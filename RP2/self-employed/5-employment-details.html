@@ -61,7 +61,6 @@
     
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">
 
-
 </head>
 
 <body class="js-enabled js-enabled">
@@ -139,33 +138,29 @@
             
             <label id="other_employer_label" class="form-label-bold">Were you self employed during 
 			the notice period?</label>
-            <div id="other_employer" class="form-group">
+            <div id="self_employed" class="form-group">
         
-        <label id="other_employer_label" for="other_employer_Yes" class="block-label">
-            <input id="other_employer_Yes" value="Yes" name="other_employer" type="radio">
+        <label id="self_employed_label" for="self_employed_Yes" class="block-label">
+            <input id="self_employed_Yes" value="Yes" name="self_employed" type="radio">
             Yes
         </label>
         
-        <label id="other_employer_label" for="other_employer_No" class="block-label">
-            <input id="other_employer_No" value="No" name="other_employer" type="radio">
+        <label id="self_employed_label" for="other_employer_No" class="block-label">
+            <input id="self_employed_No" value="No" name="self_employed" type="radio">
             No
         </label>
         
     </div>
         </div>
     <p></p>
-
-       <p></p>
     
      
-    <p>
-        </p>
 
 
         </fieldset><!-- For User research -->
         <div class="form-navigation form-group">
             <ul>
-            <li><a class="button" id="next" href="6-self-employed-details.html">Continue</a></li>                    
+            <li><a class="button" id="next" href="6-employed-details.html">Continue</a></li>                    
             <li><a href="../4-not-claiming-benefits.html" id="back" class="button-secondary">Back</a></li>            
             </ul>
         </div>
@@ -208,6 +203,15 @@
 <script type="text/javascript" src="../assets/javascripts/jquery.details.min.js"></script>
 <script type="text/javascript" src="../assets/javascripts/application.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#self_employed_Yes").click(function(){
+		$("#next").prop("href","6-self-employed-details.html");
+	});
+
+});
+
+</script>
 
     
 <script>
