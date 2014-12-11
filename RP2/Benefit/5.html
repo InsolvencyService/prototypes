@@ -109,7 +109,7 @@
 
 <main role="main" id="wrapper">
 
-    <div id="content">
+<div id="content">
         <div class="inner-block">
             <div class="phase-banner">
                     <p>
@@ -125,34 +125,33 @@
     <h1 class="form-title heading-large">Jobseeker's Allowance received during the notice period</h1>
     <div class="notice-period panel-indent">
     <p>
-        We are interested in what you did during these dates <br>
-        <span class="bolder">1 October 2014</span> and <span class="bolder">1 November 2014</span> (the notice period)
+        Please tell us what you did during these dates:<br>
+        <span class="bolder">01 October 2014</span> and <span class="bolder">01 November 2014</span> (the notice period)
     </p>
 </div>
 
     
     
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="6653e7e5699602f93adfdf64f75902a2348d62ff">
+         <input type="hidden" name="_csrf_token" value="9264fa9ad8b939ebb90da3030196c94640178b6f">
          
     <p>
         </p><div class="form-group ">
             
             <fieldset id="new_benefit_claim_start" class="date-of-birth">
                 <legend id="new_benefit_claim_start_label" class="form-label-bold">When did you apply for Jobseeker's Allowance?</legend>
-                <span class="form-hint">For example, 31 12 2013. We need the date you first applied</span>
-                <span class="form-hint">If this is an increase, please put the date you applied for the increase</span>
+                <span class="form-hint" id="new_benefit_claim_start_help">For example, 31 12 2013. We need the date you first applied.  If this is an increase, please put the date you applied for the increase.</span>
                 <div class="form-group form-group-day">
 	            <label id="new_benefit_claim_start_label.day" for="new_benefit_claim_start.day">Day</label>
-                <input id="new_benefit_claim_start.day" name="new_benefit_claim_start.day" class="date-input" type="text" maxlength="2" size="2" value="">
+                <input id="new_benefit_claim_start.day" name="new_benefit_claim_start.day" class="date-input" type="number" maxlength="2" size="2" aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help" value="">
             </div>
             <div class="form-group form-group-month">
 	            <label id="new_benefit_claim_start_label.month" for="new_benefit_claim_start.month">Month</label>
-                <input id="new_benefit_claim_start.month" name="new_benefit_claim_start.month" class="date-input" type="text" maxlength="2" size="2" value="">
+                <input id="new_benefit_claim_start.month" name="new_benefit_claim_start.month" class="date-input" type="number" maxlength="2" size="2" aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help" value="">
             </div>
             <div class="form-group form-group-year">
                 <label id="new_benefit_claim_start_label.year" for="new_benefit_claim_start.year">Year</label>
-                <input id="new_benefit_claim_start.year" name="new_benefit_claim_start.year" class="date-input" type="text" maxlength="4" size="4" value="">
+                <input id="new_benefit_claim_start.year" name="new_benefit_claim_start.year" class="date-input" type="number" maxlength="4" size="4" aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help" value="">
             </div>
             </fieldset>
         </div>
@@ -162,16 +161,16 @@
         </p><div class="form-group inline ">
             
              <fieldset class="inline">
-                    <legend id="still_claiming_label" class="form-label-bold">Were you still claiming Jobseeker's Allowance on 1 November 2014 ?</legend>
+                    <legend id="still_claiming_label" class="form-label-bold">Were you still claiming Jobseeker's Allowance on 01 November 2014 ?</legend>
                     <div id="still_claiming" class="form-group">
         
         <label id="still_claiming_label" for="still_claiming_Yes" class="block-label">
-            <input id="still_claiming_Yes" value="Yes" name="still_claiming" type="radio">
+            <input id="still_claiming_Yes" value="Yes" name="still_claiming" type="radio" aria-describedby="still_claiming_error still_claiming_help">
             Yes
         </label>
         
         <label id="still_claiming_label" for="still_claiming_No" class="block-label">
-            <input id="still_claiming_No" value="No" name="still_claiming" type="radio">
+            <input id="still_claiming_No" value="No" name="still_claiming" type="radio" aria-describedby="still_claiming_error still_claiming_help">
             No
         </label>
         
@@ -180,20 +179,33 @@
         </div>
     <p></p>
 <!-- For User research -->
-      <div class="form-navigation form-group">
-                    <ul>
-            <li><a class="button" id="next" href="6.html">Continue</a>
-            <a href="/claims/cancel-and-delete?return_url=/claims/configure-benefits" id="cancel" class="button-secondary">Cancel and delete all details </a></li>                    
-            <li><a href="4.html" id="back" class="button-secondary">Back</a></li>            
-            </ul>
-
+        <div class="form-navigation form-group">
+            
+            <div>
+                <a class="button" id="next" href="6.html">Continue</a>
+            </div>
+            <div>
+                <br>
+            </div>
+            
+            <div>
+                
+                    <a style="padding-right: 30px" href="4.html" id="back">Back</a>
+                
+                
+                    <a href="/claims/cancel-and-delete?return_url=https://rp2-pre.redundancy-payments.org.uk/claims/configure-benefits/jobseekers-allowance/benefit-start-date" id="cancel">Cancel and delete all details</a>
+                
+            </div>
         </div>
-
     </form>
 </div>
 
     </div>
-        
+    
+
+
+
+         
 </main>
 
 

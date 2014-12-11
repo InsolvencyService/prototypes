@@ -122,87 +122,100 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large">Details of your claim for loss of notice</h1>
-        <div class="notice-period panel-indent">
-	    <p>
-        We are interested in what you did during these dates <br>
-        <span class="bolder">1 October 2014</span> and <span class="bolder">1 November 2014</span> (the notice period)
+    <h1 class="form-title heading-large">About your claim for loss of notice</h1>
+    <div class="notice-period panel-indent">
+    <p>
+        Please tell us what you did during these dates:<br>
+        <span class="bolder">01 October 2014</span> and <span class="bolder">01 November 2014</span> (the notice period)
     </p>
-	</div>
+</div>
 
     
     
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
-         <fieldset>
-            
-    <fieldset class="inline">
+         <input type="hidden" name="_csrf_token" value="9264fa9ad8b939ebb90da3030196c94640178b6f">
+         
         <div class="form-group ">
             
-            <label id="claiming_benefits_label" class="form-label-bold">Did you receive any new benefits or an increase in your benefits during 
-			<span lang="en-gb">your</span> notice period?</label>
-            <div id="claiming_benefits" class="form-group">
+             <fieldset class="inline">
+                    <legend id="claiming_benefits_label" class="form-label-bold">Did you receive any new benefits or an increase in a benefit?</legend>
+                    <p>For example, Jobseeker's Allowance or Housing Benefit</p>
+                    <div id="claiming_benefits" class="form-group">
         
-        <label id="claiming_benefits_label" for="claiming_benefits_Yes" class="block-label">
-            <input id="claiming_benefits_Yes" value="Yes" name="claiming_benefits" type="radio">
+        <label id="claiming_benefits_label" for="claiming_benefits_Yes" class="block-label selected">
+            <input id="claiming_benefits_Yes" value="Yes" name="claiming_benefits" type="radio" aria-describedby="claiming_benefits_error claiming_benefits_help" checked="checked">
             Yes
         </label>
         
         <label id="claiming_benefits_label" for="claiming_benefits_No" class="block-label">
-            <input id="claiming_benefits_No" value="No" name="claiming_benefits" type="radio">
+            <input id="claiming_benefits_No" value="No" name="claiming_benefits" type="radio" aria-describedby="claiming_benefits_error claiming_benefits_help">
             No
         </label>
         
     </div>
+             </fieldset>
         </div>
         <div class="form-group ">
             
-            <label id="refused_benefits_label" class="form-label-bold">Did you apply for Jobseeker's Allowance and was this refused in the notice period?</label>
-            <div id="refused_benefits" class="form-group">
+             <fieldset class="inline">
+                    <legend id="refused_benefits_label" class="form-label-bold">If you applied for Jobseeker's Allowance, was it refused?</legend>
+                    <div id="refused_benefits" class="form-group">
         
         <label id="refused_benefits_label" for="refused_benefits_Yes" class="block-label">
-            <input id="refused_benefits_Yes" value="Yes" name="refused_benefits" type="radio">
+            <input id="refused_benefits_Yes" value="Yes" name="refused_benefits" type="radio" aria-describedby="refused_benefits_error refused_benefits_help">
             Yes
         </label>
         
-        <label id="refused_benefits_label" for="refused_benefits_No" class="block-label">
-            <input id="refused_benefits_No" value="No" name="refused_benefits" type="radio">
+        <label id="refused_benefits_label" for="refused_benefits_No" class="block-label selected">
+            <input id="refused_benefits_No" value="No" name="refused_benefits" type="radio" aria-describedby="refused_benefits_error refused_benefits_help" checked="checked">
             No
         </label>
         
     </div>
+             </fieldset>
         </div>
         <div class="form-group ">
             
-            <label id="employed_during_notice_label" class="form-label-bold">Did you have a new job or increase your hours at a second job in the notice period?</label>
-            <div id="employed_during_notice" class="form-group">
+             <fieldset class="inline">
+                    <legend id="employed_during_notice_label" class="form-label-bold">Did you get a new job or increase your hours at another job?</legend>
+                    <div id="employed_during_notice" class="form-group">
         
         <label id="employed_during_notice_label" for="employed_during_notice_Yes" class="block-label">
-            <input id="employed_during_notice_Yes" value="Yes" name="employed_during_notice" type="radio">
+            <input id="employed_during_notice_Yes" value="Yes" name="employed_during_notice" type="radio" aria-describedby="employed_during_notice_error employed_during_notice_help">
             Yes
         </label>
         
-        <label id="employed_during_notice_label" for="employed_during_notice_No" class="block-label">
-            <input id="employed_during_notice_No" value="No" name="employed_during_notice" type="radio">
+        <label id="employed_during_notice_label" for="employed_during_notice_No" class="block-label selected">
+            <input id="employed_during_notice_No" value="No" name="employed_during_notice" type="radio" aria-describedby="employed_during_notice_error employed_during_notice_help" checked="checked">
             No
         </label>
         
     </div>
+             </fieldset>
         </div>
-    </fieldset>
-
-        </fieldset><!-- For User research -->
+<!-- For User research -->
         <div class="form-navigation form-group">
-            <ul>
-            <li><a class="button" id="next" href="4.html">Continue</a></li>                    
-            <li><a href="2.html" id="back" class="button-secondary">Back</a></li>            
-            </ul>
+            
+            <div>
+                <a href="4.html" id="next" class="button">Continue</a>
+
+            </div>
+            <div>
+                <br>
+            </div>
+            
+            <div>
+                
+
+                
+                    <a href="#" id="cancel">Cancel and delete all details</a>
+                
+            </div>
         </div>
     </form>
 </div>
 
-    </div>
-    
+    </div>    
 </main>
 
 
