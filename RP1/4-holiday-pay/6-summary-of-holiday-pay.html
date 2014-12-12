@@ -69,16 +69,29 @@
  
    
 <style type="text/css">
-	tr.group-heading td{
+
+tr.section-question td{
+	background-color:#eeeeee;
+}
+
+tr.section-question td:before {
+margin-left:-20px;
+margin-right:20px;
+   content: "-";
+}
+tr.group-heading td{
 		border-bottom:0 transparent none !important;
 
-	}
-	tr.childrow td{
 }
-	tr.childrow td:first-child{
+tr.childrow td{
+}
+tr.childrow td:first-child{
 	padding-left:20px;
 }
 
+tr. section-question td{
+	font-weight:bold;
+}
 
 	tr.group-heading td.title,
 	tr.group-heading td.number{
@@ -161,7 +174,7 @@
                         <th>&nbsp;</th>
                     </tr>
                     
-                    <tr class="owed_holiday_pay_check">
+                    <tr class="owed_holiday_pay_check section-question">
                         <td>Are you owed any holiday pay?</td>
                         <td>Yes</td>
                         <td>
