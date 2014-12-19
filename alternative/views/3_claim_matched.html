@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Verify identity</title>
+    <title>Alternative - Claim notice - Claim matched</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -101,46 +101,31 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Confirm your details</h1>
+				<h1 class="form-title heading-xlarge">Claim matched</h1>
 		
-				<p>Before you can start, we need to match you to your claim. Please confirm the following details:</p>
+				<p>Thank you Alex, we have matched you to your claim.</p>
 
-				<div class="form-group">
-					<label class="form-label-bold claim_reference">Enter the 10 character reference for your claim</label>				
-					<span class="form-hint" id="claim_reference_help">For example, LN12345678</span>				
-					<input type="text" maxlength="10" size="18" aria-describedby="claim_reference_error claim_reference_help" value="">					
-					<br>
-				</div>
-					
-				<div class="form-group">
-					<label class="form-label-bold claim_reference">Date of birth</label>
-					<fieldset id="dob" class="date-of-birth">
-						<!--<legend id="dob_label" class="form-label-bold">What is your birthday?</legend>-->
-						<!--<span class="form-hint" id="dob_help">For example, 20 12</span>-->
-						<div class="form-group form-group-day">
-							<label>Day</label>
-							<input class="date-input" type="text" maxlength="2" size="2" value="">
-						</div>
-						<div class="form-group form-group-month">
-							<label>Month</label>
-							<input class="date-input" type="text" maxlength="2" size="2" value="">
-						</div>
-						<div class="form-group form-group-month">
-							<label>Year</label>
-							<input class="date-input" type="text" maxlength="4" size="4" value="">
-						</div>
-						<br>
-					</fieldset>
-        		</div>
-	
-    			<div class="form-group">
-    				<label class="form-label-bold claim_reference">National Insurance number</label>
-    				<span class="form-hint" id="claim_reference_help">For example, QQ123456C</span>
-    				<input type="text" maxlength="10" size="18" value="">
-    				<br>
-    			</div>
+				<table>
+					<tbody>
+						<tr>
+							<td class="font-small">Employer:</td>
+							<td class="font-small"><span class="bold-small">Test Enterprises Ltd</span></td>
+						</tr>
+						<tr>
+							<td class="font-small">Notice period:</td>
+							<td class="font-small"><span class="bold-small">01 October 2014</span> to <span class="bold-small">01 November 2014</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+ 				<br />
+
+ 				<!--<a href="" id="not_me">This isn't my claim</a>
+ 				<br />
+ 				<br />-->
         		
-				<a href="3_claim_notice_claim_matched.html" class="button" role="button">Save and continue</a>
+				<a href="4_jobseekers_allowance.html" class="button" role="button">Continue</a>
 				<br />
 				<br />
         		<a style="padding-right: 30px" href="/claims/start" id="back">Back</a>	

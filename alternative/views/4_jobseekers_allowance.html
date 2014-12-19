@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Claim matched</title>
+    <title>Alternative - Claim notice - Jobseekers Allowance</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -35,6 +35,32 @@
 	  @media (min-width: 641px) { main { margin: 0 30px; } }
 	  @media (min-width: 1020px) { main { margin: 0 auto; } }
 	</style>
+
+
+	<script type="text/javascript" src="../govuk/public/javascripts/govuk-template.js"></script>
+	<script type="text/javascript" src="../govuk/public/javascripts/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../govuk/public/javascripts/jquery.details.min.js"></script>
+
+
+    <script type="text/javascript">
+		$( document ).ready(function() {
+		  	$("#didnt_apply_reason").hide();
+		  	
+			$("#JSA_applied_Yes").click(function(){
+				if ($("#JSA_applied_Yes").prop("checked") == true){
+		    		$("#didnt_apply_reason").hide();
+		    	}
+		    });
+		    $("#JSA_applied_No").click(function(){
+				if ($("#JSA_applied_No").prop("checked") == true){
+		     		$("#didnt_apply_reason").show();
+		    	}
+		    });
+		});
+    </script>
+
+
+
 
   </head>
 
@@ -101,31 +127,73 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Claim matched</h1>
-		
-				<p>Thank you Alex, we have matched you to your claim.</p>
-
-				<table>
-					<tbody>
-						<tr>
-							<td class="font-small">Employer:</td>
-							<td class="font-small"><span class="bold-small">Test Enterprises Ltd</span></td>
-						</tr>
-						<tr>
-							<td class="font-small">Notice period:</td>
-							<td class="font-small"><span class="bold-small">01 October 2014</span> to <span class="bold-small">01 November 2014</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<h1 class="form-title heading-xlarge">Jobseekers Allowance</h1>
 				
- 				<br />
-
- 				<!--<a href="" id="not_me">This isn't my claim</a>
- 				<br />
- 				<br />-->
+				<div class="panel-indent">
+				    <p>
+				        Please tell us what you did during these dates:<br>
+				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> (the notice period)
+				    </p>
+				</div>
+				
+				
+				<div class="form-group">
+					<label class="form-label-bold claim_reference">Did you apply for Jobseekers Allowance during the notice period?</label>				
+				
+					<fieldset class="inline">
+						  <label class="block-label" for="JSA_applied_Yes">
+						    <input id="JSA_applied_Yes" type="radio" name="JSA_applied" value="Yes">
+						    Yes
+						  </label>
+						  <label class="block-label" for="JSA_applied_No">
+						    <input id="JSA_applied_No" type="radio" name="JSA_applied" value="No">
+						    No
+						  </label>
+					</fieldset>
+					<div id="didnt_apply_reason" class="panel-indent">
+					      <div class="form-group">
+					      	<br>
+					      	<label class="form-label">Why didn't you apply?</label>
+					      	<textarea id="bonus-details" class="form-control"></textarea>
+					      	
+					      </div>
+					 </div>
+					
+				</div>
+				
+				<br>	
+					
+					
+					
+				<div class="form-group">
+					<label class="form-label-bold claim_reference">Date of birth</label>
+					<fieldset id="dob" class="date-of-birth">
+						<!--<legend id="dob_label" class="form-label-bold">What is your birthday?</legend>-->
+						<!--<span class="form-hint" id="dob_help">For example, 20 12</span>-->
+						<div class="form-group form-group-day">
+							<label>Day</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Month</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Year</label>
+							<input class="date-input" type="text" maxlength="4" size="4" value="">
+						</div>
+						<br>
+					</fieldset>
+        		</div>
+	
+    			<div class="form-group">
+    				<label class="form-label-bold claim_reference">National Insurance number</label>
+    				<span class="form-hint" id="claim_reference_help">For example, QQ123456C</span>
+    				<input type="text" maxlength="10" size="18" value="">
+    				<br>
+    			</div>
         		
-				<a href="4_about_your_claim.html" class="button" role="button">Continue</a>
+				<a href="claim_notice_claim_matched.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
         		<a style="padding-right: 30px" href="/claims/start" id="back">Back</a>	
