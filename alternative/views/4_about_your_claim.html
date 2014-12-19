@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Verify identity</title>
+    <title>Alternative - Claim notice - Jobseekers Allowance</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -35,6 +35,28 @@
 	  @media (min-width: 641px) { main { margin: 0 30px; } }
 	  @media (min-width: 1020px) { main { margin: 0 auto; } }
 	</style>
+
+
+
+    <script type="text/javascript">
+		$( document ).ready(function() {
+		  	$("#didnt_apply_reason").hide();
+		  	
+			$("#JSA_applied_Yes").click(function(){
+				if ($("#JSA_applied_Yes").prop("checked") == true){
+		    		$("#didnt_apply_reason").show();
+		    	}
+		    });
+		    $("#JSA_applied_No").click(function(){
+				if ($("#JSA_applied_No").prop("checked") == true){
+		     		$("#didnt_apply_reason").hide();
+		    	}
+		    });
+		});
+    </script>
+
+
+
 
   </head>
 
@@ -101,16 +123,44 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Confirm your details</h1>
-		
-				<p>Before you can start, we need to match you to your claim. Please confirm the following details:</p>
-
-				<div class="form-group">
-					<label class="form-label-bold claim_reference">Enter the 10 character reference for your claim</label>				
-					<span class="form-hint" id="claim_reference_help">For example, LN12345678</span>				
-					<input type="text" maxlength="10" size="18" aria-describedby="claim_reference_error claim_reference_help" value="">					
-					<br>
+				<h1 class="form-title heading-xlarge">Jobseekers Allowance</h1>
+				
+				<div class="panel-indent">
+				    <p>
+				        Please tell us what you did during these dates:<br>
+				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> (the notice period)
+				    </p>
 				</div>
+				
+				
+				<div class="form-group">
+					<label class="form-label-bold claim_reference">Did you apply for Jobseekers Allowance during the notice period?</label>				
+				
+					<fieldset class="inline">
+					  <label class="block-label" for="JSA_applied_Yes">
+					    <input id="JSA_applied_Yes" type="radio" name="JSA_applied" value="Yes">
+					    Yes
+					  </label>
+					  <label class="block-label" for="JSA_applied_No">
+					    <input id="JSA_applied_No" type="radio" name="JSA_applied" value="No">
+					    No
+					  </label>
+					  
+					  <div class="panel-indent" id="didnt_apply_reason">
+					        <div class="form-group">
+					        	<label class="form-label">Why didn't you apply?</label>
+					        	<textarea id="bonus-details" class="form-control"></textarea>
+					        	<br>
+					        </div>
+					   </div>
+					  
+					  
+					  
+					</fieldset>
+				</div>
+					
+					
+					
 					
 				<div class="form-group">
 					<label class="form-label-bold claim_reference">Date of birth</label>
