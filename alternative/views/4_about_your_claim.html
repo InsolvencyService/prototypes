@@ -37,6 +37,8 @@
 	</style>
 
 
+    <script src="../govuk/public/javascripts/govuk-template.js" type="text/javascript"></script>
+
 
     <script type="text/javascript">
 		$( document ).ready(function() {
@@ -137,26 +139,23 @@
 					<label class="form-label-bold claim_reference">Did you apply for Jobseekers Allowance during the notice period?</label>				
 				
 					<fieldset class="inline">
-					  <label class="block-label" for="JSA_applied_Yes">
-					    <input id="JSA_applied_Yes" type="radio" name="JSA_applied" value="Yes">
-					    Yes
-					  </label>
-					  <label class="block-label" for="JSA_applied_No">
-					    <input id="JSA_applied_No" type="radio" name="JSA_applied" value="No">
-					    No
-					  </label>
-					  
-					  <div class="panel-indent" id="didnt_apply_reason">
-					        <div class="form-group">
-					        	<label class="form-label">Why didn't you apply?</label>
-					        	<textarea id="bonus-details" class="form-control"></textarea>
-					        	<br>
-					        </div>
-					   </div>
-					  
-					  
-					  
+						  <label class="block-label" for="JSA_applied_Yes">
+						    <input id="JSA_applied_Yes" type="radio" name="JSA_applied" value="Yes">
+						    Yes
+						  </label>
+						  <label class="block-label" for="JSA_applied_No">
+						    <input id="JSA_applied_No" type="radio" name="JSA_applied" value="No">
+						    No
+						  </label>
 					</fieldset>
+					<div id="didnt_apply_reason" class="panel-indent">
+					      <div class="form-group">
+					      	<label class="form-label">Why didn't you apply?</label>
+					      	<textarea id="bonus-details" class="form-control"></textarea>
+					      	<br>
+					      </div>
+					 </div>
+					
 				</div>
 					
 					
