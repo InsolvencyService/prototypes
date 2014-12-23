@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Jobseekers Allowance</title>
+    <title>Alternative - Claim notice - Benefits received</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -143,7 +143,7 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Jobseekers Allowance</h1>
+				<h1 class="form-title heading-xlarge">Benefits received</h1>
 				
 				<div class="panel-indent">
 				    <p>
@@ -154,6 +154,10 @@
 				
 				
 				<div class="form-group">
+				
+				
+				<!-- Jobseekers Allowance -->
+				
 					<label class="form-label-bold claim_reference">Did you apply for Jobseekers Allowance during the notice period?</label>				
 				
 					<fieldset class="inline">
@@ -190,57 +194,70 @@
 								    No
 								  </label>						  
 							</fieldset>
-							<br>
-							<br>
-							<br>
-							<label class="form-label">How many periods of Jobseekers Allowance did you receive?</label>
-							<fieldset class="inline">
-								  <label class="block-label" for="JSA_successful_Yes">
-								    <input id="JSA_successful_Yes" type="radio" name="JSA_successful" value="Yes">
-								    Yes
-								  </label>
-								  <label class="block-label" for="JSA_successful_No">
-								    <input id="JSA_successful_No" type="radio" name="JSA_successful" value="No">
-								    No
-								  </label>						  
-							</fieldset>
-
 						</div>
 					</div>
 					
+					<br>
+					<br>
+					
+					<!-- Other benefits -->
+					
+					<p></p>
+					
+					<label class="form-label-bold claim_reference">Which other benefits did you receive in the notice period?</label>				
+					
+					<div id="benefits_options" class="form-group form-group-compound">
+					        					        
+					            <label id="_label" for="benefits_options-2" class="block-label">
+					                <input id="benefits_options-2" name="benefits_options-2" value="employment-and-support-allowance" type="checkbox">Employment and Support Allowance
+					            </label>
+					        
+					            <label id="_label" for="benefits_options-3" class="block-label">
+					                <input id="benefits_options-3" name="benefits_options-3" value="housing-benefit" type="checkbox">Housing Benefit
+					            </label>
+					        
+					            <label id="_label" for="benefits_options-4" class="block-label">
+					                <input id="benefits_options-4" name="benefits_options-4" value="income-support" type="checkbox">Income Support
+					            </label>
+					        
+					            <label id="_label" for="benefits_options-5" class="block-label">
+					                <input id="benefits_options-5" name="benefits_options-5" value="maternity-allowance" type="checkbox">Maternity Allowance
+					            </label>
+					        
+					            <label id="_label" for="benefits_options-6" class="block-label">
+					                <input id="benefits_options-6" name="benefits_options-6" value="pension-credit" type="checkbox">Pension Credit
+					            </label>
+					        
+					            <label id="_label" for="benefits_options-7" class="block-label">
+					                <input id="benefits_options-7" name="benefits_options-7" value="sickness-and-bereavement-allowance" type="checkbox">Sickness and Bereavement Allowance
+					            </label>
+					        
+					            <label id="_label" for="benefits_options-8" class="block-label">
+					                <input id="benefits_options-8" name="benefits_options-8" value="universal-credit" type="checkbox">Universal Credit
+					            </label>
+					            
+					            
+				         	</div>
+				         	
+				         	<div id="another_benefit" class="form-group"></div>
+					            
+					            <label class="form-label" for="ni-number">
+					                Another benefit
+					                <span class="form-hint">enter the name of the benefit you received</span>
+					              </label>
+					              <input class="form-control" type="text">
+					            
+																            
+					        
+					    </div>
+					
+					
+					
 				</div>
 				
-				
-					
-					
-					
-				<div class="form-group">
-					<label class="form-label-bold claim_reference">Date of birth</label>
-					<fieldset id="dob" class="date-of-birth">
-						<!--<legend id="dob_label" class="form-label-bold">What is your birthday?</legend>-->
-						<!--<span class="form-hint" id="dob_help">For example, 20 12</span>-->
-						<div class="form-group form-group-day">
-							<label>Day</label>
-							<input class="date-input" type="text" maxlength="2" size="2" value="">
-						</div>
-						<div class="form-group form-group-month">
-							<label>Month</label>
-							<input class="date-input" type="text" maxlength="2" size="2" value="">
-						</div>
-						<div class="form-group form-group-month">
-							<label>Year</label>
-							<input class="date-input" type="text" maxlength="4" size="4" value="">
-						</div>
-						<br>
-					</fieldset>
-        		</div>
-	
-    			<div class="form-group">
-    				<label class="form-label-bold claim_reference">National Insurance number</label>
-    				<span class="form-hint" id="claim_reference_help">For example, QQ123456C</span>
-    				<input type="text" maxlength="10" size="18" value="">
-    				<br>
-    			</div>
+        		
+        		
+        		
         		
 				<a href="5_jobseekers_allowance_dates.html" class="button" role="button">Save and continue</a>
 				<br />
