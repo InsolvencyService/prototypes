@@ -44,39 +44,20 @@
 
     <script type="text/javascript">
 		$( document ).ready(function() {
-		  	$("#didnt_apply_reason").hide();
+		  	$("#JSA_end").hide();
 		  	
-			$("#JSA_applied_Yes").click(function(){
-				if ($("#JSA_applied_Yes").prop("checked") == true){
-		    		$("#didnt_apply_reason").hide();
+			$("#still_claiming_yes").click(function(){
+				if ($("#still_claiming_yes").prop("checked") == true){
+		    		$("#JSA_end").hide();
 		    	}
 		    });
-		    $("#JSA_applied_No").click(function(){
-				if ($("#JSA_applied_No").prop("checked") == true){
-		     		$("#didnt_apply_reason").show();
+		    $("#still_claiming_no").click(function(){
+				if ($("#still_claiming_no").prop("checked") == true){
+		     		$("#JSA_end").show();
 		    	}
 		    });
 		});
     </script>
-
-
-	<script type="text/javascript">
-		$( document ).ready(function() {
-		  	$("#was_application_successful").hide();
-		  	
-			$("#JSA_applied_Yes").click(function(){
-				if ($("#JSA_applied_Yes").prop("checked") == true){
-					$("#was_application_successful").show();
-				}
-			});
-			$("#JSA_applied_No").click(function(){
-				if ($("#JSA_applied_No").prop("checked") == true){
-			 		$("#was_application_successful").hide();
-				}
-			});
-		});
-	</script>
-
 
   </head>
 
@@ -152,58 +133,18 @@
 				    </p>
 				</div>
 				
-				
 				<div class="form-group">
-					<label class="form-label-bold claim_reference">Did you apply for Jobseekers Allowance during the notice period?</label>				
-				
-					<fieldset class="inline">
-						  <label class="block-label" for="JSA_applied_Yes">
-						    <input id="JSA_applied_Yes" type="radio" name="JSA_applied" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="JSA_applied_No">
-						    <input id="JSA_applied_No" type="radio" name="JSA_applied" value="No">
-						    No
-						  </label>						  
-					</fieldset>
-					
-					<div id="didnt_apply_reason" class="panel-indent">
-					      <div class="form-group">
-					      	<br>
-					      	<label class="form-label">Why didn't you apply?</label>
-					      	<textarea id="bonus-details" class="form-control"></textarea>
-					      	
-					      </div>
-					</div>
 					<br>
-					<div id="was_application_successful" class="panel-indent">
-						<div class="form-group">
-							<br>
-							<label class="form-label">Was your application successful?</label>
-							<fieldset class="inline">
-								  <label class="block-label" for="JSA_successful_Yes">
-								    <input id="JSA_successful_Yes" type="radio" name="JSA_successful" value="Yes">
-								    Yes
-								  </label>
-								  <label class="block-label" for="JSA_successful_No">
-								    <input id="JSA_successful_No" type="radio" name="JSA_successful" value="No">
-								    No
-								  </label>						  
-							</fieldset>
-						</div>
-					</div>
+					<label class="form-label">How many periods of Jobseekers Allowance did you receive?</label>
+				    <span class="form-hint">How many times, within the notice period, did you start receiving Jobseekers Allowance and then stop</span>
 					
-				</div>
-				
-				
-					
-					
+				    <input class="form-control" type="text" maxlength="2" size="2" value="">
+					</fieldset>
+				</div>					
 					
 				<div class="form-group">
-					<label class="form-label-bold claim_reference">Date of birth</label>
-					<fieldset id="dob" class="date-of-birth">
-						<!--<legend id="dob_label" class="form-label-bold">What is your birthday?</legend>-->
-						<!--<span class="form-hint" id="dob_help">For example, 20 12</span>-->
+					<label class="form-label-bold claim_reference">When did your Jobseekers Allowance first start?</label>
+					<fieldset id="JSA_start" class="date-of-birth">
 						<div class="form-group form-group-day">
 							<label>Day</label>
 							<input class="date-input" type="text" maxlength="2" size="2" value="">
@@ -220,25 +161,68 @@
 					</fieldset>
         		</div>
 	
-    			<div class="form-group">
-    				<label class="form-label-bold claim_reference">National Insurance number</label>
-    				<span class="form-hint" id="claim_reference_help">For example, QQ123456C</span>
-    				<input type="text" maxlength="10" size="18" value="">
-    				<br>
-    			</div>
-        		
-				<a href="5_jobseekers_allowance_dates.html" class="button" role="button">Save and continue</a>
-				<br />
-				<br />
-        		<a style="padding-right: 30px" href="/claims/start" id="back">Back</a>	
-				<a href="" id="cancel">Cancel and delete all details</a>
-				<br />
-				<br />
-			</div>
+					
+				<div>
+					<div class="form-group">
+						<br>
+						<label class="form-label">Were you still claiming Jobseeker's Allowance on 1 November 2014?</label>
+						<fieldset class="inline" id="still_claiming">
+							  <label class="block-label" for="still_claiming_yes">
+							    <input id="still_claiming_yes" type="radio" name="still_claiming" value="Yes">
+							    Yes
+							  </label>
+							  <label class="block-label" for="still_claiming_no">
+							    <input id="still_claiming_no" type="radio" name="still_claiming" value="No">
+							    No
+							  </label>						  
+						</fieldset>
+						
+						<div id="JSA_end" class="form-group panel-indent">
+						
+							<label class="form-label-bold">When did your Jobseekers Allowance first end?</label>
+							<fieldset id="JSA_end" class="date-of-birth">
+								<div class="form-group form-group-day">
+									<label>Day</label>
+									<input class="date-input" type="text" maxlength="2" size="2" value="">
+								</div>
+								<div class="form-group form-group-month">
+									<label>Month</label>
+									<input class="date-input" type="text" maxlength="2" size="2" value="">
+								</div>
+								<div class="form-group form-group-month">
+									<label>Year</label>
+									<input class="date-input" type="text" maxlength="4" size="4" value="">
+								</div>
+								<br>
+							</fieldset>
+						</div>
+						
+						<br />
+						<br />
+						<p></p>
+						
+						
+						<div class="form-group">
+							<label for="amount-received" class="form-label-bold">
+							How much Jobseekers Allowance did you receive in this period?
+							</label>
+							<span class="form-hint"></span>
+							<span class="form-control-addon">£</span> <input type="text" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received">
+						</div>
+						
+						<a href="6_jobseekers_allowance_period2.html" class="button" role="button">Save and continue</a>
+						<br />
+						<br />
+						<a style="padding-right: 30px" href="/claims/start" id="back">Back</a>	
+						<a href="" id="cancel">Cancel and delete all details</a>
+						
+
+						
+					</div>
+				</div>
 					
 					
 					
-				</div>		
 			</div>	
 		</div>
 	</div>
