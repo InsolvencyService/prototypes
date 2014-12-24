@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Amount of Jobseekers Allowance</title>
+    <title>Alternative - Claim notice - Jobseekers Allowance 2nd period</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -14,7 +14,6 @@
 
 	<!--Clara trying to add styles from express prototype-->
 	<link href="../public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="../public/stylesheets/examples.css" media="screen" rel="stylesheet" type="text/css" />
 
 
      <!--[if gte IE 9]><!-->
@@ -45,20 +44,21 @@
 
     <script type="text/javascript">
 		$( document ).ready(function() {
-		  	$("#JSA_amount").hide();
+		  	$("#JSA_end").hide();
 		  	
-			$("#JSA_calculation_correct_yes").click(function(){
-				if ($("#JSA_calculation_correct_yes").prop("checked") == true){
-		    		$("#JSA_amount").hide();
+			$("#still_claiming_yes").click(function(){
+				if ($("#still_claiming_yes").prop("checked") == true){
+		    		$("#JSA_end").hide();
 		    	}
 		    });
-		    $("#JSA_calculation_correct_no").click(function(){
-				if ($("#JSA_calculation_correct_no").prop("checked") == true){
-		     		$("#JSA_amount").show();
+		    $("#still_claiming_no").click(function(){
+				if ($("#still_claiming_no").prop("checked") == true){
+		     		$("#JSA_end").show();
 		    	}
 		    });
 		});
     </script>
+    
 
   </head>
 
@@ -125,65 +125,85 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Amount of Jobseekers Allowance</h1>
+				<h1 class="form-title heading-large">Jobseekers Allowance second period</h1>
 				
-				<div class="rps-calculation">
-					<p>Based on our calculation we think you received £143 in Jobseeker's Allowance</p>
-					
-					<details>
-					  <summary><span class="summary">How is this calculated?</span></summary>
-					  <div class="panel-indent">
-					    <ul class="list-bullet">
-					    	<li>Jobseekers Allowance is paid as a 7 day week</li>
-					    	<li>you are entitled to £71.50 per week</li>
-					    	<li>you claimed for 2 weeks</li>
-					    </ul>
-					  </div>
-					</details>					
-				</div>				
-					
-					
-				<div>
-					<div class="form-group">
-						<br>
-						<label class="form-label-bold">Did you receive £143 in Jobseekers Allowance between 3 October 2013 and 20 October 2013?</label>
-						<fieldset class="inline" id="JSA_calculation correct">
-							  <label class="block-label" for="JSA_calculation_correct_yes">
-							    <input id="JSA_calculation_correct_yes" type="radio" name="JSA_calculation correct" value="Yes">
-							    Yes
-							  </label>
-							  <label class="block-label" for="JSA_calculation_correct_no">
-							    <input id="JSA_calculation_correct_no" type="radio" name="JSA_calculation correct" value="No">
-							    No
-							  </label>						  
-						</fieldset>
-						
-						<div id="JSA_amount" class="panel-indent">
-							<div class="form-group">
-								<label for="amount-received" class="form-label">
-								How much Jobseekers Allowance did you receive between 3 October 2013 and 20 November 2013?
-								</label>
-								<span class="form-hint"></span>
-								<span class="form-control-addon">£</span> <input type="text" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received">
-							</div>
-						</div>
-						
-					</div>
+				
+				<!-- Notice period reminder -->
+				<!-- ====================== -->
+				
+				
+				<div class="panel-indent">
+				    <p>
+				        Please tell us what you did during these dates:<br>
+				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> (the notice period)
+				    </p>
 				</div>
-																	
-						
-				<a href="7_jobseekers_allowance_dates_2.html" class="button" role="button">Save and continue</a>
+				
+				<!-- JSA start date -->
+				<!-- ============== -->
+				
+				<div class="form-group">
+					<label class="form-label-bold claim_reference">When did your Jobseekers Allowance  start for the second time?</label>
+					<fieldset id="JSA_start" class="date-of-birth">
+						<div class="form-group form-group-day">
+							<label>Day</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Month</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Year</label>
+							<input class="date-input" type="text" maxlength="4" size="4" value="">
+						</div>
+						<br>
+					</fieldset>
+        		</div>
+	
+				<!-- JSA end date -->
+				<!-- ============ -->
+
+				<div class="form-group">
+					<label class="form-label-bold">Were you still claiming Jobseeker's Allowance on 1 November 2014?</label>
+					<fieldset class="inline" id="still_claiming">
+						  <label class="block-label" for="still_claiming_yes">
+						    <input id="still_claiming_yes" type="radio" name="still_claiming" value="Yes">
+						    Yes
+						  </label>
+						  <label class="block-label" for="still_claiming_no">
+						    <input id="still_claiming_no" type="radio" name="still_claiming" value="No">
+						    No
+						  </label>						  
+					</fieldset>
+					
+					<div id="JSA_end" class="form-group panel-indent">					
+						<label class="form-label">When did your Jobseekers Allowance end for the second time?</label>
+						<fieldset id="JSA_end" class="date-of-birth">
+							<div class="form-group form-group-day">
+								<label>Day</label>
+								<input class="date-input" type="text" maxlength="2" size="2" value="">
+							</div>
+							<div class="form-group form-group-month">
+								<label>Month</label>
+								<input class="date-input" type="text" maxlength="2" size="2" value="">
+							</div>
+							<div class="form-group form-group-month">
+								<label>Year</label>
+								<input class="date-input" type="text" maxlength="4" size="4" value="">
+							</div>
+						</fieldset>
+					</div>	
+				</div>
+				
+				<!-- Buttons -->
+				<!-- ======= -->
+															
+				<a href="6_Jobseekers_amount.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
 				<a style="padding-right: 30px" href="/claims/start" id="back">Back</a>	
-				<a href="" id="cancel">Cancel and delete all details</a>
-				
-
-						
-					</div>
-				</div>
-					
-					
+				<a href="" id="cancel">Cancel and delete all details</a>					
 					
 			</div>	
 		</div>
