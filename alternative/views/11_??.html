@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Other benefit</title>
+    <title>Alternative - Claim notice - Housing benefit end date and amount</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -44,38 +44,21 @@
 
     <script type="text/javascript">
 		$( document ).ready(function() {
-		  	$("#benefit_increased").hide();
+		  	$("#HB_end_date").hide();
 		  	
-			$("#already_receiving").click(function(){
-				if ($("#already_receiving_yes").prop("checked") == true){
-		    		$("#benefit_increased").show();
+			$("#still_receiving_yes").click(function(){
+				if ($("#still_receiving_yes").prop("checked") == true){
+		    		$("#HB_end_date").hide();
 		    	}
 		    });
-		    $("#already_receiving_no").click(function(){
-				if ($("#already_receiving_no").prop("checked") == true){
-		     		$("#benefit_increased").hide();
+		    $("#still_receiving_no").click(function(){
+				if ($("#still_receiving_no").prop("checked") == true){
+		     		$("#HB_end_date").show();
 		    	}
 		    });
 		});
     </script>
     
-	<script type="text/javascript">
-		$( document ).ready(function() {
-		  	$("#HB_start_date").hide();
-		  	
-			$("#already_receiving").click(function(){
-				if ($("#already_receiving_yes").prop("checked") == true){
-		    		$("#HB_start_date").hide();
-		    	}
-		    });
-		    $("#already_receiving_no").click(function(){
-				if ($("#already_receiving_no").prop("checked") == true){
-		     		$("#HB_start_date").show();
-		    	}
-		    });
-		});
-	</script>
-
   </head>
 
   <body class="">
@@ -141,7 +124,7 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Housing Benefit</h1>
+				<h1 class="form-title heading-xlarge">Housing benefit</h1>
 				
 				
 				<!-- Notice period reminder -->
@@ -155,52 +138,30 @@
 				    </p>
 				</div>
 				
-				<!-- Already receiving this benefit? -->
+				<!-- Still receiving HB on end date? -->
 				<!-- =============================== -->
 				
 				<div class="form-group">
-					<label class="form-label-bold">Were you still receiving housing benefit on 01 November 2014?</label>
+					<label class="form-label-bold">Were you still receiving housing benefit on 1 November 2014?</label>
 					<fieldset class="inline" id="still_receiving">
 						  <label class="block-label" for="still_receiving_yes">
-						    <input id="still_receiving_yes" type="radio" name="still_receiving" value="Yes">
+						    <input id="still_receiving_yes" type="radio" name="extra_periods" value="Yes">
 						    Yes
 						  </label>
 						  <label class="block-label" for="still_receiving_no">
-						    <input id="still_receiving_no" type="radio" name="still_receiving" value="No">
+						    <input id="still_receiving_no" type="radio" name="extra_periods" value="No">
 						    No
 						  </label>						  
-					<!--</fieldset>-->
 					</fieldset>
 				</div>
-
-
-				<!-- Increase in benefit amount? -->
-				<!-- =============================== -->
-								
-				<div id="benefit_increased" class="panel-indent">
-					<div class="form-group">
-						<label class="form-label">Did the amount that you receive from Housing benefit increase between 01 October 2014 and 01 November 2014?</label>
-						<fieldset class="inline">
-							  <label class="block-label" for="benefit_increased_yes">
-							    <input id="benefit_increased_yes" type="radio" name="benefit_increased" value="Yes">
-							    Yes
-							  </label>
-							  <label class="block-label" for="benefit_increased_No">
-							    <input id="benefit_increased_No" type="radio" name="benefit_increased" value="No">
-							    No
-							  </label>						  
-						</fieldset>
-					</div>
-				</div>
 				
-				
-				
-				<!-- Housing benefit start date -->
+				<!-- HB end date -->
 				<!-- ============== -->
-				<div id="HB_start_date" class="panel-indent">			
-					<div class="form-group" >
-						<label class="form-label claim_reference">When did your housing benefit start?</label>
-						<fieldset id="HB_start" class="date-of-birth">
+				
+				<div class="form-group" id="HB_end_date">
+					<div class="panel-indent">
+					<label class="form-label claim_reference">When did your Housing benefit end?</label>
+						<fieldset id="HB_end_date" class="date-of-birth">
 							<div class="form-group form-group-day">
 								<label>Day</label>
 								<input class="date-input" type="text" maxlength="2" size="2" value="">
@@ -215,15 +176,15 @@
 							</div>
 							<br>
 						</fieldset>
-	        		</div>
-				</div>
+					</div>
+        		</div>
 	
 				
 				<!-- Buttons -->
 				<!-- ======= -->
 				
 												
-				<a href="10_HB_end_date.html.html" class="button" role="button">Save and continue</a>
+				<a href="6_Jobseekers_amount.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
 				<a style="padding-right: 30px" href="/claims/start" id="back">Back</a>	
