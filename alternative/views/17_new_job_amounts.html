@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - New job details</title>
+    <title>Alternative - Claim notice - New job earnings</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -41,24 +41,24 @@
 	<script type="text/javascript" src="../govuk/public/javascripts/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="../govuk/public/javascripts/jquery.details.min.js"></script>
 
-    
-    <script type="text/javascript">
-    	$( document ).ready(function() {
-    	  	$("#more_than_one_number").hide();
-    	  	
-    		$("#more_than_one_yes").click(function(){
-    			if ($("#more_than_one_yes").prop("checked") == true){
-    	    		$("#more_than_one_number").show();
-    	    	}
-    	    });
-    	    $("#more_than_one_no").click(function(){
-    			if ($("#more_than_one_no").prop("checked") == true){
-    	     		$("#more_than_one_number").hide();
-    	    	}
-    	    });
-    	});
-    </script>
 
+    <script type="text/javascript">
+		$( document ).ready(function() {
+		  	$("#HB_end_date").hide();
+		  	
+			$("#still_receiving_yes").click(function(){
+				if ($("#still_receiving_yes").prop("checked") == true){
+		    		$("#HB_end_date").hide();
+		    	}
+		    });
+		    $("#still_receiving_no").click(function(){
+				if ($("#still_receiving_no").prop("checked") == true){
+		     		$("#HB_end_date").show();
+		    	}
+		    });
+		});
+    </script>
+    
   </head>
 
   <body class="">
@@ -124,7 +124,8 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">New job details</h1>
+				<h1 class="form-title heading-xlarge">New job earnings</h1>
+				
 				
 				<!-- Notice period reminder -->
 				<!-- ====================== -->
@@ -137,65 +138,79 @@
 				    </p>
 				</div>
 				
-				<p>Tell us about the new job you started during the notice period.</p>
-				
-				<!-- Details of job -->
-				<!-- =================== -->
-				
+
+				<!-- Amount received -->
+				<!-- =============== -->
+
+	
 				<div class="form-group">
-					<label class="form-label-bold" for="Job-title">Job title</label>
-					<input class="form-control-3-4" id="Job-title" type="text">
-				</div>
-				
-				<div class="form-group">
-					<label class="form-label-bold">Are you self employed in this job?</label>
-					<fieldset class="inline" id="self-employed">
-						<label class="block-label" for="self-employed_yes">
-							<input id="self-employed_yes" type="radio" name="self-employed" value="Yes">Yes
-						</label>
-						<label class="block-label" for="self-employed_no">
-							<input id="self-employed_no" type="radio" name="self-employed" value="No">No
+					<label for="amount-received" class="form-label-bold">
+					What was your gross income or gross increase in income from Fisher &amp; Co LTD?
+					</label>
+					<span class="form-hint">Gross income is the total amount before tax and National Insurance, excluding overtime.</span>
+					<span class="form-hint"></span>
+					<span class="form-control-addon">£</span> <input type="text" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received"> per
+	
+					<fieldset id="units" class="inline">
+						<label class="block-label" for="units_hour">
+							<input id="units_hour" type="radio" value="hour">
+							Hour
 						</label>						  
-					</fieldset>		
+						<label class="block-label" for="units_day">
+							<input id="units_day" type="radio" value="day">
+							Day
+						</label>						  
+						<label class="block-label" for="units_hour">
+							<input id="units_hour" type="radio" value="hour">
+							Week
+						</label>						  
+						<label class="block-label" for="units_day">
+							<input id="units_day" type="radio" value="day">
+							Month
+						</label>	
+						<label class="block-label" for="units_day">
+							<input id="units_day" type="radio" value="day">
+							Year
+						</label>						  			  
+					</fieldset>
 				</div>
-				
+	
+	
+				<!-- Normal overtime -->
+				<!-- =============== -->
+
+	
 				<div class="form-group">
-					<label class="form-label-bold" for="company_name">Company name</label>
-					<input class="form-control-3-4" id="company_name" type="text">
-				</div>
-				
+					<label for="amount-received" class="form-label-bold">
+					How many hours, or extra hours, do you normally work per week (excluding overtime) at Fisher &amp; Co LTD?
+					</label>
+					<span class="form-hint">If you work irregular hours, please tell us the average number of hours.</span>
+					<input type="text" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received">
+				</div>	
+	
+	
+				<!-- Amount received -->
+				<!-- =============== -->
+
+	
 				<div class="form-group">
-					<label class="form-label-bold" for="company_address_1">Company address</label>
-					<span class="form-label">Building and street</span>
-					  </label>
-					<input class="form-control-3-4" id="company_address_1" type="text">
-					<input class="form-control-3-4" id="company_address_2" type="text">
+					<label for="amount-received" class="form-label-bold">
+					What was the total gross pay or increase in gross pay from Fisher &amp; Co LTD between 05 October 2014 and 29 October 2014?
+					</label>
+					<span class="form-hint">Gross pay is the total before tax and National Insurance, including overtime, commission and bonuses. If this is an increase, please enter how much more you're now earning.</span>
+					<span class="form-control-addon">£</span> <input type="text" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received"> per
 				</div>
 
-				<div class="form-group">
-					<label class="form-label" for="town">Town or city</label>
-					<input class="form-control-3-4" id="town" type="text">
-				</div>
-				
-				<div class="form-group">
-					<label class="form-label" for="town">County (optional)</label>
-					<input class="form-control-3-4" id="town" type="text">
-				</div>
-
-				<div class="form-group">
-					<label class="form-label" for="town">Postcode (optional)</label>
-					<input class="form-control-3-4" id="town" type="text">
-				</div>
-				
-				
+	
+	
 				<!-- Buttons -->
 				<!-- ======= -->
 				
 												
-				<a href="16_new_job_dates.html" class="button" role="button">Save and continue</a>
+				<a href="18_.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
-				<a style="padding-right: 30px" href="14_increased_hours_amounts.html" id="back">Back</a>	
+				<a style="padding-right: 30px" href="16_new_job_dates.html" id="back">Back</a>	
 				<a href="" id="cancel">Cancel and delete all details</a>					
 					
 			</div>	

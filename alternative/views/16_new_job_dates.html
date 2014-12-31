@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - New job details</title>
+    <title>Alternative - Claim notice - New job dates</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -41,23 +41,24 @@
 	<script type="text/javascript" src="../govuk/public/javascripts/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="../govuk/public/javascripts/jquery.details.min.js"></script>
 
-    
+
     <script type="text/javascript">
-    	$( document ).ready(function() {
-    	  	$("#more_than_one_number").hide();
-    	  	
-    		$("#more_than_one_yes").click(function(){
-    			if ($("#more_than_one_yes").prop("checked") == true){
-    	    		$("#more_than_one_number").show();
-    	    	}
-    	    });
-    	    $("#more_than_one_no").click(function(){
-    			if ($("#more_than_one_no").prop("checked") == true){
-    	     		$("#more_than_one_number").hide();
-    	    	}
-    	    });
-    	});
+		$( document ).ready(function() {
+		  	$("#new_job_end").hide();
+		  	
+			$("#still_working_yes").click(function(){
+				if ($("#still_working_yes").prop("checked") == true){
+		    		$("#new_job_end").hide();
+		    	}
+		    });
+		    $("#still_working_no").click(function(){
+				if ($("#still_working_no").prop("checked") == true){
+		     		$("#new_job_end").show();
+		    	}
+		    });
+		});
     </script>
+    
 
   </head>
 
@@ -124,7 +125,8 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">New job details</h1>
+				<h1 class="form-title heading-xlarge">New job start and end dates</h1>
+				
 				
 				<!-- Notice period reminder -->
 				<!-- ====================== -->
@@ -136,66 +138,71 @@
 				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> (the notice period)
 				    </p>
 				</div>
-				
-				<p>Tell us about the new job you started during the notice period.</p>
-				
-				<!-- Details of job -->
-				<!-- =================== -->
+								
+				<!-- Increased hours start date -->
+				<!-- ========================== -->
 				
 				<div class="form-group">
-					<label class="form-label-bold" for="Job-title">Job title</label>
-					<input class="form-control-3-4" id="Job-title" type="text">
-				</div>
-				
-				<div class="form-group">
-					<label class="form-label-bold">Are you self employed in this job?</label>
-					<fieldset class="inline" id="self-employed">
-						<label class="block-label" for="self-employed_yes">
-							<input id="self-employed_yes" type="radio" name="self-employed" value="Yes">Yes
-						</label>
-						<label class="block-label" for="self-employed_no">
-							<input id="self-employed_no" type="radio" name="self-employed" value="No">No
-						</label>						  
-					</fieldset>		
-				</div>
-				
-				<div class="form-group">
-					<label class="form-label-bold" for="company_name">Company name</label>
-					<input class="form-control-3-4" id="company_name" type="text">
-				</div>
-				
-				<div class="form-group">
-					<label class="form-label-bold" for="company_address_1">Company address</label>
-					<span class="form-label">Building and street</span>
-					  </label>
-					<input class="form-control-3-4" id="company_address_1" type="text">
-					<input class="form-control-3-4" id="company_address_2" type="text">
-				</div>
+					<label class="form-label-bold claim_reference">When did your employment with Fisher &amp; Co LTD start?</label>
+					<fieldset id="new_job_start" class="date-of-birth">
+						<div class="form-group form-group-day">
+							<label>Day</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Month</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Year</label>
+							<input class="date-input" type="text" maxlength="4" size="4" value="">
+						</div>
+						<br>
+					</fieldset>
+        		</div>
+	
+				<!-- Increased hours end date -->
+				<!-- ======================== -->
 
 				<div class="form-group">
-					<label class="form-label" for="town">Town or city</label>
-					<input class="form-control-3-4" id="town" type="text">
+					<label class="form-label-bold">Were you still working at Fisher &amp; Co LTD on 1 November 2014?</label>
+					<fieldset class="inline" id="still_working">
+						  <label class="block-label" for="still_working_yes">
+						    <input id="still_working_yes" type="radio" name="still_working" value="Yes">
+						    Yes
+						  </label>
+						  <label class="block-label" for="still_working_no">
+						    <input id="still_working_no" type="radio" name="still_working" value="No">
+						    No
+						  </label>						  
+					</fieldset>
+					
+					<div id="new_job_end" class="form-group panel-indent">					
+						<label class="form-label">When did your extra hours at InterAnalysis end?</label>
+						<fieldset id="new_job_end" class="date-of-birth">
+							<div class="form-group form-group-day">
+								<label>Day</label>
+								<input class="date-input" type="text" maxlength="2" size="2" value="">
+							</div>
+							<div class="form-group form-group-month">
+								<label>Month</label>
+								<input class="date-input" type="text" maxlength="2" size="2" value="">
+							</div>
+							<div class="form-group form-group-month">
+								<label>Year</label>
+								<input class="date-input" type="text" maxlength="4" size="4" value="">
+							</div>
+						</fieldset>
+					</div>	
 				</div>
-				
-				<div class="form-group">
-					<label class="form-label" for="town">County (optional)</label>
-					<input class="form-control-3-4" id="town" type="text">
-				</div>
-
-				<div class="form-group">
-					<label class="form-label" for="town">Postcode (optional)</label>
-					<input class="form-control-3-4" id="town" type="text">
-				</div>
-				
 				
 				<!-- Buttons -->
 				<!-- ======= -->
-				
-												
-				<a href="16_new_job_dates.html" class="button" role="button">Save and continue</a>
+														
+				<a href="17_new_job_amounts.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
-				<a style="padding-right: 30px" href="14_increased_hours_amounts.html" id="back">Back</a>	
+				<a style="padding-right: 30px" href="15_new_job_details.html" id="back">Back</a>	
 				<a href="" id="cancel">Cancel and delete all details</a>					
 					
 			</div>	
