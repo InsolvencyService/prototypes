@@ -42,6 +42,54 @@
 	<script type="text/javascript" src="../govuk/public/javascripts/jquery.details.min.js"></script>
 
     
+    
+    
+    <script type="text/javascript">
+    	$( document ).ready(function() {
+    	  	$("#more_than_one_number").hide();
+    	  	
+    		$("#more_than_one_yes").click(function(){
+    			if ($("#increased_hours_yes").prop("checked") == true){
+    	    		$("#more_than_one_number").hide();
+    	    	}
+    	    });
+    	    $("#increased_hours_no").click(function(){
+    			if ($("#increased_hours_no").prop("checked") == true){
+    	     		$("#more_than_one_number").hide();
+    	    	}
+    	    });
+			$("#increased_hours_yes_more").click(function(){
+				if ($("#increased_hours_yes_more").prop("checked") == true){
+			 		$("#more_than_one_number").show();
+				}
+			});
+    	});
+    </script>
+    
+    
+    <script type="text/javascript">
+    	$( document ).ready(function() {
+    	  	$("#start_new_number").hide();
+    	  	
+    		$("#start_new_one_yes").click(function(){
+    			if ($("#start_new_yes").prop("checked") == true){
+    	    		$("#start_new_number").hide();
+    	    	}
+    	    });
+    	    $("#start_new_no").click(function(){
+    			if ($("#start_new_no").prop("checked") == true){
+    	     		$("#start_new_number").hide();
+    	    	}
+    	    });
+    		$("#start_new_yes_more").click(function(){
+    			if ($("#start_new_yes_more").prop("checked") == true){
+    		 		$("#start_new_number").show();
+    			}
+    		});
+    	});
+    </script>
+    
+    
   </head>
 
   <body class="">
@@ -126,35 +174,64 @@
 				
 				<div class="form-group">
 					<label class="form-label-bold">Did you have a one or more other jobs on 01 October 2014 where the hours you worked increased during the notice period?</label>
-					<fieldset class="inline" id="increased_hours">
-						  <label class="block-label" for="increased_hours_yes">
-						    <input id="increased_hours_yes" type="radio" name="increased_hours" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="increased_hours_no">
-						    <input id="increased_hours_no" type="radio" name="increased_hours" value="No">
-						    No
-						  </label>						  
+					<fieldset id="increased_hours">
+						
+						<label class="block-label" for="increased_hours_no">
+							<input id="increased_hours_no" type="radio" name="increased_hours" value="No">
+							No
+						</label>						  
+						
+						<label class="block-label" for="increased_hours_yes_1">
+							<input id="increased_hours_yes_1" type="radio" name="increased_hours" value="Yes1">
+							Yes, I had one job where the hours increased
+						</label>
+						
+						<label class="block-label" for="increased_hours_yes_more">
+							<input id="increased_hours_yes_more" type="radio" name="increased_hours" value="Yes_more">
+							Yes, I had more than one job where the hours increased
+						</label>
+						
+						<div id="more_than_one_number" class="form-group panel-indent">
+							<label class="form-label">How many jobs did you have where the hours you worked increased during the notice period?</label>
+							<input class="form-control-1-8" type="text" maxlength="2" size="2" value="">
+						</div>	
+						
 					</fieldset>
 				</div>
+				
+				
 				
 				<!-- New job? -->
 				<!-- ======== -->
 				
+				
 				<div class="form-group">
 					<label class="form-label-bold">Did you start one or more new jobs during the notice period?</label>
-					<fieldset class="inline" id="new_jobs">
-						  <label class="block-label" for="new_jobs_yes">
-						    <input id="new_jobs_yes" type="radio" name="new_jobs" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="new_jobs_no">
-						    <input id="new_jobs_no" type="radio" name="new_jobs" value="No">
-						    No
-						  </label>						  
+					<fieldset id="start_new">
+						
+						<label class="block-label" for="start_new_no">
+							<input id="start_new_no" type="radio" name="start_new" value="No">
+							No
+						</label>						  
+						
+						<label class="block-label" for="start_new_yes_1">
+							<input id="start_new_yes_1" type="radio" name="start_new" value="Yes1">
+							Yes, I started a new job
+						</label>
+						
+						<label class="block-label" for="start_new_yes_more">
+							<input id="start_new_yes_more" type="radio" name="start_new" value="Yes_more">
+							Yes, I started more than one new job
+						</label>
+						
+						<div id="start_new_number" class="form-group panel-indent">
+							<label class="form-label">How many new jobs did you start during the notice period?</label>
+							<input class="form-control-1-8" type="text" maxlength="2" size="2" value="">
+						</div>	
+						
 					</fieldset>
 				</div>
-				
+
 				
 				
 				<!-- Buttons -->
@@ -164,7 +241,7 @@
 				<a href="12_increased_hours_1.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
-				<a style="padding-right: 30px" href="10_HB_end_date.html" id="back">Back</a>	
+				<a style="padding-right: 30px" href="12_new_job_details.html" id="back">Back</a>	
 				<a href="" id="cancel">Cancel and delete all details</a>					
 					
 			</div>	

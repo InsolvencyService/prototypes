@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Increased hours first job details</title>
+    <title>Alternative - Claim notice - New job details</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -124,38 +124,56 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Details of first job where hours increased</h1>
+				<h1 class="form-title heading-xlarge">New job details</h1>
 				
-				<!-- More than one job where hours increased? -->
-				<!-- ======================================== -->
 				
-				<div class="form-group">
-					<label class="form-label-bold">Did you have more than one job where the hours you worked increased during the notice period?</label>
-					<fieldset class="inline" id="more_than_one">
-						  <label class="block-label" for="more_than_one_yes">
-						    <input id="more_than_one_yes" type="radio" name="more_than_one" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="more_than_one_no">
-						    <input id="more_than_one_no" type="radio" name="more_than_one" value="No">
-						    No
-						  </label>						  
-					<!--</fieldset>-->
-					
-						<div id="more_than_one_number" class="form-group panel-indent">
-						<!--<fieldset>-->
-							<label class="form-label">How many jobs did you have where the hours you worked increased during the notice period?</label>
-							<input class="form-control-1-8" type="text" maxlength="2" size="2" value="">
-						</div>	
-					</fieldset>
-				</div>
-				
-				<!-- Details of employer -->
+				<!-- Details of job -->
 				<!-- =================== -->
 				
+				<div class="form-group">
+					<label class="form-label-bold" for="Job-title">Job title</label>
+					<input class="form-control-3-4" id="Job-title" type="text">
+				</div>
 				
+				<div class="form-group">
+					<label class="form-label-bold">Are you self employed in this job?</label>
+					<fieldset class="inline" id="self-employed">
+						<label class="block-label" for="self-employed_yes">
+							<input id="self-employed_yes" type="radio" name="self-employed" value="Yes">Yes
+						</label>
+						<label class="block-label" for="self-employed_no">
+							<input id="self-employed_no" type="radio" name="self-employed" value="No">No
+						</label>						  
+					</fieldset>		
+				</div>
 				
+				<div class="form-group">
+					<label class="form-label-bold" for="company_name">Company name</label>
+					<input class="form-control-3-4" id="company_name" type="text">
+				</div>
 				
+				<div class="form-group">
+					<label class="form-label-bold" for="company_address_1">Company address</label>
+					<span class="form-label">Building and street</span>
+					  </label>
+					<input class="form-control-3-4" id="company_address_1" type="text">
+					<input class="form-control-3-4" id="company_address_2" type="text">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label" for="town">Town or city</label>
+					<input class="form-control-3-4" id="town" type="text">
+				</div>
+				
+				<div class="form-group">
+					<label class="form-label" for="town">County (optional)</label>
+					<input class="form-control-3-4" id="town" type="text">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label" for="town">Postcode (optional)</label>
+					<input class="form-control-3-4" id="town" type="text">
+				</div>
 				
 				
 				<!-- Buttons -->
@@ -165,7 +183,7 @@
 				<a href="13_inceased_hours_2.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
-				<a style="padding-right: 30px" href="12_increased_hours_1.html" id="back">Back</a>	
+				<a style="padding-right: 30px" href="11_employment.html" id="back">Back</a>	
 				<a href="" id="cancel">Cancel and delete all details</a>					
 					
 			</div>	
