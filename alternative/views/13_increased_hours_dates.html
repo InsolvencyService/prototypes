@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - Employment</title>
+    <title>Alternative - Claim notice - Jobseekers Allowance</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -41,55 +41,41 @@
 	<script type="text/javascript" src="../govuk/public/javascripts/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="../govuk/public/javascripts/jquery.details.min.js"></script>
 
-    
-    
+
+    <script type="text/javascript">
+		$( document ).ready(function() {
+		  	$("#JSA_end").hide();
+		  	
+			$("#still_claiming_yes").click(function(){
+				if ($("#still_claiming_yes").prop("checked") == true){
+		    		$("#JSA_end").hide();
+		    	}
+		    });
+		    $("#still_claiming_no").click(function(){
+				if ($("#still_claiming_no").prop("checked") == true){
+		     		$("#JSA_end").show();
+		    	}
+		    });
+		});
+    </script>
     
     <script type="text/javascript">
     	$( document ).ready(function() {
-    	  	$("#more_than_one_number").hide();
+    	  	$("#extra_periods_number").hide();
     	  	
-    		$("#more_than_one_yes").click(function(){
-    			if ($("#increased_hours_yes").prop("checked") == true){
-    	    		$("#more_than_one_number").hide();
+    		$("#extra_periods_yes").click(function(){
+    			if ($("#extra_periods_yes").prop("checked") == true){
+    	    		$("#extra_periods_number").show();
     	    	}
     	    });
-    	    $("#increased_hours_no").click(function(){
-    			if ($("#increased_hours_no").prop("checked") == true){
-    	     		$("#more_than_one_number").hide();
+    	    $("#extra_periods_no").click(function(){
+    			if ($("#extra_periods_no").prop("checked") == true){
+    	     		$("#extra_periods_number").hide();
     	    	}
     	    });
-			$("#increased_hours_yes_more").click(function(){
-				if ($("#increased_hours_yes_more").prop("checked") == true){
-			 		$("#more_than_one_number").show();
-				}
-			});
     	});
     </script>
-    
-    
-    <script type="text/javascript">
-    	$( document ).ready(function() {
-    	  	$("#start_new_number").hide();
-    	  	
-    		$("#start_new_one_yes").click(function(){
-    			if ($("#start_new_yes").prop("checked") == true){
-    	    		$("#start_new_number").hide();
-    	    	}
-    	    });
-    	    $("#start_new_no").click(function(){
-    			if ($("#start_new_no").prop("checked") == true){
-    	     		$("#start_new_number").hide();
-    	    	}
-    	    });
-    		$("#start_new_yes_more").click(function(){
-    			if ($("#start_new_yes_more").prop("checked") == true){
-    		 		$("#start_new_number").show();
-    			}
-    		});
-    	});
-    </script>
-    
-    
+
   </head>
 
   <body class="">
@@ -155,7 +141,7 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">Employment</h1>
+				<h1 class="form-title heading-xlarge">Jobseekers Allowance</h1>
 				
 				
 				<!-- Notice period reminder -->
@@ -169,79 +155,96 @@
 				    </p>
 				</div>
 				
-				<!-- Increased hours? -->
-				<!-- ================ -->
+				<!-- How many periods? -->
+				<!-- ================= -->
 				
 				<div class="form-group">
-					<label class="form-label-bold">Did you have a one or more other jobs on 01 October 2014 where the hours you worked increased during the notice period?</label>
-					<fieldset id="increased_hours">
-						
-						<label class="block-label" for="increased_hours_no">
-							<input id="increased_hours_no" type="radio" name="increased_hours" value="No">
-							No
-						</label>						  
-						
-						<label class="block-label" for="increased_hours_yes_1">
-							<input id="increased_hours_yes_1" type="radio" name="increased_hours" value="Yes1">
-							Yes, I had one job where the hours increased
-						</label>
-						
-						<label class="block-label" for="increased_hours_yes_more">
-							<input id="increased_hours_yes_more" type="radio" name="increased_hours" value="Yes_more">
-							Yes, I had more than one job where the hours increased
-						</label>
-						
-						<div id="more_than_one_number" class="form-group panel-indent">
-							<label class="form-label">How many jobs did you have where the hours you worked increased during the notice period?</label>
+					<label class="form-label-bold">Did your Jobseekers Allowance stop and then start again between 1 October 2014 and 1 November 2014?</label>
+					<fieldset class="inline" id="extra_periods">
+						  <label class="block-label" for="extra_periods_yes">
+						    <input id="extra_periods_yes" type="radio" name="extra_periods" value="Yes">
+						    Yes
+						  </label>
+						  <label class="block-label" for="extra_periods_no">
+						    <input id="extra_periods_no" type="radio" name="extra_periods" value="No">
+						    No
+						  </label>						  
+					<!--</fieldset>-->
+					
+						<div id="extra_periods_number" class="form-group panel-indent">
+						<!--<fieldset>-->
+							<label class="form-label">How many periods of Jobseekers Allowance did you receive?</label>
+							<span class="form-hint">How many times, within the notice period, did you start receiving Jobseekers Allowance</span>
 							<input class="form-control-1-8" type="text" maxlength="2" size="2" value="">
 						</div>	
-						
 					</fieldset>
 				</div>
 				
-				
-				
-				<!-- New job? -->
-				<!-- ======== -->
-				
+				<!-- JSA start date -->
+				<!-- ============== -->
 				
 				<div class="form-group">
-					<label class="form-label-bold">Did you start one or more new jobs during the notice period?</label>
-					<fieldset id="start_new">
-						
-						<label class="block-label" for="start_new_no">
-							<input id="start_new_no" type="radio" name="start_new" value="No">
-							No
-						</label>						  
-						
-						<label class="block-label" for="start_new_yes_1">
-							<input id="start_new_yes_1" type="radio" name="start_new" value="Yes1">
-							Yes, I started a new job
-						</label>
-						
-						<label class="block-label" for="start_new_yes_more">
-							<input id="start_new_yes_more" type="radio" name="start_new" value="Yes_more">
-							Yes, I started more than one new job
-						</label>
-						
-						<div id="start_new_number" class="form-group panel-indent">
-							<label class="form-label">How many new jobs did you start during the notice period?</label>
-							<input class="form-control-1-8" type="text" maxlength="2" size="2" value="">
-						</div>	
-						
+					<label class="form-label-bold claim_reference">When did your Jobseekers Allowance first start?</label>
+					<fieldset id="JSA_start" class="date-of-birth">
+						<div class="form-group form-group-day">
+							<label>Day</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Month</label>
+							<input class="date-input" type="text" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Year</label>
+							<input class="date-input" type="text" maxlength="4" size="4" value="">
+						</div>
+						<br>
 					</fieldset>
-				</div>
+        		</div>
+	
+				<!-- JSA end date -->
+				<!-- ============ -->
 
-				
+				<div class="form-group">
+					<label class="form-label-bold">Were you still claiming Jobseeker's Allowance on 1 November 2014?</label>
+					<fieldset class="inline" id="still_claiming">
+						  <label class="block-label" for="still_claiming_yes">
+						    <input id="still_claiming_yes" type="radio" name="still_claiming" value="Yes">
+						    Yes
+						  </label>
+						  <label class="block-label" for="still_claiming_no">
+						    <input id="still_claiming_no" type="radio" name="still_claiming" value="No">
+						    No
+						  </label>						  
+					</fieldset>
+					
+					<div id="JSA_end" class="form-group panel-indent">					
+						<label class="form-label">When did your Jobseekers Allowance first end?</label>
+						<fieldset id="JSA_end" class="date-of-birth">
+							<div class="form-group form-group-day">
+								<label>Day</label>
+								<input class="date-input" type="text" maxlength="2" size="2" value="">
+							</div>
+							<div class="form-group form-group-month">
+								<label>Month</label>
+								<input class="date-input" type="text" maxlength="2" size="2" value="">
+							</div>
+							<div class="form-group form-group-month">
+								<label>Year</label>
+								<input class="date-input" type="text" maxlength="4" size="4" value="">
+							</div>
+						</fieldset>
+					</div>	
+				</div>
 				
 				<!-- Buttons -->
 				<!-- ======= -->
 				
 												
-				<a href="12_increased_hours.html" class="button" role="button">Save and continue</a>
+				<a href="6_Jobseekers_amount.html" class="button" role="button">Save and continue</a>
 				<br />
 				<br />
-				<a style="padding-right: 30px" href="12_new_job_details.html" id="back">Back</a>	
+				<a style="padding-right: 30px" href="4_benefits_received.html" id="back">Back</a>	
 				<a href="" id="cancel">Cancel and delete all details</a>					
 					
 			</div>	
