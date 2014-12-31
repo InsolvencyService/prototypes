@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Alternative - Claim notice - New job dates</title>
+    <title>Alternative - Claim notice - Claim matched</title>
 
     <!--[if gt IE 8]><!--><link href="../govuk/public/stylesheets/govuk-template.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="../govuk/public/stylesheets/govuk-template-ie6.css?0.11.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -35,30 +35,6 @@
 	  @media (min-width: 641px) { main { margin: 0 30px; } }
 	  @media (min-width: 1020px) { main { margin: 0 auto; } }
 	</style>
-
-
-	<script type="text/javascript" src="../govuk/public/javascripts/govuk-template.js"></script>
-	<script type="text/javascript" src="../govuk/public/javascripts/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="../govuk/public/javascripts/jquery.details.min.js"></script>
-
-
-    <script type="text/javascript">
-		$( document ).ready(function() {
-		  	$("#new_job_end").hide();
-		  	
-			$("#still_working_yes").click(function(){
-				if ($("#still_working_yes").prop("checked") == true){
-		    		$("#new_job_end").hide();
-		    	}
-		    });
-		    $("#still_working_no").click(function(){
-				if ($("#still_working_no").prop("checked") == true){
-		     		$("#new_job_end").show();
-		    	}
-		    });
-		});
-    </script>
-    
 
   </head>
 
@@ -125,86 +101,42 @@
 	<div>
 		<div class="inner-block text">
 			<div>
-				<h1 class="form-title heading-xlarge">New job start and end dates</h1>
-				
-				
-				<!-- Notice period reminder -->
-				<!-- ====================== -->
-				
-				
-				<div class="panel-indent">
-				    <p>
-				        Please tell us what you did during these dates:<br>
-				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> (the notice period)
-				    </p>
-				</div>
-								
-				<!-- Increased hours start date -->
-				<!-- ========================== -->
-				
-				<div class="form-group">
-					<label class="form-label-bold claim_reference">When did your employment with Fisher &amp; Co LTD start?</label>
-					<fieldset id="new_job_start" class="date-of-birth">
-						<div class="form-group form-group-day">
-							<label>Day</label>
-							<input class="date-input" type="text" maxlength="2" size="2" value="">
-						</div>
-						<div class="form-group form-group-month">
-							<label>Month</label>
-							<input class="date-input" type="text" maxlength="2" size="2" value="">
-						</div>
-						<div class="form-group form-group-month">
-							<label>Year</label>
-							<input class="date-input" type="text" maxlength="4" size="4" value="">
-						</div>
-						<br>
-					</fieldset>
-        		</div>
-	
-				<!-- Increased hours end date -->
-				<!-- ======================== -->
+				<h1 class="form-title heading-xlarge">Claim matched</h1>
+		
+				<p>Thank you <span class="bold-small">Alex</span>, we have matched you to your claim.</p>
 
-				<div class="form-group">
-					<label class="form-label-bold">Were you still working at Fisher &amp; Co LTD on 1 November 2014?</label>
-					<fieldset class="inline" id="still_working">
-						  <label class="block-label" for="still_working_yes">
-						    <input id="still_working_yes" type="radio" name="still_working" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="still_working_no">
-						    <input id="still_working_no" type="radio" name="still_working" value="No">
-						    No
-						  </label>						  
-					</fieldset>
-					
-					<div id="new_job_end" class="form-group panel-indent">					
-						<label class="form-label">When did your employment at Fisher &amp; Co LTD end?</label>
-						<fieldset id="new_job_end" class="date-of-birth">
-							<div class="form-group form-group-day">
-								<label>Day</label>
-								<input class="date-input" type="text" maxlength="2" size="2" value="">
-							</div>
-							<div class="form-group form-group-month">
-								<label>Month</label>
-								<input class="date-input" type="text" maxlength="2" size="2" value="">
-							</div>
-							<div class="form-group form-group-month">
-								<label>Year</label>
-								<input class="date-input" type="text" maxlength="4" size="4" value="">
-							</div>
-						</fieldset>
-					</div>	
-				</div>
+				<table>
+					<tbody>
+						<tr>
+							<td class="font-small">Employer:</td>
+							<td class="font-small"><span class="bold-small">Test Enterprises Ltd</span></td>
+						</tr>
+						<tr>
+							<td class="font-small">Notice period:</td>
+							<td class="font-small"><span class="bold-small">01 October 2014</span> to <span class="bold-small">01 November 2014</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 				
-				<!-- Buttons -->
-				<!-- ======= -->
-														
-				<a href="17_new_job_amounts.html" class="button" role="button">Save and continue</a>
+ 				<br />
+
+ 				<!--<a href="" id="not_me">This isn't my claim</a>
+ 				<br />
+ 				<br />-->
+        		
+				<a href="4_benefits_received.html" class="button" role="button">Continue</a>
 				<br />
 				<br />
-				<a style="padding-right: 30px" href="15_new_job_details.html" id="back">Back</a>	
-				<a href="" id="cancel">Cancel and delete all details</a>					
+        		<a style="padding-right: 30px" href="2_verify_identity.html" id="back">Back</a>	
+				<a href="" id="cancel">Cancel and delete all details</a>
+				<br />
+				<br />
+			</div>
 					
+					
+					
+				</div>		
 			</div>	
 		</div>
 	</div>
