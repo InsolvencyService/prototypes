@@ -128,8 +128,6 @@
 
 <main id="content" role="main">
 
-
-
 	<div class="inner-block">
 	    <div class="phase-banner">
 	            <p>
@@ -139,53 +137,87 @@
 	    </div>
 	</div>
 
-	<div>
-		<div class="inner-block text">
-			<div>
-				<h1 class="form-title heading-xlarge">Jobseekers Allowance</h1>
-				
-				
-				<!-- Notice period reminder -->
-				<!-- ====================== -->
-				
-				
-				<div class="panel-indent">
-				    <p>
-				        Tell us about your Jobseekers Allowance between <br>
-				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> 
-				    </p>
-				</div>
-								
-				<!-- How many periods? -->
-				<!-- ================= -->
-				
-				<div class="form-group">
+	<div class="inner-block text">
+		
+		<div class="section-progress">Section 2 of 3</div>
+		
+			<h1 class="form-title heading-xlarge">Jobseekers Allowance</h1>
+			
+			<form method="get" action="6_Jobseekers_amount.html">
+			
+			<!-- Notice period reminder -->
+			<!-- ====================== -->
+			
+			<div class="panel-indent">
+			    <p>
+			        Tell us about your Jobseekers Allowance between <br>
+			        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> 
+			    </p>
+			</div>
+							
+			<!-- How many periods? -->
+			<!-- ================= -->
+			
+			<div class="form-group">
+				<fieldset class="spacing-bottom inline" id="extra_periods">
 					<label class="form-label-bold">Did your Jobseekers Allowance stop and then start again during this time?</label>
-					<fieldset class="inline" id="extra_periods">
-						  <label class="block-label" for="extra_periods_yes">
-						    <input id="extra_periods_yes" type="radio" name="extra_periods" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="extra_periods_no">
-						    <input id="extra_periods_no" type="radio" name="extra_periods" value="No">
-						    No
-						  </label>						  
-					<!--</fieldset>-->
-					
-						<div id="extra_periods_number" class="panel-indent">
-						<!--<fieldset>-->
-							<label class="form-label">How many times did you start receiving Jobseekers Allowance?</label>
-							<input class="form-control-1-8" type="text" maxlength="2" size="2" value="">
-						</div>	
-					</fieldset>
-				</div>
+					<label class="block-label" for="extra_periods_yes">
+						<input id="extra_periods_yes" type="radio" name="extra_periods" value="Yes">
+					    Yes
+					</label>
+					<label class="block-label" for="extra_periods_no">
+					    <input id="extra_periods_no" type="radio" name="extra_periods" value="No">
+					    No
+					</label>						  
 				
-				<!-- JSA start date -->
-				<!-- ============== -->
+					<div id="extra_periods_number" class="panel-indent">
+						<label class="form-label">How many times did you start receiving Jobseekers Allowance?</label>
+						<input class="form-control-1-8" type="text" maxlength="2" size="2" value="">
+					</div>	
+				</fieldset>
+			</div>
+			
+			<!-- JSA start date -->
+			<!-- ============== -->
+			
+			<div class="form-group">
+				<label class="form-label-bold claim_reference">During this time, when did your Jobseekers Allowance first start?</label>
+				<fieldset id="JSA_start" class="date-of-birth">
+					<div class="form-group form-group-day">
+						<label>Day</label>
+						<input class="date-input" type="text" maxlength="2" size="2" value="">
+					</div>
+					<div class="form-group form-group-month">
+						<label>Month</label>
+						<input class="date-input" type="text" maxlength="2" size="2" value="">
+					</div>
+					<div class="form-group form-group-month">
+						<label>Year</label>
+						<input class="date-input" type="text" maxlength="4" size="4" value="">
+					</div>
+					<br>
+				</fieldset>
+    		</div>
+
+			<!-- JSA end date -->
+			<!-- ============ -->
+
+			<div class="form-group">
+				<label class="form-label-bold">Were you still claiming Jobseeker's Allowance on 1 November 2014?</label>
+				<fieldset class="inline" id="still_claiming">
+					  <label class="block-label" for="still_claiming_yes">
+					    <input id="still_claiming_yes" type="radio" name="still_claiming" value="Yes">
+					    Yes
+					  </label>
+					  <label class="block-label" for="still_claiming_no">
+					    <input id="still_claiming_no" type="radio" name="still_claiming" value="No">
+					    No
+					  </label>						  
+				</fieldset>
 				
-				<div class="form-group">
-					<label class="form-label-bold claim_reference">During this time, when did your Jobseekers Allowance first start?</label>
-					<fieldset id="JSA_start" class="date-of-birth">
+				<div id="JSA_end" class="panel-indent">					
+					<label class="form-label">When did your Jobseekers Allowance end?</label>
+					<fieldset id="JSA_end" class="date-of-birth">
 						<div class="form-group form-group-day">
 							<label>Day</label>
 							<input class="date-input" type="text" maxlength="2" size="2" value="">
@@ -198,59 +230,23 @@
 							<label>Year</label>
 							<input class="date-input" type="text" maxlength="4" size="4" value="">
 						</div>
-						<br>
 					</fieldset>
-        		</div>
-	
-				<!-- JSA end date -->
-				<!-- ============ -->
+				</div>	
+			</div>
+			
+			<!-- Buttons -->
+			<!-- ======= -->
+		
+			<div class="form-group spacing-top">
+				<button class="button" role="button">Continue</button>
+				<ul>
+					<li><a href="4_benefits_received.html" id="back">Back</a></li>	
+					<li><a href="" id="back">Save for later</a></li>	
+				</ul>
+			</div>
 
-				<div class="form-group">
-					<label class="form-label-bold">Were you still claiming Jobseeker's Allowance on 1 November 2014?</label>
-					<fieldset class="inline" id="still_claiming">
-						  <label class="block-label" for="still_claiming_yes">
-						    <input id="still_claiming_yes" type="radio" name="still_claiming" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="still_claiming_no">
-						    <input id="still_claiming_no" type="radio" name="still_claiming" value="No">
-						    No
-						  </label>						  
-					</fieldset>
-					
-					<div id="JSA_end" class="panel-indent">					
-						<label class="form-label">When did your Jobseekers Allowance end?</label>
-						<fieldset id="JSA_end" class="date-of-birth">
-							<div class="form-group form-group-day">
-								<label>Day</label>
-								<input class="date-input" type="text" maxlength="2" size="2" value="">
-							</div>
-							<div class="form-group form-group-month">
-								<label>Month</label>
-								<input class="date-input" type="text" maxlength="2" size="2" value="">
-							</div>
-							<div class="form-group form-group-month">
-								<label>Year</label>
-								<input class="date-input" type="text" maxlength="4" size="4" value="">
-							</div>
-						</fieldset>
-					</div>	
-				</div>
-				
-				<!-- Buttons -->
-				<!-- ======= -->
-				
-												
-				<a href="6_Jobseekers_amount.html" class="button" role="button">Save and continue</a>
-				<br />
-				<br />
-				<a style="padding-right: 30px" href="4_benefits_received.html" id="back">Back</a>	
-				<a href="" id="cancel">Cancel and delete all details</a>					
-					
-			</div>	
-		</div>
-	</div>
-	
+		</form>
+	</div>	
 </main>
 
     <footer class="group js-footer" id="footer" role="contentinfo">
