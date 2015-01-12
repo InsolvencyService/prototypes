@@ -1,11 +1,15 @@
-﻿<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+﻿<!DOCTYPE html>
+<!-- saved from url=(0055)/claims/start -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 
-    <title>UX: You will be contacted when your registration is confirmed. Until then your name will not appear on the electoral register.</title>
+    <title>Prototype - Triage</title>
 
-    <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="//www.google-analytics.com/analytics.js" async=""></script><script async="" src="assets/javascripts/analytics.js"></script><script type="text/javascript">
+    <script async="" src="assets/javascripts/analytics.js"></script><script type="text/javascript">
         (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
     </script>
+
+    <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/overrides.css">
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/govuk-template.css"><!--<![endif]-->
@@ -55,15 +59,10 @@
 <link type="text/css" rel="stylesheet" href="assets/stylesheets/main.css"><!--<![endif]-->
     <!--[if IE 6]><link href="assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">  
-     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/complete.css">
-
-
+    <!--[if IE 8]><link href="assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 </head>
 
-<body class="js-enabled js-enabled js-enabled js-enabled">
+<body class="js-enabled js-enabled">
 <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
 <div id="global-cookie-message" style="display: none;">
@@ -92,7 +91,7 @@
         <div class="header-proposition">
             <div class="content">
                 <nav id="proposition-menu">
-                    <span id="proposition-name" href="https://www.gov.uk/service-manual">Claim for loss of notice</span>
+                    <a id="proposition-name" href="https://www.gov.uk/service-manual">Redundancy Payments Service</a>
                 </nav>
             </div>
         </div>
@@ -107,61 +106,90 @@
 </div>
 
 <main role="main" id="wrapper">
+    
+    <div id="content">
+        <div class="inner-block">
+            <div class="phase-banner">
+                <p>
+                    <strong class="phase-tag">BETA</strong>
+                    This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
+                </p>
+            </div>
+        </div>
 
-    <main id="content" class="complete">
-    <header>
-
-
-  <h3>Your <span lang="en-gb">loss of notice claim</span> has been received and is being processed</h3>
-
-  	  <h1 style="display:none">You will be contacted when your registration is confirmed. Until then your name will not appear on the electoral register.</h1>
-  <p></p>
-
-</header>
-<article>
+        
 <div class="inner-block text">
-  <p class="intro email">We have sent you an acknowledgement email.<span lang="en-gb">
-  </span></p>
+    
+    
+    
+    <h1 class="form-title heading-large">Other questions about your claim</h1>
 
+    
+    
+    <form class="form" method="post">
+         <input name="_csrf_token" value="4f5f9c655344bc858a723a92be13427830d64452" type="hidden">
+         
+    <p>
+        </p><div class="form-group ">
+            
+             <fieldset class="inline">
+                    <legend id="owe_employer_label" class="form-label-bold">Have you been awarded any payments in relation to your job ending by an Employment tribunal?</legend>
+                    <div id="owe_employer" class="form-group">
+        
+        <label id="owe_employer_label" for="owe_employer_Yes" class="block-label">
+            <input id="owe_employer_Yes" value="Yes" name="owe_employer" aria-describedby="owe_employer_error owe_employer_help" type="radio">
+            Yes
+        </label>
+        
+        <label id="owe_employer_label" for="owe_employer_No" class="block-label">
+            <input id="owe_employer_No" value="No" name="owe_employer" aria-describedby="owe_employer_error owe_employer_help" type="radio">
+            No
+        </label>
+        
+    </div>
+             </fieldset>
+        </div><h2 class="heading-medium">Sending a copy of your award</h2><p>You can scan a copy of your letter and email it to:<br> <a claim"="" redundancy="" online="" my="" redundancypaymentsonline@insolvency.gsi.gov.uk?subject="Querregarding" href="mailto:">redundancypaymentsonline@insolvency.gsi.gov.uk </a></p><p>Or you can post it to:</p><ul> <li>Redundancy Payments</li> <li>PO BOX 16685</li> <li>Birmingham</li> <li>B2 2LX</li></ul><p>Please
+ include your full name and the last four digits of your national 
+insurance number (For example, if your nino is 'VB123456D'. Attach 
+'456D' to your award copy)</p>
+    <p></p>
+<!-- For User research -->
+        <div class="form-navigation form-group">
+            
+            <div>
+                
+                    <input id="next" class="button" role="button" value="Continue" type="submit">
+                
+            </div>
+            <div>
+                <br>
+            </div>
+            
+            <div>
+                
+                    <a style="padding-right: 30px" href="https://rp1-pre.redundancy-payments.org.uk/claims/other-questions-details-start" id="back">Back</a>
+                
+                
+                    <a href="https://rp1-pre.redundancy-payments.org.uk/claims/cancel-and-delete?return_url=https://rp1-pre.redundancy-payments.org.uk/claims/other-questions" id="cancel">Cancel and delete all details</a>
+                
+            </div>
+        </div>
+    </form>
+</div>
 
-  <h2 class="bold-medium">What happens next</h2>
-  <p>Your Insolvency practitioner will give us additional details about your claim. We then calculate the correct amount owed to you. We aim to make payments within 3 to 6 weeks.</p><p>You will be invited to claim for your loss of notice at the end of your notice period.</p>
-	
-	<h2 class="bold-medium">What we need from you</h2>
-	<p>You need to send us a copy of your employment tribunal judgement. We cannot process your claim until you have done so.</p>
-	
-	
-	 <h2 class="bold-medium">What you can do next</h2><ul class="list-bullet text"><li>Look for advice on <a href="https://www.gov.uk/jobsearch">finding a new job</a></li><li>Find out about the <a href="https://www.gov.uk/jobseekers-allowance">Jobseeker's Allowance and apply</a></li> 
-    </ul><span title="logo" id="logo" class="content">
-                    <div><img alt="" style="float: left" src="assets/images/icon-important-0976ff4a275422b183be917d4b3ef444.png"></div> <p style="padding-top: 0px; margin-top: -5px; margin-left: 50px;">If you do not claim Jobseeker's Allowance your payment for loss of notice will be affected</p></span><p></p>
+    </div>
 
-  <div class="footnote">
-    <p><a href="https://www.surveymonkey.com/s/RBW8HYW">What did you think of this service?</a> (takes 5 minutes)</p>
-  </div>
-  
-  </div>
-</article>
+    
+    </main>
 
-</main>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
     <div class="footer-wrapper">
 
         <div class="footer-meta">
-
             <div class="footer-meta-inner">
-
-                 <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="contact-us.html">Contact us</a></li>
-                 </ul>
-                  <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" "><a href="privacy.html">Privacy</a></li>
-                    <li class="footer__link" style=""><a href="cookies.html">Cookies</a></li>
-                    <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-                </ul>
 
                 <div class="open-government-licence">
                     <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
@@ -170,11 +198,10 @@
             </div>
 
             <div class="copyright">
-                <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">&copy; Crown copyright</a>
+                <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
             </div>
         </div>
     </div>
-
 </footer>
 
 <!--end footer-->
@@ -197,14 +224,25 @@
     ga('create', 'UA-52715352-2', 'auto');
     ga('send', 'pageview');
     	
+    $(document).ready(function(){
+    	$('input[value="Yes"]').click(function(){
+    		$("#next").prop("href", "3-other-ways-to-claim.html");
+    	});
+    	$('input[value="No"]').click(function(){
+    		if ($('input[value="Yes"]:checked').length == 0){
+    			$("#next").prop("href", "3-verify-identity.html");
+    		}
+    	});
+    });
 </script>
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+<a href="/claims/start#" title="Edit settings" 
+style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
 <br><span class="tooltipTitle">Viewport size: </span>
 <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
-</main></body></html>
+</body></html>
