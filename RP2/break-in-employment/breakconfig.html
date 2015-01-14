@@ -93,7 +93,7 @@
         <div class="header-proposition">
             <div class="content">
                 <nav id="proposition-menu">
-                    <a id="proposition-name" href="#">Claim for loss of notice</a>
+                    <a id="proposition-name" href="https://www.gov.uk/service-manual">Redundancy Payments Service</a>
                 </nav>
             </div>
         </div>
@@ -119,73 +119,123 @@
             </div>
         </div>
 
-        
-<div class="inner-block text">
-    
-    <div>
-        <h1 class="form-title heading-large">Claim compensation for loss of notice</h1>
-        <div class="text">
-            <p>You can claim compensation if you haven’t been paid for your loss of notice.</p>
-			<p>Use this service if you have:</p>
-            <ul class="list-bullet">
-            <li>your National Insurance number</li>
-				<li>started a redundancy claim</li>
-            <li>received a letter or email with your claim reference number</li>
-            </ul>
 
-         </div>
+        <div class="inner-block text">
 
-            <p>If you don’t enter any information for more than 30 minutes, your claim will time out and you’ll need to start again.</p>
 
-        <div class="form-navigation form-group">
-            <ul>
-            <li><a class="button" id="next" href="https://notice.redundancy-payments.org.uk/claims/personal-details">Start now</a></li>                              
-            </ul>
+            <h1 class="form-title heading-large">Breaks in your employment</h1>
+                <form class="form" method="post">
+                    <input type="hidden" name="_csrf_token" value="b2701bddd6646cec94e9501e891e8b02afe0b053">
+
+                    <div class="form-group ">
+
+                        <fieldset class="inline">
+                            <legend id="claiming_benefits_label" class="form-label-bold">Did you have any breaks in
+                                employment including redundancy or unemployment, and excluding sick leave, maternity or
+                                paternity leave?
+                            </legend>
+
+                            <div id="claiming_benefits" class="form-group">
+
+                                <label id="claiming_benefits_label" for="claiming_benefits_Yes" class="block-label">
+                                    <input type="radio" id="claiming_benefits_Yes" value="Yes" name="claiming_benefits"
+                                           aria-describedby="claiming_benefits_error claiming_benefits_help">
+                                    Yes
+                                </label>
+
+                                <label id="claiming_benefits_label" for="claiming_benefits_No"
+                                       class="block-label selected">
+                                    <input type="radio" id="claiming_benefits_No" value="No" name="claiming_benefits"
+                                           aria-describedby="claiming_benefits_error claiming_benefits_help"
+                                           checked="checked">
+                                    No
+                                </label>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group ">
+
+                        <fieldset class="inline">
+                            <legend id="refused_benefits_label" class="form-label-bold">Did you have any periods of
+                                being on strike?
+                            </legend>
+                            <div id="refused_benefits" class="form-group">
+
+                                <label id="refused_benefits_label" for="refused_benefits_Yes" class="block-label">
+                                    <input type="radio" id="refused_benefits_Yes" value="Yes" name="refused_benefits"
+                                           aria-describedby="refused_benefits_error refused_benefits_help">
+                                    Yes
+                                </label>
+
+                                <label id="refused_benefits_label" for="refused_benefits_No"
+                                       class="block-label selected">
+                                    <input type="radio" id="refused_benefits_No" value="No" name="refused_benefits"
+                                           aria-describedby="refused_benefits_error refused_benefits_help"
+                                           checked="checked">
+                                    No
+                                </label>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group ">
+
+                        <fieldset class="inline">
+                            <legend id="employed_during_notice_label" class="form-label-bold">Did you have any period of
+                                working abroad for this employer while not paying UK National Insurance contributions?
+                            </legend>
+                            <div id="employed_during_notice" class="form-group">
+
+                                <label id="employed_during_notice_label" for="employed_during_notice_Yes"
+                                       class="block-label">
+                                    <input type="radio" id="employed_during_notice_Yes" value="Yes"
+                                           name="employed_during_notice"
+                                           aria-describedby="employed_during_notice_error employed_during_notice_help">
+                                    Yes
+                                </label>
+
+                                <label id="employed_during_notice_label" for="employed_during_notice_No"
+                                       class="block-label selected">
+                                    <input type="radio" id="employed_during_notice_No" value="No"
+                                           name="employed_during_notice"
+                                           aria-describedby="employed_during_notice_error employed_during_notice_help"
+                                           checked="checked">
+                                    No
+                                </label>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- For User research -->
+                    <div class="form-navigation form-group">
+
+                        <div>
+
+                            <input type="submit" id="next" class="button" role="button" value="Continue">
+
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+
+                        <div>
+
+                            <a id="back" href="https://rp2-pre.redundancy-payments.org.uk/claims/configure-form"
+                               style="padding-right: 30px">Back</a>
+
+
+                            <a id="cancel"
+                               href="https://rp2-pre.redundancy-payments.org.uk/claims/cancel-and-delete?return_url=https://rp2-pre.redundancy-payments.org.uk/claims/not-claiming-benefits">Cancel
+                                and delete all details</a>
+
+                        </div>
+                    </div>
+                </form>
         </div>
-
-        <div class="panel-indent">
-        If you're using a public computer to make a claim and don't complete the process you must use the link to cancel and delete your data. This will help protect your privacy.
-        </div>
-	<h2 class="heading-medium">If you have questions about your claim</h2>
-	<p>Please quote your claim reference (eg LN12345678) or National Insurance number when contacting us.</p>
-		
 
     </div>
-
-
-           <div class="text">
-            Email: <a href="mailto:redundancypaymentsonline@insolvency.gsi.gov.uk?subject=Query regarding my online redundancy claim">
-			redundancypaymentsonline@insolvency.gsi.gov.uk </a>
-
-
-        <br>
-        Website: <a href="http://www.gov.uk/insolvency-service">www.gov.uk/insolvency-service</a>
-<br>
-
-
-
-            Telephone: 0330 331 0020 (choose option 2)
-<br>
-
-            Opening hours are 9am to 5pm, Monday to Friday
-
-        </div>
-
-    
-    <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
-         <fieldset>
             
-            
-        </fieldset><!-- For User research -->
- 
-
-    </form>
-</div>
-
-    </div>
-
-
 </main>
 
 
