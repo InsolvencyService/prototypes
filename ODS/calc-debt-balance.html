@@ -73,12 +73,7 @@ padding-top:15px;
 .row > div:first-child{
 padding-top:0px;
 }
-a{
-	text-decoration:none;
-}
-a:hover, a:active, a:focus{
-	text-decoration:underline;
-}
+
 </style>
 <!-- #EndEditable -->
 
@@ -145,146 +140,192 @@ a:hover, a:active, a:focus{
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large">Which online debt solution?</h1>
+    <h1 class="form-title heading-large">Do you owe less than £15,000?</h1>
    <div class="notice-period">
-   <p>If you live in England or Wales and can't pay your debts, find out here if you are eligible to apply for a debt relief order. </p>
-   <p>
-    If you are not eligible, you can find out about alternatives. In the case of filing for bankruptcy, you can complete an online application.</p>
-    <div class="row">
- 	   <div class="col-sm-2">
-		<img alt="" src="assets/icons/DRO-debt.png">
+   <p>Calculate your total liabilities that can be taken into account in order to qualify for a debt relief order.
+   </p>
+<div id="liabilities">
+   <div>
+  <div class="row">
+ 	   <div class="col-sm-2"><img alt="" src="assets/icons/DRO-creditcards.png">
 		</div>
-    <div class="col-sm-7"><a href="calc-debt-balance.html">► Do you owe less than £15,000?</a></div>
+    <div class="col-sm-7"><h2 class="bold-medium">Credit cards</h2></div>
 	    <div class="col-sm-3">
-	        <label  for="yes">
-	        <input id="yes1" value="DidNotWant" name="yes1" type="radio">
-	        Yes
-	        </label>
-	        
-	        <label for="no">
-	        <input id="no1" value="Other" name="no1" type="radio">
-	        No
-	        </label>
 	    </div>
-    </div>
-    
-    
-    <div class="row">
- 	   <div class="col-sm-2">
-		<img alt="" src="assets/icons/DRO-Saving.png">
-		</div>
-    <div class="col-sm-7"><a href="#">► Do you have assets or savings?</a></div>
-	    <div class="col-sm-3">	        
-	        <label for="no">
-	        <input id="no1" value="No" name="no1" type="radio">
-	        No
-	        </label>
-	        <label  for="yes">
-	        <input id="yes1" value="Yes" name="yes1" type="radio">
-	        Yes
-	        </label>
+    </div><!-- row -->
 
-	    </div>
-    </div>
-  <div class="row">
- 	   <div class="col-sm-2">
-		<img alt="" src="assets/icons/DRO-OwnHome.png">
-		</div>
-    <div class="col-sm-7"><a href="#">► Do you own your own home?</a></div>
-	    <div class="col-sm-3">	        
-	        <label for="no">
-	        <input id="no1" value="No" name="no1" type="radio">
-	        No
-	        </label>
-	        <label  for="yes">
-	        <input id="yes1" value="Yes" name="yes1" type="radio">
-	        Yes
-	        </label>
-
-	    </div>
-    </div>
 
   <div class="row">
  	   <div class="col-sm-2">
-		<img alt="" src="assets/icons/DRO-vehicle.png">
 		</div>
-    <div class="col-sm-7"><a href="#">► Do you have a vehicle worth over £1,000?</a></div>
-	    <div class="col-sm-3">	        
-	        <label for="no">
-	        <input id="no1" value="No" name="no1" type="radio">
-	        No
-	        </label>
-	        <label  for="yes">
-	        <input id="yes1" value="Yes" name="yes1" type="radio">
-	        Yes
-	        </label>
-
+    <div class="col-sm-7">Name</div>
+	    <div class="col-sm-3">
+	        Amount owed
 	    </div>
-    </div>
-
-    <div class="row">
+    </div><!-- row -->
+    
+    
+      <div class="row">
  	   <div class="col-sm-2">
-		<img alt="" src="assets/icons/DRO-cash.png">
+		
 		</div>
-
-    <div class="col-sm-7"><a href="#">► Do you have monthly surplus cash over £50 ?</a></div>
-	    <div class="col-sm-3">	        
-	        <label for="no">
-	        <input id="no1" value="No" name="no1" type="radio">
-	        No
-	        </label>
-	        <label  for="yes">
-	        <input id="yes1" value="Yes" name="yes1" type="radio">
-	        Yes
-	        </label>
-
+    <div class="col-sm-7"><input type="text" value=""></div>
+	    <div class="col-sm-3">
+	        <input type="text" value="">
 	    </div>
     </div>
 
 
-    <div class="row">
- 	   <div class="col-sm-2">
-		<img alt="" src="assets/icons/DRO-judgement.png">
-		</div>
-    <div class="col-sm-7"><a href="#">► Have you been through insolvency proceedings?</a></div>
-	    <div class="col-sm-3">	        
-	        <label for="no">
-	        <input id="no1" value="No" name="no1" type="radio">
-	        No
-	        </label>
-	        <label  for="yes">
-	        <input id="yes1" value="Yes" name="yes1" type="radio">
-	        Yes
-	        </label>
-
-	    </div>
-    </div>
-
-
-    <div class="row">
- 	   <div class="col-sm-2">
-		<img alt="" src="assets/icons/DRO-lightbulb.png">
-		</div>
-    <div class="col-sm-7"><a href="#">► Are you retired or expecting your circumstances to improve?</a></div>
-	    <div class="col-sm-3">	        
-	        <label for="no">
-	        <input id="no1" value="No" name="no1" type="radio">
-	        No
-	        </label>
-	        <label  for="yes">
-	        <input id="yes1" value="Yes" name="yes1" type="radio">
-	        Yes
-	        </label>
-
-	    </div>
-    </div>
-
-
-   <div class="row">
+  <div class="row">
  	   <div class="col-sm-2">
 		</div>
     <div class="col-sm-7">
-    		<a class="button" href="calc-outcome-no.html">Check eligibility</a>
+    <a href="#">Add another credit card</a>
+    </div>
+  </div><!-- /row -->
+
+	</div><!-- /credit cards -->
+
+
+  <div>
+  <div class="row">
+ 	   <div class="col-sm-2"><img alt="" src="assets/icons/DRO-Bill.png">
+		</div>
+    <div class="col-sm-10"><h2 class="bold-medium">Loans, and overdrafts, shortfalls against your mortgage</h2>
+    <br>
+    Regular payments are excluded, only enter arrears
+
+    </div>
+    </div><!-- row -->
+
+
+  <div class="row">
+ 	   <div class="col-sm-2">
+		</div>
+    <div class="col-sm-7">Name</div>
+	    <div class="col-sm-3">
+	        Amount owed
+	    </div>
+    </div><!-- row -->
+    
+    
+      <div class="row">
+ 	   <div class="col-sm-2">
+		
+		</div>
+    <div class="col-sm-7"><input type="text" value=""></div>
+	    <div class="col-sm-3">
+	        <input type="text" value="">
+	    </div>
+    </div>
+
+
+  <div class="row">
+ 	   <div class="col-sm-2">
+		</div>
+    <div class="col-sm-7">
+    <a href="#">Add another bill</a>
+    </div>
+  </div><!-- /row -->
+
+	</div><!-- /credit cards -->
+	
+	 <div>
+  <div class="row">
+ 	   <div class="col-sm-2"><img alt="" src="assets/icons/DRO-Bill.png">
+		</div>
+    <div class="col-sm-10"><h2 class="bold-medium">Utility bills or rent</h2>
+    <br>
+    Regular payments are excluded, only enter arrears
+
+    </div>
+    </div><!-- row -->
+
+
+  <div class="row">
+ 	   <div class="col-sm-2">
+		</div>
+    <div class="col-sm-7">Name</div>
+	    <div class="col-sm-3">
+	        Amount owed
+	    </div>
+    </div><!-- row -->
+    
+    
+      <div class="row">
+ 	   <div class="col-sm-2">
+		
+		</div>
+    <div class="col-sm-7"><input type="text" value=""></div>
+	    <div class="col-sm-3">
+	        <input type="text" value="">
+	    </div>
+    </div>
+
+
+  <div class="row">
+ 	   <div class="col-sm-2">
+		</div>
+    <div class="col-sm-7">
+    <a href="#">Add another bill</a>
+    </div>
+  </div><!-- /row -->
+
+	</div><!-- /credit cards -->
+
+ <div>
+  <div class="row">
+ 	   <div class="col-sm-2"><img alt="" src="assets/icons/DRO-Bill.png">
+		</div>
+    <div class="col-sm-10"><h2 class="bold-medium">Other debts</h2>
+    <br>
+Do not enter any amounts owed for your TV licence, student loan, fines, family maintenance, social fund loans, awards against you for damages
+
+    </div>
+    </div><!-- row -->
+
+
+  <div class="row">
+ 	   <div class="col-sm-2">
+		</div>
+    <div class="col-sm-7">Name</div>
+	    <div class="col-sm-3">
+	        Amount owed
+	    </div>
+    </div><!-- row -->
+    
+    
+      <div class="row">
+ 	   <div class="col-sm-2">
+		
+		</div>
+    <div class="col-sm-7"><input type="text" value=""></div>
+	    <div class="col-sm-3">
+	        <input type="text" value="">
+	    </div>
+    </div>
+
+
+  <div class="row">
+ 	   <div class="col-sm-2">
+		</div>
+    <div class="col-sm-7">
+    <a href="#">Add another bill</a>
+    </div>
+  </div><!-- /row -->
+
+	</div><!-- /credit cards -->
+
+</div>
+<p><br/></p>
+
+   <div class="row">
+ 	   <div class="col-sm-2"  style="padding-top:20px">
+
+	<a href="calculator.html">Back</a>	
+		</div>
+    <div class="col-sm-7">
+    		<a class="button" href="calculator.html?q1=yes">Continue</a>			
 
 </div>
 	    <div class="col-sm-3">	        
