@@ -122,63 +122,62 @@
 	    </div>
 	</div>
 
-	<div>
-		<div class="inner-block text">
-			<div>
-				<h1 class="form-title heading-xlarge">Housing benefit</h1>
+	<div class="inner-block text">
+	
+		<div class="section-progress">Section 2 of 3</div>
+		
+			<h1 class="form-title heading-xlarge">Housing benefit</h1>
 				
+			<form method="get" action="11_employment.html">
 				
 				<!-- Notice period reminder -->
 				<!-- ====================== -->
 				
-				
 				<div class="panel-indent">
 				    <p>
-				        Please tell us what you did during these dates:<br>
-				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> (the notice period)
+				        Tell us about your Housing benefit between <br>
+				        <span class="bold-xsmall">01 October 2014</span> and <span  class="bold-xsmall">01 November 2014</span> 
 				    </p>
-				</div>
+				</div>	
 				
 				<!-- Still receiving HB on end date? -->
 				<!-- =============================== -->
 				
 				<div class="form-group">
-					<label class="form-label-bold">Were you still receiving housing benefit on 1 November 2014?</label>
-					<fieldset class="inline" id="still_receiving">
-						  <label class="block-label" for="still_receiving_yes">
-						    <input id="still_receiving_yes" type="radio" name="extra_periods" value="Yes">
-						    Yes
-						  </label>
-						  <label class="block-label" for="still_receiving_no">
-						    <input id="still_receiving_no" type="radio" name="extra_periods" value="No">
-						    No
-						  </label>						  
-					</fieldset>
-				</div>
-				
+				<label class="form-label-bold">Were you still receiving housing benefit on 1 November 2014?</label>
+				<fieldset class="inline" id="still_receiving">
+					  <label class="block-label" for="still_receiving_yes">
+					    <input id="still_receiving_yes" type="radio" name="extra_periods" value="Yes">
+					    Yes
+					  </label>
+					  <label class="block-label" for="still_receiving_no">
+					    <input id="still_receiving_no" type="radio" name="extra_periods" value="No">
+					    No
+					  </label>						  
+				</fieldset>
+					
 				<!-- HB end date -->
 				<!-- ============== -->
 				
-				<div id="HB_end_date">
-					<div class="panel-indent">
-					<label class="form-label claim_reference">When did your Housing benefit end?</label>
-						<fieldset id="HB_end_date" class="date-of-birth">
-							<div class="form-group form-group-day">
-								<label>Day</label>
-								<input class="date-input" type="number" max="31" min="1" maxlength="2" size="2" value="">
-							</div>
-							<div class="form-group form-group-month">
-								<label>Month</label>
-								<input class="date-input" type="number" max="12" min="1" maxlength="2" size="2" value="">
-							</div>
-							<div class="form-group form-group-month">
-								<label>Year</label>
-								<input class="date-input" type="number" maxlength="4" size="4" value="">
-							</div>
-							<br>
-						</fieldset>
-					</div>
-        		</div>
+				<div id="HB_end_date" class="panel-indent">
+				<label class="form-label claim_reference">When did your Housing benefit end?</label>
+					<fieldset id="HB_end_date" class="date-of-birth">
+						<div class="form-group form-group-day">
+							<label>Day</label>
+							<input class="date-input" type="number" max="31" min="1" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Month</label>
+							<input class="date-input" type="number" max="12" min="1" maxlength="2" size="2" value="">
+						</div>
+						<div class="form-group form-group-month">
+							<label>Year</label>
+							<input class="date-input" type="number" maxlength="4" size="4" value="">
+						</div>
+
+					</fieldset>
+				</div>
+				</div>
 	
 
 				<!-- Amount received -->
@@ -190,24 +189,23 @@
 					How much Housing benefit did you receive between 25 October 2013 and 1 November 2013?
 					</label>
 					<span class="form-hint"></span>
-					<span class="form-control-addon">£</span> <input type="text" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received">
+					<span class="form-control-addon">£</span> <input type="number" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received">
 				</div>
 	
 	
 				<!-- Buttons -->
 				<!-- ======= -->
 				
-												
-				<a href="11_employment.html" class="button" role="button">Save and continue</a>
-				<br />
-				<br />
-				<a style="padding-right: 30px" href="9_other_benefit.html" id="back">Back</a>	
-				<a href="" id="cancel">Cancel and delete all details</a>					
-					
-			</div>	
-		</div>
-	</div>
-	
+				<div class="form-group spacing-top">
+					<button class="button" role="button">Continue</button>
+					<ul>
+						<li><a href="9_other_benefit.html" id="back">Back</a></li>	
+						<li><a href="" id="back">Save for later</a></li>	
+					</ul>
+				</div>
+				
+		</form>
+	</div>		
 </main>
 
     <footer class="group js-footer" id="footer" role="contentinfo">

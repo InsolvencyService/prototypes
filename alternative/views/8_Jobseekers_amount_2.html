@@ -122,74 +122,67 @@
 	    </div>
 	</div>
 
-	<div>
-		<div class="inner-block text">
-			<div>
-				<h1 class="form-title heading-large">Amount of Jobseekers Allowance in second period</h1>
-				
-				<div class="rps-calculation">
-					<p>Based on our calculation we think you received £71.50 in Jobseeker's Allowance in the second period</p>
-					
-					<details>
-					  <summary><span class="summary">How is this calculated?</span></summary>
-					  <div class="panel-indent">
-					    <ul class="list-bullet">
-					    	<li>Jobseekers Allowance is paid as a 7 day week</li>
-					    	<li>you are entitled to £71.50 per week</li>
-					    	<li>you claimed for 1 week</li>
-					    </ul>
-					  </div>
-					</details>					
-				</div>				
-					
-					
-				<div>
-					<div class="form-group">
-						<br>
-						<label class="form-label-bold">Did you receive £71.50 in Jobseekers Allowance between 25 October 2013 and 1 November 2013?</label>
-						<fieldset class="inline" id="JSA_calculation correct">
-							  <label class="block-label" for="JSA_calculation_correct_yes">
-							    <input id="JSA_calculation_correct_yes" type="radio" name="JSA_calculation correct" value="Yes">
-							    Yes
-							  </label>
-							  <label class="block-label" for="JSA_calculation_correct_no">
-							    <input id="JSA_calculation_correct_no" type="radio" name="JSA_calculation correct" value="No">
-							    No
-							  </label>						  
-						</fieldset>
-						
-						<div id="JSA_amount" class="panel-indent">
-							<div class="form-group">
-								<label for="amount-received" class="form-label">
-								How much Jobseekers Allowance did you receive between 25 October 2013 and 1 November 2013?
-								</label>
-								<span class="form-hint"></span>
-								<span class="form-control-addon">£</span> <input type="text" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received">
-							</div>
-						</div>
-						
-					</div>
-				</div>
-																	
-						
-				<a href="9_other_benefit.html" class="button" role="button">Save and continue</a>
-				<br />
-				<br />
-				<a style="padding-right: 30px" href="7_jobseekers_allowance_dates_2.html" id="back">Back</a>	
-				<a href="" id="cancel">Cancel and delete all details</a>
-				
-
-						
-					</div>
-				</div>
-					
-					
-					
-			</div>	
-		</div>
-	</div>
+	<div class="inner-block text">
+		
+		<div class="section-progress">Section 2 of 3</div>
 	
+		<h1 class="form-title heading-xlarge">Amount of Jobseekers Allowance in second period</h1>
+
+		<form method="get" action="9_other_benefit.html">
+				
+			<!-- JSA Calculation -->
+			<!-- =============== -->
+			
+			<div class="rps-calculation spacing-bottom">
+				<p>We think you received <b>£71.50</b> in Jobseeker's Allowance in the second period</p>
+			    <ul class="list-bullet">
+			    	<li>Jobseekers Allowance is paid as a 7 day week</li>
+			    	<li>you are entitled to £71.50 per week</li>
+			    	<li>you claimed for 1 week</li>
+			    </ul>
+			</div>		
+			
+			<!-- JSA amount question -->
+			<!-- ====================== -->		
+							
+			
+			<div class="form-group">
+				<label class="form-label-bold">Did you receive £71.50 in Jobseekers Allowance between 25 October 2013 and 1 November 2013?</label>
+				<fieldset class="inline" id="JSA_calculation correct">
+					  <label class="block-label" for="JSA_calculation_correct_yes">
+					    <input id="JSA_calculation_correct_yes" type="radio" name="JSA_calculation correct" value="Yes">
+					    Yes
+					  </label>
+					  <label class="block-label" for="JSA_calculation_correct_no">
+					    <input id="JSA_calculation_correct_no" type="radio" name="JSA_calculation correct" value="No">
+					    No
+					  </label>						  
+				</fieldset>
+				
+				<div id="JSA_amount" class="panel-indent form-group">
+					<label for="amount-received" class="form-label">
+						How much Jobseekers Allowance did you receive between 25 October 2013 and 1 November 2013?
+					</label>
+					<span class="form-hint"></span>
+					<span class="form-control-addon">£</span> <input type="number" class="form-control form-control-1-8" maxlength="6" size="6" value="" id="amount-received">
+				</div>
+			</div>
+						
+			<!-- Buttons -->
+			<!-- ======= -->
+			
+			<div class="form-group spacing-top">
+				<button class="button" role="button">Continue</button>
+				<ul>
+					<li><a href="7_jobseekers_allowance_dates_2.html" id="back">Back</a></li>	
+					<li><a href="" id="back">Save for later</a></li>	
+				</ul>
+			</div>
+					
+		</form>
+	</div>
 </main>
+																	
 
     <footer class="group js-footer" id="footer" role="contentinfo">
 
