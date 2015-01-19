@@ -435,9 +435,19 @@ $("[id='q5']").bootstrapSwitch();
 $("[id='q6']").bootstrapSwitch();
 $("[id='q7']").bootstrapSwitch();
 
-$("#q1").on('switchChange.bootstrapSwitch', function(event, state) {
-  //alert(state); // true | false
+$("#q1a").on('switchChange.bootstrapSwitch', function(event, state) {
+  if (state == true)
+  {
+  	$("#q1b").bootstrapSwitch('state', false);
+  }
 });
+$("#q1b").on('switchChange.bootstrapSwitch', function(event, state) {
+  if (state == true)
+  {
+  	$("#q1a").bootstrapSwitch('state', false);
+  }
+});
+
 //alert($("#q1").bootstrapSwitch('state'));
 $("#btn-find-debt").on("click", function(e){
 	if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
