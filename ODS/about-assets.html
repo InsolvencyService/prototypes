@@ -62,13 +62,13 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap-switch.min.css">
+
 
 <style type="text/css">
-.row > div > img{
-width:100%;
-vertical-align:middle;
-max-width:50px;
+.row img{
+width:60px;
+text-align:right;
+float:right
 }
 .row > div{
 padding-top:15px;
@@ -76,32 +76,21 @@ padding-top:15px;
 .row > div:first-child{
 padding-top:0px;
 }
-a{
-	text-decoration:none;
+
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 26px;
+    height: 26px;
+    padding: 2px;
+    background: #fff;
+    border: 2px solid black;
+    color: black;
+    text-align: center;
+    display: inline-block;
 }
-a:hover, a:active, a:focus{
-	text-decoration:underline;
-}
-.row{
-margin-left:0;
-	margin-right:-100px;
-	min-height:60px;:
-}
-.options{
-	padding-top:10px !important;
-}
-.col-sm-1{
-	padding-left:0;
-	padding-right:3px;
-}
-.col-sm-7{
-	margin-right:0;
-}
-.linkcell{
-	padding-right:0;	
-}
-.linkcell a{
-	font-size:16px;
+.numbercell{
+	text-align:right;
 }
 </style>
 <!-- #EndEditable -->
@@ -164,116 +153,51 @@ margin-left:0;
             </div>
         </div>
 
+        
+</div>
+
 <!-- #BeginEditable "content" -->
+
+        
+<div id="content" >
 
         
 <div class="inner-block text">
     
+
+
     <h1 class="form-title heading-large">Which online debt solution?</h1>
-   <div class="notice-period">
+   <div>
    <p>If you live in England or Wales and can't pay your debts, you may be able to apply to clear your debts. 
    Find out if you are eligible for a debt relief order or filing for bankruptcy.</p>
-    <div class="row">
- 	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-debt.png">
-		</div>
-		<div class="col-sm-7">
-		Do you owe less than £15,000?
-		</div>
-		<div class="col-sm-2 options">
-	        <input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No">
-	     </div>
-		<div class="col-sm-2 linkcell">
-		<a href="calc-debt-balance.html">► Calculate</a></div>
-    </div>
-    
-    
-    <div class="row">
- 	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-Saving.png">
-		</div>
-		<div class="col-sm-7">
-		Do you have assets or savings?
-		</div>
-		<div class="col-sm-2 options">	        
-	       <input id="q2" name="q2" type="checkbox" data-on-text="Yes"  data-off-text="No">
-	    </div>
-    	<div class="col-sm-2"><a href="#">► Check</a></div>
-    </div>
-    
-   <div class="row">
- 	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-OwnHome.png">
-		</div>
-		<div class="col-sm-7">
-		Do you own your own home?
-		</div>
-		<div class="col-sm-2 options">	        
-	        <input id="q3" name="q3" type="checkbox" data-on-text="Yes"  data-off-text="No">
-	    </div>
-    	<div class="col-sm-2"><a href="#">► Check</a></div>
-    </div>
-    
-   <div class="row">
- 	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-vehicle.png">
-		</div>
-		<div class="col-sm-7">
-		Do you have a vehicle worth over £1,000?
-		</div>
-		<div class="col-sm-2 options">	        
-	        <input id="q4" type="checkbox" data-on-text="Yes"  data-off-text="No">
-	    </div>
-    	<div class="col-sm-2"><a href="#">► Check</a></div>
-    </div>
-    
+   <div class="panel panel-danger">
+   <div class="panel-body">
+   	<h2 class="bold-medium">Do you have any cash or assets?</h2>
+   
+   <p>Answer Yes to this question if you have any of the following and they add up to £300 or more :</p>
+	   <ul class="list-bullet">
+		   <li>Surplus cash in your bank account after your living expenses?</li>
+		   <li>Any savings</li>
+		   <li>If you own items other than those satisfying basic 
+		   domestic needs or tools of the trade</li>
+		   </ul>
+		   </div>
+		  </div>
+   </div>
 
-    <div class="row">
- 	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-cash.png">
-		</div>
-		<div class="col-sm-7">
-		Do you have monthly surplus cash over £50?
-		</div>
-		<div class="col-sm-2 options">	        
-	        <input id="q5" type="checkbox" data-on-text="Yes"  data-off-text="No">
-	    </div>
-    	<div class="col-sm-2"><a href="#">► Check</a></div>
-    </div>
     
-    <div class="row">
- 	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-judgement.png">
-		</div>
-		<div class="col-sm-7">
-		Have you been through insolvency proceedings?
-		</div>
-		<div class="col-sm-2 options">	        
-	        <input id="q6" type="checkbox" data-on-text="Yes"  data-off-text="No">
-	    </div>
-    	<div class="col-sm-2"><a href="#">► Check</a></div>
-    </div>
-
-    <div class="row">
- 	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-lightbulb.png">
-		</div>
-		<div class="col-sm-7">
-		Are you retired or expecting your circumstances to improve?
-		</div>
-		<div class="col-sm-2 options">	        
-	        <input id="q7" type="checkbox" data-on-text="Yes"  data-off-text="No">
-	    </div>
-    	<div class="col-sm-2"><a href="#">► Check</a></div>
-    </div>
+    
+   <div>
 
 
 
    <div class="row">
- 	   <div class="col-sm-2" style="padding-top:20px">
- 	   		</div>
+ 	   <div class="col-sm-2"  style="padding-top:20px">
+
+	<a href="calculator.html">Back</a>	
+		</div>
     <div class="col-sm-7">
-    		<a class="button" href="calc-outcome-no.html">Find debt solutions</a>
+    		<a class="button" href="calculator3.html?q1=yes">Continue</a>			
 
 </div>
 	    <div class="col-sm-3">	        
@@ -289,12 +213,13 @@ margin-left:0;
     
 </div>
 
-		<!-- #EndEditable -->
-
         
 </div>
 
 
+		<!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -341,25 +266,10 @@ margin-left:0;
 
 <!-- #BeginEditable "scripts" -->
 
-<script src="assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
-
 <script type="text/javascript">
 $(document).ready(function() {
-$("[id='q1']").bootstrapSwitch();
-$("[id='q2']").bootstrapSwitch();
-$("[id='q3']").bootstrapSwitch();
-$("[id='q4']").bootstrapSwitch();
-$("[id='q5']").bootstrapSwitch();
-$("[id='q6']").bootstrapSwitch();
-$("[id='q7']").bootstrapSwitch();
 
-$("#q1").on('switchChange.bootstrapSwitch', function(event, state) {
-  alert(state); // true | false
 });
-//alert($("#q1").bootstrapSwitch('state'));
-});
-
-
 
 </script>
 
