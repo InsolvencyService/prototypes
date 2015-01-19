@@ -65,12 +65,23 @@
 <link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap-switch.min.css">
 
 <style type="text/css">
-.row > div > img{
+.row > div > img,
+td > img{
 width:100%;
 vertical-align:middle;
 max-width:50px;
 }
-.row > div{
+tr > td.yesnocolumn{
+	vertical-align:top;
+	border-top:0px transparent none !important;
+	border-bottom:0px transparent none !important;
+
+}
+ tr > td{
+	vertical-align:middle;
+}
+.row > div,
+{
 padding-top:15px;
 }
 .row > div:first-child{
@@ -92,7 +103,7 @@ margin-left:0;
 }
 .col-sm-1{
 	padding-left:0;
-	padding-right:3px;
+	padding-right:0;
 }
 .col-sm-7{
 	margin-right:0;
@@ -102,6 +113,46 @@ margin-left:0;
 }
 .linkcell a{
 	font-size:16px;
+}
+td [class*="col-"] {
+padding-top:12px
+}
+.question{
+	font-size:19px;
+	display:block;
+	float:left;
+	margin-left:10px;
+	padding-top:15px;
+}
+.alert{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.maincolumn{
+	width:480px;
+}
+.morecolumn{
+	width:90px;
+}
+
+table{
+	margin-left:20px;
+}
+.icon{
+display:block;
+	max-width:50px;
+	float:left;
+}
+.icon img{
+
+	max-width:50px;
+
+}
+.bootstrap-switch-wrapper{
+	margin-left:20px
+}
+.morecolumn{
+	padding-top:20px !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -164,7 +215,12 @@ margin-left:0;
             </div>
         </div>
 
+</div>
+
 <!-- #BeginEditable "content" -->
+
+        
+<div id="content" >
 
         
 <div class="inner-block text">
@@ -173,18 +229,53 @@ margin-left:0;
    <div class="notice-period">
    <p>If you live in England or Wales and can't pay your debts, you may be able to apply to clear your debts. 
    Find out if you are eligible for a debt relief order or filing for bankruptcy.</p>
+</div>
+</div>
+   <table class="table">
+   <tr>
+   <td class="maincolumn">
+   <span class="icon"><img alt="" src="assets/icons/DRO-debt.png"></span>
+   <span class="question">Do you owe less than £15,000?</span>
+
+<div class="clearfix"></div>
+      		<div class="well well-small">
+		<p>The amount can include credit card debt, loans, overdrafts, shortfalls and arrears. </p>
+		<p>It cannot include TV licence
+student loans, cash, family maintenance, social fund loans, fines or awards against you</p>
+<p>
+		<a href="calc-debt-balance.html"><i class="glyphicon glyphicon-th"></i> Calculate your total now</a>
+		</p>
+	   	</div>
+   </td>
+   <td class="morecolumn"><a href="#"><i class="glyphicon glyphicon-info-sign"></i> More</a></td>
+   <td class="yesnocolumn"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   </tr>
+   </table> 
+   
+   <hr>
+   
     <div class="row">
  	   <div class="col-sm-1">
-		<img alt="" src="assets/icons/DRO-debt.png">
+		
 		</div>
 		<div class="col-sm-7">
-		Do you owe less than £15,000?
+		
 		</div>
 		<div class="col-sm-2 options">
-	        <input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No">
+	        
 	     </div>
 		<div class="col-sm-2 linkcell">
-		<a href="calc-debt-balance.html">► Calculate</a></div>
+		</div>
+		<div class="col-sm-12">
+		<div class="alert alert-info">
+		<p>The amount can include credit card debt, loans, overdrafts, shortfalls and arrears. </p>
+		<p>It cannot include TV licence
+student loans, cash, family maintenance, social fund loans, fines or awards against you</p>
+<p>
+		<a href="calc-debt-balance.html"><i class="glyphicon glyphicon-th"></i> Calculate your total now</a>
+		</p>
+		</div>
+		</div>
     </div>
     
     
@@ -354,7 +445,7 @@ $("[id='q6']").bootstrapSwitch();
 $("[id='q7']").bootstrapSwitch();
 
 $("#q1").on('switchChange.bootstrapSwitch', function(event, state) {
-  alert(state); // true | false
+  //alert(state); // true | false
 });
 //alert($("#q1").bootstrapSwitch('state'));
 });
