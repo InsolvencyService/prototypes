@@ -237,7 +237,7 @@ display:block;
    <span class="icon"><img alt="" src="assets/icons/DRO-debt.png"></span>
    <span class="question">Do you owe up to £15,000?</span>
    </td>
-   <td class="yesnocolumn" style="border-bottom:0 transparent none"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn" style="border-bottom:0 transparent none"><input id="q1a" name="q1a" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn" rowspan="2">
         <div>
 		<p>Including credit card debt, loans, overdrafts, shortfalls and arrears, leaving out fines&nbsp; 
@@ -255,7 +255,7 @@ display:block;
    <span class="icon"><img alt="" src="assets/icons/DRO-blank.png"></span>
    <span class="question">Do you owe more than £15,000?</span>
    </td>
-   <td class="yesnocolumn"  style="border-top:0 transparent none"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn"  style="border-top:0 transparent none"><input id="q1b" name="q1b" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    </tr>
 
 
@@ -264,7 +264,7 @@ display:block;
    <span class="icon"><img alt="" src="assets/icons/DRO-Saving.png"></span>
    <span class="question">Do you have assets or savings?</span>
    </td>
-   <td class="yesnocolumn"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn"><input id="q2" name="q2" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		<p>Money you have or things you own, not including basic household items or tools of the trade&nbsp; 
@@ -279,7 +279,7 @@ display:block;
    <span class="icon"><img alt="" src="assets/icons/DRO-OwnHome.png"></span>
    <span class="question">Do you own your own home?</span>
    </td>
-   <td class="yesnocolumn"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn"><input id="q3" name="q3" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		<p>Answer yes if you are a home owner or have a mortgage</p>	   	</div>
@@ -292,7 +292,7 @@ display:block;
    <span class="icon"><img alt="" src="assets/icons/DRO-vehicle.png"></span>
    <span class="question">Do you have a vehicle worth over £1,000?</span>
    </td>
-   <td class="yesnocolumn"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn"><input id="q4" name="q4" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		<p>&nbsp;</div>
@@ -305,7 +305,7 @@ display:block;
    <span class="icon"><img alt="" src="assets/icons/DRO-judgement.png"></span>
    <span class="question">Have you been through insolvency proceedings?</span>
    </td>
-   <td class="yesnocolumn"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn"><input id="q5" name="q5" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		Answer yes if you have a current or interim individual voluntary arrangement (IVA), are you are currently under a bankruptcy order
@@ -321,7 +321,7 @@ display:block;
    <span class="question">Are you retired or expecting your circumstances to improve?
 </span>
    </td>
-   <td class="yesnocolumn"><input id="q1" name="q1" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn"><input id="q6" name="q6" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 	   	</div>
@@ -335,7 +335,7 @@ display:block;
   
 
 
- 	      		<a class="button" href="calc-outcome-no.html">Find debt solutions</a>
+ 	      		<a class="button" href="calc-outcome-no.html" id="btn-find-debt">Find debt solutions</a>
 
 	    <div class="col-sm-3">	        
 	        
@@ -407,7 +407,8 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-$("[id='q1']").bootstrapSwitch();
+$("[id='q1a']").bootstrapSwitch();
+$("[id='q1b']").bootstrapSwitch();
 $("[id='q2']").bootstrapSwitch();
 $("[id='q3']").bootstrapSwitch();
 $("[id='q4']").bootstrapSwitch();
@@ -419,6 +420,13 @@ $("#q1").on('switchChange.bootstrapSwitch', function(event, state) {
   //alert(state); // true | false
 });
 //alert($("#q1").bootstrapSwitch('state'));
+$("#btn-find-debt").on("click", function(e){
+	if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
+		e.preventDefault();
+		alert("Select the debt questions which match your situation to proceed");
+	}
+});
+
 });
 
 
