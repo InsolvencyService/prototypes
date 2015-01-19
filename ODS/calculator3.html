@@ -237,7 +237,8 @@ display:block;
    <span class="icon"><img alt="" src="assets/icons/DRO-debt.png"></span>
    <span class="question">Do you owe up to £15,000?</span>
    </td>
-   <td class="yesnocolumn" style="border-bottom:0 transparent none"><input id="q1a" name="q1a" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn" style="border-bottom:0 transparent none">
+   <input id="q1a" name="q1a" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn" rowspan="2">
         <div>
 		<p>Including credit card debt, loans, overdrafts, shortfalls and arrears, leaving out fines&nbsp; 
@@ -424,6 +425,11 @@ $("#btn-find-debt").on("click", function(e){
 	if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
 		e.preventDefault();
 		alert("Select the debt questions which match your situation to proceed");
+	}
+	else{
+	if ($("#q1a").bootstrapSwitch('state') == true){
+		$("#btn-find-debt").attr("href", "calc-outcome-yes.html");
+		}
 	}
 });
 
