@@ -472,6 +472,9 @@ tr.bottomrow td{
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+
+
 $("[id='q1a']").bootstrapSwitch();
 $("[id='q1b']").bootstrapSwitch();
 $("[id='q2']").bootstrapSwitch();
@@ -480,6 +483,13 @@ $("[id='q4']").bootstrapSwitch();
 $("[id='q5']").bootstrapSwitch();
 $("[id='q6']").bootstrapSwitch();
 $("[id='q7']").bootstrapSwitch();
+
+qstring = getParameterByName("q");
+if (qstring.length > 1)
+{
+$("#" + qstring).bootstrapSwitch('state', true);
+}
+
 
 $("#q1a").on('switchChange.bootstrapSwitch', function(event, state) {
   if (state == true)
@@ -509,6 +519,12 @@ $("#btn-find-debt").on("click", function(e){
 
 });
 
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 
 </script>

@@ -327,7 +327,7 @@ tr td{
 	<a href="calculator3.html">Back</a>	
 		</div>
     <div class="col-sm-7">
-    		<a class="button disabled" href="calculator3.html?q1=yes" id="btn-continue">Continue</a>			
+    		<a class="button disabled" href="calculator3.html?q=q1a" id="btn-continue">Continue</a>			
 
 </div>
 	    <div class="col-sm-3">	        
@@ -399,9 +399,19 @@ tr td{
 $(document).ready(function() {
 	$("#btn-calculate").on("click", function(e){
 		e.preventDefault();
-		$("#box-total").val("14,350");
+		if ($("#box-total").val() == "14,350"){
+			$("#box-total").val("31,089");
+			$("#btn-continue").href("calculator3.html?q=q1b");
+		}
+		else{
+			$("#box-total").val("14,350");
+			$("#btn-continue").href("calculator3.html?q=q1a");
+
+		}
 		$("#btn-continue").removeClass("disabled");
 	});
+	
+
 });
 
 </script>
