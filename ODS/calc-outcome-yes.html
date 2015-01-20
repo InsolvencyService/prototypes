@@ -144,14 +144,14 @@ padding-top:0px;
     
     <h1 class="form-title heading-large">Which online debt solution?</h1>
    <div>
-   <p>Based on what you have told us, you may be eligible
+   <p id="intromessage">Based on what you have told us, you may be eligible
    for a debt relief order. </p>
    <p class="alert alert-success" >You'll need to consult an authorised debt adviser to progress your application for a 
    <a href="https://www.gov.uk/options-for-paying-off-your-debts/debt-relief-orders">debt relief order</a>.</p>
    <div class="row">
  	   <div class="col-sm-2"  style="padding-top:20px">
 
-	<a href="calculator3.html">Back</a>	
+	<a href="calculator3.html" id="btn-back">Back</a>	
 		</div>
     <div class="col-sm-7">
 				<a class="button" href="calc-FindDebtAdviser.html">Find a debt adviser</a>
@@ -225,7 +225,25 @@ padding-top:0px;
 <script type="text/javascript">
 $(document).ready(function() {
 
+
+qstring = getParameterByName("chosen");
+if (qstring.length > 1)
+{
+$("#intromessage").text("You told us you wished to move forwards to a debt relief order.");
+	$("#btn-back").prop("href", "know-which-debt-solution.html");
+
+}
+
+
 });
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 </script>
 

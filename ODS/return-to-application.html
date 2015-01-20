@@ -63,7 +63,6 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap.min.css">
 
-
 <style type="text/css">
 .row img{
 width:60px;
@@ -144,22 +143,29 @@ padding-top:0px;
 <div class="inner-block text">
     
     <h1 class="form-title heading-large">Which online debt solution?</h1>
-   <div class="notice-period">
-   <p id="intromessage">Based on what you have told us, you are eligible to file for bankruptcy. 
-   </p>
-<p class="alert alert-success" >You should always seek advice from a 
-<a class="" href="calc-FindDebtAdviser.html">qualified adviser</a> to find the 
-   right debt solution for you.</p>
+   <div>
+   <p>Choose a debt solution:</p>
+	  <div class="row">
+	  <div></div>
+	  	<div class="col-sm-4">
+	  		<a class="button" href="calc-outcome-yes.html?chosen=true">Debt relief order</a>
+	  	</div>
+	  	
+	  	<div class="col-sm-4">
+	  		<a class="button" href="calc-outcome-no.html?chosen=true">Filing for bankruptcy</a>
+	  	</div>
+
+	  </div>
+	   <p>&nbsp;</p>
    <div class="row">
  	   <div class="col-sm-2"  style="padding-top:20px">
 
-	<a href="calculator3.html" id="btn-back">Back</a>	
+		   <br>
+
+	<a href="calculator3.html">Back</a>	
 		</div>
     <div class="col-sm-7">
-    		<a class="button" href="calc-AboutBankruptcy.html">Tell me about bankruptcy</a>
-
 				
-
 
 </div>
 	    <div class="col-sm-3">	        
@@ -227,29 +233,6 @@ padding-top:0px;
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript">
-$(document).ready(function() {
-
-
-qstring = getParameterByName("chosen");
-if (qstring.length > 1)
-{
-	$("#intromessage").text("You told us you wished to move forwards to file for bankruptcy");
-	$("#btn-back").prop("href", "know-which-debt-solution.html");
-}
-
-
-});
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-
-</script>
 
 
 <!-- #EndEditable -->
