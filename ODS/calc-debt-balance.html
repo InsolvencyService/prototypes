@@ -96,6 +96,22 @@ padding-top:0px;
 	border-top:3px #333333 solid !important;
 	border-bottom:3px #333333 solid;
 }
+
+h5{
+	margin:0;
+	font-weight:600 !important;
+	font-size:16px;
+}
+tr td{
+	border: 0 transparent none !important;
+}
+.numberrow td{
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-top:0px !important;
+	padding-bottom:0px !important;
+
+}
 </style>
 <!-- #EndEditable -->
 
@@ -171,22 +187,25 @@ padding-top:0px;
     <tr>
     <th></th>
     <th>How much do you owe?</th>
+    <th>&nbsp;</th>
     </tr>
     
     <tr>
-    <td>Credit cards</td>
-    <td></td>
+    <td colspan="2"><h5>Credit cards</h5></td>
+    <td>&nbsp;</td>
     </tr>
  
-     <tr>
+     <tr class="numberrow">
 
     <td class="numbercell"><span class="numberCircle">1</span></td>
     <td>
     <input type="text" value="">
 
     </td>
+    <td rowspan="2">
+    </td>
     </tr>
-     <tr>
+     <tr class="numberrow">
 
      <td class="numbercell"><span class="numberCircle">2</span></td>
          <td>
@@ -195,107 +214,92 @@ padding-top:0px;
     </td>
     </tr>
 
-    <tr>
+    <tr class="numberrow">
     <td class="numbercell">
-    <a href="#">Add another credit card</a>
     </td>
-    <td></td>
+    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
+    <td>&nbsp;</td>
     </tr>
     
    <tr>
-    <td colspan="2">Loans, and overdrafts, shortfalls against your mortgage (regular payments are excluded, only enter arrears)</td>
+    <td colspan="3"><h5>Loans, overdrafts and mortgage shortfalls</h5></td>
 
     </tr>
  
-     <tr>
+     <tr class="numberrow">
 
     <td class="numbercell"><span class="numberCircle">3</span></td>
     <td>
     <input type="text" value="">
 
     </td>
-    </tr>
-     <tr>
-
-    <td class="numbercell"><span class="numberCircle">4</span></td>
-    <td>
-    <input type="text" value="">
-
-    </td>
+    <td rowspan="2">
+    Miss out regular payments, only enter arrears</td>
     </tr>
 
-    <tr>
+    <tr class="numberrow">
     <td class="numbercell">
-    <a href="#">Add another</a>
     </td>
-    <td></td>
+    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
     </tr>
     
    
   <tr>
-    <td colspan="2">Utility bills or rent (regular payments are excluded, only enter arrears)</td>
+    <td colspan="3"><h5>Utility bills and rent</h5>
+    </td>
 
     </tr>
  
-     <tr>
+     <tr class="numberrow">
 
     <td class="numbercell"><span class="numberCircle">5</span></td>
     <td>
     <input type="text" value="">
 
     </td>
-    </tr>
-     <tr>
-
-    <td class="numbercell"><span class="numberCircle">6</span></td>
-    <td>
-    <input type="text" value="">
-
-    </td>
+    <td rowspan="2">
+     Miss out regular payments, only enter arrears</td>
     </tr>
 
-    <tr>
+    <tr class="numberrow">
     <td class="numbercell">
-    <a href="#">Add another</a>
+    
     </td>
-    <td></td>
+    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
     </tr>
     
  <tr>
-    <td colspan="2">Other debt (do not enter amounts owed for your TV licence, student loan, fines, family maintenance, social fund loans, awards against you for damages
-)</td>
+    <td colspan="2"><h5>Other debt</h5>
+</td>
+
+    <td>&nbsp;</td>
 
     </tr>
  
-     <tr>
+     <tr class="numberrow">
 
     <td class="numbercell"><span class="numberCircle">7</span></td>
     <td>
     <input type="text" value="">
 
     </td>
+    <td rowspan="2">
+    Other than your TV licence, student loan, fines, family maintenance, social fund loans, awards against you for damages</td>
     </tr>
-     <tr>
 
-    <td class="numbercell"><span class="numberCircle">8</span></td>
+    <tr class="numberrow">
     <td>
-    <input type="text" value="">
-
     </td>
-    </tr>
-
-    <tr>
-    <td class="numbercell">
-    <a href="#">Add another</a>
-    </td>
-    <td></td>
+    
+    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
     </tr>
 
  
     <tr class="totalrow">
     <td class="numbercell">
     <span style="text-align:right; font-weight:bold">Total:</span></td>
-    <td>&nbsp;</td>
+    <td><input type="text" value="" id="box-total"></td>
+    <td><a class="button" href="#" id="btn-calculate">Calculate</a></td>
     </tr>
 
  
@@ -323,7 +327,7 @@ padding-top:0px;
 	<a href="calculator3.html">Back</a>	
 		</div>
     <div class="col-sm-7">
-    		<a class="button" href="calculator3.html?q1=yes">Continue</a>			
+    		<a class="button disabled" href="calculator3.html?q1=yes" id="btn-continue">Continue</a>			
 
 </div>
 	    <div class="col-sm-3">	        
@@ -393,7 +397,11 @@ padding-top:0px;
 
 <script type="text/javascript">
 $(document).ready(function() {
-
+	$("#btn-calculate").on("click", function(e){
+		e.preventDefault();
+		$("#box-total").val("14,350");
+		$("#btn-continue").removeClass("disabled");
+	});
 });
 
 </script>
