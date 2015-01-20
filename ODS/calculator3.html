@@ -159,6 +159,44 @@ tr.bottomrow td{
 	border-bottom:0 transparent none;
 }
 
+
+@media (max-width:768px) {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr {  }
+	
+	tr td{
+			border: 0 transparent none !important;
+			margin-right:40px;
+	}
+	td.yesnocolumn{
+	margin-left:50px;
+}
+	td.smallprintcolumn { 
+		/* Behave  like a "row" */
+		position: relative;
+		padding-right:0 !important;
+	margin-right:-20px;
+	}
+	
+	td.smallprintcolumn{
+	width:100%;
+	clear:left;
+	float:left;
+}
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -242,7 +280,7 @@ tr.bottomrow td{
    <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-debt.png"></span>
    <span class="question">Do you owe less than £15,000?</span>
    </td>
-   <td class="yesnocolumn" style="border-bottom:0 transparent none">
+   <td class="yesnocolumn" style="border-bottom:0 transparent none; width: 132px;">
    <input id="q1a" name="q1a" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn" rowspan="2">
         <div>
@@ -262,7 +300,7 @@ tr.bottomrow td{
    <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-blank.png"></span>
    <span class="question">Do you owe more than £15,000?</span>
    </td>
-   <td class="yesnocolumn"  style="border-top:0 transparent none"><input id="q1b" name="q1b" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn"  style="border-top:0 transparent none; width: 132px;"><input id="q1b" name="q1b" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    </tr>
 
 
@@ -271,7 +309,7 @@ tr.bottomrow td{
    <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-Saving.png"></span>
    <span class="question">Do you have assets or savings?</span>
    </td>
-   <td class="yesnocolumn"><input id="q2" name="q2" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q2" name="q2" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		<p>Money you have or things you own, not including basic household items or tools of the trade&nbsp; 
@@ -286,7 +324,7 @@ tr.bottomrow td{
    <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-OwnHome.png"></span>
    <span class="question">Do you own your own home?</span>
    </td>
-   <td class="yesnocolumn"><input id="q3" name="q3" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q3" name="q3" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		<p>Answer yes if you are a home owner or have a mortgage</p>	   	</div>
@@ -299,7 +337,7 @@ tr.bottomrow td{
    <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-vehicle.png"></span>
    <span class="question">Do you have a vehicle worth over £1,000?</span>
    </td>
-   <td class="yesnocolumn"><input id="q4" name="q4" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q4" name="q4" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		<p>Answer no if you are leasing your car</div>
@@ -311,7 +349,7 @@ tr.bottomrow td{
    <span class="icon"><img alt=""  width="50" height="50" src="assets/icons/DRO-cash.png"></span>
    <span class="question">Do you earn more than you need for your monthly bills, or are you retired?</span>
    </td>
-   <td class="yesnocolumn"><input id="q5" name="q5" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q5" name="q5" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		<p>Answer yes if you earn £50 above the amount needed for your normal household bills
@@ -327,7 +365,7 @@ tr.bottomrow td{
    <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-judgement.png"></span>
    <span class="question">Have you been through insolvency proceedings?</span>
    </td>
-   <td class="yesnocolumn"><input id="q6" name="q6" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q6" name="q6" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
    <td class="smallprintcolumn">
         <div>
 		Answer yes if you have a current or interim individual voluntary arrangement (IVA), 
@@ -345,7 +383,7 @@ tr.bottomrow td{
    <span class="question"><a class="button" href="calc-outcome-no.html" id="btn-find-debt">Find debt solutions</a>
    </span>
    </td>
-   <td class="yesnocolumn"></td>
+   <td class="yesnocolumn" style="width: 132px"></td>
    <td class="smallprintcolumn">
         <div>
 	   	</div>
