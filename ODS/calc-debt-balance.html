@@ -308,18 +308,7 @@ tr td{
     
    <div class="notice-period">
 
-<div id="liabilities">
-    <!-- /credit cards -->
 
-
-    <!-- /credit cards -->
-	
-	 <!-- /credit cards -->
-
-    <!-- /credit cards -->
-
-</div>
-<p><br/></p>
 
    <div class="row">
  	   <div class="col-sm-2"  style="padding-top:20px">
@@ -399,6 +388,8 @@ tr td{
 $(document).ready(function() {
 	$("#btn-calculate").on("click", function(e){
 		e.preventDefault();
+		$("#btn-continue").removeClass("disabled");
+		
 		if ($("#box-total").val() == "14,350"){
 			$("#box-total").val("31,089");
 			$("#btn-continue").href("calculator3.html?q=q1b");
@@ -408,7 +399,7 @@ $(document).ready(function() {
 			$("#btn-continue").href("calculator3.html?q=q1a");
 
 		}
-		$("#btn-continue").removeClass("disabled");
+
 	});
 	
 
