@@ -63,7 +63,6 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap.min.css">
 
-
 <style type="text/css">
 .row img{
 width:60px;
@@ -77,21 +76,6 @@ padding-top:15px;
 padding-top:0px;
 }
 
-.numberCircle {
-    border-radius: 50%;
-    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
-    width: 26px;
-    height: 26px;
-    padding: 2px;
-    background: #fff;
-    border: 2px solid black;
-    color: black;
-    text-align: center;
-    display: inline-block;
-}
-.numbercell{
-	text-align:right;
-}
 </style>
 <!-- #EndEditable -->
 
@@ -153,51 +137,99 @@ padding-top:0px;
             </div>
         </div>
 
-        
-</div>
-
 <!-- #BeginEditable "content" -->
-
-        
-<div id="content" >
 
         
 <div class="inner-block text">
     
-
-
-    <h1 class="form-title heading-large">Which online debt solution?</h1>
+    <h1 class="form-title heading-large">Confirm your details</h1>
    <div>
-   <p>If you live in England or Wales and can't pay your debts, you may be able to apply to clear your debts. 
-   Find out if you are eligible for a debt relief order or filing for bankruptcy.</p>
-   <div class="panel panel-danger">
-   <div class="panel-body">
-   	<h2 class="bold-medium">Do you have any cash or assets?</h2>
-   
-   <p>Answer Yes to this question if you have any of the following and they add up to £300 or more :</p>
-	   <ul class="list-bullet">
-		   <li>Surplus cash in your bank account after your living expenses?</li>
-		   <li>Any savings</li>
-		   <li>If you own items other than those satisfying basic 
-		   domestic needs or tools of the trade</li>
-		   </ul>
-		   </div>
-		  </div>
-   </div>
+   <p>To resume your application, please confirm the following details</p>
+	  <div>
 
+	  	
+	  	<form class="form" method="post">
+         <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
+         
+            <div class="validation-summary" style="display:none">
+                <h2>There was a problem submitting the form</h2>
+                <p>Please try the following:</p><ol>
+                    
     
     
-   <div>
+    
+    
+        <li>
+            
+                <a href="#address_postcode">You must enter your full postcode</a>
+            
+        </li>
+    
+
+                </ol>
+
+            </div>
+        <fieldset>
+            
+    <p>
+        </p>
+        
+        <div class="form-group ">
+            
+            <label id="forename_label" for="forename" class="form-label-bold forename">Enter the 10 character reference for your claim</label>
+            <span class="form-hint">For example, BR12345678</span>
+            <input id="forename" name="forename" type="text"><br>
+        </div>
+
+    <div class="form-group ">
+            
+            <label id="dob_label" class="form-label-bold">What is your birthday?</label>
+            <span class="form-hint">For example, 20 12</span>
+            <fieldset id="dob" class="date-of-birth">
+            <div class="form-group form-group-day">
+	            <label id="dob_label.day" for="dob.day">Day</label>
+                <input id="dob.day" name="dob.day" class="date-input" type="text" maxlength="2" size="2">
+            </div>
+            <div class="form-group form-group-month">
+	            <label id="dob_label.month" for="dob.month">Month</label>
+                <input id="dob.month" name="dob.month" class="date-input" type="text" maxlength="2" size="2">
+            </div>
+            <div class="form-group form-group-year">
+                &nbsp;
+            </div>
+        </fieldset>
+        </div>
+        
+    <div class="form-group ">
+            
+            <label id="nino_label" for="nino" class="form-label-bold nino">What is your National Insurance number?</label>
+            <span class="form-hint">For example, QQ123456C</span>
+            <input id="nino" name="nino" type="text" value=""><br>
+        </div>
 
 
 
+        </fieldset><!-- For User research -->
+
+                 <div class="form-navigation form-group">
+            <ul>
+            <li><a class="button" id="next" href="#">Continue</a></li>                    
+            <li><a href="0.html" id="back" class="button-secondary" style="display:none">Back</a></li>            
+            </ul>
+        </div>
+
+    </form>
+
+	  </div>	   <p>&nbsp;</p>
    <div class="row">
  	   <div class="col-sm-2"  style="padding-top:20px">
+
+		   <br>
 
 	<a href="calculator3.html">Back</a>	
 		</div>
     <div class="col-sm-7">
-    		<a class="button" href="calculator3.html?q1=yes">Continue</a>			
+				
 
 </div>
 	    <div class="col-sm-3">	        
@@ -213,13 +245,12 @@ padding-top:0px;
     
 </div>
 
+		<!-- #EndEditable -->
+
         
 </div>
 
 
-		<!-- #EndEditable -->
-
-        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -266,12 +297,6 @@ padding-top:0px;
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript">
-$(document).ready(function() {
-
-});
-
-</script>
 
 
 <!-- #EndEditable -->

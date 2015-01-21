@@ -108,78 +108,68 @@
 <main role="main" id="wrapper">
     
     <div id="content">
-        <div class="inner-block">
-            <div class="phase-banner">
-                <p>
-                    <strong class="phase-tag">BETA</strong>
-                    This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
-                </p>
-            </div>
-        </div>
+    <div class="text inner-block">
 
-        
-<div class="inner-block text">
-    
-    
-    
-    <h1 class="form-title heading-large">Verifying your identity</h1>
+        <div>
+        <h1 class="form-title heading-large"><span lang="en-gb">Your details</span></h1>
+           <form class="form" method="post">
 
-    
-    
-    <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="0d6710c9384d9a6e05dbd1d3ef4f10e046b63e73">
-         
-    <p>
-       If you're entitled to <span lang="en-gb">claim</span> we need to verify your identity before we can send you your payment.
-</p>
-    <p>
-        </p><div class="form-group ">
+<div class="form-group ">
+                
+                <label class="form-label-bold days_owed" for="days_owed" id="days_owed_label">How do we address you?</label>
+                <div class="form-hint">We will use this in our 
+					letters and emails </div>
+                &nbsp;<select>
+                <option>Choose...</option>
+
+                <option>Mr</option>
+                <option>Mrs</option>
+                </select>
+        </div><div class="form-group ">
             
              <fieldset class="inline">
-                    <legend id="suitability_1_label" class="form-label">
-					You'll receive your payment faster if you verify your 
-					identity online.</legend>
-             </fieldset> 
-             <a class="button" id="Verify" href="verify.html">
-                Verify online
-            </a>
-</div>
-    <p>
-        </p>
-        <div class="form-group ">
-            <h2 class="bold-medium">Using this service without Verify</h2>
-             <fieldset class="inline">
-                    <legend id="suitability_3_label" class="form-label">
-					
-					<br>It may take longer to process your payment without Verify. <br>
-					<a href="3-verify-identity.html">Proceed without using Verify</a></legend>
-                    <div id="suitability_3" class="form-group">
-        			</div>
+                    <legend id="claimant_gender_label" class="form-label-bold">What is your gender?</legend>
+                    <div id="claimant_gender" class="form-group">
+        
+        <label id="claimant_gender_label" for="claimant_gender_Male" class="block-label">
+            <input type="radio" id="claimant_gender_Male" value="Male" name="claimant_gender" aria-describedby="claimant_gender_error claimant_gender_help">
+            Male
+        </label>
+        
+        <label id="claimant_gender_label" for="claimant_gender_Female" class="block-label">
+            <input type="radio" id="claimant_gender_Female" value="Female" name="claimant_gender" aria-describedby="claimant_gender_error claimant_gender_help">
+            Female
+        </label>
+        
+    </div>
              </fieldset>
         </div>
-         
-               <div class="form-navigation form-group">
+
+<p class="lead text">
+            &nbsp;</p>
+
+            <div class="form-group">
+            </div>
+</form>
+     
+         <div class="form-navigation form-group">
             <ul>
             
-            <li></li>
+            <li><a href="../5-additional-contact-details.html" id="next" class="button">Continue</a></li>
                         
-                <li><a href="1-start.html" id="back" class="button-secondary">Back</a></li>
+                <li style="display:none">
+				<a href="4-confirm-title.html" class="button-secondary" id="back">Back</a></li>
             
             
             </ul>
         </div>
 
-        <div class="form-group ">
-            
-        </div>
-<!-- For User research -->
-    </form>
-</div>
-
+        
     </div>
+</div>
+</div>
     
     </main>
-
 
 
 

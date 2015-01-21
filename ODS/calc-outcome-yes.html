@@ -61,6 +61,8 @@
      <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/bootstrapbits.css">
      
 <!-- #BeginEditable "styles" -->
+<link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap.min.css">
+
 <style type="text/css">
 .row img{
 width:60px;
@@ -141,23 +143,18 @@ padding-top:0px;
 <div class="inner-block text">
     
     <h1 class="form-title heading-large">Which online debt solution?</h1>
-   <div class="notice-period">
-   <p>Based on what you have told us, you may be eligible
+   <div>
+   <p id="intromessage">Based on what you have told us, you may be eligible
    for a debt relief order. </p>
-   <p>There's a list of <a href="https://www.gov.uk/government/publications/debt-relief-orders">organisations that can help you find an authorised debt adviser</a>. 
-		The Money Advice Service has information about <a rel="external" href="https://www.moneyadviceservice.org.uk/en/articles/where-to-go-to-get-free-debt-advice">where to get free debt advice</a>.</p>
-	   <p>You should seek advice to ensure the 
-   right debt solution for you.</p>
-
+   <p class="alert alert-success" >You'll need to consult an authorised debt adviser to progress your application for a 
+   <a href="https://www.gov.uk/options-for-paying-off-your-debts/debt-relief-orders">debt relief order</a>.</p>
    <div class="row">
  	   <div class="col-sm-2"  style="padding-top:20px">
 
-	<a href="calculator.html">Back</a>	
+	<a href="calculator3.html" id="btn-back">Back</a>	
 		</div>
     <div class="col-sm-7">
-    		<a class="button" href="https://www.gov.uk/options-for-paying-off-your-debts/debt-relief-orders">Find out about debt relief orders</a>
-
-				
+				<a class="button" href="calc-FindDebtAdviser.html">Find a debt adviser</a>
 
 </div>
 	    <div class="col-sm-3">	        
@@ -228,7 +225,25 @@ padding-top:0px;
 <script type="text/javascript">
 $(document).ready(function() {
 
+
+qstring = getParameterByName("chosen");
+if (qstring.length > 1)
+{
+$("#intromessage").text("You told us you wished to move forwards to a debt relief order.");
+	$("#btn-back").prop("href", "know-which-debt-solution.html");
+
+}
+
+
 });
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 </script>
 

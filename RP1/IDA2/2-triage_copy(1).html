@@ -122,57 +122,92 @@
     
     
     
-    <h1 class="form-title heading-large">Verifying your identity</h1>
+    <h1 class="form-title heading-large">Check if you are able to use this online service</h1>
 
     
     
     <form class="form" method="post">
          <input type="hidden" name="_csrf_token" value="0d6710c9384d9a6e05dbd1d3ef4f10e046b63e73">
          
-    <p>
-       If you're entitled to <span lang="en-gb">claim</span> we need to verify your identity before we can send you your payment.
-</p>
+    <p class="panel-indent">
+        This is a new service and not all claims can be processed online at this time. Please answer the following questions so we can can advise you on the options for your claim.
+    </p>
     <p>
         </p><div class="form-group ">
             
              <fieldset class="inline">
-                    <legend id="suitability_1_label" class="form-label">
-					You'll receive your payment faster if you verify your 
-					identity online.</legend>
-             </fieldset> 
-             <a class="button" id="Verify" href="verify.html">
-                Verify online
-            </a>
-</div>
-    <p>
-        </p>
-        <div class="form-group ">
-            <h2 class="bold-medium">Using this service without Verify</h2>
-             <fieldset class="inline">
-                    <legend id="suitability_3_label" class="form-label">
-					
-					<br>It may take longer to process your payment without Verify. <br>
-					<a href="3-verify-identity.html">Proceed without using Verify</a></legend>
-                    <div id="suitability_3" class="form-group">
-        			</div>
+                    <legend id="suitability_1_label" class="form-label">Did you take holiday days during your employment which you have not been paid for?</legend>
+                    <div id="suitability_1" class="form-group">
+        
+        <label id="suitability_1_label" for="suitability_1_Yes" class="block-label">
+            <input id="suitability_1_Yes" value="Yes" name="suitability_1" type="radio" aria-describedby="suitability_1_error suitability_1_help">
+            Yes
+        </label>
+        
+        <label id="suitability_1_label" for="suitability_1_No" class="block-label">
+            <input id="suitability_1_No" value="No" name="suitability_1" type="radio" aria-describedby="suitability_1_error suitability_1_help">
+            No
+        </label>
+        
+    </div>
              </fieldset>
         </div>
-         
-               <div class="form-navigation form-group">
-            <ul>
+    <p>
+        </p><div class="form-group ">
             
-            <li></li>
-                        
-                <li><a href="1-start.html" id="back" class="button-secondary">Back</a></li>
-            
-            
-            </ul>
+             <fieldset class="inline">
+                    <legend id="suitability_3_label" class="form-label">Have you been on strike, worked overseas paying your tax there, or taken a sabbatical?</legend>
+                    <div id="suitability_3" class="form-group">
+        
+        <label id="suitability_3_label" for="suitability_3_Yes" class="block-label">
+            <input id="suitability_3_Yes" value="Yes" name="suitability_3" type="radio" aria-describedby="suitability_3_error suitability_3_help">
+            Yes
+        </label>
+        
+        <label id="suitability_3_label" for="suitability_3_No" class="block-label">
+            <input id="suitability_3_No" value="No" name="suitability_3" type="radio" aria-describedby="suitability_3_error suitability_3_help">
+            No
+        </label>
+        
+    </div>
+             </fieldset>
         </div>
-
-        <div class="form-group ">
+    <p></p>
+    <p>
+        </p><div class="form-group ">
             
+             <fieldset class="inline">
+                    <legend id="suitability_5_label" class="form-label">Have you been awarded any payments in relation to your job ending by an Employment Tribunal?</legend>
+                    <div id="suitability_5" class="form-group">
+        
+        <label id="suitability_5_label" for="suitability_5_Yes" class="block-label">
+            <input id="suitability_5_Yes" value="Yes" name="suitability_5" type="radio" aria-describedby="suitability_5_error suitability_5_help">
+            Yes
+        </label>
+        
+        <label id="suitability_5_label" for="suitability_5_No" class="block-label">
+            <input id="suitability_5_No" value="No" name="suitability_5" type="radio" aria-describedby="suitability_5_error suitability_5_help">
+            No
+        </label>
+        
+    </div>
+             </fieldset>
         </div>
+    <p></p>
 <!-- For User research -->
+        <div class="form-navigation form-group">    
+            <div>
+                <a class="button" id="next" href="../3-verify-identity.html">Continue</a>
+            </div>
+            <div>
+                <br>
+            </div>
+            
+            <div>         
+                    <a href="../1-start.html" id="back" class="button-secondary">Back</a>      
+                    <a href="#" id="cancel">Cancel and delete all details</a>      
+            </div>
+        </div>
     </form>
 </div>
 

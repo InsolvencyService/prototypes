@@ -61,6 +61,9 @@
      <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/bootstrapbits.css">
      
 <!-- #BeginEditable "styles" -->
+<link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap.min.css">
+
+
 <style type="text/css">
 .row img{
 width:60px;
@@ -142,21 +145,21 @@ padding-top:0px;
     
     <h1 class="form-title heading-large">Which online debt solution?</h1>
    <div class="notice-period">
-   <p>Based on what you have told us, you are not eligible
-   for a debt relief order. You may be eligible to file for bankruptcy. 
+   <p id="intromessage">Based on what you have told us, you are eligible to file for bankruptcy. 
    </p>
-	   <p>You should seek debt advice from a qualified adviser to find the 
-   right debt solution for you.</p>
-
+<img alt="" src="assets/images/video_placeholder.jpg" style="padding-bottom:20px">
+<p class="alert alert-success" >Always seek advice from a 
+<a class="" href="calc-FindDebtAdviser.html">qualified adviser</a>.</p>
    <div class="row">
  	   <div class="col-sm-2"  style="padding-top:20px">
 
-	<a href="calculator.html">Back</a>	
+	<a href="calculator3.html" id="btn-back">Back</a>	
 		</div>
     <div class="col-sm-7">
-    		<a class="button" href="https://www.gov.uk/bankruptcy">Find out about bankruptcy</a>
+    		<a class="button" href="calc-AboutBankruptcy.html">Tell me about bankruptcy</a>
 
 				
+
 
 </div>
 	    <div class="col-sm-3">	        
@@ -227,7 +230,24 @@ padding-top:0px;
 <script type="text/javascript">
 $(document).ready(function() {
 
+
+qstring = getParameterByName("chosen");
+if (qstring.length > 1)
+{
+	$("#intromessage").text("You told us you wished to move forwards to file for bankruptcy");
+	$("#btn-back").prop("href", "know-which-debt-solution.html");
+}
+
+
 });
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 </script>
 
