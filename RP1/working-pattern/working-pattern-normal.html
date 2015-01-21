@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0055)/claims/start -->
 <html lang="en"><!--<![endif]-->
 <head>
@@ -134,7 +134,7 @@
             <div class="phase-banner">
                 <p>
                     <strong class="phase-tag">BETA</strong>
-                    This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a>
+                    This is a new service - your <a target="_blank" href="https://www.surveymonkey.com/s/MWWXKLX">feedback</a>
                     will help us improve it
                 </p>
             </div>
@@ -144,90 +144,61 @@
         <div class="inner-block text">
 
 
-            <h1 class="form-title heading-large">Hours worked</h1>
+            <h1 class="form-title heading-large">Your working pattern</h1>
 
 
-            <form class="form" method="post">
-                <input type="hidden" name="_csrf_token" value="7eabe666b85c90b5886db75598492ef9eed6178b">
-
-                <p>
-                </p>
-
-                <div class="form-group ">
-
-                    <label id="hours_worked_label" for="hours_worked" class="form-label-bold hours_worked">How many
-                        hours a week were you contracted to work?</label>
-                    <span class="form-hint" id="hours_worked_help">Please don't include overtime hours. If you have irregular working hours, please give us the average number of hours you worked per week over the last 12 weeks.</span>
-                    <input type="text" id="hours_worked" name="hours_worked"
-                           aria-describedby="hours_worked_error hours_worked_help" value="">
-                    <br>
-                </div>
-                <p></p>
+            <form method="post" class="form">
+                <input type="hidden" value="7eabe666b85c90b5886db75598492ef9eed6178b" name="_csrf_token">
 
                 <p>
                 </p>
 
                 <div class="form-group ">
-
-                    <fieldset class="inline">
-                        <legend id="contract_paid_overtime_label" class="form-label-bold">Did your contract state you
-                            were paid for overtime hours?
-                        </legend>
-                        <div id="contract_paid_overtime" class="form-group">
-
-                            <label id="contract_paid_overtime_label" for="contract_paid_overtime_Yes"
-                                   class="block-label">
-                                <input type="radio" id="contract_paid_overtime_Yes" value="Yes"
-                                       name="contract_paid_overtime"
-                                       aria-describedby="contract_paid_overtime_error contract_paid_overtime_help">
-                                Yes
-                            </label>
-
-                            <label id="contract_paid_overtime_label" for="contract_paid_overtime_No"
-                                   class="block-label">
-                                <input type="radio" id="contract_paid_overtime_No" value="No"
-                                       name="contract_paid_overtime"
-                                       aria-describedby="contract_paid_overtime_error contract_paid_overtime_help">
-                                No
-                            </label>
-
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="form-group ">
-
-                    <fieldset class="inline">
-                        <legend class="form-label-bold" id="contract_paid_overtime_label">Did you have a regular pattern
-                            of work?
-                        </legend>
-                        <span id="hours_worked_help" class="form-hint">Answer yes if on average you worked the same days each week.</span>
-
-                        <div class="form-group" id="dayspatterntype">
-
-                            <label class="block-label" for="dayspatterntype_Yes">
-                                <input type="radio"
-                                       aria-describedby="contract_paid_overtime_error contract_paid_overtime_help"
-                                       name="dayspatterntype" value="Yes" id="dayspatterntype_Yes">
-                                Yes
-                            </label>
-
-                            <label class="block-label" for="dayspatterntype_No">
-                                <input type="radio"
-                                       aria-describedby="contract_paid_overtime_error contract_paid_overtime_help"
-                                       name="dayspatterntype" value="No" id="dayspatterntype_No">
-                                No
-                            </label>
-
-                        </div>
-                    </fieldset>
-                </div>
+            
+            <label id="days_worked_label" class="form-label-bold">
+			 <span lang="en-gb">Which days did you </span>normally work<span lang="en-gb">?</span></label>
+            <span class="form-hint">If you worked a shift pattern please select the days you most commonly worked<span lang="en-gb">. 
+			 Select the same number of days as you have above</span></span>
+            <div id="days_worked" class="form-group">
+        
+            <label id="_label" for="days_worked-1" class="form-label">
+                <input id="days_worked-1" name="days_worked-1" value="Monday" type="checkbox">Monday
+            </label>
+        
+            <label id="_label" for="days_worked-2" class="form-label">
+                <input id="days_worked-2" name="days_worked-2" value="Tuesday" type="checkbox">Tuesday
+            </label>
+        
+            <label id="_label" for="days_worked-3" class="form-label">
+                <input id="days_worked-3" name="days_worked-3" value="Wednesday" type="checkbox">Wednesday
+            </label>
+        
+            <label id="_label" for="days_worked-4" class="form-label">
+                <input id="days_worked-4" name="days_worked-4" value="Thursday" type="checkbox">Thursday
+            </label>
+        
+            <label id="_label" for="days_worked-5" class="form-label">
+                <input id="days_worked-5" name="days_worked-5" value="Friday" type="checkbox">Friday
+            </label>
+        
+            <label id="_label" for="days_worked-6" class="form-label">
+                <input id="days_worked-6" name="days_worked-6" value="Saturday" type="checkbox">Saturday
+            </label>
+        
+            <label id="_label" for="days_worked-7" class="form-label">
+                <input id="days_worked-7" name="days_worked-7" value="Sunday" type="checkbox">Sunday
+            </label>
+        
+    </div>
+        </div>
                 <p></p>
+
                 <!-- For User research -->
                 <div class="form-navigation form-group">
 
                     <div>
                         <ul>
-                            <li><a class="button" id="next" href="working-pattern-normal.html">Continue</a></li>
+                            <li><a class="button" id="next" href="working-pattern-config.html">Continue</a></li>
                         </ul>
                             <div>
                                 <a class="button-secondary" id="back" href="1-start.html">Back</a>
@@ -291,17 +262,6 @@
 
 </script>
 
-<script type="text/javascript">
-$("#dayspatterntype_Yes").on("click", function(){
-	$("#next").attr("href", "working-pattern-normal.html");
-
-});
-
-$("#dayspatterntype_No").on("click", function(){
-	$("#next").attr("href", "working-pattern-freetextbox.html");
-});
-
-</script>
 
 <div id="window-resizer-tooltip" style="display: none;">
     <a href="/claims/start#" title="Edit settings"
