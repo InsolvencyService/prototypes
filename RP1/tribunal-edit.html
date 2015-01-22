@@ -11,6 +11,7 @@
     <script type="text/javascript">
         (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
 
+
     </script>
 
     <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/overrides.css">
@@ -37,6 +38,7 @@
                     ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
                     .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
         })()
+
 
     </script>
     <![endif]-->
@@ -78,6 +80,7 @@
 <body class="js-enabled js-enabled">
 <script type="text/javascript">
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+
 </script>
 
 <div id="global-cookie-message" style="display: none;">
@@ -128,7 +131,7 @@
             <div class="phase-banner">
                 <p>
                     <strong class="phase-tag">BETA</strong>
-                    This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a>
+                    This is a new service - your <a target="_blank" href="https://www.surveymonkey.com/s/MWWXKLX">feedback</a>
                     will help us improve it
                 </p>
             </div>
@@ -141,8 +144,8 @@
             <h1 class="form-title heading-large">Other questions about your claim</h1>
 
 
-            <form class="form" method="post">
-                <input name="_csrf_token" value="4f5f9c655344bc858a723a92be13427830d64452" type="hidden">
+            <form method="post" class="form">
+                <input type="hidden" value="4f5f9c655344bc858a723a92be13427830d64452" name="_csrf_token">
 
                 <p>
                 </p>
@@ -150,31 +153,31 @@
                 <div class="form-group ">
 
                     <fieldset class="inline">
-                        <legend id="owe_employer_label" class="form-label-bold">Have you been awarded any payments in
+                        <legend class="form-label-bold" id="owe_employer_label">Have you been awarded any payments in
                             relation to your job ending by an Employment tribunal?
                         </legend>
-                        <div id="owe_employer" class="form-group">
+                        <div class="form-group" id="owe_employer">
 
-                            <label id="owe_employer_label" for="owe_employer_Yes" class="block-label">
-                                <input id="owe_employer_Yes" value="Yes" name="owe_employer"
-                                       aria-describedby="owe_employer_error owe_employer_help" type="radio">
+                            <label class="block-label" for="owe_employer_Yes" id="owe_employer_label">
+                                <input type="radio" aria-describedby="owe_employer_error owe_employer_help"
+                                       name="owe_employer" value="Yes" id="owe_employer_Yes">
                                 Yes
                             </label>
 
-                            <label id="owe_employer_label" for="owe_employer_No" class="block-label">
-                                <input id="owe_employer_No" value="No" name="owe_employer"
-                                       aria-describedby="owe_employer_error owe_employer_help" type="radio">
+                            <label class="block-label" for="owe_employer_No" id="owe_employer_label">
+                                <input type="radio" aria-describedby="owe_employer_error owe_employer_help"
+                                       name="owe_employer" value="No" id="owe_employer_No">
                                 No
                             </label>
 
                         </div>
                     </fieldset>
                 </div>
-                <h2 class="heading-medium">Sending a copy of your award</h2>
+                <h2 class="panel-indent">If you answered yes, you need to send us a copy of your employment tribunal
+                    judgement. We cannot process your claim until we have received it.</h2>
 
-                <p>You can scan a copy of your letter and email it to:<br> <a claim"="" redundancy="" online="" my=""
-                    redundancypaymentsonline@insolvency.gsi.gov.uk?subject="Querregarding"
-                    href="mailto:">redundancypaymentsonline@insolvency.gsi.gov.uk </a></p>
+                <p>You can scan a copy of your letter and email it to:<br> <a href="mailto:" redundancypaymentsonline@insolvency.gsi.gov.uk?subject="Querregarding"
+                    my="" online="" redundancy="" claim"="">redundancypaymentsonline@insolvency.gsi.gov.uk </a></p>
 
                 <p>Or you can post it to:</p>
                 <ul>
@@ -183,19 +186,19 @@
                     <li>Birmingham</li>
                     <li>B2 2LX</li>
                 </ul>
-                <p>Please include the following details on your award:</p>
-                    <ul>
-                        <li>Your full name</li>
-                        <li>Your day and month of birth</li>
-                        <li>The last four characters of your national insurance number</li>
-                    </ul>
+                <p class="heading-small">Please include the following details on your award:</p>
+                <ul>
+                    <li>Your full name</li>
+                    <li>Your day and month of birth</li>
+                    <li>The last four characters of your national insurance number</li>
+                </ul>
                 <p></p>
                 <!-- For User research -->
                 <div class="form-navigation form-group">
 
                     <div>
 
-                        <input id="next" class="button" role="button" value="Continue" type="submit">
+                        <input type="submit" value="Continue" role="button" class="button" id="next">
 
                     </div>
                     <div>
@@ -204,13 +207,14 @@
 
                     <div>
 
-                        <a style="padding-right: 30px"
+                        <a id="back"
                            href="https://rp1-pre.redundancy-payments.org.uk/claims/other-questions-details-start"
-                           id="back">Back</a>
+                           style="padding-right: 30px">Back</a>
 
 
-                        <a href="https://rp1-pre.redundancy-payments.org.uk/claims/cancel-and-delete?return_url=https://rp1-pre.redundancy-payments.org.uk/claims/other-questions"
-                           id="cancel">Cancel and delete all details</a>
+                        <a id="cancel"
+                           href="https://rp1-pre.redundancy-payments.org.uk/claims/cancel-and-delete?return_url=https://rp1-pre.redundancy-payments.org.uk/claims/other-questions">Cancel
+                            and delete all details</a>
 
                     </div>
                 </div>
@@ -277,6 +281,7 @@
     		}
     	});
     });
+
 
 </script>
 
