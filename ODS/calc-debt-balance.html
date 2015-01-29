@@ -91,6 +91,7 @@ padding-top:0px;
 }
 .numbercell{
 	text-align:right;
+	width: 15%;
 }
 .totalrow td{
 	border-top:3px #333333 solid !important;
@@ -112,6 +113,15 @@ tr td{
 	padding-bottom:0px !important;
 
 }
+.numberCircle{
+	color:#2e8aca;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -186,7 +196,7 @@ tr td{
     <table class="table">
     <tr>
     <th></th>
-    <th>How much do you owe?</th>
+    <th style="white-space:nowrap">How much do you owe?</th>
     <th>&nbsp;</th>
     </tr>
     
@@ -199,7 +209,7 @@ tr td{
 
     <td class="numbercell"><span class="numberCircle">1</span></td>
     <td>
-    <input type="text" value="">
+    <input type="number" value="" step="0.01" class="form-control">
 
     </td>
     <td rowspan="2">
@@ -209,15 +219,16 @@ tr td{
 
      <td class="numbercell"><span class="numberCircle">2</span></td>
          <td>
-    <input type="text" value="">
+    <input type="number" value="" step="0.01" class="form-control">
 
     </td>
     </tr>
 
     <tr class="numberrow">
     <td class="numbercell">
+    <a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a>
     </td>
-    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
+    <td></td>
     <td>&nbsp;</td>
     </tr>
     
@@ -230,7 +241,7 @@ tr td{
 
     <td class="numbercell"><span class="numberCircle">3</span></td>
     <td>
-    <input type="text" value="">
+    <input type="number" value="" step="0.01" class="form-control">
 
     </td>
     <td rowspan="2">
@@ -239,8 +250,9 @@ tr td{
 
     <tr class="numberrow">
     <td class="numbercell">
+    <a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a>
     </td>
-    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
+    <td></td>
     </tr>
     
    
@@ -252,9 +264,9 @@ tr td{
  
      <tr class="numberrow">
 
-    <td class="numbercell"><span class="numberCircle">5</span></td>
+    <td class="numbercell"><span class="numberCircle">4</span></td>
     <td>
-    <input type="text" value="">
+    <input type="number" value="" step="0.01" class="form-control">
 
     </td>
     <td rowspan="2">
@@ -263,9 +275,9 @@ tr td{
 
     <tr class="numberrow">
     <td class="numbercell">
-    
+<a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a>
     </td>
-    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
+    <td></td>
     </tr>
     
  <tr>
@@ -278,9 +290,9 @@ tr td{
  
      <tr class="numberrow">
 
-    <td class="numbercell"><span class="numberCircle">7</span></td>
+    <td class="numbercell"><span class="numberCircle">5</span></td>
     <td>
-    <input type="text" value="">
+    <input type="number" value="" step="0.01" class="form-control">
 
     </td>
     <td rowspan="2">
@@ -288,17 +300,18 @@ tr td{
     </tr>
 
     <tr class="numberrow">
-    <td>
+    <td class="numbercell">
+<a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a>
     </td>
     
-    <td><a href="#" class="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</a></td>
+    <td></td>
     </tr>
 
  
     <tr class="totalrow">
     <td class="numbercell">
     <span style="text-align:right; font-weight:bold">Total:</span></td>
-    <td><input type="text" value="" id="box-total"></td>
+    <td><input type="number" value="" id="box-total" class="form-control"></td>
     <td><a class="button" href="#" id="btn-calculate">Calculate</a></td>
     </tr>
 
