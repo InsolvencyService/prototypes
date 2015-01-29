@@ -410,8 +410,8 @@ var creditorSelectedHandler = function (eventObject, suggestionObject, suggestio
     $("#pnl-name").text(suggestionObject.value);
     $("#pnl-address").text(suggestionObject.address);
     $("#pnl-creditor").show();
-
 };
+
 	creditortypeahead.on('typeahead:selected', creditorSelectedHandler );
 
 $("#creditors").on("change", function(){
@@ -423,6 +423,14 @@ $("#creditors").on("change", function(){
 });
 
 $("#pnl-creditor").hide();
+
+$("#btn-clear").on("click", function(){
+	creditortypeahead.typeahead('val', '');
+	    $("#pnl-name").text("");
+    	$("#pnl-address").text("");
+    	$("#pnl-creditor").hide();
+
+});
 
 /*
 $(".tt-hint").on("change", function(){
