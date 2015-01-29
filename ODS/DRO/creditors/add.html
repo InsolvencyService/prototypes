@@ -29,7 +29,11 @@
   
   
  <link href="css/typeahead.css" rel="stylesheet">
- 
+ <style type="text/css">
+ .tt-dropdown-menu{
+	width:650px;
+}
+ </style>
 	<script type="text/javascript" src="js/jquery1.10.2.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
@@ -102,51 +106,7 @@ $('#creditors.typeahead').typeahead({
 
 <body>
 <div class="container">
-	<div class="row clearfix">
-		<div class="col-md-4 column">
-			<div>
-				<h1 style="margin-top:0">
-					Amounts owed</h1>
-			</div>
-		</div>
-		<div class="col-md-5">
-					<ul class="pagination" style="margin-top:10px">
-				<li>
-					<a href="#">1</a>
-				</li>
-				<li>
-					<a href="#">2</a>
-				</li>
-				<li>
-					<a href="#">3</a>
-				</li>
-				<li>
-					<a href="#">4</a>
-				</li>
-				<li>
-					<a href="#">5</a>
-				</li>
-				<li>
-					<a href="#">6</a>
-				</li>
-				<li>
-					<a href="#">7</a>
-				</li>
-				<li>
-					<a href="#">8</a>
-				</li>
-				<li>
-					<a href="#">9</a>
-				</li>
-
-			</ul>
-
-		</div>
-		<div class="col-md-3">
-		<input type="button" class="btn" value="Save" style="margin-top:10px">
-		</div>		
-	</div>
-	<div class="row clearfix">
+		<div class="row clearfix">
 		<div class="col-md-12 column">
 		
         <input type="text" id="filter-sources" name="filter-sources" value=""
@@ -154,7 +114,8 @@ $('#creditors.typeahead').typeahead({
 		
 		
 		<div id="bloodhound">
-			  <input class="typeahead" type="text" placeholder="Creditors" id="creditors">
+			  <input type="text" placeholder="Creditors" id="creditors" 
+			  class="form-control typeahead input-lg" autocomplete="off">
 			</div>
 
 		</div>
