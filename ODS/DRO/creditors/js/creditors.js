@@ -387,7 +387,8 @@ var creditors = new Bloodhound({
 // kicks off the loading/processing of `local` and `prefetch`
 creditors.initialize();
  
-	$('#creditors.typeahead').typeahead({
+ var creditortypeahead = $('#creditors.typeahead');
+	creditortypeahead.typeahead({
 	  hint: true,
 	  highlight: true,
 	  minLength: 1
@@ -404,5 +405,32 @@ creditors.initialize();
 	        }
 	    }
 	});
+	
+var creditorSelectedHandler = function (eventObject, suggestionObject, suggestionDataset) {
+    $("#pnl-name").text(suggestionObject.value);
+    $("#pnl-address").text(suggestionObject.address);
+    $("#pnl-creditor").show();
 
+};
+	creditortypeahead.on('typeahead:selected', creditorSelectedHandler );
+
+$("#creditors").on("change", function(){
+	if (creditortypeahead.typeahead('val') == ""){
+	    $("#pnl-name").text("");
+    	$("#pnl-address").text("");
+    	$("#pnl-creditor").hide();
+	}
+});
+
+$("#pnl-creditor").hide();
+
+/*
+$(".tt-hint").on("change", function(){
+	if (creditortypeahead.typeahead('val') == ""){
+	    $("#pnl-name").text("");
+    	$("#pnl-address").text("");
+    	$("#pnl-creditor".hide();
+	}
+});
+*/
 });
