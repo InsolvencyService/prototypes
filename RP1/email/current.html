@@ -1,0 +1,1139 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @page {
+            @bottom-right {
+                    content: "Page " counter(page) " of " counter(pages)
+                }
+                }
+
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            h3 {
+                font-family: Arial, sans-serif;
+            }
+
+            .hint {
+                font-size: 10pt;
+            }
+
+            h1, h2 {
+                font-family: Arial, sans-serif;
+                font-weight: 800;
+                line-height: 1.2em;
+                margin-bottom: .25em;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            p,li {
+                font-family: Arial, sans-serif;
+                font-size: 12pt;
+                line-height: 1.31579;
+                text-transform: none;
+            }
+            p {
+                font-weight: 800;
+            }
+            li {
+                margin: 0.25em 0;
+            }
+            h1,h2,p,li {
+                margin-right: 20%;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                table-layout: fixed;
+            }
+
+            table caption {
+                font-family: Arial, sans-serif;
+                font-size: 24px;
+                line-height: 1.25;
+                text-transform: none;
+                font-weight: 800;
+                margin: 1em 0.5em 0.5em 0em;
+                text-align: left;
+            }
+            th, td {
+                font-family: Arial, sans-serif;
+                font-size: 12pt;
+                line-height: 1.25;
+                font-weight: 300;
+                text-transform: none;
+                vertical-align: top;
+                padding: 0.7em 0.5em 0.7em 1em;
+            }
+            .answer {
+                width: 250px;
+                word-wrap: break-word;
+            }
+            tr:nth-child(even) td {
+                background-color: #fff;
+            }
+            td {
+                background: #f8f8f8;
+                border: dotted 1px #bfc1c3;
+            }
+            tr.section-question td {
+                line-height: 1.25em;
+                text-align: left;
+                color: #0b0c0c;
+                font-weight: 800;
+                background-color: #dee0e2;
+                border: solid 1px #bfc1c3;
+            }
+            tbody.loop:nth-child(even) {
+                border-top: 3px solid #dee0e2;
+            }
+            th span, td span {
+                color: #6F777B;
+                display: block;
+                font-weight:normal;
+                font-size: 12pt;
+            }
+        </style>
+    </head>
+    <body>
+        <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOoAAACMCAYAAAByOTUJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJBNDk4NDRFNjBBRTExRTI4NzQ1RTFGRURDNUI3MTlEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJBNDk4NDRGNjBBRTExRTI4NzQ1RTFGRURDNUI3MTlEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkE0OTg0NEM2MEFFMTFFMjg3NDVFMUZFREM1QjcxOUQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkE0OTg0NEQ2MEFFMTFFMjg3NDVFMUZFREM1QjcxOUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6QpMQIAAAmoUlEQVR42uxdB5xVxfU+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" />
+
+        <h1>Claim for redundancy and insolvency payments</h1>
+
+        <p>This claim is being made against Digital Testing Two Limited</p>
+
+        <h2>Summary of the claim</h2>
+
+        <p>
+        
+            <h3></h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Claimant Name
+                    
+                </td>
+                <td class="answer">
+                    
+                        Doctor Testolyulu njaskdfj
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Gender
+                    
+                </td>
+                <td class="answer">
+                    
+                        Male
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Date of Birth
+                    
+                </td>
+                <td class="answer">
+                    
+                        10 February 1950
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Address
+                    
+                </td>
+                <td class="answer">
+                    
+                        
+                            42 Evergreen Terrace<br/>
+                        
+                            Solmore<br/>
+                        
+                            Pine Grove<br/>
+                        
+                            Redditch<br/>
+                        
+                            Insolvenshire<br/>
+                        
+                            LL0 LL0<br/>
+                        
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant National Insurance Number
+                    
+                </td>
+                <td class="answer">
+                    
+                        JL123001A
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Email Address
+                    
+                </td>
+                <td class="answer">
+                    
+                        testergee1@gmail.com
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Contact Number
+                    
+                </td>
+                <td class="answer">
+                    
+                        00000000000
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Employer Name
+                    
+                </td>
+                <td class="answer">
+                    
+                        Digital Testing Two Limited
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3></h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Claimant Employer Address
+                    
+                </td>
+                <td class="answer">
+                    
+                        
+                            Hagley road<br/>
+                        
+                            Birmingham<br/>
+                        
+                            B16 8QG<br/>
+                        
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Work Address
+                    
+                </td>
+                <td class="answer">
+                    
+                        
+                            Floor 12 Elwood House<br/>
+                        
+                            126 Griffith Street<br/>
+                        
+                            Upper Wonting<br/>
+                        
+                            Shrewsbury<br/>
+                        
+                            Insolvenshire<br/>
+                        
+                            LL1 LL1<br/>
+                        
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Claimant Claim Reference Number
+                    
+                </td>
+                <td class="answer">
+                    
+                        CN00031236
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Details of the job from which you were made redundant</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    What was your job title?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Financial Services consultant
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What was your employee number? (optional)
+                    
+                        <span class="hint">You should be able to find this on your payslip</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What category of worker were you?
+                    
+                        <span class="hint"> </span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Employed
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    When did your employment at Digital Testing Two Limited start?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        01 January 2010
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What was the last day you worked for Digital Testing Two Limited?
+                    
+                        <span class="hint">For example 28 04 2014</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        25 June 2014
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Was this the date your employment officially ended?
+                    
+                        <span class="hint">This date can be found on your letter of redundancy</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        No
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    When did your employment with Digital Testing Two Limited officially end?
+                    
+                        <span class="hint">For example, 20 08 2014</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        30 June 2014
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Did Digital Testing Two Limited give you notice?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    When did Digital Testing Two Limited give you notice?
+                    
+                        <span class="hint">For example 20 04 2014</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        20 June 2014
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Do you want to claim compensation for loss of notice?
+                    
+                        <span class="hint"> </span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Details of your redundancy claim</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Would you like to claim for redundancy pay?
+                    
+                        <span class="hint">If you choose 'No' you won't need to answer any questions in section 3.</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Did you get a redundancy payment from Digital Testing Two Limited?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How much was the redundancy payment?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        £100.00
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Details of wages and other money owed</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Are you owed any wages or other money?
+                    
+                        <span class="hint">If you choose 'No' you won't need to answer any questions in section 5.</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Did your wages have any compulsory deductions?
+                    
+                        <span class="hint">This could include unpaid council tax, child support payments or any court ordered deduction at source. This does not include National Insurance and income tax</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What is the period for which you are owed wages?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        From 01 January 2014 To 05 January 2014
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Did your employer attempt to pay you?
+                    
+                        <span class="hint">This includes any failed payments to your bank account or bounced cheques from your employer</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What is the net amount of pay owed for this period?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        £100.00
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Details of any breaks in employment</h3>
+            <table>
+            
+            </table>
+        
+            <h3>Details of holiday pay</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Are you owed any holiday pay?
+                    
+                        <span class="hint">If you choose 'No' you won't need to answer any questions in section 4</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What was the start date of your holiday year at Digital Testing Two Limited?
+                    
+                        <span class="hint">For example 20 04 2014</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        15 January 2014
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How many days holiday per year were you entitled to?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        10
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Does this number of holiday days include bank holidays?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Did you carry any holiday days forward from last year's holiday allowance into this year?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How many untaken holiday days have you carried forward to this holiday year?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        100
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How many holiday days have you taken this holiday year, including bank holidays?
+                    
+                        <span class="hint"> </span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        10
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Details of wage and working hours</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    What was your gross income at Digital Testing Two Limited?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        £200.00 per month
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    If you were paid weekly, on which day of the week were you normally paid?
+                    
+                        <span class="hint">If you were not paid weekly, please skip this question. If you were paid weekly and skip this question we will default to a Saturday. </span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Friday
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Did your contract include any bonus or commission?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How much bonus or commission did you get, and how often?
+                    
+                        <span class="hint">We will take this information into account when calculating your payments so please be as accurate as possible</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        End of year bonus
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How many hours a week were you contracted to work?
+                    
+                        <span class="hint">Please don't include overtime hours. If you have irregular working hours, please give us the average number of hours you worked per week over the last 12 weeks.</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        68
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Did your contract state you were paid for overtime hours?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How many overtime hours did you normally work?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        100 hours per year
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How many days a week do you normally work?
+                    
+                        <span class="hint">Part days count as full days. If you worked shifts enter the average number of days you would work in a week.</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        3
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Which days did you normally work?
+                    
+                        <span class="hint">If you worked shifts please select the days you most commonly worked. The total must match your previous answer.</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Monday, Wednesday, Thursday
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Details of new employment</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Have you had a new job since you were made redundant?
+                    
+                        <span class="hint">If you choose 'No' you won't need to answer any questions in section 6</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Are you self-employed in your new job?
+                    
+                        <span class="hint">If you choose 'yes' you won't need to answer any more questions in section 6</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        No
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    New employer name
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        New Corp
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Employer Address
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Room 12, Baker House, 45 Drury Lane, Bicester, OXON, OX21 3JE
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Telephone number
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        05683 812423
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    When were you offered this job?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        10 January 2014
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    When did you start this job?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        25 January 2014
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Although you have a different employer, is your new job role the same?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Are you dealing with the same customers?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Have your terms and conditions changed?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Are you aware of any link between your old employer and your new employer?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What is the link between your old employer and your new employer?
+                    
+                        <span class="hint"> </span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        My manager is my old boss but he now has a better mustache.
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Other questions about your claim</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Do you owe Digital Testing Two Limited any money?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Yes
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    How much do you owe Digital Testing Two Limited?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        £100.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    What is this money owed for?
+                    
+                        <span class="hint">Any money that you owe to your employer has to be taken into account before we can calculate how much money you are due</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Temporary loan to cover personal travel costs
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Other questions about your claim</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Is there anything else you wish to tell us about your claim?
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        This service is really good!
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Payment method</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    How you wish to be paid
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        BACS
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+            <h3>Bank account details</h3>
+            <table>
+            
+            <tr>
+                <td>
+                    Name of bank, building society, or other account provider
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Mr Bank
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Sort code
+                    
+                        <span class="hint">For example 12-43-56</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        10-20-03
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Account number
+                    
+                        <span class="hint"></span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        01234568
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Building society roll or reference number
+                    
+                        <span class="hint">If your building society uses a roll or reference number, you will find it on your passbook or statement</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Account holder's name
+                    
+                        <span class="hint">Please write the name exactly as it appears on your bank card, passbook or statement</span>
+                    
+                </td>
+                <td class="answer">
+                    
+                        Mr Testolyulunjaskdfj
+                    
+                </td>
+            </tr>
+            
+            </table>
+        
+        </p>
+
+        <p>By sending your claim, you confirm that:</p>    <ul class="list-bullet">        <li>as far as you know, all the information you have provided in your claim is correct</li>        <li>this is the only claim you are making for a redundancy payment in relation to this job</li>        <li>you agree to us using your information as described in our personal information charter            (including sharing information with your last employer, their representatives or with relevant            government organisations if we need to in order to check your claim or work out how much to pay you)</li>    </ul>
+        <p>We may take legal action against you if you knowingly make a false statement in your claim</p>
+
+        <!-- Digital signature, submission date -->
+        <p>Doctor Testolyulu njaskdfj
+            accepted the declaration and submitted this claim on 16/12/2014 11:35:02</p>
+
+    </body>
+</html>
+
