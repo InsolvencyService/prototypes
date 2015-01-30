@@ -188,7 +188,7 @@ input::-webkit-inner-spin-button {
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large">Do you owe less than £15,000?</h1>
+    <h1 class="form-title heading-large">Do you owe more or less than £15,000?</h1>
     
    <p>Calculate your total liabilities that can be taken into account in order to qualify for the amount you owe as related to a debt relief order.
 </p>
@@ -311,7 +311,7 @@ input::-webkit-inner-spin-button {
     <tr class="totalrow">
     <td class="numbercell">
     <span style="text-align:right; font-weight:bold">Total:</span></td>
-    <td><input type="number" value="" id="box-total" class="form-control"></td>
+    <td><input type="number" value="" id="box-total" class="form-control text-danger" style="font-weight:bold"></td>
     <td><a class="button" href="#" id="btn-calculate">Calculate</a></td>
     </tr>
 
@@ -326,10 +326,10 @@ input::-webkit-inner-spin-button {
    <div class="row">
  	   <div class="col-sm-2"  style="padding-top:20px">
 
-	<a href="calculator3.html">Back</a>	
+	<a href="landing.html">Back</a>	
 		</div>
     <div class="col-sm-7">
-    		<a class="button disabled" href="calculator3.html?q=q1a" id="btn-continue">Continue</a>			
+    		<a class="button disabled" href="landing.html?q=q1a" id="btn-continue">Continue</a>			
 
 </div>
 	    <div class="col-sm-3">	        
@@ -399,23 +399,43 @@ input::-webkit-inner-spin-button {
 
 <script type="text/javascript">
 $(document).ready(function() {
+	var totalamount = 0;
+
 	$("#btn-calculate").on("click", function(e){
 		e.preventDefault();
 		$("#btn-continue").removeClass("disabled");
 		
-		if ($("#box-total").val() == "14,350"){
-			$("#box-total").val("31,089");
-			$("#btn-continue").attr("href", "calculator3.html?q=q1b");
+		if ($("#box-total").val() === "14350.00"){
+			$("#box-total").val("31089.00");
+			$("#btn-continue").attr("href", "landing.html?q=q1b");
 		}
 		else{
-			$("#box-total").val("14,350");
-			$("#btn-continue").attr("href","calculator3.html?q=q1a");
-
+			$('input[type=number]').each(function(){
+				if ($(this).val()){
+					var amt = $(this).val();
+					totalamount+= tonum(amt);
+				}
+			});
+			if (totalamount && totalamount > 0){
+				$("#box-total").val(totalamount.toFixed(2));
+				if (totalamount > "15000"){
+					$("#btn-continue").attr("href", "landing.html?q=q1b");
+				}
+			}
+			else{
+				if ($("#box-total").val() === ""){
+					$("#box-total").val("14350.00");
+					$("#btn-continue").attr("href","landing.html?q=q1a");
+				}
+			}
 		}
 
 	});
 	
-
+	function tonum(num)
+	{
+	 	return parseFloat(num); //.replace(/[^0-9\.]+/g,"")
+	}
 });
 
 </script>
