@@ -53,15 +53,11 @@ i.glyphicon{
 .input-lg{
 	width:260px;
 }
-
-#row-total td{
-	font-weight:bold;
-}
  </style>
 	<script type="text/javascript" src="js/jquery1.10.2.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/creditors.js"></script>
-	<!--<script src="js/handlebars.js" type="text/javascript"></script>-->
+	<script src="js/handlebars.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/tw-typeahead.js"></script>
 
 <script type="text/javascript">
@@ -123,10 +119,8 @@ i.glyphicon{
 
 
 
-	<div class="row clearfix" id="pnl-add">
-	<div class="well">
-
-		<h3 style="margin-top:0;margin-left:10px;">
+	<div class="row clearfix">
+			<h3>
 				Add amount owed
 			</h3>
 			
@@ -153,13 +147,13 @@ i.glyphicon{
 				<div class="form-group">
 					 <label for="inputEmail3" class="col-sm-5 control-label">Reference</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control input-sm" id="txt-ref" />
+						<input type="text" class="form-control input-sm" id="inputEmail3" />
 					</div>
 				</div>
 				<div class="form-group">
 					 <label for="inputPassword3" class="col-sm-5 control-label">Amount</label>
 					<div class="col-sm-7">
-						<input type="number" class="form-control input-sm" id="txt-amt" />
+						<input type="number" class="form-control input-sm" id="inputPassword3" />
 					</div>
 				</div>
 				
@@ -214,13 +208,13 @@ i.glyphicon{
 				
 					<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-7">
-						 <a class="btn btn-default" href="#" id="btn-save">Save</a> <a href="#" style="margin-left:20px" id="btn-add-cancel">Cancel</a>
+						 <a class="btn btn-default" href="#">Save</a> <a href="#" style="margin-left:20px">Cancel</a>
 					</div>
 				</div>
 				
 						</div>
 		<div class="col-md-5 column">
-			<a class="btn btn-default" href="#" id="btn-unlisted-creditor">Add unlisted creditor</a>
+			<a class="btn btn-default" href="#">Add unlisted creditor</a>
 			<div class="panel panel-default" id="pnl-creditor" style="margin-top:10px">
 				<div class="panel-body">
 					<dl>
@@ -235,12 +229,6 @@ i.glyphicon{
 		</div>
 
 			</form>
-				<div class="clearfix"></div>
-	</div>
-	
-
-	
-	
 	</div>
 	
 	
@@ -268,46 +256,14 @@ i.glyphicon{
 		</tr>
 		</thead>
 		<tbody>
-		<tr id="row-0">
-		<td><a href="#"><i class="glyphicon  glyphicon-pencil"></i> </a></td><td class="name">ABC company</td><td class="ref">TH87986910</td><td class="amt">3286.12</td><td></td><td></td>
-		</tr>
-
-		<tr id="row-1">
-		<td><a href="#"><i class="glyphicon  glyphicon-pencil"></i> </a></td><td>ABC company</td><td>TH87986910</td><td class="amt">3286.12</td><td></td><td></td>
-		</tr>
-		<tr id="row-2">
-		<td><a href="#"><i class="glyphicon  glyphicon-pencil"></i> </a></td><td>Southern Electric</td><td>93849498A</td><td class="amt">1234.98</td><td></td><td></td>
-		</tr>
-		<tr id="row-3">
-		<td><a href="#"><i class="glyphicon  glyphicon-pencil"></i> </a></td><td>Artisan Supplies</td><td>G65456686</td><td class="amt">988.01</td><td></td><td></td>
-		</tr>
-	
-		<tr id="row-4">
-		<td><a href="#"><i class="glyphicon  glyphicon-pencil"></i> </a></td><td>ABC company</td><td>TH87986910</td><td class="amt">3286.12</td><td></td><td></td>
-		</tr>
-		<tr id="row-5">
-		<td><a href="#"><i class="glyphicon  glyphicon-pencil"></i> </a></td><td>Southern Electric</td><td>93849498A</td><td class="amt">1234.98</td><td></td><td></td>
-		</tr>
-		<tr id="row-6">
-		<td><a href="#"><i class="glyphicon glyphicon-pencil"></i> </a></td><td>Artisan Supplies</td><td>G65456686</td><td class="amt">988.01</td><td></td><td></td>
-		</tr>
-	
-		<tr id="row-7">
-		<td><a href="#"><i class="glyphicon glyphicon-pencil"></i> </a></td><td>ABC company</td><td>TH87986910</td><td class="amt">3286.12</td><td></td><td></td>
-		</tr>
-		<tr id="row-8">
-		<td><a href="#"><i class="glyphicon glyphicon-pencil"></i> </a></td><td>Southern Electric</td><td>93849498A</td><td class="amt">1234.98</td><td></td><td></td>
-		</tr>
-		<tr id="row-9">
-		<td><a href="#"><i class="glyphicon glyphicon-pencil"></i> </a></td><td>Artisan Supplies</td><td>G65456686</td><td class="amt">988.01</td><td></td><td></td>
-		</tr>
-
 		<tr>
-		<td></td><td><a href="add.html" id="btn-add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add amount owed</a></td><td></td><td></td><td></td><td></td>
+		<td></td><td><a href="add_copy(1).html"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add amount owed</a></td><td></td><td></td><td></td><td></td>
 		</tr>
-
-		<tr id="row-total">
-		<td> </td><td  colspan="2"class="text-right">Total</td><td id="total-amt"></td><td></td><td></td>
+		<tr>
+		<td></td><td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+		<td></td><td></td><td></td><td></td><td></td><td></td>
 		</tr>
 
 		</tbody>

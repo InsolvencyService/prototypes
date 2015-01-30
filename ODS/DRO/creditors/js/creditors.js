@@ -386,6 +386,21 @@ var creditors = new Bloodhound({
  
 // kicks off the loading/processing of `local` and `prefetch`
 creditors.initialize();
+
+$("#pnl-creditor").hide();
+$("#pnl-add").hide();
+$("#row-total").hide();
+$("#row-0").hide();
+
+$("#row-1").hide();
+$("#row-2").hide();
+$("#row-3").hide();
+$("#row-4").hide();
+$("#row-5").hide();
+$("#row-6").hide();
+$("#row-7").hide();
+$("#row-8").hide();
+$("#row-9").hide();
  
  var creditortypeahead = $('#creditors.typeahead');
 	creditortypeahead.typeahead({
@@ -422,7 +437,7 @@ $("#creditors").on("change", function(){
 	}
 });
 
-$("#pnl-creditor").hide();
+
 
 $("#btn-clear").on("click", function(){
 	creditortypeahead.typeahead('val', '');
@@ -432,13 +447,47 @@ $("#btn-clear").on("click", function(){
 
 });
 
-/*
-$(".tt-hint").on("change", function(){
-	if (creditortypeahead.typeahead('val') == ""){
-	    $("#pnl-name").text("");
-    	$("#pnl-address").text("");
-    	$("#pnl-creditor".hide();
-	}
+$("#btn-add").on("click", function(e){
+	e.preventDefault();
+	$("#txt-amt").val("");
+	$("#txt-ref").val("")
+	$("#pnl-add").show();
+	
 });
-*/
+$("#btn-add-cancel").on("click", function(e){
+	$("#pnl-add").hide();
+});
+var countrows = 0;
+$("#btn-save").on("click", function(){
+	$("#pnl-add").hide();
+	$("#row-" + countrows).show();
+	
+	$("#row-0 td.amt").text($("#txt-amt").val());
+	$("#row-0 td.ref").text($("#txt-ref").val());
+	$("#row-0 td.name").text($("#pnl-name").text());	
+
+		
+	countrows+=1;
+	$("#row-total").show();
+	updatetotal();
+});
+
+$("#btn-unlisted-creditor").on("click", function(){
+	//$("#pnl-add").show();
+	
+});
+
+
+function updatetotal()
+{
+	var totalamount= 0;
+	$('td.amt').each(function(){
+		if ($(this).text() && $(this).is(":visible")){
+			var amt = $(this).text();
+			totalamount+= parseFloat(amt);
+		}
+	});
+	$("#total-amt").text(totalamount.toFixed(2));
+}
+
 });
