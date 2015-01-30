@@ -62,142 +62,19 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="assets/js/bootstrap-switch/bootstrap-switch.min.css">
+
 
 <style type="text/css">
-
-.row > div > img,
-td > img{
-width:100%;
-vertical-align:middle;
-max-width:50px;
+.row img{
+width:60px;
+text-align:right;
+float:right
 }
-tr > td.yesnocolumn{
-	vertical-align:top;
-	padding-top:20px !important;
-	 width: 140px;
-}
- tr > td{
-	vertical-align:middle;
-}
-.row > div,
-{
+.row > div{
 padding-top:15px;
 }
 .row > div:first-child{
 padding-top:0px;
-}
-a{
-	text-decoration:none;
-}
-a:hover, a:active, a:focus{
-	text-decoration:underline;
-}
-.row{
-margin-left:0;
-	margin-right:-100px;
-	min-height:60px;:
-}
-.options{
-	padding-top:10px !important;
-}
-.col-sm-1{
-	padding-left:0;
-	padding-right:0;
-}
-.col-sm-7{
-	margin-right:0;
-}
-.linkcell{
-	padding-right:0;	
-}
-.linkcell a{
-	font-size:16px;
-}
-td [class*="col-"] {
-padding-top:12px
-}
-.question{
-	font-size:19px;
-	display:block;
-	margin-left:10px;
-	padding-top:15px;
-}
-.alert{
-	padding-top:10px;
-	padding-bottom:10px;
-}
-.maincolumn{
-	width:410px;
-}
-
-table{
-	margin-left:20px;
-	padding-right:40px;
-	display:block;
-}
-.icon{
-display:block;
-	max-width:50px;
-	float:left;
-	margin-right:10px;
-}
-.icon img{
-
-	max-width:50px;
-
-}
-.bootstrap-switch-wrapper{
-	margin-left:20px
-}
-.morecolumn{
-	padding-top:20px !important;
-}
-.smallprintcolumn{
-	font-size:16px;
-	padding-left:20px !important;
-	padding-top:20px !important;
-}
-tr.bottomrow td{
-	border-bottom:0 transparent none;
-}
-
-
-@media (max-width:768px) {
-
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr {  }
-	
-	tr td{
-			border: 0 transparent none !important;
-			margin-right:40px;
-	}
-	td.yesnocolumn{
-	margin-left:50px;
-}
-	td.smallprintcolumn { 
-		/* Behave  like a "row" */
-		position: relative;
-		padding-right:0 !important;
-	margin-right:-20px;
-	}
-	
-	td.smallprintcolumn{
-	width:100%;
-	clear:left;
-	float:left;
-}
 }
 
 </style>
@@ -261,175 +138,49 @@ tr.bottomrow td{
             </div>
         </div>
 
-</div>
-
 <!-- #BeginEditable "content" -->
 
-<div id="content" >
-<div class="row" style="margin-left:15px;margin-right:15px;">
-    <div class="col-sm-8">
-    <h1 class="form-title heading-large">Find me a debt solution</h1>
-	   	<div>
-	   	<p>If you live in England or Wales and can't pay your debts, you may be able to apply to clear your debts. 
-	   	Find out if you are eligible for a debt relief order or filing for bankruptcy.</p>
-		</div>
-	</div>
-	
-	<div class="col-sm-4">
-		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
-		<p><a href="know-which-debt-solution.html">I know which debt solution I need</a></p>
-		<p><a href="return-to-application.html">I am returning to an existing application</a></p>
-		</div>
-	</div>
-</div>
-
-   <table class="table">
-   <tr>
-   <td class="maincolumn" style="border-bottom:0 transparent none">
-   <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-debt.png"></span>
-   <span class="question">Do you owe less than £15,000?</span>
-   </td>
-   <td class="yesnocolumn" style="border-bottom:0 transparent none;">
-   <input id="q1a" name="q1a" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
-   <td class="smallprintcolumn" rowspan="2">
-        <div>
-		<p>Including credit card debt, loans, overdrafts, shortfalls and arrears, leaving out fines&nbsp; 
-		</p>
-		<p>
-		If you aren't sure how much debt you owe<br>
-		<a class="button-get-started" href="calc-debt-balance.html" style="margin-left:15px; font-size:19px">
-		<i class="glyphicon glyphicon-th"></i> Calculate your debt</a>
-		</p>
-	   	</div>
-
-   </td>
-   </tr>
-
-   <tr>
-   <td class="maincolumn"  style="border-top:0 transparent none">
-   <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-blank.png"></span>
-   <span class="question">Do you owe more than £15,000?</span>
-   </td>
-   <td class="yesnocolumn"  style="border-top:0 transparent none;"><input id="q1b" name="q1b" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
-   </tr>
-
-
-   <tr>
-   <td class="maincolumn">
-   <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-Saving.png"></span>
-   <span class="question">Do you have assets or savings?</span>
-   </td>
-   <td class="yesnocolumn" style="width: 132px"><input id="q2" name="q2" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
-   <td class="smallprintcolumn">
-        <div>
-		<p>Money you have or things you own, not including basic household items or tools of the trade &nbsp; <br>
-		<a href="about-assets.html" style="margin-left:15px;"><i class="glyphicon glyphicon-info-sign"></i> More about assets</a>
-	   	</div>
-
-   </td>
-   </tr>
-   
-   <tr>
-   <td class="maincolumn">
-   <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-OwnHome.png"></span>
-   <span class="question">Do you own your own home?</span>
-   </td>
-   <td class="yesnocolumn" style="width: 132px"><input id="q3" name="q3" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
-   <td class="smallprintcolumn">
-        <div>
-		<p>Answer yes if you are a home owner or have a mortgage</p>	   	</div>
-
-   </td>
-   </tr>
-
-   <tr>
-   <td class="maincolumn">
-   <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-vehicle.png"></span>
-   <span class="question">Do you have a vehicle worth over £1,000?</span>
-   </td>
-   <td class="yesnocolumn" style="width: 132px"><input id="q4" name="q4" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
-   <td class="smallprintcolumn">
-        <div>
-		<p>Answer no if you are leasing your car</div>
-
-   </td>
-   </tr>
-  <tr>
-   <td class="maincolumn">
-   <span class="icon"><img alt=""  width="50" height="50" src="assets/icons/DRO-cash.png"></span>
-   <span class="question">Do you earn more than you need for your monthly bills, or are you retired?</span>
-   </td>
-   <td class="yesnocolumn" style="width: 132px"><input id="q5" name="q5" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
-   <td class="smallprintcolumn">
-        <div>
-		<p>Answer yes if you earn £50 above the amount needed for your normal household bills
-		<br>Answer yes if you are retired or expecting your circumstances to improve
-		</p> 
-	   	</div>
-
-   </td>
-   </tr>
-
-   <tr>
-   <td class="maincolumn">
-   <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-judgement.png"></span>
-   <span class="question">Have you been through insolvency proceedings?</span>
-   </td>
-   <td class="yesnocolumn" style="width: 132px"><input id="q6" name="q6" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
-   <td class="smallprintcolumn">
-        <div>
-		Answer yes if you have a current or interim individual voluntary arrangement (IVA), 
-		or if you are currently under a bankruptcy order
-		 or debt relief restrictions order or undertaking
-</div>
-
-   </td>
-   </tr>
-
-
-  <tr class="bottomrow">
-   <td class="maincolumn">
-   <span class="icon"><img alt="" width="50" height="50" src="assets/icons/DRO-blank.png"></span>
-   <span class="question"><a class="button" href="calc-outcome-no.html" id="btn-find-debt">Find 
-   a debt solution</a>
-   </span>
-   </td>
-   <td class="yesnocolumn" style="width: 132px"></td>
-   <td class="smallprintcolumn">
-        <div>
-	   	</div>
-
-   </td>
-   </tr>
-
-   </table> 
-   
         
-  
+<div class="inner-block text">
+    
+    <h1 class="form-title heading-large">My debt option</h1>
+   <div class="notice-period">
+   <p id="intromessage"><i class="glyphicon glyphicon-ok text-success"></i>&nbsp;You are eligible to file for bankruptcy. 
+   </p>
+<img alt="" src="assets/images/video_placeholder.jpg" style="padding-bottom:20px">
+<p class="alert alert-success" >Always seek advice from a 
+<a class="" href="calc-FindDebtAdviser.html">qualified adviser</a>.</p>
+   <div class="row">
+ 	   <div class="col-sm-2"  style="padding-top:20px">
+
+	<a href="landing.html" id="btn-back">Back</a>	
+		</div>
+    <div class="col-sm-7">
+    		<a class="button" href="calc-AboutBankruptcy.html">Tell me about bankruptcy</a>
+
+				
 
 
- 	      		
-
+</div>
 	    <div class="col-sm-3">	        
 	        
 	    </div>
+    </div>
 
 
-
-
+</div>
 
 <p><br></p>
 <p><br></p>
     
-
-
 </div>
-
-
 
 		<!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -476,56 +227,17 @@ tr.bottomrow td{
 
 <!-- #BeginEditable "scripts" -->
 
-<script width="50" height="50" src="assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
-
 <script type="text/javascript">
 $(document).ready(function() {
 
 
-
-$("[id='q1a']").bootstrapSwitch();
-$("[id='q1b']").bootstrapSwitch();
-$("[id='q2']").bootstrapSwitch();
-$("[id='q3']").bootstrapSwitch();
-$("[id='q4']").bootstrapSwitch();
-$("[id='q5']").bootstrapSwitch();
-$("[id='q6']").bootstrapSwitch();
-$("[id='q7']").bootstrapSwitch();
-
-qstring = getParameterByName("q");
+qstring = getParameterByName("chosen");
 if (qstring.length > 1)
 {
-$("#" + qstring).bootstrapSwitch('state', true);
+	$("#intromessage").text("You told us you wished to move forwards to file for bankruptcy");
+	$("#btn-back").prop("href", "know-which-debt-solution.html");
 }
 
-
-$("#q1a").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#q1b").bootstrapSwitch('state', false);
-  }
-});
-$("#q1b").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#q1a").bootstrapSwitch('state', false);
-  }
-});
-
-//alert($("#q1").bootstrapSwitch('state'));
-$("#btn-find-debt").on("click", function(e){
-	if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
-		e.preventDefault();
-		alert("Select the debt answers which match your situation to proceed");
-	}
-	else{
-	if ($("#q1b").bootstrapSwitch('state') == false && $("#q2").bootstrapSwitch('state') == false 
-	&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
-	&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
-		$("#btn-find-debt").attr("href", "calc-outcome-yes.html");
-		}
-	}
-});
 
 });
 
