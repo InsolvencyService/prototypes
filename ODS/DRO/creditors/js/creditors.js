@@ -462,9 +462,15 @@ $("#btn-save").on("click", function(){
 	$("#pnl-add").hide();
 	$("#row-" + countrows).show();
 	
+	if ($("#txt-amt").val()){
 	$("#row-0 td.amt").text($("#txt-amt").val());
-	$("#row-0 td.ref").text($("#txt-ref").val());
-	$("#row-0 td.name").text($("#pnl-name").text());	
+	}
+	if ($("#txt-ref").val()){
+		$("#row-0 td.ref").text($("#txt-ref").val());
+	}
+	if($("#pnl-name").text()){
+		$("#row-0 td.name").text($("#pnl-name").text());
+	}	
 
 		
 	countrows+=1;
