@@ -440,17 +440,15 @@ $("#creditors").on("change", function(){
 
 
 $("#btn-clear").on("click", function(){
-	creditortypeahead.typeahead('val', '');
-	    $("#pnl-name").text("");
-    	$("#pnl-address").text("");
-    	$("#pnl-creditor").hide();
-
+		clearfilter();
 });
 
 $("#btn-add").on("click", function(e){
 	e.preventDefault();
+	clearfilter();
 	$("#txt-amt").val("");
 	$("#txt-ref").val("")
+	$('input[type=radio]').removeAttr('checked');
 	$("#pnl-add").show();
 	
 });
@@ -494,6 +492,13 @@ function updatetotal()
 		}
 	});
 	$("#total-amt").text(totalamount.toFixed(2));
+}
+
+function clearfilter(){
+	creditortypeahead.typeahead('val', '');
+	    $("#pnl-name").text("");
+    	$("#pnl-address").text("");
+    	$("#pnl-creditor").hide();
 }
 
 });
