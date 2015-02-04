@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0055)/claims/start -->
 <html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 
-    <title>RP1 Prototype - Start</title>
+    <title>Prototype - Triage</title>
 
     <script async="" src="../assets/javascripts/analytics.js"></script><script type="text/javascript">
         (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
     </script>
+
+    <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/govuk-template.css"><!--<![endif]-->
@@ -58,10 +60,6 @@
     <!--[if IE 6]><link href="../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">
-
-
 </head>
 
 <body class="js-enabled js-enabled">
@@ -93,8 +91,7 @@
         <div class="header-proposition">
             <div class="content">
                 <nav id="proposition-menu">
-                    <a id="proposition-name" href="https://www.gov.uk/service-manual">
-					Claim for redundancy and monies owed</a>
+                    <a id="proposition-name" href="https://www.gov.uk/service-manual">Claim for redundancy and monies owed</a>
                 </nav>
             </div>
         </div>
@@ -109,7 +106,7 @@
 </div>
 
 <main role="main" id="wrapper">
-
+    
     <div id="content">
         <div class="inner-block">
             <div class="phase-banner">
@@ -125,47 +122,63 @@
     
     
     
-<h1 class="form-title heading-large">Claim for redundancy and monies owed</h1>
-<p class="text">
-    </p><p>Apply if you’ve been made redundant and your employer can’t pay you because they are insolvent.</p><p>You should only use this service if:</p><ul class="list-bullet text"><li>your employment has been terminated by your employer</li><li> you have a case reference number  </li> <li> you have your National Insurance number</li> <li> you have an email address</li></ul>
-<p></p>
-<p>
-    If you don't enter any information for more than 30 minutes, then your claim will time out and you'll need to start again. 
-</p>
-
+    <h1 class="form-title heading-large">Verifying your identity</h1>
 
     
     
     <form class="form" method="post">
          <input type="hidden" name="_csrf_token" value="0d6710c9384d9a6e05dbd1d3ef4f10e046b63e73">
          
-            <!-- For User research -->
-        <div class="form-navigation form-group">
+    <p>
+       If you're entitled to <span lang="en-gb">claim</span> we need to verify your identity before we can send your payment.
+</p>
+    <p>
+        </p><div>
             
-            <a class="button" id="next" href="2-options-c.html">
-                Start now
+             <div class="inline">
+                    <div id="suitability_1_label" class="panel-indent">
+					You'll receive your payment faster if you verify your 
+					identity online.</div>
+             </div> 
+             <a class="button" id="Verify" href="verify.html">
+                GOV.UK Verify
             </a>
-
-<p class="panel-indent"> If you are making your claim from a computer in a public place, and you decide to cancel your claim, please use the Cancel and delete my data link. This will protect your privacy. </p> <h2 class="heading-medium">Information that will help you </h2> <ul class="list-bullet text"> <li>your official letter of redundancy </li> <li>your employment details including dates and how much you were paid</li> <li>your holiday entitlement and number of holidays taken</li> <li>details of any money you are owed by the employer</li> <li>copies of any letters sent to or received from your employer or an employment tribunal</li> <li>details of any money you still owe to your employer</li> <li>your bank or building society details (so we can pay you) </li> </ul> 
-<div class="form-group">
-    You can <a href="https://www.gov.uk/calculate-your-redundancy-pay" target="_blank"> calculate your statutory redundancy pay</a> to gain an idea of how much redundancy pay you might be entitled to. 
-    <h2 class="heading-medium">Contact us if you need help using this service</h2><h2 class="heading-small"> Email</h2><div><a href="mailto:redundancypaymentsonline@insolvency.gsi.gov.uk?subject=Query" regarding="" my="" online="" redundancy="" claim"="">redundancypaymentsonline@insolvency.gsi.gov.uk</a> <h2 class="heading-small">Telephone</h2><div class="text">Opening hours are 9am to 5pm, Monday to Friday</div>
 </div>
-
-            <div>
-                
-
-                
-
-            </div>
+    <p>
+        </p>
+        <div class="form-group ">
+            <h2 class="bold-medium">Using this service without Verify</h2>
+             <fieldset class="inline">
+                    <legend id="suitability_3_label" class="form-label">
+					
+					<br>It may take longer to process your payment without Verify. You may be asked to send evidence of your identity and employment status <br>
+					<a href="3-verify-identity.html">Proceed without using Verify</a></legend>
+                    <div id="suitability_3" class="form-group">
+        			</div>
+             </fieldset>
         </div>
-    
-</div></form>
+         
+               <div class="form-navigation form-group">
+            <ul>
+            
+            <li></li>
+                        
+                <li><a href="1-start.html" id="back" class="button-secondary">Back</a></li>
+            
+            
+            </ul>
+        </div>
+
+        <div class="form-group ">
+            
+        </div>
+<!-- For User research -->
+    </form>
+</div>
 
     </div>
-</div>
-
-</main>
+    
+    </main>
 
 
 
@@ -210,6 +223,16 @@
     ga('create', 'UA-52715352-2', 'auto');
     ga('send', 'pageview');
     	
+    $(document).ready(function(){
+    	$('input[value="Yes"]').click(function(){
+    		$("#next").prop("href", "3-other-ways-to-claim.html");
+    	});
+    	$('input[value="No"]').click(function(){
+    		if ($('input[value="Yes"]:checked').length == 0){
+    			$("#next").prop("href", "3-verify-identity.html");
+    		}
+    	});
+    });
 </script>
 
 

@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0055)/claims/start -->
 <html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 
-    <title>RP1 Prototype - Start</title>
+    <title>Prototype - Triage</title>
 
     <script async="" src="../assets/javascripts/analytics.js"></script><script type="text/javascript">
         (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
     </script>
+
+    <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/govuk-template.css"><!--<![endif]-->
@@ -58,10 +60,6 @@
     <!--[if IE 6]><link href="../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">
-
-
 </head>
 
 <body class="js-enabled js-enabled">
@@ -93,8 +91,7 @@
         <div class="header-proposition">
             <div class="content">
                 <nav id="proposition-menu">
-                    <a id="proposition-name" href="https://www.gov.uk/service-manual">
-					Claim for redundancy and monies owed</a>
+                    <a id="proposition-name" href="https://www.gov.uk/service-manual">Redundancy Payments Service</a>
                 </nav>
             </div>
         </div>
@@ -109,63 +106,149 @@
 </div>
 
 <main role="main" id="wrapper">
-
     <div id="content">
         <div class="inner-block">
             <div class="phase-banner">
-                <p>
-                    <strong class="phase-tag">BETA</strong>
-                    This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
-                </p>
+                    <p>
+                        <strong class="phase-tag">BETA</strong>
+                        This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
+                    </p>
             </div>
         </div>
 
         
 <div class="inner-block text">
     
-    
-    
-<h1 class="form-title heading-large">Claim for redundancy and monies owed</h1>
-<p class="text">
-    </p><p>Apply if you’ve been made redundant and your employer can’t pay you because they are insolvent.</p><p>You should only use this service if:</p><ul class="list-bullet text"><li>your employment has been terminated by your employer</li><li> you have a case reference number  </li> <li> you have your National Insurance number</li> <li> you have an email address</li></ul>
-<p></p>
-<p>
-    If you don't enter any information for more than 30 minutes, then your claim will time out and you'll need to start again. 
-</p>
+    <h1 class="form-title heading-large">Confirming your details</h1>
 
-
-    
-    
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="0d6710c9384d9a6e05dbd1d3ef4f10e046b63e73">
-         
-            <!-- For User research -->
-        <div class="form-navigation form-group">
+         <input type="hidden" name="_csrf_token" value="c5a2ce51607d1a392286e2bfc40230e9139df5bf">
+         <fieldset>
             
-            <a class="button" id="next" href="2-options-c.html">
-                Start now
-            </a>
-
-<p class="panel-indent"> If you are making your claim from a computer in a public place, and you decide to cancel your claim, please use the Cancel and delete my data link. This will protect your privacy. </p> <h2 class="heading-medium">Information that will help you </h2> <ul class="list-bullet text"> <li>your official letter of redundancy </li> <li>your employment details including dates and how much you were paid</li> <li>your holiday entitlement and number of holidays taken</li> <li>details of any money you are owed by the employer</li> <li>copies of any letters sent to or received from your employer or an employment tribunal</li> <li>details of any money you still owe to your employer</li> <li>your bank or building society details (so we can pay you) </li> </ul> 
-<div class="form-group">
-    You can <a href="https://www.gov.uk/calculate-your-redundancy-pay" target="_blank"> calculate your statutory redundancy pay</a> to gain an idea of how much redundancy pay you might be entitled to. 
-    <h2 class="heading-medium">Contact us if you need help using this service</h2><h2 class="heading-small"> Email</h2><div><a href="mailto:redundancypaymentsonline@insolvency.gsi.gov.uk?subject=Query" regarding="" my="" online="" redundancy="" claim"="">redundancypaymentsonline@insolvency.gsi.gov.uk</a> <h2 class="heading-small">Telephone</h2><div class="text">Opening hours are 9am to 5pm, Monday to Friday</div>
-</div>
-
-            <div>
-                
-
-                
-
-            </div>
+    <p class="form-label">
+        To begin your claim, please confirm the following details.
+    </p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_title_label" for="claimant_title" class="form-label-bold claimant_title">What is your title?</label>
+            <input id="claimant_title" name="claimant_title" type="text" value=""><br>
         </div>
-    
-</div></form>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_forename_label" for="claimant_forename" class="form-label-bold claimant_forename">What is your first name?</label>
+            <input id="claimant_forename" name="claimant_forename" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_surname_label" for="claimant_surname" class="form-label-bold claimant_surname">What is your surname?</label>
+            <input id="claimant_surname" name="claimant_surname" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_date_of_birth_label" class="form-label-bold">What is your date of birth?</label>
+            <span class="form-hint">For example 20 04 1960</span>
+            <fieldset id="claimant_date_of_birth" class="date-of-birth">
+            <div class="form-group form-group-day">
+	            <label id="claimant_date_of_birth_label.day" for="claimant_date_of_birth.day">Day</label>
+                <input id="claimant_date_of_birth.day" name="claimant_date_of_birth.day" class="date-input" type="text" maxlength="2" size="2" value="">
+            </div>
+            <div class="form-group form-group-month">
+	            <label id="claimant_date_of_birth_label.month" for="claimant_date_of_birth.month">Month</label>
+                <input id="claimant_date_of_birth.month" name="claimant_date_of_birth.month" class="date-input" type="text" maxlength="2" size="2" value="">
+            </div>
+            <div class="form-group form-group-year">
+                <label id="claimant_date_of_birth_label.year" for="claimant_date_of_birth.year">Year</label>
+                <input id="claimant_date_of_birth.year" name="claimant_date_of_birth.year" class="date-input" type="text" maxlength="4" size="4" value="">
+            </div>
+        </fieldset>
+        </div>
+    <p></p>
+    <p>
+         </p><fieldset class="inline ">
+                
+                <label id="claimant_gender_label" class="form-label-bold">What is your gender?</label>
+                <div id="claimant_gender" class="form-group">
+        
+        <label id="claimant_gender_label" for="claimant_gender_Male" class="block-label">
+            <input id="claimant_gender_Male" value="Male" name="claimant_gender" type="radio">
+            Male
+        </label>
+        
+        <label id="claimant_gender_label" for="claimant_gender_Female" class="block-label">
+            <input id="claimant_gender_Female" value="Female" name="claimant_gender" type="radio">
+            Female
+        </label>
+        
+    </div>
+         </fieldset>
+    <p></p>
+    <p class="form-label-bold">
+        Contact Address
+    </p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_address_line_1_label" for="claimant_address_line_1" class="form-label">Building and street</label>
+            <input id="claimant_address_line_1" name="claimant_address_line_1" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <input id="claimant_address_line_2" name="claimant_address_line_2" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <input id="claimant_address_line_3" name="claimant_address_line_3" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_address_town_label" for="claimant_address_town" class="form-label">Town or city</label>
+            <input id="claimant_address_town" name="claimant_address_town" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_address_county_label" for="claimant_address_county" class="form-label">County (optional)</label>
+            <input id="claimant_address_county" name="claimant_address_county" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="claimant_address_postcode_label" for="claimant_address_postcode" class="form-label">Postcode</label>
+            <input id="claimant_address_postcode" name="claimant_address_postcode" type="text" value=""><br>
+        </div>
+    <p></p>
+
+        </fieldset><!-- For User research -->
+        <div class="form-navigation form-group">
+            <ul>
+            
+            <li><a class="button" id="next" href="../4-confirm-details.html">Continue</a></li>
+                  
+                <li><a href="2-options-c.html" id="back" class="button-secondary">Back</a></li>
+            
+            
+            </ul>
+        </div>
+    </form>
+</div>
 
     </div>
-</div>
-
-</main>
+        </main>
 
 
 
