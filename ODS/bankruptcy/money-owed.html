@@ -58,10 +58,9 @@
     
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">  
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/complete.css">
-     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/bootstrapbits.css">
      
 <!-- #BeginEditable "styles" -->
-<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
 
 <style type="text/css">
 .row img{
@@ -82,6 +81,27 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
+}
+.label-default{
+	background:transparent none;
+	color:gray;
+	border:thin gray solid;
+}
+
+.row.well{
+	padding-left:0;
+	padding-right:0;
+}
+.rowbottom {
+	display:block;
+	margin-left:20px;
+}
+.rowbottom hr{
+	margin:0
+}
+.rowbottom > div{
+	margin-top:6px;
+	margin-bottom:6px;
 }
 </style>
 <!-- #EndEditable -->
@@ -153,34 +173,51 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Application 12345678 overview</h1>
+	<h1 class="form-title heading-large">Money you owe</h1>
 		
-<div class="row">
-<div class="col-sm-8">
-	<ul>
-	<li>Your house</li>
-<li>Your profession</li>
-<li>Your property</li>
-<li>
-Income and spending</li>
-<li>
-People you owe money to</li>
-<li>
-Money you owe</li>
-	</ul>
-
-</div>
-
-<div class="col-sm-4">
-
-<ul>
-<li>
-Save application</li>
-
-</ul>
-</div>
-</div>
-	</div>
+		<table style="width: 100%">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Reference</th>
+				<th>Amount</th>
+				<th>Date</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Add</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</tbody>
+		</table>
+		<br><br>
+&nbsp;</div>
 
 	 <!-- #EndEditable -->
 
@@ -236,7 +273,27 @@ Save application</li>
 
 <script type="text/javascript">
 $(document).ready(function() {
-
+	$(".rowbottom").hide();
+	$(".js-section").on("click", function(e){
+		e.preventDefault();
+		if ($(this).hasClass("open") == false){
+			$(".rowbottom").hide();
+			$(".row.well").removeClass("well");
+			$(this).addClass("open");
+			$(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+			var details = $($(this).attr("href")); 
+			details.show();
+			details.parent().addClass("well");
+		}
+		else{
+			$(".rowbottom").hide();
+			$(".row.well").removeClass("well");
+			$(this).removeClass("open");
+			$(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+			var details = $($(this).attr("href")); 
+			details.hide();
+		}
+	});
 });
 
 </script>
