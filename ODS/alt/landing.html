@@ -95,7 +95,6 @@ a:hover, a:active, a:focus{
 }
 .row{
 margin-left:0;
-	margin-right:-100px;
 	min-height:60px;:
 }
 .options{
@@ -163,42 +162,6 @@ tr.bottomrow td{
 }
 
 
-@media (max-width:768px) {
-
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr {  }
-	
-	tr td{
-			border: 0 transparent none !important;
-			margin-right:40px;
-	}
-	td.yesnocolumn{
-	margin-left:50px;
-}
-	td.smallprintcolumn { 
-		/* Behave  like a "row" */
-		position: relative;
-		padding-right:0 !important;
-	margin-right:-20px;
-	}
-	
-	td.smallprintcolumn{
-	width:100%;
-	clear:left;
-	float:left;
-}
-}
 
 
 .row{
@@ -268,8 +231,8 @@ tr.bottomrow td{
 
 <!-- #BeginEditable "content" -->
 
-<div id="content" >
-<div class="row" style="margin-left:15px;margin-right:15px;">
+<div >
+<div class="row">
     <div class="col-sm-8">
     <h1 class="form-title heading-large">Find me a debt solution</h1>
 	   	<div>
@@ -443,67 +406,7 @@ tr.bottomrow td{
 
 <!-- #BeginEditable "scripts" -->
 
-<script width="50" height="50" src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function() {
-
-
-$("[id='q1a']").bootstrapSwitch();
-$("[id='q1b']").bootstrapSwitch();
-$("[id='q2']").bootstrapSwitch();
-$("[id='q3']").bootstrapSwitch();
-$("[id='q4']").bootstrapSwitch();
-$("[id='q5']").bootstrapSwitch();
-$("[id='q6']").bootstrapSwitch();
-$("[id='q7']").bootstrapSwitch();
-
-qstring = getParameterByName("q");
-if (qstring.length > 1)
-{
-$("#" + qstring).bootstrapSwitch('state', true);
-}
-
-
-$("#q1a").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#q1b").bootstrapSwitch('state', false);
-  }
-});
-$("#q1b").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#q1a").bootstrapSwitch('state', false);
-  }
-});
-
-//alert($("#q1").bootstrapSwitch('state'));
-$("#btn-find-debt").on("click", function(e){
-	if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
-		e.preventDefault();
-		alert("Select the debt answers which match your situation to proceed");
-	}
-	else{
-	if ($("#q1b").bootstrapSwitch('state') == false && $("#q2").bootstrapSwitch('state') == false 
-	&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
-	&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
-		$("#btn-find-debt").attr("href", "calc-dro.html");
-		}
-	}
-});
-
-});
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-
-</script>
 
 
 <!-- #EndEditable -->
