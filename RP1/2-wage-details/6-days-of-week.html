@@ -91,7 +91,7 @@
         <div class="header-proposition">
             <div class="content">
                 <nav id="proposition-menu">
-                    <a id="proposition-name" href="https://www.gov.uk/service-manual">Claim for redundancy and monies owed</a>
+                    <a id="proposition-name" href="https://www.gov.uk/service-manual">Redundancy Payments Service</a>
                 </nav>
             </div>
         </div>
@@ -106,7 +106,7 @@
 </div>
 
 <main role="main" id="wrapper">
-    
+
     <div id="content">
         <div class="inner-block">
             <div class="phase-banner">
@@ -122,74 +122,112 @@
     
     
     
-    <h1 class="form-title heading-large">Verifying your identity</h1>
+    <h1 class="form-title heading-large">Days of the week worked</h1>
 
     
     
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="0d6710c9384d9a6e05dbd1d3ef4f10e046b63e73">
+         <input type="hidden" name="_csrf_token" value="093a9e2253a5afbbb791d1589df56cfcb57cf345">
          
     <p>
-       If you're entitled to <span lang="en-gb">claim</span> we need to verify your identity before we can send your payment.
-</p>
+        </p><div class="form-group ">
+            
+            <label id="num_days_worked_label" for="num_days_worked" class="form-label-bold num_days_worked">How many days a week did you normally work?</label>
+            <span class="form-hint" id="num_days_worked_help">Part days count as full days. Enter the average number of days you worked in a week.</span>
+            <input id="num_days_worked" name="num_days_worked" type="text" aria-describedby="num_days_worked_error num_days_worked_help" value="">
+        <br>
+        </div>
+    <p></p>
     <p>
-        </p><div>
+        </p><div class="form-group ">
             
-             <div class="inline">
-                    <div id="suitability_1_label" class="panel-indent">
-					You'll receive your payment faster if you verify your 
-					identity online.</div>
-             </div> 
-             <a class="button" id="Verify" href="https://ida-int.redundancy-payments.org.uk/secure/">
-                GOV.UK Verify
-            </a>
-</div>
-    <p>
-        </p>
-        <div class="form-group ">
-            <h2 class="bold-medium">Using this service without 
-			<span lang="en-gb">GOV.UK </span>Verify</h2>
-			                         <p>Use this option if you don't have your 
-									 <span lang="en-gb">UK </span>passport, 
-									 <span lang="en-gb">photocard </span>driving 
-									 licence <span lang="en-gb">and</span> bank account
-									 <span lang="en-gb">or credit card </span>statement with you.
-              </p>
-             <fieldset class="inline">
-
-
-                    <legend id="suitability_3_label" class="form-label">
-					
-It will take longer to use this service without GOV.UK Verify. <br>
-					<a href="3-verify-identity.html"><span lang="en-gb">Continue</span></a></legend>
-
-
-                    <div id="suitability_3" class="form-group">
-        			</div>
-             </fieldset>
+            <legend id="days_worked_label" class="form-label-bold">Which days did you normally work?</legend>
+            <span class="form-hint" id="days_worked_help">Please select the days you most commonly worked. The total must match your previous answer.</span>
+            <div id="days_worked" class="form-group form-group-compound">
+        
+            <label id="_label" for="days_worked-1" class="block-label">
+                <input id="days_worked-1" name="days_worked-1" value="Monday" type="checkbox">Monday
+            </label>
+        
+            <label id="_label" for="days_worked-2" class="block-label">
+                <input id="days_worked-2" name="days_worked-2" value="Tuesday" type="checkbox">Tuesday
+            </label>
+        
+            <label id="_label" for="days_worked-3" class="block-label">
+                <input id="days_worked-3" name="days_worked-3" value="Wednesday" type="checkbox">Wednesday
+            </label>
+        
+            <label id="_label" for="days_worked-4" class="block-label">
+                <input id="days_worked-4" name="days_worked-4" value="Thursday" type="checkbox">Thursday
+            </label>
+        
+            <label id="_label" for="days_worked-5" class="block-label">
+                <input id="days_worked-5" name="days_worked-5" value="Friday" type="checkbox">Friday
+            </label>
+        
+            <label id="_label" for="days_worked-6" class="block-label">
+                <input id="days_worked-6" name="days_worked-6" value="Saturday" type="checkbox">Saturday
+            </label>
+        
+            <label id="_label" for="days_worked-7" class="block-label">
+                <input id="days_worked-7" name="days_worked-7" value="Sunday" type="checkbox">Sunday
+            </label>
+        
+    </div>
         </div>
-         
-               <div class="form-navigation form-group">
-            <ul>
-            
-            <li></li>
-                        
-                <li><a href="1-start.html" id="back" class="button-secondary">Back</a></li>
-            
-            
-            </ul>
-        </div>
+    <fieldset class="inline">
+            <div class="form-group ">
+                
+                <label id="wages_owed_check_label" class="form-label-bold">Did you work irregular shift patterns?</label>
+                <span class="form-hint">You only need to answer yes if you have extra information you wish to provide.</span>
+                <div id="wages_owed_check" class="form-group">
+        
+        <label id="wages_owed_check_label" for="wages_owed_check_Yes" class="block-label">
+            <input id="wages_owed_check_Yes" value="Yes" name="wages_owed_check" type="radio">
+            Yes
+        </label>
+        
+        <label id="wages_owed_check_label" for="wages_owed_check_No" class="block-label">
+            <input id="wages_owed_check_No" value="No" name="wages_owed_check" type="radio">
+            No
+        </label>
+        
+    </div>
+            </div>
+        </fieldset>
 
-        <div class="form-group ">
-            
-        </div>
 <!-- For User research -->
+        <div class="form-navigation form-group">
+            
+            <div>
+                
+                    <a class="button" id="next" href="7-summary-wage.html">Continue</a>                
+            </div>
+            <div>
+                <br>
+            </div>
+            
+            <div>
+                
+                 <a style="padding-right: 30px" href="5-overtime.html" id="back">Back</a>
+                
+                
+                    <a href="/claims/cancel-and-delete?return_url=/claims/weekdays-worked" id="cancel">Cancel and delete all details</a>
+                
+            </div>
+        </div>
     </form>
 </div>
 
     </div>
     
-    </main>
+    
+    
+    
+    
+    
+     
+                                            </main>
 
 
 
@@ -234,16 +272,6 @@ It will take longer to use this service without GOV.UK Verify. <br>
     ga('create', 'UA-52715352-2', 'auto');
     ga('send', 'pageview');
     	
-    $(document).ready(function(){
-    	$('input[value="Yes"]').click(function(){
-    		$("#next").prop("href", "3-other-ways-to-claim.html");
-    	});
-    	$('input[value="No"]').click(function(){
-    		if ($('input[value="Yes"]:checked').length == 0){
-    			$("#next").prop("href", "3-verify-identity.html");
-    		}
-    	});
-    });
 </script>
 
 
