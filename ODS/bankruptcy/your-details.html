@@ -60,9 +60,10 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+
 .row img{
 width:60px;
 text-align:right;
@@ -81,31 +82,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-.label-default{
-	background:transparent none;
-	color:gray;
-	border:thin gray solid;
-}
-
-.row.well{
-	padding-left:0;
-	padding-right:0;
-}
-.rowbottom {
-	display:block;
-	margin-left:20px;
-}
-.rowbottom hr{
-	margin:0
-}
-.rowbottom > div{
-	margin-top:6px;
-	margin-bottom:6px;
-}
-
-.btn-info{
-	color:#fff !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -173,67 +149,98 @@ display:block;
 <!-- #BeginEditable "content" -->
 
  	
-	<div style="display:block; margin-left:30px !important">
+	<div class="inner-block text">
 	
 	
 	
-	<h1 class="form-title heading-large">Money you owe</h1>
-		
-		<table style="width: 100%">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Reference</th>
-				<th>Amount</th>
-				<th>Date</th>
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr style="border:0">
-				<td colspan="5">
-				<a href="#pnl-type" data-toggle="collapse"><i class="glyphicon glyphicon-plus"></i> Add</a>
-				<div id="pnl-type" class="collapse">
-				<p>What kind of debt are you adding?</p>
-				<a href="add-creditor.html" class="btn btn-info" role="button">Credit card</a>	
-				<a href="#" class="btn btn-info" role="button">Loan</a>
-				<a href="#" class="btn btn-info" role="button">Mortgage</a>
-				<a href="#" class="btn btn-info" role="button">Personal finance</a>
-				<a href="#" class="btn btn-info" role="button">Lease arrangement</a>
-				<a href="#" class="btn btn-info" role="button">Payment arrears</a>
-				</div>
-				</td>
-			</tr>
-
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-		</tbody>
-		</table>
-		<br><br>
-		
+	<h1 class="form-title heading-large">Your Details</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	<p>
+	<div class="form-group ">
+	
+	<fieldset class="inline">
+	<legend id="title_label" class="form-label-bold">Title</legend>
+	<div id="title" class="form-group">
+	
+	<label id="title_label0" for="title_Mr." class="block-label">
+	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
+	Mr.
+	</label>
+	
+	<label id="title_label1" for="title_Mrs." class="block-label">
+	<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
+	Mrs.
+	</label>
+	
+	<label id="title_label2" for="title_Miss" class="block-label">
+	<input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title_error title_help">
+	Miss
+	</label>
+	
+	<label id="title_label3" for="title_Ms." class="block-label">
+	<input id="title_Ms." value="Ms." name="title" type="radio" aria-describedby="title_error title_help">
+	Ms.
+	</label>
+	
+	</div>
+	</fieldset>
+	</div>
+	<div class="form-group ">
+	
+	<label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+	<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Last name</label>
+	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<fieldset id="date_of_birth" class="date-of-birth">
+	<legend id="date_of_birth_label" class="form-label-bold">Date of Birth</legend>
+	<span class="form-hint" id="date_of_birth_help"></span>
+	<div class="form-group form-group-day">
+		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
+	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-month">
+		 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+	<input id="date_of_birth.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-year">
+	<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+	<input id="date_of_birth.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	</fieldset>
+	</div>
+	<div class="form-group ">
+	
+	<label id="email_label" for="email" class="form-label-bold email">Email</label>
+	<input id="email" name="email" type="text" aria-describedby="email_error email_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="email_confirmation_label" for="email_confirmation" class="form-label-bold email_confirmation">Please confirm your email</label>
+	<input id="email_confirmation" name="email_confirmation" type="text" aria-describedby="email_confirmation_error email_confirmation_help" value="" />
+	<br/>
+	</div>
+	</p>
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
 	<div>
 
 
-	<a href="overview.html?section5=complete" id="next" class="button">Continue</a>
+	<a href="create-identification.html" id="next" class="button">Continue</a>
 	
 	</div>
 	<div>
@@ -242,11 +249,12 @@ display:block;
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="overview.html?section5=inprogress" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="start.html" id="back">Back</a>&nbsp;
 	
 	</div>
-
-&nbsp;</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
@@ -299,32 +307,11 @@ display:block;
 <script type="text/javascript" src="../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type="text/javascript" src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function(){
-
-var amount = getParameterByName("amount");
-var name = getParameterByName("name");
-var ref = "1234567891234"; //getParameterByName("ref");
-var date = "1 Jan 2014"; //getParameterByName("ref");
-var deletebuttonhtml  = "<a href='#' class='btn'>Delete</a>";
-
-if (name && name.length > 0){
-
-	var htmltoadd = "<tr><td>" + name + "</td><td>" + ref + "</td><td>" + amount + "</td><td>" + date + "</td><td>" + deletebuttonhtml + "</td></tr>";
-
-    $("table tbody").prepend(htmltoadd);
-}
+$(document).ready(function() {
 
 });
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
 </script>
 

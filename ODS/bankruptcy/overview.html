@@ -180,16 +180,17 @@ display:block;
 	<ul>
 		<li class="row">
 		<div class="rowtop">
-	<span class="col-sm-6"><a href="#section1" class="js-section"><i class="glyphicon glyphicon-triangle-right"></i> You and your home</a></span>
+	<span class="col-sm-6"><a href="#details1" class="js-section">
+	<i class="glyphicon glyphicon-triangle-right"></i> Personal details</a></span>
 	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#">Add</a></span>
+	<span class="col-sm-3"><a href="personal-names.html" class="edit">Add</a></span>
 		</div>
 		<div class="clearfix"></div>
-		<div class="rowbottom" id="section1">
+		<div class="rowbottom" id="details1">
 		
 	<div class="row">
 	<div class="col-sm-6">
-Date of birth
+Names you are known by
 	</div>
 	<div class="col-sm-6">
 	</div>
@@ -197,7 +198,7 @@ Date of birth
 	<hr>
 	<div class="row">
 	<div class="col-sm-6">
-Place of birth
+Where you have lived
 	</div>
 	<div class="col-sm-6">
 	</div>
@@ -214,7 +215,7 @@ People you live with
 	<hr>
 	<div class="row">
 	<div class="col-sm-6">
-Where you have lived
+Place of birth and national insurance number
 	</div>
 	<div class="col-sm-6">
 	</div>
@@ -228,13 +229,13 @@ Where you have lived
 
 		<li class="row">
 				<div class="rowtop">
-	<span class="col-sm-6"><a href="#section2" class="js-section">
+	<span class="col-sm-6"><a href="#details2" class="js-section">
 	<i class="glyphicon glyphicon-triangle-right"></i> Your profession</a></span>
 	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#">Add</a></span>
+	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
 	</div>
 		<div class="clearfix"></div>
-		<div class="rowbottom" id="section2">
+		<div class="rowbottom" id="details2">
 	<div class="row">
 	<div class="col-sm-6">
 National insurance number
@@ -283,26 +284,83 @@ Directorships
 	<li class="row">
 	<span class="col-sm-6"><i class="glyphicon glyphicon-triangle-right"></i> Your property</span>
 	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#">Add</a></span>
+	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
 	</li>
 	<li class="row">
 	<span class="col-sm-6"><i class="glyphicon glyphicon-triangle-right"></i> Income and spending</span>
 	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#">Add</a></span>
+	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
 	</li>
-	<li class="row">
-	<span class="col-sm-6"><i class="glyphicon glyphicon-triangle-right"></i> Money you owe</span>
-	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="money-owed.html">Add</a></span>
+<li class="row" id="section5">
+
 	<!--
 		contact details of any creditor for debt incurred outside England &amp; Wales
 		-->
 
+
+		<div class="rowtop">
+	<span class="col-sm-6"><a href="#details5" class="js-section">
+	<i class="glyphicon glyphicon-triangle-right"></i> Money you owe</a></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="money-owed.html" class="edit">Add</a></span>
+		</div>
+		<div class="clearfix"></div>
+		<div class="rowbottom" id="details5">
+		
+	<div class="row">
+	<div class="col-sm-6">
+Types of debt
+	</div>
+	<div class="col-sm-6">
+	</div>
+	</div>
+	<hr>
+	<div class="row">
+	<div class="col-sm-6">
+Reference number
+	</div>
+	<div class="col-sm-6">
+	</div>
+	</div>
+	<hr>
+	<div class="row">
+	<div class="col-sm-6">
+Name of lender or company
+	</div>
+	<div class="col-sm-6">
+	</div>
+
+	</div>
+	<hr>
+	<div class="row">
+	<div class="col-sm-6">
+When the debt started
+	</div>
+	<div class="col-sm-6">
+	</div>
+	
+	<hr>
+	</div>
+
+<div class="row">
+	<div class="col-sm-6">
+Amount
+	</div>
+	<div class="col-sm-6">
+	</div>
+	
+
+	</div>
+
+	</div>
+
+
 	</li>
+	
 	<li class="row">
 	<span class="col-sm-6"><i class="glyphicon glyphicon-triangle-right"></i> Other information</span>
 	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#">Add</a></span>
+	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
 	</li>
 
 	</ul>
@@ -395,6 +453,35 @@ Directorships
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+
+// mark sections as completed
+
+var section5 = getParameterByName("section5");
+
+if (section5 && section5.length > 0){
+// change the colour of the button
+	if (section5 == "inprogress"){
+		$("#section5 .label").removeClass("label-default").addClass("label-warning");
+		$("#section5 .label").text("In progress");
+		$("#section5 .edit").text("Edit");
+		$("#section5 .edit").prop("href", "money-owed.html?amount=999.99&name=Barclaycard");
+
+	}
+	
+	if (section5 == "complete"){
+		$("#section5 .label").removeClass("label-default").addClass("label-success");
+		$("#section5 .label").text("Complete");
+		$("#section5 .edit").text("Edit");
+		$("#section5 .edit").prop("href", "money-owed.html?amount=999.99&name=Barclaycard");
+	}
+
+}
+
+
+
+
+// open and close sections of the overview and add and remove arrows
 	$(".rowbottom").hide();
 	$(".js-section").on("click", function(e){
 		e.preventDefault();
@@ -417,6 +504,15 @@ $(document).ready(function() {
 		}
 	});
 });
+
+
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 </script>
 
