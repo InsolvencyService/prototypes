@@ -64,7 +64,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap-switch.min.css">
 
-
 <style type="text/css">
 
 .row > div > img,
@@ -174,7 +173,7 @@ tr.bottomrow td{
 }
 
 #optionsarea .well{
-
+	height: 650px;
 }
 </style>
 <!-- #EndEditable -->
@@ -248,7 +247,7 @@ tr.bottomrow td{
 <div >
 <div class="row">
     <div class="col-sm-8">
-    <h1 class="form-title heading-large">Debt help</h1>
+    <h1 class="form-title heading-large">Find me a debt solution</h1>
 	   	<div>
 	   	<p>If you live in England and Wales and are struggling due to debt, find out about debt relief options that could help you.</p>
 		</div>
@@ -264,21 +263,21 @@ tr.bottomrow td{
 </div>
 
   <div class="row">
-  <div class="col-sm-12" id="filters">
-  <span>Would you like to find out about</span>
-
-   <a class="btn btn-default checked" href="#writeoff"><i class="glyphicon glyphicon-check"></i> Writing off debt</a>
- <a class="btn btn-default checked" href="#repay"><i class="glyphicon glyphicon-check"></i> Repaying debt</a>
-   <a  class="btn btn-default checked" href="#government"><i class="glyphicon glyphicon-check"></i> Government services</a>
-   <a  class="btn btn-default checked" href="#commercial"><i class="glyphicon glyphicon-check"></i> Commercial services</a>
-   
-   </div>
+  <h3 class="col-sm-3 text-right">Filter by</h3>
+  <span class="col-sm-9"><span class="label label-info">Write off debt</span> 
+  Write off your debt and prevent future contact from creditors</span>
+  </div>
+  
+  <div class="row">
+<span class="col-sm-3"></span>
+  <span class="col-sm-9"><span class="label label-default">Repay</span> Pay debt back in installments</span> 
+	 </div>
   </div>
  	      		
 
   <div class="row" id="optionsarea">
 	
-        <div class="col-sm-6 debtoption writeoff government" id="dro">
+        <div class="col-sm-6">
         	<div class="well">
         		<h2 class="text-warning">Debt Relief Order
         		<span  style="font-size:12px" class="label label-info pull-right">Write off debt</span></h2>
@@ -298,7 +297,7 @@ tr.bottomrow td{
         		<a href="../landing.html" class="btn btn-primary btn-lg" ><i class="icon-ok"></i> Check eligibility</a></p>
         	</div>
         </div>
-        <div class="col-sm-6 debtoption writeoff government" id="bankruptcy">
+        <div class="col-sm-6">
         	<div class="well">
         		<h2 class="text-info">Bancruptcy
         		<span style="font-size:12px" class="label label-info pull-right">Write off debt</span></h2>
@@ -322,7 +321,7 @@ tr.bottomrow td{
         </div>
         
         
-        	<div class="col-sm-6 debtoption writeoff repay commercial" id="iva">
+        	<div class="col-sm-6">
             <div class="well">
         		<h2 class="text-muted">Individual Voluntary Arrangements
         		       		<span style="font-size:12px" class="label label-info pull-right">Write off debt</span>
@@ -354,7 +353,7 @@ tr.bottomrow td{
         	</div>
         </div>
         
-        	        <div class="col-sm-6 debtoption repay commercial" id="dmp">
+        	        <div class="col-sm-6">
         	<div class="well">
         		<h2 class="text-info">Debt management plans
         		       		<span style="font-size:12px" class="label label-default pull-right">Repay</span>
@@ -394,13 +393,12 @@ tr.bottomrow td{
 
 
 
-</div>
-
-
-
 		<!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -446,70 +444,9 @@ tr.bottomrow td{
 <script type="text/javascript" src="../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type="text/javascript" src="../assets/js/tag/tagdisplay.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#filters a").on("click", function(e){
-		e.preventDefault();
 
-		if ($(this).hasClass("checked") == true && $(this).hasClass("disabled") == false){		
-			$(this).find("i").removeClass("glyphicon-check").addClass("glyphicon-unchecked");
-			$(this).removeClass("checked");
-			if ($("a.checked").length == 1){
-				$("a.checked").addClass("disabled");
-			}
-			$(this).addClass("unchecked");
-		
-		if ($(this).attr("href") == "#writeoff"){
-				$("#dro").hide();
-				$("#bankruptcy").hide();
-				$("a[href='#government']").removeClass("checked").find("i").removeClass("glyphicon-check").addClass("glyphicon-unchecked");
-			}
-			if ($(this).attr("href") == "#repay"){
-				$("#dmp").hide();
-				$("#iva").hide();
-			}
 
-			if ($(this).attr("href") == "#commercial"){
-				$("#dmp").hide();
-			}
-			if ($(this).attr("href") == "#government"){
-				$("#dro").hide();
-				$("#bankruptcy").hide();
-			}
-		}		
-		else
-		{
-				e.preventDefault();
-				$(this).find("i").addClass("glyphicon-check").removeClass("glyphicon-unchecked");
-				$(this).removeClass("unchecked").addClass("checked");
-				$("a").removeClass("disabled");
-				
-				if ($(this).attr("href") == "#writeoff"){
-					$("#dro").show();
-					$("#bankruptcy").show();
-					$("a[href='#government']").addClass("checked").find("i").addClass("glyphicon-check").removeClass("glyphicon-unchecked");
-
-				}
-				if ($(this).attr("href") == "#repay"){
-					$("#dmp").show();
-					$("#iva").show();
-				}
-	
-				if ($(this).attr("href") == "#commercial"){
-					$("#dmp").show();
-				}
-				if ($(this).attr("href") == "#government"){
-					$("#dro").show();
-					$("#bankruptcy").show();
-				}
-		}
-
-	});
-
-});
-</script>
 
 <!-- #EndEditable -->
     
