@@ -178,12 +178,12 @@ display:block;
 <div class="row">
 <div class="col-sm-8">
 	<ul>
-		<li class="row">
+		<li class="row" id="section1">
 		<div class="rowtop">
 	<span class="col-sm-6"><a href="#details1" class="js-section">
 	<i class="glyphicon glyphicon-triangle-right"></i> Personal details</a></span>
 	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="section1/personal-names.html" class="edit">Add</a></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Add</a></span>
 		</div>
 		<div class="clearfix"></div>
 		<div class="rowbottom" id="details1">
@@ -302,7 +302,7 @@ Directorships
 	<span class="col-sm-6"><a href="#details5" class="js-section">
 	<i class="glyphicon glyphicon-triangle-right"></i> Money you owe</a></span>
 	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="money-owed.html" class="edit">Add</a></span>
+	<span class="col-sm-3"><a href="section5/money-owed.html" class="edit">Add</a></span>
 		</div>
 		<div class="clearfix"></div>
 		<div class="rowbottom" id="details5">
@@ -464,7 +464,7 @@ if (section5 && section5.length > 0){
 		$("#section5 .label").removeClass("label-default").addClass("label-warning");
 		$("#section5 .label").text("In progress");
 		$("#section5 .edit").text("Edit");
-		$("#section5 .edit").prop("href", "money-owed.html?amount=999.99&name=Barclaycard");
+		$("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
 
 	}
 	
@@ -472,9 +472,21 @@ if (section5 && section5.length > 0){
 		$("#section5 .label").removeClass("label-default").addClass("label-success");
 		$("#section5 .label").text("Complete");
 		$("#section5 .edit").text("Edit");
-		$("#section5 .edit").prop("href", "money-owed.html?amount=999.99&name=Barclaycard");
+		$("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
 	}
+}
 
+var section1 = getParameterByName("section1");
+
+if (section1 && section1.length > 0){
+// change the colour of the button
+	
+	if (section1 == "complete"){
+		$("#section1 .label").removeClass("label-default").addClass("label-success");
+		$("#section1 .label").text("Complete");
+		$("#section1 .edit").text("Edit");
+		//$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+	}
 }
 
 
