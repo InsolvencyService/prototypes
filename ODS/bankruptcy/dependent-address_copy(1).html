@@ -60,9 +60,10 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+
 .row img{
 width:60px;
 text-align:right;
@@ -81,27 +82,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-.label-default{
-	background:transparent none;
-	color:gray;
-	border:thin gray solid;
-}
-
-.row.well{
-	padding-left:0;
-	padding-right:0;
-}
-.rowbottom {
-	display:block;
-	margin-left:20px;
-}
-.rowbottom hr{
-	margin:0
-}
-.rowbottom > div{
-	margin-top:6px;
-	margin-bottom:6px;
 }
 </style>
 <!-- #EndEditable -->
@@ -169,220 +149,129 @@ display:block;
 <!-- #BeginEditable "content" -->
 
  	
-	<div style="display:block; margin-left:30px !important">
+	<div class="inner-block text">
 	
 	
 	
-	<h1 class="form-title heading-large">Application 12345678 overview</h1>
-		
-<div class="row">
-<div class="col-sm-8">
-	<ul>
-		<li class="row">
-		<div class="rowtop">
-	<span class="col-sm-6"><a href="#details1" class="js-section">
-	<i class="glyphicon glyphicon-triangle-right"></i> Personal details</a></span>
-	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="section1/personal-names.html" class="edit">Add</a></span>
-		</div>
-		<div class="clearfix"></div>
-		<div class="rowbottom" id="details1">
-		
-	<div class="row">
-	<div class="col-sm-6">
-Names you are known by
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-Where you have lived
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-People you live with
-	</div>
-	<div class="col-sm-6">
-	</div>
-
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-Place of birth and national insurance number
-	</div>
-	<div class="col-sm-6">
-	</div>
-	<hr>
-	</div>
-
-	</div>
-
+	<h1 class="form-title heading-large">Add your dependent who lives elsewhere</h1>
 	
-	</li>
-
-		<li class="row">
-				<div class="rowtop">
-	<span class="col-sm-6"><a href="#details2" class="js-section">
-	<i class="glyphicon glyphicon-triangle-right"></i> Your profession</a></span>
-	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	<div class="form-group ">
+	
+	<label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+	<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+	<br/>
 	</div>
-		<div class="clearfix"></div>
-		<div class="rowbottom" id="details2">
-	<div class="row">
-	<div class="col-sm-6">
-National insurance number
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-
-	<div class="row">
-	<div class="col-sm-6">
-Are you self employed?
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-Your employer
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-Date you started
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-Directorships
-	</div>
-	<div class="col-sm-6">
+	<div class="form-group ">
+	
+	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Last name</label>
+	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+	<br/>
 	</div>
 
-	</div>
-	<hr>
-	</div>
-
-	</li>
-	<li class="row">
-	<span class="col-sm-6"><i class="glyphicon glyphicon-triangle-right"></i> Your property</span>
-	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
-	</li>
-	<li class="row">
-	<span class="col-sm-6"><i class="glyphicon glyphicon-triangle-right"></i> Income and spending</span>
-	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
-	</li>
-<li class="row" id="section5">
-
-	<!--
-		contact details of any creditor for debt incurred outside England &amp; Wales
-		-->
-
-
-		<div class="rowtop">
-	<span class="col-sm-6"><a href="#details5" class="js-section">
-	<i class="glyphicon glyphicon-triangle-right"></i> Money you owe</a></span>
-	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="money-owed.html" class="edit">Add</a></span>
-		</div>
-		<div class="clearfix"></div>
-		<div class="rowbottom" id="details5">
-		
-	<div class="row">
-	<div class="col-sm-6">
-Types of debt
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-Reference number
-	</div>
-	<div class="col-sm-6">
-	</div>
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-Name of lender or company
-	</div>
-	<div class="col-sm-6">
-	</div>
-
-	</div>
-	<hr>
-	<div class="row">
-	<div class="col-sm-6">
-When the debt started
-	</div>
-	<div class="col-sm-6">
+<div class="form-group ">
+	
+	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Age</label>
+	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+	<br/>
 	</div>
 	
-	<hr>
-	</div>
-
-<div class="row">
-	<div class="col-sm-6">
-Amount
-	</div>
-	<div class="col-sm-6">
+	
+	<div class="form-group ">
+	<p id="title_label" class="form-label-bold">What is the reason for their dependenace on you?</p>
+	
+	<fieldset class="inline">
+	<div id="title" class="form-group">
+	
+	<label id="title_label0" for="title_Mr." class="block-label">
+	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
+	I am their parent
+	</label>
+	
+	<label id="title_label1" for="title_Mrs." class="block-label">
+	<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
+	I am their carer
+	</label>
+	
+	
 	</div>
 	
-
-	</div>
-
-	</div>
-
-
-	</li>
+	<div class="form-group ">
 	
-	<li class="row">
-	<span class="col-sm-6"><i class="glyphicon glyphicon-triangle-right"></i> Other information</span>
-	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
-	<span class="col-sm-3"><a href="#" class="edit">Add</a></span>
-	</li>
+	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Other reason</label>
+	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+	<br/>
+	</div>
 
-	</ul>
+	</fieldset>
+	</div>
 
-</div>
 
-<div class="col-sm-4" style="padding-top:0">
-		<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-		<p><a href="#">Save application</a></p>
-		<p><a href="#">Print</a></p>
-		<p><a href="#">Delete</a></p>
-		</div>
+	<div class="form-group ">
 
-</div>
+	
+	<fieldset class="inline">
+	
+    <p class="form-label-bold">
+What is their residential address?
+    </p>
+    <div class="form-group ">
+        
+        <label id="employers_address_line_1_label" for="employers_address_line_1" class="form-label">Building and Street</label>
+        <input id="employers_address_line_1" name="employers_address_line_1" type="text" value=""><br>
+    </div>
+    <p></p>
+    <p>
+    </p><div class="form-group ">
 
-<br>
-<div class="form-navigation form-group">
+        
+        <input id="employers_address_line_2" name="employers_address_line_2" type="text" value=""><br>
+    </div>
+    <p></p>
+    <p>
+    </p><div class="form-group ">
+        
+        <input id="employers_address_line_3" name="employers_address_line_3" type="text" value=""><br>
+    </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_town_label" for="employers_address_town" class="form-label">Town</label>
+            <input id="employers_address_town" name="employers_address_town" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_county_label" for="employers_address_county" class="form-label">County</label>
+            <input id="employers_address_county" name="employers_address_county" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_postcode_label" for="employers_address_postcode" class="form-label">Postcode</label>
+            <input id="employers_address_postcode" name="employers_address_postcode" type="text" value=""><br>
+        </div>
+    <p></p>
+
+        </fieldset>	
+	
+	
+	
+	<p><br></p>
+	<!-- For User research -->
+	<div class="form-navigation form-group" style="margin-top:20px">
 	
 	<div>
 
 
-	<a href="#" id="next" class="button">Continue</a>
+	<a href="personal-household.html?name=Susan" id="next" class="button">Continue</a>
 	
 	</div>
 	<div>
@@ -391,12 +280,11 @@ Amount
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="identification-created.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="personal-household.html" id="back">Back</a>&nbsp;
 	
 	</div>
 	</div>
-
-</div>
+	</form>
 	</div>
 
 	 <!-- #EndEditable -->
@@ -454,64 +342,7 @@ Amount
 <script type="text/javascript">
 $(document).ready(function() {
 
-// mark sections as completed
-
-var section5 = getParameterByName("section5");
-
-if (section5 && section5.length > 0){
-// change the colour of the button
-	if (section5 == "inprogress"){
-		$("#section5 .label").removeClass("label-default").addClass("label-warning");
-		$("#section5 .label").text("In progress");
-		$("#section5 .edit").text("Edit");
-		$("#section5 .edit").prop("href", "money-owed.html?amount=999.99&name=Barclaycard");
-
-	}
-	
-	if (section5 == "complete"){
-		$("#section5 .label").removeClass("label-default").addClass("label-success");
-		$("#section5 .label").text("Complete");
-		$("#section5 .edit").text("Edit");
-		$("#section5 .edit").prop("href", "money-owed.html?amount=999.99&name=Barclaycard");
-	}
-
-}
-
-
-
-
-// open and close sections of the overview and add and remove arrows
-	$(".rowbottom").hide();
-	$(".js-section").on("click", function(e){
-		e.preventDefault();
-		if ($(this).hasClass("open") == false){
-			$(".rowbottom").hide();
-			$(".row.well").removeClass("well");
-			$(this).addClass("open");
-			$(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-			var details = $($(this).attr("href")); 
-			details.show();
-			details.parent().addClass("well");
-		}
-		else{
-			$(".rowbottom").hide();
-			$(".row.well").removeClass("well");
-			$(this).removeClass("open");
-			$(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
-			var details = $($(this).attr("href")); 
-			details.hide();
-		}
-	});
 });
-
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
 </script>
 
