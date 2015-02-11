@@ -174,7 +174,15 @@ tr.bottomrow td{
 }
 
 #optionsarea .well{
-
+	padding-top:10px;
+}
+#optionsarea .well h2{
+	font-size:24px;
+}
+#optionsarea .label{
+font-size:12px;
+padding-top:5px;
+padding-bottom:3px;
 }
 </style>
 <!-- #EndEditable -->
@@ -265,12 +273,12 @@ tr.bottomrow td{
 
   <div class="row">
   <div class="col-sm-12" id="filters">
-  <span>Would you like to find out about</span>
+  <span>Show options for:</span>
 
    <a class="btn btn-default checked" href="#writeoff"><i class="glyphicon glyphicon-check"></i> Writing off debt</a>
- <a class="btn btn-default checked" href="#repay"><i class="glyphicon glyphicon-check"></i> Repaying debt</a>
+ 	<a class="btn btn-default checked" href="#repay" style="color:red"><i class="glyphicon glyphicon-check"></i> Repaying debt</a>
    <a  class="btn btn-default checked" href="#government"><i class="glyphicon glyphicon-check"></i> Government services</a>
-   <a  class="btn btn-default checked" href="#commercial"><i class="glyphicon glyphicon-check"></i> Commercial services</a>
+   <a  class="btn btn-default checked" href="#commercial" style="color:orange"><i class="glyphicon glyphicon-check"></i> Commercial services</a>
    
    </div>
   </div>
@@ -281,7 +289,9 @@ tr.bottomrow td{
         <div class="col-sm-6 debtoption writeoff government" id="dro">
         	<div class="well">
         		<h2 class="text-warning">Debt Relief Order
-        		<span  style="font-size:12px" class="label label-info pull-right">Write off debt</span></h2>
+        		<span  class="label label-primary pull-right">Government service</span>
+        		<span  class="label label-info pull-right" style="margin-right:5px;">Write off debt</span></h2>
+<div class="clearfix"></div>
         		<ul>
 
 <li>Suitable if you owe less than £15,000</li>
@@ -295,7 +305,7 @@ tr.bottomrow td{
     
          		<hr>
 
-        		<h3>Standard one off charge</h3>
+        		<h3>Standard one off charge </h3>
  
         		<hr> 
         		<div class="row"  style="margin-left:0">
@@ -311,7 +321,9 @@ tr.bottomrow td{
         <div class="col-sm-6 debtoption writeoff government" id="bankruptcy">
         	<div class="well">
         		<h2 class="text-info">Bancruptcy
-        		<span style="font-size:12px" class="label label-info pull-right">Write off debt</span></h2>
+        		<span  class="label label-primary pull-right">Government service</span>
+        		<span  class="label label-info pull-right" style="margin-right:5px;">Write off debt</span></h2>
+<div class="clearfix"></div>
         		<ul>
 
 <li>Suitable if you owe more than £15,000</li>
@@ -346,9 +358,11 @@ tr.bottomrow td{
         	<div class="col-sm-6 debtoption writeoff repay commercial" id="iva">
             <div class="well">
         		<h2 class="text-muted">Individual Voluntary Arrangements
-        		       		<span style="font-size:12px" class="label label-info pull-right">Write off debt</span>
-        		       		<span style="font-size:12px" class="label label-default pull-right">Repay</span>
-        		       		</h2>
+        		<span  class="label label-warning pull-right">Commercial service</span>
+        		       		<span class="label label-info pull-right" style="margin-right:5px;">Write off debt</span>
+        		       		<span class="label label-danger pull-right" style="margin-right:5px;">Repayment</span>
+        		</h2>
+<div class="clearfix"></div>
         		<ul>
         		<li>Use extra income and assets to pay off your debts</li>
 <li>
@@ -382,10 +396,12 @@ Work directly with an Insolvency Practitioner </li>
         	        <div class="col-sm-6 debtoption repay commercial" id="dmp">
         	<div class="well">
         		<h2 class="text-info">Debt management plans
-        		       		<span style="font-size:12px" class="label label-default pull-right">Repay</span>
+        		<span  class="label label-warning pull-right">Commercial service</span>
+        		       		<span class="label label-danger pull-right" style="margin-right:5px;">Repayment</span>
+
         		       		</h2>
 
-
+<div class="clearfix"></div>
         		<ul>
         		<li>Temporary plan to pay back what you owe</li>
         			<li>
