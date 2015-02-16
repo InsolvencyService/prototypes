@@ -232,8 +232,8 @@ padding-top:0px;
 $(document).ready(function() {
 
 
-qstring = getParameterByName("chosen");
-if (qstring.length > 1)
+var qstring = getParameterByName("chosen");
+if (qstring  && qstring.length > 1)
 {
 	$("#intromessage").text("You told us you wished to move forwards to file for bankruptcy");
 	$("#btn-back").prop("href", "know-which-debt-solution.html");

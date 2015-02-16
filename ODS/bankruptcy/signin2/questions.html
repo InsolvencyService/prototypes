@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -63,25 +63,42 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+/* Credit to bootsnipp.com for the css for the color graph */
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+form .dropdown-toggle{
+	display:block;
+	width: 300px;
+	margin-top:20px;
+	text-align:left;
+}
+form .dropdown-toggle .text-left{
+	font-weight:bold;
+	text-align:left;
+}
 
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
+.answerarea{
+	
+	display:block;
+	margin-top:20px;
 }
 
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
+.form-control{
+	font-size:19px;
+	height:40px;
+}
+.col-sm-2.form-label{
+	padding-left: 30px;
+font-size: 14px;
+padding-top: 10px;
 }
 </style>
 <!-- #EndEditable -->
@@ -146,132 +163,127 @@ display:block;
 	
 
 
+	</div>
+	
+
+
 <!-- #BeginEditable "content" -->
 
- 	
-	<div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Add your dependent who lives elsewhere</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<div class="form-group ">
-	
-	<label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
-	<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Last name</label>
-	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
-	<br/>
-	</div>
+	<div id="content" >
 
-<div class="form-group ">
+	<div>
 	
-	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Age</label>
-	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
-	<br/>
-	</div>
-	
-	
-	<div class="form-group ">
-	<p id="title_label" class="form-label-bold">What is the reason for their dependenace on you?</p>
-	
-	<fieldset class="inline">
-	<div id="title" class="form-group">
-	
-	<label id="title_label0" for="title_Mr." class="block-label">
-	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
-	I am their parent
-	</label>
-	
-	<label id="title_label1" for="title_Mrs." class="block-label">
-	<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
-	I am their carer
-	</label>
-	
-	
-	</div>
-	
-	<div class="form-group ">
-	
-	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Other reason</label>
-	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
-	<br/>
-	</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    
+    <h1 class="form-title heading-large">Apply for bankruptcy</h1>
+		<form role="form">
+		<p class="form-label-bold">
+		Choose your security questions
+		</p>
+		<div class="form-hint">Select 3 questions you can answer</div>
+<div>
+  <div>
+	  <select class="form-control" id="question1">
+	  	<option disabled="disabled" selected="selected">Choose question 1</option>
+	  	<option>What is your National Insurance number?</option>
+	  	<option>What is your bank account sort code?</option>
+	  	<option>What is your passport number?</option>
+  	
+	  </select> 
+  </div>
 
-	</fieldset>
-	</div>
-
-
-	<div class="form-group ">
-
-	
-	<fieldset class="inline">
-	
-    <p class="form-label-bold">
-What is their residential address?
-    </p>
-    <div class="form-group ">
-        
-        <label id="employers_address_line_1_label" for="employers_address_line_1" class="form-label">Building and Street</label>
-        <input id="employers_address_line_1" name="employers_address_line_1" type="text" value=""><br>
+  <div id="answer1" style="display:none" class="answerarea">
+  	<div class="row">
+    	<span class="col-sm-2 form-label">Answer 1</span>
+    	<input type="text" class="col-sm-10" style="width:400px;">
     </div>
-    <p></p>
-    <p>
-    </p><div class="form-group ">
+  </div>
+  
+   </div>
+  
+  
+  <br>
+  
+  <div>
+  <div>
+ 
+	  <select class="form-control" id="question2">
+	  	<option disabled="disabled" selected="selected">Choose question 2</option>
+	  	    <option>What is the postcode of your current place of work?</option>
+		    <option>What was the postcode at your last previous address?</option>
+		    <option>Where were you born?</option>	
+	  </select> 
+  </div>
 
-        
-        <input id="employers_address_line_2" name="employers_address_line_2" type="text" value=""><br>
+  <div  id="answer2" style="display:none" class="answerarea">
+  	<div class="row">
+    	<span class="col-sm-2">Answer 2</span>
+    	<input type="text" class="col-sm-10" style="width:400px;">
     </div>
-    <p></p>
-    <p>
-    </p><div class="form-group ">
-        
-        <input id="employers_address_line_3" name="employers_address_line_3" type="text" value=""><br>
-    </div>
-    <p></p>
-    <p>
-        </p><div class="form-group ">
-            
-            <label id="employers_address_town_label" for="employers_address_town" class="form-label">Town</label>
-            <input id="employers_address_town" name="employers_address_town" type="text" value=""><br>
-        </div>
-    <p></p>
-    <p>
-        </p><div class="form-group ">
-            
-            <label id="employers_address_county_label" for="employers_address_county" class="form-label">County</label>
-            <input id="employers_address_county" name="employers_address_county" type="text" value=""><br>
-        </div>
-    <p></p>
-    <p>
-        </p><div class="form-group ">
-            
-            <label id="employers_address_postcode_label" for="employers_address_postcode" class="form-label">Postcode</label>
-            <input id="employers_address_postcode" name="employers_address_postcode" type="text" value=""><br>
-        </div>
-    <p></p>
+  </div>
+  
+   </div>
+  
+  
+  <br>
 
-        </fieldset>	
-	
-	
-	
-	<p><br></p>
-	<!-- For User research -->
-	<div class="form-navigation form-group" style="margin-top:20px">
+
+<div>
+  <div>
+ 
+	  <select class="form-control" id="question3">
+	  	<option disabled="disabled" selected="selected">Choose question 3</option>
+	  	<option>What is the date of birth of the youngest member of your household?</option>
+	  	<option>What date did you start your last position?</option>
+	  	<option>What date does your driving licence expire?</option>
+	  	<option>What date does your passport expire?</option>	  	
+	  </select> 
+  </div>
+
+  <div  id="answer3" style="display:none" class="answerarea">
+  	<div class="row">
+    	<span class="col-sm-2">Answer 3</span>
+    	<input type="text" class="col-sm-10" style="width:400px;">
+    </div>
+  </div>
+  
+   </div>
+  
+  
+  <br>
+
+  <br>
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<div class="collapse form-horizontal" id="answer1">
+  <div class="well">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Answer</label>
+    <div class="col-sm-10">
+      <input type="text" style="width:400px;">
+      </div>
+  </div>
+    <div class="clearfix"></div>
+ 
+  </div>
+</div>
+
+
+
+	<div class="form-navigation form-group">
 	
 	<div>
 
 
-	<a href="household-members.html?name=Susan" id="next" class="button">Continue</a>
+	<a href="confirmation.html" id="next" class="button">Continue</a>
 	
 	</div>
 	<div>
@@ -280,19 +292,32 @@ What is their residential address?
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="household-members.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="address.html" id="back">Back</a>&nbsp;
 	
 	</div>
 	</div>
-	</form>
-	</div>
 
-	 <!-- #EndEditable -->
+		</form>
+	</div>
+	
+	
+	
+	
+
+</div>
+
+
+<!-- Modal -->
+	
+	</div>
 
         
 </div>
 
 
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -338,11 +363,36 @@ What is their residential address?
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
 
+	$("#question1").change(function(){
+		$("#answer1").show();
+	});
+
+	$("#question2").change(function(){
+		$("#answer2").show();
+	});
+	$("#question3").change(function(){
+		$("#answer3").show();
+	});
+
+	var nextpage = $("#next").prop("href");
+	var noemail = getParameterByName("noemail");
+	if (noemail  && noemail.length > 1)
+	{
+		$("#next").prop("href", nextpage + "?noemail=true");
+	}
 });
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 </script>
 
