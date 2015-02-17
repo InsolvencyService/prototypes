@@ -139,45 +139,110 @@
 
 <!-- #BeginEditable "content" -->
 
-	<div class="content">
- 
-<div class="row" style="margin-left:15px;margin-right:15px;">
-    <div class="col-sm-8">
-    <h1 class="form-title heading-large">Apply for bankruptcy</h1>
+	<div>
+	
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    
+    <h1 class="form-title heading-large">Bankruptcy</h1>
+		<form role="form">
+			<h2 class="heading-medium">Start your application by entering and confirming your email</h2>
+			<div class="form-hint">Save time and sign 
+			in with <strong><a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify" target="_blank">GOV.UK Verify</a></strong> if you already have an account.</div>
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+					</div>
+				</div>
+				
+			</div>
+			<div class="alert alert-danger" id="pnl-email-nomatch">
+			<p>Your emails don't match.  Please write the same email twice. </p>
+			</div> 
+			<div class="alert alert-danger" id="pnl-missing-email">
+			<p>You have not given your email address. 
+			We recommend you provide your email to speed your application, without an email there will be a delay in creating your application </p>
+			<a href="address.html?noemail=true" >Continue without email</a> &nbsp;<a href="#" class="btn btn-success" style="font-size:19px; color:#fff;margin-left:30px" id="btn-close-msg">I have an email address</a>
+			</div>
+			<p class="form-hint">Enter your email address if you have one.</p> 
+			<div class="form-group">
+				<input type="email" name="email" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" id="email2" class="form-control input-lg" placeholder="Confirm email Address" tabindex="4">
+			</div>
 
-	<p>Bankruptcy is a form of insolvency. If you're made bankrupt:</p>
-<ul class="list-bullet">
-		<li>you don't have to deal with the people you owe money to 
-		yourself - the official receiver deals with your creditors</li>
-		<li>the things 
-		you own may be sold and used towards paying your debts, such as your 
-		house or car</li>
-		<li>After 12 months you're usually released from your bankruptcy restrictions and debts.
-		</li>
-
-	</ul>
-		<a href="../signin2/firsttime.html" class="button">Continue</a>
-	</div>
-
-	<div class="col-sm-4">
-		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
-		<p><a href="../../calc-FindDebtAdviser.html">Find a qualified adviser</a></p>
-
-		<p><a href="../continue/return.html">I am returning to an existing application</a></p>
-		
-		</div>
+			<p>
+					 By continuing to <strong>Register</strong> or <strong>Sign in with GOV.UK Verify</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a>.
+				</p>
+			
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<a class="btn btn-primary btn-block btn-lg" href="questions.html" style="color:#fff" id="next">Register</a></div>
+				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg" style="color:#fff">Sign in with GOV.UK Verify</a></div>
+			</div>
+		</form>
 	</div>
 </div>
-
-<p><br></p>
-
-        
-</div>
-
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" id="myModalLabel">Terms &amp; Conditions</h4>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+	
+	
+	
+	
+		<br><br>
+	
+	
+	
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
