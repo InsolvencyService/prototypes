@@ -6,7 +6,7 @@
     <title>Online debt solutions</title>
 
 
-    <!--[if gt IE 8]><!-->
+    <!--[if gt IE 8]><![endif]--><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/govuk-template.css"><!--<![endif]-->
     <!--[if IE 6]><link href="../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -26,7 +26,7 @@
         })()
     </script>
     <![endif]-->
-    <!--[if gte IE 9]><!-->
+    <!--[if gte IE 9]><![endif]--><!-->
     <link type="text/css" rel="stylesheet" media="all" href="../../assets/stylesheets/fonts.css">
     <!--<![endif]-->
 
@@ -50,7 +50,7 @@
     <meta content="assets/images/opengraph-image.png" property="og:image">
     <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 
-    <!--[if gt IE 8]><!-->
+    <!--[if gt IE 8]><![endif]--><!-->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css"><!--<![endif]-->
     <!--[if IE 6]><link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -153,12 +153,9 @@ form .dropdown-toggle .text-left{
 	
 
 
-	</div>
-	
-
-
 <!-- #BeginEditable "content" -->
 
+ 	
 	<div id="content" >
 
 	<div>
@@ -167,16 +164,13 @@ form .dropdown-toggle .text-left{
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
     
 
-		
-
-<h1 class="form-title heading-large msg-email">Check your email to continue</h1>
-<h1 class="form-title heading-large msg-letter" style="display:none;">We have sent you an application number</h1>
-	<p class="text msg-email" style="background-color:#00823b;color:White;padding: 30px; text-align: center;">
-	<b>We have sent you an email with your application number. You can use this to continue with your application</b>
-	</p>
+		<h1 class="form-title heading-large">Confirm your application</h1>
 	
-	<p class="text msg-letter" style="display:none;background-color:#00823b;color:White;padding: 30px; text-align: center;">
-	<b>We are sending you a letter with your application number. The letter explains how to continue with your application.</b>
+	<p class="text msg-URN" style="display:none;">
+	Your application number is 
+	<br>
+	<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">B94738942</span>  
+
 	</p>
 
 	
@@ -187,22 +181,30 @@ form .dropdown-toggle .text-left{
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-	<div class="msg-email">
+	<div class="msg-no-URN">
 	
-	<p>Please check your email and click the link to continue to complete your application. </p>
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="form-label">What is your application number?</label>
+	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+	<br/>
+	</div>
 
 	
 	</div>
 	
-	<div class="msg-letter" style="display:none;">
-	
-	<p>
-	You will need to wait for the letter to be able to continue.</p>
-
-	
-	</div>
 	<div>
 	
+	<h2 class="bold-medium">
+	Your security question</h2>
+	 <div class="form-group ">
+	
+	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="form-label">What is your mother's maiden name?</label>
+	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" 
+	aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+
+	
+	</div>
 	
 	
 	
@@ -210,7 +212,26 @@ form .dropdown-toggle .text-left{
 	</div>
 	</form>
 
-<br><br>
+<br>
+	<div class="form-navigation form-group">
+	
+	<div>
+
+
+	<a href="../overview.html" id="next" class="button">Continue</a>
+	
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	
+	<a style="padding-right: 30px" href="address.html" id="back">Back</a>&nbsp;
+	
+	</div>
+	</div>
+
 	</div>
 	
 	
@@ -231,6 +252,9 @@ form .dropdown-toggle .text-left{
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -276,19 +300,19 @@ form .dropdown-toggle .text-left{
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
 
-	$(".msg-letter").hide();
+	$(".msg-URN").hide();
 
-	var nextpage = $("#next").prop("href");
-	var noemail = getParameterByName("noemail");
+	var noemail = getParameterByName("URN");
 	if (noemail  && noemail.length > 1)
 	{
-		$(".msg-letter").show();
-		$(".msg-email").hide();
+		$(".msg-URN").show();
+		$(".msg-no-URN").hide();
 	}
 });
 
