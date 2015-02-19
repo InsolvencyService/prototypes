@@ -537,10 +537,14 @@ function equalHeight(group) {
 }
 
 $(document).ready(function(){
-	$('[data-toggle="popover"]').popover()
+	//$('[data-toggle="popover"]').popover()
 	equalHeight($(".well"));
 	
-	$('[data-toggle="popover"]').on('click', function(e) {e.preventDefault(); return true;});
+	$('[data-toggle="popover"]').on('click', function(e) {
+	e.preventDefault(); 
+		e.stopPropagation();
+  	$(this).popover("show");
+	});
 });
 
 
