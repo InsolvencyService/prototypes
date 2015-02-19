@@ -543,7 +543,14 @@ $(document).ready(function(){
 	$('[data-toggle="popover"]').on('click', function(e) {
 	e.preventDefault(); 
 		e.stopPropagation();
-  	$(this).popover("show");
+  		$(this).popover("show");
+	});
+	
+	$("#content:not('a')").click({ function(e)
+		e.preventDefault(); 
+		e.stopPropagation();
+		$(this).popover("hide");
+		
 	});
 });
 
