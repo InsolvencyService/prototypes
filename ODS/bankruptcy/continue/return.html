@@ -185,15 +185,15 @@ form .dropdown-toggle .text-left{
 	
 	<div class="form-group ">
 	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="form-label">What is your application number?</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+	<label id="applicant_address_line_2_label" for="urn" class="form-label">What is your application number?</label>
+	<input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
 	<br/>
 	</div>
 
 	
 	</div>
 	
-	<div>
+	<div id="securityquestion" style="display:none">
 	
 	<h2 class="bold-medium">
 	Your security question</h2>
@@ -308,12 +308,27 @@ $(document).ready(function() {
 
 	$(".msg-URN").hide();
 
-	var noemail = getParameterByName("URN");
-	if (noemail  && noemail.length > 1)
+	var URNfromemail = getParameterByName("URN");
+	if (URNfromemail && URNfromemail.length > 1)
 	{
 		$(".msg-URN").show();
 		$(".msg-no-URN").hide();
+		
+		$("#securityquestion").show();
 	}
+	
+	$("#urn").blur( function() {
+		if ($("#urn").val().length > 0){
+			$("#securityquestion").show();
+		}
+	});
+	
+	$("#next").click( function(e) {
+		if ($("#urn").val().length == 0){
+			e.preventDefault();
+		}
+	});
+
 });
 
 function getParameterByName(name) {
