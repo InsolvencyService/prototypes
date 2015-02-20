@@ -199,9 +199,8 @@ form .dropdown-toggle .text-left{
 	Your security question</h2>
 	 <div class="form-group ">
 	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="form-label">What is your mother's maiden name?</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" 
-	aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+	<label id="applicant_address_line_2_label" for="answer" class="form-label">What is your mother's maiden name?</label>
+	<input id="answer" name="applicant_address_line_2" type="text" value="" />
 
 	
 	</div>
@@ -324,9 +323,14 @@ $(document).ready(function() {
 	});
 	
 	$("#next").click( function(e) {
-		if ($("#urn").val().length == 0){
+		if ($("#urn").val().length == 0 && URNfromemail == ""){
 			e.preventDefault();
 		}
+		
+		if ($("#answer").val().length == 0){
+			e.preventDefault();
+		}
+
 	});
 
 });
