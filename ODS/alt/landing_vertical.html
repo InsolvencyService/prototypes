@@ -543,7 +543,7 @@ $(document).ready(function(){
 	$('[data-toggle="popover"]').on('click', function(e) {
 	e.preventDefault(); 
 		e.stopPropagation();
-		if (lastone && lastone != $(this)){
+		if (lastone && lastone == $(this)){
 			lastone.popover("hide");
   		}
   		$(this).popover("show");
