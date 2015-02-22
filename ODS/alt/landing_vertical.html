@@ -539,17 +539,16 @@ function equalHeight(group) {
 $(document).ready(function(){
 	//$('[data-toggle="popover"]').popover()
 	equalHeight($(".well"));
-	
+	var lastone;
 	$('[data-toggle="popover"]').on('click', function(e) {
 	e.preventDefault(); 
 		e.stopPropagation();
+		if (lastone && lastone != $(this)){
+			lastone.popover("hide");
+  		}
   		$(this).popover("show");
-	});
-	$('.popover-content').on('click', function(e) {
-		
-		e.preventDefault(); 
-		e.stopPropagation();
-		$(this).parent().siblings('[data-toggle="popover"]').popover("hide");
+	  	lastone = $(this);
+
 	});
 
 /*	
