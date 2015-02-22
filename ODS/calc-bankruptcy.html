@@ -85,6 +85,25 @@
 			background:#7f7f7f;
 	  background:rgba(255,255,255,0.8);
   		}
+  		
+.carousel-inner{
+	border: 5px silver solid;
+}
+
+a.carousel-control:focus{
+		background-color: #CCCCCC; /* #ccffcc; */
+		outline: transparent none 0px;
+	}
+	
+	.carousel-indicators li {
+  background-color: #999;
+  background-color: rgba(70,70,70,.25);
+}
+
+.carousel-indicators .active {
+  background-color: #444;
+}
+
     </style>
     <!-- #EndEditable -->
 
@@ -164,14 +183,26 @@
                             <div id="bankruptcy-video" class="carousel slide" data-ride="carousel">
                                 <!-- Indicators -->
                                 <ol class="carousel-indicators">
-                                    <li data-target="#bankruptcy-video" data-slide-to="0" class=""></li>
-                                    <li data-target="#bankruptcy-video" data-slide-to="1" class="active"></li>
+                                    <li data-target="#bankruptcy-video" data-slide-to="0" class="active"></li>
+                                    <li data-target="#bankruptcy-video" data-slide-to="1"></li>
                                     <li data-target="#bankruptcy-video" data-slide-to="2" class=""></li>
+                                    <li data-target="#bankruptcy-video" data-slide-to="3" class=""></li>
+                                    <li data-target="#bankruptcy-video" data-slide-to="4" class=""></li>
+                                    <li data-target="#bankruptcy-video" data-slide-to="5" class=""></li>
+                                     <li data-target="#bankruptcy-video" data-slide-to="6" class=""></li>
                                 </ol>
 
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
+                                
+                              <div class="item active">
+                                <img alt="Bills galore" src="bankruptcy/video/slide0.png">
+                                <div class="carousel-caption">
+                                    Find out the basics about bankruptcy 
+                                </div>
+                            </div>
+
+                                    <div class="item">
                                         <img alt="Bills galore" src="bankruptcy/video/slide1.jpg">
                                         <div class="carousel-caption">
 Some people find it difficult to manage debt. Bankruptcy is one way to clean the slate.
@@ -330,6 +361,35 @@ After 1 year, the majority of your debts are written off, giving you a fresh sta
 
 $('#bankruptcy-video').carousel({
   interval: false
+})
+
+				$('#bankruptcy-video .carousel-inner img').on("click", function(e) {
+					  $('#bankruptcy-video').carousel('next')
+				})
+
+$("a.left.carousel-control").hide();
+$('#bankruptcy-video').on('slid.bs.carousel', function (e) {
+var carouselData = $(this).data('bs.carousel');
+var currentIndex = carouselData.getItemIndex(carouselData.$element.find('.item.active'));
+
+  if (currentIndex == 6){ 
+  		$("a.carousel-control").blur();
+  		$("a.right.carousel-control").hide();
+    }
+    else{
+      		$("a.right.carousel-control").show();
+
+    }
+
+  if (currentIndex == 0){ 
+   		$("a.left.carousel-control").hide();
+    }
+    else{
+      		$("a.left.carousel-control").show();
+
+    }
+
+
 })
             });
 
