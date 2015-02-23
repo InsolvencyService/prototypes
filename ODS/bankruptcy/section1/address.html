@@ -174,39 +174,39 @@
                     </div>
                     <div class="form-group ">
 
-                        <label id="last_name_label" for="last_name" class="form-label-bold last_name">Last name</label>
+                        <label id="last_name_label" for="last_name" class="form-label">Last name</label>
                         <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
                         <br />
                     </div>
 
                     <div class="form-group ">
 
-                        <label id="last_name_label" for="last_name" class="form-label-bold last_name">Age</label>
-                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+                        <label id="age_label" for="age" class="form-label">Age</label>
+                        <input id="age" name="age" type="text" value="" />
                         <br />
                     </div>
 
                     <div class="form-group">
-                        <p id="title_label" class="form-label-bold">Does this person live at your address?</p>
+                        <p id="title_label" class="form-label">Does this person live at your address?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
 
-                                <label id="title_label0" for="title_Mr." class="block-label">
-                                    <input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
                                     Yes
                                 </label>
 
-                                <label id="title_label1" for="title_Mrs." class="block-label">
-                                    <input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help" href="#pnl-type" data-toggle="collapse">
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
                                     No
                                 </label>
                             </div>
-                            <div id="pnl-type" class="collapse panel-indent panel-success">
+                            <div id="pnl-address" class="collapse panel-indent panel-success">
                                 <div class="form-group ">
                                     <fieldset class="inline">
 
-                                        <p class="form-label-bold">What is their residential address?</p>
+                                        <p class="form-label">What is their residential address?</p>
 
                                         <div class="form-group ">
                                             <label id="employers_address_line_1_label" for="employers_address_line_1" class="form-label">Building and Street</label>
@@ -239,20 +239,22 @@
                                     </fieldset>
                                 </div>
                             </div>
+                        </fieldset>
+                    </div>
 
-
+                    <div class="form-group">
+                        <p id="title_label" class="form-label">Is this person dependent on you?</p>
 
                             <fieldset class="inline">
                                 <div id="title" class="form-group ">
-                                    <label id="owed_holiday_pay_check_label" class="form-label-bold">Is this person dependent on you?</label>
 
                                     <label id="dependent_answer1" for="dependent_yes" class="block-label">
-                                        <input id="dependent_yes" value="yes" name="dependentyesno" type="radio" aria-describedby="title_error title_help" href="#pnl-dependent" data-toggle="collapse">
+                                        <input id="dependent_yes" value="yes" name="dependentyesno" type="radio">
                                         Yes
                                     </label>
 
                                     <label id="dependent_answer2" for="dependent_no" class="block-label">
-                                        <input id="dependent_no" value="no" name="dependentyesno" type="radio" aria-describedby="title_error title_help">
+                                        <input id="dependent_no" value="no" name="dependentyesno" type="radio">
                                         No
                                     </label>
 
@@ -277,21 +279,22 @@
                                 </div>
 
                                 <div class="form-group ">
-                                    <label id="last_name_label" for="last_name" class="form-label-bold last_name">Other reason</label>
-                                    <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" /><br />
+                                    <label for="other_reason" class="form-label">Other reason</label>
+                                    <input id="other_reason" name="other_reason" type="text" value="" /><br />
                                 </div>
                             </div>
 
                     </div>
+                </form>
             
-            
-            </div>
+                <!-- For User research -->
+                <div class="form-navigation form-group" style="margin-top:20px"></div>
+                <div><a href="household-members.html?name=Susan" id="next" class="button">Continue</a></div>
+                <div><a style="padding-right: 30px" href="household-members.html" id="back">Back</a><p>&nbsp;</p></div>
 
+
+            </div>
             <p><br></p>
-            <!-- For User research -->
-            <div class="form-navigation form-group" style="margin-top:20px"></div>
-            <div><a href="household-members_alt.html?name=Susan" id="next" class="button">Continue</a></div>
-            <div><a style="padding-right: 30px" href="household-members_alt.html" id="back">Back</a><p>&nbsp;</p></div>
 
 
         </div>
@@ -348,6 +351,20 @@
 
                 var age = "32";
                 var name = "Susan Smith";
+                var rel = "Parent";
+                var dep = "Yes";
+                $("#sameaddress_No").on("click", function () {
+                    $("#pnl-address").show();
+                });
+                $("#sameaddress_Yes").on("click", function () {
+                    $("#pnl-address").hide();
+                });
+                $("#dependent_yes").on("click", function () {
+                    $("#pnl-dependent").show();
+                });
+                $("#dependent_no").on("click", function () {
+                    $("#pnl-dependent").hide();
+                });
 
                 $("#first_name").on("blur", function () {
                     name = $("#first_name").val();
@@ -358,7 +375,13 @@
                 });
 
                 $("#next").on("click", function () {
-                    var link = "household-members_alt.html?name=" + name + "&age=" + age + "&rel=Parent";
+                    if ($("#first_name").val() != "") {
+                        name = $("#first_name").val();
+                    }
+                    if ($("#last_name").val() != "") {
+                        name = $("#first_name").val();
+                    }
+                    var link = "household-members.html?name=" + name + "&age=" + age + "&rel=" + rel + "&dep=" + dep;
                     $("#next").attr("href", link);
                 });
 

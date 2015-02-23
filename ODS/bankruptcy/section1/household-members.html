@@ -286,7 +286,7 @@ $(document).ready(function(){
 var age = getParameterByName("age");
 var name = getParameterByName("name");
 var relationship = getParameterByName("rel");
-var dependent = "Yes"; //getParameterByName("ref");
+var dependent = getParameterByName("dep");
 
 var deletebuttonhtml  = "<a href='#' class='btn btn-warning' >Edit</a> <a href='#' class='btn btn-danger'>Delete</a>";
 
@@ -296,7 +296,9 @@ if (age == ""){
 if (relationship == ""){
 relationship = "Spouse";
 }
-
+if (dependent == "") {
+    dependent = "Yes";
+}
 if (name && name.length > 0){
 
 	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + relationship + "</td><td>" + dependent + "</td><td>" + deletebuttonhtml + "</td></tr>";
