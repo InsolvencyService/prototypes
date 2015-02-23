@@ -505,30 +505,65 @@ $("#q1a").on('switchChange.bootstrapSwitch', function(event, state) {
   if (state == true)
   {
   	$("#q1b").bootstrapSwitch('state', false);
+		if ($("#q1b").bootstrapSwitch('state') == false && $("#q2").bootstrapSwitch('state') == false 
+		&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
+		&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
+			$("#btn-find-debt").attr("href", "calc-dro.html");
+		}
   }
 });
 $("#q1b").on('switchChange.bootstrapSwitch', function(event, state) {
   if (state == true)
   {
   	$("#q1a").bootstrapSwitch('state', false);
+  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+  }
+});
+$("#q2").on('switchChange.bootstrapSwitch', function(event, state) {
+  if (state == true)
+  {
+  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+  }
+});
+$("#q3").on('switchChange.bootstrapSwitch', function(event, state) {
+  if (state == true)
+  {
+  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+  }
+});
+$("#q4").on('switchChange.bootstrapSwitch', function(event, state) {
+  if (state == true)
+  {
+  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+  }
+});
+$("#q5").on('switchChange.bootstrapSwitch', function(event, state) {
+  if (state == true)
+  {
+  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+  }
+});
+$("#q6").on('switchChange.bootstrapSwitch', function(event, state) {
+  if (state == true)
+  {
+  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
   }
 });
 
 
-//alert($("#q1").bootstrapSwitch('state'));
-$("#btn-find-debt").on("click", function(e){
-	if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
-		e.preventDefault();
-		alert("Select the debt answers which match your situation to proceed");
-	}
-	else{
-	if ($("#q1b").bootstrapSwitch('state') == false && $("#q2").bootstrapSwitch('state') == false 
-	&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
-	&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
-		$("#btn-find-debt").attr("href", "calc-dro.html");
+	//alert($("#q1").bootstrapSwitch('state'));
+	$("#btn-find-debt").on("click", function(e){
+		if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
+			e.preventDefault();
+			alert("Select the debt answers which match your situation to proceed");
 		}
-	}
-});
+		if ($("#q1b").bootstrapSwitch('state') == false && $("#q2").bootstrapSwitch('state') == false 
+		&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
+		&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
+			$("#btn-find-debt").attr("href", "calc-dro.html");
+		}
+
+	});
 
 });
 
