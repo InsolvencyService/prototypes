@@ -249,12 +249,12 @@
                                 <div id="title" class="form-group ">
 
                                     <label id="dependent_answer1" for="dependent_yes" class="block-label">
-                                        <input id="dependent_yes" value="yes" name="dependentyesno" type="radio">
+                                        <input id="dependent_yes" value="Yes" name="dependentyesno" type="radio">
                                         Yes
                                     </label>
 
                                     <label id="dependent_answer2" for="dependent_no" class="block-label">
-                                        <input id="dependent_no" value="no" name="dependentyesno" type="radio">
+                                        <input id="dependent_no" value="No" name="dependentyesno" type="radio">
                                         No
                                     </label>
 
@@ -265,16 +265,18 @@
                             <div id="pnl-dependent" class="collapse panel-indent panel-success">
 
                                 <div class="form-group ">
-                                    <p id="title_label" class="form-label-bold ">What is the reason for their dependenace on you?</p>
+                                    <p id="title_label" class="form-label ">What is the reason for their dependenace on you?</p>
 
                                     <fieldset class="inline">
                                         <div id="title" class="form-group">
                                             <label id="dependent_type1_label" for="dependent_type1" class="block-label">
-                                                <input id="dependent_type1" value="parent" name="dependent" type="radio" aria-describedby="title_error title_help">I am their parent
+                                                <input id="dependent_type1" value="Parent" name="dependent" type="radio" 
+                                                       aria-describedby="title_error title_help">I am their parent
                                             </label>
                                             <label id="dependent_type2_label" for="dependent_type2" class="block-label">
-                                                <input id="dependent_type2" value="carer" name="dependent" type="radio" aria-describedby="title_error title_help">I am their carer
+                                                <input id="dependent_type2" value="Carer" name="dependent" type="radio" aria-describedby="title_error title_help">I am their carer
                                             </label>
+                                        </div>
                                     </fieldset>
                                 </div>
 
@@ -377,10 +379,24 @@
                 $("#next").on("click", function () {
                     if ($("#first_name").val() != "") {
                         name = $("#first_name").val();
+                        if ($("#last_name").val() != "") {
+                            name += " " + $("#last_name").val();
+                        }
                     }
-                    if ($("#last_name").val() != "") {
-                        name = $("#first_name").val();
+                    if ($("#age").val() != "") {
+                        age = $("#age").val();
                     }
+                    if ($("input[name='dependentyesno']:checked") && $("input[name='dependentyesno']:checked").val() != null) {
+                        dep = $("input[name='dependentyesno']").val();
+                    }
+                    if ($("input[name='dependent']:checked") && $("input[name='dependent']:checked").val() != null){
+                        rel = $("input[name='dependent']:checked").val();
+                        if (rel == "" &&  $("#other_reason") && $("#other_reason").val() != "") {
+                            rel = $("#other_reason").val();
+                        }
+                    }
+ 
+    
                     var link = "household-members.html?name=" + name + "&age=" + age + "&rel=" + rel + "&dep=" + dep;
                     $("#next").attr("href", link);
                 });

@@ -283,8 +283,14 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function(){
 
+    var name2 = getCookie('name');
+    var age2 = getCookie('age');
+    var rel2 = getCookie('rel');
+    var dep2 = getCookie('dep');
+
 var age = getParameterByName("age");
 var name = getParameterByName("name");
+
 var relationship = getParameterByName("rel");
 var dependent = getParameterByName("dep");
 
@@ -294,15 +300,22 @@ if (age == ""){
 	age = 36;
 }
 if (relationship == ""){
-relationship = "Spouse";
+    relationship = "Spouse";
 }
 if (dependent == "") {
     dependent = "Yes";
 }
 if (name && name.length > 0){
+    setCookie('name', name);
+    setCookie('age', age);
+    setCookie('relationship', relationship);
+    setCookie('dependent', dependent);
 
 	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + relationship + "</td><td>" + dependent + "</td><td>" + deletebuttonhtml + "</td></tr>";
 
+	if (name2) {
+	    htmltoadd+= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>";
+	}
     $("table tbody").prepend(htmltoadd);
 }
 
@@ -315,6 +328,17 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function setCookie(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (5 * 60 * 1000)); //5 mins  
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
 </script>
 
 
