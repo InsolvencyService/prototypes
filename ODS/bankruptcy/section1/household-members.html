@@ -294,10 +294,17 @@ $(document).ready(function(){
 
 var age = getParameterByName("age");
 var name = getParameterByName("name");
-var relationship = "Parent"; //getParameterByName("ref");
+var relationship = getParameterByName("rel");
 var dependent = "Yes"; //getParameterByName("ref");
 
 var deletebuttonhtml  = "<a href='#' class='btn'>Delete</a>";
+
+if (age == ""){
+	age = 36;
+}
+if (relationship == ""){
+relationship = "Spouse";
+}
 
 if (name && name.length > 0){
 

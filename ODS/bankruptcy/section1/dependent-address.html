@@ -342,6 +342,23 @@ What is their residential address?
 <script type="text/javascript">
 $(document).ready(function() {
 
+var age = "32";
+var name = "Susan Smith";
+
+$("#first_name").on("blur",function(){ 
+   name = $("#first_name").val();
+});
+
+$("#age").on("blur",function(){ 
+   age = $("#age").val();
+});
+
+$("#next").on("click",function(){ 
+	var link = "household-members.html?name=" + name + "&age=" + age + "&rel=Parent";
+	$("#next").attr("href", link);
+});
+
+
 });
 
 </script>

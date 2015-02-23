@@ -175,8 +175,8 @@ display:block;
 
 <div class="form-group ">
 	
-	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Age</label>
-	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+	<label id="last_name_label" for="age" class="form-label-bold last_name">Age</label>
+	<input id="age" name="age"  type="text" aria-describedby="last_name_error last_name_help" value="" />
 	<br/>
 	</div>
 	
@@ -285,6 +285,23 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+var age = "32";
+var name = "Susan Smith";
+
+$("#first_name").on("blur",function(){ 
+   name = $("#first_name").val();
+});
+
+$("#age").on("blur",function(){ 
+   age = $("#age").val();
+});
+
+$("#next").on("click",function(){ 
+	var link = "household-members.html?name=" + name + "&age=" + age+ "&rel=Spouse";
+	$("#next").attr("href", link);
+});
+
 
 });
 
