@@ -154,9 +154,10 @@ display:block;
 <!-- #BeginEditable "content" -->
 
  	
-	<div class="inner-block text">
+	<div class="content">
 	
-	
+	<div class="row">
+	<div class="col-sm-12"></div>
 	
 	<h1 class="form-title heading-large">Who you live with, and your dependents</h1>
 	<p class="form-hint">It is important that you tell about everyone who lives in your house and any dependents that you have living at other addresses.</p>
@@ -225,6 +226,8 @@ display:block;
 	</form>
 	</div>
 
+	
+	</div>
 	 <!-- #EndEditable -->
 
         
@@ -314,7 +317,7 @@ if (name && name.length > 0){
 	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + relationship + "</td><td>" + dependent + "</td><td>" + deletebuttonhtml + "</td></tr>";
 
 	if (name2) {
-	    htmltoadd+= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>";
+	    htmltoadd= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>" + htmltoadd;
 	}
     $("table tbody").prepend(htmltoadd);
 }
@@ -328,13 +331,15 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function setCookie(key, value) {
+function setCookieSave(key, value) {
     var expires = new Date();
-    expires.setTime(expires.getTime() + (5 * 60 * 1000)); //5 mins  
+    expires.setTime(expires.getTime() + 31536000000); //1 year  
     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
 }
 
-s
+function setCookie(key, value) {
+    document.cookie = key + '=' + value ;
+}
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
