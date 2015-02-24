@@ -204,7 +204,17 @@ display:block;
 				<a href="#" class="btn btn-info" role="button">Secured debts (including mortgages)</a>
 				<a href="#" class="btn btn-info" role="button">Household debts</a>
 				<a href="#" class="btn btn-info" role="button">Car loan (including lease and finance)</a>
-				<a href="#" class="btn btn-info" role="button">Other</a>
+				<a href="#" class="btn btn-info" role="button" id="btn-other">Other</a>
+				<br/>
+				<div id="pnl-othertypes" style="display:none">
+				<a href="#" class="btn btn-default" role="button">Child Maintenance arrears</a>
+			<a href="#" class="btn btn-default" role="button">Tax arrears</a>
+			<a href="#" class="btn btn-default" role="button">Benefit overpayments</a>
+			<a href="#" class="btn btn-default" role="button">Fines (including PCNs)</a>
+			<a href="#" class="btn btn-default" role="button">Your business debts</a>
+			<a href="#" class="btn btn-default" role="button">Legal dispute (including solicitor fees)</a>
+			<a href="#" class="btn btn-default" role="button">Loans from friends, relatives or associates</a>
+				</div>
 				</div>
 				</td>
 			</tr>
@@ -323,6 +333,12 @@ if (name && name.length > 0){
 
     $("table tbody").prepend(htmltoadd);
 }
+
+	$("#btn-other").on("click", function(e){
+
+		$("#pnl-othertypes").show();
+		
+	});
 
 });
 
