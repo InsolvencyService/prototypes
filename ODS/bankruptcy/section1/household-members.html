@@ -157,8 +157,7 @@ display:block;
 	<div class="content">
 	
 	<div class="row">
-	<div class="col-sm-12"></div>
-	
+	<div class="col-sm-12" style="padding-left:40px; padding-right:40px">	
 	<h1 class="form-title heading-large">Who you live with, and your dependents</h1>
 	<p class="form-hint">It is important that you tell about everyone who lives in your house and any dependents that you have living at other addresses.</p>
 	
@@ -219,7 +218,7 @@ display:block;
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="details.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="../overview.html" id="back">Back</a>&nbsp;
 	
 	</div>
 	</div>
@@ -228,12 +227,14 @@ display:block;
 
 	
 	</div>
-	 <!-- #EndEditable -->
 
         
 </div>
 
 
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -302,10 +303,10 @@ var deletebuttonhtml  = "<a href='#' class='btn btn-warning' >Edit</a> <a href='
 if (age == ""){
 	age = 36;
 }
-if (relationship == ""){
+if (relationship == null || relationship == ""){
     relationship = "Spouse";
 }
-if (dependent == "") {
+if (dependent == null || dependent == "") {
     dependent = "Yes";
 }
 if (name && name.length > 0){
@@ -316,7 +317,7 @@ if (name && name.length > 0){
 
 	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + relationship + "</td><td>" + dependent + "</td><td>" + deletebuttonhtml + "</td></tr>";
 
-	if (name2) {
+	if (name2 && name != name2) {
 	    htmltoadd= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>" + htmltoadd;
 	}
     $("table tbody").prepend(htmltoadd);
