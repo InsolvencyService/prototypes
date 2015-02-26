@@ -83,11 +83,6 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
-.btn{
-	color:#fff !important;
-}
-
 </style>
 <!-- #EndEditable -->
 
@@ -154,54 +149,47 @@ display:block;
 <!-- #BeginEditable "content" -->
 
  	
-	<div class="content">
+	<div class="inner-block text">
 	
-	<div class="row">
-	<div class="col-sm-12" style="padding-left:40px; padding-right:40px">	
-	<h1 class="form-title heading-large">Who you live with, and your dependents</h1>
-	<p class="form-hint">It is important that you tell about everyone who lives in your house and any dependents that you have living at other addresses.</p>
+	
+	
+	<h1 class="form-title heading-large">Your address</h1>
+	
 	
 	
 	<form class="form" method="post">
-	<br><a href='add-person.html' class='btn btn-success'>Add a person</a>
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	<p>
+	<div class="form-group ">
+	
+	<p>You told us your address is <strong>12 High Street, Churchtown, C12 1AD</strong></p>
 
-<table style="width: 100%">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Age</th>
-				<th>Relationship</th>
-				<th>Are they dependent</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			
+	<div class="form-group ">
+	<p id="title_label" class="form-label-bold">Have you lived at any other address in the last 12 months?</p>
+	
+	<fieldset class="inline">
+	<div id="title" class="form-group">
+	
+	<label id="title_label0" for="title_Mr." class="block-label">
+	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
+	Yes
+	</label>
+	
+	<label id="title_label1" for="title_Mrs." class="block-label">
+	<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
+	No
+	</label>
+	
 
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-		</tbody>
-		</table>
+	
+	</div>
+	</fieldset>
+	</div>
 
+	</div>
+	
+	</p>
 	<p><br></p>
 	<!-- For User research -->
 	<div class="form-navigation form-group" style="margin-top:20px">
@@ -209,7 +197,7 @@ display:block;
 	<div>
 
 
-	<a href="../overview.html?section1=complete" id="next" class="button">Continue</a>
+	<a href="details.html" id="next" class="button">Continue</a>
 	
 	</div>
 	<div>
@@ -218,23 +206,19 @@ display:block;
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="../overview.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="your-names.html" id="back">Back</a>&nbsp;
 	
 	</div>
 	</div>
 	</form>
 	</div>
 
-	
-	</div>
+	 <!-- #EndEditable -->
 
         
 </div>
 
 
-	 <!-- #EndEditable -->
-
-        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -280,72 +264,12 @@ display:block;
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function(){
-
-    var name2 = getCookie('name');
-    var age2 = getCookie('age');
-    var rel2 = getCookie('rel');
-    var dep2 = getCookie('dep');
-
-var age = getParameterByName("age");
-var name = getParameterByName("name");
-
-var relationship = getParameterByName("rel");
-var dependent = getParameterByName("dep");
-
-var deletebuttonhtml  = "<a href='#' class='btn btn-warning' >Edit</a> <a href='#' class='btn btn-danger'>Delete</a>";
-
-if (age == ""){
-	age = 36;
-}
-if (relationship == null || relationship == ""){
-    relationship = "Spouse";
-}
-if (dependent == null || dependent == "") {
-    dependent = "Yes";
-}
-if (name && name.length > 0){
-    setCookie('name', name);
-    setCookie('age', age);
-    setCookie('rel', relationship);
-    setCookie('dep', dependent);
-
-	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + relationship + "</td><td>" + dependent + "</td><td>" + deletebuttonhtml + "</td></tr>";
-/*
-	if (name2 && name != name2) {
-	    htmltoadd= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>" + htmltoadd;
-	}
-*/
-    $("table tbody").prepend(htmltoadd);
-}
+$(document).ready(function() {
 
 });
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function setCookieSave(key, value) {
-    var expires = new Date();
-    expires.setTime(expires.getTime() + 31536000000); //1 year  
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-}
-
-function setCookie(key, value) {
-    document.cookie = key + '=' + value ;
-}
-function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
 </script>
 
 
