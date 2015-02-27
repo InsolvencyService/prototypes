@@ -301,34 +301,6 @@ h4.great {
 }
 
 
-.price-slider {
-	margin-bottom: 70px;
-}
-
-.price-slider span {
-	font-weight: 200;
-	display: inline-block;
-	color: #7f8c8d;
-	font-size: 13px;
-}
-
-.form-pricing {
-	background: #ffffff;
-	padding: 20px;
-	border-radius: 4px;
-}
-
-.price-form {
-	background: #ffffff;
-	margin-bottom: 10px;
-	padding: 20px;
-	border: 1px solid #eeeeee;
-	border-radius: 4px;
-	/*-moz-box-shadow:    0 5px 5px 0 #ccc;
-  	-webkit-box-shadow: 0 5px 5px 0 #ccc;
-  	box-shadow:         0 5px 5px 0 #ccc;*/
-}
-
 .ui-slider-range-min {
 	background: #2980b9;
 }
@@ -671,8 +643,8 @@ $(document).ready(function() {
 
         $("#slider").slider({
               animate: true,
-              value:1,
-              min: 10000,
+              value:8000,
+              min: 1000,
               max: 25000,
               step: 100,
               slide: function(event, ui) {
@@ -773,7 +745,8 @@ function getParameterByName(name) {
 
    function update(slider,val) {
         //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
-        var $amount = slider == 1?val:$("#amount").val();
+        //var $amount = slider == 1?val:$("#amount").val();
+        var $amount = slider == 1?val:8000;
         /* commented
 
          $total = "$" + ($amount * $duration);
