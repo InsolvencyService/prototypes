@@ -300,25 +300,6 @@ h4.great {
   	box-shadow:         2px 4px 5px 0 #ccc;
 }
 
-.total {
-	border-bottom: 1px solid #7f8c8d;
-	/*display: inline;
-	padding: 10px 5px;*/
-	position: relative;
-	padding-bottom: 20px;
-}
-
-.total:before {
-	content: "";
-	display: inline;
-	position: absolute;
-	left: 0;
-	bottom: 5px;
-	width: 100%;
-	height: 3px;
-	background: #7f8c8d;
-	opacity: 0.5;
-}
 
 .price-slider {
 	margin-bottom: 70px;
@@ -350,6 +331,13 @@ h4.great {
 
 .ui-slider-range-min {
 	background: #2980b9;
+}
+
+hr.style {
+	margin-top: 0;
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
 }
 
 </style>
@@ -441,21 +429,18 @@ h4.great {
    <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-debt.png"></span>
    <span class="question">How much do you owe ?</span>
    </td>
-   <td class="yesnocolumn" colspan="2">
+   <td colspan="2">
 
    
    
-   <div class="price-slider" style="width:40%" class="pull-left" >
-            <h4 class="great">Amount</h4>
-            <span>Minimum $10 is required</span>
-            <div class="col-sm-12">
+   <div class="price-slider pull-left col-sm-6" >
               <div id="slider"></div>
-            </div>
           </div>
+	<div class="col-sm-6">
 
-
-   <a class="button-get-started pull-left" href="../calculate-debt.html" style="font-size:19px">
+   <a class="button-get-started" href="../calculate-debt.html" style="font-size:19px">
 		<i class="glyphicon glyphicon-th"></i> Calculate your debt</a>
+		</div>
 		<div class="clearfix"></div>
            <div class="form-hint">
 		<p>Include credit card debt, loans, overdrafts, shortfalls and arrears, leave out fines 
