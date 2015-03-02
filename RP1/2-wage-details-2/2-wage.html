@@ -151,40 +151,20 @@
         <div class="form-group ">
                 
                  <fieldset class="inline">
-                        <legend id="pay_includes_bonuses_label" class="form-label-bold">Were you paid weekly?</legend>
-                        <div id="pay_includes_bonuses" class="form-group">
-        
-        <label id="pay_includes_bonuses_label" for="pay_includes_bonuses_Yes" class="block-label">
-            <input id="pay_includes_bonuses_Yes" value="Yes" name="pay_includes_bonuses" type="radio" aria-describedby="pay_includes_bonuses_error pay_includes_bonuses_help">
-            Yes
-        </label>
-        
-        <label id="pay_includes_bonuses_label" for="pay_includes_bonuses_No" class="block-label">
-            <input id="pay_includes_bonuses_No" value="No" name="pay_includes_bonuses" type="radio" aria-describedby="pay_includes_bonuses_error pay_includes_bonuses_help">
-            No
-        </label>
-        
-    </div>
-                 </fieldset>
-            </div>
-        <p>
-            </p><div class="form-group ">
-                
-                 <fieldset class="inline">
-                        <legend id="pay_includes_bonuses_label" class="form-label-bold">Did your contract include any bonus or commission?</legend>
-                        <div id="pay_includes_bonuses" class="form-group">
-        
-        <label id="pay_includes_bonuses_label" for="pay_includes_bonuses_Yes" class="block-label">
-            <input id="pay_includes_bonuses_Yes" value="Yes" name="pay_includes_bonuses" type="radio" aria-describedby="pay_includes_bonuses_error pay_includes_bonuses_help">
-            Yes
-        </label>
-        
-        <label id="pay_includes_bonuses_label" for="pay_includes_bonuses_No" class="block-label">
-            <input id="pay_includes_bonuses_No" value="No" name="pay_includes_bonuses" type="radio" aria-describedby="pay_includes_bonuses_error pay_includes_bonuses_help">
-            No
-        </label>
-        
-    </div>
+                        <legend class="form-label-bold">Were you paid weekly?</legend>
+                     <div id="paid_weekly" class="form-group">
+
+                         <label for="paid_weekly_Yes" class="block-label">
+                             <input id="paid_weekly_Yes" value="Yes" name="paid_weekly" type="radio" >
+                             Yes
+                         </label>
+
+                         <label for="paid_weekly_No" class="block-label">
+                             <input id="paid_weekly_No" value="No" name="paid_weekly" type="radio">
+                             No
+                         </label>
+
+                     </div>
                  </fieldset>
             </div>
         <p></p>
@@ -193,7 +173,7 @@
         <div class="form-navigation form-group">
             
             <div>
-                <a class="button" id="next" href="3-commission.html">Continue</a>
+                <a class="button" id="next" href="2-wage-bonus.html">Continue</a>
                 
             </div>
             <div>
@@ -251,14 +231,22 @@
 
     
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+     $(document).ready(function(){
+     	var defaultpage = "2-wage-bonus.html";
+     	var nextpage = defaultpage;
 
-    ga('create', 'UA-52715352-2', 'auto');
-    ga('send', 'pageview');
-    	
+    	$('#paid_weekly input[value="Yes"]').click(function () {
+    	    nextpage = "2-wage-weekly.html";
+    	    $("#next").prop("href", nextpage);
+    	});
+    	$('#paid_weekly input[value="No"]').click(function () {
+    	    if ($('#paid_weekly input[value="No"]:checked').length == 0) {
+    	        nextpage = defaultpage;
+    	    }
+    	    $("#next").prop("href", nextpage);
+    	});
+    });
+   	
 </script>
 
 
@@ -270,4 +258,5 @@ style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
 <br><span class="tooltipTitle">Viewport size: </span>
 <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
-</body></html>
+</body>
+</html>
