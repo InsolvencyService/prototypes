@@ -606,8 +606,8 @@ hr.style {
 
 <!-- #BeginEditable "scripts" -->
 
-<script width="50" height="50" src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
-<script width="50" height="50" src="../assets/js/rangeslider/rangeslider.min.js"></script>
+<script src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script src="../assets/js/rangeslider/rangeslider.min.js"></script>
 <script type="text/javascript" src="jquery.ui.js"></script>
     <script type="text/javascript">
         var $initval;
@@ -629,31 +629,31 @@ hr.style {
             //$("[id='q7']").bootstrapSwitch();
             $("#q2").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "bankruptcy.html");
                 }
                 $interacted = true;
             });
             $("#q3").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "bankruptcy.html");
                 }
                 $interacted = true;
             });
             $("#q4").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "bankruptcy.html");
                 }
                 $interacted = true;
             });
             $("#q5").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "bankruptcy.html");
                 }
                 $interacted = true;
             });
             $("#q6").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "bankruptcy.html");
                 }
                 $interacted = true;
             });
@@ -683,7 +683,7 @@ hr.style {
                 if ($amount < 15000
                 && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
                 && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
-                    $("#btn-find-debt").attr("href", "calc-dro.html");
+                    $("#btn-find-debt").attr("href", "dro.html");
                 }
 
             });

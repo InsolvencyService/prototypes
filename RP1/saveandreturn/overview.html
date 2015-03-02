@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<!-- #BeginTemplate "../template.dwt" -->
+<!-- #BeginTemplate "../assets/templates/b-template.dwt" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
  <!-- #BeginEditable "title" -->
-<title>Debt help options</title>
+<title>Application overview</title>
 <!-- #EndEditable -->
-    
+
 
 
     <!--[if gt IE 8]><!-->
@@ -68,170 +67,73 @@
     
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">  
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/complete.css">
- <!--    <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/bootstrapbits.css"> -->
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap-switch.min.css">
-
 
 <style type="text/css">
 
-
-.row > div > img,
-td > img{
-width:100%;
-vertical-align:middle;
-max-width:50px;
+.row img{
+width:60px;
+text-align:right;
+float:right
 }
-tr > td.yesnocolumn{
-	vertical-align:top;
-	padding-top:20px !important;
-	 width: 140px;
-}
- tr > td{
-	vertical-align:middle;
-}
-.row > div,
-{
+.row > div{
 padding-top:15px;
 }
 .row > div:first-child{
 padding-top:0px;
 }
-a{
-	text-decoration:none;
+
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+	font-size:16px;
 }
-a:hover, a:active, a:focus{
-	text-decoration:underline;
+.label-default{
+	background:transparent none;
+	color:gray;
+	border:thin gray solid;
 }
-.row{
-margin-left:0;
-	min-height:60px;:
-}
-.options{
-	padding-top:10px !important;
-}
-.col-sm-1{
+
+.row.well{
 	padding-left:0;
 	padding-right:0;
 }
-.col-sm-7{
-	margin-right:0;
-}
-.linkcell{
-	padding-right:0;	
-}
-.linkcell a{
-	font-size:16px;
-}
-td [class*="col-"] {
-padding-top:12px
-}
-.question{
-	font-size:19px;
+.rowbottom {
 	display:block;
-	margin-left:10px;
-	padding-top:15px;
-}
-.alert{
-	padding-top:10px;
-	padding-bottom:10px;
-}
-.maincolumn{
-	width:410px;
-}
-
-table{
 	margin-left:20px;
-	padding-right:40px;
-	display:block;
 }
-.icon{
-display:block;
-	max-width:50px;
-	float:left;
-	margin-right:10px;
+.rowbottom hr{
+	margin:0
 }
-.icon img{
-
-	max-width:50px;
-
-}
-.bootstrap-switch-wrapper{
-	margin-left:20px
-}
-.morecolumn{
-	padding-top:20px !important;
-}
-.smallprintcolumn{
-	font-size:16px;
-	padding-left:20px !important;
-	padding-top:20px !important;
-}
-tr.bottomrow td{
-	border-bottom:0 transparent none;
+.rowbottom > div{
+	margin-top:6px;
+	margin-bottom:6px;
 }
 
-
-
-
-.row{
-	margin-left:15px;margin-right:15px
+.label{
+	background:transparent;
+}
+.label.label-success{
+	border:1px green solid;
+	color:green;
+	padding-right:13px;
+	padding-left:13px;
+}
+.rowmiddle{
+	padding-top:0 !important;
+}
+.rowtop{
+	margin-top:10px;
+}
+h3,
+h3 > a{
+	margin-top:0 !important
 }
 
-.btn-primary{
-	color:#fff !important;
-}
-
-#optionsarea .well{
-	padding-top:10px;
-}
-#optionsarea .well h2{
-	font-size:24px;
-}
-#optionsarea .label{
-font-size:12px;
-padding-top:5px;
-padding-bottom:3px;
-}
-.lozenge_space{
-	margin-bottom: 5px;
-	margin-left:3px;
-	display: block;
-	float: right;
-}
-.button_placement{
-	padding-left:0; 
-	text-align:right; 
-	position:absolute;
-	bottom: 35px;
-	right:20px;
-	
-}
-
-.doc-demo .tab-pane {
-  padding: 10px 15px;
-}
-.doc-demo .tab-content > .active {
-  border: 1px solid #ddd;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-top: none;
-}
-
-#mainpanels{
-	margin-top:15px;
-}
-#mainpanels.row,
-#mainpanels > [class*="col-"] {
-   display: -webkit-flex;
-    display: flex;
-    flex:1 1 auto;
- }
- #mainpanels h3{
-	margin:0;
-}
 </style>
 <!-- #EndEditable -->
 
@@ -281,166 +183,167 @@ padding-bottom:3px;
     </div>
 </div>
 
-
+<main role="main" id="wrapper">
     
  <div id="content" >
-        <div class="inner-block" style="display:none">
-            <div class="phase-banner">
-                    <p>
-                        <strong class="phase-tag">ALPHA</strong>
-                        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
-                    </p>
-            </div>
-        </div>
+ <div class="inner-block">
+	<div class="phase-banner">
+	<p>
+	<strong class="phase-tag">ALPHA</strong>
+	This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+	</p>
+	</div>
+	</div>
+	
+
 
 <!-- #BeginEditable "content" -->
 
-<div id="content" >
-
-<div >
-<div class="row">
-    <div class="col-sm-8">
-    <h1 class="form-title heading-large">Your options</h1>
-	   
-	   	<p>You have 2 types of debt options available to you</p>
+ 	
+	<div style="display:block; margin-left:30px !important">
 	
-	</div>
 	
-	<div class="col-sm-4" style="display:none">
-		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
-		<p><a href="../know-which-debt-solution.html">I know which debt solution I need</a></p>
-		<p><a href="../bankruptcy/continue/return.html">I am returning to an existing application</a></p>
+	
+	<h1 class="form-title heading-large">Claim overview</h1>
 		
+<div class="row">
+<div class="col-sm-8">
+	<ul>
+		<li class="row" id="section1" style="margin:0">
+		<div class="rowtop">
+	<span class="col-sm-6"><h3>Your details</h3></span>
+	<span class="col-sm-3"><label class="label label-success">Completed</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Edit</a></span>
+		<hr style="width:100%; display:block; margin:0; margin-top:10px">
 		</div>
-	</div>
+
+	
+	</li>
+
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>1 Employment details</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>2 Details of wages</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+	
+		<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>3 Redundancy pay</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>4 Breaks in employment</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>5 Holiday pays</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>6 Details of wages</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>7 Details of wages</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0">
+	<span class="col-sm-6"><h3>8 Details of wages</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+	<li class="row" id="section1">
+		<div class="rowtop" style="margin-top:0; margin:0">
+	<span class="col-sm-6"><h3>Payment</h3></span>
+	<span class="col-sm-3"><label class="label label-default">Not started</label></span>
+	<span class="col-sm-3"><a href="section1/your-names.html" class="edit">Start</a></span>
+		<hr>
+		</div>
+	</li>
+
+
+		
+
+	</ul>
+
 </div>
 
-<div class="doc-demo row">
-<div role="tabpanel">
+<div class="col-sm-4" style="padding-top:0">
+		<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef; display:none">
+		<p><a href="#">Make a payment</a></p>		
+		<p><a href="#">Save and logout</a></p>
+		<p><a href="#">Print summary</a></p>
+		<p><a href="#">Discard application</a></p>
+		</div>
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#government" aria-controls="home" role="tab">
-	Government options</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab">
-	Non government options</a></li>
-  </ul>
+</div>
 
-  <!-- Tab panes -->
-  
-  <div class="tab-content">
-    <div  class="tab-pane active" id="government">
-    
-    <div id="mainpanels" class="row">
-         <div class="col-sm-6">
+<br>
 
-             <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3><i class="glyphicon glyphicon-ok-sign"></i> Pros</h3>
-            </div>
-            <div class="panel-body">
-              <div class="row">
-                
-                 <div> 
-    	<ul>
-    	<li>
-    	Lets you pay back what you can using your assets and extra income    	
-    	</li>
-    	<li>
-Clears debts you can’t pay off after 1 year
-    	</li>
-    	<li>
-Unsecured creditors 
-		can’t take legal action against you
-    	</li>
-    	<li>
-An Official Receiver manages 
-		the repayment of your debts for you
-    	</li></ul>		
+<div class="form-navigation form-group" style="margin:20PX;">
+	
+	<div>
 
-                </div>
-              </div>
-            </div>
-      
-           </div> 
-          </div>
-    
-    <div class="col-sm-6">
-          <div class="panel panel-danger">
-            <div class="panel-heading">
-              <h3><i class="glyphicon glyphicon-remove"></i> Cons</h3>
-            </div>
-            <div class="panel-body">
-              <div>
-                
-                 <div class=" col-sm-11 "> 
-     	<ul>
-    	<li>
-Your assets are used to pay off your debts
-    	</li>
-    	<li>
-If you can afford it, you might have to make payments on your debts for up to 3 years
-    	</li>
-    	<li>
-Your bankruptcy will appear on your credit report for 6 years
-    	</li>
-    	<li>
-Your bankruptcy is entered on a public register<br>If you own a business, it might be closed down
-    	</li>
-    	<li>
-For 1 year, you can’t manage a company or get a loan of more than £500 without the court’s permission
-    	</li>
-    	</ul>
 
-                </div>
-              </div>
-            </div>
-                 <div class="panel-footer" style="display:none">
-  
-                    </div>
-            
-          </div>
+	<a href="section1/your-names.html" id="next" class="button">Continue</a>
+	
 	</div>
+	<div>
+	<br>
 	</div>
 	
-    <div class="clearfix"></div>
-    
-    <p><a href="bankruptcy.html" class="btn btn-default" style="margin:20px 30px; font-size:19px;">Find out more &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
-    
-    
-    </div>
-    
-   <div role="tabpanel" class="tab-pane" id="nongovernment">
-    
-    
-    </div>
-
-  </div>
-
-</div> 		
-
- </div>
-
-
- 	      		
-
-
-
-
-<p><br></p>
-<p><br></p>
-    
-
+	<div>
+	
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>&nbsp;
+	
+	</div>
+	</div>
 
 </div>
+	</div>
 
-
-
-</div>
-
-
-
-		<!-- #EndEditable -->
+	 <!-- #EndEditable -->
 
         
 </div>
@@ -494,51 +397,82 @@ For 1 year, you can’t manage a company or get a loan of more than £500 withou
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../assets/js/tag/tagdisplay.js"></script>
-<script type="text/javascript" src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function() {
 
-function equalHeight(group) {
-	var tallest = 0;
-	group.each(function() {
-		var thisHeight = $(this).height();
-		if(thisHeight > tallest) {
-			tallest = thisHeight;
-		}
-	});
-	group.height(tallest);
+// mark sections as completed
+
+var section5 = getParameterByName("section5");
+
+if (section5 && section5.length > 0){
+// change the colour of the button
+	if (section5 == "inprogress"){
+		$("#section5 .label").removeClass("label-default").addClass("label-warning");
+		$("#section5 .label").text("In progress");
+		$("#section5 .edit").text("Edit");
+		$("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
+
+	}
+	
+	if (section5 == "complete"){
+		$("#section5 .label").removeClass("label-default").addClass("label-success");
+		$("#section5 .label").text("Complete");
+		$("#section5 .edit").text("Edit");
+		$("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
+	}
 }
 
-$(document).ready(function(){
-	//$('[data-toggle="popover"]').popover()
-	equalHeight($(".well"));
-	var lastone;
-	$('[data-toggle="popover"]').on('click', function(e) {
-	e.preventDefault(); 
-		e.stopPropagation();
-		$(this).popover("show");
-		
-		if (lastone && lastone != $(this)){
-			lastone.popover("hide");
-  		}
+var section1 = getParameterByName("section1");
 
-	  	lastone = $(this);
+if (section1 && section1.length > 0){
+// change the colour of the button
+	
+	if (section1 == "complete"){
+		$("#section1 .label").removeClass("label-default").addClass("label-success");
+		$("#section1 .label").text("Complete");
+		$("#section1 .edit").text("Edit");
+		//$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+	}
+}
 
+
+
+
+// open and close sections of the overview and add and remove arrows
+	$(".rowbottom").hide();
+	$(".js-section").on("click", function(e){
+		e.preventDefault();
+		if ($(this).hasClass("open") == false){
+			$(".rowbottom").hide();
+			$(".row.well").removeClass("well");
+			$(this).addClass("open");
+			$(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+			var details = $($(this).attr("href")); 
+			details.show();
+			details.parent().addClass("well");
+		}
+		else{
+			$(".rowbottom").hide();
+			$(".row.well").removeClass("well");
+			$(this).removeClass("open");
+			$(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+			var details = $($(this).attr("href")); 
+			details.hide();
+		}
 	});
-
-/*	
-	$("#content:not('a')").click({ function(e)
-		e.preventDefault(); 
-		//e.stopPropagation();
-		//$(this).popover("hide");
-		
-	});
-	*/
 });
 
 
 
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 </script>
+
 
 <!-- #EndEditable -->
     
