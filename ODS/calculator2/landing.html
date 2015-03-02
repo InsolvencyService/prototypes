@@ -401,32 +401,36 @@ hr.style {
 
    <table class="table">
    <tr>
-   <td class="maincolumn" style="border-bottom:0 transparent none; padding-bottom:0">
+   <td class="maincolumn row" colspan="3" style="border-bottom:0 transparent none; padding-bottom:0">
+   <div class="col-sm-4" style="padding-left:0">
+
    <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-debt.png"></span>
    <span class="question">How much do you owe ?</span>
-   </td>
-   <td colspan="2" style="border-bottom:0 transparent none;">
+	</div>
 
-   <div class="col-sm-6" style="padding-top:6px; margin-top:10px">
+   <div class="col-sm-4" style="padding-top:6px; margin-top:10px">
    
    <div class="price-slider ">
               <div id="slider" ></div>
           </div>
     </div>
-    <div class="col-sm-6" style="padding-top:6px; margin-top:10px">
-    <p>Slide to change the amount</p>
-	</div>
+    
+	<div class="col-sm-4">
+
+	
+   <a class="button-get-started" href="../calculate-debt.html" style="font-size:19px">
+		<i class="glyphicon glyphicon-th"></i> Calculate your debt</a>
+		</div>
+
    </td>
    </tr>
 
 
    <tr>
-   <td  style="border-top:0 transparent none; text-align:right" colspan="2">
-   	<span style="font-size:19px; margin-left:60px;">Check the amount here</span>
-      <a class="button-get-started" href="../calculate-debt.html" style="font-size:19px;">
-		<i class="glyphicon glyphicon-th"></i> Calculate your debt</a>
-</td>
-   <td class="smallprintcolumn" style="border-top:0 transparent none; padding-top:0 !important; margin-top:0;padding-left:20px"">
+   <td class="maincolumn"  style="border-top:0 transparent none">
+   &nbsp;</td>
+   <td class="yesnocolumn" style="border-top:0 transparent none">&nbsp;</td>
+   <td style="border-top:0 transparent none; padding-top:0; margin-top:0;padding-left:20px">
               <div class="form-hint">
 
 
@@ -605,105 +609,126 @@ hr.style {
 <script width="50" height="50" src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
 <script width="50" height="50" src="../assets/js/rangeslider/rangeslider.min.js"></script>
 <script type="text/javascript" src="jquery.ui.js"></script>
+    <script type="text/javascript">
+        var $initval;
+        var $interacted;
+        var $amount;
 
-<script type="text/javascript">
-var $initval = 8000;
-var $interacted = false;
-var $amount = 0;
+        $(document).ready(function () {
+            $initval = 8000;
+            $interacted = false;
+            $amount = 0;
 
-$(document).ready(function() {
+            //$("input.switch[type='checkbox']").bootstrapSwitch();
 
-        $("#slider").slider({
-              animate: true,
-              value:$initval,
-              min: 1000,
-              max: 50000,
-              step: 100,
-              slide: function(event, ui) {
-                  update(1,ui.value); //changed
-              }
-          });
-      update();
+            $("[id='q2']").bootstrapSwitch();
+            $("[id='q3']").bootstrapSwitch();
+            $("[id='q4']").bootstrapSwitch();
+            $("[id='q5']").bootstrapSwitch();
+            $("[id='q6']").bootstrapSwitch();
+            //$("[id='q7']").bootstrapSwitch();
+            $("#q2").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                }
+                $interacted = true;
+            });
+            $("#q3").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                }
+                $interacted = true;
+            });
+            $("#q4").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                }
+                $interacted = true;
+            });
+            $("#q5").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                }
+                $interacted = true;
+            });
+            $("#q6").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "calc-bankruptcy.html");
+                }
+                $interacted = true;
+            });
 
-$(".yesnocolumn input[type='checkbox']").bootstrapSwitch();
-/*
-$("[id='q2']").bootstrapSwitch();
-$("[id='q3']").bootstrapSwitch();
-$("[id='q4']").bootstrapSwitch();
-$("[id='q5']").bootstrapSwitch();
-$("[id='q6']").bootstrapSwitch();
-$("[id='q7']").bootstrapSwitch();
-*/
+            var qstring = getParameterByName("amount");
+            if (qstring && qstring.length > 1) {
+                //$("#" + qstring).bootstrapSwitch('state', true);
+            }
 
-qstring = getParameterByName("q");
-if (qstring.length > 1)
-{
-$("#" + qstring).bootstrapSwitch('state', true);
-}
+            $("#slider").slider({
+                animate: true,
+                value: $initval,
+                min: 1000,
+                max: 50000,
+                step: 100,
+                slide: function (event, ui) {
+                    update(1, ui.value); //changed
+                }
+            });
+            update();
+            $("#btn-find-debt").on("click", function (e) {
+                if ($interacted == false) {
+                    e.preventDefault();
+                    alert("Check you entered answers which match your situation");
+                    $interacted = true;
+                }
+                if ($amount < 15000
+                && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
+                && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
+                    $("#btn-find-debt").attr("href", "calc-dro.html");
+                }
 
+            });
 
-$(".yesnocolumn input[type='checkbox']").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
-  }
-  $interacted = true;
-});
+        });
 
-	$("#btn-find-debt").on("click", function(e){
-		if ($interacted == false){
-			e.preventDefault();
-			alert("Select the debt answers which match your situation to proceed");
-		}
-		if ($amount < 15000 
-		&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
-		&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
-			$("#btn-find-debt").attr("href", "calc-dro.html");
-		}
-
-	});
-
-});
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-   function update(slider,val) {
-        //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
-        //var $amount = slider == 1?val:$("#amount").val();
-        $amount = slider == 1?val:$initval;
-
-        if (val && val != $initval){
-        	$interacted = true;
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
-        $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+"£" + addCommas($amount) +' <span class="glyphicon glyphicon-chevron-right"></span></label>');
-      }
 
-function addCommas(str) {
-    var parts = (str + "").split("."),
-        main = parts[0],
-        len = main.length,
-        output = "",
-        i = len - 1;
+        function update(slider, val) {
+            //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
+            //var $amount = slider == 1?val:$("#amount").val();
+            $amount = slider == 1 ? val : $initval;
 
-    while(i >= 0) {
-        output = main.charAt(i) + output;
-        if ((len - i) % 3 === 0 && i > 0) {
-            output = "," + output;
+            if (val && val != $initval) {
+                $interacted = true;
+            }
+            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + "£" + addCommas($amount) + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
         }
-        --i;
-    }
-    // put decimal part back
-    if (parts.length > 1) {
-        output += "." + parts[1];
-    }
-    return output;
-}
-</script>
+
+        function addCommas(str) {
+            var parts = (str + "").split("."),
+                main = parts[0],
+                len = main.length,
+                output = "",
+                i = len - 1;
+
+            while (i >= 0) {
+                output = main.charAt(i) + output;
+                if ((len - i) % 3 === 0 && i > 0) {
+                    output = "," + output;
+                }
+                --i;
+            }
+            // put decimal part back
+            if (parts.length > 1) {
+                output += "." + parts[1];
+            }
+            return output;
+        }
+    </script>
 
 
 <!-- #EndEditable -->

@@ -401,36 +401,32 @@ hr.style {
 
    <table class="table">
    <tr>
-   <td class="maincolumn row" colspan="3" style="border-bottom:0 transparent none; padding-bottom:0">
-   <div class="col-sm-4" style="padding-left:0">
-
+   <td class="maincolumn" style="border-bottom:0 transparent none; padding-bottom:0">
    <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-debt.png"></span>
    <span class="question">How much do you owe ?</span>
-	</div>
+   </td>
+   <td colspan="2" style="border-bottom:0 transparent none;">
 
-   <div class="col-sm-4" style="padding-top:6px; margin-top:10px">
+   <div class="col-sm-6" style="padding-top:6px; margin-top:10px">
    
    <div class="price-slider ">
               <div id="slider" ></div>
           </div>
     </div>
-    
-	<div class="col-sm-4">
-
-	
-   <a class="button-get-started" href="../calculate-debt.html" style="font-size:19px">
-		<i class="glyphicon glyphicon-th"></i> Calculate your debt</a>
-		</div>
-
+    <div class="col-sm-6" style="padding-top:6px; margin-top:10px">
+    <p>Slide to change the amount</p>
+	</div>
    </td>
    </tr>
 
 
    <tr>
-   <td class="maincolumn"  style="border-top:0 transparent none">
-   &nbsp;</td>
-   <td class="yesnocolumn" style="border-top:0 transparent none">&nbsp;</td>
-   <td style="border-top:0 transparent none; padding-top:0; margin-top:0;padding-left:20px">
+   <td  style="border-top:0 transparent none; text-align:right" colspan="2">
+   	<span style="font-size:19px; margin-left:60px;">Check the amount here</span>
+      <a class="button-get-started" href="../calculate-debt.html" style="font-size:19px;">
+		<i class="glyphicon glyphicon-th"></i> Calculate your debt</a>
+</td>
+   <td class="smallprintcolumn" style="border-top:0 transparent none; padding-top:0 !important; margin-top:0;padding-left:20px"">
               <div class="form-hint">
 
 
@@ -502,7 +498,9 @@ hr.style {
    <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-judgement.png"></span>
    <span class="question">Have you been through insolvency proceedings?</span>
    </td>
-   <td class="yesnocolumn" style="width: 132px"><input id="q6" name="q6" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+       <td class="yesnocolumn" style="width: 132px">
+           <input id="q6" name="q6" type="checkbox" data-on-text="Yes" data-off-text="No" class="switch">
+       </td>
    <td class="smallprintcolumn">
         <div class="form-hint">
 		Answer yes if you have a current or interim individual voluntary arrangement (IVA), 
@@ -517,7 +515,7 @@ hr.style {
   <tr class="bottomrow">
    <td class="maincolumn">
    <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-blank.png"></span>
-   <span class="question"><a class="button" href="../calc-bankruptcy.html" id="btn-find-debt">Find 
+   <span class="question"><a class="button" href="calc-bankruptcy.html" id="btn-find-debt">Find 
    a debt solution</a>
    </span>
    </td>
@@ -606,145 +604,60 @@ hr.style {
 
 <!-- #BeginEditable "scripts" -->
 
-<script width="50" height="50" src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
-<script width="50" height="50" src="../assets/js/rangeslider/rangeslider.min.js"></script>
+<script src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script src="../assets/js/rangeslider/rangeslider.min.js"></script>
 <script type="text/javascript" src="jquery.ui.js"></script>
 
 <script type="text/javascript">
-/*
-
-    $(function() {
-        var $document   = $(document),
-            selector    = '[data-rangeslider]',
-            $inputRange = $(selector);
-
-        // Example functionality to demonstrate a value feedback
-        // and change the output's value.
-        function valueOutput(element) {
-            var value = element.value,
-                output = element.parentNode.getElementsByTagName('output')[0];
-            output.innerHTML = value;
-        }
-        for (var i = $inputRange.length - 1; i >= 0; i--) {
-            valueOutput($inputRange[i]);
-        };
-        $document.on('input', selector, function(e) {
-            valueOutput(e.target);
-        });
-
-        // Initialize the elements
-        $inputRange.rangeslider({
-            polyfill: false
-        });
-
-        // Example functionality to demonstrate programmatic value changes
-        $document.on('click', '#js-example-change-value button', function(e) {
-            var $inputRange = $('input[type="range"]', e.target.parentNode),
-                value = $('input[type="number"]', e.target.parentNode)[0].value;
-
-            $inputRange.val(value).change();
-        });
-
-        // Example functionality to demonstrate destroy functionality
-        $document
-            .on('click', '#js-example-destroy button[data-behaviour="destroy"]', function(e) {
-                $('input[type="range"]', e.target.parentNode).rangeslider('destroy');
-            })
-            .on('click', '#js-example-destroy button[data-behaviour="initialize"]', function(e) {
-                $('input[type="range"]', e.target.parentNode).rangeslider({ polyfill: false });
-            });
-    });
-*/
- 
+var $initval;
+var $interacted;
+var $amount;
 
 $(document).ready(function() {
+    $initval = 8000;
+    $interacted = false;
+    $amount = 0;
 
-        $("#slider").slider({
-              animate: true,
-              value:8000,
-              min: 1000,
-              max: 25000,
-              step: 100,
-              slide: function(event, ui) {
-                  update(1,ui.value); //changed
-              }
-          });
-      update();
+//$("input.switch[type='checkbox']").bootstrapSwitch();
 
-
-$("[id='q1a']").bootstrapSwitch();
-$("[id='q1b']").bootstrapSwitch();
 $("[id='q2']").bootstrapSwitch();
 $("[id='q3']").bootstrapSwitch();
 $("[id='q4']").bootstrapSwitch();
 $("[id='q5']").bootstrapSwitch();
 $("[id='q6']").bootstrapSwitch();
-$("[id='q7']").bootstrapSwitch();
-
-qstring = getParameterByName("q");
-if (qstring.length > 1)
-{
-$("#" + qstring).bootstrapSwitch('state', true);
-}
+//$("[id='q7']").bootstrapSwitch();
 
 
-$("#q1a").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#q1b").bootstrapSwitch('state', false);
-		if ($("#q1b").bootstrapSwitch('state') == false && $("#q2").bootstrapSwitch('state') == false 
-		&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
-		&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
-			$("#btn-find-debt").attr("href", "calc-dro.html");
-		}
-  }
-});
-$("#q1b").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#q1a").bootstrapSwitch('state', false);
-  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
-  }
-});
-$("#q2").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
-  }
-});
-$("#q3").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
-  }
-});
-$("#q4").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
-  }
-});
-$("#q5").on('switchChange.bootstrapSwitch', function(event, state) {
-  if (state == true)
-  {
-  	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
-  }
-});
 $("#q6").on('switchChange.bootstrapSwitch', function(event, state) {
   if (state == true)
   {
   	$("#btn-find-debt").attr("href", "calc-bankruptcy.html");
   }
+  $interacted = true;
 });
 
+var qstring = getParameterByName("amount");
+if (qstring && qstring.length > 1) {
+    //$("#" + qstring).bootstrapSwitch('state', true);
+}
 
-	//alert($("#q1").bootstrapSwitch('state'));
+$("#slider").slider({
+    animate: true,
+    value: $initval,
+    min: 1000,
+    max: 50000,
+    step: 100,
+    slide: function (event, ui) {
+        update(1, ui.value); //changed
+    }
+});
+update();
 	$("#btn-find-debt").on("click", function(e){
-		if ($("#q1a").bootstrapSwitch('state') == false && $("#q1b").bootstrapSwitch('state') == false){
+		if ($interacted == false){
 			e.preventDefault();
 			alert("Select the debt answers which match your situation to proceed");
 		}
-		if ($("#q1b").bootstrapSwitch('state') == false && $("#q2").bootstrapSwitch('state') == false 
+		if ($amount < 15000 
 		&& $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false 
 		&& $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false){
 			$("#btn-find-debt").attr("href", "calc-dro.html");
@@ -764,21 +677,34 @@ function getParameterByName(name) {
    function update(slider,val) {
         //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
         //var $amount = slider == 1?val:$("#amount").val();
-        var $amount = slider == 1?val:8000;
-        /* commented
+        $amount = slider == 1?val:$initval;
 
-         $total = "$" + ($amount * $duration);
-         $( "#amount" ).val($amount);
-         $( "#amount-label" ).text($amount);
-         $( "#duration" ).val($duration);
-         $( "#duration-label" ).text($duration);
-         $( "#total" ).val($total);
-         $( "#total-label" ).text($total);
-*/
-         $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+$amount+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+        if (val && val != $initval){
+        	$interacted = true;
+        }
+        $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+"£" + addCommas($amount) +' <span class="glyphicon glyphicon-chevron-right"></span></label>');
       }
 
+function addCommas(str) {
+    var parts = (str + "").split("."),
+        main = parts[0],
+        len = main.length,
+        output = "",
+        i = len - 1;
 
+    while(i >= 0) {
+        output = main.charAt(i) + output;
+        if ((len - i) % 3 === 0 && i > 0) {
+            output = "," + output;
+        }
+        --i;
+    }
+    // put decimal part back
+    if (parts.length > 1) {
+        output += "." + parts[1];
+    }
+    return output;
+}
 </script>
 
 
