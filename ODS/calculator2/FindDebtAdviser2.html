@@ -71,6 +71,71 @@
 
 
     <style type="text/css">
+        .row {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .btn-primary {
+            color: #fff !important;
+        }
+
+        #optionsarea .well {
+            padding-top: 10px;
+        }
+
+            #optionsarea .well h2 {
+                font-size: 24px;
+            }
+
+        #optionsarea .label {
+            font-size: 12px;
+            padding-top: 5px;
+            padding-bottom: 3px;
+        }
+
+        .lozenge_space {
+            margin-bottom: 5px;
+            margin-left: 3px;
+            display: block;
+            float: right;
+        }
+
+        .button_placement {
+            padding-left: 0;
+            text-align: right;
+            position: absolute;
+            bottom: 35px;
+            right: 20px;
+        }
+
+        .doc-demo .tab-pane {
+            padding: 10px 15px;
+        }
+
+        .doc-demo .tab-content > .active {
+            border: 1px solid #ddd;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top: none;
+        }
+
+        #mainpanels {
+            margin-top: 15px;
+        }
+
+            #mainpanels.row,
+            #mainpanels > [class*="col-"] {
+                display: -webkit-flex;
+                display: flex;
+                flex: 1 1 auto;
+            }
+
+            #mainpanels h3 {
+                margin: 0;
+            }
+
+
         #stepscontainer .row img {
             width: 60px;
             text-align: right;
@@ -92,11 +157,17 @@
             min-width: 40px;
             font-size: 16px;
             text-align: center;
+            background-color:white;
         }
 
         #stepscontainer .col-sm-8,
         #stepscontainer .col-sm-4 {
             display: table-cell;
+        }
+
+        #smallpanels {
+            margin-left: -10px;
+            margin-right: -15px;
         }
     </style>
     <!-- #EndEditable -->
@@ -158,7 +229,7 @@
                 </p>
             </div>
         </div>
-    </div>
+
         <!-- #BeginEditable "content" -->
 
         <div id="content">
@@ -175,9 +246,9 @@
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
-                            <p><a href="../bankruptcy2/signin2/start.html">Apply for bankruptcy online</a></p>
-                            <p><a href="../bankruptcy/continue/return.html">I am returning to an existing application</a></p>
+                        <div class="panel-indent" style="margin-top:110px; margin-right:40px; font-size:16px; border-color:#efefef">
+                            <p><a href="../bankruptcy2/signin2/start.html">Apply for bankruptcy</a></p>
+                            <p style="display:none"><a href="../bankruptcy/continue/return.html">I am returning to an existing application</a></p>
                         </div>
                     </div>
                 </div>
@@ -195,15 +266,21 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="bankruptcy2.html">
+                                    <a href="options.html">
                                         <h4 class="list-group-item-heading">Step 2</h4>
                                         <p class="list-group-item-text">Your options</p>
                                     </a>
                                 </li>
-                                <li class="active">
-                                    <a href="#step-3">
+                                <li>
+                                    <a href="bankruptcy2.html">
                                         <h4 class="list-group-item-heading">Step 3</h4>
-                                        <p class="list-group-item-text">Get informed advice</p>
+                                        <p class="list-group-item-text">Your option explained</p>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="#step-4">
+                                        <h4 class="list-group-item-heading">Step 4</h4>
+                                        <p class="list-group-item-text">Informed advice</p>
                                     </a>
                                 </li>
                             </ul>
@@ -217,7 +294,7 @@
                                 <div>
 
                                     <div>
-                                        <div class="row">
+                                        <div class="row" id="smallpanels">
 
 
                                             <div class="col-sm-4" style="padding-top:15px">
