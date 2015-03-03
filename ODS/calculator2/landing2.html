@@ -1,0 +1,820 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- #BeginTemplate "../template.dwt" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+ <!-- #BeginEditable "title" -->
+<title>Calculate debt solution</title>
+<!-- #EndEditable -->
+    
+
+
+    <!--[if gt IE 8]><!-->
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/govuk-template.css"><!--<![endif]-->
+    <!--[if IE 6]><link href="../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]><link href="../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <link type="text/css" rel="stylesheet" media="print" href="../assets/stylesheets/govuk-template-print.css">
+
+    <!--[if IE 8]>
+    <script type="text/javascript">
+        (function(){if(window.opera){return;}
+            setTimeout(function(){var a=document,g,b={families:(g=
+                            ["nta"]),urls:["/public/stylesheets/fonts-ie8.css"]},
+                    c="/public/javascripts/vendor/goog/webfont-debug.js",d="script",
+                    e=a.createElement(d),f=a.getElementsByTagName(d)[0],h=g.length;WebFontConfig
+                    ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
+                    .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
+        })()
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <link type="text/css" rel="stylesheet" media="all" href="../assets/stylesheets/fonts.css">
+    <!--<![endif]-->
+
+
+    <!--[if lt IE 9]>
+    <script src="../assets/javascripts/ie.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <link type="image/x-icon" href="../assets/images/favicon.ico" rel="shortcut icon">
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link href="../assets/images/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link href="../assets/images/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+    <!-- For first- and second-generation iPad: -->
+    <link href="../assets/images/apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon-precomposed">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link href="../assets/images/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed">
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="assets/images/opengraph-image.png" property="og:image">
+    <link type="text/css" rel="stylesheet" href="../assets/stylesheets/elements-page.css">
+
+    <!--[if gt IE 8]><!-->
+<link type="text/css" rel="stylesheet" href="../assets/stylesheets/main.css"><!--<![endif]-->
+    <!--[if IE 6]><link href="../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]><link href="../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    
+     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">  
+     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/complete.css">
+ <!--    <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/bootstrapbits.css"> -->
+     
+<!-- #BeginEditable "styles" -->
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap-switch.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/js/rangeslider/rangeslider.css">
+
+<style type="text/css">
+
+
+.row > div > img,
+td > img{
+width:100%;
+vertical-align:middle;
+max-width:50px;
+}
+
+tr > td.yesnocolumn{
+	vertical-align:top;
+	padding-top:20px !important;
+	 width: 140px;
+}
+ tr > td{
+	vertical-align:middle;
+}
+.row > div
+{
+padding-top:15px;
+}
+.row > div:first-child{
+padding-top:0px;
+}
+a{
+	text-decoration:none;
+}
+a:hover, a:active, a:focus{
+	text-decoration:underline;
+}
+.row{
+	margin-left:0;
+	margin-right:0;
+	min-height:60px;
+}
+.options{
+	padding-top:10px !important;
+}
+.col-sm-1{
+	padding-left:0;
+	padding-right:0;
+}
+.col-sm-7{
+	margin-right:0;
+}
+.linkcell{
+	padding-right:0;	
+}
+.linkcell a{
+	font-size:16px;
+}
+td [class*="col-"] {
+padding-top:12px
+}
+.question{
+	font-size:19px;
+	display:block;
+	margin-left:10px;
+	padding-top:15px;
+}
+.alert{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.maincolumn{
+	width:410px;
+}
+
+table{
+	margin-left:20px;
+	padding-right:40px;
+	display:block;
+}
+.icon{
+display:block;
+	max-width:50px;
+	float:left;
+	margin-right:10px;
+}
+.icon img{
+
+	max-width:50px;
+
+}
+.bootstrap-switch-wrapper{
+	margin-left:20px
+}
+.morecolumn{
+	padding-top:20px !important;
+}
+.smallprintcolumn{
+	font-size:16px;
+	padding-left:20px !important;
+	padding-top:20px !important;
+}
+tr.bottomrow td{
+	border-bottom:0 transparent none;
+}
+
+
+@media (max-width:768px) {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr {  }
+	
+	tr td{
+			border: 0 transparent none !important;
+			margin-right:40px;
+	}
+	td.yesnocolumn{
+	margin-left:50px;
+}
+	td.smallprintcolumn { 
+		/* Behave  like a "row" */
+		position: relative;
+		padding-right:0 !important;
+	margin-right:-20px;
+	}
+	
+	td.smallprintcolumn{
+	width:100%;
+	clear:left;
+	float:left;
+}
+}
+
+
+
+
+
+
+   body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.price-box {
+    margin: 0 auto;
+	background: #E9E9E9;
+	border-radius: 10px;
+	padding: 40px 15px;
+	width: 500px;
+}
+
+.ui-widget-content {
+	border: 1px solid #bdc3c7;
+	background: #e1e1e1;
+	color: #222222;
+	margin-top: 4px;
+}
+
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 8.2em;
+	height: 2.2em;
+	cursor: default;
+	margin: 0 -40px auto !important;
+	text-align: center;	
+	line-height: 30px;
+	color: #FFFFFF;
+	font-size: 15px;
+}
+
+.ui-slider .ui-slider-handle .glyphicon {
+	color: #FFFFFF;
+	margin: 0 3px; 
+	font-size: 11px;
+	opacity: 0.5;
+}
+
+.ui-corner-all {
+	border-radius: 20px;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.25em;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+	border: 1px solid #f9f9f9;
+	background: #3498db;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	margin-left: -0.5em;
+}
+
+.ui-slider .ui-slider-handle {
+	cursor: pointer;
+}
+
+.ui-slider a,
+.ui-slider a:focus {
+	cursor: pointer;
+	outline: none;
+}
+
+.price, .lead p {
+	font-weight: 600;
+	font-size: 32px;
+	display: inline-block;
+	line-height: 60px;
+}
+
+h4.great {
+	background: #00ac98;
+	margin: 0 0 25px -60px;
+	padding: 7px 15px;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 5px;
+	display: inline-block;
+	-moz-box-shadow:    2px 4px 5px 0 #ccc;
+  	-webkit-box-shadow: 2px 4px 5px 0 #ccc;
+  	box-shadow:         2px 4px 5px 0 #ccc;
+}
+
+
+.ui-slider-range-min {
+	background: #2980b9;
+}
+
+#slider{
+ border-width:5px;
+}
+
+hr.style {
+	margin-top: 0;
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+
+</style>
+<!-- #EndEditable -->
+
+
+</head>
+
+<body class="js-enabled js-enabled">
+<script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+<div id="global-cookie-message" style="display: none; height:0">
+    <div class="outer-block" style="display: none;">
+        <div class="inner-block">
+            <p>The Redundancy Payments Service uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+        </div>
+    </div>
+</div>
+
+<div id="skiplink-container">
+    <div>
+        <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+    </div>
+</div>
+
+<header class="with-proposition" id="global-header" role="banner">
+    <div class="header-wrapper">
+        <div class="header-global">
+            <div class="header-logo">
+                <a class="content" id="logo" title="Go to the GOV.UK homepage" href="https://www.gov.uk/">
+                    <img alt="" src="../assets/images/govuk/gov.uk_logotype_crown.png"> GOV.UK
+                </a>
+            </div>
+        </div>
+        <div class="header-proposition">
+            <div class="content">
+                <nav id="proposition-menu">
+                    <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!--end header-->
+
+<div id="global-header-bar">
+    <div class="inner-block">
+        <div class="header-bar"></div>
+    </div>
+</div>
+
+
+    
+ <div id="content" >
+        <div class="inner-block" style="display:none">
+            <div class="phase-banner">
+                    <p>
+                        <strong class="phase-tag">ALPHA</strong>
+                        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
+                    </p>
+            </div>
+        </div>
+
+<!-- #BeginEditable "content" -->
+
+	
+
+<div >
+<div class="row" style="margin-left:15px;margin-right:15px;">
+    <div class="col-sm-8">
+    <h1 class="form-title heading-large">Find me a debt solution</h1>
+	   	<div>
+	   	<p>If you live in England or Wales and can't pay your debts, you may be able to apply to clear your debts. 
+	   	Find out if you are eligible for a debt relief order or filing for bankruptcy.</p>
+		</div>
+	</div>
+	
+	<div class="col-sm-4">
+		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
+		<p><a href="../know-which-debt-solution.html">I know which debt solution I need</a></p>
+		<p><a href="../bankruptcy/continue/return.html">I am returning to an existing application</a></p>
+			<p><a href="../alt/landing_vertical.html">Show me all debt solutions</a></p>
+		
+		</div>
+	</div>
+</div>
+
+
+<div class="well" id="stepscontainer">
+	<div class="row form-group ">
+	
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li class="active">
+                <a href="#step-1">
+                    <h4 class="list-group-item-heading">Step 1</h4>
+                    <p class="list-group-item-text">Your circumstances</p>
+                </a></li>
+                <li class="disabled"><a href="#step-2">
+                    <h4 class="list-group-item-heading">Step 2</h4>
+                    <p class="list-group-item-text">Your options</p>
+                </a></li>
+                <li class="disabled"><a href="#step-3">
+                    <h4 class="list-group-item-heading">Step 3</h4>
+                    <p class="list-group-item-text">Get informed advice</p>
+                </a></li>
+            </ul>
+        </div>
+	</div>
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+ 
+
+   <table class="table">
+   <tr>
+   <td class="maincolumn row" colspan="3" style="border-bottom:0 transparent none; padding-bottom:0">
+   <div class="col-sm-4" style="padding-left:0">
+
+   <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-debt.png"></span>
+   <span class="question">How much do you owe ?</span>
+	</div>
+
+   <div class="col-sm-4" style="padding-top:6px; margin-top:10px">
+   
+   <div class="price-slider ">
+              <div id="slider" ></div>
+          </div>
+    </div>
+    
+	<div class="col-sm-4">
+
+	
+   <a class="button-get-started" href="../calculate-debt.html" style="font-size:19px">
+		<i class="glyphicon glyphicon-th"></i> Calculate your debt</a>
+		</div>
+
+   </td>
+   </tr>
+
+
+   <tr>
+   <td class="maincolumn"  style="border-top:0 transparent none">
+   &nbsp;</td>
+   <td class="yesnocolumn" style="border-top:0 transparent none">&nbsp;</td>
+   <td style="border-top:0 transparent none; padding-top:0; margin-top:0;padding-left:20px">
+              <div class="form-hint">
+
+
+		<p>Include credit card debt, loans, overdrafts, shortfalls and arrears, leave out fines 
+		</p>
+	   	</div>
+   </td>
+   </tr>
+   
+
+   <tr>
+   <td class="maincolumn">
+   <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-Saving.png"></span>
+   <span class="question">Do you have assets or savings?</span>
+   </td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q2" name="q2" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="smallprintcolumn">
+        <div class="form-hint">
+		<p>Money you have or things you own, not including basic household items or tools of the trade &nbsp; <br>
+		<a href="../about-assets.html" style="margin-left:30px;">Find out about assets that qualify</a>
+	   	</div>
+
+   </td>
+   </tr>
+   
+   <tr>
+   <td class="maincolumn">
+   <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-OwnHome.png"></span>
+   <span class="question">Do you own your own home?</span>
+   </td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q3" name="q3" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="smallprintcolumn">
+        <div class="form-hint">
+		<p>Answer yes if you are a home owner or have a mortgage</p>	   	</div>
+
+   </td>
+   </tr>
+
+   <tr>
+   <td class="maincolumn">
+   <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-vehicle.png"></span>
+   <span class="question">Do you have a vehicle worth over £1,000?</span>
+   </td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q4" name="q4" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="smallprintcolumn">
+        <div class="form-hint">
+		<p>Answer no if you are leasing your car</p></div>
+
+   </td>
+   </tr>
+  <tr>
+   <td class="maincolumn">
+   <span class="icon"><img alt=""  width="50" height="50" src="../assets/icons/DRO-cash.png"></span>
+   <span class="question">Do you earn more than you need for your monthly bills, or are you retired?</span>
+   </td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q5" name="q5" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="smallprintcolumn">
+        <div class="form-hint">
+		<p>Answer yes if you earn £50 above the amount needed for your normal household bills
+		<br>Answer yes if you are retired or expecting your circumstances to improve
+		</p> 
+	   	</div>
+
+   </td>
+   </tr>
+
+   <tr>
+   <td class="maincolumn">
+   <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-judgement.png"></span>
+   <span class="question">Have you been through insolvency proceedings?</span>
+   </td>
+   <td class="yesnocolumn" style="width: 132px"><input id="q6" name="q6" type="checkbox" data-on-text="Yes"  data-off-text="No"></td>
+   <td class="smallprintcolumn">
+        <div class="form-hint">
+		Answer yes if you have a current or interim individual voluntary arrangement (IVA), 
+		or if you are currently under a bankruptcy order
+		 or debt relief restrictions order or undertaking
+</div>
+
+   </td>
+   </tr>
+
+
+  <tr class="bottomrow">
+   <td class="maincolumn">
+   <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-blank.png"></span>
+   <span class="question"><a class="button" href="options.html?type=dro" id="btn-find-debt">Find 
+   a debt solution</a>
+   </span>
+   </td>
+   <td class="yesnocolumn" style="width: 132px"></td>
+   <td class="smallprintcolumn">
+        <div>
+	   	</div>
+
+   </td>
+   </tr>
+
+   </table> 
+   
+        
+  
+           </div>
+        </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                <h1 class="text-center"> STEP 2</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                <h1 class="text-center"> STEP 3</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<p><br></p>
+<p><br></p>
+    
+
+
+</div>
+
+
+
+		<!-- #EndEditable -->
+
+        
+</div>
+
+
+<footer role="contentinfo" id="footer" class="group js-footer">
+
+        
+    <div class="footer-wrapper">
+
+        <div class="footer-meta">
+
+            <div class="footer-meta-inner">
+
+                 <ul class="footer__nav" style="width:100%">
+                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../contact-us.html">Contact us</a></li>
+                 </ul>
+                  <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+                    <li class="footer__link" style=" "><a href="../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style=""><a href="../cookies.html">Cookies</a></li>
+                    <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+                </ul>
+
+                <div class="open-government-licence">
+                    <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+                    <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!--end footer-->
+
+<div class="app-error hidden" id="global-app-error"></div>
+<!--
+<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+<script type="text/javascript" src="assets/javascripts/application.js"></script>
+-->
+<script type="text/javascript" src="../assets/js/bootstrap-switch/jquery.min.js"></script>
+
+<!-- #BeginEditable "scripts" -->
+
+<script width="50" height="50" src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script width="50" height="50" src="../assets/js/rangeslider/rangeslider.min.js"></script>
+<script type="text/javascript" src="jquery.ui.js"></script>
+    <script type="text/javascript">
+        var $initval;
+        var $interacted;
+        var $amount;
+
+        $(document).ready(function () {
+        
+            var navListItems = $('ul.setup-panel li a'),
+		    allWells = $('.setup-content');
+		
+		    allWells.hide();
+		
+		    navListItems.click(function(e)
+		    {
+		        e.preventDefault();
+		        var $target = $($(this).attr('href')),
+		            $item = $(this).closest('li');
+		        
+		        if (!$item.hasClass('disabled')) {
+		            navListItems.closest('li').removeClass('active');
+		            $item.addClass('active');
+		            allWells.hide();
+		            $target.show();
+		        }
+		    });
+		    
+		    $('ul.setup-panel li.active a').trigger('click');
+		    
+		    // DEMO ONLY //
+		    $('#activate-step-2').on('click', function(e) {
+		        $('ul.setup-panel li:eq(1)').removeClass('disabled');
+		        $('ul.setup-panel li a[href="#step-2"]').trigger('click');
+		        $(this).remove();
+		    });
+        
+        
+        
+        
+            $initval = 8000;
+            $interacted = false;
+            $amount = 0;
+
+            //$("input.switch[type='checkbox']").bootstrapSwitch();
+
+            $("[id='q2']").bootstrapSwitch();
+            $("[id='q3']").bootstrapSwitch();
+            $("[id='q4']").bootstrapSwitch();
+            $("[id='q5']").bootstrapSwitch();
+            $("[id='q6']").bootstrapSwitch();
+            //$("[id='q7']").bootstrapSwitch();
+            $("#q2").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "options.html?type=b");
+                }
+                $interacted = true;
+            });
+            $("#q3").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "options.html?type=b");
+                }
+                $interacted = true;
+            });
+            $("#q4").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "options.html?type=b");
+                }
+                $interacted = true;
+            });
+            $("#q5").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "options.html?type=b");
+                }
+                $interacted = true;
+            });
+            $("#q6").on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state == true) {
+                    $("#btn-find-debt").attr("href", "options.html?type=b");
+                }
+                $interacted = true;
+            });
+
+            var qstring = getParameterByName("amount");
+            if (qstring && qstring.length > 1) {
+                //$("#" + qstring).bootstrapSwitch('state', true);
+            }
+
+            $("#slider").slider({
+                animate: true,
+                value: $initval,
+                min: 1000,
+                max: 50000,
+                step: 100,
+                slide: function (event, ui) {
+                    update(1, ui.value); //changed
+                }
+            });
+            update();
+            $("#btn-find-debt").on("click", function (e) {
+                if ($interacted == false) {
+                    e.preventDefault();
+                    alert("Check you entered answers which match your situation");
+                    $interacted = true;
+                }
+                if ($amount < 15000
+                && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
+                && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
+                    $("#btn-find-debt").attr("href", "options.html?type=dro");
+                }
+
+            });
+
+        });
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function update(slider, val) {
+            //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
+            //var $amount = slider == 1?val:$("#amount").val();
+            $amount = slider == 1 ? val : $initval;
+
+            if (val && val != $initval) {
+                $interacted = true;
+            }
+            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + "£" + addCommas($amount) + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+        }
+
+        function addCommas(str) {
+            var parts = (str + "").split("."),
+                main = parts[0],
+                len = main.length,
+                output = "",
+                i = len - 1;
+
+            while (i >= 0) {
+                output = main.charAt(i) + output;
+                if ((len - i) % 3 === 0 && i > 0) {
+                    output = "," + output;
+                }
+                --i;
+            }
+            // put decimal part back
+            if (parts.length > 1) {
+                output += "." + parts[1];
+            }
+            return output;
+        }
+    </script>
+
+
+<!-- #EndEditable -->
+    
+
+
+
+<div id="window-resizer-tooltip" style="display: none;">
+<a href="/claims/start#" title="Edit settings" 
+style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+<span class="tooltipTitle">Window size: </span>
+<span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
+<br><span class="tooltipTitle">Viewport size: </span>
+<span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
+</body><!-- #EndTemplate -->
+
+</html>
