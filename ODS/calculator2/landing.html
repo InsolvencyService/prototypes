@@ -517,7 +517,7 @@ hr.style {
   <tr class="bottomrow">
    <td class="maincolumn">
    <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-blank.png"></span>
-   <span class="question"><a class="button" href="../calc-bankruptcy.html" id="btn-find-debt">Find 
+   <span class="question"><a class="button" href="government-options.html?type=dro" id="btn-find-debt">Find 
    a debt solution</a>
    </span>
    </td>
@@ -606,8 +606,8 @@ hr.style {
 
 <!-- #BeginEditable "scripts" -->
 
-<script src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
-<script src="../assets/js/rangeslider/rangeslider.min.js"></script>
+<script width="50" height="50" src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script width="50" height="50" src="../assets/js/rangeslider/rangeslider.min.js"></script>
 <script type="text/javascript" src="jquery.ui.js"></script>
     <script type="text/javascript">
         var $initval;
@@ -629,31 +629,31 @@ hr.style {
             //$("[id='q7']").bootstrapSwitch();
             $("#q2").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "government-options.html?type=b");
                 }
                 $interacted = true;
             });
             $("#q3").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "government-options.html?type=b");
                 }
                 $interacted = true;
             });
             $("#q4").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "government-options.html?type=b");
                 }
                 $interacted = true;
             });
             $("#q5").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "government-options.html?type=b");
                 }
                 $interacted = true;
             });
             $("#q6").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "bankruptcy.html");
+                    $("#btn-find-debt").attr("href", "government-options.html?type=b");
                 }
                 $interacted = true;
             });
@@ -683,7 +683,7 @@ hr.style {
                 if ($amount < 15000
                 && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
                 && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
-                    $("#btn-find-debt").attr("href", "dro.html");
+                    $("#btn-find-debt").attr("href", "calc-dro.html");
                 }
 
             });
