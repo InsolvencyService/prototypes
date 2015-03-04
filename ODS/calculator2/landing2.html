@@ -577,7 +577,7 @@
                                         <span class="question">
                                             <a class="button" href="options.html?type=dro" id="btn-find-debt">
                                                 Find
-                                                a debt solution
+                                                a debt solution&nbsp;<i  class="glyphicon glyphicon-chevron-right"></i>
                                             </a>
                                         </span>
                                     </td>
@@ -737,9 +737,9 @@
             update();
             $("#btn-find-debt").on("click", function (e) {
                 if ($interacted == false) {
-                    e.preventDefault();
-                    alert("Check you entered answers which match your situation");
-                    $interacted = true;
+                    //e.preventDefault();
+                    //alert("Check you entered answers which match your situation");
+                    //$interacted = true;
                 }
                 if ($amount < 15000
                 && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
