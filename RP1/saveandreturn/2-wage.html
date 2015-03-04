@@ -60,6 +60,27 @@
     <!--[if IE 6]><link href="../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    
+    <style type="text/css">
+    .select-control{
+		display:  inline-block;
+		height: 34px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.4285;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+		-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	}
+    
+    </style>
 </head>
 
 <body class="js-enabled js-enabled">
@@ -138,7 +159,7 @@
             <input id="gross_income_amount" name="gross_income_amount" type="text" size="10" 
             aria-describedby="gross_income_error gross_income_help" value="">
             <label id="gross_income_period_label" for="gross_income_period">per</label>
-                <select id="gross_income_period" name="gross_income_period">
+                <select id="gross_income_period" name="gross_income_period" class="select-control">
                 <option value="invalid">Choose...</option>
                 <option value="hour">Hour</option>
                 <option value="day">Day</option>
