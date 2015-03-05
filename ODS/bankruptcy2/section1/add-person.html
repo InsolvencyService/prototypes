@@ -94,8 +94,6 @@
             font-size: 16px;
         }
     </style>
-    
-    
 <!-- #EndEditable -->
 
 
@@ -172,29 +170,30 @@
                 <p class="form-hint">We need to know about anyone who lives at your address or if you have any dependents who live at alernative addresses</p>
 
 
-                <form class="form" id="dependentForm" method="post">
+                <form class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
                     <div class="form-group ">
 
                         <label id="first_name_label" for="first_name" class="form-label first_name">First name</label>
-                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="Susan" />
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
                         <br />
                     </div>
                     <div class="form-group ">
 
                         <label id="last_name_label" for="last_name" class="form-label">Last name</label>
-                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="Jones" />
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
                         <br />
                     </div>
 
                     <div class="form-group ">
 
                         <label id="age_label" for="age" class="form-label">Age</label>
-                        <input id="age" name="age" type="text" value="36" />
+                        <input id="age" name="age" type="text" value="" />
                         <br />
                     </div>
 
+<<<<<<< HEAD
 					<div class="form-group">
                         <p id="title_label" class="form-label">Does this person live with you, and are they your dependents?</p>
 
@@ -222,6 +221,8 @@
 
 
 <!---
+=======
+>>>>>>> parent of 74af7b8... Changes to dependent type selection
                     <div class="form-group">
                         <p id="title_label" class="form-label">Does this person live at your address?</p>
 
@@ -261,14 +262,12 @@
                             </fieldset>
 
 
-                    </div> --->
-                    
-                    <input type="submit" class="button"  value="Continue">
+                    </div>
                 </form>
             
                 <!-- For User research -->
             <div class="form-navigation form-group" style="margin-top:20px"></div>
-                
+                <div><a href="person-address.html" id="next" class="button">Continue</a></div>
                 <div><a style="padding-right: 30px" href="household-members.html" id="back">Back</a>
                 &nbsp;<a href="../logout.html" id="cancel">Save and logout</a>  
 				</div>
@@ -329,28 +328,8 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type=""text/javascript">
-	
-	$("form").submit(function(){
-	    
-	    g1 = $('#homedependent').is(':checked');
-	    g2 = $('#awaydependent').is(':checked');
-	    g3 = $('#nondependent').is(':checked');
-	    
-	    if (g1){
-	    	$('#dependentForm').attr('action', 'person-relationship.html');	    	
-	    }
-	    else if (g2){
-	    	$('#dependentForm').attr('action', 'person-address.html');	
-	    }
-	    else if (g3){
-	    	$('#dependentForm').attr('action', 'household-members.html?name=Susan');	
-	    }      
-	});
 
-</script>
- 
- <!-- #EndEditable -->
+<!-- #EndEditable -->
     
 
 
