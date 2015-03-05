@@ -577,7 +577,7 @@
                                         <span class="question">
                                             <a class="button" href="options.html?type=dro" id="btn-find-debt">
                                                 Find
-                                                a debt solution&nbsp;<i  class="glyphicon glyphicon-chevron-right"></i>
+                                                a debt solution
                                             </a>
                                         </span>
                                     </td>
@@ -676,6 +676,8 @@
         var $amount;
 
         $(document).ready(function () {
+            $min = 1000;
+            $max = 50000;
             $initval = 8000;
             $interacted = false;
             $amount = 0;
@@ -727,19 +729,31 @@
             $("#slider").slider({
                 animate: true,
                 value: $initval,
-                min: 1000,
-                max: 50000,
+                min: $min,
+                max: $max,
                 step: 100,
                 slide: function (event, ui) {
                     update(1, ui.value); //changed
                 }
             });
             update();
+            $(document).keydown(function (e) {
+                switch (e.which) {
+                    case 38: // up // left is 37 and right is 39
+                        update(1, $amount + 500);
+                        break;
+                    case 40: // down
+                        update(1, $amount - 500);
+                        break;
+                    default: return; // exit this handler for other keys
+                }
+                e.preventDefault(); // prevent the default action (scroll / move caret)
+            });
             $("#btn-find-debt").on("click", function (e) {
                 if ($interacted == false) {
-                    //e.preventDefault();
-                    //alert("Check you entered answers which match your situation");
-                    //$interacted = true;
+                    e.preventDefault();
+                    alert("Check you entered answers which match your situation");
+                    $interacted = true;
                 }
                 if ($amount < 15000
                 && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
@@ -766,7 +780,14 @@
             if (val && val != $initval) {
                 $interacted = true;
             }
-            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + "£" + addCommas($amount) + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+            var formatamount = "£" + addCommas($amount);
+            if ($amount == $max) {
+                formatamount = "Over £50K";
+            }
+            if ($amount == $min) {
+                formatamount = "Under £1K";
+            }
+            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + formatamount + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
         }
 
         function addCommas(str) {
