@@ -271,7 +271,7 @@
 
                             </li>
 
-                            <li class="row" id="section1b">
+                            <li class="row" id="section2">
                                 <div class="rowtop">
                                     <span class="col-sm-6"><h3>2 Your household 
 									and dependents</h3></span>
@@ -282,7 +282,7 @@
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
                                     <span class="col-sm-6">
-                                        <a href="#details1b" class="js-section">
+                                        <a href="#details2" class="js-section">
                                             <i class="glyphicon glyphicon-triangle-right"></i> What we need to know
                                         </a>
                                     </span>
@@ -323,14 +323,14 @@
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
                                     <span class="col-sm-6">
-                                        <a href="#details2" class="js-section">
+                                        <a href="#details2a" class="js-section">
                                             <i class="glyphicon glyphicon-triangle-right"></i> What we need to know
                                         </a>
                                     </span>
                                 </div>
 
                                 <div class="clearfix"></div>
-                                <div class="rowbottom" id="details2">
+                                <div class="rowbottom" id="details2a">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             Employment history
@@ -858,6 +858,23 @@
                     }
                 }
 
+                var section2 = getParameterByName("section2");
+
+                if (section2 && section2.length > 0) {
+                    // change the colour of the button
+
+                    if (section2 == "complete") {
+                        $("#section1 .label").removeClass("label-default").addClass("label-success");
+                        $("#section1 .label").text("Complete");
+                        $("#section1 .edit").text("Edit");
+                        
+                        $("#section2 .label").removeClass("label-default").addClass("label-success");
+                        $("#section2 .label").text("Complete");
+                        $("#section2 .edit").text("Edit");
+
+                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+                    }
+                }
 
 
 
