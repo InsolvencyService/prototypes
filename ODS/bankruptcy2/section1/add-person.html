@@ -244,12 +244,12 @@
                                 </div>
                             </fieldset>
                     </div>
-                
+                </form>
             
                 <!-- For User research -->
                 <div class="form-navigation form-group" style="margin-top:20px"></div>
-                <div><input type="submit" id="next" class="button" value="Continue"></div>
-            </form> 
+                <div><a href="#" id="next" class="button">Continue</a></div>
+              
                 <div><a style="padding-right: 30px" href="household-members.html" id="back">Back</a>
                 &nbsp;<a href="../logout.html" id="cancel">Save and logout</a>  
 				</div>
@@ -322,7 +322,8 @@ $(document).ready(function() {
 
 
 
-$("form").submit(function(event) {
+ $("#next").on("click", function () {
+
   
 	 
   	 $("#pnl-missing-selection").hide();
@@ -364,13 +365,13 @@ $("form").submit(function(event) {
 /* redirects */
 	
 	if((sameaddressYesNo == false) && (dependentYesNo == true)){
-		$('#dependentForm').attr('action', 'person-address.html');
+		$('#next').attr('href', 'person-address.html');
 	}
 	else if((sameaddressYesNo == true) && (dependentYesNo == false)){
-		$('#dependentForm').attr('action', 'household-members.html?name=Susan');
+		$('#next').attr('href', 'household-members.html?name=Susan');
 	}
 	else if((sameaddressYesNo == true) && (dependentYesNo == true)){
-		$('#dependentForm').attr('action', 'person-relationship.html');
+		$('#next').attr('href', 'person-relationship.html');
 	}
 
 	
