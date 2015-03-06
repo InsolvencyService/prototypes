@@ -170,72 +170,55 @@
                 <p class="form-hint">We need to know about anyone who lives at your address or if you have any dependents who live at alernative addresses</p>
 
 
-                <form class="form" method="post">
+                <form id="dependentForm" class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
                     <div class="form-group ">
 
                         <label id="first_name_label" for="first_name" class="form-label first_name">First name</label>
-                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="Susan" />
                         <br />
                     </div>
                     <div class="form-group ">
 
                         <label id="last_name_label" for="last_name" class="form-label">Last name</label>
-                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="Jones" />
                         <br />
                     </div>
 
                     <div class="form-group ">
 
                         <label id="age_label" for="age" class="form-label">Age</label>
-                        <input id="age" name="age" type="text" value="" />
+                        <input id="age" name="age" type="text" value="36" />
                         <br />
                     </div>
+                    
+                   
+					
+					
 
-<<<<<<< HEAD
 					<div class="form-group">
-                        <p id="title_label" class="form-label">Does this person live with you, and are they your dependents?</p>
-
-                        <fieldset >
-                            <div id="title" class="form-group">
-
-                               <p><label for="homedependent" class="block-label">
-                                    <input id="homedependent" name="dependenttype" type="radio">
-                                    Lives with you and is your dependent
-                                </label></p>
-								
-                                <p><label for="awaydependent" class="block-label">
-                                    <input id="awaydependent" name="dependenttype" type="radio">
-                                    Lives elsewhere and is your dependent
-                                </label></p>
-                                <br>
-                                <p><label for="nondependent" class="block-label">
-                                    <input id="nondependent" name="dependenttype" type="radio">
-                                    Lives with you and is not your dependent
-                                </label></p>
-
-                            </div>
-                         </fieldset>
-                    </div>
-
-
-<!---
-=======
->>>>>>> parent of 74af7b8... Changes to dependent type selection
-                    <div class="form-group">
+					
+					<div class="alert alert-danger" id="pnl-missing-doublenegative">
+						<p>You have selected no to both answers below. If this is corect we don't need to know about this person.</p>
+					</div>
+ 					
+ 					<div class="alert alert-danger" id="pnl-missing-selection">
+						<p>You need to make a selection for each of the options below</p>
+					</div>
+					
                         <p id="title_label" class="form-label">Does this person live at your address?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
 
                                 <label for="sameaddress_Yes" class="block-label">
-                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    <input id="sameaddress_Yes" value="yes" name="sameAddress" type="radio">
                                     Yes
                                 </label>
 
                                 <label id="title_label1" for="sameaddress_No" class="block-label">
-                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    <input id="sameaddress_No" value="No" name="sameAddress" type="radio">
                                     No
                                 </label>
                             </div>
@@ -243,31 +226,30 @@
                     </div>
 
                     <div class="form-group">
-                        <p id="title_label2" class="form-label">Is this person dependent on you?</p>
+                        <p id="title_label" class="form-label">Is this person dependent on you?</p>
 
                             <fieldset class="inline">
-                                <div id="title0" class="form-group ">
+                                <div id="title" class="form-group ">
 
                                     <label id="dependent_answer1" for="dependent_yes" class="block-label">
-                                        <input id="dependent_yes" value="Yes" name="dependentyesno" type="radio">
+                                        <input id="dependent_Yes" name="dependentyesno" type="radio">
                                         Yes
                                     </label>
 
                                     <label id="dependent_answer2" for="dependent_no" class="block-label">
-                                        <input id="dependent_no" value="No" name="dependentyesno" type="radio">
+                                        <input id="dependent_No" name="dependentyesno" type="radio">
                                         No
                                     </label>
 
                                 </div>
                             </fieldset>
-
-
                     </div>
-                </form>
+                
             
                 <!-- For User research -->
-            <div class="form-navigation form-group" style="margin-top:20px"></div>
-                <div><a href="person-address.html" id="next" class="button">Continue</a></div>
+                <div class="form-navigation form-group" style="margin-top:20px"></div>
+                <div><input type="submit" id="next" class="button" value="Continue"></div>
+            </form> 
                 <div><a style="padding-right: 30px" href="household-members.html" id="back">Back</a>
                 &nbsp;<a href="../logout.html" id="cancel">Save and logout</a>  
 				</div>
@@ -328,7 +310,77 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/bootstrap/js/toggle-button.js"></script>
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#pnl-missing-selection").hide();
+	$("#pnl-missing-doublenegative").hide();
+});
+
+
+
+
+$("form").submit(function(event) {
+  
+	 
+  	 $("#pnl-missing-selection").hide();
+	 $("#pnl-missing-doublenegative").hide();
+	 var dependentYesNo;
+	 var sameAddressYesNo;
+	 
+	/* radio button valdation */
+	 if($('#sameaddress_Yes').is(':checked')){
+	 	sameaddressYesNo = true;
+	 }
+	 else if($('#sameaddress_No').is(':checked')){
+	 	sameaddressYesNo = false;
+	 }
+	 else{
+	 	event.preventDefault();
+	  	$("#pnl-missing-selection").show();
+	 }
+	 
+	 
+	 if($('#dependent_Yes').is(':checked')){
+	 	dependentYesNo = true;
+	 }
+	 else if($('#dependent_No').is(':checked')){
+	 	dependentYesNo = false;
+	 }
+	 else{
+	 	event.preventDefault();
+	 	$("#pnl-missing-selection").show();	 }
+	 
+	
+	 
+	if((dependentYesNo == false) && (sameaddressYesNo == false)){
+	 	event.preventDefault();
+	 	$("#pnl-missing-doublenegative").show();
+	} 
+
+	
+/* redirects */
+	
+	if((sameaddressYesNo == false) && (dependentYesNo == true)){
+		$('#dependentForm').attr('action', 'person-address.html');
+	}
+	else if((sameaddressYesNo == true) && (dependentYesNo == false)){
+		$('#dependentForm').attr('action', 'household-members.html?name=Susan');
+	}
+	else if((sameaddressYesNo == true) && (dependentYesNo == true)){
+		$('#dependentForm').attr('action', 'person-relationship.html');
+	}
+
+	
+	
+	
+	
+	
+});
+
+</script>
 <!-- #EndEditable -->
     
 
