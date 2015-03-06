@@ -166,46 +166,41 @@
 
 
 
-                <h1 class="form-title heading-large">Your relationship</h1>
+                <h1 class="form-title heading-large">Your dependents and those who live with you</h1>
+                <p class="form-hint">We need to know about anyone who lives at your address or if you have any dependents who live at alernative addresses</p>
 
 
                 <form class="form" method="post">
-					<fieldset>
-					 <div id="pnl-dependent">
+                    <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-                                <div class="form-group ">
-                                    <p id="title_label" class="form-label ">What is the reason for <strong>Susan</strong>'s dependance on you?</p>
+                    <div class="form-group">
+                        <p id="title_label" class="form-label">Does anyone live 
+						with you at your address or do you have any dependents?</p>
 
-                                    <fieldset class="inline">
-                                        <div id="title" class="form-group">
-                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
-                                                <input id="dependent_type1" value="Parent" name="dependent" type="radio" 
-                                                       aria-describedby="title_error title_help">I am their parent
-                                            </label>
-                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
-                                                <input id="dependent_type2" value="Carer" name="dependent" type="radio" aria-describedby="title_error title_help">I am their carer
-                                            </label>
-                                        </div>
-                                    </fieldset>
-                                </div>
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
 
-                                <div class="form-group ">
-                                    <label for="other_reason" class="form-label">Other reason</label>
-                                    <input id="other_reason" name="other_reason" type="text" value="" /><br />
-                                </div>
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
                             </div>
+                         </fieldset>
+                    </div>
 
-					
-					</fieldset>
-                                    </form>
+                </form>
             
                 <!-- For User research -->
-                <div class="form-navigation form-group" style="margin-top:20px"></div>
-                <div><a href="summary2.html?name=Susan" id="next" class="button">Continue</a></div>
-                <div><a style="padding-right: 30px" href="person-address.html" id="back">Back</a>
-                &nbsp;<a href="../logout.html" id="cancel">Save and logout</a></div>
-
-
+            <div class="form-navigation form-group" style="margin-top:20px"></div>
+                <div><a href="add-person.html" id="next" class="button">Continue</a></div>
+                <div><a style="padding-right: 30px" href="household-members.html" id="back">Back</a>
+                &nbsp;<a href="../logout.html" id="cancel">Save and logout</a>  
+				</div>
             </div>
             <p><br></p>
 
