@@ -127,7 +127,7 @@ help us improve it
 <div class="inner-block text">
     
     <h1 class="form-title heading-large">Reason for not <span lang="en-gb">
-	receiving Jobseeker's alowance</span></h1>
+	receiving Jobseeker's allowance</span></h1>
 
     
     
@@ -148,13 +148,13 @@ class="form-label-bold no_benefits_reason"></label>
             
             <label id="still_claiming_label" class="form-label-bold">Why did you not claim for Jobseeker's Allowance?</label>
             <div id="no-benefits" class="form-group">
-        <label id="no-benefits_label" for="no-benefits_did-not-want" class="block-label">
-            <input id="no-benefits_refused" value="DidNotWant" name="no-benefits" type="radio">
+        <label id="no-benefits_label" for="no-benefits_refused" class="block-label">
+            <input id="no-benefits_refused" value="Refused" name="no-benefits" type="radio">
             My claim was refused
                     </label>
 
-        <label id="no-benefits_label" for="no-benefits_did-not-want" class="block-label">
-            <input id="no-benefits_abroad" value="DidNotWant" name="no-benefits" type="radio">
+        <label id="no-benefits_label" for="no-benefits_abroad" class="block-label">
+            <input id="no-benefits_abroad" value="Abroad" name="no-benefits" type="radio">
             I was abroad during the notice period
                     </label>
 
@@ -224,14 +224,16 @@ class="form-label-bold no_benefits_reason"></label>
 
 
     
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#no-benefits_refused").click(function(){
+		$("#next").prop("href","4-refused.html");
+	});
+	$("#no-benefits_abroad").click(function(){
+		$("#next").prop("href","4-abroad.html");
+	});
 
-    ga('create', 'UA-52715352-2', 'auto');
-    ga('send', 'pageview');
+});
     	
 </script>
 
