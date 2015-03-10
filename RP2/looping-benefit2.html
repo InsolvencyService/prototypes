@@ -15,6 +15,8 @@
 
 
 
+
+
     </script>
 
     <!--[if gt IE 8]><!-->
@@ -39,6 +41,8 @@
                     ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
                     .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
         })()
+
+
 
 
 
@@ -88,6 +92,8 @@
 <body class="js-enabled js-enabled">
 <script type="text/javascript">
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+
+
 
 
 
@@ -168,82 +174,62 @@
 
                 <div class="form-group ">
 
-                    <fieldset class="date-of-birth" id="new_benefit_claim_start">
-                        <legend class="form-label-bold" id="new_benefit_claim_start_label">When did you apply for
-                            Jobseeker's Allowance?
+                    <fieldset class="date-of-birth" id="new_benefit_claim_end">
+                        <legend class="form-label-bold" id="new_benefit_claim_end_label">When did your Jobseeker's
+                            Allowance end?
                         </legend>
-                        <span id="new_benefit_claim_start_help" class="form-hint">For example, 31 12 2013. We need the date you first applied.  If this is an increase, please put the date you applied for the increase.</span>
+                        <span id="new_benefit_claim_end_help" class="form-hint">For example, 15 01 2014</span>
 
                         <div class="form-group form-group-day">
-                            <label for="new_benefit_claim_start.day" id="new_benefit_claim_start_label.day">Day</label>
+                            <label for="new_benefit_claim_end.day" id="new_benefit_claim_end_label.day">Day</label>
                             <input type="number" value="1"
-                                   aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help"
-                                   max="31" min="1" name="new_benefit_claim_start.day" id="new_benefit_claim_start.day">
+                                   aria-describedby="new_benefit_claim_end_error new_benefit_claim_end_help" max="31"
+                                   min="1" name="new_benefit_claim_end.day" id="new_benefit_claim_end.day">
                         </div>
                         <div class="form-group form-group-month">
-                            <label for="new_benefit_claim_start.month"
-                                   id="new_benefit_claim_start_label.month">Month</label>
+                            <label for="new_benefit_claim_end.month"
+                                   id="new_benefit_claim_end_label.month">Month</label>
                             <input type="number" value="1"
-                                   aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help"
-                                   max="12" min="1" name="new_benefit_claim_start.month"
-                                   id="new_benefit_claim_start.month">
+                                   aria-describedby="new_benefit_claim_end_error new_benefit_claim_end_help" max="12"
+                                   min="1" name="new_benefit_claim_end.month" id="new_benefit_claim_end.month">
                         </div>
                         <div class="form-group form-group-year">
-                            <label for="new_benefit_claim_start.year"
-                                   id="new_benefit_claim_start_label.year">Year</label>
-                            <input type="number" value="2000"
-                                   aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help"
-                                   max="9999" min="1000" name="new_benefit_claim_start.year"
-                                   id="new_benefit_claim_start.year">
-                        </div>
-                    </fieldset>
-                </div>
-                <p></p>
-
-                <p>
-                </p>
-
-                <div class="form-group inline ">
-
-                    <fieldset class="inline">
-                        <legend class="form-label-bold" id="still_claiming_label">Were you still claiming Jobseeker's
-                            Allowance on 01 January 2010 ?
-                        </legend>
-                        <div class="form-group" id="still_claiming">
-
-                            <label class="block-label" for="still_claiming_Yes" id="still_claiming_label">
-                                <input type="radio" aria-describedby="still_claiming_error still_claiming_help"
-                                       name="still_claiming" value="Yes" id="still_claiming_Yes">
-                                Yes
-                            </label>
-
-                            <label class="block-label selected" for="still_claiming_No" id="still_claiming_label">
-                                <input type="radio" checked="checked"
-                                       aria-describedby="still_claiming_error still_claiming_help" name="still_claiming"
-                                       value="No" id="still_claiming_No">
-                                No
-                            </label>
-
+                            <label for="new_benefit_claim_end.year" id="new_benefit_claim_end_label.year">Year</label>
+                            <input type="number" value="2010"
+                                   aria-describedby="new_benefit_claim_end_error new_benefit_claim_end_help" max="9999"
+                                   min="1000" name="new_benefit_claim_end.year" id="new_benefit_claim_end.year">
                         </div>
                     </fieldset>
                 </div>
                 <p></p>
                 <!-- For User research -->
                 <div class="form-navigation form-group">
-                    <ul>
 
-                        <li><a href="#" id="back" class="button">Continue</a>
+                    <div>
 
-                        <li><a href="#" id="back" class="button-secondary">Back</a></li>
+                        <input type="submit" value="Continue" role="button" class="button" id="next">
 
-                        <li><a id="cancel"
-                               href="/claims/cancel-and-delete?return_url=/claims/configure-benefits/jobseekers-allowance/benefit-start-date">Cancel
-                            and delete all details</a></li>
-                    </ul>
+                    </div>
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+
+                        <a id="back" href="/claims/configure-benefits/jobseekers-allowance/benefit-start-date"
+                           style="padding-right: 30px">Back</a>
+
+
+                        <a id="cancel"
+                           href="/claims/cancel-and-delete?return_url=/claims/configure-benefits/jobseekers-allowance/benefit-end-date">Cancel
+                            and delete all details</a>
+
+                    </div>
                 </div>
-
-
+            </form>
         </div>
+
+    </div>
     </div>
     </form>
     </div>
@@ -298,6 +284,8 @@
     ga('create', 'UA-52715352-2', 'auto');
     ga('send', 'pageview');
     	
+
+
 
 
 
