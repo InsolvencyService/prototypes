@@ -13,6 +13,13 @@
 
 
 
+
+
+
+
+
+
+
     </script>
 
     <!--[if gt IE 8]><!-->
@@ -37,6 +44,13 @@
                     ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
                     .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
         })()
+
+
+
+
+
+
+
 
 
 
@@ -84,6 +98,13 @@
 <body class="js-enabled js-enabled">
 <script type="text/javascript">
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+
+
+
+
+
+
+
 
 
 </script>
@@ -146,69 +167,86 @@
         <div class="inner-block text">
 
 
-            <h1 class="form-title heading-large">Employment and Support Allowance you received during the notice
-                period</h1>
+            <h1 class="form-title heading-large">Jobseeker's Allowance received during the notice period</h1>
+
+            <div class="form-group ">
+
+                <label class="form-label-bold new_benefit_total_amount" for="new_benefit_total_amount"
+                       id="new_benefit_total_amount_label">How much did you or will you have received between 01 January
+                    1980 and 01 January 2015?</label>
 
 
-            <form method="post" class="form">
-                <input type="hidden" value="5a0b455e2edb414c76d4ee9c268e4cde887f9074" name="_csrf_token">
-
-                <p>
-                </p>
-
-                <div class="form-group ">
-
-                    <label class="form-label-bold new_benefit_total_amount" for="new_benefit_total_amount"
-                           id="new_benefit_total_amount_label">How much did you or will you have received between 01
-                        January 1980 and 01 January 2010?</label>
+                <span id="new_benefit_total_amount_help" class="form-hint"><p>If your notice doesn't cover full weeks,
+                    divide your weekly benefit by 7 to give the daily rate, and multiply the answer by the number of
+                    days you received benefit.</p> <details>
+                    <summary aria-expanded="false" role="button" style="-moz-user-select: none;" tabindex="0"> Show me
+                        an example
+                    </summary>
+                    <p style="display: none;">If you received 4 days benefit , and your benefit is £72.50 per week, the
+                        calculation is 72.50 / 7 = £10.35 x 4 giving an answer of £41.43</p></details></span>
 
 
-                    <span id="new_benefit_total_amount_help" class="form-hint">If you were receiving this benefit before you were made redundant, we only need to know the total amount of any increase in this benefit over these dates.</span>
+                <span class="input-group-addon">£</span>
+                <input type="text" value=""
+                       aria-describedby="new_benefit_total_amount_error new_benefit_total_amount_help" size="8"
+                       name="new_benefit_total_amount" id="new_benefit_total_amount"><br>
+            </div>
+            <div class="form-group inline ">
 
-
-                    <span class="input-group-addon">£</span>
-                    <input type="text" value="10"
-                           aria-describedby="new_benefit_total_amount_error new_benefit_total_amount_help" size="8"
-                           name="new_benefit_total_amount" id="new_benefit_total_amount"><br>
-                </div>
                 <fieldset class="inline">
-                    <legend id="still_claiming_label" class="form-label-bold">Do you have another claim for Employment
-                        and Support Allowance?
+                    <legend class="form-label-bold" id="still_claiming_label">Were you still claiming Jobseeker's
+                        Allowance on 01 January 2015 ?
                     </legend>
-                    <span class="form-hint" id="new_benefit_total_amount_help"></span>
+                    <div class="form-group" id="still_claiming">
 
-                    <div id="still_claiming" class="form-group">
-
-                        <label id="still_claiming_label" for="still_claiming_Yes" class="block-label">
-                            <input type="radio" id="still_claiming_Yes" value="Yes" name="still_claiming"
-                                   aria-describedby="still_claiming_error still_claiming_help">
+                        <label class="block-label selected" for="still_claiming_Yes" id="still_claiming_label">
+                            <input type="radio" checked="checked"
+                                   aria-describedby="still_claiming_error still_claiming_help" name="still_claiming"
+                                   value="Yes" id="still_claiming_Yes">
                             Yes
                         </label>
 
-                        <label id="still_claiming_label" for="still_claiming_No" class="block-label">
-                            <input type="radio" id="still_claiming_No" value="No" name="still_claiming"
-                                   aria-describedby="still_claiming_error still_claiming_help">
+                        <label class="block-label" for="still_claiming_No" id="still_claiming_label">
+                            <input type="radio" aria-describedby="still_claiming_error still_claiming_help"
+                                   name="still_claiming" value="No" id="still_claiming_No">
                             No
                         </label>
 
                     </div>
                 </fieldset>
-                <p></p>
-                <!-- For User research -->
-                <div class="form-navigation form-group">
-                    <div class="form-navigation form-group">
-                        <ul>
+            </div>
+            <div class="form-navigation form-group">
 
-                            <li><a href="looping-benefit1.html" id="back" class="button">Continue</a>
+                <div>
 
-                            <li><a href="#" id="back" class="button-secondary">Back</a>
-                            <a id="cancel"
-                                   href="/claims/cancel-and-delete?return_url=/claims/configure-benefits/jobseekers-allowance/benefit-start-date">Cancel
-                                and delete all details</a></li>
-                        </ul>
-                    </div>
+                    <input type="submit" value="Continue" role="button" class="button" id="next">
+
+                </div>
+                <div>
+                    <br>
+                </div>
+
+                <div>
+
+                    <a id="back" href="/claims/configure-benefits/jobseekers-allowance/benefit-start-date"
+                       style="padding-right: 30px">Back</a>
+
+
+                    <a id="cancel"
+                       href="/claims/cancel-and-delete?return_url=/claims/configure-benefits/jobseekers-allowance/benefit-end-date">Cancel
+                        and delete all details</a>
+
+                </div>
+            </div>
             </form>
         </div>
+
+    </div>
+    </div>
+    </form>
+    </div>
+
+    </div>
 
     </div>
 </main>
@@ -258,6 +296,13 @@
     ga('create', 'UA-52715352-2', 'auto');
     ga('send', 'pageview');
     	
+
+
+
+
+
+
+
 
 
 
