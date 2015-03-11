@@ -127,8 +127,7 @@
         <div class="notice-period panel-indent">
 	    <p>
         We are interested in what you did during these dates <br>
-        <span class="bolder">1 October 2014</span> and <span class="bolder">&nbsp;<span lang="en-gb">30
-		</span>November 2014</span> (the notice period)
+        <span class="bolder">15 December 2014</span> and <span class="bolder">&nbsp;6 March 2015</span> (the notice period)
     </p>
 	</div>
 
@@ -146,14 +145,14 @@
 			Allowance or a new claim</span>?</label>
             <div id="refused_benefits" class="form-group">
         
-        <label id="refused_benefits_label" for="refused_benefits_Yes" class="block-label">
-            <input id="refused_benefits_Yes" value="Yes" name="refused_benefits" type="radio">
-            	<span lang="en-gb">I<span class="swatch-grey-3">ncreased amount</span></span>
+        <label id="refused_benefits_label" for="increased_Yes" class="block-label">
+            <input id="increased_Yes" value="Yes" name="refused_benefits" type="radio">
+            	<span lang="en-gb">Increased amount</span>
         </label>
         
-        <label id="refused_benefits_label" for="refused_benefits_No" class="block-label">
-            <input id="refused_benefits_No" value="No" name="refused_benefits" type="radio">
-            	N<span lang="en-gb">ew claim</span>
+        <label id="refused_benefits_label" for="increased_No" class="block-label">
+            <input id="increased_No" value="No" name="refused_benefits" type="radio">
+            	New claim
         </label>
         
     </div>
@@ -208,14 +207,17 @@
 
 
     
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#increased_Yes").click(function(){
+		$("#next").prop("href","5-increase.html");
+	});
+	$("#increased_No").click(function(){
+		$("#next").prop("href","5.html");
+	});
 
-    ga('create', 'UA-52715352-2', 'auto');
-    ga('send', 'pageview');
+});
     	
 </script>
 

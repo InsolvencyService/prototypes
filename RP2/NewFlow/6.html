@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- saved from url=(0055)/claims/start -->
 <html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -161,7 +161,7 @@
         
         <div class="form-group ">
             
-            <label id="new_benefit_total_amount_label" for="new_benefit_total_amount" class="form-label-bold new_benefit_total_amount">How much did you or will you have received between 10 October 2014 and 01 November 2014?</label>
+            <label id="new_benefit_total_amount_label" for="new_benefit_total_amount" class="form-label-bold new_benefit_total_amount">How much did you or will you have received between 15 December 2014 and 6 March 2015?</label>
             
                 <span class="form-hint" id="new_benefit_total_amount_help"> 
                 </span>
@@ -174,7 +174,7 @@
         <div class="form-navigation form-group">
             
             <div>
-                <a class="button" id="next" href="#">Continue</a>
+                <a class="button" id="next" href="7.html">Continue</a>
             </div>
             <div>
                 <br>
@@ -229,15 +229,27 @@
 
 
     
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script type="text/javascript">
+// get querystring another = true
+$(document).ready(function() {
+	var addanother = getParameterByName("another");
+	
+	if (addanother && addanother.length > 1) {
+		$("#next").prop("href","7-another-period.html");
+	}
+	else{
+		$("#next").prop("href","7.html");
+	};
 
-    ga('create', 'UA-52715352-2', 'auto');
-    ga('send', 'pageview');
-    	
+});
+   
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+} 	
 </script>
 
 
