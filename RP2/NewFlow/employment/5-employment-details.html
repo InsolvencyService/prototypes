@@ -60,22 +60,7 @@
     <!--[if IE 8]><link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
     
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
-<style type="text/css">
 
-.rps-example {
-    border: 1px solid #a2a2a2;
-    margin: 30px 0 30px;
-    /*outline: 15px solid #f8f8f8;*/
-    overflow: hidden;
-    padding: 15px 15px 0px 15px;
-    position: relative;
-}
-
-.rps-example .heading-medium {
-	margin-top:0!important;
-}
-
-</style>
 
 </head>
 
@@ -124,8 +109,7 @@
 
 <main role="main" id="wrapper">
 
-
-<div id="content">
+    <div id="content">
         <div class="inner-block">
             <div class="phase-banner">
                     <p>
@@ -134,65 +118,101 @@
                     </p>
             </div>
         </div>
+
         
-        
-        <div class="inner-block text">
+<div class="inner-block text">
     
-    <h1 class="form-title heading-large">Employment during notice period</h1>
-   <div class="notice-period panel-indent">
+    <h1 class="form-title heading-large">Employment details during your notice period</h1>
+    <p></p><div class="notice-period panel-indent">
     <p>
-        We are interested in what you did during these dates:<br>
-        <span class="bolder">15 December 2014</span> and <span class="bolder">6 March 2015</span> (the notice period)
+        We need to know who you were working for after you'd been made
+        redundant.
     </p>
 </div>
-			<form class="form" method="post">
+
+    
+    
+    <form class="form" method="post">
          <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
          <fieldset>
-         <div class="form-group inline ">
-            
-            <label id="other_employer_label" class="form-label-bold">Were you self employed during 
-			the notice period?</label>
-            <div id="self_employed" class="form-group">
-        
-        <label id="self_employed_label" for="self_employed_Yes" class="block-label">
-            <input id="self_employed_Yes" value="Yes" name="self_employed" type="radio">
-            Yes
-        </label>
-        
-        <label id="self_employed_label0" for="other_employer_No" class="block-label">
-            <input id="self_employed_No" value="No" name="self_employed" type="radio">
-            No
-        </label>
-        
-    </div>
-        </div>
- 
-    
-     <br/>
+         
 
+       <div class="form-group ">
+    
+
+     
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="job_title_label" for="job_title" class="form-label-bold job_title">Job title</label>
+            <input id="job_title" name="job_title" type="text" value=""><br>
+        </div>
+    <p><br/></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_name_label" for="employers_name" class="form-label-bold employers_name">Company or employer's name</label>
+            <div class="form-hint">If self employed, use your trading name if you have one, or your own name</div>
+            <input id="employers_name" name="employers_name" type="text" value=""><br>
+        </div>
+    <p></p>
+    <br>
+    <p class="form-label-bold">
+        Company/Employer's Address
+    </p>
+    <div class="form-group ">
+        
+        <label id="employers_address_line_1_label" for="employers_address_line_1" class="form-label">Company/Employer's Building and Street</label>
+        <input id="employers_address_line_1" name="employers_address_line_1" type="text" value=""><br>
+    </div>
+    <p></p>
+    <p>
+    </p><div class="form-group ">
+
+        
+        <input id="employers_address_line_2" name="employers_address_line_2" type="text" value=""><br>
+    </div>
+    <p></p>
+    <p>
+    </p><div class="form-group ">
+        
+        <input id="employers_address_line_3" name="employers_address_line_3" type="text" value=""><br>
+    </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_town_label" for="employers_address_town" class="form-label">Company/Employer's Town</label>
+            <input id="employers_address_town" name="employers_address_town" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_county_label" for="employers_address_county" class="form-label">Company/Employer's County</label>
+            <input id="employers_address_county" name="employers_address_county" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_postcode_label" for="employers_address_postcode" class="form-label">Company/Employer's Postcode</label>
+            <input id="employers_address_postcode" name="employers_address_postcode" type="text" value=""><br>
+        </div>
+    <p></p>
 
         </fieldset><!-- For User research -->
-        
-        <div class="form-navigation form-group">   
-            <div>
-                <a href="3.html" id="next" class="button">Continue</a>
-            </div>   
-	         <span><a href="1.html" id="back" class="button-secondary">Back</a>
-	         </span>&nbsp;&nbsp;&nbsp;
-	         <span>
-	            <a href="#" id="cancel" class="button-secondary">Cancel and delete all details </a>
-	         </span>
+        <div class="form-navigation form-group">
+            <ul>
+            <li><a class="button" id="next" href="6.html">Continue</a></li>                    
+            <li><a href="3.html" id="back" class="button-secondary">Back</a></li>            
+            </ul>
         </div>
-
     </form>
-    
 </div>
 
-
-
-
-        
-    </div>  
+    </div>
+    
 </main>
 
 
