@@ -120,23 +120,57 @@
         </div>
 
         
-    <h1 class="form-title heading-large">Sorry, we have been unable to find you using the details you entered</h1>
+<div class="inner-block text">
+    
+    <h1 class="form-title heading-large">Other questions about your claim</h1>
 
-	<p>Please check your details are correct and try again.</p>
+    
+    
+    <form class="form" method="post">
+    <div class="form-group ">
+            
+            <label id="email_label" for="email" class="form-label-bold email">Would you like us to email you a confirmation? (optional)</label>
+            <span class="form-hint">If you provide your email address we will send you an acknowledgement </span>
+            <input id="email" name="email" type="text" class="input-email"><br>
+        </div>
 
-	<div class="address-notice panel-indent">
-        <p>If you are unable to access the service after checking your details, contact Redundancy Payments Service.</p>
+    <div class="form-group ">
 
-	    <h3>Telephone</h3>
-		<p>0330 331 0020</p>
-        <p>Opening hours are 9am to 5pm, Monday to Friday</p>
+            <label id="confirmed_email_label" for="confirmed_email" class="form-label confirmed_email">Confirm email address</label>
+            
+            
+        <input id="confirmed_email" name="confirmed_email" type="text" class="input-email" aria-describedby="confirmed_email_error confirmed_email_help" value="">
+        <br>
+        </div>
+    
+         <input type="hidden" name="_csrf_token" value="6653e7e5699602f93adfdf64f75902a2348d62ff">
+         
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="any_other_details_label" for="any_other_details" class="form-label-bold any_other_details">Is there anything else you wish to tell us about your claim? (optional)</label>&nbsp;
+            <textarea id="any_other_details" name="any_other_details" cols="75" rows="7"></textarea>
+            <p class="form-hint">
+                Maximum 1000 characters 
+            </p>
+        </div>
+    <p></p>
 
-		<h3>Email</h3>
-        <p><a href="mailto:redundancyclaims@insolvency.gsi.gov.uk">redundancyclaims@insolvency.gsi.gov.uk</a></p>
-	</div>
+<!-- For User research -->
+         <div class="form-navigation form-group">
+                    <ul>
+            <li><a class="button" id="next" href="summary.html">Continue</a>
+            <a href="#" id="cancel" class="button-secondary">Cancel and delete all details </a></li>                    
+            <li><a href="employment/10.html" id="back" class="button-secondary">Back</a></li>            
+            </ul>
 
-    </div>
-        </main>
+        </div>
+
+    </form>
+</div>
+
+    </div>                
+</main>
 
 
 
