@@ -159,13 +159,13 @@
             <label id="other_employer_label" class="form-label-bold">Did you have a job during the notice period?</label>
             <div id="self_employed" class="form-group">
         
-        <label id="self_employed_label" for="self_employed_Yes" class="block-label">
-            <input id="self_employed_Yes" value="Yes" name="self_employed" type="radio">
+        <label id="self_employed_label" for="new-job_Yes" class="block-label">
+            <input id="new-job_Yes" value="Yes" name="self_employed" type="radio">
             Yes
         </label>
         
-        <label id="self_employed_label0" for="other_employer_No" class="block-label">
-            <input id="self_employed_No" value="No" name="self_employed" type="radio">
+        <label id="self_employed_label0" for="new-job_No" class="block-label">
+            <input id="new-job_No" value="No" name="self_employed" type="radio">
             No
         </label>
         
@@ -234,6 +234,17 @@
 
 
     
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#new-job_Yes").click(function(){
+		$("#next").prop("href","2.html");
+	});
+	$("#new-job_No").click(function(){
+		$("#next").prop("href","../10-other-questions.html");
+	});
+});
+    	
+</script>
 
 
 
