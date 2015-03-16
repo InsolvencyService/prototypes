@@ -107,7 +107,9 @@
 
 <main role="main" id="wrapper">
 
-    <div id="content">
+
+
+<div id="content">
         <div class="inner-block">
             <div class="phase-banner">
                 <p>
@@ -122,114 +124,28 @@
     
     
     
-    <h1 class="form-title heading-large">Dates of monies owed</h1>
+<h1 class="form-title heading-large">Amount of money owed</h1>
 
     
     
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="e432d41db0c435fcaded35783a95846a28e5a813">
+         <input type="hidden" name="_csrf_token" value="9665ec4b6c22dc7f08c362b2cedd55f755e4514c">
          
-    <p>
-        </p><div class="panel-indent">
-            You can add more than one period for wages owed up to a maximum of 8 weeks. You can do this in the summary section
-        </div>
-
-    <div class="form-group inline ">
-    <label id="wages_owed_amount_label" for="wages_owed_amount" class="form-label-bold wages_owed_amount">
-    What type of monies are owed?</label>
-
-    <label id="wages_owed_check_label" for="wages_owed_Wages" class="block-label">
-            <input id="wages_owed_Wages" value="Yes" name="wages_owed_check" type="radio">
-            Wages
-        </label>
+<p>
+    </p><div class="form-group ">
         
-        <label id="wages_owed_check_label" for="wages_owed_Overtime" class="block-label">
-            <input id="wages_owed_Overtime" value="No" name="wages_owed_check" type="radio">
-            Overtime
-        </label>
-       <div style="clear:left"></div>
-         <label id="wages_owed_check_label" for="wages_owed_Bonus" class="block-label">
-            <input id="wages_owed_Bonus" value="No" name="wages_owed_check" type="radio">
-            Bonus
-        </label>
-         <label id="wages_owed_check_label" for="wages_owed_Commission" class="block-label">
-            <input id="wages_owed_Commission" value="No" name="wages_owed_check" type="radio">
-            Commission
-        </label>
-
-</div>
-    <p><br/>
-        </p><div class="form-group ">
-            
-            
-            <fieldset id="wage_period_start" class="date-of-birth">
-                <legend id="wage_period_start_label" class="form-label-bold">From</legend>
-                <span class="form-hint" id="wage_period_start_help"></span>
-                <div class="form-group form-group-day">
-	            <label id="wage_period_start_label.day" for="wage_period_start.day">Day</label>
-                <input id="wage_period_start.day" name="wage_period_start.day" type="number" min="1" max="31" aria-describedby="wage_period_start_error wage_period_start_help" value="">
-            </div>
-            <div class="form-group form-group-month">
-	            <label id="wage_period_start_label.month" for="wage_period_start.month">Month</label>
-                <input id="wage_period_start.month" name="wage_period_start.month" type="number" min="1" max="12" aria-describedby="wage_period_start_error wage_period_start_help" value="">
-            </div>
-            <div class="form-group form-group-year">
-                <label id="wage_period_start_label.year" for="wage_period_start.year">Year</label>
-                <input id="wage_period_start.year" name="wage_period_start.year" type="number" min="1000" max="9999" aria-describedby="wage_period_start_error wage_period_start_help" value="">
-            </div>
-            </fieldset>
-        </div>
-    <p></p>
-    <div class="form-group ">
-            
-            
-            <fieldset id="wage_period_end" class="date-of-birth">
-                <legend id="wage_period_end_label" class="form-label-bold">To</legend>
-                <span class="form-hint" id="wage_period_end_help"></span>
-                <div class="form-group form-group-day">
-	            <label id="wage_period_end_label.day" for="wage_period_end.day">Day</label>
-                <input id="wage_period_end.day" name="wage_period_end.day" type="number" min="1" max="31" aria-describedby="wage_period_end_error wage_period_end_help" value="">
-            </div>
-            <div class="form-group form-group-month">
-	            <label id="wage_period_end_label.month" for="wage_period_end.month">Month</label>
-                <input id="wage_period_end.month" name="wage_period_end.month" type="number" min="1" max="12" aria-describedby="wage_period_end_error wage_period_end_help" value="">
-            </div>
-            <div class="form-group form-group-year">
-                <label id="wage_period_end_label.year" for="wage_period_end.year">Year</label>
-                <input id="wage_period_end.year" name="wage_period_end.year" type="number" min="1000" max="9999" aria-describedby="wage_period_end_error wage_period_end_help" value="">
-            </div>
-            </fieldset>
-        </div>
-    <p></p>
-    <p>
-        </p><div class="form-group ">
-            
-             <fieldset class="inline">
-                    <legend id="pay_attempted_label" class="form-label-bold">Did your employer attempt to pay you?</legend>
-                    
-                    <span class="form-hint" id="pay_attempted_help">For example, a bounced cheque or failed BACS payment</span>
-                    <div id="pay_attempted" class="form-group">
-        
-        <label id="pay_attempted_label" for="pay_attempted_Yes" class="block-label">
-            <input id="pay_attempted_Yes" value="Yes" name="pay_attempted" type="radio" aria-describedby="pay_attempted_error pay_attempted_help">
-            Yes
-        </label>
-        
-        <label id="pay_attempted_label" for="pay_attempted_No" class="block-label">
-            <input id="pay_attempted_No" value="No" name="pay_attempted" type="radio" aria-describedby="pay_attempted_error pay_attempted_help">
-            No
-        </label>
-        
+        <label id="net_wages_owed_amount_label" for="net_wages_owed_amount" class="form-label-bold net_wages_owed_amount">What is the net amount of <span id="typename">pay</span> owed between 01 October 2014 and 30 November 2014?</label>
+        <span class="form-hint" id="net_wages_owed_amount_help">Net income is the total amount after taking off tax and National Insurance</span>
+        <span class="input-group-addon">£</span>
+        <input id="net_wages_owed_amount" name="net_wages_owed_amount" type="text" size="8" aria-describedby="net_wages_owed_amount_error net_wages_owed_amount_help" value=""><br>
     </div>
-             </fieldset>
-        </div>
-    <p></p>
+<p></p>
 <!-- For User research -->
-       <div class="form-navigation form-group">
+          <div class="form-navigation form-group">
             
             <div>
                 
-                    <a class="button" id="next" href="4.html">Continue</a>
+                    <a class="button" id="next" href="5.html">Continue</a>
                 
             </div>
             <div>
@@ -238,18 +154,20 @@
             
             <div>
                 
-                    <a style="padding-right: 30px" href="2.html" id="back">Back</a>
+                    <a style="padding-right: 30px" href="3.html" id="back">Back</a>
                 
                 
                     <a href="#" id="cancel">Cancel and delete all details</a>
                 
             </div>
         </div>
+
     </form>
 </div>
 
     </div>
-                                            
+    
+                                                
                                             </main>
 
 
@@ -284,43 +202,25 @@
 <script type="text/javascript" src="../assets/javascripts/jquery.details.min.js"></script>
 <script type="text/javascript" src="../assets/javascripts/application.js"></script>
 
+
+    
 <script type="text/javascript">
 $(document).ready(function() {
 
-	var nextpage = "4.html";
-	var paytype = "pay";
+	var type = getParameterByName("type");
+	$("#typename").text(type);
 	
-	$("#pay_attempted_Yes").click(function(){
-		nextpage = "4-net.html";
-		$("#next").prop("href", nextpage + "?type=" + paytype);
-	});
-
-	$("#wages_owed_Wages").click(function(){
-		nextpage = "4.html";
-		paytype = "pay";
-		$("#next").prop("href",nextpage);
-	});
-	$("#wages_owed_Overtime").click(function(){
-		nextpage = "4-overtime.html";
-		paytype = "overtime";
-		$("#next").prop("href",nextpage);
-	});
-	$("#wages_owed_Bonus").click(function(){
-		nextpage = "4-bonus.html";
-		paytype = "bonus";
-		$("#next").prop("href", nextpage);
-	});
-	$("#wages_owed_Commission").click(function(){
-		nextpage = "4-commission.html";
-		paytype = "commission";
-		$("#next").prop("href",nextpage);
-	});
-
+	function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        results = regex.exec(location.search);
+	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+   
 });
-  
-
-  	
+ 	
 </script>
+
 
 
 <div id="window-resizer-tooltip" style="display: none;">
