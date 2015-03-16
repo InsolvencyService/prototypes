@@ -3,15 +3,13 @@
 <html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 
-    <title>Prototype - Triage</title>
+    <title>Prototype - summary of wages owed</title>
 
     <script async="" src="../assets/javascripts/analytics.js"></script><script type="text/javascript">
         (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
     </script>
 
     <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">
-
-    <br>
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/govuk-template.css"><!--<![endif]-->
@@ -62,12 +60,19 @@
     <!--[if IE 6]><link href="../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    
     <style type="text/css">
-    h1{
-	margin-top:0;
-	margin-bottom:0;
-	margin-top:0;
-	margin-bottom:0;
+    .column-heading th{
+		color:gray;
+	}
+	tr > th:first-child,
+	tr > td:first-child{
+	border:0 transparent none !important;
+	}
+	tr.group-heading td.title,
+	tr.group-heading td.number{
+		font-weight:bold;
+		font-size:1.2em;
 }
     
     </style>
@@ -117,120 +122,169 @@
 </div>
 
 <main role="main" id="wrapper">
-
-<div id="content">
+    <div id="content">
         <div class="inner-block">
             <div class="phase-banner">
-                <p>
-                    <strong class="phase-tag">BETA</strong>
-                    This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
-                </p>
+                    <p>
+                        <strong class="phase-tag">BETA</strong>
+                        This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
+                    </p>
             </div>
         </div>
 
         
 <div class="inner-block text">
     
-    <p class="form-hint">
-        Section 6 of 8
-    </p>
 
-    
-    <h1 class="form-title heading-large">Details of monies owed</h1>
-
-    
-    
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="e432d41db0c435fcaded35783a95846a28e5a813">
-         
-    <p>
-        </p><div class="panel-indent">Include wages, commission, overtime and any bonus payments in this section. Expenses are not included.</div><p>This section will ask about any money you're owed and when you earned it.</p><p>The following information will help you when making a claim:</p>
-    <p></p>
-    <ul class="list-bullet text">
-        <li>your contract of employment (if you have it available)</li>
-        <li>recent payslips</li>
-        <li>any other documents relating to your wages</li>
-    </ul>
-    <p>
-        
-    </p>
-    <p>
-        
-    </p><details>
-        <summary tabindex="0" style="-moz-user-select: none;" role="button" aria-expanded="false">
-            What are the questions in section 6?
-        </summary>
-            <ol id="question_list" class="list-number" style="display: block;">
+         <input type="hidden" name="_csrf_token" value="5f665556f292be409bbceff0c42e7e04ef1c91e6">
+         <fieldset>
             
-                 <li>Are you owed any money?</li>
-            
-                 <li>Did your wages have any compulsory deductions, excluding National Insurance and income tax?</li>
-            
-                 <li>What is the period for which you are owed wages?</li>
-            
-                 <li>Did your employer attempt to pay you?</li>
-            
-                 <li>What is the gross amount of pay owed for this period?</li>
-            
-                 <li>Number of unpaid days worked</li>
-            
-                 <li>What is the net amount of pay owed for this period?</li>
-            
-            </ol>
-    </details>
-    <p>
-        </p><div class="form-group ">
-            
-             <fieldset class="inline">
-                    <legend id="wages_owed_check_label" class="form-label-bold">Are you owed any money?</legend>
-                    <span class="form-hint" id="wages_owed_check_help">If you choose 'No' you won't need to answer any questions in section 6.</span>
-                    <div id="wages_owed_check" class="form-group">
-        
-        <label id="wages_owed_check_label" for="wages_owed_check_Yes" class="block-label">
-            <input id="wages_owed_check_Yes" value="Yes" name="wages_owed_check" type="radio" aria-describedby="wages_owed_check_error wages_owed_check_help">
-            Yes
-        </label>
-        
-        <label id="wages_owed_check_label" for="wages_owed_check_No" class="block-label">
-            <input id="wages_owed_check_No" value="No" name="wages_owed_check" type="radio" aria-describedby="wages_owed_check_error wages_owed_check_help">
-            No
-        </label>
+		<div id="content">
+		    <div class="text">
+		        <h1 class="form-title heading-large">
+		            Summary of wages owed
+		        </h1>
+		
+		        <p class="form-hint">
+		            Section 5 of 6
+		        </p>
+		
+		        <p class="lead text">
+		            Review the answers you have given in section 5 before you proceed.
+		        </p>
+			</div>
+		</div>
+	</fieldset>
+	</form>
+</div>
+	
+   	<div class="text" style="max-width:75%">
+            <div class="form-group">
+                <table id="summary_table">
+
+                    <tbody>
+                    <tr class="column-heading">
+                    	<th></th>
+                        <th>Question</th>
+                        <th>Answer</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                  
+                    <tr class="wages_owed_check">
+                    <td></td>
+                        <td>Are you owed any wages?</td>
+                        <td>Yes</td>
+                        <td>
+                            
+    <a href="/claims/wages-owed-details-start">
+        Change
+    </a>
+
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr class="wage_period group-heading">
+                    <td class="number">&nbsp;</td>
+                        <td class="title">From 1 January 201<span lang="en-gb">4</span> To 
+						<span lang="en-gb">4</span> <span lang="en-gb">Novem</span>ber 
+						201<span lang="en-gb">4</span></td>
+                        <td></td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+    					<a href="7-summary-grouped-c.html">Remove
+    </a>
+
+                        </td>
+                    </tr>
+                    
+                    <tr class="pay_attempted">
+                    <td></td>
+                        <td>Did your employer attempt to pay you?</td>
+                        <td>No</td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr class="wages_owed_amount_currency">
+                    <td></td>
+                        <td>What is the gross amount of pay owed for this period?</td>
+                        <td>£1000.00</td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr class="days_owed">
+                    <td></td>
+                        <td>Days Owed</td>
+                        <td>10</td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr class="net_wages_owed_amount_currency">
+                    <td></td>
+                        <td>What is the net amount of pay owed for this period?</td>
+                        <td></td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+ 
+                
+            </div>
         
     </div>
-             </fieldset>
-        </div>
-    <p></p>
-<!-- For User research -->
-        <div class="form-navigation form-group">
+<div class="inner-block text">
+                   
+                <div class="panel-indent">
+                    <a id="loop" class="button-link" href="2-dates.html">Would you like to add further wages owed?
+                    </a>
+                </div>
+                  
+       <div class="form-navigation form-group">
+            <ul>
             
-            <div>
-                
-                    <a class="button" id="next" href="2.html">Continue</a>
-                
-            </div>
-            <div>
-                <br>
-            </div>
             
-            <div>
-                
-                    <a style="padding-right: 30px" href="/claims/holiday-pay-summary" id="back">Back</a>
-                
-                
-                    <a href="javascript:history.go(-1)" id="cancel">Cancel and delete all details</a>
-                
-            </div>
+<li><a class="button" href="../other-information/14-1-other-questions.html" id="next">Continue</a></li>
+<li><a href="../4-holiday-pay/6-summary-of-holiday-pay.html" id="back" class="button-secondary">Back</a></li>
+
+
+
+            </ul>
         </div>
-    </form>
+    
 </div>
 
-    </div>
+  </div>
 
 
-
-                                
-            </main>
-
+</main>
 
 
 
