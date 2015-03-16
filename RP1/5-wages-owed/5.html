@@ -105,57 +105,199 @@
     </div>
 </div>
 
-<main role="main" id="wrapper">
-
+    <main role="main" id="wrapper">
     <div id="content">
         <div class="inner-block">
             <div class="phase-banner">
-                    <p>
-                        <strong class="phase-tag">BETA</strong>
-                        This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
-                    </p>
+                <p>
+                    <strong class="phase-tag">BETA</strong>
+                    This is a new service - your <a href="https://www.surveymonkey.com/s/MWWXKLX" target="_blank">feedback</a> will help us improve it
+                </p>
             </div>
         </div>
 
         
-<div class="inner-block text">
+<div class="inner-block">
     
-    <h1 class="form-title heading-large">Amount of wages owed</h1>
+    <p class="form-hint">
+        Section 6 of 8
+    </p>
+
+    
+    <h1 class="form-title heading-large">Summary of wages and money owed</h1>
+
+
+    
+<div id="content">
+    <p class="lead text">
+        Review the answers you have given in section 6 before you continue
+    </p>
+
+    <div class="form-group">
+        <table id="summary_table" columns="5">
+            <tbody>
+                <tr>
+                    <th colspan="3">Question</th>
+                    <th>Answer</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                
+                <tr class="wages_owed_check question-strategic question-indent-">
+                
+                
+                
+                <td colspan="3">Are you owed any money?</td>
+                    <td>Yes</td>
+                    <td>
+                        <a href="/claims/wages-owed-details-start" aria-label="Change Are you owed any money?">
+    Change
+</a>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                
+                <tr class="wages_includes_deductions  question-indent-">
+                
+                
+                
+                <td colspan="3">Did your wages have any compulsory deductions, excluding National Insurance and income tax?</td>
+                    <td>No</td>
+                    <td>
+                        <a href="/claims/attachment-of-earnings" aria-label="Change Did your wages have any compulsory deductions, excluding National Insurance and income tax?">
+    Change
+</a>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                
+                <tr class="wage_period question-master question-indent-">
+                
+                
+                
+                <td colspan="3">From 01 October 2014 To 01 November 2014</td>
+                    <td></td>
+                    <td>
+                        <a href="/claims/wages-owed/0/wages-owed-period" aria-label="Change From 01 October 2014 To 01 November 2014">
+    Change
+</a>
+                    </td>
+                    <td>
+                        
+    <a href="/claims/wages-owed/0/remove" aria-label="Remove From 01 October 2014 To 01 November 2014">
+        Remove
+    </a>
+
+                    </td>
+                </tr>
+                
+                <tr class="pay_attempted question-child question-indent-1">
+                
+                
+                    <td class="table-indent"></td>
+                    
+                
+                
+                <td colspan="2">Did your employer attempt to pay you?</td>
+                    <td>No</td>
+                    <td>
+                        <a href="/claims/wages-owed/0/wages-owed-period" aria-label="Change Did your employer attempt to pay you?">
+    Change
+</a>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                
+                <tr class="wages_owed_amount_currency question-child question-indent-1">
+                
+                
+                    <td class="table-indent"></td>
+                    
+                
+                
+                <td colspan="2">What is the gross amount of pay owed for this period?</td>
+                    <td>£1000.00</td>
+                    <td>
+                        <a href="/claims/wages-owed/0/wages-owed-amount" aria-label="Change What is the gross amount of pay owed for this period?">
+    Change
+</a>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                
+                <tr class="days_owed question-child question-indent-1">
+                
+                
+                    <td class="table-indent"></td>
+                    
+                
+                
+                <td colspan="2">Number of unpaid days worked</td>
+                    <td>5</td>
+                    <td>
+                        <a href="/claims/wages-owed/0/wages-owed-amount" aria-label="Change Number of unpaid days worked">
+    Change
+</a>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    
+    <div class="form-group">
+        <a class="button-link" href="/claims/wages-owed/1/wages-owed-period" id="loop">
+            Are you owed any more money?
+        </a>
+    </div>
+    
+</div>
+
 
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="ca99d6d2dfa7c9e4ab4d8a506b26dabd1b9dd773">
-         <fieldset>
-            
-    <p>
-        </p><div class="form-group ">
-            
-            <label id="wages_owed_amount_label" for="wages_owed_amount" class="form-label-bold wages_owed_amount">What is the gross amount of pay owed between 1 January 2014 and 1 November 2014?</label>
-            <span class="form-hint">Gross income is the total amount before taking off tax and National Insurance</span>
-            <span class="input-group-addon">£</span>
-        <input id="wages_owed_amount" name="wages_owed_amount" type="text" size="6" value=""><br>
-        </div>
-    <p></p>
-    <p>
-        </p><div class="form-group ">
-            
-            <label id="days_owed_label" for="days_owed" class="form-label-bold days_owed">
-			 <span lang="en-gb">Number of unpaid days worked</span></label>
-            <input id="days_owed" name="days_owed" type="text" size="4" maxlength="6" step="2" value="">
-        </div>
-    <p></p>
+        <input type="hidden" name="_csrf_token" value="e432d41db0c435fcaded35783a95846a28e5a813">
 
-        </fieldset><!-- For User research -->
-        <div class="form-navigation form-group">
-                      <ul>
-                <li><a class="button" id="next" href="7-summary.html">Continue</a></li>        
-                <li><a href="javascript:history.go(-1)" id="back" class="button-secondary">Back</a></li>         
-            </ul>
-
+        <!-- For User research -->
+       <div class="form-navigation form-group">
+            
+            <div>
+                
+                    <a class="button" id="next" href="5.html">Continue</a>
+                
+            </div>
+            <div>
+                <br>
+            </div>
+            
+            <div>
+                
+                    <a style="padding-right: 30px" href="3.html" id="back">Back</a>
+                
+                
+                    <a href="#" id="cancel">Cancel and delete all details</a>
+                
+            </div>
         </div>
+
     </form>
 </div>
 
-    </div>                                    
+    </div>
+</main>
+                                          
                                             </main>
 
 
