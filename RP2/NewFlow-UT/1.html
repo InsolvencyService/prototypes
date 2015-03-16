@@ -61,6 +61,17 @@
     
      <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overrides.css">
 
+<style type="text/css">
+.single-characters .form-group input{
+	width:25px;
+}
+.single-characters .form-group {
+width: 30px;
+float: left;
+margin-right: 20px;
+clear: none;
+}
+</style>
 
 </head>
 
@@ -122,53 +133,87 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large"><span lang="en-gb">Details of 
-	Jobseeker's Allowance</span></h1>
-        <div class="notice-period panel-indent">
-	    <p>
-        We are interested in what you did during these dates <br>
-        <span class="bolder">15 December 2014</span> and <span class="bolder">6 March 2015 (the notice period)</span>
-    </p>
-	</div>
+    <h1 class="form-title heading-large">Confirm your details</h1>
+    <p><span lang="en-gb"></span>  Before you can start, we need to match you to your claim. Please confirm the following details:</p>
 
     
     
     <form class="form" method="post">
          <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
-         <fieldset>
+         
+            <div class="validation-summary" style="display:none">
+                <h2>There was a problem submitting the form</h2>
+                <p>Please try the following:</p><ol>
+                    
+    
+    
+    
+    
+        <li>
             
-    <fieldset class="inline">
+                <a href="#address_postcode">You must enter your full postcode</a>
+            
+        </li>
+    
+
+                </ol>
+
+            </div>
+        <fieldset>
+            
+    <p>
+        </p>
+        
         <div class="form-group ">
             
-            <label id="claim-jsa_label" class="form-label-bold">Were you claiming Jobseeker's Allowance during the notice period?</label>
-            <div id="claim-jsa" class="form-group">
-        
-        <label id="claim-jsa_label" for="claim-jsa_Yes" class="block-label">
-            <input id="claim-jsa_Yes" value="Yes" name="claim-jsa" type="radio">
-            Yes
-        </label>
-        
-        <label id="claim-jsa_label" for="claim-jsa_No" class="block-label">
-            <input id="claim-jsa_No" value="No" name="claim-jsa" type="radio">
-            No
-        </label>
-        
-    </div>
+            <label id="forename_label" for="forename" class="form-label-bold forename">Enter your 10 character claim reference</label>
+            <span class="form-hint">For example, LN12345678</span>
+            <input id="forename" name="forename" type="text"><br>
         </div>
-    </fieldset>
+
+    <div class="form-group ">
+            
+            <label id="dob_label" class="form-label-bold">When is your birthday?</label>
+            <span class="form-hint">For example, 21 06</span>
+            <fieldset id="dob" class="date-of-birth">
+            <div class="form-group form-group-day">
+	            <label id="dob_label.day" for="dob.day">Day</label>
+                <input id="dob.day" name="dob.day" class="date-input" type="text" maxlength="2" size="2">
+            </div>
+            <div class="form-group form-group-month">
+	            <label id="dob_label.month" for="dob.month">Month</label>
+                <input id="dob.month" name="dob.month" class="date-input" type="text" maxlength="2" size="2">
+            </div>
+            <div class="form-group form-group-year">
+                &nbsp;
+            </div>
+        </fieldset>
+        </div>
+        
+    <div class="form-group ">
+            
+            <label id="nino_label" for="nino" class="form-label-bold nino">What is your National Insurance number?</label>
+            <span class="form-hint">For example, QQ123456C</span>
+            <input id="nino" name="nino" type="text" value=""><br>
+        </div>
+
+
 
         </fieldset><!-- For User research -->
-        <div class="form-navigation form-group">
+
+                 <div class="form-navigation form-group">
             <ul>
-            <li><a class="button" id="next" href="4.html">Continue</a></li>                    
-            <li><a href="1.html" id="back" class="button-secondary">Back</a></li>            
+            <li><a class="button" id="next" href="2.html">Continue</a></li>                    
+            <li><a href="0.html" id="back" class="button-secondary" style="display:none">Back</a></li>            
             </ul>
         </div>
+
     </form>
 </div>
 
     </div>
-    
+
+
 </main>
 
 
@@ -205,16 +250,14 @@
 
 
     
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#claim-jsa_Yes").click(function(){
-		$("#next").prop("href","benefits/5.html");
-	});
-	$("#claim-jsa_No").click(function(){
-		$("#next").prop("href","4-no-jsa.html");
-	});
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-});
+    ga('create', 'UA-52715352-2', 'auto');
+    ga('send', 'pageview');
     	
 </script>
 

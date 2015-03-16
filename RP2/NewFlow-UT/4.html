@@ -122,12 +122,12 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large"><span lang="en-gb">Details of 
+    <h1 class="form-title heading-large">Details of <span lang="en-gb">
 	Jobseeker's Allowance</span></h1>
         <div class="notice-period panel-indent">
 	    <p>
         We are interested in what you did during these dates <br>
-        <span class="bolder">15 December 2014</span> and <span class="bolder">6 March 2015 (the notice period)</span>
+        <span class="bolder">15 December 2014</span> and <span class="bolder">&nbsp;6 March 2015</span> (the notice period)
     </p>
 	</div>
 
@@ -140,19 +140,21 @@
     <fieldset class="inline">
         <div class="form-group ">
             
-            <label id="claim-jsa_label" class="form-label-bold">Were you claiming Jobseeker's Allowance during the notice period?</label>
-            <div id="claim-jsa" class="form-group">
+            <label id="refused_benefits_label" class="form-label-bold">
+			Was this a new claim for Jobseeker's 
+			Allowance or an increase?</label>
+            <div id="refused_benefits" class="form-group">
         
-        <label id="claim-jsa_label" for="claim-jsa_Yes" class="block-label">
-            <input id="claim-jsa_Yes" value="Yes" name="claim-jsa" type="radio">
-            Yes
+        
+        <label id="refused_benefits_label" for="increased_No" class="block-label">
+            <input id="increased_No" value="No" name="refused_benefits" type="radio">
+            	New claim
         </label>
-        
-        <label id="claim-jsa_label" for="claim-jsa_No" class="block-label">
-            <input id="claim-jsa_No" value="No" name="claim-jsa" type="radio">
-            No
+        <label id="refused_benefits_label" for="increased_Yes" class="block-label">
+            <input id="increased_Yes" value="Yes" name="refused_benefits" type="radio">
+            	<span lang="en-gb">Increase</span>
         </label>
-        
+  
     </div>
         </div>
     </fieldset>
@@ -160,8 +162,8 @@
         </fieldset><!-- For User research -->
         <div class="form-navigation form-group">
             <ul>
-            <li><a class="button" id="next" href="4.html">Continue</a></li>                    
-            <li><a href="1.html" id="back" class="button-secondary">Back</a></li>            
+            <li><a class="button" id="next" href="benefits/5.html">Continue</a></li>                    
+            <li><a href="3.html" id="back" class="button-secondary">Back</a></li>            
             </ul>
         </div>
     </form>
@@ -205,13 +207,14 @@
 
 
     
+    
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#claim-jsa_Yes").click(function(){
-		$("#next").prop("href","benefits/5.html");
+	$("#increased_Yes").click(function(){
+		$("#next").prop("href","benefits/5-increase.html");
 	});
-	$("#claim-jsa_No").click(function(){
-		$("#next").prop("href","4-no-jsa.html");
+	$("#increased_No").click(function(){
+		$("#next").prop("href","benefits/5.html");
 	});
 
 });

@@ -109,7 +109,7 @@
 
 <main role="main" id="wrapper">
 
-<div id="content">
+    <div id="content">
         <div class="inner-block">
             <div class="phase-banner">
                     <p>
@@ -122,95 +122,92 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large">Jobseeker's Allowance received during the notice period</h1>
-    <div class="notice-period panel-indent">
+    <h1 class="form-title heading-large">Employment details during your notice period</h1>
+    <p></p><div class="notice-period panel-indent">
     <p>
-        Please tell us what you did during these dates:<br>
-        <span class="bolder">15 December 2014</span> and <span class="bolder">6 March 2015</span>  (the notice period)
+        We need to know who you were working for after you'd been made
+        redundant.
     </p>
 </div>
 
     
     
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="9264fa9ad8b939ebb90da3030196c94640178b6f">
+         <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
+         <fieldset>
          
+
+       <div>
+    
+
+<div class="form-group ">
+            
+            <label id="job_title_label" for="job_title" class="form-label-bold job_title">Job title</label>
+            <input id="job_title" name="job_title" type="text" value=""><br>
+        </div>
+    <p><br/></p>
     <p>
         </p><div class="form-group ">
             
-            <fieldset id="new_benefit_claim_start" class="date-of-birth">
-                <legend id="new_benefit_claim_start_label" class="form-label-bold">When did you apply for Jobseeker's Allowance?</legend>
-                <span class="form-hint" id="new_benefit_claim_start_help">For example, 31 12 2013. We need the date you first applied. </span>
-                <div class="form-group form-group-day">
-	            <label id="new_benefit_claim_start_label.day" for="new_benefit_claim_start.day">Day</label>
-                <input id="new_benefit_claim_start.day" name="new_benefit_claim_start.day" class="date-input" type="number" maxlength="2" size="2" aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help" value="">
-            </div>
-            <div class="form-group form-group-month">
-	            <label id="new_benefit_claim_start_label.month" for="new_benefit_claim_start.month">Month</label>
-                <input id="new_benefit_claim_start.month" name="new_benefit_claim_start.month" class="date-input" type="number" maxlength="2" size="2" aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help" value="">
-            </div>
-            <div class="form-group form-group-year">
-                <label id="new_benefit_claim_start_label.year" for="new_benefit_claim_start.year">Year</label>
-                <input id="new_benefit_claim_start.year" name="new_benefit_claim_start.year" class="date-input" type="number" maxlength="4" size="4" aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help" value="">
-            </div>
-            </fieldset>
+            <label id="employers_name_label" for="employers_name" class="form-label-bold employers_name">Company or employer's name</label>
+            <div class="form-hint">If self employed, use your trading name if you have one, or your own name</div>
+            <input id="employers_name" name="employers_name" type="text" value=""><br>
         </div>
     <p></p>
-<div class="form-group ">
-            
-            <label id="forename_label" for="forename" class="form-label-bold forename">How much did you get per week?</label>
-            <input id="forename" name="forename" type="text"><br>
-        </div>
-
-    <p>
-        </p><div class="form-group inline ">
-            
-             <fieldset class="inline">
-                    <legend id="still_claiming_label" class="form-label-bold">Were you still claiming Jobseeker's Allowance on 6 March 2015 ?</legend>
-                    <div id="still_claiming" class="form-group">
+    <br>
+    <p class="form-label-bold">
+        Company/Employer's Address
+    </p>
+    <div class="form-group ">
         
-        <label id="still_claiming_label" for="still_claiming_Yes" class="block-label">
-            <input id="still_claiming_Yes" value="Yes" name="still_claiming" type="radio" aria-describedby="still_claiming_error still_claiming_help">
-            Yes
-        </label>
-        
-        <label id="still_claiming_label" for="still_claiming_No" class="block-label">
-            <input id="still_claiming_No" value="No" name="still_claiming" type="radio" aria-describedby="still_claiming_error still_claiming_help">
-            No
-        </label>
-        
+        <label id="employers_address_line_1_label" for="employers_address_line_1" class="form-label">Building and 
+		<span lang="en-gb">s</span>treet</label>
+        <input id="employers_address_line_1" name="employers_address_line_1" type="text" value=""><br>
     </div>
-             </fieldset>
+    <p></p>
+    <p>
+    </p><div class="form-group ">
+
+        
+        <input id="employers_address_line_2" name="employers_address_line_2" type="text" value=""><br>
+    </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_town_label" for="employers_address_town" class="form-label">Town<span lang="en-gb"> 
+			   or city</span></label>
+            <input id="employers_address_town" name="employers_address_town" type="text" value=""><br>
         </div>
     <p></p>
-<!-- For User research -->
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_county_label" for="employers_address_county" class="form-label">County<span lang="en-gb"> 
+			   (optional)</span></label>
+            <input id="employers_address_county" name="employers_address_county" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="employers_address_postcode_label" for="employers_address_postcode" class="form-label">Postcode</label>
+            <input id="employers_address_postcode" name="employers_address_postcode" type="text" value=""><br>
+        </div>
+    <p></p>
+</div>
+        </fieldset><!-- For User research -->
         <div class="form-navigation form-group">
-            
-            <div>
-                <a class="button" id="next" href="6.html">Continue</a>
-            </div>
-            <div>
-                <br>
-            </div>
-            
-            <div>
-                
-                    <a style="padding-right: 30px" href="../3.html" id="back">Back</a>
-                
-                
-                    <a href="/claims/cancel-and-delete?return_url=https://rp2-pre.redundancy-payments.org.uk/claims/configure-benefits/jobseekers-allowance/benefit-start-date" id="cancel">Cancel and delete all details</a>
-                
-            </div>
+            <ul>
+            <li><a class="button" id="next" href="6-increase.html">Continue</a></li>                    
+            <li><a href="3.html" id="back" class="button-secondary">Back</a></li>            
+            </ul>
         </div>
     </form>
 </div>
 
     </div>
     
-
-
-
-         
 </main>
 
 
@@ -246,17 +243,15 @@
 <script type="text/javascript" src="../../assets/javascripts/application.js"></script>
 
 
-   
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#still_claiming_Yes").click(function(){
-		$("#next").prop("href","6.html");
-	});
-	$("#still_claiming_No").click(function(){
-		$("#next").prop("href","5-end-date.html?another=true");
-	});
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-});
+    ga('create', 'UA-52715352-2', 'auto');
+    ga('send', 'pageview');
     	
 </script>
 

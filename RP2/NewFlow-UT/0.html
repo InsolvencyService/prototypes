@@ -122,53 +122,75 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large"><span lang="en-gb">Details of 
-	Jobseeker's Allowance</span></h1>
-        <div class="notice-period panel-indent">
-	    <p>
-        We are interested in what you did during these dates <br>
-        <span class="bolder">15 December 2014</span> and <span class="bolder">6 March 2015 (the notice period)</span>
-    </p>
-	</div>
+    <div>
+        <h1 class="form-title heading-large">Claim for compensation for loss of notice</h1>
+        <div class="text">
+            <p>Apply for a payment if you are not paid for 
+			your loss of notice.</p>
+			<p>You should only use this service if:</p>
+            <ul class="list-bullet">
+            <li>you have claimed a redundancy payment</li>
+				<li>you have received a letter from us with 
+				your 10 character claim number beginning LN</li>
+            <li>you have your National Insurance number</li>
 
-    
+            </ul>
+
+         </div>
+
+            <p>If you don’t enter any information for more than 30 minutes, then your claim will time out and you’ll need to start again</p>
+
+        <div class="form-navigation form-group">
+            <ul>
+            <li><a class="button" id="next" href="1.html">Start now</a></li>                    
+            <li><a href="../8.html" id="back" class="button-secondary" style="display:none">Back</a></li>            
+            </ul>
+        </div>
+	<h2 class="heading-medium">Information that will help you</h2>
+	<ul class="list-bullet">
+	<li>details of any <a href="https://www.gov.uk/browse/benefits">benefit payments you will earn</a> during your notice period</li>
+	<li>details of any money you will earn during your notice period</li>
+	</ul>
+	
+
+    </div>
+
+           <div>
+    <h2 class="heading-medium">
+            Contact us if you need help using this service</h2>
+		 <h2 class="heading-small">
+            Email
+        </h2>
+        <div class="text">
+            <a href="mailto:redundancypaymentsonline@insolvency.gsi.gov.uk?subject=Query regarding my online redundancy claim">
+			redundancypaymentsonline@insolvency.gsi.gov.uk </a>
+        </div>
+        <h2 class="heading-small">
+            Telephone
+        </h2>
+        <div class="text">
+            0330 331 0020 (<span lang="en-gb">choose </span>option 2)
+			<div class="text">
+            Opening hours are 9am to 5pm  Mon day - Friday (closed on bank holidays)
+        </div>
+        </div>
+        </div>
+
     
     <form class="form" method="post">
          <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
          <fieldset>
             
-    <fieldset class="inline">
-        <div class="form-group ">
             
-            <label id="claim-jsa_label" class="form-label-bold">Were you claiming Jobseeker's Allowance during the notice period?</label>
-            <div id="claim-jsa" class="form-group">
-        
-        <label id="claim-jsa_label" for="claim-jsa_Yes" class="block-label">
-            <input id="claim-jsa_Yes" value="Yes" name="claim-jsa" type="radio">
-            Yes
-        </label>
-        
-        <label id="claim-jsa_label" for="claim-jsa_No" class="block-label">
-            <input id="claim-jsa_No" value="No" name="claim-jsa" type="radio">
-            No
-        </label>
-        
-    </div>
-        </div>
-    </fieldset>
-
         </fieldset><!-- For User research -->
-        <div class="form-navigation form-group">
-            <ul>
-            <li><a class="button" id="next" href="4.html">Continue</a></li>                    
-            <li><a href="1.html" id="back" class="button-secondary">Back</a></li>            
-            </ul>
-        </div>
+ 
+
     </form>
 </div>
 
     </div>
-    
+
+
 </main>
 
 
@@ -205,16 +227,14 @@
 
 
     
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#claim-jsa_Yes").click(function(){
-		$("#next").prop("href","benefits/5.html");
-	});
-	$("#claim-jsa_No").click(function(){
-		$("#next").prop("href","4-no-jsa.html");
-	});
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-});
+    ga('create', 'UA-52715352-2', 'auto');
+    ga('send', 'pageview');
     	
 </script>
 

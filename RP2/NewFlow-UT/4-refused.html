@@ -114,7 +114,11 @@
             <div class="phase-banner">
                     <p>
                         <strong class="phase-tag">BETA</strong>
-                        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
+                        This is a new service - your <a 
+
+href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will 
+
+help us improve it
                     </p>
             </div>
         </div>
@@ -122,53 +126,53 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large"><span lang="en-gb">Details of 
-	Jobseeker's Allowance</span></h1>
-        <div class="notice-period panel-indent">
-	    <p>
-        We are interested in what you did during these dates <br>
-        <span class="bolder">15 December 2014</span> and <span class="bolder">6 March 2015 (the notice period)</span>
-    </p>
-	</div>
+    <h1 class="form-title heading-large"> <span lang="en-gb">
+	Reason your claim was refused</span></h1>
 
     
     
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
+         <input type="hidden" name="_csrf_token" 
+
+value="a291a379851f887a25d230a7f4dab7c0c3a38cc4">
          <fieldset>
             
-    <fieldset class="inline">
-        <div class="form-group ">
+    <p>
+        </p><div class="form-group ">
             
-            <label id="claim-jsa_label" class="form-label-bold">Were you claiming Jobseeker's Allowance during the notice period?</label>
-            <div id="claim-jsa" class="form-group">
-        
-        <label id="claim-jsa_label" for="claim-jsa_Yes" class="block-label">
-            <input id="claim-jsa_Yes" value="Yes" name="claim-jsa" type="radio">
-            Yes
-        </label>
-        
-        <label id="claim-jsa_label" for="claim-jsa_No" class="block-label">
-            <input id="claim-jsa_No" value="No" name="claim-jsa" type="radio">
-            No
-        </label>
-        
-    </div>
+            <label id="no_benefits_reason_label" for="no_benefits_reason" 
+
+class="form-label-bold no_benefits_reason"></label>
+
+<div class="form-group inline ">
+            
+            <label id="still_claiming_label" class="form-label-bold">Why 
+			<span lang="en-gb">was your </span>claim for Jobseeker's Allowance<span lang="en-gb"> 
+			 refused</span>?</label>
+            </div>
+
+
+            <span class="form-hint">The reason your claim was refused will be in your letter from Jobcentre Plus. You need to send us a copy.</span>
+            <textarea id="no_benefits_reason" name="no_benefits_reason" cols="75" 
+
+rows="7"></textarea>
         </div>
-    </fieldset>
+    <p></p>
+
 
         </fieldset><!-- For User research -->
+        <p></p>
         <div class="form-navigation form-group">
             <ul>
-            <li><a class="button" id="next" href="4.html">Continue</a></li>                    
-            <li><a href="1.html" id="back" class="button-secondary">Back</a></li>            
+            <li><a class="button" id="next" href="benefits/7.html">Continue</a></li>                    
+            <li><a href="3.html" id="back" class="button-secondary">Back</a></li>            
             </ul>
         </div>
     </form>
 </div>
 
     </div>
-    
+
 </main>
 
 
@@ -205,16 +209,14 @@
 
 
     
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#claim-jsa_Yes").click(function(){
-		$("#next").prop("href","benefits/5.html");
-	});
-	$("#claim-jsa_No").click(function(){
-		$("#next").prop("href","4-no-jsa.html");
-	});
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-});
+    ga('create', 'UA-52715352-2', 'auto');
+    ga('send', 'pageview');
     	
 </script>
 

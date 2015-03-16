@@ -122,53 +122,54 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large"><span lang="en-gb">Details of 
-	Jobseeker's Allowance</span></h1>
-        <div class="notice-period panel-indent">
-	    <p>
-        We are interested in what you did during these dates <br>
-        <span class="bolder">15 December 2014</span> and <span class="bolder">6 March 2015 (the notice period)</span>
-    </p>
-	</div>
+    <h1 class="form-title heading-large">Other questions about your claim</h1>
 
     
     
     <form class="form" method="post">
-         <input type="hidden" name="_csrf_token" value="2b6af3e5a8192bfe7cb2a48bbd05aaae18689c4f">
-         <fieldset>
+    <div class="form-group ">
             
-    <fieldset class="inline">
-        <div class="form-group ">
-            
-            <label id="claim-jsa_label" class="form-label-bold">Were you claiming Jobseeker's Allowance during the notice period?</label>
-            <div id="claim-jsa" class="form-group">
-        
-        <label id="claim-jsa_label" for="claim-jsa_Yes" class="block-label">
-            <input id="claim-jsa_Yes" value="Yes" name="claim-jsa" type="radio">
-            Yes
-        </label>
-        
-        <label id="claim-jsa_label" for="claim-jsa_No" class="block-label">
-            <input id="claim-jsa_No" value="No" name="claim-jsa" type="radio">
-            No
-        </label>
-        
-    </div>
+            <label id="email_label" for="email" class="form-label-bold email">Would you like us to email you a confirmation? (optional)</label>
+            <span class="form-hint">If you provide your email address we will send you an acknowledgement </span>
+            <input id="email" name="email" type="text" class="input-email"><br>
         </div>
-    </fieldset>
 
-        </fieldset><!-- For User research -->
-        <div class="form-navigation form-group">
-            <ul>
-            <li><a class="button" id="next" href="4.html">Continue</a></li>                    
-            <li><a href="1.html" id="back" class="button-secondary">Back</a></li>            
-            </ul>
+    <div class="form-group ">
+
+            <label id="confirmed_email_label" for="confirmed_email" class="form-label confirmed_email">Confirm email address</label>
+            
+            
+        <input id="confirmed_email" name="confirmed_email" type="text" class="input-email" aria-describedby="confirmed_email_error confirmed_email_help" value="">
+        <br>
         </div>
+    
+         <input type="hidden" name="_csrf_token" value="6653e7e5699602f93adfdf64f75902a2348d62ff">
+         
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="any_other_details_label" for="any_other_details" class="form-label-bold any_other_details">Is there anything else you wish to tell us about your claim? (optional)</label>&nbsp;
+            <textarea id="any_other_details" name="any_other_details" cols="75" rows="7"></textarea>
+            <p class="form-hint">
+                Maximum 1000 characters 
+            </p>
+        </div>
+    <p></p>
+
+<!-- For User research -->
+         <div class="form-navigation form-group">
+                    <ul>
+            <li><a class="button" id="next" href="11-summary.html">Continue</a>
+            <a href="#" id="cancel" class="button-secondary">Cancel and delete all details </a></li>                    
+            <li><a href="employment/10.html" id="back" class="button-secondary">Back</a></li>            
+            </ul>
+
+        </div>
+
     </form>
 </div>
 
-    </div>
-    
+    </div>                
 </main>
 
 
@@ -205,16 +206,14 @@
 
 
     
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#claim-jsa_Yes").click(function(){
-		$("#next").prop("href","benefits/5.html");
-	});
-	$("#claim-jsa_No").click(function(){
-		$("#next").prop("href","4-no-jsa.html");
-	});
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-});
+    ga('create', 'UA-52715352-2', 'auto');
+    ga('send', 'pageview');
     	
 </script>
 

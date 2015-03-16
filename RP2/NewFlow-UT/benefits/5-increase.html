@@ -122,7 +122,7 @@
         
 <div class="inner-block text">
     
-    <h1 class="form-title heading-large">Jobseeker's Allowance received during the notice period</h1>
+    <h1 class="form-title heading-large">Details of Jobseeker's Allowance increase</h1>
     <div class="notice-period panel-indent">
     <p>
         Please tell us what you did during these dates:<br>
@@ -139,8 +139,8 @@
         </p><div class="form-group ">
             
             <fieldset id="new_benefit_claim_start" class="date-of-birth">
-                <legend id="new_benefit_claim_start_label" class="form-label-bold">When did you apply for Jobseeker's Allowance?</legend>
-                <span class="form-hint" id="new_benefit_claim_start_help">For example, 31 12 2013. We need the date you first applied. </span>
+                <legend id="new_benefit_claim_start_label" class="form-label-bold">When did you apply for an increase in Jobseeker's Allowance?</legend>
+                <span class="form-hint" id="new_benefit_claim_start_help">For example, 31 12 2013 </span>
                 <div class="form-group form-group-day">
 	            <label id="new_benefit_claim_start_label.day" for="new_benefit_claim_start.day">Day</label>
                 <input id="new_benefit_claim_start.day" name="new_benefit_claim_start.day" class="date-input" type="number" maxlength="2" size="2" aria-describedby="new_benefit_claim_start_error new_benefit_claim_start_help" value="">
@@ -158,15 +158,15 @@
     <p></p>
 <div class="form-group ">
             
-            <label id="forename_label" for="forename" class="form-label-bold forename">How much did you get per week?</label>
+            <label id="forename_label" for="forename" class="form-label-bold forename">How much was the increase per week?</label>
             <input id="forename" name="forename" type="text"><br>
         </div>
-
     <p>
         </p><div class="form-group inline ">
             
              <fieldset class="inline">
-                    <legend id="still_claiming_label" class="form-label-bold">Were you still claiming Jobseeker's Allowance on 6 March 2015 ?</legend>
+                    <legend id="still_claiming_label" class="form-label-bold">Were you still claiming 
+					<span lang="en-gb">the increase </span>on 6 March 2015?</legend>
                     <div id="still_claiming" class="form-group">
         
         <label id="still_claiming_label" for="still_claiming_Yes" class="block-label">
@@ -182,12 +182,14 @@
     </div>
              </fieldset>
         </div>
+
+    
     <p></p>
 <!-- For User research -->
         <div class="form-navigation form-group">
             
             <div>
-                <a class="button" id="next" href="6.html">Continue</a>
+                <a class="button" id="next" href="6-increase.html">Continue</a>
             </div>
             <div>
                 <br>
@@ -195,7 +197,7 @@
             
             <div>
                 
-                    <a style="padding-right: 30px" href="../3.html" id="back">Back</a>
+                    <a style="padding-right: 30px" href="../4.html" id="back">Back</a>
                 
                 
                     <a href="/claims/cancel-and-delete?return_url=https://rp2-pre.redundancy-payments.org.uk/claims/configure-benefits/jobseekers-allowance/benefit-start-date" id="cancel">Cancel and delete all details</a>
@@ -246,17 +248,15 @@
 <script type="text/javascript" src="../../assets/javascripts/application.js"></script>
 
 
-   
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#still_claiming_Yes").click(function(){
-		$("#next").prop("href","6.html");
-	});
-	$("#still_claiming_No").click(function(){
-		$("#next").prop("href","5-end-date.html?another=true");
-	});
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-});
+    ga('create', 'UA-52715352-2', 'auto');
+    ga('send', 'pageview');
     	
 </script>
 
