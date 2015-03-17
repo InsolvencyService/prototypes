@@ -235,6 +235,13 @@ padding-bottom:3px;
 	
 }
 
+.btn span.glyphicon {    			
+	opacity: 0;				
+}
+.btn.active span.glyphicon {				
+	opacity: 1;				
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -360,9 +367,10 @@ padding-bottom:3px;
         <div class="col-sm-6 debtoption writeoff government" id="bankruptcy">
         	<div class="well">
         		
-        		<div class="col-sm-12" style="padding-bottom:40px" >
+        		<div class="col-sm-12"  >
 	        		<h2 class="text-info">Bankruptcy</h2>
 	        		
+		        		
 	        		<p>An Official Receiver manages payment of your debts using your assets and extra income.  
 	        		If you have no assets and no surplus income you will not be asked to repay.</p>
 	        		<p style="font-weight:bold; font-size:medium">Key Points:</p>
@@ -389,14 +397,22 @@ padding-bottom:3px;
 					
 	    		</div>
 				
-				
-
+				<div class="row ">
+					<div class="col-md-12 text-right"> 
+		           		<label style="font-size:large" class="btn btn-default">
+		           			Compare this option <span class="glyphicon glyphicon-ok"></span>
+							<input id="bktcheck" type="checkbox" autocomplete="off">
+							
+						</label>
+					</div>	 
+				</div>				
+<!---
 				<div class="row"  style="margin-left:0; margin-top:10px;">
 					<div class="col-sm-12 button_placement" data-position="fixed">
 						<a class="btn btn-default" style="margin-top:15px; font-size:19px;">Compare this option &nbsp; <input id="bktcheck" type="checkbox"></a>
 					</div>        
 				</div>
-
+--->
         	</div>	
         </div>
         
@@ -442,7 +458,7 @@ padding-bottom:3px;
 				<div class="row"  style="margin-left:0; margin-top:10px;">
 					<div class="col-sm-12 button_placement" >
 					
-						<a class="btn btn-default" style="margin-top:15px; font-size:19px;">Compare this option &nbsp; <input id="ivacheck" type="checkbox"></a>
+						<a id="but-iva" class="btn btn-default" style="margin-top:15px; font-size:19px;">Compare this option &nbsp; <input id="ivacheck" type="checkbox"></a>
 					</div>        
 				</div>
         	</div>
@@ -574,6 +590,10 @@ function equalHeight(group) {
 	});
 	group.height(tallest);
 }
+
+$("but-iva").on("click", function (e) {
+	$('#ivacheck').attr('checked', 'checked');
+});
 
 $("#btn-more-info").on("click", function (e) {
 				
