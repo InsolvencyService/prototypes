@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -83,6 +83,11 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
+
+.btn{
+	color:#fff !important;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -146,42 +151,116 @@ display:block;
 	
 
 
+
+
+
+        
+</div>
+	
+
+
 <!-- #BeginEditable "content" -->
 
- 	
+	<div id="content" >
+
 	<div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Your details</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-<div class="form-group ">
-	
-	<label id="first_name_label" for="first_name" class="form-label-bold first_name">What is your National insurance number?</label>
-	<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
-	<br/>
-	</div>
 
-<div class="form-group ">
-	
-	<label id="first_name_label" for="first_name" class="form-label-bold first_name">What telephone number can we contact you on?</label>
-	<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
-	<br/>
-	</div>
+	<div id="content">
+		    <div class="text">
+		        <p class="form-hint">
+		            Section 1 of 9
+		        </p>
 
-	<p><br></p>
-	<!-- For User research -->
-	<div class="form-navigation form-group" style="margin-top:20px">
+		        <h1 class="form-title heading-large">
+		            Your personal details
+		        </h1>
+		
+		
+		        <p class="lead text">
+		            Review your answers before you proceed.
+		        </p>
+			</div>
+		</div>
+ </div>
+
+
+<div class="text" style="margin-left:30px;">
+            <div class="form-group">
+                <table id="summary_table">
+
+                    <tbody>
+                                    <tr class="group-heading">
+                        <td>Have you been known by another name in the last five years?</td>
+                        <td>No</td>
+                        <td>
+                            
+    					<a href="details.html">Change
+    </a>
+
+                        </td>
+                        <td>
+                            
+    					&nbsp;</td>
+                    </tr>
+                                   <tr class="group-heading" style="display:none">
+                        <td>Have you lived at any other address in the last 12 months?</td>
+                        <td>No</td>
+                        <td>
+                            
+    					<a href="your-addresses.html">Change
+    </a>
+
+                        </td>
+                        <td>
+                            
+    					&nbsp;</td>
+                    </tr>
+
+                  <tr class="group-heading">
+                        <td>What is your National insurance number?</td>
+                        <td><span lang="en-gb">NH112233C</span></td>
+                        <td>
+                            
+    					<a href="details.html">Change
+    </a>
+
+                        </td>
+                        <td>
+                            
+    					&nbsp;</td>
+                    </tr>
+                     <tr class="group-heading">
+                        <td>What telephone number can we contact you on?</td>
+                        <td><span lang="en-gb">07733 445566</span></td>
+                        <td>
+                            
+    					<a href="details.html">Change
+    </a>
+
+                        </td>
+                        <td>
+                            
+    					&nbsp;</td>
+                    </tr>
+  
+
+                    </tbody>
+                </table>
+ 
+ 
+ 				<br>
+                
+            </div>
+        
+    </div>
+
+
+	<div class="form-navigation form-group" style="margin-top:20px; margin-left:30px">
 	
 	<div>
 
 
-	<a href="summary1.html" id="next" class="button">Continue</a>
+	<a href="../2-home/1-address.html" id="next" class="button">Continue</a>
 	
 	</div>
 	<div>
@@ -190,19 +269,22 @@ display:block;
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="your-addresses.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="../2-home/overview.html" id="back">Back</a>&nbsp;
+	<a href="../logout.html" id="cancel">Save and logout</a>  
 	
 	</div>
 	</div>
-	</form>
-	</div>
 
-	 <!-- #EndEditable -->
+
+
 
         
 </div>
 
 
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -248,12 +330,72 @@ display:block;
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
+$(document).ready(function(){
+
+    var name2 = getCookie('name');
+    var age2 = getCookie('age');
+    var rel2 = getCookie('rel');
+    var dep2 = getCookie('dep');
+
+var age = getParameterByName("age");
+var name = getParameterByName("name");
+
+var relationship = getParameterByName("rel");
+var dependent = getParameterByName("dep");
+
+var deletebuttonhtml  = "<a href='#' class='btn btn-warning' >Edit</a> <a href='#' class='btn btn-danger'>Delete</a>";
+
+if (age == ""){
+	age = 36;
+}
+if (relationship == null || relationship == ""){
+    relationship = "Spouse";
+}
+if (dependent == null || dependent == "") {
+    dependent = "Yes";
+}
+if (name && name.length > 0){
+    setCookie('name', name);
+    setCookie('age', age);
+    setCookie('rel', relationship);
+    setCookie('dep', dependent);
+
+	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + dependent  + "</td><td>" + relationship  + "</td><td>" + deletebuttonhtml + "</td></tr>";
+/*
+	if (name2 && name != name2) {
+	    htmltoadd= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>" + htmltoadd;
+	}
+*/
+    $("table tbody").prepend(htmltoadd);
+}
 
 });
 
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function setCookieSave(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + 31536000000); //1 year  
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+function setCookie(key, value) {
+    document.cookie = key + '=' + value ;
+}
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
 </script>
 
 
