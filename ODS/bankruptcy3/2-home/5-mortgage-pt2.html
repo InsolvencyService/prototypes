@@ -191,7 +191,7 @@ display:block;
                          </fieldset>
                     </div>
     <div class="form-group">
-                        <p id="title_label" class="form-label">Is this a remortgage of your property <span class="bold-medium">12 Eldin COurts</span>?</p>
+                        <p id="title_label" class="form-label">Is this a remortgage of your property <span class="bold-medium data">12 Eldin COurts</span>?</p>
 
                         <fieldset class="inline">
                             <div id="title0" class="form-group">
@@ -304,10 +304,14 @@ display:block;
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
-                   
+        
+	var housename = $.cookie('house');
+	$(".form-label .data").text(housename);
+           
   	var normalroute = $("#next").prop("href");
 	$("#remortgage_Yes").click(function(){
 		$("#next").prop("href","6-remortgage.html");
