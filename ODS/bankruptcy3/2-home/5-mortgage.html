@@ -304,9 +304,8 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
                    
- //jointly-owned-Yes
-	 var sharedowner = getCookie("name");
-	 alert(sharedowner );
+	var sharedowner = $.cookie('name');
+
 	 if (sharedowner && sharedowner.length > 0){
 	 	$("#shared-mortgage .data").text(sharedowner);
 	 	$("#shared-mortgage").show();
@@ -314,13 +313,6 @@ $(document).ready(function() {
  
 });
 
-function setCookie(key, value) {
-    document.cookie = key + '=' + value ;
-}
-function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
 
 </script>
 

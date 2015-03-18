@@ -177,7 +177,7 @@
                                 <div class="form-group ">
                                     <fieldset class="inline">
 
-                                        <p class="form-label">What is <strong>Susan</strong>'s residential address?</p>
+                                        <p class="form-label">What is <strong class="data">Susan</strong>'s residential address?</p>
 
                                         <div class="form-group ">
                                             <label id="employers_address_line_1_label" for="employers_address_line_1" class="form-label">Building and Street</label>
@@ -279,7 +279,14 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	var personname = $.cookie('name');
+	$(".form-label .data").text(personname);
+});
+</script>
 <!-- #EndEditable -->
     
 

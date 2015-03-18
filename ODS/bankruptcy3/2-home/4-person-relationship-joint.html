@@ -174,7 +174,7 @@
 					 <div id="pnl-dependent">
 
                                 <div class="form-group ">
-                                    <p id="title_label" class="form-label ">What is you relationship with <strong>Susan</strong>?</p>
+                                    <p id="title_label" class="form-label ">What is you relationship with <strong class="data">Susan</strong>?</p>
 
                                     <fieldset class="inline">
                                         <div id="title" class="form-group">
@@ -271,12 +271,9 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var personname = $.cookie('pname');
-	alert(personname);
-
+	var personname = $.cookie('name');
+	$(".form-label .data").text(personname);
 });
-    
-	
 </script>
 
 <!-- #EndEditable -->
