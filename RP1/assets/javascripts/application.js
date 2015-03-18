@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-  	document.title = "UX: " + $('h1').first().text(); 
+	if (document.title == "Prototype - Triage"){
+  		document.title = "UX: " + $('h1').first().text(); 
+  	}
   	
   // Example - Highlight grid
 
