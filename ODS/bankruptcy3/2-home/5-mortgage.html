@@ -306,11 +306,12 @@ display:block;
 $(document).ready(function() {
                    
 	var sharedowner = $.cookie('name');
-	 	
+
 	 if (sharedowner == null){
 	 	$("#shared-mortgage").hide();
 	 }
 	 else
+	 {
 	 	if (sharedowner.length > 0){
 		 	$("#shared-mortgage .data").text(sharedowner);
 		 	$("#shared-mortgage").show();
