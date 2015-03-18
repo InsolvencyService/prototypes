@@ -236,7 +236,7 @@
                 <!-- For User research -->
             <div class="form-navigation form-group" style="margin-top:20px"></div>
                 <div>
-					<a href="3b-person-address-joint.html" id="next" class="button">Continue</a></div>
+					<a href="4-person-relationship-joint.html" id="next" class="button">Continue</a></div>
                 <div>
 					<a style="padding-right: 30px" href="2-address-type.html" id="back">Back</a>
                 &nbsp;<a href="../logout.html" id="cancel">Save and logout</a>  
@@ -298,6 +298,47 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var personname;
+	var normalroute = $("#next").prop("href");
+	$("#sameaddress_No").click(function(){
+		$("#next").prop("href","3b-person-address-joint.html");
+	});
+	$("#sameaddress_Yes").click(function(){
+		$("#next").prop("href", normalroute);
+	});
+
+	$("#first_name").on("blur", function(){
+		personname = $("#first_name").val();
+	});
+	
+	$("#next").on("click", function(){
+		personname = $("#first_name").val();
+		setCookieSave("name", personname);
+	});
+
+});
+    
+
+function setCookieSave(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + 1000);  
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+
+function setCookie(key, value) {
+    document.cookie = key + '=' + value ;
+}
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
+	
+</script>
 
 <!-- #EndEditable -->
     

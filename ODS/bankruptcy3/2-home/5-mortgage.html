@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -193,8 +193,8 @@ display:block;
 
                     
     
-                       <div class="form-group">
-                        <p id="title_label" class="form-label">Is this a shared mortgage with <span class="bold-medium">Susan Smith</span>?</p>
+                       <div class="form-group" id="shared-mortgage" style="display:none">
+                        <p  class="form-label">Is this a shared mortgage with <span class="bold-medium data">Susan Smith</span>?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
@@ -211,52 +211,20 @@ display:block;
                             </div>
                          </fieldset>
                     </div>
-
+<div class="form-group ">
+	
+	<label id="last_name_label" for="last_name" class="form-label last_name">Name of the bank or building society the mortgage is with</label>
+	<input id="name" name="last_name" type="text" value="" />
+	<br/>
+	</div>
     <div class="form-group ">
 
                         <label id="first_name_label" for="first_name" class="form-label first_name">How much is left to pay on the mortgage?</label>
                         <input id="first_name" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
                         <br />
                     </div>
-    <div class="form-group">
-                        <p id="title_label" class="form-label">Is this a remortgage of your property <span class="bold-medium">12 Eldin COurts</span>?</p>
 
-                        <fieldset class="inline">
-                            <div id="title" class="form-group">
-
-                                <label for="sameaddress_Yes" class="block-label">
-                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
-                                    Yes
-                                </label>
-
-                                <label id="title_label1" for="sameaddress_No" class="block-label">
-                                    <input id="sameaddress_No" name="sameaddress" type="radio">
-                                    No
-                                </label>
-                            </div>
-                         </fieldset>
-                    </div>
-
-    <div class="form-group">
-                        <p id="title_label" class="form-label">Are there any loans 
-						or arrangements secured against your property?</p>
-
-                        <fieldset class="inline">
-                            <div id="title" class="form-group">
-
-                                <label for="secured_Yes" class="block-label">
-                                    <input id="secured_Yes" name="secured" type="radio">
-                                    Yes
-                                </label>
-
-                                <label for="secured_No" class="block-label">
-                                    <input id="secured_No" name="secured" type="radio">
-                                    No
-                                </label>
-                            </div>
-                         </fieldset>
-                    </div>
-
+  
  
 <p><br></p>
 	
@@ -264,7 +232,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-	<a href="6-secured-loans.html" id="next" class="button">Continue</a>
+	<a href="5-mortgage-pt2.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -274,7 +242,7 @@ display:block;
 	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
-	<a href="#" id="cancel">Cancel and delete all details</a>
+	<a href="#" id="cancel">Save and logout</a>
 	
 	</div>
 	</div>
@@ -336,9 +304,23 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
                    
- jointly-owned-Yes
+ //jointly-owned-Yes
+	 var sharedowner = getCookie("name");
+	 alert(sharedowner );
+	 if (sharedowner && sharedowner.length > 0){
+	 	$("#shared-mortgage .data").text(sharedowner);
+	 	$("#shared-mortgage").show();
+	 }
  
 });
+
+function setCookie(key, value) {
+    document.cookie = key + '=' + value ;
+}
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
 
 </script>
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -72,6 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+
 
 
 .row img{
@@ -161,66 +162,88 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your details</h1>
+	<h1 class="form-title heading-large">Your home</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+                    
+                    	
+
+    
+                       <div class="form-group" id="shared-mortgage" style="display:none">
+                        <p  class="form-label">Is this a shared mortgage with <span class="bold-medium data">Susan Smith</span>?</p>
+
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
+
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+    <div class="form-group">
+                        <p id="title_label" class="form-label">Is this a remortgage of your property <span class="bold-medium">12 Eldin COurts</span>?</p>
+
+                        <fieldset class="inline">
+                            <div id="title0" class="form-group">
+
+                                <label for="remortgage_Yes" class="block-label">
+                                    <input id="remortgage_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label2" for="remortgage_No" class="block-label">
+                                    <input id="remortgage_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+
+    <div class="form-group">
+                        <p id="title_label3" class="form-label">Are there any loans 
+						or arrangements secured against your property?</p>
+
+                        <fieldset class="inline">
+                            <div id="title1" class="form-group">
+
+                                <label for="secured_Yes" class="block-label">
+                                    <input id="secured_Yes" name="secured" type="radio">
+                                    Yes
+                                </label>
+
+                                <label for="secured_No" class="block-label">
+                                    <input id="secured_No" name="secured" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+
+ 
+<p><br></p>
 	
-	<p class="form-label-bold">
-	Your residential address
-	</p>
-	<p>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/City</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Post Code</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-	<br/>
-	</div>
-	</p>
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-	<a href="URN.html" id="next" class="button">Continue</a>
+	<a href="6-secured-loans.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="your-details.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="5-mortgage.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -284,9 +307,17 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-
+                   
+  	var normalroute = $("#next").prop("href");
+	$("#remortgage_Yes").click(function(){
+		$("#next").prop("href","6-remortgage.html");
+	});
+	$("#remortgage_No").click(function(){
+		$("#next").prop("href", normalroute);
+	});
 });
 
+ 
 </script>
 
 
