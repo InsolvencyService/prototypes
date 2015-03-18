@@ -210,18 +210,19 @@ display:block;
 	</div>
 	</p>
 	                   <div class="form-group">
-                        <p id="title_label" class="form-label">Do you own the property above?</p>
+                        <p id="title_label" class="form-label">Do you own the 
+						property?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
 
-                                <label for="sameaddress_Yes" class="block-label">
-                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                <label for="own_Yes" class="block-label">
+                                    <input id="own_Yes" name="sameaddress" type="radio">
                                     Yes
                                 </label>
 
-                                <label id="title_label1" for="sameaddress_No" class="block-label">
-                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                <label id="title_label1" for="own_No" class="block-label">
+                                    <input id="own_No" name="sameaddress" type="radio">
                                     No
                                 </label>
                             </div>
@@ -303,10 +304,27 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+
 <script type="text/javascript">
 $(document).ready(function() {
+	var housename;
+	var normalroute = $("#next").prop("href");
+	$("#own_No").click(function(){
+		$("#next").prop("href","summary-dont-own.html");
+	});
+	$("#own_Yes").click(function(){
+		$("#next").prop("href", normalroute);
+	});
+
+	$("#next").on("click", function(){
+		housename = $("#applicant_address_line_1").val();
+		$.cookie('house', housename, { expires: 1 });
+	});
 
 });
+    
 
 </script>
 
