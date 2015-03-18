@@ -298,6 +298,7 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 
 <script type="text/javascript">
@@ -317,26 +318,11 @@ $(document).ready(function() {
 	
 	$("#next").on("click", function(){
 		personname = $("#first_name").val();
-		setCookieSave("name", personname);
+		$.cookie('pname', personname, { expires: 1 });
 	});
 
 });
     
-
-function setCookieSave(key, value) {
-    var expires = new Date();
-    expires.setTime(expires.getTime() + 1000);  
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-}
-
-
-function setCookie(key, value) {
-    document.cookie = key + '=' + value ;
-}
-function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
 	
 </script>
 
