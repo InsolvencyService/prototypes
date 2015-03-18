@@ -310,7 +310,7 @@
                     <div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
                         <p><a href="../know-which-debt-solution.html">I know which debt solution I need</a></p>
                         <p><a href="../bankruptcy/continue/return.html">I am returning to an existing application</a></p>
-                        <p><a href="alt_landing.html">Show me all debt solutions</a></p>
+                        <p><a href="alt/alt_landing.html">Show me all debt solutions</a></p>
 
                     </div>
                 </div>
@@ -363,7 +363,7 @@
                                     <td class="yesnocolumn" style="width: 132px"><input id="q1" name="q1" type="checkbox" data-on-text="Yes" data-off-text="No"></td>
                                     <td class="smallprintcolumn">
                                         <div class="form-hint">
-                                            <p><a class="button-get-started" href="../calculator2/calculate-debt.html" style="font-size:19px">
+                                            <p><a class="button-get-started" href="calculate-debt.html" style="font-size:19px">
                                                 <i class="glyphicon glyphicon-th"></i> Help me calculate</a>
                                             </p>
                                             <p>Please leave out any fines</p>
@@ -450,14 +450,15 @@
                                     <td class="maincolumn">
                                         <span class="icon"><img alt="" width="50" height="50" src="../assets/icons/DRO-blank.png"></span>
                                         <span class="question">
-                                            <a class="button" href="../calculator2/options.html?type=dro" id="btn-find-debt">
+                                            <a class="button" id="btn-find-debt">
                                                 Find
                                                 a debt solution
                                             </a>
-                                        </span>
+                                            </span>
                                     </td>
                                     <td class="yesnocolumn" style="width: 132px"></td>
                                     <td class="smallprintcolumn">
+                                    
                                         <div>
                                         </div>
 
@@ -572,38 +573,38 @@
             
             $("#q1").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?landing=landing&bkt=yes&dmp=yes&iva=yes");
+                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
                 }
                 $interacted = true;
             });
 
             $("#q2").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?landing=landing&bkt=yes&dmp=yes&iva=yes");
+                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
                 }
                 $interacted = true;
             });
             $("#q3").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?landing=landing&bkt=yes&dmp=yes&iva=yes");
+                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
                 }
                 $interacted = true;
             });
             $("#q4").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?landing=landing&bkt=yes&dmp=yes&iva=yes");
+                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
                 }
                 $interacted = true;
             });
             $("#q5").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?landing=landing&bkt=yes&dmp=yes&iva=yes");
+                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
                 }
                 $interacted = true;
             });
             $("#q6").on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?landing=landing&bkt=yes&dmp=yes&iva=yes");
+                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
                 }
                 $interacted = true;
             });
@@ -616,13 +617,13 @@
             $("#btn-find-debt").on("click", function (e) {
                 if ($interacted == false) {
                     e.preventDefault();
-                    alert("Check you entered answers which match your situation");
+                    alert("We've detected that nothing has been changed. If all the answers are correct, hit the Find a debt solution button again.");
                     $interacted = true;
                 }
                 if ($("#q1").bootstrapSwitch('state') == false
                 && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
                 && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
-                    $("#btn-find-debt").attr("href", "options.html?landing=landing&dro=yes&dmp=yes&iva=yes");
+                    $("#btn-find-debt").attr("href", "options.html?dro=yes&dmp=yes&iva=yes");
                 }
 
             });
@@ -636,24 +637,7 @@
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
 
-        function update(slider, val) {
-            //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
-            //var $amount = slider == 1?val:$("#amount").val();
-            $amount = slider == 1 ? val : $initval;
-
-            if (val && val != $initval) {
-                $interacted = true;
-            }
-            var formatamount = "£" + addCommas($amount);
-            if ($amount == $max) {
-                formatamount = "Over £50K";
-            }
-            if ($amount == $min) {
-                formatamount = "Under £1K";
-            }
-            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + formatamount + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
-        }
-
+   
         function addCommas(str) {
             var parts = (str + "").split("."),
                 main = parts[0],
