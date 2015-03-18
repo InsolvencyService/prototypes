@@ -3,14 +3,20 @@
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Online debt solutions</title>
+ <!-- #BeginEditable "title" -->
+<title>Online debt solutions</title>
+<!-- #EndEditable -->
+
 
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/govuk-template.css"><!--<![endif]-->
-    <!--[if IE 6]><link href="../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]>
+<link href="../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]>
+<link href="../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]>
+<link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
     <link type="text/css" rel="stylesheet" media="print" href="../../assets/stylesheets/govuk-template-print.css">
 
@@ -52,9 +58,12 @@
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css"><!--<![endif]-->
-    <!--[if IE 6]><link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]>
+<link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]>
+<link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]>
+<link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
     
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">  
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
@@ -63,6 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+
 
 .row img{
 width:60px;
@@ -83,11 +93,6 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
-.btn{
-	color:#fff !important;
-}
-
 </style>
 <!-- #EndEditable -->
 
@@ -151,140 +156,137 @@ display:block;
 	
 
 
-
-
-
-        
-</div>
+<!-- #BeginEditable "content" --> 
+<div class="inner-block text">
 	
+	
+	
+	<h1 class="form-title heading-large">Your home</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+                    
+                    	
+
+                  <div class="form-group ">
+	
+	<fieldset id="date_of_birth" class="date-of-birth">
+	<legend id="date_of_birth_label" class="form-label">When did you take out the mortgage?</legend>
+	<span class="form-hint" id="date_of_birth_help"></span>
+	<div class="form-group form-group-day">
+		 <label id="date_of_birth_label.day" for="mortgage.day">Day</label>
+	<input id="mortgage.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-month">
+		 <label id="date_of_birth_label.month" for="mortgage.month">Month</label>
+	<input id="mortgage.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-year">
+	<label id="date_of_birth_label.year" for="mortgage.year">Year</label>
+	<input id="mortgage.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	</fieldset>
+	</div>
 
 
-<!-- #BeginEditable "content" -->
+                    
+    
+                       <div class="form-group">
+                        <p id="title_label" class="form-label">Is this a shared mortgage with <span class="bold-medium">Susan Smith</span>?</p>
 
-	<div id="content" >
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
 
-	<div class="inner-block text">
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
 
-	<div id="content">
-		    <div class="text">
-		        <p class="form-hint">
-		            Section 1 of 9
-		        </p>
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
 
-		        <h1 class="form-title heading-large">
-		            Your personal details
-		        </h1>
-		
-		
-		        <p class="lead text">
-		            Review your answers before you proceed.
-		        </p>
-			</div>
-		</div>
- </div>
+    <div class="form-group ">
 
+                        <label id="first_name_label" for="first_name" class="form-label first_name">How much is left to pay on the mortgage?</label>
+                        <input id="first_name" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
+                        <br />
+                    </div>
+    <div class="form-group">
+                        <p id="title_label" class="form-label">Is this a remortgage of your property <span class="bold-medium">12 Eldin COurts</span>?</p>
 
-<div class="text" style="margin-left:30px;">
-            <div class="form-group">
-                <table id="summary_table">
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
 
-                    <tbody>
-                                    <tr class="group-heading">
-                        <td>Have you been known by another name in the last five years?</td>
-                        <td>No</td>
-                        <td>
-                            
-    					<a href="details.html">Change
-    </a>
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
 
-                        </td>
-                        <td>
-                            
-    					&nbsp;</td>
-                    </tr>
-                                   <tr class="group-heading">
-                        <td>Have you lived at any other address in the last 12 months?</td>
-                        <td>No</td>
-                        <td>
-                            
-    					<a href="your-addresses.html">Change
-    </a>
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
 
-                        </td>
-                        <td>
-                            
-    					&nbsp;</td>
-                    </tr>
+    <div class="form-group">
+                        <p id="title_label" class="form-label">Are there any loans 
+						or arrangements secured against your property?</p>
 
-                  <tr class="group-heading">
-                        <td>What is your National insurance number?</td>
-                        <td><span lang="en-gb">NH112233C</span></td>
-                        <td>
-                            
-    					<a href="details.html">Change
-    </a>
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
 
-                        </td>
-                        <td>
-                            
-    					&nbsp;</td>
-                    </tr>
-                     <tr class="group-heading">
-                        <td>What telephone number can we contact you on?</td>
-                        <td><span lang="en-gb">07733 445566</span></td>
-                        <td>
-                            
-    					<a href="details.html">Change
-    </a>
+                                <label for="secured_Yes" class="block-label">
+                                    <input id="secured_Yes" name="secured" type="radio">
+                                    Yes
+                                </label>
 
-                        </td>
-                        <td>
-                            
-    					&nbsp;</td>
-                    </tr>
-  
+                                <label for="secured_No" class="block-label">
+                                    <input id="secured_No" name="secured" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
 
-                    </tbody>
-                </table>
  
- 
- 				<br>
-                
-            </div>
-        
-    </div>
-
-
-	<div class="form-navigation form-group" style="margin-top:20px; margin-left:30px">
+<p><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
 	
 	<div>
-
-
-	<a href="overview.html?section1=complete" id="next" class="button">Continue</a>
-	
+	<a href="6-secured-loans.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
 	
-	<a style="padding-right: 30px" href="overview.html" id="back">Back</a>&nbsp;
-	<a href="../logout.html" id="cancel">Save and logout</a>  
+	<a href="#" id="cancel">Cancel and delete all details</a>
 	
 	</div>
 	</div>
+	</form>
+	</div>
 
-
-
+	 <!-- #EndEditable -->
 
         
 </div>
 
 
-	 <!-- #EndEditable -->
-
-        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -330,72 +332,14 @@ display:block;
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function(){
-
-    var name2 = getCookie('name');
-    var age2 = getCookie('age');
-    var rel2 = getCookie('rel');
-    var dep2 = getCookie('dep');
-
-var age = getParameterByName("age");
-var name = getParameterByName("name");
-
-var relationship = getParameterByName("rel");
-var dependent = getParameterByName("dep");
-
-var deletebuttonhtml  = "<a href='#' class='btn btn-warning' >Edit</a> <a href='#' class='btn btn-danger'>Delete</a>";
-
-if (age == ""){
-	age = 36;
-}
-if (relationship == null || relationship == ""){
-    relationship = "Spouse";
-}
-if (dependent == null || dependent == "") {
-    dependent = "Yes";
-}
-if (name && name.length > 0){
-    setCookie('name', name);
-    setCookie('age', age);
-    setCookie('rel', relationship);
-    setCookie('dep', dependent);
-
-	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + dependent  + "</td><td>" + relationship  + "</td><td>" + deletebuttonhtml + "</td></tr>";
-/*
-	if (name2 && name != name2) {
-	    htmltoadd= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>" + htmltoadd;
-	}
-*/
-    $("table tbody").prepend(htmltoadd);
-}
-
+$(document).ready(function() {
+                   
+ jointly-owned-Yes
+ 
 });
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function setCookieSave(key, value) {
-    var expires = new Date();
-    expires.setTime(expires.getTime() + 31536000000); //1 year  
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-}
-
-function setCookie(key, value) {
-    document.cookie = key + '=' + value ;
-}
-function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
 </script>
 
 

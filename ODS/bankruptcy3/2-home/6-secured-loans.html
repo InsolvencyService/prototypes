@@ -69,31 +69,31 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-    <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
-    <style type="text/css">
-        .row img {
-            width: 60px;
-            text-align: right;
-            float: right;
-        }
+<style type="text/css">
 
-        .row > div {
-            padding-top: 15px;
-        }
 
-            .row > div:first-child {
-                padding-top: 0px;
-            }
+.row img{
+width:60px;
+text-align:right;
+float:right
+}
+.row > div{
+padding-top:15px;
+}
+.row > div:first-child{
+padding-top:0px;
+}
 
-        a.well {
-            padding-top: 8px;
-            display: block;
-            height: 90px;
-            min-width: 99%;
-            font-size: 16px;
-        }
-    </style>
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+	font-size:16px;
+}
+</style>
 <!-- #EndEditable -->
 
 
@@ -156,57 +156,97 @@
 	
 
 
-<!-- #BeginEditable "content" -->
+<!-- #BeginEditable "content" --> 
+<div class="inner-block text">
+	
+	
+	
+	<h1 class="form-title heading-large">Loans and arrangements secured against 
+	your home</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+                    
+	<div class="text">
+	            <div class="form-group">
+	 
+	 
+	 				<br>
+				 	<p>You need to tell us about loans or other arrangements secured against your home. Please complete the
+				 	details for the first, then add any additional ones later.</p>
+				
+					 <p style="display:none"><a href='add-person.html' class='btn btn-success'>Add a person</a>
+				 </p>
+		 		</div>
+			</div>
 
+    	<div class="form-group ">
+	
+	<label id="first_name_label" for="first_name" class="form-label-bold first_name">What is the loan or arrangement for?</label>
+		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
 
-        <div id="content0">
+	<input id="ref" name="ref" type="text" value="" style="width:300px !important;"/>
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Name of the company the loan or arrangement is with</label>
+	<input id="name" name="last_name" type="text" value="" />
+	<br/>
+	</div>
+	
+	<div class="form-group ">
+	
+	<fieldset id="date_of_birth" class="date-of-birth">
+	<span id="date_of_birth_label" class="form-label-bold">Date the secured loan was started or the arrangement was made</span>
+	<span class="form-hint" id="date_of_birth_help"></span>
+	
+	<div class="form-group form-group-day">
+		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
+	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-month">
+		 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+	<input id="date_of_birth.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-year">
+	<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+	<input id="date_of_birth.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	</fieldset>
+	</div>
+    	
+<div class="form-group ">
+	
+	<label id="email_label" for="email" class="form-label-bold email">How much is owed?</label>
+	<span class="form-hint">Amount they say is outstanding from you</span>
+	<input id="amount" name="amount" type="text" value="" />
+	</div>
+	
+	&nbsp;<p class="clearfix"><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+	<a href="summary.html" id="next" class="button">Continue</a>
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="5-mortgage.html" id="back">Back</a>
 
-
-            <div class="inner-block">
-
-
-
-                <h1 class="form-title heading-large">Your dependents and those who live with you</h1>
-                <p class="form-hint">You need to tell us who lives in your home 
-				and about anyone who is financially dependent on you.</p>
-
-
-                <form class="form" method="post">
-                    <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-                    <div class="form-group">
-                        <p id="title_label" class="form-label">Does anyone live 
-						with you at your address or do you have any dependents?</p>
-
-                        <fieldset class="inline">
-                            <div id="title" class="form-group">
-
-                                <label for="sameaddress_Yes" class="block-label">
-                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
-                                    Yes
-                                </label>
-
-                                <label id="title_label1" for="sameaddress_No" class="block-label">
-                                    <input id="sameaddress_No" name="sameaddress" type="radio">
-                                    No
-                                </label>
-                            </div>
-                         </fieldset>
-                    </div>
-
-                </form>
-            
-                <!-- For User research -->
-            <div class="form-navigation form-group" style="margin-top:20px"></div>
-                <div><a href="add-person.html" id="next" class="button">Continue</a></div>
-                <div><a style="padding-right: 30px" href="overview.html?section1=complete" id="back">Back</a>
-                &nbsp;<a href="../logout.html" id="cancel">Save and logout</a>  
-				</div>
-            </div>
-            <p><br></p>
-
-
-        </div>
+	
+	<a href="#" id="cancel">Cancel and delete all details</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
@@ -259,6 +299,16 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+                   
+ jointly-owned-Yes
+ 
+});
+
+</script>
+
 
 <!-- #EndEditable -->
     

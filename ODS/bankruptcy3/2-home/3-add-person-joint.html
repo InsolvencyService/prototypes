@@ -166,60 +166,81 @@
 
 
 
-                <h1 class="form-title heading-large">You dependent's address</h1>
-
+                <h1 class="form-title heading-large">Add joint property owner</h1>
 
 
                 <form class="form" method="post">
-					<fieldset>
-					<div id="pnl-address" >
-                                <div class="form-group ">
-                                    <fieldset class="inline">
+                    <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-                                        <p class="form-label">What is <strong>Susan</strong>'s residential address?</p>
+                    <div class="form-group ">
 
-                                        <div class="form-group ">
-                                            <label id="employers_address_line_1_label" for="employers_address_line_1" class="form-label">Building and Street</label>
-                                            <input id="employers_address_line_1" name="employers_address_line_1" type="text" value=""><br>
-                                        </div>
+                        <label id="first_name_label" for="first_name" class="form-label first_name">First name</label>
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+                        <br />
+                    </div>
+                    <div class="form-group ">
 
-                                        <div class="form-group ">
-                                            <input id="employers_address_line_2" name="employers_address_line_2" type="text" value=""><br>
-                                        </div>
+                        <label id="last_name_label" for="last_name" class="form-label">Last name</label>
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+                        <br />
+                    </div>
 
-                                        <div class="form-group ">
-                                            <input id="employers_address_line_3" name="employers_address_line_3" type="text" value=""><br>
-                                        </div>
+<div class="form-group">
+                        <p id="title_label" class="form-label">Gender</p>
 
-                                        <div class="form-group ">
-                                            <label id="employers_address_town_label" for="employers_address_town" class="form-label">Town</label>
-                                            <input id="employers_address_town" name="employers_address_town" type="text" value=""><br>
-                                        </div>
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
 
-                                        <div class="form-group ">
-                                            <label id="employers_address_county_label" for="employers_address_county" class="form-label">County</label>
-                                            <input id="employers_address_county" name="employers_address_county" type="text" value=""><br>
-                                        </div>
+                                <label for="gender_Male" class="block-label">
+                                    <input id="gender_Male" name="sameaddress" type="radio">
+                                    Male
+                                </label>
 
-                                        <div class="form-group ">
-                                            <label id="employers_address_postcode_label" for="employers_address_postcode" class="form-label">Postcode</label>
-                                            <input id="employers_address_postcode" name="employers_address_postcode" type="text" value=""><br>
-                                        </div>
-
-                                    </fieldset>
-                                </div>
+                                <label id="title_label1" for="gender_Female" class="block-label">
+                                    <input id="gender_Female" name="sameaddress" type="radio">
+                                    Female
+                                </label>
                             </div>
-</fieldset>
-                                    </form>
+                         </fieldset>
+                    </div>
+
+                    <div class="form-group ">
+
+                        <label id="age_label" for="age" class="form-label">Age</label>
+                        <input id="age" name="age" type="text" value="" />
+                        <br />
+                    </div>
+
+
+                    <div class="form-group">
+                        <p id="title_label" class="form-label">Does this person live with you at your address?</p>
+
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
+
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+
+                </form>
             
                 <!-- For User research -->
-                <div class="form-navigation form-group" style="margin-top:20px"></div>
+            <div class="form-navigation form-group" style="margin-top:20px"></div>
                 <div>
-					<a href="person-relationship.html" id="next" class="button">Continue</a></div>
-                <div><a style="padding-right: 30px" href="add-person.html" id="back">Back</a>
-                &nbsp;<a href="../logout.html" id="cancel">Save and logout</a></div>
-
-
+					<a href="3b-person-address-joint.html" id="next" class="button">Continue</a></div>
+                <div>
+					<a style="padding-right: 30px" href="2-address-type.html" id="back">Back</a>
+                &nbsp;<a href="../logout.html" id="cancel">Save and logout</a>  
+				</div>
             </div>
             <p><br></p>
 

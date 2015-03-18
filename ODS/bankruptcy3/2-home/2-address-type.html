@@ -168,59 +168,116 @@ display:block;
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<p class="form-label-bold">
-	Your residential address
-	</p>
-	<p>
-	<div class="form-group ">
+	                   <div class="form-group">
+                        <p id="title_label" class="form-label">What type of property is <span class="bold-medium">12 Eldin Courts?</span></p>
+
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
+
+                                <label for="address_Yes" class="block-label">
+                                    <input id="address_Yes" name="sameaddress" type="radio">
+                                    House
+                                </label>
+
+                                <label id="title_label1" for="address_Flat" class="block-label">
+                                    <input id="address_Flat" name="sameaddress" type="radio">
+                                    Flat
+                                </label>
+                                <label id="title_label1" for="address_No" class="block-label">
+                                    <input id="address_No" name="sameaddress" type="radio">
+                                    Other
+                                </label>
+
+                            </div>
+                         </fieldset>
+                    </div>
+  <div class="form-group ">
+
+                        <label id="first_name_label" for="first_name" class="form-label first_name">How much is your property <span class="font-medium">12 Eldin Courts</span> approximately worth?</label>
+                        <input id="first_name" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
+                        <br />
+                    </div>
+   
+                    
+                    	<div class="form-group ">
+	<p id="title_label" class="form-label-bold">Is the property jointly owned?</p>
 	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
+	<fieldset class="inline">
+	<div id="title" class="form-group">
 	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
+	<label id="title_label0" for="jointly-owned-Yes" class="block-label">
+	<input id="jointly-owned-Yes" value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
+	Yes
+	</label>
 	
-	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
+	<label id="title_label1" for="jointly-owned-No" class="block-label">
+	<input id="jointly-owned-No" value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
+	No
+	</label>
 	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/City</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
+
 	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
 	</div>
-	<div class="form-group ">
+	</fieldset>
+	</div>
+
+                    
+                    <div class="form-group ">
 	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Post Code</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-	<br/>
+	<fieldset id="date_of_birth" class="date-of-birth">
+	<legend id="date_of_birth_label" class="form-label-bold">When did you acquire the property?</legend>
+	<span class="form-hint" id="date_of_birth_help"></span>
+	<div class="form-group form-group-day">
+		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
+	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 	</div>
-	</p>
+	<div class="form-group form-group-month">
+		 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+	<input id="date_of_birth.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-year">
+	<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+	<input id="date_of_birth.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	</fieldset>
+	</div>
+
+<div class="form-group ">
+	<p id="title_label" class="form-label">Do you have a mortgage on <span class="bold-medium">12 Eldin Courts</span> ?</p>
+	
+	<fieldset class="inline">
+	<div id="title" class="form-group">
+	
+	<label id="title_label0" for="mortgage_Yes" class="block-label">
+	<input id="mortgage_Yes" value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
+	Yes
+	</label>
+	
+	<label id="title_label1" for="mortgage_No" class="block-label">
+	<input id="mortgage_No" value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
+	No
+	</label>
+	
+
+	
+	</div>
+	</fieldset>
+	</div>
+ 
+<p class="clearfix"><br/></p>
+	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-	<a href="../signin1/URN.html" id="next" class="button">Continue</a>
+	<a href="3-add-person-joint.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="../signin1/your-details.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="1-address.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Cancel and delete all details</a>
@@ -284,7 +341,9 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-
+                   
+ jointly-owned-Yes
+ 
 });
 
 </script>
