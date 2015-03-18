@@ -417,7 +417,7 @@ padding-bottom:3px;
 										
 										<div class="col-md-6 text-left" >
 											<p><a href="bankruptcy.html" class="button" style="font-size:19px;">
-											Learn more &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
+											Continue &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
 
 											
 										</div> 
@@ -470,7 +470,7 @@ padding-bottom:3px;
 										
 										<div class="col-md-6 text-left" >
 											<p><a href="#" class="button" style="font-size:19px;">
-											Learn more &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
+											Continue &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
 
 											
 										</div> 
@@ -520,7 +520,7 @@ padding-bottom:3px;
 										
 										<div class="col-md-6 text-left" >
 											<p><a href="#" class="button" style="font-size:19px;">
-											Learn more &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
+											Continue &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
 
 											
 										</div> 
@@ -576,7 +576,7 @@ padding-bottom:3px;
 										</div>
 										<div class="col-md-12 text-left" >
 												<p><a href="#" class="button" style="font-size:19px;">
-												Learn more &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
+												Continue &nbsp;<i  class="glyphicon glyphicon-chevron-right"></i></a></p>
 	
 
 											</div>  			
@@ -703,7 +703,33 @@ padding-bottom:3px;
 				
 			});
 
-			
+			$("#bkttab").on("click", function (e) {
+				$('#bkttab').addClass('bolder');
+				$('#drotab').removeClass('bolder');
+				$('#dmptab').removeClass('bolder');
+				$('#ivatab').removeClass('bolder');
+			});
+			$("#drotab").on("click", function (e) {
+				$('#bkttab').removeClass('bolder');
+				$('#drotab').addClass('bolder');
+				$('#dmptab').removeClass('bolder');
+				$('#ivatab').removeClass('bolder');
+			});
+			$("#dmptab").on("click", function (e) {
+				$('#bkttab').removeClass('bolder');
+				$('#drotab').removeClass('bolder');
+				$('#dmptab').addClass('bolder');
+				$('#ivatab').removeClass('bolder');
+			});
+			$("#ivatab").on("click", function (e) {
+				$('#bkttab').removeClass('bolder');
+				$('#drotab').removeClass('bolder');
+				$('#dmptab').removeClass('bolder');
+				$('#ivatab').addClass('bolder');
+			});
+
+
+
 
 
             
@@ -725,6 +751,8 @@ padding-bottom:3px;
                	$('#bkttab').addClass('active');
                	$('#bkt').addClass('visible');
                	$('#bkt').addClass('active');
+               	$('#bkttab').addClass('bolder');
+
 
                }
                else{
@@ -738,6 +766,8 @@ padding-bottom:3px;
                		$('#drotab').addClass('active');
                		$('#dro').addClass('visible');
                		$('#dro').addClass('active');
+               		$('#drotab').addClass('bolder');
+
 
                	}
                }
@@ -751,7 +781,9 @@ padding-bottom:3px;
                	if(BKTactive != 'yes' && DROactive != 'yes' ){
                		$('#dmptab').addClass('active');
                		$('#dmp').addClass('visible');
-               		$('#dmp').addClass('active')
+               		$('#dmp').addClass('active');
+               		$('#dmptab').addClass('bolder');
+
                	}
                }
                else{
@@ -764,7 +796,9 @@ padding-bottom:3px;
                	if(BKTactive != 'yes' && DROactive != 'yes' && DMPactive != 'yes' ){
                		$('#ivatab').addClass('active');
                		$('#iva').addClass('visible');
-               		$('#iva').addClass('active')
+               		$('#iva').addClass('active');
+               		$('#ivatab').addClass('bolder');
+
                	}
                }
                else{
