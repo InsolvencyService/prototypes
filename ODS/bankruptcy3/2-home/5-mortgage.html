@@ -193,7 +193,7 @@ display:block;
 
                     
     
-                       <div class="form-group" id="shared-mortgage" style="display:none">
+                       <div class="form-group" id="shared-mortgage">
                         <p  class="form-label">Is this a shared mortgage with <span class="bold-medium data">Susan Smith</span>?</p>
 
                         <fieldset class="inline">
@@ -300,16 +300,23 @@ display:block;
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
                    
 	var sharedowner = $.cookie('name');
-
-	 if (sharedowner && sharedowner.length > 0){
-	 	$("#shared-mortgage .data").text(sharedowner);
-	 	$("#shared-mortgage").show();
+	 	
+	 if (sharedowner == null){
+	 	$("#shared-mortgage").hide();
 	 }
+	 else
+	 	if (sharedowner.length > 0){
+		 	$("#shared-mortgage .data").text(sharedowner);
+		 	$("#shared-mortgage").show();
+	 	}
+	 }
+
  
 });
 
