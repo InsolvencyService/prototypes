@@ -340,13 +340,13 @@ padding-bottom:3px;
         <div class="col-xs-12">
             <ul class="nav nav-pills nav-justified thumbnail setup-panel">
                 <li class="active">
-                    <a href="landing.html">
+                    <a href="#step1">
                         <h4 class="list-group-item-heading">Step 1</h4>
                         <p class="list-group-item-text">Options overview</p>
                     </a>
                 </li>
-                <li class="disabled">
-                    <a href="#step-2">
+                <li>
+                    <a id="tab-next">
                         <h4 class="list-group-item-heading">Step 2</h4>
                         <p class="list-group-item-text">Your options</p>
                     </a>
@@ -365,7 +365,9 @@ padding-bottom:3px;
                 </li>
             </ul>
         </div>
+    <div id="chk-null2" style="color:red"class="text"> Please choose one of the options below<br><br></div>    
     </div>
+    
 
 	
         <div class="col-sm-6 debtoption writeoff government" id="dro">
@@ -625,11 +627,49 @@ $("#btn-more-info").on("click", function (e) {
 				}
 });
 
+$("#tab-next").on("click", function (e) {
+				
+				// checkbox validation
+				if(
+					$('#bktcheck').prop('checked') || 
+					$('#drocheck').prop('checked') || 
+					$('#dmpcheck').prop('checked') || 
+					$('#ivacheck').prop('checked')
+				){
+
+	                var link = "options.html?";
+	                
+	                if($('#bktcheck').prop('checked')) {
+	                	link = link + "&bkt=yes";
+	                }
+	                
+	                if($('#drocheck').prop('checked')) {
+	                	link = link + "&dro=yes";
+	                }
+	                
+	                if($('#dmpcheck').prop('checked')) {
+	                	link = link + "&dmp=yes";
+	                }
+	                
+	                if($('#ivacheck').prop('checked')) {
+	                	link = link + "&iva=yes";
+	                }
+	
+					$("#tab-next").attr("href", link);
+				}
+				else{
+				    $('#chk-null2').show();
+				    $("#tab-next").attr("href", "#but-more-info");
+				   
+				}
+});
+
       
 $(document).ready(function(){
 
 	equalHeight($(".well"));
 	$('#chk-null').hide();
+	$('#chk-null2').hide();
 
 });
 

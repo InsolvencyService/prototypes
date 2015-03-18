@@ -328,8 +328,8 @@
                                     <p class="list-group-item-text">Your circumstances</p>
                                 </a>
                             </li>
-                            <li class="disabled">
-                                <a href="#step-2">
+                            <li>
+                                <a id="tab-find-debt">
                                     <h4 class="list-group-item-heading">Step 2</h4>
                                     <p class="list-group-item-text">Your options</p>
                                 </a>
@@ -627,6 +627,21 @@
                 }
 
             });
+            
+            $("#tab-find-debt").on("click", function (e) {
+                if ($interacted == false) {
+                    e.preventDefault();
+                    alert("We've detected that nothing has been changed. If all the answers are correct, hit the Find a debt solution button again.");
+                    $interacted = true;
+                }
+                if ($("#q1").bootstrapSwitch('state') == false
+                && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
+                && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
+                    $("#tab-find-debt").attr("href", "options.html?dro=yes&dmp=yes&iva=yes");
+                }
+
+            });
+
 
         });
 

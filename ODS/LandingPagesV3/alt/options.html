@@ -337,8 +337,8 @@ padding-bottom:3px;
                                 <p class="list-group-item-text">Your options</p>	
                             </a>
                         </li>
-                        <li class="disabled">
-                            <a href="#step-3">
+                        <li>
+                            <a id="tab-next">
                                 <h4 class="list-group-item-heading">Step 3</h4>
                                 <p class="list-group-item-text">Your option explained</p>
                             </a>
@@ -690,6 +690,16 @@ padding-bottom:3px;
 			$("#tab-bak").on("click", function (e) {
 				var link =  getParameterByName('landing') + ".html";
                 $("#tab-bak").attr("href", link);
+			});
+			$("#tab-next").on("click", function (e) {
+				
+				if($("#bkt").hasClass("active") == true){
+					$("#tab-next").attr("href", "bankruptcy.html");
+				}
+				else{
+					$("#tab-next").attr("href", "#");
+				}
+				
 			});
 
 			
