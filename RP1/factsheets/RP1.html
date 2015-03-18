@@ -149,7 +149,7 @@
 
     <form class="form" method="post">
     
-    <div class="borderbox">
+    <div class="borderbox" id="company-and-case">
     
     
         <div id="employer">     
@@ -304,21 +304,33 @@
     
 <script>
      $(document).ready(function(){
-     	var defaultpage = "2-wage-bonus.html";
-     	var nextpage = defaultpage;
-
-    	$('#paid_weekly input[value="Yes"]').click(function () {
-    	    nextpage = "2-wage-weekly.html";
-    	    $("#next").prop("href", nextpage);
-    	});
-    	$('#paid_weekly input[value="No"]').click(function () {
-    	    if ($('#paid_weekly input[value="No"]:checked').length == 0) {
-    	        nextpage = defaultpage;
-    	    }
-    	    $("#next").prop("href", nextpage);
-    	});
+    	$("#employer").hide();
+    	$("#casereference").hide();
+     	$("#company-and-case").hide();
+     	   	
+    var companyname = getParameterByName("employer");
+    var casereference = getParameterByName("case");
+    if (companyname  && companyname.length > 0){
+    	$("#employer").show();
+		$("#employer > span").text(companyname);
+     	$("#company-and-case").show();
+	}
+	if (casereference && casereference.length > 0){
+		$("#casereference").show();
+		$("#casereference > span").text(casereference);
+     	$("#company-and-case").show();
+	}
+	
     });
    	
+   	
+   	function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	
 </script>
 
 
