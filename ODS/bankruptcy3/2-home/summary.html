@@ -88,6 +88,9 @@ display:block;
 	color:#fff !important;
 }
 
+#summary_table td{
+	vertical-align:top;
+}
 </style>
 <!-- #EndEditable -->
 
@@ -187,39 +190,68 @@ display:block;
 	 <div>
             <div class="form-group">
                 <table id="summary_table">
-
                     <tbody>
-                                    <tr class="group-heading">
+                        <tr class="group-heading">
                         <td>Your residential address </td>
-                        <td>85 High Street<br>
+                        <td><span class="housename">85 High Street</span><br>
                         Handytown<br/>
                         GH1 1AA</td>
-                        <td>
-                            
-    					<a href="1-address.html">Change
-    </a>
-
+                        <td>  
+    					<a href="1-address.html">Change</a>
                         </td>
                         <td>
-                            
-    					&nbsp;</td>
+                        </td>
                     </tr>
-                                   <tr class="group-heading">
-                        <td>What type of property is 12 Eldin Courts?</td>
+
+                      <tr class="group-heading">
+                        <td>What type of property is <span class="housename">85 High Street</span>?</td>
                         <td>Flat</td>
-                        <td>
-                            
-    					<a href="2-address-type.html">Change
-    </a>
-
+                        <td> 
+    					<a href="2-address-type.html">Change</a>
                         </td>
                         <td>
-                            
-    					&nbsp;</td>
+                        </td>
                     </tr>
 
-  
+                    <tr class="group-heading">
+                        <td>Is the property jointly owned?</td>
+                        <td>Yes</td>
+                        <td> 
+    					<a href="2-address-type.html">Change</a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
 
+                    <tr class="group-heading">
+                        <td>When did you acquire the property?</td>
+                        <td>1/4/2005</td>
+                        <td> 
+    					<a href="2-address-type.html">Change</a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr class="group-heading">
+                        <td>Do you have a mortgage on <span class="housename">85 High Street</span>?</td>
+                        <td>Yes</td>
+                        <td> 
+    					<a href="2-address-type.html">Change</a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                     <tr class="group-heading">
+                        <td>Joint property owner</td>
+                        <td><span class="personname">Susan Smith</span></td>
+                        <td> 
+    					<a href="2-address-type.html">Change</a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>                  
+                    
                     </tbody>
                 </table>
  
@@ -350,70 +382,23 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function(){
-
-    var name2 = getCookie('name');
-    var age2 = getCookie('age');
-    var rel2 = getCookie('rel');
-    var dep2 = getCookie('dep');
-
-var age = getParameterByName("age");
-var name = getParameterByName("name");
-
-var relationship = getParameterByName("rel");
-var dependent = getParameterByName("dep");
-
-var deletebuttonhtml  = "<a href='#' class='btn btn-warning' >Edit</a> <a href='#' class='btn btn-danger'>Delete</a>";
-
-if (age == ""){
-	age = 36;
-}
-if (relationship == null || relationship == ""){
-    relationship = "Spouse";
-}
-if (dependent == null || dependent == "") {
-    dependent = "Yes";
-}
-if (name && name.length > 0){
-    setCookie('name', name);
-    setCookie('age', age);
-    setCookie('rel', relationship);
-    setCookie('dep', dependent);
-
-	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + dependent  + "</td><td>" + relationship  + "</td><td>" + deletebuttonhtml + "</td></tr>";
-/*
-	if (name2 && name != name2) {
-	    htmltoadd= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>" + htmltoadd;
+$(document).ready(function() {     
+	var housename = $.cookie('house');
+	var personname = $.cookie('name');
+	
+	if (personname && personname.length > 0){
+		$(".personname").text(personname);
 	}
-*/
-    $("table tbody").prepend(htmltoadd);
-}
+	if (housename && housename.length > 0){
+		$(".housename").text(housename );
+	}
 
 });
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function setCookieSave(key, value) {
-    var expires = new Date();
-    expires.setTime(expires.getTime() + 31536000000); //1 year  
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-}
-
-function setCookie(key, value) {
-    document.cookie = key + '=' + value ;
-}
-function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
+ 
 </script>
 
 

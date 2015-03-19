@@ -272,7 +272,11 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	var personname = $.cookie('name');
-	$(".form-label .data").text(personname);
+	
+	if (personname && personname.length > 0){
+		$(".form-label .data").text(personname);
+	}
+
 });
 </script>
 
