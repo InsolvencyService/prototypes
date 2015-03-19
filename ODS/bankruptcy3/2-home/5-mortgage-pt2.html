@@ -230,7 +230,7 @@ display:block;
                     </div>
 
  
-<p><br></p>
+<p class="clearfix"><br></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
@@ -310,7 +310,9 @@ display:block;
 $(document).ready(function() {
         
 	var housename = $.cookie('house');
-	$(".form-label .data").text(housename);
+	if (housename && housename.length > 0){
+		$(".form-label .data").text(housename);
+	}
            
   	var normalroute = $("#next").prop("href");
 	$("#remortgage_Yes").click(function(){

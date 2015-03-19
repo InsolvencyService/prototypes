@@ -70,6 +70,7 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bankruptcy-overrides.css">
 
 <style type="text/css">
 
@@ -242,27 +243,6 @@ display:block;
 	</fieldset>
 	</div>
 
-<div class="form-group ">
-	<p id="title_label" class="form-label">Do you have a mortgage on <span class="bold-medium data">12 Eldin Courts?</span> ?</p>
-	
-	<fieldset class="inline">
-	<div id="title" class="form-group">
-	
-	<label id="title_label0" for="mortgage_Yes" class="block-label">
-	<input id="mortgage_Yes" value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
-	Yes
-	</label>
-	
-	<label id="title_label1" for="mortgage_No" class="block-label">
-	<input id="mortgage_No" value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
-	No
-	</label>
-	
-
-	
-	</div>
-	</fieldset>
-	</div>
  
 <p class="clearfix"><br/></p>
 	
@@ -354,6 +334,14 @@ $(document).ready(function() {
 	$("#jointly-owned_No").click(function(){
 		$("#next").prop("href", normalroute);
 	});
+	if ($("#date_of_birth.month").val().length > 0){
+		$.cookie('homemonth', $("#date_of_birth.month").val(), { expires: 1 });
+		$.cookie('homeyear', $("#date_of_birth.year").val(), { expires: 1 });
+	}
+	else{
+		$.cookie('homeyear', "6", { expires: 1 });
+		$.cookie('homeyear', "2005", { expires: 1 });
+	}
 
 });
     	
