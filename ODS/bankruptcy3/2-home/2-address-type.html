@@ -334,14 +334,17 @@ $(document).ready(function() {
 	$("#jointly-owned_No").click(function(){
 		$("#next").prop("href", normalroute);
 	});
-	if ($("#purchase.month").val().length > 0){
-		$.cookie('purchasemonth', $("#purchase.month").val(), { expires: 1 });
-		$.cookie('purchaseyear', $("#purchase.year").val(), { expires: 1 });
-	}
-	else{
-		$.cookie('purchasemonth', "6", { expires: 1 });
-		$.cookie('purchaseyear', "2005", { expires: 1 });
-	}
+	
+	$("#next").on("click", function(){
+		if ($("#purchase.month").val().length > 0){
+			$.cookie('purchasemonth', $("#purchase.month").val(), { expires: 1 });
+			$.cookie('purchaseyear', $("#purchase.year").val(), { expires: 1 });
+		}
+		else{
+			$.cookie('purchasemonth', "6", { expires: 1 });
+			$.cookie('purchaseyear', "2005", { expires: 1 });
+		}
+	});
 
 });
     	
