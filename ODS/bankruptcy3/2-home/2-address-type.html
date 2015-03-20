@@ -233,12 +233,12 @@ display:block;
 	<input id="purchase.day" name="purchase.day" type="number" min="1" max="31" aria-describedby="purchase_error purchase_help" value="" />
 	</div>
 	<div class="form-group form-group-month">
-		 <label id="purchase_label.month" for="purchase.month">Month</label>
-	<input id="purchase.month" name="purchase.month" type="number" min="1" max="12" aria-describedby="purchase_error purchase_help" value="" />
+		 <label id="purchase_label.month" for="purchasemonth">Month</label>
+	<input id="purchasemonth" name="purchasemonth" type="number" min="1" max="12"  />
 	</div>
 	<div class="form-group form-group-year">
-	<label id="purchase_label.year" for="purchase.year">Year</label>
-	<input id="purchase.year" name="purchase.year" type="number" min="1000" max="9999" aria-describedby="purchase_error purchase_help" value="" />
+	<label id="purchase_label.year" for="purchaseyear">Year</label>
+	<input id="purchaseyear" name="purchaseyear" type="number" min="1000" max="9999"  />
 	</div>
 	</fieldset>
 	</div>
@@ -336,9 +336,9 @@ $(document).ready(function() {
 	});
 	
 	$("#next").on("click", function(){
-		if ($("#purchase.month").val().length > 0){
-			$.cookie('purchasemonth', $("#purchase.month").val(), { expires: 1 });
-			$.cookie('purchaseyear', $("#purchase.year").val(), { expires: 1 });
+		if ($("#purchasemonth").val().length > 0){
+			$.cookie('purchasemonth', $("#purchasemonth").val(), { expires: 1 });
+			$.cookie('purchaseyear', $("#purchaseyear").val(), { expires: 1 });
 		}
 		else{
 			$.cookie('purchasemonth', "6", { expires: 1 });
