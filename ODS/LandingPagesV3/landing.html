@@ -302,7 +302,7 @@
                             If you live in England or Wales and can't pay your debts, you have options.
                             Provide some initial answers here and we'll try to direct you.
                         </p>
-                        <p>We won't save your information and you're not committing to anything.</p>
+                        
                     </div>
                 </div>
 
@@ -349,9 +349,17 @@
                         </ul>
                     </div>
                 </div>
+                
+                
+                
                 <div class="row setup-content" id="step-2">
+                
                     <div>
                         <div>
+                        <div>
+                        	<div class="col-sm-12"><p style="margin-left:20px">Your answers don't have to be exact. We're not saving your information and you're not committing to anything.<br><br></p></div>
+                        </div>
+                        
                             <table class="table">
                                
                                 
@@ -616,7 +624,7 @@
             $("#btn-find-debt").on("click", function (e) {
                 if ($interacted == false) {
                     e.preventDefault();
-                    alert("We've detected that nothing has been changed. If all the answers are correct, hit the Find a debt solution button again.");
+                    alert("You haven't made any changes to this page. If all the answers are correct, please hit the Continue button again.");
                     $interacted = true;
                 }
                 if ($("#q1").bootstrapSwitch('state') == false
