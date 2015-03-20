@@ -180,8 +180,8 @@ display:block;
 	<input id="mortgage.day" name="date_of_birth.day" type="number" min="1" max="31" />
 	</div>
 	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="mortgageyear">Month</label>
-	<input id="mortgageyear" name="date_of_birth.month" type="number" min="1" max="12"  />
+		 <label id="date_of_birth_label.month" for="mortgagemonth">Month</label>
+	<input id="mortgagemonth" name="date_of_birth.month" type="number" min="1" max="12"  />
 	</div>
 	<div class="form-group form-group-year">
 	<label id="date_of_birth_label.year" for="mortgageyear">Year</label>
@@ -322,8 +322,8 @@ $(document).ready(function() {
 	 var homeyear = $.cookie('purchaseyear');
 
 	 if (homemonth && homeyear && homemonth.length > 0 && homeyear.length > 0){
-		$("#mortgageyear").val(homemonth);
 		$("#mortgageyear").val(homeyear);
+		$("#mortgagemonth").val(homemonth);
 	 }
 	
  
