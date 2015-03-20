@@ -177,15 +177,15 @@ display:block;
 	<span class="form-hint" id="date_of_birth_help"></span>
 	<div class="form-group form-group-day">
 		 <label id="date_of_birth_label.day" for="mortgage.day">Day</label>
-	<input id="mortgage.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	<input id="mortgage.day" name="date_of_birth.day" type="number" min="1" max="31" />
 	</div>
 	<div class="form-group form-group-month">
 		 <label id="date_of_birth_label.month" for="mortgage.month">Month</label>
-	<input id="mortgage.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	<input id="mortgage.month" name="date_of_birth.month" type="number" min="1" max="12"  />
 	</div>
 	<div class="form-group form-group-year">
 	<label id="date_of_birth_label.year" for="mortgage.year">Year</label>
-	<input id="mortgage.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	<input id="mortgage.year" name="date_of_birth.year" type="number" min="1900" max="9999"  />
 	</div>
 	</fieldset>
 	</div>
@@ -318,9 +318,10 @@ $(document).ready(function() {
 	 	}
 	 }
 	 
-	 var homemonth = $.cookie('homemonth');
-	 var homeyear = $.cookie('homeyear');
-	 if (homemonth.length > 0 && homeyear.length > 0){
+	 var homemonth = $.cookie('purchasemonth');
+	 var homeyear = $.cookie('purchaseyear');
+	 alert(homemonth + "|" + homeyear);
+	 if (homemonth && homeyear && homemonth.length > 0 && homeyear.length > 0){
 		$("#mortgage.month").val(homemonth);
 		$("#mortgage.year").val(homeyear);
 	 }
