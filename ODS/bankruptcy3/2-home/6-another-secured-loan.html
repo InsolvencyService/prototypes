@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -161,7 +161,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Amounts secured against 
+	<h1 class="form-title heading-large">Amount secured against 
 	your home</h1>
 	
 	
@@ -169,19 +169,6 @@ display:block;
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
                     
-	<div class="text">
-	            <div class="form-group">
-	 
-	 
-	 				<br>
-				 	<p>You need to tell us about loans secured against your home 
-					or orders against your home. Start with the largest, then 
-					add any additional loans or orders on the next screen.</p>
-				
-					 <p style="display:none"><a href='add-person.html' class='btn btn-success'>Add a person</a>
-				 </p>
-		 		</div>
-			</div>
 
     	<div class="form-group ">
 	
@@ -336,7 +323,7 @@ $(document).ready(function() {
            
   	var normalroute = $("#next").prop("href");
 	$("#another_Yes").click(function(){
-		$("#next").prop("href","6-another-secured-loan.html");
+		$("#next").prop("href","6-secured-loans.html");
 	});
 	$("#another_No").click(function(){
 		$("#next").prop("href", normalroute);
