@@ -193,26 +193,26 @@ display:block;
 
 			<div class="text">
 	            <div class="form-group">
-	 		        <div class="rps-example">
-			<p>Based on the information you've given your interest in your property is <strong>£1,214.50</strong>. </p>
+	 		        <div class="rps-example" id="calculation">
+			<p>You have <span class="font-small">£781.90</span> equity in your property. </p>
 			<details>
 				<summary aria-expanded="false" role="button" style="-moz-user-select: none;" tabindex="0">How is this calculated?</summary>
 				<ul class="list-bullet">
-					<li>your property is worth £120,000 and is jointly owned</li>
-					<li>you have £26,000 equity in your property</li>
-					<li>you have secured loans of £8,781.90 on your property</li>
+					<li>Equity = value of your property – mortgages &amp; secured loans</li>
+					<li>Your interest = equity / the number of joint owners</li>
 				</ul>
 			</details>			
 			</div>
 
 	 <h2>What this means for you</h2>
-	 <p>Your redemption figure falls between £1,000 and 10,000. This means that:</p>
+	 <p>Your interest in <span class="housename  heading-small">12 Eldin Courts</span> falls under £1,000 and you have dependents who live with you. This means that:</p>
 	 <ul class="list-bullet">
-	 <li>The official receiver will arrange for your house to be sold.
-	 If you have partner and children it is normal for you to be given a year to find alternative accomodation.</li>
-	 <li>If you can raise the sum above, you may be able to buy back your interest and keep your home</li>
-	 <li>There may be a member of your family who can arrange to buy your home</li>
-	 
+	 <li>No immediate action will be taken against your home by the official receiver.</li>
+	 <li>The value of your interest will be looked at again in 3 years time. </li>
+	 <li>If in 3 years the value remains under £1,000 the official receiver will take no action and the property interest will be returned to you at no cost.
+</li>
+	 <li>The official receiver may agree to immediately sell the property interest back to you before the end of the 3 years.  Usually, such a sale is paid for by a friend, relative or joint owner.  
+	 The option of buying back your property interest will bring certainty to how the property is affected by bankruptcy.</li>
 	 </ul>
 	 
 	 <p>If you need more certainty ask a debt adviser for advice.</p>
@@ -310,70 +310,20 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function(){
-
-    var name2 = getCookie('name');
-    var age2 = getCookie('age');
-    var rel2 = getCookie('rel');
-    var dep2 = getCookie('dep');
-
-var age = getParameterByName("age");
-var name = getParameterByName("name");
-
-var relationship = getParameterByName("rel");
-var dependent = getParameterByName("dep");
-
-var deletebuttonhtml  = "<a href='#' class='btn btn-warning' >Edit</a> <a href='#' class='btn btn-danger'>Delete</a>";
-
-if (age == ""){
-	age = 36;
-}
-if (relationship == null || relationship == ""){
-    relationship = "Spouse";
-}
-if (dependent == null || dependent == "") {
-    dependent = "Yes";
-}
-if (name && name.length > 0){
-    setCookie('name', name);
-    setCookie('age', age);
-    setCookie('rel', relationship);
-    setCookie('dep', dependent);
-
-	var htmltoadd = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + dependent  + "</td><td>" + relationship  + "</td><td>" + deletebuttonhtml + "</td></tr>";
-/*
-	if (name2 && name != name2) {
-	    htmltoadd= "<tr><td>" + name2 + "</td><td>" + age2 + "</td><td>" + rel2 + "</td><td>" + dep2 + "</td><td>" + deletebuttonhtml + "</td></tr>" + htmltoadd;
+	var housename = $.cookie('house');
+	if (housename  && housename.length > 0){
+		$(".form-label .housename").text(housename);
 	}
-*/
-    $("table tbody").prepend(htmltoadd);
-}
 
+ $("#calculation span").text("£670.99");
 });
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function setCookieSave(key, value) {
-    var expires = new Date();
-    expires.setTime(expires.getTime() + 31536000000); //1 year  
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-}
-
-function setCookie(key, value) {
-    document.cookie = key + '=' + value ;
-}
-function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
 </script>
 
 

@@ -194,8 +194,8 @@ display:block;
                     </div>
   <div class="form-group ">
 
-                        <label id="first_name_label" for="first_name" class="form-label first_name">How much is your property <span class="bold-medium data">12 Eldin Courts</span> approximately worth?</label>
-                        <input id="first_name" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
+                        <label id="first_name_label" for="propertyvalue" class="form-label first_name">How much is your property <span class="bold-medium data">12 Eldin Courts</span> approximately worth?</label>
+                        <input id="propertyvalue" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
                         <br />
                     </div>
    
@@ -325,7 +325,9 @@ display:block;
 $(document).ready(function() {
 
 	var housename = $.cookie('house');
-	$(".form-label .data").text(housename);
+	if (housename  && housename.length > 0){
+		$(".form-label .data").text(housename);
+	}
 
 	var normalroute = $("#next").prop("href");
 	$("#jointly-owned_Yes").click(function(){
@@ -344,6 +346,13 @@ $(document).ready(function() {
 			$.cookie('purchasemonth', "6", { expires: 1 });
 			$.cookie('purchaseyear', "2005", { expires: 1 });
 		}
+		if ($("#propertyvalue").val().length > 0){
+			$.cookie('propertyvalue', $("#propertyvalue").val(), { expires: 1 });
+		}
+		else{
+			$.cookie('propertyvalue', "140000", { expires: 1 });
+		}
+		
 	});
 
 });

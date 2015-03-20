@@ -236,7 +236,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-	<a href="6-secured-loans.html" id="next" class="button">Continue</a>
+	<a href="summary.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -313,14 +313,46 @@ $(document).ready(function() {
 	if (housename && housename.length > 0){
 		$(".form-label .data").text(housename);
 	}
-           
+     
   	var normalroute = $("#next").prop("href");
+  	var nextpage = normalroute;
+  	
 	$("#remortgage_Yes").click(function(){
-		$("#next").prop("href","6-remortgage.html");
+		nextpage = "6-remortgage.html";
+		
 	});
 	$("#remortgage_No").click(function(){
-		$("#next").prop("href", normalroute);
+		if ($("#secured_Yes").is(':checked')){
+			nextpage  = "6-secured-loans.html";
+		}
+		else{
+			nextpage = normalroute;
+		}
+
 	});
+	$("#secured_Yes").click(function(){
+		if ($("#remortgage_No").is(':checked')){
+			nextpage  = "6-secured-loans.html";
+		}
+		
+	});
+	$("#secured_No").click(function(){
+		if ($("#remortgage_Yes").is(':checked')){
+			nextpage  = "6-remortgage.html";
+		}
+		else{
+			nextpage = normalroute;
+		}
+	});
+	
+	$("#next").on("click", function(){
+		if ($("#secured_Yes").is(':checked') && $("#remortgage_Yes").is(':checked')){
+			nextpage  = "6-remortgage.html?secured=true";
+		}
+
+		$("#next").prop("href", nextpage);
+	});
+	
 });
 
  
