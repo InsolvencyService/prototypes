@@ -341,6 +341,16 @@ $(document).ready(function() {
 	$("#another_No").click(function(){
 		$("#next").prop("href", normalroute);
 	});
+	
+	$("#next").on("click", function(){
+		if ($("#amount").val() && $("#amount").val().length > 0 && isNumeric($("#amount").val())) {
+		var totalsecured = parseFloat($("#amount").val());
+		$.cookie('totalsecured', totalsecured, { expires: 1 });
+
+	}
+
+	});
+	
 });
 
  

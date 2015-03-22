@@ -219,8 +219,8 @@ display:block;
 	</div>
     <div class="form-group ">
 
-                        <label id="first_name_label" for="first_name" class="form-label first_name">How much is left to pay on the mortgage?</label>
-                        <input id="first_name" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
+                        <label id="first_name_label" for="mortgageamount" class="form-label first_name">How much is left to pay on the mortgage?</label>
+                        <input id="mortgageamount" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
                         <br />
                     </div>
 
@@ -325,6 +325,13 @@ $(document).ready(function() {
 		$("#mortgageyear").val(homeyear);
 		$("#mortgagemonth").val(homemonth);
 	 }
+	
+	$("#next").on("click", function(){
+		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0 && isNumeric($("#mortgageamount").val())) {
+		var mortgageamount= parseFloat($("#mortgageamount").val());
+		$.cookie('mortgageamount', mortgageamount, { expires: 1 });
+	}
+
 	
  
 });

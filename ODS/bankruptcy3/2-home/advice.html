@@ -198,8 +198,8 @@ display:block;
 			<details>
 				<summary aria-expanded="false" role="button" style="-moz-user-select: none;" tabindex="0">How is this calculated?</summary>
 				<ul class="list-bullet">
-					<li>Equity = value of your property – mortgages &amp; secured loans</li>
-					<li>Your interest = equity / the number of joint owners</li>
+					<li>Equity = value of your property – mortgages &amp; secured loans <span class="equity heading-small"></span></li>
+					<li>Your interest = equity / the number of joint owners <span class="yourinterest heading-small"></span></li>
 				</ul>
 			</details>			
 			</div>
@@ -322,8 +322,38 @@ $(document).ready(function(){
 	}
 
  $("#calculation span").text("£670.99");
+ var totalsecurities = 100000.00
+ var propertyvalue = 105000.00;
+ if ($.cookie('propertyvalue') && $.cookie('propertyvalue').length > 0 && $.isNumeric($.cookie('propertyvalue'))){
+ 	propertyvalue  = parseFloat($.cookie('propertyvalue'));
+ }
+ 
+ var totalsecured = 0.00;
+ if ($.cookie('totalsecured') && $.cookie('totalsecured').length > 0 && $.isNumeric($.cookie('totalsecured'))){
+ 	totalsecured = parseFloat($.cookie('totalsecured'));
+ }
+
+ var mortgageamount = 90000.00;
+ if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
+ 	mortgageamount = parseFloat($.cookie('mortgageamount'));
+ }
+ totalsecurities = totalsecured + mortgageamount;
+
+ if (propertyvalue  &&  $.isNumeric(propertyvalue) && totalsecurities && $.isNumeric(totalsecurities)){
+		var equity = propertyvalue - totalsecurities;
+		
+		 $("#calculation span").text("£" + numberWithCommas(equity));
+		var yourinterest = equity / 2;
+		 $(".yourinterest").text(numberWithCommas(yourinterest));
+		 
+		 $(".equity").text(numberWithCommas(propertyvalue).toString() + " - " + numberWithCommas(totalsecurities).toString() + " = " + numberWithCommas(equity));
+
+	}
 });
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 </script>
 
 
