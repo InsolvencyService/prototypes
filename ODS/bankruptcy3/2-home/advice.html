@@ -328,16 +328,16 @@ $(document).ready(function(){
  	propertyvalue  = parseFloat($.cookie('propertyvalue'));
  }
  
- var totalsecured = 0.00;
- if ($.cookie('totalsecured') && $.cookie('totalsecured').length > 0 && $.isNumeric($.cookie('totalsecured'))){
- 	totalsecured = parseFloat($.cookie('totalsecured'));
+ var securedloan = 0.00;
+ if ($.cookie('securedloan') && $.cookie('securedloan').length > 0 && $.isNumeric($.cookie('securedloan'))){
+ 	securedloan = parseFloat($.cookie('securedloan'));
  }
 
  var mortgageamount = 90000.00;
  if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
  	mortgageamount = parseFloat($.cookie('mortgageamount'));
  }
- totalsecurities = totalsecured + mortgageamount;
+ totalsecurities = securedloan + mortgageamount;
 
  if (propertyvalue  &&  $.isNumeric(propertyvalue) && totalsecurities && $.isNumeric(totalsecurities)){
 		var equity = propertyvalue - totalsecurities;

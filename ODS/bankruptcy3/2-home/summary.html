@@ -281,7 +281,7 @@ display:block;
                     </tr>
 
                       <tr class="group-heading">
-                        <td>Remaining mortgage</td>
+                        <td>Remaining <span class="mortgagetype">mortgage</span></td>
                         <td><span class="mortgageamount">£90,000</span></td>
                         <td> 
     					<a href="2-address-type.html">Change</a>
@@ -317,16 +317,34 @@ display:block;
                     </tr>
                     </thead>
                   <tbody>
-                    <tr class="wages_owed_check">
-                        <td>HJ Finance</td>
-                        <td>Consolidating debt</td>
-                        <td>£1,291.23</td>
-                        <td>01/04/2014</td>
-                        <td>
-                            
+                    <tr class="wages_owed_check" id="1">
+                        <td class="loanname">HJ Finance</td>
+                        <td class="loanfor">Consolidating debt</td>
+                        <td class="loanamount">£1,291.23</td>
+                        <td class="loandate"><span class="loanmonth">04</span>/<span class="loanyear">2014</span></td>
+                        <td>   
     					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
                         </td>
                     </tr>
+                    <tr class="wages_owed_check" id="2" style="display:none">
+                        <td class="loanname">HJ Finance</td>
+                        <td class="loanfor">Consolidating debt</td>
+                        <td class="loanamount">£1,291.23</td>
+                        <td class="loandate"><span class="loanmonth">04</span>/<span class="loanyear">2014</span></td>
+                        <td>   
+    					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
+                        </td>
+                    </tr>
+                    <tr class="wages_owed_check" id="3" style="display:none">
+                        <td class="loanname">HJ Finance</td>
+                        <td class="loanfor">Consolidating debt</td>
+                        <td class="loanamount">£1,291.23</td>
+                        <td class="loandate"><span class="loanmonth">04</span>/<span class="loanyear">2014</span></td>
+                        <td>   
+    					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
+                        </td>
+                    </tr>
+
                      <tr class="wages_owed_check">
                         <td colspan="4"><p><a href='6-secured-loans.html'>Add another security</a></p></td>
 
@@ -437,47 +455,87 @@ $(document).ready(function() {
 		$(".housename").text(housename );
 	}
 
+ var mortgagetype = "mortgage";
+ if ($.cookie('mortgagetype') && $.cookie('mortgagetype').length > 0){
+ 	$(".mortgagetype").text($.cookie('mortgagetype'));
+ }
 
  var totalsecurities = 100000.00
  var propertyvalue = 105000.00;
  if ($.cookie('propertyvalue') && $.cookie('propertyvalue').length > 0 && $.isNumeric($.cookie('propertyvalue'))){
  	propertyvalue  = parseFloat($.cookie('propertyvalue'));
+ 	$(".propertyvalue").text(numberWithCommas(propertyvalue));
  }
  
- var totalsecured = 0.00;
- if ($.cookie('totalsecured') && $.cookie('totalsecured').length > 0 && $.isNumeric($.cookie('totalsecured'))){
- 	totalsecured = parseFloat($.cookie('totalsecured'));
- }
-
  var mortgageamount = 90000.00;
  if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
  	mortgageamount = parseFloat($.cookie('mortgageamount'));
+ 	$(".mortgageamount").text(numberWithCommas(mortgageamount));
  }
- totalsecurities = totalsecured + mortgageamount;
+ 
+ var numberofsecuredloans = 0;
+  if ($.cookie('numberofsecuredloans') && $.cookie('numberofsecuredloans').length > 0 && $.isNumeric($.cookie('numberofsecuredloans'))){
+ 	numberofsecuredloans= parseInt($.cookie('numberofsecuredloans'));
 
- 	if (propertyvalue  &&  $.isNumeric(propertyvalue)){
-		// $(".yourinterest").text(numberWithCommas(yourinterest));	 
+ 	var securedloan = 0.00;	
+ 	var loanfor = "car";
+ 	var loanname = "ABC Finance Ltd";
+ 	var loanmonth = "4";
+ 	var loanyear = "2008";
+ 	for (i = 1; i < numberofsecuredloans + 1; i++) { 
+		 if ($.cookie('securedloan' + i) && $.cookie('securedloan' + i).length > 0 && $.isNumeric($.cookie('securedloan' + i))){
+		 	securedloan = parseFloat($.cookie('securedloan' + i));
+		 }
+		 if ($.cookie('loanfor' + i) && $.cookie('loanfor' + i).length > 0){
+		 	loanfor = $.cookie('loanfor' + i);
+		 }
+		 if ($.cookie('loanname' + i) && $.cookie('loanname' + i).length > 0){
+		 	loanname= $.cookie('loanname' + i);
+		 }
+		 if ($.cookie('loanmonth' + i) && $.cookie('loanmonth' + i).length > 0){
+		 	loanmonth= $.cookie('loanmonth' + i);
+		 }
+		 if ($.cookie('loanyear' + i) && $.cookie('loanyear' + i).length > 0){
+		 	loanmonth= $.cookie('loanyear' + i);
+		 }
 
-	}
-	
+		 // add to table
+		 $("#" + i + " .loanamount").text(securedloan);
+		 $("#" + i + " .loanfor").text(loanfor);
+		 $("#" + i + " .loanname").text(loanname);
+		 $("#" + i + " .loanmonth").text(loanmonth);
+		 $("#" + i + " .loanyear").text(loanyear);
+		 
+    }
+ }
+
+ 
+  var securedloan = 0.00;
+ if ($.cookie('securedloan') && $.cookie('securedloan').length > 0 && $.isNumeric($.cookie('securedloan'))){
+ 	securedloan = parseFloat($.cookie('securedloan'));
+ }
+
+ 	
 	$("#details1").hide();
 	
-	             $(".js-section").on("click", function (e) {
-                    e.preventDefault();
-                    if ($(this).hasClass("open") == false) {
-                        $(this).addClass("open");
-                        $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-                        var details = $($(this).attr("href"));
-                        details.show();
-                    }
-                    else {
-                        $("#details1").hide();
-                        $(this).removeClass("open");
-                        $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
-                        var details = $($(this).attr("href"));
-                        details.hide();
-                    }
-                });
+     $(".js-section").on("click", function (e) {
+        e.preventDefault();
+        if ($(this).hasClass("open") == false) {
+            $(this).addClass("open");
+            $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+            var details = $($(this).attr("href"));
+            details.show();
+        }
+        else {
+            $("#details1").hide();
+            $(this).removeClass("open");
+            $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+            var details = $($(this).attr("href"));
+            details.hide();
+        }
+    });
+
+
 
 });
 

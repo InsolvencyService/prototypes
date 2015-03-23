@@ -170,7 +170,7 @@ display:block;
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
                     
 	<div class="text">
-	            <div class="form-group">
+	            <div class="form-group" id="loansmessage">
 	 
 	 
 	 				<br>
@@ -189,13 +189,13 @@ display:block;
 			What was the amount for?</label>
 		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
 
-	<input id="ref" name="ref" type="text" value="" style="width:300px !important;"/>
+	<input id="loanfor" name="ref" type="text" value="" style="width:300px !important;"/>
 	<br/>
 	</div>
 	<div class="form-group ">
 	
-	<label id="last_name_label" for="last_name" class="form-label last_name">Name of the company the loan or arrangement is with</label>
-	<input id="name" name="last_name" type="text" value="" />
+	<label id="last_name_label" for="loanname" class="form-label last_name">Name of the company the loan or arrangement is with</label>
+	<input id="loanname" name="last_name" type="text" value="" />
 	<br/>
 	</div>
 	
@@ -210,12 +210,12 @@ display:block;
 	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 	</div>
 	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
-	<input id="date_of_birth.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+		 <label id="date_of_birth_label.month" for="loanmonth">Month</label>
+	<input id="loanmonth" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 	</div>
 	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
-	<input id="date_of_birth.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	<label id="date_of_birth_label.year" for="loanyear">Year</label>
+	<input id="loanyear" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 	</div>
 	</fieldset>
 	</div>
@@ -262,7 +262,7 @@ display:block;
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="5-mortgage.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -336,18 +336,32 @@ $(document).ready(function() {
            
   	var normalroute = $("#next").prop("href");
 	$("#another_Yes").click(function(){
-		$("#next").prop("href","6-another-secured-loan.html");
+		$("#next").prop("href","6-secured-loans.html");
 	});
 	$("#another_No").click(function(){
 		$("#next").prop("href", normalroute);
 	});
 	
+	var numberofsecuredloans = $.cookie('numberofsecuredloans');
+	if (numberofsecuredloans == null){
+		numberofsecuredloans = 1;
+	}
+	else{
+		// they have already added one
+		$("#loansmessage").hide();
+	}
+
 	$("#next").on("click", function(){
 		if ($("#amount").val() && $("#amount").val().length > 0 && isNumeric($("#amount").val())) {
-		var totalsecured = parseFloat($("#amount").val());
-		$.cookie('totalsecured', totalsecured, { expires: 1 });
-
-	}
+			var securedloan = parseFloat($("#amount").val());
+			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1 });
+			$.cookie('loanfor' + numberofsecuredloans, $("#loanfor").val(), { expires: 1 });
+			$.cookie('loanname' + numberofsecuredloans, $("#loanname").val(), { expires: 1 });
+			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1 });
+			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1 });
+			
+			$.cookie('numberofsecuredloans', numberofsecuredloans, { expires: 1 });
+		}
 
 	});
 	

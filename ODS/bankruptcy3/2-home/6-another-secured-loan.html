@@ -331,11 +331,11 @@ $(document).ready(function() {
 	
 	$("#next").on("click", function(){
 		if ($("#amount").val() && $("#amount").val().length > 0 && isNumeric($("#amount").val())) {
-		var totalsecured = parseFloat($("#amount").val());
-		if ($.cookie('totalsecured').length > 0){
-			totalsecured+= $.cookie('totalsecured');
+		var securedloan = parseFloat($("#amount").val());
+		if ($.cookie('securedloan').length > 0){
+			securedloan+= $.cookie('securedloan');
 		}
-		$.cookie('totalsecured', totalsecured, { expires: 1 });
+		$.cookie('securedloan', securedloan, { expires: 1 });
 	}
 
 });

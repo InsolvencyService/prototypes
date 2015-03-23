@@ -330,6 +330,8 @@ $(document).ready(function() {
 		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0 && isNumeric($("#mortgageamount").val()) ) {
 			var mortgageamount= parseFloat($("#mortgageamount").val());
 			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
+
+			$.cookie('mortgagetype', "mortgage", { expires: 1 });
 		}
 	});
 

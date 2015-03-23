@@ -186,7 +186,7 @@ display:block;
 			What was the remortgage for?</label>
 		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
 
-	<input id="ref" name="ref" type="text" value="" style="width:300px !important;"/>
+	<input id="remortgagefor" name="ref" type="text" value="" style="width:300px !important;"/>
 	<br/>
 	</div>
 	
@@ -270,6 +270,13 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
                    
+	$("#next").on("click", function(){
+		if ($("#remortgagefor").val() && $("#remortgagefor").val().length > 0) {
+			var securedloan = parseFloat();
+			$.cookie('remortgagefor', $("#remortgagefor").val(), { expires: 1 });
+			$.cookie('mortgagetype', "remortgage", { expires: 1 });
+		}
+	});
 
  
 });
