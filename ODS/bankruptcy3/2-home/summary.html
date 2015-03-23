@@ -192,7 +192,8 @@ display:block;
 
 
 	 <div>
-            <div class="form-group">
+
+            <div class="form-group" id="details1">
                 <table id="summary_table">
                     <tbody>
                         <tr class="group-heading">
@@ -270,8 +271,8 @@ display:block;
                 <table id="summary_table">
                     <tbody>
                         <tr class="group-heading">
-                        <td>Your house is worth</td>
-                        <td>£140,000</td>
+                        <td>Your property <span class="housename">85 High Street</span> is worth</td>
+                        <td><span class="propertyvalue">£140,000</span></td>
                         <td>  
     					<a href="1-address.html">Change</a>
                         </td>
@@ -281,13 +282,14 @@ display:block;
 
                       <tr class="group-heading">
                         <td>Remaining mortgage</td>
-                        <td>£125,000</td>
+                        <td><span class="mortgageamount">£90,000</span></td>
                         <td> 
     					<a href="2-address-type.html">Change</a>
                         </td>
                         <td>
                         </td>
                     </tr>
+
 
                     </tbody>
                 </table>
@@ -435,7 +437,54 @@ $(document).ready(function() {
 		$(".housename").text(housename );
 	}
 
+
+ var totalsecurities = 100000.00
+ var propertyvalue = 105000.00;
+ if ($.cookie('propertyvalue') && $.cookie('propertyvalue').length > 0 && $.isNumeric($.cookie('propertyvalue'))){
+ 	propertyvalue  = parseFloat($.cookie('propertyvalue'));
+ }
+ 
+ var totalsecured = 0.00;
+ if ($.cookie('totalsecured') && $.cookie('totalsecured').length > 0 && $.isNumeric($.cookie('totalsecured'))){
+ 	totalsecured = parseFloat($.cookie('totalsecured'));
+ }
+
+ var mortgageamount = 90000.00;
+ if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
+ 	mortgageamount = parseFloat($.cookie('mortgageamount'));
+ }
+ totalsecurities = totalsecured + mortgageamount;
+
+ 	if (propertyvalue  &&  $.isNumeric(propertyvalue)){
+		// $(".yourinterest").text(numberWithCommas(yourinterest));	 
+
+	}
+	
+	$("#details1").hide();
+	
+	             $(".js-section").on("click", function (e) {
+                    e.preventDefault();
+                    if ($(this).hasClass("open") == false) {
+                        $(this).addClass("open");
+                        $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        var details = $($(this).attr("href"));
+                        details.show();
+                    }
+                    else {
+                        $("#details1").hide();
+                        $(this).removeClass("open");
+                        $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+                        var details = $($(this).attr("href"));
+                        details.hide();
+                    }
+                });
+
 });
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
  
 </script>
