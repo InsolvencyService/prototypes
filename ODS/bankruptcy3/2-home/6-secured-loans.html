@@ -342,8 +342,13 @@ $(document).ready(function() {
 		$("#next").prop("href", normalroute);
 	});
 	
-	var numberofsecuredloans = $.cookie('numberofsecuredloans');
-	if (numberofsecuredloans == null){
+   var numberofsecuredloans = 0;
+
+  if ($.cookie('numberofsecuredloans') && $.cookie('numberofsecuredloans').length > 0 && $.isNumeric($.cookie('numberofsecuredloans'))){
+ 	numberofsecuredloans= parseInt($.cookie('numberofsecuredloans'));
+	}
+
+	if (numberofsecuredloans == 0){
 		numberofsecuredloans = 1;
 	}
 	else{
@@ -351,8 +356,8 @@ $(document).ready(function() {
 		$("#loansmessage").hide();
 	}
 
-	$("#next").on("click", function(){
-		if ($("#amount").val() && $("#amount").val().length > 0 && isNumeric($("#amount").val())) {
+	$("#next").on("click", function(e){
+		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
 			var securedloan = parseFloat($("#amount").val());
 			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1 });
 			$.cookie('loanfor' + numberofsecuredloans, $("#loanfor").val(), { expires: 1 });
@@ -361,6 +366,7 @@ $(document).ready(function() {
 			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1 });
 			
 			$.cookie('numberofsecuredloans', numberofsecuredloans, { expires: 1 });
+			
 		}
 
 	});

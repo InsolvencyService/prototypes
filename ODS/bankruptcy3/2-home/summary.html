@@ -317,7 +317,7 @@ display:block;
                     </tr>
                     </thead>
                   <tbody>
-                    <tr class="wages_owed_check" id="1">
+                    <tr class="wages_owed_check" id="row1">
                         <td class="loanname">HJ Finance</td>
                         <td class="loanfor">Consolidating debt</td>
                         <td class="loanamount">£1,291.23</td>
@@ -326,7 +326,7 @@ display:block;
     					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
                         </td>
                     </tr>
-                    <tr class="wages_owed_check" id="2" style="display:none">
+                    <tr class="wages_owed_check" id="row2" style="display:none">
                         <td class="loanname">HJ Finance</td>
                         <td class="loanfor">Consolidating debt</td>
                         <td class="loanamount">£1,291.23</td>
@@ -335,7 +335,7 @@ display:block;
     					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
                         </td>
                     </tr>
-                    <tr class="wages_owed_check" id="3" style="display:none">
+                    <tr class="wages_owed_check" id="row3" style="display:none">
                         <td class="loanname">HJ Finance</td>
                         <td class="loanfor">Consolidating debt</td>
                         <td class="loanamount">£1,291.23</td>
@@ -474,6 +474,7 @@ $(document).ready(function() {
  }
  
  var numberofsecuredloans = 0;
+
   if ($.cookie('numberofsecuredloans') && $.cookie('numberofsecuredloans').length > 0 && $.isNumeric($.cookie('numberofsecuredloans'))){
  	numberofsecuredloans= parseInt($.cookie('numberofsecuredloans'));
 
@@ -500,11 +501,12 @@ $(document).ready(function() {
 		 }
 
 		 // add to table
-		 $("#" + i + " .loanamount").text(securedloan);
-		 $("#" + i + " .loanfor").text(loanfor);
-		 $("#" + i + " .loanname").text(loanname);
-		 $("#" + i + " .loanmonth").text(loanmonth);
-		 $("#" + i + " .loanyear").text(loanyear);
+		  $("#row" + i).show();
+		 $("#row" + i + " .loanamount").text(securedloan);
+		 $("#row" + i + " .loanfor").text(loanfor);
+		 $("#row" + i + " .loanname").text(loanname);
+		 $("#row" + i + " .loanmonth").text(loanmonth);
+		 $("#row" + i + " .loanyear").text(loanyear);
 		 
     }
  }
