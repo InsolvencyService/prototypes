@@ -70,10 +70,11 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bankruptcy-overrides.css">
-
 
 <style type="text/css">
+
+
+
 .row img{
 width:60px;
 text-align:right;
@@ -170,30 +171,8 @@ display:block;
                     
                     	
 
-                  <div class="form-group ">
-	
-	<fieldset id="date_of_birth" class="date-of-birth">
-	<legend id="date_of_birth_label" class="form-label">When did you take out the mortgage?</legend>
-	<span class="form-hint" id="date_of_birth_help"></span>
-	<div class="form-group form-group-day">
-		 <label id="date_of_birth_label.day" for="mortgage.day">Day</label>
-	<input id="mortgage.day" name="date_of_birth.day" type="number" min="1" max="31" />
-	</div>
-	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="mortgagemonth">Month</label>
-	<input id="mortgagemonth" name="date_of_birth.month" type="number" min="1" max="12"  />
-	</div>
-	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="mortgageyear">Year</label>
-	<input id="mortgageyear" name="date_of_birth.year" type="number" min="1900" max="9999"  />
-	</div>
-	</fieldset>
-	</div>
-
-
-                    
     
-                       <div class="form-group" id="shared-mortgage">
+                       <div class="form-group" id="shared-mortgage" style="display:none">
                         <p  class="form-label">Is this a shared mortgage with <span class="bold-medium data">Susan Smith</span>?</p>
 
                         <fieldset class="inline">
@@ -211,20 +190,45 @@ display:block;
                             </div>
                          </fieldset>
                     </div>
-<div class="form-group ">
-	
-	<label id="last_name_label" for="last_name" class="form-label last_name">Name of the bank or building society the mortgage is with</label>
-	<input id="name" name="last_name" type="text" value="" />
-	<br/>
-	</div>
-    <div class="form-group ">
+    <div class="form-group">
+                        <p id="title_label" class="form-label">Is this a remortgage of your property <span class="bold-medium data">12 Eldin COurts</span>?</p>
 
-                        <label id="first_name_label" for="mortgageamount" class="form-label first_name">How much is left to pay on the mortgage?</label>
-                        <input id="mortgageamount" name="first_name" type="number" aria-describedby="first_name_error first_name_help" value="" />
-                        <br />
+                        <fieldset class="inline">
+                            <div id="title0" class="form-group">
+
+                                <label for="remortgage_Yes" class="block-label">
+                                    <input id="remortgage_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label2" for="remortgage_No" class="block-label">
+                                    <input id="remortgage_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
                     </div>
 
-  
+    <div class="form-group">
+                        <p id="title_label3" class="form-label">Are there any loans 
+						or arrangements secured against your property?</p>
+
+                        <fieldset class="inline">
+                            <div id="title1" class="form-group">
+
+                                <label for="secured_Yes" class="block-label">
+                                    <input id="secured_Yes" name="secured" type="radio">
+                                    Yes
+                                </label>
+
+                                <label for="secured_No" class="block-label">
+                                    <input id="secured_No" name="secured" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+
  
 <p class="clearfix"><br></p>
 	
@@ -232,14 +236,14 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-	<a href="5-mortgage-pt2.html" id="next" class="button">Continue</a>
+	<a href="summary.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+	<a style="padding-right: 30px" href="5-mortgage.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -304,40 +308,54 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-                   
-	var sharedowner = $.cookie('name');
+        
+	var housename = $.cookie('house');
+	if (housename && housename.length > 0){
+		$(".form-label .data").text(housename);
+	}
+     
+  	var normalroute = $("#next").prop("href");
+  	var nextpage = normalroute;
+  	
+	$("#remortgage_Yes").click(function(){
+		nextpage = "6-remortgage.html";
+		
+	});
+	$("#remortgage_No").click(function(){
+		if ($("#secured_Yes").is(':checked')){
+			nextpage  = "6-secured-loans.html";
+		}
+		else{
+			nextpage = normalroute;
+		}
 
-	 if (sharedowner == null){
-	 	$("#shared-mortgage").hide();
-	 }
-	 else
-	 {
-	 	if (sharedowner.length > 0){
-		 	$("#shared-mortgage .data").text(sharedowner);
-		 	$("#shared-mortgage").show();
-	 	}
-	 }
-	 
-	 var homemonth = $.cookie('purchasemonth');
-	 var homeyear = $.cookie('purchaseyear');
-
-	 if (homemonth && homeyear && homemonth.length > 0 && homeyear.length > 0){
-		$("#mortgageyear").val(homeyear);
-		$("#mortgagemonth").val(homemonth);
-	 }
-	
-	$("#next").on("click", function(){
-		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0 && isNumeric($("#mortgageamount").val()) ) {
-			var mortgageamount= parseFloat($("#mortgageamount").val());
-			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
+	});
+	$("#secured_Yes").click(function(){
+		if ($("#remortgage_No").is(':checked')){
+			nextpage  = "6-secured-loans.html";
+		}
+		
+	});
+	$("#secured_No").click(function(){
+		if ($("#remortgage_Yes").is(':checked')){
+			nextpage  = "6-remortgage.html";
+		}
+		else{
+			nextpage = normalroute;
 		}
 	});
-
 	
- 
+	$("#next").on("click", function(){
+		if ($("#secured_Yes").is(':checked') && $("#remortgage_Yes").is(':checked')){
+			nextpage  = "6-remortgage.html?secured=true";
+		}
+
+		$("#next").prop("href", nextpage);
+	});
+	
 });
 
-
+ 
 </script>
 
 
