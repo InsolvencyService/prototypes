@@ -203,7 +203,7 @@ display:block;
 				</ul>
 			</details>			
 			</div>
-
+<div id="under1k">
 	 <h2>What this means for you</h2>
 	 <p>Your interest in <span class="housename  heading-small">12 Eldin Courts</span> falls under £1,000 and you have dependents who live with you. This means that:</p>
 	 <ul class="list-bullet">
@@ -219,14 +219,34 @@ display:block;
 	 your interest in [the property] means that your home can’t be sold to pay 
 	 your debts..</li>
 	 </ul>
-	 
+</div>	
+
+<div id="over1k">
+	 <h2>What this means for you</h2>
+	 <p>Your interest in <span class="housename  heading-small">12 Eldin Courts</span> is between £1,000 and £10,000 and you have dependents who live with you. This means that:</p>
+	 <ul class="list-bullet">
+	 <li>No immediate action will be taken against your home by the official receiver.</li>
+	 <li>The value of your interest will be looked at again in 3 years time. </li>
+	 <li>If in 3 years the value remains under £10,000 the official receiver will apply for a charge against your property.  
+	 You won’t lose your home if this happens.
+</li>
+<li>The value of the charge will be the value of your property interest at that time.  The charge will remain against your property until you decide to sell it, much in the same way a mortgage does.
+</li>
+<li>The charge will gain interest at 8% per annum and will be repaid automatically when you decide to sell your home.</li>
+<li>You can buy your interest in <span class="housename  heading-small">12 Eldin Courts</span> back from the official receiver before the end of the 3 years.  
+Usually, the money needed is paid for by a friend, relative or joint owner.  
+Buying back your interest in <span class="housename  heading-small">12 Eldin Courts</span> means that your home can’t be sold to pay your debts.
+</li>
+	 </ul>
+</div>
+ 
 	 <p>If you need more certainty ask a debt adviser for advice.</p>
 		 		</div>
 			</div>
 
 <div class="clearfix"><br></div>
 <div>
-	<div class="form-navigation form-group" style="margin-top:20px;">
+	<div class="form-navigation form-group">
 
 	<a href="../overview.html?section2=complete" id="next" class="button">Continue</a>
 	
@@ -323,7 +343,7 @@ display:block;
 $(document).ready(function(){
 	var housename = $.cookie('house');
 	if (housename  && housename.length > 0){
-		$(".form-label .housename").text(housename);
+		$(".housename").text(housename);
 	}
 
  $("#calculation span").text("£670.99");
@@ -353,6 +373,16 @@ $(document).ready(function(){
 		 
 		 $(".equity").text(numberWithCommas(propertyvalue).toString() + " - " + numberWithCommas(totalsecurities).toString() + " = " + numberWithCommas(equity));
 
+		if (yourinterest > 1000){
+			// show other message here
+			$("#under1k").hide();
+			$("#over1k").show();
+		}
+		else{
+			$("#under1k").show();
+			$("#over1k").hide();
+
+		}
 	}
 });
 
