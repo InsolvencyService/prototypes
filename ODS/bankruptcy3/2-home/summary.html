@@ -249,9 +249,9 @@ display:block;
                     </tr>
                      <tr class="group-heading">
                         <td>Joint property owner</td>
-                        <td>Rachel Burton</td>
+                        <td><span class="personname">Rachel Burton</span></td>
                         <td> 
-    					<a href="2-address-type.html">Change</a>
+    					<a href="3-add-person-joint.html">Change</a>
                         </td>
                         <td>
                         </td>
@@ -274,7 +274,7 @@ display:block;
                         <td>Your property <span class="housename">85 High Street</span> is worth</td>
                         <td><span class="propertyvalue">£140,000</span></td>
                         <td>  
-    					<a href="1-address.html">Change</a>
+    					<a href="2-address-type.html">Change</a>
                         </td>
                         <td>
                         </td>
@@ -284,12 +284,19 @@ display:block;
                         <td>Remaining <span class="mortgagetype">mortgage</span></td>
                         <td><span class="mortgageamount">£90,000</span></td>
                         <td> 
-    					<a href="2-address-type.html">Change</a>
+    					<a href="5-mortgage-pt1.html">Change</a>
                         </td>
                         <td>
                         </td>
                     </tr>
-
+                        <tr class="group-heading" id="rowremortgagefor">
+                            <td>What was the remortgage for?</td>
+                            <td><span class="remortgagefor">£90,000</span></td>
+                            <td>
+                                <a href="6-remortgage.html">Change</a>
+                            </td>
+                            <td></td>
+                        </tr>
 
                     </tbody>
                 </table>
@@ -459,7 +466,10 @@ $(document).ready(function() {
  if ($.cookie('mortgagetype') && $.cookie('mortgagetype').length > 0){
  	$(".mortgagetype").text($.cookie('mortgagetype'));
  }
-
+ if ($.cookie('remortgagefor') && $.cookie('remortgagefor').length > 0) {
+     $(".remortgagefor").text($.cookie('remortgagefor'));
+     $("#rowremortgagefor").show();
+ }
  var totalsecurities = 100000.00
  var propertyvalue = 105000.00;
  if ($.cookie('propertyvalue') && $.cookie('propertyvalue').length > 0 && $.isNumeric($.cookie('propertyvalue'))){
