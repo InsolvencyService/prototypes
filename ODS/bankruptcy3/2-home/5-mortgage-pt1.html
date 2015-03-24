@@ -328,7 +328,7 @@ $(document).ready(function() {
 	
 	$("#next").on("click", function(){
 		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0) {
-			var mortgageamount= parseFloat($("#mortgageamount").val());
+		    var mortgageamount = parseFloat(numberWithoutCommas($("#mortgageamount").val()));
 			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
 
 			$.cookie('mortgagetype', "mortgage", { expires: 1 });
@@ -339,7 +339,9 @@ $(document).ready(function() {
  
 });
 
-
+function numberWithoutCommas(x) {
+    return x.toString().replace(",", "");
+}
 </script>
 
 

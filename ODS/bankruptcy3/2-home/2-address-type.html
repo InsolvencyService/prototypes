@@ -347,7 +347,7 @@ $(document).ready(function() {
 			$.cookie('purchaseyear', "2005", { expires: 1 });
 		}
 		if ($("#propertyvalue").val().length > 0){
-			$.cookie('propertyvalue', $("#propertyvalue").val(), { expires: 1 });
+		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
 		}
 		else{
 			$.cookie('propertyvalue', "140000", { expires: 1 });
@@ -356,7 +356,11 @@ $(document).ready(function() {
 	});
 
 });
-    	
+   
+function numberWithoutCommas(x) {
+    return x.toString().replace(",","");
+}
+
 </script>
 
 
