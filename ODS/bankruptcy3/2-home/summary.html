@@ -289,7 +289,7 @@ display:block;
                         <td>
                         </td>
                     </tr>
-                        <tr class="group-heading" id="rowremortgagefor">
+                        <tr class="group-heading" id="rowremortgagefor" style="display:none">
                             <td>What was the remortgage for?</td>
                             <td><span class="remortgagefor">Buying a car</span></td>
                             <td>
@@ -469,6 +469,7 @@ $(document).ready(function() {
  if ($.cookie('remortgagefor') && $.cookie('remortgagefor').length > 0) {
      $(".remortgagefor").text($.cookie('remortgagefor'));
      $("#rowremortgagefor").show();
+     //$("#row").show();
  }
  var totalsecurities = 100000.00
  var propertyvalue = 105000.00;
