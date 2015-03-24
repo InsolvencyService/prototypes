@@ -359,7 +359,8 @@ $(document).ready(function() {
 });
    
 function numberWithoutCommas(x) {
-    return x.toString().replace(",","");
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
 }
 
 </script>
