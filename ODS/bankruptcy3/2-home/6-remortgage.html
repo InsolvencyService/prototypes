@@ -269,7 +269,12 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-          // check querystring and set next to 6-secured-loans.html        
+          // check querystring and set next to 6-secured-loans.html
+    var secured = getParameterByName("secured");
+    if (secured && secured.length > 0){
+    	$("#next").attr("href", "6-secured-loans.html");
+    }   
+       
 	$("#next").on("click", function(){
 		if ($("#remortgagefor").val() && $("#remortgagefor").val().length > 0) {
 			var securedloan = parseFloat();
@@ -278,8 +283,15 @@ $(document).ready(function() {
 		}
 	});
 
- 
 });
+
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 </script>
 
