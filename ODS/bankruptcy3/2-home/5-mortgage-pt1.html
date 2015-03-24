@@ -327,7 +327,7 @@ $(document).ready(function() {
 	 }
 	
 	$("#next").on("click", function(){
-		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0 && isNumeric($("#mortgageamount").val()) ) {
+		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0) {
 			var mortgageamount= parseFloat($("#mortgageamount").val());
 			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
 
