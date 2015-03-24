@@ -354,10 +354,15 @@ $(document).ready(function(){
  }
  
  var securedloan = 0.00;
- if ($.cookie('securedloan') && $.cookie('securedloan').length > 0 && $.isNumeric($.cookie('securedloan'))){
- 	securedloan = parseFloat($.cookie('securedloan'));
+ if ($.cookie('securedloan1') && $.cookie('securedloan1').length > 0 && $.isNumeric($.cookie('securedloan1'))){
+ 	securedloan = parseFloat($.cookie('securedloan1'));
  }
-
+ if ($.cookie('securedloan2') && $.cookie('securedloan2').length > 0 && $.isNumeric($.cookie('securedloan2'))) {
+     securedloan+= parseFloat($.cookie('securedloan2'));
+ }
+ if ($.cookie('securedloan3') && $.cookie('securedloan3').length > 0 && $.isNumeric($.cookie('securedloan3'))) {
+     securedloan+= parseFloat($.cookie('securedloan3'));
+ }
  var mortgageamount = 90000.00;
  if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
  	mortgageamount = parseFloat($.cookie('mortgageamount'));
