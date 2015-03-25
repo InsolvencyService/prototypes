@@ -126,21 +126,38 @@
 
 
   <h2 class="bold-medium">What happens next</h2>
-  <p>You can expect to receive payment within 10-15 days if you have provided 
-  all the correct information. </p>
+  <p>You can expect to receive payment within 21 days if you have provided all 
+  the correct information. </p>
 	<p>If you have any questions about your claim, or if any of your details 
 	have changed, please contact us.</p>
+<div id="whatweneed">
 	<h2 class="bold-medium">What we need from you</h2>
-	<p>You need to send us a copy of the letter you received refusing your Jobseeker's Allowance.</p>
-	<p>You need to send evidence of your self employment income and outgoings over the notice period.</p>
-	<p>Email: <a href="mailto:redundancypaymentsonline@insolvency.gsi.gov.uk">
-	redundancypaymentsonline@insolvency.gsi.gov.uk</a> <br>Website:<a href="http://www.gov.uk/insolvency-service"> 
-	www.gov.uk/insolvency-service</a> <br>Telephone: 0330 331 0020 (select 
+	<p>You need to send the item(s) below. Please include your name, National 
+	Insurance number and claim reference number.</p>
+	<ul class="list-bullet">
+	<li>
+You need to send a copy of your Jobseeker's Allowance refusal letter. If you don't have one, please ask for a copy from your Jobcentre.
+</li>
+<li>You need to send a copy of your holiday booking confirmation.</li>
+<li>You need to send evidence of your self-employment income and outgoings over the notice period.
+
+	</li>
+	
+	</ul>
+	<p>You can email photos or scans of your documents to <a href="mailto:redundancypaymentsonline@insolvency.gsi.gov.uk">
+	redundancypaymentsonline@insolvency.gsi.gov.uk</a></p>
+	<p>Or post copies to: <br>
+Redundancy Payments Service <br>
+PO Box 16685 <br>
+Birmingham <br>
+B2 2LX <br>
+</p>
+</div>
+
+		<p>Email: <a href="mailto:redundancypaymentsonline@insolvency.gsi.gov.uk">
+	redundancypaymentsonline@insolvency.gsi.gov.uk</a> <br>Website: <a href="https://www.gov.uk/your-rights-if-your-employer-is-insolvent">Your rights if your employer is insolvent</a> 
+	<br>Telephone: 0330 331 0020 (select 
 	option 2) <br>Opening hours are 9am to 5pm, Monday to Friday </p>
-	 <p>Redundancy Payments Service<br>
-        PO Box 16685<br>
-        Birmingham<br>
-        B2 2LX</p>
 
   <div class="footnote">
     <p><a href="https://www.surveymonkey.com/s/RBW8HYW">What did you think of this service?</a> (takes 5 minutes)</p>
@@ -195,15 +212,29 @@
 
 
     
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script type="text/javascript">
 
-    ga('create', 'UA-52715352-2', 'auto');
-    ga('send', 'pageview');
+$(document).ready(function() {
+	var docs = getParameterByName("senddocuments");
+	
+	if (docs && docs.length > 1) {
+		$("#whatweneed").show();
+	}
+	else{
+		$("#whatweneed").hide();
+	};
+
+});
+   
+	
     	
+    
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+} 	
 </script>
 
 
