@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <!-- #BeginEditable "title" -->
-    <title>Application overview</title>
+    <title>Overview</title>
 <!-- #EndEditable -->
 
 
@@ -72,7 +72,22 @@
     <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
 
     <style type="text/css">
-       
+
+#global-header #logo img {
+	width:auto !important;
+	position: relative;
+	top: -2px;
+	height: 34px;
+	padding-right: 6px;
+	float: left;
+	display: inline;
+	line-height: inherit;
+	border: none;
+}
+#global-header a#logo.content{
+	font-size:19px;
+}
+
         .nav-pills a{
 			font-size:16px;	
 		}
@@ -99,9 +114,25 @@
 #table-summary td{
 	width:50%;
 }
+a.btn,
+a.btn:active,
+a.btn:link,
+a.btn:focus,
 a.btn:visited{
 	color:#fff !important;
 }
+
+.btn-circle {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 10px;
+}
+
+
     </style>
 <!-- #EndEditable -->
 
@@ -164,20 +195,15 @@ a.btn:visited{
 
 
                 <h1 class="form-title heading-large">Bankruptcy adjudication</h1>
-<div class="alert alert-info">
-<a class="close" aria-label="Close">&times;</a>
-
-An order has been made for application EHBJ803MKRP - Gerard Marshall
-</div> 
-
+                
 <div class="row ng-scope" ng-controller="inboxCtrl">
         <aside class="col-md-2 pad-right-0">
             <ul class="nav nav-pills nav-stacked">
               <li class="active">
-              <a href="javascript:;"><span class="badge pull-right">6</span> New </a></li>
-              <li><a href="javascript:;" style="display:none"><span class="badge pull-right">6</span> In progress</a></li>
+              <a href="javascript:;"><span class="badge pull-right">7</span> New </a></li>
+              <li><a href="javascript:;" style="display:none"><span class="badge pull-right">5</span> In progress</a></li>
 			  <li><a href="javascript:;"><span class="badge pull-right">2</span> Referred</a></li>
-			  <li><a href="javascript:;"><span class="badge pull-right">122</span> Complete</a></li>
+			  <li><a href="javascript:;"><span class="badge pull-right">121</span> Complete</a></li>
             </ul>
             
         </aside>
@@ -215,7 +241,7 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
                             <tr>
                             <td class="col-sm-3"><a href="javascript:;"><strong>Reference</strong></a></td>
                             <td class="col-sm-3"><a href="javascript:;"><strong>Name</strong></a></td>
-                            <td class="col-sm-3"><a href="javascript:;"><strong>Date</strong></a></td>
+                            <td class="col-sm-3"><a href="javascript:;"><strong>Received</strong></a></td>
                             <td class="col-sm-2"><a href="javascript:;"><strong>Status</strong></a></td>
                             <td class="col-sm-1"></td>
                             <td class="col-sm-5"></td>
@@ -225,10 +251,12 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
                           <tbody>
                           <tr>
                             <td class="col-sm-3">DKNF098JKL</td>
-                            <td class="col-sm-3">Leon Thomas</td>
+                            <td class="col-sm-3">Derek Thomas</td>
                             <td class="col-sm-3">23 March 2015</td>
                             <td class="col-sm-2">New</td>
                             <td class="col-sm-1"> 
+                            <span class="btn btn-default btn-circle btn-warning">&nbsp;</span>
+
                             <a id="btn-notes1" href="javascript:" data-toggle="collapse" href="#notes1"><i class="glyphicon glyphicon-flag"></i></a>
                             <i class="glyphicon glyphicon-warning-sign text-danger" style="display:none"></i></td>
                           </tr>
@@ -239,13 +267,22 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
 
 
                           <tr>
+                            <td class="col-sm-3">EHBJ803MKRP</td>
+                            <td class="col-sm-3">Gerard Marshall</td>
+                            <td class="col-sm-3">23 March 2015</td>
+                            <td class="col-sm-2">New</td>
+                            <td class="col-sm-1"> 
+                            <span class="btn btn-default btn-circle btn-success">&nbsp;</span>
+                            </td>
+                          </tr>
+                          <tr>
                             <td class="col-sm-3">CGHY865ABB</td>
                             <td class="col-sm-3">Jennifer Isaacs</td>
                             <td class="col-sm-3">24 March 2015</td>
                             <td class="col-sm-2">New</td>
                             <td class="col-sm-1"> 
-                            <i class="glyphicon glyphicon-flag" style="display:none"></i>
-                            <i class="glyphicon glyphicon-warning-sign text-danger" style="display:none"></i></td>
+                            <span class="btn btn-default btn-circle btn-success">&nbsp;</span>
+							</td>
                           </tr>
                           <tr>
                             <td class="col-sm-3">LJGT9894JKL</td>
@@ -253,7 +290,8 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
                             <td class="col-sm-3">25 March 2015</td>
                             <td class="col-sm-2">New</td>
                             <td class="col-sm-1"> 
-                            <i class="glyphicon glyphicon-warning-sign text-danger" style="display:none"></i></td>
+                            <span class="btn btn-default btn-circle btn-success">&nbsp;</span>
+							</td>
                           </tr>
                           <tr>
                             <td class="col-sm-3">AHKBB975KLP</td>
@@ -261,7 +299,7 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
                             <td class="col-sm-3">26 March 2015</td>
                             <td class="col-sm-2">New</td>
                             <td class="col-sm-1"> 
-                            <i class="glyphicon glyphicon-warning-sign text-danger" style="display:none"></i></td>
+                            <span class="btn btn-default btn-circle btn-success">&nbsp;</span></td>
                           </tr>
                           <tr>
                             <td class="col-sm-3">QLBGH108RGL</td>
@@ -269,7 +307,7 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
                             <td class="col-sm-3">26 March 2015</td>
                             <td class="col-sm-2">New</td>
                             <td class="col-sm-1"> 
-                            <i class="glyphicon glyphicon-warning-sign text-danger" style="display:none"></i></td>
+                            <span class="btn btn-default btn-circle btn-success">&nbsp;</span></td>
                           </tr>
 
                         </tbody>
@@ -283,19 +321,28 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
                             <span>Application EHBJ803MKRP - Gerard Marshall</span></h3>
                         </div>
                         <div class="col-md-8">
-                            <blockquote class="bg-info small">
-                            Application received at 10:14am, 23 May 2014
-                            </blockquote>
+                            <div class="alert bg-info small" id="whenreceived" style="border:0 transparent none">
+                            Received at 10:14am, 23 May 2014
+                            </div>
                         </div>
                         <div class="col-md-4">
                 			<div class="btn-group btn-group-lg pull-right">
-                				<a class="btn btn-primary"><i class="glyphicon glyphicon-check"></i> Make order</a>
-                				<a class="btn btn-warning"><i class="glyphicon glyphicon-alert"></i> Refer</a>
+                				<a class="btn btn-primary" href="#" id="btn-makeorder"><i class="glyphicon glyphicon-check"></i> Make order</a>
+               				<a class="btn btn-warning" href="#" id="btn-refer"><i class="glyphicon glyphicon-alert"></i> Refer</a>
 
                 			</div>
                 			<div class="spacer5 pull-right"></div>
                 		</div>
 
+<div class="clearfix"></div>
+<div class="alert alert-info" id="pnl-ordermade" style="margin-left:10px; margin-right:10px; display:none">
+
+
+<a href="bankruptcyorder.html" target="_blank">A bankruptcy order has been made <strong id="whenmade"></strong>for application 
+	<strong>EHBJ803MKRP - Gerard Marshall</strong></a> 
+
+</div>
+ 
                         <div class="col-xs-12">
                             <!--message body-->
 <h3>Personal details</h3>
@@ -305,16 +352,22 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
 <td>Name:</td><td>Gerard Marshall</td>
 </tr>
 <tr>
-<td>DOB:</td><td>01/05/1955 (Pensionable age – 60yrs old)</td>
+<td>DOB:</td><td>01/05/1971</td>
 </tr>
 <tr>
 <td>Address:</td><td>234 High street, Birmingham B4 3TT (lived here for 10 years)</td>
 </tr>
 <tr>
-<td>Occupation:</td><td>Plumber</td>
+<td>Occupation:</td><td>Store Manager</td>
 </tr>
 <tr>
-<td>Work Address:</td><td>234 High street, Birmingham B4 3TT</td>
+<td>Work Address:</td><td>45 Long Street, Birmingham B22 8BQ</td>
+</tr>
+<tr>
+<td>Income per year:</td><td>£20,000</td>
+</tr>
+<tr>
+<td>Total debt:</td><td>£40,000</td>
 </tr>
 
 
@@ -344,21 +397,28 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
 </tr>
 
 <tr>
-<td colspan="2">Total value of income and expenditure</td>
+<td colspan="2"><h4>Total value of income and expenditure</h4></td>
 </tr>
 
 <tr>
-<td>Income total per month:</td><td>£300</td>
+<td>Income total per month:</td><td>£1,550</td>
 </tr>
 <tr>
-<td>Expenditure total per month:</td><td>£850</td>
+<td>Expenditure total per month:</td><td>£2,500</td>
 </tr>
 
 </tbody>
 </table>
 	 
+<div id="pnl-preview">
+<h3>Order content preview</h3>
+                       <div class="alert alert-warning" style="margin-left:10px;margin-right:10px">
 
+<p>It is ordered that <strong>Gerard Marshall</strong>, Store Manager, formerly known as <strong>Gerard Leon</strong>, of <strong>234 High street, Birmingham B4 3TT</strong> be adjudged bankrupt</p>
+<p>And it is ordered that <strong>David Rickman</strong> be appointed trustee of the bankrupt’s estate</p>
 
+                        </div>
+</div>
 	                            <!--/message body-->
                         </div>
                         
@@ -496,7 +556,7 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
 					//alert("click");
 					$("#summary").hide();
 					$("#inbox > div #table-list").show();
-					$(".alert").hide();
+			
 				});
 
 				$("#btn-notes1").on("click", function(e){
@@ -509,6 +569,16 @@ An order has been made for application EHBJ803MKRP - Gerard Marshall
 					}
 				});
 				
+				$("#btn-makeorder").on("click", function(e){
+					$("#pnl-ordermade").show();
+					$("#btn-makeorder").hide();
+					$("#btn-refer").hide();
+					
+					var dt = new Date();
+//var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+					$("#whenmade").text("on " + dt.toLocaleString() + " ");
+					$("#whenreceived").removeClass("bg-info").removeClass("alert");
+				});
              });
 
 
