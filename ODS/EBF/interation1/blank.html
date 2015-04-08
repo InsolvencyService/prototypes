@@ -68,23 +68,6 @@
 <style type="text/css">
 
 
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-a{
-	text-decoration:none;
-}
-a:hover, a:active, a:focus{
-	text-decoration:underline;
-}
 </style>
 <!-- #EndEditable -->
 
@@ -156,7 +139,16 @@ a:hover, a:active, a:focus{
                 This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
             </p>
     </div>
-
+	
+	<h4>Select files from your computer</h4>
+          <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+            <div class="form-inline">
+              <div class="form-group">
+                <input type="file" name="files[]" id="js-upload-files" multiple>
+              </div>
+              <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+            </div>
+          </form>
     
 </div>
 

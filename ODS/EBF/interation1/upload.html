@@ -68,32 +68,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bootstrapbits.css">
    <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap-switch.min.css">
-
-<style type="text/css">
-
-
-.clickable
-{
-    cursor: pointer;
-}
-
-.clickable .glyphicon
-{
-    background: rgba(0, 0, 0, 0.15);
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 4px
-}
-
-.panel-heading span
-{
-    margin-top: -23px;
-    font-size: 15px;
-    margin-right: -9px;
-}
-a.clickable { color: inherit; }
-a.clickable:hover { text-decoration:none; }
-</style>
 <!-- #EndEditable -->
 
 
@@ -154,123 +128,46 @@ a.clickable:hover { text-decoration:none; }
             </div>
         </div>
 
+</div>
+
 <!-- #BeginEditable "content" -->
 
- 	<div class="inner-block text">
-	    <div class="phase-banner inner-block">
+        
+<div id="content" >
+
+        
+<div class="inner-block text">
+    <div class="phase-banner inner-block">
             <p>
                 <strong class="phase-tag">ALPHA</strong>
                 This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
             </p>
-    	</div>
+    </div>
     
-    	<div class="container ">
-    			<h1 class="form-title heading-large">Electronic bankruptcy file</h1>
-
-                <div>
-                    <p><span class="bold-small">Unique reference number:</span> A5677865GH</p>
-                    <p><span class="bold-small">Name: </span>John Joe Bloggs</p>
-                    <p><span class="bold-small">Bankruptcy Order Date: </span>28th January 2015</p>
-                    <p><span class="bold-small">Description:</span> John Joe Bloggs trading as Bob A Job Builders</p>
-                    <p>&nbsp;</p>
-                </div>
-
-    			
-    			
-    			
-	    		<div class="col-sm-10">
-	            	<div class="panel panel-primary">
-	                	<div class="panel-heading">
-	                    	<h3 class="panel-title">Notifications</h3>
-	                    </div>
-	                	<div class="panel-body">
-	                		<table>
-		                		<thead>
-		                			<tr>
-		                				<td>Name</td>
-		                				<td>Date created</td>
-		                				<td>Date uploaded</td>
-		                				<td>Status</td>
-		                			</tr>
-		                		
-		                		</thead>
-		                		
-		                		<tbody>
-		                			
-		                			<tr>
-		                				<td><a href="#">Report to creditors</a></td>
-		                				<td>Friday 6th February 2015</td>
-		                				<td>Monday 9th February 2015</td>
-		                				<td></td>
-		                			</tr>
-
-
-		                		</tbody>
-		                	</table>
-	                	</div>
-	            	</div>
-	        	</div>
-	        
-        
-        	
-	        	<div class="col-sm-10">
-	            	<div class="panel panel-info">
-	                	<div class="panel-heading">
-	                    	<h3 class="panel-title">Documents</h3>
-	                    </div>
-	                	<div class="panel-body">
-		                	<table>
-		                		<thead>
-		                			<tr>
-		                				<td>Name</td>
-		                				<td>Date created</td>
-		                				<td>Date uploaded</td>
-		                				<td>Status</td>
-		                			</tr>
-		                		
-		                		</thead>
-		                		
-		                		<tbody>
-		                			<tr>
-		                				<td><a href="#">Bankruptcy Application</a></td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td></td>
-		                			</tr>
-		                			<tr>
-		                				<td><a href="#">Bankruptcy Order</a></td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td></td>
-		                			</tr>
-		                			
-		                		</tbody>
-		                	</table>
-		                	
-
-		                	<div class="col-sm-12 text-right">
-								<p>&nbsp;</p>
-								<a href="upload.html"><div class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"> </i> Upload a document</div></a>
-							</div>
-	                	</div>
-	                	
-	            	</div>
-	        	</div>
-	        <div class="col-sm-12 text-left">
-								<a href="">Back</a>
-								<p>&nbsp;</p>
-							</div>
-	        
-		</div>
-	</div>
-       
-
-<!-- #EndEditable -->
+    <div class="container ">
+    			<h1 class="form-title heading-large">File upload</h1>
+				<p>Select files from your computer that you would like to upload to <span class="text bold-small">John Joe Bloggs</span> electronic bankruptcy folder.</p>
+				<p>Please note that the upload facility is restricted to the following types of document</p>
+		          <form action="" method="post" enctype="multipart/form-data">
+		            <div class="form-inline">
+		              <div class="form-group">
+		                <input type="file" name="files[]" id="js-upload-files" multiple>
+		              </div>
+		               <p>&nbsp;</p>
+		               <a class="button" href="ebf_awaiting.html">Upload&nbsp;<i  class="glyphicon glyphicon-upload"></i></a>
+		               <p><a href="ebf.html">Back</a></p>		       
+		               </div>
+		          </form>
+    </div>
 
         
 </div>
+</div>
 
 
+		<!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -318,31 +215,11 @@ a.clickable:hover { text-decoration:none; }
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript">
-<script type="text/javascript">
-$(document).on('click', '.panel div.clickable', function (e) {
-    var $this = $(this);
-    var $trigger = $($this.parents('.panel')[0]).find('a[data-toggle=collapse]')
-    
-    var target = $trigger.attr('data-target')
-      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+$(document).ready(function() {
 
+});
 
-    if (!$this.hasClass('panel-collapsed')) {
-        $this.addClass('panel-collapsed');
-        $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-        $(target).collapse('hide');
-    } else {
-        $this.removeClass('panel-collapsed');
-        $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
-        $(target).collapse('show');
-    }
-});
-$(document).ready(function () {
-    $('.panel-heading span.clickable').click();
-});
 </script>
-
-
 
 
 <!-- #EndEditable -->

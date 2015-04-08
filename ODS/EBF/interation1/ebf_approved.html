@@ -66,8 +66,13 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bootstrapbits.css">
-   <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap-switch.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap-switch.min.css">
+<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../../assets/js/tag/tagdisplay.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+
+
 
 <style type="text/css">
 
@@ -93,6 +98,32 @@
 }
 a.clickable { color: inherit; }
 a.clickable:hover { text-decoration:none; }
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
 </style>
 <!-- #EndEditable -->
 
@@ -243,21 +274,26 @@ a.clickable:hover { text-decoration:none; }
 		                				<td>Wednesday 28th January 2015</td>
 		                				<td></td>
 		                			</tr>
-		                			
+		                			<tr>	
+		                				<td><a href="#">Bankrupts statement of affairs</a></td>
+		                				<td>Wednesday 8th April 2015</td>
+		                				<td>Wednesday 8th April 2015</td>
+		                				<td></td>
+		                			</tr>
 		                		</tbody>
 		                	</table>
 		                	
 
 		                	<div class="col-sm-12 text-right">
 								<p>&nbsp;</p>
-								<a href="upload.html"><div class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"> </i> Upload a document</div></a>
+								<div class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"> </i> Upload a document</div>
 							</div>
 	                	</div>
 	                	
 	            	</div>
 	        	</div>
 	        <div class="col-sm-12 text-left">
-								<a href="">Back</a>
+								<a href="case_search.html">Back</a>
 								<p>&nbsp;</p>
 							</div>
 	        
@@ -340,6 +376,7 @@ $(document).on('click', '.panel div.clickable', function (e) {
 $(document).ready(function () {
     $('.panel-heading span.clickable').click();
 });
+
 </script>
 
 

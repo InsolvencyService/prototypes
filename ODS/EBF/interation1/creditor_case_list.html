@@ -66,34 +66,10 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bootstrapbits.css">
-   <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap-switch.min.css">
-
-<style type="text/css">
-
-
-.clickable
-{
-    cursor: pointer;
-}
-
-.clickable .glyphicon
-{
-    background: rgba(0, 0, 0, 0.15);
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 4px
-}
-
-.panel-heading span
-{
-    margin-top: -23px;
-    font-size: 15px;
-    margin-right: -9px;
-}
-a.clickable { color: inherit; }
-a.clickable:hover { text-decoration:none; }
-</style>
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap-switch.min.css">
+<script type="text/javascript" src="../../assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.js"></script>
 <!-- #EndEditable -->
 
 
@@ -165,103 +141,76 @@ a.clickable:hover { text-decoration:none; }
     	</div>
     
     	<div class="container ">
-    			<h1 class="form-title heading-large">Electronic bankruptcy file</h1>
-
-                <div>
-                    <p><span class="bold-small">Unique reference number:</span> A5677865GH</p>
-                    <p><span class="bold-small">Name: </span>John Joe Bloggs</p>
-                    <p><span class="bold-small">Bankruptcy Order Date: </span>28th January 2015</p>
-                    <p><span class="bold-small">Description:</span> John Joe Bloggs trading as Bob A Job Builders</p>
-                    <p>&nbsp;</p>
-                </div>
-
-    			
-    			
-    			
-	    		<div class="col-sm-10">
-	            	<div class="panel panel-primary">
-	                	<div class="panel-heading">
-	                    	<h3 class="panel-title">Notifications</h3>
-	                    </div>
-	                	<div class="panel-body">
-	                		<table>
-		                		<thead>
-		                			<tr>
-		                				<td>Name</td>
-		                				<td>Date created</td>
-		                				<td>Date uploaded</td>
-		                				<td>Status</td>
-		                			</tr>
-		                		
-		                		</thead>
-		                		
-		                		<tbody>
-		                			
-		                			<tr>
-		                				<td><a href="#">Report to creditors</a></td>
-		                				<td>Friday 6th February 2015</td>
-		                				<td>Monday 9th February 2015</td>
-		                				<td></td>
-		                			</tr>
-
-
-		                		</tbody>
-		                	</table>
-	                	</div>
-	            	</div>
-	        	</div>
-	        
-        
-        	
-	        	<div class="col-sm-10">
-	            	<div class="panel panel-info">
-	                	<div class="panel-heading">
-	                    	<h3 class="panel-title">Documents</h3>
-	                    </div>
-	                	<div class="panel-body">
-		                	<table>
-		                		<thead>
-		                			<tr>
-		                				<td>Name</td>
-		                				<td>Date created</td>
-		                				<td>Date uploaded</td>
-		                				<td>Status</td>
-		                			</tr>
-		                		
-		                		</thead>
-		                		
-		                		<tbody>
-		                			<tr>
-		                				<td><a href="#">Bankruptcy Application</a></td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td></td>
-		                			</tr>
-		                			<tr>
-		                				<td><a href="#">Bankruptcy Order</a></td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td>Wednesday 28th January 2015</td>
-		                				<td></td>
-		                			</tr>
-		                			
-		                		</tbody>
-		                	</table>
-		                	
-
-		                	<div class="col-sm-12 text-right">
-								<p>&nbsp;</p>
-								<a href="upload.html"><div class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"> </i> Upload a document</div></a>
-							</div>
-	                	</div>
-	                	
-	            	</div>
-	        	</div>
-	        <div class="col-sm-12 text-left">
-								<a href="">Back</a>
-								<p>&nbsp;</p>
-							</div>
-	        
+    			<h1 class="form-title heading-large">Creditor case list</h1>                
 		</div>
+		
+		<div class="container">
+			<div class="row">
+		        <div class="col-md-3">
+		            <form action="#" method="get">
+		                <div class="input-group">
+		                    
+		                    <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+		                    <span class="input-group-btn">
+		                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+		                    </span>
+		                </div>
+		            </form>
+		        </div>
+		        <div class="col-md-9"></div>
+		        
+		    </div>
+		    <p>&nbsp;</p>
+		    <div class="row">    
+				<div class="col-md-10">
+		    	 <table class="table table-list-search">
+		                    <thead>
+		                        <tr>
+		                            <th>URN</th>
+		                            <th>Name</th>
+		                            <th>Bankruptcy Order Date</th>
+		                            <th>Description</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                    	<tr>
+		                           
+		                            <td><a href="ebf.html">A5677865GH</a></td>
+		                            <td><a href="ebf.html">John Joe Bloggs</a></td>
+		                            <td><a href="ebf.html">28th January 2015</a></td>
+		                            <td><a href="ebf.html">John Joe Bloggs trading as Bob A Job Builders</a></td>
+		                            
+		                        </tr>
+		                        <tr>
+		                            <td>A25DAA6468</td>
+		                            <td>Adrian Smith</td>
+		                            <td>1st December 2014</td>
+		                            <td>Adrian Smith residing at 3 Formal St, Birmingham</td>
+		                        </tr>
+		                        <tr>
+		                            <td>DD65E6EA88</td>
+		                            <td>Joanne Goodie</td>
+		                            <td>16th December 2014</td>
+		                            <td>Joanne Goodie trading as Goodie Goodie Gumdrops residing at 262 North Road, Coventry</td>
+		                        </tr>
+								<tr>
+		                            <td>ASD2256SSD</td>
+		                            <td>Stuart Jones</td>
+		                            <td>6th January 2015</td>
+		                            <td>Stuart Jones residing at 3 Shell Corner, Stoke on Trent</td>
+		                        </tr>
+		                        
+
+		                        
+		                       
+
+		                    </tbody>
+		                </table>   
+				</div>
+			</div>
+		</div>
+		<p>&nbsp;</p>
+		
 	</div>
        
 
@@ -318,28 +267,55 @@ a.clickable:hover { text-decoration:none; }
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript">
-<script type="text/javascript">
-$(document).on('click', '.panel div.clickable', function (e) {
-    var $this = $(this);
-    var $trigger = $($this.parents('.panel')[0]).find('a[data-toggle=collapse]')
+
+$(document).ready(function() {
+    var activeSystemClass = $('.list-group-item.active');
+
+    //something is entered in search form
     
-    var target = $trigger.attr('data-target')
-      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+    $('#system-search').keyup( function() {
+       var that = this;
+        // affect all table rows on in systems table
+        var tableBody = $('.table-list-search tbody');
+        var tableRowsClass = $('.table-list-search tbody tr');
+        $('.search-sf').remove();
+        tableRowsClass.each( function(i, val) {
+        
+            //Lower text for case insensitive
+            var rowText = $(val).text().toLowerCase();
+            var inputText = $(that).val().toLowerCase();
+            if(inputText != '')
+            {
+                $('.search-query-sf').remove();
+                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                    + $(that).val()
+                    + '"</strong></td></tr>');
+            }
+            else
+            {
+                $('.search-query-sf').remove();
+            }
+
+            if( rowText.indexOf( inputText ) == -1 )
+            {
+                //hide rows
+                tableRowsClass.eq(i).hide();
+                
+            }
+            else
+            {
+                $('.search-sf').remove();
+                tableRowsClass.eq(i).show();
+            }
+        });
+        //all tr elements are hidden
+        if(tableRowsClass.children(':visible').length == 0)
+        {
+            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+        }
+   });
 
 
-    if (!$this.hasClass('panel-collapsed')) {
-        $this.addClass('panel-collapsed');
-        $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-        $(target).collapse('hide');
-    } else {
-        $this.removeClass('panel-collapsed');
-        $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
-        $(target).collapse('show');
-    }
-});
-$(document).ready(function () {
-    $('.panel-heading span.clickable').click();
-});
 </script>
 
 
