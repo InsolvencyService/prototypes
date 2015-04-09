@@ -227,57 +227,26 @@
 
 
 
-                <h1 class="form-title heading-large">Your details for access</h1>
+                <h1 class="form-title heading-large">Details of the claim for access</h1>
 
                 <div class="row">
                     <div class="col-sm-8">
-<p>We need some details form you to confirm you should be given access to the case.</p>
 
    <form class="form" method="post">
-    <div class="form-group ">
-            
-            <label id="email_label" for="email" class="form-label-bold email">Your work email</label>
-            <span class="form-hint">Please provide your company email for quick access to the case. 
-            If you provide a personal email this will delay access</span>
-            <input id="email" name="email" type="text" class="input-email"><br>
-        </div>
-    <p>
-        </p>
         <div class="form-group ">
             
-            <label id="forename_label" for="forename" class="form-label-bold forename">Your name</label>
-            <input id="forename" name="forename" type="text"><br>
-        </div>
-         
+            <label id="forename_label" for="forename" class="form-label-bold forename">Amount of the claim?</label>
+            <span class="form-hint">Please provide the approximate amount of the claim to show you have knowledge of this case</span>
 
-    
-    <p>
-        </p>
+            <input id="forename" name="forename" type="text"><br>
+        </div>
+    <p></p>
         <div class="form-group ">
             
-            <label id="forename_label" for="forename" class="form-label-bold forename">Your organisation</label>
+            <label id="forename_label" for="forename" class="form-label-bold forename">Claim reference</label>
             <input id="forename" name="forename" type="text"><br>
         </div>
          
-    <p>
-        </p>
-<fieldset class="inline">
-                    <legend id="creditor_label" class="form-label-bold">Are you a creditor or acting on behalf of a creditor?</legend>
-                    <div id="creditor" class="form-group">
-        
-        <label id="creditor_label" for="creditor_Yes" class="block-label">
-            <input id="creditor_Yes" value="Yes" name="creditor" type="radio" aria-describedby="creditor_error creditor_help">
-            Yes
-        </label>
-        
-        <label id="creditor_label" for="creditor_No" class="block-label">
-            <input id="creditor_No" value="No" name="creditor" type="radio" aria-describedby="creditor_error creditor_help">
-            No
-        </label>
-        
-    </div>
-             </fieldset>
-  
     <p>
         </p>
 
@@ -379,18 +348,7 @@
         <!-- #BeginEditable "scripts" -->
 
         <script type="text/javascript">
-$(document).ready(function() {
-
-var defaultnext = $("#next").prop("href");
-
-	$("#creditor_Yes").click(function(){
-		$("#next").prop("href","3a-other-details.html");
-	});
-	$("#creditor_No").click(function(){
-		$("#next").prop("href", defaultnext);
-	});
-
-});
+            $(document).ready(function () {
 
         </script>
         <!-- #EndEditable -->
