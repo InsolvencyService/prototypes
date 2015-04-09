@@ -71,9 +71,9 @@
             padding-top: 15px;
         }
 
-            .row > div:first-child {
-                padding-top: 0px;
-            }
+        .row > div:first-child {
+            padding-top: 0px;
+        }
 
 
         .label-default {
@@ -106,6 +106,10 @@
         .label.label-success {
             border: 1px green solid;
             color: green;
+        }
+
+        .label.label-danger {
+            background: #d9534f;
         }
             
         .label.label-info  {
@@ -193,30 +197,30 @@
     			<h1 class="form-title heading-large">Bankruptcy case</h1>
 
 <div class="row">
-<div class="col-sm-4" style="padding-top:15px">Name
+<div class="col-sm-3" style="padding-top:15px">Name
 </div>
 <div class="col-sm-7" style="font-weight:bold">Kim Scarlett
 </div>
 </div>
 
 <div class="row">
-<div class="col-sm-4" style="padding-top:15px">Order date
+<div class="col-sm-3" style="padding-top:15px">Order date
 </div>
-<div class="col-sm-8" style="font-weight:bold">23/03/2015
-</div>
-</div>
-
-<div class="row">
-<div class="col-sm-4" style="padding-top:15px">Description
-</div>
-<div class="col-sm-6" style="font-weight:bold">Kim Scarlett, Store Manager, formerly known as Kimberly Red, of 110 High Street, Newhall, Birmingham B4 3TT is adjudged bankrupt
+<div class="col-sm-7" style="font-weight:bold">23/03/2015
 </div>
 </div>
 
 <div class="row">
-<div class="col-sm-4" style="padding-top:15px">Unique reference number
+<div class="col-sm-3" style="padding-top:15px">Description
 </div>
-<div class="col-sm-8" style="font-weight:bold">EHBJ8F3MKRP
+<div class="col-sm-7" style="font-weight:bold">Kim Scarlett, Store Manager, formerly known as Kimberly Red, of 110 High Street, Newhall, Birmingham B4 3TT is adjudged bankrupt
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-3" style="padding-top:15px">Unique reference number
+</div>
+<div class="col-sm-7" style="font-weight:bold">EHBJ8F3MKRP
 </div>
 </div>
 <p><br></p>
@@ -264,6 +268,14 @@
 		                				<td>28/01/2015</td>
 		                				<td>28/01/2015</td>
 		                				<td></td>
+		                			</tr>
+
+		                			<tr class="text text-muted" id="uploadwaiting" style="display:none">
+		                				<td><div class="label label-default label-as-badge">Uploaded document</div></td>
+		                				<td class="text-muted">Bankrupts statement of affairs</td>
+		                				<td class="text-muted">08/04/2015</td>
+		                				<td class="text-muted">08/04/2015</td>
+		                				<td><span class="label label-danger label-as-badge" >Awaiting Approval</span></td>
 		                			</tr>
 
 		                		</tbody>
@@ -348,6 +360,24 @@
 
 
 <script type="text/javascript">
+// check if the status is uploadwaiting and siplay that row
+$(document).ready(function(){
+var status = getParameterByName("status");
+
+	if (status && status.length > 0){
+		$("#" + status).show();
+	}
+
+});
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
 </script>
 
 
