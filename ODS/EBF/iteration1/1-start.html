@@ -227,40 +227,44 @@
 
 
 
-                <h1 class="form-title heading-large">Bankruptcy case for Kim Scarlett</h1>
+                <h1 class="form-title heading-large">Confirming your access</h1>
 
                 <div class="row">
                     <div class="col-sm-8">
-                    
-<table class="table table-bordered" style="font-size:19px">
-<tr>
-<td>Name</td><td>Kim Scarlett</td>
-</tr>
+<p>Please enter the token in the letter</p>
 
-<tr>
-<td>Order date</td><td>23/03/2015</td>
-</tr>
+   <form class="form" method="post">
+    <p>
+        </p>
+        <div class="form-group ">
+            
+            <label id="forename_label" for="forename" class="form-label-bold forename">
+			Enterprise access token</label>
+            <input id="eat" name="eat" type="text" class="input-lg" style="width:300px"><br>
+        </div>
+         
 
-<tr>
-<td>Description</td><td>Kim Scarlett, Store Manager, formerly known as Kimberly Red, of 110 High Street, Newhall, Birmingham B4 3TT is adjudged bankrupt</td>
-</tr>
+    
+         
+    <p>
+        </p>
+         
+    <p>
+        </p>
 
-<tr>
-<td>Unique reference number</td><td>EHBJ8F3MKRP</td>
-</tr>
-</table>
+<!-- For User research -->
 
-<p><span class="badge badge-important">&nbsp;</span>&nbsp;<span style="vertical-align:bottom">Notices (1)</span>   <span class="badge badge-info">&nbsp;</span>&nbsp;Documents (2)</p> 
-<p><br></p>             
-<a href="3-get-pat.html" class="button" style="margin-bottom:10px">Continue to view details</a> 
+    </form>
+						<p><br></p>             
+<a href="2-viewcase.html" class="button" style="margin-bottom:10px">Continue</a> 
+<br> 
 <p><br></p>
                     </div>
 
                     <div class="col-sm-4" style="padding-top:0; display:none">
                         <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                            
-                            <p>
-							<a href="../../adjudication1/user/return.html" style="font-weight:bold">Logout</a></p>
+                            <p><a href="../../adjudication1/user/return.html" style="font-weight:bold">Logout</a></p>
                             <br>
                         </div>
 
@@ -315,8 +319,7 @@
                             <li class="footer__link" style=" ">
                                 <a href="../../privacy.html">Privacy</a>
                             </li>
-                            <li class="footer__link" style="">
-							<a href="../../cookies.html">Cookies</a></li>
+                            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
                             <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                         </ul>
 
@@ -349,8 +352,96 @@
         <!-- #BeginEditable "scripts" -->
 
         <script type="text/javascript">
+            $(document).ready(function () {
 
-    
+                // mark sections as completed
+
+                var section5 = getParameterByName("section5");
+
+                if (section5 && section5.length > 0) {
+                    // change the colour of the button
+                    if (section5 == "inprogress") {
+                        $("#section5 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section5 .label").text("In progress");
+                        $("#section5 .edit").text("Edit");
+                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
+
+                    }
+
+                    if (section5 == "complete") {
+                        $("#section5 .label").removeClass("label-default").addClass("label-success");
+                        $("#section5 .label").text("Complete");
+                        $("#section5 .edit").text("Edit");
+                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
+                    }
+                }
+
+                var section1 = getParameterByName("section1");
+
+                if (section1 && section1.length > 0) {
+                    // change the colour of the button
+
+                    if (section1 == "complete") {
+                        $("#section1 .label").removeClass("label-default").addClass("label-success");
+                        $("#section1 .label").text("Complete");
+                        $("#section1 .edit").text("Edit");
+                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+                    }
+                }
+
+                var section2 = getParameterByName("section2");
+
+                if (section2 && section2.length > 0) {
+                    // change the colour of the button
+
+                    if (section2 == "complete") {
+                        $("#section1 .label").removeClass("label-default").addClass("label-success");
+                        $("#section1 .label").text("Complete");
+                        $("#section1 .edit").text("Edit");
+                        
+                        $("#section2 .label").removeClass("label-default").addClass("label-success");
+                        $("#section2 .label").text("Complete");
+                        $("#section2 .edit").text("Edit");
+
+                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+                    }
+                }
+
+
+
+                // open and close sections of the overview and add and remove arrows
+                $(".rowbottom").hide();
+                $(".js-section").on("click", function (e) {
+                    e.preventDefault();
+                    if ($(this).hasClass("open") == false) {
+                        $(".rowbottom").hide();
+                        $(".row.well").removeClass("well");
+                        $(this).addClass("open");
+                        $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        var details = $($(this).attr("href"));
+                        details.show();
+                        details.parent().addClass("well");
+                    }
+                    else {
+                        $(".rowbottom").hide();
+                        $(".row.well").removeClass("well");
+                        $(this).removeClass("open");
+                        $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+                        var details = $($(this).attr("href"));
+                        details.hide();
+                    }
+                });
+            });
+
+
+
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
         </script>
         <!-- #EndEditable -->
 
