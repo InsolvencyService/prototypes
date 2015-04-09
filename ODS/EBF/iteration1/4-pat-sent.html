@@ -156,7 +156,12 @@
     padding: 3px 8px;
 }
 
-
+.panel-indent {
+  clear: both;
+  border-left: 4px solid #bfc1c3;
+  padding: 10px 0 10px 15px;
+  margin: 30px 15px 45px 0;
+}
     </style>
     <!-- #EndEditable -->
 
@@ -227,81 +232,33 @@
 
 
 
-                <h1 class="form-title heading-large">Your details for access</h1>
+                <h1 class="form-title heading-large">Confirming your access</h1>
 
                 <div class="row">
                     <div class="col-sm-8">
-<p>We need some details form you to confirm you should be given access to the case.</p>
+<p class="panel-indent">You have been sent a personal access token by 
+<a href="5-pat-email.html">email</a>. Please check the email for instructions</p>
 
-   <form class="form" method="post">
-    <div class="form-group ">
-            
-            <label id="email_label" for="email" class="form-label-bold email">Your work email</label>
-            <span class="form-hint">Please provide your company email for quick access to the case. 
-            If you provide a personal email this will delay access</span>
-            <input id="email" name="email" type="text" class="input-email"><br>
-        </div>
-    <p>
-        </p>
-        <div class="form-group ">
-            
-            <label id="forename_label" for="forename" class="form-label-bold forename">Your name</label>
-            <input id="forename" name="forename" type="text"><br>
-        </div>
-         
+                     </div>
 
-    
-    <p>
-        </p>
-        <div class="form-group ">
-            
-            <label id="forename_label" for="forename" class="form-label-bold forename">Your organisation</label>
-            <input id="forename" name="forename" type="text"><br>
-        </div>
-         
-    <p>
-        </p>
-        <div class="form-group ">
-            
-            <label id="forename_label" for="forename" class="form-label-bold forename">Amount of the claim?</label>
-            <span class="form-hint">Please provide the approximate amount of the claim to show you have knowledge of this case</span>
-
-            <input id="forename" name="forename" type="text"><br>
-        </div>
-    <p></p>
-        <div class="form-group ">
-            
-            <label id="forename_label" for="forename" class="form-label-bold forename">Claim reference (optional)</label>
-            <span class="form-hint">Please provide the claim reference if you have it</span>
-            <input id="forename" name="forename" type="text"><br>
-        </div>
-         
-    <p>
-        </p>
-
-
-    </form>
-       
-                    </div>
-
-                    <div class="col-sm-4" style="padding-top:0; display:none">
-                        <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-                           
-                            <p>
-							<a href="../../adjudication1/user/return.html" style="font-weight:bold">Logout</a></p>
-                            <br>
-                        </div>
-
-                    </div>
-
+                     <p><br></p>
+                    <p><br></p>
+                       <p><br></p>
+                    <p><br></p>
+                  
+                       <p><br></p>
+                    <p><br></p>                 
+                      <p><br></p>
+                    <p><br></p>                   
+                    
                     <br>
 
-                    <div class="form-navigation form-group" style="margin:20PX;">
+                    <div class="form-navigation form-group" style="margin:20PX; display:none">
 
                         <div>
 
 
-                            <a href="4-pat-login.html" id="next" class="button">Continue</a>
+                            <a href="../../bankruptcy3/1-details/your-names.html" id="next" class="button">Continue</a>
 
                         </div>
                         <div>
@@ -310,8 +267,8 @@
 
                         <div>
 
-                            <a style="padding-right: 30px" href="javascript:history.go(-1)">Back</a>&nbsp;
-
+                            <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>&nbsp;
+	<a href="../../bankruptcy3/logout.html" id="cancel">Save and logout</a>  
 
                         </div>
                     </div>
@@ -343,8 +300,7 @@
                             <li class="footer__link" style=" ">
                                 <a href="../../privacy.html">Privacy</a>
                             </li>
-                            <li class="footer__link" style="">
-							<a href="../../cookies.html">Cookies</a></li>
+                            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
                             <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                         </ul>
 
@@ -379,93 +335,6 @@
         <script type="text/javascript">
             $(document).ready(function () {
 
-                // mark sections as completed
-
-                var section5 = getParameterByName("section5");
-
-                if (section5 && section5.length > 0) {
-                    // change the colour of the button
-                    if (section5 == "inprogress") {
-                        $("#section5 .label").removeClass("label-default").addClass("label-warning");
-                        $("#section5 .label").text("In progress");
-                        $("#section5 .edit").text("Edit");
-                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
-
-                    }
-
-                    if (section5 == "complete") {
-                        $("#section5 .label").removeClass("label-default").addClass("label-success");
-                        $("#section5 .label").text("Complete");
-                        $("#section5 .edit").text("Edit");
-                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
-
-                var section1 = getParameterByName("section1");
-
-                if (section1 && section1.length > 0) {
-                    // change the colour of the button
-
-                    if (section1 == "complete") {
-                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-                        $("#section1 .label").text("Complete");
-                        $("#section1 .edit").text("Edit");
-                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
-
-                var section2 = getParameterByName("section2");
-
-                if (section2 && section2.length > 0) {
-                    // change the colour of the button
-
-                    if (section2 == "complete") {
-                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-                        $("#section1 .label").text("Complete");
-                        $("#section1 .edit").text("Edit");
-                        
-                        $("#section2 .label").removeClass("label-default").addClass("label-success");
-                        $("#section2 .label").text("Complete");
-                        $("#section2 .edit").text("Edit");
-
-                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
-
-
-
-                // open and close sections of the overview and add and remove arrows
-                $(".rowbottom").hide();
-                $(".js-section").on("click", function (e) {
-                    e.preventDefault();
-                    if ($(this).hasClass("open") == false) {
-                        $(".rowbottom").hide();
-                        $(".row.well").removeClass("well");
-                        $(this).addClass("open");
-                        $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-                        var details = $($(this).attr("href"));
-                        details.show();
-                        details.parent().addClass("well");
-                    }
-                    else {
-                        $(".rowbottom").hide();
-                        $(".row.well").removeClass("well");
-                        $(this).removeClass("open");
-                        $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
-                        var details = $($(this).attr("href"));
-                        details.hide();
-                    }
-                });
-            });
-
-
-
-            function getParameterByName(name) {
-                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                    results = regex.exec(location.search);
-                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-            }
 
         </script>
         <!-- #EndEditable -->
