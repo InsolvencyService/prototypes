@@ -118,8 +118,50 @@
     		padding-left:18px;
      		padding-right:18px;
         }
+        
+        .clickable
+		{
+		    cursor: pointer;
+		}
+		
+		.clickable .glyphicon
+		{
+		    background: rgba(0, 0, 0, 0.15);
+		    display: inline-block;
+		    padding: 6px 12px;
+		    border-radius: 4px
+		}
+
       
-            
+		a.clickable { color: inherit; }
+		a.clickable:hover { text-decoration:none; }
+		
+		.btn-circle {
+		  width: 30px;
+		  height: 30px;
+		  text-align: center;
+		  padding: 6px 0;
+		  font-size: 12px;
+		  line-height: 1.428571429;
+		  border-radius: 15px;
+		}
+		.btn-circle.btn-lg {
+		  width: 50px;
+		  height: 50px;
+		  padding: 10px 16px;
+		  font-size: 18px;
+		  line-height: 1.33;
+		  border-radius: 25px;
+		}
+		.btn-circle.btn-xl {
+		  width: 70px;
+		  height: 70px;
+		  padding: 10px 16px;
+		  font-size: 24px;
+		  line-height: 1.33;
+		  border-radius: 35px;
+		}
+		        
     </style>
     <!-- #EndEditable -->
 
@@ -276,6 +318,26 @@
 		                				<td class="text-muted">08/04/2015</td>
 		                				<td class="text-muted">08/04/2015</td>
 		                				<td><span class="label label-danger label-as-badge" >Awaiting Approval</span></td>
+		                			</tr>
+
+		                			<tr class="text text-muted" id="approval" style="display:none">
+		                				<td><div class="label label-default label-as-badge">Uploaded document</div></td>
+		                				<td><a href="#">Bankrupts statement of affairs</a></td>
+		                				<td>08/04/2015</td>
+		                				<td>08/04/2015</td>
+		                				<td>
+		                					<a href="ebf.html?status=approved"><button type="button" class="btn btn-success btn-circle" title="Approve" ><i class="glyphicon glyphicon-ok"></i></button></a>
+		                					<a href="ebf.html?status=removed"><button type="button" class="btn btn-danger btn-circle" title="Remove"><i class="glyphicon glyphicon-remove"></i></button></a>
+		                					</td>
+		                			</tr>
+
+		                			<tr class="text text-muted" id="approved" style="display:none">
+		                				<td><div class="label label-info label-as-badge">Document</div></td>
+		                				<td><a href="#">Bankrupts statement of affairs</a></td>
+		                				<td>08/04/2015</td>
+		                				<td>08/04/2015</td>
+		                				<td>
+		                					</td>
 		                			</tr>
 
 		                		</tbody>
