@@ -157,50 +157,58 @@
     <h1 class="form-title heading-large">Bankruptcy – start your application</h1>
 		<form role="form">
 			<p>Start your application by verifying your identity with GOV.UK Verify</p>
-			<p><a href="#" class="btn btn-success btn-block btn-lg" style="color:#fff">Sign in with GOV.UK Verify</a></p>
+			<p><a href="#" class="button" style="color:#fff">Sign in with GOV.UK Verify</a></p>
 			<h2>Other ways to verify your identity</h2>
 <p>You can register directly with us if you don't have your UK passport, photocard driving license and bank account or credit card statement with you. 
 </p>
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
-					</div>
-				</div>
-				
-			</div>
+
+              <div class="form-group ">
+
+                        <label id="first_name_label" for="first_name" class="form-label first_name">First name</label>
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+                        <br />
+                    </div>
+                    <div class="form-group ">
+
+                        <label id="last_name_label" for="last_name" class="form-label">Last name</label>
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+                        <br />
+                    </div>
+
 			<div class="alert alert-danger" id="pnl-email-nomatch">
 			<p>Your emails don't match.  Please write the same email twice. </p>
 			</div> 
-			<div class="alert alert-danger" id="pnl-missing-email">
+			<div class="clearfix"></div>
+			<div class="alert alert-danger missing-email" id="pnl-missing-email">
 			<p>You have not given your email address. 
 			We recommend you provide your email to speed your application, without an email there will be a delay in creating your application </p>
-			<a href="address.html?noemail=true" >Continue without email</a> &nbsp;<a href="#" class="btn btn-success" style="font-size:19px; color:#fff;margin-left:30px" id="btn-close-msg">I have an email address</a>
-			</div>
-			<p class="form-hint">Enter your email address if you have one.</p> 
-			<div class="form-group">
-				<input type="email" name="email" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="4">
-			</div>
-			<div class="form-group">
-				<input type="email" name="email" id="email2" class="form-control input-lg" placeholder="Confirm email Address" tabindex="4">
 			</div>
 
+			
+		<div class="form-group ">
+            
+            <label id="email_label" for="email" class="form-label email">Your email</label>
+            <span class="form-hint">Enter your email address if you have one</span>
+            <input id="email1" name="email" type="text" class="input-email"><br>
+        </div>
+
+		<div class="form-group ">
+            
+            <label id="email_label" for="email" class="form-label email">Comfirm email</label>
+            <input id="email2" name="email" type="text" class="input-email"><br>
+        </div>
+
+
 			<p>
-					 By continuing to <strong>Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a>.
+					 By choosing to <strong>Continue</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a>.
 				</p>
 			
-			<hr class="colorgraph">
+
 			<div class="row">
-			<div class="col-md-3"></div>
+			<div></div>
 				<div class="col-xs-12 col-md-6">
-					<a class="btn btn-primary btn-block btn-lg" href="questions.html" style="color:#fff" id="next">Register</a></div>
-				
+					<a class="button" href="questions.html" style="color:#fff" id="next">Continue</a></div>
+					<a href="address.html?noemail=true" class="missing-email">Continue without email</a>
 			</div>
 		</form>
 	</div>
@@ -307,11 +315,11 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	var nextpage = $("#next").prop("href");
-	$("#pnl-missing-email").hide();
+	$(".missing-email").hide();
 	$("#pnl-email-nomatch").hide();
 
 	$("#btn-close-msg").on("click", function(){
-		$("#pnl-missing-email").hide();
+		$(".missing-email").hide();
 		$("#email1").focus();
 	});
 	
@@ -322,14 +330,14 @@ $(document).ready(function() {
 		if (email2 == ""){
 			e.preventDefault();
 
-			$("#pnl-missing-email").show();
+			$(".missing-email").show();
 			$("#pnl-email-nomatch").hide();
 		} 
 
 		if (email1 != email2)
 		{
 			e.preventDefault();
-			$("#pnl-missing-email").hide();
+			$(".missing-email").hide();
 			$("#pnl-email-nomatch").show();
 		}
 		
@@ -337,7 +345,7 @@ $(document).ready(function() {
 			$("#next").prop("href", nextpage + "?noemail=true");
 		}
 		else{
-					$("#next").prop("href", nextpage);
+			$("#next").prop("href", nextpage);
 
 		}
 	});
