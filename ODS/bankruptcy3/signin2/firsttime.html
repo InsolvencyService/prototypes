@@ -174,7 +174,7 @@
                         <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
                         <br />
                     </div>
-
+			<div class="clearfix"></div>
 			<div class="alert alert-danger" id="pnl-email-nomatch">
 			<p>Your emails don't match.  Please write the same email twice. </p>
 			</div> 
@@ -203,12 +203,17 @@
 					 By choosing to <strong>Continue</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a>.
 				</p>
 			
+		<div class="form-group missing-email">
+		            <input id="confirm_claim_submission" name="confirm_claim_submission" value="True" type="checkbox">
+	<label id="confirm_claim_submission_label" for="confirm_claim_submission" style="display:inline">I understand that if I choose to proceed without my email that my application will be delayed</label>
+</div>
 
+<p><br></p>
 			<div class="row">
 			<div></div>
 				<div class="col-xs-12 col-md-6">
 					<a class="button" href="questions.html" style="color:#fff" id="next">Continue</a></div>
-					<a href="address.html?noemail=true" class="missing-email">Continue without email</a>
+
 			</div>
 		</form>
 	</div>
