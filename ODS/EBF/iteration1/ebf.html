@@ -161,7 +161,11 @@
 		  line-height: 1.33;
 		  border-radius: 35px;
 		}
-		        
+		 
+tr td:first-child{
+	text-align:right;
+	width:120px;
+}       
     </style>
     <!-- #EndEditable -->
 
@@ -282,7 +286,6 @@
 		                				<td>Name</td>
 		                				<td>Created</td>
 		                				<td>Uploaded</td>
-		                				<td></td>
 		                			</tr>
 		                		
 		                		</thead>
@@ -294,7 +297,6 @@
 		                				<td><a href="#">Report to creditors</a></td>
 		                				<td>23/03/2015</td>
 		                				<td>25/03/2015</td>
-		                				<td></td>
 		                			</tr>
 
 		                			<tr>
@@ -302,42 +304,39 @@
 		                				<td><a href="#">Bankruptcy Application</a></td>
 		                				<td>28/02/2015</td>
 		                				<td>28/01/2015</td>
-		                				<td></td>
 		                			</tr>
 		                			<tr>
 		                				<td><div class="label label-info label-as-badge">Document</div></td>
 		                				<td><a href="#">Bankruptcy Order</a></td>
 		                				<td>28/01/2015</td>
 		                				<td>28/01/2015</td>
-		                				<td></td>
 		                			</tr>
 
 		                			<tr class="text text-muted" id="uploadwaiting" style="display:none">
-		                				<td><div class="label label-default label-as-badge">Uploaded document</div></td>
-		                				<td class="text-muted">Bankrupts statement of affairs</td>
+		                				<td><span class="label label-danger label-as-badge" >Awaiting Approval</span>
+		                				</td>
+		                				<td class="text-muted">Proof of debt</td>
 		                				<td class="text-muted">08/04/2015</td>
-		                				<td class="text-muted">08/04/2015</td>
-		                				<td><span class="label label-danger label-as-badge" >Awaiting Approval</span></td>
+		                				<td class="text-muted">Melanie Rosser on 08/04/2015</td>
 		                			</tr>
 
 		                			<tr class="text text-muted" id="approval" style="display:none">
-		                				<td><div class="label label-default label-as-badge">Uploaded document</div></td>
-		                				<td><a href="#">Bankrupts statement of affairs</a></td>
-		                				<td>08/04/2015</td>
-		                				<td>08/04/2015</td>
 		                				<td>
+		                				
 		                					<a href="ebf.html?status=approved"><button type="button" class="btn btn-success btn-circle" title="Approve" ><i class="glyphicon glyphicon-ok"></i></button></a>
 		                					<a href="ebf.html?status=removed"><button type="button" class="btn btn-danger btn-circle" title="Remove"><i class="glyphicon glyphicon-remove"></i></button></a>
-		                					</td>
+
+		                				</td>
+		                				<td><a href="#">Proof of debt</a></td>
+		                				<td>08/04/2015</td>
+		                				<td>Melanie Rosser on 08/04/2015</td>
 		                			</tr>
 
 		                			<tr class="text text-muted" id="approved" style="display:none">
 		                				<td><div class="label label-info label-as-badge">Document</div></td>
-		                				<td><a href="#">Bankrupts statement of affairs</a></td>
+		                				<td><a href="#">Proof of debt</a></td>
 		                				<td>08/04/2015</td>
 		                				<td>08/04/2015</td>
-		                				<td>
-		                					</td>
 		                			</tr>
 
 		                		</tbody>
