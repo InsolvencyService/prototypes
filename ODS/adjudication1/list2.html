@@ -544,15 +544,16 @@ a.btn:visited{
 				// when user clicks a row in the table show the panel
 
 				$("#inbox > div #table-list").hide();
-									$("#pnl-ordermade").show();
-					$("#btn-makeorder").hide();
-					$("#btn-refer").hide();
-					
-					var date = new Date();
-					var dtstring = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+				
+				$("#pnl-ordermade").show();
+				$("#btn-makeorder").hide();
+				$("#btn-refer").hide();
+				
+				var date = new Date();
+				var dtstring = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 //var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-					$("#whenmade").text("on " + dtstring + " ");
-					$("#whenreceived").removeClass("bg-info").removeClass("alert");
+				$("#whenmade").text("on " + dtstring + " ");
+				$("#whenreceived").removeClass("bg-info").removeClass("alert");
 
 
 				$("#lastupdated").hide();
@@ -579,8 +580,17 @@ a.btn:visited{
 						$("#notes1").show();
 					}
 				});
-             });
 
+				
+				$(document).keyup(function(e) {
+				
+					if (e.keyCode == 27) { 
+						$("#summary").hide();
+						$("#inbox > div #table-list").show();
+					}   // escape key maps to keycode `27`
+				});
+
+             });
 
 
             function getParameterByName(name) {
