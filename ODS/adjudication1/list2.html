@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../assets/templates/adjudicator-template.dwt" -->
 <head>
@@ -202,10 +202,10 @@ a.btn:visited{
         <aside class="col-md-2 pad-right-0">
             <ul class="nav nav-pills nav-stacked">
               <li class="active">
-              <a href="javascript:;"><span class="badge pull-right">7</span> New </a></li>
+              <a href="javascript:;"><span class="badge pull-right">6</span> New </a></li>
               <li><a href="javascript:;" style="display:none"><span class="badge pull-right">5</span> In progress</a></li>
 			  <li><a href="javascript:;"><span class="badge pull-right">2</span> Referred</a></li>
-			  <li><a href="javascript:;"><span class="badge pull-right">121</span> Complete</a></li>
+			  <li><a href="javascript:;"><span class="badge pull-right">122</span> Complete</a></li>
             </ul>
             
         </aside>
@@ -266,17 +266,6 @@ a.btn:visited{
                          	<td class="col-sm-3"></td>
                             <td class="col-sm-9" colspan="4">Still checking status of residency in the UK</td>
                           </tr>
-
-
-                          <tr>
-                            <td class="col-sm-3">EHBJ8F3MKRP</td>
-                            <td class="col-sm-3">Kim Scarlett</td>
-                            <td class="col-sm-3">23 March 2015</td>
-                            <td class="col-sm-2">New</td>
-                            <td class="col-sm-1"> 
-                            <span class="btn btn-default btn-circle btn-success">&nbsp;</span>
-                            </td>
-                          </tr>
                           <tr>
                             <td class="col-sm-3">CGHY865ABB</td>
                             <td class="col-sm-3">Jennifer Isaacs</td>
@@ -316,7 +305,7 @@ a.btn:visited{
                     </table>
                 </div>
                 <!--message detail-->
-                <div class="container-fluid" style="display:none" id="summary">
+                <div class="container-fluid" id="summary">
                     <div class="row">
                         <div class="col-xs-12">
                             <h3 title="subject"><a class="close pull-right" aria-hidden="true">×</a>
@@ -329,7 +318,7 @@ a.btn:visited{
                         </div>
                         <div class="col-md-4">
                 			<div class="btn-group btn-group-lg pull-right">
-                				<a class="btn btn-primary" href="list2.html" id="btn-makeorder"><i class="glyphicon glyphicon-check"></i> Make order</a>
+                				<a class="btn btn-primary" href="#" id="btn-makeorder"><i class="glyphicon glyphicon-check"></i> Make order</a>
                				<a class="btn btn-warning" href="#" id="btn-refer"><i class="glyphicon glyphicon-alert"></i> Refer</a>
 
                 			</div>
@@ -553,8 +542,19 @@ a.btn:visited{
             $(document).ready(function () {
 
 				// when user clicks a row in the table show the panel
-				$("#summary").hide();
-				$("#inbox > div #table-list").show();
+
+				$("#inbox > div #table-list").hide();
+									$("#pnl-ordermade").show();
+					$("#btn-makeorder").hide();
+					$("#btn-refer").hide();
+					
+					var date = new Date();
+					var dtstring = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+//var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+					$("#whenmade").text("on " + dtstring + " ");
+					$("#whenreceived").removeClass("bg-info").removeClass("alert");
+
+
 				$("#lastupdated").hide();
 				
 				$("#inbox > div #table-list tr td.col-sm-3").on("click", function(e){
@@ -579,7 +579,6 @@ a.btn:visited{
 						$("#notes1").show();
 					}
 				});
-				
              });
 
 
