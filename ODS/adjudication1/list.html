@@ -579,7 +579,15 @@ a.btn:visited{
 						$("#notes1").show();
 					}
 				});
+
+				$(document).keyup(function(e) {
 				
+					if (e.keyCode == 27) { 
+						$("#summary").hide();
+						$("#inbox > div #table-list").show();
+					}   // escape key maps to keycode `27`
+				});
+
              });
 
 
