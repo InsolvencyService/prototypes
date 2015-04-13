@@ -356,6 +356,9 @@
                 
                     <div>
                         <div>
+                        <div class="alert alert-info" style="clear:both;margin-left:15px; display:none" id="pnl-warning">
+                        You haven't made any changes to this page. If all the answers are correct, please press the Continue button again.
+                        </div>
                         <div>
                         	<div class="col-sm-12"><p style="margin-left:20px">Your answers don't have to be exact. We're not saving your information and you're not committing to anything.<br><br></p></div>
                         </div>
@@ -624,7 +627,8 @@
             $("#btn-find-debt").on("click", function (e) {
                 if ($interacted == false) {
                     e.preventDefault();
-                    alert("You haven't made any changes to this page. If all the answers are correct, please hit the Continue button again.");
+                    $("#pnl-warning").show();
+                    //alert("You haven't made any changes to this page. If all the answers are correct, please hit the Continue button again.");
                     $interacted = true;
                 }
                 if ($("#q1").bootstrapSwitch('state') == false
