@@ -63,11 +63,9 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+div[class^="col-sm-"], div[class*=" col-sm-"] {
+	text-align:center
 
-.row img{
-width:60px;
-text-align:right;
-float:right
 }
 .row > div{
 padding-top:15px;
@@ -88,8 +86,9 @@ display:block;
 	color:#fff !important;
 }
 
-#summary_table td{
+table td{
 	vertical-align:top;
+
 }
 </style>
 <!-- #EndEditable -->
@@ -172,59 +171,68 @@ display:block;
 		    <div class="text">
 
 		        <h1 class="form-title heading-large">
-		            Payments for application EHBJ8F3MKRP </h1>
+		            Pay the bankruptcy application fee</h1>
+				<table class="table">
+				<tr>
+				<td>Application reference</td>
+				<td>EHBJ8F3MKRP</td>
+				</tr>
+				<tr>
+				<td>Name</td>
+				<td>Kim Scarlett</td>
+				</tr>
+
+				</table>
 		
 		
 			</div>
 
 
 			<div class="text">
-	            <div class="form-group">
-	 		        <p class="lead text">
-		            These are the payments you have made towards the bankruptcy 
-					fee.
-		        </p>
-                                        <div class="form-group">
-                <table id="summary_table">
-                    <tbody>
-                        <tr>
-                        <td>Payzone payment</td>
-                        <td>01/02/2015</td>
-                        <td><span class="propertyvalue">£1</span>00.00</td>
-                        <td>
-                        </td>
-                    </tr>
+			
+			<ul >
+			<li><h3 class="heading-medium">Make a payment</h3>
+			<p>The remaining amount of £484 is needed to enable the application to proceed</p>
+			<div class="form-group ">
+	
+			<label id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
+			<input id="applicant_address_town" name="applicant_address_town" type="text"  value="" />
+			<br/>
+			</div>
 
-                      <tr >
-                        <td>Card payment (Visa ending 1056)</td>
-                        <td>10/03/2015</td>
-                        <td><span class="mortgageamount">£120.00</span></td>
-                        <td>
-                        </td>
-                    </tr>
-   
-                        <tr class="group-heading" id="rowremortgagefor">
-                            <td style="font-weight:bold;text-align:right">Total</td>
-                            <td>&nbsp;</td>
-                            <td><span class="remortgagefor" style="font-weight:bold">£220.00</span></td>
-                            <td></td>
-                        </tr>
-
-                    </tbody>
-                </table>
- 
- 
- 				<br>
-                
-            </div>
-
-	 				You have £484 to pay to enable your application to proceed<br>
-		 		</div>
+			<div>
+			<div>
+				<a href="#" class="button">Pay online</a>
+			</div>
+			<div>
+			<a href="#">
+			Pay by cash or cheque</a>
+			</div>
+		
+			
+			</div>
+			
+			
+			
+			</li>
+			<li><h3 class="heading-medium">How can I get a refund?</h3>
+			<div>
+			<p>
+			The amount is refunded in full if the application is cancelled.</p>
+			<p>In the unusual event that the application is rejected, the amount 
+			is refunded minus the £180 fee for the 
+			Adjudicator.
+			</p>
+			</div>
+			
+			
+			</li>	
+			</ul>
 			</div>
 </div>
 
 <div style="margin-left:30px">
-    	<p><a href="payments.html">Make a payment</a></p></div>  
+    </div>  
     
 <p class="clearfix"><br></p> 
 
@@ -232,7 +240,7 @@ display:block;
 <div style=" margin-left:30px">
 	<div class="form-navigation form-group" style="margin-top:20px;">
 
-	<a href="../overview.html" id="next" class="button">Continue</a>
+	<a href="../2-home/advice.html" id="next" class="button" style="display:none">Continue</a>
 	
 	</div>
 	<div>
@@ -242,7 +250,7 @@ display:block;
 	<div>
 	
 		<a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>&nbsp;
-	<a href="../logout.html" id="cancel">Save and logout</a>  
+	<a href="../logout.html" id="cancel" style="display:none">Save and logout</a>  
 	
 	</div>
          
