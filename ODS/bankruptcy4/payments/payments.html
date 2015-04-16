@@ -172,7 +172,7 @@ table td{
 
 		        <h1 class="form-title heading-large">
 		            Pay the bankruptcy application fee</h1>
-				<table class="table">
+				<table class="table" style="display:none">
 				<tr>
 				<td>Application reference</td>
 				<td>EHBJ8F3MKRP</td>
@@ -187,22 +187,29 @@ table td{
 		
 			</div>
 
-
 			<div class="text">
 			
 			<ul >
 			<li><h3 class="heading-medium">Make a payment</h3>
+			
+			<div class="alert alert-danger" id="panel-error-greater" style="display:none">
+You have entered an amount that is greater than the remaining fee of £484.
+</div>
+			<div class="alert alert-danger" id="panel-error-empty" style="display:none">
+Please enter an amount
+</div>
+
 			<p>You need to pay the remaining amount of £484 to enable your application to proceed</p>
 			<div class="form-group ">
 	
-			<label id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
-			<input id="applicant_address_town" name="applicant_address_town" type="text"  value="" />
+			<label id="applicant_address_town_label" for="amount" class="form-label">How much would you like to pay?</label>
+			<input id="amount" type="text"  value="" />
 			<br/>
 			</div>
 
 			<div>
 			<div>
-				<a href="#" class="button">Pay online</a>
+				<a href="#" class="button" id="pay-online">Pay online</a>
 			</div>
 			<div>
 			<a href="#">
@@ -219,7 +226,8 @@ table td{
 			<div>
 			<p>
 			The amount is automatically refunded in full if you choose to cancel your application.</p>
-			<p>In the unusual event that your application is rejected, you will be refunded the amount minus the £180 fee for the 
+			<p>In the unusual event that your application is rejected, you will be refunded 
+			£525 minus the fee for the 
 			Adjudicator.
 			</p>
 			</div>
@@ -329,99 +337,16 @@ table td{
 
 <script type="text/javascript">
 $(document).ready(function() {     
-	var housename = $.cookie('house');
-	var personname = $.cookie('name');
 	
-	if (personname && personname.length > 0){
-		$(".personname").text(personname);
-	}
-	if (housename && housename.length > 0){
-		$(".housename").text(housename );
-	}
-
- var mortgagetype = "mortgage";
- if ($.cookie('mortgagetype') && $.cookie('mortgagetype').length > 0){
- 	$(".mortgagetype").text($.cookie('mortgagetype'));
- }
- if ($.cookie('remortgagefor') && $.cookie('remortgagefor').length > 0) {
-     $(".remortgagefor").text($.cookie('remortgagefor'));
-     $("#rowremortgagefor").show();
-     //$("#row").show();
- }
- var totalsecurities = 100000.00
- var propertyvalue = 105000.00;
- if ($.cookie('propertyvalue') && $.cookie('propertyvalue').length > 0 && $.isNumeric($.cookie('propertyvalue'))){
- 	propertyvalue  = parseFloat($.cookie('propertyvalue'));
- 	$(".propertyvalue").text(numberWithCommas(propertyvalue));
- }
- 
- var mortgageamount = 70000.00;
- if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
- 	mortgageamount = parseFloat($.cookie('mortgageamount'));
- 	$(".mortgageamount").text(numberWithCommas(mortgageamount));
- }
- 
- var numberofsecuredloans = 0;
-
-  if ($.cookie('numberofsecuredloans') && $.cookie('numberofsecuredloans').length > 0 && $.isNumeric($.cookie('numberofsecuredloans'))){
- 	numberofsecuredloans= parseInt($.cookie('numberofsecuredloans'));
-
- 	var securedloan = 0.00;	
- 	var loanfor = "car";
- 	var loanname = "ABC Finance Ltd";
- 	var loanmonth = "4";
- 	var loanyear = "2008";
- 	for (i = 1; i < numberofsecuredloans + 1; i++) { 
-		 if ($.cookie('securedloan' + i) && $.cookie('securedloan' + i).length > 0 && $.isNumeric($.cookie('securedloan' + i))){
-		 	securedloan = parseFloat($.cookie('securedloan' + i));
-		 }
-		 if ($.cookie('loanfor' + i) && $.cookie('loanfor' + i).length > 0){
-		 	loanfor = $.cookie('loanfor' + i);
-		 }
-		 if ($.cookie('loanname' + i) && $.cookie('loanname' + i).length > 0){
-		 	loanname= $.cookie('loanname' + i);
-		 }
-		 if ($.cookie('loanmonth' + i) && $.cookie('loanmonth' + i).length > 0){
-		 	loanmonth= $.cookie('loanmonth' + i);
-		 }
-		 if ($.cookie('loanyear' + i) && $.cookie('loanyear' + i).length > 0){
-		 	loanyear= $.cookie('loanyear' + i);
-		 }
-
-		 // add to table
-		  $("#row" + i).show();
-		 $("#row" + i + " .loanamount").text(securedloan);
-		 $("#row" + i + " .loanfor").text(loanfor);
-		 $("#row" + i + " .loanname").text(loanname);
-		 $("#row" + i + " .loanmonth").text(loanmonth);
-		 $("#row" + i + " .loanyear").text(loanyear);
-		 
-    }
- }
-
- 
-  var securedloan = 0.00;
- if ($.cookie('securedloan') && $.cookie('securedloan').length > 0 && $.isNumeric($.cookie('securedloan'))){
- 	securedloan = parseFloat($.cookie('securedloan'));
- }
-
- 	
-	$("#details1").hide();
-	
-     $(".js-section").on("click", function (e) {
+     $("#pay-online").on("click", function (e) {
         e.preventDefault();
-        if ($(this).hasClass("open") == false) {
-            $(this).addClass("open");
-            $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-            var details = $($(this).attr("href"));
-            details.show();
+        //alert($("#amount").val());
+        if ($("#amount").val() == ""){
+        	$("#panel-error-empty").show();
         }
-        else {
-            $("#details1").hide();
-            $(this).removeClass("open");
-            $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
-            var details = $($(this).attr("href"));
-            details.hide();
+
+        if ($("#amount").val() && $("#amount").val() > 484){
+        	$("#panel-error-greater").show();
         }
     });
 
