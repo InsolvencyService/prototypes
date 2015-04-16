@@ -63,9 +63,9 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
-div[class^="col-sm-"], div[class*=" col-sm-"] {
-	text-align:center
 
+.col-sm-4{
+	text-align:center
 }
 .row > div{
 padding-top:15px;
@@ -179,22 +179,20 @@ display:block;
 			<div class="text">
 			
 			<ul >
-			<li><h3 class="heading-medium">Make a payment</h3>
-			<p>You need to pay the remaining amount of £484 to enable your application to proceed</p>
-			<div class="form-group ">
-	
-			<label id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
-			<input id="applicant_address_town" name="applicant_address_town" type="text"  value="" />
-			<br/>
+			<li><h3 class="heading-medium">Make Payment</h3>
+			<div class="row">
+			<div class="col-sm-4">
+				<a href="#"><img alt="" src="../../assets/icons/Bankruptcy-Icons-debit.png" style="width:65px"><br>Pay by debit card</a>
 			</div>
-
-			<div>
-			<div>
-				<a href="#" class="button">Pay online</a>
-			</div>
-			<div>
+			<div class="col-sm-4" style="padding-top:0">
 			<a href="#">
-			Pay by cash or cheque</a>
+			<img alt="" src="../../assets/icons/Bankruptcy-Icons-person.png" style="width:65px">
+			<br>Ask someone to pay for you</a>
+			</div>
+			<div class="col-sm-4" style="padding-top:0">
+			<a href="#">
+			<img alt="" src="../../assets/icons/Bankruptcy-Icons-cash.png" style="width:65px">
+			<br>Pay by cash or cheque</a>
 			</div>
 		
 			
@@ -203,20 +201,25 @@ display:block;
 			
 			
 			</li>
-			<li><h3 class="heading-medium">What if I need a refund?</h3>
-			<div>
-			<p>
-			The amount is automatically refunded to you in full if you choose to cancel your application.</p>
-			<p>In the unusual event that your application is rejected, you will be refunded the amount minus the £180 fee for the adjudicator.
-			</p>
+			<li><h3 class="heading-medium">Request refund</h3>
+			<div class="row">
+			<div style="margin-left:20px">
+			<a href="#">Request a refund because you have decided not to continue at this time</a>
+			</div>
+			<div style="margin-left:20px">
+			<a href="#">Request a refund because your wish to cancel your application </a>
+			</div>
+			<div style="margin-left:20px">
+			<a href="#">Request a refund because your application was refused</a>
+			</div>
 			</div>
 			
 			
 			</li>	
-			<li><h3 class="heading-medium">View my statement</h3>
-			<div>
-			<div>
-			<a href="statement.html">View a summary of payments made towards your fee</a>
+			<li><h3 class="heading-medium">View statement</h3>
+			<div class="row">
+			<div style="margin-left:20px">
+			<a href="statement.html">View a summary of payments made</a>
 			</div>
 			</div>			
 			</li>
