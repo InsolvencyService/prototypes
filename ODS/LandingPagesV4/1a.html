@@ -237,21 +237,9 @@
 		$("#next").on("click", function (e) {
 		
 		$.cookie('debt', 'Below £15,000');
+		alert($.cookie('debt'));
 
-			if($('#radio-1').prop('checked')){
-				$.cookie("debt", "Below £15,000");
-			}
-			else if($('#radio-2').prop('checked')){
-				$.cookie("debt", "Above £15,000");
-			}
-			
-			if(amend='true'){
-			 	$("#next").attr("href", "summary.html");
-			}
-			else{
-				 $("#next").attr("href", "2.html");
-			}
-			
+					
 		});
 
 		
