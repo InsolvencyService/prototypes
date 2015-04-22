@@ -235,6 +235,9 @@
 	
 		//Button click
 		$("#next").on("click", function (e) {
+		
+		$.cookie("debt", "Below £15,000");
+
 			if($('#radio-1').prop('checked')){
 				$.cookie("debt", "Below £15,000");
 			}
