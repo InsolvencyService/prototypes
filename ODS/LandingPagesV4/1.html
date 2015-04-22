@@ -230,14 +230,12 @@
 
        
     <script type="text/javascript">
-       	var debt;
-       	var amend;
-     /*  	
+ 
+     	
        	$(document).ready(function(){
-			debt = $.cookie('debt');
-			amend = $.cookie('amend');
+			var amend = $.cookie('amend');
 		});
-	*/
+	
 		//Button click
 		$("#next").on("click", function (e) {
 			if($('#radio-1').prop('checked')){
@@ -247,9 +245,7 @@
 				$.cookie("debt", "Above £15,000");
 			}
 			
-			$.cookie("example", "foo");
-
-			if(amend='true'){
+			if(amend=='true'){
 			 	$("#next").attr("href", "summary.html");
 			}
 			else{

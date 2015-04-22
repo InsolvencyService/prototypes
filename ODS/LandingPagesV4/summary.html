@@ -283,14 +283,20 @@ display:block;
 	$(document).ready(function(){
 	
 	var debt = ($.cookie('debt'));
-	alert( $.cookie("debt") );
-	alert($.cookie("example"));
-
+	var asset = ($.cookie('asset'));
+	var property = ($.cookie('property'));
+	var vehicle = ($.cookie('vehicle'));
+	var surplus = ($.cookie('surplus'));
+	var insolvency = ($.cookie('insolvency'));
 
 	
 	$("#SummaryTable").find('tbody')
-    .append($('<tr><td>Debt you owe</td><td>'+debt+'</td><td>Change</td></tr>'))
-    .append($('<tr><td>Debt you owe</td><td>'+debt+'</td><td>Change</td></tr>')
+    .append($('<tr><td>How much do you owe?</td><td>'+debt+'</td><td>Change</td></tr>'))
+    .append($('<tr><td>Do you have any assets or savings?</td><td>'+asset+'</td><td>Change</td></tr>'))
+    .append($('<tr><td>Do you own a property?</td><td>'+property+'</td><td>Change</td></tr>'))
+    .append($('<tr><td>Do you have a vehicle worth over £1,000?</td><td>'+vehicle+'</td><td>Change</td></tr>'))
+    .append($('<tr><td>Do you earn more than you need for your monthly bills?</td><td>'+surplus+'</td><td>Change</td></tr>'))
+    .append($('<tr><td>Have you been through insolvency proceedings previously?</td><td>'+insolvency+'</td><td>Change</td></tr>')
         
     );
 	

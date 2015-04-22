@@ -226,139 +226,33 @@
 
     <!-- #BeginEditable "scripts" -->
 
-    <script width="50" height="50" src="../assets/js/bootstrap-switch/bootstrap-switch.min.js"></script>
-    <!--<script width="50" height="50" src="../assets/js/rangeslider/rangeslider.min.js"></script>-->
-    <script type="text/javascript" src="../calculator2/jquery.ui.js"></script>
-    <script type="text/javascript" src="../assets/js/jquery.ui-touch-punch.js"></script>
-    
+   <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
+
        
     <script type="text/javascript">
-        var $initval;
-        var $interacted;
-        var $amount;
-
-        $(document).ready(function () {
-            $min = 1000;
-            $max = 50000;
-            $initval = 8000;
-            $interacted = false;
-            $amount = 0;
-
-            //$("input.switch[type='checkbox']").bootstrapSwitch();
-
-            $("[id='q1']").bootstrapSwitch()
-            $("[id='q2']").bootstrapSwitch();
-            $("[id='q3']").bootstrapSwitch();
-            $("[id='q4']").bootstrapSwitch();
-            $("[id='q5']").bootstrapSwitch();
-            $("[id='q6']").bootstrapSwitch();
-            //$("[id='q7']").bootstrapSwitch();
-            
-            $("#q1").on('switchChange.bootstrapSwitch', function (event, state) {
-                if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
-                }
-                $interacted = true;
-            });
-
-            $("#q2").on('switchChange.bootstrapSwitch', function (event, state) {
-                if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
-                }
-                $interacted = true;
-            });
-            $("#q3").on('switchChange.bootstrapSwitch', function (event, state) {
-                if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
-                }
-                $interacted = true;
-            });
-            $("#q4").on('switchChange.bootstrapSwitch', function (event, state) {
-                if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
-                }
-                $interacted = true;
-            });
-            $("#q5").on('switchChange.bootstrapSwitch', function (event, state) {
-                if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
-                }
-                $interacted = true;
-            });
-            $("#q6").on('switchChange.bootstrapSwitch', function (event, state) {
-                if (state == true) {
-                    $("#btn-find-debt").attr("href", "options.html?bkt=yes&dmp=yes&iva=yes");
-                }
-                $interacted = true;
-            });
-
-            var qstring = getParameterByName("amount");
-            if (qstring && qstring.length > 1) {
-                //$("#" + qstring).bootstrapSwitch('state', true);
-            }
-
-            $("#btn-find-debt").on("click", function (e) {
-                if ($interacted == false) {
-                    e.preventDefault();
-                    $("#pnl-warning").show();
-                    $("html, body").animate({ scrollTop: 0 }, "slow");
-                    //alert("You haven't made any changes to this page. If all the answers are correct, please hit the Continue button again.");
-                    $interacted = true;
-                }
-                if ($("#q1").bootstrapSwitch('state') == false
-                && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
-                && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
-                    $("#btn-find-debt").attr("href", "options.html?dro=yes&dmp=no&iva=no");
-                }
-
-            });
-            
-            $("#tab-find-debt").on("click", function (e) {
-                if ($interacted == false) {
-                    e.preventDefault();
-                    $("#pnl-warning").show();
-                    $interacted = true;
-                }
-                if ($("#q1").bootstrapSwitch('state') == false
-                && $("#q3").bootstrapSwitch('state') == false && $("#q4").bootstrapSwitch('state') == false
-                && $("#q5").bootstrapSwitch('state') == false && $("#q6").bootstrapSwitch('state') == false) {
-                    $("#tab-find-debt").attr("href", "options.html?dro=yes&dmp=no&iva=no");
-                }
-
-            });
-
-
-        });
-
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-
-   
-        function addCommas(str) {
-            var parts = (str + "").split("."),
-                main = parts[0],
-                len = main.length,
-                output = "",
-                i = len - 1;
-
-            while (i >= 0) {
-                output = main.charAt(i) + output;
-                if ((len - i) % 3 === 0 && i > 0) {
-                    output = "," + output;
-                }
-                --i;
-            }
-            // put decimal part back
-            if (parts.length > 1) {
-                output += "." + parts[1];
-            }
-            return output;
-        }
-    </script>
+       	
+     
+       	$(document).ready(function(){
+			var amend = $.cookie('amend');
+		});
+	
+		//Button click
+		$("#next").on("click", function (e) {
+			if($('#radio-1').prop('checked')){
+				$.cookie("property", "Yes");
+			}
+			else if($('#radio-2').prop('checked')){
+				$.cookie("property", "No");
+			}
+			
+			if(amend=='true'){
+			 	$("#next").attr("href", "summary.html");
+			}
+			else{
+				 $("#next").attr("href", "4.html");
+			}
+			
+		});
 
 
     <!-- #EndEditable -->
