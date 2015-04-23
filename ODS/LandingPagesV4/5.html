@@ -255,9 +255,14 @@
     <script type="text/javascript">
        	
        	var amend;
+       	var surplus;
+       	var insolvency;
      	
        	$(document).ready(function(){
 			amend = $.cookie('amend');
+			surplus= $.cookie('surplus');
+			insolvency= $.cookie('insolvency');
+			
 			$("#validation").hide();
 			
 			if(amend=='true'){
