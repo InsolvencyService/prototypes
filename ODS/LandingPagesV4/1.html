@@ -235,9 +235,20 @@
     <script type="text/javascript">
  
      	var amend;
+     	var debt;
        	$(document).ready(function(){
 			amend = $.cookie('amend');
+			debt = $.cookie('debt');
+			
 			$("#validation").hide();
+			
+			if(debt=="Yes"){
+		 		$('#radio-1').prop('checked', true);
+		 	}
+		 	else if (debt=="No"){
+		 		$('#radio-2').prop('checked', true);
+		 	}
+
 		});
 		
 	
