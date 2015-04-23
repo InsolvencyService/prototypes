@@ -146,7 +146,7 @@
 					<h1 class="form-title heading-xlarge">Find out which debt solutions are available to you</h1>
 				    
 				    <p class="heading-large">Your debts</p>
-				    <p class="text-danger" visible="false" id="validation" style="padding: 10px; border: solid red 1px;">Please make a selection</p>
+				    <p class="text-danger" id="validation" style="color:red; padding : 10px; border: solid red 1px;">Please make a selection</p>
 				    
 				    <fieldset class="inline">
 					    <legend class="form-label-bold">How much do you owe?</legend>
@@ -237,6 +237,7 @@
      	var amend;
        	$(document).ready(function(){
 			amend = $.cookie('amend');
+			$("#validation").hide();
 		});
 		
 	

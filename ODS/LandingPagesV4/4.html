@@ -147,7 +147,8 @@
 				<h1 class="form-title heading-xlarge">Find out which debt solutions are available to you</h1>
 			    
 			    <p class="heading-large">Your vehicle</p>
-			    
+			    <p class="text-danger" id="validation" style="color:red; padding : 10px; border: solid red 1px;">Please make a selection</p>
+
 			    
 			    <fieldset class="inline">
 				    <legend class="form-label-bold">Do you have a vehicle worth over £1,000?</legend>
@@ -241,6 +242,7 @@
      	var amend;
        	$(document).ready(function(){
 			amend = $.cookie('amend');
+			$("#validation").hide();
 		});
 	
 		//Button click
@@ -251,6 +253,12 @@
 			else if($('#radio-2').prop('checked')){
 				$.cookie("vehicle", "No");
 			}
+			else{
+			 	e.preventDefault();
+                $("#validation").show();
+				return;
+			}
+
 			
 			if(amend=='true'){
 			 	$("#next").attr("href", "summary.html");

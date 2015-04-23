@@ -147,7 +147,8 @@
 				<h1 class="form-title heading-xlarge">Find out which debt solutions are available to you</h1>
 			    
 			    <p class="heading-large">Your monthly surplus</p>
-			    
+			    <p class="text-danger" id="validation" style="color:red; padding : 10px; border: solid red 1px;">Please make a selection</p>
+
 			    
 			    <fieldset class="inline">
 				    <legend class="form-label-bold">Do you earn more than you need for your monthly bills?</legend>
@@ -242,6 +243,7 @@
      	
        	$(document).ready(function(){
 			amend = $.cookie('amend');
+			$("#validation").hide();
 		});
 	
 		//Button click
@@ -252,6 +254,12 @@
 			else if($('#radio-2').prop('checked')){
 				$.cookie("surplus", "No");
 			}
+			else{
+			 	e.preventDefault();
+                $("#validation").show();
+				return;
+			}
+
 			
 			if(amend=='true'){
 			 	$("#next").attr("href", "summary.html");
