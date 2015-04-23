@@ -147,25 +147,53 @@
 				<h1 class="form-title heading-xlarge">Find out which debt solutions are available to you</h1>
 			    
 			    <p class="heading-large">Your assets and savings</p>
-			    <p class="text-danger" id="validation" style="color:red; padding : 10px; border: solid red 1px;">Please make a selection</p>
+			    <p class="text-danger" id="validation" style="color:red; padding : 10px; border: solid red 1px;">Please make sure you've selected one answer for each question</p>
 
-			    
 			    <fieldset class="inline">
-				    <legend class="form-label-bold">Do you have any assets or savings?</legend>
-				  	<span class="form-hint">Money you have or things you own but not including basic household items or tools of the trade</span>
-				    <label class="block-label" for="radio-1">
-				      <input id="radio-1" type="radio" name="radio-group" value="Yes">
+				    <legend class="form-label-bold">Do you own a property?</legend>
+				  	<span class="form-hint">Answer yes if you are a home owner or have a mortgage</span>
+				    <label class="block-label" for="rad-property-yes">
+				      <input id="rad-property-yes" type="radio" name="property-group" value="Yes">
 				      Yes
 				    </label>
-				    <label class="block-label" for="radio-2">
-				      <input id="radio-2" type="radio" name="radio-group" value="No">
+				    <label class="block-label" for="rad-property-no">
+				      <input id="rad-property-no" type="radio" name="property-group" value="No">
 				      No
 				    </label>
-				</fieldset> 
+				</fieldset>
+			    <p>&nbsp;</p>
+			    <fieldset class="inline">
+				    <legend class="form-label-bold">Do you have a vehicle worth over £1,000?</legend>
+				  	<span class="form-hint">Answer no if your car is on lease or finance</span>
+				    <label class="block-label" for="rad-vehicle-yes">
+				      <input id="rad-vehicle-yes" type="radio" name="vehicle-group" value="Yes">
+				      Yes
+				    </label>
+				    <label class="block-label" for="rad-vehicle-no">
+				      <input id="rad-vehicle-no" type="radio" name="vehicle-group" value="No">
+				      No
+				    </label>
+				</fieldset>
+			    <p>&nbsp;</p>
+			    <fieldset class="inline">
+				    <legend class="form-label-bold">Do you have any other assets or savings?</legend>
+				  	<span class="form-hint">Money you have or things you own but not including basic household items or tools of the trade</span>
+				    <label class="block-label" for="rad-asset-yes">
+				      <input id="rad-asset-yes" type="radio" name="asset-group" value="Yes">
+				      Yes
+				    </label>
+				    <label class="block-label" for="rad-asset-no">
+				      <input id="rad-asset-no" type="radio" name="asset-group" value="No">
+				      No
+				    </label>
+				</fieldset>
+				
+ 				 
+ 
 				
 			<p>&nbsp;</p>	
 			<a id="next" class="button" role="button" >Next Step</a><br/>
-			<a id="back" "href="1.html">Back</a><br/><br/>
+			<a id="back" href="1.html">Back</a><br/><br/>
 			</div>
 				<div class="col-md-4">&nbsp;</div>
 
@@ -249,10 +277,12 @@
 	
 		//Button click
 		$("#next").on("click", function (e) {
-			if($('#radio-1').prop('checked')){
+		
+		// Set asset cookie
+			if($('#rad-asset-yes').prop('checked')){
 				$.cookie("asset", "Yes");
 			}
-			else if($('#radio-2').prop('checked')){
+			else if($('#rad-asset-no').prop('checked')){
 				$.cookie("asset", "No");
 			}
 			else{
@@ -260,13 +290,41 @@
                 $("#validation").show();
 				return;
 			}
+		
+		
+		// Set property cookie
+			if($('#rad-property-yes').prop('checked')){
+				$.cookie("property", "Yes");
+			}
+			else if($('#rad-property-no').prop('checked')){
+				$.cookie("property", "No");
+			}
+			else{
+			 	e.preventDefault();
+                $("#validation").show();
+				return;
+			}
+			
+		// Set vehicle cookie
+			if($('#rad-vehicle-yes').prop('checked')){
+				$.cookie("vehicle", "Yes");
+			}
+			else if($('#rad-vehicle-no').prop('checked')){
+				$.cookie("vehicle", "No");
+			}
+			else{
+			 	e.preventDefault();
+                $("#validation").show();
+				return;
+			}
+
 
 			
 			if(amend=='true'){
 			 	$("#next").attr("href", "summary.html");
 			}
 			else{
-				 $("#next").attr("href", "3.html");
+				 $("#next").attr("href", "5.html");
 			}
 			
 		});
