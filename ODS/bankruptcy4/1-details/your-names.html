@@ -169,22 +169,23 @@ display:block;
 	<p>
 	<div class="form-group ">
 	
-	<p>You told us your name is <strong>David James Smith</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="name.html">Change</a></p>
-
+	<p>You told us your name is <br/>
+	<strong>Kim Scarlett</strong>
+	<a href="name.html" style="float:right">Change</a></p>
+<p><br></p>
 	<div class="form-group ">
 	<p id="title_label" class="form-label-bold">Have you been known by another name in the last five years?</p>
 	
 	<fieldset class="inline">
-	<div id="title" class="auto-style1">
+	<div id="othername" class="auto-style1">
 	
-	<label id="title_label0" for="title_Mr." class="block-label">
-	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
+	<label id="title_label0" for="othername_Yes" class="block-label">
+	<input id="othername_Yes" value="Yes" name="othername" type="radio" aria-describedby="title_error title_help">
 	Yes
 	</label>
 	
-	<label id="title_label1" for="title_Mrs." class="block-label">
-	<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
+	<label id="title_label1" for="othername_No" class="block-label">
+	<input id="othername_No" value="Mrs." name="othername" type="radio" aria-describedby="title_error title_help">
 	No
 	</label>
 	
@@ -204,7 +205,7 @@ display:block;
 	<div>
 
 
-	<a href="details.html" id="next" class="button">Continue</a>
+	<a href="your-addresses.html" id="next" class="button">Continue</a>
 	
 	</div>
 	<div>
@@ -274,6 +275,14 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	var normalroute = $("#next").prop("href");
+	$("#othername_Yes").click(function(){
+		$("#next").prop("href","other-name.html");
+	});
+	$("#othername_No").click(function(){
+		$("#next").prop("href", normalroute);
+	});
 
 });
 
