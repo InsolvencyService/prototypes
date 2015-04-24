@@ -173,7 +173,7 @@ display:block;
 	<div class="form-group ">
 	
 	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="12 High Street" />
+	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
@@ -191,7 +191,7 @@ display:block;
 	<div class="form-group ">
 	
 	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/City</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="Churchtown" />
+	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
@@ -203,19 +203,41 @@ display:block;
 	<div class="form-group ">
 	
 	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Post Code</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="C12 1AD" />
+	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 	<br/>
 	</div>
 
 		<br/>
 
+<div class="form-group " id="other-addresses">
+	<p id="title_label" class="form-label-bold">Have you lived at any other address in the last 12 months?</p>
+	
+	<fieldset class="inline">
+	<div id="otheraddress" class="form-group">
+	
+	<label id="title_label0" for="otheraddress_Yes" class="block-label">
+	<input id="otheraddress_Yes" value="Mr." name="otheraddress" type="radio" aria-describedby="title_error title_help">
+	Yes
+	</label>
+	
+	<label id="title_label1" for="otheraddress_No" class="block-label">
+	<input id="otheraddress_No" value="No" name="otheraddress" type="radio" aria-describedby="title_error title_help">
+	No
+	</label>
+	
 
+	
+	</div>
+	</fieldset>
+	</div>
+
+<p><br></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="your-addresses.html">Continue</a>
+		<a id="next" class="button" href="details.html">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -290,21 +312,38 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	var housename;
+	
+	var pre  = getParameterByName("pre");
+	if (pre && pre.length > 1){
+		$("#applicant_address_line_1").val("110 High Street");
+		$("#applicant_address_line_2").val("Newhall");
+		$("#applicant_address_town").val("Birmingham");
+		$("#applicant_address_post_code").val("B4 3TT");
+		$("#other-addresses").hide();
+		
+		$("#next").prop("href", "your-addresses.html")
+	}
+	
 	var normalroute = $("#next").prop("href");
-	$("#own_No").click(function(){
-		$("#next").prop("href","summary-dont-own.html");
+
+	$("#otheraddress_Yes").click(function(){
+		$("#next").prop("href","other-address.html");
 	});
-	$("#own_Yes").click(function(){
+	$("#otheraddress_No").click(function(){
 		$("#next").prop("href", normalroute);
 	});
 
-	$("#next").on("click", function(){
-		housename = $("#applicant_address_line_1").val();
-		$.cookie('house', housename, { expires: 1 });
-	});
 
 });
-    
+
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 </script>
 
