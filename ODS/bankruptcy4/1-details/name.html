@@ -3,14 +3,20 @@
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Online debt solutions</title>
+ <!-- #BeginEditable "title" -->
+<title>Online debt solutions</title>
+<!-- #EndEditable -->
+
 
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/govuk-template.css"><!--<![endif]-->
-    <!--[if IE 6]><link href="../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]>
+<link href="../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]>
+<link href="../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]>
+<link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
     <link type="text/css" rel="stylesheet" media="print" href="../../assets/stylesheets/govuk-template-print.css">
 
@@ -52,9 +58,12 @@
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css"><!--<![endif]-->
-    <!--[if IE 6]><link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]>
+<link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]>
+<link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]>
+<link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
     
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">  
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
@@ -63,6 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+
 
 .row img{
 width:60px;
@@ -83,11 +93,9 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-.auto-style1 {
-	float: left;
-	width: 100%;
-	clear: both;
-	zoom: 1;
+
+legend{
+	border-bottom:0
 }
 </style>
 <!-- #EndEditable -->
@@ -169,42 +177,53 @@ display:block;
 	<p>
 	<div class="form-group ">
 	
-	<p>You told us your name is <strong>David James Smith</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="name.html">Change</a></p>
-
-	<div class="form-group ">
-	<p id="title_label" class="form-label-bold">Have you been known by another name in the last five years?</p>
-	
 	<fieldset class="inline">
-	<div id="title" class="auto-style1">
+	<legend id="title_label" class="form-label-bold">Title</legend>
+	<div id="title" class="form-group">
 	
 	<label id="title_label0" for="title_Mr." class="block-label">
 	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
-	Yes
+	Mr.
 	</label>
 	
 	<label id="title_label1" for="title_Mrs." class="block-label">
 	<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
-	No
+	Mrs.
 	</label>
 	
-
+	<label id="title_label2" for="title_Miss" class="block-label">
+	<input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title_error title_help">
+	Miss
+	</label>
+	
+	<label id="title_label3" for="title_Ms." class="block-label">
+	<input id="title_Ms." value="Ms." name="title" type="radio" aria-describedby="title_error title_help">
+	Ms.
+	</label>
 	
 	</div>
 	</fieldset>
 	</div>
-
-	</div>
+	<div class="form-group ">
 	
+	<label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+	<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="last_name_label" for="last_name" class="form-label-bold last_name">Last name</label>
+	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+	<br/>
+	</div>
 	</p>
-	<p><br></p>
 	<!-- For User research -->
-	<div class="form-navigation form-group" style="margin-top:20px">
+	<div class="form-navigation form-group">
 	
 	<div>
 
 
-	<a href="details.html" id="next" class="button">Continue</a>
+		<a id="next" class="button" href="your-names.html">Continue</a>
 	
 	</div>
 	<div>
@@ -213,7 +232,7 @@ display:block;
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="../overview.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="../start.html" id="back">Back</a>&nbsp;
 	
 	</div>
 	</div>
