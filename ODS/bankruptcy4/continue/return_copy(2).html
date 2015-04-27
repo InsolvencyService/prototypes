@@ -234,8 +234,9 @@ width:40px
 	<div>
 
 
-	<a href="security-question.html" id="next" class="button">Continue</a>&nbsp;&nbsp;
-			<div>
+	<a href="../overview.html" id="next" class="button">Continue</a>&nbsp;&nbsp;
+		<a href="../forgotten/forgotten-ref.html">I have forgotten my reference number</a></div>
+	<div>
 	<br>
 	</div>
 	
@@ -263,12 +264,12 @@ width:40px
 </div>
 
 
-</div>
-
-
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -320,6 +321,33 @@ width:40px
 <script type="text/javascript">
 $(document).ready(function() {
 
+	$(".msg-URN").hide();
+
+	var URNfromemail = getParameterByName("URN");
+	if (URNfromemail && URNfromemail.length > 1)
+	{
+		$(".msg-URN").show();
+		$(".msg-no-URN").hide();
+		
+		$("#securityquestion").show();
+	}
+	
+	$("#urn").blur( function() {
+		if ($("#urn").val().length > 0){
+			$("#securityquestion").show();
+		}
+	});
+	
+	$("#next").click( function(e) {
+		if ($("#urn").val().length == 0 && URNfromemail == ""){
+			e.preventDefault();
+		}
+		
+		if ($("#answer").val().length == 0){
+			e.preventDefault();
+		}
+
+	});
 
 });
 
