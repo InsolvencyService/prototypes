@@ -76,6 +76,12 @@
      
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
+
+.warning{
+	color:red;
+	padding-left:10px;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -124,29 +130,128 @@
             </div>
         </div>
 
+
+
+</div>
+
 <!-- #BeginEditable "content" -->
 
-<style type="text/css">
-</style>
+<div id="content" >
 
-	<div class="inner-block">
-		<h1 class="form-title heading-xlarge">Your debt relief order application</h1>
+<div id="content0" >
+	<div class="row" style="margin-left:20px;">   
+    	
+    		
+    			<div class="col-sm-8 ">
+    				<h1 id="AI_name" class="form-title heading-large">Adrian Wilson, StepChange</h1>
+    				<p>
+    					<br>
+    					<a class="btn btn-default"><span class="font-small">Create a new application&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-plus"></i></span></a>
+    					&nbsp;&nbsp;&nbsp;
+    					<a class="btn btn-default"><span class="font-small">Upload XML file&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-upload"></i></span></a>
+    				</p>
+    			</div>
+    			<div class="col-sm-4">
+                    <div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
+                        <p><a href="#">Change user password</a></p>
+                        <p><a href="#">Log out</a></p>
+                    </div>
+                </div>
+	
+    			</div>
+
+    		            
+	</div>
 		
-		<div class="col-md-8">
-			<h3 class="heading-medium">You can view and amend your application that has been submitted by your intermediary</h3>
-			<p class="text">To view your application online you will need:</p>
-			<ul class="list-bullet">
-				<li>the ?? digit unique reference number supplied by your intermediary</li>
-				<li>to know your email address</li>
-			</ul>
-			<p class="panel-indent">This service is only available to you if you have first registered with an Insolvency Service approved intermidiary</p>
-			<a href="public_login.html" class="button heading-medium">Continue</a>
+		<div class="container">
+			<div class="row">
+		        <div class="col-md-3">
+		            
+		        </div>
+		        <div class="col-md-9"></div>  
+		    </div>
+		    
+		    <p>&nbsp;</p>
+		    
+		    <div class="row font-xsmall">
+		    	<div class="col-sm-5">
+		    		<p>Recently accessed</p>
+		    	</div>
+		    	
+		    	<div class="col-sm-2">
+		    		<a href="#">10</a> | <a href="#">20</a> | <a href="#">30</a> | <a href="#">See All</a>
+		    	</div>   
+		    	
+				<div class="col-sm-3">	
+		    		<form action="#" method="get">
+		                <div class="input-group">
+		                    
+		                    <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+		                    <span class="input-group-btn">
+		                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+		                    </span>
+		                </div>
+		            </form>
+				</div>		    	
+		    </div>
+		   
+		    <div class="row">    
+				<div class="col-md-10">
+		    	 	<table class="table table-list-search">
+		                    <thead>
+		                        <tr>
+		                            <th>Reference Number</th>
+		                            <th>Surname</th>
+		                            <th>Initial</th>
+		                            <th>Date amended</th>
+		                            <th>Amended by</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                    	<tr>
+		                            <td><a href="application.html">DRO896654</a></td>
+		                            <td>Bloggs</td>
+		                            <td>A</td>
+		                            <td>28th January 2015</td>
+		                            <td>Authorised intermediary</td>
+		                        </tr>
+		                        <tr>
+		                            <td>DRO556254</td>
+		                            <td>Jones</td>
+		                            <td>I</td>
+		                            <td>27th January 2015</td>
+		                            <td>Authorised intermediary</td>
+		                        </tr>
+		                        <tr>
+		                            <td>DRO665489</td>
+		                            <td>Williamson</td>
+		                            <td>JB</td>
+		                            <td>18th January 2015</td>
+		                            <td>Authorised intermediary</td>
+		                        </tr>
+								<tr>
+		                            <td>DRO445668</td>
+		                            <td>Smith</td>
+		                            <td>H</td>
+		                            <td>5th January 2015</td>
+		                            <td>Debtor</td>
+		                        </tr>
+		                  	</tbody>
+		            </table>   
+				</div>
+			</div>
 		</div>
+		<p>&nbsp;</p>
 		
 	</div>
-<div class="clearfix"></div>
-<p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+</div>
+		
 	
+
+
 
 <!-- #EndEditable -->
 
@@ -202,6 +307,59 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+
+<script type="text/javascript" src="../../assets/js/bootstrap/js/toggle-button.js"></script>
+
+
+<script>
+	$(document).ready(function(){
+		$("#pnl-validation").hide();
+	});
+	
+	$("#next").on("click", function (e) {
+		
+		
+		var touched = false;
+		var id = $("#id").val();
+		var password = $("#password").val();
+		
+		
+		if(password==""){
+			$("#pnl-password").addClass("panel-indent panel-danger");
+			touched=true;
+			$("#password").focus();
+		}
+		else{
+			$("#pnl-password").removeClass("panel-indent panel-danger");
+		}
+		
+		if(id == ""){
+			$("#pnl-id").addClass("panel-indent panel-danger");
+			touched=true;
+			$("#id").focus();
+		}
+		else{
+			$("#pnl-id").removeClass("panel-indent panel-danger");
+		}
+
+		
+		
+		if(touched==true){
+			$("#pnl-validation").show();
+		}
+		
+		if(password!=""&&id!=""){
+			 $("#next").prop("href", "ai_admin.html");
+		}  
+		
+
+	
+	});
+	
+</script>
+
+
+
 
 <!-- #EndEditable -->
     
