@@ -202,7 +202,7 @@ width:40px
 	
 	<div class="form-group ">
 	
-	<label id="applicant_address_line_2_label" for="urn" class="form-label">What is your application number?</label>
+	<label id="applicant_address_line_2_label" for="urn" class="form-label">Enter your application number?</label>
 	<input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
 	<br/>
 	</div>
@@ -305,6 +305,28 @@ width:40px
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	$(".msg-URN").hide();
+
+	var URNfromemail = getParameterByName("URN");
+	if (URNfromemail && URNfromemail.length > 1)
+	{
+		$("#urn").val(URNfromemail );
+	}
+	
+	$("#urn").blur( function() {
+		//if ($("#urn").val().length > 0){
+		//	$("#securityquestion").show();
+		//}
+	});
+	
+	$("#next").click( function(e) {
+		if ($("#urn").val().length == 0 && URNfromemail == ""){
+			e.preventDefault();
+		}
+		
+
+	});
 
 
 });
