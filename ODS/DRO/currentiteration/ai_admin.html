@@ -143,18 +143,17 @@
     	
     		
     			<div class="col-sm-8 ">
-    				<h1 id="AI_name" class="form-title heading-large">Adrian Wilson, StepChange</h1>
+    				<h1 id="AI_name" class="form-title heading-large">Adrian Wilson</h1>
     				<p>
     					<br>
-    					<a class="btn btn-default"><span class="font-small">Create a new application&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-plus"></i></span></a>
-    					&nbsp;&nbsp;&nbsp;
-    					<a class="btn btn-default"><span class="font-small">Upload XML file&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-upload"></i></span></a>
+    					<a class="btn btn-default"><span class="font-medium">Create a new application&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-plus"></i></span></a>
     				</p>
     			</div>
     			<div class="col-sm-4">
                     <div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
                         <p><a href="#">Change user password</a></p>
                         <p><a href="#">Log out</a></p>
+                        <p><a href="#">Upload XML</a></p>
                     </div>
                 </div>
 	
@@ -175,7 +174,7 @@
 		    
 		    <div class="row font-xsmall">
 		    	<div class="col-sm-5">
-		    		<p>Recently accessed</p>
+		    		<p>Current cases</p>
 		    	</div>
 		    	
 		    	<div class="col-sm-2">
@@ -203,38 +202,39 @@
 		                            <th>Reference Number</th>
 		                            <th>Surname</th>
 		                            <th>Initial</th>
-		                            <th>Date amended</th>
-		                            <th>Amended by</th>
+		                            <th>Date last edited</th>
+		                            <th>Last edited by</th>
 		                        </tr>
 		                    </thead>
 		                    <tbody>
 		                    	<tr>
-		                            <td><a href="application.html">DRO896654</a></td>
+		                            <td>
+									<a href="application.html">DRO896654</a></td>
 		                            <td>Bloggs</td>
 		                            <td>A</td>
 		                            <td>28th January 2015</td>
-		                            <td>Authorised intermediary</td>
+		                            <td>Adrian Wilson</td>
 		                        </tr>
 		                        <tr>
 		                            <td>DRO556254</td>
 		                            <td>Jones</td>
 		                            <td>I</td>
 		                            <td>27th January 2015</td>
-		                            <td>Authorised intermediary</td>
+		                            <td>Adrian Wilson</td>
 		                        </tr>
 		                        <tr>
 		                            <td>DRO665489</td>
 		                            <td>Williamson</td>
 		                            <td>JB</td>
 		                            <td>18th January 2015</td>
-		                            <td>Authorised intermediary</td>
+		                            <td>Adrian Wilson</td>
 		                        </tr>
 								<tr>
 		                            <td>DRO445668</td>
 		                            <td>Smith</td>
 		                            <td>H</td>
 		                            <td>5th January 2015</td>
-		                            <td>Debtor</td>
+		                            <td>Adrian Wilson</td>
 		                        </tr>
 		                  	</tbody>
 		            </table>   
@@ -311,52 +311,6 @@
 <script type="text/javascript" src="../../assets/js/bootstrap/js/toggle-button.js"></script>
 
 
-<script>
-	$(document).ready(function(){
-		$("#pnl-validation").hide();
-	});
-	
-	$("#next").on("click", function (e) {
-		
-		
-		var touched = false;
-		var id = $("#id").val();
-		var password = $("#password").val();
-		
-		
-		if(password==""){
-			$("#pnl-password").addClass("panel-indent panel-danger");
-			touched=true;
-			$("#password").focus();
-		}
-		else{
-			$("#pnl-password").removeClass("panel-indent panel-danger");
-		}
-		
-		if(id == ""){
-			$("#pnl-id").addClass("panel-indent panel-danger");
-			touched=true;
-			$("#id").focus();
-		}
-		else{
-			$("#pnl-id").removeClass("panel-indent panel-danger");
-		}
-
-		
-		
-		if(touched==true){
-			$("#pnl-validation").show();
-		}
-		
-		if(password!=""&&id!=""){
-			 $("#next").prop("href", "ai_admin.html");
-		}  
-		
-
-	
-	});
-	
-</script>
 
 
 
