@@ -512,9 +512,11 @@
                     <div class="col-sm-4" style="padding-top:0">
                         <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                            
-                            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                            <p id="ai_save" hidden="true"><a href="application.html?p=a">Save</a></p>
+                            <p id="user_save" hidden="true"><a href="start.html">Save and log out</a></p>
                             <p><a href="#">Make a payment</a></p>
                             <p><a href="#">Print summary</a></p>
+                            <p id="ai" hidden="true"><a href="ai_admin.html">Return to case search</a></p>
                             
                         </div>
 
@@ -600,7 +602,17 @@
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+			var user = getParameterByName('p');
+	
             $(document).ready(function () {
+            
+            	if(user=="a"){
+            		$("#ai").show(); 
+            		$("#ai_save").show();            	
+            	}
+            	else{
+            		$("#user_save").show();
+            	}
 
                 // mark sections as completed
 

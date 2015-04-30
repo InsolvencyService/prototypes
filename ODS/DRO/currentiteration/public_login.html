@@ -142,8 +142,8 @@
 		
 			<form role="form">
 				
-				<h2>Verify your identity</h2>
-				<p>You will need the reference number your intermediary has provided along with your personal details to view your application</p>
+				<h2 class="form-label-bold">Verify your identity</h2>
+				<p>We need to verify your identify before you can access the application<br><br></p>
 				
 				<div id="pnl-validation" class="alert alert-danger">
 					Please make sure you complete all of the information 
@@ -151,29 +151,51 @@
 	            
 	            
 	            <div class="form-group" id="pnl-reference">
-					<label id="urn_label" for="urn" class="form-label">Reference Number</label>
+					<label id="urn_label" for="urn" class="form-label-bold">Reference Number</label>
+					<span class="form-hint">Six digit number given to you by your debt adviser</span>
 	                <input id="urn_no" name="urn" type="text" value="" />
 	                <br />
 	            </div>
 
 	            
 	            <div class="form-group" id="pnl-forename">
-					<label id="first_name_label" for="first_name" class="form-label first_name">First name</label>
+					<label id="first_name_label" for="first_name" class="form-label-bold">First name</label>
 	                <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" /> 
 	                
 	                <br />
 	            </div>
 	            
 		        <div class="form-group" id="pnl-surname">
-					<label id="last_name_label" for="last_name" class="form-label">Last name</label>
+					<label id="last_name_label" for="last_name" class="form-label-bold">Last name</label>
 	                <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
 	                <br />
 	            </div>		
 				
+				<div id="pnl-dob" class="form-group">
+					<fieldset  class="date-of-birth">
+						<span id="date_of_birth_label" class="form-label-bold">Date of birth</span>
+						<span class="form-hint" id="date_of_birth_help"></span>
+						
+						<div class="form-group form-group-day">
+							 <label id="date_of_birth_label.day" for="date_of_birth.day" >Day</label>
+						<input id="day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div>
+						<div class="form-group form-group-month">
+							 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+						<input id="month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div>
+						<div class="form-group form-group-year">
+						<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+						<input id="year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div>
+					</fieldset>
+				</div>
+
+				
 				<div class="clearfix"></div>
 				
 				<div class="form-group" id="pnl-email">
-	        		<label id="email_label" for="email" class="form-label email">Email address</label>
+	        		<label id="email_label" for="email" class="form-label-bold email">Email address</label>
 	            	<input id="email" name="email" type="text" class="input-email"><br>
 	        	</div>
 		
@@ -272,7 +294,10 @@
 		var lastname = $("#last_name").val();
 		var firstname = $("#first_name").val();
 		var reference = $("#urn_no").val();
-		
+		var day = $("#day").val();
+		var month= $("#month").val();
+		var year = $("#year").val();
+
 		if(email==""){
 			$("#pnl-email").addClass("panel-indent panel-danger");
 			touched=true;
@@ -280,6 +305,15 @@
 		}
 		else{
 			$("#pnl-email").removeClass("panel-indent panel-danger");
+		}
+		
+		if(day==""||month==""||year==""){
+			$("#pnl-dob").addClass("panel-indent panel-danger");
+			touched=true;
+			$("#date_of_birth.day").focus();
+		}
+		else{
+			$("#pnl-dob").removeClass("panel-indent panel-danger");
 		}
 		
 		if(lastname == ""){
@@ -313,8 +347,7 @@
 		if(touched==true){
 			$("#pnl-validation").show();
 		}
-		
-		if(email!=""&&lastname!=""&&firstname!=""&&reference!=""){
+		else{
 			 $("#next").prop("href", "security_questions.html");
 		}  
 		
