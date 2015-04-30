@@ -174,22 +174,41 @@ legend{
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<p>Thank you, we have sent you an email with your reference number which you can use to 
-	continue your application</p>
-	<div class="form-group ">
+	<p>
+	Please enter your date of birth </p>
+<p><br/></p>		
+			<div class="form-group ">
 	
+	<fieldset id="date_of_birth" class="date-of-birth">
+	<legend id="date_of_birth_label" class="form-label-bold">Date of Birth</legend>
+	<span class="form-hint" id="date_of_birth_help"></span>
+	<div class="form-group form-group-day">
+		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
+	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-month">
+		 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+	<input id="date_of_birth.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-year">
+	<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+	<input id="date_of_birth.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	</fieldset>
 	</div>
 
-		<p class="clearfix"><br></p>
-		<p><br></p>
+		<div class="form-group ">
+	
+	</div>
+	<p class="clearfix"><br></p>
+
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
 
+	<a href="sent.html" id="next" class="button">Continue</a>
 
-	<a href="../continue/return2.html" id="next" class="button">Continue</a>
-	
 	</div>
 	<div>
 	<br>
@@ -197,7 +216,7 @@ legend{
 	
 	<div>
 	
-	<a style="padding-right: 30px; display:none" href="../start.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="forgotten-ref2.html" id="back">Back</a>&nbsp;
 	
 	</div>
 	</div>
