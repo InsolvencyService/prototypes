@@ -173,12 +173,12 @@ width:40px
 <!-- #BeginEditable "content" -->
 
  	
-	<div id="content0" >
+	<div id="content" >
 
 	<div>
 	
 <div class="row">
-    <div class="col-xs-12 col-sm-8">
+    <div class="col-xs-12 col-sm-8" style="margin-left:30px">
     
 
 		<h1 class="form-title heading-large">Continue your application</h1>
@@ -186,7 +186,7 @@ width:40px
 	<p class="text msg-URN" style="display:none;">
 	Your application number is 
 	<br>
-	<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNHJ93RD5309F</span>  
+	<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">EHBJ8F3MKRP</span>  
 
 	</p>
 
@@ -196,24 +196,24 @@ width:40px
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	<div class="msg-no-URN">
 	
-	<div class="form-group ">
+	<div id="securityquestion" >
 	
-	<label id="applicant_address_line_2_label" for="urn" class="form-label-bold">What 
-		is your application number?</label>
-		<div class="form-hint">
-		You can find your application number in the ‘Continue your bankruptcy application’ email we sent you. If you didn't register with an email address, we sent you a letter  with the information</div>
-	<input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
+	<h2 class="bold-medium">
+	Your security question</h2>
+	 <div class="form-group ">
+	
+	<label id="applicant_address_line_2_label0" for="answer" class="form-label">
+		 What town were you born in?</label>
+	<input id="answer" name="applicant_address_line_2" type="text" value="" />
 
 	
 	</div>
 	
-		</div>
+	
+	
+	</div>
+
 	</form>
 
 <br>
@@ -222,9 +222,9 @@ width:40px
 	<div>
 
 
-	<a href="security-question.html" id="next" class="button">Continue</a>&nbsp;&nbsp;
-	<a href="../forgotten/postcode.html">I have forgotten my reference number</a>
-			<div>
+	<a href="../overview.html" id="next" class="button">Continue</a>&nbsp;&nbsp;
+		</div>
+	<div>
 	<br>
 	</div>
 	
@@ -252,12 +252,12 @@ width:40px
 </div>
 
 
-</div>
-
-
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -308,29 +308,6 @@ width:40px
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-	$(".msg-URN").hide();
-
-	var URNfromemail = getParameterByName("URN");
-	if (URNfromemail && URNfromemail.length > 1)
-	{
-		$("#urn").val(URNfromemail );
-	}
-	
-	$("#urn").blur( function() {
-		//if ($("#urn").val().length > 0){
-		//	$("#securityquestion").show();
-		//}
-	});
-	
-	$("#next").click( function(e) {
-		if ($("#urn").val().length == 0 && URNfromemail == ""){
-			e.preventDefault();
-		}
-		
-
-	});
-
 
 });
 
