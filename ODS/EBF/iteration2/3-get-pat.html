@@ -227,55 +227,80 @@
 
 
 
-                <h1 class="form-title heading-large">Confirming your access</h1>
+                <h1 class="form-title heading-large">Your details for access</h1>
 
                 <div class="row">
                     <div class="col-sm-8">
-<p>Please enter the tokens below</p>
+<p>We need some details from you to confirm you can access documents and notices.</p>
 
    <form class="form" method="post">
+    <div class="form-group ">
+            
+            <label id="email_label" for="email" class="form-label-bold email">Your work email</label>&nbsp;
+            <input id="email" name="email" type="text" class="input-email"><br>
+        </div>
     <p>
         </p>
-                 
-       <div class="form-group ">
+   <div class="form-group ">
             
-            <label id="forename_label" for="forename" class="form-label-bold forename">
-			Enterprise access token</label>
+            <label id="email_label" for="email" class="form-label-bold email">Confirm email</label>&nbsp;
+            <input id="email" name="email" type="text" class="input-email"><br>
+        </div>
+    <p>
+        </p>
+
+        <div class="form-group ">
+            
+            <label id="forename_label" for="forename" class="form-label-bold forename">Your name</label>
             <input id="forename" name="forename" type="text"><br>
         </div>
+         
 
     
     <p>
         </p>
         <div class="form-group ">
             
-            <label id="forename_label" for="forename" class="form-label-bold forename">
-			Personal access token</label>
+            <label id="forename_label" for="forename" class="form-label-bold forename">Your organisation</label>
             <input id="forename" name="forename" type="text"><br>
         </div>
          
     <p>
         </p>
-         
+<fieldset class="inline">
+                    <legend id="creditor_label" class="form-label-bold">Are you a creditor or acting on behalf of a creditor?</legend>
+                    <div id="creditor" class="form-group">
+        
+        <label id="creditor_label" for="creditor_Yes" class="block-label">
+            <input id="creditor_Yes" value="Yes" name="creditor" type="radio" aria-describedby="creditor_error creditor_help">
+            Yes
+        </label>
+        
+        <label id="creditor_label" for="creditor_No" class="block-label">
+            <input id="creditor_No" value="No" name="creditor" type="radio" aria-describedby="creditor_error creditor_help">
+            No
+        </label>
+        
+    </div>
+             </fieldset>
+  
     <p>
         </p>
+	   <p>
+        </p>
+	   <p>
+        </p>
 
-<!-- For User research -->
 
     </form>
-						<p><br></p>             
-<a href="ebf.html" class="button" style="margin-bottom:10px">Continue</a> 
-<br> 
-<p>&nbsp;</p>
-						<p>&nbsp;</p>
-						<p>&nbsp;</p>
-						<p><br></p>
+       
                     </div>
 
                     <div class="col-sm-4" style="padding-top:0; display:none">
                         <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                            
-                            <p><a href="../../adjudication1/user/return.html" style="font-weight:bold">Logout</a></p>
+                            <p>
+							<a href="../../adjudication1/user/return.html" style="font-weight:bold">Logout</a></p>
                             <br>
                         </div>
 
@@ -283,12 +308,12 @@
 
                     <br>
 
-                    <div class="form-navigation form-group" style="margin:20PX; display:none">
+                    <div class="form-navigation form-group" style="margin:20PX;">
 
                         <div>
 
 
-                            <a href="../../bankruptcy3/1-details/your-names.html" id="next" class="button">Continue</a>
+                            <a href="4-pat-sent.html" id="next" class="button">Continue</a>
 
                         </div>
                         <div>
@@ -297,8 +322,9 @@
 
                         <div>
 
-                            <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>&nbsp;
-	<a href="../../bankruptcy3/logout.html" id="cancel">Save and logout</a>  
+                            <a style="padding-right: 30px" href="javascript:history.go(-1)">Back</a><br>
+							<br>&nbsp;
+
 
                         </div>
                     </div>
@@ -330,7 +356,8 @@
                             <li class="footer__link" style=" ">
                                 <a href="../../privacy.html">Privacy</a>
                             </li>
-                            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+                            <li class="footer__link" style="">
+							<a href="../../cookies.html">Cookies</a></li>
                             <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                         </ul>
 
@@ -363,21 +390,18 @@
         <!-- #BeginEditable "scripts" -->
 
         <script type="text/javascript">
-            $(document).ready(function () {
+$(document).ready(function() {
 
-                // mark sections as completed
+var defaultnext = $("#next").prop("href");
 
-   
-            });
+	$("#creditor_Yes").click(function(){
+		$("#next").prop("href","3a-other-details.html");
+	});
+	$("#creditor_No").click(function(){
+		$("#next").prop("href", defaultnext);
+	});
 
-
-
-            function getParameterByName(name) {
-                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                    results = regex.exec(location.search);
-                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-            }
+});
 
         </script>
         <!-- #EndEditable -->
