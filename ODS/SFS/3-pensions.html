@@ -177,17 +177,17 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your monthly income</h1>
+	<h1 class="form-title heading-large">Your pension</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	<p>For each question, enter the amount you take home after taxes, national insurance and pension contributions.</p>
+	
 <div class="row">
 <div></div>
 <div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Your salary or wages</label>
+<label id="last_name_label" for="loanname" class="form-label last_name">State pensions</label>
 </div>
 <div class="col-sm-3">
 <div class="input-group">
@@ -202,21 +202,7 @@ display:block;
 
 <div class="row"><div></div>
 <div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Other salary/wages</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint">eg. second employment</div></div>
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Bonuses or overtime</label>
+<label id="last_name_label" for="loanname" class="form-label last_name">Private or work pensions</label>
 </div>
 <div class="col-sm-3">
 <div class="input-group">
@@ -226,12 +212,11 @@ display:block;
 
 </div>
 <div class="col-sm-4"><div class="form-hint"></div></div>
-
 </div>
 
 <div class="row"><div></div>
 <div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Your partner’s salary or wages</label>
+<label id="last_name_label" for="loanname" class="form-label last_name">Pension credit</label>
 </div>
 <div class="col-sm-3">
 <div class="input-group">
@@ -246,19 +231,33 @@ display:block;
 
 <div class="row"><div></div>
 <div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Contributions from other members of the household</label>
+<label id="last_name_label" for="loanname" class="form-label last_name">Other pensions</label>
 </div>
 <div class="col-sm-3">
 <div class="input-group">
       <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount3" placeholder="0.00">
+      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
 </div>
 
 </div>
 <div class="col-sm-4"><div class="form-hint"></div></div>
 
 </div>
-
+<p><br></p>
+				    <fieldset class="inline">
+					    <legend class="form-label" style="border:0 transparent none">
+Do you have any other income?
+</legend>
+					  	<span class="form-hint">You need to tell us about any income not yet entered</span>
+					    <label class="block-label" for="radio-1">
+					      <input id="radio-1" type="radio" name="radio-group" value="Yes">
+					      Yes
+					    </label>
+					    <label class="block-label" for="radio-2">
+					      <input id="radio-2" type="radio" name="radio-group" value="No">
+					      No
+					    </label>
+					</fieldset> 
 
 
 <p class="clearfix"><br/></p>
@@ -268,14 +267,14 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="2-other-income.html">Continue</a>
+		<a id="next" class="button" href="4.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="../brian/overview.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="2-other-income.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -342,13 +341,17 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+	var defaultnext = $("#next").attr("href");
+	$("#next").on("click", function (e) {
+			if($('#radio-1').prop('checked')){
+				$("#next").attr("href", "3b-other-income.html");
+			}
+			else{
+			 	$("#next").attr("href", defaultnext);
+			}
+						
+		});
 
-	$("#next").on("click", function(e){
-//		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
-//			var amount = parseFloat($("#amount").val());		
-//		}
-
-	});
 
 });
     
