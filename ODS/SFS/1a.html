@@ -109,7 +109,26 @@ display:block;
 	content: "£"; 
 }
 
-</style>
+    .select-control{
+		display:  inline-block;
+		height: 34px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.4285;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+		-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	}
+    
+    </style>
+
 <!-- #EndEditable -->
 
 
@@ -177,7 +196,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your monthly income</h1>
+	<h1 class="form-title heading-large">Your income</h1>
 	
 	
 	
@@ -196,13 +215,23 @@ display:block;
 </div>
 </div>
 
-<div class="col-sm-4"><div class="form-hint"></div></div>
+<div class="col-sm-4"><div>
+<label id="gross_income_period_label" for="gross_income_period" style="font-weight:normal">per</label>
+                <select id="gross_income_period" name="gross_income_period" class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+            </select>
+</div></div>
+
 
 </div>
 
 <div class="row"><div></div>
 <div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Other salary/wages</label>
+<label id="last_name_label" for="loanname" class="form-label last_name">Other salary or wages</label>
+<div class="form-hint">For example, if you have a second job. </div>
+
 </div>
 <div class="col-sm-3">
 <div class="input-group">
@@ -211,7 +240,14 @@ display:block;
 </div>
 
 </div>
-<div class="col-sm-4"><div class="form-hint">eg. second employment</div></div>
+<div class="col-sm-4"><div>
+<label id="gross_income_period_label" for="gross_income_period" style="font-weight:normal">per</label>
+                <select id="gross_income_period" name="gross_income_period" class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+            </select>
+</div></div>
 </div>
 
 <div class="row"><div></div>
@@ -225,7 +261,15 @@ display:block;
 </div>
 
 </div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
+<div class="col-sm-4"><div>
+<label id="gross_income_period_label" for="gross_income_period" style="font-weight:normal">per</label>
+                <select id="gross_income_period" name="gross_income_period" class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+            </select>
+</div></div>
+
 
 </div>
 
@@ -240,13 +284,21 @@ display:block;
 </div>
 
 </div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
+<div class="col-sm-4"><div>
+<label id="gross_income_period_label" for="gross_income_period" style="font-weight:normal">per</label>
+                <select id="gross_income_period" name="gross_income_period" class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+            </select>
+</div></div>
 
 </div>
 
 <div class="row"><div></div>
 <div class="col-sm-5">
 <label id="last_name_label" for="loanname" class="form-label last_name">Contributions from other members of the household</label>
+<div class="form-hint">For example, contributions towards your food, utilities and rent costs. </div>
 </div>
 <div class="col-sm-3">
 <div class="input-group">
@@ -255,7 +307,15 @@ display:block;
 </div>
 
 </div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
+<div class="col-sm-4"><div>
+<label id="gross_income_period_label" for="gross_income_period" style="font-weight:normal">per</label>
+                <select id="gross_income_period" name="gross_income_period" class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+            </select>
+</div></div>
+
 
 </div>
 
@@ -268,7 +328,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="2-other-income.html">Continue</a>
+		<a id="next" class="button" href="2a.html">Continue</a>
 	</div>
 	<div>
 	<br>

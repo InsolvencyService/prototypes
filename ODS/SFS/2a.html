@@ -177,90 +177,70 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your monthly income</h1>
+	<h1 class="form-title heading-large">Other income</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	<p>For each question, enter the amount you take home after taxes, national insurance and pension contributions.</p>
-<div class="row">
-<div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Your salary or wages</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount1" placeholder="0.00">
-</div>
-</div>
-
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Other salary/wages</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint">eg. second employment</div></div>
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Bonuses or overtime</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Your partner’s salary or wages</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Contributions from other members of the household</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount3" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
+	
 
 
+<div class="form-group ">
+        
 
+        <fieldset id="benefit_selections">
+            <legend id="benefit_selections_label" class="form-label-bold">Please select any benefit or allowance you receive</legend>
+            <p>
+                </p><div id="benefits_options" class="form-group form-group-compound">
+        
+                    <label id="_label" for="benefits_options-1" class="block-label">
+                <input id="benefits_options-1" name="benefits_options-1" value="jobseekers-allowance" type="checkbox">Maintenance or child support
+            </label>
+            <label id="_label" for="benefits_options-8" class="block-label">
+                <input id="benefits_options-8" name="benefits_options-8" value="universal-credit" type="checkbox">Universal Credit
+            </label>
+
+            <label id="_label" for="benefits_options-1" class="block-label">
+                <input id="benefits_options-1" name="benefits_options-1" value="jobseekers-allowance" type="checkbox">Jobseeker's Allowance
+            </label>
+        
+            <label id="_label" for="benefits_options-2" class="block-label">
+                <input id="benefits_options-2" name="benefits_options-2" value="employment-and-support-allowance" type="checkbox">Employment and Support Allowance
+            </label>
+        
+            <label id="_label" for="benefits_options-3" class="block-label">
+                <input id="benefits_options-3" name="benefits_options-3" value="housing-benefit" type="checkbox">Housing Benefit
+            </label>
+        
+            <label id="_label" for="benefits_options-4" class="block-label">
+                <input id="benefits_options-4" name="benefits_options-4" value="income-support" type="checkbox">Income Support
+            </label>
+        
+            <label id="_label" for="benefits_options-5" class="block-label">
+                <input id="benefits_options-5" name="benefits_options-5" value="maternity-allowance" type="checkbox">Maternity Allowance
+            </label>
+        
+            <label id="_label" for="benefits_options-6" class="block-label">
+                <input id="benefits_options-6" name="benefits_options-6" value="pension-credit" type="checkbox">Pension Credit
+            </label>
+        
+            <label id="_label" for="benefits_options-7" class="block-label">
+                <input id="benefits_options-7" name="benefits_options-7" value="sickness-and-bereavement-allowance" type="checkbox">Sickness and Bereavement Allowance
+            </label>
+        
+        
+    </div>
+                <div><br>
+                
+                <label id="another_benefit_text_label" for="another_benefit_text" class="form-label-bold another_benefit_text">Another benefit (please specify)</label>
+                <input id="another_benefit_text" name="another_benefit_text" type="text" aria-describedby="another_benefit_text_error another_benefit_text_help" value="">
+        <br>
+                <span class="explanatory">Please enter the name of the benefit you received</span>
+                </div>
+            <p></p>
+        </fieldset>
+    </div>
 <p class="clearfix"><br/></p>
 
 	
@@ -268,14 +248,14 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="2-other-income.html">Continue</a>
+		<a id="next" class="button" href="2b.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="../brian/overview.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="1-salary-and-wages.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>

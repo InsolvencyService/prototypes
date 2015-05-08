@@ -86,27 +86,31 @@ padding-top:15px;
 padding-top:0px;
 }
 
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-.currencyinput {
-    border: 1px inset #ccc;
-    padding-right:20px;
-}
-.currencyinput input {
-    border: 0;
+input.amount{
+	width:90%; font-size:19px;
+		border: 1px solid #fff;
+		padding-top:12px;
+-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
-.amount{
-	margin-left:15px;
+.select-control{
+	display:  inline-block;
+	height: 34px;
+	padding: 4px 12px;
+	font-size: 19px;
+	line-height: 1.4285;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #fff;
 }
-
-.amount:before { 
-	content: "£"; 
+td .form-label{
+	padding-top:8px
+}
+div.pound-sign{
+	width:10%; padding-right:15px; padding-top:8px; font-size:19px;
 }
 
 </style>
@@ -177,105 +181,115 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your monthly income</h1>
+	<h1 class="form-title heading-large">Other income</h1>
 	
-	
+<p>Please complete the questions for any other income</p>	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	<p>For each question, enter the amount you take home after taxes, national insurance and pension contributions.</p>
-<div class="row">
-<div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Your salary or wages</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount1" placeholder="0.00">
-</div>
-</div>
+	
+	
+	
+		<table class="table table-condensed">
+	<thead>
+	<tr>
+	<th>Question</th>
+	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
+	<th style="width:200px; padding-left:20px">Frequency</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td><span class="form-label">Borders or lodgers</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
 
-<div class="col-sm-4"><div class="form-hint"></div></div>
+	<tr>
+	<td><span class="form-label">Non-dependants</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
 
-</div>
+	<tr>
+	<td><span class="form-label">Contributions</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
 
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Other salary/wages</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint">eg. second employment</div></div>
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Bonuses or overtime</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Your partner’s salary or wages</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Contributions from other members of the household</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount3" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
+	<tr>
+	<td><span class="form-label">Student loans and grants</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
+	<tr>
+	<td><span class="form-label">Any other income</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
 
 
-
-<p class="clearfix"><br/></p>
+</table>	
+	<p class="clearfix"><br/></p>
 
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="2-other-income.html">Continue</a>
+		<a id="next" class="button" href="4.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="../brian/overview.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
