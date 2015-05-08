@@ -173,11 +173,11 @@ display:block;
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block">
+<div class="inner-block text">
 	
 	
 	
-	<h1 class="form-title heading-large">Your pension<i style="float:right"><a class="small" href="3-no-pension.html">Alternative</a></i></h1>
+	<h1 class="form-title heading-large">Other income</h1>
 	
 	
 	
@@ -186,79 +186,71 @@ display:block;
 	
 <div class="row">
 <div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">State pensions</label>
+<div class="col-sm-8">
+<label id="last_name_label" for="loanname" class="form-label last_name">Maintenance or child support</label>
 </div>
-<div class="col-sm-3">
+<div class="col-sm-4">
 <div class="input-group">
       <div class="input-group-addon">£</div>
       <input type="text" class="form-control text-right" id="amount1" placeholder="0.00">
 </div>
+    
 </div>
-
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
 </div>
 
 <div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Private or work pensions</label>
+<div class="col-sm-8">
+<label id="last_name_label" for="loanname" class="form-label last_name">Borders or lodgers</label>
 </div>
-<div class="col-sm-3">
+<div class="col-sm-4">
 <div class="input-group">
       <div class="input-group-addon">£</div>
       <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
 </div>
 
 </div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
 </div>
 
 <div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Pension credit</label>
+<div class="col-sm-8">
+<label id="last_name_label" for="loanname" class="form-label last_name">Non-dependants</label>
 </div>
-<div class="col-sm-3">
+<div class="col-sm-4">
 <div class="input-group">
       <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
+      <input type="text" class="form-control text-right" id="amount3" placeholder="0.00">
 </div>
 
 </div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
 </div>
 
 <div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Other pensions</label>
+<div class="col-sm-8">
+<label id="last_name_label" for="loanname" class="form-label last_name">Contributions</label>
 </div>
-<div class="col-sm-3">
+<div class="col-sm-4">
 <div class="input-group">
       <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
+      <input type="text" class="form-control text-right" id="amount3" placeholder="0.00">
 </div>
 
 </div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
+</div>
+
+
+<div class="row"><div></div>
+<div class="col-sm-8">
+<label id="last_name_label" for="loanname" class="form-label last_name">Student loans and grants
+Other income</label>
+</div>
+<div class="col-sm-4">
+<div class="input-group">
+      <div class="input-group-addon">£</div>
+      <input type="text" class="form-control text-right" id="amount3" placeholder="0.00">
+</div>
 
 </div>
-<p><br></p>
-<h2 class="form-title heading-large">Other income</h2>
-				    <fieldset class="inline">
-					    <legend class="form-label" style="border:0 transparent none">
-Do you have any other income?
-</legend>
-					  	<span class="form-hint">You need to tell us about any income not yet entered</span>
-					    <label class="block-label" for="radio-1">
-					      <input id="radio-1" type="radio" name="radio-group" value="Yes">
-					      Yes
-					    </label>
-					    <label class="block-label" for="radio-2">
-					      <input id="radio-2" type="radio" name="radio-group" value="No">
-					      No
-					    </label>
-					</fieldset> 
+</div>
 
 
 <p class="clearfix"><br/></p>
@@ -268,14 +260,14 @@ Do you have any other income?
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="4.html">Continue</a>
+		<a id="next" class="button" href="1-salary-and-wages.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="2-other-income.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="../bankruptcy4/overview.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -342,17 +334,13 @@ Do you have any other income?
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var defaultnext = $("#next").attr("href");
-	$("#next").on("click", function (e) {
-			if($('#radio-1').prop('checked')){
-				$("#next").attr("href", "3b-other-income.html");
-			}
-			else{
-			 	$("#next").attr("href", defaultnext);
-			}
-						
-		});
 
+	$("#next").on("click", function(e){
+//		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
+//			var amount = parseFloat($("#amount").val());		
+//		}
+
+	});
 
 });
     

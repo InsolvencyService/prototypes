@@ -101,15 +101,36 @@ display:block;
     border: 0;
 }
 
-.amount{
-	margin-left:15px;
+
+input.amount{
+	width:90%; font-size:19px;
+		border: 1px solid #fff;
+		padding-top:12px;
+-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
-.amount:before { 
-	content: "£"; 
+.select-control{
+	display:  inline-block;
+	height: 34px;
+	padding: 4px 12px;
+	font-size: 19px;
+	line-height: 1.4285;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #fff;
+}
+td .form-label{
+	padding-top:8px
+}
+div.pound-sign{
+	width:10%; padding-right:15px; padding-top:8px; font-size:19px;
 }
 
-</style>
+    </style>
+
 <!-- #EndEditable -->
 
 
@@ -177,88 +198,103 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your pension<i style="float:right"><a class="small" href="3-no-pension.html">Alternative</a></i></h1>
+	<h1 class="form-title heading-large">Your income</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	<p>For each question, enter the amount you take home after taxes, national insurance and pension contributions.</p>
 	
-<div class="row">
-<div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">State pensions</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount1" placeholder="0.00">
-</div>
-</div>
+	
+		<table class="table table-condensed">
+	<thead>
+	<tr>
+	<th>Type</th>
+	<th style="width:200px">Amount</th>
+	<th style="width:200px">Frequency</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td><span class="form-label">Your salary or wages</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+     </select>
+	</td>
+	</tr>
+	
+		
+	<tr>
+	<td><span class="form-label">Other salary or wages</span><span style="color:GrayText">For example, if you have a second job. </span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+     </select>
+	</td>
+	</tr>
+	<tr>
+	<td><span class="form-label">Bonuses or overtime</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+     </select>
+	</td>
+	</tr>
+	<tr>
+	<td><span class="form-label">Your partner’s salary or wages</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+     </select>
+	</td>
+	</tr>
 
-<div class="col-sm-4"><div class="form-hint"></div></div>
+	<tr>
+	<td><span class="form-label">Contributions from other members of the household</span>
+	<div class="form-hint">For example, contributions towards your food, utilities and rent costs. </div></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+     </select>
+	</td>
+	</tr>
 
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Private or work pensions</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Pension credit</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
-
-<div class="row"><div></div>
-<div class="col-sm-5">
-<label id="last_name_label" for="loanname" class="form-label last_name">Other pensions</label>
-</div>
-<div class="col-sm-3">
-<div class="input-group">
-      <div class="input-group-addon">£</div>
-      <input type="text" class="form-control text-right" id="amount2" placeholder="0.00">
-</div>
-
-</div>
-<div class="col-sm-4"><div class="form-hint"></div></div>
-
-</div>
-<p><br></p>
-<h2 class="form-title heading-large">Other income</h2>
-				    <fieldset class="inline">
-					    <legend class="form-label" style="border:0 transparent none">
-Do you have any other income?
-</legend>
-					  	<span class="form-hint">You need to tell us about any income not yet entered</span>
-					    <label class="block-label" for="radio-1">
-					      <input id="radio-1" type="radio" name="radio-group" value="Yes">
-					      Yes
-					    </label>
-					    <label class="block-label" for="radio-2">
-					      <input id="radio-2" type="radio" name="radio-group" value="No">
-					      No
-					    </label>
-					</fieldset> 
+</table>
+	
+	
+	
 
 
 <p class="clearfix"><br/></p>
@@ -268,14 +304,14 @@ Do you have any other income?
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="4.html">Continue</a>
+		<a id="next" class="button" href="2a.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="2-other-income.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="../brian/overview.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -342,17 +378,13 @@ Do you have any other income?
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var defaultnext = $("#next").attr("href");
-	$("#next").on("click", function (e) {
-			if($('#radio-1').prop('checked')){
-				$("#next").attr("href", "3b-other-income.html");
-			}
-			else{
-			 	$("#next").attr("href", defaultnext);
-			}
-						
-		});
 
+	$("#next").on("click", function(e){
+//		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
+//			var amount = parseFloat($("#amount").val());		
+//		}
+
+	});
 
 });
     
