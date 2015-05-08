@@ -132,7 +132,9 @@
 <!-- #BeginEditable "content" -->
  	
 
-content
+ 	<div class="inner-block">
+	 	<h1 class="form-title heading-large">DRO not applicable</h1>	
+	</div>
 
 <!-- #EndEditable -->
 
@@ -188,6 +190,21 @@ content
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	var normalroute = $("#next").prop("href");
+	$("#othername_Yes").click(function(){
+		$("#next").prop("href","additional-name.html");
+	});
+	$("#othername_No").click(function(){
+		$("#next").prop("href", normalroute);
+	});
+
+});
+
+</script>
 
 <!-- #EndEditable -->
     

@@ -21,7 +21,7 @@
 <link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
     <link type="text/css" rel="stylesheet" media="print" href="../../assets/stylesheets/govuk-template-print.css">
- 
+  
     <!--[if IE 8]> 
     <script type="text/javascript">
         (function(){if(window.opera){return;}
@@ -76,6 +76,8 @@
      
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
+
+
 
 
 
@@ -147,6 +149,14 @@
                 padding-right: 13px;
                 padding-left: 13px;
             }
+            
+            .label.label-warning {
+                border: 1px orange solid;
+                color: orange;
+                padding-right: 13px;
+                padding-left: 13px;
+            }
+
 
         .rowmiddle {
             padding-top: 0 !important;
@@ -203,7 +213,7 @@
 		    	<div class="phase-banner">
 			        
 				        <p>
-					        <strong class="phase-tag">ALPHA</strong>
+					        <strong class="phase-tag">BETA</strong>
 					        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
 					        
 				        </p>
@@ -233,7 +243,7 @@
                                     <span class="col-sm-6"><h3>1. Your personal details</h3></span>
                                     <span class="col-sm-3"><label class="label label-default">Not started</label></span>
                                     <span class="col-sm-3">
-									<a class="edit">Start</a></span>
+									<a href="section_personaldetails/name.html" class="edit">Start</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
@@ -633,8 +643,12 @@
 
 <script type="text/javascript">
 			var user = getParameterByName('p');
+			var section1 = getParameterByName("section1");
+
 	
             $(document).ready(function () {
+            
+            	
             
             	if(user=="a"){
             		$("#ai").show(); 
@@ -646,56 +660,31 @@
 
                 // mark sections as completed
 
-                var section5 = getParameterByName("section5");
-
-                if (section5 && section5.length > 0) {
-                    // change the colour of the button
-                    if (section5 == "inprogress") {
-                        $("#section5 .label").removeClass("label-default").addClass("label-warning");
-                        $("#section5 .label").text("In progress");
-                        $("#section5 .edit").text("Edit");
-                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
-
-                    }
-
-                    if (section5 == "complete") {
-                        $("#section5 .label").removeClass("label-default").addClass("label-success");
-                        $("#section5 .label").text("Complete");
-                        $("#section5 .edit").text("Edit");
-                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
-
-                var section1 = getParameterByName("section1");
+               
 
                 if (section1 && section1.length > 0) {
                     // change the colour of the button
+                    if (section1 == "inprogress") {
+                        $("#section1 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section1 .label").text("In progress");
+                        $("#section1 .edit").text("Edit");
+                
+
+                    }
 
                     if (section1 == "complete") {
                         $("#section1 .label").removeClass("label-default").addClass("label-success");
                         $("#section1 .label").text("Complete");
                         $("#section1 .edit").text("Edit");
-                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+                      
                     }
                 }
 
-                var section2 = getParameterByName("section2");
+                
 
-                if (section2 && section2.length > 0) {
-                    // change the colour of the button
+                
 
-                    if (section2 == "complete") {
-                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-                        $("#section1 .label").text("Complete");
-                        $("#section1 .edit").text("Edit");
-                        
-                        $("#section2 .label").removeClass("label-default").addClass("label-success");
-                        $("#section2 .label").text("Complete");
-                        $("#section2 .edit").text("Edit");
-
-                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
+            
 
 
 
