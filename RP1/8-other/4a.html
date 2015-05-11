@@ -165,8 +165,8 @@
                 <input id="benefits_options-8" name="benefits_options" value="universal-credit" type="radio">My Employer Representative
 
             </label>
-            <label id="_label" for="benefits_options-9" class="block-label">
-                <input id="benefits_options-9" name="benefits_options" value="universal-credit" type="radio">Other
+            <label id="_label" for="benefits_other" class="block-label">
+                <input id="benefits_other" name="benefits_options" value="universal-credit" type="radio">Other
             </label>
         
 
@@ -177,7 +177,7 @@
   
          <p>
         </p>
-          <div class="form-group ">
+          <div class="form-group " id="otherinfo">
             
             <label id="any_other_details_label" for="any_other_details" class="form-label-bold any_other_details">Who helped you with your claim?</label>
 
@@ -266,6 +266,10 @@ $(document).ready(function() {
 	});
 	$("#no").click(function(){
 		$("#next").prop("href","5.html");
+	});
+	$("#otherinfo").hide();
+	$("#benefits_other").click(function(){
+		$("#otherinfo").show();
 	});
 
 });
