@@ -125,59 +125,7 @@
     <form class="form" method="post">
          <input type="hidden" name="_csrf_token" value="1d40d44a71b7b01e89c815cb2b99f9edb5241e67">
          
-    <p>
-        </p>
-     <fieldset id="benefit_selections">
-            <legend id="benefit_selections_label" class="form-label-bold">
-			<span lang="en-gb">Who assisted you in completing your claim?
-			</span></legend>
-			<div class="form-hint">The organisation or type of person who helped you</div>
-            <p>
-                </p><div id="benefits_options" class="form-group form-group-compound">
-                
-            <label id="_label" for="benefits_options-2" class="block-label">
-                <input id="benefits_options-2" name="benefits_options" value="employment-and-support-allowance" type="radio">Citizen's Advice Bureau
-            </label>
-        
-            <label id="_label" for="benefits_options-3" class="block-label">
-                <input id="benefits_options-3" name="benefits_options" value="housing-benefit" type="radio">Insolvency Service
-            </label>
-        
-            <label id="_label" for="benefits_options-4" class="block-label">
-                <input id="benefits_options-4" name="benefits_options" value="income-support" type="radio">Library
-            </label>
-        
-            <label id="_label" for="benefits_options-5" class="block-label">
-                <input id="benefits_options-5" name="benefits_options" value="maternity-allowance" type="radio">Job Centre
-
-            </label>
-        
-            <label id="_label" for="benefits_options-6" class="block-label">
-                <input id="benefits_options-6" name="benefits_options" value="pension-credit" type="radio">Family or friend
-
-            </label>
-        
-            <label id="_label" for="benefits_options-7" class="block-label">
-                <input id="benefits_options-7" name="benefits_options" value="sickness-and-bereavement-allowance" type="radio">Work colleague
-            </label>
-        
-            <label id="_label" for="benefits_options-8" class="block-label">
-                <input id="benefits_options-8" name="benefits_options" value="universal-credit" type="radio">My employer representative
-
-            </label>
-            <label id="_label" for="benefits_other" class="block-label">
-                <input id="benefits_other" name="benefits_options" value="universal-credit" type="radio">Other
-            </label>
-        
-
-    </div>
-            <p></p>
-        </fieldset>
-
-  
-         <p>
-        </p>
-          <div class="form-group " id="otherinfo">
+    &nbsp;<div class="form-group " id="otherinfo">
             
             <label id="any_other_details_label" for="any_other_details" class="form-label-bold any_other_details">Who helped you with your claim?</label>
 
@@ -269,7 +217,7 @@ $(document).ready(function() {
 	});
 	$("#otherinfo").hide();
 	$("#benefits_other").click(function(){
-		$("#next").prop("href","4b.html");
+		$("#otherinfo").show();
 	});
 
 });
