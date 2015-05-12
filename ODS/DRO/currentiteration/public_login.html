@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
  <!-- #BeginEditable "title" -->
-<title>GOV</title>
+<title>Debt Relief Order</title>
 <!-- #EndEditable -->
     
 
@@ -21,7 +21,7 @@
 <link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
     <link type="text/css" rel="stylesheet" media="print" href="../../assets/stylesheets/govuk-template-print.css">
- 
+  
     <!--[if IE 8]> 
     <script type="text/javascript">
         (function(){if(window.opera){return;}
@@ -81,6 +81,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .warning{
 	color:red;
 	padding-left:10px;
@@ -128,7 +140,7 @@
 		    	<div class="phase-banner">
 			        
 				        <p>
-					        <strong class="phase-tag">ALPHA</strong>
+					        <strong class="phase-tag">BETA</strong>
 					        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
 					        
 				        </p>
@@ -287,7 +299,7 @@
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/bootstrap/js/toggle-button.js"></script>
-
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script>
 	$(document).ready(function(){
@@ -357,6 +369,7 @@
 			$("#pnl-validation").show();
 		}
 		else{
+			 $.cookie('user', 'debtor');
 			 $("#next").prop("href", "security_questions.html");
 		}  
 		
