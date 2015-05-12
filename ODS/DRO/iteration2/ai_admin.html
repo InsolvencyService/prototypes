@@ -259,7 +259,7 @@
 		                            <th>First name</th>
 		                            <th><a id="created">Date created &nbsp;&nbsp;<i style="font-size:0.8em"class="glyphicon glyphicon-sort"></i></a></th>
 		                            <th><a id="date">Last edited &nbsp;&nbsp;<i style="font-size:0.8em"class="glyphicon glyphicon-sort"></i></a></th>
-		                            <th>Case status</th>
+		                            <th><a id="status">Case status &nbsp;&nbsp;<i style="font-size:0.8em"class="glyphicon glyphicon-sort"></i></a></th>
 		                        </tr>
 		                    </thead>
 		                    <tbody id="table">
@@ -385,6 +385,12 @@ $("#name").on("click", function (e) {
 	$('#name').tablesorter();
 
 });
+
+$("#status").on("click", function (e) {
+	$('#status').tablesorter();
+
+});
+
 
 $("#date").on("click", function (e) {
 	$('#date').tablesorter();
