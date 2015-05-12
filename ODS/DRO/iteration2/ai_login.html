@@ -263,6 +263,7 @@
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/bootstrap/js/toggle-button.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 
 <script>
@@ -304,7 +305,8 @@
 		}
 		
 		if(password!=""&&id!=""){
-			 $("#next").prop("href", "ai_admin.html");
+			$.cookie("user", "ai");
+			$("#next").prop("href", "ai_admin.html");
 		}  
 		
 
