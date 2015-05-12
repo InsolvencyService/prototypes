@@ -112,19 +112,19 @@
     </div>
 </div>
 
-<div id="content" >
+<div id="content" > 
     <div class="inner-block">
     	
-		    	<div class="phase-banner">
-			        
-				        <p>
+		    	<div class="phase-banner clearfix">
+		    		
+			        <div class="col-sm-9">
 					        <strong class="phase-tag">BETA</strong>
 					        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
-					        
-				        </p>
-			       
-		    
-			        
+				        </div>
+						
+						<div id="logout" class="col-sm-3 text-right" hidden="true">
+					        <a id="logout-link">Sign out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+				        </div>			        
 			    </div>
 		
     </div>   
@@ -247,7 +247,8 @@
 <script type="text/javascript">
 	var user;
 	$(document).ready(function(){
-		$("#pnl-validation").hide();		
+		$("#pnl-validation").hide();	
+		$("#logout").show();	
 	});
 
 

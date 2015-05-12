@@ -91,6 +91,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <style type="text/css">
         .row img {
             width: 60px;
@@ -207,19 +215,19 @@
     </div>
 </div>
 
-<div id="content" >
+<div id="content" > 
     <div class="inner-block">
     	
-		    	<div class="phase-banner">
-			        
-				        <p>
+		    	<div class="phase-banner clearfix">
+		    		
+			        <div class="col-sm-9">
 					        <strong class="phase-tag">BETA</strong>
 					        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
-					        
-				        </p>
-			       
-		    
-			        
+				        </div>
+						
+						<div id="logout" class="col-sm-3 text-right" hidden="true">
+					        <a id="logout-link">Sign out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+				        </div>			        
 			    </div>
 		
     </div>   
@@ -548,10 +556,10 @@
                            
                            	
                            
-                            <p id="ai_save" hidden="true"><a href="application.html?p=a">Save</a></p>
-                            <p id="user_save" hidden="true"><a href="start.html">Save and log out</a></p>
+                            <p id="ai_save" hidden="true"><a href="#">Save</a></p>
+                            <p id="user_save" hidden="true"><a href="#">Save</a></p>
                             <p><a href="#">Make a payment</a></p>
-                            <p><a href="#">Print summary</a></p>
+                            <p><a href="#">View and print application</a></p>
                             <p id="ai" hidden="true"><a href="ai_admin.html">Return to case search</a></p>
                             
                         </div>
@@ -649,14 +657,17 @@
 
 	
             $(document).ready(function () {
+            	$("#logout").show();
             
             
             	if(user=="ai"){
             		$("#ai").show(); 
-            		$("#ai_save").show();            	
+            		$("#ai_save").show();  
+            		$("#logout-link").prop("href", "ai_login.html");          	
             	}
             	else{
             		$("#user_save").show();
+            		$("#logout-link").prop("href", "public_login.html");   
             	}
 
                 // mark sections as completed
