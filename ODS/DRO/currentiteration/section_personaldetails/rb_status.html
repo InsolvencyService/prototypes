@@ -154,7 +154,7 @@
 			</div>
 			
 			<div class="form-group" id="pnl-residence">
-				<p id="title_label2" class="form-label-bold">Do you currently or have you ever, lived or had your principle residence in England or Wales?</p>
+				<p id="title_label2" class="form-label-bold">Do you currently live or have your principle residence in England or Wales?</p>
 				<fieldset class="inline">
 					<div id="residence" class="auto-style1">
 						<label id="title_label0" for="residence_Yes" class="block-label">
@@ -164,6 +164,19 @@
 					</div>
 				</fieldset>
 			</div>
+			
+			<div class="form-group" id="pnl-residence1">
+				<p id="title_label2" class="form-label-bold">Have you ever, lived or had your principle residence in England or Wales in the last three years?</p>
+				<fieldset class="inline">
+					<div id="residence1" class="auto-style1">
+						<label id="title_label0" for="residence1_Yes" class="block-label">
+						<input id="residence1_Yes" value="Yes" name="residence1" type="radio" aria-describedby="title_error title_help">Yes</label>
+						<label id="title_label1" for="residence1_No" class="block-label">
+						<input id="residence1_No" value="No" name="residence1" type="radio" aria-describedby="title_error title_help">No</label>
+					</div>
+				</fieldset>
+			</div>
+
 
 			<div class="form-group" id="pnl-business">
 				<p id="title_label6" class="form-label-bold">Have you carried on business in either England or Wales in the last three years?</p>
@@ -180,7 +193,7 @@
 			<p>&nbsp;</p>
 		
 			<div class="form-navigation form-group">
-				<a href="../application.html?section1=complete" id="next" class="button">Continue</a><br>
+				<a  id="next" class="button">Continue</a><br> <!--href="../application.html?section1=complete" --->
 			</div>
 			
 			<div>
@@ -246,22 +259,78 @@
 
 
 <script type="text/javascript">
+	var count=1;
 	
 	$(document).ready(function(){
-		$("#pnl-validation").hide();	
+		$("#pnl-validation").hide();
+		$("#pnl-residence1").hide();
+		$("#pnl-business").hide();
+			
 	});
 
+	$('#pnl-residence input:radio').click(function() {
+		
+		if(($('#residence_Yes').prop('checked')==true)){
+			$("#pnl-residence1").hide();
+			$("#pnl-business").hide();
+			count=1;
 
+		}
+		else {
+			$("#pnl-residence1").show();
+			count++;
+
+		}
+	
+	});
+	
+	$('#pnl-residence1 input:radio').click(function() {
+		
+		if(($('#residence1_Yes').prop('checked')==true)){
+			$("#pnl-business").hide();
+		}
+		else {
+			$("#pnl-business").show();
+			count++;
+		}
+	
+	});
+
+	
 	$("#next").click(function(){
 		
-		if(
-			(($('#home_Yes').prop('checked')==false) && ($('#home_No').prop('checked')==false)) ||
-			(($('#residence_Yes').prop('checked')==false) && ($('#residence_No').prop('checked')==false)) ||
-			(($('#business_Yes').prop('checked')==false) && ($('#business_No').prop('checked')==false)) 
-			){
-			$("#pnl-validation").show();
+		if(count==1){
+			if((($('#home_Yes').prop('checked')==false) && ($('#home_No').prop('checked')==false)) ||
+			(($('#residence_Yes').prop('checked')==false) && ($('#residence_No').prop('checked')==false))){
+				$("#pnl-validation").show();
+			}
+			else{
+				$("#next").prop("href","../application.html?section1=complete");
+			}
 		}
-				
+		else if(count==2){
+			if(
+			($('#residence1_Yes').prop('checked')==false) && ($('#residence1_No').prop('checked')==false)
+			){
+				$("#pnl-validation").show();
+			}
+			else{
+				$("#next").prop("href","../application.html?section1=complete");
+			}
+		
+		}
+		else if(count==3){
+			if(($('#business_Yes').prop('checked')==false) && ($('#business_No').prop('checked')==false)){
+				$("#pnl-validation").show();
+			}
+			else{
+				$("#next").prop("href","../application.html?section1=complete");
+			}
+
+		}
+		
+			
+			
 	});
 
 function getParameterByName(name) {
