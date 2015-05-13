@@ -137,8 +137,9 @@
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
-	
-	
+	<p class="form-hint">
+        Income 3 of 3
+    </p>
 	
 	<h1 class="form-title heading-large">Your pension<i style="float:right"><a class="small" href="3-no-pension.html">Alternative</a></i></h1>
 	
@@ -337,6 +338,24 @@ Do you have any other income?
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../assets/js/sfs.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	var defaultnext = $("#next").attr("href");
+	$("#next").on("click", function (e) {
+			if($('#radio-1').prop('checked')){
+				$("#next").attr("href", "3b-other-income.html");
+			}
+			else{
+			 	$("#next").attr("href", defaultnext);
+			}
+						
+		});
+
+
+});
+    
+
+</script>
 <!-- #EndEditable -->
     
 
