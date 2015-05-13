@@ -71,6 +71,78 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/sfs.css">
+    <style type="text/css">
+        .row img {
+            width: 60px;
+            text-align: right;
+            float: right;
+        }
+
+        .row > div {
+            padding-top: 15px;
+        }
+
+            .row > div:first-child {
+                padding-top: 0px;
+            }
+
+        a.well {
+            padding-top: 8px;
+            display: block;
+            height: 90px;
+            min-width: 99%;
+            font-size: 16px;
+        }
+
+        .label-default {
+            background: transparent none;
+            color: gray;
+            border: thin gray solid;
+        }
+
+        .row.well {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .rowbottom {
+            display: block;
+            margin-left: 20px;
+        }
+
+            .rowbottom hr {
+                margin: 0;
+            }
+
+            .rowbottom > div {
+                margin-top: 6px;
+                margin-bottom: 6px;
+            }
+
+        .label {
+            background: transparent;
+        }
+
+            .label.label-success {
+                border: 1px green solid;
+                color: green;
+                padding-right: 13px;
+                padding-left: 13px;
+            }
+
+        .rowmiddle {
+            padding-top: 0 !important;
+        }
+
+        .rowtop {
+            margin-top: 10px;
+        }
+
+        h3,
+        h3 > a {
+            margin-top: 0 !important;
+        }
+    </style>
 
 <!-- #EndEditable -->
 
@@ -135,14 +207,11 @@
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block">
-	
-	<p class="form-hint">
-        Flexible costs 1 of 4
-    </p>
+<div style="display:block; margin-left:30px !important">
+
 	
 	
-	<h1 class="form-title heading-large">Your communications and leisure</h1>
+	<h1 class="form-title heading-large">Summary</h1>
 	
 	
 	
@@ -150,162 +219,101 @@
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
 	
-	
-		<table class="table table-condensed">
-	<thead>
-	<tr>
-	<th>Question</th>
-	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
-	<th style="width:200px; padding-left:20px">Frequency</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td><span class="form-label">Home phone, internet, TV package (including film subscriptions)</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-	<tr>
-	<td><span class="form-label">Mobile phone</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	
-	<tr>
-	<td><span class="form-label">Hobbies, leisure or sport (including socialising, eating and drinking out, outings, clubs and so on)</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
 
 
-	<tr>
-	<td><span class="form-label">Gifts (including birthdays, festivals, charitable donations and so on)</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+               <div class="row">
+                    <div class="col-sm-8">
+                        <ul>
+                        <li class="row" id="section1">
+                                <div class="rowtop">
+                                    <span class="col-sm-9">
+                                     <a href="#details1" class="js-section"><h3>Income</h3>
+                                     </a>
+									</span>
+                                    <span class="col-sm-3">
+									<span class="amount text-right">£1,2465.00</span></span>
+                                </div>
+                                <div class="clearfix"></div>
+ 
+                                <div class="clearfix"></div>
+                                <div class="rowbottom" id="details1">
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <a href="1a.html">Salary/wages</a>
+                                        </div>
+                                        <div class="col-sm-3"><span class="amount text-right">£1,2345.00</span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                     <div class="row">
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <div class="col-sm-6"><a href="2.html">Benefits</a>
+ 
+                                        </div>
+                                        <div class="col-sm-3"><span class="amount text-right">0.00</span>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <div class="col-sm-6"><a href="2.html">Pensions</a>
+ 
+                                        </div>
+                                        <div class="col-sm-3"><span class="amount text-right">0.00</span>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <div class="col-sm-6"><a href="2.html">Other income</a>
+ 
+                                        </div>
+                                        <div class="col-sm-3"><span class="amount text-right">£120.00</span>
+                                        </div>
+                                    </div>
 
 
-	<tr>
-	<td><span class="form-label">Pocket money</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+                                    <hr>
+ 
+                                </div>
 
 
-	<tr>
-	<td><span class="form-label">Newspapers, magazines, stationary and postage</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+                            </li>
 
+ 
 
-	<tr>
-	<td><span class="form-label">Other costs</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+                        </ul>
 
-	<tr class="totalrow">
-	<td><span class="form-label text-right">Total communications and leisure</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-		<div class="text-right amount" id="box-total">0.00</div>
-	</td>
-	<td>
-	<div>per month</div>
-</td>
-	</tr>
+                    </div>
 
-</table>	
+		<br><br><br><br><br><br>	
 	<p class="clearfix"><br/></p>
 
 	
 	<!-- For User research -->
-	<div class="form-navigation form-group">
+	<div class="form-navigation form-group inner-block">
 	
 	<div>
-		<a id="next" class="button" href="14.html">Continue</a>
+		<a id="next" class="button" href="../brian/overview.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="12.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="FlexibleCosts/2.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
 	
 	</div>
-	</div>
-	</form>
-	</div>
 
-	 <!-- #EndEditable -->
+
+	</div>
 
         
 </div>
@@ -355,13 +363,46 @@
 -->
 <script type="text/javascript" src="../assets/js/bootstrap-switch/jquery.min.js"></script>
 
-<!-- #BeginEditable "scripts" -->
-
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../assets/js/sfs.js"></script>
 
-<!-- #EndEditable -->
-    
+      <script type="text/javascript">
+            $(document).ready(function () {
+
+                // open and close sections of the overview and add and remove arrows
+                $(".rowbottom").hide();
+                $(".js-section").on("click", function (e) {
+                    e.preventDefault();
+                    if ($(this).hasClass("open") == false) {
+                        $(".rowbottom").hide();
+                        $(".row.well").removeClass("well");
+                        $(this).addClass("open");
+                        $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        var details = $($(this).attr("href"));
+                        details.show();
+                        details.parent().addClass("well");
+                    }
+                    else {
+                        $(".rowbottom").hide();
+                        $(".row.well").removeClass("well");
+                        $(this).removeClass("open");
+                        $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+                        var details = $($(this).attr("href"));
+                        details.hide();
+                    }
+                });
+            });
+
+
+
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+        </script>
 
 
 
@@ -375,3 +416,16 @@ style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh
 </body><!-- #EndTemplate -->
 
 </html>
+
+	 </div>
+
+	 <!-- #EndEditable -->
+
+        
+<div class="inner-block">
+	
+	
+	<form class="form" method="post">
+	
+
+        

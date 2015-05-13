@@ -546,7 +546,7 @@ People you live with and your dependents
                                 <div class="rowtop">
                                     <span class="col-sm-6"><h3>7 Your income and expenses</h3></span>
                                     <span class="col-sm-3"><label class="label label-default">Not started</label></span>
-                                    <span class="col-sm-3"><a href="../SFS/1a.html" class="edit">Start</a></span>
+                                    <span class="col-sm-3"><a href="../SFS3/summary.html" class="edit">Start</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
@@ -874,98 +874,98 @@ People you live with and your dependents
 
         <!-- #BeginEditable "scripts" -->
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-
-                // mark sections as completed
-
-                var section5 = getParameterByName("section5");
-
-                if (section5 && section5.length > 0) {
-                    // change the colour of the button
-                    if (section5 == "inprogress") {
-                        $("#section5 .label").removeClass("label-default").addClass("label-warning");
-                        $("#section5 .label").text("In progress");
-                        $("#section5 .edit").text("Edit");
-                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
-
-                    }
-
-                    if (section5 == "complete") {
-                        $("#section5 .label").removeClass("label-default").addClass("label-success");
-                        $("#section5 .label").text("Complete");
-                        $("#section5 .edit").text("Edit");
-                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
-
-                var section1 = getParameterByName("section1");
-
-                if (section1 && section1.length > 0) {
-                    // change the colour of the button
-
-                    if (section1 == "complete") {
-                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-                        $("#section1 .label").text("Complete");
-                        $("#section1 .edit").text("Edit");
-                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
-
-                var section2 = getParameterByName("section2");
-
-                if (section2 && section2.length > 0) {
-                    // change the colour of the button
-
-                    if (section2 == "complete") {
-                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-                        $("#section1 .label").text("Complete");
-                        $("#section1 .edit").text("Edit");
-                        
-                        $("#section2 .label").removeClass("label-default").addClass("label-success");
-                        $("#section2 .label").text("Complete");
-                        $("#section2 .edit").text("Edit");
-
-                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
-                    }
-                }
-
-
-
-                // open and close sections of the overview and add and remove arrows
-                $(".rowbottom").hide();
-                $(".js-section").on("click", function (e) {
-                    e.preventDefault();
-                    if ($(this).hasClass("open") == false) {
-                        $(".rowbottom").hide();
-                        $(".row.well").removeClass("well");
-                        $(this).addClass("open");
-                        $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-                        var details = $($(this).attr("href"));
-                        details.show();
-                        details.parent().addClass("well");
-                    }
-                    else {
-                        $(".rowbottom").hide();
-                        $(".row.well").removeClass("well");
-                        $(this).removeClass("open");
-                        $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
-                        var details = $($(this).attr("href"));
-                        details.hide();
-                    }
-                });
-            });
-
-
-
-            function getParameterByName(name) {
-                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                    results = regex.exec(location.search);
-                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-            }
-
-        </script>
+	        <script type="text/javascript">
+	            $(document).ready(function () {
+	
+	                // mark sections as completed
+	
+	                var section5 = getParameterByName("section5");
+	
+	                if (section5 && section5.length > 0) {
+	                    // change the colour of the button
+	                    if (section5 == "inprogress") {
+	                        $("#section5 .label").removeClass("label-default").addClass("label-warning");
+	                        $("#section5 .label").text("In progress");
+	                        $("#section5 .edit").text("Edit");
+	                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
+	
+	                    }
+	
+	                    if (section5 == "complete") {
+	                        $("#section5 .label").removeClass("label-default").addClass("label-success");
+	                        $("#section5 .label").text("Complete");
+	                        $("#section5 .edit").text("Edit");
+	                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
+	                    }
+	                }
+	
+	                var section1 = getParameterByName("section1");
+	
+	                if (section1 && section1.length > 0) {
+	                    // change the colour of the button
+	
+	                    if (section1 == "complete") {
+	                        $("#section1 .label").removeClass("label-default").addClass("label-success");
+	                        $("#section1 .label").text("Complete");
+	                        $("#section1 .edit").text("Edit");
+	                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+	                    }
+	                }
+	
+	                var section2 = getParameterByName("section2");
+	
+	                if (section2 && section2.length > 0) {
+	                    // change the colour of the button
+	
+	                    if (section2 == "complete") {
+	                        $("#section1 .label").removeClass("label-default").addClass("label-success");
+	                        $("#section1 .label").text("Complete");
+	                        $("#section1 .edit").text("Edit");
+	                        
+	                        $("#section2 .label").removeClass("label-default").addClass("label-success");
+	                        $("#section2 .label").text("Complete");
+	                        $("#section2 .edit").text("Edit");
+	
+	                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+	                    }
+	                }
+	
+	
+	
+	                // open and close sections of the overview and add and remove arrows
+	                $(".rowbottom").hide();
+	                $(".js-section").on("click", function (e) {
+	                    e.preventDefault();
+	                    if ($(this).hasClass("open") == false) {
+	                        $(".rowbottom").hide();
+	                        $(".row.well").removeClass("well");
+	                        $(this).addClass("open");
+	                        $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+	                        var details = $($(this).attr("href"));
+	                        details.show();
+	                        details.parent().addClass("well");
+	                    }
+	                    else {
+	                        $(".rowbottom").hide();
+	                        $(".row.well").removeClass("well");
+	                        $(this).removeClass("open");
+	                        $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+	                        var details = $($(this).attr("href"));
+	                        details.hide();
+	                    }
+	                });
+	            });
+	
+	
+	
+	            function getParameterByName(name) {
+	                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	                    results = regex.exec(location.search);
+	                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	            }
+	
+	        </script>
         <!-- #EndEditable -->
 
 
