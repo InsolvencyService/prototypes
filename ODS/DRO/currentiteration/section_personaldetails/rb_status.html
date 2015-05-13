@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
  <!-- #BeginEditable "title" -->
-<title>GOV</title>
+<title>Debt Relief Order</title>
 <!-- #EndEditable -->
     
 
@@ -112,19 +112,19 @@
     </div>
 </div>
 
-<div id="content" >
+<div id="content" > 
     <div class="inner-block">
     	
-		    	<div class="phase-banner">
-			        
-				        <p>
+		    	<div class="phase-banner clearfix">
+		    		
+			        <div class="col-sm-9">
 					        <strong class="phase-tag">BETA</strong>
 					        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
-					        
-				        </p>
-			       
-		    
-			        
+				        </div>
+						
+						<div id="logout" class="col-sm-3 text-right" hidden="true">
+					        <a id="logout-link">Sign out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+				        </div>			        
 			    </div>
 		
     </div>   
@@ -133,43 +133,58 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Your family</h1>	
+	 	<h1 class="form-title heading-large">Residential and business status</h1>	
 		
 		<form class="form" method="post">
 		
-			
-			
-			<div class="form-group ">
-				<p id="title_label" class="form-label-bold">Are you in a relationship?</p>
+			<div id="pnl-validation" class="alert alert-danger">
+					Please complete all of the information 
+			</div>
+					
+			<div class="form-group">
+				<p id="title_label" class="form-label-bold">Do you own your own home?</p>
 				<fieldset class="inline">
 					<div id="othername" class="auto-style1">
-						<label id="title_label1" for="relationship_no" class="block-label">
-						<input id="relationship_no" value="Male" name="relationship" type="radio">No</label>
-						<label id="title_label2" for="relationship_married" class="block-label">
-						<input id="relationship_married" value="Female" name="relationship" type="radio">I'm married</label>
-						<label id="title_label3" for="relationship_civil" class="block-label">
-						<input id="relationship_civil" value="Female" name="relationship" type="radio">I have a civil partner</label>
-						<label id="title_label4" for="relationship_cohab" class="block-label">
-						<input id="relationship_cohab" value="Female" name="relationship" type="radio">I'm cohabiting with a long time partner</label>
-
+						<label id="home_label" for="home_Yes" class="block-label">
+						<input id="home_Yes" value="Yes" name="home" type="radio" aria-describedby="title_error title_help">Yes</label>
+						<label id="home_label1" for="home_No" class="block-label">
+						<input id="home_No" value="No" name="home" type="radio" aria-describedby="title_error title_help">No</label>
 					</div>
 				</fieldset>
 			</div>
-			<p>&nbsp;</p>
-
-			<div class="form-group ">
-				<label id="children" for="children" class="form-label-bold">Number of dependent children</label>
-				<input id="children0" name="children" type="text" value="" /><br/>
+			
+			<div class="form-group" id="pnl-residence">
+				<p id="title_label2" class="form-label-bold">Do you currently or have you ever, lived or had your principle residence in England or Wales?</p>
+				<fieldset class="inline">
+					<div id="residence" class="auto-style1">
+						<label id="title_label0" for="residence_Yes" class="block-label">
+						<input id="residence_Yes" value="Yes" name="residence" type="radio" aria-describedby="title_error title_help">Yes</label>
+						<label id="title_label1" for="residence_No" class="block-label">
+						<input id="residence_No" value="No" name="residence" type="radio" aria-describedby="title_error title_help">No</label>
+					</div>
+				</fieldset>
 			</div>
+
+			<div class="form-group" id="pnl-business">
+				<p id="title_label6" class="form-label-bold">Have you carried on business in either England or Wales in the last three years?</p>
+				<fieldset class="inline">
+					<div id="business" class="auto-style1">
+						<label id="title_label7" for="business_Yes" class="block-label">
+						<input id="business_Yes" value="Yes" name="business" type="radio" aria-describedby="title_error title_help">Yes</label>
+						<label id="title_label8" for="business_No" class="block-label">
+						<input id="business_No" value="No" name="business" type="radio" aria-describedby="title_error title_help">No</label>
+					</div>
+				</fieldset>
+			</div>	
 		
 			<p>&nbsp;</p>
 		
 			<div class="form-navigation form-group">
-				<a id="next" class="button" href="rb_status.html">Continue</a><br>
+				<a href="../application.html?section1=complete" id="next" class="button">Continue</a><br>
 			</div>
 			
 			<div>
-				<a style="padding-right: 30px" href="phone.html" id="back">Back</a><br><br>
+				<a style="padding-right: 30px" href="family.html" id="back">Back</a><br><br>
 			</div>
 		</form>
 	</div>
@@ -229,18 +244,34 @@
 
 <!-- #BeginEditable "scripts" -->
 
+
 <script type="text/javascript">
-$(document).ready(function() {
-
-	var normalroute = $("#next").prop("href");
-	$("#home_Yes").click(function(){
-		$("#next").prop("href","not_applicable.html");
-	});
-	$("#home_No").click(function(){
-		$("#next").prop("href", normalroute);
+	
+	$(document).ready(function(){
+		$("#pnl-validation").hide();	
 	});
 
-});
+
+	$("#next").click(function(){
+		
+		if(
+			(($('#home_Yes').prop('checked')==false) && ($('#home_No').prop('checked')==false)) ||
+			(($('#residence_Yes').prop('checked')==false) && ($('#residence_No').prop('checked')==false)) ||
+			(($('#business_Yes').prop('checked')==false) && ($('#business_No').prop('checked')==false)) 
+			){
+			$("#pnl-validation").show();
+		}
+				
+	});
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
 
 </script>
 

@@ -76,6 +76,12 @@
      
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
+
+.warning{
+	color:red;
+	padding-left:10px;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -132,62 +138,46 @@
 <!-- #BeginEditable "content" -->
  	
 
- 	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Residential and business status</h1>	
-		
-		<form class="form" method="post">
-		
-			<div id="pnl-validation" class="alert alert-danger">
-					Please complete all of the information 
-			</div>
-					
-			<div class="form-group">
-				<p id="title_label" class="form-label-bold">Do you own your own home?</p>
-				<fieldset class="inline">
-					<div id="othername" class="auto-style1">
-						<label id="home_label" for="home_Yes" class="block-label">
-						<input id="home_Yes" value="Yes" name="home" type="radio" aria-describedby="title_error title_help">Yes</label>
-						<label id="home_label1" for="home_No" class="block-label">
-						<input id="home_No" value="No" name="home" type="radio" aria-describedby="title_error title_help">No</label>
-					</div>
-				</fieldset>
-			</div>
-			
-			<div class="form-group" id="pnl-residence">
-				<p id="title_label2" class="form-label-bold">Do you currently or have you ever, lived or had your principle residence in England or Wales?</p>
-				<fieldset class="inline">
-					<div id="residence" class="auto-style1">
-						<label id="title_label0" for="residence_Yes" class="block-label">
-						<input id="residence_Yes" value="Yes" name="residence" type="radio" aria-describedby="title_error title_help">Yes</label>
-						<label id="title_label1" for="residence_No" class="block-label">
-						<input id="residence_No" value="No" name="residence" type="radio" aria-describedby="title_error title_help">No</label>
-					</div>
-				</fieldset>
-			</div>
+	<div id="content0" >
 
-			<div class="form-group" id="pnl-business">
-				<p id="title_label6" class="form-label-bold">Have you carried on business in either England or Wales in the last three years?</p>
-				<fieldset class="inline">
-					<div id="business" class="auto-style1">
-						<label id="title_label7" for="business_Yes" class="block-label">
-						<input id="business_Yes" value="Yes" name="business" type="radio" aria-describedby="title_error title_help">Yes</label>
-						<label id="title_label8" for="business_No" class="block-label">
-						<input id="business_No" value="No" name="business" type="radio" aria-describedby="title_error title_help">No</label>
+	<div class="row" style="margin-left:20px;">
+    	    
+    	<h1 class="form-title heading-large">Application creation</h1>
+		<div class="col-xs-12 col-md-8" style="margin-left:30px">
+		
+			<form role="form">
+				
+				<div id="pnl-validation" class="alert alert-danger">
+					Please add a last name 
+				</div>
+	            
+	       
+	            <div class="form-group" id="pnl-email">
+	        		<label id="email_label" for="email" class="form-label-bold lastname">Last name</label>
+	            	<input id="email" name="email" type="text" class="input-email"><br>
+	        	</div>       	
+				
+				<p class="clearfix">&nbsp;</p>
+	
+				<div class="row">
+				<div></div>
+					<div class="col-xs-6">
+						<a class="button heading-medium" style="color:#fff" id="next">Create</a><br/>
+						<a href="ai_admin.html">Cancel</a>
 					</div>
-				</fieldset>
-			</div>	
-		
-			<p>&nbsp;</p>
-		
-			<div class="form-navigation form-group">
-				<a id="next" class="button">Continue</a><br>
-			</div>
-			
-			<div>
-				<a style="padding-right: 30px" href="#" id="back">Back</a><br><br>
-			</div>
-		</form>
+					
+
+	
+				</div>
+			</form>
+		</div>
 	</div>
+	
+	<p class="clearfix">&nbsp;</p>
+
+        
+</div>
+
 
 <!-- #EndEditable -->
 
@@ -244,58 +234,44 @@
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript">
-	var user = ($.cookie('user'));
+<script type="text/javascript" src="../../assets/js/bootstrap/js/toggle-button.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+<script>
 	$(document).ready(function(){
-		$("#pnl-validation").hide();	
-		$("#logout").show();	
+		$("#pnl-validation").hide();
 		
-		if(user=="ai"){
-       		$("#logout-link").prop("href", "ai_login.html");          	
-    	}
-    	else{
-    		$("#logout-link").prop("href", "public_login.html");   
-    	}
-
-
 	});
-
-
-	$("#next").click(function(){
+	
+	$("#next").on("click", function (e) {
 		
-		if(
-			(($('#home_Yes').prop('checked')==false) && ($('#home_No').prop('checked')==false)) ||
-			(($('#residence_Yes').prop('checked')==false) && ($('#residence_No').prop('checked')==false)) ||
-			(($('#business_Yes').prop('checked')==false) && ($('#business_No').prop('checked')==false)) 
-			){
+		
+		var touched = false;
+		var email = $("#email").val();
+		
+
+		if(email==""){
+			$("#pnl-email").addClass("panel-indent panel-danger");
+			touched=true;
+			$("#email").focus();
+		}
+		else{
+			$("#pnl-email").removeClass("panel-indent panel-danger");
+		}
+		
+		
+		if(touched==true){
 			$("#pnl-validation").show();
 		}
-		else{		
-			if($('#home_Yes').prop('checked')==true){
-				 $("#next").prop("href", "not_applicable.html");		
-			}
-			else if(($('#residence_Yes').prop('checked')==false) && ($('#business_Yes').prop('checked')==false)){
-				 $("#next").prop("href", "not_applicable.html");		
-			}
-			else{
-				$("#next").prop("href", "application.html");
-			}
-		}
-		
-
-		
+		else{
+			$("#next").prop("href", "application.html");
+		}  
 	});
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-
-
+	
 </script>
+
+
+
 
 <!-- #EndEditable -->
     
