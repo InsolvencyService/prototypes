@@ -70,57 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/sfs.css">
 
-<style type="text/css">
-
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-input.amount{
-	width:90%; font-size:19px;
-		border: 1px solid #fff;
-		padding-top:12px;
--webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-.select-control{
-	display:  inline-block;
-	height: 34px;
-	padding: 4px 12px;
-	font-size: 19px;
-	line-height: 1.4285;
-	color: #555;
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #fff;
-}
-td .form-label{
-	padding-top:8px
-}
-div.pound-sign{
-	width:10%; padding-right:15px; padding-top:8px; font-size:19px;
-}
-</style>
 <!-- #EndEditable -->
 
 
@@ -439,6 +390,18 @@ div.pound-sign{
 	</td>
 	</tr>
 
+	<tr class="totalrow">
+	<td><span class="form-label text-right">Total benefits and allowances</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+		<div class="text-right amount" id="box-total">0.00</div>
+	</td>
+	<td>
+	<div>per month</div>
+	</td>
+	</tr>
+
+
 	</tbody>
 	</table>
 	
@@ -521,23 +484,7 @@ div.pound-sign{
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-
-	$("#next").on("click", function(e){
-//		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
-//			var amount = parseFloat($("#amount").val());		
-//		}
-
-	});
-
-});
-    
-
-</script>
-
+<script type="text/javascript" src="../assets/js/sfs.js"></script>
 
 <!-- #EndEditable -->
     
