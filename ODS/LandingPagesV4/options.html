@@ -307,8 +307,18 @@ padding-bottom:3px;
         <div class="row">
             <div class="col-sm-8">
                 <h1 class="form-title heading-large">Your options</h1>
+				<div id="bkt-text" class="hidden">
+					<p>Based on your answers, three common debt solutions are available to you. One is provided by the government while two are available from private companies.</p>
+					<p>The information below is meant to help guide you towards a debt solution that is right for you. Other options exist, and you should speak with a qualified 
+					debt advisor about your circumstances before making a decision.</p>
+				</div>
+				<div id="dro-text" class="hidden">
+					<p>Based on your answers, one common debt solution is available to you, it is provided by the government.</p>
+					<p>The information below is meant to help guide you towards a debt solution that is right for you. Other options may exist, and you should speak with a qualified 
+					debt advisor about your circumstances before making a decision.</p>
+				</div>
 
-                            </div>
+            </div>
 
             <div class="col-sm-4" style="display:none">
                 <div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
@@ -710,7 +720,14 @@ padding-bottom:3px;
             	var DMPactive = getParameterByName('dmp');
             	var IVAactive = getParameterByName('iva');
             	
-            	
+            	if(BKTactive == 'yes'){
+            		$('#bkt-text').removeClass('hidden');
+            		$('#bkt-text').addClass('visible');
+            	}
+            	else{
+            		$('#dro-text').removeClass('hidden');
+            		$('#dro-text').addClass('visible');
+            	}
                
                /* Activate BKT tab */
                if(BKTactive == 'yes'){
