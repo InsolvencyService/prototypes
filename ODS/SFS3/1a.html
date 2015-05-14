@@ -332,42 +332,11 @@
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
-
+<script type="text/javascript" src="../assets/js/sfs.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
 
-	$("tr input").first().focus();
-
-	$("#next").on("click", function(e){
-//		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
-//			var amount = parseFloat($("#amount").val());		
-//		}
-
-	});
-
-	$("input").on("change", function(e){
-		e.preventDefault();
-		totalamount = 0;
-
-		$('tr input.amount').each(function(){
-			if ($(this).val()){
-				var amt = $(this).val();
-				totalamount+= tonum(amt);
-			}
-		});
-		if (totalamount && totalamount > 0){
-			$("#box-total").text(totalamount.toFixed(2));
-
-		}
-
-	});
-
-	
-	function tonum(num)
-	{
-	 	return parseFloat(num); //.replace(/[^0-9\.]+/g,"")
-	}
 
 });
     

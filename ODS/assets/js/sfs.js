@@ -6,10 +6,19 @@
 		e.preventDefault();
 		totalamount = 0;
 
-		$('tr input.amount').each(function(){
+		$('tr td input.amount').each(function(){
+			var listfrequency = $(this).parent().parent().find("select").first();
 			if ($(this).val()){
 				var amt = $(this).val();
-				totalamount+= tonum(amt);
+				if (listfrequency.val() == "week"){
+					totalamount+= (tonum(amt) * 52) / 12;
+				}
+				if (listfrequency.val() == "year"){
+					totalamount+= tonum(amt) / 12;
+				}
+				if (listfrequency.val() == "month"){
+					totalamount+= tonum(amt);
+				}
 			}
 		});
 		if (totalamount && totalamount > 0){
