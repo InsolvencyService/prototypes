@@ -155,32 +155,36 @@
 	 
 	 
 	 				<br>
-				 	<p>You need to tell us about loans secured against your home 
-					or orders against your home. Start with the largest, then 
-					add any additional loans or orders on the next screen.</p>
+				 	<p>Besides your mortgage, you need to tell us about any 
+					other loans secured against your property (eg secured bank 
+					loan). We’ll ask you about other types of debts secured 
+					against your property later.</p>
+					<div class="panel-indent">Check your yearly loan statement or contact the company or bank your loan is with for information about what you owe.
+					</div>
 				
 					 <p style="display:none"><a href='add-person.html' class='btn btn-success'>Add a person</a>
 				 </p>
 		 		</div>
 			</div>
 
-    	<div class="form-group ">
-	
-	<label id="first_name_label" for="first_name" class="form-label first_name">
-			What was the loan for?</label>
-		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
-
-	<input id="loanfor" name="ref" type="text" value="" style="width:300px !important;"/>
-	<br/>
-	</div>
+    	
 	<div class="form-group ">
 	
-	<label id="last_name_label" for="loanname" class="form-label last_name">Name of the company the loan or arrangement is with</label>
+	<label id="last_name_label" for="loanname" class="form-label last_name">Name of the company 
+		or bank the loan is with</label>
 	<input id="loanname" name="last_name" type="text" value="" />
 	<br/>
 	</div>
 	
-	<div class="form-group ">
+	
+    	
+<div class="form-group ">
+	
+	<label id="email_label" for="email" class="form-label email">How much is owed?</label>
+	<span class="form-hint">Amount they say is outstanding from you</span>
+	<input id="amount" name="amount" type="text" value="" />
+</div>
+<div class="form-group ">
 	
 	<fieldset id="date_of_birth" class="date-of-birth">
 	<span id="date_of_birth_label" class="form-label">Date the secured loan was started or the arrangement was made</span>
@@ -200,14 +204,35 @@
 	</div>
 	</fieldset>
 	</div>
-    	
+	
+<div class="form-group" id="shared-mortgage">
+                        <p  class="form-label">Is this a shared mortgage with <span class="bold-medium data">Susan Smith</span>?</p>
+
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
+
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+	
 <div class="form-group ">
 	
-	<label id="email_label" for="email" class="form-label email">How much is owed?</label>
-	<span class="form-hint">Amount they say is outstanding from you</span>
-	<input id="amount" name="amount" type="text" value="" />
-</div>
+	<label id="first_name_label" for="first_name" class="form-label first_name">
+			What was the loan for?</label>
+		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
 
+	<input id="loanfor" name="ref" type="text" value="" style="width:300px !important;"/>
+	<br/>
+	</div>
 
 	<div class="form-group ">
 	<p id="title_label" class="form-label">Do you have another amount secured against your home?</p>
