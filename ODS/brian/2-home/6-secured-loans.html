@@ -176,19 +176,26 @@
 	<br/>
 	</div>
 	
+	    	
+	<div class="form-group ">
 	
+	<label id="last_name_label" for="outstanding" class="form-label last_name">Reference number</label>
+	<input id="outstanding" name="last_name" type="text" value="" />
+	<br/>
+	</div>
+
     	
 <div class="form-group ">
 	
-	<label id="email_label" for="email" class="form-label email">How much is owed?</label>
-	<span class="form-hint">Amount they say is outstanding from you</span>
+	<label id="email_label" for="email" class="form-label email">Amount currently outstanding</label>
+	<span class="form-hint">How much the lender says you owe</span>
 	<input id="amount" name="amount" type="text" value="" />
 </div>
 <div class="form-group ">
 	
 	<fieldset id="date_of_birth" class="date-of-birth">
-	<span id="date_of_birth_label" class="form-label">Date the secured loan was started or the arrangement was made</span>
-	<span class="form-hint" id="date_of_birth_help"></span>
+	<span id="date_of_birth_label" class="form-label">Date you took out the loan </span>
+	<span class="form-hint" id="date_of_birth_help">Use the format MM YYYY (eg 01 2015)</span>
 	
 	<div class="form-group form-group-day">
 		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
@@ -205,25 +212,29 @@
 	</fieldset>
 	</div>
 	
-<div class="form-group" id="shared-mortgage">
-                        <p  class="form-label">Is this a shared mortgage with <span class="bold-medium data">Susan Smith</span>?</p>
+				<div class="form-group" id="shared-mortgage">
+                        <p  class="form-label">Is this a joint loan with another person?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
-
-                                <label for="sameaddress_Yes" class="block-label">
-                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
-                                    Yes
+                                <label for="person_Yes" class="block-label">
+                                    <input id="person_Yes" name="sameaddress" type="radio">
+                                    Yes - with <span class="bold-medium data">Susan Smith</span>
                                 </label>
 
-                                <label id="title_label1" for="sameaddress_No" class="block-label">
-                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                <label for="person_Yes" class="block-label">
+                                    <input id="person_Yes" name="sameaddress" type="radio">
+                                    Yes - with another person
+                                </label>
+<div class="clearfix"></div>
+                                <label id="title_label1" for="person_No" class="block-label">
+                                    <input id="person_No" name="sameaddress" type="radio">
                                     No
                                 </label>
                             </div>
                          </fieldset>
                     </div>
-	
+
 <div class="form-group ">
 	
 	<label id="first_name_label" for="first_name" class="form-label first_name">
@@ -235,7 +246,7 @@
 	</div>
 
 	<div class="form-group ">
-	<p id="title_label" class="form-label">Do you have another amount secured against your home?</p>
+	<p id="title_label" class="form-label">Are there any other loans secured against your property?</p>
 	
 	<fieldset class="inline">
 	<div id="title" class="form-group">

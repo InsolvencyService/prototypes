@@ -222,17 +222,18 @@ display:block;
                                     <input id="secured_No" name="secured" type="radio">
                                     No
                                 </label>
-
+<div class="clearfix"></div>
                                 <label for="secured_Yes" class="block-label">
                                     <input id="secured_Yes" name="secured" type="radio">
                                     Yes – secured loans
                                 </label>
-                                <label for="secured_Yes" class="block-label">
-                                    <input id="secured_Yes" name="secured" type="radio">
+                                <label for="secureddebts_Yes" class="block-label">
+                                    <input id="secureddebts_Yes" name="secured" type="radio">
                                     Yes – other secured debts
                                 </label>
-                                <label for="secured_Yes" class="block-label">
-                                    <input id="secured_Yes" name="secured" type="radio">
+<div class="clearfix"></div>
+                                <label for="securedBoth_Yes" class="block-label">
+                                    <input id="securedBoth_Yes" name="secured" type="radio">
                                     Yes – both
                                 </label>
                             </div>
@@ -331,6 +332,8 @@ $(document).ready(function() {
 		nextpage = "6-remortgage.html";
 		
 	});
+	
+
 	$("#remortgage_No").click(function(){
 		if ($("#secured_Yes").is(':checked')){
 			nextpage  = "6-secured-loans.html";
@@ -340,6 +343,7 @@ $(document).ready(function() {
 		}
 
 	});
+	//secureddebts_Yes securedloans_Yes securedboth_Yes
 	$("#secured_Yes").click(function(){
 		if ($("#remortgage_No").is(':checked')){
 			nextpage  = "6-secured-loans.html";
