@@ -321,7 +321,6 @@ var amount = 450.00;
 	$("#amount").change(function(e){
 		if ($("#amount").val()){
 			amount = parseFloat($("#amount").val().replace(",", ""));
-			alert(amount);
 			$("#btn-pay").attr("href", "https://payments:team@payment-prototype.herokuapp.com/landing?service=insolvency&amount=" + amount + "&return_url=http://insolvencyservice.github.io/prototypes/ODS/brian/start.html");
 		}
 	});
