@@ -166,10 +166,10 @@
                                 <table id="income">
                                     <tbody>
                                         <tr class="group-heading">
-                                            <td>Salary/wages</td>
+                                            <td>Salary or wages</td>
                                             <td class="number-col"><span></span></td>
                                             <td>
-                                                <a href="1a.html"><span class="auto-style1">Start</span></a>
+                                                <a href="1a.html" class="next"><span class="auto-style1">Start</span></a>
                                             </td>
                                             <td></td>
                                         </tr>
@@ -182,7 +182,7 @@
                                             </td>
                                             <td></td>
                                         </tr>
-                                        <tr class="group-heading">
+                                        <tr class="group-heading pensionable">
                                             <td>Pensions</td>
                                             <td class="number-col"><span></span></td>
                                             <td>
@@ -387,37 +387,36 @@
                 </form>
             </div>
 
-        </div>
+            <p class="clearfix"><br /></p>
 
 
+            <!-- For User research -->
+            <div class="form-navigation form-group inner-block">
 
-        <br><br><br><br><br><br>
-        <p class="clearfix"><br /></p>
+                <div>
+                    <a id="next" class="button" href="../brian/overview.html">Continue</a>
+                </div>
+                <div>
+                    <br>
+                </div>
 
-
-        <!-- For User research -->
-        <div class="form-navigation form-group inner-block">
-
-            <div>
-                <a id="next" class="button" href="../brian/overview.html">Continue</a>
-            </div>
-            <div>
-                <br>
-            </div>
-
-            <div>
-                <a style="padding-right: 30px" href="FlexibleCosts/2.html" id="back">Back</a>
+                <div>
+                    <a style="padding-right: 30px" href="FlexibleCosts/2.html" id="back">Back</a>
 
 
-                <a href="#" id="cancel">Save and logout</a>
+                    <a href="#" id="cancel">Save and logout</a>
+
+                </div>
+
 
             </div>
 
-
         </div>
 
+</main>
 
-        </div>
+ 
+
 
 
         <footer role="contentinfo" id="footer" class="group js-footer">
@@ -504,6 +503,15 @@
                     $("#" + stage + " a").first().show().text("Start");
                     $("#income" + " a").first().text("Edit");
 
+                }
+
+				var defaultnext = $(".next").first().attr("href");
+ 				$(".pensionable").hide();
+                var pensionable = getParameterByName("pensionable");
+                if (pensionable && pensionable.length > 0) {
+                    $(".pensionable").show();
+                    defaultnext  += "?pensionable=true";
+                    $(".next").attr("href", defaultnext);
                 }
 
             });

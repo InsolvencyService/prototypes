@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../assets/templates/b-template.dwt" -->
 <head>
@@ -141,7 +141,7 @@
     </p>
 	
 	<h1 class="form-title heading-large">Income from benefits and allowances</h1>
-	<p>For each question that is applicable, enter the amount you receive.</p>
+	<p>For each question that's applicable, enter the amount you receive.</p>
 		<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
@@ -362,7 +362,7 @@
 	<tr>
 	<td>
 <label id="last_name_label10" for="loanname" class="form-label last_name">Other 
-	benefits or tax credits (for example maternity benefits) </label>
+	benefits or tax credits (for example maternity allowance) </label>
 		</td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
@@ -394,7 +394,7 @@
 	
 
 
-<p class="clearfix"><br/></p>
+
 
 	
 	<!-- For User research -->
@@ -473,6 +473,26 @@
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../assets/js/sfs.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var defaultnext = $("#next").first().attr("href");
+
+            var pensionable = getParameterByName("pensionable");
+            if (pensionable && pensionable.length > 0) {
+                $("#next").attr("href", "3-pensions.html");
+            }
+
+        });
+
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+    </script>
 <!-- #EndEditable -->
     
 
