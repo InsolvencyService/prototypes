@@ -918,10 +918,21 @@ People you live with and your dependents
 	                        $("#section1 .label").removeClass("label-default").addClass("label-success");
 	                        $("#section1 .label").text("Complete");
 	                        $("#section1 .edit").text("Edit");
-	                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
+	                        $("#section1 .edit").prop("href", "1-completed/name.html");
 	                    }
 	                }
 	
+		                var section2 = getParameterByName("section2");
+	
+	                if (section2 && section2.length > 0) {
+	                    // change the colour of the button
+	
+	                    if (section2 == "continue") {
+	                        $("#section2 .label").removeClass("label-default").addClass("label-success");
+	                        $("#section2 .edit").text("Continue");
+	                       // $("#section2 .edit").prop("href", "1-completed/name.html");
+	                    }
+	                }
 	                var section2 = getParameterByName("section2");
 	
 	                if (section2 && section2.length > 0) {

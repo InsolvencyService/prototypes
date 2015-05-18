@@ -3,14 +3,20 @@
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Online debt solutions</title>
+ <!-- #BeginEditable "title" -->
+<title>Online debt solutions</title>
+<!-- #EndEditable -->
+
 
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/govuk-template.css"><!--<![endif]-->
-    <!--[if IE 6]><link href="../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]>
+<link href="../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]>
+<link href="../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]>
+<link href="../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
     <link type="text/css" rel="stylesheet" media="print" href="../../assets/stylesheets/govuk-template-print.css">
 
@@ -52,9 +58,12 @@
 
     <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css"><!--<![endif]-->
-    <!--[if IE 6]><link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]>
+<link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]>
+<link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]>
+<link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
     
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">  
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
@@ -63,6 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+
 
 .row img{
 width:60px;
@@ -146,10 +156,8 @@ display:block;
 	
 
 
-<!-- #BeginEditable "content" -->
-
- 	
-	<div class="inner-block text">
+<!-- #BeginEditable "content" --> 
+<div class="inner-block text">
 	
 	
 	
@@ -159,14 +167,13 @@ display:block;
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-		<p>You told us your address is <br/>
-
-	<p>
-		<div class="form-group ">
+	
+	<p class="form-label-bold">
+	</p>
+	<div class="form-group ">
 	
 	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" 
-	type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="110 High Street" />
+	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="110 High Street" />
 	<br/>
 	</div>
 	<div class="form-group ">
@@ -196,22 +203,20 @@ display:block;
 	<div class="form-group ">
 	
 	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" 
-	aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="B4 3TT" />
+	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="B4 3TT" />
 	<br/>
 	</div>
 
-	<div class="form-group ">
-	
+		<br/>
 
-	<div class="form-group ">
+<div class="form-group " id="other-addresses">
 	<p id="title_label" class="form-label-bold">Have you lived at any other address in the last 12 months?</p>
 	
 	<fieldset class="inline">
 	<div id="otheraddress" class="form-group">
 	
 	<label id="title_label0" for="otheraddress_Yes" class="block-label">
-	<input id="otheraddress_Yes" value="Mr." name="otheraddress" type="radio" aria-describedby="title_error title_help">
+	<input id="otheraddress_Yes" value="Mr." name="otheraddress" type="radio" aria-describedby="title_error title_help" checked="checked">
 	Yes
 	</label>
 	
@@ -226,26 +231,23 @@ display:block;
 	</fieldset>
 	</div>
 
-	</div>
+<p><br></p>
 	
-	</p>
-	<p><br></p>
 	<!-- For User research -->
-	<div class="form-navigation form-group" style="margin-top:20px">
+	<div class="form-navigation form-group">
 	
 	<div>
-
-
-	<a href="details.html" id="next" class="button">Continue</a>
-	
+		<a id="next" class="button" href="details.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
+	<a style="padding-right: 30px" href="your-addresses.html" id="back">Back</a>
+
 	
-	<a style="padding-right: 30px" href="your-names.html" id="back">Back</a>&nbsp;
+	<a href="#" id="cancel">Save and logout</a>
 	
 	</div>
 	</div>
@@ -304,9 +306,26 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+
 <script type="text/javascript">
 $(document).ready(function() {
+	var housename;
+	
+	var pre  = getParameterByName("pre");
+	if (pre && pre.length > 1){
+		$("#applicant_address_line_1").val("110 High Street");
+		$("#applicant_address_line_2").val("Newhall");
+		$("#applicant_address_town").val("Birmingham");
+		$("#applicant_address_post_code").val("B4 3TT");
+		//$("#other-addresses").hide();
+		
+		$("#next").prop("href", "your-addresses.html")
+	}
+	
 	var normalroute = $("#next").prop("href");
+
 	$("#otheraddress_Yes").click(function(){
 		$("#next").prop("href","other-address.html");
 	});
@@ -314,7 +333,17 @@ $(document).ready(function() {
 		$("#next").prop("href", normalroute);
 	});
 
+
 });
+
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 </script>
 

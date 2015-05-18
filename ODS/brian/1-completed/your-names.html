@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -83,6 +83,12 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
+.auto-style1 {
+	float: left;
+	width: 100%;
+	clear: both;
+	zoom: 1;
+}
 </style>
 <!-- #EndEditable -->
 
@@ -153,70 +159,33 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your address</h1>
+	<h1 class="form-title heading-large">Your name</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-		<p>You told us your address is <br/>
-
+	
 	<p>
-		<div class="form-group ">
-	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" 
-	type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="110 High Street" />
-	<br/>
-	</div>
 	<div class="form-group ">
 	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="Newhall" />
-	<br/>
-	</div>
+	<p>You told us your name is 
+	<strong>Brian Bagley</strong>
+	<a href="name.html" style="float:right; display:none">Change</a></p>
+<p><br></p>
 	<div class="form-group ">
-	
-	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="Birmingham" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" 
-	aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="B4 3TT" />
-	<br/>
-	</div>
-
-	<div class="form-group ">
-	
-
-	<div class="form-group ">
-	<p id="title_label" class="form-label-bold">Have you lived at any other address in the last 12 months?</p>
+	<p id="title_label" class="form-label-bold">Have you been known by another name in the last five years?</p>
 	
 	<fieldset class="inline">
-	<div id="otheraddress" class="form-group">
+	<div id="othername" class="auto-style1">
 	
-	<label id="title_label0" for="otheraddress_Yes" class="block-label">
-	<input id="otheraddress_Yes" value="Mr." name="otheraddress" type="radio" aria-describedby="title_error title_help">
+	<label id="title_label0" for="othername_Yes" class="block-label">
+	<input id="othername_Yes" value="Yes" name="othername" type="radio" aria-describedby="title_error title_help">
 	Yes
 	</label>
 	
-	<label id="title_label1" for="otheraddress_No" class="block-label">
-	<input id="otheraddress_No" value="No" name="otheraddress" type="radio" aria-describedby="title_error title_help">
+	<label id="title_label1" for="othername_No" class="block-label">
+	<input id="othername_No" value="Mrs." name="othername" type="radio" aria-describedby="title_error title_help">
 	No
 	</label>
 	
@@ -236,7 +205,7 @@ display:block;
 	<div>
 
 
-	<a href="details.html" id="next" class="button">Continue</a>
+	<a href="address.html" id="next" class="button">Continue</a>
 	
 	</div>
 	<div>
@@ -245,7 +214,7 @@ display:block;
 	
 	<div>
 	
-	<a style="padding-right: 30px" href="your-names.html" id="back">Back</a>&nbsp;
+	<a style="padding-right: 30px" href="../overview.html" id="back">Back</a>&nbsp;
 	
 	</div>
 	</div>
@@ -306,11 +275,12 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+
 	var normalroute = $("#next").prop("href");
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
+	$("#othername_Yes").click(function(){
+		$("#next").prop("href","other-name.html");
 	});
-	$("#otheraddress_No").click(function(){
+	$("#othername_No").click(function(){
 		$("#next").prop("href", normalroute);
 	});
 
