@@ -168,7 +168,7 @@ display:block;
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-<p>You told us your address is <strong>110 High Street, Newhall, Birmingham B4 3TT</strong></p>
+<p>You told us your address is <strong class="data">110 High Street</strong><strong class="data">, Newhall, Birmingham B4 3TT</strong></p>
 	                   <div class="form-group">
                         <p id="title_label" class="form-label">Do you own the 
 						property?</p>
@@ -279,7 +279,7 @@ $(document).ready(function() {
 	});
 
 	$("#next").on("click", function(){
-		housename = $("#applicant_address_line_1").val();
+		housename = $(".data").first().val();
 		$.cookie('house', housename, { expires: 1 });
 	});
 

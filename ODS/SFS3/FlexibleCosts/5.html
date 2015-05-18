@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -137,10 +137,10 @@
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
 	<p class="form-hint">
-        <a href="../summary.html?stage=flexible">Income and expenses</a> &gt; Fixed costs 6 of 8
+        <a href="../summary.html?stage=flexible">Income and expenses</a> &gt; Fixed costs 9 of 9
     </p>
 	
-	<h1 class="form-title heading-large">Your pensions and insurances</h1>
+	<h1 class="form-title heading-large">Your other costs</h1>
 	
 	
 	
@@ -158,8 +158,24 @@
 	</tr>
 	</thead>
 	<tbody>
+
 	<tr>
-	<td><span class="form-label">Pension payments</span></td>
+	<td><span class="form-label">Mortgage endowment</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
+	
+	<tr>
+	<td><span class="form-label">Other costs</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
@@ -174,67 +190,14 @@
 	</tr>
 
 	<tr>
-	<td><span class="form-label">Life insurance</span></td>
+	<td><span class="form-label"><a href="#">Add another outgoing</a></span></td>
 	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
 	</td>
 	</tr>
-
-	<tr>
-	<td><span class="form-label">Mortgage payment protection insurance</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-	<tr>
-	<td><span class="form-label">Buildings and contents insurance</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-	<tr>
-	<td><span class="form-label">Health insurance (medical or accident or dental)</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
+	
+	
 	<tr class="totalrow">
-	<td><span class="form-label text-right">Total pensions and insurances costs</span></td>
+	<td><span class="form-label text-right">Total other costs</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
 		<div class="text-right amount" id="box-total">0.00</div>
@@ -252,14 +215,14 @@
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="7.html">Continue</a>
+		<a id="next" class="button" href="../summary.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="5.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="4.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
