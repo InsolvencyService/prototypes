@@ -273,7 +273,7 @@ $(document).ready(function() {
           // check querystring and set next to 6-secured-loans.html
     var secured = getParameterByName("secured");
     if (secured && secured.length > 0){
-    	$("#next").attr("href", "6-secured-loans.html");
+    	$("#next").attr("href", "6-secured-" + secured + ".html");
     }   
        
 	$("#next").on("click", function(){
