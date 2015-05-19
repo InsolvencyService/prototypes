@@ -183,6 +183,7 @@ width:40px
 
 		<h1 class="form-title heading-large">Continue your application</h1>
 	
+  
 	<p class="text msg-URN" style="display:none;">
 	Your application number is 
 	<br>
@@ -203,7 +204,7 @@ width:40px
 	Your security question</h2>
 	 <div class="form-group ">
 	
-	<label id="applicant_address_line_2_label0" for="answer" class="form-label">What is your mother's maiden name?</label>
+	<label id="applicant_address_line_2_label0" for="answer" class="form-label">When you were young, what did you want to be when you grew up?</label>
 	<input id="answer" name="applicant_address_line_2" type="text" value="" />
 
 	
@@ -308,6 +309,12 @@ width:40px
 <script type="text/javascript">
 $(document).ready(function() {
 
+    $("#next").on("click", function (e) {
+        if ($("#answer").val().toLowerCase() != "astronaut") {
+            e.preventDefault();
+            window.location.href = "return-error.html";
+        }
+    });
 });
 
 function getParameterByName(name) {
