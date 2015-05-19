@@ -7,7 +7,8 @@
 		totalamount = 0;
 
 		$('tr td input.amount').each(function(){
-			var listfrequency = $(this).parent().parent().find("select").first();
+		    var listfrequency = $(this).parent().next().find("select");
+		    //alert($(this).val() + " " + $(this).parent().next().find("select").val());
 			if ($(this).val()){
 				var amt = $(this).val();
 				if (listfrequency.val() == "week"){
