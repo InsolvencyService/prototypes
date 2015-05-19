@@ -499,19 +499,25 @@
             $(document).ready(function () {
                 var stage = getParameterByName("stage");
                 if (stage && stage.length > 0) {
-                    if (stage == "costs") {
+                    //if (stage == "costs") {
                         $("#income a.edit").text("Edit").show();
                         $("#partnerincome a.edit").text("Edit").show();
                         $("#costs a.edit").first().text("Start").show();
-                    }
+                    //}
                 }
 
 
                 var lastpage = getParameterByName("lastpage");
+
                 if (lastpage && lastpage.length > 0) {
-                    $("#" + lastpage + " a.edit").first().show().text("Edit");
-                    $("#" + lastpage).next().find("a.edit").first().text("Start");
-                    $("#" + lastpage).next().find("a.edit").show();
+                    var lastitemnumber = parseInt(lastpage.replace(stage, ""));
+                    $("#" + lastpage + " a.edit").show();
+                    //$("#" + lastpage + " a.edit").first().show().text("Edit");
+                    //$("#" + lastpage).next().find("a.edit").first().text("Start");
+                    //$("#" + lastpage).next().find("a.edit").show();
+                    for (i = 1; i < lastitemnumber; i++) {
+                        $("#" + stage + i + " a.edit").text("Edit").show();
+                    }
                 }
 
 
