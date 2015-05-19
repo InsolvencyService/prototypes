@@ -177,12 +177,12 @@
 
                                             <tr class="group-heading" id="income2">
                                                 <td>
-                                                    Benefits<br />
-                                                    <a href="#">I do not receive benefits</a>
+                                                    Benefits
                                                 </td>
                                                 
                                                 <td>
-                                                    <a href="2.html" style="display:none" class="edit">Edit</a>
+                                                    <a href="2.html" style="display:none" class="edit">Edit</a><br />
+                                                    <a href="#" style="display:none" class="declare">I do not receive benefits</a>
                                                 </td>
                                                 
                                             </tr>
@@ -197,24 +197,24 @@
 
                                             <tr class="group-heading" id="income4">
                                                 <td>
-                                                    Other income<br />
-                                                    <a href="#">I do not have other income</a>
+                                                    Other income
                                                 </td>
                                                 
                                                 <td>
-                                                    <a href="4-other-income.html" style="display:none" class="edit">Edit</a>
+                                                    <a href="4-other-income.html" style="display:none" class="edit">Edit</a><br />
+                                                    <a href="#" style="display:none" class="declare">I do not have other income</a>
                                                     
                                                 </td>
-                                                <td>&nbsp;</td>
+
                                             </tr>
 
                                             <tr class="group-heading totalrow">
-                                                <td><span style="width:100%; display:block;text-align :right">Total income</span></td>
+                                                <td><span style="width:100%; display:block;text-align :right">Total</span></td>
                                                 
                                                 <td>
                                                     &nbsp;
                                                 </td>
-                                                <td>&nbsp;</td>
+ 
                                             </tr>
 
                                         </tbody>
@@ -230,37 +230,18 @@
                                 <div class="form-group">
                                     <table>
                                         <tbody>
-                                            <tr class="group-heading">
-                                                <td>Your partner’s salary or wages</td>
-                                                
+                                            <tr class="group-heading" id="partnerincome1">
+                                                <td>Income from other household members</td>
+
                                                 <td>
-                                                    <a href="3-contributions.html"><span class="auto-style1">Start</span></a>
+                                                    <a href="3-contributions.html" class="edit" style="display:none"><span class="auto-style1">Start</span></a>
                                                 </td>
-                                                
+
                                             </tr>
 
-                                            <tr class="group-heading">
-                                                <td>
-                                                    Your partner’s benefits<br />
-                                                    <a href="#">They do not receive benefits</a>
-                                                </td>
-                                                
-                                                <td>
-                                                    <a href="3-contributions.html" style="display:none" class="edit">Edit</a>
-                                                    
-                                                </td>
-                                                
-                                            </tr>
-                                            <tr class="group-heading">
-                                                <td>Contributions from other members of the household</td>
-                                                
-                                                <td>
-                                                    <a href="3-contributions.html" style="display:none" class="edit">Edit</a>
-                                                </td>
-                                                
-                                            </tr>
+  
                                             <tr class="group-heading totalrow">
-                                                <td><span style="width:100%; display:block;text-align :right">Total income</span></td>
+                                                <td><span style="width:100%; display:block;text-align :right">Total</span></td>
                                                 
                                                 <td>
                                                     &nbsp;
@@ -499,24 +480,40 @@
             $(document).ready(function () {
                 var stage = getParameterByName("stage");
                 if (stage && stage.length > 0) {
-                    //if (stage == "costs") {
+                    if (stage == "income") {
+                        $("#income a.edit").first().text("Edit").show();
+                        $("#partnerincome a.edit").hide();
+                        $("#costs a.edit").hide();
+                        $("#partnerincome a.edit").first().text("Start").show();
+                    }
+                    if (stage == "partnerincome") {
+                        $("#income a.edit").text("Edit").show();
+                        $("#partnerincome a.edit").first().text("Edit").show();
+                        $("#costs a.edit").first().text("Start").show();
+                    }
+                    if (stage == "costs") {
                         $("#income a.edit").text("Edit").show();
                         $("#partnerincome a.edit").text("Edit").show();
-                        $("#costs a.edit").first().text("Start").show();
-                    //}
+                        $("#costs a.edit").first().text("Edit").show();
+                    }
                 }
 
 
-                var lastpage = getParameterByName("lastpage");
+                var page = getParameterByName("page");
 
-                if (lastpage && lastpage.length > 0) {
-                    var lastitemnumber = parseInt(lastpage.replace(stage, ""));
-                    $("#" + lastpage + " a.edit").show();
-                    //$("#" + lastpage + " a.edit").first().show().text("Edit");
-                    //$("#" + lastpage).next().find("a.edit").first().text("Start");
-                    //$("#" + lastpage).next().find("a.edit").show();
-                    for (i = 1; i < lastitemnumber; i++) {
+                if (page && page.length > 0) {
+                    var itemnumber = parseInt(page);
+                    $("#" + stage + page + " a.edit").show();
+
+                    for (i = 1; i < itemnumber; i++) {
                         $("#" + stage + i + " a.edit").text("Edit").show();
+                    }
+                    itemnumber += 1;
+                    $("#" + stage + itemnumber + " a.edit").text("Start").show();
+                    if (stage == "income" && itemnumber == 3) {
+                        itemnumber += 1;
+                        $("#" + stage + itemnumber + " a.edit").text("Start").show();
+
                     }
                 }
 
