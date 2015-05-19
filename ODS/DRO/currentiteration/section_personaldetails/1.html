@@ -133,7 +133,7 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Your name</h1>	
+	 	<h1 class="form-title heading-large">You and your family</h1>	
 		
 		<form class="form" method="post">
 			<div class="form-group ">
@@ -177,16 +177,87 @@
 					</div>
 				</fieldset>
 			</div>
-	
+			
+			<p>&nbsp;</p>
+			
+			<div id="pnl-dob" class="form-group">
+				<fieldset  class="date-of-birth">
+					<span id="date_of_birth_label" class="form-label-bold">Date of birth</span>
+					<span class="form-hint" id="date_of_birth_help"></span>
+					
+					<div class="form-group form-group-day">
+						 <label id="date_of_birth_label.day" for="date_of_birth.day" >Day</label>
+					<input id="day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-month">
+						 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+					<input id="month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-year">
+					<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+					<input id="year" name="date_of_birth.year" type="number" min="1900" max="2100" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+				</fieldset>
+			</div>
+				
+			<div class="form-group ">
+				<label id="birth_town_label" for="birth_town" class="form-label-bold">Town of birth</label>
+				<input id="birth_town" name="birth_town" type="text" value="" /><br/>
+			</div>
+			<p>&nbsp;</p>
+			<div class="form-group ">
+				<label id="applicant_telephone_label" for="applicant_telephone" class="form-label-bold applicant_address_line_1">National Insurance number</label>
+				<input id="applicant_telephone" name="applicant_telephone" type="text" value="" />
+				<br/>
+			</div>
+		<p>&nbsp;</p>
+			<div class="form-group ">
+				<p id="title_label" class="form-label-bold">Gender</p>
+				<fieldset class="inline">
+					<div id="othername" class="auto-style1">
+						<label id="title_label0" for="gender_male" class="block-label">
+						<input id="gender_male" value="Male" name="gender" type="radio" aria-describedby="title_error title_help">Male</label>
+						<label id="title_label1" for="gender_female" class="block-label">
+						<input id="gender_female" value="Female" name="gender" type="radio" aria-describedby="title_error title_help">Female</label>
+					</div>
+				</fieldset>
+			</div>
+			
+			<p>&nbsp;</p>
+			
+			<div class="form-group ">
+				<p id="title_label" class="form-label-bold">Are you in a relationship?</p>
+				<fieldset class="inline">
+					<div id="othername" class="auto-style1">
+						<label id="title_label1" for="relationship_no" class="block-label">
+						<input id="relationship_no" value="Male" name="relationship" type="radio">No</label>
+						<label id="title_label2" for="relationship_married" class="block-label">
+						<input id="relationship_married" value="Female" name="relationship" type="radio">I'm married</label>
+						<label id="title_label3" for="relationship_civil" class="block-label">
+						<input id="relationship_civil" value="Female" name="relationship" type="radio">I have a civil partner</label>
+						<label id="title_label4" for="relationship_cohab" class="block-label">
+						<input id="relationship_cohab" value="Female" name="relationship" type="radio">I'm cohabiting</label>
+
+					</div>
+				</fieldset>
+			</div>
+			<p>&nbsp;</p>
+
+			<div class="form-group form-group-year">
+				<label id="children" for="children" class="form-label-bold">Number of dependent children</label>
+				<input id="children0" name="children" type="number" min="0" max="30" value="" /><br/>
+			</div>
+
+
 		
 			<p>&nbsp;</p>
 		
 			<div class="form-navigation form-group">
-				<a id="next" class="button" href="birth.html">Continue</a><br>
+				<a id="next" class="button" href="2.html">Continue</a><br>
 			</div>
 			
 			<div>
-				<a style="padding-right: 30px" href="../prequestion.html" id="back">Back</a><br><br>
+				<a style="padding-right: 30px" href="application" id="back">Back</a><br><br>
 			</div>
 		</form>
 	</div>
