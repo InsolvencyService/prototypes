@@ -219,7 +219,7 @@
                             <div id="title" class="form-group">
                                 <label for="person_Yes" class="block-label">
                                     <input id="person_Yes" name="sameaddress" type="radio">
-                                    Yes - with <span class="bold-medium data">Susan Smith</span>
+                                    Yes - with <span class="bold-medium data sharedowner">Susan Smith</span>
                                 </label>
 
                                 <label for="person_Yes" class="block-label">
@@ -350,7 +350,13 @@ $(document).ready(function() {
 	if (housename && housename.length > 0){
 		$(".form-label .data").text(housename);
 	}
-           
+ 
+	var sharedowner = $.cookie('name');
+ 	if (sharedowner.length > 0){
+	 	$(".sharedowner").text(sharedowner);
+ 	}
+
+    
   	var normalroute = $("#next").prop("href");
 	$("#another_Yes").click(function(){
 		$("#next").prop("href","6-secured-loans.html");
