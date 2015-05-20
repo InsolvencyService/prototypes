@@ -84,8 +84,8 @@
 	        if ($(this).val()) {
 	            var amt = $(this).val();
 
-	            $.cookie(stage + thispage + "-value" + i, parseFloat(amt), { expires: 1, path: '/' });
-	            $.cookie(stage + thispage + "-frequency" + i, listfrequency.val(), { expires: 1, path: '/' });
+	            $.cookie(stage + thispage + "-value" + i, parseFloat(amt), { expires: 1});
+	            $.cookie(stage + thispage + "-frequency" + i, listfrequency.val(), { expires: 1 });
 	            totalamount = totalamount + normalise(parseFloat(amt), listfrequency.val());
 
 	            //alert(stage + thispage + "-value" + i + " - " + amt);
@@ -93,7 +93,7 @@
 	        i += 1;
 	    });
 	    if (totalamount && totalamount > 0) {
-	        $.cookie(stage + thispage, totalamount, { expires: 1, path: '/' });
+	        $.cookie(stage + thispage, totalamount, { expires: 1 });
 	        //alert(stage + thispage + " - " + totalamount);
 	    }
 
