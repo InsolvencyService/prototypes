@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../assets/templates/b-template.dwt" -->
 <head>
@@ -217,7 +217,7 @@
                                     <span class="col-sm-8"><h3>1 Your personal details</h3></span>
                                     
                                     <span class="col-sm-4">
-									<a class="edit" href="1-details/your-names.html">Start</a></span>
+									<a class="edit" href="1-completed/your-names.html">Edit</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
@@ -551,7 +551,7 @@ People you live with and your dependents
                                     <hr>
                                 </div>
                             </li>
-                            <li class="row">
+                            <li class="row" id="section4">
                                 <div class="rowtop">
                                     <span class="col-sm-8"><h3>7 Your income and expenses</h3></span>
                                     
@@ -888,24 +888,20 @@ People you live with and your dependents
 	            $(document).ready(function () {
 	
 	                // mark sections as completed
+	                $("#section4 .edit").text("Start").hide();
+
+	                var section4 = getParameterByName("section4");
 	
-	                var section5 = getParameterByName("section5");
-	
-	                if (section5 && section5.length > 0) {
+	                if (section4 && section4.length > 0) {
 	                    // change the colour of the button
-	                    if (section5 == "inprogress") {
-	                        $("#section5 .label").removeClass("label-default").addClass("label-warning");
-	                        $("#section5 .label").text("In progress");
-	                        $("#section5 .edit").text("Edit");
-	                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
-	
+	                    if (section4 == "inprogress") {
+	                        $("#section4 .edit").text("Continue");
 	                    }
 	
-	                    if (section5 == "complete") {
-	                        $("#section5 .label").removeClass("label-default").addClass("label-success");
-	                        $("#section5 .label").text("Complete");
-	                        $("#section5 .edit").text("Edit");
-	                        $("#section5 .edit").prop("href", "section5/money-owed.html?amount=999.99&name=Barclaycard");
+	                    if (section4 == "complete") {
+	                        $("#section1 .edit").text("Edit");
+	                        $("#section4 .edit").show().text("Edit").prop("href","../SFS3/summary.html?stage=costs&page=13");
+	                        $("#section2 .edit").text("Edit");
 	                    }
 	                }
 	
@@ -935,18 +931,22 @@ People you live with and your dependents
 	                }
 	                var section2 = getParameterByName("section2");
 	
+
 	                if (section2 && section2.length > 0) {
 	                    // change the colour of the button
 	
 	                    if (section2 == "complete") {
 	                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-	                        $("#section1 .label").text("Complete");
+	                        //$("#section1 .label").text("Complete");
 	                        $("#section1 .edit").text("Edit");
 	                        
 	                        $("#section2 .label").removeClass("label-default").addClass("label-success");
-	                        $("#section2 .label").text("Complete");
+	                        //$("#section2 .label").text("Complete");
 	                        $("#section2 .edit").text("Edit");
 	
+	                        $("#section4 .label").removeClass("label-default").addClass("label-success");
+	                        //$("#section2 .label").text("Complete");
+	                        $("#section4 .edit").text("Start").show();
 	                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
 	                    }
 	                }
