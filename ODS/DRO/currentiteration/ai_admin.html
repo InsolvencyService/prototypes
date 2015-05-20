@@ -264,7 +264,6 @@
 		                            <th><a id="name">Name &nbsp;&nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></a></th>
 		                            <th><a id="date">Last edited &nbsp;&nbsp;<i style="font-size:0.8em"class="glyphicon glyphicon-sort"></i></a></th>
 		                            <th><a id="status">Case status &nbsp;&nbsp;<i style="font-size:0.8em"class="glyphicon glyphicon-sort"></i></a></th>
-		                            <th>&nbsp;</th>
 		                        </tr>
 		                    </thead>
 		                    <tbody id="table">
@@ -274,40 +273,25 @@
 		                            <td>Jason Bloggs</td>
 		                            <td>28-01-2015</td>
 		                            <td><div class="label label-success label-as-badge">Active</div> </td>
-		                            <td>
-			                            <span class="font-small">
-				                            <a><i class="glyphicon glyphicon-trash" title="Delete application"></i></a>&nbsp;
-				                            <a><i class="glyphicon glyphicon-remove-circle" title="Reject application"></i></a>
-				                        </span>
-			                        </td>
-			                        
-		                        </tr>
+		                         </tr>
 		                        <tr>
 		                            <td>556254</td>
 		                            <td>Ian Jones</td>
 		                            <td>27-01-2015</td>
 		                            <td><div class="label label-danger label-as-badge">Rejected</div> </td>
-		                            <td>&nbsp;</td>
+		                            
 		                        </tr>
 		                        <tr>
 		                            <td>665489</td>
 		                            <td>Jason Williamson</td>
 		                            <td>18-01-2015</td>
 		                            <td><div class="label label-success label-as-badge">Active</div> </td>
-		                            <td>
-			                            <span class="font-small">
-				                            <a><i class="glyphicon glyphicon-trash" title="Delete application"></i></a>&nbsp;
-				                            <a><i class="glyphicon glyphicon-remove-circle" title="Reject application"></i></a>
-				                        </span>
-			                        </td>
-
 		                        </tr>
 								<tr>
 		                            <td>445668</td>
 		                            <td>Harold Smith</td>
 		                            <td>05-01-2015</td>
 		                            <td><span class="label label-warning label-as-badge">Submited</span> </td>
-		                            <td>&nbsp;</td>
 		                        </tr>
 		                  	</tbody>
 		            </table>   
@@ -390,6 +374,10 @@ $(document).ready(function() {
     $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")}); 
     
 }); 
+
+$("i").click(function(){
+   window.confirm("Are you sure?");
+});
 
 
 $("#ref").on("click", function (e) {
