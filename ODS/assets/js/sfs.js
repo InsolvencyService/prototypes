@@ -47,7 +47,7 @@
             if (parseFloat(amount)) {
                 total = total + normalise(parseFloat(amount),frequency);
             }
-            alert(amountitem + count + " - " + amount + " / " + amountfreq + count + " - " + frequency);
+            //alert(amountitem + count + " - " + amount + " / " + amountfreq + count + " - " + frequency);
         }
         count += 1;
     });
