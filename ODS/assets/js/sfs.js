@@ -47,6 +47,7 @@
             if (parseFloat(amount)) {
                 total = total + normalise(parseFloat(amount),frequency);
             }
+            alert(amountitem + count + " - " + amount + " / " + amountfreq + count + " - " + frequency);
         }
         count += 1;
     });
@@ -87,13 +88,13 @@
 	            $.cookie(stage + thispage + "-frequency" + i, listfrequency.val(), { expires: 1, path: '/SFS3' });
 	            totalamount = totalamount + normalise(parseFloat(amt), listfrequency.val());
 
-	            alert(stage + thispage + "-value" + i + " - " + amt);
+	            //alert(stage + thispage + "-value" + i + " - " + amt);
 	        }
 	        i += 1;
 	    });
 	    if (totalamount && totalamount > 0) {
 	        $.cookie(stage + thispage, totalamount, { expires: 1, path: '/SFS3' });
-	        alert(stage + thispage + " - " + totalamount);
+	        //alert(stage + thispage + " - " + totalamount);
 	    }
 
 	});
