@@ -72,6 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/sfs.css">
 
+
 <!-- #EndEditable -->
 
 
@@ -136,13 +137,12 @@
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
-	
 	<p class="form-hint">
-        <a href="summary.html?stage=costs&amp;page=9">Income and expenses</a> &gt; Costs 10 of 13
+        <a href="summary.html?stage=partnerincome&page=1">Income and expenses</a> &gt; Income 3 of 3
     </p>
 	
-	
-	<h1 class="form-title heading-large">Food and housekeeping</h1>
+	<h1 class="form-title heading-large">Contributions and income of other members of 
+							the household</h1>
 	
 	
 	
@@ -150,8 +150,7 @@
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
 	
-	
-			<p>How much do you spend each month on the following</p>  <table class="table table-condensed">
+		<table class="table table-condensed">
 	<thead>
 	<tr>
 	<th>Question</th>
@@ -161,13 +160,13 @@
 	</thead>
 	<tbody>
 	<tr>
-	<td><span class="form-label">Groceries (including food, pet food, non-alcoholic drinks, cleaning supplies, etc but not including toiletries or baby items)</span></td>
+	<td><span class="form-label">Your partner’s salary or wages</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D4">
                 <option value="week">per week</option>
                 <option value="month" selected="selected">per month</option>
                 <option value="year">per year</option>
@@ -176,83 +175,35 @@
 	</tr>
 
 	<tr>
-	<td><span class="form-label">Meals at work</span></td>
+	<td><span class="form-label">Your partner’s benefits</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
-	<select class="select-control">
+		<select class="select-control" name="D5">
                 <option value="week">per week</option>
                 <option value="month" selected="selected">per month</option>
                 <option value="year">per year</option>
      </select>
 	</td>
 	</tr>
-
 
 	<tr>
-	<td><span class="form-label">Laundry and dry cleaning</span></td>
+	<td><span class="form-label">Contributions from other members of the household</span>
+	<div class="form-hint">For example, contributions towards your food, utilities and rent costs. </div></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D5">
                 <option value="week">per week</option>
                 <option value="month" selected="selected">per month</option>
                 <option value="year">per year</option>
      </select>
 	</td>
 	</tr>
-        <tr>
-            <td><span class="form-label">Toiletries</span></td>
-            <td>
-                <div class="pull-left text-right pound-sign">£</div>
-                <input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-            </td>
-            <td>
-                <select class="select-control">
-                    <option value="week">per week</option>
-                    <option value="month" selected="selected">per month</option>
-                    <option value="year">per year</option>
-                </select>
-            </td>
-        </tr>
-
-
-	<tr>
-	<td><span class="form-label">Alcohol</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-
-	<tr>
-	<td><span class="form-label">Vet bills</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-
 
 	<tr class="totalrow">
 	<td><span class="form-label text-right">Total</span></td>
@@ -265,22 +216,27 @@
 </td>
 	</tr>
 
-</table>	
-	<p class="clearfix"><br/></p>
+</table>
+	
+	
+	
+
+
+&nbsp;<p class="clearfix"><br/></p>
 
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="costs11.html">Continue</a>
+        <a id="next" class="button" href="summary.html?stage=partnerincome&page=1">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="FlexibleCosts/1.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="2.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -345,6 +301,24 @@
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../assets/js/sfs.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	var defaultnext = $("#next").attr("href");
+	$("#next").on("click", function (e) {
+			if($('#radio-1').prop('checked')){
+				$("#next").attr("href", "3b-other-income.html");
+			}
+			else{
+			 	$("#next").attr("href", defaultnext);
+			}
+						
+		});
+
+
+});
+    
+
+</script>
 <!-- #EndEditable -->
     
 

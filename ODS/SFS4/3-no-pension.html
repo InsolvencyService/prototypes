@@ -70,8 +70,46 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/sfs.css">
 
+<style type="text/css">
+
+
+.row img{
+width:60px;
+text-align:right;
+float:right
+}
+.row > div{
+padding-top:15px;
+}
+.row > div:first-child{
+padding-top:0px;
+}
+
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+	font-size:16px;
+}
+.currencyinput {
+    border: 1px inset #ccc;
+    padding-right:20px;
+}
+.currencyinput input {
+    border: 0;
+}
+
+.amount{
+	margin-left:15px;
+}
+
+.amount:before { 
+	content: "£"; 
+}
+
+</style>
 <!-- #EndEditable -->
 
 
@@ -136,151 +174,51 @@
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
-	
 	<p class="form-hint">
-        <a href="summary.html?stage=costs&amp;page=9">Income and expenses</a> &gt; Costs 10 of 13
+        <a href="summary.html">Income and expenses</a> &gt; Income 3 of 3
     </p>
+
 	
 	
-	<h1 class="form-title heading-large">Food and housekeeping</h1>
+	<h1 class="form-title heading-large">Other income</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	
-	
-			<p>How much do you spend each month on the following</p>  <table class="table table-condensed">
-	<thead>
-	<tr>
-	<th>Question</th>
-	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
-	<th style="width:200px; padding-left:20px">Frequency</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td><span class="form-label">Groceries (including food, pet food, non-alcoholic drinks, cleaning supplies, etc but not including toiletries or baby items)</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-	<tr>
-	<td><span class="form-label">Meals at work</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+<p><br></p>
+				    <fieldset class="inline">
+					    <legend class="form-label" style="border:0 transparent none">
+Do you have any other income?
+</legend>
+					  	<span class="form-hint">You need to tell us about any income not yet entered</span>
+					    <label class="block-label" for="radio-1">
+					      <input id="radio-1" type="radio" name="radio-group" value="Yes">
+					      Yes
+					    </label>
+					    <label class="block-label" for="radio-2">
+					      <input id="radio-2" type="radio" name="radio-group" value="No">
+					      No
+					    </label>
+					</fieldset> 
 
 
-	<tr>
-	<td><span class="form-label">Laundry and dry cleaning</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-        <tr>
-            <td><span class="form-label">Toiletries</span></td>
-            <td>
-                <div class="pull-left text-right pound-sign">£</div>
-                <input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-            </td>
-            <td>
-                <select class="select-control">
-                    <option value="week">per week</option>
-                    <option value="month" selected="selected">per month</option>
-                    <option value="year">per year</option>
-                </select>
-            </td>
-        </tr>
-
-
-	<tr>
-	<td><span class="form-label">Alcohol</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-
-	<tr>
-	<td><span class="form-label">Vet bills</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-
-
-	<tr class="totalrow">
-	<td><span class="form-label text-right">Total</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-		<div class="text-right amount" id="box-total"></div>
-	</td>
-	<td>
-	<div>per month</div>
-</td>
-	</tr>
-
-</table>	
-	<p class="clearfix"><br/></p>
+<p class="clearfix"><br/></p>
 
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="costs11.html">Continue</a>
+        <a id="next" class="button" href="summary.html?stage=income&page=3">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="FlexibleCosts/1.html" id="back">Back</a>
+        <a style="padding-right: 30px" href="summary.html?stage=income&page=2" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -343,7 +281,27 @@
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../assets/js/sfs.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var defaultnext = $("#next").attr("href");
+	$("#next").on("click", function (e) {
+			if($('#radio-1').prop('checked')){
+				$("#next").attr("href", "4-other-income.html");
+			}
+			else{
+			 	$("#next").attr("href", defaultnext);
+			}
+						
+		});
+
+
+});
+    
+
+</script>
+
 
 <!-- #EndEditable -->
     
