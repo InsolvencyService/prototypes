@@ -72,11 +72,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/sfs.css">
 
-<style type="text/css">
-
-
-    </style>
-
 <!-- #EndEditable -->
 
 
@@ -141,20 +136,22 @@
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
+	
 	<p class="form-hint">
-        <a href="summary.html">Income and expenses</a> &gt; Income 1 of 3
+        <a href="summary.html?stage=costs&amp;page=10">Income and expenses</a> &gt; Costs 11 of 13
     </p>
-    
-	<h1 class="form-title heading-large">Your income</h1>
+	
+	
+	<h1 class="form-title heading-large">Personal costs</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	<p>For each question, enter the amount you take home after taxes, national insurance and pension contributions.</p>
 	
 	
-		<table class="table table-condensed">
+	
+			<p>How much do you spend each month on the following</p>  <table class="table table-condensed">
 	<thead>
 	<tr>
 	<th>Question</th>
@@ -164,91 +161,7 @@
 	</thead>
 	<tbody>
 	<tr>
-	<td style="border-bottom:0 transparent none"><span class="form-label">Net income</span>
-	<span style="color:GrayText">Take home pay after deductions</span></td>
-	<td style="border-bottom:0 transparent none">
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td style="border-bottom:0 transparent none">
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td colspan="3" style="border-top:0 transparent none">
-	<div class="well" style="padding-bottom:0">
-	
-	<table class="table">
-	<tr>
-	<td style=""><span class="form-label">Amount you pay in income tax</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td><span class="form-label">Amount you pay in National insurance</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td><span class="form-label">Pension deductions</span>
-	<span class="form-hint">You can enter personal pension costs later</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-	</table>
-	</div>
-	</td>
-	</tr>
-
-
-	<tr>
-	<td><span class="form-label">Overtime</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-		<tr>
-	<td><span class="form-label">Bonuses</span></td>
+	<td><span class="form-label">Clothing and footwear</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
@@ -263,21 +176,7 @@
 	</tr>
 
 	<tr>
-	<td><span class="form-label">Other salary or wages</span><span style="color:GrayText">For example, if you have a second job. </span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td><span class="form-label">Any other income from employment</span></td>
+	<td><span class="form-label">Hairdressing</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
@@ -291,6 +190,7 @@
 	</td>
 	</tr>
 	
+
 
 	<tr class="totalrow">
 	<td><span class="form-label text-right">Total</span></td>
@@ -303,27 +203,22 @@
 </td>
 	</tr>
 
-</table>
-	
-	
-	
-
-
-<p class="clearfix"><br/></p>
+</table>	
+	<p class="clearfix"><br/></p>
 
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="summary.html?stage=income&page=1">Continue</a>
+		<a id="next" class="button" href="costs12.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="summary.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="FlexibleCosts/2.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -387,29 +282,6 @@
 
 <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../assets/js/sfs.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-
-    var defaultnext = $("#next").first().attr("href");
-
-    var pensionable = getParameterByName("pensionable");
-    if (pensionable && pensionable.length > 0) {
-        defaultnext += "?pensionable=true";
-        $("#next").attr("href", defaultnext);
-    }
-
-});
-    
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-</script>
-
 
 <!-- #EndEditable -->
     
