@@ -283,7 +283,7 @@
                                 <table id="fixed">
                                     <tbody>
                                         <tr class="group-heading" id="costs1">
-                                            <td>Home and contents</td>
+                                            <td>Home, contents and utilities</td>
                                             <td class="value"></td>
                                             <td>
                                                 <a href="costs1.html" class="edit">Start</a>
@@ -291,7 +291,7 @@
                                             
                                         </tr>
 
-                                        <tr class="group-heading" id="costs2">
+                                        <tr class="group-heading" id="costs2" style="display:none">
                                             <td>Utility costs</td>
                                             <td class="value"></td>
                                             <td>
@@ -507,6 +507,7 @@
                         $("#partnerincome a.edit").hide();
                         $("#costs a.edit").hide();
                         $("#partnerincome a.edit").first().text("Start").show();
+                        $("#costs a.edit").first().text("Start").show();
                         totalincome();
                     }
                     if (stage == "partnerincome") {
