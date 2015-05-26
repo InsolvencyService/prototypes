@@ -135,65 +135,89 @@
  	<div class="inner-block">
 	 	<h1 class="form-title heading-large">Your insolvency proceedings</h1>	
 		
+		
 		<form class="form" method="post">
+		
+		<!--- Q1 --->	
 			<div class="form-group">
 				<fieldset class="inline">
-				<legend id="proceedings_label" class="form-label-bold">Are you currently subject to any formal insolvency proceedings?</legend>
-					<div id="pnl-proceedings" class="form-group">
-						<label id="proceedings_label0" for="proceedings_no" class="block-label">
-						<input id="proceedings_no" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">No</label>
-
-						<label id="proceedings_label1" for="proceedings_bkt" class="block-label">
-						<input id="proceedings_bkt" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">A bankruptcy</label>
-		
-						<label id="proceedings_label2" for="proceedings_dmp" class="block-label">
-						<input id="proceedings_dmp" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">A debt management plan</label>
-		
-						<label id="proceedings_label3" for="proceedings_ccao" class="block-label">
-						<input id="proceedings_ccao" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">A county court administration order</label>
-					</div>
-				</fieldset>
-			</div>
-		
-			<div id="pnl-date" class="form-group inline">
-				<fieldset  class="date-of-birth">
-					<span id="date_of_proceeding_label" class="form-label-bold">Date of proceedings</span>
-					<span class="form-hint" id="date_of_proceeding_help"></span>
-					
-					<div class="form-group form-group-day">
-						 <label id="date_of_proceeding_label.day" for="date_of_proceeding.day" >Day</label>
-					<input id="day" name="date_of_proceeding.day" type="number" min="1" max="31" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
-					</div>
-					<div class="form-group form-group-month">
-						 <label id="date_of_proceeding_label.month" for="date_of_proceeding.month">Month</label>
-					<input id="month" name="date_of_proceeding.month" type="number" min="1" max="12" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
-					</div>
-					<div class="form-group form-group-year">
-					<label id="date_of_proceeding_label.year" for="date_of_proceeding.year">Year</label>
-					<input id="year" name="date_of_proceeding.year" type="number" min="1000" max="9999" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
+				<legend id="presented_label" class="form-label-bold">Did you present the bankruptcy petition yourself?</legend>
+					<div id="pnl-presented" class="form-group">
+						
+						<label id="presented_label1" for="presented_yes" class="block-label">
+						<input id="presented_yes" value="" name="presented" type="radio" aria-describedby="title_error title_help">Yes</label>
+						
+						<label id="presented_label1" for="presented_no" class="block-label">
+						<input id="presented_no" value="" name="presented" type="radio" aria-describedby="title_error title_help">No</label>
+												
 					</div>
 				</fieldset>
 			</div>
 			
-			<div class="form-group" id="pnl-pending">
+			<div class="form-group" id="pnl-referred">
 				<fieldset class="inline">
-				<legend id="pending_label" class="form-label-bold">Is there a pending bankruptcy petition against you?</legend>
-					<div id="pending" class="form-group">
-						<label id="pending_label0" for="pending_yes" class="block-label">
-						<input id="pending_yes" value="" name="pendings" type="radio" aria-describedby="title_error title_help">Yes</label>
+				<legend id="referred_label" class="form-label-bold">Has the court referred you to the DRO procedure?</legend>
+					<div id="pnl-referrer" class="form-group">
+						
+						<label id="referred_label1" for="referred_yes" class="block-label">
+						<input id="referred_yes" value="" name="referred" type="radio" aria-describedby="title_error title_help">Yes</label>
+						
+						<label id="referred_label1" for="referred_no" class="block-label">
+						<input id="referred_no" value="" name="referred" type="radio" aria-describedby="title_error title_help">No</label>
+												
+					</div>
+				</fieldset>
+			</div>
+			<div id="pnl-crt" hidden="yes" class="panel-indent">
+					<div class="form-group ">
+						<label id="courtname_label" for="courtname" class="form-label-bold applicant_address_line_1">Name of court</label>
+						<input id="courtname" name="courtname" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					</div>
+					
+					<div class="form-group ">
+						<label id="courtref" for="courtref" class="form-label-bold applicant_address_line_1">Court reference</label>
+						<input id="courtref" name="courtref" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					</div>
+				</div>
 
-						<label id="pending_label1" for="pending_no" class="block-label">
-						<input id="pending_no" value="" name="pendings" type="radio" aria-describedby="title_error title_help">No</label>		
+			
+			<div class="panel-indent" id="pnl-credcourt">
+				<div class="form-group" id="pnl-creditor">
+					<label id="creditorname" for="creditorname" class="form-label-bold">Name of creditor</label>
+					<input id="creditorname" name="creditorname" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+				</div>
+				<div id="pnl-court">
+					<div class="form-group ">
+						<label id="courtname_label" for="courtname" class="form-label-bold applicant_address_line_1">Name of court</label>
+						<input id="courtname" name="courtname" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					</div>
+					
+					<div class="form-group ">
+						<label id="courtref" for="courtref" class="form-label-bold applicant_address_line_1">Court reference</label>
+						<input id="courtref" name="courtref" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					</div>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+			
+			<div class="form-group" id="pnl-consent">
+				<fieldset class="inline">
+				<legend id="consent_label" class="form-label-bold">Have you obtained the creditors consent to apply for a DRO?</legend>
+					<div id="consent" class="form-group">
+						<label id="consent_label0" for="consent_yes" class="block-label">
+						<input id="consent_yes" value="" name="consent" type="radio" aria-describedby="title_error title_help">Yes</label>
+
+						<label id="consent_label1" for="consent_no" class="block-label">
+						<input id="consent_no" value="" name="consent" type="radio" aria-describedby="title_error title_help">No</label>		
 					</div>
 				</fieldset>
 			</div>
 
-
-		
 			<p>&nbsp;</p>
-		
+
 			<div class="form-navigation form-group">
-				<a id="next" class="button">Continue</a><br>
+				<a href="../application.html?section2=inprogress" id="next" class="button">Continue</a><br>
 			</div>
 			
 			<div>
@@ -259,41 +283,59 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-	$("#pnl-pending").hide();
-	$("#pnl-date").hide();
-	
-	
-
-	
-	$("#proceedings_bkt").click(function(){
-		$("#next").prop("href","bankruptcy.html");
-	});
-	
-	$("#proceedings_dmp").click(function(){
-		$("#next").prop("href","dmp.html");
-	});
-
-	$("#proceedings_ccao").click(function(){
-		$("#next").prop("href","ccao.html");
-	});
-
-
+	$("#pnl-referred").hide();
+	$("#pnl-creditor").hide();
+	$("#pnl-court").hide();
+	$("#pnl-consent").hide();
+	$("#pnl-credcourt").hide();
 });
 
-$('#pnl-proceedings input:radio').click(function() {
-	if($("#proceedings_no").prop('checked')==true){
-		$("#pnl-pending").show();
-		$("#pnl-date").hide();
+$('#pnl-presented input:radio').click(function() {
+	if($("#presented_yes").prop('checked')==true){
+		$("#pnl-referred").show();
+		$("#pnl-creditor").hide();
+		$("#pnl-court").hide();
+		$("#pnl-consent").hide();
+		$("#pnl-credcourt").hide();
+
 	}
 	else{
-		$("#pnl-pending").hide();
-		$("#pnl-date").show();
-		$("#pending_no").prop('checked', false);
-		$("#pending_yes").prop('checked', false);
+		$("#pnl-referred").hide();
+		$("#pnl-creditor").show();
+		$("#pnl-court").show();
+		$("#pnl-consent").show();
+		$("#pnl-credcourt").show();
+	}
 
+});
+
+$('#pnl-referrer input:radio').click(function() {
+	
+	if($("#referred_yes").prop('checked')==true){
+		$("#pnl-crt").show();
+	}
+	else{
+		$("#pnl-crt").hide();
 	}
 });
+
+/*
+$('#pnl-proceedings input:radio').click(function() {
+	
+	if(	($("#proceedings_bkt").prop('checked')==true) || ($("#proceedings_io").prop('checked')==true) || ($("#proceedings_iva").prop('checked')==true) ||
+		($("#proceedings_bro").prop('checked')==true) || ($("#proceedings_dro").prop('checked')==true) || ($("#proceedings_drro").prop('checked')==true)){
+		$("#pnl-preceeding-date").show();
+		$("#pnl-preceeding-dmp").hide();
+	}
+	else if($("#proceedings_no").prop('checked')==true){
+		$("#pnl-preceeding-date").hide();
+		$("#pnl-preceeding-dmp").hide();
+		$("#pnl-preceeding-ccao").hide();
+	}
+});
+*/
+
+
 
 </script>
 
