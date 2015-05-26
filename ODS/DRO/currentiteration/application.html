@@ -432,7 +432,7 @@
                             </li>
                             <li class="row">
                                 <div class="rowtop">
-                                    <span class="col-sm-6"><h3>6 Your property 
+                                    <span class="col-sm-6"><h3>6. Your property 
 									transactions and preferred creditors</h3></span>
                                     <span class="col-sm-3"><label class="label label-default">Not started</label></span>
                                     <span class="col-sm-3"><a href="#" class="edit">Start</a></span>
@@ -463,11 +463,11 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="row">
+                            <li class="row" id="section7">
                                 <div class="rowtop">
                                     <span class="col-sm-6"><h3>7. Your creditors</h3></span>
                                     <span class="col-sm-3"><label class="label label-default">Not started</label></span>
-                                    <span class="col-sm-3"><a href="#" class="edit">Start</a></span>
+                                    <span class="col-sm-3"><a href="section_creditors/1.html" class="edit">Start</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
@@ -650,6 +650,7 @@
 			var user = ($.cookie('user'));
 			var section1 = getParameterByName("section1");
 			var section2 = getParameterByName("section2");
+			var section7 = getParameterByName("section7");
 	
             $(document).ready(function () {
             	$("#logout").show();
@@ -706,6 +707,23 @@
                 }
 
                 
+				if (section7 && section7.length > 0) {
+                    // change the colour of the button
+                    if (section7 == "inprogress") {
+                        $("#section7 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section7 .label").text("In progress");
+                        $("#section7 .edit").text("Edit");
+                
+
+                    }
+
+                    if (section7 == "complete") {
+                        $("#section7 .label").removeClass("label-default").addClass("label-success");
+                        $("#section7 .label").text("Complete");
+                        $("#section7 .edit").text("Edit");
+                      
+                    }
+                }
 
                 
 
