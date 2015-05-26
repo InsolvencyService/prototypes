@@ -197,6 +197,14 @@
 
                                             <tr class="group-heading" id="income4">
                                                 <td>
+                                                    <span lang="en-gb">Contributions by others</span></td>
+                                                <td class="value">&nbsp;</td>
+                                                <td><a href="3-contributions.html" class="edit">Start</a></td>
+
+                                            </tr>
+
+                                            <tr class="group-heading" id="income4">
+                                                <td>
                                                     Other income
                                                 </td>
                                                 <td class="value"></td>
@@ -222,63 +230,12 @@
                                 </div>
                             </div>
 
-                            <div id="partnerincome">
-                                <h2 class="heading-medium">Income from other<br />household members</h2>
-
-                                <div class="form-group">
-                                    <table>
-                                        <tbody>
-                                            <tr class="group-heading" id="partnerincome1">
-                                                <td>Income from other<br/>household members</td>
-                                                <td class="value"></td>
-                                                <td>
-                                                    <a href="3-contributions.html" class="edit"><span class="auto-style1">Start</span></a>
-                                                </td>
-
-                                            </tr>
-
-                                            <tr class="group-heading totalrow" id="partnerincometotal">
-                                                <td><span style="float:right">Total</span></td>
-                                                <td class="totalvalue"></td>
-                                                <td class="actions">
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-
-                            <div id="totalincome">
-                                <h2 class="heading-medium">Overall total</h2>
-
-                                <div class="form-group">
-                                    <table>
-                                        <tbody>
-
-
-                                            <tr class="group-heading totalrow" id="overalltotal">
-                                                <td style="border-top:3px double gray"><span style="float:right"></span></td>
-
-
-                                                <td class="totalvalue" style="border-top: 3px double gray"></td>
-                                                <td class="actions" style="border-top: 3px double gray">
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
+ 
                         </div>
 
                         <div class="col-sm-6" id="costs">
 
-                            <div class="heading-medium">Costs</div>
+                            <div class="heading-medium">Expenses</div>
                             <div class="form-group">
                                 <table id="fixed">
                                     <tbody>
@@ -464,6 +421,7 @@
                         $("#costs a.edit").first().text("Start").show();
                         totalincome();
                     }
+                    /*
                     if (stage == "partnerincome") {
                         $("#income a.edit").text("Edit").show();
                         $("#partnerincome a.edit").first().text("Edit").show();
@@ -471,6 +429,7 @@
                         totalincome();
                         totalpartnerincome();
                     }
+                    */
                     if (stage == "costs") {
                         $("#income a.edit").text("Edit").show();
                         $("#partnerincome a.edit").text("Edit").show();
@@ -522,7 +481,7 @@
                     }
                 }
                 $("#incometotal .totalvalue").text(totalamount.toFixed(2));
-                $("#overalltotal .totalvalue").text(totalamount.toFixed(2));
+                //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
             }
             //partnerincometotal  overalltotal  coststotal  totalvalue
             function totalpartnerincome() {
@@ -542,7 +501,7 @@
                 if ($("#incometotal .totalvalue").text().length > 0) {
                     overalltotal += parseFloat($("#incometotal .totalvalue").text());
                 }
-                $("#overalltotal .totalvalue").text(overalltotal.toFixed(2));
+                //$("#overalltotal .totalvalue").text(overalltotal.toFixed(2));
             }
 
             function totalcosts(page) {
