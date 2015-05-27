@@ -199,11 +199,11 @@
                                                 <td>
                                                     <span lang="en-gb">Contributions by others</span></td>
                                                 <td class="value">&nbsp;</td>
-                                                <td><a href="3-contributions.html" class="edit">Start</a></td>
+                                                <td><a href="3-contributions.html" style="display:none" class="edit">Start</a></td>
 
                                             </tr>
 
-                                            <tr class="group-heading" id="income4">
+                                            <tr class="group-heading" id="income5">
                                                 <td>
                                                     Other income
                                                 </td>
@@ -417,19 +417,10 @@
                         $("#income a.edit").first().text("Edit").show();
                         $("#partnerincome a.edit").hide();
                         $("#costs a.edit").hide();
-                        $("#partnerincome a.edit").first().text("Start").show();
                         $("#costs a.edit").first().text("Start").show();
                         totalincome();
                     }
-                    /*
-                    if (stage == "partnerincome") {
-                        $("#income a.edit").text("Edit").show();
-                        $("#partnerincome a.edit").first().text("Edit").show();
-                        $("#costs a.edit").first().text("Start").show();
-                        totalincome();
-                        totalpartnerincome();
-                    }
-                    */
+
                     if (stage == "costs") {
                         $("#income a.edit").text("Edit").show();
                         $("#partnerincome a.edit").text("Edit").show();
@@ -442,18 +433,21 @@
 
                 if (page && page.length > 0) {
                     var itemnumber = parseInt(page);
-                    $("#" + stage + page + " a.edit").show();
+                    $("#" + stage + (itemnumber - 1) + " a.edit").text("Edit").removeClass("button");
+                    $("#" + stage + page + " a.edit").show().addClass("buttton");
 
                     for (i = 1; i < itemnumber; i++) {
                         $("#" + stage + i + " a.edit").text("Edit").show();
                     }
                     itemnumber += 1;
+                    /*
                     $("#" + stage + itemnumber + " a.edit").text("Start").show();
                     if (stage == "income" && itemnumber == 3) {
                         itemnumber += 1;
                         $("#" + stage + itemnumber + " a.edit").text("Start").show();
 
                     }
+                    */
                 }
 
 
