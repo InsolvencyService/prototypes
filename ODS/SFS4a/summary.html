@@ -170,7 +170,7 @@
                                                 <td>Salary or wages</td>
                                                 <td class="value"></td>
                                                 <td>
-                                                    <a href="1a.html" class="next edit button" style="text-align:center"><span>Start</span></a>
+                                                    <a href="1a.html" class="next edit button">Start</a>
                                                 </td>
 
                                             </tr>
@@ -197,7 +197,7 @@
 
                                             <tr class="group-heading" id="income4">
                                                 <td>
-                                                    <span lang="en-gb">Contributions by others</span></td>
+                                                    Contributions by others</td>
                                                 <td class="value">&nbsp;</td>
                                                 <td><a href="3-contributions.html" style="display:none" class="edit">Start</a></td>
 
@@ -405,6 +405,7 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
+                $("#next").hide();
 
                 var stage = getParameterByName("stage");
                 var page = getParameterByName("page");
@@ -413,18 +414,17 @@
                     page = 1;
                 }
                 if (stage && stage.length > 0) {
+                    $("a.edit").removeClass("button").hide();
                     if (stage == "income") {
                         $("#income a.edit").first().text("Edit").show();
-                        $("#partnerincome a.edit").hide();
-                        $("#costs a.edit").hide();
+                        //$("#partnerincome a.edit").hide();
                         $("#costs a.edit").first().text("Start").show();
                         totalincome();
                     }
 
                     if (stage == "costs") {
                         $("#income a.edit").text("Edit").show();
-                        $("#partnerincome a.edit").text("Edit").show();
-                        $("#costs a.edit").first().text("Edit").show();
+                        $("#costs a.edit").first().addClass("button").text("Start").show();
                         totalincome();
                         totalpartnerincome();
                         totalcosts(page);
@@ -433,15 +433,15 @@
 
                 if (page && page.length > 0) {
                     var itemnumber = parseInt(page);
-                    $("#" + stage + (itemnumber - 1) + " a.edit").text("Edit").removeClass("button");
-                    $("#" + stage + page + " a.edit").show().addClass("buttton");
-
+                    var previous = itemnumber - 1;
+                    $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
+                    $("#" + stage + itemnumber + " a.edit").show().text("Edit");
                     for (i = 1; i < itemnumber; i++) {
                         $("#" + stage + i + " a.edit").text("Edit").show();
                     }
                     itemnumber += 1;
+                    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
                     /*
-                    $("#" + stage + itemnumber + " a.edit").text("Start").show();
                     if (stage == "income" && itemnumber == 3) {
                         itemnumber += 1;
                         $("#" + stage + itemnumber + " a.edit").text("Start").show();
