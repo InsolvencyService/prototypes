@@ -424,7 +424,7 @@
 
                     if (stage == "costs") {
                         $("#income a.edit").text("Edit").show();
-                        $("#costs a.edit").first().addClass("button").text("Start").show();
+                        $("#costs a.edit").first().text("Start").show();
                         totalincome();
                         totalpartnerincome();
                         totalcosts(page);
@@ -435,19 +435,21 @@
                     var itemnumber = parseInt(page);
                     var previous = itemnumber - 1;
                     $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
+                    if (stage == "income" && itemnumber == 2) {
+                        itemnumber += 1;
+                    }
                     $("#" + stage + itemnumber + " a.edit").show().text("Edit");
                     for (i = 1; i < itemnumber; i++) {
                         $("#" + stage + i + " a.edit").text("Edit").show();
                     }
                     itemnumber += 1;
                     $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
-                    /*
-                    if (stage == "income" && itemnumber == 3) {
-                        itemnumber += 1;
-                        $("#" + stage + itemnumber + " a.edit").text("Start").show();
-
+                    if (stage == "income" && itemnumber > 5) {
+                        $("#costs1 a.edit").addClass("button").text("Show");
                     }
-                    */
+                    if (stage == "costs" && itemnumber > 7) {
+                        $("#next").show();
+                    }
                 }
 
 
@@ -465,7 +467,7 @@
             function totalincome() {
                 var totalamount = 0;
                 var item = "income";
-                for (i = 1; i < 5; i++) {
+                for (i = 1; i < 6; i++) {
                     var amount = $.cookie(item + i);
                     if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
                         $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
