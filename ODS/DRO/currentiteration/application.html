@@ -339,13 +339,12 @@
                         <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                             <p><a href="#">Make a payment</a></p>
                             <p><a href="#">View and print application</a></p>
-							<div id="ai" hidden="true" class="text-right">	                        
+							<div id="ai" hidden="true">	                        
 							    <p><a href="ai_admin.html">Return to case search</a></p>
 							    <p>&nbsp;</p>
-							    <p><i class="glyphicon glyphicon-trash"></i>&nbsp; <a href="#">Delete application</a></p>
-                            </div>
+							</div>
                         </div>
-                        
+                        <p id="delete" hidden="true"><i class="glyphicon glyphicon-trash"></i>&nbsp; <a href="#">Delete application</a></p>
                         
 
                     </div>
@@ -442,7 +441,8 @@
             	if(user=="ai"){
             		$("#ai").show(); 
             		$("#ai_panel").show();  
-            		$("#logout-link").prop("href", "ai_login.html");          	
+            		$("#logout-link").prop("href", "ai_login.html");  
+            		$("#delete").show();        	
             	}
             	else{
             		$("#user_save").show();
