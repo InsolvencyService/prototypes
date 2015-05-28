@@ -145,21 +145,20 @@
         <a href="summary.html">Income and expenses</a> &gt; Income 1 of 3
     </p>
     
-	<h1 class="form-title heading-large">Your income</h1>
+	<h1 class="form-title heading-large">Salary or wgaes</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	<p>For each question, enter the amount you take home after taxes, national insurance and pension contributions.</p>
 	
 	
 		<table class="table table-condensed">
 	<thead>
 	<tr>
-	<th>Question</th>
+	<th>&nbsp;</th>
 	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
-	<th style="width:200px; padding-left:20px">Frequency</th>
+	<th style="width:200px; padding-left:20px">per week / month / year</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -184,7 +183,8 @@
 	
 	<table class="table">
 	<tr>
-	<td style=""><span class="form-label">Amount you pay in income tax</span></td>
+	<td style=""><span class="form-label">Amount you pay in income tax</span>
+	<span class="form-hint">Check your payslips for information about your PAYE income tax</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0.00">
@@ -198,22 +198,7 @@
 	</td>
 	</tr>
 	<tr>
-	<td><span class="form-label">Amount you pay in National insurance</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control" name="D3">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td><span class="form-label">Pension deductions</span>
-	<span class="form-hint">You can enter personal pension costs later</span></td>
+	<td><span class="form-label">Pension deductions</span> </td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0.00">
@@ -263,7 +248,8 @@
 	</tr>
 
 	<tr>
-	<td><span class="form-label">Other salary or wages</span><span style="color:GrayText">For example, if you have a second job. </span></td>
+	<td><span class="form-label">Other payments to you by your employer</span>
+	<span style="color:GrayText">For example, vehicle allowance. </span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
@@ -277,17 +263,12 @@
 	</td>
 	</tr>
 	<tr>
-	<td><span class="form-label">Any other income from employment</span></td>
+	<td><span class="form-label"><a href="1a.html">Add an employment</a></span></td>
 	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
+			</td>
 	<td>
 	<select class="select-control" name="D8">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
+       </select>
 	</td>
 	</tr>
 	
