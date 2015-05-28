@@ -175,6 +175,15 @@
                     <td>                            
                     </td>
                 </tr>
+                
+                <tr id="row2">
+                    <td></td>
+                    <td class="text-right">Total:</td>
+                    <td id="total"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
                
 			</tbody>
 			</table>
@@ -253,6 +262,10 @@ $(document).ready(function() {
 	
 	if(row2=="show"){
 		$("#row2").show();
+		$("#total").text("£1980.48");
+	}
+	else{
+		$("#total").text("£1,291.23");
 	}
 
 });
