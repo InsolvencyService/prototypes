@@ -756,11 +756,12 @@ Employment details 2
 	            $(document).ready(function () {
 	
 	                // mark sections as completed
-	                $("#section4 .edit").text("Start").hide();
+
 					$("ul li.row .button").removeClass("button");
 					$("ul li.row .edit").hide();
 					$("#next").removeClass("button");
-					
+	                $("#section1 .edit").addClass("button").show().text("Start");
+	                					
 	                var section4 = getParameterByName("section4");
 					var section5 = getParameterByName("section5");
 					var section6 = getParameterByName("section6");
@@ -810,37 +811,9 @@ Employment details 2
 	                }
 	
 		                var section2 = getParameterByName("section2");
-	
-	                if (section2 && section2.length > 0) {
-	                    // change the colour of the button
-	
-	                    if (section2 == "continue") {
-	                        $("#section2 .label").removeClass("label-default").addClass("label-success");
-	                        $("#section2 .edit").text("Continue");
-	                       // $("#section2 .edit").prop("href", "1-completed/name.html");
-	                    }
-	                }
 	                var section2 = getParameterByName("section2");
 	
 
-	                if (section2 && section2.length > 0) {
-	                    // change the colour of the button
-	
-	                    if (section2 == "complete") {
-	                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-	                        //$("#section1 .label").text("Complete");
-	                        $("#section1 .edit").text("Edit");
-	                        
-	                        $("#section2 .label").removeClass("label-default").addClass("label-success");
-	                        //$("#section2 .label").text("Complete");
-	                        $("#section2 .edit").text("Edit");
-	
-	                        $("#section4 .label").removeClass("label-default").addClass("label-success");
-	                        //$("#section2 .label").text("Complete");
-	                        $("#section4 .edit").text("Start").show();
-	                        //$("#section1 .edit").prop("href", "section1/money-owed.html?amount=999.99&name=Barclaycard");
-	                    }
-	                }
 	
 	
 	
