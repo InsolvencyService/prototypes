@@ -79,6 +79,30 @@
 .btn{
 	color:white!important
 }
+
+.ui-autocomplete {
+      padding: 0;
+      list-style: none;
+      background-color: #fff;
+      width: 218px;
+      border: 1px solid #B0BECA;
+      max-height: 350px;
+      overflow-x: hidden;
+    }
+    .ui-autocomplete .ui-menu-item {
+      border-top: 1px solid #B0BECA;
+      display: block;
+      padding: 4px 6px;
+      color: #353D44;
+      cursor: pointer;
+    }
+    .ui-autocomplete .ui-menu-item:first-child {
+      border-top: none;
+    }
+    .ui-autocomplete .ui-menu-item.ui-state-focus {
+      background-color: #D5E5F4;
+      color: #161A1C;
+    }
 </style>
 <!-- #EndEditable -->
 
@@ -136,11 +160,84 @@
  	<div class="inner-block">
 	 	<h1 class="form-title heading-large">Add a creditor</h1>
 	 	
-	 	<form class="form" method="post">
+	 	<form class="form" method="post" id="frm-creditor">
 			<div class="form-group ">
 				<label id="creditor_name_label" for="creditor_name" class="form-label-bold first_name">Creditor name</label>
-				<input id="creditor_name" name="creditor_name" type="text" value="" /><br/>
+				<select class="field form-control-3-4 font-xsmall" placeholder="Type your creditor name" name="Country" id="creditor-selector" autofocus="autofocus" autocorrect="off" autocomplete="off">
+			        <option value="" selected="selected">Select Country</option>
+			        <option value="1st  Credit, The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP">1st  Credit, The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP</option>
+					<option>Abbey National Plc, c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH</option>
+					<option>Ace Cards and Gifts, Express House, Clayton Business Park, Petre Road, Accrington, Lancashire, BB5 5JY</option>
+					<option>Additions Direct, Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN</option>
+					<option>Barclaycard, Specialist Support Unit, Collections Floor 6, PO Box 5402, Northampton, NN4 1ZR</option>
+					<option>Barclays Bank Plc, Open Sort &amp; Distribute, Astron House, 51 Saffron Road, Leicester, LE87 2BB</option>
+					<option>Barclays Partner Finance, c/o Grant Thornton UK LLP, Hartwell House, 55-61 Victoria Street, Bristol, Avon, BS1 6FT</option>
+					<option>BCW Group Plc, 24 George Square, Glasgow, Lanarkshire, G2 1EG</option>
+					<option>Bedford Borough Council, A015, Town Hall, St Pauls Square, Bedford, MK40 1SJ</option>
+					<option>C.A.R.S, Viewpoint, Basing View, Basingstoke, Hampshire, RG21 4RG</option>
+					<option>Cabot Financial (UK) Ltd, 1 Kings Hill Avenue, Kings Hill, West Malling, Kent, ME19 4UA</option>
+					<option>HSBC, Collections and Recoveries, 2nd Floor, 12 Calthorpe Road, Edgebaston, Birmingham, B15 1FD</option>
+					<option>Hull City Council, Council Tax Section, First Floor, Treasury Building, Guildhall Road, Hull, HU1 2AB</option>
+					<option>John Lewis Partnership Card, HBEU Collections, 1st Floor, 120 Edmund Street, Birmingham, B3 2QZ</option>
+					<option>John Moores, Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN</option>
+					<option>Kirklees Council, Civic Centre 1 High Street HUDDERSFIELD, HD1 2NF</option>
+					<option>La Redoute, Empire Buildings, Horbury Road, Wakefield, WF90 8AA</option>
+			      </select>
+				<br/>
+				<a id="add-creditor" class="font-xsmall">Add a creditor</a>
 			</div>
+			<div id="pnl-creditor" class="panel-indent">
+			
+				<div class="form-group" >
+					<label id="applicant_name_label" for="applicant_name" class="form-label-bold applicant_address_line_1">Creditor name</label>
+					<input id="applicant_name" name="applicant_name" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					<br/>
+				</div>
+
+				<div class="form-group" >
+					<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+					<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+					<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+					<br/>
+				</div>
+					
+				<div class="form-group ">
+					<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
+					<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+					<br/>
+				</div>
+					
+				<div class="form-group ">
+					<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+					<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="applicant_address_country_label" for="applicant_address_country" class="form-label-bold applicant_address_country">Country</label>
+					<input id="applicant_address_country" name="applicant_address_country" type="text" aria-describedby="applicant_address_country_error applicant_address_country_help" value="" />
+					<br/>
+				</div>
+
+			</div>
+			
 			<div class="form-group ">
 				<label id="creditor_reference_label" for="creditor_reference" class="form-label-bold">Creditor reference</label>
 				<input id="creditor_reference" name="creditor_reference" type="text" value="" />
@@ -225,7 +322,7 @@
 	 	</form>
 	 	<p>&nbsp;</p>
 		<div>
-			<a id="next" style=" vertical-align: middle;" class="button" href="1.html?row2=show">Add creditor</a> 
+			<a id="next" style=" vertical-align: middle;" class="button" href="1.html?row2=show">Save and return</a> 
 		</div>
 		<p>&nbsp;</p>
 		<div>
@@ -288,11 +385,21 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../../assets/js/jquery.select-to-autocomplete.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#pnl-attachment_earnings").hide();
 	$("#pnl-secured_details").hide();
+	$("#pnl-creditor").hide();
+});
 
+$("#add-creditor").on("click", function (e) {
+	$("#pnl-creditor").toggle();
+});
+
+$(function(){
+      $( '#creditor-selector' ).selectToAutocomplete();
 });
 
 $('#pnl-secured input:radio').click(function() {
@@ -314,6 +421,12 @@ $('#pnl-earnings input:radio').click(function() {
 	else{
 		$("#pnl-attachment_earnings").hide();
 	}
+});
+
+$('#creditor-selector').change(function(e) {
+    e.preventDefault();
+    var creditorx = $('#creditor-selector').value;
+    $('#cred_address').text(creditorx);
 });
 
 </script>
