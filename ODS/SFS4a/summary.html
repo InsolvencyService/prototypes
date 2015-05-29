@@ -71,9 +71,6 @@
             padding-top: 0px;
         }
 
-        .auto-style1 {
-            color: #005EA5;
-        }
     </style>
 
 
@@ -180,9 +177,9 @@
                                                     Benefits
                                                 </td>
                                                 <td class="value"></td>
-                                                <td>
+                                                <td style="white-space:nowrap">
                                                     <a href="2.html" style="display:none" class="edit">Edit</a><br />
-                                                    <a href="#" style="display:none" class="declare">I do not receive benefits</a>
+                                                    <a href="#" style="display:none" class="declare" id="btn-nobenefits">I don't receive benefits</a>
                                                 </td>
 
                                             </tr>
@@ -450,7 +447,10 @@
                     if (stage == "costs" && itemnumber > 7) {
                         $("#next").show();
                     }
-                }
+                     if (stage == "income" && itemnumber == 2) {
+                        $("#income2 .declare").show();
+                    }
+               }
 
 
 				var defaultnext = $(".next").first().attr("href");
@@ -462,6 +462,13 @@
                     $(".next").attr("href", defaultnext);
                 }
 
+				$("#btn-nobenefits").on("click", function(){
+                   $("#income2 a.edit").removeClass("button").text("Edit");
+                   $("#btn-nobenefits").hide();
+                   $("#income4 a.edit").show().addClass("button").text("Start");
+				
+				});
+				
             });
 
             function totalincome() {
