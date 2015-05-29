@@ -70,7 +70,9 @@
         .row > div:first-child {
             padding-top: 0px;
         }
-
+		.value, .totalvalue {
+			text-align:right;
+		}
     </style>
 
 
@@ -403,6 +405,15 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $("#next").hide();
+				$(".pensionable").hide();
+				var pensionable = false;
+				if (getParameterByName("pensionable") && getParameterByName("pensionable").length > 0){
+                	pensionable = getParameterByName("pensionable");
+                
+                    $(".pensionable").show();
+                    defaultnext  += "?pensionable=true";
+                    $(".next").attr("href", defaultnext);
+                }
 
                 var stage = getParameterByName("stage");
                 var page = getParameterByName("page");
@@ -432,7 +443,7 @@
                     var itemnumber = parseInt(page);
                     var previous = itemnumber - 1;
                     $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
-                    if (stage == "income" && itemnumber == 2) {
+                    if (stage == "income" && itemnumber == 2 && pensionable == false) {
                         itemnumber += 1;
                     }
                     $("#" + stage + itemnumber + " a.edit").show().text("Edit");
@@ -454,14 +465,7 @@
 
 
 				var defaultnext = $(".next").first().attr("href");
- 				$(".pensionable").hide();
-                var pensionable = getParameterByName("pensionable");
-                if (pensionable && pensionable.length > 0) {
-                    $(".pensionable").show();
-                    defaultnext  += "?pensionable=true";
-                    $(".next").attr("href", defaultnext);
-                }
-
+ 
 				$("#btn-nobenefits").on("click", function(){
                    $("#income2 a.edit").removeClass("button").text("Edit");
                    $("#btn-nobenefits").hide();
