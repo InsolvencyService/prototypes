@@ -217,7 +217,7 @@
                                     <span class="col-sm-8"><h3>1 Personal details</h3></span>
                                     
                                     <span class="col-sm-4">
-									<a class="edit" href="1-completed/your-names.html">Edit</a></span>
+									<a class="edit button" href="1-completed/your-names.html">Edit</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
@@ -734,12 +734,20 @@ Employment details 2
 					$("ul li.row .edit").hide();
 					$("#next").removeClass("button");
 	                $("#section1 .edit").addClass("button").show().text("Start");
-	                					
+
+	                var section1 = getParameterByName("section1");	
+		            var section2 = getParameterByName("section2");
+	                var section3 = getParameterByName("section3");				
 	                var section4 = getParameterByName("section4");
 					var section5 = getParameterByName("section5");
 					var section6 = getParameterByName("section6");
 	               // if (section4 && section4.length > 0) {
 	                    // change the colour of the button
+		                if (section1 && section1 == "complete") {
+	                        $("#section1 .edit").show().removeClass("button").text("Edit");
+	                        $("#section2 .edit").show().addClass("button").text("Start");
+	                    }
+              
 	                    if (section4 == "inprogress") {
 	                        $("#section4 .edit").text("Continue");
 	                    }
@@ -770,21 +778,6 @@ Employment details 2
 
 	                //}
 	
-	                var section1 = getParameterByName("section1");
-	
-	                if (section1 && section1.length > 0) {
-	                    // change the colour of the button
-	
-	                    if (section1 == "complete") {
-	                        $("#section1 .label").removeClass("label-default").addClass("label-success");
-	                        $("#section1 .label").text("Complete");
-	                        $("#section1 .edit").text("Edit");
-	                        $("#section1 .edit").prop("href", "1-completed/name.html");
-	                    }
-	                }
-	
-		                var section2 = getParameterByName("section2");
-	                var section2 = getParameterByName("section2");
 	
 
 	
