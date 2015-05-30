@@ -137,21 +137,23 @@
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
 	<p class="form-hint">
-        <a href="summary.html?stage=costs&amp;page=6">Income and expenses</a> &gt; Expenses 
-		5 of 8
+        <a href="summary.html?stage=costs&amp;page=2">Income and expenses</a> &gt; 
+		Expenses 2 of 7
     </p>
 	
 	
-	<h1 class="form-title heading-large">Savings</h1>
+	<h1 class="form-title heading-large">Pension, insurance and healthcare</h1>
 	
 	
 	
 	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token0" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
 	
 	
-			<p>How much do you spend on the following</p>  <table class="table table-condensed">
+			<p>Enter the total amount you spend on each item</p>  
+			<p>If you have children, don’t include the cost of prescriptions, medicines, dentistry or opticians for them - we’ll ask you about these later.</p>
+			<table class="table table-condensed">
 	<thead>
 	<tr>
 	<th></th>
@@ -161,13 +163,85 @@
 	</thead>
 	<tbody>
 		<tr>
-	<td><span class="form-label">Amount you regularly put into your savings accounts</span></td>
+	<td><span class="form-label">Personal pension payments</span>
+	<span class="form-hint">Don’t include workplace pension payments deducted directly from your salary</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
-	<select class="select-control" name="D1">
+	<select class="select-control" name="D11">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Life insurance</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D9">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Health insurance</span>
+	<span class="form-hint">for example, medical or dental insurance</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D10">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Payment protection insurance</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D4">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Pet insurance</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D13">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Veterinary bills</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D12">
                 <option value="week">per week</option>
                 <option value="month" selected="selected">per month</option>
                 <option value="year">per year</option>
@@ -176,30 +250,22 @@
 		</tr>
 		<tr>
 	<td>
-	
-	
-	<h1 class="form-title heading-large">Fines</h1>
-	
-	
-	
-	<input type="hidden" name="_csrf_token1" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	
-	
-			<p>How much do you spend on the following</p>  </td>
+	<h2 class="heading-medium">Healthcare</h2>
+			</td>
 	<td>
 		&nbsp;</td>
 	<td>
 	&nbsp;</td>
 		</tr>
 		<tr>
-	<td><span class="form-label">Fines excluding penalty charge notices</span></td>
+	<td><span class="form-label">Adult care costs</span>
+	<span class="form-hint">(expenses you have as a result of caring for someone over 16)</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
-	<select class="select-control" name="D2">
+	<select class="select-control" name="D6">
                 <option value="week">per week</option>
                 <option value="month" selected="selected">per month</option>
                 <option value="year">per year</option>
@@ -207,15 +273,48 @@
 	</td>
 		</tr>
 		<tr>
-	<td><span class="form-label">
-	<a href="#">Add another fine</a>
-	</span></td>
+	<td><span class="form-label">Prescriptions and medicines</span></td>
 	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
+	<select class="select-control" name="D7">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
 	</td>
 		</tr>
 		<tr>
+	<td><span class="form-label">Dentistry</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D14">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Opticians</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D8">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+	<tr class="totalrow">
 	<td><span class="form-label text-right">Total</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
@@ -224,11 +323,9 @@
 	<td>
 	<div>per month</div>
 </td>
-		</tr>
+	</tr>
 
 </table>	
-	</form>
-	<form class="form" method="post">
 	<p class="clearfix"><br/></p>
 
 	
@@ -236,24 +333,20 @@
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="costs9.html">Continue</a>
+		<a id="next" class="button" href="expenses3.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="costs5.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="expenses1.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
 	
 	</div>
 	</div>
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	
-	
 	</form>
 	</div>
 

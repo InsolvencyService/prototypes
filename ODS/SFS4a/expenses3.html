@@ -136,13 +136,14 @@
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
+	
 	<p class="form-hint">
-        <a href="summary.html?stage=costs&amp;page=2">Income and expenses</a> &gt; 
-		Expenses 2 of 8
+        <a href="summary.html?stage=costs&amp;page=9">Income and expenses</a> &gt; 
+		Expenses 3 of 7
     </p>
 	
 	
-	<h1 class="form-title heading-large">Pension, insurance and healthcare</h1>
+	<h1 class="form-title heading-large">Food and housekeeping</h1>
 	
 	
 	
@@ -160,99 +161,71 @@
 	</tr>
 	</thead>
 	<tbody>
-		<tr>
-	<td><span class="form-label">Pension payments</span></td>
+	<tr>
+	<td><span class="form-label">Groceries</span>
+	<span class="form-hint">Including food, pet food, non-alcoholic drinks, cleaning supplies, etc but not including toiletries or baby items</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
-	<select class="select-control" name="D11">
+	<select class="select-control">
+                <option value="week">per week</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
+
+		<tr>
+            <td><span class="form-label">Toiletries</span></td>
+            <td>
+                <div class="pull-left text-right pound-sign">£</div>
+                <input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+            </td>
+            <td>
+                <select class="select-control" name="D1">
+                    <option value="week">per week</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="year">per year</option>
+                </select>
+            </td>
+        </tr>
+		<tr>
+	<td><span class="form-label">Alcohol</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
+	</td>
+	<td>
+	<select class="select-control" name="D2">
                 <option value="week">per week</option>
                 <option value="month" selected="selected">per month</option>
                 <option value="year">per year</option>
      </select>
 	</td>
 		</tr>
-		<tr>
-	<td><span class="form-label">Life insurance</span></td>
+
+	<tr>
+	<td><span class="form-label">Meals at work</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
 	</td>
 	<td>
-	<select class="select-control" name="D9">
+	<select class="select-control">
                 <option value="week">per week</option>
                 <option value="month" selected="selected">per month</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Health insurance (medical, accident, dental)</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control" name="D10">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td>
-	<h2 class="heading-medium">Healthcare</h2>
-			</td>
-	<td>
-		&nbsp;</td>
-	<td>
-	&nbsp;</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Adult care costs</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control" name="D6">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Prescriptions and medicines</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control" name="D7">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Dentistry and opticians</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
-	</td>
-	<td>
-	<select class="select-control" name="D8">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
+	</tr>
+
+
+
+
+
+
 	<tr class="totalrow">
 	<td><span class="form-label text-right">Total</span></td>
 	<td>
@@ -272,14 +245,14 @@
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="costs4.html">Continue</a>
+		<a id="next" class="button" href="expenses4.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="costs1.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="expenses2.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>

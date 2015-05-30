@@ -98,6 +98,9 @@
 	        //alert(stage + thispage + " - " + totalamount);
 	    }
 
+
+
+
 	});
 	
 
@@ -120,5 +123,14 @@
 	{
 	 	return parseFloat(num); //.replace(/[^0-9\.]+/g,"")
 	}
+
+			$(".addanother").hide();
+			$("#btn-addanother").on("click", function(){
+				$(".addanother").show().find("input").first().focus();
+				 $('html, body').animate({
+                        scrollTop: $(".addanother").offset().top
+                    }, 2000);
+
+			});
 
 });
