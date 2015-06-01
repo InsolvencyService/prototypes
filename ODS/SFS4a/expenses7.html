@@ -153,15 +153,19 @@
 		<table class="table table-condensed">
 	<thead>
 	<tr>
-	<th></th>
-	<th class="heading-amount">Amount</th>
+	<th>&nbsp;</th>
+	<th style="width:160px; padding-right:25px">Type</th>
+	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
 	<th style="width:200px; padding-left:20px">per week / month / year</th>
 	</tr>
+
 	</thead>
 	<tbody>
 		<tr>
 	<td><span class="form-label">Savings</span>
 	<span class="form-hint">Enter the amount you regularly pay into a savings account.</span></td>
+	<td>
+		&nbsp;</td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
@@ -175,8 +179,10 @@
 	</td>
 		</tr>
 		<tr>
-	<td><span class="form-label">Fines excluding penalty charge notices</span>
+	<td><span class="form-label">Fines</span>
 	<span class="form-hint">Do not include Penalty Charge Notices, for example parking fines issued by a local authority.</span></td>
+	<td>
+		&nbsp;</td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
@@ -193,6 +199,8 @@
 	<td><span class="form-label">
 	<a href="#">Add another fine</a>
 	</span></td>
+	<td>
+	&nbsp;</td>
 	<td>
 	</td>
 	<td>
@@ -214,10 +222,17 @@
 	<td>
 		&nbsp;</td>
 	<td>
+		&nbsp;</td>
+	<td>
 	&nbsp;</td>
 		</tr>
-	<tr>
-	<td><span class="form-label">Other expense 1</span></td>
+
+	<tr class="addanother">
+	<td><label id="last_name_label" for="last_name" class="form-label">Type and amount</label>
+	</td>
+	<td>
+	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" class="form-control" placeholder="Type" />
+</td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0.00">
@@ -231,14 +246,23 @@
 	</td>
 	</tr>
 
+
 	<tr>
-	<td><span class="form-label"><a href="#"><i class="glyphicon glyphicon-plus"></i> Add another expense</a></span></td>
+	<td>
+<label id="last_name_label10" for="loanname" class="form-label"><i class="glyphicon glyphicon-plus"></i>&nbsp;<a href="#" id="btn-addanother">Add another expense</a></label>
+		</td>
+	<td>
+	&nbsp;</td>
+	<td>
+	</td>
+	<td>
+	</td>
 	<td>
 	</td>
 	</tr>
 
 		<tr>
-	<td><span class="form-label text-right">Total</span></td>
+	<td colspan="2"><span class="form-label text-right">Total</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
 		<div class="text-right amount" id="box-total"></div>
