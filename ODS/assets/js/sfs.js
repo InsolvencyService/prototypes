@@ -57,8 +57,8 @@
 
 
 
-	$("tr select").first().keydown();
-	//$("tr input").first().focus();
+	//$("tr select").first().keydown();
+	$("tr input").first().focus();
 	
 	$("input").on("change", function(e){
 	    var total = calctotal();

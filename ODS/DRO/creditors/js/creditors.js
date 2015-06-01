@@ -441,6 +441,7 @@ $("#creditors").on("change", function(){
 
 $("#btn-clear").on("click", function(){
 		clearfilter();
+		$("#creditors").focus();
 });
 
 $("#btn-add").on("click", function(e){
