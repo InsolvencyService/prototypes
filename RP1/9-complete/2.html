@@ -122,29 +122,20 @@
     
     
     
-    <h1 class="form-title heading-large">Contact details</h1>
+    <h1 class="form-title heading-large"><span lang="en-gb">Your email address</span></h1>
 
 
     <form class="form" method="post">
          <input type="hidden" name="_csrf_token" value="aa7f593e37638edd0198a847b73e6b0be527dca1">
-   <p>
-        </p><div class="form-group ">
-            
-            <label id="contact_number_label" for="contact_number" class="form-label-bold contact_number">Your telephone number</label>
-            <span class="form-hint" id="contact_number_help">Your phone number in case we need to contact you about your claim</span>
-            <input class="form-control" id="contact_number" name="contact_number" type="text" aria-describedby="contact_number_error contact_number_help" value="">
-        <br>
-        </div>
     <p></p>      
     <p>
         </p><div class="form-group ">
             
-            <label id="email_label" for="email" class="form-label-bold email">Your email address</label>
-            <span class="form-hint" id="email_help"><span lang="en-gb">The email 
-			 is used</span> to update you about your claim<span lang="en-gb">. 
-			 We will send you a code to check you can access your email</span></span>
-            
-        <input class="form-control" id="email" name="email" type="text" size="35" maxlength="200" aria-describedby="email_error email_help" value="">
+            <label id="email_label" for="email" class="form-label-bold email">
+			 Email address</label>
+			 <span class="form-hint">Enter your email address if you have one, this will be used to update you about your claim. 
+            Without an email, there will be a delay while we send you correspondence. </span>
+			 <input class="form-control" id="email1" name="email" type="text" size="35" maxlength="200" aria-describedby="email_error email_help" value="">
         <br>
         </div>
     <p></p>
@@ -154,11 +145,18 @@
             <label id="confirmed_email_label" for="confirmed_email" class="form-label confirmed_email">Confirm email address</label>
             
             
-        <input class="form-control" id="confirmed_email" name="confirmed_email" type="text" size="35" maxlength="200" aria-describedby="confirmed_email_error confirmed_email_help" value="">
+        <input class="form-control" id="email2" name="confirmed_email" type="text" size="35" maxlength="200" aria-describedby="confirmed_email_error confirmed_email_help" value="">
         <br>
         </div>
     <p></p>
- 
+<div class="form-group missing-email">
+            <label id="_label" for="days_worked-1" class="block-label">
+                <input id="days_worked-1" name="days_worked-1" value="Monday" type="checkbox">
+                I understand that if I choose to proceed without my email that my application will be delayed
+            </label>
+
+</div>
+<p></p> 
 <!-- For User research -->
         <div class="form-navigation form-group">
             
@@ -230,25 +228,49 @@
 
 
     
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script type="text/javascript">
+$(document).ready(function() {
+	var nextpage = $("#next").prop("href");
+	var confirmed = false;
+	$(".missing-email").hide();
+	$("#pnl-email-nomatch").hide();
 
-    ga('create', 'UA-52715352-2', 'auto');
-    ga('send', 'pageview');
-    	
-    $(document).ready(function(){
-    	$('input[value="Yes"]').click(function(){
-    		$("#next").prop("href", "3-other-ways-to-claim.html");
-    	});
-    	$('input[value="No"]').click(function(){
-    		if ($('input[value="Yes"]:checked').length == 0){
-    			$("#next").prop("href", "3-verify-identity.html");
-    		}
-    	});
-    });
+
+	
+	$("#next").on("click", function(e){
+		var email1 = $("#email1").val();
+		var email2 = $("#email2").val();
+			
+		if (confirmed == false){
+			if (email2 == ""){
+				e.preventDefault();
+	
+				$(".missing-email").show();
+
+			} 
+			else{
+				if (email1 != email2)
+				{
+					e.preventDefault();
+					$(".missing-email").hide();
+
+				}
+			}
+			if ($("#pnl-missing-email").is(":visible") == true){
+				$("#next").prop("href", nextpage + "?noemail=true");
+			}
+			else{
+				$("#next").prop("href", nextpage);
+			}
+
+		}
+		
+
+	});
+
+});
+
+
 </script>
 
 
