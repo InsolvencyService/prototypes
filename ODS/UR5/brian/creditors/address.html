@@ -170,8 +170,8 @@ display:block;
 	
 	<div class="form-group ">
 	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">Creditor name</label>
-	<input id="applicant_address_town0" name="applicant_address_town0" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+	<label  for="name" class="form-label-bold">Creditor name</label>
+	<input id="name" name="applicant_address_town0" type="text" value="" />
 	</div>
 	
 	<p class="form-label-bold">
@@ -296,27 +296,17 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var housename;
+
+	var normalroute = $("#next").prop("href");
 	
-	var pre  = getParameterByName("pre");
-	if (pre && pre.length > 1){
-		$("#applicant_address_line_1").val("110 High Street");
-		$("#applicant_address_line_2").val("Newhall");
-		$("#applicant_address_town").val("Birmingham");
-		$("#applicant_address_post_code").val("B4 3TT");
-		//$("#other-addresses").hide();
+	var name  = getParameterByName("name");
+	if (name && name.length > 1){
+		$("#name").val(name);
 		
-		$("#next").prop("href", "your-addresses.html")
+		//$("#next").prop("href", "your-addresses.html")
 	}
 	
-	var normalroute = $("#next").prop("href");
 
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
-	});
-	$("#otheraddress_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
 
 
 });

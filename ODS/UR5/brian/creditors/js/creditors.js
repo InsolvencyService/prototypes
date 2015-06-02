@@ -415,16 +415,18 @@ $("#row-9").hide();
 	  // is compatible with the typeahead jQuery plugin
 	  source: creditors.ttAdapter()
 	});
-	
+var defaultnext = $("#next").prop("href");
+
 var creditorSelectedHandler = function (eventObject, suggestionObject, suggestionDataset) {
-    $("#pnl-name").text(suggestionObject.value);
-    $("#pnl-address").text(suggestionObject.address);
-    $("#pnl-creditor").show();
+	$("#next").prop("href", defaultnext + "?name=" + creditortypeahead.typeahead('val'));
+
 };
 
-	creditortypeahead.on('typeahead:selected', creditorSelectedHandler );
+creditortypeahead.on('typeahead:selected', creditorSelectedHandler );
 
 $("#creditors").on("change", function(){
+	$("#next").prop("href", defaultnext + "?name=" + creditortypeahead.typeahead('val'));
+
 	if (creditortypeahead.typeahead('val') == ""){
 	    $("#pnl-name").text("");
     	$("#pnl-address").text("");
@@ -437,44 +439,6 @@ $("#creditors").on("change", function(){
 $("#btn-clear").on("click", function(){
 		clearfilter();
 		$("#creditors").focus();
-});
-
-$("#btn-add").on("click", function(e){
-	e.preventDefault();
-	clearfilter();
-	$("#txt-amt").val("");
-	$("#txt-ref").val("")
-	$('input[type=radio]').removeAttr('checked');
-	$("#pnl-add").show();
-	
-});
-$("#btn-add-cancel").on("click", function(e){
-	$("#pnl-add").hide();
-});
-var countrows = 0;
-$("#btn-save").on("click", function(){
-	$("#pnl-add").hide();
-	$("#row-" + countrows).show();
-	
-	if ($("#txt-amt").val()){
-	$("#row-0 td.amt").text($("#txt-amt").val());
-	}
-	if ($("#txt-ref").val()){
-		$("#row-0 td.ref").text($("#txt-ref").val());
-	}
-	if($("#pnl-name").text()){
-		$("#row-0 td.name").text($("#pnl-name").text());
-	}	
-
-		
-	countrows+=1;
-	$("#row-total").show();
-	updatetotal();
-});
-
-$("#btn-unlisted-creditor").on("click", function(){
-	//$("#pnl-add").show();
-	
 });
 
 

@@ -78,6 +78,9 @@
 .tt-input{
 	width:400px;
 }
+.tt-hint{
+	display:none !important;
+}
 .choose-address{
 	color:gray;
 }
@@ -213,7 +216,7 @@ display:block;
 
 
 	<p class="clearfix"><br/></p>
-	<a class="button" href="address.html">Continue</a>
+	<a class="button" href="address.html" id="next">Continue</a>
 	</div>
 	
 <h2>List of creditors</h2>
@@ -263,7 +266,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>
+<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
 	</div>
 	<div>
 	<br>
@@ -342,27 +345,8 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var housename;
-	
-	var pre  = getParameterByName("pre");
-	if (pre && pre.length > 1){
-		$("#applicant_address_line_1").val("110 High Street");
-		$("#applicant_address_line_2").val("Newhall");
-		$("#applicant_address_town").val("Birmingham");
-		$("#applicant_address_post_code").val("B4 3TT");
-		//$("#other-addresses").hide();
-		
-		$("#next").prop("href", "your-addresses.html")
-	}
 	
 	var normalroute = $("#next").prop("href");
-
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
-	});
-	$("#otheraddress_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
 
 
 });
