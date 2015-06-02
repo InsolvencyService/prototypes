@@ -70,35 +70,9 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
+.amount-value:before { content: "£"; }
 
 
 .row img{
@@ -120,7 +94,6 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
 </style>
 <!-- #EndEditable -->
 
@@ -189,88 +162,86 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Money you owe</h1>
-	<p>Organisations and people you owe money to are known as creditors.</p>
-	<p>Add each of your creditors here. </p>
+	<h1 class="form-title heading-large">Amount you owe</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
+	<div class="form-group ">
+	
+	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
+		Amount you owe <span class="creditorname">ABC Ltd</span></label>
+		<div class="form-hint">The amount they say is outstanding from you</div>
+	<input id="applicant_address_town0" name="amount" type="text" value="" class="amount-value" />
+	</div>
+	
 	<p class="form-label-bold">
 	</p>
 	
-	<div class="form-group">
+	                <div class="form-group ">
 	
-	<label  for="creditors" class="form-label-bold ">Add creditor</label>
-
-	<div class="form-hint">Start typing part of the name to find a match, click on the name to select. If there is no match, continue to enter the full details. </div>
-	<input type="text" placeholder="Start typing name" id="creditors" style="width:400px"
-								  class="form-control typeahead input-lg" autocomplete="off">
-	&nbsp;<a href="#" id="btn-clear">Clear</a>							  
-
-
-
-	<p class="clearfix"><br/></p>
-	<a class="button" href="address.html">Continue</a>
+	<fieldset id="date_of_birth" class="date-of-birth">
+	<legend id="date_of_birth_label" class="form-label">When was the debt first incurred?</legend>
+	<div class="form-hint">
+	
+	<ul class="bulleted">
+	<li>For bills, the first date you didn't pay amount outstanding</li>
+	<li>For overdrafts, the date you first failed to make the full payment</li>
+	<li>For credit cards, the date you took out the card</li>
+	</ul>
 	</div>
+
+	<span class="form-hint" id="date_of_birth_help"></span>
+	<div class="form-group form-group-day" style="display:none">
+		 <label id="date_of_birth_label.day" for="mortgage.day">Day</label>
+	<input id="mortgage.day" name="date_of_birth.day" type="number" min="1" max="31" />
+	</div>
+	<div class="form-group form-group-month">
+		 <label id="date_of_birth_label.month" for="mortgagemonth">Month</label>
+	<input id="mortgagemonth" name="date_of_birth.month" type="number" min="1" max="12"  />
+	</div>
+	<div class="form-group form-group-year">
+	<label id="date_of_birth_label.year" for="mortgageyear">Year</label>
+	<input id="mortgageyear" name="date_of_birth.year" type="number" min="1900" max="9999"  />
+	</div>
+	</fieldset>
+	</div>
+
+	<div class="form-group ">
 	
-<h2>List of creditors</h2>
-<table style="width: 100%">
-		<thead>
-			<tr>
-				<th>&nbsp;</th>
-				<th>Name</th>
-				<th>Reference</th>
-				<th>Amount</th>
-				<th>Date</th>
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody>
+	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account number</label>
+	<div class="form-hint">Enter the account number on the correspondence with the creditor</div>
+	<input id="applicant_address_town" name="applicant_address_town" type="text" value="" />
+	<br/>
+	</div>
 
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-		</tbody>
-		</table>
+	<div class="form-group ">
+	
+	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Reference</label>
+	<div class="form-hint">Enter the last reference number you were given on the correspondence with the creditor</div>
+	<input id="applicant_address_town" name="applicant_address_town" type="text" value="" />
+	<br/>
+	</div>
 
-<p><br></p>
+
+
+
+<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>
+		<a id="next" class="button" href="summary.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="start.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="address.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -333,11 +304,6 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
-	<!--<script src="js/handlebars.js" type="text/javascript"></script>-->
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
 
 
 <script type="text/javascript">
