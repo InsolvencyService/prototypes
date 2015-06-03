@@ -298,10 +298,15 @@ display:block;
 $(document).ready(function() {
 
 	var normalroute = $("#next").prop("href");
-	
-	var name  = getParameterByName("name");
-	if (name && name.length > 1){
-		$("#name").val(name);
+	var numcreditors = 0;
+	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 1){
+		numcreditors = $.cookie('numcreditors');
+	}
+
+	var creditorname = $.cookie('creditorname' + numcreditors);
+
+	if (creditorname && creditorname.length > 1){
+		$("#name").val(creditorname);
 		
 		//$("#next").prop("href", "your-addresses.html")
 	}

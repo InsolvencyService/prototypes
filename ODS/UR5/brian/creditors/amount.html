@@ -174,56 +174,61 @@ display:block;
 	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
 		Amount you owe <span class="creditorname">ABC Ltd</span></label>
 		<div class="form-hint">The amount they say is outstanding from you</div>
-	<input id="applicant_address_town0" name="amount" type="text" value="" class="amount-value" />
+		<input id="amount" name="amount" type="text" value="" class="amount-value" />
 	</div>
 	
 	<p class="form-label-bold">
 	</p>
 	
-	                <div class="form-group ">
+		<div class="form-group ">
 	
-	<fieldset id="date_of_birth" class="date-of-birth">
-	<legend id="date_of_birth_label" class="form-label">When was the debt first incurred?</legend>
-	<div class="form-hint">
-	
-	<ul class="bulleted">
-	<li>For bills, the first date you didn't pay amount outstanding</li>
-	<li>For overdrafts, the date you first failed to make the full payment</li>
-	<li>For credit cards, the date you took out the card</li>
-	</ul>
+	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account number or reference</label>
+	<div class="form-hint">Enter the account number on the correspondence with the creditor</div>
+			<input id="ref" name="applicant_address_town" type="text" value="" />
+	<br/>
 	</div>
 
-	<span class="form-hint" id="date_of_birth_help"></span>
-	<div class="form-group form-group-day" style="display:none">
-		 <label id="date_of_birth_label.day" for="mortgage.day">Day</label>
-	<input id="mortgage.day" name="date_of_birth.day" type="number" min="1" max="31" />
+	
+	                <div class="form-group">
+
+	<fieldset id="date_of_birth" class="date-of-birth">
+	
+	<legend id="date_of_birth_label" class="form-label-bold">When was the debt first incurred?</legend>
+<div class="form-hint">eg. 07 2013</div>
+
+	<div class="row">
+	<div class="col-sm-4">
+		<div class="form-group form-group-day" style="display:none">
+			 <label id="date_of_birth_label.day" for="day">Day</label>
+		<input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+		</div>
+		<div class="form-group form-group-month">
+			 <label id="date_of_birth_label.month" for="month">Month</label>
+		<input id="month" name="date_of_birth.month" type="number" min="1" max="12"  />
+		</div>
+		<div class="form-group form-group-year">
+		<label id="date_of_birth_label.year" for="year">Year</label>
+		<input id="year" name="date_of_birth.year" type="number" min="1900" max="9999"  />
+		</div>
 	</div>
-	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="mortgagemonth">Month</label>
-	<input id="mortgagemonth" name="date_of_birth.month" type="number" min="1" max="12"  />
+
+	<div class="col-sm-8">
+		<div class="form-hint">
+	
+		<ul class="bulleted">
+		<li>For bills, the first date you didn't pay amount outstanding</li>
+		<li>For overdrafts, the date you first failed to make the full payment</li>
+		<li>For credit cards, the date you took out the card</li>
+		</ul>
+		</div>
 	</div>
-	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="mortgageyear">Year</label>
-	<input id="mortgageyear" name="date_of_birth.year" type="number" min="1900" max="9999"  />
 	</div>
 	</fieldset>
+	
+
 	</div>
 
-	<div class="form-group ">
-	
-	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account number</label>
-	<div class="form-hint">Enter the account number on the correspondence with the creditor</div>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" value="" />
-	<br/>
-	</div>
 
-	<div class="form-group ">
-	
-	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Reference</label>
-	<div class="form-hint">Enter the last reference number you were given on the correspondence with the creditor</div>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" value="" />
-	<br/>
-	</div>
 
 
 
@@ -308,28 +313,28 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var housename;
-	
-	var pre  = getParameterByName("pre");
-	if (pre && pre.length > 1){
-		$("#applicant_address_line_1").val("110 High Street");
-		$("#applicant_address_line_2").val("Newhall");
-		$("#applicant_address_town").val("Birmingham");
-		$("#applicant_address_post_code").val("B4 3TT");
-		//$("#other-addresses").hide();
-		
-		$("#next").prop("href", "your-addresses.html")
-	}
 	
 	var normalroute = $("#next").prop("href");
+	var numcreditors = 0;
 
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
-	});
-	$("#otheraddress_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
+	
+	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
+		numcreditors = $.cookie('numcreditors');
+	}
 
+	var creditorname = $.cookie('creditorname' + numcreditors);
+
+	if (creditorname && creditorname.length > 1){
+		$(".creditorname").text(creditorname);
+	}
+
+	$("#next").on("click", function(){
+		$.cookie('creditorref'  + numcreditors, $('#ref').val(), { expires: 1 });
+		$.cookie('creditoramount' + numcreditors, $('#amount').val(), { expires: 1 });
+		$.cookie('incurredday' + numcreditors, $('#day').val(), { expires: 1 });
+		$.cookie('incurredmonth' + numcreditors, $('#month').val(), { expires: 1 });
+		$.cookie('incurredyear' + numcreditors, $('#year').val(), { expires: 1 });
+	});
 
 });
 
