@@ -330,7 +330,8 @@ $(document).ready(function() {
 
 	$("#next").on("click", function(){
 		$.cookie('creditorref'  + numcreditors, $('#ref').val(), { expires: 1 });
-		$.cookie('creditoramount' + numcreditors, $('#amount').val(), { expires: 1 });
+		var amount = $('#amount').val();
+		$.cookie('creditoramount' + numcreditors, parseFloat(amount).toFixed(2), { expires: 1 });
 		$.cookie('incurredday' + numcreditors, $('#day').val(), { expires: 1 });
 		$.cookie('incurredmonth' + numcreditors, $('#month').val(), { expires: 1 });
 		$.cookie('incurredyear' + numcreditors, $('#year').val(), { expires: 1 });
