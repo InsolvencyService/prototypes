@@ -216,7 +216,7 @@ display:block;
 		<br/>
 
 
-<p><br></p>
+<p class="clearfix"><br></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
@@ -307,11 +307,12 @@ $(document).ready(function() {
 
 	if (creditorname && creditorname.length > 1){
 		$("#name").val(creditorname);
-		
-		//$("#next").prop("href", "your-addresses.html")
 	}
 	
 
+	$("#next").on("click", function(e){
+		$.cookie('creditorname' + numcreditors, $("#name").val(), { expires: 1 });
+	});
 
 
 });
