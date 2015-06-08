@@ -166,52 +166,78 @@ display:block;
  
 <div class="row" style="margin-left:15px;margin-right:15px;">
     <div class="col-sm-8">
-    <h1 class="form-title heading-large">Get an application for bankruptcy</h1>
-
-	<p>
-	Once you’re sure that bankruptcy is the best option for you, you can register and start an online application.</p> 
-<p>You can stop or restart your application at any time. Your information won’t go anywhere until you decide to submit it.
-
-	</p>
-<p>Before you continue, make sure you: </p>
 
 
 
-	<ul class="list-bullet">
-		<li>understand <a href="../../LandingPagesV3/bankruptcy.html">what happens if you go bankrupt</a></li>  
-<li>have checked that this is the 
-<a href="../../LandingPagesV3/options.html?bkt=yes&amp;dmp=yes&amp;iva=yes">right debt option for you</a></li> 
-<li>have spoken with a <a href="../../LandingPagesV3/findadebtadvisor.html">debt adviser</a> about your situation
-</li>
 
-	</ul>
-		<a href="signin2/firsttime.html" class="button">Continue</a>
-	
-	</div>
+        <h1 class="form-title heading-large">Apply for bankruptcy</h1>
 
+
+
+
+
+        <p>
+            Start your application for bankruptcy by providing these details:
+        </p>
+        <ol class="list-bullet text"><li>Your email</li><li>Your date of birth</li><li>Your address</li></ol>
+        <p>There is a fee for applying for bankruptcy. <a href="">Find out more about ways to pay.</a></p>
+        <p>You can complete the application in your own time, your details are securely saved.</p>
+        <p></p>
+
+
+
+        <!-- For User research -->
+        <div>
+
+            <div>
+
+                <a href="signin2/firsttime.html" class="button">Continue</a>
+
+
+            </div>
+            <div>
+                <br>
+            </div>
+
+            <div>
+
+
+
+
+            </div>
+            <div>
+                <p>
+
+
+                </p>
+            </div>
+
+        </div>
+    </div>	
 	<div class="col-sm-4">
-		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef">
-		<p><a href="../../calc-FindDebtAdviser.html">Find a qualified adviser</a></p>
+		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef;">
+		<p><a href="../../calc-FindDebtAdviser.html" style="display:none">Find a qualified adviser</a></p>
 
 		<p><a href="continue/return2.html">I am returning to an existing application</a></p>
-			<p><a href="payments/payments-external.html">Pay a fee for a 
+			<p><a href="payments/payments-external.html" class="payment">Pay a fee for a 
 			bankrutpcy application</a></p>
 		
 		</div>
 	</div>
-</div>
+
 
 <p><br></p>
 
         
 </div>
 
-	 <!-- #EndEditable -->
-
         
 </div>
 
 
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -260,6 +286,20 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+                    $(".payment").hide();
+                var payment = getParameterByName("payment");
+                if (payment && payment.length > 0)
+                {
+                    $(".payment").show();
+                }
+
+
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
 
 });
 
