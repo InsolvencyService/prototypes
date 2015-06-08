@@ -173,7 +173,7 @@ display:block;
 	
 	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
 		Amount you owe <span class="creditorname">ABC Ltd</span></label>
-		<div class="form-hint">The amount they say is outstanding from you</div>
+		<div class="form-hint">How much they say you owe</div>
 		<input id="amount" name="amount" type="text" value="" class="amount-value" />
 	</div>
 	
@@ -182,8 +182,8 @@ display:block;
 	
 		<div class="form-group ">
 	
-	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account number or reference</label>
-	<div class="form-hint">Enter the account number on the correspondence with the creditor</div>
+	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account or reference number</label>
+	<div class="form-hint">If you don’t have one leave this question blank</div>
 			<input id="ref" name="applicant_address_town" type="text" value="" />
 	<br/>
 	</div>
@@ -193,8 +193,8 @@ display:block;
 
 	<fieldset id="date_of_birth" class="date-of-birth">
 	
-	<legend id="date_of_birth_label" class="form-label-bold">When was the debt first incurred?</legend>
-<div class="form-hint">eg. 07 2013</div>
+	<legend id="date_of_birth_label" class="form-label-bold">Date the debt began (was incurred)</legend>
+<div class="form-hint">For example, 07 2013</div>
 
 	<div class="row">
 	<div class="col-sm-4">
@@ -216,9 +216,10 @@ display:block;
 		<div class="form-hint">
 	
 		<ul class="bulleted">
-		<li>For bills, the first date you didn't pay amount outstanding</li>
-		<li>For overdrafts, the date you first failed to make the full payment</li>
-		<li>For credit cards, the date you took out the card</li>
+		<li>For <strong>bills</strong>, enter the first date you didn't pay the full bill</li>
+		<li>For <strong>overdrafts</strong>, enter the first date you used your overdraft </li>
+		<li>For <strong>loans</strong>, enter the date you received the money  </li>
+		<li>For <strong>credit cards</strong>, enter the  date you took out the card</li>
 		</ul>
 		</div>
 	</div>
@@ -246,7 +247,7 @@ display:block;
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="address.html" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>

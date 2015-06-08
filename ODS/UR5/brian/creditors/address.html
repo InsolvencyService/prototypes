@@ -299,12 +299,13 @@ $(document).ready(function() {
 
 	var normalroute = $("#next").prop("href");
 	var numcreditors = 0;
-	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 1){
+	var creditorname;
+	
+	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
 		numcreditors = $.cookie('numcreditors');
+		creditorname = $.cookie('creditorname' + numcreditors);
 	}
-
-	var creditorname = $.cookie('creditorname' + numcreditors);
-
+	
 	if (creditorname && creditorname.length > 1){
 		$("#name").val(creditorname);
 	}

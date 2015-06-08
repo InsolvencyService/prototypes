@@ -204,7 +204,7 @@ display:block;
 	<h1 class="form-title heading-large">Money you owe</h1>
 	<div class="newvisitor">
 	<p>Organisations and people you owe money to are known as creditors.</p>
-	<p>Add each of your creditors here. </p>
+	<p>We need to know about all of your creditors, including family members or friends.</p>
 	</div>
 	
 	
@@ -213,14 +213,12 @@ display:block;
 	
 	<p>
 	</p>
-	<div class="alert alert-danger" id="msg-entervalue" style="display:none">Please check the creditor's name against our list by typing 
-	the first few letters of their name before you continue</div>
+	<div class="alert alert-danger" id="msg-entervalue" style="display:none">Enter a creditor’s name to continue.</div>
 	<div class="form-group">
 	
 	<label  for="creditors" class="form-label-bold " id="heading-add">Add creditor</label>
 
-	<div class="form-hint">Start typing part of the name, click or use the arrow keys and return to select. 
-	If there is no match, continue to enter the full details. </div>
+	<div class="form-hint">Enter the creditor’s name below – it can be the name of an organisation or an individual, for example ABC Bank Ltd or Joe Johnson. </div>
 	<input type="text" placeholder="Start typing name" id="creditors" style="width:400px"
 								  class="form-control typeahead input-lg" autocomplete="off">
 		<a class="button" href="address.html" id="next">Continue</a>
@@ -537,6 +535,7 @@ $(document).ready(function() {
 	var numcreditors = 0;
 	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
 		numcreditors = parseInt($.cookie('numcreditors'));
+		alert(numcreditors);
 	}
 	if (numcreditors > 0){
 
@@ -573,11 +572,10 @@ $(document).ready(function() {
 	}
 	
 	$("#next").on("click", function(e){
-		if ($('#creditors.typeahead').val().length > 0){
-			numcreditors+=1;
+		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
+			numcreditors=numcreditors + 1;
 			$.cookie('numcreditors', numcreditors, { expires: 1 });
 			$.cookie('creditorname' + numcreditors, $('#creditors.typeahead').val(), { expires: 1 });
-
 		}
 		else{
 			$("#msg-entervalue").show();
