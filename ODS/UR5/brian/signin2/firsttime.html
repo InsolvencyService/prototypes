@@ -139,8 +139,8 @@
  <div class="inner-block">
 	<div class="phase-banner">
 	<p>
-	<strong class="phase-tag">ALPHA</strong>
-	This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+	<strong class="phase-tag">BETA</strong>
+    This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
 	</div>
@@ -178,7 +178,7 @@
 	<fieldset id="date_of_birth" class="date-of-birth">
 	<legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
 	
-	<span class="form-hint" id="date_of_birth_help">For example, 31 1 1976</span>
+	<span class="form-hint" id="date_of_birth_help">For example, 31 01 1976</span>
 	<div class="form-group form-group-day">
 		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
 	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
@@ -204,20 +204,20 @@
 		<div class="form-group ">
             
             <label id="email_label" for="email" class="form-label-bold email">Your email</label>
-            <span class="form-hint">Enter your email address if you have one, this will be used to confirm the initial part of your application. 
-            Without an email, there will be a delay while we send you correspondence. </span>
+            <span class="form-hint">Enter your email address if you have one. It will be used to confirm the initial part of your application. Without an email, there will be a delay while we post you information.</span>
             <input id="email1" name="email" type="text" class="input-email"><br>
         </div>
 
 		<div class="form-group ">
             
-            <label id="email_label" for="email" class="form-label-bold email">Confirm email</label>
+            <label id="email_label0" for="email" class="form-label-bold email">Confirm email</label>
             <input id="email2" name="email" type="text" class="input-email"><br>
         </div>
 			
 		<div class="form-group missing-email">
 		            <input id="confirm_claim_submission" name="confirm_claim_submission" value="True" type="checkbox">
-	<label id="confirm_claim_submission_label" for="confirm_claim_submission" style="display:inline; font-weight:normal">&nbsp;I understand that if I choose to proceed without my email that my application will be delayed</label>
+	<label id="confirm_claim_submission_label" for="confirm_claim_submission" style="display:inline; font-weight:normal">&nbsp;
+	I understand that my application will be delayed if I choose to proceed without entering my email address.</label>
 </div>
 
 
@@ -234,7 +234,7 @@
 	</div>
 	
 	<div class="col-sm-4">
-		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef; ">
+		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef; display:none">
 		<p></p>
 		<p><a href="../agent/firsttime.html">I am acting as an agent on behalf of the debtor</a></p>
 		
@@ -285,11 +285,14 @@
             <div class="footer-meta-inner">
 
                  <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../../contact-us.html">Contact us</a></li>
+                    <li class="small-btm-margin" style="text-align:left; display:block">
+					<a class="bold-medium" href="../../../contact-us.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" "><a href="../../../privacy.html">Privacy</a></li>
-                    <li class="footer__link" style=""><a href="../../../cookies.html">Cookies</a></li>
+                    <li class="footer__link" style=" ">
+					<a href="../../../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style="">
+					<a href="../../../cookies.html">Cookies</a></li>
                     <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                 </ul>
 
