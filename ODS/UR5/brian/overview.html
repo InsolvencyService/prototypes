@@ -728,7 +728,14 @@ Employment details 2
 <!-- #BeginEditable "scripts" -->
 
 	        <script type="text/javascript">
-	            $(document).ready(function () {
+                $(document).ready(function () {
+                    var reset = getParameterByName("reset");
+
+                    if (reset && reset.length > 0) {
+                        $("#section5 .edit").prop("href", "creditors/summary.html?reset=true");
+                        $("#section6 .edit").prop("href","../SFS4a/summary.html?reset=true");
+                    }
+
 					var payment = getParameterByName("payment");	
 					if (payment && payment.length > 0){
 						$("#payment").show();
@@ -777,7 +784,7 @@ Employment details 2
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().text("Edit");
 	                        $("#section5 .edit").show().text("Edit");
-	                        $("#section6 .edit").show().text("Edit").prop("href","../SFS4a/summary.html?stage=costs&page=13");
+	                        $("#section6 .edit").show().text("Edit").prop("href","../SFS4a/summary.html?stage=costs&page=7");
 	                        $("#section7 .edit").show().addClass("button").text("Start");
 	                    }
 

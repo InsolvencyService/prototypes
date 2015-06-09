@@ -393,6 +393,12 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
+                var reset = getParameterByName("reset");
+
+                if (reset && reset.length > 0) {
+                    removeallcookies();
+                }
+
 				var defaultnext = $(".next").first().attr("href");
                 $("#next").hide();
 				$(".pensionable").hide();
@@ -516,6 +522,23 @@
                 $("#coststotal .totalvalue").text(totalamount.toFixed(2));
             }
 
+            function removeallcookies() {
+                var item = "income";
+                for (i = 1; i < 6; i++) {
+                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
+                        $.removeCookie(item + i);
+                    }
+                }
+                item = "costs";
+                for (i = 1; i <= page; i++) {
+                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
+                        if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
+                            $.removeCookie(item + i);
+                        }
+                    }
+                }
+
+            }
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
                 var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
