@@ -6,14 +6,12 @@ var creditors =   [
 
 { icon: '', address: 'The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP', value: '1st  Credit' },
 { icon: '', address: 'c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH', value: 'Abbey National Plc' },
-{ icon: '', address: 'c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH', value: 'Abbey National Plc' },
 { icon: '', address: 'Express House, Clayton Business Park, Petre Road, Accrington, Lancashire, BB5 5JY', value: 'Ace Cards and Gifts' },
 { icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'Additions Direct' },
 { icon: '', address: 'Minton Hollins Building, Shelton Old Road, Stoke-on-Trent, ST4 7RY', value: 'Advantis Credit' },
 { icon: '', address: 'Debt Collection Department, Bishops Rise, Hatfield, Herts, AL10 9HL', value: 'Affinity Water' },
 { icon: '', address: 'PO Box 444, Bromley, BR1 1ZB', value: 'Aktiv Kapital' },
 { icon: '', address: 'Essex & Suffolk Water Customer Care, FAO Warren Pitts, PO Box 292, Durhan, DH1 9TX', value: 'Alexander James & Co Ltd' },
-{ icon: '', address: 'c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH', value: 'Alliance & Leicester Plc' },
 { icon: '', address: 'c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH', value: 'Alliance & Leicester Plc' },
 { icon: '', address: 'Registered Office: Adamson House, Towers Business Park, Didsbury, Manchester, M20 2YY.', value: 'Allied International Credit (UK) Ltd' },
 { icon: '', address: 'FAO Graham Wallis, American Express Insolvencies, PO Box 1028, Maidstone, Kent, ME19 8WW', value: 'American Express' },
@@ -31,8 +29,6 @@ var creditors =   [
 { icon: '', address: 'PO Box 30095, London, SE1 7WU', value: 'Asset Link Capital (No. 1) Limited' },
 { icon: '', address: '3 Earlstrees Road, Earlstrees Industrial Estate, Corby, Northamptonshire, NN17 4AZ', value: 'Avon' },
 { icon: '', address: 'Credit Recovery, 4th Floor, Bow Bells House, 1 Bread Street, London, EC4M 9BE', value: 'Bank Of Ireland GB Ltd' },
-{ icon: '', address: 'Credit Recovery, 4th Floor, Bow Bells House, 1 Bread Street, London, EC4M 9BE', value: 'Bank Of Ireland GB Ltd' },
-{ icon: '', address: 'Personal Insolvencies, Dundas House, PO Box 66, Rosyth, Fife, KY11 2YG', value: 'Bank of Scotland' },
 { icon: '', address: 'Personal Insolvencies, Dundas House, PO Box 66, Rosyth, Fife, KY11 2YG', value: 'Bank of Scotland' },
 { icon: '', address: 'Specialist Support Unit, Collections Floor 6, PO Box 5402, Northampton, NN4 1ZR', value: 'Barclaycard' },
 { icon: '', address: 'Open Sort & Distribute, Astron House, 51 Saffron Road, Leicester, LE87 2BB', value: 'Barclays Bank Plc' },
@@ -65,7 +61,6 @@ var creditors =   [
 { icon: '', address: 'Town Hall, Halifax, West Yorkshire, HX1 1UJ', value: 'Calderdale Borough Council' },
 { icon: '', address: '90 Fulbourn Road, Cambridge, Cambridgeshire, CB1 9NJ', value: 'Cambridge Water Plc' },
 { icon: '', address: 'Specialist Support Unit, Capital One Services, PO Box 5282, Nottingham, Nottinghamshire, NG2 3YH', value: 'Capital One Bank Europe Plc' },
-{ icon: '', address: 'Specialist Support Unit, Capital One Services, PO Box 5282, Nottingham, Nottinghamshire, NG2 3YH', value: 'Capital One Bank Europe Plc' },
 { icon: '', address: '27 Rye Close, Hampshire, GU51 2QQ', value: 'CapQuest Debt Recovery Ltd' },
 { icon: '', address: 'County Hall, Atlantic Warf, Cardiff, South Glamorgan, CF10 4UW', value: 'Cardiff City Council' },
 { icon: '', address: 'Collections Department, Lambourne House, Lambourne Crescent, Cardiff Business Park, Llanishen, Cardiff, CF14 5GL', value: 'Carlyle Finance Ltd' },
@@ -82,17 +77,14 @@ var creditors =   [
 { icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'Choice' },
 { icon: '', address: '2nd floor, The Wharf, Neville Street, Leeds, LS1 4AZ', value: 'Churchill Insurance Co Ltd' },
 { icon: '', address: 'c/o Grant Thornton UK LLP, Hartwell House, 55-61 Victoria Street, Bristol, Avon, BS1 6FT', value: 'Citibank International Plc' },
-{ icon: '', address: 'c/o Grant Thornton UK LLP, Hartwell House, 55-61 Victoria Street, Bristol, Avon, BS1 6FT', value: 'Citibank International Plc' },
 { icon: '', address: 'Pelham Street, Brighton, BN1 4FA', value: 'City College Brighton & Hove' },
 { icon: '', address: 'Lawrence House, Riverside Drive, Cleckheaton, West Yorkshire, BD19 4DH', value: 'CL Finance' },
 { icon: '', address: 'PO Box 336, Lamport, Northampton, Northamptionshire, NN6 9WZ', value: 'Clarity Credit Management Solutions' },
 { icon: '', address: 'CLC Finance, Unit 4, Meadow court, Millshaw, Leeds, LS11 8LZ', value: 'CLC Finance' },
 { icon: '', address: 'Debt Relief Orders, Collections, Brunswick Point, Wqade Lane, PO Box 764, Leeds, West Yorkshire, LS1 9JJ', value: 'Clydesdale Bank Plc' },
-{ icon: '', address: 'Debt Relief Orders, Collections, Brunswick Point, Wqade Lane, PO Box 764, Leeds, West Yorkshire, LS1 9JJ', value: 'Clydesdale Bank Plc' },
 { icon: '', address: 'Income Management, Rowan House, Sheepen Road, Colchester, CO3 3WG', value: 'Colchester Borough Council' },
 { icon: '', address: 'Bellway House, 7 Worcester Road, Bromsgrove, B61 7DL', value: 'Commercial Credit Services' },
 { icon: '', address: 'Compass House, Waterside, Hanbury Road, Bromsgrove, B60 4FD', value: 'Controlaccount' },
-{ icon: '', address: 'c/o Grant Thornton UK LLP, Hartwell House, 55-61 Victoria Street, Bristol, Avon, BS1 6FT', value: 'Co-operative Bank Plc' },
 { icon: '', address: 'c/o Grant Thornton UK LLP, Hartwell House, 55-61 Victoria Street, Bristol, Avon, BS1 6FT', value: 'Co-operative Bank Plc' },
 { icon: '', address: 'The Copeland Centre, Catherine Street, Whitehaven, Cumbria, CA28 7SJ', value: 'Copeland Borough Council (Housing Benefit Overpayments)' },
 { icon: '', address: 'PO Box 676, Threemilestone Truro, TR4 9LD', value: 'Cornwall Council' },
@@ -112,7 +104,6 @@ var creditors =   [
 { icon: '', address: 'Droyds Debt & Collection Services, Bradford, West Yorkshire, BD1 1DA', value: 'Droyds Debt & Collection Services' },
 { icon: '', address: 'Revenue Services, PO Box 3, Council House, Priory Street, Dudley, West Midlands, DY1 1HG', value: 'Dudley Metropolitan Borough Council - Council Tax' },
 { icon: '', address: 'Debt Management (SF), PO Box 171, Mitcheldean, Gloucestershire, GL17 0XH', value: 'DWP (Benefit Overpayments)' },
-{ icon: '', address: 'Debt Management (SF), PO Box 171, Mitcheldean, Gloucestershire, GL17 0XH', value: 'DWP (Social Fund) Excluded Debt' },
 { icon: '', address: 'Veolia Water Outsourcing Ltd, Dwr Cymru Customer Services, Linea, Fortran Road, St. Mellons, Cardiff, CF3 0LT', value: 'Dwr Cymru - Welsh Water Ltd' },
 { icon: '', address: 'Insolvency Department, Newland House, 49 Mount Street, NOTTINGHAM, NG1 6PG', value: 'E.ON UK Plc' },
 { icon: '', address: 'Anglia Revenues Partnership, Breckland House, St Nicholas Street, Thetford, Norfolk, IP24 1BT', value: 'East Cambridgeshire District Council' },
@@ -131,7 +122,6 @@ var creditors =   [
 { icon: '', address: 'Griffin House, 40 Lever Street, Manchester, M60 6ES', value: 'Fashion World' },
 { icon: '', address: '5th Floor, Maitland House, Warrior Square, Southend-On-Sea, Essex, SS1 2JS', value: 'Fenton Cooper' },
 { icon: '', address: 'Repayment Services S/CRS/RST, 40 Wakefield Road, Leeds, LS98 1FD', value: 'First Direct' },
-{ icon: '', address: 'Repayment Services S/CRS/RST, 40 Wakefield Road, Leeds, LS98 1FD', value: 'First Direct' },
 { icon: '', address: 'Emerald House, Meadowcroft Way, Leigh, WN7 3XZ', value: 'First Response Finance Limited' },
 { icon: '', address: 'Walton House 56-58, Richmond Hill, Bournemouth, BH2 6EX', value: 'FLM Quick' },
 { icon: '', address: 'The Cherry Garden, Cherry Garden Lane, Folkstone, Kent, CT19 4QB', value: 'Folkestone & Dover Water Services Ltd' },
@@ -142,7 +132,6 @@ var creditors =   [
 { icon: '', address: 'Revenues Dept, Town Hall, South Promenade, Lytham St Annes, FY8 1LW', value: 'Fylde Borough Council' },
 { icon: '', address: 'Auto Recoveries, Capital House, 1 Bruntcliffe Way, Leeds, LS27 0JG', value: 'GE Money Auto' },
 { icon: '', address: 'Early Charge Off Department, Capital House, 1 Bruntcliffe Way, Morley, West Yorkshire, LS27 0JG', value: 'GE Money Ltd' },
-{ icon: '', address: 'Early Charge Off Department, Capital House, 1 Bruntcliffe Way, Morley, West Yorkshire, LS27 0JG', value: 'GE Money Ltd' },
 { icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'General Credit Company (Shop Direct)' },
 { icon: '', address: 'Warwick House, Birmingham Road, Stratford-Upon-Avon, Warwickshire, CV37 0BP', value: 'Geoffrey Parker Bourne Solicitors' },
 { icon: '', address: '66/70 Coombe Road, New Malden, KT3 4QW', value: 'Global Debt Recovery' },
@@ -151,7 +140,6 @@ var creditors =   [
 { icon: '', address: '1 Amberley Street, Sheffield, South Yorkshire, S9 2FS', value: 'Grattan Plc' },
 { icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'Great Universal Stores' },
 { icon: '', address: '1 Godwin Street, Bradford, BD1 2SU', value: 'Greenwood Personal Credit' },
-{ icon: '', address: 'Personal Insolvencies, Dundas House, PO Box 66, Rosyth, Fife, KY11 2YG', value: 'Halifax' },
 { icon: '', address: 'Personal Insolvencies, Dundas House, PO Box 66, Rosyth, Fife, KY11 2YG', value: 'Halifax' },
 { icon: '', address: 'Enterprise House, 1 Apex View, Leeds, LS11 9BH', value: 'Hamptons Legal Services' },
 { icon: '', address: 'Insolvency Department, Gibson House, Huntingdon, Cambridgeshire, PE29 6WQ', value: 'Hartlepool Water' },
@@ -165,7 +153,6 @@ var creditors =   [
 { icon: '', address: 'Axis Teo, Axis Park, Hurricane Way, Langley, SL3 8AG', value: 'Honda Finance Europe Plc' },
 { icon: '', address: 'Early Charge Off Department, Capital House, 1 Bruntcliffe Way, Leeds, LS27 0JG', value: 'House Of Fraser' },
 { icon: '', address: 'PO Box 110, Cleckheaton, West Yorkshire, BD19 4XT', value: 'Howard Cohen and Co' },
-{ icon: '', address: 'Collections and Recoveries, 2nd Floor, 12 Calthorpe Road, Edgebaston, Birmingham, B15 1FD', value: 'HSBC' },
 { icon: '', address: 'Collections and Recoveries, 2nd Floor, 12 Calthorpe Road, Edgebaston, Birmingham, B15 1FD', value: 'HSBC' },
 { icon: '', address: 'Council Tax Section, First Floor, Treasury Building, Guildhall Road, Hull, HU1 2AB', value: 'Hull City Council' },
 { icon: '', address: 'PO Box 333, Glasgow, G2 9AG', value: 'Hutchison 3G UK Ltd' },
@@ -190,8 +177,6 @@ var creditors =   [
 { icon: '', address: 'Civic Hall, Calverley Street, Leeds, LS1 1UR', value: 'Leeds City Council' },
 { icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'Legal Direct Recoveries (Shop Direct)' },
 { icon: '', address: 'Wellington House, 22-32 Wellington Street, LEICESTER, LE1 6HL', value: 'Leicester City Council ' },
-{ icon: '', address: 'Lawrence House, Riverside Drive, Cleckheaton, West Yorkshire, BD19 4DH', value: 'Lewis Debt Recovery' },
-{ icon: '', address: 'PO Box 30095, London, SE1 7WU', value: 'Link Financial' },
 { icon: '', address: 'PO Box 30095, London, SE1 7WU', value: 'Link Financial Outsourcing Limited' },
 { icon: '', address: 'Crusader House 2nd Floor, 145-157 St. John Street, London, EC1V 4PY ', value: 'Liquid Advance' },
 { icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'Littlewoods' },
@@ -205,7 +190,6 @@ var creditors =   [
 { icon: '', address: 'Churchgate House, 56 Oxford Road, Manchester M1 6EU', value: 'London Scottish Bank Ltd' },
 { icon: '', address: 'PO Box 164, Leeds, LS10 9EH', value: 'Lowell Group' },
 { icon: '', address: 'Town Hall, George Street, Luton, Bedfordshire, LU1 2BQ', value: 'Luton Borough Council' },
-{ icon: '', address: 'Kings Meadow, Chester Business Park, Cheshire, CH99 9FB', value: 'M&S Money' },
 { icon: '', address: 'Kings Meadow, Chester Business Park, Cheshire, CH99 9FB', value: 'M&S Money' },
 { icon: '', address: 'Unit 1A, 58 Portland Street, Kilmarnock, Ayrshire, KA1 1JG', value: 'Mackenzie Hall Ltd' },
 { icon: '', address: 'Princes Road, Maldon, CM9 5DL', value: 'Maldon District Council' },
@@ -233,7 +217,6 @@ var creditors =   [
 { icon: '', address: 'Credit Management Services, PO Box 16337, 7 Brindley Place, Birmingham, B2 2YH', value: 'Natwest Plc' },
 { icon: '', address: '80 High Street, Sidcup, Kent, DA14 6DS', value: 'Nelson Guest' },
 { icon: '', address: 'Revenues and Benefits, Newcastle City Council, Civic Centre, Barrass Bridge, Newcastle upon Tyne, NE1 8QH', value: 'Newcastle City Council' },
-{ icon: '', address: 'Revenues & Benefits, Newcastle City Council, Civic Centre, Room 201, Newcastle upon Tyne, NE1 8QH', value: 'Newcastle City Council (Housing Benefit Debt Recovery)' },
 { icon: '', address: 'Housing Department. Civic Centre, Newcastle Upon tyne, Tyne & Wear, NE1 8PR', value: 'Newcastle City Council (Housing Dept.)' },
 { icon: '', address: 'PO Box 4000, Leeds, LS2 8RZ', value: 'Next ' },
 { icon: '', address: 'Desford Road, Enderby, Leicester, LE19 4AT', value: 'Next Retail and Next Directory' },
@@ -264,7 +247,6 @@ var creditors =   [
 { icon: '', address: 'PO Box 444, Bromley, BR1 1ZB', value: 'PRA Group (UK) Limited ' },
 { icon: '', address: 'Preston City Council, Legal Services, Lancaster Road, Preston, PR1 2RL', value: 'Preston City Council' },
 { icon: '', address: '1 Godwin Street, Bradford, BD1 2SU', value: 'Provident Financial Services Ltd' },
-{ icon: '', address: '1 Godwin Street, Bradford, BD1 2SU', value: 'Provident Personal Credit' },
 { icon: '', address: '125 Chester Road, Sunderland, SR4 7HG', value: 'Ramsdens Financial Ltd' },
 { icon: '', address: 'c/o RSM Tenon, FAO Robert Beat, Salisbury House, 31 Finsbury Circus, London, EC2M 5SQ', value: 'RBS Plc' },
 { icon: '', address: 'Credit Management Services, PO Box 16337, 7 Brindley Place, Birmingham, B2 2YH', value: 'RBS Plc' },
@@ -282,7 +264,6 @@ var creditors =   [
 { icon: '', address: 'Suite One, 2nd Floor, Bellway House, 7 Worcester Road, Bromsgrove, Worcestershire, B61 7DL', value: 'S C Gray Solicitors Ltd' },
 { icon: '', address: 'PO Box 1173, Woking, Surrey, GU22 2BS', value: 'S.R.J Debt Recoveries' },
 { icon: '', address: 'Personal Insolvencies, Dundas House, PO Box 66, Rosyth, Fife, KY11 2YG', value: 'Sainsburys Bank plc' },
-{ icon: '', address: 'Personal Insolvencies, Dundas House, PO Box 66, Rosyth, Fife, KY11 2YG', value: 'Sainsburys Bank plc' },
 { icon: '', address: 'Insolvency Team, Santander House, 201 Grafton Gate East, Milton Keynes, Buckinghamshire, MK9 1AN', value: 'Santander' },
 { icon: '', address: 'Recoveries Department, Capital House, 1 Bruntcliffe Way, Morley, Leeds, LS27 0JG', value: 'Santander Cards' },
 { icon: '', address: 'First Data, Janus House, JPT/G, Endeavour Drive, Basildon, Essex, SS14 3WF', value: 'SAV Credit Ltd' },
@@ -295,7 +276,6 @@ var creditors =   [
 { icon: '', address: 'Department SO, PO Box 499, 1-5 Queens Road Quadrant, Brighton, BN1 3XJ', value: 'Sechiari, Clarke & Mitchell' },
 { icon: '', address: 'St. Peters House, Balliol Road, Bootle. L20 3AB', value: 'Sefton MBC' },
 { icon: '', address: 'The Insolvency Department, Sherbourne House, St Martins Road, Coventry, CV3 6SD', value: 'Severn Trent Water Ltd' },
-{ icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'Shop Direct Financial Services Ltd' },
 { icon: '', address: 'Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN', value: 'Shop Direct Home Shopping Ltd' },
 { icon: '', address: 'Central Collections Department, Kingston House, Centre 27 Business Park, Birstall, WF17 9TD', value: 'Shopacheck Financial Services Ltd' },
 { icon: '', address: '155 Bromford Lane, Erdington, Birmingham, B24 8DJ', value: 'Short Term Finance Ltd' },
@@ -370,7 +350,6 @@ var creditors =   [
 { icon: '', address: 'Legal Notice Unit, PO Box 4313, Manchester, M61 0AR', value: 'Woolwich' },
 { icon: '', address: 'County Hall, Spetchley Road, Worcestershire, WR5 2NP', value: 'Worcestershire County Council' },
 { icon: '', address: 'Debt Relief Orders, Collections, PO Box 764. Bruswick Point, Wade Lane, Leeds, LS11 9JJ', value: 'Yorkshire Bank' },
-{ icon: '', address: 'Debt Relief Orders, Collections, PO Box 764. Bruswick Point, Wade Lane, Leeds, LS11 9JJ', value: 'Yorkshire Bank' },
 { icon: '', address: 'Brook House, 4 Gladstone Road, Scarborough, YO12 7BH', value: 'Yorkshire Coast Homes' },
 { icon: '', address: 'Recovery Department, PO Box 52, Bradford, BD3 7YD', value: 'Yorkshire Water Services Ltd' },
 { icon: '', address: 'YHN House, Benton Park Road, Newcastle Upon Tyne, Tyne and Wear, NE7 7LX', value: 'Your Homes Newcastle' }
@@ -428,9 +407,9 @@ $("#creditors").on("change", function(){
 	$("#next").prop("href", defaultnext);
 
 	if (creditortypeahead.typeahead('val') == ""){
-	    $("#pnl-name").text("");
+	    /*$("#pnl-name").text("");
     	$("#pnl-address").text("");
-    	$("#pnl-creditor").hide();
+    	$("#pnl-creditor").hide();*/
 	}
 });
 
@@ -456,9 +435,9 @@ function updatetotal()
 
 function clearfilter(){
 	creditortypeahead.typeahead('val', '');
-	    $("#pnl-name").text("");
+/*	    $("#pnl-name").text("");
     	$("#pnl-address").text("");
-    	$("#pnl-creditor").hide();
+    	$("#pnl-creditor").hide();*/
 }
 
 });

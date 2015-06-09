@@ -528,43 +528,59 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	
+	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
+	var total = 0;
+	
 	$("#creditorlist").hide();
 	$("#btn-sectioncomplete").hide();
 	$(".newvisitor").show();
 	var numcreditors = 0;
 	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
 		numcreditors = parseInt($.cookie('numcreditors'));
-		alert(numcreditors);
 	}
 	if (numcreditors > 0){
 
 		for (i=1; i <= numcreditors; i++){
+
 			if ($.cookie('creditorname' + i) && $.cookie('creditorname' + i).length > 0 && $.cookie('creditoramount' + i)){
-				if ($.cookie('creditordeleted' + i) == null){
-					$("#creditorlist").show();
-					$("#btn-sectioncomplete").show();
-					$("#heading-add").text("Add another creditor");
-					alert($(".heading-add").text());
-					$(".newvisitor").hide();
-					
-					$("#row" + i).show();
-					$("#row" + i + " .name").text($.cookie('creditorname' + i));
-					$("#row" + i + " .ref").text($.cookie('creditorref' + i));
-					$("#row" + i + " .amount").text( parseFloat($.cookie('creditoramount' + i)).toFixed(2));
-					$("#row" + i + " .date").text($.cookie('incurredmonth' + i) + "/" + ($.cookie('incurredyear' + i)));
-			
+				if (reset && reset.length > 0){
+					$.removeCookie('creditorname' + i);
+					$.removeCookie('creditoramount' + i);
+					//alert("removed " + 	'creditorname' + i);
+				}
+				else{
+					if ($.cookie('creditordeleted' + i) == null){
+						$("#creditorlist").show();
+						$("#btn-sectioncomplete").show();
+						$("#heading-add").text("Add another creditor");
+						$(".newvisitor").hide();
+						
+						$("#row" + i).show();
+						$("#row" + i + " .name").text($.cookie('creditorname' + i));
+						$("#row" + i + " .ref").text($.cookie('creditorref' + i));
+						$("#row" + i + " .amount").text( parseFloat($.cookie('creditoramount' + i)).toFixed(2));
+						$("#row" + i + " .date").text($.cookie('incurredmonth' + i) + "/" + ($.cookie('incurredyear' + i)));
+					}
 				}
 
-			
+				if ($.cookie('creditordeleted' + i) && reset && reset.length > 0){
+					$.removeCookie('creditordeleted' + i);		
+				}
+
+
 			}
-
 		}
-		
-	    var total = calctotal();
 
-		if (total && total > 0){
-			$("#box-total").text(total.toFixed(2));
+		if (reset && reset.length > 0){
+			$.removeCookie($.cookie('numcreditors'));	
+		}
+		else{
+		    total = calctotal();
+	
+			if (total && total > 0){
+				$("#box-total").text(total.toFixed(2));
+			}
 		}
 
 
@@ -614,6 +630,11 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 
 </script>
