@@ -213,7 +213,19 @@ display:block;
 	
 	<p>
 	</p>
-	<div class="alert alert-danger" id="msg-entervalue" style="display:none">Enter a creditor’s name to continue.</div>
+	
+	
+	<div class="validation-summary"  id="msg-entervalue" style="display:none">
+                <h2>Add a creditor</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+               Enter a creditor’s name below to continue
+        </li>
+        </ol>
+    </div>
+            
+            
+
 	<div class="form-group">
 	
 	<label  for="creditors" class="form-label-bold " id="heading-add">Add creditor</label>
@@ -236,7 +248,7 @@ display:block;
 			<tr>
 				<th>Name</th>
 				<th>Reference</th>
-				<th style="text-align:right">Amount</th>
+				<th style="text-align:right">£ Amount</th>
 				<th>Date</th>
 				<th>&nbsp;</th>
 			</tr>
@@ -430,8 +442,7 @@ display:block;
 
 			<tr  class="totalrow" >
 				<td  colspan="2" class="text-right"><span >Total</span></td>
-				<td class="amount" style="width:100px">
-						<div class="pull-left text-right pound-sign">£</div>
+				<td class="amount" style="width:100px; white-space:nowrap">
 						<div class="text-right" id="box-total"></div>
 				</td>
 				<td></td>
@@ -558,7 +569,7 @@ $(document).ready(function() {
 						$("#row" + i).show();
 						$("#row" + i + " .name").text($.cookie('creditorname' + i));
 						$("#row" + i + " .ref").text($.cookie('creditorref' + i));
-						$("#row" + i + " .amount").text( parseFloat($.cookie('creditoramount' + i)).toFixed(2));
+						$("#row" + i + " .amount").text(numberWithCommas(parseFloat($.cookie('creditoramount' + i)).toFixed(2)));
 						$("#row" + i + " .date").text($.cookie('incurredmonth' + i) + "/" + ($.cookie('incurredyear' + i)));
 					}
 				}
@@ -578,7 +589,7 @@ $(document).ready(function() {
 		    total = calctotal();
 	
 			if (total && total > 0){
-				$("#box-total").text(total.toFixed(2));
+				$("#box-total").text(numberWithCommas(total));
 			}
 		}
 
@@ -613,7 +624,8 @@ $(document).ready(function() {
         var totalamount = 0;
         $('tr td.amount').each(function () {
             if (parseFloat($(this).text())) {
-                totalamount = totalamount + parseFloat($(this).text());
+            	var amount = $(this).text();
+                totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
                 $(this).val(parseFloat($(this).text()).toFixed(2));
             }
         });
@@ -634,6 +646,9 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function numberWithoutCommas(x) {
+    return parseFloat(x.toString().replace(/,/g, "")).toFixed(2);
+}
 
 
 </script>

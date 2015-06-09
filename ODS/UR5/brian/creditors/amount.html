@@ -170,7 +170,16 @@ display:block;
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
 	<div class="clearfix"></div>
-	<div class="alert alert-danger" id="msg-enteramt" style="display:none">Please enter a valid amount</div>	
+	
+	<div class="validation-summary"  id="msg-enteramt" style="display:none">
+                <h2>There was a problem with your answers</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+              Please enter a valid amount
+         </li>
+      </ol>
+     </div>
+
 	<div class="form-group ">
 	
 	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
@@ -190,7 +199,15 @@ display:block;
 	<br/>
 	</div>
 	<div class="clearfix"></div>
-	<div class="alert alert-danger" id="msg-enterdate" style="display:none">Please enter a valid date</div>
+	<div class="validation-summary"  id="msg-enterdate"  style="display:none">
+                <h2>There was a problem with your answers</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+               Please enter a valid date
+         </li>
+      </ol>
+     </div>
+	
 <div class="clearfix"></div>
 	
 	 <div class="form-group">
@@ -337,10 +354,12 @@ $(document).ready(function() {
 		var amt = $('#amount').val();
 		var month= $('#month').val();
 		var year  = $('#year').val();
+		$("#msg-enteramt").hide();
+		$("#msg-enterdate").hide();
 
 		if (amt && amt.length > 0 && month && month.length > 0 && parseInt(month) && year && year.length == 4 && parseInt(year)){	
 			
-			if (parseFloat(numberWithoutCommas(amt)) > 50){
+			if (parseFloat(numberWithoutCommas(amt)) > 10){
 				$.cookie('creditorref'  + numcreditors, $('#ref').val(), { expires: 1 });
 
 				var amount = parseFloat(numberWithoutCommas(amt)).toFixed(2);
@@ -351,14 +370,18 @@ $(document).ready(function() {
 				$.cookie('incurredyear' + numcreditors, year, { expires: 1 });
 			}
 			else{
-				$("#msg-enteramt").text("Please log amounts you owe that are greater than £50");
+				$("#msg-enteramt").text("Please log amounts you owe that are greater than £10");
 				$("#msg-enteramt").show();
 				e.preventDefault();
 			}
 		}
 		else{
-			$("#msg-enteramt").show();
-			$("#msg-enterdate").show();
+			if (amt && amt.length > 0 && $.isNumeric(parseFloat(numberWithoutCommas(amt)))){
+				$("#msg-enterdate").show();
+			}
+			else{
+				$("#msg-enteramt").show();
+			}
 			e.preventDefault();
 		}
 	});
@@ -373,9 +396,12 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function numberWithoutCommas(x) {
-    var number = parseFloat(x.toString().replace(",", ""));
-    return number;
+    return parseFloat(x.toString().replace(/,/g, "")).toFixed(2);
 }
 
 
