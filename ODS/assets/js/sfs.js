@@ -7,7 +7,7 @@
             if ($(this).val()) {
                 var amt = $(this).val();
                 totalamount = totalamount + normalise(parseFloat(amt), listfrequency.val());
-                $(this).val(parseFloat(amt).toFixed(2));
+                $(this).val(parseFloat(amt));
             }
         });
         return totalamount;
@@ -37,7 +37,7 @@
 
         if ($.cookie(amountitem + count) && $.cookie(amountitem + count).length > 0) {
             var amount = $.cookie(amountitem + count);
-            $(this).val(parseFloat(amount).toFixed(2));
+            $(this).val(parseFloat(amount));
             var frequency = "month";
             if ($.cookie(amountfreq + count) && $.cookie(amountfreq + count).length > 0) {
                 frequency = $.cookie(amountfreq + count);
@@ -52,7 +52,7 @@
         count += 1;
     });
     if (total && total > 0) {
-        $("#box-total").text(total.toFixed(2));
+        $("#box-total").text(toDecimal(total));
     }
 
 
@@ -64,15 +64,15 @@
 	    var total = calctotal();
 
 		if (total && total > 0){
-			$("#box-total").text(total.toFixed(2));
+			$("#box-total").text(toDecimal(total));
 		}
 	});
 	$("select.select-control").on("change", function (e) {
 	    var total = calctotal();
 
 	    if (total && total > 0) {
-	        $("#box-total").text(total.toFixed(2));
-	    }
+	        $("#box-total").text(toDecimal(total));
+	     }
 	});
 
 
@@ -133,4 +133,19 @@
 
 			});
 
+
+			function toDecimal(num) {
+			    var n1 = parseFloat(num);
+			    if (n1 % 1 != 0) {
+			        n1 = n1.toFixed(2);
+			        var n2 = parseFloat(num.toFixed(1));
+
+			        if (n1.toString().substring(n1.toString().length - 1) == '0') {
+			            n1 = n2;
+			        }
+			    }
+
+			    return n1;
+			}
 });
+
