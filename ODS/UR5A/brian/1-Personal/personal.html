@@ -93,6 +93,22 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
+
+.inner-block{
+	float:left;
+	display: table-cell;
+}
+.right-block{
+	padding-top:60px;
+	width:33.33333%;
+	float:left;
+	  position: relative;
+	  min-height: 1px;
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  display: table-cell;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -242,14 +258,14 @@ display:block;
 
 <div class="form-group " id="other-name-1">
 	<label id="title_label" class="form-label-bold" for="othername1">Have you been known by another name in the last 5 years?</label>
-		<input value="" type="text" id="othername1" style="width:50%"/>
+		<input value="" type="text" id="othername1" style="width:50%" placeholder="Firstnames and last name"/>
 </div>
-
-<div class="form-group " id="other-name-2">
-	<label id="title_label" class="form-label-bold" for="othername1">Have you been known by another name in the last 5 years?</label>
-		<input value="" type="text" id="othername1" style="width:50%"/>
+<div class="form-group " id="other-name-2" style="display:none">
+	<label id="title_label" class="form-label-bold" for="othername2">Another name</label>
+		<input value="" type="text" id="othername2" style="width:50%" placeholder="Firstnames and last name"/>
 </div>
-	
+<p><a href="#" id="btn-addanothername">Add another name you were known by</a></p>
+	<p class="clearfix"><br/></p>
 	<div class="form-group ">
 	
 	<fieldset id="date_of_birth" class="date-of-birth">
@@ -270,10 +286,10 @@ display:block;
 	</div>
 	</fieldset>
 	</div>
-			<p><br></p>
-			<div class="clearfix"></div>
+			<p class="clearfix"><br></p>
+			<div></div>
 	                                <div class="form-group ">
-                                    <p id="title_label" class="form-label ">What is your relationship status?</p>
+                                    <p id="title_label" class="form-label-bold ">What is your relationship status?</p>
 
                                     <fieldset class="inline">
                                         <div id="title" class="form-group">
@@ -293,14 +309,32 @@ display:block;
 
                                         </div>
                                     </fieldset>
-                                </div>
+                             </div>
+  </form> 
+  <p class="clearfix"><br/></p>
 
 	</div>
+<div class="right-block">
+<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+                           
+                            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                            <br>
+                            <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                            <p class="heading-secondary">Bankruptcy fee</p>
+                           	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
+                           	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
+                           	<p><a href="payments/payments.html">Make a payment</a></p>
+                            </div>
+                            <p><a href="#" style="display:none">Print summary</a></p>
+                            <p><a href="#" style="display:none">Generate court documents</a></p>
+                            <p><a href="#" style="display:none">Discard application</a></p>
+                        </div>
+</div>
 
 <p><br></p>
 	
 	<!-- For User research -->
-	<div class="form-navigation form-group">
+	<div class="form-navigation form-group" style="margin-left:30px;">
 	
 	<div>
 		<a id="next" class="button" href="../1-details/details.html">Continue</a>
@@ -377,6 +411,9 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+
+
 	var housename;
 	
 	var pre  = getParameterByName("pre");
@@ -399,6 +436,10 @@ $(document).ready(function() {
 		$("#next").prop("href", normalroute);
 	});
 
+	$("#btn-addanothername").click(function(){
+		$("#other-name-2").show();
+	});
+	
 
 });
 
