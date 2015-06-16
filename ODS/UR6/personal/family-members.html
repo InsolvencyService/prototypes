@@ -240,9 +240,9 @@ display:block;
             <h2 class="heading-medium">Who lives with you at <strong class="home">10 High Street</strong></h2>
             <p>
                 <a href="add.html" class="button">Add a person</a>&nbsp;
-                <a href="dependents.html">I live alone</a>
+                <a href="dependents.html" id="livealone">I live alone</a>
             </p>
-            <table style="width: 100%">
+            <table style="width: 100%" class="family">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -309,7 +309,7 @@ display:block;
         <div class="form-navigation form-group" style="margin-left:30px;">
 
             <div>
-                <a href="dependents.html" class="button" id="next">I have added all people who live with me</a>
+                <a href="dependents.html" class="button family" id="next">I have added all people who live with me</a>
 
             </div>
             <div>
@@ -385,12 +385,14 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
-
+	$(".family").hide();
 
 	var housename;
 	
 	var pre  = getParameterByName("added");
 	if (pre && pre.length > 1){
+		$(".family").show();	
+		$("#livealone").hide();	
 		$("#row1").show();
 	}
 	
