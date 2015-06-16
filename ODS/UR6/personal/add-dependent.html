@@ -183,173 +183,90 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Personal details summary</h1>
+	<h1 class="form-title heading-large">Add dependent</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<p class="lead text">
-		            Review your answers before you proceed.
-		        </p>
+	
+
+                          <div class="form-group ">
+
+                        <label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="Susan" />
+                        <br />
+                    </div>
+                    <div class="form-group ">
+
+                        <label id="last_name_label" for="last_name" class="form-label-bold ">Last name</label>
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="Bagley" />
+                        <br />
+                    </div>
 
 
 
-                   <div class="form-group" id="details1">
-                <table id="summary_table">
-                    <tbody>
-                        <tr class="group-heading">
-                        <td>Title</td>
-                        <td>Mr</td>
-                        <td>  
-    					<a href="1.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
+<p class="clearfix"></p>
 
-                      <tr class="group-heading">
-                        <td>Firstname</td>
-                        <td>Brian</td>
-                        <td> 
-    					<a href="1.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
+        <div class="form-group ">
 
-                    <tr class="group-heading">
-                        <td>Middle names</td>
-                        <td>&nbsp;</td>
-                        <td> 
-    					<a href="1.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-
-                    <tr class="group-heading">
-                        <td>Last name</td>
-                        <td>Bagley</td>
-                        <td> 
-    					<a href="1.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-
-                    <tr class="group-heading">
-                        <td>
-	Have you been known by another name in the last 5 years?</td>
-                        <td>No</td>
-                        <td> 
-    					<a href="1.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                     <tr class="group-heading">
-                        <td>Date of birth</td>
-                        <td>31/05/1980</td>
-                        <td> 
-    					<a href="1.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>                  
-                     <tr class="group-heading">
-                        <td>People who live with you</td>
-                        <td>2</td>
-                        <td> 
-    					<a href="family-members.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>  
-                     <tr class="group-heading">
-                        <td>Dependents who don't live with you</td>
-                        <td>0</td>
-                        <td> 
-    					<a href="dependents.html">Change</a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>  
-                    </tbody>
-                </table>
- 
- 
- 				<br>
-                
-            </div>
-
-
-        <div id="familylist">
-            <h2 class="heading-medium">People who live with you at <strong class="home">10 High Street</strong></h2>
-            <table style="width: 100%">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th style="text-align:right; white-space:nowrap">Relationship</th>
-                        <th>Dependent</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr id="row1">
-
-                        <td class="name" style="width:45%">Susan Bagley</td>
-                        <td class="ref">36</td>
-                        <td class="amount">Wife</td>
-                        <td class="date">Yes</td>
-                        <td class="edit"><a href="#" class="btn-edit">Edit</a>&nbsp;<a href="#" class="btn-delete">Delete</a></td>
-                    </tr>
-                    <tr id="row2">
-                        <td class="name" style="width:45%">James Bagley</td>
-                        <td class="ref">10</td>
-                        <td class="amount">Child</td>
-                        <td class="date">Yes</td>
-                        <td class="edit"><a href="#" class="btn-edit">Edit</a>&nbsp;<a href="#" class="btn-delete">Delete</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                        <label id="age_label" for="age" class="form-label-bold ">Age</label>
+                        <input id="age" name="age" type="text" value="" />
+                        <br />
+                    </div>
 
         <p class="clearfix"></p>
-        
-        <div id="dependentslist" style="display:none">
-            <h2 class="heading-medium">Your dependents</h2>
-            <table style="width: 100%">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th style="text-align:right; white-space:nowrap">Relationship</th>
-                        <th>Dependent</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
 
-                    <tr id="row1" style="display:none">
+<div class="form-group ">
+                                    <p id="title_label" class="form-label-bold  ">What is their relationship to you?</p>
 
-                        <td class="name" style="width:45%">&nbsp;</td>
-                        <td class="ref">&nbsp;</td>
-                        <td class="amount">&nbsp;</td>
-                        <td class="date">&nbsp;</td>
-                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-       
-        
-        
-        <p class="clearfix"></p>
+                                    <fieldset class="inline">
+                                        <div id="title" class="form-group">
+                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
+                                                <input id="dependent_type1" value="Spouse" name="dependent" type="radio" 
+                                                       aria-describedby="title_error title_help">My husband/wife/partner
+                                            </label>
+                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
+                                                <input id="dependent_type2" value="Child" name="dependent" type="radio" aria-describedby="title_error title_help">My child
+                                            </label>
+                                            <label id="dependent_type2_label" for="dependent_type3" class="block-label">
+                                                <input id="dependent_type3" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">Parent
+                                            </label>
+                                            <label id="dependent_type2_label" for="dependent_type4" class="block-label">
+                                                <input id="dependent_type4" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">Relative
+                                            </label>
+                                            <label id="dependent_type2_label" for="dependent_type5" class="block-label">
+                                                <input id="dependent_type5" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">No relationship
+                                            </label>
 
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+
+                    <div class="form-group">
+                        <p id="title_label2" class="form-label-bold ">Is this person dependent on you?</p>
+                        <div class="form-hint">Do you pay for their care or living expenses?</div>
+
+                            <fieldset class="inline">
+                                <div id="title0" class="form-group ">
+
+                                    <label id="dependent_answer1" for="dependent_yes" class="block-label">
+                                        <input id="dependent_yes" value="Yes" name="dependentyesno" type="radio">
+                                        Yes
+                                    </label>
+
+                                    <label id="dependent_answer2" for="dependent_no" class="block-label">
+                                        <input id="dependent_no" value="No" name="dependentyesno" type="radio">
+                                        No
+                                    </label>
+
+                                </div>
+                            </fieldset>
+
+
+                    </div>
 
 
 </form> 
@@ -383,7 +300,7 @@ display:block;
         <div class="form-navigation form-group" style="margin-left:30px;">
 
             <div>
-            <a href="../overview.html?section1=complete" class="button" id="next">Continue</a>
+                <a href="dependents.html?added=true" class="button" id="next">Continue</a>
 
             </div>
             <div>
