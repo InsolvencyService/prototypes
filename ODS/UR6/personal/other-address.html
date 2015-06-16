@@ -94,10 +94,10 @@ display:block;
 	font-size:16px;
 }
 
-.inner-block {
-    float: left;
-    display: table-cell;
-    width: 66.66666666%;
+.inner-block.text{
+	float:left;
+	display: table-cell;
+    width:66.66666666%;
 }
 .right-block{
 	padding-top:60px;
@@ -183,203 +183,139 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Personal details</h1>
+	<h1 class="form-title heading-large">Your previous address</h1>
 	
-	
+	<div class="form-hint">We need your address history for the last 3 years</div>
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<p class="form-label-bold">
-	</p>
-	
-	 <div class="form-group ">
-	
-	<fieldset class="inline">
-	<legend id="title_label" class="form-label-bold">Title</legend>
-	<div id="title" class="form-group">
-	
-	<label id="title_label0" for="title_Mr." class="block-label">
-	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
-	Mr.
-	</label>
-	
-	<label id="title_label1" for="title_Mrs." class="block-label">
-	<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">
-	Mrs.
-	</label>
-	
-	<label id="title_label2" for="title_Miss" class="block-label">
-	<input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title_error title_help">
-	Miss
-	</label>
-	
-	<label id="title_label3" for="title_Ms." class="block-label">
-	<input id="title_Ms." value="Ms." name="title" type="radio" aria-describedby="title_error title_help">
-	Ms.
-	</label>
-	
-	</div>
-	</fieldset>
-	</div>
-
-	
-	<div class="form-group" style="display:none">
-	<label   class="form-label-bold" for="title">Title</label>
-	<select class="select-control" id="title">
-                <option value="week">per week</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="year">per year</option>
-     </select>
-	</div>
-
-
-<div class="row">
-	<div class="col-sm-4" style="padding-top:15px">
-		<div class="form-group" >
-		<label  class="form-label-bold" for="firstname">Firstname</label>
-		<input value="John" type="text" id="firstname"/>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="form-group" >
-		<label  class="form-label-bold" for="middlename">Middle names</label>
-		<input value="" type="text" id="middlename"/>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="form-group" >
-		<label  class="form-label-bold" for="lastname">Last name</label>
-		<input value="Williamson" type="text" id="lastname"/>
-		</div>
-	</div>
-</div>
-
-		<br/>
-
-<div class="form-group " id="other-name-1">
-	<label id="title_label" class="form-label-bold" for="othername1">Have you been known by another name in the last 5 years?</label>
-	<div class="form-hint">You will be asked about trading names later so don't include them here</div>
-		<input value="" type="text" id="othername1" style="width:80%" placeholder="Firstnames and last name"/>
-</div>
-<div class="form-group other-names" id="other-name-2">
-	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
-</div>
-<div class="form-group other-names" id="other-name-2">
-	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
-</div>
-<div class="form-group other-names" id="other-name-2">
-	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
-</div>
-<div class="form-group other-names" id="other-name-2">
-	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
-</div>
-<div class="form-group other-names" id="other-name-2">
-	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
-</div>
-
-<p><a href="#" id="btn-addanothername" style="display:none">Add another name you were known by</a></p>
-	<p class="clearfix"><br/></p>
 	<div class="form-group ">
 	
-	<fieldset id="date_of_birth" class="date-of-birth">
-	<legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
+	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
 	
-	<span class="form-hint" id="date_of_birth_help">For example, 31 01 1976</span>
-	<div class="form-group form-group-day">
-		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
-	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="31" />
+	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
+	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+	<br/>
 	</div>
-	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
-	<input id="date_of_birth.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="05" />
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
+	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+	<br/>
 	</div>
-	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
-	<input id="date_of_birth.year" name="date_of_birth.year" type="number" min="1000" max="9999" pattern="[1-9]" value="1980" />
+	<div class="form-group ">
+	
+	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+	<br/>
 	</div>
-	</fieldset>
+	<div class="form-group ">
+	
+	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
+	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+	<br/>
 	</div>
-			<p class="clearfix"><br></p>
-			<div></div>
-	                                <div class="form-group ">
-                                    <p id="title_label" class="form-label-bold ">What is your relationship status?</p>
+	<div class="form-group ">
+	
+	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+	<br/>
+	</div>
+	
+      <div class="form-group inline ">
 
-                                    <fieldset class="inline">
-                                        <div id="title" class="form-group">
-                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
-                                                <input id="dependent_type1" value="Partner" name="dependent" type="radio" 
-                                                       aria-describedby="title_error title_help">Single</label>
-                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
-                                                <input id="dependent_type2" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Married</label>
-                                            <label id="dependent_type2_label" for="dependent_type3" class="block-label">
-                                                <input id="dependent_type3" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Living together</label>
-                                            <label id="dependent_type2_label" for="dependent_type6" class="block-label">
-                                                <input id="dependent_type6" value="Other" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Other
-                                            </label>
+            <label id="still_claiming_label" class="form-label-bold">
+			When did you move in?</label>
 
-                                        </div>
-                                    </fieldset>
-                             </div>
 
-  </form> 
-  <p class="clearfix"><br/></p>
+            
+            <fieldset id="new_job_start" class="date-of-birth">
+            <div class="form-group form-group-day">
+	            <label id="new_job_start_label.day" for="new_job_start.day">Day</label>
+                <input id="new_job_start.day" name="new_job_start.day" class="date-input" type="text" maxlength="2" size="2" value="">
+            </div>
+            <div class="form-group form-group-month">
+	            <label id="new_job_start_label.month" for="new_job_start.month">Month</label>
+                <input id="new_job_start.month" name="new_job_start.month" class="date-input" type="text" maxlength="2" size="2" value="">
+            </div>
+            <div class="form-group form-group-year">
+                <label id="new_job_start_label.year" for="new_job_start.year">Year</label>
+                <input id="new_job_start.year" name="new_job_start.year" class="date-input" type="text" maxlength="4" size="4" value="">
+            </div>
 
-	</div>
-<div class="right-block">
-<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-                           
-                            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-                            <br>
-                            <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                            <p class="heading-secondary">Bankruptcy fee</p>
-                           	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
-                           	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
-                           	<p><a href="payments/payments.html">Make a payment</a></p>
-                            </div>
-                            <p><a href="#" style="display:none">Print summary</a></p>
-                            <p><a href="#" style="display:none">Generate court documents</a></p>
-                            <p><a href="#" style="display:none">Discard application</a></p>
-                        </div>
+        </fieldset>
+        </div>
+</form>
 </div>
 
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group" style="margin-left:30px;">
-	
-	<div>
-		<a id="next" class="button" href="contact-details.html">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="../brian/1-details/your-addresses.html" id="back">Back</a>
+    <div class="right-block">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
 
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
+                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
+            </div>
 
-	</div>
+
+        </div>
+
+        <p><br></p>
+
+        <!-- For User research -->
+        <div class="form-navigation form-group" style="margin-left:30px;">
+
+            <div>
+                <a href="dependents.html" class="button" id="next">Continue</a>
+
+            </div>
+            <div>
+                <br>
+            </div>
+
+            <div>
+                <a style="padding-right: 30px" href="../brian/1-details/your-addresses.html" id="back">Back</a>
+
+
+                <a href="#" id="cancel">Save and logout</a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+	 </div>
+
+
+	 </div>
+
 
 	 <!-- #EndEditable -->
 
         
-</div>
+<div id="content" >
 
+        
+<div id="content" >
 
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -436,31 +372,12 @@ $(document).ready(function() {
 
 	var housename;
 	
-	$(".other-names").hide();
-	
-	var pre  = getParameterByName("pre");
+	var pre  = getParameterByName("added");
 	if (pre && pre.length > 1){
-		$("#applicant_address_line_1").val("110 High Street");
-		$("#applicant_address_line_2").val("Newhall");
-		$("#applicant_address_town").val("Birmingham");
-		$("#applicant_address_post_code").val("B4 3TT");
-		//$("#other-addresses").hide();
-		
-		$("#next").prop("href", "your-addresses.html")
 	}
 	
 	var normalroute = $("#next").prop("href");
 
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
-	});
-	$("#otheraddress_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
-
-	$("#btn-addanothername").click(function(){
-		$("#other-name-2").show();
-	});
 	
 
 });
