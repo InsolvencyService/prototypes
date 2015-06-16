@@ -93,23 +93,6 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
-.inner-block.text{
-	float:left;
-	display: table-cell;
-    width:66.66666666%;
-}
-.right-block{
-	padding-top:60px;
-	width:33.33333%;
-	float:left;
-	  position: relative;
-	  min-height: 1px;
-	  padding-right: 15px;
-	  padding-left: 15px;
-	  display: table-cell;
-}
-
 </style>
 <!-- #EndEditable -->
 
@@ -183,147 +166,129 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Add family member</h1>
+  <h1 class="form-title heading-large">We can't process 
+	your application online</h1>
+
+
+    <form class="form" method="post">
+         <input type="hidden" name="_csrf_token" value="c5a2ce51607d1a392286e2bfc40230e9139df5bf">
+         <fieldset>
+            
+    <p>
+        Because we are still developing this service, we 
+		are unable to fully support your application
+		online at the moment.
+		You should check your answers on the previous page.
+		</p>
+		 <p>
+         We need you to complete a paper form 
+		 so we can process your claim.
+		 Please provide us with your details and we will send an 
+		 application form to your address. </p>
+    <p>&nbsp;</p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="full_name_label" for="full_name" class="form-label-bold full_name">Full name</label>
+            <input id="full_name" name="full_name" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="case_reference_label" for="case_reference" class="form-label-bold case_reference">Case 
+			 reference number</label>
+            <span class="form-hint">For example CN00001234
+            <input id="case_reference" name="case_reference" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p class="form-label-bold">
+        Contact address
+    </p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="address_line_1_label" for="address_line_1" class="form-label">Building name/number and street</label>
+            <input id="address_line_1" name="address_line_1" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <input id="address_line_2" name="address_line_2" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <input id="address_line_3" name="address_line_3" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="town_label" for="town" class="form-label">Town or city</label>
+            <input id="town" name="town" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="post_code_label" for="post_code" class="form-label">Postcode (optional)</label>
+            <input id="post_code" name="post_code" type="text" value=""><br>
+        </div>
+    <p></p>
+    <p>
+        </p><div class="form-group ">
+            
+            <label id="telephone_label" for="telephone" class="form-label-bold telephone">Contact telephone number</label>
+            <input id="telephone" name="telephone" type="text" value=""><br>
+        </div>
+    <p></p>
+
+         </span>
+
+        </fieldset><!-- For User research -->
+        <div class="form-navigation form-group">
+            <ul>
+            
+            <li><input id="next" class="button" type="submit" value="Next"></li>       
+                <li><a href="2-triage.html" id="back" class="button-secondary">Back</a></li>
+            
+            </ul>
+        </div>
+    </form>
+</div>
+<p class="clearfix"><br/></p>
+
 	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
 	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	
-
-                          <div class="form-group ">
-
-                        <label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
-                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="Susan" />
-                        <br />
-                    </div>
-                    <div class="form-group ">
-
-                        <label id="last_name_label" for="last_name" class="form-label-bold ">Last name</label>
-                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="Bagley" />
-                        <br />
-                    </div>
-
-
-
-<p class="clearfix"></p>
-
-        <div class="form-group ">
-
-                        <label id="age_label" for="age" class="form-label-bold ">Age</label>
-                        <input id="age" name="age" type="text" value="" />
-                        <br />
-                    </div>
-
-        <p class="clearfix"></p>
-
-<div class="form-group ">
-                                    <p id="title_label" class="form-label-bold  ">What is their relationship to you?</p>
-
-                                    <fieldset class="inline">
-                                        <div id="title" class="form-group">
-                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
-                                                <input id="dependent_type1" value="Spouse" name="dependent" type="radio" 
-                                                       aria-describedby="title_error title_help">My husband/wife/partner
-                                            </label>
-                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
-                                                <input id="dependent_type2" value="Child" name="dependent" type="radio" aria-describedby="title_error title_help">My child
-                                            </label>
-                                            <label id="dependent_type2_label" for="dependent_type3" class="block-label">
-                                                <input id="dependent_type3" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">Parent
-                                            </label>
-                                            <label id="dependent_type2_label" for="dependent_type4" class="block-label">
-                                                <input id="dependent_type4" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">Relative
-                                            </label>
-                                            <label id="dependent_type2_label" for="dependent_type5" class="block-label">
-                                                <input id="dependent_type5" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">No relationship
-                                            </label>
-
-                                        </div>
-                                    </fieldset>
-                                </div>
-
-
-                    <div class="form-group">
-                        <p id="title_label2" class="form-label-bold ">Is this person dependent on you?</p>
-                        <div class="form-hint">Do you pay for their care or living expenses?</div>
-
-                            <fieldset class="inline">
-                                <div id="title0" class="form-group ">
-
-                                    <label id="dependent_answer1" for="dependent_yes" class="block-label">
-                                        <input id="dependent_yes" value="Yes" name="dependentyesno" type="radio">
-                                        Yes
-                                    </label>
-
-                                    <label id="dependent_answer2" for="dependent_no" class="block-label">
-                                        <input id="dependent_no" value="No" name="dependentyesno" type="radio">
-                                        No
-                                    </label>
-
-                                </div>
-                            </fieldset>
-
-
-                    </div>
-
-
-</form> 
-  <p class="clearfix"><br/></p>
-
+	<div>
+		<a id="next" class="button" href="2-home/2-address-type.html">Continue</a>
 	</div>
-    <div class="right-block">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="../overview.html" id="back">Back</a>
 
-                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-                <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-
-
-        </div>
-
-        <p><br></p>
-
-        <!-- For User research -->
-        <div class="form-navigation form-group" style="margin-left:30px;">
-
-            <div>
-                <a href="family-members.html?added=true" class="button" id="next">Continue</a>
-
-            </div>
-            <div>
-                <br>
-            </div>
-
-            <div>
-                <a style="padding-right: 30px" href="family-members.html" id="back">Back</a>
-
-
-                <a href="#" id="cancel">Save and logout</a>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -375,46 +340,22 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
-
 	var housename;
-	
-	var pre  = getParameterByName("pre");
-	if (pre && pre.length > 1){
-		$("#applicant_address_line_1").val("110 High Street");
-		$("#applicant_address_line_2").val("Newhall");
-		$("#applicant_address_town").val("Birmingham");
-		$("#applicant_address_post_code").val("B4 3TT");
-		//$("#other-addresses").hide();
-		
-		$("#next").prop("href", "your-addresses.html")
-	}
-	
 	var normalroute = $("#next").prop("href");
-
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
+	$("#own_No").click(function(){
+		$("#next").prop("href","summary-dont-own.html");
 	});
-	$("#otheraddress_No").click(function(){
+	$("#own_Yes").click(function(){
 		$("#next").prop("href", normalroute);
 	});
 
-	$("#btn-addanothername").click(function(){
-		$("#other-name-2").show();
+	$("#next").on("click", function(){
+		housename = $(".data").first().val();
+		$.cookie('house', housename, { expires: 1 });
 	});
-	
 
 });
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
+    
 
 </script>
 

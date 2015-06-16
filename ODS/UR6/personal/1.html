@@ -259,13 +259,31 @@ display:block;
 
 <div class="form-group " id="other-name-1">
 	<label id="title_label" class="form-label-bold" for="othername1">Have you been known by another name in the last 5 years?</label>
+	<div class="form-hint">You will be asked about trading names later so don't include them here
 		<input value="" type="text" id="othername1" style="width:80%" placeholder="Firstnames and last name"/>
 </div>
-<div class="form-group " id="other-name-2" style="display:none">
-	<label id="title_label" class="form-label-bold" for="othername2">Other name you were known by</label>
+<div class="form-group other-names" id="other-name-2">
+	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
 		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
 </div>
-<p><a href="#" id="btn-addanothername">Add another name you were known by</a></p>
+<div class="form-group other-names" id="other-name-2">
+	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+</div>
+<div class="form-group other-names" id="other-name-2">
+	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+</div>
+<div class="form-group other-names" id="other-name-2">
+	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+</div>
+<div class="form-group other-names" id="other-name-2">
+	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+</div>
+
+<p><a href="#" id="btn-addanothername" style="display:none">Add another name you were known by</a></p>
 	<p class="clearfix"><br/></p>
 	<div class="form-group ">
 	
@@ -416,6 +434,8 @@ $(document).ready(function() {
 
 
 	var housename;
+	
+	$(".othername").hide();
 	
 	var pre  = getParameterByName("pre");
 	if (pre && pre.length > 1){
