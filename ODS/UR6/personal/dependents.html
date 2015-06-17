@@ -220,11 +220,11 @@ display:block;
 
                         <tr id="row1">
 
-                            <td class="col1" style="width:45%">Tania Balgley</td>
+                            <td class="col1" style="width:45%">Tania Bagley</td>
                             <td class="col2">18</td>
                             <td class="col3">33 Long STreet, Churchtown, C22 33K</td>
                             <td class="col4">Child</td>
-                            <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                            <td class="edit"><a href="#" class="btn-edit">Edit</a>&nbsp;<a href="#" class="btn-delete">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -342,12 +342,13 @@ display:block;
 $(document).ready(function() {
 
 	$(".dependents").hide();
-
+	$("#name").focus();
 	var housename;
 	
 	var pre  = getParameterByName("added");
 	if (pre && pre.length > 1){
 		$(".dependents").show();
+		$("#livealone").hide();
 	}
 	
 	var normalroute = $("#next").prop("href");
