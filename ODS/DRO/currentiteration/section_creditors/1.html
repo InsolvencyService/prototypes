@@ -250,28 +250,32 @@
 $(document).ready(function() {
 	
 		
-	var name = $.cookie('name');
-	var reference = $.cookie('reference');
-	var amount = $.cookie('amount');
-	var type = $.cookie('type');
+	var c_name;
+	c_name = $.cookie('name');
+	var c_reference;
+	c_reference = $.cookie('reference');
+	var c_amount;
+	c_amount = $.cookie('amount');
+	var c_type;
+	c_type = $.cookie('type');
 	
-	alert(name);
-	alert(reference);
-	alert(amount);
-	alert(type); 
+	alert(c_name);
+	alert(c_reference);
+	alert(c_amount);
+	alert(c_type); 
 	
-	if(name==null){	
+	if(c_name==null){	
 		$("#row1").hide();
 	}
 	else{
 		$("#row1").show();
 	}
 
-	$("#creditor-name").text(name);
-	$("#reference").text(reference);
-	$("#amount").text(amount);
-    $("#type").text(type);
-	$("#total").text(amount);
+	$("#creditor-name").text(c_name);
+	$("#reference").text(c_reference);
+	$("#amount").text(c_amount);
+    $("#type").text(c_type);
+	$("#total").text(c_amount);
 	
 	
 	
