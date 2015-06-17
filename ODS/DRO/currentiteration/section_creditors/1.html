@@ -154,7 +154,7 @@
                     <td id="amount"></td>
                     <td id="type"></td>
                     <td>   
-					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
+					<a href='#' class='btn btn-warning'>Edit</a> <a id="delete" class='btn btn-danger'>Delete</a>
                     </td>
                 </tr>
                 
@@ -257,17 +257,27 @@ $(document).ready(function() {
 	
 	if(c_name==null){	
 		$("#row1").hide();
+		$("#total").text("0.00");
 	}
 	else{
 		$("#row1").show();
+		$("#total").text(c_amount);
 	}
 	
 	$("#creditor-name").text(c_name);
 	$("#reference").text(c_reference);
 	$("#amount").text(c_amount);
     $("#type").text(c_type);
-	$("#total").text(c_amount);
 	
+	$("#delete").click(function(){
+		$.removeCookie('name');
+		$.removeCookie('reference');
+		$.removeCookie('amount');
+		$.removeCookie('secured');
+		$('#delete').prop("href","1.html");
+	
+	});
+
 
 });
 
