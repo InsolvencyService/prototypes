@@ -387,6 +387,7 @@
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../../../assets/js/jquery.select-to-autocomplete.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#pnl-attachment_earnings").hide();
@@ -399,6 +400,7 @@ $("#next").click(function(){
 	var creditorname = $("#creditor-selector :selected").attr("value");
 	var reference = creditor_reference.val();
 	var amount = amount-claimed.val()
+	
 	
 	$.cookie("name", creditorname);
 	$.cookie("reference", reference);
