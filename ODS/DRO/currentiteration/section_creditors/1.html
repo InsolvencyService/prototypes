@@ -149,7 +149,7 @@
                 </thead>
               <tbody>
                 <tr id="row1">
-                    <td><span id="creditor-name"></span></td>
+                    <td id="creditor-name"></td>
                     <td id="reference"></td>
                     <td id="amount"></td>
                     <td id="type"></td>
@@ -250,8 +250,11 @@
 $(document).ready(function() {
 	
 		
-	var c_name;
-	c_name = $.cookie('name');
+	var c_name = $.cookie('name');
+	
+	
+	/*
+	c_name = 
 	var c_reference;
 	c_reference = $.cookie('reference');
 	var c_amount;
@@ -270,13 +273,13 @@ $(document).ready(function() {
 	else{
 		$("#row1").show();
 	}
-
-	$("#creditor-name").text("name");
-	$("#reference").text(c_reference);
+*/
+	$("#creditor-name").text(c_name);
+/*	$("#reference").text(c_reference);
 	$("#amount").text(c_amount);
     $("#type").text(c_type);
 	$("#total").text(c_amount);
-	
+	*/
 	
 	
 
