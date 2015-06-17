@@ -164,7 +164,7 @@
 			<div class="form-group ">
 				<label id="creditor_name_label" for="creditor_name" class="form-label-bold first_name">Creditor name</label>
 				<select class="field form-control-3-4 font-xsmall" placeholder="Type your creditor name" name="Country" id="creditor-selector" autofocus="autofocus" autocorrect="off" autocomplete="off">
-			        <option value="" selected="selected">Select Country</option>
+			        <option value="" selected="selected"></option>
 			        <option value="1st  Credit, The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP">1st  Credit, The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP</option>
 					<option>Abbey National Plc, c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH</option>
 					<option>Ace Cards and Gifts, Express House, Clayton Business Park, Petre Road, Accrington, Lancashire, BB5 5JY</option>
@@ -398,7 +398,7 @@ $("#next").click(function(){
 	var e = document.getElementById("creditor-selector");
 	var creditor-name = e.options[e.selectedIndex].value;
 	var reference = creditor_reference.val();
-	var amount = amount-claimed.val()
+	var amount = amount-claimed.val();
 	
 	$.cookie("name", creditor-name);
 	$.cookie("reference", reference);
