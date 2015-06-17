@@ -243,8 +243,8 @@
 				<input id="creditor_reference" name="creditor_reference" type="text" value="" />
 			</div>
 			<div class="form-group ">
-				<label id="creditor_reference_label" for="creditor_reference" class="form-label-bold">Amount owed</label>
-				<input id="creditor_reference" name="creditor_reference" type="number" value="" /><br/>
+				<label id="creditor_reference_label" for="amount-claimed" class="form-label-bold">Amount owed</label>
+				<input id="amount-claimed" name="creditor_reference" type="number" value="" /><br/>
 			</div>
 			
 			<div class="form-group ">
@@ -322,7 +322,7 @@
 	 	</form>
 	 	<p>&nbsp;</p>
 		<div>
-			<a id="next" style=" vertical-align: middle;" class="button" href="1.html?row2=show">Save and return</a> 
+			<a id="next" style=" vertical-align: middle;" class="button">Save and return</a> 
 		</div>
 		<p>&nbsp;</p>
 		<div>
@@ -394,6 +394,19 @@ $(document).ready(function() {
 	$("#pnl-creditor").hide();
 });
 
+$("#next").click(function(){
+	var e = document.getElementById("creditor-selector");
+	var creditor-name = e.options[e.selectedIndex].value;
+	var reference = creditor_reference.val();
+	var amount = amount-claimed.val()
+	
+	$.cookie("name", creditor-name);
+	$.cookie("reference", reference);
+	$.cookie("amount", amount);	
+	$("#next").prop("href","1.html");
+});
+
+
 $("#add-creditor").on("click", function (e) {
 	$("#pnl-creditor").toggle();
 });
@@ -406,12 +419,14 @@ $('#pnl-secured input:radio').click(function() {
 	
 	if(	($("#secured_yes").prop('checked')==true)){
 		$("#pnl-secured_details").show();
+		$.cookie("secured", "Secured");
 	}
 	else{
 		$("#pnl-secured_details").hide();
+		$.cookie("secured", "Unsecured");
+
 	}
 });
-
 
 $('#pnl-earnings input:radio').click(function() {
 	
