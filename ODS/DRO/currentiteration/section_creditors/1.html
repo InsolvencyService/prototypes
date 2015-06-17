@@ -249,23 +249,26 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
+		
+	var name = $.cookie('name');
+	var reference = $.cookie('reference');
+	var amount = $.cookie('amount');
+	var type = $.cookie('type');
 	
+	 
 	
-	var cookie-check=0;
-	cookie-check = $.cookie('amount');
-	
-	if(cookie-check==0){	
+	if(name==null){	
 		$("#row1").hide();
 	}
 	else{
 		$("#row1").show();
 	}
 
-	$("#creditor-name").text($.cookie('name'));
-	$("#reference".text($.cookie('reference'));
-	$("#amount".text(cookie-check);
-    $("#type".text($.cookie('type'));
-	$("#total").text(cookie-check);
+	$("#creditor-name").text(name);
+	$("#reference").text(reference);
+	$("#amount").text(amount);
+    $("#type").text(type);
+	$("#total").text(amount);
 	
 	
 	
