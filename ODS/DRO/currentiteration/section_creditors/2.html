@@ -164,24 +164,24 @@
 			<div class="form-group ">
 				<label id="creditor_name_label" for="creditor_name" class="form-label-bold first_name">Creditor name</label>
 				<select class="field form-control-3-4 font-xsmall" placeholder="Type your creditor name" name="Country" id="creditor-selector" autofocus="autofocus" autocorrect="off" autocomplete="off">
-			        <option value="" selected="selected"></option>
-			        <option value="1st  Credit, The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP">1st  Credit, The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP</option>
-					<option>Abbey National Plc, c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH</option>
-					<option>Ace Cards and Gifts, Express House, Clayton Business Park, Petre Road, Accrington, Lancashire, BB5 5JY</option>
-					<option>Additions Direct, Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN</option>
-					<option>Barclaycard, Specialist Support Unit, Collections Floor 6, PO Box 5402, Northampton, NN4 1ZR</option>
-					<option>Barclays Bank Plc, Open Sort &amp; Distribute, Astron House, 51 Saffron Road, Leicester, LE87 2BB</option>
-					<option>Barclays Partner Finance, c/o Grant Thornton UK LLP, Hartwell House, 55-61 Victoria Street, Bristol, Avon, BS1 6FT</option>
-					<option>BCW Group Plc, 24 George Square, Glasgow, Lanarkshire, G2 1EG</option>
-					<option>Bedford Borough Council, A015, Town Hall, St Pauls Square, Bedford, MK40 1SJ</option>
-					<option>C.A.R.S, Viewpoint, Basing View, Basingstoke, Hampshire, RG21 4RG</option>
-					<option>Cabot Financial (UK) Ltd, 1 Kings Hill Avenue, Kings Hill, West Malling, Kent, ME19 4UA</option>
-					<option>HSBC, Collections and Recoveries, 2nd Floor, 12 Calthorpe Road, Edgebaston, Birmingham, B15 1FD</option>
-					<option>Hull City Council, Council Tax Section, First Floor, Treasury Building, Guildhall Road, Hull, HU1 2AB</option>
-					<option>John Lewis Partnership Card, HBEU Collections, 1st Floor, 120 Edmund Street, Birmingham, B3 2QZ</option>
-					<option>John Moores, Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN</option>
-					<option>Kirklees Council, Civic Centre 1 High Street HUDDERSFIELD, HD1 2NF</option>
-					<option>La Redoute, Empire Buildings, Horbury Road, Wakefield, WF90 8AA</option>
+			        <option value="" selected="selected">creditor name</option>
+			        <option value="1st  Credit">1st  Credit, The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP</option>
+					<option value="Abbey National Plc">Abbey National Plc, c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH</option>
+					<option value="Ace Cards and Gifts">Ace Cards and Gifts, Express House, Clayton Business Park, Petre Road, Accrington, Lancashire, BB5 5JY</option>
+					<option value="Additions Direct">Additions Direct, Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN</option>
+					<option value="Barclaycard">Barclaycard, Specialist Support Unit, Collections Floor 6, PO Box 5402, Northampton, NN4 1ZR</option>
+					<option value="Barclays Bank Plc">Barclays Bank Plc, Open Sort &amp; Distribute, Astron House, 51 Saffron Road, Leicester, LE87 2BB</option>
+					<option value="Barclays Partner Finance">Barclays Partner Finance, c/o Grant Thornton UK LLP, Hartwell House, 55-61 Victoria Street, Bristol, Avon, BS1 6FT</option>
+					<option value="BCW Group Plc">BCW Group Plc, 24 George Square, Glasgow, Lanarkshire, G2 1EG</option>
+					<option value="Bedford Borough Council">Bedford Borough Council, A015, Town Hall, St Pauls Square, Bedford, MK40 1SJ</option>
+					<option value="C.A.R.S">C.A.R.S, Viewpoint, Basing View, Basingstoke, Hampshire, RG21 4RG</option>
+					<option value="Cabot Financial (UK) Ltd">Cabot Financial (UK) Ltd, 1 Kings Hill Avenue, Kings Hill, West Malling, Kent, ME19 4UA</option>
+					<option value="HSBC, Collections and Recoveries">HSBC, Collections and Recoveries, 2nd Floor, 12 Calthorpe Road, Edgebaston, Birmingham, B15 1FD</option>
+					<option value="Hull City Council">Hull City Council, Council Tax Section, First Floor, Treasury Building, Guildhall Road, Hull, HU1 2AB</option>
+					<option value="John Lewis Partnership Card">John Lewis Partnership Card, HBEU Collections, 1st Floor, 120 Edmund Street, Birmingham, B3 2QZ</option>
+					<option value="John Moores">John Moores, Shop Direct Group, Sandringham House, Sandringham Avenue, Chelmsford, Essex, CM92 1LN</option>
+					<option value="Kirklees Council">Kirklees Council, Civic Centre 1 High Street HUDDERSFIELD, HD1 2NF</option>
+					<option value="La Redoute">La Redoute, Empire Buildings, Horbury Road, Wakefield, WF90 8AA</option>
 			      </select>
 				<br/>
 				<a id="add-creditor" class="font-xsmall">Add a creditor</a>
@@ -395,12 +395,12 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
-	var e = document.getElementById("creditor-selector");
-	var creditor-name = e.options[e.selectedIndex].value;
-	var reference = creditor_reference.val();
-	var amount = amount-claimed.val();
 	
-	$.cookie("name", creditor-name);
+	var creditorname = $("#creditor-selector :selected").attr("value");
+	var reference = creditor_reference.val();
+	var amount = amount-claimed.val()
+	
+	$.cookie("name", creditorname);
 	$.cookie("reference", reference);
 	$.cookie("amount", amount);	
 	$("#next").prop("href","1.html");
