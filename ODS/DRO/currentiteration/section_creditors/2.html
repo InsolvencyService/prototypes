@@ -393,17 +393,33 @@ $(document).ready(function() {
 	$("#pnl-attachment_earnings").hide();
 	$("#pnl-secured_details").hide();
 	$("#pnl-creditor").hide();
+	
+	
+	var cookiename = $.cookie('name');
+	var cookieamount = $.cookie('amount');
+	var cookietype = $.cookie('secured');
+	var cookiereference = $.cookie('reference');
+	
+	if(cookietype=="secured"){
+		$("#secured_yes").attr("checked", true);
+		$("#pnl-secured_details").show();
+	}
+	else{
+		$("#secured_no").attr("checked", true);
+	}
+	
+	$("#creditor_reference").attr("value", cookiereference);
+	$("#amount-claimed").attr("value", cookieamount);
+	
+
 });
 
 $("#next").click(function(){
 	
-	var creditorname; 
-	var reference; 
-	var amount;
+	var creditorname = $("#creditor-selector :selected").attr("value");
+	var reference = creditor_reference.val();
+	var amount = amount-claimed.val()
 	
-	creditorname = $("#creditor-selector :selected").attr("value");
-	reference = $("#creditor_reference").val();
-	amount = $("#amount-claimed").val();	
 	
 	$.cookie("name", creditorname);
 	$.cookie("reference", reference);
