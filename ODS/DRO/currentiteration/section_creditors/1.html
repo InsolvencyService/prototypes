@@ -148,7 +148,7 @@
                 </tr>
                 </thead>
               <tbody>
-                <tr id="row1" hidden="true">
+                <tr id="row1">
                     <td id="creditor-name"></td>
                     <td id="reference"></td>
                     <td id="amount"></td>
@@ -248,10 +248,16 @@
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	var cookie-check=0;
 	
+	
+	
+	var cookie-check=0;
 	cookie-check = $.cookie('amount');
-	if(cookie-check<>0){
+	
+	if(cookie-check==0){	
+		$("#row1").hide();
+	}
+	else{
 		$("#row1").show();
 	}
 
