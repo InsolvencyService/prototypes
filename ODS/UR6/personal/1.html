@@ -237,7 +237,7 @@ display:block;
 <div class="row">
 	<div class="col-sm-4" style="padding-top:15px">
 		<div class="form-group" >
-		<label  class="form-label-bold" for="firstname">Firstname</label>
+		<label  class="form-label-bold" for="firstname">First name</label>
 		<input value="John" type="text" id="firstname"/>
 		</div>
 	</div>
@@ -260,27 +260,27 @@ display:block;
 <div class="form-group " id="other-name-1">
 	<label id="title_label" class="form-label-bold" for="othername1">Have you been known by another name in the last 5 years?</label>
 	<div class="form-hint">You will be asked about trading names later so don't include them here</div>
-		<input value="" type="text" id="othername1" style="width:80%" placeholder="Firstnames and last name"/>
+		<input value="" type="text" id="othername1" style="width:80%" placeholder="Full name"/>
 </div>
 <div class="form-group other-names" id="other-name-2">
 	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Full name"/>
 </div>
-<div class="form-group other-names" id="other-name-2">
+<div class="form-group other-names" id="other-name-3">
 	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Full name"/>
 </div>
-<div class="form-group other-names" id="other-name-2">
+<div class="form-group other-names" id="other-name-4">
 	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Full name"/>
 </div>
-<div class="form-group other-names" id="other-name-2">
+<div class="form-group other-names" id="other-name-5">
 	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Full name"/>
 </div>
-<div class="form-group other-names" id="other-name-2">
+<div class="form-group other-names" id="other-name-6">
 	<label id="title_label" class="form-label-bold" for="othername2" style="display:none">Other name you were known by</label>
-		<input value="" type="text" id="othername2" style="width:80%" placeholder="Firstnames and last name"/>
+		<input value="" type="text" id="othername2" style="width:80%" placeholder="Full name"/>
 </div>
 
 <p><a href="#" id="btn-addanothername" style="display:none">Add another name you were known by</a></p>
@@ -317,14 +317,11 @@ display:block;
                                                        aria-describedby="title_error title_help">Single</label>
                                             <label id="dependent_type2_label" for="dependent_type2" class="block-label">
                                                 <input id="dependent_type2" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Married</label>
+                                                aria-describedby="title_error title_help">Married or civil partnership</label>
                                             <label id="dependent_type2_label" for="dependent_type3" class="block-label">
-                                                <input id="dependent_type3" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Living together</label>
-                                            <label id="dependent_type2_label" for="dependent_type6" class="block-label">
-                                                <input id="dependent_type6" value="Other" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Other
-                                            </label>
+                                                <input id="dependent_type3" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+                                                <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
+						                     </label>
 
                                         </div>
                                     </fieldset>
@@ -432,11 +429,10 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
-
-
+	var othernamecount = 1;
 	var housename;
-	
 	$(".other-names").hide();
+	$("#btn-addanothername").show();	
 	
 	var pre  = getParameterByName("pre");
 	if (pre && pre.length > 1){
@@ -451,15 +447,10 @@ $(document).ready(function() {
 	
 	var normalroute = $("#next").prop("href");
 
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
-	});
-	$("#otheraddress_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
-
-	$("#btn-addanothername").click(function(){
-		$("#other-name-2").show();
+	$("#btn-addanothername").click(function(e){
+		e.preventDefault();
+		othernamecount = othernamecount  + 1;
+		$("#other-name-" + othernamecount.toString()).show();
 	});
 	
 
