@@ -148,25 +148,15 @@
                 </tr>
                 </thead>
               <tbody>
-                <tr id="row1">
-                    <td>HJ Finance</td>
-                    <td>HJF663994-AO</td>
-                    <td>£1,291.23</td>
-                    <td>Secured</td>
+                <tr id="row1" hidden="true">
+                    <td id="creditor-name"></td>
+                    <td id="reference"></td>
+                    <td id="amount"></td>
+                    <td id="type"></td>
                     <td>   
 					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
                     </td>
                 </tr>
-                <tr id="row2">
-                    <td>Quick Quid Loans</td>
-                    <td>QQ-87663994</td>
-                    <td>£689.25</td>
-                    <td>Unsecured</td>
-                    <td>   
-					<a href='#' class='btn btn-warning'>Edit</a> <a href='#' class='btn btn-danger'>Delete</a>
-                    </td>
-                </tr>
-
                 
                  <tr>
                     <td colspan="4"><p><a href='2.html'>Add 
@@ -255,18 +245,24 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#row2").hide();
-	var row2 = getParameterByName("row2");
+	var cookie-check=0;
 	
-	if(row2=="show"){
-		$("#row2").show();
-		$("#total").text("£1980.48");
+	cookie-check = $.cookie('amount');
+	if(cookie-check<>0){
+		$("#row1").show();
 	}
-	else{
-		$("#total").text("£1,291.23");
-	}
+
+	$("#creditor-name").text($.cookie('name'));
+	$("#reference".text($.cookie('reference'));
+	$("#amount".text(cookie-check);
+    $("#type".text($.cookie('type'));
+	$("#total").text(cookie-check);
+	
+	
+	
 
 });
 
