@@ -154,12 +154,12 @@
                     <td id="amount"></td>
                     <td id="type"></td>
                     <td>   
-					<a href='#' class='btn btn-warning'>Edit</a> <a id="delete" class='btn btn-danger'>Delete</a>
+					<a href='2.html' class='btn btn-warning'>Edit</a> <a id="delete" class='btn btn-danger'>Delete</a>
                     </td>
                 </tr>
                 
                  <tr>
-                    <td colspan="4"><p><a href='2.html'>Add 
+                    <td colspan="4"><p><a id="create">Add 
 					a creditor</a></p></td>
 
                     <td>                            
@@ -277,6 +277,15 @@ $(document).ready(function() {
 		$('#delete').prop("href","1.html");
 	
 	});
+	$("#create").click(function(){
+		$.removeCookie('name');
+		$.removeCookie('reference');
+		$.removeCookie('amount');
+		$.removeCookie('secured');
+		$('#create').prop("href","1.html");
+	
+	});
+
 
 
 });
