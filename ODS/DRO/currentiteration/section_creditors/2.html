@@ -418,8 +418,8 @@ $(document).ready(function() {
 $("#next").click(function(){
 	
 	var creditorname = $("#creditor-selector :selected").attr("value");
-	var reference = $("creditor_reference").val();
-	var amount = $("amount-claimed").val();
+	var reference = $("#creditor_reference").val();
+	var amount = $("#amount-claimed").val();
 	
 	
 	$.cookie("name", creditorname);
