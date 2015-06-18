@@ -404,13 +404,14 @@ $(document).ready(function() {
 		$("#secured_yes").attr("checked", true);
 		$("#pnl-secured_details").show();
 	}
-	else{
+	else if(cookietype=="unsecured"){
 		$("#secured_no").attr("checked", true);
 	}
 	
 	$("#creditor_reference").attr("value", cookiereference);
 	$("#amount-claimed").attr("value", cookieamount);
-	$("#creditor-selector :selected").attr("value", cookiename);
+	$("#creditor-selector :selected").attr("value", );
+	$('#creditor-selector option[value="' + cookiename + '"]').attr("selected", "selected");
 
 });
 
