@@ -179,16 +179,16 @@
 	
 	<span class="form-hint" id="date_of_birth_help">For example, 31 01 1976</span>
 	<div class="form-group form-group-day">
-		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
-	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+		 <label id="date_of_birth_label.day" for="dob-day">Day</label>
+	<input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 	</div>
 	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
-	<input id="date_of_birth.month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+		 <label id="date_of_birth_label.month" for="dob-month">Month</label>
+	<input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 	</div>
 	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
-	<input id="date_of_birth.year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	<label id="date_of_birth_label.year" for="dob-year">Year</label>
+	<input id="dob-year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 	</div>
 	</fieldset>
 	</div>
@@ -328,7 +328,7 @@
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -366,10 +366,18 @@ $(document).ready(function() {
 					$("#pnl-email-nomatch").show();
 				}
 			}
+			$.cookie('dob-day', $("#dob-day").val(), { expires: 1, path:'/' });
+			$.cookie('dob-month', $("#dob-month").val(), { expires: 1, path:'/' });
+			$.cookie('dob-year', $("#dob-year").val(), { expires: 1, path:'/' });
+			$.cookie('firstname', $("#first_name").val(), { expires: 1, path:'/' });
+			$.cookie('lastname', $("#last_name").val(), { expires: 1, path:'/' });
+
 			if ($("#pnl-missing-email").is(":visible") == true){
 				$("#next").prop("href", nextpage + "?noemail=true");
 			}
 			else{
+				$.cookie('email', $("#email1").val(), { expires: 1, path:'/' });
+
 				$("#next").prop("href", nextpage);
 			}
 
@@ -380,6 +388,15 @@ $(document).ready(function() {
 
 });
 
+function htmlEncode(value){
+  //create a in-memory div, set it's inner text(which jQuery automatically encodes)
+  //then grab the encoded contents back out.  The div never exists on the page.
+  return $('<div/>').text(value).html();
+}
+
+function htmlDecode(value){
+  return $('<div/>').html(value).text();
+}
 
 </script>
 

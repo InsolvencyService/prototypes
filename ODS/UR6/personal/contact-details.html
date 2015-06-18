@@ -194,7 +194,7 @@ display:block;
 		<div class="form-group ">
             
             <label id="email_label" for="email" class="form-label-bold email">Email</label>
-            <input id="email1" name="email" type="text" class="input-email" value="brian.bagley@gmail.com"><br>
+            <input id="email" name="email" type="text" class="input-email" value="brian.bagley@gmail.com"><br>
         </div>
 
 		<div class="form-group ">
@@ -362,8 +362,6 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
-
-
 	var housename;
 	
 	var pre  = getParameterByName("pre");
@@ -376,6 +374,8 @@ $(document).ready(function() {
 		
 		$("#next").prop("href", "your-addresses.html")
 	}
+	
+	$("#email").val($.cookie('email'));
 	
 	var normalroute = $("#next").prop("href");
 

@@ -326,13 +326,19 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
-
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	var nextpage = $("#next").prop("href");
 	var confirmed = false;
+	var firstname;
+	var lastname;
+	var dob_day;
+	var dob_month;
+	var dob_year;
+	var email;
+	
+		
 	$(".missing-email").hide();
 	$("#pnl-email-nomatch").hide();
 
@@ -369,6 +375,14 @@ $(document).ready(function() {
 				$("#next").prop("href", nextpage + "?noemail=true");
 			}
 			else{
+
+				$.cookie('email', $("#email1").val(), { expires: 1, path:'/' });
+				$.cookie('dob-day', $("#date_of_birth.day").val(), { expires: 1, path:'/' });
+				$.cookie('dob-month', $("#date_of_birth.month").val(), { expires: 1, path:'/' });
+				$.cookie('dob-year', $("#date_of_birth.year").val(), { expires: 1, path:'/' });
+				$.cookie('firstname', $("#firstname").val(), { expires: 1, path:'/' });
+				$.cookie('lastname', $("#lastname").val(), { expires: 1, path:'/' });
+
 				$("#next").prop("href", nextpage);
 			}
 
