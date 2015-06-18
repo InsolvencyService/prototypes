@@ -410,7 +410,7 @@ $(document).ready(function() {
 	
 	$("#creditor_reference").attr("value", cookiereference);
 	$("#amount-claimed").attr("value", cookieamount);
-	//$("#creditor-selector :selected").attr("value", );
+	//$("#creditor-selector :selected").attr("value", cookiename);
 	$('#creditor-selector option[value="' + cookiename + '"]').attr("selected", "selected");
 
 });
@@ -418,8 +418,8 @@ $(document).ready(function() {
 $("#next").click(function(){
 	
 	var creditorname = $("#creditor-selector :selected").attr("value");
-	var reference = creditor_reference.val();
-	var amount = amount-claimed.val()
+	var reference = $("creditor_reference").val();
+	var amount = $("amount-claimed").val();
 	
 	
 	$.cookie("name", creditorname);
