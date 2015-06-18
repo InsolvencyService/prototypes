@@ -413,6 +413,17 @@ $(document).ready(function() {
 	{
 		$("#next").prop("href", nextpage + "?noemail=true");
 	}
+	
+	$("#next").on("click", function(){
+		$.cookie('question1', $("#question1").val(), { expires: 1, path:'/' });
+		$.cookie('question2', $("#question2").val(), { expires: 1, path:'/' });
+		$.cookie('question3', $("#question3").val(), { expires: 1, path:'/' });	
+		$.cookie('answer1', $("#answer1").val(), { expires: 1, path:'/' });
+		$.cookie('answer2', $("#answer2").val(), { expires: 1, path:'/' });
+		$.cookie('answer3', $("#answer3").val(), { expires: 1, path:'/' });	
+					
+	});
+	
 });
 
 function getParameterByName(name) {
