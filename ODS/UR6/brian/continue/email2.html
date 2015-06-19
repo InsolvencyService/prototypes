@@ -140,7 +140,7 @@ $(document).ready(function() {
 	var letter = name.substring(0, 1).toUpperCase();
 	$("#firstname").text(name);
 	urn = letter + urn.substring(1, urn.length);
-	alert(urn);
+
 	$("#urn").text(urn);
 	$.cookie('urn',urn, { expires: 1, path:'/' });
 	
