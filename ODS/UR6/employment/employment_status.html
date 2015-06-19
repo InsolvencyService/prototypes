@@ -332,7 +332,7 @@ $("#next").click(function(){
 
 	
 	$.cookie("employment_status", $("#employment :checked").attr("value"));
-	$.cookie("occupation", $("#occupations :selected").attr("value"));
+	$.cookie("occupation", $("#occupations").val());
 	$.cookie("NI_number", $("#NI_number").val());
 	$("#next").prop("href","#");
 });
