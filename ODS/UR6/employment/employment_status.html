@@ -203,62 +203,78 @@ display:block;
 <!-- #BeginEditable "content" --> 
 <div id="content" >
 
-
-
-	<div class="col-md-11 inner-block">
-	
+<div class="inner-block">	
 	<h1 class="form-title heading-large">Personal details</h1>
-		<div class="form-group ">
-			<fieldset class="inline">
-			<legend id="title_label" class="form-label-bold">What is your current employment status?</legend>
-				<div id="employment" class="form-group">
-					<label id="title_label0" for="unemployed" class="block-label">
-					<input id="unemployed" value="unemployed" name="employment_status" type="radio" aria-describedby="title_error title_help">Unemployed</label>
+	<div class="col-md-9">
+		<form class="form" method="post">
 	
-					<label id="title_label1" for="employed" class="block-label">
-					<input id="employed" value="employed" name="employment_status" type="radio" aria-describedby="title_error title_help">Employed</label>
-	
-					<label id="title_label2" for="self" class="block-label">
-					<input id="self" value="self" name="employment_status" type="radio" aria-describedby="title_error title_help">Self employed</label>
-	
-					<label id="title_label3" for="director" class="block-label">
-					<input id="director" value="director" name="employment_status" type="radio" aria-describedby="title_error title_help">Company director</label>
-				</div>
-			</fieldset>
-		</div>
-	
-	
-		<div class="panel-indent" id="pnl-occupation_type">
-			<label id="occupations_label" for="occupations" class="form-label-bold">
-			Please enter your current occupation</label>
-			<p class="hint-small"></p>
-	
-			<input type="text" placeholder="Start typing occupation" id="occupations" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">					  
-		</div>
-	
-		<div>
-			<p>&nbsp;</p>
-			<label id="NI_label" for="NI_number" class="form-label-bold">National Insurance number</label>
-			<p class="hint-small">It's on your National Insurance card, benefit letter, payslip or P60<br>For example, 'QQ 12 34 56 C'.</p>
-			<input type="text" id="NI_number" style="width:400px" class="form-control" autocomplete="off">
-		</div>
+			<div class="form-group ">
+				<fieldset class="inline">
+				<legend id="title_label" class="form-label-bold">What is your current employment status?</legend>
+					<div id="employment" class="form-group">
+						<label id="title_label0" for="unemployed" class="block-label">
+						<input id="unemployed" value="unemployed" name="employment_status" type="radio" aria-describedby="title_error title_help">Unemployed</label>
 		
-		<div class="form-navigation form-group">
-				<br><a id="next" class="button">Continue</a><br>
-				<a href="#">Back</a>
+						<label id="title_label1" for="employed" class="block-label">
+						<input id="employed" value="employed" name="employment_status" type="radio" aria-describedby="title_error title_help">Employed</label>
+		
+						<label id="title_label2" for="self" class="block-label">
+						<input id="self" value="self" name="employment_status" type="radio" aria-describedby="title_error title_help">Self employed</label>
+		
+						<label id="title_label3" for="director" class="block-label">
+						<input id="director" value="director" name="employment_status" type="radio" aria-describedby="title_error title_help">Company director</label>
+					</div>
+				</fieldset>
 			</div>
+		
+		
+			<div class="panel-indent" id="pnl-occupation_type">
+				<label id="occupations_label" for="occupations" class="form-label-bold">
+				Please enter your current occupation</label>
+				<p class="hint-small"></p>
+		
+				<input type="text" placeholder="Start typing occupation" id="occupations" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">					  
+			</div>
+		
+			<div>
+				<p>&nbsp;</p>
+				<label id="NI_label" for="NI_number" class="form-label-bold">National Insurance number</label>
+				<p class="hint-small">It's on your National Insurance card, benefit letter, payslip or P60<br>For example, 'QQ 12 34 56 C'.</p>
+				<input type="text" id="NI_number" style="width:400px" class="form-control" autocomplete="off">
+			</div>
+			
+			</form>
+			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+					<br><a id="next" class="button">Continue</a><br>
+					<a href="#">Back</a>
+				</div>
+		</div>		
+		<div class="col-md-3">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+            <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
+            </div>
+        </div>
 
-
-	<p class="clearfix"><br/></p>
 	</div>
 </div>
+
 
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
