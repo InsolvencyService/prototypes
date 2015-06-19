@@ -183,6 +183,25 @@ width:40px
 
 		<h1 class="form-title heading-large">Continue your application</h1>
 	
+<div class="validation-summary" style="display:none">
+                <h2>Application number is not valid</h2>
+                <p></p><ol>
+                    
+    
+        <li class="error-message">
+            
+            <p>Please enter a 12 digit application number</p>
+            <p><a href="urn-help.html">I have forgotten my application number</a></p>
+
+        </li>
+    
+    
+    
+
+                </ol>
+
+            </div>
+
 	<p class="text msg-URN" style="display:none;">
 	Your application number is 
 	<br>
@@ -190,8 +209,6 @@ width:40px
 
 	</p>
 
-	<p><br/></p>
-	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -223,7 +240,7 @@ width:40px
 
 
 	<a href="security-question.html" id="next" class="button">Continue</a>&nbsp;&nbsp;
-        <a href="urn-help.html">I have forgotten my application number or security questions</a>
+        <a href="urn-help.html" style="display:none">I have forgotten my application number or security questions</a>
 			<div>
 	<br>
 	</div>
@@ -305,6 +322,7 @@ width:40px
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -314,29 +332,22 @@ $(document).ready(function() {
 	if (getParameterByName("ignore") && getParameterByName("ignore").length > 0){
 		ignorevalidation = true;
 	}
-	var URNfromemail = getParameterByName("URN");
-	if (URNfromemail && URNfromemail.length > 1)
-	{
-		$("#urn").val(URNfromemail);
-	}
 	
-	$("#urn").blur( function() {
-		//if ($("#urn").val().length > 0){
-		//	$("#securityquestion").show();
-		//}
-	});
-	
-	var urn = 
+	var urn = $.cookie('urn');
 	$("#next").click( function(e) {
 
-		if (ignorevalidation == false){		
-			if ($("#urn").val().length == 0 && URNfromemail == ""){
-				alert(ignorevalidation );
-				if ($("#urn").val().toUpperCase() != "X52S-FQ6Y-HQWP"){
-					window.location = "return-error.html";
-				};
-				
+		if (ignorevalidation == false){	
+			if ($("#urn").val().length < 12){
 				e.preventDefault();
+				$(".validation-summary").show();
+			}
+			else{
+				if ($("#urn").val().length > 0){
+					if (stripped($("#urn").val()).toUpperCase() != stripped(urn).toUpperCase()){
+						e.preventDefault();
+						window.location = "security-question.html?error=true";
+					};	
+				}
 			}
 		}
 
@@ -344,6 +355,10 @@ $(document).ready(function() {
 
 
 });
+
+function stripped(urn){
+    return urn.replace(/[\. ,:-]+/g, "");
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

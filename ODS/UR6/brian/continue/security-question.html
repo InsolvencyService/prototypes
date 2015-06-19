@@ -310,6 +310,11 @@ width:40px
 <script type="text/javascript">
 $(document).ready(function() {
 
+	var error = getParameterByName("error");
+	if (error && error.length >0){
+		 $("#next").prop("href", "return-error.html");
+	}
+	
 	var number = 1;
 
 	var answer = "astronaut";

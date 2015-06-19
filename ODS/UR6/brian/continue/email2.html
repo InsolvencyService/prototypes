@@ -135,7 +135,7 @@ $(document).ready(function() {
 	
 	var name = $.cookie('firstname');
 	if (name == null){
-		name = "Brian";
+		name = $("#firstname").text();
 	}
 	var letter = name.substring(0, 1).toUpperCase();
 	$("#firstname").text(name);
