@@ -110,11 +110,20 @@
 	    if (frequency == "week") {
 	        normalisedamount = (tonum(amt) * 52) / 12;
 	    }
+	    if (frequency == "fortnight") {
+	        normalisedamount = (tonum(amt) * 26) / 12;
+	    }
+	    if (frequency == "4weeks") {
+	        normalisedamount = (tonum(amt) * (52/4)) / 12;
+	    }
 	    if (frequency == "year") {
 	        normalisedamount = tonum(amt) / 12;
 	    }
 	    if (frequency == "month") {
 	        normalisedamount = tonum(amt);
+	    }
+	    if (frequency == "quarter") {
+	        normalisedamount = (tonum(amt) * 4) / 12;
 	    }
 	    return normalisedamount;
 	}
