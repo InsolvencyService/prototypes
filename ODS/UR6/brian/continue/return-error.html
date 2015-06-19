@@ -189,8 +189,9 @@ width:40px
                     
     
         <li class="error-message">
-            
-            <p>Please re-enter your reference number and answer your secret question</p>
+              <p id="error-length" style="display:none">Please enter a 12 digit application number</p>
+
+            <p id="error-reenter">Please re-enter your application number and answer your secret question</p>
             <p><a href="urn-help.html">I have forgotten my application number or security questions</a></p>
 
         </li>
@@ -317,34 +318,44 @@ width:40px
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {
-
 	$(".msg-URN").hide();
-
-	var URNfromemail = getParameterByName("URN");
-	if (URNfromemail && URNfromemail.length > 1)
-	{
-		$("#urn").val(URNfromemail );
+	var ignorevalidation = false;
+	if (getParameterByName("ignore") && getParameterByName("ignore").length > 0){
+		ignorevalidation = true;
 	}
 	
-	$("#urn").blur( function() {
-		//if ($("#urn").val().length > 0){
-		//	$("#securityquestion").show();
-		//}
-	});
-	
+	var urn = $.cookie('urn');
 	$("#next").click( function(e) {
-		if ($("#urn").val().length == 0 && URNfromemail == ""){
-			e.preventDefault();
+
+		if (ignorevalidation == false){	
+			if ($("#urn").val().length < 12){
+				e.preventDefault();
+				$("#error-length").show();
+				$("#error-reenter").hide();
+			}
+			else{
+				if ($("#urn").val().length > 0){
+					if (stripped($("#urn").val()).toUpperCase() != stripped(urn).toUpperCase()){
+						e.preventDefault();
+						window.location = "security-question.html?error=true";
+					};	
+				}
+			}
 		}
-		
 
 	});
 
 
 });
+
+function stripped(urn){
+    return urn.replace(/[\. ,:-]+/g, "");
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
