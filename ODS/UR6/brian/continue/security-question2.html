@@ -203,7 +203,7 @@ width:40px
 	Your security question</h2>
 	 <div class="form-group ">
 	
-	<label id="applicant_address_line_2_label0" for="answer" class="form-label">
+	<label id="question" for="answer" class="form-label">
         Who was your favourite childhood hero?</label>
 	<input id="answer" name="applicant_address_line_2" type="text" value="" />
 
@@ -306,9 +306,35 @@ width:40px
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	var number = 2;
+
+    if ($.cookie('securityquestion') && $.cookie('securityquestion').length > 0){
+    	number = parseInt($.cookie('securityquestion')); 
+	}
+	
+	var answer = "astronaut";
+    if ($.cookie('question' + number) && $.cookie('question' + number).length > 1 && $.cookie('answer' + number)){
+    	$("#question").text($.cookie('question' + number));
+    	answer = $.cookie('answer' + number).toLowerCase();
+    }
+	
+    $("#next").on("click", function (e) {
+    	number = number + 1;
+    	if (number == 4){
+    		number = 1;
+    	}
+		$.cookie('securityquestion', number, { expires: 1, path:'/' });
+		
+        if ($("#answer").val().toLowerCase() != answer) {
+            e.preventDefault();
+            window.location.href = "return-error.html";
+        }
+    });
 
 });
 

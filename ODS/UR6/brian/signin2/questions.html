@@ -392,10 +392,17 @@ We’ll ask you one of your secuirity questions each time you log into your appl
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
 
+	if ($.cookie('answer1') && $.cookie('answer1').length > 1){
+			$("#answer1").show();
+			$("#answer2").show();
+			$("#answer3").show();
+	}
+	
 	$("#question1").change(function(){
 		$("#answer1").show();
 	});
@@ -418,10 +425,9 @@ $(document).ready(function() {
 		$.cookie('question1', $("#question1").val(), { expires: 1, path:'/' });
 		$.cookie('question2', $("#question2").val(), { expires: 1, path:'/' });
 		$.cookie('question3', $("#question3").val(), { expires: 1, path:'/' });	
-		$.cookie('answer1', $("#answer1").val(), { expires: 1, path:'/' });
-		$.cookie('answer2', $("#answer2").val(), { expires: 1, path:'/' });
-		$.cookie('answer3', $("#answer3").val(), { expires: 1, path:'/' });	
-					
+		$.cookie('answer1', $("#answer1 input").val(), { expires: 1, path:'/' });
+		$.cookie('answer2', $("#answer2 input").val(), { expires: 1, path:'/' });
+		$.cookie('answer3', $("#answer3 input").val(), { expires: 1, path:'/' });			
 	});
 	
 });

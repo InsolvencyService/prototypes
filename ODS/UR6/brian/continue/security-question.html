@@ -204,7 +204,7 @@ width:40px
 	Your security question</h2>
 	 <div class="form-group ">
 	
-	<label id="applicant_address_line_2_label0" for="answer" class="form-label">When you were young, what did you want to be when you grew up?</label>
+	<label for="answer" class="form-label" id="question">When you were young, what did you want to be when you grew up?</label>
 	<input id="answer" name="applicant_address_line_2" type="text" value="" />
 
 	
@@ -305,12 +305,24 @@ width:40px
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
 
+	var number = 1;
+
+	var answer = "astronaut";
+    if ($.cookie('question' + number) && $.cookie('question' + number).length > 1 && $.cookie('answer' + number)){
+    	$("#question").text($.cookie('question' + number));
+    	answer = $.cookie('answer' + number).toLowerCase();
+    }
+	
     $("#next").on("click", function (e) {
-        if ($("#answer").val().toLowerCase() != "astronaut") {
+    	number = 2;
+		$.cookie('securityquestion', number, { expires: 1, path:'/' });
+
+        if ($("#answer").val().toLowerCase() != answer) {
             e.preventDefault();
             window.location.href = "return-error.html";
         }
