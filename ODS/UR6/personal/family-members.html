@@ -109,7 +109,9 @@ display:block;
 	  padding-left: 15px;
 	  display: table-cell;
 }
-
+.btn-edit{
+	margin-right:10px;
+}
 </style>
 <!-- #EndEditable -->
 
@@ -192,7 +194,7 @@ display:block;
 	
 	
 
-        <fieldset id="date_of_birth" class="date-of-birth">
+        <fieldset id="movedin-date" class="date-of-birth">
 
             <legend id="date_of_birth_label" class="form-label-bold">When did you move to <strong class="home">10 High Street</strong>?</legend>
             <div class="form-hint">For example, Apr 2003</div>
@@ -241,12 +243,12 @@ display:block;
             <label  class="heading-medium">Who lives with you at <strong class="home">10 High Street?</strong></label>
 			<div class="form-hint">Enter their name, you can add more later</div>
                 <input class="form-control input-lg" id="name" style="width:250px; display:inline-block; margin-right:15px" placeholder="First name Last name">
-                <a href="add.html" class="button">Add a person</a>&nbsp;
+                <a href="add.html" class="button" id="add">Add a person</a>&nbsp;
                 <a href="dependents.html" id="livealone">I live alone</a>
 
             </div>
-            <h2 class="heading-medium">Your household</h2>
-            <table style="width: 100%" class="family">
+            <h2 class="heading-medium family" style="display:none">Your household</h2>
+            <table style="width: 100%;display:none" class="family" >
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -261,16 +263,82 @@ display:block;
                     <tr id="row1" style="display:none">
 
                         <td class="name" style="width:45%">Susan Bagley</td>
-                        <td class="ref">36</td>
-                        <td class="amount">Wife</td>
-                        <td class="date">Yes</td>
+                        <td class="age">23+</td>
+                        <td class="relationship">Wife</td>
+                        <td class="dependent">No</td>
                         <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
                     </tr>
+
                     <tr id="row2" style="display:none">
+
                         <td class="name" style="width:45%">James Bagley</td>
-                        <td class="ref">10</td>
-                        <td class="amount">Child</td>
-                        <td class="date">Yes</td>
+                        <td class="age">1-3</td>
+                        <td class="relationship">Son</td>
+                        <td class="dependent">Yes</td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row3" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row4" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row5" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row6" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row7" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row7" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row8" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
+                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+                    </tr>
+                    <tr id="row9" style="display:none">
+
+                        <td class="name" style="width:45%"></td>
+                        <td class="age"></td>
+                        <td class="relationship"></td>
+                        <td class="dependent"></td>
                         <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
                     </tr>
 
@@ -313,7 +381,7 @@ display:block;
         <div class="form-navigation form-group" style="margin-left:30px;">
 
             <div>
-                <a href="dependents.html" class="button family" id="next">I have added all people who live with me</a>
+                <a href="dependents.html" class="button family" id="next" style="display:none">I have added all people who live with me</a>
 
             </div>
             <div>
@@ -391,18 +459,50 @@ $(document).ready(function() {
 
 	$(".family").hide();
 
-	var housename;
 	
 	var pre  = getParameterByName("added");
 	if (pre && pre.length > 1){
 		$(".family").show();	
 		$("#livealone").hide();	
 		$("#row1").show();
+		$("#movedin-date").hide();
 	}
 	
 	var normalroute = $("#next").prop("href");
 
+	$("#add").on("click", function(){
+		$.cookie('partner-name', $("#name").val(), { expires: 1, path:'/' });
+	});
+
+	var number = 0;
+
+    if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
+    	number = parseInt($.cookie('familymembers')); 
+	}
 	
+	for (i = 1; i < number + 1; i++) { 
+		if ($.cookie('member' + i + "-firstname") && $.cookie('member' + i + "-firstname").length > 0){
+				if ($.cookie('memberdeleted' + i) == null){
+					$(".family").show();
+					
+					$("#row" + i).show();
+					var firstname = $.cookie('member' + i + "-firstname");
+					var lastname = $.cookie('member' + i + "-lastname");
+					$("#row" + i + " .name").text(firstname + " " + lastname);
+					$("#row" + i + " .age").text($.cookie('member' + i + "-age"));
+					$("#row" + i + " .relationship").text($.cookie('member' + i + "-relationship"));
+					$("#row" + i + " .dependent").text($.cookie('member' + i + "-dependent"));
+				
+				}
+			$(".family").show();	
+			$("#livealone").hide();	
+			$("#row1").show();
+			$("#movedin-date").hide();
+
+
+			$.removeCookie('memberdeleted' + i);		
+		}
+	}
 
 });
 

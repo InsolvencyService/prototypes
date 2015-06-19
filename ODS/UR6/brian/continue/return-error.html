@@ -323,7 +323,6 @@ width:40px
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$(".msg-URN").hide();
 	var ignorevalidation = false;
 	if (getParameterByName("ignore") && getParameterByName("ignore").length > 0){
 		ignorevalidation = true;
@@ -342,7 +341,7 @@ $(document).ready(function() {
 				if ($("#urn").val().length > 0){
 					if (stripped($("#urn").val()).toUpperCase() != stripped(urn).toUpperCase()){
 						e.preventDefault();
-						window.location = "security-question.html?error=true";
+						window.location = "security-question2.html?error=true";
 					};	
 				}
 			}

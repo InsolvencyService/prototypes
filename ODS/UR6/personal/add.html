@@ -216,17 +216,17 @@ display:block;
                                             <label for="age1" class="block-label">
                                                 <input id="age1" value="0-3" name="age" type="radio">0-3
                                             </label>
-                                            <label for="age1" class="block-label">
-                                                <input id="age1" value="0-3" name="age" type="radio">4-11
+                                            <label for="age2" class="block-label">
+                                                <input id="age2" value="4-11" name="age" type="radio">4-11
                                             </label>
-                                            <label for="age1" class="block-label">
-                                                <input id="age1" value="0-3" name="age" type="radio">12-18
+                                            <label for="age3" class="block-label">
+                                                <input id="age3" value="12-18" name="age" type="radio">12-18
                                             </label>
-                                            <label for="age1" class="block-label">
-                                                <input id="age1" value="0-3" name="age" type="radio">18-23
+                                            <label for="age4" class="block-label">
+                                                <input id="age4" value="18-23" name="age" type="radio">18-23
                                             </label>
-                                            <label for="age1" class="block-label">
-                                                <input id="age1" value="0-3" name="age" type="radio">23+
+                                            <label for="age5" class="block-label">
+                                                <input id="age5" value="23+" name="age" type="radio">23+
                                             </label>
 
 
@@ -384,39 +384,48 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../assets/js/titleCaps.js"></script>
 
 
 <script type="text/javascript">
 $(document).ready(function() {
 
+	var number = 0;
 
-
-	var housename;
-	
-	var pre  = getParameterByName("pre");
-	if (pre && pre.length > 1){
-		$("#applicant_address_line_1").val("110 High Street");
-		$("#applicant_address_line_2").val("Newhall");
-		$("#applicant_address_town").val("Birmingham");
-		$("#applicant_address_post_code").val("B4 3TT");
-		//$("#other-addresses").hide();
-		
-		$("#next").prop("href", "your-addresses.html")
+    if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
+    	number = parseInt($.cookie('familymembers')); 
 	}
 	
+	var membername = $.cookie('partner-name');
+	var memberfirstname = "Susan";
+	var memberlastname = "Bagley";	
+	
+	if (membername && membername.length >1){
+		memberfirstname  = membername.split(' ')[0];
+		
+		if (membername.indexOf(" ") > -1){
+			memberlastname = membername.substring(membername.lastIndexOf(" ") + 1);
+		}
+	}
+	
+	$("#first_name").val(titleCaps(memberfirstname));
+	$("#last_name").val(titleCaps(memberlastname.toLowerCase()));				
+
 	var normalroute = $("#next").prop("href");
 
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","other-address.html");
+	$("#next").on("click", function(){
+    	number = number + 1;
+    	if (number == 4){
+    		number = 1;
+    	}
+		$.cookie('familymembers', number, { expires: 1, path:'/' });
+		
+		$.cookie('member' + number + "-firstname", $("#first_name").val(), { expires: 1, path:'/' });	
+		$.cookie('member' + number + "-lastname", $("#last_name").val(), { expires: 1, path:'/' });		
+		$.cookie('member' + number + "-age", $("input:radio[name ='age']:checked").val(), { expires: 1, path:'/' });		
+		$.cookie('member' + number + "-relationship", $("input:radio[name ='dependent']:checked").val(), { expires: 1, path:'/' });
+		$.cookie('member' + number + "-dependent", $("input:radio[name ='dependentyesno']:checked").val(), { expires: 1, path:'/' });	
 	});
-	$("#otheraddress_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
-
-	$("#btn-addanothername").click(function(){
-		$("#other-name-2").show();
-	});
-	
 
 });
 
