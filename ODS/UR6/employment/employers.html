@@ -402,7 +402,7 @@ $(document).ready(function() {
 
 $("#next").click(function(){
 	
-	if($.cookie('employer_count')<=1){
+	if($.cookie('employer_count')==1){
 		$("#next").prop("href","employer_detail.html?show=all");
 	}
 	else{
