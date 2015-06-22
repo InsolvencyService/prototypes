@@ -354,6 +354,7 @@ $("#next").click(function(){
 	if(
 	($("#employment :checked").attr("value")=="employed") || 
 	($("#employment :checked").attr("value") == "unemployed")){
+		$.cookie("employed", "true");
 		$("#next").prop("href","employer_detail.html");
 	}
 	
