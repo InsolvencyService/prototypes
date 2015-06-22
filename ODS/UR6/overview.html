@@ -768,7 +768,12 @@ Employment details 2
 	                    if (section4 == "inprogress") {
 	                        $("#section4 .edit").text("Continue");
 	                    }
-		                if (section4 && section4 == "complete") {
+		                if (section2 && section2 == "complete") {
+	                         $("#section1 .edit").show().removeClass("button").text("Edit");
+	                        $("#section2 .edit").show().text("Edit");
+	                        $("#section3 .edit").show().addClass("button").text("Start");
+	                        document.title = 'Overview - Bank';
+	                    }if (section4 && section4 == "complete") {
 	                         $("#section1 .edit").show().removeClass("button").text("Edit");
 	                        $("#section2 .edit").show().text("Edit");
 	                        $("#section3 .edit").show().text("Edit");
