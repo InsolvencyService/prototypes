@@ -392,7 +392,9 @@ $(document).ready(function() {
 	$("#name").attr("value", $.cookie('employer_name'));
 	
 	
-	if($.cookie('employed') == "true") && ($.cookie('employer_count') != 1){
+	if(
+	($.cookie('employed') == "true") && ($.cookie('employer_count') != 1)
+	){
 		$("#checkbox-employed").attr('checked', true);
 	}
 	
