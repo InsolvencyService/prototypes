@@ -393,6 +393,7 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
+	$.cookie("employed", "true");
 	if($.cookie('employer_count')<=1){
 		$("#next").prop("href","employer_detail.html?show=all");
 	}
