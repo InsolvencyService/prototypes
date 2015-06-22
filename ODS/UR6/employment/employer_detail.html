@@ -327,7 +327,6 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
 <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
 
 	
@@ -347,9 +346,9 @@ $(document).ready(function() {
 	
 });
 
-$("#add_employer").click(function()
-	
-	$.cookie("employer_name", $("#name").val());
+$("#add_employer").click(function(){
+	var employername = $("#name").val();
+	$.cookie("employer_name", employername);
 	$("#add_employer").prop("href","employers.html");
 	
 	
