@@ -352,9 +352,16 @@ $("#next").click(function(){
 	$.cookie("NI_number", $("#NI_number").val());
 	
 	if(
-	($("#employment :checked").attr("value")=="employed") || 
-	($("#employment :checked").attr("value") == "unemployed")){
+	$("#employment :checked").attr("value")=="employed"){
 		$.cookie("employed", "true");
+		$("#next").prop("href","employers.html");
+	} 
+	
+	
+	
+	
+	else if($("#employment :checked").attr("value") == "unemployed"){
+		$.cookie("employed", "false");
 		$("#next").prop("href","employer_detail.html");
 	}
 	

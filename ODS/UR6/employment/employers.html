@@ -295,8 +295,8 @@ display:block;
 				</div>
 				<div>
 				<br> <br>
-					<label class="form-checkbox" for="checkbox-telephone-number">
-					    <input id="checkbox-telephone-number" type="checkbox" class="text-small" value="checkbox-telephone-number">&nbsp; I'm still currently employed</label>
+					<label class="form-checkbox" for="checkbox-employed">
+					    <input id="checkbox-employed" type="checkbox" class="text-small" value="checkbox-employed">&nbsp; I'm still currently employed</label>
 				</div>
 			</div>
 			
@@ -390,6 +390,12 @@ display:block;
 
 $(document).ready(function() {
 	$("#name").attr("value", $.cookie('employer_name'));
+	
+	
+	if($.cookie('employed') == "true"){
+		$("#checkbox-employed").attr('checked', true);
+	}
+	
 });
 
 $("#next").click(function(){

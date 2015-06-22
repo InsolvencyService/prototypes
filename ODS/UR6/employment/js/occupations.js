@@ -57,6 +57,7 @@ var occupations =   [
 { value: 'Children\'s nurse' },
 { value: 'Chiropractor' },
 { value: 'Civil engineer' },
+{ value: 'Civil Servant' },
 { value: 'Civil Service administrator' },
 { value: 'Clinical biochemist' },
 { value: 'Clinical cytogeneticist' },
