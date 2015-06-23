@@ -364,7 +364,7 @@ display:block;
 	<div class="form-navigation form-group" style="margin-left:30px;">
 	
 	<div>
-		<a id="next" class="button" href="contact-details.html">Continue</a>
+		<a id="next" class="button" >Continue</a>
 	</div>
 	<div>
 	<br>
@@ -462,6 +462,21 @@ $(document).ready(function() {
 
 });
 
+$("#next").click(function(){
+	$.cookie("title", $("#title :checked").attr("value"));
+	$.cookie("firstname", $("#firstname").val());
+	$.cookie("middlename", $("#middlename").val());
+	$.cookie("lastname", $("#lastname").val());
+	$.cookie("othername1", $("#othername1").val());
+	$.cookie("othername2", $("#othername2").val());
+	$.cookie("othername3", $("#othername3").val());
+	$.cookie("othername4", $("#othername4").val());
+	$.cookie("othername5", $("#othername5").val());
+	$.cookie("othername6", $("#othername6").val());
+
+	$("#next").prop("href","contact-details.html");
+	
+});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
