@@ -204,7 +204,7 @@ display:block;
                     <tbody>
                         <tr class="group-heading">
                         <td>Title</td>
-                        <td>Mr</td>
+                        <td id="user_title"></td>
                         <td>  
     					<a href="1.html">Edit</a>
                         </td>
@@ -214,7 +214,7 @@ display:block;
 
                       <tr class="group-heading">
                         <td>First name</td>
-                        <td>Brian</td>
+                        <td id="user_firstname"></td>
                         <td> 
     					<a href="1.html">Edit</a>
                         </td>
@@ -224,7 +224,7 @@ display:block;
 
                     <tr class="group-heading">
                         <td>Middle names</td>
-                        <td>&nbsp;</td>
+                        <td id="user_middlename"></td>
                         <td> 
     					<a href="1.html">Edit</a>
                         </td>
@@ -234,7 +234,7 @@ display:block;
 
                     <tr class="group-heading">
                         <td>Last name</td>
-                        <td>Bagley</td>
+                        <td id="user_lastname"></td>
                         <td> 
     					<a href="1.html">Edit</a>
                         </td>
@@ -254,7 +254,7 @@ display:block;
                     </tr>
                      <tr class="group-heading">
                         <td>Date of birth</td>
-                        <td>31/05/1980</td>
+                        <td id="user_dob"></td>
                         <td> 
     					<a href="1.html">Edit</a>
                         </td>
@@ -529,6 +529,24 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	var othername;
+	var dob = $.cookie("dob-day")+"/"+$.cookie("dob-month")+"/"+$.cookie("dob-year");
+
+	if($.cookie("othername1")!=null){
+		othername="Yes";
+	}
+	else{
+		othername="No";
+	}
+	
+	$("#user_title").attr("text", $.cookie("title"));
+	$("#user_firstname").attr("text", $.cookie("firstname"));
+	$("#user_middlename").attr("text", $.cookie("middlename"));
+	$("#user_lastname").attr("text", $.cookie("lastname"));
+	$("#user_lastname").attr("text", $.cookie("lastname"));
+	$("#user_dob").attr("text", dob);
+	
 
 	var number = 0;
 
