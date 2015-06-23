@@ -197,7 +197,7 @@ display:block;
 	
 	<fieldset class="inline">
 	<legend id="title_label" class="form-label-bold">Title</legend>
-	<div id="title" class="form-group">
+	<div id="title-select" class="form-group">
 	
 	<label id="title_label0" for="title_Mr." class="block-label">
 	<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">
@@ -463,7 +463,7 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
-	$.cookie("title", $("#title :checked").attr("value"));
+	$.cookie("title", $("#title-select :checked").attr("value"));
 	$.cookie("firstname", $("#firstname").val());
 	$.cookie("middlename", $("#middlename").val());
 	$.cookie("lastname", $("#lastname").val());
