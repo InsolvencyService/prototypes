@@ -245,7 +245,7 @@ display:block;
                     <tr class="group-heading">
                         <td>
 	Have you been known by another names in the last 5 years?</td>
-                        <td>No</td>
+                        <td id="user_othername"></td>
                         <td> 
     					<a href="1.html">Edit</a>
                         </td>
@@ -540,12 +540,12 @@ $(document).ready(function() {
 		othername="No";
 	}
 	
-	$("#user_title").attr("text", $.cookie("title"));
-	$("#user_firstname").attr("text", $.cookie("firstname"));
-	$("#user_middlename").attr("text", $.cookie("middlename"));
-	$("#user_lastname").attr("text", $.cookie("lastname"));
-	$("#user_lastname").attr("text", $.cookie("lastname"));
-	$("#user_dob").attr("text", dob);
+	$("#user_title").text($.cookie("title"));
+	$("#user_firstname").text($.cookie("firstname"));
+	$("#user_middlename").text($.cookie("middlename"));
+	$("#user_lastname").text($.cookie("lastname"));
+	$("#user_dob").text(dob);
+	$("#user_othername").text(othername);
 	
 
 	var number = 0;
