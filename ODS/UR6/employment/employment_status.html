@@ -223,6 +223,14 @@ display:block;
 		
 						<label id="title_label3" for="director" class="block-label">
 						<input id="director" value="director" name="employment_status" type="radio" aria-describedby="title_error title_help">Company director</label>
+						
+						<label id="title_label3" for="retired" class="block-label">
+						<input id="retired" value="retired" name="employment_status" type="radio" aria-describedby="title_error title_help">Retired</label>
+						
+						<label id="title_label3" for="education" class="block-label">
+						<input id="education" value="In education" name="employment_status" type="radio" aria-describedby="title_error title_help">In education</label>
+
+
 					</div>
 				</fieldset>
 			</div>
@@ -356,12 +364,15 @@ $("#next").click(function(){
 		$.cookie("employed", "true");
 		$("#next").prop("href","employers.html");
 	} 
-	
-	
-	
-	
-	else if($("#employment :checked").attr("value") == "unemployed"){
+	else if($("#employment :checked").attr("value") == "self"){
 		$.cookie("employed", "false");
+		$("#next").prop("href","business_1.html");
+	}
+	else if($("#employment :checked").attr("value") == "director"){
+		$("#next").prop("href","director_1.html");
+	}
+	else{
+		$.cookie("employed", "true");
 		$("#next").prop("href","employer_detail.html");
 	}
 	
