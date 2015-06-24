@@ -272,7 +272,7 @@ display:block;
                     </tr>  
                      <tr class="group-heading">
                         <td>Dependents who don't live with you</td>
-                        <td>0</td>
+                        <td id="otherdependents"></td>
                         <td> 
     					<a href="dependents.html">Edit</a>
                         </td>
@@ -532,9 +532,11 @@ $(document).ready(function() {
 
 	if($.cookie("other_dependent") == "true"){
 		$("#dependentslist").show();
+		$("#otherdependents").text("1");
 	}
 	else{
 		$("#dependentslist").hide();
+		$("#otherdependents").text("0");
 
 	}
 
