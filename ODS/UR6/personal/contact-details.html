@@ -394,7 +394,8 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
-		$.cookie(applicant_address, $("#applicant_address_line_1").val());
+		var addr = $("#applicant_address_line_1").val();
+		$.cookie("applicant_address", addr);
 		$("#next").prop("href","family-members.html");
 });
 
