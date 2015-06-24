@@ -213,21 +213,21 @@ display:block;
 				<legend id="title_label" class="form-label-bold">What is your current employment status?</legend>
 					<div id="employment" class="form-group">
 						<label id="title_label0" for="unemployed" class="block-label">
-						<input id="unemployed" value="unemployed" name="employment_status" type="radio" aria-describedby="title_error title_help">Unemployed</label>
+						<input id="unemployed" value="Unemployed" name="employment_status" type="radio" aria-describedby="title_error title_help">Unemployed</label>
 		
 						<label id="title_label1" for="employed" class="block-label">
-						<input id="employed" value="employed" name="employment_status" type="radio" aria-describedby="title_error title_help">Employed</label>
+						<input id="employed" value="Employed" name="employment_status" type="radio" aria-describedby="title_error title_help">Employed</label>
 		
 						<label id="title_label2" for="self" class="block-label">
-						<input id="self" value="self" name="employment_status" type="radio" aria-describedby="title_error title_help">Self employed</label>
+						<input id="self" value="Self employed" name="employment_status" type="radio" aria-describedby="title_error title_help">Self employed</label>
 		
 						<label id="title_label3" for="director" class="block-label">
-						<input id="director" value="director" name="employment_status" type="radio" aria-describedby="title_error title_help">Company director</label>
+						<input id="director" value="Director" name="employment_status" type="radio" aria-describedby="title_error title_help">Company director</label>
 						
-						<label id="title_label3" for="retired" class="block-label">
-						<input id="retired" value="retired" name="employment_status" type="radio" aria-describedby="title_error title_help">Retired</label>
+						<label id="title_label4" for="retired" class="block-label">
+						<input id="retired" value="Retired" name="employment_status" type="radio" aria-describedby="title_error title_help">Retired</label>
 						
-						<label id="title_label3" for="education" class="block-label">
+						<label id="title_label5" for="education" class="block-label">
 						<input id="education" value="In education" name="employment_status" type="radio" aria-describedby="title_error title_help">In education</label>
 
 
@@ -360,15 +360,15 @@ $("#next").click(function(){
 	$.cookie("NI_number", $("#NI_number").val());
 	
 	if(
-	$("#employment :checked").attr("value")=="employed"){
+	$("#employment :checked").attr("value")=="Employed"){
 		$.cookie("employed", "true");
 		$("#next").prop("href","employers.html");
 	} 
-	else if($("#employment :checked").attr("value") == "self"){
+	else if($("#employment :checked").attr("value") == "Self employed"){
 		$.cookie("employed", "false");
 		$("#next").prop("href","business_1.html");
 	}
-	else if($("#employment :checked").attr("value") == "director"){
+	else if($("#employment :checked").attr("value") == "Director"){
 		$("#next").prop("href","director_1.html");
 	}
 	else{
