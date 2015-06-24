@@ -196,14 +196,14 @@ display:block;
                     <tbody>
                     	<tr class="group-heading">
                     		<td>Current employment status</td>
-                        	<td id="employment-status">Unemployed</td>
+                        	<td id="employment-status"></td>
                         	<td><a href="employment_status.html">Edit</a></td>
                         	<td></td>
                     	</tr>
 
 	                    <tr class="group-heading">
 	                       <td>National Insurance number</td>
-	                        <td width="30%">QQ 12 34 56 C</td>
+	                        <td id="NINO" width="30%"></td>
 	                        <td><a href="employment_status.html">Edit</a></td>
 	                        <td></td>
 	                    </tr>
@@ -381,7 +381,9 @@ $(document).ready(function() {
 	if(employee == "true"){
 		$("#employer").show();
 	}
-
+	
+	$("#NINO").text($.cookie('NI_number'));
+	$("#employment-status").text($.cookie('employment_status'));
 });
 
 
