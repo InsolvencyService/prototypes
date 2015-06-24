@@ -287,7 +287,7 @@ display:block;
 	<div class="form-navigation form-group" style="margin-left:30px;">
 	
 	<div>
-		<a id="next" class="button" href="family-members.html">Continue</a>
+		<a id="next" class="button" >Continue</a>
 	</div>
 	<div>
 	<br>
@@ -392,6 +392,12 @@ $(document).ready(function() {
 	
 
 });
+
+$("#next").click(function(){
+		$.cookie(applicant_address, $("#applicant_address_line_1").val());
+		$("#next").prop("href","family-members.html");
+});
+
 
 
 function getParameterByName(name) {

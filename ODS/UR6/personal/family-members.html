@@ -196,7 +196,7 @@ display:block;
 
         <fieldset id="movedin-date" class="date-of-birth">
 
-            <legend id="date_of_birth_label" class="form-label-bold">When did you move to <strong class="home">10 High Street</strong>?</legend>
+            <legend id="date_of_birth_label" class="form-label-bold">When did you move to <strong class="home"></strong>?</legend>
             <div class="form-hint">For example, Apr 2003</div>
 
             <div>
@@ -240,7 +240,7 @@ display:block;
 
         <div id="familylist">
         	<div class="form-group">
-            <label  class="heading-medium">Who lives with you at <strong class="home">10 High Street?</strong></label>
+            <label  class="heading-medium">Who lives with you at <strong class="home"></strong></label>
 			<div class="form-hint">Enter their name, you can add more later</div>
                 <input class="form-control input-lg" id="name" style="width:250px; display:inline-block; margin-right:15px" placeholder="First name Last name">
                 <a href="add.html" class="button" id="add">Add a person</a>&nbsp;
@@ -458,6 +458,10 @@ display:block;
 $(document).ready(function() {
 
 	$(".family").hide();
+	
+	var home_address = $.cookie(applicant_address);
+	$(".home").text(home_address);
+
 
 	
 	var pre  = getParameterByName("added");
