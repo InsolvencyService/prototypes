@@ -445,6 +445,10 @@ $("#next").on("click", function(){
 	var adependency = $("#title :checked").attr("value");
 	var ODcount = $.cookie("OD_count")
 	
+	if(ODcount=="" || ODcount==null){
+		ODcount=0;
+	}
+	
 	ODcount ++;
 
 	$.cookie("other_dependent", "true");
