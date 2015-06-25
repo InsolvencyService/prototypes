@@ -443,7 +443,7 @@ $("#next").on("click", function(){
 	var aname=$("#first_name").val()+" "+$("#last_name").val();
 	var aage=$("#age").val();
 	var adependency = $("#title :checked").attr("value");
-	var ODcount = $.cookie("OD_count")
+	var ODcount = $.cookie("OD_count");
 	
 	if(ODcount=="" || ODcount==null){
 		ODcount=0;
