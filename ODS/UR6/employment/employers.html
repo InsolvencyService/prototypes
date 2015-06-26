@@ -388,11 +388,19 @@ display:block;
 	
 <script type="text/javascript">
 
-var countx = $.cookie("employer_count");
+var countx;
+
+
 
 
 $(document).ready(function() {
 	$("#name").attr("value", $.cookie('employer_name_temp'));
+	
+	countx = $.cookie("employer_count");
+	if(countx==""||countx==null){
+		countx=0;
+	}
+
 });
 
 $("#next").click(function(){
