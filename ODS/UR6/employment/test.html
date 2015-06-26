@@ -175,12 +175,8 @@
 						<th>Lastname</th>
 					</tr>
 				</thead>
-				<tbody hidden="true">
-					<tr>
-						<td>Firstname</td>
-						<td>Middlename</td>
-						<td>Lastname</td>
-					</tr>
+				<tbody class="tbl-names">
+					
 				</tbody>
 			</table>
 		</div>
@@ -267,6 +263,9 @@
 <script type="text/javascript">
 var countx;
 var row;
+var fname;
+var mname;
+var lname;
 
 $(document).ready(function() {
 
@@ -276,12 +275,15 @@ $(document).ready(function() {
 	}
 	
 	for(var i=1; i < countx; i++) {
+		fname = $.cookie("firstname"+i);
+		mname = $.cookie("middlename"+i);
+		lname = $.cookie("lastname"+i);
 	
-		row = "<tr><td>"+ $.cookie("firstname"+i)+"</td><td>"+ $.cookie("middlename"+i)+"</td><td>"+ $.cookie("lastname"+i)) +"</td></tr>";
-		
+		row = "<tr><td>"+ fname +"</td><td>"+ mname +"</td><td>"+ lname +"</td></tr>";
+		$(".tbl-names").append(row);	
 		
 	}
-	$("#tbl-names").append(row);	
+	
 
 });
 	
