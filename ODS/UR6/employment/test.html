@@ -260,10 +260,11 @@
 <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
+var countx;
 
 $(document).ready(function() {
 
-	var countx = $.cookie("count");
+	countx = $.cookie("count");
 	if(countx==""||countx==null){
 		countx=0;
 	}
@@ -282,10 +283,10 @@ $(document).ready(function() {
 $("#next").click(function(){
 	countx++;
 	alert(countx);
-	$.cookie("firstname"+countx, $("#firstname").val());
+	/*$.cookie("firstname"+countx, $("#firstname").val());
 	$.cookie("middlename"+countx, $("#middlename").val());
 	$.cookie("lastname"+countx, $("#lastname").val());
-	$.cookie("count", countx);
+	$.cookie("count", countx);*/
 	$("#next").attr("href", "#");
 });
 
