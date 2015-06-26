@@ -258,15 +258,15 @@ display:block;
 					
 					<div class="form-group form-group-day">
 						 <label id="start_label.day" for="start.day" >Day</label>
-					<input id="day" name="start.day" type="number" min="1" max="31"  value="" />
+					<input id="start_day" name="start.day" type="number" min="1" max="31"  value="" />
 					</div>
 					<div class="form-group form-group-month">
 						 <label id="start_label.month" for="date_of_birth.month">Month</label>
-					<input id="month" name="start.month" type="number" min="1" max="12" value="" />
+					<input id="start_month" name="start.month" type="number" min="1" max="12" value="" />
 					</div>
 					<div class="form-group form-group-year">
 					<label id="start_label.year" for="date_of_birth.year">Year</label>
-					<input id="year" name="start.year" type="number" min="1900" max="9999" value="" />
+					<input id="start_year" name="start.year" type="number" min="1900" max="9999" value="" />
 					</div>
 					
 				</fieldset>
@@ -402,8 +402,9 @@ $(document).ready(function() {
 $("#next").click(function(){
 
 	
-	var startx = $("#start.day").val() + "/" + $("#start.month").val() + "/" + $("#start.year").val();
-	var endx = $("#end.day").val() + "/" + $("#end.month").val() + "/" + $("#end.year").val();
+	var startx = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
+	alert(startx);
+	var endx = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
 	
 	var employer_address;
 	var address1=$("#employer_address_line_1").val();
