@@ -429,13 +429,14 @@ $("#next").click(function(){
 	}
 
 	
-	countx++;
+	
 	$.cookie("employer_count", countx);
 	$.cookie("employer_name"+countx, $("#name").val());
 	$.cookie("employer_address"+countx, employer_address);
 	$.cookie("employer_startdate"+countx, startx);
 	$.cookie("employer_enddate"+countx, endx);
-
+	countx++;
+	
 	$("#next").prop("href","employer_detail.html");
 	
 	
