@@ -213,8 +213,8 @@ display:block;
 				<label  class="form-label-bold">Enter your current or previous employers name?</label>
 				<div class="form-hint">We need to know about all the companies who you have been employed by in the last 12 months.<br><br></div>
 	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" placeholder="Employer name">
-	                <a id="add_employer" class="button">Add an employer</a>&nbsp;
-	                <a href="trading_1.html" id="no_employment">I haven't been employed.</a>
+	                <a id="add_employer" class="button">Add an employer</a>
+	                <p><a href="trading_1.html" id="no_employment">I haven't been employed.</a></p>
             </div>
             
             <div id="pnl-employment_table">
@@ -228,21 +228,11 @@ display:block;
 	                        <th>&nbsp;</th>
 	                    </tr>
 	                </thead>
-	                <tbody>
-	                    <tr id="row1">
-	                        <td>John Doe Ltd</td>
-	                        <td>6 High St, Birmingham, B63 7DJ</td>
-	                        <td>1/12/2014</td>
-	                        <td>31/12/2014</td>
-	                        <td><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+	                <tbody class="tbl-content">
+	                    <tr
+	                       
 	                    </tr>
-	                     <tr id="row2">
-	                        <td>Andrews Ltd</td>
-	                        <td>23 High St, Walsall, WS2 7FE</td>
-	                        <td>8/1/2015</td>
-	                        <td></td>
-	                        <td><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-	                    </tr>
+	                    
 
 	                </tbody>
 	            </table>
@@ -333,18 +323,24 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	$("#pnl-employment_table").hide();
-	$("#row2").hide();
-	var tableshow = getParameterByName("show");
+	$("#pnl-employment_table").hide();	
+	
+	var tableshow = $.cookie("employer_count");
 		
-	if(tableshow == 'row1'){
+	if(tableshow != "" || tableshow != null){
 		$("#pnl-employment_table").show();
 		$("#no_employment").hide();
 	}
-	else if(tableshow == 'all'){
-		$("#pnl-employment_table").show();
-		$("#row2").show();
-		$("#no_employment").hide();
+	
+	for(var i=1; i <= countx; i++) {
+		cname = $.cookie("employer_name"+i);
+		caddress = $.cookie("employer_address"+i);
+		cstart = $.cookie("employer_startdate"+i);
+		cend = $.cookie("employer_enddate"+i);
+	
+		row = "<tr><td>"+ cname +"</td><td>"+ caddress +"</td><td>"+ cstart +"</td><td>"+ cend +"cend"+"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+		$(".tbl-content").append(row);	
+		
 	}
 	
 });
