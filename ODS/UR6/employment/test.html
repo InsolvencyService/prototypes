@@ -170,7 +170,6 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Record</th>
 						<th>Firstname</th>
 						<th>Middlename</th>
 						<th>Lastname</th>
@@ -183,7 +182,7 @@
 		</div>
 
 			<p>&nbsp;</p>
-			<div class="button"><a href="#" id="next">Save</a></div>
+			<div class="button"><a id="next">Save</a></div>
 			<div class="form-navigation form-group"><a href="#">Back</a></div>
 		</div>		
 		<div class="col-md-3">
@@ -268,34 +267,27 @@ $(document).ready(function() {
 	if(countx==""||countx==null){
 		countx=0;
 	}
-	
+	alert(countx);
 	for(var i=1, i < countx+1; i++) {
-		$("#tbl-names").append(
-		"<tr>  <td>"
-		+ i 
-		+"</td><td>"
-		+ $.cookie("firstname"+(i-1)) 
-		+"</td><td>"
-		+ $.cookie("middlename"+(i-1)) 
-		+"</td><td>"
-		+ $.cookie("lastname"+(i-1)) 
-		+"</td></tr>");
+	
+		var row = "</td><td>"+ $.cookie("firstname"+(i-1))+"</td><td>"+ $.cookie("middlename"+(i-1))+"</td><td>"+ $.cookie("lastname"+(i-1)) +"</td></tr>";
+		alert(row);
+		$("#tbl-names").append(row);
 	}
 	
 
 });
-
+/*
 	
 $("#next").click(function(){
 	countx++;
-	$.cookie("count", countx);
 	$.cookie("firstname"+countx, $("#firstname").val());
 	$.cookie("middlename"+countx, $("#middlename").val());
 	$.cookie("lastname"+countx, $("#lastname").val());
 	$.cookie("count", countx);
 });
 
-
+*/
 </script>
 
 
