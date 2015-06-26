@@ -387,12 +387,7 @@ display:block;
 
 	
 <script type="text/javascript">
-
 var countx;
-
-
-
-
 $(document).ready(function() {
 	$("#name").attr("value", $.cookie('employer_name_temp'));
 	
@@ -400,6 +395,7 @@ $(document).ready(function() {
 	if(countx==""||countx==null){
 		countx=0;
 	}
+	
 
 });
 
@@ -438,6 +434,7 @@ $("#next").click(function(){
 
 	
 	countx++;
+	
 	$.cookie("employer_count", countx);
 	$.cookie("employer_name"+countx, $("#name").val());
 	$.cookie("employer_address"+countx, employer_address);
