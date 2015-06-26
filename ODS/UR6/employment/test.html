@@ -287,10 +287,9 @@ $("#next").click(function(){
 
 	countx++;
 	$.cookie("count", countx);
-
-	
-//	$.cookie("firstname"+countx, $("#firstname").val());
-	
+	$.cookie("firstname"+countx, $("#firstname").val());
+	$.cookie("middlename"+countx, $("#middlename").val());
+	$.cookie("lastname"+countx, $("#lastname").val());
 	$("#next").prop("href","test.html");
 	
 });
