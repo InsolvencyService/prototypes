@@ -72,68 +72,8 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
-
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
-}
-</style>
+ </style>
 <!-- #EndEditable -->
 
 
@@ -208,12 +148,43 @@ display:block;
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
-			
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="#">Back</a>
+				
+				<div class="form-group">
+					<label id="name_label0" for="firstname" class="form-label-bold">First name</label>
+					<input id="firstname" name="name" type="text" value="" /><br/>
 				</div>
+				
+				<div class="form-group">
+					<label id="name_label0" for="middlename" class="form-label-bold">Middle name</label>
+					<input id="middlename" name="name" type="text" value="" /><br/>
+				</div>
+
+				<div class="form-group">
+					<label id="name_label0" for="lastname" class="form-label-bold">Last name</label>
+					<input id="lastname" name="name" type="text" value="" /><br/>
+				</div>
+
+		</form>
+		
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>Record</th>
+						<th>Firstname</th>
+						<th>Middlename</th>
+						<th>Lastname</th>
+					</tr>
+				</thead>
+				<tbody id="tbl-names">
+				
+				</tbody>
+			</table>
+		</div>
+
+			<p>&nbsp;</p>
+			<div class="button"><a href="#" id="next">Save</a></div>
+			<div class="form-navigation form-group"><a href="#">Back</a></div>
 		</div>		
 		<div class="col-md-3">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
@@ -286,33 +257,29 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
 <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
-
-	
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 
 $(document).ready(function() {
-	$("#pnl-employment_table").hide();
-	$("#row2").hide();
-	var employed = $.cookie('employment_status');
+
+	var countx = $.cookie("count");
 	
-	if(employed == "employed"){
-		$("#pnl-current_employer").show();
-	}
-	else if(employed == "unemployed"){
-		$("#pnl-unemployed").show();
+	for(var i=1, i < countx+1; i++) {
+		$("#tbl-names").append("<tr>  <td>"+ i +"</td><td>"+ $.cookie("firstname"+i-1) +"</td><td>"+ $.cookie("middlename"+i-1) +"</td><td>"+ $.cookie("lastname"+i-1) +"</td></tr>");
 	}
 	
+
 });
 
-$("#add_employer").click(function(){
-
 	
-	$.cookie("employer_name", $("#name").val());
-	$("#add_employer").prop("href","employers.html");
-	
+$("#next").click(function(){
+	countx++;
+	$.cookie("count", countx);
+	$.cookie("firstname"+countx, $("#firstname").val());
+	$.cookie("middlename"+countx, $("#middlename").val());
+	$.cookie("lastname"+countx, $("#lastname").val());
 	
 });
 
