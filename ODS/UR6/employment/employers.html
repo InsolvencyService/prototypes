@@ -213,6 +213,14 @@ display:block;
 					<label id="name_label0" for="name" class="form-label">Employer name</label>
 					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
+				
+				<div  id="pnl-occupation_type">
+					<label id="occupations_label" for="occupations" class="form-label">Please enter the role you performed</label>
+					<p class="hint-small"></p>
+					
+					<input type="text" placeholder="Start typing role" id="occupations" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
+				</div>
+				<p>&nbsp;</p>
 						
 				<div class="form-group ">
 					<label id="employer_address_line_1_label" for="employer_address_line_1" class="form-label employer_address_line_1">Building and street</label>
@@ -384,6 +392,8 @@ display:block;
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
 <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/occupations.js"></script>
+<script type="text/javascript" src="../creditors/js/tw-typeahead.js"></script>
 
 	
 <script type="text/javascript">
@@ -436,6 +446,7 @@ $("#next").click(function(){
 	countx++;
 	
 	$.cookie("employer_count", countx);
+	$.cookie("employer_role"+countx, $("#occupations").val());
 	$.cookie("employer_name"+countx, $("#name").val());
 	$.cookie("employer_address"+countx, employer_address);
 	$.cookie("employer_startdate"+countx, startx);
