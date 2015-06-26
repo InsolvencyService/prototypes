@@ -265,9 +265,21 @@
 $(document).ready(function() {
 
 	var countx = $.cookie("count");
+	if(countx==""||countx==null){
+		countx=0;
+	}
 	
 	for(var i=1, i < countx+1; i++) {
-		$("#tbl-names").append("<tr>  <td>"+ i +"</td><td>"+ $.cookie("firstname"+i-1) +"</td><td>"+ $.cookie("middlename"+i-1) +"</td><td>"+ $.cookie("lastname"+i-1) +"</td></tr>");
+		$("#tbl-names").append(
+		"<tr>  <td>"
+		+ i 
+		+"</td><td>"
+		+ $.cookie("firstname"+(i-1)) 
+		+"</td><td>"
+		+ $.cookie("middlename"+(i-1)) 
+		+"</td><td>"
+		+ $.cookie("lastname"+(i-1)) 
+		+"</td></tr>");
 	}
 	
 
@@ -280,7 +292,7 @@ $("#next").click(function(){
 	$.cookie("firstname"+countx, $("#firstname").val());
 	$.cookie("middlename"+countx, $("#middlename").val());
 	$.cookie("lastname"+countx, $("#lastname").val());
-	
+	$.cookie("count", countx);
 });
 
 
