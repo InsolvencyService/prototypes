@@ -208,41 +208,22 @@ display:block;
 	<div class="col-md-9">
 		<form class="form" method="post">
 	
-			<div class="form-group ">
-				<fieldset class="inline">
-				<legend id="title_label" class="form-label-bold">What is your current employment status?</legend>
-					<div id="employment" class="form-group">
-						<label id="title_label0" for="unemployed" class="block-label">
-						<input id="unemployed" value="Unemployed" name="employment_status" type="radio" aria-describedby="title_error title_help">Unemployed</label>
-		
-						<label id="title_label1" for="employed" class="block-label">
-						<input id="employed" value="Employed" name="employment_status" type="radio" aria-describedby="title_error title_help">Employed</label>
-		
-						<label id="title_label2" for="self" class="block-label">
-						<input id="self" value="Self employed" name="employment_status" type="radio" aria-describedby="title_error title_help">Self employed</label>
-		
-						<label id="title_label3" for="director" class="block-label">
-						<input id="director" value="Director" name="employment_status" type="radio" aria-describedby="title_error title_help">Company director</label>
 						
-						<label id="title_label4" for="retired" class="block-label">
-						<input id="retired" value="Retired" name="employment_status" type="radio" aria-describedby="title_error title_help">Retired</label>
-						
-						<label id="title_label5" for="education" class="block-label">
-						<input id="education" value="In education" name="employment_status" type="radio" aria-describedby="title_error title_help">In education</label>
-
-
-					</div>
-				</fieldset>
-			</div>
-		
-		
-			<div class="panel-indent" id="pnl-occupation_type">
+			<div class="panel" id="pnl-employed">
 				<label id="occupations_label" for="occupations" class="form-label-bold">
-				Please enter your current occupation</label>
-				<p class="hint-small"></p>
+				Have you been employed in the last 12 months?</label>
+				<p class="hint-small">Answer yes for PAYE employment only, excluding CIS. Answer no if your only employment contract was in relation to a company directorship
+				</p>
 		
-				<input type="text" placeholder="Start typing occupation" id="occupations" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">					  
+				<div id="employment-yesno" class="form-group inline">
+					<label id="title_label0" for="employed-yes" class="block-label">
+					<input id="employed-yes" value="yes" name="employedyesno" type="radio" aria-describedby="title_error title_help">Yes</label>
+	
+					<label id="title_label1" for="employed-no" class="block-label">
+					<input id="employed-no" value="no" name="employedyesno" type="radio" aria-describedby="title_error title_help">No</label>
+				</div>				  
 			</div>
+
 		
 			<div>
 				<p>&nbsp;</p>
@@ -339,41 +320,22 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	$("#pnl-occupation_type").hide();
+	
 });
 
-$("#employment input:radio").click(function(){
-	if($("#employed").prop('checked')==true){
-		$("#pnl-occupation_type").show();
-	}
-	else{
-		$("#pnl-occupation_type").hide();
-	}
-});
 	
 
 $("#next").click(function(){
 
-	
-	$.cookie("employment_status", $("#employment :checked").attr("value"));
-	$.cookie("occupation", $("#occupations").val());
 	$.cookie("NI_number", $("#NI_number").val());
 	
-	if(
-	$("#employment :checked").attr("value")=="Employed"){
+	if($("#employed-yes").prop('checked')==true){
 		$.cookie("employed", "true");
 		$("#next").prop("href","employers.html");
-	} 
-	else if($("#employment :checked").attr("value") == "Self employed"){
-		$.cookie("employed", "false");
-		$("#next").prop("href","business_1.html");
 	}
-	else if($("#employment :checked").attr("value") == "Director"){
-		$("#next").prop("href","director_1.html");
-	}
-	else{
-		$.cookie("employed", "true");
-		$("#next").prop("href","employer_detail.html");
+	else if($("#employed-no").prop('checked')==true) {
+		$.cookie("employed", "no");
+		$("#next").prop("href","trading_1.html");
 	}
 	
 });

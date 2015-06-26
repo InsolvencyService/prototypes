@@ -175,14 +175,19 @@
 						<th>Lastname</th>
 					</tr>
 				</thead>
-				<tbody id="tbl-names">
-				
+				<tbody hidden="true">
+					<tr>
+						<td>Firstname</td>
+						<td>Middlename</td>
+						<td>Lastname</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
 
 			<p>&nbsp;</p>
-			<div class="button"><a id="next">Save</a></div>
+			<a id="next" class="button">Continue</a><br>
+
 			<div class="form-navigation form-group"><a href="#">Back</a></div>
 		</div>		
 		<div class="col-md-3">
@@ -261,33 +266,31 @@
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 var countx;
-
 $(document).ready(function() {
 
 	countx = $.cookie("count");
 	if(countx==""||countx==null){
 		countx=0;
 	}
-	/*alert(countx);
-	for(var i=1, i < countx+1; i++) {
+	alert(countx);
+	/*for(var i=1, i < countx+1; i++) {
 	
 		var row = "</td><td>"+ $.cookie("firstname"+(i-1))+"</td><td>"+ $.cookie("middlename"+(i-1))+"</td><td>"+ $.cookie("lastname"+(i-1)) +"</td></tr>";
-		alert(row);
-		$("#tbl-names").append(row);
+		
+		$("#tbl-names").text(row);
 	}
-	*/
+		*/
 
 });
-
 	
 $("#next").click(function(){
+
 	countx++;
-	alert(countx);
-	/*$.cookie("firstname"+countx, $("#firstname").val());
-	$.cookie("middlename"+countx, $("#middlename").val());
-	$.cookie("lastname"+countx, $("#lastname").val());
-	$.cookie("count", countx);*/
-	$("#next").attr("href", "#");
+	
+//	$.cookie("firstname"+countx, $("#firstname").val());
+	
+	$("#next").prop("href","test.html");
+	
 });
 
 

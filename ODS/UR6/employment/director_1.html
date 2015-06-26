@@ -204,22 +204,27 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Trading details</h1>
+	<h1 class="form-title heading-large">Directorship details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
-			<div class="form-group" id="pnl-trading">
+						
+			<div class="form-group" id="pnl-director">
 				<fieldset class="inline">
-				<legend id="trading_label" class="form-label-bold">Have you, in the last 3 years, been self employed or a partner in a partnership?</legend>
+				<legend id="director_label" class="form-label-bold">Have you, in the last 12 months, been a director of a company?</legend>
 					<div class="form-group">
-						<label id="trading_label0" for="trading_yes" class="block-label">
-						<input id="trading_yes" value="" name="trading" type="radio" aria-describedby="title_error title_help">Yes</label>
+						<label id="director_label0" for="director_yes" class="block-label">
+						<input id="director_yes" value="" name="director" type="radio" aria-describedby="title_error title_help">Yes</label>
 
-						<label id="trading_label1" for="trading_no" class="block-label">
-						<input id="trading_no" value="" name="trading" type="radio" aria-describedby="title_error title_help">No</label>		
+						<label id="director_label1" for="director_no" class="block-label">
+						<input id="director_no" value="" name="director" type="radio" aria-describedby="title_error title_help">No</label>		
 					</div>
 				</fieldset>
-			</div>			
+			</div>
+
+
+			
+			
 		</form>
 			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
@@ -308,22 +313,15 @@ display:block;
 	
 <script type="text/javascript">
 
-$(document).ready(function() {
-	
+$('#pnl-director input:radio').click(function() {
+	if(($("#director_yes").prop('checked')==true)){
+		$("#next").prop("href","director_detail.html");
+	}
+	else if(($("#director_no").prop('checked')==true)){
+		$("#next").prop("href","summary.html");
+	}
 
 });
-
-$('#pnl-trading input:radio').click(function() {
-
-if(($("#trading_yes").prop('checked')==true)){
-	$("#next").prop("href","trading_detail.html");
-}
-else{
-	$("#next").prop("href","director_1.html");	
-}
-
-});
-
 
 
 </script>
