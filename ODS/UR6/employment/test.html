@@ -266,20 +266,22 @@
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 var countx;
+var row;
+
 $(document).ready(function() {
 
 	countx = $.cookie("count");
 	if(countx==""||countx==null){
 		countx=0;
 	}
-	alert(countx);
-	/*for(var i=1, i < countx+1; i++) {
 	
-		var row = "</td><td>"+ $.cookie("firstname"+(i-1))+"</td><td>"+ $.cookie("middlename"+(i-1))+"</td><td>"+ $.cookie("lastname"+(i-1)) +"</td></tr>";
+	for(var i=1; i < countx; i++) {
+	
+		row = "<tr><td>"+ $.cookie("firstname"+i)+"</td><td>"+ $.cookie("middlename"+i)+"</td><td>"+ $.cookie("lastname"+i)) +"</td></tr>";
 		
-		$("#tbl-names").text(row);
+		
 	}
-		*/
+	$("#tbl-names").append(row);	
 
 });
 	
