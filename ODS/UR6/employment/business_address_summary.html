@@ -204,12 +204,12 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Business address</h1>
+	<h1 class="form-title heading-large">Business address<span class="plural"></span></h1>
 	<div class="col-md-9">
 		<table>
 			<thead>
 				<tr>
-					<th>Address</th>
+					<th>Address<span class="plural"></span></th>
 					<th></th>
 				</tr>
 			</thead>
@@ -222,7 +222,7 @@ display:block;
 			<div class="form-navigation form-group">
 			<p>&nbsp;</p>
 			<div>
-					<a class="button" href="business_names.html" id="next">I've added all the businesses addresses</a>
+					<a class="button" href="business_names.html" id="next">I've added all the business addresses</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -314,8 +314,12 @@ $(document).ready(function() {
 	}
 	
 	for(var i=1; i<=count; i++){
-		row = "<tr><td>" + $.cookie("business_address"+1); + "</td><td><a href=\"#\">Edit</a>&nbsp;<a href=\"#\">Delete</a></td></tr>";
+		row = "<tr><td>" + $.cookie("business_address"+i); + "</td><td><a href=\"#\">Edit</a>&nbsp;<a href=\"#\">Delete</a></td></tr>";
 		$("#tablebody").append(row);
+	}
+	
+	if(count>0){
+		$(".plural").append("es")
 	}
 	
 
