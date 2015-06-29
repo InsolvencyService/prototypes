@@ -222,7 +222,7 @@ display:block;
 			<div class="form-navigation form-group">
 			<p>&nbsp;</p>
 			<div>
-					<a class="button" href="business_names.html" id="next">I've added all the business addresses</a>
+					<a class="button" id="next">I've added all the business addresses</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -324,6 +324,17 @@ $(document).ready(function() {
 	
 
 });
+
+$("#next").click(function(){
+	if($.cookie("business_type") == "Partnership"){
+		$("#next").attr("href", "partner_detail.html")
+	}
+	else{
+		$("#next").attr("href", "business_additional.html")
+	}
+	
+});
+
 
 	
 </script>
