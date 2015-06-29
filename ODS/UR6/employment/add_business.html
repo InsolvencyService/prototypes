@@ -207,26 +207,80 @@ display:block;
 	<h1 class="form-title heading-large">Business details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-			<div id="pnl-business">
+			<div id="pnl-business" class="clearfix">
 			
 				<div class="form-group">
 					<label id="name_label0" for="name" class="form-label-bold">Business name</label>
-					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" />
 				</div>
 				
-				<div class="form-group ">				
+				<p><br></p>
+				
+				<div class="form-group ">
 				<fieldset class="inline">
-				<legend id="type_label" class="form-label-bold">Business type</legend>
-					<div id="business-type" class="form-group">
-						<label id="type_label0" for="self_employed" class="block-label">
-						<input id="self_employed" value="ceased" name="business_type" type="radio" aria-describedby="title_error title_help">Self employed</label>
+				<legend id="title_label" class="form-label-bold">Has the business traded under a different name in the last three years?</legend>
+					<div id="traded" class="form-group">
+						<label id="title_label0" for="yes" class="block-label">
+						<input id="yes" value="yes" name="names" type="radio">Yes</label>
 		
-						<label id="type_label1" for="partner" class="block-label">
-						<input id="partner" value="ceased" name="business_type" type="radio" aria-describedby="title_error title_help">Partner in a partnership</label>
+						<label id="title_label1" for="no" class="block-label">
+						<input id="no" value="no" name="names" type="radio">No</label>
 					</div>
 				</fieldset>
 				</div>
 				
+				<div id="pnl-names" class="form-group panel-indent">
+					<div class="form-group" id="row1">
+						<label id="name_label1" for="name" class="form-label-bold">Trading name(s)</label>
+						<br>
+						<input id="trade_name2" name="name1" type="text" value="" />
+						<a id="add_name" style="padding-left:20px">Add another</a>
+					</div>
+					
+					<div class="form-group" id="row2">
+						<br>
+						<input id="trade_name2" name="name2" type="text" value="" />
+					</div>
+					
+					<div class="form-group" id="row3">
+						<br>
+						<input id="trade_name2" name="name3" type="text" value="" />
+					</div>
+					
+					<div class="form-group" id="row4">
+						<br>
+						<input id="trade_name2" name="name4" type="text" value="" />
+					</div>
+					
+					<div class="form-group" id="row5">
+						<br>
+						<input id="trade_name2" name="name5" type="text" value="" />
+					</div>
+				</div>
+				
+				<p>&nbsp;</p>
+				
+				<div class="form-group">
+					<label id="nature_label0" for="nature" class="form-label-bold">Nature of business</label>
+					<input id="nature" name="nature" type="text" value="" />
+				</div>
+				
+				<p><br></p>				
+				<div class="form-group ">				
+				<fieldset class="inline">
+				<legend id="type_label" class="form-label-bold">Is this a partnership</legend>
+					<div id="business-type" class="form-group">
+						<label id="type_label1" for="partner" class="block-label">
+						<input id="partner" value="partnership" name="business_type" type="radio" aria-describedby="title_error title_help">Yes</label>
+					
+						<label id="type_label0" for="self_employed" class="block-label">
+						<input id="self_employed" value="sole" name="business_type" type="radio" aria-describedby="title_error title_help">No</label>
+					</div>
+				</fieldset>
+				</div>
+				
+				<p>&nbsp;</p>
+
 				<div class="form-group ">
 					<div>
 					<fieldset  class="date-of-birth">
@@ -234,21 +288,23 @@ display:block;
 						<span class="form-hint" id="date_of_birth_help">For example 31 12 2011.</span>
 						
 						<div class="form-group form-group-day">
-							 <label id="date_of_birth_label.day" for="date_of_birth.day" >Day</label>
-							<input id="day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="date_of_birth_label.day" for="start.day" >Day</label>
+							<input id="startday" name="start.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-month">
-							 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
-							<input id="month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="date_of_birth_label.month" for="start.month">Month</label>
+							<input id="startmonth" name="start.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-year">
-							<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
-							<input id="year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							<label id="date_of_birth_label.year" for="start.year">Year</label>
+							<input id="startyear" name="start.year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div><br>
 					</fieldset>
 					</div>
 				</div>
 				
+				<p><br></p>
+
 				<div class="form-group ">
 				<fieldset class="inline">
 				<legend id="title_label" class="form-label-bold">Has the business ceased trading?</legend>
@@ -269,16 +325,16 @@ display:block;
 						<span class="form-hint" id="date_of_birth_help">For example 31 12 2011.</span>
 						
 						<div class="form-group form-group-day">
-							 <label id="ceased_label.day" for="ceased.day" >Day</label>
-							<input id="day" name="ceased.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="ceased_label.day" for="end.day" >Day</label>
+							<input id="endday" name="end.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-month">
-							 <label id="ceased_label.month" for="ceased.month">Month</label>
-							<input id="month" name="ceased.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="ceased_label.month" for="end.month">Month</label>
+							<input id="endmonth" name="end.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-year">
-							<label id="ceased_label.year" for="ceased.year">Year</label>
-							<input id="year" name="ceased.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							<label id="ceased_label.year" for="end.year">Year</label>
+							<input id="endyear" name="end.year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div><br>
 					</fieldset>
 					</div>
@@ -286,7 +342,7 @@ display:block;
 			</div>			
 				
 		</form>
-		
+			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
 			<div>
 					<a class="button" id="next">Continue</a>
@@ -373,14 +429,43 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	$("#ceased_date").hide();
 	
+	var count = 1;
+	
+	$("#ceased_date").hide();
+	$("#pnl-names").hide();
+	$("#row2").hide();
+	$("#row3").hide();
+	$("#row4").hide();
+	$("#row5").hide();
+	
+	$('#add_name').click(function() {
+		if(count<5){
+			count++;
+			$("#row"+count).show();
+		}
+		if(count==5){
+			$("#add_name").hide();
+		}	
+	});
+
 });
+
+$('#traded input:radio').click(function() {
+
+	if(($("#yes").prop('checked')==true)){
+			$("#pnl-names").show();
+		}
+		else{
+			$("#pnl-names").hide();	
+		}
+		
+});
+
 
 $('#ceased input:radio').click(function() {
 	if($("#ceasedyes").prop('checked')==true){
 		$("#ceased_date").show();
-
 	}
 	else{
 		$("#ceased_date").hide();
@@ -391,11 +476,26 @@ $('#ceased input:radio').click(function() {
 
 
 $('#business-type input:radio').click(function() {
+	var startdate;
+	var enddate;
+	
+	startdate = $("#start.day").val() + "/" + $("#start.month").val() + "/" + $("#start.year").val();
+	end date = $("#end.day").val() + "/" + $("#end.month").val() + "/" + $("#end.year").val();
+	
+	$.cookie("business_name", $("#name").val());
+	$.cookie("business_nature", $("#nature").val());
+	$.cookie("business_startdate", startdate);
+	$.cookie("business_enddate", enddate);
+	
+	for(var i = 1; i<= count, i++){
+		$.cookie("business_tradename"+i, $(#"trade_name"+i).val());
+	}	
+	
 	if($("#partner").prop('checked')==true){
-		$("#next").prop("href","partnership_detail.html");
+		$.cookie("business_type", "Partnership");	
 	}
 	else{
-		$("#next").prop("href","business_address.html");
+		$.cookie("business_type", "Sole trader");
 	}
 
 });
