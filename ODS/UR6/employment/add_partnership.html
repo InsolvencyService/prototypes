@@ -230,12 +230,12 @@ display:block;
 	                </tbody>
 	            </table>
 	            <p>&nbsp;</p>
-	            <p><a href="employee_1.html" class="button family" id="next">I have added all my business partners.</a></p>
+	            <p><a href="employees.html" class="button family" id="next">I have added all my business partners.</a></p>
 			</div>
 		</form>
 			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
-					<a href="trading_1.html">Back</a>
+					<a href="#">Back</a>
 				</div>
 		</div>		
 		<div class="col-md-3">
@@ -317,6 +317,7 @@ display:block;
 
 $(document).ready(function() {
 	$("#pnl-partner_table").hide();
+	$("#business_name").attr("text", $.cookie('business_name'));
 	
 	
 	var count;
@@ -348,7 +349,7 @@ $(document).ready(function() {
 		$("#row2").show();
 	}
 	
-	$("#business_name").attr("text", $.cookie('business_name'));	*/
+		*/
 	
 });
 
