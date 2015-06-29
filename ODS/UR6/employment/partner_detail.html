@@ -215,38 +215,38 @@ display:block;
 				</div>
 						
 				<div class="form-group ">
-					<label id="employer_address_line_1_label" for="employer_address_line_1" class="form-label employer_address_line_1">Building and street</label>
-					<input id="employer_address_line_1" name="employer_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
+					<label id="partner_address_line_1_label" for="partner_address_line_1" class="form-label employer_address_line_1">Building and street</label>
+					<input id="partner_address_line_1" name="partner_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
 				</div>
 		
 				<div class="form-group ">
-					<label id="employer_address_line_2_label" for="employer_address_line_2" class="visuallyhidden">Address Line 2</label>
-					<input id="employer_address_line_2" name="employer_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
+					<label id="partner_address_line_2_label" for="partner_address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="partner_address_line_2" name="partner_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="employer_address_line_3_label" for="employer_address_line_3" class="visuallyhidden">Address Line 3</label>
-					<input id="employer_address_line_3" name="employer_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
+					<label id="partner_address_line_3_label" for="partner_address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="partner_address_line_3" name="partner_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="employer_address_town_label" for="employer_address_town" class="form-label employer_address_town">Town/city</label>
-					<input id="employer_address_town" name="employer_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
+					<label id="partner_address_town_label" for="partner_address_town" class="form-label employer_address_town">Town/city</label>
+					<input id="partner_address_town" name="partner_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="employer_address_county_label" for="employer_address_county" class="form-label employer_address_county">County</label>
-					<input id="employer_address_county" name="employer_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
+					<label id="partner_address_county_label" for="employer_address_county" class="form-label employer_address_county">County</label>
+					<input id="partner_address_county" name="employer_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="employer_address_post_code_label" for="employer_address_post_code" class="form-label employer_address_post_code">Postcode</label>
-					<input id="employer_address_post_code" name="employer_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
+					<label id="partner_address_post_code_label" for="partner_address_post_code" class="form-label employer_address_post_code">Postcode</label>
+					<input id="partner_address_post_code" name="partner_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
 					<br/>
 				</div>
 			</div>						
@@ -336,21 +336,53 @@ display:block;
 
 	
 <script type="text/javascript">
-
+var count;
 $(document).ready(function() {
 	$("#name").attr("value", $.cookie('partner_name'));	
 });
 
 $("#next").click(function(){
+	count = $.cookie("business_partner_count");
 	
-	if($.cookie('partner_count')==1){
-		$("#next").prop("href","add_partnership.html?show=all");
+	if(count == ""){
+		count = 1;
 	}
 	else{
-		$.cookie("partner_count", 1);
-		$("#next").prop("href","add_partnership.html?show=row1");
+		count++;
 	}
 	
+	var partner_address;
+	var address1=$("#partner_address_line_1").val();
+	var address2=$("#partner_address_line_2").val();
+	var address3=$("#partner_address_line_3").val();
+	var address4=$("#partner_address_town").val();
+	var address5=$("#partner_address_county").val();
+	var address6=$("#partner_address_post_code").val();
+	
+	if(address1 != ""){
+		partner_address = address1+", ";
+	}
+	if(address2 != ""){
+		partner_address = partner_address+address2+", ";
+	}
+	if(address3 != ""){
+		partner_address = partner_address+address3+", ";
+	}
+	if(address4 != ""){
+		partner_address = partner_address+address4+", ";
+	}
+	if(address5 != ""){
+		partner_address = partner_address+address5+", ";
+	}
+	if(address6 != ""){
+		partner_address = partner_address+address6;
+	}
+
+	
+	$.cookie("business_partner_count", count);
+	$.cookie("business_partner_name", partner_address);
+	$.cookie("business_partner_address", address);
+	$("#next").prop("href","add_partnership.html");
 });
 
 
