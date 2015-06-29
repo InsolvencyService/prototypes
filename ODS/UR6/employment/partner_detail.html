@@ -380,8 +380,8 @@ $("#next").click(function(){
 
 	
 	$.cookie("business_partner_count", count);
-	$.cookie("business_partner_name", $("#name").val());
-	$.cookie("business_partner_address", partner_address);
+	$.cookie("business_partner_name"+count, $("#name").val());
+	$.cookie("business_partner_address"+count, partner_address);
 	$("#next").prop("href","add_partnership.html");
 });
 
