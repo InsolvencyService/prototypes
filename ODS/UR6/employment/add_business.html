@@ -288,16 +288,16 @@ display:block;
 						<span class="form-hint" id="date_of_birth_help">For example 31 12 2011.</span>
 						
 						<div class="form-group form-group-day">
-							 <label id="date_of_birth_label.day" for="start.day" >Day</label>
-							<input id="startday" name="start.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="date_of_birth_label.day" for="start_day" >Day</label>
+							<input id="start_day" name="start.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-month">
-							 <label id="date_of_birth_label.month" for="start.month">Month</label>
-							<input id="startmonth" name="start.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="date_of_birth_label.month" for="start_month">Month</label>
+							<input id="start_month" name="start.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-year">
-							<label id="date_of_birth_label.year" for="start.year">Year</label>
-							<input id="startyear" name="start.year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							<label id="date_of_birth_label.year" for="start_year">Year</label>
+							<input id="start_year" name="start_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div><br>
 					</fieldset>
 					</div>
@@ -322,19 +322,19 @@ display:block;
 					<div>
 					<fieldset  class="date-of-birth">
 						<span id="date_of_birth_label" class="form-label-bold">Date trading ceased</span>
-						<span class="form-hint" id="date_of_birth_help">For example 31 12 2011.</span>
+						<span class="form-hint" id="end_help">For example 31 12 2011.</span>
 						
 						<div class="form-group form-group-day">
-							 <label id="ceased_label.day" for="end.day" >Day</label>
-							<input id="endday" name="end.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="ceased_label.day" for="end_day" >Day</label>
+							<input id="end_day" name="end_day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-month">
-							 <label id="ceased_label.month" for="end.month">Month</label>
-							<input id="endmonth" name="end.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							 <label id="ceased_label.month" for="end_month">Month</label>
+							<input id="end_month" name="end_month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div>
 						<div class="form-group form-group-year">
-							<label id="ceased_label.year" for="end.year">Year</label>
-							<input id="endyear" name="end.year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+							<label id="ceased_label.year" for="end_year">Year</label>
+							<input id="end_year" name="end_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 						</div><br>
 					</fieldset>
 					</div>
@@ -479,8 +479,8 @@ $('#business-type input:radio').click(function() {
 	var startdate;
 	var enddate;
 	
-	startdate = $("#start.day").val() + "/" + $("#start.month").val() + "/" + $("#start.year").val();
-	end date = $("#end.day").val() + "/" + $("#end.month").val() + "/" + $("#end.year").val();
+	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
+	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
 	
 	$.cookie("business_name", $("#name").val());
 	$.cookie("business_nature", $("#nature").val());
