@@ -209,23 +209,13 @@ display:block;
 		<table>
 			<thead>
 				<tr>
-					<th>Building/Street</th>
-					<th></th>
-					<th></th>
-					<th>Town</th>
-					<th>County</th>
-					<th>Postcode</th>
+					<th>Address</th>
 					<th></th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="tablebody">
 				<tr>
 					<td>Floor Four</td>
-					<td>30 Razor House</td>
-					<td>1 High Street</td>
-					<td>Minehead</td>
-					<td>Somerset</td>
-					<td>WE12 2SS</td>
 					<td><a href="#">Edit</a>&nbsp;<a href="#">Delete</a></td>
 				</tr>
 				
@@ -319,7 +309,19 @@ display:block;
 	
 <script type="text/javascript">
 
+$(document).ready(function() {
+	var count;
+	count = $.cookie("business_address_count");
+	if(count == null){
+		count=0;
+	}
+	
+	for(var i; i<=count; i++){
+		$("#tablebody").append("<tr><td>" + $.cookie("business_address"+1); + "</td><td><a href=\"#\">Edit</a>&nbsp;<a href=\"#\">Delete</a></td></tr>");
+	}
+	
 
+});
 
 	
 </script>

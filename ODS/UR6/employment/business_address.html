@@ -334,12 +334,18 @@ display:block;
 
 	
 <script type="text/javascript">
-
+var count;
 $(document).ready(function() {
 	$("#name").attr("value", $.cookie('business_name'));
+	count = $.cookie("business_address_count");
+	if(count == null){
+		count=0;
+	}
 });
 
 $('#next').click(function() {
+
+		count++;
 		var business_address;
 		var address1=$("#business_address_line_1").val();
 		var address2=$("#business_address_line_2").val();
@@ -367,7 +373,9 @@ $('#next').click(function() {
 			business_address = business_address+address6;
 		}
 
-		$.cookie("business_address", business_address);
+		$.cookie("business_address"+count, business_address);
+		$.cookie("business_address_count", count);
+		
 		$("#next").prop("href","business_address_summary.html");
 });
 
