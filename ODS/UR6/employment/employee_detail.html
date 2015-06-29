@@ -210,11 +210,12 @@ display:block;
 			<div id="pnl-current_employer">
 				<label id="name_label" for="name" class="form-label-bold"></label>
 				<div class="form-group">
-					<label id="name_label0" for="name" class="form-label">Employees name</label>
+					<label id="name_label0" for="name" class="form-label-bold">Employees name</label>
 					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
-						
+				<p>&nbsp;</p>
 				<div class="form-group ">
+					<label id="name_label0" for="name" class="form-label-bold">Employees address</label>
 					<label id="employee_address_line_1_label" for="employee_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 					<input id="employee_address_line_1" name="employee_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
@@ -250,7 +251,7 @@ display:block;
 					<br/>
 				</div>
 			</div>	
-			
+			<p>&nbsp;</p>
 			<div class="form-group" id="pnl-owed">
 				<fieldset class="inline">
 				<legend id="director_label" class="form-label-bold">Does this employee claim that you how them money?</legend>
@@ -265,17 +266,17 @@ display:block;
 			</div>
 			
 			
-			<div class="form-group" id="pnl-amount">
-					<label id="name_label0" for="amount" class="form-label">How much does the employee claims you owe them?</label>
-					<input id="amount" name="amount" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+			<div class="form-group panel-indent" id="pnl-amount">
+					<label id="name_label0" for="amount" class="form-label-bold">How much does the employee claims you owe them?</label>
+					<span>£ </span><input id="amount" name="amount" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 
 					
 		</form>
-		
+		<p>&nbsp;</p>
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Add partner</a>
+					<a class="button" id="next">Continue</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -422,7 +423,7 @@ $("#next").click(function(){
 	$.cookie("business_employee_name"+count, $("#name").val());
 	$.cookie("business_employee_address"+count, employee_address);
 	$.cookie("business_employee_amount"+count, amountx);
-	$("#next").prop("href","add_partnership.html");
+	$("#next").prop("href","add_employee.html");
 });
 
 
