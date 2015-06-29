@@ -427,10 +427,10 @@ display:block;
 
 	
 <script type="text/javascript">
-
+var count = 1;
 $(document).ready(function() {
 	
-	var count = 1;
+	
 	
 	$("#ceased_date").hide();
 	$("#pnl-names").hide();
@@ -497,6 +497,8 @@ $('#next').click(function() {
 	else{
 		$.cookie("business_type", "Sole trader");
 	}
+	
+	$('#next').attr('href', 'business_address.html');
 
 });
 
