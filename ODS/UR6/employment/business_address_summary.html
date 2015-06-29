@@ -214,10 +214,6 @@ display:block;
 				</tr>
 			</thead>
 			<tbody id="tablebody">
-				<tr>
-					<td>Floor Four</td>
-					<td><a href="#">Edit</a>&nbsp;<a href="#">Delete</a></td>
-				</tr>
 				
 			</tbody>
 		</table>
@@ -311,13 +307,15 @@ display:block;
 
 $(document).ready(function() {
 	var count;
+	var row;
 	count = $.cookie("business_address_count");
 	if(count == null){
 		count=0;
 	}
 	
 	for(var i=1; i<=count; i++){
-		$("#tablebody").append("<tr><td>" + $.cookie("business_address"+1); + "</td><td><a href=\"#\">Edit</a>&nbsp;<a href=\"#\">Delete</a></td></tr>");
+		row = "<tr><td>" + $.cookie("business_address"+1); + "</td><td><a href=\"#\">Edit</a>&nbsp;<a href=\"#\">Delete</a></td></tr>";
+		$("#tablebody").append(row);
 	}
 	
 
