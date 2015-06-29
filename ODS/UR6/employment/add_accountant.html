@@ -230,7 +230,7 @@ display:block;
 	                </tbody>
 	            </table>
 	            <p>&nbsp;</p>
-	            <p><a href="business_summary.html" class="button family" id="next">I have added all my business partners.</a></p>
+	            <p><a href="business_summary.html" class="button family" id="next">I have added all my business accountancy companies.</a></p>
 			</div>
 		</form>
 			<p>&nbsp;</p>
@@ -317,7 +317,7 @@ display:block;
 
 $(document).ready(function() {
 	$("#pnl-partner_table").hide();
-	
+	$("#business_name").attr("text", $.cookie('business_name'));
 	
 	var count;
 	var row;
@@ -335,20 +335,7 @@ $(document).ready(function() {
 		$("#tablebody").append(row);
 	}
 	
-	/*
-/*	
-	var tableshow = getParameterByName("show");
-		
-	if(tableshow == 'row1'){
-		$("#pnl-partner_table").show();
-		$("#no_employment").hide();
-	}
-	else if(tableshow == 'all'){
-		$("#pnl-partner_table").show();
-		$("#row2").show();
-	}
 	
-	$("#business_name").attr("text", $.cookie('business_name'));	*/
 	
 });
 
@@ -356,10 +343,10 @@ $(document).ready(function() {
 	
 
 
-$("#add_partner").click(function(){
-	var partnername = $("#name").val();
-	$.cookie("accountant_name", partnername);
-	$("#add_partner").prop("href","accountant_detail.html");
+$("#add_accountant").click(function(){
+	var accountant= $("#name").val();
+	$.cookie("accountant_name", accountant);
+	$("#add_accountant").prop("href","accountant_detail.html");
 	
 });
 

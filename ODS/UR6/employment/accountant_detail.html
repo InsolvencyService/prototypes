@@ -204,49 +204,49 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Partners details</h1>
+	<h1 class="form-title heading-large">Accounts company details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div id="pnl-current_employer">
 				<label id="name_label" for="name" class="form-label-bold"></label>
 				<div class="form-group">
-					<label id="name_label0" for="name" class="form-label">Partner name</label>
+					<label id="name_label0" for="name" class="form-label">Accounts company  name</label>
 					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
 						
 				<div class="form-group ">
-					<label id="partner_address_line_1_label" for="partner_address_line_1" class="form-label employer_address_line_1">Building and street</label>
-					<input id="partner_address_line_1" name="partner_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
+					<label id="accountant_address_line_1_label" for="accountant_address_line_1" class="form-label employer_address_line_1">Building and street</label>
+					<input id="accountant_address_line_1" name="accountant_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
 				</div>
 		
 				<div class="form-group ">
-					<label id="partner_address_line_2_label" for="partner_address_line_2" class="visuallyhidden">Address Line 2</label>
-					<input id="partner_address_line_2" name="partner_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
+					<label id="accountant_address_line_2_label" for="accountant_address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="accountant_address_line_2" name="accountant_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="partner_address_line_3_label" for="partner_address_line_3" class="visuallyhidden">Address Line 3</label>
-					<input id="partner_address_line_3" name="partner_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
+					<label id="accountant_address_line_3_label" for="accountant_address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="accountant_address_line_3" name="accountant_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="partner_address_town_label" for="partner_address_town" class="form-label employer_address_town">Town/city</label>
-					<input id="partner_address_town" name="partner_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
+					<label id="accountant_address_town_label" for="accountant_address_town" class="form-label employer_address_town">Town/city</label>
+					<input id="accountant_address_town" name="accountant_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="partner_address_county_label" for="employer_address_county" class="form-label employer_address_county">County</label>
-					<input id="partner_address_county" name="employer_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
+					<label id="accountant_address_county_label" for="accountant_address_county" class="form-label employer_address_county">County</label>
+					<input id="accountant_address_county" name="accountant_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
 					<br/>
 				</div>
 				
 				<div class="form-group ">
-					<label id="partner_address_post_code_label" for="partner_address_post_code" class="form-label employer_address_post_code">Postcode</label>
-					<input id="partner_address_post_code" name="partner_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
+					<label id="accountant_address_post_code_label" for="accountant_address_post_code" class="form-label employer_address_post_code">Postcode</label>
+					<input id="accountant_address_post_code" name="accountant_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
 					<br/>
 				</div>
 			</div>						
@@ -254,7 +254,7 @@ display:block;
 		
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Add partner</a>
+					<a class="button" id="next">Continue</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -351,38 +351,38 @@ $("#next").click(function(){
 		count++;
 	}
 	
-	var partner_address;
-	var address1=$("#partner_address_line_1").val();
-	var address2=$("#partner_address_line_2").val();
-	var address3=$("#partner_address_line_3").val();
-	var address4=$("#partner_address_town").val();
-	var address5=$("#partner_address_county").val();
-	var address6=$("#partner_address_post_code").val();
+	var accountant_address;
+	var address1=$("#accountant_address_line_1").val();
+	var address2=$("#accountant_address_line_2").val();
+	var address3=$("#accountant_address_line_3").val();
+	var address4=$("#accountant_address_town").val();
+	var address5=$("#accountant_address_county").val();
+	var address6=$("#accountant_address_post_code").val();
 	
 	if(address1 != ""){
-		partner_address = address1+", ";
+		accountant_address = address1+", ";
 	}
 	if(address2 != ""){
-		partner_address = partner_address+address2+", ";
+		accountant_address = accountant_address+address2+", ";
 	}
 	if(address3 != ""){
-		partner_address = partner_address+address3+", ";
+		paaccountantrtner_address = accountant_address+address3+", ";
 	}
 	if(address4 != ""){
-		partner_address = partner_address+address4+", ";
+		accountant_address = accountant_address+address4+", ";
 	}
 	if(address5 != ""){
-		partner_address = partner_address+address5+", ";
+		accountant_address = accountant_address+address5+", ";
 	}
 	if(address6 != ""){
-		partner_address = partner_address+address6;
+		accountant_address = accountant_address+address6;
 	}
 
 	
-	$.cookie("business_partner_count", count);
-	$.cookie("business_partner_name"+count, $("#name").val());
-	$.cookie("business_partner_address"+count, partner_address);
-	$("#next").prop("href","add_partnership.html");
+	$.cookie("business_accountant_count", count);
+	$.cookie("business_accountant_name"+count, $("#name").val());
+	$.cookie("business_accountant_address"+count, accountant_address);
+	$("#next").prop("href","add_accountant.html");
 });
 
 
