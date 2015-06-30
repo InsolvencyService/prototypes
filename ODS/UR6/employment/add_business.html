@@ -482,6 +482,10 @@ $('#next').click(function() {
 	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
 	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
 	
+	if(enddate=="" || enddate == null){
+		enddate="";
+	}	
+	
 	$.cookie("business_name", $("#name").val());
 	$.cookie("business_nature", $("#nature").val());
 	$.cookie("business_startdate", startdate);
