@@ -70,38 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -124,15 +94,25 @@ display:block;
 	font-size:16px;
 }
 
+.inner-block.text{
+	float:left;
+	display: table-cell;
+    width:66.66666666%;
+}
+.right-block{
+	padding-top:60px;
+	width:33.33333%;
+	float:left;
+	  position: relative;
+	  min-height: 1px;
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  display: table-cell;
+}
 .btn-edit{
 	margin-right:10px;
 }
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
-}
+
 </style>
 <!-- #EndEditable -->
 
@@ -196,164 +176,117 @@ display:block;
 	
 
 
-</div>
+	</div>
 	
 
 
 <!-- #BeginEditable "content" --> 
 <div id="content" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Business details</h1>
-	<div class="col-md-9">
+	<div class="inner-block text">
+		<h1 class="form-title heading-large">Business details summary</h1>
 		<form class="form" method="post">
-			<div id="pnl-business" class="clearfix">
-			
-				<div class="form-group">
-					<label id="name_label0" for="name" class="form-label-bold">Business name</label>
-					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" />
-				</div>
-				
-				<p><br></p>
-				
-				<div class="form-group ">
-				<fieldset class="inline">
-				<legend id="title_label" class="form-label-bold">Has the business traded under a different name in the last three years?</legend>
-					<div id="traded" class="form-group">
-						<label id="title_label0" for="yes" class="block-label">
-						<input id="yes" value="yes" name="names" type="radio">Yes</label>
-		
-						<label id="title_label1" for="no" class="block-label">
-						<input id="no" value="no" name="names" type="radio">No</label>
-					</div>
-				</fieldset>
-				</div>
-				
-				<div id="pnl-names" class="form-group panel-indent">
-					<div class="form-group" id="row1">
-						<label id="name_label1" for="name" class="form-label-bold">Trading name(s)</label>
-						<br>
-						<input id="trade_name1" name="name1" type="text" value="" />
-						<a id="add_name" style="padding-left:20px">Add another</a>
-					</div>
-					
-					<div class="form-group" id="row2">
-						<br>
-						<input id="trade_name2" name="name2" type="text" value="" />
-					</div>
-					
-					<div class="form-group" id="row3">
-						<br>
-						<input id="trade_name3" name="name3" type="text" value="" />
-					</div>
-					
-					<div class="form-group" id="row4">
-						<br>
-						<input id="trade_name4" name="name4" type="text" value="" />
-					</div>
-					
-					<div class="form-group" id="row5">
-						<br>
-						<input id="trade_name5" name="name5" type="text" value="" />
-					</div>
-				</div>
-				
-				<p>&nbsp;</p>
-				
-				<div class="form-group">
-					<label id="nature_label0" for="nature" class="form-label-bold">Nature of business</label>
-					<input id="nature" name="nature" type="text" value="" />
-				</div>
-				
-				<p><br></p>				
-				<div class="form-group ">				
-				<fieldset class="inline">
-				<legend id="type_label" class="form-label-bold">Is this a partnership</legend>
-					<div id="business-type" class="form-group">
-						<label id="type_label1" for="partner" class="block-label">
-						<input id="partner" value="partnership" name="business_type" type="radio" aria-describedby="title_error title_help">Yes</label>
-					
-						<label id="type_label0" for="self_employed" class="block-label">
-						<input id="self_employed" value="sole" name="business_type" type="radio" aria-describedby="title_error title_help">No</label>
-					</div>
-				</fieldset>
-				</div>
-				
-				<p>&nbsp;</p>
+			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+			<p class="lead text bold">
+	            Review your answers before you proceed.
+	        </p>
 
-				<div class="form-group ">
-					<div>
-					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">Date trading commenced</span>
-						<span class="form-hint" id="date_of_birth_help">For example 31 12 2011.</span>
-						
-						<div class="form-group form-group-day">
-							 <label id="date_of_birth_label.day" for="start_day" >Day</label>
-							<input id="start_day" name="start.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div>
-						<div class="form-group form-group-month">
-							 <label id="date_of_birth_label.month" for="start_month">Month</label>
-							<input id="start_month" name="start.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div>
-						<div class="form-group form-group-year">
-							<label id="date_of_birth_label.year" for="start_year">Year</label>
-							<input id="start_year" name="start_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div><br>
-					</fieldset>
-					</div>
-				</div>
-				
-				<p><br></p>
+			<div class="form-group" id="employer">
+				<p class="bold-small">Business details</p>
+	            <table id="employer_table">
+                    <tbody>
+                    	<tr class="group-heading">
+                    		<td>Business Name</td>
+                        	<td id="name"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Also traded as</td>
+                        	<td id="trading"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Nature of business</td>
+                        	<td id="nature"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Type of business</td>
+                        	<td id="type"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+						<tr class="group-heading">
+                    		<td>Commence trading</td>
+                        	<td id="start"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Ceased trading</td>
+                        	<td id="end"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Number of business addresses</td>
+                        	<td id="no_addresses"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Number of business partners</td>
+                        	<td id="no_partners"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Number of employees</td>
+                        	<td id="no_employees"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	<tr class="group-heading">
+                    		<td>Number of accountants</td>
+                        	<td id="no_accountants"></td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                    	
 
-				<div class="form-group ">
-				<fieldset class="inline">
-				<legend id="title_label" class="form-label-bold">Has the business ceased trading?</legend>
-					<div id="ceased" class="form-group">
-						<label id="title_label0" for="ceasedyes" class="block-label">
-						<input id="ceasedyes" value="ceased" name="ceased_training" type="radio" aria-describedby="title_error title_help">Yes</label>
-		
-						<label id="title_label1" for="ceasedno" class="block-label">
-						<input id="ceasedno" value="ceased" name="ceased_training" type="radio" aria-describedby="title_error title_help">No</label>
-					</div>
-				</fieldset>
-				</div>
-				
-				<div id="ceased_date" class="form-group panel-indent">
-					<div>
-					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">Date trading ceased</span>
-						<span class="form-hint" id="end_help">For example 31 12 2011.</span>
-						
-						<div class="form-group form-group-day">
-							 <label id="ceased_label.day" for="end_day" >Day</label>
-							<input id="end_day" name="end_day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div>
-						<div class="form-group form-group-month">
-							 <label id="ceased_label.month" for="end_month">Month</label>
-							<input id="end_month" name="end_month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div>
-						<div class="form-group form-group-year">
-							<label id="ceased_label.year" for="end_year">Year</label>
-							<input id="end_year" name="end_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div><br>
-					</fieldset>
-					</div>
-				</div>
-			</div>			
-				
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-			<div>
-					<a class="button" id="next">Continue</a>
-			</div>
-					<a href="#">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
+
+
+
+	                    
+                    </tbody>
+                </table>
+  				<br>
+            </div>
+            
+             
+
+        <p class="clearfix"></p>
+        
+        
+       
+       
+        
+        
+        <p class="clearfix"></p>
+
+
+
+</form> 
+  <p class="clearfix"><br/></p>
+
+	</div>
+    <div class="right-block">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
+
+                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                <br>
                 <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                     <p class="heading-secondary">Bankruptcy fee</p>
                     <p style="font-weight:bold;font-size:large">
@@ -366,10 +299,35 @@ display:block;
                 <p><a href="#" style="display:none">Generate court documents</a></p>
                 <p><a href="#" style="display:none">Discard application</a></p>
             </div>
+
+
         </div>
 
-	</div>
-</div>
+        <p><br></p>
+
+        <!-- For User research -->
+        <div class="form-navigation form-group" style="margin-left:30px;">
+
+            <div>
+            <a href="../overview.html?section2=complete" class="button" id="next">Continue</a>
+
+            </div>
+            <div>
+                <br>
+            </div>
+
+            <div>
+                
+
+
+                <a href="#" id="cancel">Save and logout</a>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 
 	 <!-- #EndEditable -->
@@ -422,93 +380,57 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
 
-	
+
 <script type="text/javascript">
-var count = 1;
 $(document).ready(function() {
+//var x = $.cookie("business_id");
+
+var tradedas;
+
+	for(i=1; i<=$.cookie("trading_count"); i++){
+		tradedas += $.cookie("business_tradename")+i+", ";
+	}
 	
+	$("#name").text($.cookie("business_name"));
+	$("#trading").text(tradeas);
+	$("#nature").text($.cookie("business_nature"));
+	$("#type").text($.cookie("business_type"));
+	$("#start").text($.cookie("business_startdate"));
+	$("#end").text($.cookie("business_enddate"));
 	
-	
-	$("#ceased_date").hide();
-	$("#pnl-names").hide();
-	$("#row2").hide();
-	$("#row3").hide();
-	$("#row4").hide();
-	$("#row5").hide();
-	
-	$('#add_name').click(function() {
-		if(count<5){
-			count++;
-			$("#row"+count).show();
-		}
-		if(count==5){
-			$("#add_name").hide();
-		}	
-	});
-
-});
-
-$('#traded input:radio').click(function() {
-
-	if(($("#yes").prop('checked')==true)){
-			$("#pnl-names").show();
-		}
-		else{
-			$("#pnl-names").hide();	
-		}
-		
-});
-
-
-$('#ceased input:radio').click(function() {
-	if($("#ceasedyes").prop('checked')==true){
-		$("#ceased_date").show();
+	if($.cookie("business_address_count")>0){
+		$("#no_addresses").text($.cookie("business_address_count"));
 	}
 	else{
-		$("#ceased_date").hide();
+		$("#no_addresses").text("0");
 	}
-
-});
-
-
-
-$('#next').click(function() {
-	var startdate;
-	var enddate;
 	
-	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
-	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
-	
-	$.cookie("business_name", $("#name").val());
-	$.cookie("business_nature", $("#nature").val());
-	$.cookie("business_startdate", startdate);
-	$.cookie("business_enddate", enddate);
-	
-	for(var i = 1; i<= count; i++){
-		if($("#trade_name"+i).val()!=""){
-			$.cookie("business_tradename"+i, $("#trade_name"+i).val());
-			$.cookie("trading_count", i);
-		}
-	}
-		
-	
-	if($("#partner").prop('checked')==true){
-		$.cookie("business_type", "Partnership");	
+	if($.cookie("business_partner_count")>0){
+		$("#no_partners").text($.cookie("business_partner_count"));
 	}
 	else{
-		$.cookie("business_type", "Sole trader");
+		$("#no_partners").text("0");
 	}
 	
-	$('#next').attr('href', 'business_address.html');
-
-});
-
-
+	if($.cookie("business_accountant_count")>0){
+		$("#no_accountants").text($.cookie("business_accountant_count"));
+	}
+	else{
+		$("#no_accountants").text("0");
+	}
+	
+	if($.cookie("business_employee_count")>0){
+		$("#no_employees").text($.cookie("business_employee_count"));
+	}
+	else{
+		$("#no_employees").text("0");
+	}
 
 	
+	
+	
+
 </script>
 
 
