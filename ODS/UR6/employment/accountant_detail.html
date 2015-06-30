@@ -339,6 +339,10 @@ display:block;
 var count;
 $(document).ready(function() {
 	$("#name").attr("value", $.cookie("accountant_name"));	
+	
+	var x = $.cookie("business_id");
+	
+
 });
 
 $("#next").click(function(){
@@ -379,9 +383,9 @@ $("#next").click(function(){
 	}
 
 	
-	$.cookie("business_accountant_count", count);
-	$.cookie("business_accountant_name"+count, $("#name").val());
-	$.cookie("business_accountant_address"+count, accountant_address);
+	$.cookie("business"+x+"_accountant_count", count);
+	$.cookie("business"+x+"_accountant_name"+count, $("#name").val());
+	$.cookie("business"+x+"_accountant_address"+count, accountant_address);
 	$("#next").prop("href","add_accountant.html");
 });
 

@@ -338,11 +338,12 @@ display:block;
 <script type="text/javascript">
 var count;
 $(document).ready(function() {
+	var x = $.cookie("business_id");
 	$("#name").attr("value", $.cookie('partner_name'));	
 });
 
 $("#next").click(function(){
-	count = $.cookie("business_partner_count");
+	count = $.cookie("business"+x+"_partner_count");
 	
 	if(count == null){
 		count = 1;
@@ -379,9 +380,9 @@ $("#next").click(function(){
 	}
 
 	
-	$.cookie("business_partner_count", count);
-	$.cookie("business_partner_name"+count, $("#name").val());
-	$.cookie("business_partner_address"+count, partner_address);
+	$.cookie("business"+x+"_partner_count", count);
+	$.cookie("business"+x+"_partner_name"+count, $("#name").val());
+	$.cookie("business"+x+"_partner_address"+count, partner_address);
 	$("#next").prop("href","add_partnership.html");
 });
 

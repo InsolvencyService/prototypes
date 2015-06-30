@@ -429,8 +429,14 @@ display:block;
 <script type="text/javascript">
 var count = 1;
 $(document).ready(function() {
+
+	var x = $.cookie("business_id");
 	
+	if(x == "" || or x == null){
+		x = 0;
+	}
 	
+	x++;
 	
 	$("#ceased_date").hide();
 	$("#pnl-names").hide();
@@ -486,24 +492,24 @@ $('#next').click(function() {
 		enddate="";
 	}	
 	
-	$.cookie("business_name", $("#name").val());
-	$.cookie("business_nature", $("#nature").val());
-	$.cookie("business_startdate", startdate);
-	$.cookie("business_enddate", enddate);
+	$.cookie("business"+x+"_name", $("#name").val());
+	$.cookie("business"+x+"_nature", $("#nature").val());
+	$.cookie("business"+x+"_startdate", startdate);
+	$.cookie("business"+x+"_enddate", enddate);
 	
 	for(var i = 1; i<= count; i++){
 		if($("#trade_name"+i).val()!=""){
-			$.cookie("business_tradename"+i, $("#trade_name"+i).val());
+			$.cookie("business"+x+"_tradename"+i, $("#trade_name"+i).val());
 			$.cookie("trading_count", i);
 		}
 	}
 		
 	
 	if($("#partner").prop('checked')==true){
-		$.cookie("business_type", "Partnership");	
+		$.cookie("business"+x+"_type", "Partnership");	
 	}
 	else{
-		$.cookie("business_type", "Sole trader");
+		$.cookie("business"+x+"_type", "Sole trader");
 	}
 	
 	$('#next').attr('href', 'business_address.html');

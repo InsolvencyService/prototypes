@@ -306,15 +306,17 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+	var x = $.cookie("business_id");
 	var count;
 	var row;
-	count = $.cookie("business_address_count");
+	count = $.cookie("business"+x+"_address_count");
 	if(count == null){
 		count=0;
 	}
 	
 	for(var i=1; i<=count; i++){
-		row = "<tr><td>" + $.cookie("business_address"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+		row = "<tr><td>" + $.cookie("business"+x+"_address"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
 		$("#tablebody").append(row);
 	}
 	

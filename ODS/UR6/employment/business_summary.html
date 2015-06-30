@@ -264,21 +264,7 @@ display:block;
                 </table>
   				<br>
             </div>
-            
-             
-
-        <p class="clearfix"></p>
-        
-        
-       
-       
-        
-        
-        <p class="clearfix"></p>
-
-
-
-</form> 
+	</form> 
   <p class="clearfix"><br/></p>
 
 	</div>
@@ -303,26 +289,22 @@ display:block;
 
         </div>
 
-        <p><br></p>
+       
 
         <!-- For User research -->
         <div class="form-navigation form-group" style="margin-left:30px;">
 
             <div>
-            <a href="../overview.html?section2=complete" class="button" id="next">Continue</a>
-
+            <p><a href="add_business" class="button" id="next">Add another business</a></p>
+            <p><a href="#">I've added all of my businesses</a></p>
+			<p><br></p>
+			<p><a href="#">Back</a></p>
             </div>
             <div>
                 <br>
             </div>
 
-            <div>
-                
-
-
-                <a href="#" id="cancel">Save and logout</a>
-
-            </div>
+            
 
         </div>
 
@@ -384,44 +366,44 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-//var x = $.cookie("business_id");
+	var x = $.cookie("business_id");
 
 	var tradedas="";
 
 	for(i=1; i<=$.cookie("trading_count"); i++){
-		tradedas += $.cookie("business_tradename"+i)+", ";
+		tradedas += $.cookie("business"+x+"_tradename"+i)+", ";
 	}
 	
-	$("#name").text($.cookie("business_name"));
+	$("#name").text($.cookie("business"+x+"_name"));
 	$("#trading").text(tradedas);
-	$("#nature").text($.cookie("business_nature"));
-	$("#type").text($.cookie("business_type"));
-	$("#start").text($.cookie("business_startdate"));
-	$("#end").text($.cookie("business_enddate"));
+	$("#nature").text($.cookie("business"+x+"_nature"));
+	$("#type").text($.cookie("business"+x+"_type"));
+	$("#start").text($.cookie("business"+x+"_startdate"));
+	$("#end").text($.cookie("business"+x+"_enddate"));
 	
-	if($.cookie("business_address_count")>0){
-		$("#no_addresses").text($.cookie("business_address_count"));
+	if($.cookie("business"+x+"_address_count")>0){
+		$("#no_addresses").text($.cookie("business"+x+"_address_count"));
 	}
 	else{
 		$("#no_addresses").text("0");
 	}
 	
-	if($.cookie("business_partner_count")>0){
-		$("#no_partners").text($.cookie("business_partner_count"));
+	if($.cookie("business"+x+"_partner_count")>0){
+		$("#no_partners").text($.cookie("business"+x+"_partner_count"));
 	}
 	else{
 		$("#no_partners").text("0");
 	}
 	
-	if($.cookie("business_accountant_count")>0){
-		$("#no_accountants").text($.cookie("business_accountant_count"));
+	if($.cookie("business"+x+"_accountant_count")>0){
+		$("#no_accountants").text($.cookie("business"+x+"_accountant_count"));
 	}
 	else{
 		$("#no_accountants").text("0");
 	}
 	
-	if($.cookie("business_employee_count")>0){
-		$("#no_employees").text($.cookie("business_employee_count"));
+	if($.cookie("business"+x+"_employee_count")>0){
+		$("#no_employees").text($.cookie("business"+x+"_employee_count"));
 	}
 	else{
 		$("#no_employees").text("0");

@@ -360,6 +360,7 @@ display:block;
 <script type="text/javascript">
 var count;
 $(document).ready(function() {
+	var x = $.cookie("business_id");
 	$("#pnl-amount").hide();
 	$("#name").val($.cookie("employee_name"));	
 });
@@ -377,7 +378,8 @@ $('#pnl-owed input:radio').click(function() {
 
 
 $("#next").click(function(){
-	count = $.cookie("business_employee_count");
+	
+	count = $.cookie("business"+x+"_employee_count");
 	
 	if(count == null){
 		count = 1;
@@ -420,10 +422,10 @@ $("#next").click(function(){
 		amountx = 0.00;
 	}
 	
-	$.cookie("business_employee_count", count);
-	$.cookie("business_employee_name"+count, $("#name").val());
-	$.cookie("business_employee_address"+count, employee_address);
-	$.cookie("business_employee_amount"+count, amountx);
+	$.cookie("business"+x+"_employee_count", count);
+	$.cookie("business"+x+"_employee_name"+count, $("#name").val());
+	$.cookie("business"+x+"_employee_address"+count, employee_address);
+	$.cookie("business"+x+"_employee_amount"+count, amountx);
 	$("#next").prop("href","add_employee.html");
 });
 
