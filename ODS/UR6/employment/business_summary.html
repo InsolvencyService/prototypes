@@ -389,7 +389,7 @@ $(document).ready(function() {
 	var tradedas;
 
 	for(i=1; i<=$.cookie("trading_count"); i++){
-		tradedas = tradedas + $.cookie("business_tradename")+i+", ";
+		tradedas += $.cookie("business_tradename"+i)+", ";
 	}
 	
 	$("#name").text($.cookie("business_name"));
