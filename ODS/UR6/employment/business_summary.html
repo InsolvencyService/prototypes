@@ -236,7 +236,7 @@ display:block;
                         	<td><a href="#">Edit</a></td>
                         	<td></td>
                     	</tr>
-                    	<tr class="group-heading">
+                    	<tr class="group-heading" id="partners">
                     		<td>Number of business partners</td>
                         	<td id="no_partners"></td>
                         	<td><a href="#">Edit</a></td>
@@ -369,7 +369,7 @@ $(document).ready(function() {
 	var x = $.cookie("business_id");
 
 	var tradedas="";
-
+	$("#partners").hide();
 	for(i=1; i<=$.cookie("trading_count"); i++){
 		tradedas += $.cookie("business"+x+"_tradename"+i)+", ";
 	}
@@ -390,6 +390,7 @@ $(document).ready(function() {
 	
 	if($.cookie("business"+x+"_partner_count")>0){
 		$("#no_partners").text($.cookie("business"+x+"_partner_count"));
+		$("#partners").show();
 	}
 	else{
 		$("#no_partners").text("0");
