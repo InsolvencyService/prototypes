@@ -437,10 +437,6 @@ $(document).ready(function() {
 		x = 0;
 	}
 	
-	x++;
-	
-	$.cookie("business_id", x);
-	
 	$("#ceased_date").hide();
 	$("#pnl-names").hide();
 	$("#row2").hide();
@@ -487,6 +483,9 @@ $('#ceased input:radio').click(function() {
 $('#next').click(function() {
 	var startdate;
 	var enddate;
+	
+	x++;
+	$.cookie("business_id", x);
 	
 	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
 	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
