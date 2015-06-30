@@ -338,13 +338,13 @@ display:block;
 <script type="text/javascript">
 var count;
 $(document).ready(function() {
-	$("#name").attr("value", $.cookie('partner_name'));	
+	$("#name").attr("value", $.cookie("accountant_name"));	
 });
 
 $("#next").click(function(){
 	count = $.cookie("business_partner_count");
 	
-	if(count == null){
+	if(count == null || count == ""){
 		count = 1;
 	}
 	else{

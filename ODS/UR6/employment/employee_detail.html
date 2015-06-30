@@ -360,7 +360,8 @@ display:block;
 <script type="text/javascript">
 var count;
 $(document).ready(function() {
-	$("#pnl-amount").hide();	
+	$("#pnl-amount").hide();
+	$("#name").val($.cookie("employee_name"));	
 });
 
 $('#pnl-owed input:radio').click(function() {
@@ -413,10 +414,10 @@ $("#next").click(function(){
 	}
 	var amountx;
 	if($("#amount").val()!=""){
-		amountx = $("#amount").val();
+		amountx = $("#amount").val(parseFloat($(this).val()).toFixed(2));
 	}
 	else{
-		amountx = 0;
+		amountx = 0.00;
 	}
 	
 	$.cookie("business_employee_count", count);

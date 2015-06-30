@@ -416,7 +416,10 @@ $("#next").click(function(){
 
 	
 	var startx = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
-	var endx = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
+	if($("#end_day").val()!=""){
+		var endx = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
+	}
+	else{ endx=""; }
 	
 	var employer_address;
 	var address1=$("#employer_address_line_1").val();
