@@ -220,9 +220,16 @@ display:block;
 	                    </tr>
 	                </thead>
 	                <tbody id="tablebody">
-	                    
+	                    <tr>
+	                    	<td>Sortcode</td>
+	                        <td>Account Number</td>
+	                        <td>Address</td>
+	                        <td>Used for income</td>
+	                        <td></td>
+						</tr>	
 	                </tbody>
 	            </table>
+	            <p>&nbsp;</p>
 			</div>
 			
 			
@@ -335,7 +342,7 @@ $(document).ready(function() {
 		$("#pnl-account_table").show();
 		$("#next").show();
 		$("#txt-intro").hide();
-		$("#addlink").remove("button");
+		$("#addlink").removeClass("button");
 	}
 	else{
 		$("#pnl-account_table").hide();
