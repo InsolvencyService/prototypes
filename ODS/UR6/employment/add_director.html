@@ -222,8 +222,10 @@ display:block;
 	            <table style="width: 100%" class="family">
 	                <thead>
 	                    <tr>
-	                        <th>Name</th>
-	                        <th>Address</th>
+	                        <th>Company name</th>
+	                        <th>Registration Number</th>
+	                        <th>Country of registration</th>
+	                        <th>Insolvent</th>
 	                        <th>&nbsp;</th>
 	                    </tr>
 	                </thead>
@@ -336,8 +338,17 @@ $(document).ready(function() {
 
 	}
 	
+		
 	for(var i=1; i<=count; i++){
-		row = "<tr><td>"+ $.cookie("director_name"+i) + "</td><td>" + $.cookie("director_address"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+		row = "<tr><td>"
+		+ $.cookie("director_name"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_reg"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_country"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_insolve"+i) 
+		+ "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
 		$("#tablebody").append(row);
 	}
 	
