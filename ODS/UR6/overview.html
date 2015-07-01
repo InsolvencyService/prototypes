@@ -773,7 +773,15 @@ Employment details 2
 	                        $("#section2 .edit").show().text("Edit");
 	                        $("#section3 .edit").show().addClass("button").text("Start");
 	                        document.title = 'Overview - Bank';
-	                    }if (section4 && section4 == "complete") {
+	                    }
+	                    if (section3 && section3 == "complete") {
+	                        $("#section1 .edit").show().removeClass("button").text("Edit");
+	                        $("#section2 .edit").show().text("Edit");
+	                        $("#section3 .edit").show().text("Edit");
+	                        $("#section4 .edit").show().addClass("button").text("Start");
+	                        document.title = 'Overview - Money you owe';
+	                    }
+	                    if (section4 && section4 == "complete") {
 	                         $("#section1 .edit").show().removeClass("button").text("Edit");
 	                        $("#section2 .edit").show().text("Edit");
 	                        $("#section3 .edit").show().text("Edit");
