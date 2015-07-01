@@ -229,7 +229,7 @@ display:block;
 			</div>
 				
 			<div id="pnl-ukbased">
-				<div class="form-group" id="pnl-registered">
+				<div class="form-group">
 					<fieldset class="inline">
 					<legend id="incorporated_label" class="form-label-bold">Is it incorporated in the UK?</legend>
 						<div class="form-group">
@@ -243,28 +243,33 @@ display:block;
 				</div>
 			</div>
 
-				
-			<div id="pnl-registration_no">
-				<div class="form-group">
-					<label id="name_label0" for="number" class="form-label">Registered company number</label>
-					<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
+			<div id="incorporated" class="panel-indent">	
+				<div id="registration_no">
+					<div class="form-group">
+						<label id="name_label0" for="number" class="form-label-bold">Registered company number</label>
+						<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
+						
+					</div>
 				</div>
-			</div>
-				
-			<div id="pnl-territory">
-				<div class="form-group">
-					<label id="name_label0" for="territory" class="form-label">County/territory the company is registered in</label>
-					<input id="territory" name="territory" type="text" aria-describedby="first_name_error first_name_help" value="" />
-				</div>
-				<div class="form-group">
-					<label id="name_label0" for="number" class="form-label">Overseas company registration number</label>
-					<p class="form-hint">The number, if any, under which the company is registered as an overseas company under Part 34 of the Companies Act</p>
-					<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
+				<div id="foreign">
+				<p class="clearfix"></p>	
+					<div id="pnl-territory">
+						<div class="form-group">
+							<label id="name_label0" for="territory" class="form-label-bold">County/territory the company is registered in</label>
+							<input id="territory" name="territory" type="text" aria-describedby="first_name_error first_name_help" value="" />
+						</div>
+						<div class="form-group">
+							<label id="name_label0" for="number" class="form-label-bold">Overseas company registration number</label>
+							<p class="form-hint">The number, if any, under which the company is registered as an overseas company under Part 34 of the Companies Act</p>
+							<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
+						</div>
+					</div>
 				</div>
 			</div>
 			
-			<div class="pnl-address">			
+			<div id="pnl-address" class="panel-indent">			
 				<div class="form-group ">
+					<p class="form-label-bold">Company address</p>
 					<label id="partner_address_line_1_label" for="partner_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 					<input id="partner_address_line_1" name="partner_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
@@ -302,7 +307,7 @@ display:block;
 			</div>	
 			
 			<div id="pnl-insolvency">
-				<div class="form-group" id="pnl-director">
+				<div class="form-group">
 					<fieldset class="inline">
 					<legend id="insolve_label" class="form-label-bold">Is this company currently subject to any insolvency proceedings?</legend>
 						<div class="form-group">
@@ -319,7 +324,7 @@ display:block;
 			
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Add directorship</a>
+					<a class="button" id="next">Continue</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -402,9 +407,61 @@ display:block;
 	
 <script type="text/javascript">
 var count;
+var country;
+var ip;
 
 $(document).ready(function() {	
-	$("#name").attr("value", $.cookie('director_name'));	
+	$("#name").attr("value", $.cookie('director_name'));
+	
+	$("#pnl-ukbased").hide();
+	$("#incorporated").hide();
+	$("#foreign").hide();
+	$("#pnl-address").hide();	
+});
+
+
+$('#pnl-registered input:radio').click(function() {
+	if(($("#registered_yes").prop('checked')==true)){
+		$("#pnl-ukbased").show();
+		$("#pnl-address").hide();
+
+	}
+	else if(($("#registered_no").prop('checked')==true)){
+		$("#pnl-ukbased").hide();
+		$("#pnl-address").show();
+
+	}
+
+});
+
+
+$('#pnl-ukbased input:radio').click(function() {
+	if(($("#incorporated_yes").prop('checked')==true)){
+		$("#incorporated").show();
+		$("#foreign").hide();
+		country="United Kingdom";
+
+	}
+	else if(($("#incorporated_no").prop('checked')==true)){
+		$("#incorporated").show();
+		$("#foreign").show();
+
+	}
+
+});
+
+
+
+$('#pnl-insolvency input:radio').click(function() {
+	if(($("#insolve_yes").prop('checked')==true)){
+		ip="Yes";
+		$("#next").attr("href", "ip_details.html");
+	}
+	else if(($("#insolve_no").prop('checked')==true)){
+		ip="No";
+		$("#next").attr("href", "add_director.html");	
+	}
+
 });
 
 $("#next").click(function(){
@@ -417,38 +474,17 @@ $("#next").click(function(){
 		count++;
 	}
 	
-	var director_address = "";
-	var address1=$("#director_address_line_1").val();
-	var address2=$("#director_address_line_2").val();
-	var address3=$("#director_address_line_3").val();
-	var address4=$("#director_address_town").val();
-	var address5=$("#director_address_county").val();
-	var address6=$("#director_address_post_code").val();
+	if(country!="United Kingdom"){
+		country=$("#territory").val();
+	}	
 	
-	if(address1 != ""){
-		director_address += address1+", ";
-	}
-	if(address2 != ""){
-		director_address += address2+", ";
-	}
-	if(address3 != ""){
-		director_address += address3+", ";
-	}
-	if(address4 != ""){
-		director_address += address4+", ";
-	}
-	if(address5 != ""){
-		director_address += address5+", ";
-	}
-	if(address6 != ""){
-		director_address += address6;
-	}
-
 	
 	$.cookie("director_count", count);
-	$.cookie("director_name"+count, $("#name").val());
-	$.cookie("director_address"+count, director_address);
-	$("#next").prop("href","add_director.html");
+	$.cookie("director_company_name"+count, $("#name").val());
+	$.cookie("director_company_reg"+count, $("#registered_no").val());
+	$.cookie("director_company_country"+count, country);
+	$.cookie("director_company_insolve"+count, ip);
+	
 });
 
 
