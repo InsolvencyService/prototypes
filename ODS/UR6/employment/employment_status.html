@@ -221,7 +221,19 @@ display:block;
 					<input id="employed-no" value="no" name="employedyesno" type="radio" aria-describedby="title_error title_help">No</label>
 				</div>				  
 			</div>
-
+			
+			<div class="panel-indent" id="pnl-other">
+				<label id="occupations_label" for="occupations" class="form-label-bold">
+				Have you been employed in the last 12 months?</label>
+		
+				<div id="employment-yesno" class="form-group inline">
+					<label id="title_label0" for="retired" class="block-label">
+					<input id="retired" value="Retired" name="retired" type="radio" aria-describedby="title_error title_help">Retired</label>
+	
+					<label id="title_label1" for="student" class="block-label">
+					<input id="student" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">F/T or P/T student</label>
+				</div>				  
+			</div>
 		
 			<div>
 				<p>&nbsp;</p>
@@ -319,23 +331,46 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
+	$("#pnl-other").hide();	
 });
 
+
+$('#pnl-employed input:radio').click(function() {
 	
+	if($("#employed-yes").prop('checked')==true){
+		$("#pnl-other").hide();
+	}
+	else if(($("#employed-no").prop('checked')==true)){
+		$("#pnl-other").show();
+	}
+
+});
+
 
 $("#next").click(function(){
 
 	$.cookie("NI_number", $("#NI_number").val());
 	
 	if($("#employed-yes").prop('checked')==true){
-		$.cookie("employed", "true");
+		$.cookie("employed", "Employed");
 		$("#next").prop("href","employers.html");
 	}
-	else if($("#employed-no").prop('checked')==true) {
-		$.cookie("employed", "no");
+	else if($("#employed-no").prop('checked')==true){
+				
+		if($("#retired").prop('checked')==true){
+			$.cookie("employed", "Retired");
+		}
+		else if($("#student").prop('checked')==true){
+			$.cookie("employed", "Student");
+		}
+		else{
+			$.cookie("employed", "Unemployed");
+		}
+			
 		$("#next").prop("href","trading_1.html");
 	}
+	
+	
 	
 });
 
