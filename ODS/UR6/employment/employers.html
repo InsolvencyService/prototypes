@@ -219,7 +219,7 @@ display:block;
 				<div  id="pnl-occupation_type">
 					<label id="occupations_label" for="occupations" class="form-label-bold">
 					What do you do for a living?</label>
-					<p class="hint-small">For example, Teacher or Sales Assistant</p>
+					<p class="form-hint">For example, Teacher or Sales Assistant</p>
 					
 					<input type="text" id="occupations" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
 				</div>
@@ -408,7 +408,7 @@ $(document).ready(function() {
 		countx=0;
 	}
 	
-	if(count>=1){
+	if(countx!=0){
 		$("#name_label").hide();
 		$("#other").text(" other");
 		$("#loop").text("additional employer's");
