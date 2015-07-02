@@ -204,27 +204,30 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Employer Details</h1>
+	<h1 class="form-title heading-large">Employer<span id="other"></span> details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div id="pnl-current_employer">
-				<label id="name_label" for="name" class="form-label">Please enter your current or most recent employer.</label>
-				<p><br></p>
+				<label id="name_label" for="name" class="form-label">Please tell us about your<span id="loop"></span><br><br></label>
+				
 				<div class="form-group">
-					<label id="name_label0" for="name" class="form-label-bold">Employer name</label>
+					<label id="name_label0" for="name" class="form-label-bold">Employer's name</label>
+					<p class="form-hint">For example, The Insolvency Service</p>
 					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
 				
 				<div  id="pnl-occupation_type">
-					<label id="occupations_label" for="occupations" class="form-label-bold">Please enter the role you performed</label>
-					<p class="hint-small"></p>
+					<label id="occupations_label" for="occupations" class="form-label-bold">
+					What do you do for a living?</label>
+					<p class="hint-small">For example, Teacher or Sales Assistant</p>
 					
-					<input type="text" placeholder="Start typing role" id="occupations" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
+					<input type="text" id="occupations" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
 				</div>
 				<p>&nbsp;</p>
 						
 				<div class="form-group ">
-				<label id="occupations_label" for="occupations" class="form-label-bold">Business address</label>
+				<label id="occupations_label" for="occupations" class="form-label-bold">
+					Employer's business address</label>
 
 					<label id="employer_address_line_1_label" for="employer_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 					<input id="employer_address_line_1" name="employer_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
@@ -265,7 +268,7 @@ display:block;
 			<div id="pnl-startdate" class="form-group">
 				<fieldset  class="date-of-birth">
 					<span id="date_of_birth_label" class="form-label-bold">Start of employment</span>
-					<span class="form-hint" id="start_help">For example 31 12 2011.</span>
+					<span class="form-hint" id="start_help">For example 31 12 2011</span>
 					
 					<div class="form-group form-group-day">
 						 <label id="start_label.day" for="start.day" >Day</label>
@@ -287,7 +290,8 @@ display:block;
 				<div>
 				<fieldset  class="date-of-birth">
 					<span id="end_date_label" class="form-label-bold">End of employment</span>
-					<span class="form-hint" id="end_date_help">For example 31 12 2011.</span>
+					<span class="form-hint" id="end_date_help">For example 31 12 2011</span>
+					<p>Leave this blank if you're still currently working for this employer</p>
 					
 					<div class="form-group form-group-day">
 						 <label id="end_day_label" for="end.day" >Day</label>
@@ -303,11 +307,6 @@ display:block;
 					</div><br>
 				</fieldset>
 					
-				</div>
-				<div>
-				<br> <br>
-					<label class="form-checkbox" for="checkbox-employed">
-					    <input id="checkbox-employed" type="checkbox" class="text-small" value="checkbox-employed">&nbsp; I'm still currently employed</label>
 				</div>
 			</div>
 			
@@ -407,6 +406,15 @@ $(document).ready(function() {
 	countx = $.cookie("employer_count");
 	if(countx==""||countx==null){
 		countx=0;
+	}
+	
+	if(count>1){
+		$("#name_label").hide();
+		$("#other").text(" other");
+		$("#loop").text("additional employer's");
+	}
+	else{
+		$("#loop").text("current or most recent employer");
 	}
 	
 
