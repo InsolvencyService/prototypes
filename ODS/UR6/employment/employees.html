@@ -314,7 +314,8 @@ display:block;
 	
 <script type="text/javascript">
 $(document).ready(function() {
-	$('.business_name').text($.cookie('business'+x+'_name'));
+	var x = $.cookie("business_id");
+	$(".business_name").text($.cookie('business'+x+'_name'));
 });
 
 $('#pnl-employee input:radio').click(function() {
