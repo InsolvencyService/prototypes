@@ -204,13 +204,13 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Your accounts</h1>
+	<h1 class="form-title heading-large">Accountants for <span class="business_name"></span></h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
 			<div class="form-group" id="pnl-trading">
 				<fieldset class="inline">
-				<legend id="trading_label" class="form-label-bold">In the last <strong>5</strong> years has your business used an accountant, book keeper or financial advisor?</legend>
+				<legend id="trading_label" class="form-label-bold">Has <span class="business_name"></span> used an accountant, book keeper or financial adviser in the last 5 years?</legend>
 					<div class="form-group">
 						<label id="trading_label0" for="trading_yes" class="block-label">
 						<input id="trading_yes" value="" name="trading" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -309,7 +309,9 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
+	var x = $.cookie("business_id");
+	$(".business_name").text($.cookie("business"+x+"_name"));
+
 
 });
 
