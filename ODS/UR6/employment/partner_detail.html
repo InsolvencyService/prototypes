@@ -210,7 +210,7 @@ display:block;
 		<p>If you have several business partners, we'll ask you about the rest later.</p>
 		<form class="form" method="post">
 			<div id="pnl-current_employer">
-				
+				<p>&nbsp;</p>
 				<div class="form-group">
 					<label id="firstname_label0" for="firstname" class="form-label-bold">Business partner's first name</label>
 					<input id="firstname" name="firstname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
@@ -263,7 +263,8 @@ display:block;
 		
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Add partner</a>
+					<p>&nbsp;</p>
+					<a class="button" id="next">Add partner</a><br>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -349,6 +350,8 @@ var count;
 var x;
 
 $(document).ready(function() {
+	$("#business_name").text($.cookie('business'+x+'_name'));
+
 	x = $.cookie("business_id");
 	var str =$.cookie('partner_name');
 	var ret = str.split(" ");
