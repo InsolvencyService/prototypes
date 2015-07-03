@@ -204,17 +204,26 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Partners details</h1>
+	<h1 class="form-title heading-large">Business partner details for <span id="business_name"></span></h1>
 	<div class="col-md-9">
+		<p>You told us that <span id="business_name"></span> is a partnership. Please tell us about your partner.</p>
+		<p>If you have several business partners, we'll ask you about the rest later.</p>
 		<form class="form" method="post">
 			<div id="pnl-current_employer">
-				<label id="name_label" for="name" class="form-label-bold"></label>
+				
 				<div class="form-group">
-					<label id="name_label0" for="name" class="form-label">Partner name</label>
-					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+					<label id="firstname_label0" for="firstname" class="form-label-bold">Business partner's first name</label>
+					<input id="firstname" name="firstname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
+				
+				<div class="form-group">
+					<label id="lastname_label0" for="lastname" class="form-label-bold">Business partner's last name</label>
+					<input id="lastname" name="lastname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+				</div>
+				<p>&nbsp;</p>
 						
 				<div class="form-group ">
+					<label id="firstname_label" for="name" class="form-label-bold">Business partner's address</label>
 					<label id="partner_address_line_1_label" for="partner_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 					<input id="partner_address_line_1" name="partner_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
@@ -341,7 +350,10 @@ var x;
 
 $(document).ready(function() {
 	x = $.cookie("business_id");
-	$("#name").attr("value", $.cookie('partner_name'));	
+	var str =$.cookie('partner_name');
+	var ret = str.split(" ");
+	$("#firstname").attr("value",  ret[0]);
+	$("#lastname").attr("value",  ret[1]);
 });
 
 $("#next").click(function(){
@@ -383,7 +395,7 @@ $("#next").click(function(){
 
 	
 	$.cookie("business"+x+"_partner_count", count);
-	$.cookie("business"+x+"_partner_name"+count, $("#name").val());
+	$.cookie("business"+x+"_partner_name"+count, $("#firstname").val()+" "+$("#lastname").val());
 	$.cookie("business"+x+"_partner_address"+count, partner_address);
 	$("#next").prop("href","add_partnership.html");
 });
