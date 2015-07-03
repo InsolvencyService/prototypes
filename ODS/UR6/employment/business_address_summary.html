@@ -311,10 +311,10 @@ display:block;
 
 	
 <script type="text/javascript">
-
+var x;
 $(document).ready(function() {
 
-	var x = $.cookie("business_id");
+	x = $.cookie("business_id");
 	var count;
 	var row;
 	count = $.cookie("business"+x+"_address_count");
@@ -337,7 +337,7 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
-	if($.cookie("business_type") == "Partnership"){
+	if($.cookie("business"+x"_type") == "Partnership"){
 		$("#next").attr("href", "partner_detail.html");
 	}
 	else{
