@@ -204,15 +204,22 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Employee details</h1>
+	<h1 class="form-title heading-large">Employee details for <span class="business_name"></span></h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
+			<p>We need to know about all of <span class="business_name"></span>'s current employees and about any past employees the business owes money to. For example, wages, redundancy pay or holiday pay.</p>
+			<p>&nbsp;</p>
 			<div id="pnl-current_employer">
 				<label id="name_label" for="name" class="form-label-bold"></label>
 				<div class="form-group">
-					<label id="name_label0" for="name" class="form-label-bold">Employees name</label>
-					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+					<label id="firstname_label0" for="firstname" class="form-label-bold">Employee's first name</label>
+					<input id="firstname" name="firstname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
+				<div class="form-group">
+					<label id="lastname_label0" for="lastname" class="form-label-bold">Employee's last name</label>
+					<input id="lastname" name="lastname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+				</div>
+
 				<p>&nbsp;</p>
 				<div class="form-group ">
 					<label id="name_label0" for="name" class="form-label-bold">Employees address</label>
@@ -254,7 +261,7 @@ display:block;
 			<p>&nbsp;</p>
 			<div class="form-group" id="pnl-owed">
 				<fieldset class="inline">
-				<legend id="director_label" class="form-label-bold">Does this employee claim that you how them money?</legend>
+				<legend id="director_label" class="form-label-bold">Does this employee claim that you owe them money?</legend>
 					<div class="form-group">
 						<label id="employee_label0" for="employee_yes" class="block-label">
 						<input id="employee_yes" value="" name="employee" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -267,7 +274,8 @@ display:block;
 			
 			
 			<div class="form-group panel-indent" id="pnl-amount">
-					<label id="name_label0" for="amount" class="form-label-bold">How much does the employee claims you owe them?</label>
+					<label id="name_label0" for="amount" class="form-label-bold">How much do they claim you owe them?</label>
+					<p class="form-hint">For example £50.65</p>
 					<span>£ </span><input id="amount" name="amount" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 
@@ -363,7 +371,14 @@ var x;
 $(document).ready(function() {
 	x = $.cookie("business_id");
 	$("#pnl-amount").hide();
-	$("#name").val($.cookie("employee_name"));	
+		
+	var str =$.cookie("employee_name");
+	var ret = str.split(" ");
+	$("#firstname").attr("value",  ret[0]);
+	$("#lastname").attr("value",  ret[1]);
+	
+	$(".business_name").text($.cookie('business'+x+'_name'));
+
 });
 
 $('#pnl-owed input:radio').click(function() {
