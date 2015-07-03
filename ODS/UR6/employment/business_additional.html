@@ -204,26 +204,30 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Additional business details</h1>
+	<h1 class="form-title heading-large">Additional business details <span class="Business_Name"></span></h1>
 	
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div class="form-group">
-				<label id="name_label0" for="name" class="form-label-bold">VAT Number</label>
+				<label id="name_label0" for="name" class="form-label-bold">VAT number</label>
+				<p>If your business is VAT registered</p>
 				<p class="form-hint">For example GB 551 6778 32</p>
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 			
 			<div class="form-group">
-				<label id="name_label0" for="name" class="form-label-bold">Your current or last Income Tax reference number</label>
-				<p class="form-hint">For example 63288 98745</p>
+				<label id="name_label0" for="name" class="form-label-bold">Your current or last Income Tax reference number 
+				or Unique Taxpayer Reference</label>
+				<p class="form-hint">You can find this on your P60, tax return 
+				or statement of account from HMRC</p>
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 
 			<p>&nbsp;</p>
 			<div class="form-group">
 				<fieldset>
-					<legend id="title_label" class="form-label-bold">Where are your accounts stored?</legend>
+					<legend id="title_label" class="form-label-bold">Where do 
+					you keep your business accounts?</legend>
 					<div>						
 						<div class="form-group ">
 							<label id="accounts_address_line_1_label" for="accounts_address_line_1" class="form-label employer_address_line_1">Building and street</label>
@@ -266,7 +270,7 @@ display:block;
 			
 			<div class="form-group">
 				<fieldset class="inline">
-				<legend id="title_label" class="form-label-bold">Do you hold any records on computer?</legend>
+				<legend id="title_label" class="form-label-bold">Do you store any of your accounts electronically?</legend>
 					<div id="computer" class="form-group">
 						<label id="title_label0" for="yes" class="block-label">
 						<input id="yes" value="yes" name="names" type="radio">Yes</label>
@@ -371,11 +375,14 @@ display:block;
 
 	
 <script type="text/javascript">
+$(document).ready(function() {
+	$(".Business_Name").text($.cookie('business'+x+'_name'));
+});
 
 $('#next').click(function() {
 
 	if(($("#yes").prop('checked')==true)){
-			$("#next").attr("href", "business_additional_1.html");
+			$("#next").attr("href", "employees.html");	
 		}
 		else{
 			$("#next").attr("href", "employees.html");	
