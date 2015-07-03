@@ -290,32 +290,36 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/banklist.js"></script>
 
 	
 <script type="text/javascript">
-var count;
-
-
 $(document).ready(function() {
-	x = $.cookie("business_id");
-	$("#name").attr("value", $.cookie('partner_name'));	
-});
+   
+var bank = [{'401928', 'HSBC', 'High St, Dudley, West Midlands, DY4 9PR'}];
+//{'sort': '000000', 'bank': 'INSS', 'address': 'Colmore Row, Birmingham, B1 3RG'}
+//];
 
+/*var=0;
+$.each(bank[i], function( key, value ) {
+	alert( key + ": " + value );
+	i++;
+});	
+
+
+var x="";
+for(var i=0, i<bank.length, i++){
+	for (var prop in bank[i]) {
+	    x =  prop + ": " + bank[prop] + "\n";
+	    alert(x);
+	}
+}	
+*/
+var a = 
+alert(a);
+});
 $("#next").click(function(){
-	count = $.cookie("bank_count");
 	
-	if(count == null){
-		count = 1;
-	}
-	else{
-		count++;
-	}
-	
-	$.cookie("bank_count", count);
-	
-	$("#next").prop("href","add_bank.html");
 });
 
 
