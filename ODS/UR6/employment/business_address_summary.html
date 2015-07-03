@@ -223,7 +223,7 @@ display:block;
 			<div class="form-hint">Enter the first line of the address below, for example 11 Place Road. You can add more later<br><br>
 			</div>
             <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-            <a id="business_address.html" class="button">Add address</a>&nbsp;
+            <a id="add_address" class="button">Add address</a>&nbsp;
         </div>		
 			<div class="form-navigation form-group">
 			<p>&nbsp;</p>
@@ -317,9 +317,8 @@ $(document).ready(function() {
 	var x = $.cookie("business_id");
 	var count;
 	var row;
-	$.cookie("address", $("#name").val());
 	count = $.cookie("business"+x+"_address_count");
-	$(".Business_Name").attr("text", $.cookie('business'+x+'_name'));
+	$(".Business_Name").text($.cookie('business'+x+'_name'));
 
 	if(count == null){
 		count=0;
@@ -339,14 +338,18 @@ $(document).ready(function() {
 
 $("#next").click(function(){
 	if($.cookie("business_type") == "Partnership"){
-		$("#next").attr("href", "partner_detail.html")
+		$("#next").attr("href", "partner_detail.html");
 	}
 	else{
-		$("#next").attr("href", "business_additional.html")
+		$("#next").attr("href", "business_additional.html");
 	}
 	
 });
 
+$("#add_address").click(function(){
+	$.cookie("address", $("#name").val());
+	$("#next").attr("href", "business_address.html");
+});
 
 	
 </script>
