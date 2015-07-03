@@ -204,14 +204,16 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Directorship details</h1>
+	<h1 class="form-title heading-large">Director details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
 						
 			<div class="form-group" id="pnl-director">
 				<fieldset class="inline">
-				<legend id="director_label" class="form-label-bold">Have you, in the last 12 months, been a director of a company?</legend>
+				<legend id="director_label" class="form-label-bold">Have you, in the last 12 months, been a director of a 
+				registered company?</legend>
+				<p class="form-hint">This includes Limited Companies (LTD), Public Liability Companies (PLC) or Limitied Liability Partnerships (LLP)</p>
 					<div class="form-group">
 						<label id="director_label0" for="director_yes" class="block-label">
 						<input id="director_yes" value="" name="director" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -317,7 +319,7 @@ $('#pnl-director input:radio').click(function() {
 	if(($("#director_yes").prop('checked')==true)){
 		$("#next").prop("href","director_detail.html");
 	}
-	else if(($("#director_no").prop('checked')==true)){s
+	else if(($("#director_no").prop('checked')==true)){
 		$("#next").prop("href","../overview.html?section2=complete");
 	}
 

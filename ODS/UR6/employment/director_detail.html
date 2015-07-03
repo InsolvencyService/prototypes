@@ -213,25 +213,17 @@ display:block;
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 			
-			<div id="pnl-registered">
-				<div class="form-group" id="pnl-registered">
-					<fieldset class="inline">
-					<legend id="registered_label" class="form-label-bold">Is this a registered company?</legend>
-						<div class="form-group">
-							<label id="registered_label0" for="registered_yes" class="block-label">
-							<input id="registered_yes" value="" name="registered" type="radio" aria-describedby="title_error title_help">Yes</label>
-	
-							<label id="registered_label1" for="registered_no" class="block-label">
-							<input id="registered_no" value="" name="registered" type="radio" aria-describedby="title_error title_help">No</label>		
-						</div>
-					</fieldset>
-				</div>
-			</div>
+			<div class="form-group">
+				<label id="name_label0" for="number" class="form-label-bold">Registered company number</label>
+				<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
 				
+			</div>
+					
 			<div id="pnl-ukbased">
 				<div class="form-group">
 					<fieldset class="inline">
-					<legend id="incorporated_label" class="form-label-bold">Is it incorporated in the UK?</legend>
+					<legend id="incorporated_label" class="form-label-bold">Is 
+					this company registered in the UK?</legend>
 						<div class="form-group">
 							<label id="incorporated_label0" for="incorporated_yes" class="block-label">
 							<input id="incorporated_yes" value="" name="incorporated" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -243,73 +235,25 @@ display:block;
 				</div>
 			</div>
 
-			<div id="incorporated" class="panel-indent">	
-				<div id="registration_no">
+			<div id="foreign" class="panel-indent">
+				<div id="pnl-territory">
 					<div class="form-group">
-						<label id="name_label0" for="number" class="form-label-bold">Registered company number</label>
-						<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
-						
+						<label id="name_label0" for="territory" class="form-label-bold">County/territory the company is registered in</label>
+						<input id="territory" name="territory" type="text" aria-describedby="first_name_error first_name_help" value="" />
 					</div>
-				</div>
-				<div id="foreign">
-				<p class="clearfix"></p>	
-					<div id="pnl-territory">
-						<div class="form-group">
-							<label id="name_label0" for="territory" class="form-label-bold">County/territory the company is registered in</label>
-							<input id="territory" name="territory" type="text" aria-describedby="first_name_error first_name_help" value="" />
-						</div>
-						<div class="form-group">
-							<label id="name_label0" for="number" class="form-label-bold">Overseas company registration number</label>
-							<p class="form-hint">The number, if any, under which the company is registered as an overseas company under Part 34 of the Companies Act</p>
-							<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
-						</div>
+					<div class="form-group">
+						<label id="name_label0" for="number" class="form-label-bold">Overseas company registration number</label>
+						<p class="form-hint">The number, if any, under which the company is registered as an overseas company under Part 34 of the Companies Act</p>
+						<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
 					</div>
 				</div>
 			</div>
-			
-			<div id="pnl-address" class="panel-indent">			
-				<div class="form-group ">
-					<p class="form-label-bold">Company address</p>
-					<label id="partner_address_line_1_label" for="partner_address_line_1" class="form-label employer_address_line_1">Building and street</label>
-					<input id="partner_address_line_1" name="partner_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
-					<br/>
-				</div>
-		
-				<div class="form-group ">
-					<label id="partner_address_line_2_label" for="partner_address_line_2" class="visuallyhidden">Address Line 2</label>
-					<input id="partner_address_line_2" name="partner_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="partner_address_line_3_label" for="partner_address_line_3" class="visuallyhidden">Address Line 3</label>
-					<input id="partner_address_line_3" name="partner_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="partner_address_town_label" for="partner_address_town" class="form-label employer_address_town">Town/city</label>
-					<input id="partner_address_town" name="partner_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="partner_address_county_label" for="employer_address_county" class="form-label employer_address_county">County</label>
-					<input id="partner_address_county" name="employer_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="partner_address_post_code_label" for="partner_address_post_code" class="form-label employer_address_post_code">Postcode</label>
-					<input id="partner_address_post_code" name="partner_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
-					<br/>
-				</div>
-			</div>	
 			
 			<div id="pnl-insolvency">
 				<div class="form-group">
 					<fieldset class="inline">
 					<legend id="insolve_label" class="form-label-bold">Is this company currently subject to any insolvency proceedings?</legend>
+					<p class="form-hint">For example, Liquidation, Adminstration or Company Voluntary Arrangement.</p>
 						<div class="form-group">
 							<label id="insolve_label0" for="insolve_yes" class="block-label">
 							<input id="insolve_yes" value="" name="insolve" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -324,7 +268,7 @@ display:block;
 			
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Continue</a>
+					<br><a class="button" id="next">Continue</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -413,7 +357,7 @@ var ip;
 $(document).ready(function() {	
 	$("#name").attr("value", $.cookie('director_name'));
 	
-	$("#pnl-ukbased").hide();
+	
 	$("#incorporated").hide();
 	$("#foreign").hide();
 	$("#pnl-address").hide();	
@@ -422,12 +366,12 @@ $(document).ready(function() {
 
 $('#pnl-registered input:radio').click(function() {
 	if(($("#registered_yes").prop('checked')==true)){
-		$("#pnl-ukbased").show();
+		
 		$("#pnl-address").hide();
 
 	}
 	else if(($("#registered_no").prop('checked')==true)){
-		$("#pnl-ukbased").hide();
+		
 		$("#pnl-address").show();
 
 	}
@@ -443,7 +387,7 @@ $('#pnl-ukbased input:radio').click(function() {
 
 	}
 	else if(($("#incorporated_no").prop('checked')==true)){
-		$("#incorporated").show();
+		
 		$("#foreign").show();
 
 	}
