@@ -183,7 +183,7 @@ display:block;
 <!-- #BeginEditable "content" --> 
 <div id="content" >
 	<div class="inner-block text">
-		<h1 class="form-title heading-large">Business details summary</h1>
+		<h1 class="form-title heading-large">Business details summary for <span id="business_name"></span></h1>
 		<form class="form" method="post">
 			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 			<p class="lead text bold">
@@ -252,7 +252,23 @@ display:block;
                 </table>
   				<br>
             </div>
-	</form> 
+            
+             <div class="form-navigation form-group" >
+
+            <div>
+            <p><a href="add_business.html">Add another business</a><br><br></p>
+            <p><a href="director_1.html" class="button">Continue - I've added all of my businesses</a></p>
+			<p><br></p>
+			<p><a href="#">Back</a></p>
+            </div>
+            <div>
+                <br>
+            </div>
+
+            
+
+        </div>
+	</form>
   <p class="clearfix"><br/></p>
 
 	</div>
@@ -280,21 +296,7 @@ display:block;
        
 
         <!-- For User research -->
-        <div class="form-navigation form-group" style="margin-left:30px;">
-
-            <div>
-            <p><a href="add_business" class="button" id="next">Add another business</a></p>
-            <p><a href="director_1.html">I've added all of my businesses</a></p>
-			<p><br></p>
-			<p><a href="#">Back</a></p>
-            </div>
-            <div>
-                <br>
-            </div>
-
-            
-
-        </div>
+       
 
 
     </div>
@@ -355,6 +357,8 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	var x = $.cookie("business_id");
+	$("#business_name").text($.cookie('business'+x+'_name'));
+
 
 	var tradedas="";
 	$("#partners").hide();
