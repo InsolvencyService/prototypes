@@ -322,7 +322,7 @@ display:block;
 $(document).ready(function() {
 	var x = $.cookie("business_id");
 	$("#pnl-partner_table").hide();
-	$("#business_name").attr("text", $.cookie("business"+x+"_name"));
+	$("#business_name").text($.cookie("business"+x+"_name"));
 	
 
 	
