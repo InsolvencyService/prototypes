@@ -204,8 +204,10 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Business address</h1>
+	<h1 class="form-title heading-large">Business address for <span id="Business_Name"></span></h1>
+	
 	<div class="col-md-9">
+		<p id="remove">Please enter the most recent business address you gave the HMRC. If your business has multiple addresses, we'll ask about the rest later.<br><br></p>
 		<form class="form" method="post">
 			<div id="pnl-business">
 				
@@ -339,10 +341,14 @@ var x;
 
 $(document).ready(function() {
 	x = $.cookie("business_id");
-	$("#name").attr("value", $.cookie('business'+x+'_name'));
+	$("#business_address_line_1").val($.cookie("address"));
+	$("#Business_Name").attr("text", $.cookie('business'+x+'_name'));
 	count = $.cookie("business"+x+"_address_count");
 	if(count == null){
 		count=0;
+	}
+	if(count>0){
+		$("#remove").hide();
 	}
 });
 

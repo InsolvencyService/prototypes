@@ -204,7 +204,7 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Business address<span class="plural"></span></h1>
+	<h1 class="form-title heading-large">Additional business addresses for <span class="Business_Name"></span></h1>
 	<div class="col-md-9">
 		<table>
 			<thead>
@@ -217,13 +217,20 @@ display:block;
 				
 			</tbody>
 		</table>
-		<p><br><a href="business_address.html" class="btn btn-default" >Add another address</a></p>
-		
+		<p>&nbsp;</p>
+		<div class="form-group">
+			<label  class="form-label-bold">Has <span class="Business_Name"></span> traded from any other addresses since its debts started?</label>
+			<div class="form-hint">Enter the first line of the address below, for example 11 Place Road. You can add more later<br><br>
+			</div>
+            <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
+            <a id="business_address.html" class="button">Add address</a>&nbsp;
+        </div>		
 			<div class="form-navigation form-group">
 			<p>&nbsp;</p>
 			<div>
-					<a class="button" id="next">I've added all the business addresses</a>
+					<a class="button" id="next">Continue - I've added all my business' addresses</a>
 			</div>
+					<p><br></p>
 					<a href="#">Back</a>
 				</div>
 		</div>		
@@ -310,7 +317,10 @@ $(document).ready(function() {
 	var x = $.cookie("business_id");
 	var count;
 	var row;
+	$.cookie("address", $("#name").val());
 	count = $.cookie("business"+x+"_address_count");
+	$(".Business_Name").attr("text", $.cookie('business'+x+'_name'));
+
 	if(count == null){
 		count=0;
 	}

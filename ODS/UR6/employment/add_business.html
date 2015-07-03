@@ -205,12 +205,14 @@ display:block;
 
 <div class="inner-block">	
 	<h1 class="form-title heading-large">Business details</h1>
+	<p>Please tell us about your business.</p>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div id="pnl-business" class="clearfix">
 			
 				<div class="form-group">
 					<label id="name_label0" for="name" class="form-label-bold">Business name</label>
+					<p class="form-hint">The name you use with your customers and creditors.<br>For example, ABC Trading.</p>
 					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" />
 				</div>
 				
@@ -218,7 +220,7 @@ display:block;
 				
 				<div class="form-group ">
 				<fieldset class="inline">
-				<legend id="title_label" class="form-label-bold">Has the business traded under a different name in the last three years?</legend>
+				<legend id="title_label" class="form-label-bold">Are any of the business' debts under a different name?</legend>
 					<div id="traded" class="form-group">
 						<label id="title_label0" for="yes" class="block-label">
 						<input id="yes" value="yes" name="names" type="radio">Yes</label>
@@ -231,7 +233,7 @@ display:block;
 				
 				<div id="pnl-names" class="form-group panel-indent">
 					<div class="form-group" id="row1">
-						<label id="name_label1" for="name" class="form-label-bold">Trading name(s)</label>
+						<label id="name_label1" for="name" class="form-label-bold">Other business name(s)</label>
 						<br>
 						<input id="trade_name1" name="name1" type="text" value="" />
 						<a id="add_name" style="padding-left:20px">Add another</a>
@@ -261,14 +263,15 @@ display:block;
 				<p>&nbsp;</p>
 				
 				<div class="form-group">
-					<label id="nature_label0" for="nature" class="form-label-bold">Nature of business</label>
+					<label id="nature_label0" for="nature" class="form-label-bold">Business type</label>
+					<p class="form-hint">For example, flower shop construction</p>
 					<input id="nature" name="nature" type="text" value="" />
 				</div>
 				
 				<p><br></p>				
 				<div class="form-group ">				
 				<fieldset class="inline">
-				<legend id="type_label" class="form-label-bold">Is this a partnership</legend>
+				<legend id="type_label" class="form-label-bold">Is this business a partnership?</legend>
 					<div id="business-type" class="form-group">
 						<label id="type_label1" for="partner" class="block-label">
 						<input id="partner" value="partnership" name="business_type" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -284,7 +287,7 @@ display:block;
 				<div class="form-group ">
 					<div>
 					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">Date trading commenced</span>
+						<span id="date_of_birth_label" class="form-label-bold">Date this business started trading</span>
 						<span class="form-hint" id="date_of_birth_help">For example 31 12 2011.</span>
 						
 						<div class="form-group form-group-day">
@@ -304,25 +307,12 @@ display:block;
 				</div>
 				
 				<p><br></p>
-
-				<div class="form-group ">
-				<fieldset class="inline">
-				<legend id="title_label" class="form-label-bold">Has the business ceased trading?</legend>
-					<div id="ceased" class="form-group">
-						<label id="title_label0" for="ceasedyes" class="block-label">
-						<input id="ceasedyes" value="ceased" name="ceased_training" type="radio" aria-describedby="title_error title_help">Yes</label>
-		
-						<label id="title_label1" for="ceasedno" class="block-label">
-						<input id="ceasedno" value="ceased" name="ceased_training" type="radio" aria-describedby="title_error title_help">No</label>
-					</div>
-				</fieldset>
-				</div>
-				
-				<div id="ceased_date" class="form-group panel-indent">
+	
+				<div class="form-group">
 					<div>
 					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">Date trading ceased</span>
-						<span class="form-hint" id="end_help">For example 31 12 2011.</span>
+						<span id="date_of_birth_label" class="form-label-bold">Date this business stopped trading</span>
+						<span class="form-hint" id="end_help">For example 31 12 2011. Leave blank if it's still trading</span>
 						
 						<div class="form-group form-group-day">
 							 <label id="ceased_label.day" for="end_day" >Day</label>
