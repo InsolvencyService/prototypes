@@ -353,7 +353,7 @@ $(document).ready(function() {
 	x = $.cookie("business_id");
 	$(".business_name").text($.cookie('business'+x+'_name'));
 	var str = $.cookie('partner_name');
-	if(str==null||str==""){
+	if(str!=null){
 		var ret = str.split(" ");
 		$("#firstname").attr("value",  ret[0]);
 		$("#lastname").attr("value",  ret[1]);

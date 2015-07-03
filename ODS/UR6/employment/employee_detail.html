@@ -375,13 +375,14 @@ var x;
 $(document).ready(function() {
 	x = $.cookie("business_id");
 	$("#pnl-amount").hide();
-		
+	$(".business_name").text($.cookie('business'+x+'_name'));	
 	var str =$.cookie("employee_name");
-	var ret = str.split(" ");
-	$("#firstname").attr("value",  ret[0]);
-	$("#lastname").attr("value",  ret[1]);
+	if(str!=null){	
+		var ret = str.split(" ");
+		$("#firstname").attr("value",  ret[0]);
+		$("#lastname").attr("value",  ret[1]);
+	}
 	
-	$(".business_name").text($.cookie('business'+x+'_name'));
 
 });
 
