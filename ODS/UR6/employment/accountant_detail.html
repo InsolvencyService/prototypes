@@ -204,17 +204,21 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Accounts company details</h1>
+	<h1 class="form-title heading-large">Accountant's details for <span class="business_name"></span></h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div id="pnl-current_employer">
+			<p>We need to know about all accountants, book keepers and financial advisers <span class="business_name"></span> has used in the past 5 years. </p>
+			<p>If you have used several companies, we'll ask you about the rest later.<br><br></p>
 				<label id="name_label" for="name" class="form-label-bold"></label>
 				<div class="form-group">
-					<label id="name_label0" for="name" class="form-label">Accounts company  name</label>
-					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+					<label id="name_label0" for="name" class="form-label-bold">Accountants name</label>
+					<p class="form-hint">Accountants firm or individual name</p>
+					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/><br/>
 				</div>
 						
 				<div class="form-group ">
+					<label id="name_label0" for="accountant_address_line_1" class="form-label-bold">Accountants address</label>
 					<label id="accountant_address_line_1_label" for="accountant_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 					<input id="accountant_address_line_1" name="accountant_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
@@ -252,7 +256,7 @@ display:block;
 			</div>						
 		</form>
 		
-			<div class="form-navigation form-group">
+			<div class="form-navigation form-group"><br/><br/>
 			<div>
 					<a class="button" id="next">Continue</a>
 			</div>
@@ -342,6 +346,7 @@ $(document).ready(function() {
 	$("#name").attr("value", $.cookie("accountant_name"));	
 	
 	x = $.cookie("business_id");
+	$(".business_name").text($.cookie('business'+x+'_name'));
 	
 
 });
@@ -356,6 +361,7 @@ $("#next").click(function(){
 		count++;
 	}
 	
+
 	var accountant_address;
 	var address1=$("#accountant_address_line_1").val();
 	var address2=$("#accountant_address_line_2").val();
