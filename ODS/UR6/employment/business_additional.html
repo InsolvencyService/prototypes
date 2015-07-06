@@ -215,6 +215,8 @@ display:block;
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 			
+			<p>&nbsp;</p>
+			
 			<div class="form-group">
 				<label id="name_label0" for="name" class="form-label-bold">Your current or last Income Tax reference number 
 				or Unique Taxpayer Reference</label>
@@ -222,8 +224,8 @@ display:block;
 				or statement of account from HMRC</p>
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
-
 			<p>&nbsp;</p>
+	
 			<div class="form-group">
 				<fieldset>
 					<legend id="title_label" class="form-label-bold">Where do 
@@ -231,7 +233,7 @@ display:block;
 					<select id="business_addresses">
 					
 					</select>
-					
+							<p>&nbsp;</p>					
 					<div id="otheraddress" class="panel-indent">						
 						<div class="form-group ">
 							<label id="accounts_address_line_1_label" for="accounts_address_line_1" class="form-label employer_address_line_1">Building and street</label>
@@ -401,15 +403,15 @@ var a1;
 		$("#business_addresses").append(o);
 	}
 
-o = new Option("Other", "Other");
+o = new Option("Another address", "Another address");
 $("#business_addresses").append(o);
 
 	
 });
 
 $('#business_addresses').change(function() {
-    var option = $(this).find('option:selected');
-    if(option=="Other"){
+    var option = $("#business_addresses :selected").text()
+    if(option=="Another address"){
     	$("#otheraddress").show();
     }
     else{
