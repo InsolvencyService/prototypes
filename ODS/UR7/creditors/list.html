@@ -235,21 +235,7 @@ display:block;
             
             
 
-	<div class="form-group">
 	
-	<label  for="creditors" class="form-label-bold " id="heading-add">Add creditor</label>
-
-	<div class="form-hint">Enter the creditor’s name below – it can be the name of an organisation or an individual, for example ABC Bank Ltd or Joe Johnson. </div>
-	<input type="text" placeholder="Start typing name" id="creditors" style="width:400px"
-								  class="form-control typeahead input-lg" autocomplete="off">
-		<a class="button" href="address.html" id="next">Add creditor</a>
-
-	&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
-
-
-
-	<p class="clearfix"><br/></p>
-	</div>
         <p class="clearfix"><br /></p>
         <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
            <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
@@ -257,7 +243,7 @@ display:block;
             <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
         </div>  
 <div id="creditorlist">
-<h2>List of creditors</h2>
+<h2 class="form-label-bold">List of creditors</h2>
 <table style="width: 100%">
 		<thead>
 			<tr>
@@ -467,7 +453,24 @@ display:block;
 		</tbody>
 		</table>
 </div>
-<p><br></p>
+<p  class="clearfix"><br/></p>
+<div class="form-group">
+	
+	<label  for="creditors" class="form-label-bold " id="heading-add">Add creditor</label>
+
+	<div class="form-hint">Enter the creditor’s name below – it can be the name of an organisation or an individual, for example ABC Bank Ltd or Joe Johnson. </div>
+	<input type="text" placeholder="Start typing name" id="creditors" style="width:400px"
+								  class="form-control typeahead input-lg" autocomplete="off">
+		<a class="button" href="address.html" id="next">Add creditor</a>
+
+	&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
+
+
+
+	<p class="clearfix"><br/></p>
+	</div>
+<div class="clearfix"></div>
+
 <a class="button secondary" href="visitlist.html" id="btn-addedall">Continue - I have added all creditors</a>
 <p><br></p>
 	
