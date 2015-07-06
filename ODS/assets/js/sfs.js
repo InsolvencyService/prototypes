@@ -59,7 +59,6 @@
 
 	//$("tr select").first().keydown();
 	$("tr input").first().focus();
-	//$("tr input").first().parent().parent().addClass("active");
 	
 	$("input").on("change", function(e){
 	    var total = calctotal();

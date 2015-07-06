@@ -215,8 +215,6 @@ display:block;
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 			
-			<p>&nbsp;</p>
-			
 			<div class="form-group">
 				<label id="name_label0" for="name" class="form-label-bold">Your current or last Income Tax reference number 
 				or Unique Taxpayer Reference</label>
@@ -224,8 +222,8 @@ display:block;
 				or statement of account from HMRC</p>
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
+
 			<p>&nbsp;</p>
-	
 			<div class="form-group">
 				<fieldset>
 					<legend id="title_label" class="form-label-bold">Where do 
@@ -233,8 +231,8 @@ display:block;
 					<select id="business_addresses">
 					
 					</select>
-							<p>&nbsp;</p>					
-					<div id="otheraddress" class="panel-indent">						
+					
+					<div id="otheraddress">						
 						<div class="form-group ">
 							<label id="accounts_address_line_1_label" for="accounts_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 							<input id="accounts_address_line_1" name="accounts_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
@@ -382,42 +380,17 @@ display:block;
 	
 <script type="text/javascript">
 $(document).ready(function() {
-
-$("#otheraddress").hide();
-
-var o;
-var a1;
-	//$(".Business_Name").text($.cookie('business'+x+'_name'));
+	$(".Business_Name").text($.cookie('business'+x+'_name'));
 	
-	var x = $.cookie("business_id");	
-	var count = $.cookie("business"+x+"_address_count");
+	x = $.cookie("business_id");	
+	count = $.cookie("business"+x+"_address_count");
 
-	for (var i = 1; i <= count; i++) {
-		a1 = $.cookie("business"+x+"_address"+i); 
-		o = new Option(a1,"");
-				
-		if(i==1){
-			o.selected=true;
-		}
-		
-		$("#business_addresses").append(o);
+	, business_address);
+
+	for(var i=1, i <= count, i++){
+		$("#business_accounts").append("<option>"+$.cookie("business"+x+"_address"+i)+"</option>");
 	}
-
-o = new Option("Another address", "Another address");
-$("#business_addresses").append(o);
-
-	
-});
-
-$('#business_addresses').change(function() {
-    var option = $("#business_addresses :selected").text()
-    if(option=="Another address"){
-    	$("#otheraddress").show();
-    }
-    else{
-    	$("#otheraddress").hide();
-
-    }
+	$("#business_accounts").append("<option>Other</option>");
 });
 
 $('#next').click(function() {
