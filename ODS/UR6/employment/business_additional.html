@@ -387,7 +387,7 @@ var o;
 	count = $.cookie("business"+x+"_address_count");
 
 	for(var i=1, i <= count, i++){
-		o = new Option($("#business_accounts").append("<option>"+$.cookie("business"+x+"_address"+i)+"</option>"),"");
+		o = new Option($.cookie("business"+x+"_address"+i),"");
 		if(i==1){
 			o.selected=true;
 		}
