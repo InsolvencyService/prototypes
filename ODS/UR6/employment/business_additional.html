@@ -381,20 +381,20 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 var o;
-var a;
-	$(".Business_Name").text($.cookie('business'+x+'_name'));
+var a1;
+	//$(".Business_Name").text($.cookie('business'+x+'_name'));
 	
 	var x = $.cookie("business_id");	
 	var count = $.cookie("business"+x+"_address_count");
 
-	for(var i=1, i <= count, i++){
-		a = $.cookie("business"+x+"_address"+i);
-		alert(a);
-		o = new Option(a,"");
-		alert(o);
+	for (var i = 1; i <= count; i++) {
+		a1 = $.cookie("business"+x+"_address"+i); 
+		o = new Option(a1,"");
+				
 		if(i==1){
 			o.selected=true;
 		}
+		
 		$("#business_addresses").append(o);
 	}
 
