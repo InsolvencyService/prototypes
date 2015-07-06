@@ -232,7 +232,7 @@ display:block;
 					
 					</select>
 					
-					<div id="otheraddress">						
+					<div id="otheraddress" class="panel-indent">						
 						<div class="form-group ">
 							<label id="accounts_address_line_1_label" for="accounts_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 							<input id="accounts_address_line_1" name="accounts_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
@@ -380,6 +380,9 @@ display:block;
 	
 <script type="text/javascript">
 $(document).ready(function() {
+
+$("#otheraddress").hide();
+
 var o;
 var a1;
 	//$(".Business_Name").text($.cookie('business'+x+'_name'));
@@ -398,10 +401,21 @@ var a1;
 		$("#business_addresses").append(o);
 	}
 
-o = new Option("Other", "");
+o = new Option("Other", "Other");
 $("#business_addresses").append(o);
 
 	
+});
+
+$('#business_addresses').change(function() {
+    var option = $(this).find('option:selected');
+    if(option=="Other"){
+    	$("#otheraddress").show();
+    }
+    else{
+    	$("#otheraddress").hide();
+
+    }
 });
 
 $('#next').click(function() {
