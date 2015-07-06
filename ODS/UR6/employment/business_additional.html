@@ -381,13 +381,15 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 var o;
+var a;
 	$(".Business_Name").text($.cookie('business'+x+'_name'));
 	
-	x = $.cookie("business_id");	
-	count = $.cookie("business"+x+"_address_count");
+	var x = $.cookie("business_id");	
+	var count = $.cookie("business"+x+"_address_count");
 
 	for(var i=1, i <= count, i++){
-		o = new Option($.cookie("business"+x+"_address"+i),"");
+		a = $.cookie("business"+x+"_address"+i);
+		o = new Option(a,"");
 		if(i==1){
 			o.selected=true;
 		}
