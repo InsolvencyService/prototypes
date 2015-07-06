@@ -380,15 +380,24 @@ display:block;
 	
 <script type="text/javascript">
 $(document).ready(function() {
+var o;
 	$(".Business_Name").text($.cookie('business'+x+'_name'));
 	
 	x = $.cookie("business_id");	
 	count = $.cookie("business"+x+"_address_count");
 
 	for(var i=1, i <= count, i++){
-		$("#business_accounts").append("<option>"+$.cookie("business"+x+"_address"+i)+"</option>");
+		o = new Option($("#business_accounts").append("<option>"+$.cookie("business"+x+"_address"+i)+"</option>"),"");
+		if(i=1){
+			o.selected=true;
+		}
+		$("#business_addresses").append(o);
 	}
-	$("#business_accounts").append("<option>Other</option>");
+
+o = new Option("Other", "");
+$("#business_addresses").append(o);
+
+	
 });
 
 $('#next').click(function() {
