@@ -155,9 +155,9 @@
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
 
-                    <div class="row">
+                    <div>
 
-                        <div class="col-sm-6">
+                        <div>
 
                             <div id="income">
                                 <h2 class="heading-medium">Your income</h2>
@@ -168,8 +168,10 @@
                                             <tr class="group-heading" id="income1">
                                                 <td>Salary or wages</td>
                                                 <td class="value"></td>
-                                                <td>
-                                                    <a href="1a.html" class="next edit button">Start</a>
+                                                <td style="white-space:nowrap">
+                                                    <a href="1a.html" class="next edit button">Start</a><br/>
+                                                    <a href="#" class="declare" id="btn-no">I don't receive any salary or wages</a>
+
                                                 </td>
 
                                             </tr>
@@ -232,7 +234,7 @@
  
                         </div>
 
-                        <div class="col-sm-6" id="costs">
+                        <div id="costs">
 
                             <div class="heading-medium">Expenses</div>
                             <div class="form-group">
@@ -462,6 +464,12 @@
 
 				var defaultnext = $(".next").first().attr("href");
  
+				$("#btn-no").on("click", function(){
+                   $("#income1 a.edit").removeClass("button").text("Edit");
+                   $("#btn-no").hide();
+                   $("#income2 a.edit").show().addClass("button").text("Start");
+				
+				});
 				$("#btn-nobenefits").on("click", function(){
                    $("#income2 a.edit").removeClass("button").text("Edit");
                    $("#btn-nobenefits").hide();
