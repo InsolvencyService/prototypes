@@ -228,7 +228,11 @@ display:block;
 				<fieldset>
 					<legend id="title_label" class="form-label-bold">Where do 
 					you keep your business accounts?</legend>
-					<div>						
+					<select id="business_addresses">
+					
+					</select>
+					
+					<div id="otheraddress">						
 						<div class="form-group ">
 							<label id="accounts_address_line_1_label" for="accounts_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 							<input id="accounts_address_line_1" name="accounts_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
@@ -377,6 +381,16 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	$(".Business_Name").text($.cookie('business'+x+'_name'));
+	
+	x = $.cookie("business_id");	
+	count = $.cookie("business"+x+"_address_count");
+
+	, business_address);
+
+	for(var i=1, i <= count, i++){
+		$("#business_accounts").append("<option>"+$.cookie("business"+x+"_address"+i)+"</option>");
+	}
+	$("#business_accounts").append("<option>Other</option>");
 });
 
 $('#next').click(function() {

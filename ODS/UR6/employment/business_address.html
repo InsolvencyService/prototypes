@@ -247,7 +247,52 @@ display:block;
 					<input id="business_address_post_code" name="business_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
 					<br/>
 				</div>
-			</div>			
+			</div>	
+			<p>&nbsp;</p>
+			<div class="form-group">
+				<div>
+				<fieldset  class="date-of-birth">
+					<span id="start_label" class="form-label-bold">When did you start trading from this address?</span>
+					<span class="form-hint" id="end_help">For example 31 12 2011.</span>
+					
+					<div class="form-group form-group-day">
+						 <label id="start_label.day" for="start_day" >Day</label>
+						<input id="start_day" name="start_day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-month">
+						 <label id="start_label.month" for="start_month">Month</label>
+						<input id="start_month" name="start_month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-year">
+						<label id="start_label.year" for="start_year">Year</label>
+						<input id="start_year" name="start_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div><br>
+				</fieldset>
+				</div>
+			</div>	
+			
+			<div class="form-group">
+				<div>
+				<fieldset  class="date-of-birth">
+					<span id="date_of_birth_label" class="form-label-bold">When did you finish trading from this address?</span>
+					<span class="form-hint" id="end_help">For example 31 12 2011. Leave blank if you're still trading</span>
+					
+					<div class="form-group form-group-day">
+						 <label id="ceased_label.day" for="end_day" >Day</label>
+						<input id="end_day" name="end_day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-month">
+						 <label id="ceased_label.month" for="end_month">Month</label>
+						<input id="end_month" name="end_month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-year">
+						<label id="ceased_label.year" for="end_year">Year</label>
+						<input id="end_year" name="end_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div><br>
+				</fieldset>
+				</div>
+			</div>		
+	
 				
 		</form>
 		
@@ -353,6 +398,12 @@ $(document).ready(function() {
 });
 
 $('#next').click(function() {
+		var startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
+		var enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
+		
+		if(enddate=="//"){
+			enddate=""
+		}
 
 		count++;
 		var business_address;
@@ -384,6 +435,8 @@ $('#next').click(function() {
 
 		$.cookie("business"+x+"_address"+count, business_address);
 		$.cookie("business"+x+"_address_count", count);
+		$.cookie("business"+x+"_address_start", startdate);
+		$.cookie("business"+x+"_address_end", enddate);
 		
 		$("#next").prop("href","business_address_summary.html");
 });
