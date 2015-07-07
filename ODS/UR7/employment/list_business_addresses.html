@@ -204,9 +204,17 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Additional business addresses for <span class="Business_Name"></span></h1>
+	<h1 class="form-title heading-large">Business address summary</h1>
+	<div class="form-hint">We need to know if you have been employed in the last 12 months</div>
+	<div class="form-hint">We need to know if <span class="Business_Name">ABC Limited</span> traded from any other addresses since its debts started?</div>
+
 	<div class="col-md-9">
-		<table>
+		<form class="form" method="post">
+			
+			 <div  class="repeat">
+            	<h2 class="form-label-bold">Addresses<br></h2>
+            	
+			<table style="width: 100%" >
 			<thead>
 				<tr>
 					<th>Address<span class="plural"></span></th>
@@ -216,21 +224,25 @@ display:block;
 			<tbody id="tablebody">
 				
 			</tbody>
-		</table>
-		<p>&nbsp;</p>
-		<div class="form-group">
-			<label  class="form-label-bold">Has <span class="Business_Name"></span> traded from any other addresses since its debts started?</label>
-			<div class="form-hint">Enter the first line of the address below, for example 11 Place Road. You can add more later<br><br>
+			</table>
+
+	            
 			</div>
-            <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-            <a id="add_address" class="button">Add address</a>&nbsp;
-        </div>		
-			<div class="form-navigation form-group">
+			
+	            <p>&nbsp;</p>			
+			<div class="form-group">
+				<label  class="form-label-bold">Enter the first line of the address</label>
+				<div class="form-hint">For example 11 Place Street<br><br></div>
+	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
+	                <a id="add_address" class="button"><span class="firsttime">Add address</span><span class="repeat">Add another address</span></a>
+	                <p><br><a href="trading_1.html" class="button family" id="next" ><span class="repeat">Continue - I have added all my business addresses</span>
+	                <span class="firsttime">Continue - I have added all my business addresses</span></a></p>
+	    	</div>
+            
+           
+		</form>
 			<p>&nbsp;</p>
-			<div>
-					<a class="button" id="next">Continue - I've added all my business' addresses</a>
-			</div>
-					<p><br></p>
+			<div class="form-navigation form-group">
 					<a href="#">Back</a>
 				</div>
 		</div>		
@@ -306,14 +318,15 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
 <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="../assets/loop.js"></script>
 	
 <script type="text/javascript">
-var x;
-$(document).ready(function() {
 
+$(document).ready(function() {
+	//$("#pnl-employment_table").hide();	
+	
+	
 	x = $.cookie("business_id");
 	var count;
 	var row;
@@ -332,26 +345,31 @@ $(document).ready(function() {
 	if(count>1){
 		$(".plural").append("es")
 	}
+
+
+	$("#next").click(function(){
+		if($.cookie("business"+x+"_type") == "Partnership"){
+			$("#next").attr("href", "partner_detail.html");
+		}
+		else{
+			$("#next").attr("href", "business_additional.html");
+		}
+		
+	});
 	
+	$("#add_address").click(function(){
+		$.cookie("address", $("#name").val());
+		$("#add_address").attr("href", "business_address.html");
+	});
+		
 
 });
 
-$("#next").click(function(){
-	if($.cookie("business"+x+"_type") == "Partnership"){
-		$("#next").attr("href", "partner_detail.html");
-	}
-	else{
-		$("#next").attr("href", "business_additional.html");
-	}
-	
-});
 
-$("#add_address").click(function(){
-	$.cookie("address", $("#name").val());
-	$("#add_address").attr("href", "business_address.html");
-});
 
-	
+
+
+
 </script>
 
 
