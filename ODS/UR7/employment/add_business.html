@@ -337,7 +337,7 @@ display:block;
 			<div>
 					<a class="button" id="next" href="list_business_addresses.html">Continue</a>
 			</div>
-					<a href="#">Back</a>
+					<a href="list_businesses.html">Back</a>
 				</div>
 		</div>		
 		<div class="col-md-3">
@@ -422,6 +422,9 @@ var x;
 
 $(document).ready(function() {
 
+	var tempname = $.cookie("business_name_temp");
+	$("#name").val(tempname);
+	
 	x = $.cookie("business_id");
 	
 	$.cookie("trading_count", 0);
