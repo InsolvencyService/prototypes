@@ -204,44 +204,31 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Employment history</h1>
-	<div class="form-hint">We need to know if you have been employed in the last 12 months</div>
-	<div class="col-md-9">
+	<h1 class="form-title heading-large">Your status</h1>
+		<div class="col-md-9">
 		<form class="form" method="post">
 			
-			 <div id="pnl-employment_table" class="repeat">
-            	<h2 class="form-label-bold">Employers<br></h2>
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Name</th>
-	                        <th>Address</th>
-	                        <th>Start date</th>
-	                        <th>End date</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody class="tbl-content">
-	                                     
+			<div id="pnl-other">
+				<label id="occupations_label" for="occupations" class="form-label-bold">
+				Are you currently:</label>
+		
+				<div id="employment-yesno" class="form-group inline">
+					<label id="title_label0" for="retired" class="block-label">
+					<input id="retired" value="Retired" name="retired" type="radio" aria-describedby="title_error title_help">Retired</label>
+	
+					<label id="title_label1" for="student" class="block-label">
+					<input id="student" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">A student</label>
+					<label id="title_label1" for="notworking" class="block-label">
+					<input id="notworking" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">Not currrently working</label>
 
-	                </tbody>
-	            </table>
-
-	            
+				</div>				  
 			</div>
-	            <p>&nbsp;</p>			
-			<div class="form-group">
-				<label  class="form-label-bold">Enter the employer name</label>
-				<div class="form-hint">For example ABC Limited<br><br></div>
-	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
-	                <a id="add_employer" class="button"><span class="firsttime">Add employer</span><span class="repeat">Add another employer</span></a>
-	                <p><br><a href="trading_1.html" class="button family repeat" id="next" >Continue - I have added all employers</a>
-	                <a href="notworking.html" class="button family firsttime" id="next" >Continue - I was not employed</a></p>
-	    	</div>
-            
-           
 		</form>
 			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+				<a id="next" class="button" href="trading_1.html">Continue</a><br>
+			</div>
+
 			<div class="form-navigation form-group">
 					<a href="#">Back</a>
 				</div>
@@ -318,48 +305,17 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
 <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../assets/loop.js"></script>
+
 	
 <script type="text/javascript">
 
 $(document).ready(function() {
-	//$("#pnl-employment_table").hide();	
 	
-	
-	var countx;
-	countx = $.cookie("employer_count");
-	
-		
-	if((countx != null)){
-		//$("#pnl-employment_table").show();
-		//$("#no_employment").hide();
-		for(var i=1; i <= countx; i++) {
-			cname = $.cookie("employer_name"+i);
-			caddress = $.cookie("employer_address"+i);
-			cstart = $.cookie("employer_startdate"+i);
-			cend = $.cookie("employer_enddate"+i);
-		
-			row = "<tr><td>"+ cname +"</td><td>"+ caddress +"</td><td>"+ cstart +"</td><td>"+ cend +"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
-			$(".tbl-content").append(row);	
-			
-		}
-	}
+
 });
 
-$("#add_employer").click(function(){
-	var employername = $("#name").val();
-	$.cookie("employer_name_temp", employername);
-	$("#add_employer").prop("href","employers.html");
-	
-});
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
 
 
