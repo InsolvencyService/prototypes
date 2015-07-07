@@ -183,7 +183,7 @@ display:block;
 <!-- #BeginEditable "content" --> 
 <div id="content" >
 	<div class="inner-block text">
-		<h1 class="form-title heading-large">Personal details summary</h1>
+		<h1 class="form-title heading-large">Employment summary</h1>
 		<form class="form" method="post">
 			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 			<p class="lead text bold">
@@ -191,7 +191,7 @@ display:block;
 	        </p>
 
 			<div class="form-group" id="employer">
-				<p class="bold-small">Employer details</p>
+				<p class="bold-small">Employment details</p>
 	            <table id="employer_table">
                     <tbody>
                     	<tr class="group-heading">
@@ -370,19 +370,15 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#employer").hide();
-	$("#trading").hide();
-	$("#director").hide();
-	
 	var employee = $.cookie('employed');
 	//var traded = getParameterByName("trading");
 	//var director = getParameterByName("director");
 	
 	if(employee == "true"){
-		$("#employer").show();
+
 	}
 	
-	$("#NINO").text($.cookie('NI_number'));
+//	$("#NINO").text($.cookie('NI_number'));
 	$("#employment-status").text($.cookie('employment_status'));
 });
 
