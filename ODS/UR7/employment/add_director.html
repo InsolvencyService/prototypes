@@ -204,9 +204,11 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Other director details</h1>
+	<h1 class="form-title heading-large">Director details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
+		<p>We need to know about companies you have been a director of in last 12 months.</p>	
+			
 			<div id="pnl-director_table">
 	            <table style="width: 100%" class="family">
 	                <thead>
@@ -226,12 +228,12 @@ display:block;
 			</div>
 			
 			<div class="form-group">
-				<label  class="form-label-bold">Have you been a director of any 
-				other registered company in the last 12 months?</label>
-				<div class="form-hint">This includes any LTD's, PLC's or LLP's. Enter the company name, for example ABC Trading.<br><br></div>
+				<label  class="form-label-bold">Enter the company name below</label>
+				<div class="form-hint">This includes any limited companies, public liability companies any limited liability partnerships.<br><br></div>
 	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-	                <a id="add_directorship" class="button">Add directorship</a><br><br>
-	                <p><a href="../overview.html?section2=complete" class="button family" id="next">I have added all my directorships.</a></p>
+	                <a id="add_directorship" class="button">Add <span class="other">another </span>company</a>
+	                <p><a href="../overview.html?section2=complete" class="other1" id="next">I haven't been a director of a company.</a></p>
+	                <p class="other"><br><a href="../overview.html?section2=complete" class="button family" id="next">I have added all my directorships.</a></p>
 	            </div>
             
             
@@ -330,9 +332,18 @@ $(document).ready(function() {
 	count = $.cookie("director_count");
 	if(count == null){
 		count=0;
+
 	}
-	else if(count > 0){
+	
+	if(count > 0){
 		$("#pnl-director_table").show();
+		$(".other").show();
+		$(".other1").hide();
+	}
+	else{
+		$("#pnl-partner_table").hide();
+		$(".other").hide();
+		$(".other1").show();
 
 	}
 	
