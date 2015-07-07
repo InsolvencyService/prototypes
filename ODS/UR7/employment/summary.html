@@ -208,9 +208,9 @@ table td[class*=col-], table th[class*=col-]{
                         	<td></td>
                     	</tr>
 
-	                    <tr class="group-heading">
+	                    <tr class="group-heading" id="employers">
 	                       <td class="col-sm-7">Employers in the last 12 months</td>
-	                        <td  class="col-sm-2">2</td>
+	                        <td  class="col-sm-2 count">2</td>
 	                        <td class="col-sm-3"><a href="list_employers.html?loop=true">Edit</a></td>
 	                        <td></td>
 	                    </tr>
@@ -219,13 +219,13 @@ table td[class*=col-], table th[class*=col-]{
   				<br>
             </div>
             
-			<div class="form-group" id="employer">
+			<div class="form-group" id="businesses">
 				<p class="bold-small">Business details</p>
 	            <table id="employer_table">
                     <tbody>
 	                    <tr class="group-heading">
 	                       <td class="col-sm-7">Self employed and partnerships</td>
-	                        <td class="col-sm-2">2</td>
+	                        <td class="col-sm-2 count">2</td>
 	                        <td  class="col-sm-3"><a href="list_businesses.html?loop=true">Edit</a></td>
 	                        <td></td>
 	                    </tr>
@@ -234,13 +234,13 @@ table td[class*=col-], table th[class*=col-]{
   				<br>
             </div>
 
-			<div class="form-group" id="employer">
+			<div class="form-group" id="directorships">
 				<p class="bold-small">Director details</p>
 	            <table id="employer_table">
                     <tbody>
 	                    <tr class="group-heading">
 	                       <td class="col-sm-7">Directorships</td>
-	                        <td class="col-sm-2">2</td>
+	                        <td class="col-sm-2 count">2</td>
 	                        <td class="col-sm-3"><a href="add_director.html?loop=true">Edit</a></td>
 	                        <td></td>
 	                    </tr>
@@ -372,16 +372,38 @@ table td[class*=col-], table th[class*=col-]{
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var employee = $.cookie('employed');
-	//var traded = getParameterByName("trading");
-	//var director = getParameterByName("director");
-	
-	if(employee == "true"){
-
+	var id = $.cookie("business_id");
+	var employed;
+	if ($.cookie("occupations_temp") && $.cookie("occupations_temp").length){
 	}
 	
+	$("#employment-status").text($.cookie('employed'));
+
+	//var traded = getParameterByName("trading");
+	//var director = getParameterByName("director");
+	var num = 1;
+	if($.cookie('employed') && $.cookie('employed').length > 0){
+		$("#employers .count").text($.cookie("employer_count"));
+	}
+	else{
+		$("#employers").hide();
+	}
+	
+	if($.cookie('business_name_temp') && $.cookie('business_name_temp').length > 0){
+		$("#businesses .count").text(1);
+	}
+	else{
+		$("#businesses").hide();
+	}
+
+	if($.cookie('director_count') && $.cookie('director_count').length > 0){
+		$("#directorships .count").text($.cookie("director_count"));
+	}
+	else{
+		$("#directorships").hide();
+	}
+
 //	$("#NINO").text($.cookie('NI_number'));
-	$("#employment-status").text($.cookie('employment_status'));
 });
 
 
