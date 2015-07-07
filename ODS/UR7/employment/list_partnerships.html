@@ -70,8 +70,38 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
+  <link href="../creditors/css/typeahead.css" rel="stylesheet">
+ <style type="text/css">
+ .tt-dropdown-menu{
+	width:650px;
+}
+.tt-input{
+	width:400px;
+}
+.tt-hint{
+	display:none !important;
+}
+.choose-address{
+	color:gray;
+}
+.row > div:first-child{
+	padding-left:5px;
+	margin-left:0;	
+}
+i.glyphicon{
+	margin-right:5px;
+	color:#666666;
+}
+.input-sm{
+	width:170px;
+}
+.input-lg{
+	width:260px;
+}
 
-<style type="text/css">
+#row-total td{
+	font-weight:bold;
+}
 
 
 .row img{
@@ -94,25 +124,15 @@ display:block;
 	font-size:16px;
 }
 
-.inner-block.text{
-	float:left;
-	display: table-cell;
-    width:66.66666666%;
-}
-.right-block{
-	padding-top:60px;
-	width:33.33333%;
-	float:left;
-	  position: relative;
-	  min-height: 1px;
-	  padding-right: 15px;
-	  padding-left: 15px;
-	  display: table-cell;
-}
 .btn-edit{
 	margin-right:10px;
 }
-
+.amount{
+	text-align:right
+}
+.totalrow td{
+	font-weight:bold !important;
+}
 </style>
 <!-- #EndEditable -->
 
@@ -176,107 +196,60 @@ display:block;
 	
 
 
-	</div>
+</div>
 	
 
 
 <!-- #BeginEditable "content" --> 
 <div id="content" >
-	<div class="inner-block text">
-		<h1 class="form-title heading-large">Business details summary for <span id="business_name"></span></h1>
+
+<div class="inner-block">	
+	<h1 class="form-title heading-large">Business address summary</h1>
+	<div class="form-hint">We need to know if you have been employed in the last 12 months</div>
+	<div class="form-hint">We need to know if <span class="Business_Name">ABC Limited</span> traded from any other addresses since its debts started?</div>
+
+	<div class="col-md-9">
 		<form class="form" method="post">
-			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
+			
+			 <div  class="repeat">
+            	<h2 class="form-label-bold">Addresses<br></h2>
+            	
+			<table style="width: 100%" >
+			<thead>
+				<tr>
+					<th>Address<span class="plural"></span></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="tablebody">
+				
+			</tbody>
+			</table>
 
-			<div class="form-group" id="employer">
-				<p class="bold-small">Business details</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Business Name</td>
-                        	<td id="name"></td>
-                        	<td><a href="#">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	<tr class="group-heading">
-                    		<td>Also traded as</td>
-                        	<td id="trading"></td>
-                        	<td><a href="#">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	<tr class="group-heading">
-                    		<td>Commenced trading</td>
-                        	<td id="start"></td>
-                        	<td><a href="#">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	<tr class="group-heading">
-                    		<td>Ceased trading</td>
-                        	<td id="end"></td>
-                        	<td><a href="#">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	<tr class="group-heading">
-                    		<td>Number of business addresses</td>
-                        	<td id="no_addresses"></td>
-                        	<td><a href="list_business_addresses.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	<tr class="group-heading" id="partners">
-                    		<td>Number of business partners</td>
-                        	<td id="no_partners"></td>
-                        	<td><a href="list_partnerships.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	<tr class="group-heading">
-                    		<td>Number of employees</td>
-                        	<td id="no_employees"></td>
-                        	<td><a href="list_employers.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	<tr class="group-heading">
-                    		<td>Number of accountants</td>
-                        	<td id="no_accountants"></td>
-                        	<td><a href="add_accountant.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    	
-
-
-
-
-	                    
-                    </tbody>
-                </table>
-  				<br>
-            </div>
+	            
+			</div>
+			
+	            <p>&nbsp;</p>			
+			<div class="form-group">
+				<label  class="form-label-bold">Enter the first line of the address</label>
+				<div class="form-hint">For example 11 Place Street<br><br></div>
+	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
+	                <a id="add_address" class="button"><span class="firsttime">Add address</span><span class="repeat">Add another address</span></a>
+	                <p><br><a href="trading_1.html" class="button family" id="next" ><span class="repeat">Continue - I have added all my business addresses</span>
+	                <span class="firsttime">Continue - I have added all my business addresses</span></a></p>
+	    	</div>
             
-             <div class="form-navigation form-group" >
-
-            <div>
-            <p class="text-right"><a href="add_business.html" class="button">Add another business</a><br><br></p>
-            <p><a href="add_director.html" class="button">Continue - I've added all of my businesses</a></p>
-			<p><br></p>
-			<p><a href="#">Back</a></p>
-            </div>
-            <div>
-                <br>
-            </div>
-
-            
-
-        </div>
-	</form>
-  <p class="clearfix"><br/></p>
-
-	</div>
-    <div class="right-block">
+           
+		</form>
+			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+					<a href="#">Back</a>
+				</div>
+		</div>		
+		<div class="col-md-3">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-
-                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-                <br>
+            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+            <br>
                 <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                     <p class="heading-secondary">Bankruptcy fee</p>
                     <p style="font-weight:bold;font-size:large">
@@ -289,17 +262,10 @@ display:block;
                 <p><a href="#" style="display:none">Generate court documents</a></p>
                 <p><a href="#" style="display:none">Discard application</a></p>
             </div>
-
-
         </div>
 
-       
-
-        <!-- For User research -->
-       
-
-
-    </div>
+	</div>
+</div>
 
 
 	 <!-- #EndEditable -->
@@ -352,59 +318,57 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-
-
+<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/loop.js"></script>
+	
 <script type="text/javascript">
+
 $(document).ready(function() {
-	var x = $.cookie("business_id");
-	$("#business_name").text($.cookie('business'+x+'_name'));
+	//$("#pnl-employment_table").hide();	
+	
+	
+	x = $.cookie("business_id");
+	var count;
+	var row;
+	count = $.cookie("business"+x+"_address_count");
+	$(".Business_Name").text($.cookie('business'+x+'_name'));
+
+	if(count == null){
+		count=0;
+	}
+	
+	for(var i=1; i<=count; i++){
+		row = "<tr><td>" + $.cookie("business"+x+"_address"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+		$("#tablebody").append(row);
+	}
+	
+	if(count>1){
+		$(".plural").append("es")
+	}
 
 
-	var tradedas="";
-	$("#partners").hide();
-	for(i=1; i<=$.cookie("trading_count"); i++){
-		tradedas += $.cookie("business"+x+"_tradename"+i)+", ";
-	}
+	$("#next").click(function(){
+		if($.cookie("business"+x+"_type") == "Partnership"){
+			$("#next").attr("href", "partner_detail.html");
+		}
+		else{
+			$("#next").attr("href", "business_additional.html");
+		}
+		
+	});
 	
-	$("#name").text($.cookie("business"+x+"_name"));
-	$("#trading").text(tradedas);
-	$("#nature").text($.cookie("business"+x+"_nature"));
-	$("#type").text($.cookie("business"+x+"_type"));
-	$("#start").text($.cookie("business"+x+"_startdate"));
-	$("#end").text($.cookie("business"+x+"_enddate"));
-	
-	if($.cookie("business"+x+"_address_count")>0){
-		$("#no_addresses").text($.cookie("business"+x+"_address_count"));
-	}
-	else{
-		$("#no_addresses").text("0");
-	}
-	
-	if($.cookie("business"+x+"_partner_count")>0){
-		$("#no_partners").text($.cookie("business"+x+"_partner_count"));
-		$("#partners").show();
-	}
-	else{
-		$("#no_partners").text("0");
-	}
-	
-	if($.cookie("business"+x+"_accountant_count")>0){
-		$("#no_accountants").text($.cookie("business"+x+"_accountant_count"));
-	}
-	else{
-		$("#no_accountants").text("0");
-	}
-	
-	if($.cookie("business"+x+"_employee_count")>0){
-		$("#no_employees").text($.cookie("business"+x+"_employee_count"));
-	}
-	else{
-		$("#no_employees").text("0");
-	}
+	$("#add_address").click(function(){
+		$.cookie("address", $("#name").val());
+		$("#add_address").attr("href", "business_address.html");
+	});
+		
 
 });
-	
-	
+
+
+
+
+
 
 </script>
 
