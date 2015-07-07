@@ -113,6 +113,13 @@ display:block;
 	margin-right:10px;
 }
 
+table td[class*=col-], table th[class*=col-]{
+			padding-left:0;
+			padding-right:20px
+
+}
+
+
 </style>
 <!-- #EndEditable -->
 
@@ -191,26 +198,20 @@ display:block;
 	        </p>
 
 			<div class="form-group" id="employer">
-				<p class="bold-small">Employment details</p>
+				<p class="bold-small">Employment history</p>
 	            <table id="employer_table">
                     <tbody>
                     	<tr class="group-heading">
                     		<td>Current employment status</td>
-                        	<td id="employment-status"></td>
-                        	<td><a href="employment_status.html">Edit</a></td>
+                        	<td id="employment-status">Employed</td>
+                        	<td><a href="list_employers.html">Edit</a></td>
                         	<td></td>
                     	</tr>
 
 	                    <tr class="group-heading">
-	                       <td>National Insurance number</td>
-	                        <td id="NINO" width="30%"></td>
-	                        <td><a href="employment_status.html">Edit</a></td>
-	                        <td></td>
-	                    </tr>
-	                    <tr class="group-heading">
-	                       <td>Employers in the last 12 months</td>
-	                        <td width="30%">2</td>
-	                        <td><a href="employer_detail.html?show=all">Edit</a></td>
+	                       <td class="col-sm-7">Employers in the last 12 months</td>
+	                        <td  class="col-sm-2">2</td>
+	                        <td class="col-sm-3"><a href="list_employers.html?loop=true">Edit</a></td>
 	                        <td></td>
 	                    </tr>
                     </tbody>
@@ -218,37 +219,38 @@ display:block;
   				<br>
             </div>
             
-            <div class="form-group" id="trading">
-				<p class="bold-small">Trading details</p>
-	            <table>
+			<div class="form-group" id="employer">
+				<p class="bold-small">Business details</p>
+	            <table id="employer_table">
                     <tbody>
-                    	<tr class="group-heading">
-                    		<td>???</td>
-                        	<td width="30%">???</td>
-                        	<td><a href="employment_status.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
+	                    <tr class="group-heading">
+	                       <td class="col-sm-7">Self employed and partnerships</td>
+	                        <td class="col-sm-2">2</td>
+	                        <td  class="col-sm-3"><a href="list_businesses.html?loop=true">Edit</a></td>
+	                        <td></td>
+	                    </tr>
                     </tbody>
                 </table>
   				<br>
             </div>
-            
-            <div class="form-group" id="director">
+
+			<div class="form-group" id="employer">
 				<p class="bold-small">Director details</p>
-	            <table>
+	            <table id="employer_table">
                     <tbody>
-                    	<tr class="group-heading">
-                    		<td>???</td>
-                        	<td id="employment-status">???</td>
-                        	<td><a href="employment_status.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
+	                    <tr class="group-heading">
+	                       <td class="col-sm-7">Directorships</td>
+	                        <td class="col-sm-2">2</td>
+	                        <td class="col-sm-3"><a href="add_director.html?loop=true">Edit</a></td>
+	                        <td></td>
+	                    </tr>
                     </tbody>
                 </table>
   				<br>
             </div>
 
-
+            
+    
 
 
      
