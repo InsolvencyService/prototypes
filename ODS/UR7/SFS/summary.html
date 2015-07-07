@@ -73,6 +73,14 @@
 		.value, .totalvalue {
 			text-align:right;
 		}
+		
+		table tr.group-title{
+			width:50%;
+}
+		table tr.actions{
+			width:30%;
+}
+
     </style>
 
 
@@ -164,15 +172,16 @@
 
                                 <div class="form-group">
                                     <table>
-                                        <tbody>
+                                        <tbody class="group-title">
                                             <tr class="group-heading" id="income1">
-                                                <td>Salary or wages</td>
-                                                <td class="value"></td>
-                                                <td style="white-space:nowrap">
+                                                <td class="group-title">Salary or wages</td>
+                                                <td class="actions">
                                                     <a href="1a.html" class="next edit button">Start</a><br/>
                                                     <a href="#" class="declare" id="btn-no">I don't receive any salary or wages</a>
 
                                                 </td>
+
+                                                <td class="value">&nbsp;</td>
 
                                             </tr>
 
@@ -180,27 +189,32 @@
                                                 <td>
                                                     Benefits
                                                 </td>
-                                                <td class="value"></td>
-                                                <td style="white-space:nowrap">
+                                                <td  class="actions">
                                                     <a href="2.html" style="display:none" class="edit">Edit</a><br />
                                                     <a href="#" style="display:none" class="declare" id="btn-nobenefits">I don't receive benefits</a>
                                                 </td>
 
+                                                <td class="value"></td>
+
                                             </tr>
                                             <tr class="group-heading pensionable" id="income3">
                                                 <td>Pensions</td>
-                                                <td class="value"></td>
-                                                <td>
+                                                <td class="actions">
                                                     <a href="3-pensions.html" style="display:none" class="edit">Edit</a>
                                                 </td>
+
+                                                <td class="value"></td>
 
                                             </tr>
 
                                             <tr class="group-heading" id="income4">
                                                 <td>
                                                     Contributions from others</td>
+                                                <td class="actions"><a href="3-contributions.html" style="display:none" class="edit">Start</a><br />
+                                                    <a href="#" style="display:none" class="declare">I have no contributions</a>
+												</td>
+
                                                 <td class="value">&nbsp;</td>
-                                                <td><a href="3-contributions.html" style="display:none" class="edit">Start</a></td>
 
                                             </tr>
 
@@ -208,20 +222,21 @@
                                                 <td>
                                                     Other income
                                                 </td>
-                                                <td class="value"></td>
-                                                <td>
+                                                <td class="actions">
                                                     <a href="4-other-income.html" style="display:none" class="edit">Edit</a><br />
                                                     <a href="#" style="display:none" class="declare">I do not have other income</a>
 
                                                 </td>
 
+                                                <td class="value"></td>
+
                                             </tr>
 
                                             <tr class="group-heading totalrow" id="incometotal">
-                                                <td><span style="float:right">Total</span></td>
-                                                <td class="totalvalue"></td>
+                                                <td></td>
                                                 <td class="actions">
-                                                </td>
+                                                <span style="float:right; width:100%">Total</span></td>
+                                                <td class="totalvalue"></td>
                                             </tr>
 
                                         </tbody>
@@ -239,71 +254,77 @@
                             <div class="heading-medium">Expenses</div>
                             <div class="form-group">
                                 <table id="fixed">
-                                    <tbody>
+                                    <tbody class="group-title">
                                         <tr class="group-heading" id="costs1">
-                                            <td>Home and utilities</td>
-                                            <td class="value"></td>
-                                            <td>
+                                            <td class="group-title">Home and utilities</td>
+                                            <td class="actions">
                                                 <a href="expenses1.html" class="edit">Start</a>
                                             </td>
+                                            
+                                            <td class="value"></td>
                                             
                                         </tr>
 
                                         <tr class="group-heading" id="costs2">
                                             <td>Pension, insurance and health care</td>
-                                            <td class="value"></td>
                                             <td>
                                                 <a href="expenses2.html" style="display:none" class="edit">Edit</a>
                                             </td>
                                             
+                                            <td class="value"></td>
+                                            
                                         </tr>
                                         <tr class="group-heading" id="costs3">
                                             <td>Food and housekeeping</td>
-                                            <td class="value"></td>
                                             <td>
                                                 <a href="expenses3.html" style="display:none" class="edit">Edit</a>
                                             </td>
+                                            
+                                            <td class="value"></td>
                                             
                                         </tr>
 
                                         <tr class="group-heading" id="costs4">
                                             <td>Transport and travel</td>
-                                            <td class="value"></td>
                                             <td>
                                                 <a href="expenses4.html" style="display:none" class="edit">Edit</a>
                                             </td>
+                                            <td class="value"></td>
                                         </tr>
                                         <tr class="group-heading" id="costs5">
                                             <td>Childcare and maintenance</td>
-                                            <td class="value"></td>
                                             <td>
                                                 <a href="expenses5.html" style="display:none" class="edit">Edit</a>
                                             </td>
                                             
+                                            <td class="value"></td>
+                                            
                                         </tr>
                                         <tr class="group-heading" id="costs6">
                                             <td>Personal and leisure</td>
-                                            <td class="value"></td>
                                             <td>
                                                 <a href="expenses6.html" style="display:none" class="edit">Edit</a>
                                             </td>
+                                            
+                                            <td class="value"></td>
                                             
                                         </tr>
 
                                         <tr class="group-heading" id="costs7">
                                             <td>Regular savings, fines and other expenses</td>
-                                            <td class="value"></td>
                                             <td>
                                                 <a href="expenses7.html" style="display:none" class="edit">Edit</a>
                                             </td>
                                             
+                                            <td class="value"></td>
+                                            
                                         </tr>
                                         <tr class="group-heading totalrow" id="coststotal">
-                                            <td><span style="float:right">Total</span></td>
-                                            <td class="totalvalue"></td>
-                                            <td class="actions">
-                                                &nbsp;
+                                            <td></td>
+                                            <td class="actions" style="text-align:right">
+                                               <span style="float:right;">Total</span>
                                             </td>
+                                            <td class="totalvalue"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -394,6 +415,11 @@
         <script type="text/javascript" src="../../assets/js/sfs.js"></script>
 
         <script type="text/javascript">
+            var itemnumber = 0;
+            var stage = "income";
+            var page = 1;
+            var pensionable = false;
+
             $(document).ready(function () {
                 var reset = getParameterByName("reset");
 
@@ -404,7 +430,7 @@
 				var defaultnext = $(".next").first().attr("href");
                 $("#next").hide();
 				$(".pensionable").hide();
-				var pensionable = false;
+
 				if (getParameterByName("pensionable") && getParameterByName("pensionable").length > 0){
                 	pensionable = getParameterByName("pensionable");
                 
@@ -413,12 +439,13 @@
                     $(".next").attr("href", defaultnext);
                 }
 
-                var stage = getParameterByName("stage");
-                var page = getParameterByName("page");
-                if (page == null)
-                {
-                    page = 1;
-                }
+				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
+				    stage = getParameterByName("stage");
+				}
+				if (getParameterByName("page") && getParameterByName("page").length > 0) {
+				    page = getParameterByName("page");
+				}
+
                 if (stage && stage.length > 0) {
                     $("a.edit").removeClass("button").hide();
                     if (stage == "income") {
@@ -437,45 +464,51 @@
                     }
                 }
 
-                if (page && page.length > 0) {
-                    var itemnumber = parseInt(page);
-                    var previous = itemnumber - 1;
-                    $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
-                    if (stage == "income" && itemnumber == 2 && pensionable == false) {
-                        itemnumber += 1;
-                    }
-                    $("#" + stage + itemnumber + " a.edit").show().text("Edit");
-                    for (i = 1; i < itemnumber; i++) {
-                        $("#" + stage + i + " a.edit").text("Edit").show();
-                    }
+ 
+                itemnumber = parseInt(page);
+                var previous = itemnumber - 1;
+                $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
+                if (stage == "income" && itemnumber == 2 && pensionable == false) {
                     itemnumber += 1;
-                    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
-                    if (stage == "income" && itemnumber > 5) {
-                        $("#costs1 a.edit").addClass("button").text("Start");
-                    }
-                    if (stage == "costs" && itemnumber > 7) {
-                        $("#next").show();
-                    }
-                     if (stage == "income" && itemnumber == 2) {
-                        $("#income2 .declare").show();
-                    }
-               }
+                }
+                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
+                for (i = 1; i < itemnumber; i++) {
+                    $("#" + stage + i + " a.edit").text("Edit").show();
+                }
+                if (stage == "income") {
+                    $(".declare").hide();
+                }
+
+                //itemnumber += 1;
+
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+                $("#" + stage + itemnumber +  " .declare").show();
+
+                if (stage == "income" && itemnumber > 5) {
+                    $("#costs1 a.edit").addClass("button").text("Start");
+                }
+                if (stage == "costs" && itemnumber > 7) {
+                    $("#next").show();
+                }
+
+
 
 
 				var defaultnext = $(".next").first().attr("href");
- 
-				$("#btn-no").on("click", function(){
-                   $("#income1 a.edit").removeClass("button").text("Edit");
-                   $("#btn-no").hide();
-                   $("#income2 a.edit").show().addClass("button").text("Start");
-				
+				$(".declare").on("click", function () {
+				    $("#" + stage + itemnumber + " .declare").hide();
+				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
+				    itemnumber = itemnumber + 1;
+				    if (itemnumber == 3 && pensionable == false) {
+				        itemnumber = 4;
+				    }
+				    $("#" + stage + itemnumber + " .declare").show();
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+				    if (stage == "income" && itemnumber == 6) {
+				        $("#costs a.edit").first().text("Start").addClass("button").show();
+				    }
 				});
-				$("#btn-nobenefits").on("click", function(){
-                   $("#income2 a.edit").removeClass("button").text("Edit");
-                   $("#btn-nobenefits").hide();
-                   $("#income4 a.edit").show().addClass("button").text("Start");
-				
-				});
+
 				
             });
 
