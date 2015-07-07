@@ -763,6 +763,7 @@ Employment details 2
 		                if (section1 && section1 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");
 	                        $("#section2 .edit").show().addClass("button").text("Start");
+	                        document.title = 'Overview - Employment';
 	                    }
               
 	                    if (section4 == "inprogress") {
@@ -770,20 +771,20 @@ Employment details 2
 	                    }
 		                if (section2 && section2 == "complete") {
 	                         $("#section1 .edit").show().removeClass("button").text("Edit");
-	                        $("#section2 .edit").show().text("Edit");
+	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().addClass("button").text("Start");
 	                        document.title = 'Overview - Bank';
 	                    }
 	                    if (section3 && section3 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");
-	                        $("#section2 .edit").show().text("Edit");
+	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().addClass("button").text("Start");
-	                        document.title = 'Overview - Money you owe';
+	                        document.title = 'Overview';
 	                    }
 	                    if (section4 && section4 == "complete") {
 	                         $("#section1 .edit").show().removeClass("button").text("Edit");
-	                        $("#section2 .edit").show().text("Edit");
+	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().text("Edit");
 	                        $("#section5 .edit").show().addClass("button").text("Start");
@@ -791,7 +792,7 @@ Employment details 2
 	                    }
 	                    if (section5 && section5 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");
-	                        $("#section2 .edit").show().text("Edit");
+	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().text("Edit");
 	                        $("#section5 .edit").show().text("Edit");
@@ -800,7 +801,7 @@ Employment details 2
 	                    }
 	                    if (section6 && section6 == "complete") {
 	                         $("#section1 .edit").show().removeClass("button").text("Edit");
-	                        $("#section2 .edit").show().text("Edit");
+	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().text("Edit");
 	                        $("#section5 .edit").show().text("Edit");
