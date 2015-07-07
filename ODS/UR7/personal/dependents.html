@@ -185,7 +185,7 @@ display:block;
 	
 	<h1 class="form-title heading-large">Your other dependents</h1>
 	
-	
+	<div class="form-hint">We need to know about any people you support by paying for their care or living expenses, who don't live with you.</div>
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -194,19 +194,9 @@ display:block;
 
 
 
-
+	<h2 class="heading-medium">Dependents</h2>
         <div id="familylist">
- 			<div class="form-group">
-            <label  class="heading-medium">Tell us about any dependants who don’t live with you</label>
-			<div class="form-hint">Include anyone whose care or living expenses you pay for</div>
-                <input class="form-control input-lg" id="name" style="width:250px; display:inline-block; margin-right:15px" placeholder="First name Last name">
-                <a href="add-dependent.html" class="button">Add a dependent</a><br/>
-                <a href="summary.html" id="livealone">No dependents to add</a>
-
-            </div>
-        
-  
-                <table style="width: 100%" class="dependents">
+                     <table style="width: 100%" class="dependents">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -228,6 +218,18 @@ display:block;
                         </tr>
                     </tbody>
                 </table>
+                
+ 			<div class="form-group">
+            <label  class="heading-medium">Enter the dependent's name below. You can add more later</label>
+			<div class="form-hint">For example, Jane Smith</div>
+                <input class="form-control input-lg" id="name" style="width:250px; display:inline-block; margin-right:15px" placeholder="First name Last name">
+                <a href="add-dependent.html" class="button">Add a dependent</a><br/>
+                <a href="summary.html" id="livealone">No dependents to add</a>
+
+            </div>
+        
+  
+   
 </div>
         <p class="clearfix"><br/></p>
 
