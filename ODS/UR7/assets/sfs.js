@@ -14,16 +14,15 @@
     }
 
     var summaryurl = $("#next").prop("href");
-    var addnum = 0;
+ 
     if (summaryurl.indexOf("&") <= 0) {
         summaryurl = $(".form-hint > a").prop("href");
-        addnum = 1;
     }
     var thispage = 1;
     var stage = "income";
 
     if (summaryurl && summaryurl.indexOf("&") > 0) {
-        thispage = parseInt(summaryurl.match(/(\d+)$/)[0], 10) + addnum;
+        thispage = parseInt(summaryurl.match(/(\d+)$/)[0], 10) - 1;
         stage = summaryurl.substring(summaryurl.indexOf("=") + 1, summaryurl.lastIndexOf("&"));
     }
     var total = 0;

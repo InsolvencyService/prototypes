@@ -422,7 +422,7 @@ table td[class*=col-], table th[class*=col-]{
         <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
         <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-        <script type="text/javascript" src="../../assets/js/sfs.js"></script>
+      <!--  <script type="text/javascript" src="../assets/js/sfs.js"></script>-->
 
         <script type="text/javascript">
             var itemnumber = 0;
@@ -522,7 +522,7 @@ table td[class*=col-], table th[class*=col-]{
             function totalincome() {
                 var totalamount = 0;
                 var item = "income";
-                for (i = 1; i < 6; i++) {
+                for (i = 1; i < 7; i++) {
                     var amount = $.cookie(item + i);
                     if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
                         $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
