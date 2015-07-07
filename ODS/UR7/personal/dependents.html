@@ -110,6 +110,22 @@ display:block;
 	  display: table-cell;
 }
 
+.halfwidth{
+  float: left;
+  margin-right: 15px;
+  clear: none;
+	width:35%;
+}
+.partwidth{
+  float: left;
+  margin-right: 0;
+  clear: none;
+	width:15%;
+	margin-top:23px;
+}
+
+.inline-group{
+}
 </style>
 <!-- #EndEditable -->
 
@@ -185,7 +201,7 @@ display:block;
 	
 	<h1 class="form-title heading-large">Your other dependents</h1>
 	
-	<div class="form-hint">We need to know about any people you support by paying for their care or living expenses, who don't live with you.</div>
+	<div class="form-hint">We need to know about people who don't live with you that you support by paying for their care or living expenses.</div>
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -218,20 +234,35 @@ display:block;
                         </tr>
                     </tbody>
                 </table>
-                
- 			<div class="form-group">
-            <label  class="heading-medium">Enter the dependent's name below. You can add more later</label>
-			<div class="form-hint">For example, Jane Smith</div>
-                <input class="form-control input-lg" id="name" style="width:250px; display:inline-block; margin-right:15px" placeholder="First name Last name">
-                <a href="add-dependent.html" class="button">Add a dependent</a><br/>
-                <a href="summary.html" id="livealone">No dependents to add</a>
+	<div class="form-group ">
+	
+	<fieldset class="inline-group">
+	<legend class="form-label">Enter the dependent's name below. You can add more later</legend>
+	
+	<span class="form-hint">For example, Jane Smith</span>
+	<div class="form-group halfwidth">
+		 <label for="firstname">First name</label>
+			<input id="firstname"  />
+	</div>
+	<div class="form-group halfwidth">
+		 <label for="lastname">Last name</label>
+		<input id="lastname"  />
+	</div>
+	<div class="form-group partwidth">
+                <a href="add-dependent.html" class="button">Add</a><br/>
+	</div>
 
-            </div>
+	</fieldset>
+	<p  class="clearfix"><br/></p>
+                <a href="summary.html" id="livealone" class="button">No dependents to add</a>
+
+	</div>
+			<p class="clearfix"><br></p>
         
   
    
 </div>
-        <p class="clearfix"><br/></p>
+   
 
 
 
