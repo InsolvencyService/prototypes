@@ -264,7 +264,7 @@ display:block;
 			<div class="form-navigation form-group">
 			<div>
 					<p>&nbsp;</p>
-					<a class="button" id="next">Add partner</a><br>
+					<a class="button" id="next" href="list_partnerships.html?loop=true">Add partner</a><br>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -401,7 +401,7 @@ $("#next").click(function(){
 	$.cookie("business"+x+"_partner_count", count);
 	$.cookie("business"+x+"_partner_name"+count, $("#firstname").val()+" "+$("#lastname").val());
 	$.cookie("business"+x+"_partner_address"+count, partner_address);
-	$("#next").prop("href","add_partnership.html");
+	//$("#next").prop("href","add_partnership.html");
 });
 
 

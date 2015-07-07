@@ -235,7 +235,7 @@ display:block;
 				<div class="form-hint">For example 11 Place Street<br><br></div>
 	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
 	                <a id="add_address" class="button"><span class="firsttime">Add address</span><span class="repeat">Add another address</span></a>
-	                <p><br><a href="trading_1.html" class="button family" id="next" ><span class="repeat">Continue - I have added all my business addresses</span>
+	                <p><br><a href="business_additional.html" class="button family" id="next" ><span class="repeat">Continue - I have added all my business addresses</span>
 	                <span class="firsttime">Continue - I have added all my business addresses</span></a></p>
 	    	</div>
             
@@ -349,7 +349,7 @@ $(document).ready(function() {
 
 	$("#next").click(function(){
 		if($.cookie("business"+x+"_type") == "Partnership"){
-			$("#next").attr("href", "partner_detail.html");
+			$("#next").attr("href", "list_partnerships.html");
 		}
 		else{
 			$("#next").attr("href", "business_additional.html");
