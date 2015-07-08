@@ -397,9 +397,9 @@ $(document).ready(function() {
 	if($.cookie('business_name_temp')){
 		$("#businesses .count").text("1");
 	}
-	if($.cookie("trading_count") && parseInt($.cookie("trading_count"))){
-		if (parseInt($.cookie("trading_count") > 0)){
-			$("#businesses .count").text($.cookie("trading_count"));
+	if($.cookie("business_id") && parseInt($.cookie("business_id"))){
+		if (parseInt($.cookie("business_id") > 0)){
+			$("#businesses .count").text($.cookie("business_id"));
 		}
 	}
 
