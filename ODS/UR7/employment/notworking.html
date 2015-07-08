@@ -313,17 +313,19 @@ display:block;
 
 $(document).ready(function() {
 	var status = "Retired";
+	
 	$("#retired").click(function(){
 		status = "Retired";
+		$.cookie("employment_status", status);
 	});
 	$("#student").click(function(){
 		status = "Student";
+		$.cookie("employment_status", status);
 	});
 	$("#notworking").click(function(){
 		status = "Not working";
+		$.cookie("employment_status", status);
 	});
-	
-	$.cookie("employment_status", status);
 });
 
 
