@@ -386,7 +386,7 @@ $(document).ready(function() {
 	//var traded = getParameterByName("trading");
 	//var director = getParameterByName("director");
 	var num = 1;
-	if($.cookie('employed') && $.cookie('employed').length > 0){
+	if($.cookie('employed') == null){
 		$("#employers .count").text($.cookie("employer_count"));
 	}
 	else{
