@@ -377,7 +377,11 @@ $(document).ready(function() {
 	if ($.cookie("occupations_temp") && $.cookie("occupations_temp").length){
 	}
 	
-	$("#employment-status").text($.cookie('employed'));
+	var empstatus = $.cookie('employed');
+	if ($.cookie("employment_status") && $.cookie("employment_status").length > 0){
+		empstatus = $.cookie("employment_status");
+	}
+	$("#employment-status").text(empstatus);
 
 	//var traded = getParameterByName("trading");
 	//var director = getParameterByName("director");

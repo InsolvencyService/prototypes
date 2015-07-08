@@ -212,7 +212,7 @@ display:block;
 				<label id="occupations_label" for="occupations" class="form-label-bold">
 				Are you currently:</label>
 		
-				<div id="employment-yesno" class="form-group inline">
+				<div id="employment-status" class="form-group inline">
 					<label id="title_label0" for="retired" class="block-label">
 					<input id="retired" value="Retired" name="retired" type="radio" aria-describedby="title_error title_help">Retired</label>
 	
@@ -312,8 +312,18 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
+	var status = "Retired";
+	$("#retired").click(function(){
+		status = "Retired";
+	});
+	$("#student").click(function(){
+		status = "Student";
+	});
+	$("#notworking").click(function(){
+		status = "Not working";
+	});
 	
-
+	$.cookie("employment_status", status);
 });
 
 
