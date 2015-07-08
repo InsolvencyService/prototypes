@@ -386,21 +386,22 @@ $(document).ready(function() {
 		$("#employers .count").text($.cookie("employer_count"));
 	}
 	else{
-		$("#employers").hide();
+		$("#employers .count").text("0");
 	}
 	
 	if($.cookie('business_name_temp') && $.cookie('business_name_temp').length > 0){
-		$("#businesses .count").text(1);
+		$("#businesses .count").text("1");
 	}
 	else{
-		$("#businesses").hide();
+		$("#businesses .count").text("0");
+
 	}
 
 	if($.cookie('director_count') && $.cookie('director_count').length > 0){
 		$("#directorships .count").text($.cookie("director_count"));
 	}
 	else{
-		$("#directorships").hide();
+		$("#directorships .count").text("0");
 	}
 
 //	$("#NINO").text($.cookie('NI_number'));
