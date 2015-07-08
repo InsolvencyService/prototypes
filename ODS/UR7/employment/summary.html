@@ -393,13 +393,16 @@ $(document).ready(function() {
 		$("#employers .count").text("0");
 	}
 	
-	if($.cookie('business_name_temp') && $.cookie('business_name_temp').length > 0){
+	$("#businesses .count").text("0");	
+	if($.cookie('business_name_temp')){
 		$("#businesses .count").text("1");
 	}
-	else{
-		$("#businesses .count").text("0");
-
+	if($.cookie("trading_count") && parseInt($.cookie("trading_count"))){
+		if (parseInt($.cookie("trading_count") > 0)){
+			$("#businesses .count").text($.cookie("trading_count"));
+		}
 	}
+
 
 	if($.cookie('director_count') && $.cookie('director_count').length > 0){
 		$("#directorships .count").text($.cookie("director_count"));
