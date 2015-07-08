@@ -398,20 +398,17 @@ $(document).ready(function() {
     	number = parseInt($.cookie('familymembers')); 
 	}
 	
-	var membername = $.cookie('partner-name');
-	var memberfirstname = "Susan";
-	var memberlastname = "Bagley";	
+	var firstname = $.cookie('firstname');
+	var lastname = $.cookie('lastname');
 	
-	if (membername && membername.length >1){
-		memberfirstname  = membername.split(' ')[0];
-		
-		if (membername.indexOf(" ") > -1){
-			memberlastname = membername.substring(membername.lastIndexOf(" ") + 1);
-		}
+	if (firstname && firstname.length > 0){
+		$("#first_name").val(titleCaps(firstname));
+		if (lastname){
+			$("#last_name").val(titleCaps(lastname.toLowerCase()))		}
 	}
 	
-	$("#first_name").val(titleCaps(memberfirstname));
-	$("#last_name").val(titleCaps(memberlastname.toLowerCase()));				
+	
+	;				
 
 	var normalroute = $("#next").prop("href");
 

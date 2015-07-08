@@ -387,6 +387,14 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
+	var firstname = $.cookie('firstname');
+	var lastname = $.cookie('lastname');
+	
+	if (firstname && firstname.length > 0){
+		$("#first_name").val(titleCaps(firstname));
+		if (lastname){
+			$("#last_name").val(titleCaps(lastname.toLowerCase()))		}
+	}
 
 
 	var housename;
