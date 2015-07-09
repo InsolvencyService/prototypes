@@ -207,7 +207,8 @@ display:block;
 	<h1 class="form-title heading-large"><span class="firsttime">Self employed businesses</span><span class="repeat">Your self employed businesses</span></h1>
 
 	<div class="col-md-9">
-		<div class="form-hint">We need to know if in the last 3 years you been self employed or a partner in a business (not including Limited Liability Partnerships). 			<br>You do not need to include companies already added.</div>
+		<div class="form-hint">We need to know if in the last 3 years you been self employed or a partner in a business (not including Limited Liability Partnerships).</div>
+        <p id="director-text" style="display:none">You do not need to include <span class="companylist"></span>.</p>
 
 		<form class="form" method="post">
 			
@@ -278,7 +279,7 @@ display:block;
 			
 	            <p>&nbsp;</p>			
 			<div class="form-group">
-				<label  class="form-label-bold"><span class="firsttime">Enter the business name</span><span class="repeat">Enter another business name</span></label>
+				<label  class="form-label-bold"><span class="firsttime">Enter the business name</span><span class="repeat">Enter another business</span></label>
 				<div class="form-hint">For example, ABC Limited<br><br></div>
 	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
 	                <a id="add_business" class="button" href="add_business.html"><span class="firsttime">Add business</span>
@@ -291,7 +292,7 @@ display:block;
 		</form>
 			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
-					<a href="javascript:history.go(-1)">Back</a>
+					<a href="list_directorships.html?loop=true">Back</a>
 				</div>
 		</div>		
 		<div class="col-md-3">
@@ -373,6 +374,11 @@ display:block;
 
 $(document).ready(function() {
 
+	var directorcount = $.cookie("director_count");
+	if (directorcount && parseInt(directorcount) > 0){
+		$("#director-text").show();
+		$(".companylist").text(getcompanies(directorcount));
+	}
 	var x = $.cookie("business_id");
 	$("#business_name").text($.cookie('business'+x+'_name'));
 
@@ -428,6 +434,21 @@ $("#add_business").click(function(){
 	
 });
 	
+function getcompanies(count){
+		var companytext = "";
+        for (i = 1; i <= count; i++) {
+            if (i > 1){
+                if (i == count){
+                	companytext = companytext + " or ";
+                }
+                else{
+                	companytext = companytext + ", ";
+                }
+            }
+			companytext = companytext + $.cookie("director_company_name"+i);				
+        }
+		return companytext;
+}
 
 </script>
 

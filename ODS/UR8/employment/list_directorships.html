@@ -204,12 +204,12 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Director details</h1>
+	<h1 class="form-title heading-large"><span class="firsttime">Directorships</span><span class="repeat">Your directorships</span></h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-		<p>We need to know about companies you have been a director of in last 12 months.</p>	
+		<p>We need to know if you have been a director of a limited company in the last 12 months.</p>	
 			
-			<div id="pnl-director_table">
+			<div id="pnl-director_table" class="repeat">
 	            <table style="width: 100%" class="family">
 	                <thead>
 	                    <tr>
@@ -226,14 +226,26 @@ display:block;
 	            </table>
 	            <p>&nbsp;</p>
 			</div>
-			
+
+	<div class="validation-summary" style="display:none">
+                <h2>Please check your answers</h2>
+                <p></p><ol>     
+        <li class="error-message">
+
+            <p>You are entering a company name that does include <strong>Ltd</strong>, <strong>Limited</strong>, <strong>LLP</strong>, <strong>Limited liability partnership</strong>
+             or <strong>PLC</strong>, are you sure you wish to proceed?</p>
+
+        </li>
+                </ol>
+            </div>
+
 			<div class="form-group">
-				<label  class="form-label-bold"><span class="other1">Enter the company name</span><span class="other">Enter another company name</span></label>
+				<label  class="form-label-bold"><span class="firsttime">Enter the company name</span><span class="repeat">Enter another company name</span></label>
 				<div class="form-hint">This includes any limited companies, public liability companies and limited liability partnerships.<br><br></div>
 	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-	                <a id="add_directorship" class="button">Add <span class="other">another </span>company</a>
-	                <p class="other1"><br><a href="list_businesses.html" class=" button" id="next">Continue - I haven't been a director of a company</a></p>
-	                <p class="other"><br><a href="list_businesses.html" class="button family" id="next">Continue - I have added all my directorships</a></p>
+	                <a id="add_directorship" class="button" href="director_detail.html">Add <span class="repeat">another </span>company</a>
+	                <p class="firsttime"><br><a href="list_businesses.html" class=" button" id="next">Continue - I haven't been a director of a company</a></p>
+	                <p class="repeat"><br><a href="list_businesses.html" class="button family" id="next">Continue - I have added all my directorships</a></p>
 	            </div>
             
             
@@ -316,17 +328,12 @@ display:block;
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="../assets/loop.js"></script>
 	
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
-	$("#pnl-director_table").hide();
-	
-	
-
-	
+		
 	var count;
 	var row;
 	count = $.cookie("director_count");
@@ -334,19 +341,19 @@ $(document).ready(function() {
 		count=0;
 
 	}
-	
+/*	
 	if(count > 0){
 		$("#pnl-director_table").show();
-		$(".other").show();
-		$(".other1").hide();
+		$(".repeat").show();
+		$(".firsttime").hide();
 	}
 	else{
 		$("#pnl-partner_table").hide();
-		$(".other").hide();
-		$(".other1").show();
+		$(".repeat").hide();
+		$(".firsttime").show();
 
 	}
-	
+*/	
 		
 	for(var i=1; i<=count; i++){
 		row = "<tr><td>"
@@ -363,10 +370,16 @@ $(document).ready(function() {
 	
 });
 
-$("#add_directorship").click(function(){
+$("#add_directorship").click(function(e){
 	var directorname = $("#name").val();
-	$.cookie("director_name", directorname);
-	$("#add_directorship").prop("href","director_detail.html");
+	if (isvalidcompany(directorname) == true){
+		$.cookie("director_name", directorname);
+		$("#add_directorship").prop("href","director_detail.html");
+	}
+	else{
+		e.preventDefault();
+		$(".validation-summary").show();
+	}
 	
 });
 
@@ -377,7 +390,15 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function isvalidcompany(companyname){
+	var name = companyname.toLowerCase();
+	if (name.indexOf("limited") > -1 || name.indexOf("ltd") > -1 || name.indexOf("llp") > -1 || name.indexOf("plc") > -1){
+		return true;
+	}
 
+	return false;
+
+}
 
 </script>
 

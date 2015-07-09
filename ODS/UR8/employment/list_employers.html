@@ -205,8 +205,9 @@ display:block;
 
 <div class="inner-block">	
 	<h1 class="form-title heading-large">Employment history</h1>
-	<div class="form-hint">We need to know about your employment in the last 12 months.
-		<br>You do not need to include companies or businesses already entered. </div>
+	<div class="form-hint">We need to know about your employment in the last 12 months.</div>
+    <p id="director-text" style="display:none">You do not need to include <span class="companylist"></span><span class="businesslist">.</span>.</p>
+
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
@@ -346,6 +347,20 @@ $(document).ready(function() {
 			
 		}
 	}
+	var directorcount = $.cookie("director_count");
+	if (directorcount && parseInt(directorcount) > 0) {
+	    $("#director-text").show();
+	    $("#director-text .companylist").text(getcompanies(directorcount));
+	}
+	var businesscount = $.cookie("business_id");
+	if (businesscount && parseInt(businesscount) > 0) {
+	    $("#director-text").show();
+	    var businesstext = getbusinesses(businesscount);
+	    if (directorcount > 0) {
+	        businesstext = " or " + businesstext;
+	    }
+	    $(".businesslist").text(businesstext);
+	}
 });
 
 $("#add_employer").click(function(){
@@ -354,6 +369,40 @@ $("#add_employer").click(function(){
 	$("#add_employer").prop("href","employers.html");
 	
 });
+
+
+function getcompanies(count) {
+    var companytext = "";
+    for (i = 1; i <= count; i++) {
+        if (i > 1) {
+            if (i == count) {
+                companytext = companytext + " or ";
+            }
+            else {
+                companytext = companytext + ", ";
+            }
+        }
+        companytext = companytext + $.cookie("director_company_name" + i);
+    }
+    return companytext;
+}
+
+
+function getbusinesses(count) {
+    var companytext = "";
+    for (i = 1; i <= count; i++) {
+        if (i > 1) {
+            if (i == count) {
+                companytext = companytext + " or ";
+            }
+            else {
+                companytext = companytext + ", ";
+            }
+        }
+        companytext = companytext + $.cookie("business"+i+"_name");
+    }
+    return companytext;
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
