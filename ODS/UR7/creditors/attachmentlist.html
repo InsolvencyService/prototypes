@@ -647,7 +647,7 @@ display:block;
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="visitlist.html?pre=true" id="back">Back</a>
+        <a style="padding-right: 30px" href="visitlist.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -722,6 +722,7 @@ $(document).ready(function() {
 	if (pre && pre.length > 0)
 	{
 		$(".pre").show();
+		$("#back").prop("href", $("#back").prop("href") + "?pre=true");
 	}	
 	
 	var reset = getParameterByName("reset");
