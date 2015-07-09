@@ -70,38 +70,10 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
+
+
 
 
 .row img{
@@ -122,16 +94,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right;
-}
-.totalrow td{
-	font-weight:bold !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -189,135 +151,94 @@ display:block;
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
-	This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+    This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
 	</div>
 	
 
 
-<!-- #BeginEditable "content" --> 
-<div class="inner-block text">
+<!-- #BeginEditable "content" -->
+
+        
 	
-	<h1 class="form-title heading-large">Creditors summary</h1>
+	<div class="content">
+ 
+<div class="row" style="margin-left:15px;margin-right:15px;">
+    <div class="col-sm-8">
 
 
-			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
 
-			<div class="form-group" id="employer">
-				<p class="bold-small">Creditors</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of creditors</td>
-                        	<td>2</td>
-                        	<td><a href="list.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="visitlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="attachmentlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
 
-                </table>
-  				<br>
+        <h1 class="form-title heading-large">Apply for bankruptcy</h1>
+
+
+
+
+
+        <p>
+            Start your application for bankruptcy by providing these details:
+        </p>
+        <ol class="list-bullet text"><li>Your email</li><li>Your date of birth</li><li>Your address</li>
+        </ol>
+
+        <p>You can complete the application in your own time, and your details will be saved securely.</p>
+        <p></p>
+
+
+
+        <!-- For User research -->
+        <div>
+
+            <div>
+
+                <a href="brian/signin2/firsttime.html" class="button">Start now</a>
+
+
             </div>
-	<h2 class="heading-medium">Enforcement visits</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Enforcement date</th>
-						<th class="text-left">Value seized</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
+            <div>
+                <br>
+            </div>
+
+            <div>
+
+
+
+
+            </div>
+            <div>
+                <p>
+
+
+                </p>
+            </div>
+
+        </div>
+    </div>	
+	<div class="col-sm-4">
+		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef;">
+		<p><a href="../../calc-FindDebtAdviser.html" style="display:none">Find a qualified adviser</a></p>
+
+		<p><a href="brian/continue/return2.html">I am returning to an existing application</a></p>
+			<p><a href="payments/payments-external.html" class="payment">Pay a fee for a 
+			bankrutpcy application</a></p>
+		
 		</div>
-	</form>
-<p><br></p>
-
-	<h2 class="heading-medium">Attachments of earnings</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Frequency</th>
-						<th class="text-left">Amount</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
-
+	</div>
 
 
 <p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<a class="button" href="../overview.html?section5=complete" id="next">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	
-	</div>
-
-	 <!-- #EndEditable -->
+        
+</div>
 
         
 </div>
 
 
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -364,43 +285,24 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
-
-
 <script type="text/javascript">
 $(document).ready(function() {
-	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
-	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
+                    $(".payment").hide();
+                var payment = getParameterByName("payment");
+                if (payment && payment.length > 0)
+                {
+                    $(".payment").show();
+                }
 
+
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
 
 });
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
-
 
 </script>
 

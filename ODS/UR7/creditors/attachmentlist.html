@@ -201,7 +201,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Enforcement visit</h1>
+	<h1 class="form-title heading-large">Attachment of earnings</h1>
 	<div>
 	<p>We need to know if an enforcement office or bailiff has visited you in 
 	the last 6 months</p>
@@ -606,37 +606,34 @@ display:block;
 				</td>
 
 			</tr>
-			<tr  id="row19" style="display:none">
+			<tr  class="pre" style="display:none">
 				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row20" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row21" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row22" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row23" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
+				<td class="name">ABC Limited</td>
+				<td>
+                        <fieldset class="inline">
+                            <div class="form-group visit">
+
+                                <label for="visited5_Yes" class="block-label">
+                                    <input id="visited18_Yes" class="Yes" name="visited18" type="radio">
+                                    Yes
+                                </label>
+
+                                <label for="visited18_No" class="block-label">
+                                    <input id="visited18_No" name="visited18" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+				</td>
+
 			</tr>
 
 		</tbody>
 		</table>
 </div>
 <p><br></p>
-<a class="button" href="attachmentlist.html" id="next">I have selected all creditors who visited me</a>
+<a class="button" href="summary.html" id="next">I have selected all creditors 
+		with an attachment of earnings</a>
 <p><br></p>
 	
 	<!-- For User research -->
@@ -721,6 +718,11 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+	var pre = getParameterByName("pre");
+	if (pre && pre.length > 0)
+	{
+		$(".pre").show();
+	}	
 	
 	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
@@ -819,7 +821,7 @@ $(document).ready(function() {
 	    $("input.Yes").click(function(){
 			var id  = $(this).prop("name").substring(7);
 			var creditor= $("#row" + id + " .name").text();
-			$("#next").prop("href","visit.html?row=" + id + "&name=" + creditor);
+			$("#next").prop("href","attachment.html?row=" + id + "&name=" + creditor);
 		});
 
 

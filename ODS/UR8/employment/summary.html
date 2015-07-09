@@ -70,38 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -124,15 +94,32 @@ display:block;
 	font-size:16px;
 }
 
+.inner-block.text{
+	float:left;
+	display: table-cell;
+    width:66.66666666%;
+}
+.right-block{
+	padding-top:60px;
+	width:33.33333%;
+	float:left;
+	  position: relative;
+	  min-height: 1px;
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  display: table-cell;
+}
 .btn-edit{
 	margin-right:10px;
 }
-.amount{
-	text-align:right;
+
+table td[class*=col-], table th[class*=col-]{
+			padding-left:0;
+			padding-right:20px
+
 }
-.totalrow td{
-	font-weight:bold !important;
-}
+
+
 </style>
 <!-- #EndEditable -->
 
@@ -196,128 +183,144 @@ display:block;
 	
 
 
-<!-- #BeginEditable "content" --> 
-<div class="inner-block text">
+	</div>
 	
-	<h1 class="form-title heading-large">Creditors summary</h1>
 
 
+<!-- #BeginEditable "content" --> 
+<div id="content" >
+	<div class="inner-block text">
+		<h1 class="form-title heading-large">Employment summary</h1>
+		<form class="form" method="post">
+			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 			<p class="lead text bold">
 	            Review your answers before you proceed.
 	        </p>
 
 			<div class="form-group" id="employer">
-				<p class="bold-small">Creditors</p>
+				<p class="bold-small">Employment history</p>
 	            <table id="employer_table">
                     <tbody>
                     	<tr class="group-heading">
-                    		<td>Number of creditors</td>
-                        	<td>2</td>
-                        	<td><a href="list.html">Edit</a></td>
+                    		<td>Current employment status</td>
+                        	<td id="employment-status">Employed</td>
+                        	<td><a href="list_employers.html">Edit</a></td>
                         	<td></td>
                     	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="visitlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="attachmentlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
 
+	                    <tr class="group-heading" id="employers">
+	                       <td class="col-sm-7">Employers in the last 12 months</td>
+	                        <td  class="col-sm-2 count">2</td>
+	                        <td class="col-sm-3"><a href="list_employers.html?loop=true">Edit</a></td>
+	                        <td></td>
+	                    </tr>
+                    </tbody>
                 </table>
   				<br>
             </div>
-	<h2 class="heading-medium">Enforcement visits</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Enforcement date</th>
-						<th class="text-left">Value seized</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+            
+			<div class="form-group" id="businesses">
+				<p class="bold-small">Business details</p>
+	            <table id="employer_table">
+                    <tbody>
+	                    <tr class="group-heading">
+	                       <td class="col-sm-7">Self employed and partnerships</td>
+	                        <td class="col-sm-2 count">2</td>
+	                        <td  class="col-sm-3"><a href="list_businesses.html?loop=true">Edit</a></td>
+	                        <td></td>
+	                    </tr>
+                    </tbody>
+                </table>
+  				<br>
+            </div>
 
-	<h2 class="heading-medium">Attachments of earnings</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Frequency</th>
-						<th class="text-left">Amount</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+			<div class="form-group" id="directorships">
+				<p class="bold-small">Director details</p>
+	            <table id="employer_table">
+                    <tbody>
+	                    <tr class="group-heading">
+	                       <td class="col-sm-7">Directorships</td>
+	                        <td class="col-sm-2 count">2</td>
+	                        <td class="col-sm-3"><a href="add_director.html?loop=true">Edit</a></td>
+	                        <td></td>
+	                    </tr>
+                    </tbody>
+                </table>
+  				<br>
+            </div>
+
+            
+    
+
+
+     
+
+        <p class="clearfix"></p>
+        
+        
+       
+       
+        
+        
+        <p class="clearfix"></p>
 
 
 
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<a class="button" href="../overview.html?section5=complete" id="next">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+</form> 
+  <p class="clearfix"><br/></p>
 
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
 	</div>
-	</div>
-	
-	</div>
+    <div class="right-block">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+
+                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
+            </div>
+
+
+        </div>
+
+        <p><br></p>
+
+        <!-- For User research -->
+        <div class="form-navigation form-group" style="margin-left:30px;">
+
+            <div>
+            <a href="../overview.html?section2=complete" class="button" id="next">Continue</a>
+
+            </div>
+            <div>
+                <br>
+            </div>
+
+            <div>
+                
+
+
+                <a href="#" id="cancel">Save and logout</a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -365,24 +368,50 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
 
 
 <script type="text/javascript">
 $(document).ready(function() {
+	var id = $.cookie("business_id");
+	var employed;
+	if ($.cookie("occupations_temp") && $.cookie("occupations_temp").length){
+	}
 	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
+	var empstatus = $.cookie('employed');
+	if ($.cookie("employment_status") && $.cookie("employment_status").length > 0){
+		empstatus = $.cookie("employment_status");
+	}
+	$("#employment-status").text(empstatus);
+
+	//var traded = getParameterByName("trading");
+	//var director = getParameterByName("director");
+	var num = 1;
+	if($.cookie('employed') == null){
+		$("#employers .count").text($.cookie("employer_count"));
+	}
+	else{
+		$("#employers .count").text("0");
+	}
 	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
+	$("#businesses .count").text("0");	
+	if($.cookie('business_name_temp')){
+		$("#businesses .count").text("1");
+	}
+	if($.cookie("business_id") && parseInt($.cookie("business_id"))){
+		if (parseInt($.cookie("business_id") > 0)){
+			$("#businesses .count").text($.cookie("business_id"));
+		}
+	}
 
 
+	if($.cookie('director_count') && $.cookie('director_count').length > 0){
+		$("#directorships .count").text($.cookie("director_count"));
+	}
+	else{
+		$("#directorships .count").text("0");
+	}
+
+//	$("#NINO").text($.cookie('NI_number'));
 });
 
 
@@ -391,14 +420,6 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
 }
 
 

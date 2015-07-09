@@ -70,38 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -124,14 +94,37 @@ display:block;
 	font-size:16px;
 }
 
-.btn-edit{
-	margin-right:10px;
+.inner-block.text{
+	float:left;
+	display: table-cell;
+    width:66.66666666%;
 }
-.amount{
-	text-align:right;
+.right-block{
+	padding-top:60px;
+	width:33.33333%;
+	float:left;
+	  position: relative;
+	  min-height: 1px;
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  display: table-cell;
 }
-.totalrow td{
-	font-weight:bold !important;
+
+.halfwidth{
+  float: left;
+  margin-right: 15px;
+  clear: none;
+	width:35%;
+}
+.partwidth{
+  float: left;
+  margin-right: 0;
+  clear: none;
+	width:15%;
+	margin-top:23px;
+}
+
+.inline-group{
 }
 </style>
 <!-- #EndEditable -->
@@ -196,128 +189,144 @@ display:block;
 	
 
 
+	</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
+<div id="content" >
 <div class="inner-block text">
 	
-	<h1 class="form-title heading-large">Creditors summary</h1>
+	
+	
+	<h1 class="form-title heading-large">Your other dependents</h1>
+	
+	<div class="form-hint">We need to know about people who don't live with you that you support by paying for their care or living expenses.</div>
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	
 
 
-			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
 
-			<div class="form-group" id="employer">
-				<p class="bold-small">Creditors</p>
-	            <table id="employer_table">
+	<h2 class="heading-medium">Dependents</h2>
+        <div id="familylist">
+        
+        	<div class="dependents">
+                     <table style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                            <th>Reason</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of creditors</td>
-                        	<td>2</td>
-                        	<td><a href="list.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="visitlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="attachmentlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
 
+                        <tr id="row1">
+
+                            <td class="col1" style="width:45%">Tania Bagley</td>
+                            <td class="col2">18</td>
+                            <td class="col3">33 Long STreet, Churchtown, C22 33K</td>
+                            <td class="col4">Child</td>
+                            <td class="edit"><a href="#" class="btn-edit">Edit</a>&nbsp;<a href="#" class="btn-delete">Delete</a></td>
+                        </tr>
+                    </tbody>
                 </table>
-  				<br>
+    <p class="clearfix"><br/></p>
+    </div>
+	<div class="form-group ">
+	
+	<fieldset>
+	<legend class="form-label">Enter the dependent's name below</legend>
+	
+	<span class="form-hint">For example, Jane Smith</span>
+	<div class="form-group halfwidth">
+		 <label for="firstname">First name</label>
+			<input id="firstname"  />
+	</div>
+	<div class="form-group halfwidth">
+		 <label for="lastname">Last name</label>
+		<input id="lastname"  />
+	</div>
+	<div class="form-group partwidth">
+                <a href="add-dependent.html" class="button" id="add">Add</a><br/>
+	</div>
+
+	</fieldset>
+<p class="clearfix"><br></p>
+                <a href="summary.html" id="livealone" class="button">I have no dependents to add</a>
+                <a href="summary.html" class="button dependents">I have added all dependents who don't live with me</a>
+
+	</div>
+			<p class="clearfix"><br></p>
+        
+  
+   
+</div>
+   
+
+
+
+
+</form> 
+  <p class="clearfix"><br/></p>
+
+	</div>
+    <div class="right-block">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+
+                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
             </div>
-	<h2 class="heading-medium">Enforcement visits</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Enforcement date</th>
-						<th class="text-left">Value seized</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
-
-	<h2 class="heading-medium">Attachments of earnings</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Frequency</th>
-						<th class="text-left">Amount</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
 
 
+        </div>
 
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<a class="button" href="../overview.html?section5=complete" id="next">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+        <p><br></p>
 
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	
-	</div>
+        <!-- For User research -->
+        <div class="form-navigation form-group" style="margin-left:30px;">
+
+            <div>
+
+
+            </div>
+            <div>
+                <br>
+            </div>
+
+            <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+
+                <a href="#" id="cancel">Save and logout</a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -365,23 +374,31 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
 
 
 <script type="text/javascript">
 $(document).ready(function() {
-	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
-	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
 
+	$(".dependents").hide();
+	$("#name").focus();
+	var housename;
+	
+	var pre  = getParameterByName("added");
+	if (pre && pre.length > 1){
+		$(".dependents").show();
+		$("#livealone").hide();
+	}
+	
+	$("#add").on("click", function(){
+		$.cookie('firstname', $("#firstname").val(), { expires: 1, path:'/' });
+		$.cookie('lastname', $("#lastname").val(), { expires: 1, path:'/' });		
+	
+	});
+
+	
+	var normalroute = $("#next").prop("href");
+
+	
 
 });
 
@@ -391,14 +408,6 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
 }
 
 

@@ -70,7 +70,7 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
+  <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
  .tt-dropdown-menu{
 	width:650px;
@@ -128,7 +128,7 @@ display:block;
 	margin-right:10px;
 }
 .amount{
-	text-align:right;
+	text-align:right
 }
 .totalrow td{
 	font-weight:bold !important;
@@ -196,128 +196,175 @@ display:block;
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
-<div class="inner-block text">
+<div id="content" >
+
+<div class="inner-block">	
+	<h1 class="form-title heading-large">Business details</h1>
+	<p>Please tell us about your business</p>
+	<div class="col-md-9">
+		<form class="form" method="post">
+			<div id="pnl-business" class="clearfix">
+			
+				<div class="form-group">
+					<label id="name_label0" for="name" class="form-label-bold">Business name</label>
+					<p class="form-hint">The name you use with your customers and creditors<br>For example, ABC Trading</p>
+					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+				</div>
+				
+				<p><br></p>
+				
+				<div class="form-group ">
+				<fieldset class="inline">
+				<legend id="title_label" class="form-label-bold">Are any of the business' debts under a different name?</legend>
+					<div id="traded" class="form-group">
+						<label id="title_label0" for="yes" class="block-label">
+						<input id="yes" value="yes" name="names" type="radio">Yes</label>
+		
+						<label id="title_label1" for="no" class="block-label">
+						<input id="no" value="no" name="names" type="radio">No</label>
+					</div>
+				</fieldset>
+				</div>
+				
+				<div id="pnl-names" class="form-group panel-indent">
+					<div class="form-group" id="row1">
+						<label id="name_label1" for="name" class="form-label-bold">Other business name(s)</label>
+						<br>
+						<input id="trade_name1" name="name1" type="text" value="" />
+						<a id="add_name" style="padding-left:20px">Add another</a>
+					</div>
+					
+					<div class="form-group" id="row2">
+						<br>
+						<input id="trade_name2" name="name2" type="text" value="" />
+					</div>
+					
+					<div class="form-group" id="row3">
+						<br>
+						<input id="trade_name3" name="name3" type="text" value="" />
+					</div>
+					
+					<div class="form-group" id="row4">
+						<br>
+						<input id="trade_name4" name="name4" type="text" value="" />
+					</div>
+					
+					<div class="form-group" id="row5">
+						<br>
+						<input id="trade_name5" name="name5" type="text" value="" />
+					</div>
+				</div>
+				
+				<p>&nbsp;</p>
+				
+				<div class="form-group">
+					<label id="nature_label0" for="nature" class="form-label-bold">Business type</label>
+					<p class="form-hint">For example, flower shop or construction</p>
+					<input id="nature" name="nature" type="text" value="" />
+				</div>
+				
+				<p><br></p>				
+				<div class="form-group ">				
+				<fieldset class="inline">
+				<legend id="type_label" class="form-label-bold">Is this business a partnership?</legend>
+					<div id="business-type" class="form-group">
+						<label id="type_label1" for="partner" class="block-label">
+						<input id="partner" value="partnership" name="business_type" type="radio" aria-describedby="title_error title_help">Yes</label>
+					
+						<label id="type_label0" for="self_employed" class="block-label">
+						<input id="self_employed" value="sole" name="business_type" type="radio" aria-describedby="title_error title_help">No</label>
+					</div>
+				</fieldset>
+				</div>
+				
+				<p>&nbsp;</p>
+
+				<div class="form-group ">
+					<div>
+					<fieldset  class="date-of-birth">
+						<span id="date_of_birth_label" class="form-label-bold">Date this business started trading</span>
+						<span class="form-hint" id="date_of_birth_help">For example 31 12 2011</span>
+						
+						<div class="form-group form-group-day">
+							 <label id="date_of_birth_label.day" for="start_day" >Day</label>
+							<input id="start_day" name="start.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div>
+						<div class="form-group form-group-month">
+							 <label id="date_of_birth_label.month" for="start_month">Month</label>
+							<input id="start_month" name="start.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div>
+						<div class="form-group form-group-year">
+							<label id="date_of_birth_label.year" for="start_year">Year</label>
+							<input id="start_year" name="start_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div><br>
+					</fieldset>
+					</div>
+				</div>
+				
+				<p><br></p>
 	
-	<h1 class="form-title heading-large">Creditors summary</h1>
-
-
-			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
-
-			<div class="form-group" id="employer">
-				<p class="bold-small">Creditors</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of creditors</td>
-                        	<td>2</td>
-                        	<td><a href="list.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="visitlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="attachmentlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-
-                </table>
-  				<br>
+				<div class="form-group">
+					<div>
+					<fieldset  class="date-of-birth">
+						<span id="date_of_birth_label" class="form-label-bold">Date this business stopped trading</span>
+						<span class="form-hint" id="end_help">For example 31 12 2011<br>Leave blank if it's still trading</span>
+						
+						<div class="form-group form-group-day">
+							 <label id="ceased_label.day" for="end_day" >Day</label>
+							<input id="end_day" name="end_day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div>
+						<div class="form-group form-group-month">
+							 <label id="ceased_label.month" for="end_month">Month</label>
+							<input id="end_month" name="end_month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div>
+						<div class="form-group form-group-year">
+							<label id="ceased_label.year" for="end_year">Year</label>
+							<input id="end_year" name="end_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+						</div><br>
+					</fieldset>
+					</div>
+				</div>
+			</div>			
+				
+		</form>
+			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+			<div>
+					<a class="button" id="next" href="list_business_addresses.html">Continue</a>
+			</div>
+					<a href="javascript:history.go(-1)">Back</a>
+				</div>
+		</div>		
+		<div class="col-md-3">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+            <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
             </div>
-	<h2 class="heading-medium">Enforcement visits</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Enforcement date</th>
-						<th class="text-left">Value seized</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+        </div>
 
-	<h2 class="heading-medium">Attachments of earnings</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Frequency</th>
-						<th class="text-left">Amount</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+	</div>
+</div>
 
-
-
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<a class="button" href="../overview.html?section5=complete" id="next">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	
-	</div>
 
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -366,42 +413,110 @@ display:block;
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
+<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
 
-
+	
 <script type="text/javascript">
-$(document).ready(function() {
-	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
-	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
+var count = 1;
+var x;
 
+$(document).ready(function() {
+
+	var tempname = $.cookie("business_name_temp");
+	$("#name").val(tempname);
+	
+	x = $.cookie("business_id");
+	
+	$.cookie("trading_count", 0);
+	
+	if(x == "" ||  x == null){
+		x = 0;
+	}
+	
+	$("#ceased_date").hide();
+	$("#pnl-names").hide();
+	$("#row2").hide();
+	$("#row3").hide();
+	$("#row4").hide();
+	$("#row5").hide();
+	
+	$('#add_name').click(function() {
+		if(count<5){
+			count++;
+			$("#row"+count).show();
+		}
+		if(count==5){
+			$("#add_name").hide();
+		}	
+	});
+
+});
+
+$('#traded input:radio').click(function() {
+
+	if(($("#yes").prop('checked')==true)){
+			$("#pnl-names").show();
+		}
+		else{
+			$("#pnl-names").hide();	
+		}
+		
+});
+
+
+$('#ceased input:radio').click(function() {
+	if($("#ceasedyes").prop('checked')==true){
+		$("#ceased_date").show();
+	}
+	else{
+		$("#ceased_date").hide();
+	}
 
 });
 
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+$('#next').click(function() {
+	var startdate;
+	var enddate;
+	
+	x++;
+	$.cookie("business_id", x);
+	
+	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
+	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
+	
+	if(enddate=="//"){
+		enddate="";
+	}	
+	
+	$.cookie("business"+x+"_name", $("#name").val());
+	$.cookie("business"+x+"_nature", $("#nature").val());
+	$.cookie("business"+x+"_startdate", startdate);
+	$.cookie("business"+x+"_enddate", enddate);
+	
+	for(var i = 1; i<= count; i++){
+		if($("#trade_name"+i).val()!=""){
+			$.cookie("business"+x+"_tradename"+i, $("#trade_name"+i).val());
+			$.cookie("trading_count", i);
+		}
+	}
+		
+	
+	if($("#partner").prop('checked')==true){
+		$.cookie("business"+x+"_type", "Partnership");	
+	}
+	else{
+		$.cookie("business"+x+"_type", "Sole trader");
+	}
+	
+	//$('#next').attr('href', 'business_address.html');
 
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
+});
 
 
+
+	
 </script>
 
 

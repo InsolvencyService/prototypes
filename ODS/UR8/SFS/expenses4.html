@@ -70,70 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/sfs.css">
 
-#row-total td{
-	font-weight:bold;
-}
-
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right;
-}
-.totalrow td{
-	font-weight:bold !important;
-}
-</style>
 <!-- #EndEditable -->
 
 
@@ -197,119 +135,233 @@ display:block;
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block text">
+<div class="inner-block">
 	
-	<h1 class="form-title heading-large">Creditors summary</h1>
-
-
-			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
-
-			<div class="form-group" id="employer">
-				<p class="bold-small">Creditors</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of creditors</td>
-                        	<td>2</td>
-                        	<td><a href="list.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="visitlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="attachmentlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-
-                </table>
-  				<br>
-            </div>
-	<h2 class="heading-medium">Enforcement visits</h2>
+	<p class="form-hint">
+        <a href="summary.html?stage=costs&amp;page=3">Income and expenses</a> &gt; 
+		Expenses 4 of 7
+    </p>
+	
+	
+	
+	<h1 class="form-title heading-large">Transport and travel</h1>
+	
+	
+	
 	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Enforcement date</th>
-						<th class="text-left">Value seized</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	
+	
+			<p>Enter the total amount you spend on each item. </p>
+		<p>If you and your partner, etc own multiple vehicles, include only those that you use.</p>
+			<table class="table table-condensed">
+	<thead>
+	<tr>
+	<th>&nbsp;</th>
+	<th style="width:160px; padding-right:25px">Type</th>
+	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
+	<th style="width:200px; padding-left:20px">per week / month / year</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+	<td><span class="form-label">Vehicle finance</span>
+	<span class="form-hint">Including payment for any vehicle you have purchased through a personal lease, hire purchase, conditional sale, etc</span></td>
+	<td>
+		&nbsp;</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D1">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Vehicle insurance</span></td>
+	<td>
+		&nbsp;</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D2">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Breakdown cover</span>
+	</td>
+	<td>
+		&nbsp;</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D3">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Vehicle tax</span></td>
+	<td>
+		&nbsp;</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D4">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">MOT and ongoing maintenance</span></td>
+	<td>
+		&nbsp;</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D5">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Fuel, parking and toll road charges</span>
+	</td>
+	<td>
+		&nbsp;</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D6">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+	<tr>
+	<td><span class="form-label">Public transport</span>
+	<span class="form-hint">To work, shopping, etc</span></td>
+	<td>
+		&nbsp;</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
 
-	<h2 class="heading-medium">Attachments of earnings</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Frequency</th>
-						<th class="text-left">Amount</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+	<tr id="another"  class="addanother">
+	<td>
+<h3>Add another transport expense</h3>
+		</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	</tr>
+
+	<tr class="addanother">
+	<td><label id="last_name_label" for="last_name" class="form-label">Type and amount</label>
+	</td>
+	<td>
+	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" class="form-control"  placeholder="Type" />
+</td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+	</tr>
 
 
+	<tr>
+	<td>
+<label id="last_name_label10" for="loanname" class="form-label"><i class="glyphicon glyphicon-plus"></i>&nbsp;<a href="#" id="btn-addanother">Add another transport expense</a></label>
+		</td>
+	<td>
+	&nbsp;</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	</tr>
 
-<p><br></p>
+	<tr class="totalrow">
+	<td colspan="2"><span class="form-label text-right">Total</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+		<div class="text-right amount" id="box-total"></div>
+	</td>
+	<td>
+	<div>per month</div>
+</td>
+	</tr>
+
+</table>	
+	<p class="clearfix"><br/></p>
+
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-<a class="button" href="../overview.html?section5=complete" id="next">Continue</a>
+		<a id="next" class="button" href="summary.html?stage=costs&page=5">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
 	
 	</div>
 	</div>
-	
+	</form>
 	</div>
 
 	 <!-- #EndEditable -->
@@ -365,45 +417,7 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
-	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
-
-
-});
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
-
-
-</script>
-
+<script type="text/javascript" src="../assets/sfs.js"></script>
 
 <!-- #EndEditable -->
     

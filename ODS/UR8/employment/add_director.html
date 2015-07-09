@@ -70,7 +70,7 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
+  <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
  .tt-dropdown-menu{
 	width:650px;
@@ -128,7 +128,7 @@ display:block;
 	margin-right:10px;
 }
 .amount{
-	text-align:right;
+	text-align:right
 }
 .totalrow td{
 	font-weight:bold !important;
@@ -196,128 +196,78 @@ display:block;
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
-<div class="inner-block text">
-	
-	<h1 class="form-title heading-large">Creditors summary</h1>
+<div id="content" >
 
-
-			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
-
-			<div class="form-group" id="employer">
-				<p class="bold-small">Creditors</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of creditors</td>
-                        	<td>2</td>
-                        	<td><a href="list.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="visitlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="attachmentlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-
-                </table>
-  				<br>
+<div class="inner-block">	
+	<h1 class="form-title heading-large">Director details</h1>
+	<div class="col-md-9">
+		<form class="form" method="post">
+		<p>We need to know about companies you have been a director of in last 12 months.</p>	
+			
+			<div id="pnl-director_table">
+	            <table style="width: 100%" class="family">
+	                <thead>
+	                    <tr>
+	                        <th>Company name</th>
+	                        <th>Registration Number</th>
+	                        <th>Country of registration</th>
+	                        <th>Insolvent</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
+	                </thead>
+	                <tbody id="tablebody">
+	                    
+	                </tbody>
+	            </table>
+	            <p>&nbsp;</p>
+			</div>
+			
+			<div class="form-group">
+				<label  class="form-label-bold"><span class="other1">Enter the company name</span><span class="other">Enter another company name</span></label>
+				<div class="form-hint">This includes any limited companies, public liability companies and limited liability partnerships.<br><br></div>
+	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
+	                <a id="add_directorship" class="button">Add <span class="other">another </span>company</a>
+	                <p class="other1"><br><a href="summary.html" class=" button" id="next">Continue - I haven't been a director of a company.</a></p>
+	                <p class="other"><br><a href="summary.html" class="button family" id="next">Continue - I have added all my directorships</a></p>
+	            </div>
+            
+            
+		</form>
+			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+					<a href="#">Back</a>
+				</div>
+		</div>		
+		<div class="col-md-3">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+            <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
             </div>
-	<h2 class="heading-medium">Enforcement visits</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Enforcement date</th>
-						<th class="text-left">Value seized</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+        </div>
 
-	<h2 class="heading-medium">Attachments of earnings</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Frequency</th>
-						<th class="text-left">Amount</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+	</div>
+</div>
 
-
-
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<a class="button" href="../overview.html?section5=complete" id="next">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	
-	</div>
 
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -365,26 +315,60 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
+<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
 
-
+	
 <script type="text/javascript">
+
 $(document).ready(function() {
 	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
+	$("#pnl-director_table").hide();
 	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
+	
 
+	
+	var count;
+	var row;
+	count = $.cookie("director_count");
+	if(count == null){
+		count=0;
 
+	}
+	
+	if(count > 0){
+		$("#pnl-director_table").show();
+		$(".other").show();
+		$(".other1").hide();
+	}
+	else{
+		$("#pnl-partner_table").hide();
+		$(".other").hide();
+		$(".other1").show();
+
+	}
+	
+		
+	for(var i=1; i<=count; i++){
+		row = "<tr><td>"
+		+ $.cookie("director_company_name"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_reg"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_country"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_insolve"+i) 
+		+ "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+		$("#tablebody").append(row);
+	}
+	
 });
 
+$("#add_directorship").click(function(){
+	var directorname = $("#name").val();
+	$.cookie("director_name", directorname);
+	$("#add_directorship").prop("href","director_detail.html");
+	
+});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -393,13 +377,6 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
 
 
 </script>

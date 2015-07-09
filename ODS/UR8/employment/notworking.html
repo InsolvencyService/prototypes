@@ -70,7 +70,7 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="css/typeahead.css" rel="stylesheet">
+  <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
  .tt-dropdown-menu{
 	width:650px;
@@ -128,7 +128,7 @@ display:block;
 	margin-right:10px;
 }
 .amount{
-	text-align:right;
+	text-align:right
 }
 .totalrow td{
 	font-weight:bold !important;
@@ -196,128 +196,68 @@ display:block;
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
-<div class="inner-block text">
+<div id="content" >
+
+<div class="inner-block">	
+	<h1 class="form-title heading-large">Your status</h1>
+		<div class="col-md-9">
+		<form class="form" method="post">
+			
+			<div id="pnl-other">
+				<label id="occupations_label" for="occupations" class="form-label-bold">
+				Are you currently:</label>
+		
+				<div id="employment-status" class="form-group inline">
+					<label id="title_label0" for="retired" class="block-label">
+					<input id="retired" value="Retired" name="retired" type="radio" aria-describedby="title_error title_help">Retired</label>
 	
-	<h1 class="form-title heading-large">Creditors summary</h1>
+					<label id="title_label1" for="student" class="block-label">
+					<input id="student" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">A student</label>
+					<label id="title_label1" for="notworking" class="block-label">
+					<input id="notworking" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">Not currently working</label>
 
+				</div>				  
+			</div>
+		</form>
+			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+				<a id="next" class="button" href="list_businesses.html">Continue</a><br>
+			</div>
 
-			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
-
-			<div class="form-group" id="employer">
-				<p class="bold-small">Creditors</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of creditors</td>
-                        	<td>2</td>
-                        	<td><a href="list.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="visitlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="attachmentlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-
-                </table>
-  				<br>
+			<div class="form-navigation form-group">
+					<a href="#">Back</a>
+				</div>
+		</div>		
+		<div class="col-md-3">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+            <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
             </div>
-	<h2 class="heading-medium">Enforcement visits</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Enforcement date</th>
-						<th class="text-left">Value seized</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+        </div>
 
-	<h2 class="heading-medium">Attachments of earnings</h2>
-	<form class="form" method="post">
-		<div id="creditorlist">
-			<table style="width: 100%">
-				<thead>
-					<tr>
-						<th>Creditor</th>
-						<th>Frequency</th>
-						<th class="text-left">Amount</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
-<p><br></p>
+	</div>
+</div>
 
-
-
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<a class="button" href="../overview.html?section5=complete" id="next">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	
-	</div>
 
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -366,40 +306,29 @@ display:block;
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
+<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
 
-
+	
 <script type="text/javascript">
+
 $(document).ready(function() {
+	var status = "Retired";
 	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
-	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
-
-
+	$("#retired").click(function(){
+		status = "Retired";
+		$.cookie("employment_status", status);
+	});
+	$("#student").click(function(){
+		status = "Student";
+		$.cookie("employment_status", status);
+	});
+	$("#notworking").click(function(){
+		status = "Not working";
+		$.cookie("employment_status", status);
+	});
 });
 
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
 
 
 </script>
