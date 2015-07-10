@@ -549,7 +549,9 @@ display:block;
 		</table>
 </div>
 <p><br></p>
-<a class="button" href="../overview.html?section5=complete" id="next">I have selected all creditors who took an action against me</a>
+<p><a class="button" href="actiontype.html" id="btn-selectedall">I have selected all creditors who took an action against me</a></p>
+<p><br/></p>
+<p><a class="button" href="summary.html" id="next">No creditors took any action against me</a></p>
 <p><br></p>
 	
 	<!-- For User research -->
@@ -563,7 +565,7 @@ display:block;
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+        <a style="padding-right: 30px" href="list.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -687,11 +689,7 @@ $(document).ready(function() {
 			$.removeCookie($.cookie('numcreditors'));	
 		}
 		else{
-		    total = calctotal();
-	
-			if (total && total > 0){
-				$("#box-total").text(numberWithCommas(total));
-			}
+		    
 		}
 
 
@@ -699,7 +697,13 @@ $(document).ready(function() {
 	}
 	
 	$("#next").on("click", function(e){
+	    // check if we have a Yes click	
+	    var id = 1;
+	    var creditor = $("#row" + id + " .name").text();
+	    $("#btn-selectedall").prop("href", $("#btn-selectedall").prop("href") + "?row=" + id + "&name=" + creditor);
+
 	});
+
 	var rowid = "row1";
 	var id = 1;
 	$(".btn-delete").on("click", function () {
@@ -722,24 +726,11 @@ $(document).ready(function() {
 	});
 	
 	
-	
-   function calctotal() {
-        var totalamount = 0;
-        $('tr td.amount').each(function () {
-            if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
-            	var amount = $(this).text();
-                totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
-                $(this).val(parseFloat($(this).text()));
-            }
-        });
-        return totalamount;
-    }
-
-	    $("input.Yes").click(function(){
-			var id  = $(this).prop("name").substring(7);
-			var creditor= $("#row" + id + " .name").text();
-			$("#next").prop("href","visit.html?row=" + id + "&name=" + creditor);
-		});
+    $("input.Yes").click(function(){
+		var id  = $(this).prop("name").substring(7);
+		var creditor= $("#row" + id + " .name").text();
+		$("#btn-selectedall").prop("href", $("#btn-selectedall").prop("href") + "?row=" + id + "&name=" + creditor);
+	});
 
 
 	var amount = getParameterByName("amount");

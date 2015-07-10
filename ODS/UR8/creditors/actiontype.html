@@ -170,14 +170,14 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Attachment of earnings</h1>
+	<h1 class="form-title heading-large">Type of action</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<div class="clearfix"></div>
+	<div class="form-hint">We need to know the type of action <span class="companyname">ABC Comapny</span> took</div>
 	
 	<div class="validation-summary"  id="msg-enteramt" style="display:none">
                 <h2>There was a problem with your answers</h2>
@@ -191,32 +191,18 @@ display:block;
 	
 <div class="clearfix"></div>
 	
-	<div class="form-group ">
+<div class="form-group">
+					<fieldset class="inline">
+					<legend id="incorporated_label" class="form-label-bold">What type of action did they take?</legend>
+						<div class="form-group">
+							<label for="type_bailiff" class="block-label">
+							<input id="type_bailiff" value="" name="type" type="radio">Enforcement visit</label>
 	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold">
-		What is the amount of the attachment of earnings?</label>
-		<div class="form-hint">Approximate value of the items</div>
-		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
-	</div>
-
-<p class="clearfix"><br/></p>
-	
-		<div class="form-group ">
-	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold">
-		How often it this amount taken?</label>
-		<div class="form-hint" style="display:none"></div>
-		<select class="select-control" name="D1">
-                <option value="week">per week</option>
-                <option value="fortnight">per fortnight</option>
-                <option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-
-	</div>
-
+							<label for="type_attachment" class="block-label">
+							<input id="type_attachment" value="" name="type" type="radio">Attachment of earnings</label>		
+						</div>
+					</fieldset>
+				</div>
 
 
 <p class="clearfix"><br/></p>
@@ -225,14 +211,14 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="summary.html">Continue</a>
+		<a id="next" class="button" href="visit.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+	<a style="padding-right: 30px" href="actionlist.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -299,24 +285,21 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	
-	var normalroute = $("#next").prop("href");
+	var nextpage = $("#next").prop("href");
 	var rowid = getParameterByName("row");
 	var creditor = getParameterByName("name");
 
-	if (creditor && creditor.length > 0){
-		$("#creditor").text(creditor);
+	if (creditor) {
+	    $(".companyname").text(creditor);
 	}
-	
-	$("#next").on("click", function(e){
-		e.preventDefault();
-		var amount = $("#amount").val();
-		var date;
-		if (amount && amount.length > 0){
-			date =  $("#day").val() + "-" +  $("#month").val() + "-" +  $("#year").val();
-			window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
-		}
+	$("#type_attachment").click(function(){
+			nextpage  = "attachment.html";
 	});
 	
+	$("#next").on("click", function(){
+
+		$("#next").prop("href", nextpage);
+	});
 
 
 });
@@ -329,18 +312,6 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, "")).toFixed(2);
-}
-
-function pad (str, max) {
-  str = str.toString();
-  return str.length < max ? pad("0" + str, max) : str;
-}
 
 </script>
 
