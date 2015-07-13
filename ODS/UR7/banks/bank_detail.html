@@ -204,7 +204,7 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Partners details</h1>
+	<h1 class="form-title heading-large">Your bank account</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
@@ -213,7 +213,7 @@ display:block;
 		
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Add partner</a>
+					<a class="button" id="next">Continue</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -296,11 +296,28 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
    
-var bank = [{'401928', 'HSBC', 'High St, Dudley, West Midlands, DY4 9PR'}];
-//{'sort': '000000', 'bank': 'INSS', 'address': 'Colmore Row, Birmingham, B1 3RG'}
-//];
+var bank = 	[
+			{sort:'401928', bank:'HSBC', address:'High St, Dudley, West Midlands, DY4 9PR'},
+			{sort: '000000', bank: 'INSS', address: 'Colmore Row, Birmingham, B1 3RG'}
+];
 
-/*var=0;
+var sortcode = $.cookie("bank_sortcode");
+sortcode = sortcode.replace(/\D/g,'');
+
+$.map(bank, function(a) {
+   
+	if(a.sort==sortcode){
+		alert(a.bank);
+	}
+	
+
+// alert(a.sort);
+});
+
+
+
+/*
+var i=0;
 $.each(bank[i], function( key, value ) {
 	alert( key + ": " + value );
 	i++;
@@ -308,18 +325,15 @@ $.each(bank[i], function( key, value ) {
 
 
 var x="";
+
 for(var i=0, i<bank.length, i++){
-	for (var prop in bank[i]) {
-	    x =  prop + ": " + bank[prop] + "\n";
-	    alert(x);
-	}
+	x =  bank[i];
+	alert(x);
 }	
-*/
-var a = 
-alert(a);
+
 });
 $("#next").click(function(){
-	
+*/	
 });
 
 
