@@ -244,7 +244,7 @@
 	<div class="form-navigation form-group">
 	
 	<div>
-        <a id="next" class="button" href="summary.html?stage=income&page=4&pensionable=true">Continue</a>
+        <a id="next" class="button" href="summary.html?stage=income&page=4">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -320,12 +320,7 @@
 $(document).ready(function() {
 	var defaultnext = $("#next").attr("href");
 	$("#next").on("click", function (e) {
-			if($('#radio-1').prop('checked')){
-				$("#next").attr("href", "4-other-income.html");
-			}
-			else{
-			 	$("#next").attr("href", defaultnext);
-			}
+
 						
 		});
 

@@ -255,7 +255,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="list.html">Continue</a>
+		<a id="next" class="button" href="attachmentlist.html">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -338,12 +338,17 @@ $(document).ready(function() {
 	}
 	
 	$("#next").on("click", function(e){
-		e.preventDefault();
+		//e.preventDefault();
 		var amount = $("#amount").val();
 		var date;
 		if (amount && amount.length > 0){
 			date =  $("#day").val() + "-" +  $("#month").val() + "-" +  $("#year").val();
-			window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
+			//window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
+	        $.cookie("creditorrow", parseFloat(rowid), { expires: 1});
+	        $.cookie("creditorname", creditor, { expires: 1});	        
+	        $.cookie("creditoramount", parseFloat(amount), { expires: 1});
+	        $.cookie("creditordate", date, { expires: 1});
+
 		}
 	});
 	

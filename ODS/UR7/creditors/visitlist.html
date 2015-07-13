@@ -606,30 +606,26 @@ display:block;
 				</td>
 
 			</tr>
-			<tr  id="row19" style="display:none">
+			<tr  class="pre" style="display:none">
 				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row20" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row21" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row22" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
-			</tr>
-			<tr  id="row23" style="display:none">
-				
-				<td class="name">&nbsp;</td>
-				<td class="ref">&nbsp;</td>
+				<td class="name">ABC Limited</td>
+				<td>
+                        <fieldset class="inline">
+                            <div class="form-group visit">
+
+                                <label for="visited5_Yes" class="block-label">
+                                    <input id="visited18_Yes" class="Yes" name="visited18" type="radio">
+                                    Yes
+                                </label>
+
+                                <label for="visited18_No" class="block-label">
+                                    <input id="visited18_No" name="visited18" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+				</td>
+
 			</tr>
 
 		</tbody>
@@ -721,7 +717,13 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-	
+	var pre = getParameterByName("pre");
+
+	if (pre && pre.length > 0)
+	{
+		$(".pre").show();
+	}
+		
 	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
 	var total = 0;
