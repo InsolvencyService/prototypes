@@ -295,11 +295,18 @@
 
                                 <div class="clearfix"></div>
                                 <div class="rowbottom" id="details2a">
-                                
+	<div class="row">
+	<div class="col-sm-6">
+Directorships of limited companies
+	</div>
+	<div class="col-sm-6">
+	</div>
+	</div>                            
+	<hr>
 
 	<div class="row">
 	<div class="col-sm-6">
-Employment details 1
+Self employment
 	</div>
 	<div class="col-sm-6">
 	</div>
@@ -307,7 +314,7 @@ Employment details 1
 	<hr>
 	<div class="row">
 	<div class="col-sm-6">
-Employment details 2
+Your employment
 	</div>
 	<div class="col-sm-6">
 	</div>
@@ -759,12 +766,20 @@ Employment details 2
 	                var section4 = getParameterByName("section4");
 					var section5 = getParameterByName("section5");
 					var section6 = getParameterByName("section6");
+					$(".rowbottom").hide();
 	               // if (section4 && section4.length > 0) {
 	                    // change the colour of the button
 		                if (section1 && section1 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");
 	                        $("#section2 .edit").show().addClass("button").text("Start");
+
 	                        document.title = 'Overview - Employment';
+	                        
+	                        $("#section2 .js-section").addClass("open");
+	                        $("#section2 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+	                        var details = $("#section2 .js-section").attr("href");
+	                        $(details).show();
+	                        $(details).parent().addClass("well");
 	                    }
               
 	                    if (section4 == "inprogress") {
@@ -777,7 +792,7 @@ Employment details 2
 	                        document.title = 'Overview - Bank';
 	                    }
 	                    if (section3 && section3 == "complete") {
-	                        $("#section1 .edit").show().removeClass("button").text("Edit");
+	                        $("#section1 .edit").show().removeClass("button").text("Edit");	
 	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().addClass("button").text("Start");
@@ -790,6 +805,12 @@ Employment details 2
 	                        $("#section4 .edit").show().text("Edit");
 	                        $("#section5 .edit").show().addClass("button").text("Start");
 	                        document.title = 'Overview - Money you owe';
+
+	                        $("#section5 .js-section").addClass("open");
+	                        $("#section5 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+	                        var details = $("#section5 .js-section").attr("href");
+	                        $(details).show();
+	                        $(details).parent().addClass("well");
 	                    }
 	                    if (section5 && section5 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");
@@ -799,6 +820,12 @@ Employment details 2
 	                        $("#section5 .edit").show().text("Edit");
 	                        $("#section6 .edit").show().addClass("button").text("Start");
 	                        document.title = 'Overview - Income and expenses';
+
+	                        $("#section6 .js-section").addClass("open");
+	                        $("#section6 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+	                        var details = $("#section6 .js-section").attr("href");
+	                        $(details).show();
+	                        $(details).parent().addClass("well");
 	                    }
 	                    if (section6 && section6 == "complete") {
 	                         $("#section1 .edit").show().removeClass("button").text("Edit");
@@ -819,7 +846,7 @@ Employment details 2
 	
 	
 	                // open and close sections of the overview and add and remove arrows
-	                $(".rowbottom").hide();
+
 	                $(".js-section").on("click", function (e) {
 	                    e.preventDefault();
 	                    if ($(this).hasClass("open") == false) {
