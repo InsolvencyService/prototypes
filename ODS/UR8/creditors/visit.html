@@ -195,8 +195,7 @@ display:block;
 
 	<fieldset id="date_of_birth" class="date-of-birth">
 	
-	<legend id="date_of_birth_label" class="form-label-bold">When did the agents for <span id="creditor">
-	ABC Limited</span> visit you?</legend>
+	<legend id="date_of_birth_label" class="form-label-bold">When did the agents for <span class="creditor">ABC Limited</span> visit you?</legend>
 <div class="form-hint">For example, 30 May 2015</div>
 		<div class="form-group form-group-day" >
 			 <label id="date_of_birth_label.day" for="day">Day</label>
@@ -334,7 +333,7 @@ $(document).ready(function() {
 	var creditor = getParameterByName("name");
 
 	if (creditor && creditor.length > 0){
-		$("#creditor").text(creditor);
+		$(".creditor").text(creditor);
 	}
 	
 	$("#next").on("click", function(e){

@@ -177,7 +177,7 @@ display:block;
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<div class="form-hint">We need to know the type of action <strong class="companyname">ABC Company</strong> took</div>
+	<div class="form-hint">We need to know the type of action <strong class="creditor">ABC Company</strong> took</div>
 	
 	<div class="validation-summary"  id="msg-enteramt" style="display:none">
                 <h2>There was a problem with your answers</h2>
@@ -289,16 +289,17 @@ $(document).ready(function() {
 	var rowid = getParameterByName("row");
 	var creditor = getParameterByName("name");
 
-	if (creditor) {
-	    $(".companyname").text(creditor);
+	if (creditor && creditor.length > 0){
+		$(".creditor").text(creditor);
 	}
+	
 	$("#type_attachment").click(function(){
 			nextpage  = "attachment.html";
 	});
 	
 	$("#next").on("click", function(){
 
-		$("#next").prop("href", nextpage);
+	    $("#next").prop("href", nextpage + "?name=" + creditor);
 	});
 
 
