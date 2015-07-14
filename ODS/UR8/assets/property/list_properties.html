@@ -4,40 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <!-- #BeginEditable "title" -->
- <title>Resume application</title>
- <!-- #EndEditable -->
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-
-<style type="text/css">
-
-/* Credit to bootsnipp.com for the css for the color graph */
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-form .dropdown-toggle{
-	display:block;
-	width: 300px;
-	margin-top:20px;
-	text-align:left;
-}
-form .dropdown-toggle .text-left{
-	font-weight:bold;
-	text-align:left;
-}
-
-.answerarea{
-	
-	display:block;
-	margin-top:20px;
-}
-</style>
+<title>Online debt solutions</title>
 <!-- #EndEditable -->
 
 
@@ -102,10 +69,69 @@ form .dropdown-toggle .text-left{
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-<style type="text/css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
+  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
+ <style type="text/css">
+ .tt-dropdown-menu{
+	width:650px;
+}
+.tt-input{
+	width:400px;
+}
+.tt-hint{
+	display:none !important;
+}
+.choose-address{
+	color:gray;
+}
+.row > div:first-child{
+	padding-left:5px;
+	margin-left:0;	
+}
+i.glyphicon{
+	margin-right:5px;
+	color:#666666;
+}
+.input-sm{
+	width:170px;
+}
+.input-lg{
+	width:260px;
+}
+
+#row-total td{
+	font-weight:bold;
+}
+
 
 .row img{
-width:40px
+width:60px;
+text-align:right;
+float:right
+}
+.row > div{
+padding-top:15px;
+}
+.row > div:first-child{
+padding-top:0px;
+}
+
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+	font-size:16px;
+}
+
+.btn-edit{
+	margin-right:10px;
+}
+.amount{
+	text-align:right
+}
+.totalrow td{
+	font-weight:bold !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -170,104 +196,73 @@ width:40px
 	
 
 
-<!-- #BeginEditable "content" -->
-
- 	
-	<div id="content0" >
-
-	<div>
+</div>
 	
-<div class="row">
-    <div class="col-xs-12 col-sm-8" style="margin-left:30px">
-    
 
-		<h1 class="form-title heading-large">Continue your application</h1>
-	
-<div class="validation-summary" style="display:none">
-                <h2>Application number is not valid</h2>
-                <p></p><ol>
-                    
-    
-        <li class="error-message">
+
+<!-- #BeginEditable "content" --> 
+<div id="content" >
+
+<div class="inner-block">	
+	<h1 class="form-title heading-large"><span class="firsttime">Property</span><span class="repeat">Your property</span></h1>
+	<div class="col-md-9">
+		<form class="form" method="post">
+		<p>We need to know about properties you own or part own.</p>	
+			
+			<div id="pnl-director_table" class="repeat">
+	            <table style="width: 100%" class="family">
+	                <thead>
+	                    <tr>
+	                        <th>Address</th>
+	                        <th>Postcode</th>
+	                        <th>Jointly owned</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
+	                </thead>
+	                <tbody id="tablebody">
+	                    
+	                </tbody>
+	            </table>
+	            <p>&nbsp;</p>
+			</div>
+
+				<div class="form-group">
+				<label  class="form-label-bold">
+				<span class="firsttime">Enter the first line of the address</span>
+				<span class="repeat">Enter another address</span></label>
+				<div class="form-hint">For example, 123 High Street<br><br></div>
+	                <input class="typeahead input-lg form-control-3-4" id="name" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
+	                <a id="add_directorship" class="button"  href="../../employment/director_detail.html">Add <span class="repeat">another </span>company</a>
+	                <p class="firsttime"><br><a href="../../employment/list_businesses.html" class=" button" id="next">Continue - I don't own any property</a></p>
+	                <p class="repeat"><br><a href="../../employment/list_businesses.html" class="button family" id="next">Continue - I have added all my properties</a></p>
+	            </div>
             
-            <p>Please enter a 12 digit application number</p>
-
-        </li>
-    
-    
-    
-
-                </ol>
-
+            
+		</form>
+			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+					<a href="#">Back</a>
+				</div>
+		</div>		
+		<div class="col-md-3">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+            <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../../personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
             </div>
-
-	<p class="text msg-URN" style="display:none;">
-	Your application number is 
-	<br>
-	<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNH-J93R-5309</span>  
-
-	</p>
-
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	<div class="msg-no-URN">
-	
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_2_label" for="urn" class="form-label-bold">What 
-		is your application number?</label>
-		<div class="form-hint">
-			You can find this in the email we sent you. </div>
-	<input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-
-	
-	</div>
-	
-		</div>
-	</form>
-
-
-	<div class="form-navigation form-group">
-	
-	<div>
-
-
-	<a href="security-question.html" id="next" class="button">Continue</a>&nbsp;&nbsp;
-        <a href="urn-help.html">I have forgotten my application details</a>
-			<div>
-	<br>
-	</div>
-	
-	<div>
-	
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>&nbsp;
+        </div>
 
 	</div>
-	</div>
-
-	</div>
-	
-	
-	
-	
-
-</div>
-
-
-<!-- Modal -->
-	
-	</div>
-
-        
-</div>
-
-
 </div>
 
 
@@ -320,50 +315,82 @@ width:40px
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../shared/loop.js"></script>
 
+<script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
+<script type="text/javascript" src="js/properties.js"></script>
+
+<a href="js/properties.js"></a>
 <script type="text/javascript">
+
 $(document).ready(function() {
-	var ignorevalidation = false;
-	if (getParameterByName("ignore") && getParameterByName("ignore").length > 0){
-		ignorevalidation = true;
+		
+	var count;
+	var row;
+	count = $.cookie("director_count");
+	if(count == null){
+		count=0;
+
+	}
+/*	
+	if(count > 0){
+		$("#pnl-director_table").show();
+		$(".repeat").show();
+		$(".firsttime").hide();
+	}
+	else{
+		$("#pnl-partner_table").hide();
+		$(".repeat").hide();
+		$(".firsttime").show();
+
+	}
+*/	
+		
+	for(var i=1; i<=count; i++){
+		row = "<tr><td>"
+		+ $.cookie("director_company_name"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_reg"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_country"+i) 
+		+ "</td><td>" 
+		+ $.cookie("director_company_insolve"+i) 
+		+ "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+		$("#tablebody").append(row);
 	}
 	
-	var urn = $.cookie('urn');
-	$("#next").click( function(e) {
-
-		if (ignorevalidation == false){	
-			if ($("#urn").val().length < 12){
-				e.preventDefault();
-				$(".validation-summary").show();
-			}
-			else{
-				if ($("#urn").val().length > 0){
-				/*
-					if (stripped($("#urn").val()).toUpperCase() != stripped(urn).toUpperCase()){
-						e.preventDefault();
-						window.location = "security-question.html?error=true";
-					};	
-					*/
-				}
-			}
-		}
-
-	});
-
-
 });
 
-function stripped(urn){
-    return urn.replace(/[\. ,:-]+/g, "");
-}
+$("#add_directorship").click(function(e){
+	var directorname = $("#name").val();
+	if (isvalidcompany(directorname) == true){
+		$.cookie("director_name", directorname);
+		$("#add_directorship").prop("href","director_detail.html");
+	}
+	else{
+		e.preventDefault();
+		$(".validation-summary").show();
+	}
+	
+});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function isvalidcompany(companyname){
+	var name = companyname.toLowerCase();
+	if (name.indexOf("limited") > -1 || name.indexOf("ltd") > -1 || name.indexOf("llp") > -1 || name.indexOf("plc") > -1){
+		return true;
+	}
+
+	return false;
+
 }
 
 </script>
