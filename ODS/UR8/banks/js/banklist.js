@@ -5,6 +5,16 @@ var bank = 	[
 			{sort: '000000', bank: 'INSS', address: 'Colmore Row, Birmingham, B1 3RG'}
 ];
 
+var sortcode = $.cookie("bank_sortcode");
+
+$.map(bank, function(a) {
+	if(a.sort==sortcode){
+		$("#sort_code").val(a.sort);
+		$("#bank").val(a.bank);
+		$("#address").val(a.address);
+	}	
+});
+
 
 });	
 
