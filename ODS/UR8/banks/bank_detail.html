@@ -215,7 +215,7 @@ display:block;
 
 			<div>
 				<label  class="form-label-bold" for="address">Address</label>
-				<input class="form-control-3-4" id="address" style="width:250px; display:inline-block; margin-right:15px; margin-bottom:5px">   
+				<input class="form-control-3-4" id="address" style="width:90%; display:inline-block; margin-right:15px; margin-bottom:5px">   
 					
 			</div>
 			
@@ -394,39 +394,22 @@ var bank = 	[
 var sortcode = $.cookie("bank_sortcode");
 sortcode = sortcode.replace(/\D/g,'');
 
-$.map(bank, function(a) {
-   
-	if(a.sort==sortcode){
-		$("#sort_code").val(sortcode);
-		$("#bank").val(a.bank);
-		$("#address").val(a.address);
-	}
+	$.map(bank, function(a) {
+	   
+		if(a.sort==sortcode){
+			$("#sort_code").val(sortcode);
+			$("#bank").val(a.bank);
+			$("#address").val(a.address);
+		}
+		
+	
+	
+	});
+
+});
+
 	
 
-// alert(a.sort);
-});
-
-
-
-/*
-var i=0;
-$.each(bank[i], function( key, value ) {
-	alert( key + ": " + value );
-	i++;
-});	
-
-
-var x="";
-
-for(var i=0, i<bank.length, i++){
-	x =  bank[i];
-	alert(x);
-}	
-
-});
-$("#next").click(function(){
-*/	
-});
 
 
 </script>
