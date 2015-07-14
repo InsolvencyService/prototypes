@@ -380,23 +380,20 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../UR7/banks/js/banklist.js"></script>
+<script type="text/javascript" src="../../UR8/banks/js/banklist.js"></script>
 
 	
 <script type="text/javascript">
 $(document).ready(function() {
    
 	var sortcode = $.cookie("bank_sortcode");
+	
 	$.map(bank, function(a) {
-	   
-		if(a.sort==sortcode){
-			$("#sort_code").val(sortcode);
+		if(a.sc==sortcode){
+			$("#sort_code").val(a.sc);
 			$("#bank").val(a.bank);
 			$("#address").val(a.address);
-		}
-		
-	
-	
+		}	
 	});
 
 });
