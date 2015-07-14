@@ -151,9 +151,17 @@
 		
 						<label id="title_label3" for="title_Ms." class="block-label">
 						<input id="title_Ms." value="Ms." name="title" type="radio" aria-describedby="title_error title_help">Ms</label>
+						
+						<label id="title_label3" for="title_other" class="block-label">
+						<input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other</label>
 		
 					</div>
 				</fieldset>
+			</div>
+			
+			<div id="o_title" class="panel-indent form-group">
+				<label id="title_label" for="title" class="form-label-bold first_name">Other Title</label>
+				<input id="title" name="title" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 		
 			<div class="form-group ">
@@ -323,6 +331,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+	$("#o_title").hide();
 
 	var normalroute = $("#next").prop("href");
 	$("#othername_Yes").click(function(){
@@ -333,6 +342,19 @@ $(document).ready(function() {
 	});
 
 });
+
+$("#title input:radio").click(function(){
+	if($("#title_other").prop('checked')==true){
+		$("#o_title").show();
+	}
+	else{
+		$("#o_title").hide();
+	}
+});
+
+
+
+
 
 </script>
 
