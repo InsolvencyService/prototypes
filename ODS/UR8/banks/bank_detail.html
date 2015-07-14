@@ -70,7 +70,7 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../creditors/css/typeahead.css" rel="stylesheet">
+  <link href="../../UR7/creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
  .tt-dropdown-menu{
 	width:650px;
@@ -204,16 +204,106 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Partners details</h1>
+	<h1 class="form-title heading-large">Your bank account</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-			
+			<div>
+				<label  class="form-label-bold" for="bank">Bank</label>
+				<input class="form-control-3-4" id="bank" style="width:250px; display:inline-block; margin-right:15px; margin-bottom:5px">   
+						
+			</div>
+
+			<div>
+				<label  class="form-label-bold" for="address">Address</label>
+				<input class="form-control-3-4" id="address" style="width:250px; display:inline-block; margin-right:15px; margin-bottom:5px">   
 					
+			</div>
+			
+			<div>
+				<label  class="form-label-bold" for="sort_code">Sortcode</label>
+				<input class="form-control-3-4" id="sort_code" style="width:250px; display:inline-block; margin-right:15px; margin-bottom:5px">   
+						
+			</div>
+
+			<div>
+				<label  class="form-label-bold" for="ac_number">Account number</label>
+				<p class="form-hint" for="ac_number">You can find this on your account statement</p>
+				<input class="form-control-3-4" id="ac_number" style="width:250px; display:inline-block; margin-right:15px">   
+				<p>&nbsp;</p>		
+			</div>
+			
+			<div class="form-group ">
+				<fieldset  class="date-of-birth">
+					<span id="date_of_birth_label" class="form-label-bold">When did you open the account?</span>
+					<span class="form-hint" id="date_of_birth_help">For example Aug 2011</span>
+					
+					<div class="form-group" style="width:60px">
+						 <label id="date_of_birth_label.month" for="month">Month</label>
+			
+						<select id="month" name="month">
+							<option value="0"></option>
+							<option value="1">Jan</option>
+							<option value="2">Feb</option>
+							<option value="3">Mar</option>
+							<option value="4">Apr</option>
+							<option value="5">May</option>
+							<option value="6">Jun</option>
+							<option value="7">Jul</option>
+							<option value="8">Aug</option>
+							<option value="9">Sep</option>
+							<option value="10">Oct</option>
+							<option value="11">Nov</option>
+							<option value="12">Dec</option>
+						</select>
+					</div>
+					
+					<div class="form-group form-group-year">
+						<label id="date_of_birth_label.year" for="start_year">Year</label>
+						<input id="start_year" name="start_year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div><br>
+				</fieldset>
+			</div>
+			
+			<div>
+				<label  class="form-label-bold" for="ac_balance">Current account balance</label>
+				£ <input class="form-control-1-8" id="ac_balance" >   
+				<p>&nbsp;</p>		
+			</div>
+			
+						
+			<div>
+			<legend id="type_label" class="form-label-bold">If this is a joint account please tell us who the other account holders are.</legend>
+			<table>
+				<thead>
+				<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Relationship</th>
+				</tr>
+				</thead>
+				
+				<tbody>
+				<tr>
+				<td><input class="form-control" id="ac_balance"></td>
+				<td><input class="form-control" id="ac_balance"></td>
+				<td><input class="form-control" id="ac_balance"></td>
+				</tr>
+				</tbody>
+			
+			</table>
+			<p class="text-right" style="margin-top:3px"><a href="#">Add another person</a></p>
+			</div>
+			
+			
+				
+				<p><br></p>
+
+		
 		</form>
 		
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Add partner</a>
+					<a class="button" id="next">Continue</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -225,10 +315,10 @@ display:block;
                 <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                     <p class="heading-secondary">Bankruptcy fee</p>
                     <p style="font-weight:bold;font-size:large">
-                        <a href="../personal/payments/statement.html">£0 received</a><br>
+                        <a href="../../UR7/personal/payments/statement.html">£0 received</a><br>
                         <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
                     </p>
-                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
+                    <p><a href="../../UR7/personal/payments/payments.html">Make a payment</a></p>
                 </div>
                 <p><a href="#" style="display:none">Print summary</a></p>
                 <p><a href="#" style="display:none">Generate court documents</a></p>
@@ -290,17 +380,36 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="js/banklist.js"></script>
+<script type="text/javascript" src="../../UR7/banks/js/banklist.js"></script>
 
 	
 <script type="text/javascript">
 $(document).ready(function() {
    
-var bank = [{'401928', 'HSBC', 'High St, Dudley, West Midlands, DY4 9PR'}];
-//{'sort': '000000', 'bank': 'INSS', 'address': 'Colmore Row, Birmingham, B1 3RG'}
-//];
+var bank = 	[
+			{sort:'401928', bank:'HSBC', address:'High St, Dudley, West Midlands, DY4 9PR'},
+			{sort: '000000', bank: 'INSS', address: 'Colmore Row, Birmingham, B1 3RG'}
+];
 
-/*var=0;
+var sortcode = $.cookie("bank_sortcode");
+sortcode = sortcode.replace(/\D/g,'');
+
+$.map(bank, function(a) {
+   
+	if(a.sort==sortcode){
+		$("#sort_code").text(sortcode);
+		$("#bank").text(a.bank);
+		$("#address").text(a.address);
+	}
+	
+
+// alert(a.sort);
+});
+
+
+
+/*
+var i=0;
 $.each(bank[i], function( key, value ) {
 	alert( key + ": " + value );
 	i++;
@@ -308,18 +417,15 @@ $.each(bank[i], function( key, value ) {
 
 
 var x="";
+
 for(var i=0, i<bank.length, i++){
-	for (var prop in bank[i]) {
-	    x =  prop + ": " + bank[prop] + "\n";
-	    alert(x);
-	}
+	x =  bank[i];
+	alert(x);
 }	
-*/
-var a = 
-alert(a);
+
 });
 $("#next").click(function(){
-	
+*/	
 });
 
 
