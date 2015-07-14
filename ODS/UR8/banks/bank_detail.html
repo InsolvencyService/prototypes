@@ -389,8 +389,8 @@ $(document).ready(function() {
 	var sortcode = $.cookie("bank_sortcode");
 	
 	$.map(bank, function(a) {
-		if(a.sc==sortcode){
-			$("#sort_code").val(a.sc);
+		if(a.sort==sortcode){
+			$("#sort_code").val(a.sort);
 			$("#bank").val(a.bank);
 			$("#address").val(a.address);
 		}	
