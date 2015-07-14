@@ -208,20 +208,14 @@ display:block;
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div>
-				<label  class="form-label-bold" for="bank">Bank</label>
-				<input class="form-control-3-4" id="bank" style="width:250px; display:inline-block; margin-right:15px; margin-bottom:5px">   	
-			</div>
-
-			<div>
-				<label  class="form-label-bold" for="address">Address</label>
-				<input class="form-control-3-4" id="address" style="width:90%; display:inline-block; margin-right:15px;">   
+				<label  class="form-label-bold" for="sort_code">Branch details</label>
+				<input class="form-control-1-4" id="sort_code" style="width:25%;margin-bottom:5px"><br>			
+				<input class="form-control-1-2" id="bank" style="width:50%;  margin-right:15px; margin-bottom:5px"><br> 	
+				<input class="form-control-3-4" id="address" style="width:90%;  margin-right:15px;">   
 				<p>&nbsp;</p>	
 			</div>
 			
-			<div>
-				<label  class="form-label-bold" for="sort_code">Sortcode</label>
-				<input class="form-control-3-4" id="sort_code" style="width:250px; display:inline-block; margin-right:15px; margin-bottom:5px">   			
-			</div>
+			
 
 			<div>
 				<label  class="form-label-bold" for="ac_number">Account number</label>
@@ -231,7 +225,7 @@ display:block;
 			</div>
 			
 			<div>
-				<label  class="form-label-bold" for="ac_balance">Current account balance</label>
+				<label  class="form-label-bold" for="ac_balance">Current balance</label>
 				£ <input class="form-control-1-8" id="ac_balance" >   
 				<p>&nbsp;</p>		
 			</div>
@@ -415,8 +409,11 @@ display:block;
 $(document).ready(function() {
    	
 	var bank = 	[
-				{sort:'401928', bank:'HSBC', address:'High St, Dudley, West Midlands, DY4 9PR'},
-				{sort: '000000', bank: 'INSS', address: 'Colmore Row, Birmingham, B1 3RG'}
+				{sort: '000000', bank: 'HSBC', address: 'High St, Dudley, West Midlands, DY4 9PR'},
+				{sort: '111111', bank: 'Lloyds Bank PLC', address: 'High Road, Birmingham, B12 4DF'},
+				{sort: '222222', bank: 'TSB', address: 'Sutton Way, Birmingham, B12 5KG'},
+				{sort: '333333', bank: 'Santander', address: 'Temple St, Birmingham, B2 3LG'},
+				{sort: '444444', bank: 'INSS', address: 'Colmore Row, Birmingham, B1 3RG'}
 	];
 	
 	var sortcode = $.cookie("bank_sortcode");
