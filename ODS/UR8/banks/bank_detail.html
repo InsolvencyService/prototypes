@@ -397,9 +397,9 @@ sortcode = sortcode.replace(/\D/g,'');
 $.map(bank, function(a) {
    
 	if(a.sort==sortcode){
-		$("#sort_code").text(sortcode);
-		$("#bank").text(a.bank);
-		$("#address").text(a.address);
+		$("#sort_code").val(sortcode);
+		$("#bank").val(a.bank);
+		$("#address").val(a.address);
 	}
 	
 
