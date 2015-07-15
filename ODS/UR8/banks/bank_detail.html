@@ -408,6 +408,9 @@ $("#next").click(function(){
 			$.cookie("acc"+ x +"-relationship"+i, $("#relationship"+i).val());
 			$.cookie("acc_joint", i);		
 		}
+		else{
+			$.cookie("acc_joint", '0');
+		}
 	}
 	
 	if($("#main_yes").prop('checked')==true){
