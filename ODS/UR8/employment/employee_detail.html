@@ -428,18 +428,11 @@ $("#next").click(function(){
 	if(address6 != ""){
 		employee_address = employee_address+address6;
 	}
-	var amountx;
-	if($("#amount").val()!=""){
-		amountx = $("#amount").val();
-	}
-	else{
-		amountx = 0.00;
-	}
+
 	
 	$.cookie("business"+x+"_employee_count", count);
 	$.cookie("business"+x+"_employee_name"+count, $("#firstname").val()+" "+$("#lastname").val());
 	$.cookie("business"+x+"_employee_address"+count, employee_address);
-	$.cookie("business"+x+"_employee_amount"+count, amountx);
 
 });
 
