@@ -133,6 +133,26 @@ display:block;
 .totalrow td{
 	font-weight:bold !important;
 }
+
+
+legend {
+    border: 0 transparent none;
+}
+
+.halfwidth {
+    float: left;
+    margin-right: 15px;
+    clear: none;
+    width: 35%;
+}
+
+.partwidth {
+    float: left;
+    margin-right: 0;
+    clear: none;
+    width: 15%;
+    margin-top: 23px;
+}
 </style>
 <!-- #EndEditable -->
 
@@ -208,39 +228,52 @@ display:block;
 	<div class="form-hint">We need to know about the business partners for <span id="business_name"></span></div>
 
 	<div class="col-md-9">
-		<form class="form" method="post">
-			
-			 <div  class="repeat">
-            	<h2 class="form-label-bold">Partnerships<br></h2>
-            	
-			<table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Name</th>
-	                        <th>Address</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                    
-	                </tbody>
-	            </table>
+        <form class="form" method="post">
 
-	            
-			</div>
-			
-	            <p>&nbsp;</p>			
-			<div class="form-group">
-				<label  class="form-label-bold">Enter their first and last name</label>
-				<div class="form-hint">For example, John Smith. You can add more later.<br><br></div>
-	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
-	                <a id="add_partner" class="button" href="partner_detail.html"><span class="firsttime">Add partner</span>
-	                <span class="repeat" style="display:none">Add another partner</span></a>
-	                <p><br><a href="add_employee.html" class="button family repeat" id="next" ><span>Continue - I have added all my business partners</span></a></p>
-	    	</div>
-            
-           
-		</form>
+            <div class="repeat">
+                <h2 class="form-label-bold">Partnerships<br></h2>
+
+                <table style="width: 100%" class="family">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody"></tbody>
+                </table>
+
+
+            </div>
+
+            <p>&nbsp;</p>
+
+            <fieldset>
+                <legend class="form-label-bold">
+                    <span class="firsttime">Enter the employees name</span>
+                    <span class="repeat">Enter another employees name</span>
+                </legend>
+
+                <span class="form-hint">For example, Jane Smith</span>
+                <div class="form-group halfwidth">
+                    <label for="firstname">First name</label>
+                    <input id="firstname" />
+                </div>
+                <div class="form-group halfwidth">
+                    <label for="lastname">Last name</label>
+                    <input id="lastname" />
+                </div>
+                <div class="form-group partwidth">
+                    <a id="add_partner" class="button" href="partner_detail.html">Add <span class="repeat"></span></a>&nbsp;
+                    <br />
+                </div>
+
+            </fieldset>
+            <p><br><a href="add_employee.html" class="button family repeat" id="next"><span>Continue - I have added all my business partners</span></a></p>
+
+
+        </form>
 			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
 					<a href="javascript:history.go(-1)">Back</a>
@@ -367,8 +400,8 @@ $(document).ready(function() {
 	
 
 
-$("#add_partner").click(function(){
-	var partnername = $("#name").val();
+$("#add_partner").click(function () {
+    var partnername = $.trim($("#firstname").val() + " " + $("#lastname").val());
 	$.cookie("partner_name", partnername);
 	//$("#add_partner").prop("href","partner_detail.html");
 	
