@@ -361,10 +361,11 @@ $(document).ready(function() {
 	];
 	
 	var sortcode = $.cookie("bank_sortcode");
+	sortcode = sortcode.replace(/\D/g,'');
 	
 	$.map(bank, function(a) {
 		if(a.sort==sortcode){
-			$("#sort_code").val(a.sort);
+			$("#sort_code").val($.cookie("bank_sortcode"));
 			$("#bank").val(a.bank);
 			$("#address").val(a.address);
 		}	

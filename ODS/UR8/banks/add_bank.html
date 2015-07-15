@@ -360,7 +360,6 @@ $(document).ready(function() {
 
 $("#addlink").click(function(){
 	var sortcode = $("#name").val();
-	sortcode = sortcode.replace(/\D/g,'');
 	$.cookie("bank_sortcode", sortcode);
 	$("#addlink").attr("href", "bank_detail.html");
 });
