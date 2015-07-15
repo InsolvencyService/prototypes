@@ -332,36 +332,8 @@ $("#next").click(function(){
 	if(count == null){
 		count = 1;
 	}
-	else{
-		count++;
-	}
-	
-	var employee_address;
-	var address1=$("#employee_address_line_1").val();
-	var address2=$("#employee_address_line_2").val();
-	var address3=$("#employee_address_line_3").val();
-	var address4=$("#employee_address_town").val();
-	var address5=$("#employee_address_county").val();
-	var address6=$("#employee_address_post_code").val();
-	
-	if(address1 != ""){
-		employee_address = address1+", ";
-	}
-	if(address2 != ""){
-		employee_address = employee_address+address2+", ";
-	}
-	if(address3 != ""){
-		employee_address = employee_address+address3+", ";
-	}
-	if(address4 != ""){
-		employee_address = employee_address+address4+", ";
-	}
-	if(address5 != ""){
-		employee_address = employee_address+address5+", ";
-	}
-	if(address6 != ""){
-		employee_address = employee_address+address6;
-	}
+
+
 	var amountx;
 	if($("#amount").val()!=""){
 		amountx = $("#amount").val();
@@ -370,9 +342,7 @@ $("#next").click(function(){
 		amountx = 0.00;
 	}
 	
-	$.cookie("business"+x+"_employee_count", count);
-	$.cookie("business"+x+"_employee_name"+count, $("#firstname").val()+" "+$("#lastname").val());
-	$.cookie("business"+x+"_employee_address"+count, employee_address);
+
 	$.cookie("business"+x+"_employee_amount"+count, amountx);
 
 });
