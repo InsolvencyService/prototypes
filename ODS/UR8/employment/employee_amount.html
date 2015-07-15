@@ -204,75 +204,22 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Employee details for <span class="business_name"></span></h1>
+	<h1 class="form-title heading-large">Amount owed</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-			<p>We need to know about all of <span class="business_name"></span>'s current employees and about any past employees the business might owe money to (for example wages, redundancy pay or holiday pay).</p>
+			<p>We need to know about the amount owed to <strong class="name">Jane Smith</strong>.</p>
 			<p>&nbsp;</p>
-			<div id="pnl-current_employer">
-				<label id="name_label" for="name" class="form-label-bold"></label>
-				<div class="form-group">
-					<label id="firstname_label0" for="firstname" class="form-label-bold">First name</label>
-					<input id="firstname" name="firstname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
-				</div>
-				<div class="form-group">
-					<label id="lastname_label0" for="lastname" class="form-label-bold">Last name</label>
-					<input id="lastname" name="lastname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
-				</div>
+			
+			
+			<div class="form-group" id="pnl-amount">
+					<label id="name_label0" for="amount" class="form-label-bold">How much do they claim you owe them?</label>
+					<p class="form-hint">For example £50.65</p>
+					<span>£ </span><input id="amount" name="amount" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/><br/>
+					<label id="name_label0" for="amount" class="form-label-bold">What is the claim for?</label>
+					<p class="form-hint">For example unpaid wages, redundancy or holiday pay</p>
+					<textarea cols="55" rows="5"></textarea>
 
-				<p>&nbsp;</p>
-				<div class="form-group ">
-					<label id="name_label0" for="name" class="form-label-bold">Address</label>
-					<label id="employee_address_line_1_label" for="employee_address_line_1" class="form-label employer_address_line_1">Building and street</label>
-					<input id="employee_address_line_1" name="employee_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
-					<br/>
-				</div>
-		
-				<div class="form-group ">
-					<label id="employee_address_line_2_label" for="employee_address_line_2" class="visuallyhidden">Address Line 2</label>
-					<input id="employee_address_line_2" name="employee_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="employee_address_line_3_label" for="employee_address_line_3" class="visuallyhidden">Address Line 3</label>
-					<input id="employee_address_line_3" name="employee_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="employee_address_town_label" for="employee_address_town" class="form-label employer_address_town">Town/city</label>
-					<input id="employee_address_town" name="employee_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="employee_address_county_label" for="employee_address_county" class="form-label employer_address_county">County</label>
-					<input id="employee_address_county" name="employee_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
-					<br/>
-				</div>
-				
-				<div class="form-group ">
-					<label id="employee_address_post_code_label" for="employee_address_post_code" class="form-label employer_address_post_code">Postcode</label>
-					<input id="employee_address_post_code" name="employee_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
-					<br/>
-				</div>
-			</div>	
-			<p>&nbsp;</p>
-			<div class="form-group" id="pnl-owed">
-				<fieldset class="inline">
-				<legend id="director_label" class="form-label-bold">Does this employee claim <span class="business_name"></span> owes them money?</legend>
-					<div class="form-group">
-						<label id="employee_label0" for="employee_yes" class="block-label">
-						<input id="employee_yes" value="" name="employee" type="radio" aria-describedby="title_error title_help">Yes</label>
-
-						<label id="employee_label1" for="employee_no" class="block-label">
-						<input id="employee_no" value="" name="employee" type="radio" aria-describedby="title_error title_help">No</label>		
-					</div>
-				</fieldset>
 			</div>
-			
-			
 
 					
 		</form>
@@ -365,7 +312,6 @@ var count;
 var x;
 $(document).ready(function() {
 	x = $.cookie("business_id");
-	$("#pnl-amount").hide();
 	$(".business_name").text($.cookie('business'+x+'_name'));	
 	var str =$.cookie("employee_name");
 	if(str!=null){	
@@ -373,19 +319,7 @@ $(document).ready(function() {
 		$("#firstname").attr("value",  ret[0]);
 		$("#lastname").attr("value",  ret[1]);
 	}
-
-	var nextpage = $("#next").prop("href");
-	$('#pnl-owed input:radio').click(function() {
 	
-		if(($("#employee_yes").prop('checked')==true)){
-				$("#next").prop("href", "employee_amount.html");
-			}
-			else{
-				$("#next").prop("href", nextpage);
-	
-			}		
-	});
-		
 
 });
 
