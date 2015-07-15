@@ -204,7 +204,7 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Your bank accounts</h1>
+	<h1 class="form-title heading-large">Your<span class="loop"> other</span> bank accounts</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
@@ -214,19 +214,14 @@ display:block;
 	                    <tr>
 	                        <th>Sortcode</th>
 	                        <th>Account Number</th>
-	                        <th>Address</th>
-	                        <th>Used for income</th>
+	                        <th>Balance</th>
+	                        <th>Partners</th>
+	                        <th>Salary paid</th>
 	                        <th></th>
 	                    </tr>
 	                </thead>
 	                <tbody id="tablebody">
-	                    <tr>
-	                    	<td>Sortcode</td>
-	                        <td>Account Number</td>
-	                        <td>Address</td>
-	                        <td>Used for income</td>
-	                        <td></td>
-						</tr>	
+	                    
 	                </tbody>
 	            </table>
 	            <p>&nbsp;</p>
@@ -235,7 +230,7 @@ display:block;
 			
 			<div id="txt-intro">
 				<p>We need to know about all the bank, building society, credit union and national
-				savings accounts you have held in the last 2 years. This includes any join, business or dormant accounts.</p>
+				savings accounts you have held in the last 2 years. This includes any joint, business or dormant accounts.</p>
 			</div>
 			
 			
@@ -243,10 +238,11 @@ display:block;
 				<label  class="form-label-bold">What is the sort code of your account?</label>
 				<p class="form-hint">For example 40 19 28</p>
 				<input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-	            <a id="addlink" class="button">Add account</a>&nbsp;
+	            <a id="addlink" class="button">Add<span class="loop"> other</span> account</a>&nbsp;
+	        	<p><a class="firsttime" href="../overview.html?section3=complete">I haven't had any bank accounts</a></p>
 	        </div>
 	        
-	        <div id="done">
+	        <div class="loop"> 
 		        <p>&nbsp;</p>
 		        <p><a href="../overview.html?section3=complete" class="button family" id="next">Continue - I have added all my accounts.</a></p>
             </div>
@@ -335,27 +331,27 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var count = $.cookie("bank_count");
+	var count = $.cookie("acc_count");
 	var row;
 	
-	if(count>0){
+	
+	if(count!=null){
 		$("#pnl-account_table").show();
-		$("#next").show();
-		$("#txt-intro").hide();
-		$("#addlink").removeClass("button");
+		$(".loop").show();
+		$(".firsttime").hide();
 	}
 	else{
 		$("#pnl-account_table").hide();
-		$("#next").hide();
-		$("#txt-intro").show();
+		$(".loop").hide();
+		
 	}
 	
-/*	for(var i=1; i<=count; i++){
-		row = "<tr><td>"+ $.cookie("business"+x+"_partner_name"+i) + "</td><td>" + $.cookie("business"+x+"_partner_address"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+	for(var i=1; i<=count; i++){
+		row = "<tr><td>"+ $.cookie("acc"+ i +"-sort") + "</td><td>" + $.cookie("acc"+ i +"-number") + "</td><td>" + $.cookie("acc_joint") + "</td><td>" + $.cookie("acc"+i+"primary")	+ "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
 		$("#tablebody").append(row);
 	}
 	
-*/	
+	
 });
 
 $("#addlink").click(function(){
