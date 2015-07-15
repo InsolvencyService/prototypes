@@ -261,7 +261,7 @@ legend{
 		<input id="lastname"  />
 	</div>
 	<div class="form-group partwidth">
-              	  <a id="add_employee" class="button">Add <span class="repeat">another</span></a>&nbsp;
+              	  <a id="add_employee" class="button" href="employee_detail.html">Add <span class="repeat"></span></a>&nbsp;
 					<br/>
 	</div>
 
@@ -353,7 +353,10 @@ legend{
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var x = $.cookie("business_id");
+    var x = 1;
+    if ($.cookie("business_id") && parseInt($.cookie("business_id"))) {
+        x = parseInt($.cookie("business_id"));
+    }
 	
 	$(".business_name").text($.cookie("business"+x+"_name"));
 	
@@ -364,15 +367,6 @@ $(document).ready(function() {
 	
 	if(count == null){
 		count=0;
-	}
-	
-	if(count > 0){
-		$(".repeat").show();
-		$(".firsttime").hide();
-	}
-	else{
-		$(".repeat").hide();
-		$(".firsttime").show();
 	}
 	
 	

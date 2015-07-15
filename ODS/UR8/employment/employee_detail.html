@@ -288,7 +288,7 @@ display:block;
 		<p>&nbsp;</p>
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Continue</a>
+                <a class="button" id="next" href="list_employees.html?loop=true">Continue</a>
 			</div>
 					<a href="#">Back</a>
 				</div>
@@ -447,7 +447,7 @@ $("#next").click(function(){
 	$.cookie("business"+x+"_employee_name"+count, $("#firstname").val()+" "+$("#lastname").val());
 	$.cookie("business"+x+"_employee_address"+count, employee_address);
 	$.cookie("business"+x+"_employee_amount"+count, amountx);
-	$("#next").prop("href","add_employee.html");
+
 });
 
 
