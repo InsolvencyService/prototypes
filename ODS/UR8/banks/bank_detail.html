@@ -349,7 +349,7 @@
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
-
+var count =1;
 $(document).ready(function() {
    	
 	var bank = 	[
@@ -376,7 +376,7 @@ $(document).ready(function() {
 	$("#row4").hide();
 	$("#row5").hide();
 	
-	var count =1;
+	
 	$("#add_person").click(function(){
 	count++;
 	$("#row"+count).show();
@@ -387,7 +387,8 @@ $(document).ready(function() {
 
 
 $("#next").click(function(){
-	var x = $.cookie("acc-count");
+	var x = 0;
+	x = $.cookie("acc-count");
 	
 	if(x==null){
 		x=0;
