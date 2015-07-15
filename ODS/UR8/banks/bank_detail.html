@@ -361,11 +361,11 @@ $(document).ready(function() {
 	];
 	
 	var sortcode = $.cookie("bank_sortcode");
-	sortcode = sortcode.replace(/\D/g,'');
+	var sortcode1 = sortcode.replace(/\D/g,'');
 	
 	$.map(bank, function(a) {
-		if(a.sort==sortcode){
-			$("#sort_code").val($.cookie("bank_sortcode"));
+		if(a.sort==sortcode1){
+			$("#sort_code").val(sortcode);
 			$("#bank").val(a.bank);
 			$("#address").val(a.address);
 		}	
@@ -383,6 +383,45 @@ $(document).ready(function() {
 });
 
 });
+
+
+
+$("#next").click(function(){
+	/*var x = $.cookie("acc-count");
+	
+	if(x==null){
+		x=0;
+	}
+	
+	x++;
+	$.cookie("acc"+ x +"-number", $("#sort_code").val());
+	$.cookie("acc"+ x +"-number", $("#ac_number").val());
+	$.cookie("acc"+ x +"-balance", $("#ac_balance").val());
+	$.cookie("acc"+ x +"-month", $("#month :selected").val());
+	$.cookie("acc"+ x +"-year", $("#start_year").val());
+	
+	for(var i = 1; i<= count; i++){
+		if($("#firstname"+i).val()!=""){
+			$.cookie("acc"+ x +"-firstname"+i, $("#firstname"+i).val());
+			$.cookie("acc"+ x +"-lastname"+i, $("#lastame"+i).val());
+			$.cookie("acc"+ x +"-relationship"+i, $("#relationship"+i).val());
+			$.cookie("acc_joint", i);		
+		}
+	}
+	
+	if($("#main_yes").prop('checked')==true){
+		$.cookie("acc"+x+"primary", "yes");	
+	}
+	else{
+		$.cookie("acc"+x+"primary", "no");
+	}
+
+	$.cookie("acc-count",x);
+	*/
+	$("#next").attr("href", "add_bank.html");
+});
+
+
 
 
 
