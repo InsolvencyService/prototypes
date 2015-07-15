@@ -331,9 +331,13 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var count = $.cookie("acc_count");
+	var count = $.cookie("acc-count");
 	var row;
 	
+	if(count == null){
+		count=0;
+	}
+
 	
 	if(count>0){
 		$("#pnl-account_table").show();
