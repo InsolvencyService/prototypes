@@ -70,38 +70,9 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
+.amount-value:before { content: "£"; }
 
 
 .row img{
@@ -123,15 +94,13 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
+#month option{
+	width:50px;
+	display:block;
+	white-space:nowrap;
+	margin:0;
+	padding:5px 4px 3px 4px;
+	border:1px gray solid !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -196,79 +165,151 @@ display:block;
 	
 
 
-</div>
+<!-- #BeginEditable "content" --> 
+<div class="inner-block text">
+	
+	
+	
+	<h1 class="form-title heading-large">Property details</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	<div class="clearfix"></div>
+	
+	<div class="validation-summary"  id="msg-enteramt" style="display:none">
+                <h2>There was a problem with your answers</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+              Please enter a valid amount
+         </li>
+      </ol>
+     </div>
+
+	<div class="form-group ">
+	
+	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
+		Value of <span class="creditorname">ABC Ltd</span></label>
+		<div class="form-hint">Approximate value</div>
+		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
+	</div>
+	
+	<p class="form-label-bold">
+	</p>
+	
+		<div class="form-group ">
+	
+	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account or reference number</label>
+	<div class="form-hint">If you don’t have one leave this question blank</div>
+			<input id="ref" name="applicant_address_town" type="text" value="" />
+	<br/>
+	</div>
+	<div class="clearfix"></div>
+	<div class="validation-summary"  id="msg-enterdate"  style="display:none">
+                <h2>There was a problem with your answers</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+               Please enter a valid date
+         </li>
+      </ol>
+     </div>
+	
+<div class="clearfix"></div>
+	
+	 <div class="form-group">
+
+	<fieldset id="date_of_birth" class="date-of-birth">
+	
+	<legend id="date_of_birth_label" class="form-label-bold">Date the debt began (was incurred)</legend>
+<div class="form-hint">For example, Apr 2013</div>
+
+	<div class="row">
+	<div class="col-sm-4">
+		<p><br/></p>
+		<p><br/></p>
+		<div class="form-group form-group-day" style="display:none">
+			 <label id="date_of_birth_label.day" for="day">Day</label>
+		<input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+		</div>
+		<div class="form-group" style="width:60px">
+			 <label id="date_of_birth_label.month" for="month">Month</label>
+
+			<select id="month" name="month">
+				<option value="0"></option>
+				<option value="1">Jan</option>
+				<option value="2">Feb</option>
+				<option value="3">Mar</option>
+				<option value="4">Apr</option>
+				<option value="5">May</option>
+				<option value="6">Jun</option>
+				<option value="7">Jul</option>
+				<option value="8">Aug</option>
+				<option value="9">Sep</option>
+				<option value="10">Oct</option>
+				<option value="11">Nov</option>
+				<option value="12">Dec</option>
+			</select>
+		
+		</div>
+		<div class="form-group form-group-year">
+		<label id="date_of_birth_label.year" for="year">Year</label>
+		<input id="year" name="date_of_birth.year" type="number" min="1900" max="9999"  />
+		</div>
+	</div>
+
+	<div class="col-sm-8">
+		<div class="form-hint">
+	
+		<ul class="bulleted">
+		<li>For <strong>bills</strong>, enter the first date you didn't pay the full bill</li>
+		<li>For <strong>overdrafts</strong>, enter the first date you used your overdraft </li>
+		<li>For <strong>loans</strong>, enter the date you received the money  </li>
+		<li>For <strong>credit cards</strong>, enter the  date you took out the card</li>
+		</ul>
+		</div>
+	</div>
+	</div>
+	</fieldset>
 	
 
-
-<!-- #BeginEditable "content" --> 
-<div id="content" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large"><span class="firsttime">Property</span><span class="repeat">Your property</span></h1>
-	<div class="col-md-9">
-		<form class="form" method="post">
-		<p>We need to know about properties you own or part own.</p>	
-			
-			<div id="pnl-director_table" class="repeat">
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Address</th>
-	                        <th>Postcode</th>
-	                        <th>Jointly owned</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                    
-	                </tbody>
-	            </table>
-	            <p>&nbsp;</p>
-			</div>
-
-				<div class="form-group">
-				<label  class="form-label-bold">
-				<span class="firsttime">Enter the first line of the address</span>
-				<span class="repeat">Enter another address</span></label>
-				<div class="form-hint">For example, 123 High Street<br><br></div>
-	                <input class="typeahead input-lg form-control-3-4" id="propertyname" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
-	                <a id="add" class="button"  href="address.html">Add <span class="repeat">another </span>property</a>
-	                <p class="firsttime"><br><a href="summary.html?noproperty=true" class=" button" id="next">Continue - I don't own any property</a></p>
-	                <p class="repeat"><br><a href="summary.html" class="button family" id="next">Continue - I have added all my properties</a></p>
-	            </div>
-            
-            
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="#">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
-
 	</div>
-</div>
 
+
+
+
+
+
+<p class="clearfix"><br/></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+		<a id="next" class="button" href="../../creditors/list.html">Continue</a>
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -316,32 +357,62 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../shared/loop.js"></script>
 
-<script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="js/properties.js"></script>
-
-<a href="js/properties.js"></a>
 <script type="text/javascript">
-
 $(document).ready(function() {
-		
 	
+	var normalroute = $("#next").prop("href");
+	var numcreditors = 0;
+
+	
+	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
+		numcreditors = $.cookie('numcreditors');
+	}
+
+	var creditorname = $.cookie('creditorname' + numcreditors);
+
+	if (creditorname && creditorname.length > 1){
+		$(".creditorname").text(creditorname);
+	}
+
+	
+	$("#next").on("click", function(e){
+		var amt = $('#amount').val();
+		var month= $('#month').val();
+		var year  = $('#year').val();
+		$("#msg-enteramt").hide();
+		$("#msg-enterdate").hide();
+
+		if (amt && amt.length > 0 && month && month.length > 0 && parseInt(month) && year && year.length == 4 && parseInt(year)){	
+			if (parseFloat(numberWithoutCommas(amt)) > 10){
+				$.cookie('creditorref'  + numcreditors, $('#ref').val(), { expires: 1 });
+
+				var amount = parseFloat(numberWithoutCommas(amt)).toFixed(2);
+	
+				$.cookie('creditoramount' + numcreditors, amount, { expires: 1 });
+				//$.cookie('incurredday' + numcreditors, $('#day').val(), { expires: 1 });
+				$.cookie('incurredmonth' + numcreditors, pad(month,2), { expires: 1 });
+				$.cookie('incurredyear' + numcreditors, year, { expires: 1 });
+			}
+			else{
+				$("#msg-enteramt").text("Please log amounts you owe that are greater than £10");
+				$("#msg-enteramt").show();
+				e.preventDefault();
+			}
+		}
+		else{
+			if (amt && amt.length > 0 && $.isNumeric(parseFloat(numberWithoutCommas(amt)))){
+				$("#msg-enterdate").show();
+			}
+			else{
+				$("#msg-enteramt").show();
+			}
+			e.preventDefault();
+		}
+	});
+
 });
 
-$("#add").click(function(e){
-    var name = $("#propertyname").val();
-	if (isvalidname(name) == true){
-		$.cookie("propertyname", name);
-	}
-        /*
-	else{
-		e.preventDefault();
-		$(".validation-summary").show();
-	}
-	*/
-});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -350,14 +421,17 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function isvalidname(companyname){
-	var name = companyname.toLowerCase();
-	if (name.length > 2 && name.indexOf(" ") > -1){
-		return true;
-	}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
-	return false;
+function numberWithoutCommas(x) {
+    return parseFloat(x.toString().replace(/,/g, "")).toFixed(2);
+}
 
+function pad (str, max) {
+  str = str.toString();
+  return str.length < max ? pad("0" + str, max) : str;
 }
 
 </script>

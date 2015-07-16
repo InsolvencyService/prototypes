@@ -70,38 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -122,16 +92,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -196,79 +156,87 @@ display:block;
 	
 
 
-</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large"><span class="firsttime">Property</span><span class="repeat">Your property</span></h1>
-	<div class="col-md-9">
-		<form class="form" method="post">
-		<p>We need to know about properties you own or part own.</p>	
-			
-			<div id="pnl-director_table" class="repeat">
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Address</th>
-	                        <th>Postcode</th>
-	                        <th>Jointly owned</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                    
-	                </tbody>
-	            </table>
-	            <p>&nbsp;</p>
-			</div>
-
-				<div class="form-group">
-				<label  class="form-label-bold">
-				<span class="firsttime">Enter the first line of the address</span>
-				<span class="repeat">Enter another address</span></label>
-				<div class="form-hint">For example, 123 High Street<br><br></div>
-	                <input class="typeahead input-lg form-control-3-4" id="propertyname" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
-	                <a id="add" class="button"  href="address.html">Add <span class="repeat">another </span>property</a>
-	                <p class="firsttime"><br><a href="summary.html?noproperty=true" class=" button" id="next">Continue - I don't own any property</a></p>
-	                <p class="repeat"><br><a href="summary.html" class="button family" id="next">Continue - I have added all my properties</a></p>
-	            </div>
-            
-            
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="#">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
-
+<div class="inner-block text">
+	
+	
+	
+	<h1 class="form-title heading-large">Property address and type</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+		<div class="form-group ">
+	
+			<label id="applicant_address_line_1_label" for="address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+	<input id="address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+	<br/>
 	</div>
-</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
+	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
+	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
+	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+	<br/>
+	</div>
 
+		<br/>
+
+
+<p class="clearfix"><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+		<a id="next" class="button" href="amount.html">Continue</a>
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="list_properties.html" id="back">Back</a>
+
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -316,32 +284,31 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../shared/loop.js"></script>
+<script type="text/javascript" src="../../../assets/js/titleCaps.js"></script>
 
-<script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="js/properties.js"></script>
-
-<a href="js/properties.js"></a>
 <script type="text/javascript">
-
 $(document).ready(function() {
-		
+
+	var normalroute = $("#next").prop("href");
+	var numproperties = 0;
+	var propertyname;
 	
+	if ($.cookie('propertyname') && $.cookie('propertyname').length > 0) {
+	    propertyname = $.cookie('propertyname');
+	}
+	
+	if (propertyname && propertyname.length > 1) {
+	    $("#address_line_1").val(titleCaps(propertyname));
+	}
+	
+
+	$("#next").on("click", function(e){
+		$.cookie('propertyname', titleCaps($("#name").val()), { expires: 1 });
+	});
+
+
 });
 
-$("#add").click(function(e){
-    var name = $("#propertyname").val();
-	if (isvalidname(name) == true){
-		$.cookie("propertyname", name);
-	}
-        /*
-	else{
-		e.preventDefault();
-		$(".validation-summary").show();
-	}
-	*/
-});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -350,15 +317,6 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function isvalidname(companyname){
-	var name = companyname.toLowerCase();
-	if (name.length > 2 && name.indexOf(" ") > -1){
-		return true;
-	}
-
-	return false;
-
-}
 
 </script>
 
