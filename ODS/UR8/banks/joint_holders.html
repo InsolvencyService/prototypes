@@ -204,47 +204,51 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Your<span class="loop"> other</span> bank accounts</h1>
 	<div class="col-md-9">
+		<h1 class="form-title heading-large">Your joint account holders</h1>
+
 		<form class="form" method="post">
 			
-			<div id="pnl-account_table">
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Sortcode</th>
-	                        <th>Account Number</th>
-	                        <th>Balance</th>
-	                        <th>Partners</th>
-	                        <th>Salary paid</th>
-	                        <th></th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                    
-	                </tbody>
-	            </table>
-	            <p>&nbsp;</p>
-			</div>
+			
 			
 			
 			<div id="txt-intro">
-				<p>We need to know about all the bank, building society, credit union and national
-				savings accounts you have held in the last 2 years. This includes any joint, business, dormant or frozen accounts.</p>
+				<p>We need to know your relationship to your joint account holders.</p>
 			</div>
 			
+			<div id="joint1">
+				<label class="form-label-bold" for="joint1-name">What is your relationship to <span id="joint"></span></label>
+				<input class="form-control-3-4" id="joint1-name" style="width:250px; display:inline-block; margin-right:15px">  		
+			</div>
 			
-			<div class="form-group">
-				<label  class="form-label-bold">What is the sort code of your account?</label>
-				<p class="form-hint">For example 40 19 28. Leave blank if your account doesn't have a sort code.</p>
-				<input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-	            <a id="addlink" class="button">Add<span class="loop"> another</span> account</a>&nbsp;
-	        	<p><a class="firsttime" href="../overview.html?section3=complete">I haven't had any bank accounts</a></p>
-	        </div>
-	        
+			<div id="joint2">
+				<p><br></p>
+				<label class="form-label-bold" for="joint2-name">What is your relationship to <span id="joint"></span></label>
+				<input class="form-control-3-4" id="joint2-name" style="width:250px; display:inline-block; margin-right:15px">  		
+			</div>
+			
+			<div id="joint3">
+				<p><br></p>
+				<label class="form-label-bold" for="joint3-name">What is your relationship to <span id="joint"></span></label>
+				<input class="form-control-3-4" id="joint3-name" style="width:250px; display:inline-block; margin-right:15px">  		
+			</div>
+
+			<div id="joint4">
+				<p><br></p>
+				<label class="form-label-bold" for="joint4-name">What is your relationship to <span id="joint"></span></label>
+				<input class="form-control-3-4" id="joint4-name" style="width:250px; display:inline-block; margin-right:15px">  		
+			</div>
+			
+			<div id="joint5">
+				<p><br></p>
+				<label class="form-label-bold" for="joint5-name">What is your relationship to <span id="joint"></span></label>
+				<input class="form-control-3-4" id="joint5-name" style="width:250px; display:inline-block; margin-right:15px">  		
+			</div>
+
+			      
 	        <div class="loop"> 
 		        <p>&nbsp;</p>
-		        <p><a href="../overview.html?section3=complete" class="button family" id="next">Continue - I have added all my accounts.</a></p>
+		        <p><a href="add_bank.html" class="button family" id="next">Continue</a></p>
             </div>
             
 		</form>
@@ -331,39 +335,23 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var count = $.cookie("acc-count");
-	var row;
 	
-	if(count == null){
-		count=0;
+	var name;
+	x = 1;//$.cookie("acc-count");
+	$("#joint1").hide();
+	$("#joint2").hide();
+	$("#joint3").hide();
+	$("#joint4").hide();
+	$("#joint5").hide();
+
+	for(i=1; i<x; i++){
+		$("#joint"+i).show();
+		//name = "Mark Keeling";//$.cookie("acc"+ x +"-firstname"+i)+" "+$.cookie("acc"+ x +"-lastname"+i);
+		//$("#joint1 joint").text(name);	
 	}
 
-	
-	if(count>0){
-		$("#pnl-account_table").show();
-		$(".loop").show();
-		$(".firsttime").hide();
-	}
-	else{
-		$("#pnl-account_table").hide();
-		$(".loop").hide();
-	}
-	
-	for(var i=1; i<=count; i++){
-		row = "<tr><td>"+ $.cookie("acc"+ i +"-sort") + "</td><td>" + $.cookie("acc"+ i +"-number") + "</td><td>£" + $.cookie("acc"+ i +"-balance") + "</td><td>" + $.cookie("acc_joint"+i) + "</td><td>" + $.cookie("acc"+i+"primary")	+ "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
-		$("#tablebody").append(row);
-	}
-	
-	
+
 });
-
-$("#addlink").click(function(){
-	var sortcode = $("#name").val();
-	$.cookie("bank_sortcode", sortcode);
-	$("#addlink").attr("href", "bank_detail.html");
-});
-
-
 
 </script>
 
