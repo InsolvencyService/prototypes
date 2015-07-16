@@ -225,6 +225,7 @@
 				</div>
 	
 				<div id="row2">
+					
 					<div>
 						<label  class="form-label-bold" for="firstname2">First name</label>
 						<input class="form-control-3-4" id="firstname2" style="width:250px; display:inline-block; margin-right:15px">   
@@ -238,6 +239,7 @@
 				</div>
 	
 				<div id="row3">
+					
 					<div>
 						<label  class="form-label-bold" for="firstname3">First name</label>
 						<input class="form-control-3-4" id="firstname3" style="width:250px; display:inline-block; margin-right:15px">   
@@ -245,12 +247,12 @@
 					</div>	
 					<div>
 						<label  class="form-label-bold" for="lastname3">Last name</label>
-						<input class="form-control-3-4" id="lastname3" style="width:250px; display:inline-block; margin-right:15px">   
-						<p>&nbsp;</p>	
+						<input class="form-control-3-4" id="lastname3" style="width:250px; display:inline-block; margin-right:15px">   	
 					</div>
 				</div>
 	
 				<div id="row4">
+					
 					<div>
 						<label  class="form-label-bold" for="firstname4">First name</label>
 						<input class="form-control-3-4" id="firstname4" style="width:250px; display:inline-block; margin-right:15px">   
@@ -258,12 +260,12 @@
 					</div>	
 					<div>
 						<label  class="form-label-bold" for="lastname4">Last name</label>
-						<input class="form-control-3-4" id="lastname4" style="width:250px; display:inline-block; margin-right:15px">   
-						<p>&nbsp;</p>	
+						<input class="form-control-3-4" id="lastname4" style="width:250px; display:inline-block; margin-right:15px">   	
 					</div>
 				</div>
 	
 				<div id="row5">
+					
 					<div>
 						<label  class="form-label-bold" for="firstname5">First name</label>
 						<input class="form-control-3-4" id="firstname5" style="width:250px; display:inline-block; margin-right:15px">   
@@ -271,12 +273,11 @@
 					</div>	
 					<div>
 						<label  class="form-label-bold" for="lastname5">Last name</label>
-						<input class="form-control-3-4" id="lastname5" style="width:250px; display:inline-block; margin-right:15px">   
-						<p>&nbsp;</p>	
+						<input class="form-control-3-4" id="lastname5" style="width:250px; display:inline-block; margin-right:15px">   	
 					</div>
 				</div>
 	
-				<p><a id="add_person">Add another person</a></p>
+				<a id="add_person">Add another person</a>
 			</div>
 		
 			
@@ -363,7 +364,7 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
+<script type="text/javascript" src="../../assets/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 var count =1;
@@ -377,8 +378,17 @@ $(document).ready(function() {
 				{sort: '444444', bank: 'INSS', address: 'Colmore Row, Birmingham, B1 3RG'}
 	];
 	
-	var sortcode = $.cookie("bank_sortcode");
-	var sortcode1 = sortcode.replace(/\D/g,'');
+	var sortcode;
+	
+	if($.cookie("bank_sortcode")==null){
+		sortcode="";
+	}
+	else{
+		sortcode=$.cookie("bank_sortcode");
+
+	}
+	
+	var sortcode1 = sortcode.replace(/\D/g,"");
 	
 	$.map(bank, function(a) {
 		if(a.sort==sortcode1){
@@ -387,7 +397,6 @@ $(document).ready(function() {
 			$("#address").val(a.address);
 		}	
 	});
-
 	$("#row2").hide();
 	$("#row3").hide();
 	$("#row4").hide();
