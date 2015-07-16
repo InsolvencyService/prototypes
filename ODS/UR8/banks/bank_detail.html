@@ -428,10 +428,10 @@ $("#next").click(function(){
 		if($("#firstname"+i).val()!=""){
 			$.cookie("acc"+ x +"-firstname"+i, $("#firstname"+i).val());
 			$.cookie("acc"+ x +"-lastname"+i, $("#lastame"+i).val());
-			$.cookie("acc_joint"+ x, i);		
+			$.cookie("acc"+x+"_joint", i);		
 		}
 		else{
-			$.cookie("acc_joint"+ x, '0');
+			$.cookie("acc"+x+"_joint", '0');
 		}
 	}
 	
@@ -444,7 +444,7 @@ $("#next").click(function(){
 
 	$.cookie("acc-count",x);
 	
-	if($.cookie("acc_joint"+ x)>0){
+	if(x>0){
 		$("#next").attr("href", "joint_holders.html");
 	}
 	else{
