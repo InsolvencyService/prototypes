@@ -453,7 +453,7 @@ $("#next").click(function(){
 
 	$.cookie("acc-count",x);
 	
-	if(x>0){
+	if($.cookie("acc"+x+"_joint")>0){
 		$("#next").attr("href", "joint_holders.html");
 	}
 	else{
