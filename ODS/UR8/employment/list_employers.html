@@ -204,7 +204,7 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Employment history</h1>
+	<h1 class="form-title heading-large">Co owners</h1>
 	<div class="form-hint">We need to know about your employment in the last 12 months.</div>
     <p id="director-text" style="display:none">You do not need to include <span class="companylist"></span><span class="businesslist">.</span>.</p>
 
@@ -212,7 +212,7 @@ display:block;
 		<form class="form" method="post">
 			
 			 <div id="pnl-employment_table" class="repeat">
-            	<h2 class="form-label-bold">Employers<br></h2>
+            	<h2 class="form-label-bold">&nbsp;Owners<br></h2>
 	            <table style="width: 100%" class="family">
 	                <thead>
 	                    <tr>
@@ -231,15 +231,29 @@ display:block;
 
 	            
 			</div>
-	            <p>&nbsp;</p>			
-			<div class="form-group">
-				<label  class="form-label-bold"><span class="firsttime">Enter the employer's name</span><span class="repeat">Enter another employer's name</span></label>
-				<div class="form-hint">For example ABC Limited. You can add more later<br><br></div>
-	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
-	                <a id="add_employer" class="button" href="employers.html"><span class="firsttime">Add employer</span><span class="repeat">Add another employer</span></a>
+	            <p>&nbsp;</p>		
+	           <fieldset>
+	<legend class="form-label-bold"><span class="firsttime">Enter the co owners name</span>
+	<span class="repeat">Enter another owners name</span></legend>
+	
+	<span class="form-hint">For example, Jane Smith</span>
+	<div class="form-group halfwidth">
+		 <label for="firstname">First name</label>
+			<input id="firstname"  />
+	</div>
+	<div class="form-group halfwidth">
+		 <label for="lastname">Last name</label>
+		<input id="lastname"  />
+	</div>
+	<div class="form-group partwidth">
+              	  <a id="add" class="button" href="employee_detail.html">Add <span class="repeat"></span></a>&nbsp;
+					<br/>
+	</div>
+
+	</fieldset>
+	
 	                <p><br><a href="summary.html" class="button family repeat" id="next" >Continue - I have added all my employers</a>
 	                <a href="notworking.html" class="button family firsttime" id="next" >Continue - I am not employed</a></p>
-	    	</div>
             
            
 		</form>

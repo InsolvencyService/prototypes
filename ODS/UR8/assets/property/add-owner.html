@@ -69,32 +69,31 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/bankruptcy-overrides.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">	
+    <style type="text/css">
+        .row img {
+            width: 60px;
+            text-align: right;
+            float: right;
+        }
 
-<style type="text/css">
+        .row > div {
+            padding-top: 15px;
+        }
 
+            .row > div:first-child {
+                padding-top: 0px;
+            }
 
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-</style>
+        a.well {
+            padding-top: 8px;
+            display: block;
+            height: 90px;
+            min-width: 99%;
+            font-size: 16px;
+        }
+    </style>
 <!-- #EndEditable -->
 
 
@@ -157,104 +156,96 @@ display:block;
 	
 
 
-<!-- #BeginEditable "content" --> 
-<div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Property description</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	                   <div class="form-group">
-                        <p id="title_label" class="form-label">What type of property is <span class="bold-medium data">110 High Street</span>?</p>
+<!-- #BeginEditable "content" -->
+
+
+        <div id="content0">
+
+
+            <div class="inner-block">
+
+
+
+                <h1 class="form-title heading-large">Add joint property owner</h1>
+
+
+                <form class="form" method="post">
+                    <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+
+                    <div class="form-group ">
+
+                        <label id="first_name_label" for="first_name" class="form-label first_name">First name</label>
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+                        <br />
+                    </div>
+                    <div class="form-group ">
+
+                        <label id="last_name_label" for="last_name" class="form-label">Last name</label>
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+                        <br />
+                    </div>
+
+<div class="form-group">
+                        <p id="title_label" class="form-label">Gender</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
 
-                                <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
-                                    Detached house
-                                </label>
-                                <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
-                                    Semi-detached house
-                                </label>
-                                <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
-                                    Terraced house
-                                </label>    
-                          		<label id="title_label1" for="address_Flat" class="block-label">
-                                    <input id="address_Flat" name="sameaddress" type="radio">
-                                    Flat/Maisonette
-                                </label>
-                                <label id="title_label1" for="address_No" class="block-label">
-                                    <input id="address_No" name="sameaddress" type="radio">
-                                    Other
+                                <label for="gender_Male" class="block-label">
+                                    <input id="gender_Male" name="gender" type="radio">
+                                    Male
                                 </label>
 
+                                <label id="title_label1" for="gender_Female" class="block-label">
+                                    <input id="gender_Female" name="gender" type="radio">
+                                    Female
+                                </label>
                             </div>
                          </fieldset>
                     </div>
-                    
-                   <div class="form-group ">
-                        <label id="first_name_label" for="numbedrooms" class="form-label first_name">Number of bedrooms?</label>
-      						<input id="numbedrooms" type="number" autocomplete="off" />
-                        <br />
-                    </div>
 
-  					<div class="form-group ">
-                        <label id="first_name_label" for="propertyvalue" class="form-label first_name">How much is your property <span class="bold-medium data">110 High Street</span> currently worth?</label>
-      <input id="propertyvalue" name="first_name" type="number"
-             autocomplete="off" />
-                        <br />
-                    </div>
-   
                     <div class="form-group ">
-	
-	<fieldset id="purchase" class="date-of-birth">
-	<legend id="purchase_label" class="form-label">When did you purchase the property?</legend>
-	<span class="form-hint" id="purchase_help"></span>
-	<div class="form-group form-group-day">
-		 <label id="purchase_label.day" for="purchase.day">Day</label>
-	<input id="purchase.day" name="purchase.day" type="number" min="1" max="31" aria-describedby="purchase_error purchase_help" value="" />
-	</div>
-	<div class="form-group form-group-month">
-		 <label id="purchase_label.month" for="purchasemonth">Month</label>
-	<input id="purchasemonth" name="purchasemonth" type="number" min="1" max="12"  />
-	</div>
-	<div class="form-group form-group-year">
-	<label id="purchase_label.year" for="purchaseyear">Year</label>
-	<input id="purchaseyear" name="purchaseyear" type="number" min="1000" max="9999"  />
-	</div>
-	</fieldset>
-	</div>
 
-<p class="clearfix"><br/></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-		<a id="next" class="button" href="list_owners.html">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="../../../UR6/brian/2-home/1-address.html" id="back">Back</a>
+                        <label id="age_label" for="age" class="form-label">Age</label>
+                        <input id="age" name="age" type="text" value="" />
+                        <br />
+                    </div>
 
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	</form>
-	</div>
+
+                    <div class="form-group">
+                        <p id="title_label" class="form-label">Does this person live with you at <span class="bold-medium data">110 High Street</span>?</p>
+
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
+
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+
+                </form>
+            
+                <!-- For User research -->
+            <div class="form-navigation form-group" style="margin-top:20px"></div>
+                <div>
+					<a href="../../../UR6/brian/2-home/4-person-relationship-joint.html" id="next" class="button">Continue</a></div>
+                <div>
+					<a style="padding-right: 30px" href="../../../UR6/brian/2-home/2-address-type.html" id="back">Back</a>
+                &nbsp;<a href="../../../UR6/brian/logout.html" id="cancel">Save and logout</a>  
+				</div>
+            </div>
+            <p><br></p>
+
+
+        </div>
 
 	 <!-- #EndEditable -->
 
@@ -309,7 +300,7 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
-  
+
 <script type="text/javascript">
 $(document).ready(function() {
 
@@ -318,42 +309,28 @@ $(document).ready(function() {
 		$(".form-label .data").text(housename);
 	}
 
+	var personname;
 	var normalroute = $("#next").prop("href");
-	$("#jointly-owned_Yes").click(function(){
-		$("#next").prop("href","3-add-person-joint.html");
+	$("#sameaddress_No").click(function(){
+		$("#next").prop("href","3b-person-address-joint.html");
 	});
-	$("#jointly-owned_No").click(function(){
+	$("#sameaddress_Yes").click(function(){
 		$("#next").prop("href", normalroute);
+	});
+
+	$("#first_name").on("blur", function(){
+		personname = $("#first_name").val();
 	});
 	
 	$("#next").on("click", function(){
-		if ($("#purchasemonth").val().length > 0){
-			$.cookie('purchasemonth', $("#purchasemonth").val(), { expires: 1 });
-			$.cookie('purchaseyear', $("#purchaseyear").val(), { expires: 1 });
-		}
-		else{
-			$.cookie('purchasemonth', "6", { expires: 1 });
-			$.cookie('purchaseyear', "2005", { expires: 1 });
-		}
-		if ($("#propertyvalue").val().length > 0){
-		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
-		}
-		else{
-			$.cookie('propertyvalue', "140000", { expires: 1 });
-		}
-		
+		personname = $("#first_name").val();
+		$.cookie('name', personname, { expires: 1 });
 	});
 
 });
-   
-function numberWithoutCommas(x) {
-    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
-    return number;
-}
-
+    
+	
 </script>
-
-
 
 <!-- #EndEditable -->
     
