@@ -433,11 +433,14 @@ $("#next").click(function(){
 	$.cookie("acc"+ x +"-month", $("#month :selected").val());
 	$.cookie("acc"+ x +"-year", $("#start_year").val());
 	
+	var joint_count=0;
+	
 	for(var i = 1; i<= count; i++){
 		if($("#firstname"+i).val()!=""){
 			$.cookie("acc"+ x +"-firstname"+i, $("#firstname"+i).val());
 			$.cookie("acc"+ x +"-lastname"+i, $("#lastame"+i).val());
-			$.cookie("acc"+x+"_joint", i);		
+			$.cookie("acc"+x+"_joint", i);
+			joint_count=i;	
 		}
 		else{
 			$.cookie("acc"+x+"_joint", '0');
@@ -453,7 +456,7 @@ $("#next").click(function(){
 
 	$.cookie("acc-count",x);
 	
-	if(parseInt($.cookie("acc"+x+"_joint"))>0){
+	if(joint_count>0){
 		$("#next").attr("href", "joint_holders.html");
 	}
 	else{
