@@ -70,86 +70,9 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/bankruptcy-overrides.css">
 
-#row-total td{
-	font-weight:bold;
-}
-
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
-}
-
-legend{
-	border:0 transparent none;
-}
-.halfwidth{
-  float: left;
-  margin-right: 15px;
-  clear: none;
-	width:35%;
-}
-.partwidth{
-  float: left;
-  margin-right: 0;
-  clear: none;
-	width:15%;
-	margin-top:23px;
-}
+<style type="text/css">
 
 </style>
 <!-- #EndEditable -->
@@ -214,99 +137,161 @@ legend{
 	
 
 
-</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Your tenants</h1>
-	<div class="form-hint">We need to know about anyone leasing or renting 
-		your <strong>1 The Place</strong>.</div>
-    <p id="director-text" style="display:none">You do not need to include <span class="companylist"></span><span class="businesslist">.</span>.</p>
-
-	<div class="col-md-9">
-		<form class="form" method="post">
-			
-			 <div id="pnl-employment_table" class="repeat">
-            	<h2 class="form-label-bold">Tenants<br></h2>
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Name</th>
-	                        <th>Address</th>
-	                        <th>Start date</th>
-	                        <th>End date</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody class="tbl-content">
-	                                     
-
-	                </tbody>
-	            </table>
-
-	            
+<div class="inner-block text">
+	
+	
+	
+	<h1 class="form-title heading-large">Amounts secured against 
+	your home</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+                    
+	<div class="text">
+	            <div class="form-group" id="loansmessage">
+	 
+	 
+	 				<br>
+				 	<p>Besides your mortgage, you need to tell us about any other debts secured against your property.</p>
+					<div class="panel-indent">
+					Please include details of any other charges or securities given by you or awarded against <span class="bold-medium data">110 High Street</span> (eg, a charging order from the court). 					</div>
+				
+					 <p style="display:none"><a href='../../../UR6/brian/2-home/add-person.html' class='btn btn-success'>Add a person</a>
+				 </p>
+		 		</div>
 			</div>
-	            <p>&nbsp;</p>	
-           <fieldset>
-	<legend class="form-label-bold"><span class="firsttime">Enter the tenants name</span>
-	<span class="repeat">Enter another tenants name</span></legend>
+
+    	
+	<div class="form-group ">
 	
-	<span class="form-hint">For example, Jane Smith</span>
-	<div class="form-group halfwidth">
-		 <label for="firstname">First name</label>
-			<input id="firstname"  />
+	<label id="last_name_label" for="loanname" class="form-label last_name">Name of the creditor or beneficiary of the charge/security</label>
+	<div class="form-hint">eg this is the creditor who will be repaid when you sell your house</div>
+	<input id="loanname" name="last_name" type="text" value="" />
+	<br/>
 	</div>
-	<div class="form-group halfwidth">
-		 <label for="lastname">Last name</label>
-		<input id="lastname"  />
-	</div>
-	<div class="form-group partwidth">
-              	  <a id="add" class="button" href="add-owner.html">Add <span class="repeat"></span></a>&nbsp;
-					<br/>
+	
+	    	
+	<div class="form-group ">
+	
+	<label id="last_name_label" for="outstanding" class="form-label last_name">Reference number (if any)</label>
+	<input id="outstanding" name="last_name" type="text" value="" />
+	<br/>
 	</div>
 
-	</fieldset>
+    	
+<div class="form-group ">
 	
-	                <p><br><a href="list_properties.html?loop=true" class="button family" id="next" >
-	                <span class="repeat">Continue - I have added all tenants</span>
-	                <span class="firsttime" >Continue - No one rents my property</span></a></p>
-            
-           
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="javascript:history.go(-1)">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
-
-	</div>
+	<label id="email_label" for="email" class="form-label email">Amount currently outstanding</label>
+	<span class="form-hint">How much your creditor says you owe</span>
+	<input id="amount" name="amount" type="text" value="" />
 </div>
+<div class="form-group ">
+	
+	<fieldset id="date_of_birth" class="date-of-birth">
+	<span id="date_of_birth_label" class="form-label">Date the charge/security was made</span>
+	<span class="form-hint" id="date_of_birth_help">Use the format MM YYYY (eg 01 2015)</span>
+	
+	<div class="form-group form-group-day">
+		 <label id="date_of_birth_label.day" for="date_of_birth.day">Day</label>
+	<input id="date_of_birth.day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-month">
+		 <label id="date_of_birth_label.month" for="loanmonth">Month</label>
+	<input id="loanmonth" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	<div class="form-group form-group-year">
+	<label id="date_of_birth_label.year" for="loanyear">Year</label>
+	<input id="loanyear" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+	</div>
+	</fieldset>
+	</div>
+	
+				<div class="form-group" id="shared-mortgage">
+                        <p  class="form-label">Is this a joint debt with someone else?</p>
 
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
+                                <label for="person_Yes" class="block-label">
+                                    <input id="person_Yes" name="sameaddress" type="radio">
+                                    Yes - with <span class="bold-medium data">Susan Smith</span>
+                                </label>
+
+                                <label for="person_Yes" class="block-label">
+                                    <input id="person_Yes" name="sameaddress" type="radio">
+                                    Yes - with another person
+                                </label>
+<div class="clearfix"></div>
+                                <label id="title_label1" for="person_No" class="block-label">
+                                    <input id="person_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+                            </div>
+                         </fieldset>
+                    </div>
+
+<div class="form-group " style="display:none">
+	
+	<label id="first_name_label" for="first_name" class="form-label first_name">
+			What was the debt for?</label>
+		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
+
+	<input id="loanfor" name="ref" type="text" value="" style="width:300px !important;"/>
+	<br/>
+	</div>
+
+	<div class="form-group ">
+	<p id="title_label" class="form-label">Are there any other debts secured against your property?</p>
+	
+	<fieldset class="inline">
+	<div id="title" class="form-group">
+	
+	<label id="title_label0" for="another_Yes" class="block-label">
+	<input id="another_Yes" value="Mr." name="joint" type="radio" aria-describedby="title_error title_help">
+	Yes
+	</label>
+	
+	<label id="title_label1" for="another_No" class="block-label">
+	<input id="another_No" value="Mrs." name="joint" type="radio" aria-describedby="title_error title_help">
+	No
+	</label>
+	
+	</div>
+	</fieldset>
+	</div>
+
+
+	<p class="clearfix"><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+	<a href="../../../UR6/brian/2-home/summary.html" id="next" class="button">Continue</a>
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -354,99 +339,56 @@ legend{
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../shared/loop.js"></script>
-	
-<script type="text/javascript">
 
+<script type="text/javascript">
 $(document).ready(function() {
-	//$("#pnl-employment_table").hide();	
+ 
+	var housename = $.cookie('house');
+	if (housename && housename.length > 0){
+		$(".form-label .data").text(housename);
+	}
+           
+  	var normalroute = $("#next").prop("href");
+	$("#another_Yes").click(function(){
+		$("#next").prop("href","6-secured-debts.html");
+	});
+	$("#another_No").click(function(){
+		$("#next").prop("href", normalroute);
+	});
 	
-	
-	var countx;
-	countx = $.cookie("employer_count");
-	
-		
-	if((countx != null)){
-		//$("#pnl-employment_table").show();
-		//$("#no_employment").hide();
-		for(var i=1; i <= countx; i++) {
-			cname = $.cookie("employer_name"+i);
-			caddress = $.cookie("employer_address"+i);
-			cstart = $.cookie("employer_startdate"+i);
-			cend = $.cookie("employer_enddate"+i);
-		
-			row = "<tr><td>"+ cname +"</td><td>"+ caddress +"</td><td>"+ cstart +"</td><td>"+ cend +"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
-			$(".tbl-content").append(row);	
+   var numberofsecuredloans = 0;
+
+  if ($.cookie('numberofsecuredloans') && $.cookie('numberofsecuredloans').length > 0){
+ 	numberofsecuredloans= parseInt($.cookie('numberofsecuredloans'));
+	}
+
+	if (numberofsecuredloans == 0){
+		numberofsecuredloans = 1;
+	}
+	else{
+	    // they have already added one
+	    numberofsecuredloans += 1;
+		$("#loansmessage").hide();
+	}
+
+	$("#next").on("click", function(e){
+		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
+			var securedloan = parseFloat($("#amount").val());
+			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1 });
+			$.cookie('loanfor' + numberofsecuredloans, $("#loanfor").val(), { expires: 1 });
+			$.cookie('loanname' + numberofsecuredloans, $("#loanname").val(), { expires: 1 });
+			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1 });
+			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1 });
+			
+			$.cookie('numberofsecuredloans', numberofsecuredloans, { expires: 1 });
 			
 		}
-	}
-	var directorcount = $.cookie("director_count");
-	if (directorcount && parseInt(directorcount) > 0) {
-	    $("#director-text").show();
-	    $("#director-text .companylist").text(getcompanies(directorcount));
-	}
-	var businesscount = $.cookie("business_id");
-	if (businesscount && parseInt(businesscount) > 0) {
-	    $("#director-text").show();
-	    var businesstext = getbusinesses(businesscount);
-	    if (directorcount > 0) {
-	        businesstext = " or " + businesstext;
-	    }
-	    $(".businesslist").text(businesstext);
-	}
-});
 
-$("#add_employer").click(function(){
-	var employername = $("#name").val();
-	$.cookie("employer_name_temp", employername);
-	$("#add_employer").prop("href","employers.html");
+	});
 	
 });
 
-
-function getcompanies(count) {
-    var companytext = "";
-    for (i = 1; i <= count; i++) {
-        if (i > 1) {
-            if (i == count) {
-                companytext = companytext + " or ";
-            }
-            else {
-                companytext = companytext + ", ";
-            }
-        }
-        companytext = companytext + $.cookie("director_company_name" + i);
-    }
-    return companytext;
-}
-
-
-function getbusinesses(count) {
-    var companytext = "";
-    for (i = 1; i <= count; i++) {
-        if (i > 1) {
-            if (i == count) {
-                companytext = companytext + " or ";
-            }
-            else {
-                companytext = companytext + ", ";
-            }
-        }
-        companytext = companytext + $.cookie("business"+i+"_name");
-    }
-    return companytext;
-}
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-
-
+ 
 </script>
 
 
