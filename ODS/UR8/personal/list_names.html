@@ -70,8 +70,38 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
+  <link href="../../UR8/creditors/css/typeahead.css" rel="stylesheet">
+ <style type="text/css">
+ .tt-dropdown-menu{
+	width:650px;
+}
+.tt-input{
+	width:400px;
+}
+.tt-hint{
+	display:none !important;
+}
+.choose-address{
+	color:gray;
+}
+.row > div:first-child{
+	padding-left:5px;
+	margin-left:0;	
+}
+i.glyphicon{
+	margin-right:5px;
+	color:#666666;
+}
+.input-sm{
+	width:170px;
+}
+.input-lg{
+	width:260px;
+}
 
-<style type="text/css">
+#row-total td{
+	font-weight:bold;
+}
 
 
 .row img{
@@ -94,20 +124,31 @@ display:block;
 	font-size:16px;
 }
 
-.inner-block {
-    float: left;
-    display: table-cell;
-    width: 66.66666666%;
+.btn-edit{
+	margin-right:10px;
 }
-.right-block{
-	padding-top:60px;
-	width:33.33333%;
-	float:left;
-	  position: relative;
-	  min-height: 1px;
-	  padding-right: 15px;
-	  padding-left: 15px;
-	  display: table-cell;
+.amount{
+	text-align:right
+}
+.totalrow td{
+	font-weight:bold !important;
+}
+
+legend{
+	border:0 transparent none;
+}
+.halfwidth{
+  float: left;
+  margin-right: 15px;
+  clear: none;
+	width:35%;
+}
+.partwidth{
+  float: left;
+  margin-right: 0;
+  clear: none;
+	width:15%;
+	margin-top:23px;
 }
 
 </style>
@@ -173,182 +214,93 @@ display:block;
 	
 
 
-	</div>
+</div>
 	
 
 
 <!-- #BeginEditable "content" --> 
 <div id="content" >
-<div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Personal details</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<p class="form-label-bold">
-	</p>
-	
-	 <div class="form-group ">
-	
-	<fieldset class="inline">
-	<legend id="title_label" class="form-label-bold">Title</legend>
-	<div id="title-select" class="form-group">
-	
-	<label id="title_label0" for="title_Mr." class="block-label">
-	<input id="title_Mr." value="Mr" name="title" type="radio" aria-describedby="title_error title_help">
-	Mr
-	</label>
-	
-	<label id="title_label1" for="title_Mrs." class="block-label">
-	<input id="title_Mrs." value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
-	Mrs
-	</label>
-	
-	<label id="title_label2" for="title_Miss" class="block-label">
-	<input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title_error title_help">
-	Miss
-	</label>
-	
-	<label id="title_label3" for="title_Ms." class="block-label">
-	<input id="title_Ms." value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
-	Ms
-	</label>
 
-    <label id="title_label4" for="title_other" class="block-label">
-        <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
-     </label>
+<div class="inner-block">	
+	<h1 class="form-title heading-large">Other names</h1>
+	<div class="form-hint">Have you been known by any other names in the last 5 years? Include maiden names, and short names such as "Bob" for Robert.</div>
+	<div class="form-hint">Don't include trading names</div>
+	
 
+	<div class="col-md-9">
+		<form class="form" method="post">
+			
+			 <div id="pnl-employment_table" class="repeat">
+            	<h2 class="form-label-bold">Owners<br></h2>
+	            <table style="width: 100%" class="family">
+	                <thead>
+	                    <tr>
+	                        <th>Name</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
+	                </thead>
+                    <tbody class="tbl-content"></tbody>
+	            </table>
+
+	            
+			</div>
+	            <p>&nbsp;</p>	
+           <fieldset>
+	<legend class="form-label-bold"><span class="firsttime">Enter name</span>
+	<span class="repeat">Enter another name</span></legend>
+	
+	<span class="form-hint">For example, Bob Smith</span>
+	<div class="form-group halfwidth">
+		 <label for="firstname">First name</label>
+			<input id="firstname"  />
 	</div>
+	<div class="form-group halfwidth">
+		 <label for="lastname">Last name</label>
+		<input id="lastname"  />
+	</div>
+	<div class="form-group partwidth">
+              	  <a id="add" class="button" href="#">Add <span class="repeat"></span></a>&nbsp;
+					<br/>
+	</div>
+
 	</fieldset>
-	</div>
-
 	
-<div>
-	<div>
-		<div class="form-group" >
-		<label  class="form-label-bold" for="firstname">First name</label>
-		<input value="John" type="text" id="firstname"/>
-		</div>
-	</div>
-	<div>
-		<div class="form-group" >
-		<label  class="form-label-bold" for="middlename">Middle names</label>
-		<input value="" type="text" id="middlename"/>
-		</div>
-	</div>
-	<div>
-		<div class="form-group" >
-		<label  class="form-label-bold" for="lastname">Last name</label>
-		<input value="Williamson" type="text" id="lastname"/>
-		</div>
+	                <p><br>
+					<a href="contact-details.html" class="button family" id="next"><span class="repeat">Continue - I have added all my names</span>
+	                <span class="firsttime">Continue - I have not been known by any other name</span></a></p>
+            
+           
+		</form>
+			<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+					<a href="javascript:history.go(-1)">Back</a>
+				</div>
+		</div>		
+		<div class="col-md-3">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+            <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../../UR8/personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../../UR8/personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
+            </div>
+        </div>
+
 	</div>
 </div>
 
-
-<p><br/></p>
-	<div class="form-group ">
-	
-	<fieldset id="date_of_birth" class="date-of-birth">
-	<legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
-	
-	<span class="form-hint" id="date_of_birth_help">For example, 31 01 1976</span>
-	<div class="form-group form-group-day">
-		 <label id="date_of_birth_label.day" for="dob-day">Day</label>
-	<input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="31" />
-	</div>
-	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="dob-month">Month</label>
-	<input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="05" />
-	</div>
-	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="dob-year">Year</label>
-	<input id="dob-year" name="date_of_birth.year" type="number" min="1000" max="9999" pattern="[1-9]" value="1980" />
-	</div>
-	</fieldset>
-	</div>
-			<p class="clearfix"><br></p>
-			<div></div>
-	                                <div class="form-group ">
-                                    <p id="title_label" class="form-label-bold ">What is your relationship status?</p>
-
-                                    <fieldset class="inline">
-                                        <div id="relationship" class="form-group">
-                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
-                                                <input id="dependent_type1" value="Partner" name="dependent" type="radio" 
-                                                       aria-describedby="title_error title_help">Single</label>
-                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
-                                                <input id="dependent_type2" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Married/civil partnership</label>
-                                            <label id="dependent_type2_label" for="dependent_type3" class="block-label">
-                                                <input id="dependent_type3" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Co-habiting</label>
-                                            <label id="dependent_type2_label" for="dependent_type4" class="block-label">
-                                                <input id="dependent_type4" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Divorced/former civil partner</label>
-                                            <label id="dependent_type2_label" for="dependent_type4" class="block-label">
-                                                <input id="dependent_type4" value="Relative" name="dependent" type="radio" 
-                                                aria-describedby="title_error title_help">Widowed/surviving civil-partner</label>
-
-                                        </div>
-                                    </fieldset>
-                             </div>
-
-  </form> 
-  <p class="clearfix"><br/></p>
-
-	</div>
-<div class="right-block">
-<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-                           
-                            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-                            <br>
-                            <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                            <p class="heading-secondary">Bankruptcy fee</p>
-                           	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
-                           	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
-                           	<p><a href="payments/payments.html">Make a payment</a></p>
-                            </div>
-                            <p><a href="#" style="display:none">Print summary</a></p>
-                            <p><a href="#" style="display:none">Generate court documents</a></p>
-                            <p><a href="#" style="display:none">Discard application</a></p>
-                        </div>
-</div>
-
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group" style="margin-left:30px;">
-	
-	<div>
-		<a id="next" class="button" href="list_names.html">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-
-	</div>
 
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -396,55 +348,27 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-
-
+<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../shared/loop.js"></script>
+	
 <script type="text/javascript">
+
 $(document).ready(function() {
-
-	var othernamecount = 1;
-
-	$("#firstname").val($.cookie('firstname'));
-	$("#lastname").val($.cookie('lastname'));
-
-	$("#dob-day").val($.cookie('dob-day'));
-	$("#dob-month").val($.cookie('dob-month'));
-	$("#dob-year").val($.cookie('dob-year'));
-	$("#othername1").val($.cookie('othername1'));
 		
-	$(".other-names").hide();
-	$("#btn-addanothername").show();	
-		
-	var normalroute = $("#next").prop("href");
-
-	$("#btn-addanothername").click(function(e){
-		e.preventDefault();
-		othernamecount = othernamecount  + 1;
-		$("#other-name-" + othernamecount.toString()).show();
-	});
-	
-
 });
 
-$("#next").click(function(){
-	$.cookie("title", $("#title-select :checked").attr("value"), { expires: 1, path:'/' });
-	$.cookie("firstname", $("#firstname").val(), { expires: 1, path:'/' });
-	$.cookie("middlename", $("#middlename").val(), { expires: 1, path:'/' });
-	$.cookie("lastname", $("#lastname").val(), { expires: 1, path:'/' });
-	$.cookie("othername1", $("#othername1").val(), { expires: 1, path:'/' });
-	$.cookie('dob-day', $("#dob-day").val(), { expires: 1, path:'/' })
-	$.cookie('dob-month', $("#dob-month").val(), { expires: 1, path:'/' })
-	$.cookie('dob-year', $("#dob-year").val(), { expires: 1, path:'/' })
+$("#add").click(function () {
+    $(".repeat").show();
+	 $(".firsttime").hide();
 
-
-	
+	var name = $("#firstname").val() + " " + $("#lastname").val();
+	row = "<tr><td>"+ name +"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+	$(".tbl-content").append(row);	
+	$("#firstname").val("");		
+	 $("#lastname").val("");
 });
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+
 
 
 </script>
