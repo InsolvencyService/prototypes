@@ -395,7 +395,18 @@ $(document).ready(function() {
 
 $("#next").click(function(){
 		var addr = $("#applicant_address_line_1").val();
-		$.cookie("applicant_address", addr);
+		if (addr && addr.length > 0){
+			$.cookie("applicant_address", addr, { expires: 1, path:'/' });
+			$.cookie("address_line_1", addr, { expires: 1, path:'/' });
+			$.cookie("address_line_2", $("#applicant_address_line_2").val(), { expires: 1, path:'/' });
+			$.cookie("address_line_3", $("#applicant_address_line_3").val(), { expires: 1, path:'/' });
+			
+			$.cookie("town", $("#applicant_address_town").val(), { expires: 1, path:'/' });
+			if ( $("#applicant_address_post_code")){
+				$.cookie("post_code", $("#applicant_address_post_code").val(), { expires: 1, path:'/' });
+			}
+		}
+		
 		$("#next").prop("href","family-members.html");
 });
 

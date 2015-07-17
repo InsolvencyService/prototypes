@@ -454,14 +454,14 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
-	$.cookie("title", $("#title-select :checked").attr("value"));
-	$.cookie("firstname", $("#firstname").val());
-	$.cookie("middlename", $("#middlename").val());
-	$.cookie("lastname", $("#lastname").val());
-	$.cookie("othername1", $("#othername1").val());
-	$.cookie('dob-day', $("#dob-day").val())
-	$.cookie('dob-month', $("#dob-month").val())
-	$.cookie('dob-year', $("#dob-year").val())
+	$.cookie("title", $("#title-select :checked").attr("value"), { expires: 1, path:'/' });
+	$.cookie("firstname", $("#firstname").val(), { expires: 1, path:'/' });
+	$.cookie("middlename", $("#middlename").val(), { expires: 1, path:'/' });
+	$.cookie("lastname", $("#lastname").val(), { expires: 1, path:'/' });
+	$.cookie("othername1", $("#othername1").val(), { expires: 1, path:'/' });
+	$.cookie('dob-day', $("#dob-day").val(), { expires: 1, path:'/' })
+	$.cookie('dob-month', $("#dob-month").val(), { expires: 1, path:'/' })
+	$.cookie('dob-year', $("#dob-year").val(), { expires: 1, path:'/' })
 
 	$("#next").prop("href","contact-details.html");
 	

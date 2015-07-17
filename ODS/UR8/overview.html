@@ -356,8 +356,7 @@ Your employment
                             <li class="row" id="section4">
                                 <div class="rowtop">
                                     <span class="col-sm-8"><h3>4 Assets</h3></span>
-                                    
-                                    <span class="col-sm-4"><a href="#" class="edit" style="display:none">Start</a></span>
+                                    <span class="col-sm-4"><a href="assets/property/list_properties.html" class="edit" style="display:none">Start</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
@@ -796,7 +795,13 @@ Your employment
 	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().addClass("button").text("Start");
-	                        document.title = 'Overview';
+	                        document.title = 'Assets - Property';
+	                        
+	                        $("#section4 .js-section").addClass("open");
+	                        $("#section4 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+	                        var details = $("#section4 .js-section").attr("href");
+	                        $(details).show();
+	                        $(details).parent().addClass("well");
 	                    }
 	                    if (section4 && section4 == "complete") {
 	                         $("#section1 .edit").show().removeClass("button").text("Edit");
