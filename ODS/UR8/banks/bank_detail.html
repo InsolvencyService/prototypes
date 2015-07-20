@@ -440,17 +440,13 @@ $("#next").click(function(){
 		}
 	}
 	
-	if($.cookie("acc"+x+"_joint")==null){
-		$.cookie("acc"+x+"_joint", "None");
-	}
-	
-
 	$.cookie("acc-count",x);
-	alert(joint_count);
+
 	if(joint_count!=0){
 		$("#next").attr("href", "joint_holders.html");
 	}
 	else{
+		$.cookie("acc"+x+"_joint", "None");
 		$("#next").attr("href", "add_bank.html");
 	}
 });
