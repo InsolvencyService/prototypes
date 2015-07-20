@@ -162,54 +162,37 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Property description</h1>
+	<h1 class="form-title heading-large">Secured loan or arrangement</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	                   <div class="form-group">
-                        <p id="title_label" class="form-label">What type of property is <span class="bold-medium data">1 The Place</span>?</p>
+		<div class="form-group ">
+	<label id="last_name_label" for="name" class="form-label last_name">Name of the company the loan or arrangement is with</label>
+	<input id="loanname" name="name" type="text" value="ABC Company" />
+	<br/>
+	</div>
 
-                        <fieldset class="inline">
-                            <div id="title" class="form-group">
 
-                                <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
-                                    Detached house
-                                </label>
-                                <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
-                                    Semi-detached house
-                                </label>
-                                <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
-                                    Terraced house
-                                </label>    
-                          		<label id="title_label1" for="address_Flat" class="block-label">
-                                    <input id="address_Flat" name="sameaddress" type="radio">
-                                    Flat/Maisonette
-                                </label>
-    <label id="title_label4" for="title_other" class="block-label">
-        <input id="title_other" value="" name="sameaddress" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
-     </label>
+<div class="form-group ">
+	
+	<label id="first_name_label" for="first_name" class="form-label first_name">
+			What was the loan for?</label>
+		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
 
-                            </div>
-                         </fieldset>
-                    </div>
-                    
-                   <div class="form-group ">
-                        <label id="first_name_label" for="numbedrooms" class="form-label first_name">Number of bedrooms?</label>
-      						<input id="numbedrooms" type="number" autocomplete="off" style="width:70px" />
-                        <br />
-                    </div>
+	<input id="loanfor" name="ref" type="text" value="" style="width:300px !important;"/>
+	<br/>
+	</div>
 
+
+	
+	
   					<div class="form-group ">
-                        <label id="first_name_label" for="propertyvalue" class="form-label first_name">How much is 
-						the property <span class="bold-medium data">1 The Place</span> currently worth?</label>
-						<div class="form-hint">Please provide the most accurate figure you can</div>
+                        <label id="first_name_label" for="propertyvalue" class="form-label first_name">
+						How much is left to pay?</label>
+						<div class="form-hint">You can find this on your statement or contact your lender for the amount </div>
 		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
                         <br />
                     </div>
@@ -219,8 +202,7 @@ display:block;
 
 	<fieldset id="date_of_birth" class="date-of-birth">
 	
-	<legend id="date_of_birth_label" class="form-label">When did you obtain 
-	the property or start having a financial interest in it?</legend>
+	<legend id="date_of_birth_label" class="form-label">Date the secured loan was started or the arrangement was made</legend>
 <div class="form-hint">For example, 30 May 2015</div>
 		<div class="form-group form-group-day" style="display:none">
 			 <label id="date_of_birth_label.day" for="day">Day</label>
@@ -262,7 +244,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="list_owners.html?loop=true&owner=me">Continue</a>
+		<a id="next" class="button" href="summary_mortgage.html?loop=true">Continue</a>
 	</div>
 	<div>
 	<br>
