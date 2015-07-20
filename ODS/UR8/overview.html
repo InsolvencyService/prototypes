@@ -342,11 +342,20 @@ Your employment
                                 <div class="rowbottom" id="details3a">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            TBD
+                                            Account number and balance
                                         </div>
                                         <div class="col-sm-6">
                                         </div>
                                     </div>
+ 
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            Joint account holders
+                                        </div>
+                                        <div class="col-sm-6">
+                                        </div>
+                                    </div>
+
                                     <hr>
 
 
@@ -789,6 +798,12 @@ Your employment
 	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
 	                        $("#section3 .edit").show().addClass("button").text("Start");
 	                        document.title = 'Overview - Bank';
+	                        
+	                        $("#section3 .js-section").addClass("open");
+	                        $("#section3 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+	                        var details = $("#section3 .js-section").attr("href");
+	                        $(details).show();
+	                        $(details).parent().addClass("well");
 	                    }
 	                    if (section3 && section3 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");	
