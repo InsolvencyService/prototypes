@@ -323,7 +323,7 @@ $(document).ready(function() {
 	var count = $.cookie("acc-count");
 	
 	for(i=1; i<=count; i++){
-		acc=$.cookie("acc"+i+"-sort") + " " + $.cookie("acc"+i+"-number");
+		acc="S/C:"$.cookie("acc"+i+"-sort") + " A/C:" + $.cookie("acc"+i+"-number");
 		$("#table_body").append("<tr><td>"+ acc +"</td><td><label class=\"block-label\" for=\"radio-inline-"+i+"\"><input id=\"radio-inline-"+i+"\" type=\"radio\" name=\"primary\" value=\""+acc+"\">Yes</label></td></tr>")
 	}
 });
