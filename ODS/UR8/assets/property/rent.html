@@ -70,40 +70,10 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
-
-#row-total td{
-	font-weight:bold;
-}
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/bankruptcy-overrides.css">
 
 
+<style type="text/css">
 .row img{
 width:60px;
 text-align:right;
@@ -122,16 +92,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -196,89 +156,70 @@ display:block;
 	
 
 
-</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
+<div class="inner-block text">
+	
+	
+	
+	<h1 class="form-title heading-large">Rent details</h1>
+	
+	
+	
+	<form class="form" method="post">         
+                    	
+                  <div class="form-group ">
+	                    
+    
+                       <div class="form-group" id="shared-mortgage">
+                        <p  class="form-label">Are you currently renting <strong>1 The Place</strong> ?</p>
 
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Property</h1>
-	<div class="col-md-9">
-		<form class="form" method="post">
-		<p>We need to know about properties you own or have a financial interest 
-		in</p>	
-			
-			<div id="pnl-director_table" class="repeat">
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Address</th>
-	                        <th>Postcode</th>
-	                        <th>Jointly owned</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                	<tr id="row1" class="loop">
-	                        <td>1 The Place</td>
-	                        <td>AB1 2JH</td>
-	                        <td>Yes</td>
-	                        <td>&nbsp;</td>
-                 		</tr>
-	                </tbody>
-	            </table>
-	            <tr>
-	            
-	            </tr>
-			</div>
-<p><br/></p>
-				<div class="form-group">
-				<label  class="form-label-bold">
-				<span class="firsttime">Enter the first line of the address</span>
-				<span class="repeat">Enter another address</span></label>
-				<div class="form-hint">For example, 123 High Street<br><br></div>
-	                <input class="typeahead input-lg form-control-3-4" id="propertyname" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
-	                <a id="add" class="button"  href="address.html">Add <span class="repeat">another </span>property</a>
-	                <p><br><a href="rent.html" class=" button" id="next">
-	                <span class="firsttime">Continue - I don't own or have financial interest in any property</span>
-	                <span class="repeat">Continue - I have added all properties</span>
-	                </a></p>
-	            </div>
-            
-            
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="#">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
+                        <fieldset class="inline">
+                            <div id="title" class="form-group">
 
+                                <label for="sameaddress_Yes" class="block-label">
+                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label1" for="sameaddress_No" class="block-label">
+                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                    No
+                                </label>
+
+                            </div>
+                         </fieldset>
+                    </div>
+
+ 
+<p class="clearfix"><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+	<a href="summary.html" id="next" class="button">Continue</a>
 	</div>
-</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -324,54 +265,49 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../shared/loop.js"></script>
 
-<script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="js/properties.js"></script>
-
-<a href="js/properties.js"></a>
 <script type="text/javascript">
-
 $(document).ready(function() {
-	if (getParameterByName("loop")){
-		$("#next").prop("href", "rentlist.html");
-	}	
+                   
+	var sharedowner = $.cookie('name');
+
+	 if (sharedowner == null){
+	 	//$("#shared-mortgage").hide();
+	 }
+	 else
+	 {
+	 	if (sharedowner.length > 0){
+		 	$("#shared-mortgage .data").text(sharedowner);
+		 	$("#shared-mortgage").show();
+	 	}
+	 }
+	 
+	 var homemonth = $.cookie('purchasemonth');
+	 var homeyear = $.cookie('purchaseyear');
+
+	 if (homemonth && homeyear && homemonth.length > 0 && homeyear.length > 0){
+		$("#mortgageyear").val(homeyear);
+		$("#mortgagemonth").val(homemonth);
+	 }
 	
+	$("#next").on("click", function(){
+		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0) {
+		    var mortgageamount = parseFloat(numberWithoutCommas($("#mortgageamount").val()));
+			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
+
+			$.cookie('mortgagetype', "mortgage", { expires: 1 });
+		}
+	});
+
+	
+ 
 });
 
-$("#add").click(function(e){
-    var name = $("#propertyname").val();
-	if (isvalidname(name) == true){
-		$.cookie("propertyname", name);
-	}
-        /*
-	else{
-		e.preventDefault();
-		$(".validation-summary").show();
-	}
-	*/
-});
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
 }
-
-function isvalidname(companyname){
-	var name = companyname.toLowerCase();
-	if (name.length > 2 && name.indexOf(" ") > -1){
-		return true;
-	}
-
-	return false;
-
-}
-
 </script>
 
 
