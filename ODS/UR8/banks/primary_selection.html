@@ -196,87 +196,76 @@ display:block;
 	
 
 
-</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Your<span class="loop"> other</span> bank accounts</h1>
-	<div class="col-md-9">
-		<form class="form" method="post">
-			
-			<div id="pnl-account_table">
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Sortcode</th>
-	                        <th>Account number</th>
-	                        <th>Balance</th>
-	                        <th>Joint holders</th>
-	                        <th></th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                    
-	                </tbody>
-	            </table>
-	            <p>&nbsp;</p>
-			</div>
-			
-			
-			<div id="txt-intro">
-				<p>We need to know about all the bank, building society, credit union and national
-				savings accounts you have held in the last 2 years. This includes any joint, business, dormant or frozen accounts.</p>
-			</div>
-			
-			
-			<div class="form-group">
-				<label  class="form-label-bold">What is the sort code of your account?</label>
-				<p class="form-hint">For example 40 19 28. Leave blank if your account doesn't have a sort code.</p>
-				<input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-	            <a id="addlink" class="button">Add<span class="loop"> another</span> account</a>&nbsp;
-	        	<p><a class="firsttime" href="../overview.html?section3=complete">I haven't had any bank accounts</a></p>
-	        </div>
-	        
-	        <div class="loop"> 
-		        <p>&nbsp;</p>
-		        <p><a class="button family" id="next">Continue - I have added all my accounts.</a></p>
-            </div>
-            
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="#">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
-
+<div class="inner-block text">
+	
+	
+	
+	<h1 class="form-title heading-large">Actions taken</h1>
+	<div>
+	<p>We need to know which of your accounts your salary, benefits or other income is paid into.</p>
 	</div>
-</div>
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	
+	<div class="validation-summary"  id="msg-entervalue" style="display:none">
+                <h2>Add a creditor</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+               Enter a creditor’s name below to continu</li>
+        </ol>
+    </div>
+		<p class="clearfix"><br /></p>
+ 
+ <div id="creditorlist">
+<table style="width: 100%">
+		<thead>
+			<tr>
+				<th>Account</th>
+				<th>Is your salary, benefits or other income paid into this account?</th>
+			</tr>
+		</thead>
+		<tbody id="table_body">
 
+			
+
+		</tbody>
+		</table>
+</div>
+<p><br></p>
+<p><a class="button" href="summary.html" id="next">Continue</a></p>
+<p><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+        <a style="padding-right: 30px" href="../creditors/list.html" id="back">Back</a>
+
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -324,55 +313,17 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
-	
 <script type="text/javascript">
-var count;
 $(document).ready(function() {
-	count = $.cookie("acc-count");
-	var row;
 	
-	if(count == null){
-		count=0;
-	}
-
-	
-	if(count>0){
-		$("#pnl-account_table").show();
-		$(".loop").show();
-		$(".firsttime").hide();
-	}
-	else{
-		$("#pnl-account_table").hide();
-		$(".loop").hide();
-	}
-	
-	for(var i=1; i<=count; i++){
-		row = "<tr><td>"+ $.cookie("acc"+ i +"-sort") + "</td><td>" + $.cookie("acc"+ i +"-number") + "</td><td>£" + $.cookie("acc"+ i +"-balance") + "</td><td>" + $.cookie("acc"+i+"_joint") + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
-		$("#tablebody").append(row);
-	}
-	
-	
-});
-
-$("#addlink").click(function(){
-	var sortcode = $("#name").val();
-	$.cookie("bank_sortcode", sortcode);
-	$("#addlink").attr("href", "bank_detail.html");
-});
-
-$("#next").click(function(){
-	if(count==1){
-		$("#next").attr("href", "../overview.html?section3=complete");
-	}
-	else{
-		$("#next").attr("href", "primary_selection.html");
+	var count = $.cookie("acc-count");
+	for(i=0; i<count; i++){
+		$("#table_body").append("<tr><td>"+ $.cookie("acc"+i+"-sort") + " " + $.cookie("acc"+i+"-number") +"</td><td><label class=\"block-label\" for=\"radio-inline-1\"><input id=\"radio-inline-1\" type=\"radio\" name=\"primary\" value=\"Yes\">Yes</label></td></tr>")
 	}
 });
-
-
-
 </script>
 
 
