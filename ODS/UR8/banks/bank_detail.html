@@ -422,7 +422,7 @@ $("#next").click(function(){
 		$("#add_person").hide();
 	}	
 	
-	$.cookie("acc"+ x +"-sort", $("#sort_code").val());
+	$.cookie("acc"+ x +"-sort", sortcode);
 	$.cookie("acc"+ x +"-number", $("#ac_number").val());
 	$.cookie("acc"+ x +"-balance", $("#ac_balance").val());
 	$.cookie("acc"+ x +"-month", $("#month :selected").val());
@@ -437,9 +437,10 @@ $("#next").click(function(){
 			$.cookie("acc"+x+"_joint", i);
 			joint_count=i;	
 		}
-		else{
-			$.cookie("acc"+x+"_joint", "0");
-		}
+	}
+	
+	if($.cookie("acc"+x+"_joint")==null){
+		$.cookie("acc"+x+"_joint", "None");
 	}
 	
 
