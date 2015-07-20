@@ -201,7 +201,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Actions taken</h1>
+	<h1 class="form-title heading-large">Your primary account</h1>
 	<div>
 	<p>We need to know which of your accounts your salary, benefits or other income is paid into.</p>
 	</div>
@@ -236,7 +236,7 @@ display:block;
 		</table>
 </div>
 <p><br></p>
-<p><a class="button" href="summary.html" id="next">Continue</a></p>
+<p><a class="button"  id="next">Continue</a></p>
 <p><br></p>
 	
 	<!-- For User research -->
@@ -317,13 +317,25 @@ display:block;
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+var acc;
 $(document).ready(function() {
 	
 	var count = $.cookie("acc-count");
-	for(i=0; i<count; i++){
-		$("#table_body").append("<tr><td>"+ $.cookie("acc"+i+"-sort") + " " + $.cookie("acc"+i+"-number") +"</td><td><label class=\"block-label\" for=\"radio-inline-1\"><input id=\"radio-inline-1\" type=\"radio\" name=\"primary\" value=\"Yes\">Yes</label></td></tr>")
+	
+	for(i=1; i<=count; i++){
+		acc=$.cookie("acc"+i+"-sort") + " " + $.cookie("acc"+i+"-number");
+		$("#table_body").append("<tr><td>"+ acc +"</td><td><label class=\"block-label\" for=\"radio-inline-"+i+"\"><input id=\"radio-inline-"+i+"\" type=\"radio\" name=\"primary\" value=\""+acc+"\">Yes</label></td></tr>")
 	}
 });
+
+
+$("#next").click(function(){
+	var a = $('input[name=primary]:checked').val();
+	$.cookie("primaryaccount", a);
+	$("#next").attr("href", "summary.html");
+});
+
+
 </script>
 
 
