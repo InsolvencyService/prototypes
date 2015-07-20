@@ -152,11 +152,8 @@
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div>
-				<label class="form-label-bold" for="sort_code">Branch details</label>
-				<label for="sort_code" style="width:100px" >Sort code &nbsp;</label><input class="form-control-1-4" id="sort_code" style="width:25%;margin-bottom:5px"><br>			
-				<label for="bank" style="width:100px">Bank &nbsp;</label><input class="form-control-1-2" id="bank" style="width:50%;  margin-right:15px; margin-bottom:5px"><br> 	
-				<label for="address" style="width:100px">Address &nbsp;</label><input class="form-control-3-4" id="address" style="width:80%;  margin-right:15px;">   
-				<p>&nbsp;</p>	
+				<p>We need to know a little bit more about your account at <span id="bankname"></span> located as <span id="bankaddress"></span>.</p>
+				<p>&nbsp;</p>
 			</div>
 			
 			
@@ -385,16 +382,14 @@ $(document).ready(function() {
 	}
 	else{
 		sortcode=$.cookie("bank_sortcode");
-
 	}
 	
 	var sortcode1 = sortcode.replace(/\D/g,"");
 	
 	$.map(bank, function(a) {
 		if(a.sort==sortcode1){
-			$("#sort_code").val(sortcode);
-			$("#bank").val(a.bank);
-			$("#address").val(a.address);
+			$("#bankname").text(a.bank);
+			$("#bankaddress").text(a.address);
 		}	
 	});
 	$("#row2").hide();
@@ -443,16 +438,10 @@ $("#next").click(function(){
 			joint_count=i;	
 		}
 		else{
-			$.cookie("acc"+x+"_joint", '0');
+			$.cookie("acc"+x+"_joint", "0");
 		}
 	}
 	
-	if($("#main_yes").prop('checked')==true){
-		$.cookie("acc"+x+"primary", "Yes");	
-	}
-	else{
-		$.cookie("acc"+x+"primary", "No");
-	}
 
 	$.cookie("acc-count",x);
 	alert(joint_count);
