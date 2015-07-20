@@ -283,15 +283,10 @@
 <script type="text/javascript" src="../../assets/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-   	
-	
-});
-
-
 
 $("#next").click(function(){
-	var business_address;
+	var business_address = "";
+	var business_name = $("#business_name").val();
 	var address1=$("#business_address_line_1").val();
 	var address2=$("#business_address_line_2").val();
 	var address3=$("#business_address_line_3").val();
@@ -318,7 +313,7 @@ $("#next").click(function(){
 		business_address = business_address+address6;
 	}
 	
-	$.cookie("foreign-bank", $("#business_name").val());
+	$.cookie("foreign-bank", business_name);
 	$.cookie("foreign-address", business_address);
 	
 	$("#next").attr("href","bank_detail.html");	
