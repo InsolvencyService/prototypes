@@ -211,18 +211,35 @@ display:block;
 	            <table id="employer_table">
                     <tbody>
                     	<tr class="group-heading">
-                    		<td>Number of bank accounts</td>
+                    		<td width="60%">Number of bank accounts</td>
                         	<td id="banks">2</td>
                         	<td><a href="add_bank.html">Edit</a></td>
-                        	<td></td>
                     	</tr>
-                   
+                    </tbody>
+                </table>
+                <p><br></p>
+                 <p class="bold-small">Primary Account</p>   
+                <table id="employer_table">
+                    <tbody>
+ 
                     	<tr class="group-heading">
-                    		<td>Primary account</td>
+                    		<td width="60%">Bank</td>
+                        	<td id="branch">0</td>
+                        	<td><a href="primary_selection">Edit</a></td>
+                    	</tr>
+                    	
+                    	<tr class="group-heading">
+                    		<td>Account number</td>
                         	<td id="number">0</td>
                         	<td><a href="primary_selection">Edit</a></td>
-                        	<td></td>
                     	</tr>
+
+						<tr class="group-heading">
+                    		<td>Balance</td>
+                    		<td id="balance">0</td>
+                        	<td><a href="primary_selection">Edit</a></td>
+                    	</tr>
+
                     </tbody>
                     
 
@@ -315,10 +332,16 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	var count= $.cookie("acc-count");
+	
 	var primary = $.cookie("primaryaccount");
+	var b = $.cookie("acc"+ primary +"-bank");
+	var bal = $.cookie("acc"+ primary +"-balance")
+	var acc = $.cookie("acc"+ primary +"-number")
 	
 	$("#banks").text(count);
-	$("#number").text(primary);
+	$("#branch").text(b);
+	$("#number").text(acc);
+	$("#balance").text("£"+bal);
 
 
 });
