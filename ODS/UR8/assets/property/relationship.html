@@ -69,74 +69,31 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
+    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 
-#row-total td{
-	font-weight:bold;
-}
+    <style type="text/css">
+        .row img {
+            width: 60px;
+            text-align: right;
+            float: right;
+        }
 
+        .row > div {
+            padding-top: 15px;
+        }
 
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
+            .row > div:first-child {
+                padding-top: 0px;
+            }
 
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
-}
- .auto-style1 {
-	 background-color: #00823B;
- }
- </style>
+        a.well {
+            padding-top: 8px;
+            display: block;
+            height: 90px;
+            min-width: 99%;
+            font-size: 16px;
+        }
+    </style>
 <!-- #EndEditable -->
 
 
@@ -199,93 +156,81 @@ display:block;
 	
 
 
-</div>
-	
+<!-- #BeginEditable "content" -->
 
 
-<!-- #BeginEditable "content" --> 
-<div id="content" >
+        <div id="content0">
 
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Secured loans</h1>
-	<div class="col-md-9">
-		<form class="form" method="post">
-				 	<p>Besides your mortgage, you need to tell us about any other debts secured against <strong>1 The Place</strong>.</p>
-					<div class="panel-indent">
-					Please include details of any other charges or securities given by you or awarded against 
-					<span class="bold-medium data">1 The Place</span> (eg, a charging order from the court). </div>
 
-			
-			<div id="pnl-director_table" class="repeat">
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Creditor</th>
-	                        <th>Amount</th>
-	                        <th>Date</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                	<tr id="row1" class="loop">
-	                        <td>ABC Bank</td>
-	                        <td>£4,234</td>
-	                        <td>12/03/2014</td>
-	                        <td>&nbsp;</td>
-                 		</tr>
-	                </tbody>
-	            </table>
-	            <tr>
-	            
-	            </tr>
-			</div>
-<p><br/></p>
-				<div class="form-group">
-				<label  class="form-label-bold">
-				<span class="firsttime">Enter the company the loan is with</span>
-				<span class="repeat">Enter another company</span></label>
-				<div class="form-hint">For example, ABC Bank<br><br></div>
-	                <input class="typeahead input-lg form-control-3-4" id="propertyname" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
-	                <a id="add" class="button"  href="secured-debt.html">Add <span class="repeat">secured loan</span></a>
-				<p><br></p>
-					<p>
-	                <a href="list_properties.html?loop=true" class=" button" id="next">
-	                <span class="firsttime">Continue - I don't have any secured loans</span>
-	                <span class="repeat">Continue - I have added all secured loans</span></a></p>
-	            </div>
+            <div class="inner-block">
+
+
+
+                <h1 class="form-title heading-large">Your relationship</h1>
+
+
+                <form class="form" method="post">
+					<fieldset>
+					 <div id="pnl-dependent">
+
+                                <div class="form-group ">
+                                    <p id="title_label" class="form-label ">What is your relationship with <strong class="data">Susan</strong>?</p>
+
+                                    <fieldset class="inline">
+                                        <div id="title" class="form-group">
+                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
+                                                <input id="dependent_type1" value="Partner" name="dependent" type="radio" 
+                                                       aria-describedby="title_error title_help">Spouse</label>
+                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
+                                                <input id="dependent_type2" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Civil partner</label>
+                                            <label id="dependent_type2_label" for="dependent_type3" class="block-label">
+                                                <input id="dependent_type3" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Divorced </label>
+                                            <label id="dependent_type2_label" for="dependent_type4" class="block-label">
+                                                <input id="dependent_type4" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Partner</label>           
+                                            <label id="dependent_type2_label" for="dependent_type5" class="block-label">
+                                                <input id="dependent_type5" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Business partner</label>
+                                            <label id="dependent_type2_label" for="dependent_type6" class="block-label">
+                                                <input id="dependent_type6" value="Other" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Other
+                                            </label>
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label for="other_reason" class="form-label">Other</label>
+                                    <input id="other_reason" name="other_reason" type="text" value="" /><br />
+                                </div>
+                            </div>
+
+					
+					</fieldset>
+                                    </form>
             
-            
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="#">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
+                <!-- For User research -->
+                <div class="form-navigation form-group" style="margin-top:20px"></div>
+                <div><a href="../../../UR6/brian/2-home/5-mortgage.html" id="next" class="button">Continue</a></div>
+                <div><a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                &nbsp;<a href="../../../UR6/brian/logout.html" id="cancel">Save and logout</a></div>
+
+
             </div>
+            <p><br></p>
+
+
         </div>
-
-	</div>
-</div>
-
 
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -331,54 +276,18 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../shared/loop.js"></script>
 
-<script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="js/properties.js"></script>
-
-<a href="js/properties.js"></a>
 <script type="text/javascript">
-
 $(document).ready(function() {
-		
+	var personname = $.cookie('name');
 	
+	if (personname && personname.length > 0){
+		$(".form-label .data").text(personname);
+	}
+
 });
-
-$("#add").click(function(e){
-    var name = $("#propertyname").val();
-	if (isvalidname(name) == true){
-		$.cookie("propertyname", name);
-	}
-        /*
-	else{
-		e.preventDefault();
-		$(".validation-summary").show();
-	}
-	*/
-});
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function isvalidname(companyname){
-	var name = companyname.toLowerCase();
-	if (name.length > 2 && name.indexOf(" ") > -1){
-		return true;
-	}
-
-	return false;
-
-}
-
 </script>
-
 
 <!-- #EndEditable -->
     
