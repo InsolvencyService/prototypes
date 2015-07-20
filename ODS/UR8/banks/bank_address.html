@@ -291,9 +291,6 @@ $(document).ready(function() {
 
 
 $("#next").click(function(){
-
-	var count = $.cookie("acc-count");
-		
 	var business_address;
 	var address1=$("#business_address_line_1").val();
 	var address2=$("#business_address_line_2").val();
@@ -321,10 +318,10 @@ $("#next").click(function(){
 		business_address = business_address+address6;
 	}
 	
-	$.cookie("acc"+count+"-name", $("#business_name").val());
-	$.cookie("acc"+count+"-address", business_address);
-
+	$.cookie("foreign-bank", $("#business_name").val());
+	$.cookie("foreign-address", business_address);
 	
+	$("#next").attr("href","bank_detail.html");	
 });
 
 
