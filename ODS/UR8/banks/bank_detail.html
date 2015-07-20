@@ -369,6 +369,7 @@
 <script type="text/javascript">
 var count =1;
 var sortcode;
+var bank_name;
 $(document).ready(function() {
    	
 	var bank = 	[
@@ -398,15 +399,16 @@ $(document).ready(function() {
 		
 		$.map(bank, function(a) {
 			if(a.sort==sortcode1){
-				$("#bankname").text(a.bank);
+				bank_name = a.bank;
+				$("#bankname").text(bank_name);
 				$("#bankaddress").text(a.address);
 			}	
 		});
 	}
 	else{
-		var xname = $.cookie("foreign-bank");
+		bank_name = $.cookie("foreign-bank");
 		var xaddress = $.cookie("foreign-address");
-		$("#bankname").text(xname);
+		$("#bankname").text(bank_name);
 		$("#bankaddress").text(xaddress);
 	}
 	$("#row2").hide();
@@ -447,6 +449,7 @@ $("#next").click(function(){
 	$.cookie("acc"+ x +"-balance", $("#ac_balance").val());
 	$.cookie("acc"+ x +"-month", $("#month :selected").val());
 	$.cookie("acc"+ x +"-year", $("#start_year").val());
+	$.cookie("acc"+ x +"-bank", bank_name);
 	
 	var joint_count=0;
 	
