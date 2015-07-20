@@ -204,7 +204,7 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Your<span class="loop"> other</span> bank accounts</h1>
+	<h1 class="form-title heading-large"><span class="loop">Other B</span><span class="firsttime">B</span>ank accounts and savings</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
@@ -228,17 +228,19 @@ display:block;
 			
 			
 			<div id="txt-intro">
-				<p>We need to know about all the bank, building society, credit union and national
-				savings accounts you have held in the last 2 years. This includes any joint, business, dormant or frozen accounts.</p>
+				<p>We need to know about any bank, building society, credit union and national
+				savings accounts you have had in the last 2 years. This includes all of your accounts in the UK and abroad as well as any joint, business, 
+				dormant or frozen accounts.</p>
 			</div>
 			
 			
 			<div class="form-group">
-				<label  class="form-label-bold">What is the sort code of your account?</label>
-				<p class="form-hint">For example 40 19 28. Leave blank if your account doesn't have a sort code.</p>
+				<label  class="form-label-bold">Enter the account sort code?</label>
+				<p>You can find it on your account statement or at the bottom of your debit card.</p>
+				<p class="form-hint">For example 12 34 56. You can add more accounts later. Leave blank if it's a foreign account.</p>
 				<input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
 	            <a id="addlink" class="button">Add<span class="loop"> another</span> account</a>&nbsp;
-	        	<p><a class="firsttime" href="../overview.html?section3=complete">I haven't had any bank accounts</a></p>
+	        	<p><a class="firsttime" href="../overview.html?section3=complete">I have not had any bank accounts</a></p>
 	        </div>
 	        
 	        <div class="loop"> 
@@ -358,8 +360,14 @@ $(document).ready(function() {
 
 $("#addlink").click(function(){
 	var sortcode = $("#name").val();
-	$.cookie("bank_sortcode", sortcode);
-	$("#addlink").attr("href", "bank_detail.html");
+	if(sortcode == "" || sortcode == null){
+		$("#addlink").attr("href", "bank_address.html");
+
+	}
+	else{
+		$.cookie("bank_sortcode", sortcode);
+		$("#addlink").attr("href", "bank_detail.html");
+	}
 });
 
 $("#next").click(function(){
