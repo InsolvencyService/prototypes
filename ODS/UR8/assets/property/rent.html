@@ -166,33 +166,66 @@ display:block;
 	
 	
 	<form class="form" method="post">         
-                    	
-                  <div class="form-group ">
-	                    
-    
-                       <div class="form-group" id="shared-mortgage">
-                        <p  class="form-label">Are you currently renting <strong>1 The Place</strong> ?</p>
 
-                        <fieldset class="inline">
-                            <div id="title" class="form-group">
-
-                                <label for="sameaddress_Yes" class="block-label">
-                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
-                                    Yes
-                                </label>
-
-                                <label id="title_label1" for="sameaddress_No" class="block-label">
-                                    <input id="sameaddress_No" name="sameaddress" type="radio">
-                                    No
-                                </label>
-
-                            </div>
-                         </fieldset>
+  					<div class="form-group ">
+                        <label id="first_name_label" for="propertyvalue" class="form-label first_name">How much is 
+						the rent for <span class="bold-medium data">1 The Place</span> each month?</label>
+		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
+                        <br />
                     </div>
-
- 
-<p class="clearfix"><br></p>
+   
+	<br>
+		<br><br>&nbsp;<a href="summary.html" class="button family" id="skip" >I do not pay rent</a>
 	
+ 	<div class="form-group ">
+	
+	<label id="last_name_label" for="last_name" class="form-label last_name">Name of the landlord you rent the property from</label>
+	<div class="form-hint">If you do not pay the landlord directly, the name and contact details of the managing agent.
+</div>
+	<input id="name" name="last_name" type="text" value="" />
+	<br/>
+	</div>
+       	
+      
+<div class="heading-medium">Landlord's address</div>
+			<div class="form-group ">
+	
+			<label id="applicant_address_line_1_label" for="address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+	<input id="address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
+	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
+	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
+	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+	<br/>
+	</div>
+
+
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
