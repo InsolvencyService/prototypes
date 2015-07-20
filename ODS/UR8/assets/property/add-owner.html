@@ -69,31 +69,48 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">	
-    <style type="text/css">
-        .row img {
-            width: 60px;
-            text-align: right;
-            float: right;
-        }
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 
-        .row > div {
-            padding-top: 15px;
-        }
+<style type="text/css">
 
-            .row > div:first-child {
-                padding-top: 0px;
-            }
 
-        a.well {
-            padding-top: 8px;
-            display: block;
-            height: 90px;
-            min-width: 99%;
-            font-size: 16px;
-        }
-    </style>
+.row img{
+width:60px;
+text-align:right;
+float:right
+}
+.row > div{
+padding-top:15px;
+}
+.row > div:first-child{
+padding-top:0px;
+}
+
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+	font-size:16px;
+}
+
+.inner-block.text{
+	float:left;
+	display: table-cell;
+    width:66.66666666%;
+}
+.right-block{
+	padding-top:60px;
+	width:33.33333%;
+	float:left;
+	  position: relative;
+	  min-height: 1px;
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  display: table-cell;
+}
+
+</style>
 <!-- #EndEditable -->
 
 
@@ -156,83 +173,162 @@
 	
 
 
-<!-- #BeginEditable "content" -->
+	</div>
+	
 
 
-        <div id="content0">
+<!-- #BeginEditable "content" --> 
+<div id="content" >
+<div class="inner-block text">
+	
+	
+	
+	<h1 class="form-title heading-large">Add a person</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	
 
+                          <div class="form-group ">
 
-            <div class="inner-block">
-
-
-
-                <h1 class="form-title heading-large">Add joint property owner</h1>
-
-
-                <form class="form" method="post">
-                    <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-                    <div class="form-group ">
-
-                        <label id="first_name_label" for="first_name" class="form-label first_name">First name</label>
-                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+                        <label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="Susan" />
                         <br />
                     </div>
                     <div class="form-group ">
 
-                        <label id="last_name_label" for="last_name" class="form-label">Last name</label>
-                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+                        <label id="last_name_label" for="last_name" class="form-label-bold ">Last name</label>
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="Bagley" />
                         <br />
                     </div>
 
-<div class="form-group">
-                        <p id="title_label" class="form-label">Gender</p>
 
-                        <fieldset class="inline">
-                            <div id="title" class="form-group">
 
-                                <label for="gender_Male" class="block-label">
-                                    <input id="gender_Male" name="gender" type="radio">
-                                    Male
-                                </label>
+<p class="clearfix"></p>
+<div class="form-group ">
+                                    <p id="title_label" class="form-label-bold">Age</p>
 
-                                <label id="title_label1" for="gender_Female" class="block-label">
-                                    <input id="gender_Female" name="gender" type="radio">
-                                    Female
-                                </label>
-                            </div>
-                         </fieldset>
-                    </div>
+                                    <fieldset class="inline">
+                                        <div id="title" class="form-group">
+                                            <label for="age1" class="block-label">
+                                                <input id="age1" value="0-3" name="age" type="radio">0-3
+                                            </label>
+                                            <label for="age2" class="block-label">
+                                                <input id="age2" value="4-11" name="age" type="radio">4-11
+                                            </label>
+                                            <label for="age3" class="block-label">
+                                                <input id="age3" value="12-18" name="age" type="radio">12-18
+                                            </label>
+                                            <label for="age4" class="block-label">
+                                                <input id="age4" value="19-23" name="age" type="radio">19-23
+                                            </label>
+                                            <label for="age5" class="block-label">
+                                                <input id="age5" value="24-30" name="age" type="radio">24-30
+                                            </label>
 
-                    <div class="form-group ">
+                                            <label for="age5" class="block-label">
+                                                <input id="age5" value="31-50" name="age" type="radio">31-50
+                                            </label>
+                                            <label for="age5" class="block-label">
+                                                <input id="age5" value="51-65" name="age" type="radio">51-65
+                                            </label>
+                                            <label for="age5" class="block-label">
+                                                <input id="age5" value="66+" name="age" type="radio">60+
+                                            </label>
 
-                        <label id="age_label" for="age" class="form-label">Age</label>
-                        <input id="age" name="age" type="text" value="" />
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+        <p class="clearfix"></p>
+
+<div class="form-group ">
+                                    <p id="title_label" class="form-label-bold  ">What's their relationship to you?</p>
+
+                                    <fieldset class="inline">
+                                        <div id="title" class="form-group">
+                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
+                                                <input id="dependent_type1" value="Husband/wife/partner" name="dependent" type="radio" 
+                                                       aria-describedby="title_error title_help">Husband/wife/partner
+                                            </label>
+                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
+                                                <input id="dependent_type2" value="Child" name="dependent" type="radio" aria-describedby="title_error title_help">Child
+                                            </label>
+                                            <label id="dependent_type2_label" for="dependent_type3" class="block-label">
+                                                <input id="dependent_type3" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+                                                <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
+						                     </label>
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+<div class="form-group ">
+
+                        <label id="first_name_label" for="stake" class="form-label-bold first_name">How much is their stake in the property?</label>
+                        <input id="stake" name="first_name" type="text" value="50" style="width:50px" /><span>%</span>
                         <br />
                     </div>
 
-                </form>
-            
-                <!-- For User research -->
-            <div class="form-navigation form-group" style="margin-top:20px"></div>
-                <div>
-					<a href="relationship.html" id="next" class="button">Continue</a></div>
-                <div>
-					<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-                &nbsp;<a href="../../brian/logout.html" id="cancel">Save and logout</a>  
-				</div>
+
+</form> 
+  <p class="clearfix"><br/></p>
+
+	</div>
+    <div class="right-block">
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+
+                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                <br>
+                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                    <p class="heading-secondary">Bankruptcy fee</p>
+                    <p style="font-weight:bold;font-size:large">
+                        <a href="../../personal/payments/statement.html">£0 received</a><br>
+                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+                    </p>
+                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
+                </div>
+                <p><a href="#" style="display:none">Print summary</a></p>
+                <p><a href="#" style="display:none">Generate court documents</a></p>
+                <p><a href="#" style="display:none">Discard application</a></p>
             </div>
-            <p><br></p>
 
 
         </div>
 
+        <p><br></p>
+
+        <!-- For User research -->
+        <div class="form-navigation form-group" style="margin-left:30px;">
+
+            <div>
+                <a href="list_owners.html?loop=true" class="button" id="next">Continue</a>
+
+            </div>
+            <div>
+                <br>
+            </div>
+
+            <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+
+                <a href="#" id="cancel">Save and logout</a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -278,39 +374,61 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../../assets/js/titleCaps.js"></script>
 
 
 <script type="text/javascript">
 $(document).ready(function() {
 
-	var housename = $.cookie('house');
-	if (housename  && housename.length > 0){
-		$(".form-label .data").text(housename);
+	var number = 0;
+
+    if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
+    	number = parseInt($.cookie('familymembers')); 
 	}
-
-	var personname;
-	var normalroute = $("#next").prop("href");
-	$("#sameaddress_No").click(function(){
-		$("#next").prop("href","3b-person-address-joint.html");
-	});
-	$("#sameaddress_Yes").click(function(){
-		$("#next").prop("href", normalroute);
-	});
-
-	$("#first_name").on("blur", function(){
-		personname = $("#first_name").val();
-	});
 	
+	var firstname = $.cookie('memberfirstname');
+	var lastname = $.cookie('memberlastname');
+	
+	if (firstname && firstname.length > 0){
+		$("#first_name").val(titleCaps(firstname));
+		if (lastname){
+			$("#last_name").val(titleCaps(lastname.toLowerCase()))		}
+	}
+	
+	
+	;				
+
+	var normalroute = $("#next").prop("href");
+
 	$("#next").on("click", function(){
-		personname = $("#first_name").val();
-		$.cookie('name', personname, { expires: 1 });
+    	number = number + 1;
+    	if (number == 4){
+    		number = 1;
+    	}
+		$.cookie('familymembers', number, { expires: 1, path:'/' });
+		
+		$.cookie('member' + number + "-firstname", $("#first_name").val(), { expires: 1, path:'/' });	
+		$.cookie('member' + number + "-lastname", $("#last_name").val(), { expires: 1, path:'/' });		
+		$.cookie('member' + number + "-age", $("input:radio[name ='age']:checked").val(), { expires: 1, path:'/' });		
+		$.cookie('member' + number + "-relationship", $("input:radio[name ='dependent']:checked").val(), { expires: 1, path:'/' });
+		$.cookie('member' + number + "-dependent", $("input:radio[name ='dependentyesno']:checked").val(), { expires: 1, path:'/' });	
 	});
 
 });
-    
-	
+
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
 </script>
+
 
 <!-- #EndEditable -->
     
