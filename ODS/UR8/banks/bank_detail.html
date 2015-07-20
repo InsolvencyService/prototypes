@@ -217,40 +217,42 @@
 					<div>
 						<label  class="form-label-bold" for="lastname1">Last name</label>
 						<input class="form-control-3-4" id="lastname1" style="width:250px; display:inline-block; margin-right:15px">   
-						<p>&nbsp;</p>	
 					</div>
 				</div>
 	
 				<div id="row2">
 					
 					<div>
+						<p>&nbsp;</p>
 						<label  class="form-label-bold" for="firstname2">First name</label>
 						<input class="form-control-3-4" id="firstname2" style="width:250px; display:inline-block; margin-right:15px">   
 							
 					</div>	
 					<div>
 						<label  class="form-label-bold" for="lastname2">Last name</label>
-						<input class="form-control-3-4" id="lastname2" style="width:250px; display:inline-block; margin-right:15px">   
-						<p>&nbsp;</p>	
+						<input class="form-control-3-4" id="lastname2" style="width:250px; display:inline-block; margin-right:15px">   	
 					</div>
 				</div>
 	
 				<div id="row3">
 					
 					<div>
+						<p>&nbsp;</p>
 						<label  class="form-label-bold" for="firstname3">First name</label>
 						<input class="form-control-3-4" id="firstname3" style="width:250px; display:inline-block; margin-right:15px">   
 							
 					</div>	
 					<div>
 						<label  class="form-label-bold" for="lastname3">Last name</label>
-						<input class="form-control-3-4" id="lastname3" style="width:250px; display:inline-block; margin-right:15px">   	
+						<input class="form-control-3-4" id="lastname3" style="width:250px; display:inline-block; margin-right:15px">
+   	
 					</div>
 				</div>
 	
 				<div id="row4">
 					
 					<div>
+						<p>&nbsp;</p>
 						<label  class="form-label-bold" for="firstname4">First name</label>
 						<input class="form-control-3-4" id="firstname4" style="width:250px; display:inline-block; margin-right:15px">   
 							
@@ -264,6 +266,7 @@
 				<div id="row5">
 					
 					<div>
+						<p>&nbsp;</p>
 						<label  class="form-label-bold" for="firstname5">First name</label>
 						<input class="form-control-3-4" id="firstname5" style="width:250px; display:inline-block; margin-right:15px">   
 							
@@ -400,9 +403,12 @@ $(document).ready(function() {
 	
 	
 	$("#add_person").click(function(){
-	count++;
-	$("#row"+count).show();
-});
+		count++;
+		$("#row"+count).show();
+		if(count==5){
+			$("#add_person").hide();
+		}
+	});
 
 });
 

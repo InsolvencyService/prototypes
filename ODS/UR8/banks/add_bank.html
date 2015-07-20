@@ -364,6 +364,8 @@ $("#addlink").click(function(){
 
 $("#next").click(function(){
 	if(count==1){
+		var a = $.cookie("acc1-sort") + " " + $.cookie("acc1-number");
+		$.cookie("primaryaccount", a);
 		$("#next").attr("href", "summary.html");
 	}
 	else{
