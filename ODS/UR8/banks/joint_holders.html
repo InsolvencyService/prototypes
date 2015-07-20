@@ -217,31 +217,31 @@ display:block;
 			</div>
 			
 			<div id="joint1">
-				<label class="form-label-bold" for="joint1-name">What is your relationship to <span id="joint"></span></label>
+				<label class="form-label-bold" for="joint1-name">What is your relationship to <span id="jointname1"></span>?</label>
 				<input class="form-control-3-4" id="joint1-name" style="width:250px; display:inline-block; margin-right:15px">  		
 			</div>
 			
 			<div id="joint2">
 				<p><br></p>
-				<label class="form-label-bold" for="joint2-name">What is your relationship to <span id="joint"></span></label>
+				<label class="form-label-bold" for="joint2-name">What is your relationship to <span id="jointname2"></span>?</label>
 				<input class="form-control-3-4" id="joint2-name" style="width:250px; display:inline-block; margin-right:15px">  		
 			</div>
 			
 			<div id="joint3">
 				<p><br></p>
-				<label class="form-label-bold" for="joint3-name">What is your relationship to <span id="joint"></span></label>
+				<label class="form-label-bold" for="joint3-name">What is your relationship to <span id="jointname3"></span>?</label>
 				<input class="form-control-3-4" id="joint3-name" style="width:250px; display:inline-block; margin-right:15px">  		
 			</div>
 
 			<div id="joint4">
 				<p><br></p>
-				<label class="form-label-bold" for="joint4-name">What is your relationship to <span id="joint"></span></label>
+				<label class="form-label-bold" for="joint4-name">What is your relationship to <span id="jointname4"></span>?</label>
 				<input class="form-control-3-4" id="joint4-name" style="width:250px; display:inline-block; margin-right:15px">  		
 			</div>
 			
 			<div id="joint5">
 				<p><br></p>
-				<label class="form-label-bold" for="joint5-name">What is your relationship to <span id="joint"></span></label>
+				<label class="form-label-bold" for="joint5-name">What is your relationship to <span id="jointname5"></span>?</label>
 				<input class="form-control-3-4" id="joint5-name" style="width:250px; display:inline-block; margin-right:15px">  		
 			</div>
 
@@ -337,17 +337,18 @@ display:block;
 $(document).ready(function() {
 	
 	var name;
-	x = 1;//$.cookie("acc-count");
+	x = $.cookie("acc-count");
+	c = $.cookie("acc"+x+"_joint");
 	$("#joint1").hide();
 	$("#joint2").hide();
 	$("#joint3").hide();
 	$("#joint4").hide();
 	$("#joint5").hide();
 
-	for(i=1; i<x; i++){
+	for(i=1; i<=c; i++){
 		$("#joint"+i).show();
-		//name = "Mark Keeling";//$.cookie("acc"+ x +"-firstname"+i)+" "+$.cookie("acc"+ x +"-lastname"+i);
-		//$("#joint1 joint").text(name);	
+		name = $.cookie("acc"+ x +"-firstname"+i)+" "+$.cookie("acc"+ x +"-lastname"+i);
+		$("#jointname"+i).text(name);	
 	}
 
 
