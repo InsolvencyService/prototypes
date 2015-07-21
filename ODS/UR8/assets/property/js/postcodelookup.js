@@ -506,11 +506,12 @@ $(document).ready(function() {
 ];
  
     $("#btn-lookup").on("click", function (e) {
+        e.preventDefault();
         // find match in addresses
         var postcode = $("#postcode").val();
-
+        var found = false;
         $.each(addresses, function () {
-            if (this.postcode == postcode) {
+            if (ismatch(this.postcode,postcode)) {
                 $("#fulladdress").show();
                 $("#address_line_1").val(this.line1);
                 $("#address_line_2").val(this.line3);
@@ -520,8 +521,14 @@ $(document).ready(function() {
                 $("#address_post_code").val(this.postcode);
 
                 $("#next").show();
+                found = true;
             }
+            $(".validation-summary").hide();
         });
+        if (found == false) {
+            $(".validation-summary").show();
+            $("#fulladdress").show();
+        }
     });
 
     $("#name").on("change", function () {
@@ -531,4 +538,11 @@ $(document).ready(function() {
         }
 
     });
+
+    function ismatch(name1, name2) {
+        if (name1 == name2) {
+            return true;
+        }
+        return false;
+    }
 });
