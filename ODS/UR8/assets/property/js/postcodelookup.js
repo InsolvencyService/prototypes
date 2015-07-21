@@ -523,10 +523,10 @@ $(document).ready(function() {
                 $("#next").show();
                 found = true;
             }
-            $(".validation-summary").hide();
+            $("#nomatch.validation-summary").hide();
         });
         if (found == false) {
-            $(".validation-summary").show();
+            $("#nomatch.validation-summary").show();
             $("#fulladdress").show();
             $("#address_line_1").val('');
             $("#address_line_2").val('');

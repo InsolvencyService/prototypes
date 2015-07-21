@@ -431,6 +431,10 @@ $(document).ready(function() {
 		$.cookie('member' + number + "-age", $("input:radio[name ='age']:checked").val(), { expires: 1, path:'/' });		
 		$.cookie('member' + number + "-relationship", $("input:radio[name ='dependent']:checked").val(), { expires: 1, path:'/' });
 		$.cookie('member' + number + "-dependent", $("input:radio[name ='dependentyesno']:checked").val(), { expires: 1, path:'/' });	
+		if ($("input:radio[name ='dependent']:checked").val() == "Husband/wife/partner") {
+		    $.cookie('partner-firstname', $("#first_name").val(), { expires: 1, path: '/' });
+		    $.cookie('partner-lastname', $("#last_name").val(), { expires: 1, path: '/' });
+		}
 	});
 
 });

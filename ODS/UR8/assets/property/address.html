@@ -184,7 +184,15 @@ legend {
 	
 	<form class="form" method="post">
 	
-	
+        <div class="clearfix"></div>
+        <div class="validation-summary" style="display:none" id="nomatch">
+            <h2>Address lookup</h2>
+            <p></p><ol>
+                <li class="error-message">
+                    <p id="error-reenter">We could not find a match. Please try again or enter the address below</p>
+                </li>
+            </ol>
+        </div>
 				<fieldset class="firsttime">
                             <legend class="form-label-bold">
                                 <span class="firsttime">Address lookup</span>
@@ -339,10 +347,10 @@ $(document).ready(function() {
 	var numproperties = 0;
 	var propertyfirstline;
 	
-	if ($.cookie('propertyfirstline') && $.cookie('propertyfirstline').length > 0) {
+	if ($.cookie('propertyline1') && $.cookie('propertyline1').length > 0) {
 	    var pcode = $.cookie('propertypostcode');
-	    $("#address_line_1").val(titleCaps($.cookie('propertyfirstline')));
-	    $("#address_post_code").val(pcode.toUpperCase());
+	    $("#name").val(titleCaps($.cookie('propertyline1')));
+	    $("#postcode").val(pcode.toUpperCase());
 	}
 	
 

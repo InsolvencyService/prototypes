@@ -384,7 +384,7 @@
                 if ($.cookie("address_line_1") && $.cookie("address_line_1").length > 1) {
                     $("#name").val($.cookie("address_line_1"));
                     $("#postcode").val($.cookie("post_code"));
-                    $("#add").prop("href", "amount.html");
+                    //$("#add").prop("href", "amount.html");
                 }
             });
 
@@ -409,8 +409,7 @@
                 return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
             }
 
-            function isvalidname(companyname) {
-                var name = companyname.toLowerCase();
+            function isvalidname(name) {
                 if (name.length > 2) {
                     return true;
                 }
