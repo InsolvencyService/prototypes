@@ -351,9 +351,9 @@ $(document).ready(function() {
 	});
 	
 	$("#next").on("click", function(){
-		if ($("#purchasemonth").val().length > 0){
-			$.cookie('purchasemonth', $("#purchasemonth").val(), { expires: 1 });
-			$.cookie('purchaseyear', $("#purchaseyear").val(), { expires: 1 });
+		if ($("#month").val().length > 0){
+			$.cookie('purchasemonth', $("#month").val(), { expires: 1 });
+			$.cookie('purchaseyear', $("#year").val(), { expires: 1 });
 		}
 		else{
 			$.cookie('purchasemonth', "6", { expires: 1 });

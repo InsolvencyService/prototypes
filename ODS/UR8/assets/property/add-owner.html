@@ -384,8 +384,8 @@ $(document).ready(function() {
 
 	var number = 0;
 
-    if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
-    	number = parseInt($.cookie('familymembers')); 
+	if ($.cookie('numowners') && parseInt($.cookie('numowners'))) {
+	    number = parseInt($.cookie('numowners'));
 	}
 	
 	var firstname = $.cookie('memberfirstname');
@@ -407,7 +407,7 @@ $(document).ready(function() {
     	if (number == 4){
     		number = 1;
     	}
-		$.cookie('familymembers', number, { expires: 1, path:'/' });
+    	$.cookie('numowners', number, { expires: 1, path: '/' });
 		
 		$.cookie('member' + number + "-firstname", $("#first_name").val(), { expires: 1, path:'/' });	
 		$.cookie('member' + number + "-lastname", $("#last_name").val(), { expires: 1, path:'/' });		
