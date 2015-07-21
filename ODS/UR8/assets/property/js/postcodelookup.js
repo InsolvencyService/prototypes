@@ -502,7 +502,11 @@ $(document).ready(function() {
 { line1: '70 Foster St', line2: '', line3:'', town: 'Inverness Ness-Side Ward', county:'Highland', postcode: 'IV2 6WT'},
 { line1: '714 Fonthill Rd', line2: '', line3:'', town: 'Darton West Ward', county:'South Yorkshire', postcode: 'S75 5EJ'},
 { line1: '9 Milton St', line2: '', line3:'', town: 'Consett North ED', county:'County Durham', postcode: 'DH8 5LP'},
-{ line1: '6 Norwood Grove', line2: '', line3:'', town: 'Tanworth-in-Arden', county:'Warwickshire', postcode: 'B94 5RZ'}
+{ line1: '6 Norwood Grove', line2: '', line3:'', town: 'Tanworth-in-Arden', county:'Warwickshire', postcode: 'B94 5RZ'},
+{ line1: '33 Stephenson Street', line2:'', line3:'', town:'Birmingham', county:'West Midlands', postcode:'B2 4BH'},
+{ line1: '1156 Kingsbury Road', line2:'Castle Vale', line3:'', town:'Birmingham', county:'West Midlands', postcode:'B35 6AB'},
+{ line1: '65 Cuthbert Road', line2:'', line3:'', town:'Birmingham', county:'West Midlands', postcode:'B18 4AH'},
+
 ];
  
     $("#btn-lookup").on("click", function (e) {
