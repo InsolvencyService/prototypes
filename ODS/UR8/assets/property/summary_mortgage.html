@@ -213,7 +213,7 @@ display:block;
                     <tbody>
                     	<tr class="group-heading">
                     		<td>Address </td>
-                        	<td>1 The Place, M12 34K</td>
+                        	<td><span id="address">1 The Place, M12 34K</span></td>
                         	<td><a href="list_properties.html">Edit</a></td>
                         	<td></td>
                     	</tr>
@@ -380,7 +380,10 @@ display:block;
 
 $(document).ready(function() {
 		
-	
+    var housename = $.cookie("propertyline1");
+    if (housename && housename.length > 0) {
+        $(".data").text(housename);
+    }
 });
 
 $("#add").click(function(e){

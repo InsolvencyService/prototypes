@@ -172,7 +172,7 @@ display:block;
                   <div class="form-group ">
 	
 	<fieldset id="date_of_birth" class="date-of-birth">
-	<legend id="date_of_birth_label" class="form-label">When did you take out the mortgage on <strong>1 The Place</strong>?</legend>
+	<legend id="date_of_birth_label" class="form-label">When did you take out the mortgage on <strong class="data">1 The Place</strong>?</legend>
 	
 	<div class="form-hint">You can check your yearly mortgage statement or contact your mortgage provider</div>
 	
@@ -203,7 +203,7 @@ display:block;
                     </div>
 
   <div class="form-group">
-                        <p id="title_label" class="form-label">Is this a remortgage of your property <strong>1 The Place</strong>?</p>
+                        <p id="title_label" class="form-label">Is this a remortgage of your property <strong class="data">1 The Place</strong>?</p>
 						<div class="form-hint">A remortgage is the replacing of an existing mortgage with a new one</div>
 
                         <fieldset class="inline">
@@ -301,19 +301,12 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-                   
-	var sharedowner = $.cookie('name');
+             
+    var housename = $.cookie("propertyline1");
+    if (housename && housename.length > 0) {
+        $(".data").text(housename);
+    }
 
-	 if (sharedowner == null){
-	 	//$("#shared-mortgage").hide();
-	 }
-	 else
-	 {
-	 	if (sharedowner.length > 0){
-		 	$("#shared-mortgage .data").text(sharedowner);
-		 	$("#shared-mortgage").show();
-	 	}
-	 }
 	 
 	 var homemonth = $.cookie('purchasemonth');
 	 var homeyear = $.cookie('purchaseyear');
