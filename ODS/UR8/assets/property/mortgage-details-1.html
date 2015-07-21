@@ -162,7 +162,7 @@ display:block;
 	
 	
 	<h1 class="form-title heading-large">Mortgage on your property</h1>
-	<div>We need to know about your mortgage on <strong>1 The Place</strong>.</div>
+	<div>We need to know about your mortgage on <strong class="data">1 The Place</strong>.</div>
 	
 	
 	
@@ -170,12 +170,12 @@ display:block;
 	<div class="form-group ">
 	
 	<label id="last_name_label" for="last_name" class="form-label last_name">Name of the bank or building society the mortgage is with</label>
-	<input id="name" name="last_name" type="text" value="" />
+        <input id="creditors" name="last_name" type="text" placeholder="Start typing name" value="" class="form-control typeahead input-lg" autocomplete="off   />
 	<br/>
 	</div>
 
 	
-	<br>
+	<div class="clearfix"></div>
 		<br><br>&nbsp;<a href="list_tenants.html" class="button family" id="skip" >I do not have a mortgage</a>
 	
 
@@ -187,7 +187,7 @@ display:block;
 	                    
     
                        <div class="form-group" id="shared-mortgage">
-                        <p  class="form-label">Is this a shared mortgage with <span class="bold-medium data">Susan Smith</span>?</p>
+                        <p  class="form-label">Is this a shared mortgage with <span class="bold-medium  partnerdata">Susan Smith</span>?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
@@ -282,10 +282,19 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
+    <script type="text/javascript" src="../../creditors/js/creditors.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {
-                   
+    
+    var housename = $.cookie("propertyline1");
+    if (housename && housename.length > 0) {
+        $(".data").text(housename);
+    }
+
 	var sharedowner = $.cookie('name');
 
 	 if (sharedowner == null){
@@ -294,7 +303,7 @@ $(document).ready(function() {
 	 else
 	 {
 	 	if (sharedowner.length > 0){
-		 	$("#shared-mortgage .data").text(sharedowner);
+		 	$("#shared-mortgage .partnerdata").text(sharedowner);
 		 	$("#shared-mortgage").show();
 	 	}
 	 }
