@@ -284,7 +284,7 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-    <script type="text/javascript" src="../../creditors/js/creditors.js"></script>
+    <script type="text/javascript" src="js/mortgagelenders.js"></script>
 
 
 <script type="text/javascript">
@@ -295,7 +295,7 @@ $(document).ready(function() {
         $(".data").text(housename);
     }
 
-	var sharedowner = $.cookie('name');
+    var sharedowner = $.cookie('partner-firstname') + ' ' + $.cookie('partner-lastname');
 
 	 if (sharedowner == null){
 	 	//$("#shared-mortgage").hide();
@@ -303,7 +303,7 @@ $(document).ready(function() {
 	 else
 	 {
 	 	if (sharedowner.length > 0){
-		 	$("#shared-mortgage .partnerdata").text(sharedowner);
+		 	$(".partnerdata").text(sharedowner);
 		 	$("#shared-mortgage").show();
 	 	}
 	 }
