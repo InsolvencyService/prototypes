@@ -204,13 +204,13 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Employee details for <span class="business_name"></span></h1>
+	<h1 class="form-title heading-large">Employee details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-			<p>We need to know about all of <span class="business_name"></span>'s current employees and about any past employees the business might owe money to (for example wages, redundancy pay or holiday pay).</p>
+			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<div id="pnl-current_employer">
-				<label id="name_label" for="name" class="form-label-bold"></label>
+				
 				<div class="form-group">
 					<label id="firstname_label0" for="firstname" class="form-label-bold">First name</label>
 					<input id="firstname" name="firstname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
@@ -261,7 +261,7 @@ display:block;
 			<p>&nbsp;</p>
 			<div class="form-group" id="pnl-owed">
 				<fieldset class="inline">
-				<legend id="director_label" class="form-label-bold">Does this employee claim <span class="business_name"></span> owes them money?</legend>
+				<legend id="director_label" class="form-label-bold">Does <span id="employeename">[employee name]</span> claim that <span class="business_name">[business name]</span> owes them money?</legend>
 					<div class="form-group">
 						<label id="employee_label0" for="employee_yes" class="block-label">
 						<input id="employee_yes" value="" name="employee" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -372,6 +372,8 @@ $(document).ready(function() {
 		var ret = str.split(" ");
 		$("#firstname").attr("value",  ret[0]);
 		$("#lastname").attr("value",  ret[1]);
+		
+		$("#employeename").text(str);
 	}
 
 	var nextpage = $("#next").prop("href");

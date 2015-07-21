@@ -70,7 +70,7 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../UR6/creditors/css/typeahead.css" rel="stylesheet">
+  <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
  .tt-dropdown-menu{
 	width:650px;
@@ -204,104 +204,80 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Additional business details <span class="Business_Name"></span></h1>
-	
+	<h1 class="form-title heading-large">Employee details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-			<div class="form-group">
-				<label id="name_label0" for="name" class="form-label-bold">VAT number</label>
-				<p>If your business is VAT registered</p>
-				<p class="form-hint">For example GB 551 6778 32</p>
-				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
-			</div>
-			
-			<p>&nbsp;</p>
-			
-			<div class="form-group">
-				<label id="name_label0" for="name" class="form-label-bold">Your current or last Income Tax reference number 
-				or Unique Taxpayer Reference</label>
-				<p class="form-hint">You can find this on your P60, tax return 
-				or statement of account from HMRC</p>
-				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
-			</div>
-			<p>&nbsp;</p>
-	
-			<div class="form-group" id="pnl-click">
-				<fieldset>
-					<legend id="title_label" class="form-label-bold">How do you store your business accounts?</legend>
-					<div id="title-select" class="form-group inline">
-						
-						<label id="title_label0" for="hard" class="block-label">
-						<input id="hard" value="Mr" name="title" type="radio" aria-describedby="title_error title_help">
-						As hardcopies (eg paper files, etc)
-						</label>
-						
-						<label id="title_label1" for="electronic" class="block-label">
-						<input id="electronic" value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
-						Electronically (eg Sage Business software, Microsoft Excel, etc)</label>
-						
-						<label id="title_label1" for="cloud" class="block-label">
-						<input id="cloud" value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
-						Online (eg Cloud storage, Google drive, etc) </label>
-
-					</div>
-							<p>&nbsp;</p>					
-					<div id="otheraddress" class="panel-indent">	
-					
-					<label class="form-label-bold">Enter the address where your accounts are kept</label>
-					<p><br></p>
-						<div class="form-group ">
-							<label id="accounts_address_line_1_label" for="accounts_address_line_1" class="form-label employer_address_line_1">Building and street</label>
-							<input id="accounts_address_line_1" name="accounts_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
-							<br/>
-						</div>
-				
-						<div class="form-group ">
-							<label id="accounts_address_line_2_label" for="accounts_address_line_2" class="visuallyhidden">Address Line 2</label>
-							<input id="accounts_address_line_2" name="accounts_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
-							<br/>
-						</div>
-						
-						<div class="form-group ">
-							<label id="accounts_address_line_3_label" for="accounts_address_line_3" class="visuallyhidden">Address Line 3</label>
-							<input id="accounts_address_line_3" name="accounts_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
-							<br/>
-						</div>
-						
-						<div class="form-group ">
-							<label id="accounts_address_town_label" for="accounts_address_town" class="form-label employer_address_town">Town/city</label>
-							<input id="accounts_address_town" name="accounts_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
-							<br/>
-						</div>
-						
-						<div class="form-group ">
-							<label id="accounts_address_county_label" for="accounts_address_county" class="form-label employer_address_county">County</label>
-							<input id="accounts_address_county" name="accounts_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
-							<br/>
-						</div>
-						
-						<div class="form-group ">
-							<label id="accounts_address_post_code_label" for="accounts_address_post_code" class="form-label employer_address_post_code">Postcode</label>
-							<input id="accounts_address_post_code" name="accounts_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
-							<br/>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-			
-			
-	
-			
-
-			
-		</form>
-			
-			
-				<div>
-					<a href="list_employees.html" class="button">Continue</a>
+				<div id="pnl-current_employer">
+				<label id="name_label" for="name" class="form-label-bold"></label>
+				<div class="form-group">
+					<label id="firstname_label0" for="firstname" class="form-label-bold">First name</label>
+					<input id="firstname" name="firstname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+				</div>
+				<div class="form-group">
+					<label id="lastname_label0" for="lastname" class="form-label-bold">Last name</label>
+					<input id="lastname" name="lastname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
 
-				<div class="form-navigation form-group">
+				<p>&nbsp;</p>
+				<div class="form-group ">
+					<label id="name_label0" for="name" class="form-label-bold">Address</label>
+					<label id="employee_address_line_1_label" for="employee_address_line_1" class="form-label employer_address_line_1">Building and street</label>
+					<input id="employee_address_line_1" name="employee_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
+					<br/>
+				</div>
+		
+				<div class="form-group ">
+					<label id="employee_address_line_2_label" for="employee_address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="employee_address_line_2" name="employee_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="employee_address_line_3_label" for="employee_address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="employee_address_line_3" name="employee_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="employee_address_town_label" for="employee_address_town" class="form-label employer_address_town">Town/city</label>
+					<input id="employee_address_town" name="employee_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="employee_address_county_label" for="employee_address_county" class="form-label employer_address_county">County</label>
+					<input id="employee_address_county" name="employee_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
+					<br/>
+				</div>
+				
+				<div class="form-group ">
+					<label id="employee_address_post_code_label" for="employee_address_post_code" class="form-label employer_address_post_code">Postcode</label>
+					<input id="employee_address_post_code" name="employee_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
+					<br/>
+				</div>
+			</div>	
+			<p>&nbsp;</p>
+			<div class="form-group" id="pnl-amount">
+					<label id="name_label0" for="amount" class="form-label-bold">How much do they claim you owe them?</label>
+					<p class="form-hint">For example £50.65</p>
+					<span>£ </span><input id="amount" name="amount" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/><br/>
+					<label id="name_label0" for="amount" class="form-label-bold">What 
+					are the claiming for?</label>
+					<p class="form-hint">For example, unpaid wages, redundancy, holiday pay 
+					etc</p>
+					<textarea cols="55" rows="5"></textarea>
+
+			</div>
+			
+			
+
+					
+		</form>
+		<p>&nbsp;</p>
+			<div class="form-navigation form-group">
+			<div>
+                <a class="button" id="next" href="list_former_employees.html?loop=true">Continue</a>
+			</div>
 					<a href="#">Back</a>
 				</div>
 		</div>		
@@ -312,10 +288,10 @@ display:block;
                 <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                     <p class="heading-secondary">Bankruptcy fee</p>
                     <p style="font-weight:bold;font-size:large">
-                        <a href="../../UR6/personal/payments/statement.html">£0 received</a><br>
+                        <a href="../personal/payments/statement.html">£0 received</a><br>
                         <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
                     </p>
-                    <p><a href="../../UR6/personal/payments/payments.html">Make a payment</a></p>
+                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
                 </div>
                 <p><a href="#" style="display:none">Print summary</a></p>
                 <p><a href="#" style="display:none">Generate court documents</a></p>
@@ -340,14 +316,11 @@ display:block;
             <div class="footer-meta-inner">
 
                  <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block">
-					<a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
+                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" ">
-					<a href="../../privacy.html">Privacy</a></li>
-                    <li class="footer__link" style="">
-					<a href="../../cookies.html">Cookies</a></li>
+                    <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
                     <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                 </ul>
 
@@ -381,69 +354,94 @@ display:block;
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-<script type="text/javascript" src="../../UR6/creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
 
 	
 <script type="text/javascript">
+var count;
+var x;
 $(document).ready(function() {
-
-$("#otheraddress").hide();
-
-var o;
-var a1;
-	//$(".Business_Name").text($.cookie('business'+x+'_name'));
+	x = $.cookie("business_id");
 	
-	var x = $.cookie("business_id");	
-	var count = $.cookie("business"+x+"_address_count");
-
-	for (var i = 1; i <= count; i++) {
-		a1 = $.cookie("business"+x+"_address"+i); 
-		o = new Option(a1,"");
-				
-		if(i==1){
-			o.selected=true;
-		}
-		
-		$("#business_addresses").append(o);
+	$(".business_name").text($.cookie('business'+x+'_name'));	
+	var str =$.cookie("employee_name");
+	if(str!=null){	
+		var ret = str.split(" ");
+		$("#firstname").attr("value",  ret[0]);
+		$("#lastname").attr("value",  ret[1]);
 	}
-
-o = new Option("Another address", "Another address");
-$("#business_addresses").append(o);
-
+/*
+	var nextpage = $("#next").prop("href");
+	$('#pnl-owed input:radio').click(function() {
 	
+		if(($("#employee_yes").prop('checked')==true)){
+				$("#next").prop("href", "employee_amount.html");
+			}
+			else{
+				$("#next").prop("href", nextpage);
+	
+			}		
+	});
+*/		
+
 });
 
-$('#business_addresses').change(function() {
-    var option = $("#business_addresses :selected").text()
-    if(option=="Another address"){
-    	$("#otheraddress").show();
-    }
-    else{
-    	$("#otheraddress").hide();
 
-    }
-});
 
-$('#pnl-click input:radio').click(function() {
-	if(($("#cloud").prop('checked')==true)){
-		$("#otheraddress").hide();
+$("#next").click(function(){
+	
+	count = $.cookie("business"+x+"_femployee_count");
+	
+	if(count == null){
+		count = 1;
 	}
 	else{
-		$("#otheraddress").show();		
+		count++;
 	}
+	
+	var employee_address;
+	var address1=$("#employee_address_line_1").val();
+	var address2=$("#employee_address_line_2").val();
+	var address3=$("#employee_address_line_3").val();
+	var address4=$("#employee_address_town").val();
+	var address5=$("#employee_address_county").val();
+	var address6=$("#employee_address_post_code").val();
+	
+	if(address1 != ""){
+		employee_address = address1+", ";
+	}
+	if(address2 != ""){
+		employee_address = employee_address+address2+", ";
+	}
+	if(address3 != ""){
+		employee_address = employee_address+address3+", ";
+	}
+	if(address4 != ""){
+		employee_address = employee_address+address4+", ";
+	}
+	if(address5 != ""){
+		employee_address = employee_address+address5+", ";
+	}
+	if(address6 != ""){
+		employee_address = employee_address+address6;
+	}
+	
+	var amountx;
+	if($("#amount").val()!=""){
+		amountx = $("#amount").val();
+	}
+	else{
+		amountx = 0.00;
+	}
+	
+
+	$.cookie("business"+x+"_femployee_amount"+count, amountx);
+	$.cookie("business"+x+"_femployee_count", count);
+	$.cookie("business"+x+"_femployee_name"+count, $("#firstname").val()+" "+$("#lastname").val());
+	$.cookie("business"+x+"_femployee_address"+count, employee_address);
 
 });
 
-$('#next').click(function() {
-
-	if(($("#yes").prop('checked')==true)){
-			$("#next").attr("href", "employees.html");	
-		}
-		else{
-			$("#next").attr("href", "add_employee.html");	
-		}
-		
-});
 
 </script>
 

@@ -204,12 +204,10 @@ display:block;
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large"><span class="firsttime">Self employed businesses</span><span class="repeat">Your self employed businesses</span></h1>
+	<h1 class="form-title heading-large">Business summary</h1>
 
 	<div class="col-md-9">
-		<div class="form-hint">We need to know if in the last 3 years you been self employed or a partner in a business (not including Limited Liability Partnerships).</div>
-        <p id="director-text" style="display:none">You do not need to include <span class="companylist"></span>.</p>
-
+		
 		<form class="form" method="post">
 			
 			 <div  class="repeat">
@@ -230,13 +228,13 @@ display:block;
                         	<td></td>
                     	</tr>
                     	<tr class="group-heading">
-                    		<td>Commenced trading</td>
+                    		<td>Started trading</td>
                         	<td id="start"></td>
                         	<td><a href="#">Edit</a></td>
                         	<td></td>
                     	</tr>
                     	<tr class="group-heading">
-                    		<td>Ceased trading</td>
+                    		<td>Stopped trading</td>
                         	<td id="end"></td>
                         	<td><a href="#">Edit</a></td>
                         	<td></td>
@@ -254,11 +252,18 @@ display:block;
                         	<td></td>
                     	</tr>
                     	<tr class="group-heading">
-                    		<td>Number of employees</td>
+                    		<td>Number of current employees</td>
                         	<td id="no_employees"></td>
                         	<td><a href="list_employers.html?loop=true">Edit</a></td>
                         	<td></td>
                     	</tr>
+                    	<tr class="group-heading">
+                    		<td>Number of former employees owed money</td>
+                        	<td id="no_femployees"></td>
+                        	<td><a href="list_former_employers.html?loop=true">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+
                     	<tr class="group-heading">
                     		<td>Number of accountants</td>
                         	<td id="no_accountants"></td>
@@ -273,19 +278,24 @@ display:block;
 	                    
                     </tbody>
                 </table>
-
+			<p>&nbsp;</p>
 	            
 			</div>
-			
-	            <p>&nbsp;</p>			
+			<p>We need to know if you have been self employed or a partner in a<span class="repeat">any other</span> non limited business in the last 3 years.</p>
+		<p>Non-limited businesses can be sole traders or partnerships and aren’t registered with Companies House.</p>
+		<p>If you’re not sure, self employed businesses won’t have Ltd, PLC, or LLP as part of the company name, eg ABC Trading.<br></p>
+		
+        <p id="director-text" style="display:none">You do not need to include <span class="companylist"></span>.</p>
+
+	            			
 			<div class="form-group">
-				<label  class="form-label-bold"><span class="firsttime">Enter the business name</span><span class="repeat">Enter another business</span></label>
-				<div class="form-hint">For example, ABC Limited<br><br></div>
+				<label  class="form-label-bold"><span class="firsttime">Enter the business name</span><span class="repeat">Enter another business name</span></label>
+				<div class="form-hint">For example, ABC Trading<br><br></div>
 	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
 	                <a id="add_business" class="button" href="add_business.html"><span class="firsttime">Add business</span>
 	                <span class="repeat" style="display:none">Add another business</span></a>
 	                <p><br><a href="list_employers.html" class="button family" id="next" ><span class="repeat" style="display:none">Continue - I have added all my businesses</span>
-	                <span class="firsttime">Continue - I have not been self employed or a partner in a business</span></a></p>
+	                <span class="firsttime">Continue - I have not been self employed or a partner in a non-limited business</span></a></p>
 	    	</div>
             
            
@@ -424,6 +434,14 @@ $(document).ready(function() {
 	else{
 		$("#no_employees").text("0");
 	}
+	
+	if($.cookie("business"+x+"_femployee_count")>0){
+		$("#no_femployees").text($.cookie("business"+x+"_femployee_count"));
+	}
+	else{
+		$("#no_femployees").text("0");
+	}
+
 
 });
 	

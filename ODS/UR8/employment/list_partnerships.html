@@ -224,8 +224,8 @@ legend {
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Business partner summary for <span id="business_name"></span></h1>
-	<div class="form-hint">We need to know about the business partners for <span id="business_name"></span></div>
+	<h1 class="form-title heading-large">Business partners</h1>
+	
 
 	<div class="col-md-9">
         <form class="form" method="post">
@@ -243,19 +243,18 @@ legend {
                     </thead>
                     <tbody id="tablebody"></tbody>
                 </table>
-
+				<p><br></p>
 
             </div>
-
+			<div>We need to know about <span class="firsttime">all </span><span class="repeat">any other </span>current <span id="business_name"></span> partners</div>
             <p>&nbsp;</p>
 
             <fieldset>
                 <legend class="form-label-bold">
-                    <span class="firsttime">Enter the partner's name</span>
-                    <span class="repeat">Enter another partner name</span>
+                    Enter the partner's first and last name
                 </legend>
 
-                <span class="form-hint">For example, Jane Smith</span>
+                <span class="form-hint">For example, Jane Smith. You can add more later.</span>
                 <div class="form-group halfwidth">
                     <label for="firstname">First name</label>
                     <input id="firstname" />
@@ -265,12 +264,12 @@ legend {
                     <input id="lastname" />
                 </div>
                 <div class="form-group partwidth">
-                    <a id="add_partner" class="button" href="partner_detail.html">Add <span class="repeat"></span></a>&nbsp;
+                    <a id="add_partner" class="button" href="partner_detail.html">Add partner</a>&nbsp;
                     <br />
                 </div>
 
             </fieldset>
-            <p><br><a href="list_employees.html" class="button family repeat" id="next"><span>Continue - I have added all my business partners</span></a></p>
+            <p><br><a href="list_employees.html" class="button family repeat" id="next"><span>Continue - I have added all business partners</span></a></p>
 
 
         </form>
