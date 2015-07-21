@@ -200,8 +200,8 @@ display:block;
 	</div>
 	<div class="form-group ">
 	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+        <label for="address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+        <input id="address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 	<br/>
 	</div>
 
@@ -291,19 +291,18 @@ $(document).ready(function() {
 
 	var normalroute = $("#next").prop("href");
 	var numproperties = 0;
-	var propertyname;
+	var propertyfirstline;
 	
-	if ($.cookie('propertyname') && $.cookie('propertyname').length > 0) {
-	    propertyname = $.cookie('propertyname');
+	if ($.cookie('propertyfirstline') && $.cookie('propertyfirstline').length > 0) {
+	    var pcode = $.cookie('propertypostcode');
+	    $("#address_line_1").val(titleCaps($.cookie('propertyfirstline')));
+	    $("#address_post_code").val(pcode.toUpperCase());
 	}
 	
-	if (propertyname && propertyname.length > 1) {
-	    $("#address_line_1").val(titleCaps(propertyname));
-	}
 	
 
 	$("#next").on("click", function(e){
-		$.cookie('propertyname', titleCaps($("#name").val()), { expires: 1 });
+		//$.cookie('propertyname', titleCaps($("#name").val()), { expires: 1 });
 	});
 
 
