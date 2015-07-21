@@ -528,6 +528,14 @@ $(document).ready(function() {
         if (found == false) {
             $(".validation-summary").show();
             $("#fulladdress").show();
+            $("#address_line_1").val('');
+            $("#address_line_2").val('');
+            $("#address_line_3").val('');
+            $("#address_town").val('');
+            $("#address_county").val('');
+            $("#address_post_code").val('');
+
+            $("#next").show();
         }
     });
 
@@ -539,6 +547,13 @@ $(document).ready(function() {
 
     });
 
+    $("#next").on("click", function (e) {
+        if ($("#address_line_1").val() == '') {
+            alert("Please enter an address");
+            e.preventDefault();
+        }
+    });
+    
     function ismatch(name1, name2) {
         if (name1 == name2) {
             return true;
