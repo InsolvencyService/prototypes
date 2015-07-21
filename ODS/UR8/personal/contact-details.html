@@ -448,7 +448,9 @@ $(document).ready(function() {
 $("#next").click(function(){
 		var addr = $("#address_line_1").val();
 		if (addr && addr.length > 0){
-			$.cookie("address", addr, { expires: 1, path:'/' });
+		    $.cookie("address", addr, { expires: 1, path: '/' });
+		    $.cookie("applicant_address", addr, { expires: 1, path: '/' });
+
 			$.cookie("address_line_1", addr, { expires: 1, path:'/' });
 			$.cookie("address_line_2", $("#address_line_2").val(), { expires: 1, path:'/' });
 			$.cookie("address_line_3", $("#address_line_3").val(), { expires: 1, path:'/' });
