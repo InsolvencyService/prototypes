@@ -525,6 +525,7 @@ $(document).ready(function() {
                 $("#address_post_code").val(this.postcode);
 
                 $("#next").show();
+                $("#btn-lookup").removeClass("button");
                 found = true;
             }
             $("#nomatch.validation-summary").hide();

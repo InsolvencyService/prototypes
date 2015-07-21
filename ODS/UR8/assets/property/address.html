@@ -198,7 +198,7 @@ legend {
                                 <span class="firsttime">Address lookup</span>
                             </legend>
 
-                            <span class="form-hint">For example, 1 High Street  SG7 6AA</span>
+                            <span class="form-hint">For example, 1 High Street  WS11 9RH</span>
                             <div class="form-group halfwidth">
                                 <label for="name">First line</label>
                                 <input id="name" />
@@ -351,6 +351,8 @@ $(document).ready(function() {
 	    var pcode = $.cookie('propertypostcode');
 	    $("#name").val(titleCaps($.cookie('propertyline1')));
 	    $("#postcode").val(pcode.toUpperCase());
+
+	    $("#btn-lookup").trigger("click");
 	}
 	
 
@@ -358,6 +360,7 @@ $(document).ready(function() {
 	$("#next").on("click", function (e) {
 	    $.cookie('propertyname', titleCaps($("#address_line_1").val()), { expires: 1 });
 	    $.cookie('propertyline1', titleCaps($("#address_line_1").val()), { expires: 1 });
+	    $.cookie("propertypostcode", $("#postcode").val());
 	});
 
 

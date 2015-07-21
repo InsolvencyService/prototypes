@@ -365,19 +365,22 @@ legend{
 $(document).ready(function () {
 
     // have we just added an owner?
-    var number = 0;
+    var numowners = 0;
 
     if ($.cookie('numowners') && parseInt($.cookie('numowners'))) {
-        number = parseInt($.cookie('numowners'));
+        numowners = parseInt($.cookie('numowners'));
     }
 
-    var name = $.cookie('member' + number + "-firstname")  + " " + $.cookie('member' + number + "-lastname");
-    var relationship = $.cookie('member' + number + "-relationship");
+    var name = $.cookie('member' + numowners + "-firstname")  + " " + $.cookie('member' + numowners + "-lastname");
+    var relationship = $.cookie('member' + numowners + "-relationship");
 
-    if (number > 0){
+    if (numowners > 0){
         // add row to table
-        $("tbody").append("<tr><td>" + name + "</td><td>" + relationship + "</td><td>50%</td></tr>");
+        var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
+        var row = "<tr><td>" + name + "</td><td>" + relationship + "</td><td>50%</td>" + editbuttons + "</tr>";
+        $("tbody").append(row);
         $("#myshare").text("50%");
+        $("#next").text("Continue - I have added all joint owners");
     }
     else{
         $("#firstname").val($.cookie('partner-firstname'));

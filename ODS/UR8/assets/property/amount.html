@@ -211,7 +211,7 @@ display:block;
                         <label id="first_name_label" for="propertyvalue" class="form-label first_name">How much is 
 						the property <span class="bold-medium data">1 The Place</span> currently worth?</label>
 						<div class="form-hint">Please provide the most accurate figure you can</div>
-		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
+		<span class="currency">£</span><input id="propertyvalue" name="amount" type="text" value="" class="amount-value" />
                         <br />
                     </div>
    
@@ -337,6 +337,11 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
+    var numproperties = 0;
+    if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
+        numproperties = parseInt($.cookie("numproperties"));
+    }
+
     var housename = $.cookie("propertyline1");
 	if (housename  && housename.length > 0){
 		$(".form-label .data").text(housename);
@@ -359,8 +364,15 @@ $(document).ready(function() {
 			$.cookie('purchasemonth', "6", { expires: 1 });
 			$.cookie('purchaseyear', "2005", { expires: 1 });
 		}
+
+		numproperties = numproperties + 1;
 		if ($("#propertyvalue").val().length > 0){
 		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
+
+		    $.cookie('numproperties', numproperties, { expires: 1 });
+		    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
+		    $.cookie('property' + numproperties + 'address', $.cookie("propertyline1") + ", " + $.cookie("propertypostcode"), { expires: 1 });
+
 		}
 		else{
 			$.cookie('propertyvalue', "140000", { expires: 1 });

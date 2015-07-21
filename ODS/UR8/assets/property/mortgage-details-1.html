@@ -72,6 +72,8 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/bankruptcy-overrides.css">
 
+    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
+    <link href="../../creditors/css/typeahead.css" rel="stylesheet">
 
 <style type="text/css">
 .row img{
@@ -93,6 +95,9 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
+    .twitter-typeahead{
+        width:400px;
+    }
 </style>
 <!-- #EndEditable -->
 
@@ -170,13 +175,13 @@ display:block;
 	<div class="form-group ">
 	
 	<label id="last_name_label" for="last_name" class="form-label last_name">Name of the bank or building society the mortgage is with</label>
-        <input id="creditors" name="last_name" type="text" placeholder="Start typing name" value="" class="form-control typeahead input-lg" autocomplete="off   />
-	<br/>
+        <input id="creditors" name="last_name" type="text" placeholder="Start typing name" 
+               value="" class="form-control typeahead input-lg" autocomplete="off"  />
 	</div>
 
 	
 	<div class="clearfix"></div>
-		<br><br>&nbsp;<a href="list_tenants.html" class="button family" id="skip" >I do not have a mortgage</a>
+		<br><a href="list_tenants.html" class="button family" id="skip" >I do not have a mortgage</a>
 	
 
 
@@ -307,22 +312,15 @@ $(document).ready(function() {
 		 	$("#shared-mortgage").show();
 	 	}
 	 }
-	 
-	 var homemonth = $.cookie('purchasemonth');
-	 var homeyear = $.cookie('purchaseyear');
 
-	 if (homemonth && homeyear && homemonth.length > 0 && homeyear.length > 0){
-		$("#mortgageyear").val(homeyear);
-		$("#mortgagemonth").val(homemonth);
+	 var numproperties = 0;
+	 if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
+	     numproperties = parseInt($.cookie("numproperties"));
 	 }
+
 	
 	$("#next").on("click", function(){
-		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0) {
-		    var mortgageamount = parseFloat(numberWithoutCommas($("#mortgageamount").val()));
-			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
 
-			$.cookie('mortgagetype', "mortgage", { expires: 1 });
-		}
 	});
 
 	
