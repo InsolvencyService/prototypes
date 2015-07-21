@@ -401,7 +401,8 @@ $("#next").click(function(){
 			$.cookie("address_line_2", $("#applicant_address_line_2").val(), { expires: 1, path:'/' });
 			$.cookie("address_line_3", $("#applicant_address_line_3").val(), { expires: 1, path:'/' });
 			
-			$.cookie("town", $("#applicant_address_town").val(), { expires: 1, path:'/' });
+			$.cookie("town", $("#applicant_address_town").val(), { expires: 1, path: '/' });
+			$.cookie("county", $("#applicant_address_county").val(), { expires: 1, path: '/' });
 			if ( $("#applicant_address_post_code")){
 				$.cookie("post_code", $("#applicant_address_post_code").val(), { expires: 1, path:'/' });
 			}

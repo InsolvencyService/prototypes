@@ -380,13 +380,17 @@
                 if (getParameterByName("loop")) {
                     $("#next").prop("href", "rentlist.html");
                 }
-
+                if ($.cookie("address_line_1") && $.cookie("address_line_1").length > 1) {
+                    $("#name").val($.cookie("address_line_1"));
+                    $("#postcode").val($.cookie("post_code"));
+                    $("#add").prop("href", "amount.html");
+                }
             });
 
             $("#add").click(function (e) {
-                var name = $("#firstline").val();
+                var name = $("#name").val();
                 if (isvalidname(name) == true) {
-                    $.cookie("propertyfirstline", name);
+                    $.cookie("propertyline1", name);
                     $.cookie("propertypostcode", $("#postcode").val());
                 }
                 /*

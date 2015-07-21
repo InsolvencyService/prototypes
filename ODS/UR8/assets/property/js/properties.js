@@ -44,10 +44,8 @@ typeaheadfirstline.on('typeahead:selected', addresseselectedHandler );
 $("#name").on("change", function () {
 	$("#add").prop("href", defaultnext);
 
-	if (typeaheadfirstline.typeahead('val') == ""){
-	    /*$("#pnl-name").text("");
-    	$("#pnl-address").text("");
-    	$("#pnl-creditor").hide();*/
+	if (typeaheadfirstline.typeahead('val') == "") {
+	    $("#postcode").val('');
 	}
 
 });
