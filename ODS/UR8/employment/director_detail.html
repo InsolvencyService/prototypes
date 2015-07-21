@@ -205,19 +205,17 @@ display:block;
 
 <div class="inner-block">	
 	<h1 class="form-title heading-large">Directorship details</h1>
+	<p>Please tell us about the company.<br><br></p>
 	<div class="col-md-9">
 		<form class="form" method="post">
 			
 			<div class="form-group">
 				<label id="name_label0" for="name" class="form-label-bold">Company name</label>
+				<p class="form-hint">For example ABC Trading Ltd</p>
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
 			
-			<div class="form-group">
-				<label id="name_label0" for="number" class="form-label-bold">Registered company number</label>
-				<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
-				
-			</div>
+			
 					
 			<div id="pnl-ukbased">
 				<div class="form-group">
@@ -234,16 +232,16 @@ display:block;
 					</fieldset>
 				</div>
 			</div>
-
+			
 			<div id="foreign" class="panel-indent">
 				<div id="pnl-territory">
-					<div class="form-group">
+					<div id="nonuk" class="form-group">
 						<label id="name_label0" for="territory" class="form-label-bold">County/territory the company is registered in</label>
 						<input id="territory" name="territory" type="text" aria-describedby="first_name_error first_name_help" value="" />
 					</div>
 					<div class="form-group">
-						<label id="name_label0" for="number" class="form-label-bold">Overseas company registration number</label>
-						<p class="form-hint">The number, if any, under which the company is registered as an overseas company</p>
+						<label id="name_label0" for="number" class="form-label-bold">Company registration number</label>
+						<p class="form-hint">The number under which the company is registered in the UK or overseas</p>
 						<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
 					</div>
 				</div>
@@ -253,7 +251,7 @@ display:block;
 				<div class="form-group">
 					<fieldset class="inline">
 					<legend id="insolve_label" class="form-label-bold">Is this company currently subject to any insolvency proceedings?</legend>
-					<p class="form-hint">For example, liquidation, adminstration or company voluntary arrangement</p>
+					<p class="form-hint">For example, liquidation, administration or company voluntary arrangement</p>
 						<div class="form-group">
 							<label id="insolve_label0" for="insolve_yes" class="block-label">
 							<input id="insolve_yes" value="" name="insolve" type="radio" aria-describedby="title_error title_help">Yes</label>
@@ -382,14 +380,15 @@ $('#pnl-registered input:radio').click(function() {
 $('#pnl-ukbased input:radio').click(function() {
 	if(($("#incorporated_yes").prop('checked')==true)){
 		$("#incorporated").show();
-		$("#foreign").hide();
+		$("#foreign").show();
+		$("#nonuk").hide();
+
 		country="United Kingdom";
 
 	}
 	else if(($("#incorporated_no").prop('checked')==true)){
-		
 		$("#foreign").show();
-
+		$("#nonuk").show();
 	}
 
 });
