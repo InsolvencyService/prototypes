@@ -9,7 +9,7 @@ var addresses =   [
 ];
  
     
-    // constructs the suggestion engine
+// constructs the suggestion engine
 var addresses = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
