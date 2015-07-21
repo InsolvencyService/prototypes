@@ -93,6 +93,26 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
+
+legend {
+    border: 0 transparent none;
+}
+
+.halfwidth {
+    float: left;
+    margin-right: 15px;
+    clear: none;
+    width: 35%;
+}
+
+.partwidth {
+    float: left;
+    margin-right: 0;
+    clear: none;
+    width: 15%;
+    margin-top: 23px;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -158,17 +178,39 @@ display:block;
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Property address and type</h1>
-	
-	
+			
+	<h1 class="form-title heading-large">Property address</h1>
+
 	
 	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-		<div class="form-group ">
+	
+				<fieldset class="firsttime">
+                            <legend class="form-label-bold">
+                                <span class="firsttime">Address lookup</span>
+                            </legend>
+
+                            <span class="form-hint">For example, 1 High Street  SG7 6AA</span>
+                            <div class="form-group halfwidth">
+                                <label for="firstline">First line</label>
+                                <input id="firstline" />
+                            </div>
+                            <div class="form-group halfwidth">
+                                <label for="postcode">Postcode</label>
+                                <input id="postcode" />
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group">
+                                <a id="btn-lookup" class="button" href="#">Lookup address</a>&nbsp;
+                                <a id="btn-outsideuk" href="#" style="padding-top:6px" class="btn-link">I live abroad</a>&nbsp;
+
+                                <br />
+                            </div>
+                        </fieldset>
+
+<div class="repeat">
+	
+		<div class="form-group">
 	
 			<label id="applicant_address_line_1_label" for="address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
 	<input id="address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
@@ -204,7 +246,7 @@ display:block;
         <input id="address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 	<br/>
 	</div>
-
+</div>
 		<br/>
 
 
@@ -214,7 +256,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="amount.html">Continue</a>
+		<a id="next" class="button repeat" href="amount.html">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -284,8 +326,12 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../shared/loop.js"></script>
 <script type="text/javascript" src="../../../assets/js/titleCaps.js"></script>
-
+        <script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
+<script type="text/javascript" src="js/properties.js"></script>
+        
 <script type="text/javascript">
 $(document).ready(function() {
 
