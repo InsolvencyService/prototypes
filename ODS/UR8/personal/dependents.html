@@ -199,9 +199,9 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your other dependents</h1>
+	<h1 class="form-title heading-large">Your other dependants</h1>
 	
-	<div class="form-hint">We need to know about people who don't live with you that you support by paying for their care or living expenses.</div>
+	<div>We need to know about people who don't live with you. Include anyone whose care or living expenses you pay for (eg food, bills, healthcare).</div>
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -210,10 +210,10 @@ display:block;
 
 
 
-	<h2 class="heading-medium">Dependents</h2>
+	
         <div id="familylist">
         
-        	<div class="dependents">
+        	<div class="dependents"><h2 class="heading-medium">Dependants</h2>
                      <table style="width: 100%">
                     <thead>
                         <tr>
@@ -230,7 +230,7 @@ display:block;
 
                             <td class="col1" style="width:45%">Tania Bagley</td>
                             <td class="col2">18</td>
-                            <td class="col3">33 Long STreet, Churchtown, C22 33K</td>
+                            <td class="col3">33 Long Street, Churchtown C22 33K</td>
                             <td class="col4">Child</td>
                             <td class="edit"><a href="#" class="btn-edit">Edit</a>&nbsp;<a href="#" class="btn-delete">Delete</a></td>
                         </tr>
@@ -241,8 +241,10 @@ display:block;
 	<div class="form-group ">
 	
 	<fieldset>
-	<legend class="form-label">Enter the dependent's name below</legend>
-	
+	<p><br></p>
+	<label class="form-label-bold">Enter the dependent's name below</label>
+	<span class="form-hint">Enter their full first and last name. You can add more people later.</span>
+
 	<span class="form-hint">For example, Jane Smith</span>
 	<div class="form-group halfwidth">
 		 <label for="firstname">First name</label>
@@ -253,13 +255,13 @@ display:block;
 		<input id="lastname"  />
 	</div>
 	<div class="form-group partwidth">
-                <a href="add-dependent.html" class="button" id="add">Add</a><br/>
+                <a href="add-dependent.html" class="button" id="add">Add dependant</a><br/>
 	</div>
 
 	</fieldset>
 <p class="clearfix"><br></p>
-                <a href="summary.html" id="livealone" class="button">I have no dependents to add</a>
-                <a href="summary.html" class="button dependents">I have added all dependents who don't live with me</a>
+                <a href="summary.html" id="livealone" class="button">I have no dependants to add</a>
+                <a href="summary.html" class="button dependents">I have added all my dependants</a>
 
 	</div>
 			<p class="clearfix"><br></p>
