@@ -1,10 +1,8 @@
 $(document).ready(function() {
    
 var addresses =   [
-{ icon: 'glyphicon-star', address: '274 Lesborne Road, Reigate, Surrey, RH2 7JP', value: 'Goods Abundant Ltd', postcode: 'AB1 2JH' },
-{ icon: 'glyphicon-star', address: 'Walton House 56-58, Richmond Hill, Bournemouth, BH2 6EX', value: 'ABC Company', postcode: 'AB1 2JH' },
-
-{ icon: '', address: '1 The Place, Churchtown, Redhill, AB1 2JH', value: '1 The Place', postcode: 'AB1 2JH' }
+{ line1: '274 Lesborne Road', line2: '', line3:'', town:'Reigate', county:'Surrey', postcode: 'RH2 7JP' },
+{ line1: 'Walton House 56-58', line2: 'Richmond Hill', line3:'', town:'Bournemouth', county:'', postcode: 'BH2 6EX'},
 
 ];
  
@@ -19,8 +17,23 @@ var addresses = new Bloodhound({
 // kicks off the loading/processing of `local` and `prefetch`
 addresses.initialize();
 
-var typeaheadfirstline = $('#name.typeahead');
-	typeaheadfirstline.typeahead({
+$("#pnl-creditor").hide();
+$("#pnl-add").hide();
+$("#row-total").hide();
+$("#row-0").hide();
+
+$("#row-1").hide();
+$("#row-2").hide();
+$("#row-3").hide();
+$("#row-4").hide();
+$("#row-5").hide();
+$("#row-6").hide();
+$("#row-7").hide();
+$("#row-8").hide();
+$("#row-9").hide();
+ 
+var creditortypeahead = $('#propertyname.typeahead');
+	creditortypeahead.typeahead({
 	  hint: true,
 	  highlight: true,
 	  minLength: 1
@@ -36,27 +49,26 @@ var defaultnext = $("#add").prop("href");
 
 var addresseselectedHandler = function (eventObject, suggestionObject, suggestionDataset) {
 	$("#add").prop("href", "amount.html");
-	$("#postcode").val(suggestionObject.postcode);
+
 };
 
-typeaheadfirstline.on('typeahead:selected', addresseselectedHandler );
+creditortypeahead.on('typeahead:selected', addresseselectedHandler );
 
-$("#name").on("change", function () {
+$("#propertyname").on("change", function () {
 	$("#add").prop("href", defaultnext);
 
-	if (typeaheadfirstline.typeahead('val') == ""){
+	if (creditortypeahead.typeahead('val') == ""){
 	    /*$("#pnl-name").text("");
     	$("#pnl-address").text("");
     	$("#pnl-creditor").hide();*/
 	}
-
 });
 
 
 
 $("#btn-clear").on("click", function(){
 		clearfilter();
-		$(".typeahead").first().focus();
+		$("#propertyname").focus();
 });
 
 
@@ -73,8 +85,10 @@ function updatetotal()
 }
 
 function clearfilter(){
-	typeaheadfirstline.typeahead('val', '');
-
+	creditortypeahead.typeahead('val', '');
+/*	    $("#pnl-name").text("");
+    	$("#pnl-address").text("");
+    	$("#pnl-creditor").hide();*/
 }
 
 });
