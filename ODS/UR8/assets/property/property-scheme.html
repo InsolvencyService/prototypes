@@ -171,7 +171,7 @@ display:block;
 	                    
     
                        <div class="form-group" id="shared-mortgage">
-                        <p  class="form-label">Is <strong>1 The Place</strong> part of a shared ownership scheme?</p>
+                        <p  class="form-label">Is <strong class="data">1 The Place</strong> part of a shared ownership scheme?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
@@ -269,35 +269,14 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-                   
-	var sharedowner = $.cookie('name');
 
-	 if (sharedowner == null){
-	 	//$("#shared-mortgage").hide();
-	 }
-	 else
-	 {
-	 	if (sharedowner.length > 0){
-		 	$("#shared-mortgage .data").text(sharedowner);
-		 	$("#shared-mortgage").show();
-	 	}
-	 }
-	 
-	 var homemonth = $.cookie('purchasemonth');
-	 var homeyear = $.cookie('purchaseyear');
-
-	 if (homemonth && homeyear && homemonth.length > 0 && homeyear.length > 0){
-		$("#mortgageyear").val(homeyear);
-		$("#mortgagemonth").val(homemonth);
-	 }
-	
+		
+    var housename = $.cookie("propertyline1");
+    if (housename && housename.length > 0) {
+        $(".data").text(housename);
+    }
+                
 	$("#next").on("click", function(){
-		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0) {
-		    var mortgageamount = parseFloat(numberWithoutCommas($("#mortgageamount").val()));
-			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
-
-			$.cookie('mortgagetype', "mortgage", { expires: 1 });
-		}
 	});
 
 	
