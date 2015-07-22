@@ -318,8 +318,13 @@ $(document).ready(function() {
 	 }
 
 	
-	 $("#next").on("click", function () {
-	     $.cookie('mortgagecompany', $("#creditors").val(), { expires: 1 });
+	 $("#next").on("click", function (e) {
+	     if ($("#creditors").val().length > 0) {
+	         $.cookie('mortgagecompany', $("#creditors").val(), { expires: 1 });
+	     }
+	     else {
+	         e.preventDefault();
+	     }
 	});
 
 	
