@@ -380,6 +380,9 @@ $(document).ready(function() {
         var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
         var row = '<tr><td>' + name + '</td><td class="amount"><span class="poundsign">£</span>' + value + '</td>' + editbuttons + "</tr>";
         $("#tablebody").append(row);
+
+        $(".firsttime").hide();
+        $(".repeat").show();
     }
 });
 
