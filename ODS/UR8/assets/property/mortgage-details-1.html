@@ -181,14 +181,14 @@ display:block;
 
 	
 	<div class="clearfix"></div>
-		<br><a href="list_tenants.html" class="button family" id="skip" >I do not have a mortgage</a>
+		<br><a href="list_tenants.html" class="family" id="skip" >I do not have a mortgage</a>
 	
 
 
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 <p><br/></p>          
                     	
-                  <div class="form-group ">
+                  <div class="form-group partner">
 	                    
     
                        <div class="form-group" id="shared-mortgage">
@@ -294,7 +294,7 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-    
+
     var housename = $.cookie("propertyline1");
     if (housename && housename.length > 0) {
         $(".data").text(housename);
@@ -302,16 +302,14 @@ $(document).ready(function() {
 
     var sharedowner = $.cookie('partner-firstname') + ' ' + $.cookie('partner-lastname');
 
-	 if (sharedowner == null){
-	 	//$("#shared-mortgage").hide();
-	 }
-	 else
-	 {
-	 	if (sharedowner.length > 0){
+	 	if ($.cookie('partner-firstname') && $.cookie('partner-firstname').length > 0){
 		 	$(".partnerdata").text(sharedowner);
-		 	$("#shared-mortgage").show();
+		 	$(".partner").show();
 	 	}
-	 }
+	 	else{
+	 		$(".partner").hide();
+	 	}
+
 
 	 var numproperties = 0;
 	 if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
