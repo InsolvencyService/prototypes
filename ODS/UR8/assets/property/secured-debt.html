@@ -148,23 +148,12 @@
 	
 	
 	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-                    
-	<div class="text">
-	            <div class="form-group" id="loansmessage">
-	 
-	 
-					 <p style="display:none"><a href='../../../UR6/brian/2-home/add-person.html' class='btn btn-success'>Add a person</a>
-				 </p>
-		 		</div>
-			</div>
 
-    	
 	<div class="form-group ">
 	
-	<label id="last_name_label" for="loanname" class="form-label last_name">Name of the creditor or beneficiary of the charge/security</label>
+        <label id="last_name_label" for="loancompanyname" class="form-label last_name">Name of the creditor or beneficiary of the charge/security</label>
 	<div class="form-hint">eg this is the creditor who will be repaid when you sell your house</div>
-	<input id="loanname" name="last_name" type="text" value="" />
+        <input id="loancompanyname" name="last_name" type="text" value="" />
 	<br/>
 	</div>
 	
@@ -322,14 +311,11 @@ $(document).ready(function() {
 	if (housename && housename.length > 0){
 		$(".form-label .data").text(housename);
 	}
-           
-  	var normalroute = $("#next").prop("href");
-	$("#another_Yes").click(function(){
-		$("#next").prop("href","6-secured-debts.html");
-	});
-	$("#another_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
+
+	var loancompanyname = $.cookie('loancompanyname');
+	if (loancompanyname && loancompanyname.length > 0) {
+	    $("#loancompanyname").val(loancompanyname);
+	}
 	
    var numberofsecuredloans = 0;
 
@@ -342,16 +328,15 @@ $(document).ready(function() {
 	}
 	else{
 	    // they have already added one
-	    numberofsecuredloans += 1;
-		$("#loansmessage").hide();
+	    numberofsecuredloans = numberofsecuredloans + 1;
 	}
 
 	$("#next").on("click", function(e){
-		if ($("#amount").val() && $("#amount").val().length > 0 && $.isNumeric($("#amount").val())) {
-			var securedloan = parseFloat($("#amount").val());
+		if ($("#amount").val()) {
+		    var securedloan = numberWithoutCommas($("#amount").val());
 			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1 });
 			$.cookie('loanfor' + numberofsecuredloans, $("#loanfor").val(), { expires: 1 });
-			$.cookie('loanname' + numberofsecuredloans, $("#loanname").val(), { expires: 1 });
+			$.cookie('loancompanyname' + numberofsecuredloans, $("#loancompanyname").val(), { expires: 1 });
 			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1 });
 			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1 });
 			
@@ -363,6 +348,10 @@ $(document).ready(function() {
 	
 });
 
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
+}
  
 </script>
 

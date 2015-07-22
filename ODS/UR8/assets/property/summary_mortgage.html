@@ -207,47 +207,52 @@ display:block;
 	<h1 class="form-title heading-large">Mortgage and secured loans</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-			<p>Mortgage details for <span class="bold-medium data">1 The Place</span></p>
-			<div class="form-group">
-	            
-  				<br>
-            </div>
+
 
 		
 				 	<p>Besides your mortgage, you need to tell us about any other debts secured against <strong class="bold-medium data">1 The Place</strong>.
 				 	Please include details of any charges or securities given by you or awarded against the property (eg, a charging order from the court). </p>
 
-			
-			<div id="pnl-director_table" class="repeat">
+			<p class="heading-medium">Mortgage summary for <strong id="address" class="data">1, The Place, SG7 6BP</strong></p>
+			<div id="pnl-director_table">
 	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Creditor</th>
-	                        <th>Amount</th>
-	                        <th>Date</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody id="tablebody">
-	                	<tr id="row1" class="loop">
-	                        <td>ABC Bank</td>
-	                        <td>£4,234</td>
-	                        <td>12/03/2014</td>
-	                        <td>&nbsp;</td>
-                 		</tr>
-	                </tbody>
+
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th class="amount">Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estimated value</td>
+                            <td class="amount"><span class="poundsign">£</span><span id="propertyvalue">150,000</span></td>
+                            <td class="amount"><a href="#">Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mortgage with <span id="mortgagecompany">HSBC</span></td>
+                            <td class="amount"><span class="poundsign">£</span><span id="mortgageamount">150,000</span></td>
+                            <td class="amount"><a href="#">Edit</a></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr><td colspan="3"><h2 class="heading-medium">Secured loans</h2></td></tr>
+                    </tbody>
+                    <tbody id="tablebody" class="repeat">
+
+
+                    </tbody>
 	            </table>
-	            <tr>
-	            
-	            </tr>
+
 			</div>
 <p><br/></p>
 				<div class="form-group">
 				<label  class="form-label-bold">
-				<span class="firsttime">Enter the company the loan is with</span>
+				<span class="firsttime">Enter the name of the company the loan is with</span>
 				<span class="repeat">Enter another company</span></label>
 				<div class="form-hint">For example, ABC Bank<br><br></div>
-	                <input class="typeahead input-lg form-control-3-4" id="propertyname" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
+	                <input class="typeahead input-lg form-control-3-4" id="name" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
 	                <a id="add" class="button"  href="secured-debt.html">Add <span class="repeat">secured loan</span></a>
 				<p><br></p>
 					<p>
@@ -339,7 +344,7 @@ display:block;
 <script type="text/javascript" src="../../shared/loop.js"></script>
 
 <script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="js/properties.js"></script>
+<script type="text/javascript" src="js/loancompanies.js"></script>
 
 <a href="js/properties.js"></a>
 <script type="text/javascript">
@@ -350,12 +355,35 @@ $(document).ready(function() {
     if (housename && housename.length > 0) {
         $(".data").text(housename);
     }
+
+    if ($.cookie('propertyvalue')) {
+        $("#propertyvalue").text(numberWithCommas($.cookie('propertyvalue')));
+    }
+    if ($.cookie('mortgageamount')){
+        $("#mortgageamount").text(numberWithCommas($.cookie('mortgageamount')));
+    }
+
+
+    var numberofsecuredloans = 0;
+    if ($.cookie("numberofsecuredloans") && parseInt($.cookie("numberofsecuredloans"))) {
+        numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
+    }
+
+    for (i = 1; i <= numberofsecuredloans; i++) {
+
+        var value = numberWithCommas($.cookie('securedloan' + i));
+        var name = $.cookie('loancompanyname' + i);
+
+        var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
+        var row = '<tr><td>' + name + '</td><td class="amount"><span class="poundsign">£</span>' + value + '</td>' + editbuttons + "</tr>";
+        $("#tablebody").append(row);
+    }
 });
 
 $("#add").click(function(e){
-    var name = $("#propertyname").val();
+    var name = $("#name").val();
 	if (isvalidname(name) == true){
-		$.cookie("propertyname", name);
+		$.cookie("loancompanyname", name);
 	}
         /*
 	else{
@@ -373,13 +401,14 @@ function getParameterByName(name) {
 }
 
 function isvalidname(companyname){
-	var name = companyname.toLowerCase();
-	if (name.length > 2 && name.indexOf(" ") > -1){
+    if (companyname.length > 2) {
 		return true;
 	}
 
 	return false;
-
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 </script>
