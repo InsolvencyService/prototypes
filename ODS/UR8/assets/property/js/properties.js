@@ -1,10 +1,12 @@
 $(document).ready(function() {
-   
+
+    var enteredl1 = $.cookie("address_line_1");
+    var enteredpcode = $.cookie("post_code");
 var addresses =   [
 { icon: 'glyphicon-star', address: '274 Lesborne Road, Reigate, Surrey, RH2 7JP', value: 'Goods Abundant Ltd', postcode: 'AB1 2JH' },
 { icon: 'glyphicon-star', address: 'Walton House 56-58, Richmond Hill, Bournemouth, BH2 6EX', value: 'ABC Company', postcode: 'AB1 2JH' },
 
-{ icon: '', address: '1 The Place, Churchtown, Redhill, AB1 2JH', value: '1 The Place', postcode: 'AB1 2JH' }
+{ icon: '', address: enteredl1 + ", " + enteredpcode, value: enteredl1, postcode: enteredpcode }
 
 ];
  
