@@ -170,7 +170,7 @@
 	
 	<label id="email_label" for="email" class="form-label email">Amount currently outstanding</label>
 	<span class="form-hint">How much your creditor says you owe</span>
-	<input id="amount" name="amount" type="text" value="" />
+    <span class="currency">£</span><input id="amount" name="amount" type="text" value="" />
 </div>
 <div class="form-group ">
 	
@@ -194,13 +194,13 @@
 	</div>
 	
 				<div class="form-group" id="shared-mortgage">
-                        <p  class="form-label">Is this a joint debt with someone else?</p>
+                        <p  class="form-label">Is this a joint debt?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
-                                <label for="person_Yes" class="block-label">
+                                <label for="person_Yes" class="block-label partner">
                                     <input id="person_Yes" name="sameaddress" type="radio">
-                                    Yes - with <span class="bold-medium data">Susan Smith</span>
+                                    Yes - with <span class="bold-medium partnerdata">Susan Smith</span>
                                 </label>
 
                                 <label for="person_Yes" class="block-label">
@@ -307,6 +307,15 @@
 <script type="text/javascript">
 $(document).ready(function() {
  
+    var sharedowner = $.cookie('partner-firstname') + ' ' + $.cookie('partner-lastname');
+    if ($.cookie('partner-firstname') && $.cookie('partner-firstname').length > 0) {
+        $(".partnerdata").text(sharedowner);
+        $(".partner").show();
+    }
+    else {
+        $(".partner").hide();
+    }
+
 	var housename = $.cookie('house');
 	if (housename && housename.length > 0){
 		$(".form-label .data").text(housename);
