@@ -560,7 +560,9 @@ $(document).ready(function() {
     });
     
     function ismatch(name1, name2) {
-        if (name1 == name2) {
+        name1 = name1.replace(/ /g, '');
+        name2 = name2.replace(/ /g, '');
+        if (name1.toUpperCase() == name2.toUpperCase()) {
             return true;
         }
         return false;
