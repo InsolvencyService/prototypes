@@ -245,7 +245,7 @@ display:block;
                     <tr class="group-heading">
                         <td>
 	Have you been known by any other names in the last 5 years?</td>
-                        <td id="user_othername"></td>
+                        <td id="user_othername">No</td>
                         <td> 
     					<a href="1.html">Edit</a>
                         </td>
@@ -543,7 +543,7 @@ $(document).ready(function() {
 	var othername="";
 	var dob = $.cookie("dob-day")+"/"+$.cookie("dob-month")+"/"+$.cookie("dob-year");
 
-	if($.cookie("othername1")!= ""){
+	if($.cookie("othername1")!= null){
 		othername="Yes";
 	}
 	else{
