@@ -243,7 +243,7 @@ legend{
 	                <tbody class="tbl-content">
 	                                     
 	                    <tr class="repeat">
-	                        <td>James Smith</td>
+	                        <td><span class="personname">James Smith</span></td>
 	                        <td>Me</td>
 	                        <td><span id="myshare">100%</span></td>
 	                        <td>&nbsp;</td>
@@ -373,6 +373,10 @@ $(document).ready(function () {
 
     var name = $.cookie('member' + numowners + "-firstname")  + " " + $.cookie('member' + numowners + "-lastname");
     var relationship = $.cookie('member' + numowners + "-relationship");
+
+    if ($.cookie("firstname")) {
+        $(".personname").text($.cookie("firstname") + " " + $.cookie("lastname"));
+    }
 
     if (numowners > 0){
         // add row to table
