@@ -212,18 +212,29 @@ display:block;
                     <tbody>
                     	<tr class="group-heading">
                     		<td>Number of properties</td>
-                        	<td>1&nbsp;</td>
+                        	<td><span id="numproperties">1</span></td>
                         	<td><a href="list_properties.html">Edit</a></td>
                         	<td></td>
                     	</tr>
-                    </tbody>
-                    <tbody>
+
                     	<tr class="group-heading">
                     		<td>Number of vehicles</td>
                         	<td>0</td>
-                        	<td><a href="../../creditors/actionlist.html">Edit</a></td>
+                        	<td><a href="#">Edit</a></td>
                         	<td></td>
                     	</tr>
+                        <tr class="group-heading">
+                            <td>Items you own</td>
+                            <td>0</td>
+                            <td><a href="#">Edit</a></td>
+                            <td></td>
+                        </tr>
+                        <tr class="group-heading">
+                            <td>Life insurance policies</td>
+                            <td>0</td>
+                            <td><a href="#">Edit</a></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                     <tbody>
                     </tbody>
@@ -320,11 +331,12 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	
-	var reset = getParameterByName("reset");
-	var normalroute = $("#next").prop("href");
-	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
+    var numproperties = 0;
+    if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
+        numproperties = $.cookie("numproperties");
+    }
+
+	$("#numproperties").text(numproperties);
 	$("#row1 .date").text($.cookie("creditordate"));
 	$("#row1 .amount").append($.cookie("creditoramount"));
 
