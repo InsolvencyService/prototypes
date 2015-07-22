@@ -363,6 +363,9 @@ $(document).ready(function() {
         $("#mortgageamount").text(numberWithCommas($.cookie('mortgageamount')));
     }
 
+    if ($.cookie('mortgageamount')) {
+        $("#mortgagecompany").text($.cookie('mortgagecompany'));
+    }
 
     var numberofsecuredloans = 0;
     if ($.cookie("numberofsecuredloans") && parseInt($.cookie("numberofsecuredloans"))) {
