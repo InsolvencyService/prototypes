@@ -373,102 +373,33 @@ $(document).ready(function() {
 		$(".newvisitor").show();
 	}
 
-	/*var numcreditors = 0;
-	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
-		numcreditors = parseInt($.cookie('numcreditors'));
-	}
-	if (numcreditors > 0){
-
-		for (i=1; i <= numcreditors; i++){
-
-			if ($.cookie('creditorname' + i) && $.cookie('creditorname' + i).length > 0 && $.cookie('creditoramount' + i)){
-				if (reset && reset.length > 0){
-					$.removeCookie('creditorname' + i);
-					$.removeCookie('creditoramount' + i);
-				}
-				else{
-					if ($.cookie('creditordeleted' + i) == null){
-						$("#creditorlist").show();
-						$("#btn-addedall").show();
-						$("#heading-add").text("Add another creditor");
-						$(".newvisitor").hide();
-						
-						$("#row" + i).show();
-						$("#row" + i + " .name").text($.cookie('creditorname' + i));
-						$("#row" + i + " .ref").text($.cookie('creditorref' + i));
-						$("#row" + i + " .amount").text(numberWithCommas(parseFloat($.cookie('creditoramount' + i))));
-						$("#row" + i + " .date").text($.cookie('incurredmonth' + i) + "/" + ($.cookie('incurredyear' + i)));
-					}
-				}
-
-				if ($.cookie('creditordeleted' + i) && reset && reset.length > 0){
-					$.removeCookie('creditordeleted' + i);		
-				}
-
-
-			}
-		}*/
-
-		/*if (reset && reset.length > 0){
-			$.removeCookie($.cookie('numcreditors'));	
-		}
-		else{
-		    total = calctotal();
-	
-			if (total && total > 0){
-				$("#box-total").text(numberWithCommas(total));
-			}
-		}
-
-
-		
-	}*/
 });	
-	$("#next").on("click", function(e){
-		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
-			$.cookie('DROtempcreditorname', $('#creditors.typeahead').val(), { expires: 1 });
-		}
-		else{
-			$("#msg-entervalue").show();
-			e.preventDefault();
-		}
-	});
-/*	var rowid = "row1";
-	var id = 1;
-	$(".btn-delete").on("click", function () {
-	    if ($(this).parent().parent().prop("id")) {
-			rowid= $(this).parent().parent().prop("id");
-			id = parseInt(rowid.substring(3, rowid.length));
-			$("#confirm-delete").show();
-	    }
-
-	    $("#btn-confirm-delete").on("click", function () {
-	        $.cookie('creditordeleted' + id, "1", { expires: 1 });
-	        $("#row" + id).hide();
-	        $("#confirm-delete").hide();
-
-	        total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
-	        $("#box-total").text(numberWithCommas(total));
-
-	    })
-	});*/
 	
-	
-/*	
-   function calctotal() {
-        var totalamount = 0;
-        $('tr td.amount').each(function () {
-            if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
-            	var amount = $(this).text();
-                totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
-                $(this).val(parseFloat($(this).text()));
-            }
-        });
-        return totalamount;
-    }
-
+$("#next").on("click", function(e){
+	if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
+		$.cookie('DROtempcreditorname', $('#creditors.typeahead').val(), { expires: 1 });
+	}
+	else{
+		$("#msg-entervalue").show();
+		e.preventDefault();
+	}
 });
-*/
+	
+
+function calctotal() {
+    var totalamount = 0;
+    
+    $('tr td.amount').each(function () {
+        if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
+        	var amount = $(this).text();
+            totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
+            $(this).val(parseFloat($(this).text()));
+        }
+    });
+    
+    return totalamount;
+}
+
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -476,7 +407,7 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-/*
+
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -485,7 +416,7 @@ function numberWithoutCommas(x) {
     return parseFloat(x.toString().replace(/,/g, ""));
 }
 
-*/
+
 </script>
 
 
