@@ -233,10 +233,10 @@ display:block;
 				<div id="excluded_debt">
 									
 					<label id="excluded_label1" for="excluded_yes" class="block-label">
-					<input id="excluded_yes"  name="excluded" type="radio">Yes</label>
+					<input id="excluded_yes"  name="excluded" value="yes" type="radio">Yes</label>
 					
 					<label id="excluded_label1" for="excluded_no" class="block-label">
-					<input id="excluded_no"  name="excluded" type="radio">No</label>
+					<input id="excluded_no"  name="excluded" value="yes" type="radio">No</label>
 
 				</div>
 			</fieldset>
@@ -248,10 +248,10 @@ display:block;
 				<div id="secured_debt">
 									
 					<label id="secured_label1" for="secured_yes" class="block-label">
-					<input id="secured_yes"  name="secured" type="radio">Yes</label>
+					<input id="secured_yes"  name="secured" value="yes" type="radio">Yes</label>
 					
 					<label id="secured_label1" for="secured_no" class="block-label">
-					<input id="secured_no"  name="secured" type="radio">No</label>
+					<input id="secured_no"  name="secured" value="no" type="radio">No</label>
 
 				</div>
 			</fieldset>
@@ -426,8 +426,6 @@ $('#pnl-earnings input:radio').click(function() {
 
 $("#next").on("click", function(e){
 		writeCookies();
-		
-		
 
 });
 
@@ -452,7 +450,7 @@ function writeCookies() {
 		var address4=$("#creditor_address_town").val();
 		var address5=$("#creditor_address_county").val();
 		var address6=$("#creditor_address_post_code").val();
-	
+			
 		if(address1 != ""){
 			creditor_address = address1+", ";
 		}
@@ -473,26 +471,26 @@ function writeCookies() {
 		}
 		$.cookie("DROCreditorAddress"+count, creditor_address);
 
-		
+
 		// reference
-		$.cookie("DROCreditorReference"+count, );
+		$.cookie("DROCreditorReference"+count, $("#ref").val() );
 		// amount
-		$.cookie("DROCreditorAmount"+count, );
+		$.cookie("DROCreditorAmount"+count, $("#amount").val());
 		// excluded
-		$.cookie("DROCreditorExcludedDebt"+count, );
+		$.cookie("DROCreditorExcludedDebt"+count, $("#excluded_debt :selected").val());
 		// secured
-		$.cookie("DROCreditorSecuredDebt"+count, );
+		$.cookie("DROCreditorSecuredDebt"+count, $("#secured_debt :selected").val());
 		// secured on
-		$.cookie("DROCreditorSecuredOn"+count, );
+		$.cookie("DROCreditorSecuredOn"+count, $("#secured_item").val());
 		// secured value
-		$.cookie("DROCreditorSecuredValue"+count, );
+		$.cookie("DROCreditorSecuredValue"+count, $("#secured_value").val());
 		// attachment order details
-		$.cookie("DROCreditorAttachmentOrder"+count, );
+		$.cookie("DROCreditorAttachmentOrder"+count, $("#debt_reason").val());
 		// order amount
-		$.cookie("DROCreditorAttachmentAmount"+count, );
+		$.cookie("DROCreditorAttachmentAmount"+count, $("#creditor_reference").val());
 		// update count
-		$.cookie("DROCreditorCount", count)
-	
+		$.cookie("DROCreditorCount", count);
+
 }
 
 function getParameterByName(name) {
