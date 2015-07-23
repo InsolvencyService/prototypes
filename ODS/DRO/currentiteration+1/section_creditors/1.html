@@ -336,17 +336,19 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
-	var DROCreditorCount;
+	var DROCreditorCount = $.cookie("DROcreditorcount");
 	
-	if($.cookie("DROcreditorcount") == null){
-		DROCreditorCount = 0;
+	if(DROCreditorCount == null || DROCreditorCount == ""){
+		 DROCreditorCount = 0;
+	}
+	
+	
+	if(DROCreditorCount > 0){
+		$("#creditorlist").show();
 	}
 	else{
-		DROCreditorCount = $.cookie("DROcreditorcount");
+		$("#creditorlist").hide();
 	}
-	
-	if(DROCreditorCount > 0){$("#creditorlist").show();}
-	else{$("#creditorlist").hide();}
 	
 	
 });
