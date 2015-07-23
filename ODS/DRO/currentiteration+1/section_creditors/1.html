@@ -231,10 +231,10 @@ display:block;
 	<table style="width: 100%">
 		<thead>
 			<tr>
-				<th>Name</th>
+				<th width="40%">Name</th>
 				<th>Reference</th>
-				<th style="text-align:right; white-space:nowrap">Amount</th>
-				<th>Date</th>
+				<th>Amount</th>
+				<th>Secured</th>
 				<th>&nbsp;</th>
 			</tr>
 		</thead>
@@ -269,9 +269,9 @@ display:block;
 	<table style="width: 100%">
 		<thead>
 			<tr>
-				<th>Name</th>
+				<th width="40%">Name</th>
 				<th>Reference</th>
-				<th style="text-align:right; white-space:nowrap">Amount</th>
+				<th>Amount</th>
 				<th>Date</th>
 				<th>&nbsp;</th>
 			</tr>
@@ -440,16 +440,19 @@ $(document).ready(function() {
 			if(excluded == "yes"){
 				$("#excludedcreditorlist").show();
 				$("#excludedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td>"+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+				excludedtotal = excludedtotal+amount;
 			}
 			else{
 				$("#creditorlist").show();
-				$("#creditorlist").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td>"+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+				$("#includedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td>"+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+				total = total+amount;
 			}
 		}
 		
 		//adds excluded total
+		$("#excludedbody").append("<tr class=\"totalrow\" ><td  colspan=\"2\" class=\"text-right\" style=\"white-space:nowrap\"><span >Total £</span></td><td class=\"amount\" style=\"width:100px; white-space:nowrap\"><div class=\"text-right\" id=\"box-total\">"+ excludedtotal +"</div></td><td></td><td></td></tr>");
 		//adds included total	
-		
+		$("#includedbody").append("<tr class=\"totalrow\" ><td  colspan=\"2\" class=\"text-right\" style=\"white-space:nowrap\"><span >Total £</span></td><td class=\"amount\" style=\"width:100px; white-space:nowrap\"><div class=\"text-right\" id=\"box-total\">"+ total +"</div></td><td></td><td></td></tr>");
 	}
 	
 /*
