@@ -424,12 +424,15 @@
 			var section1 = getParameterByName("section1");
 			var section2 = getParameterByName("section2");
 			var section7 = getParameterByName("section7");
+			var creditors = getParameterByName("creditors");
+			var total = getParameterByName("total");
+
 	
             $(document).ready(function () {
             	$("#logout").show();
             	
             	if($.cookie("DROIncludedCreditorCount") != null){
-            		$("#creditors_entered").text($.cookie("DROIncludedCreditorCount")+" creditors entered, debt value £"+$.cookie("DROIncludedCreditorTotal"));
+            		$("#creditors_entered").text(creditors+" creditors entered, debt value £"+total);
             	}
             
             	if(user=="ai"){

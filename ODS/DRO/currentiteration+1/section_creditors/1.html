@@ -481,8 +481,7 @@ $("#next").on("click", function(e){
 });
 
 $("#btn-addedall").on("click", function(e){
-	$.cookie("DROIncludedCreditorCount",includedcreditors);
-	$.cookie("DROIncludedCreditorTotal",total);
+	$("#btn-addedall").attr("href", "../application.html?section7=inprogress&creditors="+includedcreditors+"&total="+total)
 });
 
 	
