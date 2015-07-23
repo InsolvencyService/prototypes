@@ -299,7 +299,7 @@ display:block;
 	<div>
 		
 		<a id="next" class="button" href="1.html">Save and return</a>
-		<p><a id="again" href="#">Add another record for this creditor</a></p>
+		<p><a id="again" href="amount.html">Add another record for this creditor</a></p>
 	</div>
 	<div>
 	<br>
@@ -428,6 +428,12 @@ $("#next").on("click", function(e){
 		writeCookies();
 
 });
+
+$("#again").on("click", function(e){
+		writeCookies();
+
+});
+
 
 
 function writeCookies() {
