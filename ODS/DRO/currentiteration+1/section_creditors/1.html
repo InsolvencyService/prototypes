@@ -423,7 +423,7 @@ $(document).ready(function() {
 
 		
 	}*/
-	
+});	
 	$("#next").on("click", function(e){
 		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
 			$.cookie('DROtempcreditorname', $('#creditors.typeahead').val(), { expires: 1 });
@@ -450,11 +450,11 @@ $(document).ready(function() {
 	        total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
 	        $("#box-total").text(numberWithCommas(total));
 
-	    })*/
-	});
+	    })
+	});*/
 	
 	
-	
+/*	
    function calctotal() {
         var totalamount = 0;
         $('tr td.amount').each(function () {
@@ -468,7 +468,7 @@ $(document).ready(function() {
     }
 
 });
-
+*/
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -476,7 +476,7 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
+/*
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -485,7 +485,7 @@ function numberWithoutCommas(x) {
     return parseFloat(x.toString().replace(/,/g, ""));
 }
 
-
+*/
 </script>
 
 
