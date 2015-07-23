@@ -177,33 +177,33 @@ display:block;
 	<form class="form" method="post">
 		<div id="address_section">
 			<div class="form-group ">
-				<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-				<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+				<label id="creditor_address_line_1_label" for="creditor_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+				<input id="creditor_address_line_1" name="creditor_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
 				<br/>
 			</div>
 			<div class="form-group ">
-				<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-				<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+				<label id="creditor_address_line_2_label" for="creditor_address_line_2" class="visuallyhidden">Address Line 2</label>
+				<input id="creditor_address_line_2" name="creditor_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
 				<br/>
 			</div>
 			<div class="form-group ">
-				<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-				<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+				<label id="creditor_address_line_3_label" for="creditor_address_line_3" class="visuallyhidden">Address Line 3</label>
+				<input id="creditor_address_line_3" name="creditor_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
 				<br/>
 			</div>
 			<div class="form-group ">
-				<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
-				<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+				<label id="creditor_address_town_label" for="creditor_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+				<input id="creditor_address_town" name="creditor_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
 				<br/>
 			</div>
 			<div class="form-group ">
-				<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-				<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+				<label id="creditor_address_county_label" for="creditor_address_county" class="form-label-bold applicant_address_county">County</label>
+				<input id="creditor_address_county" name="creditor_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
 				<br/>
 			</div>
 			<div class="form-group ">
-				<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-				<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+				<label id="creditor_address_post_code_label" for="creditor_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+				<input id="creditor_address_post_code" name="creditor_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 				<br/>
 			</div>
 		</div>
@@ -297,7 +297,9 @@ display:block;
 	<div class="form-navigation form-group">
 	<p>&nbsp;</p>
 	<div>
+		
 		<a id="next" class="button" href="1.html">Save and return</a>
+		<p><a id="again" href="#">Add another record for this creditor</a></p>
 	</div>
 	<div>
 	<br>
@@ -371,6 +373,9 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+var count;
+var tempname;
+
 $(document).ready(function() {
 	$("#pnl-attachment_earnings").hide();
 	$("#pnl-secured_details").hide();
@@ -386,7 +391,7 @@ $(document).ready(function() {
 		$("#address_section").hide();
 	}
 
-	var tempname = $.cookie('DROtempcreditorname');
+	tempname = $.cookie('DROtempcreditorname');
 	$("#creditor_name").text(tempname);
 	
 	
@@ -420,10 +425,75 @@ $('#pnl-earnings input:radio').click(function() {
 });
 
 $("#next").on("click", function(e){
+		writeCookies();
+		
 		
 
 });
 
+
+function writeCookies() {
+	// Get count
+		count = $.cookie("DROCreditorCount");
+		if(count == null || count == ""){
+			count=0
+		}
+		count++;
+	
+	// write records
+		// name
+		$.cookie("DROCreditorName"+count, tempname);
+		// address
+		
+		var creditor_address = "";
+		var address1=$("#creditor_address_line_1").val();
+		var address2=$("#creditor_address_line_2").val();
+		var address3=$("#creditor_address_line_3").val();
+		var address4=$("#creditor_address_town").val();
+		var address5=$("#creditor_address_county").val();
+		var address6=$("#creditor_address_post_code").val();
+	
+		if(address1 != ""){
+			creditor_address = address1+", ";
+		}
+		if(address2 != ""){
+			creditor_address = creditor_address+address2+", ";
+		}
+		if(address3 != ""){
+			creditor_address = creditor_address+address3+", ";
+		}
+		if(address4 != ""){
+			creditor_address = creditor_address+address4+", ";
+		}
+		if(address5 != ""){
+			creditor_address = creditor_address+address5+", ";
+		}
+		if(address6 != ""){
+			creditor_address = creditor_address+address6;
+		}
+		$.cookie("DROCreditorAddress"+count, creditor_address);
+
+		
+		// reference
+		$.cookie("DROCreditorReference"+count, );
+		// amount
+		$.cookie("DROCreditorAmount"+count, );
+		// excluded
+		$.cookie("DROCreditorExcludedDebt"+count, );
+		// secured
+		$.cookie("DROCreditorSecuredDebt"+count, );
+		// secured on
+		$.cookie("DROCreditorSecuredOn"+count, );
+		// secured value
+		$.cookie("DROCreditorSecuredValue"+count, );
+		// attachment order details
+		$.cookie("DROCreditorAttachmentOrder"+count, );
+		// order amount
+		$.cookie("DROCreditorAttachmentAmount"+count, );
+		// update count
+		$.cookie("DROCreditorCount", count)
+	
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
