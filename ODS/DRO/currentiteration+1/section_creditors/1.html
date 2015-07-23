@@ -336,10 +336,13 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
-	var DROCreditorCount = $.cookie("DROcreditorcount");
+	var DROCreditorCount;
 	
-	if(DROCreditorCount == null){
+	if($.cookie("DROcreditorcount") == null){
 		DROCreditorCount = 0;
+	}
+	else{
+		DROCreditorCount = $.cookie("DROcreditorcount");
 	}
 	
 	if(DROCreditorCount > 0){$("#creditorlist").show();}
