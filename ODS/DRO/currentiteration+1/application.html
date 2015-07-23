@@ -300,8 +300,8 @@
                             
                             <li class="row" id="section7">
                                 <div class="rowtop">
-                                    <span class="col-sm-8"><h3>7.Creditors</h3></span>
-                                    <span class="col-sm-4"><a href="section_creditors/1.html"><label class="label label-default">Not started</label></a></span>
+                                    <div class="col-sm-8"><p class="font-medium">7. Creditors <span id="creditors_entered" style="float:right" class="font-small text-right">test</span></p></div>
+                                    <div class="col-sm-4"><a href="section_creditors/1.html"><label class="label label-default">Not started</label></a></div>
                                 </div>
                             </li>
                            
@@ -427,7 +427,10 @@
 	
             $(document).ready(function () {
             	$("#logout").show();
-            
+            	
+            	if($.cookie("DROIncludedCreditorCount") != null){
+            		$("#creditors_entered").text($.cookie("DROIncludedCreditorCount")+" creditors entered, debt value £"+$.cookie("DROIncludedCreditorTotal"));
+            	}
             
             	if(user=="ai"){
             		$("#ai").show(); 
