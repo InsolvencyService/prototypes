@@ -206,7 +206,6 @@ display:block;
 		
 	<form class="form" method="post">
 	       
-    <h2 class="form-label-bold">Creditors</h2>
 		<div id="creditorlist">
 			<table style="width: 100%">
 				<thead>
@@ -326,20 +325,17 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="../../../UR8/creditors/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../../../UR8/creditors/js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="../../../UR8/creditors/js/creditors.js"></script>
 
+<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/tw-typeahead.js"></script>
+	<script type="text/javascript" src="js/creditors.js"></script>
+	<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
+/*$(document).ready(function() {
 	
-	if($.cookie("DROcreditorcount") == null || $.cookie("DROcreditorcount") == ""){
-		 $("#creditorlist").hide();
-	}
-	else{
+	if($.cookie("DROcreditorcount") >0){
 		var DROCreditorCount = $.cookie("DROcreditorcount");
 		$("#creditorlist").show();
 	}
@@ -348,10 +344,12 @@ $(document).ready(function() {
 	
 	
 });
-	
+*/
+
 $("#next").on("click", function(e){
-	if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
-		$.cookie('DROtempcreditorname', $('#creditors.typeahead').val());
+	var cname = $('#creditors.typeahead').val();
+	if (cname && cname.length > 0){
+		$.cookie('DROtempcreditorname', cname);
 	}
 });
 
@@ -378,6 +376,7 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -385,7 +384,6 @@ function numberWithCommas(x) {
 function numberWithoutCommas(x) {
     return parseFloat(x.toString().replace(/,/g, ""));
 }
-
 
 </script>
 

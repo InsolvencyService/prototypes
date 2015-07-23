@@ -3,7 +3,6 @@ $(document).ready(function() {
 var creditors =   [
 { icon: 'glyphicon-star', address: '274 Lesborne Road, Reigate, Surrey, RH2 7JP', value: 'Goods Abundant Ltd' },
 { icon: 'glyphicon-star', address: 'Walton House 56-58, Richmond Hill, Bournemouth, BH2 6EX', value: 'ABC Company' },
-
 { icon: '', address: 'The Omnibus Building, Lesborne Road, Reigate, Surrey, RH2 7JP', value: '1st  Credit' },
 { icon: '', address: 'c/o KPMG, FAO Lynn Taylor, National Client Service Centre, One Snowhill, Snow Hill Queensway, Birmingham, B4 6GH', value: 'Abbey National Plc' },
 { icon: '', address: 'Express House, Clayton Business Park, Petre Road, Accrington, Lancashire, BB5 5JY', value: 'Ace Cards and Gifts' },
@@ -365,20 +364,12 @@ var creditors = new Bloodhound({
 // kicks off the loading/processing of `local` and `prefetch`
 creditors.initialize();
 
-$("#pnl-creditor").hide();
-$("#pnl-add").hide();
-$("#row-total").hide();
-$("#row-0").hide();
+$("#creditorlist").hide();
+if($.cookie("DROcreditorcount") >0){
+		var DROCreditorCount = $.cookie("DROcreditorcount");
+		$("#creditorlist").show();
+	}
 
-$("#row-1").hide();
-$("#row-2").hide();
-$("#row-3").hide();
-$("#row-4").hide();
-$("#row-5").hide();
-$("#row-6").hide();
-$("#row-7").hide();
-$("#row-8").hide();
-$("#row-9").hide();
  
  var creditortypeahead = $('#creditors.typeahead');
 	creditortypeahead.typeahead({
@@ -434,9 +425,6 @@ function updatetotal()
 
 function clearfilter(){
 	creditortypeahead.typeahead('val', '');
-/*	    $("#pnl-name").text("");
-    	$("#pnl-address").text("");
-    	$("#pnl-creditor").hide();*/
 }
 
 });
