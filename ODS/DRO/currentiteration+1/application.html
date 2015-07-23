@@ -300,7 +300,7 @@
                             
                             <li class="row" id="section7">
                                 <div class="rowtop">
-                                    <div class="col-sm-8"><p class="font-medium">7. Creditors <span id="creditors_entered" style="float:right" class="font-small text-right">test</span></p></div>
+                                    <div class="col-sm-8"><p class="font-medium">7. Creditors <span id="creditors_entered" style="float:right" class="font-xsmall text-right">test</span></p></div>
                                     <div class="col-sm-4"><a href="section_creditors/1.html"><label class="label label-default">Not started</label></a></div>
                                 </div>
                             </li>
@@ -426,12 +426,13 @@
 			var section7 = getParameterByName("section7");
 			var creditors = getParameterByName("creditors");
 			var total = getParameterByName("total");
+			
 
 	
             $(document).ready(function () {
             	$("#logout").show();
             	
-            	if($.cookie("DROIncludedCreditorCount") != null){
+            	if(creditors != ""){
             		$("#creditors_entered").text(creditors+" creditors entered, debt value £"+total);
             	}
             
