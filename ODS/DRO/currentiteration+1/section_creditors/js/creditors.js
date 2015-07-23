@@ -396,19 +396,12 @@ creditortypeahead.on('typeahead:selected', creditorSelectedHandler );
 $("#creditors").on("change", function(){
 	$("#next").prop("href", defaultnext);
 
-	if (creditortypeahead.typeahead('val') == ""){
-	    /*$("#pnl-name").text("");
-    	$("#pnl-address").text("");
-    	$("#pnl-creditor").hide();*/
-	}
-});
-
-$("#next").on("click", function(e){
 	var cname = $('#creditors.typeahead').val();
 	if (cname && cname.length > 0){
 		$.cookie('DROtempcreditorname', cname);
 	}
 });
+
 
 
 
