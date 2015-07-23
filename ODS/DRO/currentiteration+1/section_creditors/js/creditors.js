@@ -403,6 +403,13 @@ $("#creditors").on("change", function(){
 	}
 });
 
+$("#next").on("click", function(e){
+	var cname = $('#creditors.typeahead').val();
+	if (cname && cname.length > 0){
+		$.cookie('DROtempcreditorname', cname);
+	}
+});
+
 
 
 $("#btn-clear").on("click", function(){
