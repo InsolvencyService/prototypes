@@ -335,47 +335,38 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-	var DROCreditorCount = $.cookie("DROcreditorcount");
 	
-	if(DROCreditorCount == null || DROCreditorCount == ""){
-		 DROCreditorCount = 0;
-	}
-	
-	
-	if(DROCreditorCount > 0){
-		$("#creditorlist").show();
+	if($.cookie("DROcreditorcount") == null || $.cookie("DROcreditorcount") == ""){
+		 $("#creditorlist").hide();
 	}
 	else{
-		$("#creditorlist").hide();
+		var DROCreditorCount = $.cookie("DROcreditorcount");
+		$("#creditorlist").show();
 	}
+	
+	
 	
 	
 });
 	
 $("#next").on("click", function(e){
 	if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
-		numcreditors=numcreditors + 1;
-		$.cookie('DROtempcreditorname', $('#creditors.typeahead').val(), { expires: 1 });
-	}
-	else{
-		$("#msg-entervalue").show();
-		e.preventDefault();
+		$.cookie('DROtempcreditorname', $('#creditors.typeahead').val());
 	}
 });
 
 	
-   function calctotal() {
-        var totalamount = 0;
-        $('tr td.amount').each(function () {
-            if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
-            	var amount = $(this).text();
-                totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
-                $(this).val(parseFloat($(this).text()));
-            }
-        });
-        return totalamount;
-    }
+function calctotal() {
+    var totalamount = 0;
+    $('tr td.amount').each(function () {
+        if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
+        	var amount = $(this).text();
+            totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
+            $(this).val(parseFloat($(this).text()));
+        }
+    });
+    return totalamount;
+}
 
 });
 
