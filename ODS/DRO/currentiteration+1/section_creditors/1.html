@@ -242,9 +242,9 @@ display:block;
 	</div>
 	
 	<div class="form-group">
-		<label  for="creditors" class="form-label-bold " id="heading-add" style="display:none">Add creditor</label>
-
-			<div class="form-hint">Enter the creditor’s name below – it can be the name of an organisation or an individual, for example ABC Bank Ltd or Joe Johnson. </div>
+		<label  for="creditors" class="form-label-bold " id="heading-add">Add creditor</label>
+			
+			<div class="form-hint">It can be the name of an organisation or an individual, for example ABC Bank Ltd or Joe Johnson. </div>
 				<input type="text" placeholder="Start typing name" id="creditors" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
 				<a class="button" href="amount.html?address=true" id="next">Add creditor</a>&nbsp;
 				<a href="#" id="btn-clear" style="display:none">X</a>	  
@@ -335,6 +335,15 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	var DROCreditorCount = $.cookie("DROcreditorcount");
+	
+	if(DROCreditorCount == null){
+		DROCreditorCount = 0;
+	}
+	
+	if(DROCreditorCount > 0){$("#creditorlist").show();}
+	else{$("#creditorlist").hide();}
 	
 	
 });
