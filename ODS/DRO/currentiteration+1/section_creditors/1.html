@@ -333,6 +333,12 @@ display:block;
 	<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+
+$("#next").on("click", function(e){
+	var cname = $('#creditors.typeahead').val();
+	$.cookie('DROtempcreditorname', cname);
+});
+
 	
 function calctotal() {
     var totalamount = 0;
