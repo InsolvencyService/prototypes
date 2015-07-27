@@ -142,84 +142,44 @@
 		
 		<!--- Q1 --->
 		<form class="form" method="post">
-			<div class="form-group">
+			
+			<div class="form-group" id="pnl-referred">
 				<fieldset class="inline">
-				<legend id="proceedings_label" class="form-label-bold">Are you currently subject to any Insolvency proceedings?</legend>
-					<div id="pnl-proceedings" class="form-group">
-						<label id="proceedings_label1" for="proceedings_yes" class="block-label">
-						<input id="proceedings_yes" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">Yes</label>
-					
-						<label id="proceedings_label1" for="proceedings_no" class="block-label">
-						<input id="proceedings_no" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">No</label>
-					
-					</div>
-				</fieldset>
-			</div>
-		
-			<p>&nbsp;</p>
-					
-			<div class="form-group" id="pnl-pending">
-				<fieldset class="inline">
-				<legend id="pending_label" class="form-label-bold">Do you have a pending bankruptcy petition against you?</legend>
-					<div id="pending" class="form-group">
-						<label id="pending_label0" for="pending_yes" class="block-label">
-						<input id="pending_yes" value="" name="pendings" type="radio" aria-describedby="title_error title_help">Yes</label>
-
-						<label id="pending_label1" for="pending_no" class="block-label">
-						<input id="pending_no" value="" name="pendings" type="radio" aria-describedby="title_error title_help">No</label>		
+				<legend id="referred_label" class="form-label-bold">Has the court referred you to the DRO procedure?</legend>
+					<div id="pnl-referrer" class="form-group">
+						
+						<label id="referred_label1" for="referred_yes" class="block-label">
+						<input id="referred_yes" value="" name="referred" type="radio" aria-describedby="title_error title_help">Yes</label>
+						
+						<label id="referred_label1" for="referred_no" class="block-label">
+						<input id="referred_no" value="" name="referred" type="radio" aria-describedby="title_error title_help">No</label>
+												
 					</div>
 				</fieldset>
 			</div>
 			
-			<p>&nbsp;</p>
-
-			<div class="form-group" id="pnl-previous">
-				<fieldset class="inline">
-				<legend id="previous_label" class="form-label-bold">Have you had any kind of Insolvency proceeding before?</legend>
-					<div id="previous" class="form-group">
-						<label id="previous_label0" for="previous_yes" class="block-label">
-						<input id="previous_yes" value="" name="previous" type="radio">Yes</label>
-
-					
-						<label id="previous_label0" for="previous_no" class="block-label">
-						<input id="previous_no" value="" name="previous" type="radio">No</label>
-					
-					</div>
-				</fieldset>
-			</div>
-			
-			<p>&nbsp;</p>
-			
-			<div class="form-group">
-				<fieldset class="inline">
-					<legend id="DMPCCAO_label" class="form-label-bold">Do you currently have a debt management plan or County Court administration order?</legend>
-						<div id="pnl-DMPCCAO" class="form-group">
-							<label id="DMPCCAO_label0" for="DMPCCAO_NO" class="block-label">
-							<input id="DMPCCAO_NO" value="" name="DMPCCAO" type="radio" aria-describedby="title_error title_help">No</label>
-
-							<label id="DMPCCAO_label1" for="DMPCCAO_DMP" class="block-label">
-							<input id="DMPCCAO_DMP" value="" name="DMPCCAO" type="radio" aria-describedby="title_error title_help">Debt management plan</label>
-			
-							<label id="DMPCCAO_DMP_label2" for="DMPCCAO_CCAO" class="block-label">
-							<input id="DMPCCAO_CCAO" value="" name="DMPCCAO" type="radio" aria-describedby="title_error title_help">County Court administration order</label>
-						</div>
-				</fieldset>
-			</div>			
 		</form>
-	</div>
+		
 		
 	<p>&nbsp;</p>
 	
-	<div class="inner-block">
+	<div>
 		<p><a id="next" class="button">Save and continue</a><br>
 		<a id="return" style=" vertical-align: middle;" href="../application.html?section2=inprogress">Return to overview</a><br><br>
 		<a style="padding-right: 30px" href="../application.html" id="back">Back</a><br><br></p>
 	</div>
+	
+
+</div>
+
+
 </div>
 
 
 <!-- #EndEditable -->
 
+        
+<div id="content" >
  	
 
 <footer role="contentinfo" id="footer" class="group js-footer">
@@ -273,60 +233,22 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-
-	
-
-});
-
 $("#next").click(function(){
-	//cookie Q1 current insolve proceedings 
-	if(	($("#proceedings_yes").prop('checked')==true)){
-		$.cookie("current_insolve_proceeding", "yes");
+
+	if($("#referred_yes").prop('checked')==true){
+		$("#next").attr("href","ip5.html");	
 	}
-	else if(($("#proceedings_no").prop('checked')==true)){
-		$.cookie("current_insolve_proceeding", "no");
+	else{
+		forwardPage();
 	}
+
 	
-	//cookie Q2 pending bankruptcy
-	if(	($("#pending_yes").prop('checked')==true)){
-		$.cookie("pending_bkt", "yes");
-	}
-	else if(($("#pending_no").prop('checked')==true)){
-		$.cookie("pending_bkt", "no");
-	}
-
-	//cookie Q3 previous insolve proceedings
-	if(	($("#previous_yes").prop('checked')==true)){
-		$.cookie("previous_insolve_proceeding", "yes");
-	}
-	else if(($("#previous_no").prop('checked')==true)){
-		$.cookie("previous_insolve_proceeding", "no");
-	}
-
-	// cookie dmp or ccao
-	if(	($("#DMPCCAO_NO").prop('checked')==true)){
-		$.cookie("DMPCCAO", "no");
-	}
-	else if(($("#DMPCCAO_DMP").prop('checked')==true)){
-		$.cookie("DMPCCAO", "dmp");
-	}
-	else if(($("#DMPCCAO_CCAO").prop('checked')==true)){
-		$.cookie("DMPCCAO", "ccao");
-	}
-	forwardPage();
 	
 });
 
 function forwardPage() {
 
-	if($.cookie("current_insolve_proceeding") == "yes"){
-	$("#next").attr("href","ip2.html");
-	}
-	else if($.cookie("pending_bkt") == "yes"){
-	$("#next").attr("href","ip3.html");
-	}
-	else if($.cookie("previous_insolve_proceeding") == "yes"){
+	if($.cookie("previous_insolve_proceeding") == "yes"){
 	$("#next").attr("href","ip7.html");
 	}
 	else if($.cookie("DMPCCAO") == "dmp"){
@@ -340,6 +262,7 @@ function forwardPage() {
 	}
 	
 }
+
 
 </script>
 

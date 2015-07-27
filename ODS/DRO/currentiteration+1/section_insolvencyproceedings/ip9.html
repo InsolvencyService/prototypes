@@ -129,74 +129,27 @@
 		
     </div>   
 
+	</div>
+
 <!-- #BeginEditable "content" -->
  	
 
+ 	<div id="content" >
+ 	
+
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Your insolvency proceedings</h1>	
+	 	<h1 class="form-title heading-large">Insolvency history</h1>	
 		
+		<!--- Q1 --->
 		<form class="form" method="post">
-			<div class="form-group">
-				<fieldset class="inline">
-				<legend id="proceedings_label" class="form-label-bold">Are you currently subject to any of the following insolvency proceedings?</legend>
-					<div id="pnl-proceedings" class="form-group">
-						<label id="proceedings_label1" for="proceedings_no" class="block-label">
-						<input id="proceedings_no" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">No</label>
-					
-						<label id="proceedings_label1" for="proceedings_bkt" class="block-label">
-						<input id="proceedings_bkt" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">Undischarged bankruptcy</label>
-						
-						<label id="proceedings_label2" for="proceedings_io" class="block-label">
-						<input id="proceedings_io" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">Interim order</label>
-						
-						<label id="proceedings_label3" for="proceedings_iva" class="block-label">
-						<input id="proceedings_iva" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">IVA</label>
-						
-						<label id="proceedings_label4" for="proceedings_bro" class="block-label">
-						<input id="proceedings_bro" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">BRO</label>
-
-						<label id="proceedings_label5" for="proceedings_dro" class="block-label">
-						<input id="proceedings_dro" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">DRO</label>
-						
-						<label id="proceedings_label6" for="proceedings_drro" class="block-label">
-						<input id="proceedings_drro" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">DRRO</label>
-
-						<label id="proceedings_label7" for="proceedings_dmp" class="block-label">
-						<input id="proceedings_dmp" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">Debt management plan</label>
-		
-						<label id="proceedings_label8" for="proceedings_ccao" class="block-label">
-						<input id="proceedings_ccao" value="" name="proceedings" type="radio" aria-describedby="title_error title_help">County Court administration order</label>
-					</div>
-				</fieldset>
-			</div>
-		
-			<div id="pnl-preceeding-date" class="form-group inline">	
-				<fieldset  class="date-of-birth">
-					<span id="date_of_proceeding_label" class="form-label-bold">Date of proceedings</span>
-					<span class="form-hint" id="date_of_proceeding_help"></span>
-					
-					<div class="form-group form-group-day">
-						 <label id="date_of_proceeding_label.day" for="date_of_proceeding.day" >Day</label>
-					<input id="day" name="date_of_proceeding.day" type="number" min="1" max="31" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
-					</div>
-					<div class="form-group form-group-month">
-						 <label id="date_of_proceeding_label.month" for="date_of_proceeding.month">Month</label>
-					<input id="month" name="date_of_proceeding.month" type="number" min="1" max="12" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
-					</div>
-					<div class="form-group form-group-year">
-					<label id="date_of_proceeding_label.year" for="date_of_proceeding.year">Year</label>
-					<input id="year" name="date_of_proceeding.year" type="number" min="1000" max="9999" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
-					</div>
-				</fieldset>
-			</div>
 			
-			<div id="pnl-preceeding-dmp">
+			<div id="pnl-preceeding-ccao">
 				
 				<div class="form-group ">
-					<label id="organisation_label" for="organisation" class="form-label-bold applicant_address_line_1">Organisation name</label>
-					<input id="organisation" name="organisation" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					<label id="courtname_label" for="courtname" class="form-label-bold applicant_address_line_1">Name of court</label>
+					<input id="courtname" name="courtname" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
 				</div>
-				<p>&nbsp;</p>
+				
 				<div class="form-group ">
 					<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
 					<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
@@ -227,6 +180,12 @@
 					<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 				</div>
 				<p>&nbsp;</p>
+				<div class="form-group ">
+					<label id="organisation-ref_label" for="organisation-ref" class="form-label-bold applicant_address_line_1">Court reference</label>
+					<input id="organisation-ref" name="organisation-ref" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+				</div>
+				<p>&nbsp;</p>
+
 				<fieldset  class="date-of-birth">
 					<span id="date_of_proceeding_label" class="form-label-bold">Date entered</span>
 					<span class="form-hint" id="date_of_proceeding_help"></span>
@@ -246,86 +205,31 @@
 				</fieldset>	
 			</div>
 			
-			<div id="pnl-preceeding-ccao">
-				
-				<div class="form-group ">
-					<label id="courtname_label" for="courtname" class="form-label-bold applicant_address_line_1">Name of court</label>
-					<input id="courtname" name="courtname" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-				</div>
-				
-				<div class="form-group ">
-					<label id="courtref" for="courtref" class="form-label-bold applicant_address_line_1">Court reference</label>
-					<input id="courtref" name="courtref" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-				</div>
+
 			
-				<div class="form-group ">
-					<label id="creditorname" for="creditorname" class="form-label-bold">Name of creditor</label>
-					<input id="creditorname" name="creditorname" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-				</div>
-			</div>
-
-			<p>&nbsp;</p>
-			
-			<div class="form-group" id="pnl-pending">
-				<fieldset class="inline">
-				<legend id="pending_label" class="form-label-bold">Do you have a pending bankruptcy petition against you?</legend>
-					<div id="pending" class="form-group">
-						<label id="pending_label0" for="pending_yes" class="block-label">
-						<input id="pending_yes" value="" name="pendings" type="radio" aria-describedby="title_error title_help">Yes</label>
-
-						<label id="pending_label1" for="pending_no" class="block-label">
-						<input id="pending_no" value="" name="pendings" type="radio" aria-describedby="title_error title_help">No</label>		
-					</div>
-				</fieldset>
-			</div>
-
-			<p>&nbsp;</p>
-			
-			<div class="form-group" id="pnl-previous">
-				<fieldset class="inline">
-				<legend id="previous_label" class="form-label-bold">Have you had any kind of Insolvency proceeding before?</legend>
-					<div id="previous" class="form-group">
-						<label id="previous_label0" for="previous_yes" class="block-label">
-						<input id="previous_iva" value="" name="previous" type="radio">IVA</label>
-
-						<label id="previous_label1" for="previous_ao" class="block-label">
-						<input id="previous_ao" value="" name="previous" type="radio">Administration order</label>
-						
-						<label id="previous_label1" for="previous_dro" class="block-label">
-						<input id="previous_dro" value="" name="previous" type="radio">DRO</label>
-						
-						<label id="previous_label1" for="previous_bkt" class="block-label">
-						<input id="previous_bkt" value="" name="previous" type="radio">Bankruptcy</label>
-
-						<label id="previous_label1" for="previous_bro" class="block-label">
-						<input id="previous_bro" value="" name="previous" type="radio">BRO</label>
-						
-						<label id="previous_label1" for="previous_drro" class="block-label">
-						<input id="previous_drro" value="" name="previous" type="radio">DRRO</label>
-
-						<label id="previous_label1" for="previous_eo" class="block-label">
-						<input id="previous_eo" value="" name="previous" type="radio">Enforcement order</label>
-
-					</div>
-				</fieldset>
-			</div>
-
-
-			<div class="form-navigation form-group">
-				<a id="next" class="button">Continue</a><br>
-			</div>
-			
-			<div>
-				<a style="padding-right: 30px" href="../application.html" id="back">Back</a><br><br>
-			</div>
 		</form>
+		
+		
+	<p>&nbsp;</p>
+	
+	<div>
+		<p><a id="next" class="button" href="#">Save and continue</a><br>
+		<a id="return" style=" vertical-align: middle;" href="../application.html?section2=inprogress">Return to overview</a><br><br>
+		<a style="padding-right: 30px" href="../application.html" id="back">Back</a><br><br></p>
 	</div>
+	
+
+</div>
+
+
+</div>
+
 
 <!-- #EndEditable -->
 
         
-</div>
-
+<div id="content" >
+ 	
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
@@ -377,53 +281,6 @@
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript">
-$(document).ready(function() {
-
-	$("#pnl-preceeding-date").hide();
-	$("#pnl-preceeding-dmp").hide();
-	$("#pnl-preceeding-ccao").hide();
-	
-	$("#proceedings_bkt").click(function(){
-		$("#next").prop("href","bankruptcy.html");
-	});
-	
-	$("#proceedings_dmp").click(function(){
-		$("#next").prop("href","dmp.html");
-	});
-
-	$("#proceedings_ccao").click(function(){
-		$("#next").prop("href","ccao.html");
-	});
-
-
-});
-
-
-$('#pnl-proceedings input:radio').click(function() {
-	
-	if(	($("#proceedings_bkt").prop('checked')==true) || ($("#proceedings_io").prop('checked')==true) || ($("#proceedings_iva").prop('checked')==true) ||
-		($("#proceedings_bro").prop('checked')==true) || ($("#proceedings_dro").prop('checked')==true) || ($("#proceedings_drro").prop('checked')==true)){
-		$("#pnl-preceeding-date").show();
-		$("#pnl-preceeding-dmp").hide();
-	}
-	else if($("#proceedings_dmp").prop('checked')==true){
-		$("#pnl-preceeding-dmp").show();
-		$("#pnl-preceeding-date").hide();
-		$("#pnl-preceeding-ccao").hide();
-	}
-	else if($("#proceedings_no").prop('checked')==true){
-		$("#pnl-preceeding-date").hide();
-		$("#pnl-preceeding-dmp").hide();
-		$("#pnl-preceeding-ccao").hide();
-	}
-	else if($("#proceedings_ccao").prop('checked')==true){
-		$("#pnl-preceeding-ccao").show();
-		$("#pnl-preceeding-date").hide();
-		$("#pnl-preceeding-dmp").hide();
-	}
-
-	
-});
 
 </script>
 

@@ -129,11 +129,16 @@
 		
     </div>   
 
+	</div>
+
 <!-- #BeginEditable "content" -->
  	
 
+ 	<div id="content" >
+ 	
+
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Your insolvency proceedings</h1>	
+	 	<h1 class="form-title heading-large">Insolvency history</h1>	
 		
 		<!--- Q1 --->
 		<form class="form" method="post">
@@ -167,20 +172,20 @@
 							<input id="proceeding_iva" value="" name="proceeding" type="radio" aria-describedby="title_error title_help">IVA</label>
 							
 							<label id="proceeding_label4" for="proceeding_bro" class="block-label">
-							<input id="proceeding_bro" value="" name="proceeding" type="radio" aria-describedby="title_error title_help">BRO</label>
+							<input id="proceeding_bro" value="" name="proceeding" type="radio" aria-describedby="title_error title_help">BRO/U</label>
 	
 							<label id="proceeding_label5" for="proceeding_dro" class="block-label">
 							<input id="proceeding_dro" value="" name="proceeding" type="radio" aria-describedby="title_error title_help">DRO</label>
 							
 							<label id="proceeding_label6" for="proceeding_drro" class="block-label">
-							<input id="proceeding_drro" value="" name="proceeding" type="radio" aria-describedby="title_error title_help">DRRO</label>
+							<input id="proceeding_drro" value="" name="proceeding" type="radio" aria-describedby="title_error title_help">DRRO/U</label>
 						</div>
 					</fieldset>
 				</div>
 				<p>&nbsp;</p>
 				<fieldset  class="date-of-birth">
 					<span id="date_of_proceeding_label" class="form-label-bold">Date of proceedings</span>
-					<span class="form-hint" id="date_of_proceeding_help"></span>
+					<span class="form-hint" id="date_of_proceeding_help">e.g. 31 12 2011</span>
 					
 					<div class="form-group form-group-day">
 						 <label id="date_of_proceeding_label.day" for="date_of_proceeding.day" >Day</label>
@@ -323,10 +328,10 @@
 						<input id="previous_bkt" value="" name="previous" type="radio">Bankruptcy</label>
 
 						<label id="previous_label1" for="previous_bro" class="block-label">
-						<input id="previous_bro" value="" name="previous" type="radio">BRO</label>
+						<input id="previous_bro" value="" name="previous" type="radio">BRO/U</label>
 						
 						<label id="previous_label1" for="previous_drro" class="block-label">
-						<input id="previous_drro" value="" name="previous" type="radio">DRRO</label>
+						<input id="previous_drro" value="" name="previous" type="radio">DRRO/U</label>
 
 						<label id="previous_label1" for="previous_eo" class="block-label">
 						<input id="previous_eo" value="" name="previous" type="radio">Enforcement order</label>
@@ -336,7 +341,7 @@
 				<p>&nbsp;</p>
 				<fieldset  class="date-of-birth">
 					<span id="date_of_previous_label" class="form-label-bold">Date proceeding started</span>
-					<span class="form-hint" id="date_of_proceeding_help"></span>
+					<span class="form-hint" id="date_of_proceeding_help">e.g. 31 12 2011</span>
 					
 					<div class="form-group form-group-day">
 						 <label id="date_of_previous_label.day" for="date_of_previous.day" >Day</label>
@@ -410,9 +415,15 @@
 					<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 				</div>
 				<p>&nbsp;</p>
+				<div class="form-group ">
+					<label id="organisation-ref_label" for="organisation-ref" class="form-label-bold applicant_address_line_1">Organisation reference</label>
+					<input id="organisation-ref" name="organisation-ref" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+				</div>
+				<p>&nbsp;</p>
+
 				<fieldset  class="date-of-birth">
 					<span id="date_of_proceeding_label" class="form-label-bold">Date entered</span>
-					<span class="form-hint" id="date_of_proceeding_help"></span>
+					<span class="form-hint" id="date_of_proceeding_help">e.g. 31 12 2011</span>
 					
 					<div class="form-group form-group-day">
 						 <label id="date_of_proceeding_label.day" for="date_of_proceeding.day" >Day</label>
@@ -437,14 +448,59 @@
 				</div>
 				
 				<div class="form-group ">
-					<label id="courtref" for="courtref" class="form-label-bold applicant_address_line_1">Court reference</label>
-					<input id="courtref" name="courtref" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+					<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
 				</div>
 			
 				<div class="form-group ">
-					<label id="creditorname" for="creditorname" class="form-label-bold">Name of creditor</label>
-					<input id="creditorname" name="creditorname" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+					<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
 				</div>
+				
+				<div class="form-group ">
+					<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+				</div>
+	
+				<div class="form-group ">
+					<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+					<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+				</div>
+	
+				<div class="form-group ">
+					<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
+					<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+				</div>
+	
+				<div class="form-group ">
+					<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+					<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+				</div>
+				<p>&nbsp;</p>
+				<div class="form-group ">
+					<label id="organisation-ref_label" for="organisation-ref" class="form-label-bold applicant_address_line_1">Court reference</label>
+					<input id="organisation-ref" name="organisation-ref" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+				</div>
+				<p>&nbsp;</p>
+
+				<fieldset  class="date-of-birth">
+					<span id="date_of_proceeding_label" class="form-label-bold">Date entered</span>
+					<span class="form-hint" id="date_of_proceeding_help"></span>
+					
+					<div class="form-group form-group-day">
+						 <label id="date_of_proceeding_label.day" for="date_of_proceeding.day" >Day</label>
+					<input id="day" name="date_of_proceeding.day" type="number" min="1" max="31" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
+					</div>
+					<div class="form-group form-group-month">
+						 <label id="date_of_proceeding_label.month" for="date_of_proceeding.month">Month</label>
+					<input id="month" name="date_of_proceeding.month" type="number" min="1" max="12" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
+					</div>
+					<div class="form-group form-group-year">
+					<label id="date_of_proceeding_label.year" for="date_of_proceeding.year">Year</label>
+					<input id="year" name="date_of_proceeding.year" type="number" min="1000" max="9999" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
+					</div>
+				</fieldset>	
+			</div>
 			</div>
 			
 			<div class="form-group" id="pnl-reasons">
@@ -486,22 +542,25 @@
 				</div>
 			</div>
 
-			<div class="form-navigation form-group">
-				<a id="next" class="button">Continue</a><br>
-			</div>
 			
-			<div>
-				<a style="padding-right: 30px" href="../application.html" id="back">Back</a><br><br>
-			</div>
 		</form>
+		
+		
+	<p>&nbsp;</p>
+	
+	<div class="inner-block">
+		<p><a id="next" class="button" href="#">Save and continue</a><br>
+		<a id="return" style=" vertical-align: middle;" href="../application.html?section2=inprogress">Return to overview</a><br><br>
+		<a style="padding-right: 30px" href="../application.html" id="back">Back</a><br><br></p>
 	</div>
+	
+
+</div>
+
 
 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -569,11 +628,6 @@ $(document).ready(function() {
 
 
 	
-	$("#next").click(function(){
-		
-			$("#next").prop("href","../application.html?section2=inprogress");
-		
-	});
 	
 });
 
