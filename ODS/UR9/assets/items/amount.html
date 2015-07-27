@@ -70,8 +70,32 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/sfs.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/bankruptcy-overrides.css">
 
+<style type="text/css">
+
+
+.row img{
+width:60px;
+text-align:right;
+float:right
+}
+.row > div{
+padding-top:15px;
+}
+.row > div:first-child{
+padding-top:0px;
+}
+
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+	font-size:16px;
+}
+
+</style>
 <!-- #EndEditable -->
 
 
@@ -135,198 +159,49 @@
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block">
-	<p class="form-hint">
-        <a href="summary.html?stage=costs&amp;page=4">Income and expenses</a> &gt; 
-		Expenses 5 of 7</p>
+<div class="inner-block text">
 	
 	
-	<h1 class="form-title heading-large">Childcare and maintenance</h1>
+	
+	<h1 class="form-title heading-large">Asset details</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	
-	
-			<p>Enter the total amount you spend on each item.</p>  
-			<table class="table table-condensed">
-	<thead>
-	<tr>
-	<th></th>
-	<th class="heading-amount">Amount</th>
-	<th style="width:200px; padding-left:20px">per week / month / year</th>
-	</tr>
-	</thead>
-	<tbody>
-		<tr>
-	<td><span class="form-label">Child maintenance or child support payments</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D2">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Childcare costs</span>
-	<span class="form-hint">For example, nursery or childminder costs</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D1">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Nappies and baby items</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D6">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Precriptions and medicines for your children</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D9">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Dentistry and optician costs for your children</span>
-	<span class="form-hint">Including braces, glasses, etc</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D9">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
+                   <div class="form-group ">
+                        <label id="first_name_label" for="name" class="form-label first_name">What is the asset?</label>
+                        <div class="form-hint">For example, 50 shares in British Gas</div>
+      						<input id="name"  />
+                        <br />
+                    </div>
 
-		<tr>
-	<td><span class="form-label">School uniforms</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D3">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">School meals</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D7">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">After school clubs and school trips</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D4">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Public transport to and from school</span>
-	<span class="form-hint">Don’t include expenses already listed under transportation and travel </span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D5">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
-		<tr>
-	<td><span class="form-label">Pocket money</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D8">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-		</tr>
+  					<div class="form-group ">
+                        <label id="first_name_label" for="amount" class="form-label first_name">How much is it currently worth?</label>
+						<div class="form-hint">Please provide the most accurate figure you can</div>
+		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
+                        <br />
+                    </div>
+   
+ <div class="clearfix"></div>
 
+        <div class="form-group ">   
+            <label  for="about" id="benefit_refusal_reason_label">Please provide details of the asset</label>
+            <span class="form-hint">Including how long you have had it, the company it is with and if it is in joint ownership</span>
+            <textarea rows="4" cols="75" name="about" id="about"></textarea>
+            <p class="form-hint">
+                Maximum 1000 characters 
+            </p>
+        </div>
 
-
-	<tr class="totalrow">
-	<td><span class="form-label text-right">Total</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-		<div class="text-right amount" id="box-total"></div>
-	</td>
-	<td>
-	<div>per month</div>
-</td>
-	</tr>
-
-</table>	
-	<p class="clearfix"><br/></p>
-
+<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="summary.html?stage=costs&page=6">Continue</a>
+		<a id="next" class="button" href="summary.html?stage=item&amp;page=2">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -394,9 +269,65 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../shared/sfs.js"></script>
+
+  
+<script type="text/javascript">
+$(document).ready(function() {
+
+    var type = "Other";
+    if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
+        numproperties = parseInt($.cookie("numproperties"));
+    }
+
+    var housename = $.cookie("propertyline1");
+	if (housename  && housename.length > 0){
+		$(".form-label .data").text(housename);
+	}
+
+	var normalroute = $("#next").prop("href");
+	$("#jointly-owned_Yes").click(function(){
+		$("#next").prop("href","3-add-person-joint.html");
+	});
+	$("#jointly-owned_No").click(function(){
+		$("#next").prop("href", normalroute);
+	});
+	
+	$("#next").on("click", function(){
+		if ($("#month").val().length > 0){
+			$.cookie('purchasemonth', $("#month").val(), { expires: 1 });
+			$.cookie('purchaseyear', $("#year").val(), { expires: 1 });
+		}
+		else{
+			$.cookie('purchasemonth', "6", { expires: 1 });
+			$.cookie('purchaseyear', "2005", { expires: 1 });
+		}
+
+		numproperties = numproperties + 1;
+		if ($("#propertyvalue").val().length > 0){
+		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
+
+		    $.cookie('numproperties', numproperties, { expires: 1 });
+		    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
+		    $.cookie('property' + numproperties + 'address', $.cookie("propertyline1") + ", " + $.cookie("propertypostcode"), { expires: 1 });
+
+		}
+		else{
+			$.cookie('propertyvalue', "140000", { expires: 1 });
+		}
+		
+	});
+
+});
+   
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
+}
+
+</script>
+
+
 
 <!-- #EndEditable -->
     
