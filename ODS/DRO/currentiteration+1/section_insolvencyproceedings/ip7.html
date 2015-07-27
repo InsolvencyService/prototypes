@@ -138,23 +138,56 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Insolvency history</h1>	
+	 	<h1 class="form-title heading-large">Previous insolvency proceedings</h1>	
 		<form>
-			<div class="form-group" id="pnl-previous">
+			<div id="pnl-previous-date" class="form-group inline">	
+			
 				<fieldset class="inline">
-				<legend id="previous_label" class="form-label-bold">Have you had any kind of Insolvency proceeding before?</legend>
-					<div id="previous" class="form-group">
-						<label id="previous_label0" for="previous_yes" class="block-label">
-						<input id="previous_yes" value="" name="previous" type="radio">Yes</label>
+				<legend id="previous_label" class="form-label-bold">What kind of Insolvency proceeding have you had before?</legend>
+					<div id="previous1" class="form-group">
+											
+						<label id="previous_label0" for="previous_iva" class="block-label">
+						<input id="previous_iva" value="" name="previous" type="radio">IVA</label>
 
+						<label id="previous_label1" for="previous_ao" class="block-label">
+						<input id="previous_ao" value="" name="previous" type="radio">Administration order</label>
+						
+						<label id="previous_label1" for="previous_dro" class="block-label">
+						<input id="previous_dro" value="" name="previous" type="radio">DRO</label>
+						
+						<label id="previous_label1" for="previous_bkt" class="block-label">
+						<input id="previous_bkt" value="" name="previous" type="radio">Bankruptcy</label>
+
+						<label id="previous_label1" for="previous_bro" class="block-label">
+						<input id="previous_bro" value="" name="previous" type="radio">BRO/U</label>
+						
+						<label id="previous_label1" for="previous_drro" class="block-label">
+						<input id="previous_drro" value="" name="previous" type="radio">DRRO/U</label>
+
+						<label id="previous_label1" for="previous_eo" class="block-label">
+						<input id="previous_eo" value="" name="previous" type="radio">Enforcement order</label>
+
+					</div>
+				</fieldset>
+				<p>&nbsp;</p>
+				<fieldset  class="date-of-birth">
+					<span id="date_of_previous_label" class="form-label-bold">Date proceeding started</span>
+					<span class="form-hint" id="date_of_proceeding_help">e.g. 31 12 2011</span>
 					
-						<label id="previous_label0" for="previous_no" class="block-label">
-						<input id="previous_no" value="" name="previous" type="radio">No</label>
-					
+					<div class="form-group form-group-day">
+						 <label id="date_of_previous_label.day" for="date_of_previous.day" >Day</label>
+					<input id="day" name="date_of_previous.day" type="number" min="1" max="31" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
+					</div>
+					<div class="form-group form-group-month">
+						 <label id="date_of_previous_label.month" for="date_of_previous.month">Month</label>
+					<input id="month" name="date_of_previous.month" type="number" min="1" max="12" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
+					</div>
+					<div class="form-group form-group-year">
+					<label id="date_of_previous_label.year" for="date_of_previous.year">Year</label>
+					<input id="year" name="date_of_previous.year" type="number" min="1000" max="9999" aria-describedby="date_of_proceeding_error date_of_proceeding_help" value="" />
 					</div>
 				</fieldset>
 			</div>
-			
 			
 		</form>
 		
