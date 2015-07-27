@@ -439,7 +439,8 @@
 	
             $(document).ready(function () {
             	$("#logout").show();
-            	$("#notes").val($.cookie("case_notes");
+            	
+            	$("#notes").val($.cookie("case_notes"));
             	
             	if(creditors != ""){
             		$("#creditors_entered").text(creditors+" creditors entered, debt value £"+total);
