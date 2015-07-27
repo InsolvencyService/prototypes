@@ -394,7 +394,7 @@ $(document).ready(function() {
 	tempname = $.cookie('DROtempcreditorname');
 	$("#creditor_name").text(tempname);
 	
-	if(edited=='true'){
+	if(edited=="true"){
 		readCookies();
 	}
 	
@@ -503,7 +503,7 @@ function writeCookies() {
 }
 
 function readCookies() {
-		var id = getParameterByName("address");
+		var id = getParameterByName("id");
 		$("#ref").val($.cookie("DROCreditorReference"+id));
 		$("#amount").val($.cookie("DROCreditorAmount"+id));
 		$("#secured_item").val($.cookie("DROCreditorSecuredOn"+id));
