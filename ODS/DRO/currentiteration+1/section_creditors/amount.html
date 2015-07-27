@@ -375,13 +375,14 @@ display:block;
 <script type="text/javascript">
 var count;
 var tempname;
+var edited;
 
 $(document).ready(function() {
 	$("#pnl-attachment_earnings").hide();
 	$("#pnl-secured_details").hide();
 	$("#pnl-creditor").hide();
 	
-	var edited = getParameterByName("edit");	
+	edited = getParameterByName("edit");	
 	var address_show = getParameterByName("address");
 	
 	if(address_show == 'true'){
@@ -446,6 +447,10 @@ function writeCookies() {
 			count=0
 		}
 		count++;
+		
+		if(edited=="true"){
+			count = getParameterByName("id");
+		}
 	
 	// write records
 		// name
