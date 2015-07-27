@@ -513,7 +513,7 @@ function readCookies() {
 		
 		if($.cookie("DROCreditorSecuredValue"+id) != ""){
 			$( "#secured_yes" ).prop( "checked", true );
-			$( "#pnl-secured_details").show;
+			$( "#pnl-secured_details").show();
 		}
 		else{
 			$( "#secured_no" ).prop( "checked", true );
@@ -528,7 +528,7 @@ function readCookies() {
 		
 		if($.cookie("DROCreditorAttachmentAmount"+id)!=""){
 			$( "#attachment_yes" ).prop( "checked", true );
-			$( "#pnl-attachment_earnings").show;
+			$( "#pnl-attachment_earnings").show();
 		}
 		else{
 			$( "#attachment_no" ).prop( "checked", true );
