@@ -273,7 +273,8 @@
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" style=" vertical-align: middle;" class="button" href="../application.html?section1=inprogress">Save and return</a> 
+		<p><a id="next" style=" vertical-align: middle;" class="button" href="../section_insolvencyproceedings/ip1.html">Save and continue</a></p>
+		<p><a id="return" style=" vertical-align: middle;" href="../application.html?section1=inprogress">Return to overview</a></p>
 	</div>
 	<div>
 	<br>
@@ -391,9 +392,11 @@ $(document).ready(function() {
 	var normalroute = $("#next").prop("href");
 	$("#otheraddress_Yes").click(function(){
 		$("#next").prop("href","additional_address.html");
+		$("#return").hide();
 	});
 	$("#otheraddress_No").click(function(){
 		$("#next").prop("href", normalroute);
+		$("#return").show();
 	});
 
 });

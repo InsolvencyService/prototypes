@@ -330,12 +330,20 @@
                         <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                             <!---<p><a href="#">Make a payment</a></p>--->
                             <p><a href="#">View and print application</a></p>
-							<div id="ai" hidden="true">	 
+							<div class="ai" hidden="true">	 
 								<p><a href="#">Print barcode letter</a></p>                       
 							    <p><a href="ai_admin.html">Return to case search</a></p>
 							</div>
                         </div>
                         <p style="font-size  :16px;"><i class="glyphicon glyphicon-trash"></i>&nbsp; <a id="del-application">Delete application</a></p>
+                        
+                        <form class="ai" hidden="true">
+                        <div>
+                        <p>&nbsp;</p>
+                        <p class="text-info font-xsmall">Case notes</p>
+                        <textarea name="notes" rows="6" cols="25"></textarea>
+                        </div>
+                        </form>
                         
 
                     </div>
@@ -437,7 +445,7 @@
             	}
             
             	if(user=="ai"){
-            		$("#ai").show(); 
+            		$(".ai").show(); 
             		$("#ai_panel").show();  
             		$("#logout-link").prop("href", "ai_login.html");  
             		$("#delete").show();        	
