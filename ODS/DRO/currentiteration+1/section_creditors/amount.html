@@ -283,14 +283,51 @@ display:block;
 		</div>
 			
 		<div id="pnl-attachment_earnings" class="panel-indent">
-			<div class="form-group">
-				<label id="organisation_label" for="debt_reason" class=" form-label-bold">Details of order</label>
-				<textarea id="debt_reason" name="debt_reason" rows="4" cols="50"></textarea>
+			
+			<div class="form-group ">
+				<label id="court_name_label" for="court_name" class="form-label-bold">Court name</label>
+				<input id="court_name" name="court_name" value="" /><br/>
 			</div>
 			<div class="form-group ">
-				<label id="creditor_reference_label" for="creditor_reference" class="form-label-bold">Order amount</label>
-				<input id="creditor_reference" name="creditor_reference" type="number" value="" /><br/>
+				<label id="court_reference_label" for="court_reference" class="form-label-bold">Court reference</label>
+				<input id="court_reference" name="court_reference" value="" /><br/>
 			</div>
+			
+			<div id="address_section">
+			<label id="court_name_label" for="court_name" class="form-label-bold">Court address</label>
+
+			<div class="form-group ">
+				<label id="court_address_line_1_label" for="court_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
+				<input id="court_address_line_1" name="court_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+				<br/>
+			</div>
+			<div class="form-group ">
+				<label id="court_address_line_2_label" for="court_address_line_2" class="visuallyhidden">Address Line 2</label>
+				<input id="court_address_line_2" name="court_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+				<br/>
+			</div>
+			<div class="form-group ">
+				<label id="court_address_line_3_label" for="court_address_line_3" class="visuallyhidden">Address Line 3</label>
+				<input id="court_address_line_3" name="court_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+				<br/>
+			</div>
+			<div class="form-group ">
+				<label id="court_address_town_label" for="court_address_town" class="form-label applicant_address_town">Town/city</label>
+				<input id="court_address_town" name="court_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+				<br/>
+			</div>
+			<div class="form-group ">
+				<label id="court_address_county_label" for="court_address_county" class="form-label applicant_address_county">County</label>
+				<input id="court_address_county" name="court_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+				<br/>
+			</div>
+			<div class="form-group ">
+				<label id="court_address_post_code_label" for="court_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
+				<input id="court_address_post_code" name="court_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+				<br/>
+			</div>
+		</div>
+		
 		</div>
 	
 	<!-- For User research -->
@@ -498,10 +535,15 @@ function writeCookies() {
 		$.cookie("DROCreditorSecuredOn"+count, $("#secured_item").val());
 		// secured value
 		$.cookie("DROCreditorSecuredValue"+count, $("#secured_value").val());
-		// attachment order details
-		$.cookie("DROCreditorAttachmentOrder"+count, $("#debt_reason").val());
-		// order amount
-		$.cookie("DROCreditorAttachmentAmount"+count, $("#creditor_reference").val());
+		// attachment of earnings court detail
+		$.cookie("DROCreditorAttachmentCourt"+count, $("#court_name").val());
+		$.cookie("DROCreditorAttachmentCourtRef"+count, $("#court_ref").val());
+		$.cookie("DROCreditorAttachmentCourtAdd1"+count, $("#court_address_line_1").val());
+		$.cookie("DROCreditorAttachmentCourtAdd2"+count, $("#court_address_line_2").val());
+		$.cookie("DROCreditorAttachmentCourtAdd3"+count, $("#court_address_line_3").val());
+		$.cookie("DROCreditorAttachmentCourtAdd4"+count, $("#court_address_town").val());
+		$.cookie("DROCreditorAttachmentCourtAdd5"+count, $("#court_address_county").val());
+		$.cookie("DROCreditorAttachmentCourtAdd5"+count, $("#court_address_post_code").val());
 		// update count
 		$.cookie("DROCreditorCount", count);
 
@@ -513,8 +555,15 @@ function readCookies() {
 		$("#amount").val($.cookie("DROCreditorAmount"+id));
 		$("#secured_item").val($.cookie("DROCreditorSecuredOn"+id));
 		$("#secured_value").val($.cookie("DROCreditorSecuredValue"+id));
-		$("#debt_reason").val($.cookie("DROCreditorAttachmentOrder"+id));
-		$("#creditor_reference").val($.cookie("DROCreditorAttachmentAmount"+id));
+		$("#court_name").val($.cookie("DROCreditorAttachmentAmount"+id));
+		$("#court_ref").val($.cookie("DROCreditorAttachmentCourtRef"+id));
+		$("#court_address_line_1").val($.cookie("DROCreditorAttachmentCourtAdd1"+id));
+		$("#court_address_line_2").val($.cookie("DROCreditorAttachmentCourtAdd2"+id));
+		$("#court_address_line_3").val($.cookie("DROCreditorAttachmentCourtAdd3"+id));
+		$("#court_address_town").val($.cookie("DROCreditorAttachmentCourtAdd4"+id));
+		$("#court_address_county").val($.cookie("DROCreditorAttachmentCourtAdd5"+id));
+		$("#court_address_post_code").val($.cookie("DROCreditorAttachmentCourtAdd5"+id));
+
 		
 		if($.cookie("DROCreditorSecuredValue"+id) != ""){
 			$( "#secured_yes" ).prop( "checked", true );
@@ -531,7 +580,7 @@ function readCookies() {
 			$( "#excluded_no" ).prop( "checked", true );
 		}
 		
-		if($.cookie("DROCreditorAttachmentAmount"+id)!=""){
+		if($.cookie("DROCreditorAttachmentCourt"+id)!=""){
 			$( "#attachment_yes" ).prop( "checked", true );
 			$( "#pnl-attachment_earnings").show();
 		}
