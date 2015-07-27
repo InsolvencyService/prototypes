@@ -537,7 +537,7 @@ function writeCookies() {
 		$.cookie("DROCreditorSecuredValue"+count, $("#secured_value").val());
 		// attachment of earnings court detail
 		$.cookie("DROCreditorAttachmentCourt"+count, $("#court_name").val());
-		$.cookie("DROCreditorAttachmentCourtRef"+count, $("#court_ref").val());
+		$.cookie("DROCreditorAttachmentCourtRef"+count, $("#court_reference").val());
 		$.cookie("DROCreditorAttachmentCourtAdd1"+count, $("#court_address_line_1").val());
 		$.cookie("DROCreditorAttachmentCourtAdd2"+count, $("#court_address_line_2").val());
 		$.cookie("DROCreditorAttachmentCourtAdd3"+count, $("#court_address_line_3").val());
@@ -555,8 +555,8 @@ function readCookies() {
 		$("#amount").val($.cookie("DROCreditorAmount"+id));
 		$("#secured_item").val($.cookie("DROCreditorSecuredOn"+id));
 		$("#secured_value").val($.cookie("DROCreditorSecuredValue"+id));
-		$("#court_name").val($.cookie("DROCreditorAttachmentAmount"+id));
-		$("#court_ref").val($.cookie("DROCreditorAttachmentCourtRef"+id));
+		$("#court_name").val($.cookie("DROCreditorAttachmentCourt"+id));
+		$("#court_reference").val($.cookie("DROCreditorAttachmentCourtRef"+id));
 		$("#court_address_line_1").val($.cookie("DROCreditorAttachmentCourtAdd1"+id));
 		$("#court_address_line_2").val($.cookie("DROCreditorAttachmentCourtAdd2"+id));
 		$("#court_address_line_3").val($.cookie("DROCreditorAttachmentCourtAdd3"+id));
