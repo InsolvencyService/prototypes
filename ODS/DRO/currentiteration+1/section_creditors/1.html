@@ -371,11 +371,7 @@ var includedcreditors = 0;
 var total = 0.00;
 $(document).ready(function() {
 	
-	/*
-	var reset = getParameterByName("reset");
-	var loop = getParameterByName("loop");
-	var normalroute = $("#next").prop("href");*/
-	
+		
 	$("#creditorlist").hide();
 	$("#excludedcreditorlist").hide();
 
@@ -409,7 +405,7 @@ $(document).ready(function() {
 			else{
 				$("#creditorlist").show();
 				$("#includedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td class=\"text-right\">£ "+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-				total = total+ parseFloat(amount).toFixed(2);
+				total = total + amount;
 				includedcreditors++;
 			}
 		}
@@ -420,14 +416,6 @@ $(document).ready(function() {
 		$("#includedbody").append("<tr class=\"totalrow\" ><td  colspan=\"2\" class=\"text-right\" style=\"white-space:nowrap\"><span >Total</span></td><td style=\"width:100px; white-space:nowrap\"><div class=\"text-right\" id=\"box-total\">£ "+ total +"</div></td><td></td><td></td></tr>");
 	}
 	
-/*
-	if (loop && loop.length > 0){
-	}
-	else{
-		$("#creditorlist").hide();
-		$("#btn-addedall").hide();
-		$(".newvisitor").show();
-	}*/
 
 });	
 	
