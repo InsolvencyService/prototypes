@@ -204,7 +204,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Your creditors</h1>
+	<h1 class="form-title heading-large">Creditors</h1>
 	
 	
 	
@@ -226,7 +226,7 @@ display:block;
     --->
 
 <div id="creditorlist">
-	<p class="bold-small">Included debts</p>
+	<p class="bold-small">Qualifying debts</p>
 
 	<table style="width: 100%">
 		<thead>
@@ -338,8 +338,6 @@ display:block;
         <a style="padding-right: 30px" href="application.html" id="back">Back</a>
 
 	
-	<a href="#" id="cancel">Save and logout</a>
-	
 	</div>
 	</div>
 	</form>
@@ -433,21 +431,21 @@ $(document).ready(function() {
 	
 	if(count>0){
 		for(i=1; i<=count; i++){
-			excluded = $.cookie("DROCreditorExcludedDebt"+i);
+			excluded = parseFloat($.cookie("DROCreditorExcludedDebt"+i)).toFixed(2); 
 			cname = $.cookie("DROCreditorName"+i);
 			reference = $.cookie("DROCreditorReference"+i);
-			amount = $.cookie("DROCreditorAmount"+i);
-			type = $.cookie("DROCreditorSecuredDebt"+i);	
+			amount = parseFloat($.cookie("DROCreditorAmount"+i)).toFixed(2);
+			type = parseFloat($.cookie("DROCreditorSecuredDebt"+i)).toFixed(2);	
 			
 			//add creditors to table
 			if(excluded == "yes"){
 				$("#excludedcreditorlist").show();
-				$("#excludedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td class=\"text-right\">£ "+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+				$("#excludedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td class=\"text-right\">£ "+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
 				excludedtotal = excludedtotal+ parseInt(amount);
 			}
 			else{
 				$("#creditorlist").show();
-				$("#includedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td class=\"text-right\">£ "+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+				$("#includedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td class=\"text-right\">£ "+ amount +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
 				total = total+ parseInt(amount);
 				includedcreditors++;
 			}

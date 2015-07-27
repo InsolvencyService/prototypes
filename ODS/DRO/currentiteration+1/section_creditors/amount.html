@@ -299,7 +299,7 @@ display:block;
 	<div>
 		
 		<a id="next" class="button" href="1.html">Save and return</a>
-		<p><a id="again" href="amount.html">Add another record for this creditor</a></p>
+		<p><a id="again" href="amount.html">Add another debt for this creditor</a></p>
 	</div>
 	<div>
 	<br>
@@ -381,7 +381,7 @@ $(document).ready(function() {
 	$("#pnl-secured_details").hide();
 	$("#pnl-creditor").hide();
 	
-	
+	var edited = getParameterByName("edit");	
 	var address_show = getParameterByName("address");
 	
 	if(address_show == 'true'){
@@ -394,6 +394,9 @@ $(document).ready(function() {
 	tempname = $.cookie('DROtempcreditorname');
 	$("#creditor_name").text(tempname);
 	
+	if(edited==true){
+		readCookies();
+	}
 	
 });
 	
@@ -497,6 +500,39 @@ function writeCookies() {
 		// update count
 		$.cookie("DROCreditorCount", count);
 
+}
+
+function readCookies() {
+		var id = getParameterByName("address");
+		$("#ref").val($.cookie("DROCreditorReference"+id));
+		$("#amount").val($.cookie("DROCreditorAmount"+id));
+		$("#secured_item").val($.cookie("DROCreditorSecuredOn"+id));
+		$("#secured_value").val($.cookie("DROCreditorSecuredValue"+id));
+		$("#debt_reason").val($.cookie("DROCreditorAttachmentOrder"+id));
+		$("#creditor_reference").val($.cookie("DROCreditorAttachmentAmount"+id));
+		
+		if($.cookie("DROCreditorSecuredValue"+id) != ""){
+			$( "#secured_yes" ).prop( "checked", true );
+			$( "#pnl-secured_details").show;
+		}
+		else{
+			$( "#secured_no" ).prop( "checked", true );
+		}
+		
+		if($.cookie("DROCreditorExcludedDebt"+id) == 'yes'){
+			$( "#excluded_yes" ).prop( "checked", true );
+		}
+		else{
+			$( "#excluded_no" ).prop( "checked", true );
+		}
+		
+		if($.cookie("DROCreditorAttachmentAmount"+id)!=""){
+			$( "#attachment_yes" ).prop( "checked", true );
+			$( "#pnl-attachment_earnings").show;
+		}
+		else{
+			$( "#attachment_no" ).prop( "checked", true );
+		}
 }
 
 function getParameterByName(name) {

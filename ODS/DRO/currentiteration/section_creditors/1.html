@@ -134,9 +134,10 @@
 
 <!-- #BeginEditable "content" -->
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Your creditors</h1>
+	 	<h1 class="form-title heading-large">Creditors</h1>
 	 	
 	 	<div style="margin-left:30px">
+	 		<p class="bold-small">Qualifying debts</p>
 			<table>
 			<thead>
               <tr class="column-heading">
@@ -158,13 +159,7 @@
                     </td>
                 </tr>
                 
-                 <tr>
-                    <td colspan="4"><p><a id="create">Add 
-					a creditor</a></p></td>
-
-                    <td>                            
-                    </td>
-                </tr>
+                 
                 
                 <tr id="row2">
                     <td></td>
@@ -178,6 +173,33 @@
 			</tbody>
 			</table>
 		</div> 
+		
+		<div style="margin-left:30px">
+	 		<p>&nbsp;</p>
+			<p class="bold-small">Excluded debts</p>
+			<table>
+			<thead>
+              <tr class="column-heading">
+                    <th>Creditor name</th>
+                    <th>Reference</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th></th>
+                </tr>
+                </thead>
+             <tbody>   
+                <tr id="row2">
+                    <td></td>
+                    <td class="text-right">Total:</td>
+                    <td id="total">£0.00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+			</tbody>
+			</table>
+		</div> 
+		<p>&nbsp;</p>
+		<p><a id="create" class="font-xsmall" style="margin-left:30px">Add a creditor</a></p>
 		<p>&nbsp;</p>
 		<div>
 			<a id="next" style=" vertical-align: middle;" class="button" href="../application.html?section7=inprogress">Save and return</a> 
@@ -257,7 +279,7 @@ $(document).ready(function() {
 	
 	if(c_name==null){	
 		$("#row1").hide();
-		$("#total").text("0.00");
+		$("#total").text("£0.00");
 	}
 	else{
 		$("#row1").show();
