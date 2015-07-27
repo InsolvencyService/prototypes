@@ -429,13 +429,14 @@ $(document).ready(function() {
 		$("#address_section").hide();
 	}
 
-	tempname = $.cookie('DROtempcreditorname');
-	$("#creditor_name").text(tempname);
+	
+	
 	
 	if(edited=="true"){
 		readCookies();
 	}
-	
+	tempname = $.cookie('DROtempcreditorname');
+	$("#creditor_name").text(tempname);
 });
 	
 $("#add-creditor").on("click", function (e) {
@@ -551,6 +552,7 @@ function writeCookies() {
 
 function readCookies() {
 		var id = getParameterByName("id");
+		$.cookie('DROtempcreditorname', "DROCreditorName"+id);
 		$("#ref").val($.cookie("DROCreditorReference"+id));
 		$("#amount").val($.cookie("DROCreditorAmount"+id));
 		$("#secured_item").val($.cookie("DROCreditorSecuredOn"+id));
