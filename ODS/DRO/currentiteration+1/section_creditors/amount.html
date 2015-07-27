@@ -552,7 +552,7 @@ function writeCookies() {
 
 function readCookies() {
 		var id = getParameterByName("id");
-		$.cookie('DROtempcreditorname', "DROCreditorName"+id);
+		$.cookie('DROtempcreditorname', $.cookie('DROCreditorName'+id));
 		$("#ref").val($.cookie("DROCreditorReference"+id));
 		$("#amount").val($.cookie("DROCreditorAmount"+id));
 		$("#secured_item").val($.cookie("DROCreditorSecuredOn"+id));
