@@ -181,9 +181,9 @@ table td[class*=col-], table th[class*=col-]{
 
                                                 </td>
                                                 <td class="value col-sm-2">&nbsp;</td>
-                                               <td class="actions col-sm-2" style="white-space:nowrap">
+                                               <td class="actions col-sm-2">
                                                     <a href="amount.html?type=investments" class="next edit button">Add</a><br/>
-                                                   <a href="#" class="declare">I don't have any of these</a>
+                                                   <a href="#" class="declare" id="btn-no">I don't have any of these</a>
 
                                                 </td>
                                             </tr>
@@ -208,13 +208,13 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td class="totalvalue">1234.50</td>
 
                                                 <td class="actions">
-                                                   <a href="#" class="declare" id="btn-no">I have finished adding these</a>
+                                                    <a href="amount.html?type=investments" class="next edit button">Add another</a>
 
                                                 </td>
                                             </tr>
 										</tbody>
-										<tbody class="group-title parent" id="item2">
-                                            <tr class="group-heading parent">
+										<tbody class="group-title" id="item2">
+                                            <tr class="group-heading">
                                                 <td>Money owed to you<br />
                                                 <div class="form-hint">For example, trade invoices, any loans you have given.</div>
 
@@ -223,9 +223,14 @@ table td[class*=col-], table th[class*=col-]{
                                                <td class="value col-sm-2">&nbsp;</td>
                                                <td class="actions col-sm-2">
                                                     <a href="amount.html?type=money" class="next edit button">Add</a><br/>
-                                                   <a href="#" class="declare">I am not owed any money</a>
 
                                                 </td>
+                                            </tr>
+                                            <tr style="display:none" class="declare" >
+                                            <td></td>
+                                            <td colspan="2">
+                                            <a href="#"  id="btn-no">I don't have any money owed to me</a>
+                                            </td>
                                             </tr>
                                           </tbody>
                                           
@@ -257,8 +262,7 @@ table td[class*=col-], table th[class*=col-]{
 
                                             <tr class="group-heading" id="item5">
                                                 <td>
-                                                     Self employed trading assets<br />
-                                                     <div class="form-hint">(including stock, machinery, tools)</div>
+                                                     Business assets or tools of the trade<br />
                                                     <a href="#" style="display:none" class="declare">
                                                     I am not self employed</a>
                                                 </td>
@@ -273,7 +277,7 @@ table td[class*=col-], table th[class*=col-]{
 
                                             <tr class="group-heading" id="item5">
                                                 <td>
-                                                     Interest in a will or trust<br />
+                                                     Wills and trusts<br />
                                                     <a href="#" style="display:none" class="declare">This does not apply to me</a>
                                                 </td>
                                                 <td class="actions">
@@ -287,8 +291,7 @@ table td[class*=col-], table th[class*=col-]{
 
                                             <tr class="group-heading" id="item6">
                                                 <td>
-                                                     Any other assets or possessions<br />
-                                                     <div class="form-hint">eg. paintings, antiques and expensive furniture, jewellery of value</div>
+                                                     Luxury items (jewellery, antiques, paintings, etc)<br />
                                                     <a href="#" style="display:none" class="declare">I have no luxury items</a>
                                                 </td>
                                                 <td class="actions">
@@ -302,8 +305,7 @@ table td[class*=col-], table th[class*=col-]{
 
                                             <tr class="group-heading" id="item7">
                                                 <td>
-                                                    General household items<br />
-                                                    <div class="form-hint">eg. General household items e.g. mobile phones TVs etc, largely exempt</div>
+                                                     Household items<br />
                                                     <a href="#" style="display:none" class="declare">I have no household items</a>
                                                 </td>
                                                 <td class="actions">
@@ -317,8 +319,7 @@ table td[class*=col-], table th[class*=col-]{
 
                                             <tr class="group-heading" id="item8">
                                                 <td>
-                                                     Other<br />
-                                                     <div class="form-hint">Anything not already covered</div>
+                                                     Other assets<br />
                                                     <a href="#" style="display:none" class="declare">I have no other assets</a>
                                                 </td>
                                                 <td class="actions">
@@ -457,6 +458,8 @@ table td[class*=col-], table th[class*=col-]{
                 if (stage && stage.length > 0) {
                     $("a.edit").removeClass("button").hide();
                     if (stage == "item") {
+                        $("#item a.edit").first().text("Edit").show();
+                        $("#costs a.edit").first().text("Add").show();
                         totalitem();
                     }
                 }
@@ -468,20 +471,18 @@ table td[class*=col-], table th[class*=col-]{
                 if (stage == "item" && itemnumber == 2 && pensionable == false) {
                     itemnumber += 1;
                 }
-                //$("#" + stage + itemnumber + " a.edit").show().text("Edit");
+                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
                 for (i = 1; i < itemnumber; i++) {
-                   // $("#" + stage + i + " a.edit").text("Edit").show();
+                    $("#" + stage + i + " a.edit").text("Edit").show();
                 }
  
                 $(".declare").hide();
 
-                $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Add");
-
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
+                $("#" + stage + itemnumber +  " .declare").show();
           
                 $("#" + stage + itemnumber + " .parent a.declare").hide();
-                $("#" + stage + itemnumber + " .total a.declare").show();
-                $("#" + stage + itemnumber + " .child a.edit").show();
-                //$("#" + stage + itemnumber + " .parent a.edit").hide();
+                $("#" + stage + itemnumber + " .parent a.edit").hide();
 
                 if (stage == "item" && itemnumber > 6) {
                     $("#next").show();
