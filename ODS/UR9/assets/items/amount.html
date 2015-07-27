@@ -276,13 +276,11 @@ display:block;
 $(document).ready(function() {
 
     var type = "Other";
-    if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
-        numproperties = parseInt($.cookie("numproperties"));
-    }
-
-    var housename = $.cookie("propertyline1");
-	if (housename  && housename.length > 0){
-		$(".form-label .data").text(housename);
+	if (getParameterByName("type") && getParameterByName("type").length > 0){
+    	type = getParameterByName("type");
+	}
+	if (type=="investments"){
+		$("h1").text("Stocks, shares and investment asset");
 	}
 
 	var normalroute = $("#next").prop("href");
@@ -319,7 +317,14 @@ $(document).ready(function() {
 	});
 
 });
-   
+  
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+ 
 function numberWithoutCommas(x) {
     var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
     return number;
