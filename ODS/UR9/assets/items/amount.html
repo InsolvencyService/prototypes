@@ -187,9 +187,9 @@ display:block;
  <div class="clearfix"></div>
 
         <div class="form-group ">   
-            <label  for="about" id="benefit_refusal_reason_label">Please provide details of the asset</label>
+            <label for="description">Please provide details of the asset</label>
             <span class="form-hint">Including how long you have had it, the company it is with and if it is in joint ownership</span>
-            <textarea rows="4" cols="75" name="about" id="about"></textarea>
+            <textarea rows="4" cols="75" name="about" id="description"></textarea>
             <p class="form-hint">
                 Maximum 1000 characters 
             </p>
@@ -201,7 +201,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="summary.html?stage=item&amp;page=2">Continue</a>
+		<a id="next" class="button" href="summary.html?stage=item&amp;page=1">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -274,45 +274,70 @@ display:block;
   
 <script type="text/javascript">
 $(document).ready(function() {
-
-    var type = "Other";
+    var editing = false;
+    if (getParameterByName("edit") && getParameterByName("edit").length > 0) {
+        editing = true;
+    }
+    var page = "1";
+    if (getParameterByName("page") && getParameterByName("page").length > 0) {
+        page = parseInt(getParameterByName("page"));
+    }
+    var type = "other";
 	if (getParameterByName("type") && getParameterByName("type").length > 0){
     	type = getParameterByName("type");
 	}
+
 	if (type=="investments"){
 		$("h1").text("Stocks, shares and investment asset");
 	}
+	if (type == "money") {
+	    $("h1").text("Money owed to you");
+	}
+	if (type == "cash") {
+	    $("h1").text("Cash");
+	}
+	if (type == "compensation") {
+	    $("h1").text("Compensation or legal claim"); //eg  mis-sold PPI, claim for damages, breach of contract, etc.
+	}
+	if (type == "trade") {
+	    $("h1").text("Self employed trading assets"); //(including stock, machinery, tools)
+	}
+	if (type == "beneficiary") {
+	    $("h1").text("Interest in a Will or Trust");
+	}
+	if (type == "posessions") {
+	    $("h1").text("Any other assets or possessions");
+	}
+	if (type == "household") {
+	    $("h1").text("General household items");
+	}
+	if (type == "other") {
+	    $("h1").text("Other assets");
+	}
+
+
+	var numofthistype = 0;
+	if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
+	    numofthistype = parseInt($.cookie("num" + type));
+	}
+	if (editing == false) {
+	    numofthistype = numofthistype + 1;
+	}
 
 	var normalroute = $("#next").prop("href");
-	$("#jointly-owned_Yes").click(function(){
-		$("#next").prop("href","3-add-person-joint.html");
-	});
-	$("#jointly-owned_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
+	$("#next").prop("href", "summary.html?stage=item&type=" + type + "&num=" + numofthistype + "&page=" + page)
 	
-	$("#next").on("click", function(){
-		if ($("#month").val().length > 0){
-			$.cookie('purchasemonth', $("#month").val(), { expires: 1 });
-			$.cookie('purchaseyear', $("#year").val(), { expires: 1 });
+	$("#next").on("click", function (e) {
+
+	    if ($("#amount").val().length > 0) {
+	        $.cookie("num" + type, numofthistype);
+		    $.cookie(type + numofthistype + 'amount', $("#amount").val(), { expires: 1, path: "/" });
+		    $.cookie(type + numofthistype + 'name', $("#name").val(), { expires: 1, path: "/" });
 		}
 		else{
-			$.cookie('purchasemonth', "6", { expires: 1 });
-			$.cookie('purchaseyear', "2005", { expires: 1 });
+		    e.preventDefault();
 		}
 
-		numproperties = numproperties + 1;
-		if ($("#propertyvalue").val().length > 0){
-		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
-
-		    $.cookie('numproperties', numproperties, { expires: 1 });
-		    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
-		    $.cookie('property' + numproperties + 'address', $.cookie("propertyline1") + ", " + $.cookie("propertypostcode"), { expires: 1 });
-
-		}
-		else{
-			$.cookie('propertyvalue', "140000", { expires: 1 });
-		}
 		
 	});
 

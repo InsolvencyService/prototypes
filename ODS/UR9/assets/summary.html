@@ -70,9 +70,38 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
+  <link href="../creditors/css/typeahead.css" rel="stylesheet">
+ <style type="text/css">
+ .tt-dropdown-menu{
+	width:650px;
+}
+.tt-input{
+	width:400px;
+}
+.tt-hint{
+	display:none !important;
+}
+.choose-address{
+	color:gray;
+}
+.row > div:first-child{
+	padding-left:5px;
+	margin-left:0;	
+}
+i.glyphicon{
+	margin-right:5px;
+	color:#666666;
+}
+.input-sm{
+	width:170px;
+}
+.input-lg{
+	width:260px;
+}
 
-<style type="text/css">
-.amount-value:before { content: "£"; }
+#row-total td{
+	font-weight:bold;
+}
 
 
 .row img{
@@ -94,13 +123,15 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-#month option{
-	width:50px;
-	display:block;
-	white-space:nowrap;
-	margin:0;
-	padding:5px 4px 3px 4px;
-	border:1px gray solid !important;
+
+.btn-edit{
+	margin-right:10px;
+}
+.amount{
+	text-align:right;
+}
+.totalrow td{
+	font-weight:bold !important;
 }
 </style>
 <!-- #EndEditable -->
@@ -168,65 +199,74 @@ display:block;
 <!-- #BeginEditable "content" --> 
 <div class="inner-block text">
 	
-	
-	
-	<h1 class="form-title heading-large">Type of action</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<div class="form-hint">We need to know the type of action <strong class="creditor">ABC Company</strong> took</div>
-	
-	<div class="validation-summary"  id="msg-enteramt" style="display:none">
-                <h2>There was a problem with your answers</h2>
-                <p></p><ol>
-        <li class="error-message"> 
-              Please enter a valid amount
-         </li>
-      </ol>
-     </div>
-
-	
-<div class="clearfix"></div>
-	
-<div class="form-group">
-					<fieldset class="inline">
-					<legend id="incorporated_label" class="form-label-bold">What type of action did they 
-					most recently take?</legend>
-						<div class="form-group">
-							<label for="type_bailiff" class="block-label">
-							<input id="type_bailiff" value="" name="type" type="radio">Enforcement visit</label>
-	
-							<label for="type_attachment" class="block-label">
-							<input id="type_attachment" value="" name="type" type="radio">Attachment of earnings</label>		
-						</div>
-					</fieldset>
-				</div>
+	<h1 class="form-title heading-large">Assets summary</h1>
 
 
-<p class="clearfix"><br/></p>
+			<p class="lead text bold">
+	            Review your answers before you proceed.
+	        </p>
+
+			<div class="form-group">
+				<p class="bold-small">Property</p>
+	            <table id="employer_table">
+                    <tbody>
+                    	<tr class="group-heading">
+                    		<td>Number of properties</td>
+                        	<td><span id="numproperties">1</span></td>
+                        	<td><a href="property/list_properties.html">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+
+                    	<tr class="group-heading">
+                    		<td>Number of vehicles</td>
+                        	<td>0</td>
+                        	<td><a href="#">Edit</a></td>
+                        	<td></td>
+                    	</tr>
+                        <tr class="group-heading">
+                            <td>Items you own</td>
+                            <td>0</td>
+                            <td><a href="#">Edit</a></td>
+                            <td></td>
+                        </tr>
+                        <tr class="group-heading">
+                            <td>Life insurance policies</td>
+                            <td>0</td>
+                            <td><a href="#">Edit</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                    </tbody>
+
+                </table>
+  				<br>
+            </div>
+	<p><br></p>
+
+
+
+<p><br></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="visit.html">Continue</a>
+<a class="button" href="../overview.html?section4=complete" id="next">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="actionlist.html" id="back">Back</a>
+        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
 	
 	</div>
 	</div>
-	</form>
+	
 	</div>
 
 	 <!-- #EndEditable -->
@@ -282,26 +322,23 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
+	<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../creditors/js/tw-typeahead.js"></script>
+	<script type="text/javascript" src="../creditors/js/creditors.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {
 	
-	var nextpage = $("#next").prop("href");
-	var rowid = getParameterByName("row");
-	var creditor = getParameterByName("name");
+    var numproperties = 0;
+    if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
+        numproperties = $.cookie("numproperties");
+    }
 
-	if (creditor && creditor.length > 0){
-		$(".creditor").text(creditor);
-	}
-	
-	$("#type_attachment").click(function(){
-			nextpage  = "attachment.html";
-	});
-	
-	$("#next").on("click", function(){
-
-	    $("#next").prop("href", nextpage + "?name=" + creditor);
-	});
+	$("#numproperties").text(numproperties);
+	$("#row1 .date").text($.cookie("creditordate"));
+	$("#row1 .amount").append($.cookie("creditoramount"));
 
 
 });
@@ -312,6 +349,14 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function numberWithoutCommas(x) {
+    return parseFloat(x.toString().replace(/,/g, ""));
 }
 
 

@@ -198,19 +198,19 @@ tr td.actions a.edit{
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=investments" class="edit button">Add</a><br/>
+                                                    <a href="amount.html?type=investments&page=1" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">I don't have any of these</a>
                                                 </td>
                                             </tr>
-                                            <tr class="child">
+                                            <!--<tr class="child">
                                                 <td>ABC shares #1234567
                                                 </td>
                                                 <td class="value">1234.50</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=investments" class="child-edit">Edit</a>&nbsp;
+                                                    <a href="amount.html?type=investments&edit=true&page=1" class="child-edit">Edit</a>&nbsp;
                                                      <a href="#" class="next delete">Delete</a>
                                                 </td>
-                                            </tr>
+                                            </tr>-->
                                             <tr class="total">
                                                 <td class="actions" style="text-align:right">
                                                 <span style="float:right; width:100%">Total</span></td>
@@ -228,7 +228,7 @@ tr td.actions a.edit{
                                                 </td>
                                                <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=money" class="edit button">Add</a><br/>
+                                                   <a href="amount.html?type=money&page=2" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">I am not owed any money</a>
                                                 </td>
                                             </tr>
@@ -249,7 +249,7 @@ tr td.actions a.edit{
                                                 </td>
                                                <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=cash" class="edit button">Add</a><br/>
+                                                   <a href="amount.html?type=cash&page=3" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">I don't have any cash in hand</a>
                                                 </td>
                                             </tr>
@@ -270,7 +270,7 @@ tr td.actions a.edit{
                                                 </td>
                                                <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=compensation" class="edit button">Add</a><br/>
+                                                   <a href="amount.html?type=compensation&page=4" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">I have no compensation or claims</a>
                                                 </td>
                                             </tr>
@@ -291,7 +291,7 @@ tr td.actions a.edit{
                                                 </td>
                                                <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=trade" class="edit button">Add</a><br/>
+                                                   <a href="amount.html?type=trade&page=5" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">I am not self employed</a>
                                                 </td>
                                             </tr>
@@ -312,7 +312,7 @@ tr td.actions a.edit{
                                                 </td>
                                                <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=beneficiary" class="edit button">Add</a><br/>
+                                                   <a href="amount.html?type=beneficiary&page=6" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">This does not apply to me</a>
                                                 </td>
                                             </tr>
@@ -333,29 +333,8 @@ tr td.actions a.edit{
                                                 </td>
                                                <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=other" class="edit button">Add</a><br/>
+                                                   <a href="amount.html?type=other&page=7" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">I have no other items</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="total">
-                                                <td class="actions" style="text-align:right">
-                                                <span style="float:right; width:100%">Total</span></td>
-                                                <td class="value"></td>
-                                                <td class="actions">
-                                                   <a href="#" class="declare" id="btn-no">I have finished adding these</a>
-                                                </td>
-                                            </tr>
-                                         </tbody>
-
-   										<tbody class="group-title" id="item7">
-                                            <tr class="group-heading parent">
-                                                <td><div class="group-title">General household items</div>
-                                                <div class="form-hint">eg. mobile phones TVs etc, largely exempt</div>
-                                                </td>
-                                               <td class="value">&nbsp;</td>
-                                               <td class="actions">
-                                                    <a href="amount.html?type=household" class="edit button">Add</a><br/>
-                                                   <a href="#" class="declare">I have no household items</a>
                                                 </td>
                                             </tr>
                                             <tr class="total">
@@ -370,12 +349,33 @@ tr td.actions a.edit{
 
    										<tbody class="group-title" id="item8">
                                             <tr class="group-heading parent">
+                                                <td><div class="group-title">General household items</div>
+                                                <div class="form-hint">eg. mobile phones TVs etc, largely exempt</div>
+                                                </td>
+                                               <td class="value">&nbsp;</td>
+                                               <td class="actions">
+                                                   <a href="amount.html?type=household&page=8" class="edit button">Add</a><br/>
+                                                   <a href="#" class="declare">I have no household items</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="total">
+                                                <td class="actions" style="text-align:right">
+                                                <span style="float:right; width:100%">Total</span></td>
+                                                <td class="value"></td>
+                                                <td class="actions">
+                                                   <a href="#" class="declare" id="btn-no">I have finished adding these</a>
+                                                </td>
+                                            </tr>
+                                         </tbody>
+
+   										<tbody class="group-title" id="item9">
+                                            <tr class="group-heading parent">
                                                 <td><div class="group-title">Other</div>
                                                 <div class="form-hint">Anything not already covered</div>
                                                 </td>
                                                <td class="value">&nbsp;</td>
                                                <td class="actions">
-                                                    <a href="amount.html?type=other" class="edit button">Add</a><br/>
+                                                   <a href="amount.html?type=other&page=9" class="edit button">Add</a><br/>
                                                    <a href="#" class="declare">I have no other assets</a>
                                                 </td>
                                             </tr>
@@ -417,7 +417,7 @@ tr td.actions a.edit{
             <div class="form-navigation form-group inner-block">
 
                 <div>
-                    <a id="next" class="button" href="../../overview.html?section6=complete">Continue</a>
+                    <a id="next" class="button" href="../summary.html?page=4">Continue</a>
                 </div>
                 <div>
                     <br>
@@ -519,8 +519,6 @@ tr td.actions a.edit{
                     $("a.edit").removeClass("button").hide();
                     if (stage == "item") {
                         $("#item a.edit").first().text("Edit").show();
-                        $("#costs a.edit").first().text("Add").show();
-                        totalitem();
                     }
                 }
 				
@@ -546,78 +544,86 @@ tr td.actions a.edit{
 
                 //$("#" + stage + itemnumber + " .parent a.edit").hide();
 
-                if (stage == "item" && itemnumber > 6) {
+                if (stage == "item" && itemnumber > 8) {
                     $("#next").show();
                 }
 
 
+                //show child amounts
+                var type = "other";
+                if (getParameterByName("type") && getParameterByName("type").length > 0) {
+                    type = getParameterByName("type");
+                }
+                var numofthistype = 0;
+                if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
+                    numofthistype = parseInt($.cookie("num" + type));
+                }
+                
+                for (i = 1; i <= numofthistype; i++) {
+                    // append the child row here
+                    var childamount = $.cookie(type + i + 'amount');
+                    var childname = $.cookie(type + i + 'name');
+                    var insertext = '<tr class="child"><td>' + childname + '</td>';
+                    insertext = insertext + '<td class="value">' + childamount + '</td>';
+                    insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
+                    insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
+                    $("#" + stage + itemnumber + " .parent").after(insertext);
+                }
+                //$("#" + stage + itemnumber + ".total .value").text(totalitem(stage + itemnumber));
+                totaloverall();
+
+                $("#" + stage + itemnumber + " .total").show();
+
 				var defaultnext = $(".next").first().attr("href");
-				$(".declare").on("click", function () {
+				$(".declare").on("click", function (e) {
+				    e.preventDefault();
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
+				    $("#" + stage + itemnumber + " .child").hide();
+				    $("#" + stage + itemnumber + " .total").hide();
+
+				    $("#" + stage + itemnumber + ".parent .value").text(totalitem(type));
+
 				    itemnumber = itemnumber + 1;
 				    if (itemnumber == 3 && pensionable == false) {
 				        itemnumber = 4;
 				    }
 				    $("#" + stage + itemnumber + " .declare").show();
 				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
-				    if (stage == "item" && itemnumber == 6) {
-				        $("#costs a.edit").first().text("Add").addClass("button").show();
-				    }
+
 				});
 
 				
             });
 
-            function totalitem() {
+            function totalitem(rowid) {
                 var totalamount = 0;
-                var item = "item";
-                for (i = 1; i < 7; i++) {
-                    var amount = $.cookie(item + i);
-                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-                        $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
+                var numrows = $(rowid + " .child").length;
+                // TODO - make this each, go over the amounts in the page, convert to numbers and add up
+                $.each($("#" + rowid + " .child"), function (index, value) {
+                    if ($(this).find(".value")) {
+                        var amount = $(this).find(".value");
                         if (parseFloat(amount)) {
                             totalamount = totalamount + parseFloat(amount);
                         }
                     }
+                });
+
+                return totalamount.toFixed(2);
+            }
+     
+            function totaloverall() {
+                var totalamount = 0;
+                var rowamount = 0;
+                for (i = 1; i < 9; i++) {
+                    rowamount = rowamount + totalitem("item" + i);
+                    if (rowamount != 0){
+                        $("#" + "item" + i + " .total .value").text(rowamount);
+                    }
+                    totalamount = totalamount + rowamount;
                 }
-                $("#itemtotal .totalvalue").text(totalamount.toFixed(2));
+                return totalamount.toFixed(2);
                 //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
-            }
-            //partneritemtotal  overalltotal  coststotal  totalvalue
-            function totalpartneritem() {
-                var totalamount = 0;
-                var item = "partneritem";
- 
-                if ($.cookie(item + 1) && $.cookie(item + 1).length > 0) { 
-                    var amount = $.cookie(item + 1);
-                    $("#" + item + 1 + " .value").text(parseFloat(amount).toFixed(2)); // parseFloat($.cookie(item + i)).toFixed(2)
-                    if (parseFloat(amount)) {
-                        totalamount = totalamount + parseFloat(amount);
-                    }
-                }
-
-                $("#partneritemtotal .totalvalue").text(totalamount.toFixed(2));
-                var overalltotal = totalamount;
-                if ($("#itemtotal .totalvalue").text().length > 0) {
-                    overalltotal += parseFloat($("#itemtotal .totalvalue").text());
-                }
-                //$("#overalltotal .totalvalue").text(overalltotal.toFixed(2));
-            }
-
-            function totalcosts(page) {
-                var totalamount = 0;
-                var item = "costs";
-                for (i = 1; i <= page; i++) {
-                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-                        var amount = $.cookie(item + i);
-                        $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
-                        if (parseFloat(amount)) {
-                            totalamount = totalamount + parseFloat(amount);
-                        }
-                    }
-                }
-                $("#coststotal .totalvalue").text(totalamount.toFixed(2));
             }
 
             function removeallcookies() {
