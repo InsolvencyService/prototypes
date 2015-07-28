@@ -267,7 +267,7 @@ display:block;
 <div class="clearfix"></div>
 
 <a class="button secondary" href="#" id="next_section">Continue - I have added all pensions</a><br>
-<a href="../application.html?section5=inprogress" id="overview">Return to overview</a>
+<a href="../application.html" id="overview">Return to overview</a>
 
 <p><br></p>
 	
@@ -413,7 +413,12 @@ $("#next").on("click", function(e){
 		e.preventDefault();
 	}
 });
-
+$("#next_section").on("click", function(e){
+	sectionComplete()
+});
+$("#overview").on("click", function(e){
+	sectionComplete()
+});
 
 	
 /*
@@ -447,6 +452,10 @@ function numberWithoutCommas(x) {
     return parseFloat(x.toString().replace(/,/g, ""));
 }
 */
+
+function sectionComplete() {
+	$.cookie('section5', 'inprogress', {path: '/'});
+}
 
 </script>
 
