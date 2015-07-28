@@ -330,7 +330,7 @@ $(document).ready(function() {
 	$("#next").on("click", function (e) {
 
 	    if ($("#amount").val().length > 0) {
-	        $.cookie("num" + type, numofthistype);
+	        $.cookie("num" + type, numofthistype, { expires: 1, path: "/" });
 		    $.cookie(type + numofthistype + 'amount', $("#amount").val(), { expires: 1, path: "/" });
 		    $.cookie(type + numofthistype + 'name', $("#name").val(), { expires: 1, path: "/" });
 		}
