@@ -543,8 +543,9 @@ function writeCookies() {
 		$.cookie("DROCreditorAttachmentCourtAdd5"+count, $("#court_address_county").val());
 		$.cookie("DROCreditorAttachmentCourtAdd5"+count, $("#court_address_post_code").val());
 		// update count
-		$.cookie("DROCreditorCount", count);
-
+		if(edited!="true"){
+			$.cookie("DROCreditorCount", count);
+		}
 }
 
 function readCookies() {

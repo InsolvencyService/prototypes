@@ -362,7 +362,9 @@ function writeCookies() {
 		// excluded
 		$.cookie("DROPensionApproved"+count, $("#excluded_debt :checked").val());
 		// update count
-		$.cookie("DROPensionCount", count);
+		if(edited!="true"){
+			$.cookie("DROPensionCount", count);
+		}
 
 }
 
