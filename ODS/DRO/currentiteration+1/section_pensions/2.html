@@ -361,7 +361,7 @@ function writeCookies() {
 		$.cookie("DROPensionAddress5-"+count, $("#pension_address_county").val());
 		$.cookie("DROPensionAddress6-"+count, $("#pension_address_post_code").val());
 		// reference
-		$.cookie("DROPensionNumber"+count, $("#ref").val() );
+		$.cookie("DROPensionNumber"+count, $("#ref").val());
 		// excluded
 		$.cookie("DROPensionApproved"+count, $("#excluded_debt :checked").val());
 		// update count
@@ -378,7 +378,7 @@ function readCookies() {
 		$("#pension_address_town").val($.cookie("DROPensionAddress4-"+id));
 		$("#pension_address_county").val($.cookie("DROPensionAddress5-"+id));
 		$("#pension_address_post_code").val($.cookie("DROPensionAddress6-"+id));
-		$("#ref").val($.cookie("DROPensionNumber"+id);
+		$("#ref").val($.cookie("DROPensionNumber"+id));
 		
 		if($.cookie("DROPensionApproved"+id) == 'yes'){
 			$( "#excluded_yes" ).prop( "checked", true );
