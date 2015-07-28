@@ -244,9 +244,8 @@ display:block;
 	<p>&nbsp;</p>
 	<div>
 		
-		<a id="next" class="button" href="../section_creditors/1.html">Save and return</a>
-		<p><a id="again" href="2.html">Add another debt for this creditor</a></p>
-	</div>
+		<a id="next" class="button">Save and return</a>
+			</div>
 	<div>
 	<br>
 	</div>
@@ -321,19 +320,18 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	
-	
 	edited = getParameterByName("edit");	
-		
-	
+			
 	if(edited=="true"){
 		readCookies();
 	}
 	tempname = $.cookie('TempDROPensionProvider');
-	$("#creditor_name").text(tempname);
+	$("#pension").text(tempname);
 });
 
 $("#next").on("click", function(e){
 		writeCookies();
+		$("#next").("href", "../section_pensions/1.html");
 
 });
 
