@@ -287,7 +287,7 @@
                                 <div class="rowtop">
                                     <span class="col-sm-8"><h3>5. Pension 
 									details</h3></span>
-                                    <span class="col-sm-4"><a href="#"><label class="label label-default">Not started</label></a></span>
+                                    <span class="col-sm-4"><a href="section_pensions/1.html"><label class="label label-default">Not started</label></a></span>
                                 </div>
                             </li>
                             <li class="row" id="section6">
@@ -431,6 +431,7 @@
 			var user = $.cookie('user');
 			var section1 = getParameterByName("section1");
 			var section2 = getParameterByName("section2");
+			var section5 = getParameterByName("section5");
 			var section7 = getParameterByName("section7");
 			var creditors = getParameterByName("creditors");
 			var total = getParameterByName("total");
@@ -497,7 +498,24 @@
                     }
                 }
 
+                if (section5 && section5.length > 0) {
+                    // change the colour of the button
+                    if (section5 == "inprogress") {
+                        $("#section5 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section5 .label").text("In progress");
+                        $("#section5 .edit").text("Edit");
                 
+
+                    }
+
+                    if (section5 == "complete") {
+                        $("#section5 .label").removeClass("label-default").addClass("label-success");
+                        $("#section5 .label").text("Complete");
+                        $("#section5 .edit").text("Edit");
+                      
+                    }
+                }
+
 				if (section7 && section7.length > 0) {
                     // change the colour of the button
                     if (section7 == "inprogress") {
