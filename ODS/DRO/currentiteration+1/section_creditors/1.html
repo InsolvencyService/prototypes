@@ -282,8 +282,8 @@ display:block;
 
 	
 	</div>
-<a class="button secondary" href="#" id="btn-addedall">Continue - I have added all creditors</a>
-<p><a id="return" href="../application.html">Return to overview</a></p>
+<a class="button secondary" id="btn-addedall">Continue - I have added all creditors</a>
+<p><a id="return">Return to overview</a></p>
 <p><br></p>
 	
 	<!-- For User research -->
@@ -430,10 +430,12 @@ $("#next").on("click", function(e){
 
 $("#btn-addedall").on("click", function(e){
 	sectionComplete()
+	$("#btn-addedall").attr("href", "#")
 });
 
 $("#return").on("click", function(e){
 	sectionComplete()
+	$("#return").attr("href", "../application.html")
 });
 
 
