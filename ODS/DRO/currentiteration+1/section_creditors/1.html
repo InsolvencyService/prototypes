@@ -208,7 +208,7 @@ display:block;
 	
 	
 	
-	<form >
+	<form>
 	 <!--- 	
 	<div class="validation-summary"  id="msg-entervalue" style="display:none">
         <ol>
@@ -264,10 +264,10 @@ display:block;
 
 		</tbody>
 	</table>
+	<p>&nbsp;</p>
 </div>
 
 
-<div  class="clearfix"><br/></div>
 <div class="form-group">
 	
 	<label  for="creditors" class="form-label-bold " id="heading-add">Enter the creditor’s name</label>
@@ -280,11 +280,10 @@ display:block;
 
 
 
-	<p class="clearfix"><br/></p>
+	
 	</div>
-<div class="clearfix"></div>
-
 <a class="button secondary" href="#" id="btn-addedall">Continue - I have added all creditors</a>
+<p><a id="return" href="../application.html">Return to overview</a></p>
 <p><br></p>
 	
 	<!-- For User research -->
@@ -430,10 +429,22 @@ $("#next").on("click", function(e){
 });
 
 $("#btn-addedall").on("click", function(e){
-	$("#btn-addedall").attr("href", "../application.html?section7=inprogress&creditors="+includedcreditors+"&total="+total)
+	sectionComplete()
 });
 
-	
+$("#return").on("click", function(e){
+	sectionComplete()
+});
+
+
+function sectionComplete() {
+	$.cookie('section7', 'inprogress', {path: '/'});
+	$.cookie('creditors', includedcreditors, {path: '/'});
+	$.cookie('ctotal', total, {path: '/'});
+
+}
+
+
 /*
 function calctotal() {
     var totalamount = 0;
