@@ -87,6 +87,9 @@ td{
     vertical-align:top;
 }
 
+.well{
+    padding-top:20px;
+}
 .actions .edit{
     display:block;
 }
@@ -257,7 +260,7 @@ tbody > tr > td:first-child{
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
                                                     <a href="amount.html?type=household&page=2" class="edit button">Add</a>
-                                                    <a href="#" class="declare">I have finished adding these</a>
+                                                    <a href="#" class="declare">I have none of these</a>
                                                 </td>
                                             </tr>
                                             <tr class="totalhide" style="display:none">
@@ -270,7 +273,7 @@ tbody > tr > td:first-child{
                                             </tr>
                                         </tbody>
 
-                                        <tbody id="item3" data-role="posessions">
+                                        <tbody id="item3" data-role="possessions">
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Any other assets or possessions</div>
@@ -294,7 +297,7 @@ tbody > tr > td:first-child{
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=other&page=3" class="edit button">Add</a>
+                                                    <a href="amount.html?type=possessions&page=3" class="edit button">Add</a>
                                                     <a href="#" class="declare">I have no other items</a>
                                                 </td>
                                             </tr>
@@ -658,33 +661,19 @@ tbody > tr > td:first-child{
 
                 if (stage && stage.length > 0) {
                     $("a.edit").removeClass("button").hide();
-                    //if (stage == "item") {
-                    //    $("#item a.edit").first().text("Edit").hide();
-                    //}
                 }
 				
  
                 itemnumber = parseInt(page);
                 var previous = itemnumber - 1;
-                //$("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
                 if (stage == "item" && itemnumber == 2 && pensionable == false) {
                     itemnumber += 1;
                 }
-                //$("#" + stage + itemnumber + " a.edit").show().text("Edit");
-                //for (i = 1; i < itemnumber; i++) {
-                //    $("#" + stage + i + " a.edit").text("Edit").show();
-                //}
  
                 $(".declare").hide();
-
                 $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Add");
                 $("#" + stage + itemnumber +  " .declare").show();
-          
-                //$("#" + stage + itemnumber + " .parent a.declare").hide();
-                $("#" + stage + itemnumber + " a.declare").show();
                 $("#" + stage + itemnumber + " .total").show();
-
-                //$("#" + stage + itemnumber + " .parent a.edit").hide();
 
                 if (stage == "item" && itemnumber > 8) {
                     $("#next").show();
@@ -696,7 +685,6 @@ tbody > tr > td:first-child{
                 if (getParameterByName("type") && getParameterByName("type").length > 0) {
                     currenttype = getParameterByName("type");
                 }
-
 
                 showchildrowdata();
 
@@ -772,19 +760,19 @@ tbody > tr > td:first-child{
                     if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
                         numofthistype = parseInt($.cookie("num" + type));
                     }
-
+                    $("#item" + rowid + " tr.child").remove();
                     for (i = 1; i <= numofthistype; i++) {
-                        // TODO - change the skip button text
+                        // Change the skip button text
                         $("#item" + rowid + " .declare").text("I have completed this section");
-                        // append the child row here
-                        var childamount = $.cookie(type + i + 'amount');
-                        if (childamount) {
+                        // append the child row 
+                        if ($.cookie(type + i + 'amount') > 0) {
+                            var childamount = parseFloat($.cookie(type + i + 'amount'));
                             var childname = $.cookie(type + i + 'name');
                             var insertext = '<tr class="child"><td>' + childname + '</td>';
                             insertext = insertext + '<td class="value">' + childamount + '</td>';
                             insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
                             insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
-                            $("#" + stage + rowid + " .total").before(insertext);
+                            $("#" + stage + rowid + " .totalhide").before(insertext);
                             $("#" + stage + rowid + " .child").show();
 
                             totalamount = totalamount + childamount;
