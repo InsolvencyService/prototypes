@@ -99,6 +99,9 @@ tr td.actions{
 tr td.actions a.edit{
 	width:100px;
 }
+.delete{
+    padding-left:20px;
+}
   </style>
 
 
@@ -191,67 +194,18 @@ tr td.actions a.edit{
 
                                 <div class="form-group">
                                     <table>
-                                        <tbody class="group-title" id="item1" data-role="investments">
-                                            <tr class="group-heading parent">
-                                                <td class="col-sm-8">
-                                                    <div class="group-title">
-                                                        Stocks, shares and investment
-                                                    </div>
-                                                </td>
-                                                <td class="value">&nbsp;</td>
-                                                <td class="actions">
-                                                    <a href="amount.html?type=investments&page=1" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">I don't have any of these</a>
-                                                </td>
-                                            </tr>
-                                            <!--<tr class="child">
-            <td>ABC shares #1234567
-            </td>
-            <td class="value">1234.50</td>
-            <td class="actions">
-                <a href="amount.html?type=investments&edit=true&page=1" class="child-edit">Edit</a>&nbsp;
-                 <a href="#" class="next delete">Delete</a>
-            </td>
-        </tr>-->
-                                            <tr class="total">
-                                                <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
-                                                </td>
-                                                <td class="value">1234.50</td>
-                                                <td class="actions">
-                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-										
-                                        <tbody class="group-title" id="item2" data-role="money">
-                                            <tr class="group-heading parent">
-                                                <td>
-                                                    <div class="group-title">Money owed to you</div>
-                                                    <div class="form-hint">For example, trade invoices, any loans you have given.</div>
-                                                </td>
-                                                <td class="value">&nbsp;</td>
-                                                <td class="actions">
-                                                    <a href="amount.html?type=money&page=2" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">I am not owed any money</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="total">
-                                                <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
-                                                </td>
-                                                <td class="value"></td>
-                                                <td class="actions">
-                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                          
-                                          
-                                        <tbody class="group-title" id="item3" data-role="cash">
+
+                                        <tbody class="group-title" id="item1" data-role="cash">
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Cash</div>
+                                                    <div class="help form-hint">
+                                                        <p>Include the following:</p>
+                                                        <ul style="font-weight:normal">
+                                                            <li>Cash not in the building society or bank</li>
+                                                            <li>Any positive balance in your building society or bank</li>
+                                                        </ul>
+                                                    </div>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
@@ -259,6 +213,7 @@ tr td.actions a.edit{
                                                     <a href="#" class="declare">I don't have any cash in hand</a>
                                                 </td>
                                             </tr>
+
                                             <tr class="total">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%">Total</span>
@@ -269,40 +224,17 @@ tr td.actions a.edit{
                                                 </td>
                                             </tr>
                                         </tbody>
-                    
-                                          
-                                        <tbody class="group-title" id="item4" data-role="compensation">
-                                            <tr class="group-heading parent">
-                                                <td>
-                                                    <div class="group-title">Compensation or legal claim</div>
-                                                </td>
-                                                <td class="value">&nbsp;</td>
-                                                <td class="actions">
-                                                    <a href="amount.html?type=compensation&page=4" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">I have no compensation or claims</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="total">
-                                                <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
-                                                </td>
-                                                <td class="value">1234.50</td>
-                                                <td class="actions">
-                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
 
-                                        <tbody class="group-title" id="item5" data-role="trade">
+                                        <tbody class="group-title" id="item2" data-role="household">
                                             <tr class="group-heading parent">
                                                 <td>
-                                                    <div class="group-title">Self employed trading assets</div>
-                                                    <div class="form-hint">(including stock, machinery, tools)</div>
+                                                    <div class="group-title">General household items</div>
+                                                    <div class="form-hint">eg. mobile phones TVs etc, largely exempt</div>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=trade&page=5" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">I am not self employed</a>
+                                                    <a href="amount.html?type=household&page=8" class="edit button">Add</a><br />
+                                                    <a href="#" class="declare">I have no household items</a>
                                                 </td>
                                             </tr>
                                             <tr class="total">
@@ -316,30 +248,7 @@ tr td.actions a.edit{
                                             </tr>
                                         </tbody>
 
-                                        <tbody class="group-title" id="item6" data-role="beneficiary">
-                                            <tr class="group-heading parent">
-                                                <td>
-                                                    <div class="group-title">Interest in a will or trust</div>
-                                                    <div class="form-hint">(including stock, machinery, tools)</div>
-                                                </td>
-                                                <td class="value">&nbsp;</td>
-                                                <td class="actions">
-                                                    <a href="amount.html?type=beneficiary&page=6" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">This does not apply to me</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="total">
-                                                <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
-                                                </td>
-                                                <td class="value"></td>
-                                                <td class="actions">
-                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-
-                                        <tbody class="group-title" id="item7" data-role="posessions">
+                                        <tbody class="group-title" id="item3" data-role="posessions">
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Any other assets or possessions</div>
@@ -362,16 +271,109 @@ tr td.actions a.edit{
                                             </tr>
                                         </tbody>
 
-                                        <tbody class="group-title" id="item8" data-role="household">
+                                        <tbody class="group-title" id="item4" data-role="compensation">
                                             <tr class="group-heading parent">
                                                 <td>
-                                                    <div class="group-title">General household items</div>
-                                                    <div class="form-hint">eg. mobile phones TVs etc, largely exempt</div>
+                                                    <div class="group-title">Compensation or legal claim</div>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=8" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">I have no household items</a>
+                                                    <a href="amount.html?type=compensation&page=4" class="edit button">Add</a><br />
+                                                    <a href="#" class="declare">I have no compensation or claims</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="total">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%">Total</span>
+                                                </td>
+                                                <td class="value"></td>
+                                                <td class="actions">
+                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody class="group-title" id="item5" data-role="beneficiary">
+                                            <tr class="group-heading parent">
+                                                <td>
+                                                    <div class="group-title">Interest in a will or trust</div>
+                                                    <div class="form-hint">(including stock, machinery, tools)</div>
+                                                </td>
+                                                <td class="value">&nbsp;</td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=beneficiary&page=6" class="edit button">Add</a><br />
+                                                    <a href="#" class="declare">This does not apply to me</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="total">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%">Total</span>
+                                                </td>
+                                                <td class="value"></td>
+                                                <td class="actions">
+                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                       <tbody class="group-title" id="item6" data-role="investments">
+                                            <tr class="group-heading parent">
+                                                <td class="col-sm-8">
+                                                    <div class="group-title">
+                                                        Stocks, shares and investment
+                                                    </div>
+                                                </td>
+                                                <td class="value">&nbsp;</td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=investments&page=1" class="edit button">Add</a><br />
+                                                    <a href="#" class="declare">I don't have any of these</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="total">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%">Total</span>
+                                                </td>
+                                                <td class="value">1234.50</td>
+                                                <td class="actions">
+                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+										
+                                        <tbody class="group-title" id="item7" data-role="trade">
+                                            <tr class="group-heading parent">
+                                                <td>
+                                                    <div class="group-title">Self employed trading assets</div>
+                                                    <div class="form-hint">(including stock, machinery, tools)</div>
+                                                </td>
+                                                <td class="value">&nbsp;</td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=trade&page=5" class="edit button">Add</a><br />
+                                                    <a href="#" class="declare">I am not self employed</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="total">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%">Total</span>
+                                                </td>
+                                                <td class="value"></td>
+                                                <td class="actions">
+                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody class="group-title" id="item8" data-role="money">
+                                            <tr class="group-heading parent">
+                                                <td>
+                                                    <div class="group-title">Money owed to you</div>
+                                                    <div class="form-hint">For example, trade invoices, any loans you have given.</div>
+                                                </td>
+                                                <td class="value">&nbsp;</td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=money&page=2" class="edit button">Add</a><br />
+                                                    <a href="#" class="declare">I am not owed any money</a>
                                                 </td>
                                             </tr>
                                             <tr class="total">
@@ -560,6 +562,7 @@ tr td.actions a.edit{
           
                 $("#" + stage + itemnumber + " .parent a.declare").hide();
                 $("#" + stage + itemnumber + " .total a.declare").show();
+                $("#" + stage + itemnumber + " .total").show();
 
                 //$("#" + stage + itemnumber + " .parent a.edit").hide();
 
@@ -590,11 +593,11 @@ tr td.actions a.edit{
                         insertext = insertext + '<td class="value">' + childamount + '</td>';
                         insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
                         insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
-                        $("#" + stage + rowid + " .parent").after(insertext);
+                        $("#" + stage + rowid + " .total").before(insertext);
                         $("#" + stage + rowid + " .child").show();
-                        $("#" + stage + rowid + " .total").show();
                     }
                 }
+
                 //$("#" + stage + itemnumber + ".total .value").text(totalitem(stage + itemnumber));
                 totaloverall();
 

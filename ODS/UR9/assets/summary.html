@@ -196,51 +196,86 @@ display:block;
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
+<div id="content" >
 <div class="inner-block text">
 	
 	<h1 class="form-title heading-large">Assets summary</h1>
 
 
 			<p class="lead text bold">
-	            Review your answers before you proceed.
-	        </p>
+	            We need to know about all the assets you own or have a share in.&nbsp; 
+				This is to help us build a complete understanding of your 
+				situation.</p>
 
 			<div class="form-group">
-				<p class="bold-small">Property</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of properties</td>
-                        	<td><span id="numproperties">1</span></td>
-                        	<td><a href="property/list_properties.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
 
-                    	<tr class="group-heading">
-                    		<td>Number of vehicles</td>
-                        	<td>0</td>
-                        	<td><a href="#">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                        <tr class="group-heading">
-                            <td>Items you own</td>
-                            <td>0</td>
-                            <td><a href="#">Edit</a></td>
-                            <td></td>
-                        </tr>
-                        <tr class="group-heading">
-                            <td>Life insurance policies</td>
-                            <td>0</td>
-                            <td><a href="#">Edit</a></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                    </tbody>
+                                    <table id="assets">
+                                        <tbody class="group-title">
+                                            <tr class="group-heading" id="assets1">
+                                                <td class="group-title col-sm-8">Properties
+                                                <br/>
+                                                 <a href="#" class="declare" id="btn-no">I don't own or have an interest in any property</a>
 
-                </table>
-  				<br>
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="property/list_properties.html" class="next edit button">Start</a>
+
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+
+                                            <tr class="group-heading" id="assets2">
+                                                <td class="group-title col-sm-8">Vehicles
+                                                <br/>
+                                                 <a href="#" class="declare" id="btn-no">I don't own any vehicles</a>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="#" class="next edit button">Start</a>
+
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+                                            <tr class="group-heading" id="assets3">
+                                                <td class="group-title col-sm-8">Items you own
+                                                <br/>
+                                                 <a href="#" class="declare" id="btn-no">Skip section</a>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="items/summary.html" class="next edit button">Start</a>
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+                                            <tr class="group-heading" id="assets4">
+                                                <td class="group-title col-sm-8">Life insurance
+                                                <br/>
+                                                 <a href="#" class="declare" id="btn-no">I don't have any life insurance</a>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="#" class="next edit button">Start</a>
+
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+
+									</tbody>
+								</table>
+	  				<br>
             </div>
 	<p><br></p>
 
@@ -269,12 +304,13 @@ display:block;
 	
 	</div>
 
-	 <!-- #EndEditable -->
-
         
 </div>
 
 
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -329,16 +365,67 @@ display:block;
 
 
 <script type="text/javascript">
-$(document).ready(function() {
-	
-    var numproperties = 0;
-    if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
-        numproperties = $.cookie("numproperties");
-    }
 
-	$("#numproperties").text(numproperties);
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
+var itemnumber = 0;
+var stage = "assets";
+var page = 1;
+
+$(document).ready(function() {
+                $("#next").hide();
+
+				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
+				    stage = getParameterByName("stage");
+				}
+				if (getParameterByName("page") && getParameterByName("page").length > 0) {
+				    page = getParameterByName("page");
+				}
+
+                if (stage && stage.length > 0) {
+                    $("a.edit").removeClass("button").hide();
+                }
+
+ 
+                itemnumber = parseInt(page);
+                var previous = itemnumber - 1;
+                $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
+                if (stage == "income" && itemnumber == 2 && pensionable == false) {
+                    itemnumber += 1;
+                }
+                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
+                for (i = 1; i < itemnumber; i++) {
+                    $("#" + stage + i + " a.edit").text("Edit").show();
+                }
+
+
+                itemnumber = parseInt(page);
+                var previous = itemnumber - 1;
+                $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
+                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
+                for (i = 1; i < itemnumber; i++) {
+                    $("#" + stage + i + " a.edit").text("Edit").show();
+                }
+
+
+                $(".declare").hide();
+                
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+                $("#" + stage + itemnumber +  " .declare").show();
+         
+	             if (itemnumber > 2) {
+                    $("#next").show();
+                }
+
+				$(".declare").on("click", function () {
+				    $("#" + stage + itemnumber + " .declare").hide();
+				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
+				    itemnumber = itemnumber + 1;
+				    $("#" + stage + itemnumber + " .declare").show();
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+
+				    if (itemnumber > 2) {
+				        $("#next").show();
+				    }
+				});
 
 
 });
