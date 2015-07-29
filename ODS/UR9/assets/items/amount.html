@@ -95,6 +95,7 @@ display:block;
 	font-size:16px;
 }
 
+
 </style>
 <!-- #EndEditable -->
 
@@ -278,7 +279,7 @@ $(document).ready(function() {
     if (getParameterByName("edit") && getParameterByName("edit").length > 0) {
         editing = true;
     }
-    var page = "1";
+    var page = 1;
     if (getParameterByName("page") && getParameterByName("page").length > 0) {
         page = parseInt(getParameterByName("page"));
     }
@@ -325,13 +326,14 @@ $(document).ready(function() {
 	}
 
 	var normalroute = $("#next").prop("href");
+
 	$("#next").prop("href", "summary.html?stage=item&type=" + type + "&num=" + numofthistype + "&page=" + page)
 	
 	$("#next").on("click", function (e) {
 
 	    if ($("#amount").val().length > 0) {
 	        $.cookie("num" + type, numofthistype, { expires: 1, path: "/" });
-		    $.cookie(type + numofthistype + 'amount', $("#amount").val(), { expires: 1, path: "/" });
+	        $.cookie(type + numofthistype + 'amount', numberWithoutCommas($("#amount").val()), { expires: 1, path: "/" });
 		    $.cookie(type + numofthistype + 'name', $("#name").val(), { expires: 1, path: "/" });
 		}
 		else{

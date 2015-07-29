@@ -63,9 +63,9 @@
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
 
+    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
 
-    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/sfs.css">
+
     <style type="text/css">
         .row > div:first-child {
             padding-top: 0px;
@@ -83,10 +83,13 @@ table td[class*=col-], table th[class*=col-]{
 
 }
 
-tr.parent td{
-	font-weight:bold;
+td{
+    vertical-align:top;
 }
 
+.actions .edit{
+    display:block;
+}
 tr.child td:first-child{
 	padding-left:20px;
 }
@@ -102,7 +105,15 @@ tr td.actions a.edit{
 .delete{
     padding-left:20px;
 }
-  </style>
+
+tbody > tr > td:first-child{
+    padding-left:15px;
+}
+
+        table td .group-title {
+            font-weight: bold;
+        }
+</style>
 
 
 
@@ -199,70 +210,97 @@ tr td.actions a.edit{
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Cash</div>
-                                                    <div class="help form-hint">
-                                                        <p>Include the following:</p>
-                                                        <ul style="font-weight:normal">
-                                                            <li>Cash not in the building society or bank</li>
-                                                            <li>Any positive balance in your building society or bank</li>
-                                                        </ul>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details1" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
                                                     </div>
+                                                    <ul id="details1" class="help form-hint" >
+                                                        <li>Cash not in the building society or bank</li>
+                                                        <li>Any positive balance in your building society or bank</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=cash&page=3" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">I don't have any cash in hand</a>
+                                                    <a href="amount.html?type=cash&page=1" class="edit button">Add</a>
+                                                    <a href="#" class="declare">I don't have any cash</a>
                                                 </td>
                                             </tr>
 
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none"><!-- in case we need to show totals here -->
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
-                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
                                                 </td>
                                             </tr>
                                         </tbody>
 
-                                        <tbody class="group-title" id="item2" data-role="household">
+                                        <tbody class="group-title clearfix" id="item2" data-role="household">
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">General household items</div>
-                                                    <div class="form-hint">eg. mobile phones TVs etc, largely exempt</div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details2" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details2" class="rowbottom help form-hint">
+                                                        <li>Mobile phones, TVs, furniture, white goods (typically exempt)</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=8" class="edit button">Add</a><br />
-                                                    <a href="#" class="declare">I have no household items</a>
+                                                    <a href="amount.html?type=household&page=2" class="edit button">Add</a>
+                                                    <a href="#" class="declare">I have finished adding these</a>
                                                 </td>
                                             </tr>
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
-                                                    <a href="#" class="declare" id="btn-no">I have finished adding these</a>
                                                 </td>
                                             </tr>
                                         </tbody>
 
-                                        <tbody class="group-title" id="item3" data-role="posessions">
+                                        <tbody id="item3" data-role="posessions">
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Any other assets or possessions</div>
-                                                    <div class="form-hint">eg. paintings, antiques and expensive furniture, jewellery of value</div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details3" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details3" class="rowbottom help form-hint">
+                                                        <li>Fixtures and Fittings</li>
+                                                        <li>Luxury household furniture</li>
+                                                        <li>Jewellery</li>
+                                                        <li>Antiques</li>
+                                                        <li>Fine Arts</li>
+                                                        <li>Boats and Vessels</li>
+                                                        <li>Paintings
+                                                        </li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=other&page=7" class="edit button">Add</a><br />
+                                                    <a href="amount.html?type=other&page=3" class="edit button">Add</a>
                                                     <a href="#" class="declare">I have no other items</a>
                                                 </td>
                                             </tr>
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none   ">
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
@@ -275,16 +313,27 @@ tr td.actions a.edit{
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Compensation or legal claim</div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details4" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details4" class="rowbottom help form-hint">
+                                                        <li>Rights of action</li>
+                                                        <li>PPI Compensation Claims</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=compensation&page=4" class="edit button">Add</a><br />
+                                                    <a href="amount.html?type=compensation&page=4" class="edit button">Add</a>
                                                     <a href="#" class="declare">I have no compensation or claims</a>
                                                 </td>
                                             </tr>
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
@@ -297,17 +346,27 @@ tr td.actions a.edit{
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Interest in a will or trust</div>
-                                                    <div class="form-hint">(including stock, machinery, tools)</div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details5" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details5" class="rowbottom help form-hint">
+                                                        <li>Interest in a Will or Wills</li>
+                                                        <li>Interest in a Trust</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=beneficiary&page=6" class="edit button">Add</a><br />
+                                                    <a href="amount.html?type=beneficiary&page=5" class="edit button">Add</a>
                                                     <a href="#" class="declare">This does not apply to me</a>
                                                 </td>
                                             </tr>
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
@@ -322,17 +381,34 @@ tr td.actions a.edit{
                                                     <div class="group-title">
                                                         Stocks, shares and investment
                                                     </div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details6" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details6" class="rowbottom help form-hint">
+                                                        <li>National Savings</li>
+                                                        <li>Futures</li>
+                                                        <li>Interest in Associated Companies - stocks and shares</li>
+                                                        <li>Limited Partnership Interest - stocks and shares</li>
+                                                        <li>Interest in Subsidiary Companies - stocks and shares</li>
+                                                        <li>Share Options - stocks and shares</li>
+                                                        <li>Time Shares</li>
+                                                        <li>Stocks and Shares</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=investments&page=1" class="edit button">Add</a><br />
+                                                    <a href="amount.html?type=investments&page=6" class="edit button">Add</a>
                                                     <a href="#" class="declare">I don't have any of these</a>
                                                 </td>
                                             </tr>
 
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value">1234.50</td>
                                                 <td class="actions">
@@ -345,17 +421,45 @@ tr td.actions a.edit{
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Self employed trading assets</div>
-                                                    <div class="form-hint">(including stock, machinery, tools)</div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details7" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details7" class="rowbottom help form-hint">
+                                                        <li>Client Base/Goodwill</li>
+                                                        <li>Commissions Receivable</li>
+                                                        <li>Computer Equipment - Software</li>
+                                                        <li>Contributory -Share of Partnership business</li>
+                                                        <li>Copyrights</li>
+                                                        <li>Directors Loan Accounts</li>
+                                                        <li>Farming Stock and Crops</li>
+                                                        <li>Fees Receivable</li>
+                                                        <li>Intellectual Property & patents</li>
+                                                        <li>Interest in Joint Venture</li>
+                                                        <li>Interest in Partnership - share of partnership business</li>
+                                                        <li>Office Furniture</li>
+                                                        <li>Patents (added above)</li>
+                                                        <li>Plant and Machinery</li>
+                                                        <li>Recovery of VAT/Income Tax paid</li>
+                                                        <li>Royalties Receivable</li>
+                                                        <li>Stock</li>
+                                                        <li>Tools and Equipment</li>
+                                                        <li>VAT/TI Refunds (repeated at line 56)</li>
+                                                        <li>Work in Progress (uncert/cert)</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=trade&page=5" class="edit button">Add</a><br />
+                                                    <a href="amount.html?type=trade&page=7" class="edit button">Add</a>
                                                     <a href="#" class="declare">I am not self employed</a>
                                                 </td>
                                             </tr>
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
@@ -368,17 +472,31 @@ tr td.actions a.edit{
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Money owed to you</div>
-                                                    <div class="form-hint">For example, trade invoices, any loans you have given.</div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details8" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details8" class="rowbottom help form-hint">
+                                                        <li>Book Debts</li>
+                                                        <li>Collections</li>
+                                                        <li>Goods with Sheriff</li>
+                                                        <li>Monies deposited at Court</li>
+                                                        <li>Monies held by third party</li>
+                                                        <li>Payments</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=money&page=2" class="edit button">Add</a><br />
+                                                    <a href="amount.html?type=money&page=8" class="edit button">Add</a>
                                                     <a href="#" class="declare">I am not owed any money</a>
                                                 </td>
                                             </tr>
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                                    <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
@@ -391,15 +509,24 @@ tr td.actions a.edit{
                                             <tr class="group-heading parent">
                                                 <td>
                                                     <div class="group-title">Other</div>
-                                                    <div class="form-hint">Anything not already covered</div>
+                                                    <div class="form-hint">
+                                                        <p>
+                                                            <a href="#details9" class="js-section">
+                                                                <i class="glyphicon glyphicon-triangle-right"></i> What kinds of items to include
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    <ul id="details9" class="rowbottom help form-hint">
+                                                        <li>Anything not already covered</li>
+                                                    </ul>
                                                 </td>
                                                 <td class="value">&nbsp;</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=other&page=9" class="edit button">Add</a><br />
+                                                    <a href="amount.html?type=other&page=9" class="edit button">Add</a>
                                                     <a href="#" class="declare">I have no other assets</a>
                                                 </td>
                                             </tr>
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td style="text-align:right">
                                                     <span>Total</span>
                                                 </td>
@@ -413,7 +540,7 @@ tr td.actions a.edit{
    										<tbody>
                                                <tr class="group-heading totalrow" id="overalltotal">
                                                 <td class="actions" style="text-align:right">
-                                                <span style="float:right; width:100%">Total</span></td>
+                                                <span style="float:right; width:100%"></span></td>
                                                 <td class="totalvalue"></td>
                                                 <td></td>
                                             </tr>
@@ -520,14 +647,7 @@ tr td.actions a.edit{
 				var defaultnext = $(".next").first().attr("href");
                 $("#next").hide();
                 $(".total").hide();
-                
-				if (getParameterByName("pensionable") && getParameterByName("pensionable").length > 0){
-                	pensionable = getParameterByName("pensionable");
-                
-                    $(".pensionable").show();
-                    defaultnext  += "?pensionable=true";
-                    $(".next").attr("href", defaultnext);
-                }
+
 
 				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
 				    stage = getParameterByName("stage");
@@ -538,30 +658,30 @@ tr td.actions a.edit{
 
                 if (stage && stage.length > 0) {
                     $("a.edit").removeClass("button").hide();
-                    if (stage == "item") {
-                        $("#item a.edit").first().text("Edit").show();
-                    }
+                    //if (stage == "item") {
+                    //    $("#item a.edit").first().text("Edit").hide();
+                    //}
                 }
 				
  
                 itemnumber = parseInt(page);
                 var previous = itemnumber - 1;
-                $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
+                //$("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
                 if (stage == "item" && itemnumber == 2 && pensionable == false) {
                     itemnumber += 1;
                 }
-                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
-                for (i = 1; i < itemnumber; i++) {
-                    $("#" + stage + i + " a.edit").text("Edit").show();
-                }
+                //$("#" + stage + itemnumber + " a.edit").show().text("Edit");
+                //for (i = 1; i < itemnumber; i++) {
+                //    $("#" + stage + i + " a.edit").text("Edit").show();
+                //}
  
                 $(".declare").hide();
 
                 $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Add");
                 $("#" + stage + itemnumber +  " .declare").show();
           
-                $("#" + stage + itemnumber + " .parent a.declare").hide();
-                $("#" + stage + itemnumber + " .total a.declare").show();
+                //$("#" + stage + itemnumber + " .parent a.declare").hide();
+                $("#" + stage + itemnumber + " a.declare").show();
                 $("#" + stage + itemnumber + " .total").show();
 
                 //$("#" + stage + itemnumber + " .parent a.edit").hide();
@@ -577,6 +697,74 @@ tr td.actions a.edit{
                     currenttype = getParameterByName("type");
                 }
 
+
+                showchildrowdata();
+
+                $(".help").hide();
+
+                openhelp("#" + stage + itemnumber);
+
+				var defaultnext = $(".next").first().attr("href");
+				$(".declare").on("click", function (e) {
+				    e.preventDefault();
+				    $("#" + stage + itemnumber + " .declare").hide();
+				    $("#" + stage + itemnumber + " a.edit").hide();
+				    closehelp(stage + itemnumber);
+				    itemnumber = itemnumber + 1;
+				    openhelp(stage + itemnumber);
+				    showchildrowdata();
+
+				    $("#" + stage + itemnumber + " .declare").show();
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
+
+				});
+				var rowname = "item1";
+				$(".js-section").on("click", function (e) {
+				    e.preventDefault();
+				    if ($(this).closest("tbody")) {
+				        rowname = $(this).closest("tbody").attr("id");
+
+				        if ($(this).hasClass("open") == false) {
+				            openhelp("#" + rowname);
+				        }
+				        else {
+				            $(this).removeClass("open");
+				            $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+				            var details = $($(this).attr("href"));
+				            details.hide();
+				        }
+				    }
+				});
+
+            });
+
+            function openhelp(section) {
+                if (section.substring(0, 1) != "#") {
+                    section = "#" + section;
+                }
+                $(".well").removeClass("well");
+                $(section + " .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                $(section + " .js-section").addClass("open");
+                $(section + " .help").show();
+                var details = $($(section + " .js-section").first().attr("href"));
+                details.show();
+                $(section).addClass("well");
+            }
+            function closehelp(section) {
+                if (section.substring(0, 1) != "#") {
+                    section = "#" + section;
+                }
+                $("tbody").removeClass("well");
+                $(section + " .js-section").find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+                $(section + " .js-section").removeClass("open");
+                $(section + " .help").hide();
+                var details = $($(section + " .js-section").first().attr("href"));
+                details.hide();
+                $(section).removeClass("well");
+            }
+
+            function showchildrowdata() {
+                var totalamount = 0.00;
                 for (rowid = 1; rowid <= 9; rowid++) {
                     type = $("#item" + rowid).data("role");
 
@@ -586,50 +774,35 @@ tr td.actions a.edit{
                     }
 
                     for (i = 1; i <= numofthistype; i++) {
+                        // TODO - change the skip button text
+                        $("#item" + rowid + " .declare").text("I have completed this section");
                         // append the child row here
                         var childamount = $.cookie(type + i + 'amount');
-                        var childname = $.cookie(type + i + 'name');
-                        var insertext = '<tr class="child"><td>' + childname + '</td>';
-                        insertext = insertext + '<td class="value">' + childamount + '</td>';
-                        insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
-                        insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
-                        $("#" + stage + rowid + " .total").before(insertext);
-                        $("#" + stage + rowid + " .child").show();
+                        if (childamount) {
+                            var childname = $.cookie(type + i + 'name');
+                            var insertext = '<tr class="child"><td>' + childname + '</td>';
+                            insertext = insertext + '<td class="value">' + childamount + '</td>';
+                            insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
+                            insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
+                            $("#" + stage + rowid + " .total").before(insertext);
+                            $("#" + stage + rowid + " .child").show();
+
+                            totalamount = totalamount + childamount;
+                        }
                     }
                 }
 
-                //$("#" + stage + itemnumber + ".total .value").text(totalitem(stage + itemnumber));
-                totaloverall();
+                $("#overalltotal .totalvalue").text(totalamount);
+            }
 
-                //$("#" + stage + itemnumber + " .total").show();
-
-				var defaultnext = $(".next").first().attr("href");
-				$(".declare").on("click", function (e) {
-				    e.preventDefault();
-				    $("#" + stage + itemnumber + " .declare").hide();
-				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
-				    //$("#" + stage + itemnumber + " .child").hide();
-				    //$("#" + stage + itemnumber + " .total").hide();
-
-				    $("#" + stage + itemnumber + ".parent .value").text(totalitem(type));
-
-				    itemnumber = itemnumber + 1;
-				    if (itemnumber == 3 && pensionable == false) {
-				        itemnumber = 4;
-				    }
-				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
-
-				});
-
-				
-            });
-
-            function totalitem(rowid) {
-                var totalamount = 0;
+            function totaloverall(rowid) {
+                if (rowid.substring(0, 1) != "#") {
+                    rowid = "#" + rowid;
+                }
+                var totalamount = 0.00;
                 var numrows = $(rowid + " .child").length;
                 // TODO - make this each, go over the amounts in the page, convert to numbers and add up
-                $.each($("#" + rowid + " .child"), function (index, value) {
+                $.each($(rowid + " .child"), function (index, value) {
                     if ($(this).find(".value")) {
                         var amount = $(this).find(".value").first().text();
                         if (parseFloat(amount)) {
@@ -640,37 +813,7 @@ tr td.actions a.edit{
 
                 return totalamount.toFixed(2);
             }
-     
-            function totaloverall() {
-                var totalamount = 0.00;
-                var rowamount = 0.00;
-                for (i = 1; i < 9; i++) {
-                    rowamount = rowamount + parseFloat(totalitem("item" + i));
-                    if (rowamount != 0){
-                        $("#" + "item" + i + " .total .value").text(rowamount);
-                    }
-                    totalamount = totalamount + rowamount;
-                }
-                $("#overalltotal .totalvalue").text(totalamount.toFixed(2));
-            }
 
-            function removeallcookies() {
-                var item = "item";
-                for (i = 1; i < 6; i++) {
-                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-                        $.removeCookie(item + i);
-                    }
-                }
-                item = "costs";
-                for (i = 1; i <= page; i++) {
-                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-                        if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-                            $.removeCookie(item + i);
-                        }
-                    }
-                }
-
-            }
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
                 var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
