@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0055)/claims/start -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <!-- #BeginTemplate "../../Drotemplate.dwt" -->
@@ -133,163 +133,145 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Personal details continued</h1>	
+	 	<h1 class="form-title heading-large">Personal details</h1>	
 		
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<p class="form-label-bold">
-	</p>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-	<br/>
-	</div>
-
-	
-
-	<div class="form-group " id="other-addresses">
-	<p id="title_label" class="form-label-bold">Have you lived at any other address in the last 6 years?</p>
-	
-	<fieldset class="inline">
-	<div id="otheraddress" class="form-group">
-	
-	<label id="title_label0" for="otheraddress_Yes" class="block-label">
-	<input id="otheraddress_Yes" value="Mr." name="otheraddress" type="radio" aria-describedby="title_error title_help">
-	Yes
-	</label>
-	
-	<label id="title_label1" for="otheraddress_No" class="block-label">
-	<input id="otheraddress_No" value="No" name="otheraddress" type="radio" aria-describedby="title_error title_help">
-	No
-	</label>
-	</div>
-	</fieldset>
-	
-
-	<p>&nbsp;</p>
-	
-	<div class="form-group">
-		<p id="title_label" class="form-label-bold">Do you own your own home?</p>
-		<fieldset class="inline">
-			<div id="othername" class="auto-style1">
-				<label id="home_label" for="home_Yes" class="block-label">
-				<input id="home_Yes" value="Yes" name="home" type="radio" aria-describedby="title_error title_help">Yes</label>
-				<label id="home_label1" for="home_No" class="block-label">
-				<input id="home_No" value="No" name="home" type="radio" aria-describedby="title_error title_help">No</label>
+		<form class="form" method="post">
+			<div class="form-group ">
+				<fieldset class="inline">
+				<legend id="title_label" class="form-label-bold">Title</legend>
+					<div id="title" class="form-group">
+						<label id="title_label0" for="title_Mr." class="block-label">
+						<input id="title_Mr." value="Mr." name="title" type="radio" aria-describedby="title_error title_help">Mr</label>
+		
+						<label id="title_label1" for="title_Mrs." class="block-label">
+						<input id="title_Mrs." value="Mrs." name="title" type="radio" aria-describedby="title_error title_help">Mrs</label>
+		
+						<label id="title_label2" for="title_Miss" class="block-label">
+						<input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title_error title_help">Miss</label>
+		
+						<label id="title_label3" for="title_Ms." class="block-label">
+						<input id="title_Ms." value="Ms." name="title" type="radio" aria-describedby="title_error title_help">Ms</label>
+						
+						<label id="title_label3" for="title_other" class="block-label">
+						<input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other</label>
+		
+					</div>
+				</fieldset>
 			</div>
-		</fieldset>
-	</div>
-	
-	<div class="form-group" id="pnl-residence">
-		<p id="title_label2" class="form-label-bold">Do you currently live or have your principle residence in England or Wales?</p>
-		<fieldset class="inline">
-			<div id="residence" class="auto-style1">
-				<label id="title_label0" for="residence_Yes" class="block-label">
-				<input id="residence_Yes" value="Yes" name="residence" type="radio" aria-describedby="title_error title_help">Yes</label>
-				<label id="title_label1" for="residence_No" class="block-label">
-				<input id="residence_No" value="No" name="residence" type="radio" aria-describedby="title_error title_help">No</label>
+			
+			<div id="o_title" class="panel-indent form-group">
+				<label id="title_label" for="title" class="form-label-bold first_name">Other Title</label>
+				<input id="title" name="title" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
-		</fieldset>
-	</div>
-	
-	<div class="form-group" id="pnl-residence1">
-		<p id="title_label2" class="form-label-bold">Have you ever, lived or had your principal residence in England or Wales in the last three years?</p>
-		<fieldset class="inline">
-			<div id="residence1" class="auto-style1">
-				<label id="title_label0" for="residence1_Yes" class="block-label">
-				<input id="residence1_Yes" value="Yes" name="residence1" type="radio" aria-describedby="title_error title_help">Yes</label>
-				<label id="title_label1" for="residence1_No" class="block-label">
-				<input id="residence1_No" value="No" name="residence1" type="radio" aria-describedby="title_error title_help">No</label>
+		
+			<div class="form-group ">
+				<label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+				<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
-		</fieldset>
-	</div>
-
-
-	<div class="form-group" id="pnl-business">
-		<p id="title_label6" class="form-label-bold">Have you carried on business in either England or Wales in the last three years?</p>
-		<fieldset class="inline">
-			<div id="business" class="auto-style1">
-				<label id="title_label7" for="business_Yes" class="block-label">
-				<input id="business_Yes" value="Yes" name="business" type="radio" aria-describedby="title_error title_help">Yes</label>
-				<label id="title_label8" for="business_No" class="block-label">
-				<input id="business_No" value="No" name="business" type="radio" aria-describedby="title_error title_help">No</label>
+			
+			<div class="form-group ">
+				<label id="middle_name_label" for="middle_name" class="form-label-bold">
+				Middle names</label>
+				<input id="middle_name" name="middle_name" type="text" aria-describedby="middle_name_error first_name_help" value="" /><br/>
 			</div>
-		</fieldset>
-	</div>
-	<p>&nbsp;</p>
 	
-	<div class="form-group">
-			<label id="applicant_telephone_label" for="applicant_telephone" class="form-label-bold">Telephone</label>
-			<input id="applicant_telephone" name="applicant_telephone" type="text" value="" />
-			<br/>
-		</div>
-		<div class="form-group ">
-			<label id="applicant_mobile_label" for="applicant_mobile" class="form-label-bold">Mobile</label>
-			<input id="applicant_mobile" name="applicant_mobile" type="text"  value="" />
-			<br/>
-		</div>
-		<div class="form-group ">
-			<label id="applicant_email_label" for="applicant_email" class="form-label-bold">Email address</label>
-			<input id="applicant_email" name="applicant_email" type="text" value="" />
-			<br/>
-		</div>	
-	</div>
-	
-	<p>&nbsp;</p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-		<p><a id="next" style=" vertical-align: middle;" class="button" href="../section_insolvencyproceedings/ip1.html">Save and continue</a></p>
-		<p><a id="return" style=" vertical-align: middle;" href="../application.html?section1=inprogress">Return to overview</a></p>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="1.html" id="back">Back</a>
+			<div class="form-group ">
+				<p id="title_label4" class="form-label-bold">Have you ever been known by another name?</p>
+				<fieldset class="inline">
+					<div id="othername" class="auto-style1">
+						<label id="title_label5" for="othername_Yes" class="block-label">
+						<input id="othername_Yes" value="Yes" name="othername" type="radio" aria-describedby="title_error title_help">Yes</label>
+						<label id="title_label6" for="othername_No" class="block-label">
+						<input id="othername_No" value="Mrs." name="othername" type="radio" aria-describedby="title_error title_help">No</label>
+					</div>
+				</fieldset>
+			</div>
+			
+			<p>&nbsp;</p>
+			
+			<div id="pnl-dob" class="form-group">
+				<fieldset  class="date-of-birth">
+					<span id="date_of_birth_label" class="form-label-bold">Date of birth</span>
+					<span class="form-hint" id="date_of_birth_help">For example 31 08 1976</span>
+					
+					<div class="form-group form-group-day">
+						 <label id="date_of_birth_label.day" for="date_of_birth.day" >Day</label>
+					<input id="day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-month">
+						 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+					<input id="month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-year">
+					<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+					<input id="year" name="date_of_birth.year" type="number" min="1900" max="2100" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+				</fieldset>
+			</div>
+				
+			<div class="form-group ">
+				<label id="birth_town_label" for="birth_town" class="form-label-bold">
+				City or town of birth</label>
+				<input id="birth_town" name="birth_town" type="text" value="" /><br/>
+			</div>
+			
+			<p>&nbsp;</p>
+			<div class="form-group ">
+				<label id="applicant_telephone_label" for="applicant_telephone" class="form-label-bold applicant_address_line_1">National Insurance number</label>
+				<input id="applicant_telephone" name="applicant_telephone" type="text" value="" />
+				<br/>
+			</div>
+			
+		<p>&nbsp;</p>
+			<div class="form-group ">
+				<p id="title_label" class="form-label-bold">Gender</p>
+				<fieldset class="inline">
+					<div id="othername" class="auto-style1">
+						<label id="title_label0" for="gender_male" class="block-label">
+						<input id="gender_male" value="Male" name="gender" type="radio" aria-describedby="title_error title_help">Male</label>
+						<label id="title_label1" for="gender_female" class="block-label">
+						<input id="gender_female" value="Female" name="gender" type="radio" aria-describedby="title_error title_help">Female</label>
+					</div>
+				</fieldset>
+			</div>
+			
+			<p>&nbsp;</p>
+			
+			<div class="form-group ">
+				<p id="title_label" class="form-label-bold">Are you in a relationship?</p>
+				<fieldset class="inline">
+					<div id="othername" class="auto-style1">
+						<label id="title_label1" for="relationship_no" class="block-label">
+						<input id="relationship_no" value="Male" name="relationship" type="radio">No</label>
+						<label id="title_label2" for="relationship_married" class="block-label">
+						<input id="relationship_married" value="Female" name="relationship" type="radio">I'm married</label>
+						<label id="title_label3" for="relationship_civil" class="block-label">
+						<input id="relationship_civil" value="Female" name="relationship" type="radio">I have a civil partner</label>
+						<label id="title_label4" for="relationship_cohab" class="block-label">
+						<input id="relationship_cohab" value="Female" name="relationship" type="radio">I'm cohabiting</label>
 
+					</div>
+				</fieldset>
+			</div>
+			<p>&nbsp;</p>
 
-	
-	<!--<a href="#" id="cancel">Save and logout</a>--->
-	
-	</div>
-	</div>
-	</form>
+			<div class="form-group form-group-year">
+				<label id="children" for="children" class="form-label-bold">Number of dependent children</label>
+				<input id="children0" name="children" type="number" min="0" max="30" value="" /><br/>
+			</div>
+
+			
+		
+			<p>&nbsp;</p>
+		
+			<div class="form-navigation form-group">
+				<a id="next" class="button" href="2.html">Save and continue</a><br>
+			</div>
+			
+			<div>
+				<a style="padding-right: 30px" href="../application.html" id="back">Back</a><br><br>
+			</div>
+		</form>
 	</div>
 
 <!-- #EndEditable -->
@@ -349,57 +331,30 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-	var count=1;
-	
-	$(document).ready(function(){
-		$("#pnl-validation").hide();
-		$("#pnl-residence1").hide();
-		$("#pnl-business").hide();
-			
-	});
-
-	$('#pnl-residence input:radio').click(function() {
-		
-		if(($('#residence_Yes').prop('checked')==true)){
-			$("#pnl-residence1").hide();
-			$("#pnl-business").hide();
-			count=1;
-
-		}
-		else {
-			$("#pnl-residence1").show();
-			count++;
-
-		}
-	
-	});
-	
-	$('#pnl-residence1 input:radio').click(function() {
-		
-		if(($('#residence1_Yes').prop('checked')==true)){
-			$("#pnl-business").hide();
-			count--;
-		}
-		else {
-			$("#pnl-business").show();
-			count++;
-		}
-	
-	});
-
+	$("#o_title").hide();
 
 	var normalroute = $("#next").prop("href");
-	$("#otheraddress_Yes").click(function(){
-		$("#next").prop("href","additional_address.html");
-		$("#return").hide();
+	$("#othername_Yes").click(function(){
+		$("#next").prop("href","additional_name.html");
 	});
-	$("#otheraddress_No").click(function(){
+	$("#othername_No").click(function(){
 		$("#next").prop("href", normalroute);
-		$("#return").show();
 	});
 
 });
+
+$("#title input:radio").click(function(){
+	if($("#title_other").prop('checked')==true){
+		$("#o_title").show();
+	}
+	else{
+		$("#o_title").hide();
+	}
+});
+
+
+
+
 
 </script>
 

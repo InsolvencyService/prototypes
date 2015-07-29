@@ -204,11 +204,11 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Creditors</h1>
+	<h1 class="form-title heading-large">Pensions</h1>
 	
 	
 	
-	<form>
+	<form >
 	 <!--- 	
 	<div class="validation-summary"  id="msg-entervalue" style="display:none">
         <ol>
@@ -225,65 +225,50 @@ display:block;
     </div>  
     --->
 
-<div id="creditorlist">
-	<p class="bold-small">Qualifying debts</p>
-
-	<table style="width: 100%">
+<div id="pensionlist">
+	<p class="bold-small">Personal and occupational pensions</p>
+	
+	<table style="width: 60%">
 		<thead>
 			<tr>
-				<th width="40%">Name</th>
-				<th>Reference</th>
-				<th>Amount</th>
-				<th>Secured</th>
+				<th>Name</th>
+				<!--<th>Address</th>--->
+				<th>Policy number</th>
+				<th>Approved pension</th>
 				<th>&nbsp;</th>
 			</tr>
 		</thead>
-		<tbody id="includedbody">
-		
-	
-		</tbody>
-	</table>
-</div>
-<p>&nbsp;</p>
-<div id="excludedcreditorlist">
-	<p class="bold-small">Excluded debts</p>
-	
-	<table style="width: 100%">
-		<thead>
-			<tr>
-				<th width="40%">Name</th>
-				<th>Reference</th>
-				<th>Amount</th>
-				<th>Secured</th>
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody id="excludedbody">
+		<tbody id="body">
 
 		
 
 		</tbody>
 	</table>
-	<p>&nbsp;</p>
 </div>
 
 
+<div  class="clearfix"><br/></div>
 <div class="form-group">
 	
-	<label  for="creditors" class="form-label-bold " id="heading-add">Enter the creditor’s name</label>
+	<label  for="creditors" class="form-label-bold " id="heading-add">Enter the 
+	pension providers name</label>
 
-	<div class="form-hint">It can be the name of an organisation or an individual, for example ABC Bank Ltd or Joe Johnson. </div>
-	<input type="text" placeholder="Start typing name" id="creditors" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
-		<a class="button" href="amount.html?address=true" id="next">Add creditor</a>
+	<div class="form-hint">Enter the name of the organisation, for 
+		example A1 Pensions. </div>
+	<input type="text" id="pension" style="width:400px" class="input-lg">
+		<a class="button" id="next">Add provider</a>
 
 	&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
 
 
 
-	
+	<p class="clearfix"><br/></p>
 	</div>
-<a class="button secondary" id="btn-addedall">Continue - I have added all creditors</a>
-<p><a id="return">Return to overview</a></p>
+<div class="clearfix"></div>
+
+<a class="button secondary" href="#" id="next_section">Continue - I have added all pensions</a><br>
+<a href="../application.html" id="overview">Return to overview</a>
+
 <p><br></p>
 	
 	<!-- For User research -->
@@ -297,7 +282,7 @@ display:block;
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="application.html" id="back">Back</a>
+        <a style="padding-right: 30px" href="../application.html" id="back">Back</a>
 
 	
 	</div>
@@ -358,95 +343,84 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="js/creditors.js"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 
 
 <script type="text/javascript">
-var excludedtotal=0.00;
-var includedcreditors = 0;
-var total=0.00;
-$(document).ready(function() {
-	
-		
-	$("#creditorlist").hide();
-	$("#excludedcreditorlist").hide();
 
+$(document).ready(function() {
+	$("#pensionlist").hide();
 	
-	
-	var count = $.cookie("DROCreditorCount");
+	var count = $.cookie("DROPensionCount");
 	if(count == null || count == ""){
 		count = 0;
 	}
 	
-	var excluded;
-	var cname;
-	var reference;
-	var amount;
-	var type;
+	var pname;
+	var paddress;
+	var pnumber;
+	var papproved;
 	
 	if(count>0){
-		for(i=1; i<=count; i++){
-			excluded =$.cookie("DROCreditorExcludedDebt"+i); 
-			cname = $.cookie("DROCreditorName"+i);
-			reference = $.cookie("DROCreditorReference"+i);
-			amount = parseFloat($.cookie("DROCreditorAmount"+i));
-			type = $.cookie("DROCreditorSecuredDebt"+i);	
-			
-			//add creditors to table
-			if(excluded == "yes"){
-				$("#excludedcreditorlist").show();
-				$("#excludedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td class=\"text-right\">£ "+ amount.toFixed(2) +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-				excludedtotal = excludedtotal+amount;
-			}
-			else{
-				$("#creditorlist").show();
-				$("#includedbody").append("<tr><td>"+ cname +"</td><td>"+ reference +"</td><td class=\"text-right\">£ "+ amount.toFixed(2) +"</td><td>"+ type +"</td><td class=\"edit\"><a href=\"amount.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-				total = total+amount;
-				includedcreditors++;
-			}
-		}
-		
-		//adds excluded total
-		$("#excludedbody").append("<tr class=\"totalrow\" ><td  colspan=\"2\" class=\"text-right\" style=\"white-space:nowrap\"><span >Total</span></td><td class=\"amount\" style=\"width:100px; white-space:nowrap\"><div class=\"text-right\" id=\"box-total\">£ "+ excludedtotal.toFixed(2) +"</div></td><td></td><td></td></tr>");
-		//adds included total	
-		$("#includedbody").append("<tr class=\"totalrow\" ><td  colspan=\"2\" class=\"text-right\" style=\"white-space:nowrap\"><span >Total</span></td><td style=\"width:100px; white-space:nowrap\"><div class=\"text-right\" id=\"box-total\">£ "+ total.toFixed(2) +"</div></td><td></td><td></td></tr>");
-	}
-	
+		for(i=1; i<=count; i++){	
+			$("#pensionlist").show();
 
-});	
-	
+			pname = $.cookie("DROPensionName"+i);
+			/*paddress = ""; 
+			var address1=$.cookie("DROPensionAddress1-"+i);
+			var address2=$.cookie("DROPensionAddress2-"+i);
+			var address3=$.cookie("DROPensionAddress3-"+i);
+			var address4=$.cookie("DROPensionAddress4-"+i);
+			var address5=$.cookie("DROPensionAddress5-"+i);
+			var address6=$.cookie("DROPensionAddress6-"+i);
+			
+			if(address1 != ""){
+				paddress = address1+", ";
+			}
+			if(address2 != ""){
+				paddress = paddress +address2+", ";
+			}
+			if(address3 != ""){
+				paddress = paddress+address3+", ";
+			}
+			if(address4 != ""){
+				paddress = paddress+address4+", ";
+			}
+			if(address5 != ""){
+				paddress = paddress+address5+", ";
+			}
+			if(address6 != ""){
+				paddress = paddress+address6;
+			}
+			*/
+			pnumber = $.cookie("DROPensionNumber"+i);
+			papproved = $.cookie("DROPensionApproved"+i);			
+			
+			//add pensions to table
+			$("#body").append("<tr><td>"+ pname +"</td><td>" + pnumber +"</td><td>"+ papproved +"</td><td class=\"edit\"><a href=\"2.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+			// removed address + paddress +"</td><td>"
+		}
+	}
+});
+
 $("#next").on("click", function(e){
-	if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
-		$.cookie('DROtempcreditorname', $('#creditors.typeahead').val(), { expires: 1 });
+	if ($('#pension').val() && $('#pension').val().length > 0){
+		$.cookie('TempDROPensionProvider', $('#pension').val());
+		$("#next").attr("href", "2.html");
 	}
 	else{
 		$("#msg-entervalue").show();
 		e.preventDefault();
 	}
 });
-
-$("#btn-addedall").on("click", function(e){
+$("#next_section").on("click", function(e){
 	sectionComplete()
-	$("#btn-addedall").attr("href", "#")
+});
+$("#overview").on("click", function(e){
+	sectionComplete()
 });
 
-$("#return").on("click", function(e){
-	sectionComplete()
-	$("#return").attr("href", "../application.html")
-});
-
-
-function sectionComplete() {
-	$.cookie('section7', 'inprogress', {path: '/'});
-	$.cookie('creditors', includedcreditors, {path: '/'});
-	$.cookie('ctotal', total, {path: '/'});
-
-}
-
-
+	
 /*
 function calctotal() {
     var totalamount = 0;
@@ -478,6 +452,10 @@ function numberWithoutCommas(x) {
     return parseFloat(x.toString().replace(/,/g, ""));
 }
 */
+
+function sectionComplete() {
+	$.cookie('section5', 'inprogress', {path: '/'});
+}
 
 </script>
 
