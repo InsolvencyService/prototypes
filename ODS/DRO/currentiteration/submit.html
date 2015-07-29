@@ -76,6 +76,33 @@
      
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     padding-top:50px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     
+     opacity:1;
+}
+#overback{
+	background-color:#fff;
+	opacity:100!important;
+	width: 21%;
+	margin-left:auto;
+	margin-right:auto;
+	padding:10px;
+	border: 1px black solid;
+	text-align:left;
+	padding-left:45px;
+	
+	
+	
+}
 </style>
 <!-- #EndEditable -->
 
@@ -180,10 +207,10 @@
 		<div class="col-md-1"></div>
 		
 		<div style="padding-left:15px">
-			<a href="ai_admin.html" class="button heading-medium"><i class="glyphicon glyphicon-ok-circle"></i> &nbsp; Submit</a><br>
+			<a class="button heading-medium submit"><i class="glyphicon glyphicon-ok-circle"></i> &nbsp; Submit</a><br>
 		</div>
 		
-			<div class="col-md-6"><a href="ai_admin.html">Submit against advice</a></div>
+			<div class="col-md-6"><a class="submit">Submit against advice</a></div>
 			<div class="col-md-5 text-right"><a href="application.html">Amend application</a></div>
 			
 		
@@ -191,7 +218,16 @@
 	</div>
 <div class="clearfix"></div>
 <p>&nbsp;</p><p>&nbsp;</p>
-	
+<div id="overlay">
+     <div id="overback">
+          <p class="form-label-bold" style="margin-bottom:10px;">Confirm your password</p>
+        
+          <p style="margin-bottom:10px;"><input id="password" name="password" type="password" value="" /></p>
+          <p><a id="finalise" class="button">Submit</a>
+          <span style="position:fixed;padding-top:15px; padding-left:70px;"><a onclick='overlay()'>Cancel</a></span></p>
+		  <span class="clearfix"></span>
+     </div>
+</div>	
 
 <!-- #EndEditable -->
 
@@ -263,14 +299,29 @@ $(document).ready(function(){
 
 		
 });
+
+$(".submit").click(function(){
+	overlay();
+});
 	
 function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
             results = regex.exec(location.search);
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
+}
 	
+function overlay() {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
+$("#finalise").click(function(){	
+	if($("#password").val() && $("#password").val().length >0 ){
+		$("#finalise").attr('href', 'ai_admin.html');
+	}
+});
+
 
 </script>
 

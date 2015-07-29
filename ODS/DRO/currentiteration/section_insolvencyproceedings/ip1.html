@@ -545,12 +545,14 @@
 				</div>
 			</div>
 
-			<div class="form-navigation form-group">
-				<a id="next" class="button">Save and return</a><br>
+			<div style="padding-left:25px" class="form-navigation form-group">
+				<a id="next" class="button">Save and continue</a><br>
+				<a id="return" >Return to overview</a><br><br>
+				<a style="padding-right: 30px" href="../application.html" id="back">Back</a>
 			</div>
 			
 			<div>
-				<a style="padding-right: 30px" href="../../iteration3/application.html" id="back">Back</a><br><br>
+				<br><br>
 			</div>
 		</form>
 	</div>
@@ -629,10 +631,15 @@ $(document).ready(function() {
 
 	
 	$("#next").click(function(){
-		
-			$("#next").prop("href","../application.html?section2=inprogress");
-		
+			$("#next").prop("href","#");
+			$.cookie("section2", "inprogress");
 	});
+	
+	$("#return").click(function(){
+			$("#return").prop("href","../application.html?section2=inprogress");
+			$.cookie("section2", "inprogress");
+	});
+
 	
 });
 
