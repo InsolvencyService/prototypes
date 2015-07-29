@@ -335,11 +335,11 @@ $(document).ready(function() {
 
 	var normalroute = $("#next").prop("href");
 	$("#othername_Yes").click(function(){
-		$.cookie("section1", "inprogress");
+		$.cookie("section1", "inprogress", {path: '/'});
 		$("#next").prop("href","additional_name.html");
 	});
 	$("#othername_No").click(function(){
-		$.cookie("section1", "inprogress");
+		$.cookie("section1", "inprogress", {path: '/'});
 		$("#next").prop("href", normalroute);
 	});
 

@@ -391,12 +391,12 @@ $(document).ready(function() {
 
 	var normalroute = $("#next").prop("href");
 	$("#otheraddress_Yes").click(function(){
-		$.cookie("section1", "inprogress");
+		$.cookie("section1", "inprogress",{path: '/'});
 		$("#next").prop("href","additional_address.html");
 		$("#return").hide();
 	});
 	$("#otheraddress_No").click(function(){
-		$.cookie("section1", "inprogress");
+		$.cookie("section1", "inprogress",{path: '/'});
 		$("#next").prop("href", normalroute);
 		$("#return").show();
 	});

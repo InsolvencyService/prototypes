@@ -632,12 +632,12 @@ $(document).ready(function() {
 	
 	$("#next").click(function(){
 			$("#next").prop("href","#");
-			$.cookie("section2", "inprogress");
+			$.cookie("section2", "inprogress",{path: '/'});
 	});
 	
 	$("#return").click(function(){
 			$("#return").prop("href","../application.html?section2=inprogress");
-			$.cookie("section2", "inprogress");
+			$.cookie("section2", "inprogress",{path: '/'});
 	});
 
 	
