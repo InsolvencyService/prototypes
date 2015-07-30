@@ -69,9 +69,11 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-    <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css">
-  <link href="../creditors/css/typeahead.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
+
+
  <style type="text/css">
+
  </style>
 <!-- #EndEditable -->
 
@@ -128,27 +130,29 @@
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
-    This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+	This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
 	</div>
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
 <div style="margin-left:30px !important">
-
-
-	
-	<h1 class="form-title heading-large">Assets summary</h1>
+	<h1 class="form-title heading-large">Employment summary</h1>
 
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-sm-12">
 
-			<p class="lead text bold">
-	            We need to know about all the assets you own or have a share in.&nbsp; 
-				This is to help us build a complete understanding of your 
-				situation.</p>
+			<p>
+	            We need to know about your recent employment history. <br><br>
+				Specifically, we need to know if you have been a director of a 
+				limited company, self employed or a partner in a non-limited 
+				business or employed in the last 3 years.</p>
 
 			<div class="form-group">
 
@@ -156,13 +160,13 @@
                                         <tbody class="group-title">
                                             <tr class="group-heading" id="assets1">
                                                 <td class="group-title col-sm-8">
-                                                <div>Properties</div>
+												<div>Director of a limited company</div>
+												<div class="form-hint">eg director of a company with Ltd, PLC or LLP as part of the company name like 'ABC Trading Ltd'</div>
+                                                
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="property/list_properties.html" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">I don't own or have an interest in any property</a>
-
-
+                                                    <a href="list_directorships.html" class="next edit button">Start</a>
+														<div><a href="#" class="declare">I am not a director of a limited company</a></div>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -171,40 +175,53 @@
 
                                             <tr class="group-heading" id="assets2">
                                                 <td class="group-title col-sm-8">
-                                                <div>Vehicles</div>
- 
+                                                <div>Self-employed </div>
+												<div class="form-hint">eg as a sole trader</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="#" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">I don't own any vehicles</a>
+                                                    <a href="list_businesses.html" class="next edit button">Start</a>
+                                                <div><a href="#" class="declare">I am not self employed</a></div>
+
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
 
                                             </tr>
+                                         
                                             <tr class="group-heading" id="assets3">
-                                                <td class="group-title col-sm-8">
-                                                <div>Items you own</div>
+                                                <td class="group-title col-sm-8"><div>Partner in a non-limited business</div>
+												<div class="form-hint">eg, don’t have Ltd, PLC or LLP as part of the company name, such as 'ABC Trading'  </div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="items/summary.html" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">Skip section</a>
-
+                                                    <a href="list_partnerships.html" class="next edit button">Start</a>
+                                                <div><a href="#" class="declare">I am not a partner</a></div>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
 
                                             </tr>
+                                        
                                             <tr class="group-heading" id="assets4">
-                                                <td class="group-title col-sm-8">
-                                                <div>Life insurance</div>
+                                                <td class="group-title col-sm-8"><div>Employed</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="#" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">I don't have any life insurance</a>
+                                                    <a href="list_employers.html" class="next edit button">Start</a>
+                                                	<div><a href="#" class="declare" id="btn-notemployed">I am not employed</a></div>
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+                                            
+                                            <tr class="group-heading notworking" style="display:none">
+                                                <td class="group-title col-sm-8"><div>Not working</div>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="notworking.html" class="next edit">Edit</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -249,9 +266,6 @@
 	 <!-- #EndEditable -->
 
         
-</div>
-
-
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -325,6 +339,12 @@ $(document).ready(function() {
                     $("a.edit").removeClass("button").hide();
                 }
 
+				if (getParameterByName("notworking") && getParameterByName("notworking").length > 0) {
+				    $(".notworking").show();
+				    $(".notworking .value").text(getParameterByName("notworking"));			
+				    $(".notworking .edit").show();	    
+				}
+
                 itemnumber = parseInt(page);
                 var previous = itemnumber - 1;
                 $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
@@ -334,29 +354,74 @@ $(document).ready(function() {
                 }
 
                 $(".well").removeClass("well");  
+
+                $(".declare").hide();
                 
-                $(".declare").hide();    
                 $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
                 $("#" + stage + itemnumber +  " .declare").show();
-				$("#" + stage + itemnumber).addClass("well"); 
-         
+ 				$("#" + stage + itemnumber).addClass("well"); 
+ 				       
 	             if (itemnumber > 3) {
                     $("#next").show();
                 }
-
+                
+			    var id = $.cookie("business_id");
+				var employed;
+				if ($.cookie("occupations_temp") && $.cookie("occupations_temp").length){
+				}
+				
+				var empstatus = $.cookie('employed');
+				if ($.cookie("employment_status") && $.cookie("employment_status").length > 0){
+					empstatus = $.cookie("employment_status");
+				}
+				$("#employment-status").text(empstatus);
+			
+				//var traded = getParameterByName("trading");
+				//var director = getParameterByName("director");
+				var num = 1;
+				if($.cookie('employed') == null){
+					$("#employers .count").text($.cookie("employer_count"));
+				}
+				else{
+					$("#employers .count").text("0");
+				}
+				
+				$("#businesses .count").text("0");	
+				if($.cookie('business_name_temp')){
+					$("#businesses .count").text("1");
+				}
+				if($.cookie("business_id") && parseInt($.cookie("business_id"))){
+					if (parseInt($.cookie("business_id") > 0)){
+						$("#businesses .count").text($.cookie("business_id"));
+					}
+				}
+			
+			
+				if($.cookie('director_count') && $.cookie('director_count').length > 0){
+					$("#directorships .count").text($.cookie("director_count"));
+				}
+				else{
+					$("#directorships .count").text("0");
+				}
+			
+			
 				$(".declare").on("click", function () {
+				    $(".well").removeClass("well");
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
 				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
 				    $("#" + stage + itemnumber).addClass("well");
-
+				    
 				    if (itemnumber > 3) {
 				        $("#next").show();
 				    }
 				});
 
+				$("#btn-notemployed").on("click", function () {
+				     $("#next").attr("href","notworking.html").show();
+				});
 
 });
 
