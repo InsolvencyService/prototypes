@@ -226,7 +226,7 @@ display:block;
 		</form>
 			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
-				<a id="next" class="button" href="summary.html">Continue</a><br>
+				<a id="next" class="button" href="summary.html?page=5">Continue</a><br>
 			</div>
 
 			<div class="form-navigation form-group">
@@ -313,19 +313,28 @@ display:block;
 
 $(document).ready(function() {
 	var status = "Retired";
+	var defaultnext = $("#next").attr("href");
 	
 	$("#retired").click(function(){
 		status = "Retired";
-		$.cookie("employment_status", status);
 	});
 	$("#student").click(function(){
 		status = "Student";
-		$.cookie("employment_status", status);
 	});
 	$("#notworking").click(function(){
 		status = "Not working";
-		$.cookie("employment_status", status);
 	});
+	
+	$("#next").click(function(e){
+		if ($( "input[name=retired]:checked" ).length > 0){
+			$.cookie("employment_status", status);
+			$("#next").attr("href", defaultnext + "&notworking=" + status);
+		}
+		else{
+			e.preventDefault();
+		}
+	});
+
 });
 
 

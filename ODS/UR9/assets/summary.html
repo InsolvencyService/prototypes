@@ -72,68 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
-
-#row-total td{
-	font-weight:bold;
-}
-
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right;
-}
-.totalrow td{
-	font-weight:bold !important;
-}
-</style>
+ </style>
 <!-- #EndEditable -->
 
 
@@ -217,13 +156,13 @@ display:block;
                                     <table id="assets">
                                         <tbody class="group-title">
                                             <tr class="group-heading" id="assets1">
-                                                <td class="group-title col-sm-8">Properties
-                                                <br/>
-                                                 <a href="#" class="declare" id="btn-no">I don't own or have an interest in any property</a>
-
+                                                <td class="group-title col-sm-8">
+                                                <div>Properties</div>
                                                 </td>
                                                 <td class="actions col-sm-2">
                                                     <a href="property/list_properties.html" class="next edit button">Start</a>
+                                                 <a href="#" class="declare">I don't own or have an interest in any property</a>
+
 
                                                 </td>
 
@@ -232,41 +171,41 @@ display:block;
                                             </tr>
 
                                             <tr class="group-heading" id="assets2">
-                                                <td class="group-title col-sm-8">Vehicles
-                                                <br/>
-                                                 <a href="#" class="declare" id="btn-no">I don't own any vehicles</a>
+                                                <td class="group-title col-sm-8">
+                                                <div>Vehicles</div>
+ 
 
                                                 </td>
                                                 <td class="actions col-sm-2">
                                                     <a href="#" class="next edit button">Start</a>
-
+                                                 <a href="#" class="declare">I don't own any vehicles</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
 
                                             </tr>
                                             <tr class="group-heading" id="assets3">
-                                                <td class="group-title col-sm-8">Items you own
-                                                <br/>
-                                                 <a href="#" class="declare" id="btn-no">Skip section</a>
+                                                <td class="group-title col-sm-8">
+                                                <div>Items you own</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
                                                     <a href="items/summary.html" class="next edit button">Start</a>
+                                                 <a href="#" class="declare">Skip section</a>
+
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
 
                                             </tr>
                                             <tr class="group-heading" id="assets4">
-                                                <td class="group-title col-sm-8">Life insurance
-                                                <br/>
-                                                 <a href="#" class="declare" id="btn-no">I don't have any life insurance</a>
+                                                <td class="group-title col-sm-8">
+                                                <div>Life insurance</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
                                                     <a href="#" class="next edit button">Start</a>
-
+                                                 <a href="#" class="declare">I don't have any life insurance</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -384,19 +323,6 @@ $(document).ready(function() {
                     $("a.edit").removeClass("button").hide();
                 }
 
- 
-                itemnumber = parseInt(page);
-                var previous = itemnumber - 1;
-                $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
-                if (stage == "income" && itemnumber == 2 && pensionable == false) {
-                    itemnumber += 1;
-                }
-                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
-                for (i = 1; i < itemnumber; i++) {
-                    $("#" + stage + i + " a.edit").text("Edit").show();
-                }
-
-
                 itemnumber = parseInt(page);
                 var previous = itemnumber - 1;
                 $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
@@ -405,11 +331,12 @@ $(document).ready(function() {
                     $("#" + stage + i + " a.edit").text("Edit").show();
                 }
 
-
-                $(".declare").hide();
+                $(".well").removeClass("well");  
                 
+                $(".declare").hide();    
                 $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
                 $("#" + stage + itemnumber +  " .declare").show();
+				$("#" + stage + itemnumber).addClass("well"); 
          
 	             if (itemnumber > 3) {
                     $("#next").show();
@@ -421,6 +348,7 @@ $(document).ready(function() {
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
 				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+				    $("#" + stage + itemnumber).addClass("well");
 
 				    if (itemnumber > 3) {
 				        $("#next").show();

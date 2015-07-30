@@ -71,56 +71,9 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
-<style type="text/css">
+ <style type="text/css">
 
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-.inner-block.text{
-	float:left;
-	display: table-cell;
-    width:66.66666666%;
-}
-.right-block{
-	padding-top:60px;
-	width:33.33333%;
-	float:left;
-	  position: relative;
-	  min-height: 1px;
-	  padding-right: 15px;
-	  padding-left: 15px;
-	  display: table-cell;
-}
-.btn-edit{
-	margin-right:10px;
-}
-
-table td[class*=col-], table th[class*=col-]{
-			padding-left:0;
-			padding-right:20px
-
-}
-
-
-</style>
+ </style>
 <!-- #EndEditable -->
 
 
@@ -183,139 +136,130 @@ table td[class*=col-], table th[class*=col-]{
 	
 
 
-	</div>
+</div>
 	
 
 
 <!-- #BeginEditable "content" --> 
 <div id="content" >
-	<div class="inner-block text">
-		<h1 class="form-title heading-large">Employment summary</h1>
-		<form class="form" method="post">
-			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+<div class="inner-block text">
+	
+	<h1 class="form-title heading-large">Employment summary</h1>
+
+
 			<p class="lead text bold">
-	            Please review your answers before continuing.
-	        </p>
+	            We need to know about your recent employment history. <br><br>
+				Specifically, we need to know if you have been a director of a 
+				limited company, self employed or a partner in a non-limited 
+				business or employed in the last 3 years.</p>
 
-			<div class="form-group" id="directorships">
-				<p class="bold-small">Directorship details</p>
-	            <table id="employer_table">
-                    <tbody>
-	                    <tr class="group-heading">
-	                       <td class="col-sm-7">Directorships</td>
-	                        <td class="col-sm-2 count">2</td>
-	                        <td class="col-sm-3"><a href="list_directorships.html?loop=true">Edit</a></td>
-	                        <td></td>
-	                    </tr>
-                    </tbody>
-                </table>
-  				<br>
+			<div class="form-group">
+
+                                    <table id="assets">
+                                        <tbody class="group-title">
+                                            <tr class="group-heading" id="assets1">
+                                                <td class="group-title col-sm-8">
+												<div>Director of a limited company</div>
+												<div class="form-hint">eg director of a company with Ltd, PLC or LLP as part of the company name like 'ABC Trading Ltd'</div>
+                                                
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="list_directorships.html" class="next edit button">Start</a>
+														<div><a href="#" class="declare">I am not a director of a limited company</a></div>
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+
+                                            <tr class="group-heading" id="assets2">
+                                                <td class="group-title col-sm-8">
+                                                <div>Self-employed </div>
+												<div class="form-hint">eg as a sole trader</div>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="list_businesses.html" class="next edit button">Start</a>
+                                                <div><a href="#" class="declare">I am not self employed</a></div>
+
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+                                         
+                                            <tr class="group-heading" id="assets3">
+                                                <td class="group-title col-sm-8"><div>Partner in a non-limited business</div>
+												<div class="form-hint">eg, don’t have Ltd, PLC or LLP as part of the company name, such as 'ABC Trading'  </div>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="list_partnerships.html" class="next edit button">Start</a>
+                                                <div><a href="#" class="declare">I am not a partner</a></div>
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+                                        
+                                            <tr class="group-heading" id="assets4">
+                                                <td class="group-title col-sm-8"><div>Employed</div>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="list_employers.html" class="next edit button">Start</a>
+                                                	<div><a href="#" class="declare" id="btn-notemployed">I am not employed</a></div>
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+                                            
+                                            <tr class="group-heading notworking" style="display:none">
+                                                <td class="group-title col-sm-8"><div>Not working</div>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="notworking.html" class="next edit">Edit</a>
+                                                </td>
+
+                                                <td class="value col-sm-2">&nbsp;</td>
+
+                                            </tr>
+
+									</tbody>
+								</table>
+	  				<br>
             </div>
-
-            
-			<div class="form-group" id="businesses">
-				<p class="bold-small">Business details</p>
-	            <table id="employer_table">
-                    <tbody>
-	                    <tr class="group-heading">
-	                       <td class="col-sm-7">Self employed and partnerships</td>
-	                        <td class="col-sm-2 count">2</td>
-	                        <td  class="col-sm-3"><a href="list_businesses.html?loop=true">Edit</a></td>
-	                        <td></td>
-	                    </tr>
-                    </tbody>
-                </table>
-  				<br>
-            </div>
-
-            
-			<div class="form-group" id="employer">
-				<p class="bold-small">Employment details</p>
-	            <table id="employer_table">
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Current employment status</td>
-                        	<td id="employment-status">Employed</td>
-                        	<td><a href="list_employers.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-
-	                    <tr class="group-heading" id="employers">
-	                       <td class="col-sm-7">Employers in the last 12 months</td>
-	                        <td  class="col-sm-2 count">2</td>
-	                        <td class="col-sm-3"><a href="list_employers.html?loop=true">Edit</a></td>
-	                        <td></td>
-	                    </tr>
-                    </tbody>
-                </table>
-  				<br>
-            </div>
+	<p><br></p>
 
 
 
-     
-
-        <p class="clearfix"></p>
-        
-        
-       
-       
-        
-        
-        <p class="clearfix"></p>
-
-
-
-</form> 
-  <p class="clearfix"><br/></p>
-
+<p><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+<a class="button" href="../overview.html?section4=complete" id="next">Continue</a>
 	</div>
-    <div class="right-block">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+	<div>
+	<br>
+	</div>
+	
+	<div>
+        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
-                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-                <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	
+	</div>
 
-
-        </div>
-
-        <p><br></p>
-
-        <!-- For User research -->
-        <div class="form-navigation form-group" style="margin-left:30px;">
-
-            <div>
-            <a href="../overview.html?section2=complete" class="button" id="next">Continue</a>
-
-            </div>
-            <div>
-                <br>
-            </div>
-
-            <div>
-                
-
-
-                <a href="#" id="cancel">Save and logout</a>
-
-            </div>
-
-        </div>
-
-
-    </div>
+        
+</div>
 
 
 	 <!-- #EndEditable -->
@@ -368,50 +312,116 @@ table td[class*=col-], table th[class*=col-]{
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
+	<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../creditors/js/tw-typeahead.js"></script>
+	<script type="text/javascript" src="../creditors/js/creditors.js"></script>
 
 
 <script type="text/javascript">
+
+var itemnumber = 0;
+var stage = "assets";
+var page = 1;
+
 $(document).ready(function() {
-	var id = $.cookie("business_id");
-	var employed;
-	if ($.cookie("occupations_temp") && $.cookie("occupations_temp").length){
-	}
-	
-	var empstatus = $.cookie('employed');
-	if ($.cookie("employment_status") && $.cookie("employment_status").length > 0){
-		empstatus = $.cookie("employment_status");
-	}
-	$("#employment-status").text(empstatus);
+                $("#next").hide();
 
-	//var traded = getParameterByName("trading");
-	//var director = getParameterByName("director");
-	var num = 1;
-	if($.cookie('employed') == null){
-		$("#employers .count").text($.cookie("employer_count"));
-	}
-	else{
-		$("#employers .count").text("0");
-	}
-	
-	$("#businesses .count").text("0");	
-	if($.cookie('business_name_temp')){
-		$("#businesses .count").text("1");
-	}
-	if($.cookie("business_id") && parseInt($.cookie("business_id"))){
-		if (parseInt($.cookie("business_id") > 0)){
-			$("#businesses .count").text($.cookie("business_id"));
-		}
-	}
+				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
+				    stage = getParameterByName("stage");
+				}
+				if (getParameterByName("page") && getParameterByName("page").length > 0) {
+				    page = getParameterByName("page");
+				}
 
+                if (stage && stage.length > 0) {
+                    $("a.edit").removeClass("button").hide();
+                }
 
-	if($.cookie('director_count') && $.cookie('director_count').length > 0){
-		$("#directorships .count").text($.cookie("director_count"));
-	}
-	else{
-		$("#directorships .count").text("0");
-	}
+				if (getParameterByName("notworking") && getParameterByName("notworking").length > 0) {
+				    $(".notworking").show();
+				    $(".notworking .value").text(getParameterByName("notworking"));			
+				    $(".notworking .edit").show();	    
+				}
 
-//	$("#NINO").text($.cookie('NI_number'));
+                itemnumber = parseInt(page);
+                var previous = itemnumber - 1;
+                $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
+                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
+                for (i = 1; i < itemnumber; i++) {
+                    $("#" + stage + i + " a.edit").text("Edit").show();
+                }
+
+                $(".well").removeClass("well");  
+
+                $(".declare").hide();
+                
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+                $("#" + stage + itemnumber +  " .declare").show();
+ 				$("#" + stage + itemnumber).addClass("well"); 
+ 				       
+	             if (itemnumber > 3) {
+                    $("#next").show();
+                }
+                
+			    var id = $.cookie("business_id");
+				var employed;
+				if ($.cookie("occupations_temp") && $.cookie("occupations_temp").length){
+				}
+				
+				var empstatus = $.cookie('employed');
+				if ($.cookie("employment_status") && $.cookie("employment_status").length > 0){
+					empstatus = $.cookie("employment_status");
+				}
+				$("#employment-status").text(empstatus);
+			
+				//var traded = getParameterByName("trading");
+				//var director = getParameterByName("director");
+				var num = 1;
+				if($.cookie('employed') == null){
+					$("#employers .count").text($.cookie("employer_count"));
+				}
+				else{
+					$("#employers .count").text("0");
+				}
+				
+				$("#businesses .count").text("0");	
+				if($.cookie('business_name_temp')){
+					$("#businesses .count").text("1");
+				}
+				if($.cookie("business_id") && parseInt($.cookie("business_id"))){
+					if (parseInt($.cookie("business_id") > 0)){
+						$("#businesses .count").text($.cookie("business_id"));
+					}
+				}
+			
+			
+				if($.cookie('director_count') && $.cookie('director_count').length > 0){
+					$("#directorships .count").text($.cookie("director_count"));
+				}
+				else{
+					$("#directorships .count").text("0");
+				}
+			
+			
+				$(".declare").on("click", function () {
+				    $(".well").removeClass("well");
+				    $("#" + stage + itemnumber + " .declare").hide();
+				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
+				    itemnumber = itemnumber + 1;
+				    $("#" + stage + itemnumber + " .declare").show();
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+				    $("#" + stage + itemnumber).addClass("well");
+				    
+				    if (itemnumber > 3) {
+				        $("#next").show();
+				    }
+				});
+
+				$("#btn-notemployed").on("click", function () {
+				     $("#next").attr("href","notworking.html").show();
+				});
+
 });
 
 
@@ -420,6 +430,14 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function numberWithoutCommas(x) {
+    return parseFloat(x.toString().replace(/,/g, ""));
 }
 
 
