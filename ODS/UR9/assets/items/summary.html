@@ -735,12 +735,14 @@ tbody > tr > td:first-child{
                 if (section.substring(0, 1) != "#") {
                     section = "#" + section;
                 }
-                $(".well").removeClass("well");
-                $(section + " .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-                $(section + " .js-section").addClass("open");
-                $(section + " .help").show();
-                var details = $($(section + " .js-section").first().attr("href"));
-                details.show();
+                if ($(section + " .child").length == 0) {
+                    $(".well").removeClass("well");
+                    $(section + " .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                    $(section + " .js-section").addClass("open");
+                    $(section + " .help").show();
+                    var details = $($(section + " .js-section").first().attr("href"));
+                    details.show();
+                }
                 $(section).addClass("well");
             }
             function closehelp(section) {
