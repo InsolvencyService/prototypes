@@ -138,7 +138,7 @@
 <!-- #BeginEditable "content" --> 
 <div id="content0" >
 
-<div class="inner-block">	
+<div class="row">	
 	<h1 class="form-title heading-large">Your status</h1>
 		<div class="col-md-9">
 		<form class="form" method="post">
@@ -159,14 +159,7 @@
 				</div>				  
 			</div>
 		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-				<a id="next" class="button" href="summary.html?page=5">Continue</a><br>
-			</div>
 
-			<div class="form-navigation form-group">
-					<a href="javascript:history.go(-1)">Back</a>
-				</div>
 		</div>		
 		<div class="col-md-3">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
@@ -187,6 +180,14 @@
         </div>
 
 	</div>
+    <p class="clearfix">&nbsp;</p>
+
+
+    <div class="form-navigation form-group">
+        <a id="next" class="button" href="summary.html?page=5">Continue</a><br>
+
+        <a href="javascript:history.go(-1)">Back</a>
+    </div>
 </div>
 
 
@@ -265,7 +266,8 @@ $(document).ready(function() {
 	
 	$("#next").click(function(e){
 		if ($( "input[name=retired]:checked" ).length > 0){
-			$.cookie("employment_status", status);
+		    $.cookie("employment_status", status);
+		    status = status.replace(" ", "%20");
 			$("#next").attr("href", defaultnext + "&notworking=" + status);
 		}
 		else{
