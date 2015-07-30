@@ -699,12 +699,17 @@ tbody > tr > td:first-child{
 				    $("#" + stage + itemnumber + " a.edit").hide();
 				    closehelp(stage + itemnumber);
 				    itemnumber = itemnumber + 1;
-				    openhelp(stage + itemnumber);
-				    showchildrowdata();
 
-				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
+				    if (itemnumber < 9) {
+				        openhelp(stage + itemnumber);
+				        showchildrowdata();
 
+				        $("#" + stage + itemnumber + " .declare").show();
+				        $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
+				    }
+				    else {
+				        $("#next").show();
+				    }
 				});
 				var rowname = "item1";
 				$(".js-section").on("click", function (e) {
