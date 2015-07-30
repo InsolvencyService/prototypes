@@ -722,7 +722,7 @@ tbody > tr > td:first-child{
 				        rowname = $(this).closest("tbody").attr("id");
 
 				        if ($(this).hasClass("open") == false) {
-				            openhelp("#" + rowname);
+				            openhelp("#" + rowname, true);
 				        }
 				        else {
 				            $(this).removeClass("open");
@@ -735,11 +735,11 @@ tbody > tr > td:first-child{
 
             });
 
-            function openhelp(section) {
+            function openhelp(section, force) {
                 if (section.substring(0, 1) != "#") {
                     section = "#" + section;
                 }
-                if ($(section + " .child").length == 0) {
+                if ($(section + " .child").length == 0 || force) {
                     $(".well").removeClass("well");
                     $(section + " .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                     $(section + " .js-section").addClass("open");
