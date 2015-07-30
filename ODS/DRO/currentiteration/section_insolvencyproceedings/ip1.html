@@ -611,7 +611,7 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -632,13 +632,13 @@ $(document).ready(function() {
 
 	
 	$("#next").click(function(){
-			$("#next").prop("href","#");
-			$.cookie("section2", "inprogress",{path: '/'});
+		$.cookie("section2", "inprogress", {path: '/'});
+		$("#next").prop("href","#");
 	});
 	
 	$("#return").click(function(){
-			$("#return").prop("href","../application.html?section2=inprogress");
-			$.cookie("section2", "inprogress",{path: '/'});
+		$.cookie("section2", "inprogress", {path: '/'});
+		$("#return").prop("href","../application.html?section2=inprogress");	
 	});
 
 	
