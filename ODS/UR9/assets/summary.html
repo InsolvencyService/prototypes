@@ -156,11 +156,11 @@
                                         <tbody class="group-title">
                                             <tr class="group-heading" id="assets1">
                                                 <td class="group-title col-sm-8">
-                                                <div>Properties</div>
+                                                <div>Have you owned any property in the last 3 years?</div>
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="property/list_properties.html" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">I don't own or have an interest in any property</a>
+                                                    <a href="property/list_properties.html" class="next edit button">Yes</a>
+                                                 <a href="#" class="declare button">No</a>
 
 
                                                 </td>
@@ -171,13 +171,13 @@
 
                                             <tr class="group-heading" id="assets2">
                                                 <td class="group-title col-sm-8">
-                                                <div>Vehicles</div>
+                                                <div>Have you owned a vehicle in the last year?</div>
  
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="#" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">I don't own any vehicles</a>
+                                                    <a href="vehicle/list_vehicles.html" class="next edit button">Yes</a>
+                                                 <a href="#" class="declare button">No</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -185,12 +185,13 @@
                                             </tr>
                                             <tr class="group-heading" id="assets3">
                                                 <td class="group-title col-sm-8">
-                                                <div>Items you own</div>
-
+                                                <div>Do you have any items or cash?</div>
+												<div class="form-hint">Answer yes to check more detailed questions</div>
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="items/summary.html" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">Skip section</a>
+                                                    <a href="items/summary.html" class="next edit button">Yes</a>
+                                                 <a href="#" class="declare button">No</a>
+
 
                                                 </td>
 
@@ -199,12 +200,12 @@
                                             </tr>
                                             <tr class="group-heading" id="assets4">
                                                 <td class="group-title col-sm-8">
-                                                <div>Life insurance</div>
+                                                <div>Do you have life insurance?</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="#" class="next edit button">Start</a>
-                                                 <a href="#" class="declare">I don't have any life insurance</a>
+                                                    <a href="#" class="next edit button">Yes</a>
+                                                 <a href="#" class="declare button">No</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -336,7 +337,7 @@ $(document).ready(function() {
                 $(".well").removeClass("well");  
                 
                 $(".declare").hide();    
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
                 $("#" + stage + itemnumber +  " .declare").show();
 				$("#" + stage + itemnumber).addClass("well"); 
          
@@ -377,7 +378,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
 				    $("#" + stage + itemnumber).addClass("well");
 
 				    if (itemnumber > 3) {
