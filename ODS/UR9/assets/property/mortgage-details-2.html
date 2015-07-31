@@ -340,11 +340,11 @@ $(document).ready(function() {
 	$("#next").on("click", function(){
 		if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0) {
 		    var mortgageamount = parseFloat(numberWithoutCommas($("#mortgageamount").val()));
-			$.cookie('mortgageamount', mortgageamount, { expires: 1 });
+			$.cookie('mortgageamount', mortgageamount, { expires: 1, path: "/" });
 
-			$.cookie('mortgagetype', "mortgage", { expires: 1 });
+			$.cookie('mortgagetype', "mortgage", { expires: 1, path: "/" });
 
-			$.cookie('property' + numproperties + 'mortgageamount', mortgageamount, { expires: 1 });
+			$.cookie('property' + numproperties + 'mortgageamount', mortgageamount, { expires: 1, path: "/" });
 
 		}
 	});

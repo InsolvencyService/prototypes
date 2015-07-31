@@ -357,25 +357,25 @@ $(document).ready(function() {
 	
 	$("#next").on("click", function(){
 		if ($("#month").val().length > 0){
-			$.cookie('purchasemonth', $("#month").val(), { expires: 1 });
-			$.cookie('purchaseyear', $("#year").val(), { expires: 1 });
+			$.cookie('purchasemonth', $("#month").val(), { expires: 1, path: "/" });
+			$.cookie('purchaseyear', $("#year").val(), { expires: 1, path: "/" });
 		}
 		else{
-			$.cookie('purchasemonth', "6", { expires: 1 });
-			$.cookie('purchaseyear', "2005", { expires: 1 });
+			$.cookie('purchasemonth', "6", { expires: 1, path: "/" });
+			$.cookie('purchaseyear', "2005", { expires: 1, path: "/" });
 		}
 
 		numproperties = numproperties + 1;
 		if ($("#propertyvalue").val().length > 0){
-		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
+		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1, path: "/" });
 
-		    $.cookie('numproperties', numproperties, { expires: 1 });
-		    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
-		    $.cookie('property' + numproperties + 'address', $.cookie("propertyline1") + ", " + $.cookie("propertypostcode"), { expires: 1 });
+		    $.cookie('numproperties', numproperties, { expires: 1, path: "/" });
+		    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#propertyvalue").val()), { expires: 1, path: "/" });
+		    $.cookie('property' + numproperties + 'address', $.cookie("propertyline1") + ", " + $.cookie("propertypostcode"), { expires: 1, path: "/" });
 
 		}
 		else{
-			$.cookie('propertyvalue', "140000", { expires: 1 });
+			$.cookie('propertyvalue', "140000", { expires: 1, path: "/" });
 		}
 		
 	});

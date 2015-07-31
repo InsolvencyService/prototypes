@@ -155,13 +155,13 @@
                                         <tbody class="group-title">
                                             <tr class="group-heading" id="row1">
                                                 <td class="group-title col-sm-8">
-												<div>Director of a limited company</div>
+												<div>Are you a director of a limited company?</div>
 												<div class="form-hint">eg director of a company with Ltd, PLC or LLP as part of the company name like 'ABC Trading Ltd'</div>
                                                 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="list_directorships.html" class="next edit button">Start</a>
-														<div><a href="#" class="declare">I am not a director of a limited company</a></div>
+                                                    <a href="list_directorships.html" class="next edit button">Yes</a>
+														&nbsp;<a href="#" class="declare button">No</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -170,13 +170,13 @@
 
                                             <tr class="group-heading" id="row2">
                                                 <td class="group-title col-sm-8">
-                                                <div>Self-employed </div>
+                                                <div>Are you self-employed?</div>
 												<div class="form-hint">eg as a sole trader</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="list_businesses.html" class="next edit button">Start</a>
-                                                <div><a href="#" class="declare">I am not self employed</a></div>
+                                                    <a href="list_businesses.html" class="next edit button">Yes</a>
+                                                    &nbsp;<a href="#" class="declare button">No</a>
 
                                                 </td>
 
@@ -185,13 +185,13 @@
                                             </tr>
                                          
                                             <tr class="group-heading" id="row3">
-                                                <td class="group-title col-sm-8"><div>Partner in a non-limited business</div>
+                                                <td class="group-title col-sm-8"><div>Are you a partner in a non-limited business?</div>
 												<div class="form-hint">eg, don’t have Ltd, PLC or LLP as part of the company name, such as 'ABC Trading'  </div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="list_partnerships.html" class="next edit button">Start</a>
-                                                <div><a href="#" class="declare">I am not a partner</a></div>
+                                                    <a href="list_partnerships.html" class="next edit button">Yes</a>
+                                                    &nbsp;<a href="#" class="declare button">No</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -199,12 +199,12 @@
                                             </tr>
                                         
                                             <tr class="group-heading" id="row4">
-                                                <td class="group-title col-sm-8"><div>Employed</div>
+                                                <td class="group-title col-sm-8"><div>Are you employed?</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="list_employers.html" class="next edit button">Start</a>
-                                                	<div><a href="#" class="declare" id="btn-notemployed">I am not employed</a></div>
+                                                    <a href="list_employers.html" class="next edit button">Yes</a>
+                                                    &nbsp;<a href="#" class="declare button">No</a>
                                                 </td>
 
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -355,7 +355,7 @@ $(document).ready(function() {
 
                 $(".declare").hide();
                 
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
                 $("#" + stage + itemnumber +  " .declare").show();
  				$("#" + stage + itemnumber).addClass("well"); 
  				       
@@ -408,7 +408,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
 				    $("#" + stage + itemnumber).addClass("well");
 				    
 				    if (itemnumber > 3) {

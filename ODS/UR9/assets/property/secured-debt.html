@@ -363,13 +363,13 @@ $(document).ready(function() {
 	$("#next").on("click", function(e){
 		if ($("#amount").val()) {
 		    var securedloan = numberWithoutCommas($("#amount").val());
-			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1 });
-			$.cookie('loanfor' + numberofsecuredloans, $("#loanfor").val(), { expires: 1 });
-			$.cookie('loancompanyname' + numberofsecuredloans, $("#loancompanyname").val(), { expires: 1 });
-			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1 });
-			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1 });
+			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1, path: "/" });
+			$.cookie('loanfor' + numberofsecuredloans, $("#loanfor").val(), { expires: 1, path: "/" });
+			$.cookie('loancompanyname' + numberofsecuredloans, $("#loancompanyname").val(), { expires: 1, path: "/" });
+			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1, path: "/" });
+			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1, path: "/" });
 			
-			$.cookie('numberofsecuredloans', numberofsecuredloans, { expires: 1 });
+			$.cookie('numberofsecuredloans', numberofsecuredloans, { expires: 1, path: "/" });
 			
 		}
 
