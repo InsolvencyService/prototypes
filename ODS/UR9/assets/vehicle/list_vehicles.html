@@ -381,13 +381,16 @@
         		var make;
         		var model; 
         		var status;
+        		var tablerow;
         		            		
-        		for(var i=1; i>count; i++){
-        			VRN = $.cookie("VehicleVRN"+i);
+        		for(i=1; i<=count; i++){
+          			VRN = $.cookie("VehicleVRN"+i);
         			make = $.cookie("VehicleMake"+i);
         			model = $.cookie("VehicleModel"+i);
         			status = $.cookie("VehicleUse"+i);
-        			$("#tablebody").append("<tr><td>"+VRN+"</td><td>"+make+"</td><td>"+model+"</td><td>"+status+"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a>&nbsp;&nbsp;<a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+        			tablerow = "<tr><td>"+VRN+"</td><td>"+make+"</td><td>"+model+"</td><td>"+status+"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a>&nbsp;&nbsp;<a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+        			alert(tablerow);
+        			$("#tablebody").append(tablerow);
         		}            	
             });
 
