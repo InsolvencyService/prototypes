@@ -323,7 +323,7 @@
 	 	<p>&nbsp;</p>
 		<div>
 			<p><a id="next" style=" vertical-align: middle;" class="button">Save and return</a></p>
-			<p><a href="2.html">Add another debt for this creditor</a></p> 
+			<p><a id="again" href="2.html">Add another debt for this creditor</a></p> 
 		</div>
 		<p>&nbsp;</p>
 		<div>
@@ -413,7 +413,14 @@ $(document).ready(function() {
 	$("#amount-claimed").attr("value", cookieamount);
 	//$("#creditor-selector :selected").attr("value", cookiename);
 	$('#creditor-selector option[value="' + cookiename + '"]').attr("selected", "selected");
-
+	
+	var loop = getParameterByName(again);
+	
+	if(loop == 'true'){
+		$('#creditor-selector option[value="' + cookiename + '"]').attr("selected", "selected");
+	}
+	
+	
 });
 
 $("#next").click(function(){
@@ -429,6 +436,9 @@ $("#next").click(function(){
 	$("#next").prop("href","1.html");
 });
 
+$("#again").click(function(){
+	$("#again").attr("href", "2.html?again=true");
+}
 
 $("#add-creditor").on("click", function (e) {
 	$("#pnl-creditor").toggle();
@@ -466,6 +476,14 @@ $('#creditor-selector').change(function(e) {
     var creditorx = $('#creditor-selector').value;
     $('#cred_address').text(creditorx);
 });
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 </script>
 <!-- #EndEditable -->
