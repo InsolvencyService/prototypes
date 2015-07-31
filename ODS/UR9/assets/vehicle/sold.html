@@ -197,49 +197,25 @@ display:block;
 			</div>
 
 			<p>&nbsp;</p>
-
-		
-			<div class="form-group ">
-				<label id="disposed_label" for="vehicle_address_line_1" class="form-label-bold">Enter the address of where the vehicle was sold or disposed of?</label>
-				<div class="form-group ">
-					<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
-					<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-					<br/>
-				</div>
-				<div class="form-group ">
-					<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
-					<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-					<br/>
-				</div>
-				<div class="form-group ">
-					<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
-					<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-					<br/>
-				</div>
-				<div class="form-group ">
-					<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
-					<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-					<br/>
-				</div>
-				<div class="form-group ">
-					<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
-					<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-					<br/>
-				</div>
-				<div class="form-group ">
-					<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
-					<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-					<br/>
-				</div>
-			</div>
 			
-			<p>&nbsp;</p>
-			
-			<div class="form-group ">
-				<label id="value_label" class="form-label-bold" for="value">How much did you receive for the sale or transfer of the vehicle?</label>
-				<p class="form-hint">Leave blank if you didn't receive any money</p>
-				£ <input id="value" name="vrn" type="text"  value="" />
-				<br/>
+			<div class="form-group" id="pnl-owned">
+			<p id="title_label" class="form-label-bold">How was the vehicle disposed of?</p>
+			<fieldset class="inline">
+				<div>				
+					<label id="sold_label1" for="sold" class="block-label">
+					<input id="sold"  name="used" value="sold" type="radio">Sold</label>
+					
+					<label id="scrapped_label1" for="scrapped" class="block-label">
+					<input id="scrapped"  name="used" value="scrapped" type="radio">Scrapped</label>
+					
+					<label id="finance_label1" for="finance" class="block-label">
+					<input id="finance"  name="used" value="returned to finance company" type="radio">Returned to finance company</label>
+					
+					<label id="repo_label1" for="repo" class="block-label">
+					<input id="repo"  name="used" value="repossessed" type="radio">Repossessed</label>
+					
+				</div>
+			</fieldset>
 			</div>
 
 
@@ -252,7 +228,7 @@ display:block;
 	<p>&nbsp;</p>
 	<div>
 		
-		<a id="next" href="list_vehicles.html?loop=true" class="button">Continue</a>
+		<a id="next" class="button">Continue</a>
 			</div>
 	<div>
 	<br>
@@ -330,6 +306,16 @@ $(document).ready(function() {
 	$("#make").val($.cookie("TempVehicleMake"));
 	$("#model").val($.cookie("TempVehicleModel"));
 });
+
+$('#next').click(function() {
+		if($("#sold").prop('checked')==true || $("#scrapped").prop('checked')==true){
+			$("#next").attr("href","sold_amount.html");
+		}
+		else{
+			$("#next").attr("href","finance.html");
+		}
+});
+
 
 
 function writeCookies() {

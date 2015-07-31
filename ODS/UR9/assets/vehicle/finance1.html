@@ -166,103 +166,114 @@ display:block;
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block">
+<div class="inner-block text">
 	
 	
 	
-	<h1 class="form-title heading-large">Vehicle you've owned</h1>
+	<h1 class="form-title heading-large">Outstanding vehicle finance</h1>
 	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	<div class="clearfix"></div>
+	
+	<div class="validation-summary"  id="msg-enteramt" style="display:none">
+                <h2>There was a problem with your answers</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+              Please enter a valid amount
+         </li>
+      </ol>
+     </div>
+     
+   
 	<div class="form-group ">
-		<label id="value_label" class="form-label-bold" for="model">Value</label>
-		£ <input id="value" name="value" type="text"  value="" />
-		<br/>
+	
+	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
+		What is the outstanding balance for your vehicle finance?</label>
+		<div class="form-hint">How much the finance company say you owe</div>
+		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
 	</div>
 	
-	<form class="form" method="post">			
-		<div class="form-group" id="pnl-owned">
-			<p id="title_label" class="form-label-bold">What do you mainly use the vehicle for?</p>
-			<fieldset class="inline">
-				<div>				
-					<label id="commute_label1" for="commute" class="block-label">
-					<input id="commute"  name="used" value="commuting" type="radio">Commuting</label>
-					
-					<label id="school_label1" for="school" class="block-label">
-					<input id="school"  name="used" value="school" type="radio">To take children to school</label>
-					
-					<label id="caring_label1" for="caring" class="block-label">
-					<input id="caring"  name="used" value="caring" type="radio">Caring for a relative</label>
-					
-					<label id="social_label1" for="social" class="block-label">
-					<input id="social"  name="used" value="social" type="radio">Socialising</label>
-				</div>
-			</fieldset>
-		</div>
-		<p>&nbsp;</p>
+	<div class="clearfix">&nbsp;</div>
+	
 		<div class="form-group ">
-			<p id="disposed_label" for="vehicle_address_line_1" for="vehicle_address_line_1" class="form-label-bold">Where is the vehicle kept over night?</p>
-			<div class="form-group ">
-				<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
-				<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
-				<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
-				<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
-				<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
-				<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
-				<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-				<br/>
-			</div>
-		</div>
-		<p>&nbsp;</p>
-		<div class="form-group" id="pnl-owned">
-			<p id="title_label" class="form-label-bold">Is there any finance outstanding on this vehicle?</p>
-			<fieldset class="inline">
-				<div>				
-					<label id="owned_label1" for="owned_yes" class="block-label">
-					<input id="owned_yes"  name="owned" value="Yes" type="radio">Yes</label>
-					
-					<label id="owned_label1" for="owned_no" class="block-label">
-					<input id="owned_no"  name="owned" value="No" type="radio">No</label>
+	
+	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account or reference number</label>
+	<div class="form-hint">If you don’t have one leave this question blank</div>
+			<input id="ref" name="applicant_address_town" type="text" value="" />
+	<br/>
+	</div>
+	<div class="clearfix"></div>
+	<div class="validation-summary"  id="msg-enterdate"  style="display:none">
+                <h2>There was a problem with your answers</h2>
+                <p></p><ol>
+        <li class="error-message"> 
+               Please enter a valid date
+         </li>
+      </ol>
+     </div>
+	
+<div class="clearfix">&nbsp;</div>
+	
+<div class="form-group">
 
-				</div>
-			</fieldset>
+	<fieldset id="date_of_birth" class="date-of-birth">
+		<legend id="date_of_birth_label" class="form-label-bold">Date you took out the finance on the vehicle.</legend>
+		<p class="form-hint">For example, Apr 2013</p>
+		
+		<div class="form-group">
+			<label id="date_of_birth_label.month" for="month">Month</label>
+	
+			<select id="month" name="month">
+				<option value="0"></option>
+				<option value="1">Jan</option>
+				<option value="2">Feb</option>
+				<option value="3">Mar</option>
+				<option value="4">Apr</option>
+				<option value="5">May</option>
+				<option value="6">Jun</option>
+				<option value="7">Jul</option>
+				<option value="8">Aug</option>
+				<option value="9">Sep</option>
+				<option value="10">Oct</option>
+				<option value="11">Nov</option>
+				<option value="12">Dec</option>
+			</select>
+			
 		</div>
-	</form>
-		
-		
-		
+			
+		<div class="form-group form-group-year">
+			<label id="date_of_birth_label.year" for="year">Year</label>
+			<input id="year" name="date_of_birth.year" type="number" min="1900" max="9999"  />
+		</div>
+	</fieldset>
+</div>
+
+
+
+
+
+
+<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-	<p>&nbsp;</p>
+	
 	<div>
-		
-		<a id="next" class="button">Continue</a>
-			</div>
+		<a id="next" class="button" href="list_vehicles.html?loop=true">Continue</a>
+	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
 	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+	
+	<a href="#" id="cancel">Save and logout</a>
 	
 	</div>
 	</div>
@@ -321,81 +332,11 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../../../assets/js/jquery.select-to-autocomplete.js"></script>
-<script type="text/javascript" src="../../../assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-var tempname;
-var count;
 
-$(document).ready(function() {
-	$("#make").val($.cookie("TempVehicleMake"));
-	$("#model").val($.cookie("TempVehicleModel"));
-});
 
-$('#next').click(function() {
-		if($("#owned_no").prop('checked')==true){
-			$("#next").attr("href","list_vehicles.html?loop=true");
-		}
-		else{
-			$("#next").attr("href","finance.html");
-		}
-});
-
-function writeCookies() {
-	// Get count
-		count = $.cookie("DROPensionCount");
-		if(count == null || count == ""){
-			count=0
-		}
-		count++;
-		
-		if(edited=="true"){
-			count = getParameterByName("id");
-		}
-	
-	// write records
-		// name
-		$.cookie("DROPensionName"+count, tempname);
-		// address
-		$.cookie("DROPensionAddress1-"+count, $("#pension_address_line_1").val());
-		$.cookie("DROPensionAddress2-"+count, $("#pension_address_line_2").val());
-		$.cookie("DROPensionAddress3-"+count, $("#pension_address_line_3").val());
-		$.cookie("DROPensionAddress4-"+count, $("#pension_address_town").val());
-		$.cookie("DROPensionAddress5-"+count, $("#pension_address_county").val());
-		$.cookie("DROPensionAddress6-"+count, $("#pension_address_post_code").val());
-		// reference
-		$.cookie("DROPensionNumber"+count, $("#ref").val());
-		// excluded
-		$.cookie("DROPensionApproved"+count, $("#excluded_debt :checked").val());
-		// update count
-		if(edited!="true"){
-			$.cookie("DROPensionCount", count);
-		}
-
-}
-
-function readCookies() {
-		var id = getParameterByName("id");
-		$.cookie('TempDROPensionProvider', $.cookie('DROPensionName'+id));
-		$("#pension_address_line_1").val($.cookie("DROPensionAddress1-"+id));
-		$("#pension_address_line_2").val($.cookie("DROPensionAddress2-"+id));
-		$("#pension_address_line_3").val($.cookie("DROPensionAddress3-"+id));
-		$("#pension_address_town").val($.cookie("DROPensionAddress4-"+id));
-		$("#pension_address_county").val($.cookie("DROPensionAddress5-"+id));
-		$("#pension_address_post_code").val($.cookie("DROPensionAddress6-"+id));
-		$("#ref").val($.cookie("DROPensionNumber"+id));
-		
-		if($.cookie("DROPensionApproved"+id) == 'yes'){
-			$( "#excluded_yes" ).prop( "checked", true );
-		}
-		else{
-			$( "#excluded_no" ).prop( "checked", true );
-		}
-		
-		
-}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

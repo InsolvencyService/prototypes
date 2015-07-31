@@ -185,14 +185,64 @@ display:block;
 				<input id="model" name="model" type="text"  value="" />
 				<br/>
 			</div>
-			<div class="form-group ">
+						<div class="form-group ">
 				<label id="vrn_label" class="form-label-bold" for="vrn">Registration number</label>
 				<input id="vrn" name="vrn" type="text"  value="" />
-				<br/>
+				<br/><br/>
 			</div>
 
 			
-		
+			<div class="form-group" id="pnl-owned">
+			<p id="title_label" class="form-label-bold">Type of vehicle</p>
+			<fieldset class="inline">
+				<div>				
+					<label id="sold_label1" for="sold" class="block-label">
+					<input id="sold"  name="used" value="sold" type="radio">Motorycle</label>
+					
+					<label id="sold_label1" for="sold" class="block-label">
+					<input id="sold"  name="used" value="sold" type="radio">3 wheeled motorycle</label>
+
+					<label id="sold_label1" for="sold" class="block-label">
+					<input id="sold"  name="used" value="sold" type="radio">Quad bike</label>
+	
+					
+					<label id="scrapped_label1" for="scrapped" class="block-label">
+					<input id="scrapped"  name="used" value="scrapped" type="radio">Car</label>
+					
+					<label id="finance_label1" for="finance" class="block-label">
+					<input id="finance"  name="used" value="returned to finance company" type="radio">MPV or 4X4</label>
+					
+					<label id="repo_label1" for="repo" class="block-label">
+					<input id="repo"  name="used" value="repossessed" type="radio">Motorhome</label>
+					
+					<label id="repo_label1" for="repo" class="block-label">
+					<input id="repo"  name="used" value="repossessed" type="radio">Minibus</label>
+					
+					<label id="repo_label1" for="repo" class="block-label">
+					<input id="repo"  name="used" value="repossessed" type="radio">Van</label>
+					
+					<label id="repo_label1" for="repo" class="block-label">
+					<input id="repo"  name="used" value="repossessed" type="radio">Pickup truck</label>
+
+					<label id="repo_label1" for="repo" class="block-label">
+					<input id="repo"  name="used" value="repossessed" type="radio">Commercial vehicle</label>
+					
+					<label id="dependent_type2_label" for="dependent_type3" class="block-label">
+	                    <input id="dependent_type3" value="Other" name="dependent" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
+	                    <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/></span>
+	                </label>
+
+					
+				</div>
+			</fieldset>
+			</div>
+
+			
+			
+			
+			
+
+
 		
 		<p>&nbsp;</p>
 		
@@ -200,11 +250,14 @@ display:block;
 			<p id="title_label" class="form-label-bold">Is this a vehicle:</p>
 			<fieldset class="inline">
 				<div>				
-					<label id="owned_label1" for="owned_yes" class="block-label">
-					<input id="owned_yes"  name="owned" value="Yes" type="radio">You have owned<br> </label>
+					<label id="own_label1" for="own" class="block-label">
+					<input id="own"  name="owned" value="Own" type="radio">You own<br> </label>
 					
-					<label id="owned_label1" for="owned_no" class="block-label">
-					<input id="owned_no"  name="owned" value="No" type="radio">You haven't owned but use on a regular basis</label>
+					<label id="sold_label1" for="disposed" class="block-label">
+					<input id="disposed"  name="owned" value="Disposed" type="radio">You have sold/disposed of<br> </label>
+					
+					<label id="use_label1" for="use" class="block-label">
+					<input id="use"  name="owned" value="Use" type="radio">You don't own but use on a regular basis</label>
 
 				</div>
 			</fieldset>
@@ -299,12 +352,16 @@ $(document).ready(function() {
 });
 
 $('#next').click(function() {
-		if($("#owned_yes").prop('checked')==true){
+		if($("#own").prop('checked')==true){
 			$("#next").attr("href","owned.html");
 		}
-		else{
+		else if($("#disposed").prop('checked')==true){
+			$("#next").attr("href","sold.html");
+		}
+		else if($("#use").prop('checked')==true){
 			$("#next").attr("href","used.html");
 		}
+
 });
 
 function writeCookies() {

@@ -170,82 +170,21 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Vehicle you've owned</h1>
+	<h1 class="form-title heading-large">Vehicle disposal</h1>
 	
-	<div class="form-group ">
-		<label id="value_label" class="form-label-bold" for="model">Value</label>
-		£ <input id="value" name="value" type="text"  value="" />
-		<br/>
-	</div>
 	
-	<form class="form" method="post">			
-		<div class="form-group" id="pnl-owned">
-			<p id="title_label" class="form-label-bold">What do you mainly use the vehicle for?</p>
-			<fieldset class="inline">
-				<div>				
-					<label id="commute_label1" for="commute" class="block-label">
-					<input id="commute"  name="used" value="commuting" type="radio">Commuting</label>
-					
-					<label id="school_label1" for="school" class="block-label">
-					<input id="school"  name="used" value="school" type="radio">To take children to school</label>
-					
-					<label id="caring_label1" for="caring" class="block-label">
-					<input id="caring"  name="used" value="caring" type="radio">Caring for a relative</label>
-					
-					<label id="social_label1" for="social" class="block-label">
-					<input id="social"  name="used" value="social" type="radio">Socialising</label>
-				</div>
-			</fieldset>
-		</div>
-		<p>&nbsp;</p>
-		<div class="form-group ">
-			<p id="disposed_label" for="vehicle_address_line_1" for="vehicle_address_line_1" class="form-label-bold">Where is the vehicle kept over night?</p>
+	
+	<form class="form" method="post">	
+	
+						
 			<div class="form-group ">
-				<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
-				<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" /><br>
+				<label id="value_label" class="form-label-bold" for="value">How much did you receive for the sale or transfer of the vehicle?</label>
+				<p class="form-hint">Leave blank if you didn't receive any money</p>
+				£ <input id="value" name="vrn" type="text"  value="" />
 				<br/>
 			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
-				<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
-				<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
-				<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
-				<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
-				<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-				<br/>
-			</div>
-		</div>
-		<p>&nbsp;</p>
-		<div class="form-group" id="pnl-owned">
-			<p id="title_label" class="form-label-bold">Is there any finance outstanding on this vehicle?</p>
-			<fieldset class="inline">
-				<div>				
-					<label id="owned_label1" for="owned_yes" class="block-label">
-					<input id="owned_yes"  name="owned" value="Yes" type="radio">Yes</label>
-					
-					<label id="owned_label1" for="owned_no" class="block-label">
-					<input id="owned_no"  name="owned" value="No" type="radio">No</label>
 
-				</div>
-			</fieldset>
-		</div>
-	</form>
+
 		
 		
 		
@@ -255,7 +194,7 @@ display:block;
 	<p>&nbsp;</p>
 	<div>
 		
-		<a id="next" class="button">Continue</a>
+		<a id="next" href="list_vehicles.html?loop=true" class="button">Continue</a>
 			</div>
 	<div>
 	<br>
@@ -334,14 +273,6 @@ $(document).ready(function() {
 	$("#model").val($.cookie("TempVehicleModel"));
 });
 
-$('#next').click(function() {
-		if($("#owned_no").prop('checked')==true){
-			$("#next").attr("href","list_vehicles.html?loop=true");
-		}
-		else{
-			$("#next").attr("href","finance.html");
-		}
-});
 
 function writeCookies() {
 	// Get count
