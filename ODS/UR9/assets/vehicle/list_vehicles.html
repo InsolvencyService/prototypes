@@ -368,10 +368,10 @@
 
         <a href="../property/js/properties.js"></a>
         <script type="text/javascript">
-
+			var count;
             $(document).ready(function () {
             	
-            	var count = $.cookie("VehicleCount");
+            	count = $.cookie("VehicleCount");
             	
             	if(count == null){
             		count = 0;
@@ -397,6 +397,18 @@
 				$.cookie("TempVehicleMake", $("#make").val(), {path: '/'});
 				$.cookie("TempVehicleModel", $("#model").val(), {path: '/'});
             });
+            
+            $("#next").click(function (e) {
+            	var totalasset=0;
+				var currentasset=0;
+				for(x=1;x<=count;x++){
+					currentasset = $.cookie("VehicleAssetValue"+x);
+					totalasset=totalasset+currentasset;
+				}
+				$.cookie("VehicleAssetTotal", totalasset, {path: '/'});
+				$("#next").attr("href", "../summary.html?page=3");
+            });
+
 
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
