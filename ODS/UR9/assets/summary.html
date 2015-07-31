@@ -365,12 +365,12 @@ $(document).ready(function() {
 	                 securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
 	             }
 	             if (propertyvalue > 0) {
-	                 $("assets1 .value").text(numberWithCommas(propertyvalue - (mortgageamount + securedloansamount)));
+	                 $("#assets1 .value").text(numberWithCommas(propertyvalue - (mortgageamount + securedloansamount)));
 	             }
 
                  //Populate item amount
 	             if (parseFloat($.cookie('otherassetsamount'))) {
-	                 $("assets3 .value").text(numberWithCommas(parseFloat($.cookie('otherassetsamount'))));
+	                 $("#assets3 .value").text(numberWithCommas(parseFloat($.cookie('otherassetsamount'))));
 	             }
 
 				$(".declare").on("click", function () {
