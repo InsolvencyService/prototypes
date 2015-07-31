@@ -383,8 +383,8 @@
             });
 
             $("#add").click(function (e) {
-				$.cookie("TempVehicleMake", $("#make").val());
-				$.cookie("TempVehicleModel", $("#model").val());
+				$.cookie("TempVehicleMake", $("#make").val(), {path: '/'});
+				$.cookie("TempVehicleModel", $("#model").val(), {path: '/'});
             });
 
             function getParameterByName(name) {

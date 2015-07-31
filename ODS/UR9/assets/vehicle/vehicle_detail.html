@@ -382,14 +382,14 @@ function writeCookies() {
 	
 	// write records
 		// name
-		$.cookie("VehicleMake"+count, $("#make").val());
-		$.cookie("VehicleModel"+count, $("#model").val());
-		$.cookie("VehicleVRN"+count, $("#vrn").val());
-		$.cookie("VehicleType"+count, $("#pnl-type :checked").val());
-		$.cookie("VehicleUse"+count, $("#pnl-use :checked").val());
+		$.cookie("VehicleMake"+count, $("#make").val(), {path: '/'});
+		$.cookie("VehicleModel"+count, $("#model").val(), {path: '/'});
+		$.cookie("VehicleVRN"+count, $("#vrn").val(), {path: '/'});
+		$.cookie("VehicleType"+count, $("#pnl-type :checked").val(), {path: '/'});
+		$.cookie("VehicleUse"+count, $("#pnl-use :checked").val(), {path: '/'});
 
 		// update count
-		$.cookie("VehicleCount", count);
+		$.cookie("VehicleCount", count, {path: '/'});
 }
 
 
