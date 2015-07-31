@@ -192,7 +192,7 @@ display:block;
 			</div>
 
 			
-			<div class="form-group" id="pnl-owned">
+			<div class="form-group" id="pnl-type">
 			<p id="title_label" class="form-label-bold">Type of vehicle</p>
 			<fieldset class="inline">
 				<div>				
@@ -246,7 +246,7 @@ display:block;
 		
 		<p>&nbsp;</p>
 		
-		<div class="form-group" id="pnl-owned">
+		<div class="form-group" id="pnl-use">
 			<p id="title_label" class="form-label-bold">Is this a vehicle:</p>
 			<fieldset class="inline">
 				<div>				
@@ -366,35 +366,24 @@ $('#next').click(function() {
 
 function writeCookies() {
 	// Get count
-		count = $.cookie("DROPensionCount");
+		count = $.cookie("VehicleCount");
 		if(count == null || count == ""){
 			count=0
 		}
 		count++;
 		
-		if(edited=="true"){
-			count = getParameterByName("id");
-		}
+		
 	
 	// write records
 		// name
-		$.cookie("DROPensionName"+count, tempname);
-		// address
-		$.cookie("DROPensionAddress1-"+count, $("#pension_address_line_1").val());
-		$.cookie("DROPensionAddress2-"+count, $("#pension_address_line_2").val());
-		$.cookie("DROPensionAddress3-"+count, $("#pension_address_line_3").val());
-		$.cookie("DROPensionAddress4-"+count, $("#pension_address_town").val());
-		$.cookie("DROPensionAddress5-"+count, $("#pension_address_county").val());
-		$.cookie("DROPensionAddress6-"+count, $("#pension_address_post_code").val());
-		// reference
-		$.cookie("DROPensionNumber"+count, $("#ref").val());
-		// excluded
-		$.cookie("DROPensionApproved"+count, $("#excluded_debt :checked").val());
-		// update count
-		if(edited!="true"){
-			$.cookie("DROPensionCount", count);
-		}
+		$.cookie("VehicleMake"+count, $.cookie("TempVehicleMake"));
+		S.cookie("VehicleModel"+count, $.cookie("TempVehicleMake"));
+		S.cookie("VehicleVRN"+count, $("#vrn").val());
+		$.cookie("VehicleType"+count, $("#pnl-type :checked").val());
+		$.cookie("VehicleUse"+count, $("#pnl-use :checked").val());
 
+		// update count
+		$.cookie("VehicleCount", count);
 }
 
 function readCookies() {
