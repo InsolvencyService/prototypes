@@ -153,7 +153,7 @@
 
                                     <table id="assets">
                                         <tbody class="group-title">
-                                            <tr class="group-heading" id="assets1">
+                                            <tr class="group-heading" id="row1">
                                                 <td class="group-title col-sm-8">
 												<div>Director of a limited company</div>
 												<div class="form-hint">eg director of a company with Ltd, PLC or LLP as part of the company name like 'ABC Trading Ltd'</div>
@@ -168,7 +168,7 @@
 
                                             </tr>
 
-                                            <tr class="group-heading" id="assets2">
+                                            <tr class="group-heading" id="row2">
                                                 <td class="group-title col-sm-8">
                                                 <div>Self-employed </div>
 												<div class="form-hint">eg as a sole trader</div>
@@ -184,7 +184,7 @@
 
                                             </tr>
                                          
-                                            <tr class="group-heading" id="assets3">
+                                            <tr class="group-heading" id="row3">
                                                 <td class="group-title col-sm-8"><div>Partner in a non-limited business</div>
 												<div class="form-hint">eg, don’t have Ltd, PLC or LLP as part of the company name, such as 'ABC Trading'  </div>
 
@@ -198,7 +198,7 @@
 
                                             </tr>
                                         
-                                            <tr class="group-heading" id="assets4">
+                                            <tr class="group-heading" id="row4">
                                                 <td class="group-title col-sm-8"><div>Employed</div>
 
                                                 </td>
@@ -320,7 +320,7 @@
 <script type="text/javascript">
 
 var itemnumber = 0;
-var stage = "assets";
+var stage = "row";
 var page = 1;
 
 $(document).ready(function() {
@@ -373,33 +373,32 @@ $(document).ready(function() {
 					empstatus = $.cookie("employment_status");
 				}
 				$("#employment-status").text(empstatus);
-			
-				//var traded = getParameterByName("trading");
-				//var director = getParameterByName("director");
-				var num = 1;
-				if($.cookie('employed') == null){
-					$("#employers .count").text($.cookie("employer_count"));
-				}
-				else{
-					$("#employers .count").text("0");
-				}
+		
 				
-				$("#businesses .count").text("0");	
-				if($.cookie('business_name_temp')){
-					$("#businesses .count").text("1");
+				if ($.cookie('employer_count')) {
+				    var count = parseInt($.cookie("employer_count"));
+				    var employers = "";
+				    for (var i = 1; i <= count; i++) {
+				        if (i > 1) {
+				            employers = employers + ", ";
+				        }
+				        employers = employers + $.cookie("employer_name" + i);
+				    }
+				    $("#row4 .value").text(employers);
 				}
 				if($.cookie("business_id") && parseInt($.cookie("business_id"))){
-					if (parseInt($.cookie("business_id") > 0)){
-						$("#businesses .count").text($.cookie("business_id"));
-					}
+					    $("#row2 .value").text($.cookie("business" + parseInt($.cookie("business_id")) + "_name"));
 				}
-			
-			
-				if($.cookie('director_count') && $.cookie('director_count').length > 0){
-					$("#directorships .count").text($.cookie("director_count"));
-				}
-				else{
-					$("#directorships .count").text("0");
+				if ($.cookie('director_count') && parseInt($.cookie("director_count"))) {
+				    var count = parseInt($.cookie("director_count"));
+				    var directorships = "";
+				    for (var i = 1; i <= count; i++) {
+				        if (i > 1) {
+				            directorships = directorships + ", ";
+				        }
+				        directorships = directorships + $.cookie("director_company_name" + i);
+				    }
+				    $("#row1 .value").text(directorships);
 				}
 			
 			
