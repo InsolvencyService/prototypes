@@ -170,7 +170,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Vehicle you've owned</h1>
+	<h1 class="form-title heading-large">Vehicle you own</h1>
 	
 	<div class="form-group ">
 		<label id="value_label" class="form-label-bold" for="model">Value</label>
@@ -350,7 +350,7 @@ function writeCookies() {
 			
 	// write records
 		$.cookie("VehicleValue"+count, $("#value").val(), {path: '/'});
-		$.cookie("VehicleUse"+count, $("#pnl-use :checked").val(), {path: '/'});
+		$.cookie("VehicleUsedFor"+count, $("#pnl-use :checked").val(), {path: '/'});
 		$.cookie("VehicleStoredAddress1-"+count, $("#vehicle_address_line_1").val(), {path: '/'});
 		$.cookie("VehicleStoredAddress2-"+count, $("#vehicle_address_line_2").val(), {path: '/'});
 		$.cookie("VehicleStoredAddress3-"+count, $("#vehicle_address_line_3").val(), {path: '/'});
