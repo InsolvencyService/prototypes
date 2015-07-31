@@ -352,6 +352,8 @@ $(document).ready(function() {
 });
 
 $('#next').click(function() {
+
+		writeCookies();
 		if($("#own").prop('checked')==true){
 			$("#next").attr("href","owned.html");
 		}
@@ -387,23 +389,7 @@ function writeCookies() {
 }
 
 function readCookies() {
-		var id = getParameterByName("id");
-		$.cookie('TempDROPensionProvider', $.cookie('DROPensionName'+id));
-		$("#pension_address_line_1").val($.cookie("DROPensionAddress1-"+id));
-		$("#pension_address_line_2").val($.cookie("DROPensionAddress2-"+id));
-		$("#pension_address_line_3").val($.cookie("DROPensionAddress3-"+id));
-		$("#pension_address_town").val($.cookie("DROPensionAddress4-"+id));
-		$("#pension_address_county").val($.cookie("DROPensionAddress5-"+id));
-		$("#pension_address_post_code").val($.cookie("DROPensionAddress6-"+id));
-		$("#ref").val($.cookie("DROPensionNumber"+id));
-		
-		if($.cookie("DROPensionApproved"+id) == 'yes'){
-			$( "#excluded_yes" ).prop( "checked", true );
-		}
-		else{
-			$( "#excluded_no" ).prop( "checked", true );
-		}
-		
+	
 		
 }
 
