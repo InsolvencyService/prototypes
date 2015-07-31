@@ -414,31 +414,31 @@ $(document).ready(function() {
 	//$("#creditor-selector :selected").attr("value", cookiename);
 	$('#creditor-selector option[value="' + cookiename + '"]').attr("selected", "selected");
 	
-	var loop = getParameterByName(again);
 	
-	if(loop == 'true'){
-		$('#creditor-selector option[value="' + cookiename + '"]').attr("selected", "selected");
-	}
+	
 	
 	
 });
 
 $("#next").click(function(){
-	
 	var creditorname = $("#creditor-selector :selected").attr("value");
 	var reference = $("#creditor_reference").val();
 	var amount = $("#amount-claimed").val();
-	
-	
+		
 	$.cookie("name", creditorname);
 	$.cookie("reference", reference);
 	$.cookie("amount", amount);	
+
 	$("#next").prop("href","1.html");
 });
 
 $("#again").click(function(){
+	var creditorname = $("#creditor-selector :selected").attr("value");
+	$.cookie("name", creditorname);
 	$("#again").attr("href", "2.html?again=true");
 }
+
+
 
 $("#add-creditor").on("click", function (e) {
 	$("#pnl-creditor").toggle();
