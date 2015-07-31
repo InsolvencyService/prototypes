@@ -198,10 +198,10 @@ display:block;
 
 			<p>&nbsp;</p>
 			
-			<div class="form-group" id="pnl-owned">
+			<div class="form-group" >
 			<p id="title_label" class="form-label-bold">How was the vehicle disposed of?</p>
 			<fieldset class="inline">
-				<div>				
+				<div id="transfer_type">				
 					<label id="sold_label1" for="sold" class="block-label">
 					<input id="sold"  name="used" value="sold" type="radio">Sold</label>
 					
@@ -302,12 +302,8 @@ display:block;
 var tempname;
 var count;
 
-$(document).ready(function() {
-	$("#make").val($.cookie("TempVehicleMake"));
-	$("#model").val($.cookie("TempVehicleModel"));
-});
-
 $('#next').click(function() {
+		writeCookies();
 		if($("#sold").prop('checked')==true || $("#scrapped").prop('checked')==true){
 			$("#next").attr("href","sold_amount.html");
 		}
@@ -316,61 +312,17 @@ $('#next').click(function() {
 		}
 });
 
-
-
 function writeCookies() {
 	// Get count
-		count = $.cookie("DROPensionCount");
-		if(count == null || count == ""){
-			count=0
-		}
-		count++;
-		
-		if(edited=="true"){
-			count = getParameterByName("id");
-		}
-	
+		count = $.cookie("VehicleCount");
+			
 	// write records
-		// name
-		$.cookie("DROPensionName"+count, tempname);
-		// address
-		$.cookie("DROPensionAddress1-"+count, $("#pension_address_line_1").val());
-		$.cookie("DROPensionAddress2-"+count, $("#pension_address_line_2").val());
-		$.cookie("DROPensionAddress3-"+count, $("#pension_address_line_3").val());
-		$.cookie("DROPensionAddress4-"+count, $("#pension_address_town").val());
-		$.cookie("DROPensionAddress5-"+count, $("#pension_address_county").val());
-		$.cookie("DROPensionAddress6-"+count, $("#pension_address_post_code").val());
-		// reference
-		$.cookie("DROPensionNumber"+count, $("#ref").val());
-		// excluded
-		$.cookie("DROPensionApproved"+count, $("#excluded_debt :checked").val());
-		// update count
-		if(edited!="true"){
-			$.cookie("DROPensionCount", count);
-		}
-
+		$.cookie("VehicleTransferDay"+count, $("#day").val(), {path: '/'});
+		$.cookie("VehicleTransferMonth"+count, $("#month").val(), {path: '/'});
+		$.cookie("VehicleTransferYear"+count, $("#year").val(), {path: '/'});
+		$.cookie("VehicleTransferType"+count, $("#transfer_type :selected").val(), {path: '/'});
 }
 
-function readCookies() {
-		var id = getParameterByName("id");
-		$.cookie('TempDROPensionProvider', $.cookie('DROPensionName'+id));
-		$("#pension_address_line_1").val($.cookie("DROPensionAddress1-"+id));
-		$("#pension_address_line_2").val($.cookie("DROPensionAddress2-"+id));
-		$("#pension_address_line_3").val($.cookie("DROPensionAddress3-"+id));
-		$("#pension_address_town").val($.cookie("DROPensionAddress4-"+id));
-		$("#pension_address_county").val($.cookie("DROPensionAddress5-"+id));
-		$("#pension_address_post_code").val($.cookie("DROPensionAddress6-"+id));
-		$("#ref").val($.cookie("DROPensionNumber"+id));
-		
-		if($.cookie("DROPensionApproved"+id) == 'yes'){
-			$( "#excluded_yes" ).prop( "checked", true );
-		}
-		else{
-			$( "#excluded_no" ).prop( "checked", true );
-		}
-		
-		
-}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
