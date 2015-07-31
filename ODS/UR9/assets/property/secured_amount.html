@@ -333,18 +333,18 @@ $(document).ready(function() {
 	
 	$("#next").on("click", function(){
 		if ($("#purchasemonth").val().length > 0){
-			$.cookie('purchasemonth', $("#purchasemonth").val(), { expires: 1 });
-			$.cookie('purchaseyear', $("#purchaseyear").val(), { expires: 1 });
+			$.cookie('purchasemonth', $("#purchasemonth").val(), { expires: 1, path: "/" });
+			$.cookie('purchaseyear', $("#purchaseyear").val(), { expires: 1, path: "/" });
 		}
 		else{
-			$.cookie('purchasemonth', "6", { expires: 1 });
-			$.cookie('purchaseyear', "2005", { expires: 1 });
+			$.cookie('purchasemonth', "6", { expires: 1, path: "/" });
+			$.cookie('purchaseyear', "2005", { expires: 1, path: "/" });
 		}
 		if ($("#propertyvalue").val().length > 0){
-		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1 });
+		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1, path: "/" });
 		}
 		else{
-			$.cookie('propertyvalue', "140000", { expires: 1 });
+			$.cookie('propertyvalue', "140000", { expires: 1, path: "/" });
 		}
 		
 	});

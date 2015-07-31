@@ -344,6 +344,34 @@ $(document).ready(function() {
                     $("#next").show();
                 }
 
+                //Populate property amount - should be a negative value
+                //Property value - mortgage amount + secured loan amounts
+	             var propertyvalue = 0.0;
+	             var mortgageamount = 0.0;
+	             var securedloansamount = 0.0;
+
+	             if ($.cookie('propertyvalue')) {
+	                 propertyvalue = parseFloat($.cookie('propertyvalue'));
+	             }
+	             if ($.cookie('mortgageamount')) {
+	                 mortgageamount = parseFloat($.cookie('mortgageamount'));
+	             }
+	             var numberofsecuredloans = 0;
+	             if ($.cookie("numberofsecuredloans") && parseInt($.cookie("numberofsecuredloans"))) {
+	                 numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
+	             }
+	             for (i = 1; i <= numberofsecuredloans; i++) {
+	                 securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
+	             }
+	             if (propertyvalue > 0) {
+	                 $("assets1 .value").text(propertyvalue - (mortgageamount + securedloansamount));
+	             }
+
+                 //Populate item amount
+	             if ($.cookie('otherassetsamount')) {
+	                 $("assets3 .value").text($.cookie('otherassetsamount'));
+	             }
+
 				$(".declare").on("click", function () {
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");

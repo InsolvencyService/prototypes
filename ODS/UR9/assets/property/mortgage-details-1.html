@@ -321,7 +321,7 @@ $(document).ready(function() {
 	
 	 $("#next").on("click", function (e) {
 	     if ($("#creditors").val().length > 0) {
-	         $.cookie('mortgagecompany', $("#creditors").val(), { expires: 1 });
+	         $.cookie('mortgagecompany', $("#creditors").val(), { expires: 1, path: "/" });
 	     }
 	     else {
 	         e.preventDefault();

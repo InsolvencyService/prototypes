@@ -789,6 +789,8 @@ table td .group-title {
                 }
 
                 $("#overalltotal .totalvalue").text(totalamount);
+                $.cookie("otherassetsamount", totalamount, { expires: 1, path: "/" });
+
             }
 
             function totaloverall(rowid) {
