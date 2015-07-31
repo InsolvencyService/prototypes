@@ -405,8 +405,8 @@
 					currentasset = parseFloat($.cookie("VehicleAssetValue"+x));
 					totalasset=totalasset+currentasset;
 				}
-				//$.cookie("VehicleAssetTotal", totalasset, {path: '/'});
-				//$("#next").attr("href", "../summary.html?page=3");
+				$.cookie("VehicleAssetTotal", totalasset, {path: '/'});
+				$("#next").attr("href", "../summary.html?page=3");
             });
 
 
