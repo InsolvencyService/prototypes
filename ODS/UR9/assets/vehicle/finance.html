@@ -195,10 +195,10 @@ display:block;
      
      <div class="form-group ">
 	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
+		<label for="companyname" class="form-label-bold applicant_address_town">
 		What is the name of the finance company?</label>
 		<div class="form-hint">For example ABC Finance Ltd</div>
-		<span class="currency"></span><input id="amount" name="amount" type="text" value="" class="amount-value" />
+		<input id="companyname" name="companyname" type="text" value=""  />
 	</div>
 	
 	<div class="clearfix">&nbsp;</div>
@@ -324,8 +324,23 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+$('#next').click(function() {
+	writeCookies();
+});
 
-
+function writeCookies(){
+	// Get count
+		count = $.cookie("VehicleCount");
+			
+	// write records
+	$.cookie("VehicleFinanceCompany"+count, $("#name").val(), {path: '/'});
+	$.cookie("VehicleFinanceAdd1-"+count, $("#vehicle_address_line_1").val(), {path: '/'});
+	$.cookie("VehicleFinanceAdd2-"+count, $("#vehicle_address_line_2").val(), {path: '/'});
+	$.cookie("VehicleFinanceAdd3-"+count, $("#vehicle_address_line_3").val(), {path: '/'});
+	$.cookie("VehicleFinanceAdd4-"+count, $("#vehicle_address_town").val(), {path: '/'});
+	$.cookie("VehicleFinanceAdd5-"+count, $("#vehicle_address_county").val(), {path: '/'});
+	$.cookie("VehicleFinanceAdd6-"+count, $("#vehicle_address_post_code").val(), {path: '/'});
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

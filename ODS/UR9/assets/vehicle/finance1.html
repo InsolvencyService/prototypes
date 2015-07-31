@@ -336,6 +336,20 @@ display:block;
 
 <script type="text/javascript">
 
+$('#next').click(function() {
+	writeCookies();
+});
+
+function writeCookies(){
+	// Get count
+		count = $.cookie("VehicleCount");
+			
+	// write records
+	$.cookie("VehicleFinanceOutstanding"+count, $("#amount").val(), {path: '/'});
+	$.cookie("VehicleFinanceRef"+count, $("#ref").val(), {path: '/'});
+	$.cookie("VehicleFinanceMonth"+count, $("#month").val(), {path: '/'});
+	$.cookie("VehicleFinanceYear"+count, $("#year").val(), {path: '/'});
+}
 
 
 function getParameterByName(name) {
