@@ -153,6 +153,14 @@
 			<div class="form-group">
 
                                     <table id="assets">
+                                        <thead style="display:none">
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th>Total
+                                                </th>
+                                            </tr>
+                                        </thead>
                                         <tbody class="group-title">
                                             <tr class="group-heading" id="assets1">
                                                 <td class="group-title col-sm-8">
@@ -362,15 +370,19 @@ $(document).ready(function() {
 	                 numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
 	             }
 	             for (i = 1; i <= numberofsecuredloans; i++) {
-	                 securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
+	                 if (parseFloat($.cookie('securedloan' + i))) {
+	                     securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
+	                 }
 	             }
-	             if (propertyvalue > 0) {
+	             if (getParameterByName("page").length > 0 && propertyvalue > 0) {
 	                 $("#assets1 .value").text(numberWithCommas(propertyvalue - (mortgageamount + securedloansamount)));
+	                 $("thead").show();
 	             }
 
                  //Populate item amount
-	             if (parseFloat($.cookie('otherassetsamount'))) {
+	             if (getParameterByName("page").length > 0 && parseFloat($.cookie('otherassetsamount'))) {
 	                 $("#assets3 .value").text(numberWithCommas(parseFloat($.cookie('otherassetsamount'))));
+	                 $("thead").show();
 	             }
 
 				$(".declare").on("click", function () {

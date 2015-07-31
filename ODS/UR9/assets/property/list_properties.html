@@ -390,13 +390,15 @@
                     if ($.cookie('property' + i + 'joint')) {
                         jointownership = "Yes";
                     }
-                    var value = numberWithCommas($.cookie('property' + i + 'value'));
-                    var address = $.cookie('property' + i + 'address');
+                    if ($.cookie('property' + i + 'value')) {
+                        var value = numberWithCommas($.cookie('property' + i + 'value'));
+                        var address = $.cookie('property' + i + 'address');
 
-                    var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-                    var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
+                        var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
+                        var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
 
-                    $("tbody").append(row);
+                        $("tbody").append(row);
+                    }
                 }
 
 

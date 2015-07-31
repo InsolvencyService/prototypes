@@ -369,7 +369,7 @@ $(document).ready(function() {
 			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1, path: "/" });
 			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1, path: "/" });
 			
-			$.cookie('numberofsecuredloans', numberofsecuredloans, { expires: 1, path: "/" });
+			$.cookie('numberofsecuredloans', parseInt(numberofsecuredloans), { expires: 1, path: "/" });
 			
 		}
 
