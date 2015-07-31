@@ -378,9 +378,19 @@ $(document).ready(function() {
 	                 $("#assets1 .value").text(numberWithCommas(propertyvalue - (mortgageamount + securedloansamount)));
 	                 $("thead").show();
 	             }
+	             
+	             //Populate item amount
+	             if (parseFloat($.cookie('VehicleAssetTotal'))) {
+	                 $("#assets2 .value").text(numberWithCommas(parseFloat($.cookie('VehicleAssetTotal'))));
+	             }
 
+<<<<<<< HEAD
                  //Populate item amount
 	             if (getParameterByName("page").length > 0 && parseFloat($.cookie('otherassetsamount'))) {
+=======
+	                              //Populate item amount
+	             if (parseFloat($.cookie('otherassetsamount'))) {
+>>>>>>> origin/gh-pages
 	                 $("#assets3 .value").text(numberWithCommas(parseFloat($.cookie('otherassetsamount'))));
 	                 $("thead").show();
 	             }
