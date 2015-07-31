@@ -194,18 +194,27 @@ display:block;
 			What is their relationship to you?</p>
 
             <fieldset class="inline">
-                <div id="title" class="form-group">
-                    <label id="dependent_type1_label" for="dependent_type1" class="block-label">
-                        <input id="dependent_type1" value="Parent" name="dependent" type="radio" 
+                <div id="relationship" class="form-group">
+                    <label id="relationship_type1_label" for="relationship_type1" class="block-label">
+                        <input id="relationship_type1" value="Husband/wife/partner" name="relationship" type="radio" 
                                aria-describedby="title_error title_help">Husband/wife/partner
                     </label>
                     
-                    <label id="dependent_type2_label" for="dependent_type2" class="block-label">
-                        <input id="dependent_type2" checked="true" value="Child" name="dependent" type="radio" aria-describedby="title_error title_help">Child
+                    <label id="relationship_type2_label" for="relationship_type2" class="block-label">
+                        <input id="relationship_type2" checked="true" value="Child" name="relationship" type="radio" aria-describedby="title_error title_help">Child
                     </label>
                     
-                    <label id="dependent_type2_label" for="dependent_type3" class="block-label">
-                        <input id="dependent_type3" value="Other" name="dependent" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
+                    <label id="relationship_type3_label" for="relationship_type3" class="block-label">
+                        <input id="relationship_type3" checked="true" value="Friend" name="relationship" type="radio" aria-describedby="title_error title_help">Friend
+                    </label>
+
+					<label id="relationship_type4_label" for="relationship_type4" class="block-label">
+                        <input id="relationship_type4" checked="true" value="Employer" name="relationship" type="radio" aria-describedby="title_error title_help">Employer
+                    </label>
+
+                    
+                    <label id="relationship_type2_label" for="relationship_other" class="block-label">
+                        <input id="relationship_other" value="Other" name="relationship" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
                         <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/></span>
                      </label>
 	                        
@@ -297,65 +306,24 @@ display:block;
 var tempname;
 var count;
 
-$(document).ready(function() {
-	
-
-});
-
 
 function writeCookies() {
 	// Get count
-		count = $.cookie("DROPensionCount");
-		if(count == null || count == ""){
-			count=0
-		}
-		count++;
-		
-		if(edited=="true"){
-			count = getParameterByName("id");
-		}
-	
+		count = $.cookie("VehicleCount");
+			
 	// write records
-		// name
-		$.cookie("DROPensionName"+count, tempname);
-		// address
-		$.cookie("DROPensionAddress1-"+count, $("#pension_address_line_1").val());
-		$.cookie("DROPensionAddress2-"+count, $("#pension_address_line_2").val());
-		$.cookie("DROPensionAddress3-"+count, $("#pension_address_line_3").val());
-		$.cookie("DROPensionAddress4-"+count, $("#pension_address_town").val());
-		$.cookie("DROPensionAddress5-"+count, $("#pension_address_county").val());
-		$.cookie("DROPensionAddress6-"+count, $("#pension_address_post_code").val());
-		// reference
-		$.cookie("DROPensionNumber"+count, $("#ref").val());
-		// excluded
-		$.cookie("DROPensionApproved"+count, $("#excluded_debt :checked").val());
-		// update count
-		if(edited!="true"){
-			$.cookie("DROPensionCount", count);
-		}
-
-}
-
-function readCookies() {
-		var id = getParameterByName("id");
-		$.cookie('TempDROPensionProvider', $.cookie('DROPensionName'+id));
-		$("#pension_address_line_1").val($.cookie("DROPensionAddress1-"+id));
-		$("#pension_address_line_2").val($.cookie("DROPensionAddress2-"+id));
-		$("#pension_address_line_3").val($.cookie("DROPensionAddress3-"+id));
-		$("#pension_address_town").val($.cookie("DROPensionAddress4-"+id));
-		$("#pension_address_county").val($.cookie("DROPensionAddress5-"+id));
-		$("#pension_address_post_code").val($.cookie("DROPensionAddress6-"+id));
-		$("#ref").val($.cookie("DROPensionNumber"+id));
-		
-		if($.cookie("DROPensionApproved"+id) == 'yes'){
-			$( "#excluded_yes" ).prop( "checked", true );
+		$.cookie("VehicleOwnerFirstName"+count, $("#firstname").val(), {path: '/'});
+		$.cookie("VehicleOwnerLastName"+count, $("#lastname").val(), {path: '/'});
+		if($("#relationship_other").prop('checked')==true){
+			$.cookie("VehicleOwnerRelationship"+count, $("#other").val(), {path: '/'});
 		}
 		else{
-			$( "#excluded_no" ).prop( "checked", true );
+			$.cookie("VehicleOwnerRelationship"+count,  $("#relationship :checked").val(), {path: '/'});
 		}
-		
-		
+
+
 }
+
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
