@@ -351,26 +351,26 @@ $(document).ready(function() {
 	             var mortgageamount = 0.0;
 	             var securedloansamount = 0.0;
 
-	             if ($.cookie('propertyvalue')) {
+	             if (parseFloat($.cookie('propertyvalue'))) {
 	                 propertyvalue = parseFloat($.cookie('propertyvalue'));
 	             }
-	             if ($.cookie('mortgageamount')) {
+	             if (parseFloat($.cookie('mortgageamount'))) {
 	                 mortgageamount = parseFloat($.cookie('mortgageamount'));
 	             }
 	             var numberofsecuredloans = 0;
-	             if ($.cookie("numberofsecuredloans") && parseInt($.cookie("numberofsecuredloans"))) {
+	             if (parseInt($.cookie("numberofsecuredloans"))) {
 	                 numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
 	             }
 	             for (i = 1; i <= numberofsecuredloans; i++) {
 	                 securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
 	             }
 	             if (propertyvalue > 0) {
-	                 $("assets1 .value").text(propertyvalue - (mortgageamount + securedloansamount));
+	                 $("assets1 .value").text(numberWithCommas(propertyvalue - (mortgageamount + securedloansamount)));
 	             }
 
                  //Populate item amount
-	             if ($.cookie('otherassetsamount')) {
-	                 $("assets3 .value").text($.cookie('otherassetsamount'));
+	             if (parseFloat($.cookie('otherassetsamount'))) {
+	                 $("assets3 .value").text(numberWithCommas(parseFloat($.cookie('otherassetsamount'))));
 	             }
 
 				$(".declare").on("click", function () {
