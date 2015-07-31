@@ -399,14 +399,14 @@
             });
             
             $("#next").click(function (e) {
-            	var totalasset=0;
-				var currentasset=0;
+            	var totalasset=0.00;
+				var currentasset=0.00;
 				for(x=1;x<=count;x++){
-					currentasset = $.cookie("VehicleAssetValue"+x);
+					currentasset = parseFloat($.cookie("VehicleAssetValue"+x));
 					totalasset=totalasset+currentasset;
 				}
-				$.cookie("VehicleAssetTotal", totalasset, {path: '/'});
-				$("#next").attr("href", "../summary.html?page=3");
+				//$.cookie("VehicleAssetTotal", totalasset, {path: '/'});
+				//$("#next").attr("href", "../summary.html?page=3");
             });
 
 
