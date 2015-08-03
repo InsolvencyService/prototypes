@@ -379,26 +379,40 @@
 
             $(document).ready(function () {
                 // look for cookies coming back
-                var numproperties = 0;
+                var numproperties = 1;
                 if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
                     numproperties = $.cookie("numproperties");
                 }
-
+                var value = 0.0;
+                var jointownership = "No";
+                var address = $.cookie("propertyline1");
                 for (i = 1; i <= numproperties; i++) {
-                    var jointownership = "No";
-
+                    // TODO - make the next bit work
                     if ($.cookie('property' + i + 'joint')) {
                         jointownership = "Yes";
                     }
                     if ($.cookie('property' + i + 'value')) {
-                        var value = numberWithCommas($.cookie('property' + i + 'value'));
-                        var address = $.cookie('property' + i + 'address');
+                         value = numberWithCommas($.cookie('property' + i + 'value'));
+                         address = $.cookie('property' + i + 'address');
 
                         var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
                         var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
-
                         $("tbody").append(row);
                     }
+                }
+                // TODO - remove this next bit when the above is working
+                if ($.cookie("numproperties") == null) {
+                    if ($.cookie('propertyvalue')) {
+                        value = numberWithCommas($.cookie('propertyvalue'));
+                    }
+
+                    if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
+                        jointownership = "Yes";
+                    }
+
+                    var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
+                    var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
+                    $("tbody").append(row);
                 }
 
 

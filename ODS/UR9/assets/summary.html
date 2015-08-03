@@ -378,7 +378,17 @@ $(document).ready(function() {
 	                 }
 	             }
 	             if (getParameterByName("page").length > 0 && propertyvalue > 0) {
-	                 $("#assets1 .value").text(numberWithCommas(propertyvalue - (mortgageamount + securedloansamount)));
+	                 var personamount = mortgageamount;
+
+	                 if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
+	                     var ownerpercentage = 50;
+	                     if ($.cookie('ownerpercentage')) {
+	                         ownerpercentage = parseInt($.cookie('ownerpercentage'));
+	                     }
+	                     mortgageamount = mortgageamount * (ownerpercentage / 100);
+	                     personamount = (propertyvalue * (ownerpercentage / 100)) - (mortgageamount + securedloansamount);
+	                 }
+	                 $("#assets1 .value").text(numberWithCommas(personamount));
 	                 $("thead").show();
 	             }
 	             
