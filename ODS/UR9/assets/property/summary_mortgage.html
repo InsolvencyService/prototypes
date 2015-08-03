@@ -231,7 +231,7 @@ display:block;
                             <td class="amount"><a href="#">Edit</a></td>
                         </tr>
                         <tr>
-                            <td>Mortgage with <span id="mortgagecompany">HSBC</span></td>
+                            <td><span class="sharedmortgage" style="display:none">Your share of the </span>Mortgage with <span id="mortgagecompany">HSBC</span></td>
                             <td class="amount"><span class="poundsign">£</span><span id="mortgageamount">150,000</span></td>
                             <td class="amount"><a href="#">Edit</a></td>
                         </tr>
@@ -354,7 +354,7 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-		
+    var mortgageamount = 0.0;
     var housename = $.cookie("propertyline1");
     if (housename && housename.length > 0) {
         $(".data").text(housename);
@@ -363,14 +363,22 @@ $(document).ready(function() {
     if ($.cookie('propertyvalue')) {
         $("#propertyvalue").text(numberWithCommas($.cookie('propertyvalue')));
     }
-    if ($.cookie('mortgageamount')){
-        $("#mortgageamount").text(numberWithCommas($.cookie('mortgageamount')));
-    }
-
     if ($.cookie('mortgagecompany')) {
         $("#mortgagecompany").text($.cookie('mortgagecompany'));
     }
+    if ($.cookie('mortgageamount')) {
+        mortgageamount = numberWithoutCommas($.cookie('mortgageamount'));
+    }
+    if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
+        $(".sharedmortgage").show();
+        var ownerpercentage = 50;
+        if ($.cookie('ownerpercentage')) {
+            ownerpercentage = parseInt($.cookie('ownerpercentage'));
+        }
+        mortgageamount = mortgageamount * (ownerpercentage / 100);
+    }
 
+    $("#mortgageamount").text(numberWithCommas(mortgageamount));
     var numberofsecuredloans = 0;
     if ($.cookie("numberofsecuredloans") && parseInt($.cookie("numberofsecuredloans"))) {
         numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
@@ -421,6 +429,10 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
+}
 </script>
 
 

@@ -245,19 +245,19 @@ legend{
                         <tr class="repeat singleowner">
                             <td><span id="singleownername">You</span></td>
                             <td></td>
-                            <td><span id="myshare">100%</span></td>
+                            <td><span>100%</span></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr class="repeat sharedowner" id="sharedowner1">
                             <td><span id="sharedowner1name">You</span></td>
                             <td></td>
-                            <td><span id="myshare"><input type="text" value="50%"></span></td>
+                            <td><span><input type="text" value="50%"></span></td>
                             <td>&nbsp;</td>
                         </tr>
-                        <tr class="repeat sharedowner" id="sharedowner1">
+                        <tr class="repeat sharedowner" id="sharedowner2">
                             <td><span id="sharedowner2name">Susan Smith</span></td>
                             <td>Me</td>
-                            <td><span id="myshare"><input type="text" value="50%"></span></td>
+                            <td><span><input type="text" value="50%" id="sharedownerpercentage"></span></td>
                             <td>&nbsp;</td>
                         </tr>
 	                </tbody>
@@ -420,8 +420,21 @@ $(document).ready(function () {
         $.cookie("memberfirstname", $("#firstname").val(), { expires: 1, path: '/' });
         $.cookie("memberlastname", $("#lastname").val(), { expires: 1, path: '/' });
     });
+
+    $("#next").click(function () {
+        var percentage = 100.0;
+        if ($("#sharedownerpercentage").val().length > 0) {
+            percentage = 100 - parseInt($("#sharedownerpercentage").val());
+        }
+        $.cookie('ownerpercentage', percentage, { expires: 1, path: '/' });
+        $.cookie('member' + numowners + "-percentage", parseInt($("#sharedownerpercentage").val()), { expires: 1, path: '/' });
+    });
 });
 
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

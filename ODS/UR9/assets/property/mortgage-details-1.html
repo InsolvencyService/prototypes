@@ -197,13 +197,13 @@ display:block;
                         <fieldset class="inline">
                             <div id="title" class="form-group">
 
-                                <label for="sameaddress_Yes" class="block-label">
-                                    <input id="sameaddress_Yes" name="sameaddress" type="radio">
+                                <label for="sharedmortgage_Yes" class="block-label">
+                                    <input id="sharedmortgage_Yes" name="sharedmortgage" type="radio">
                                     Yes
                                 </label>
 
-                                <label id="title_label1" for="sameaddress_No" class="block-label">
-                                    <input id="sameaddress_No" name="sameaddress" type="radio">
+                                <label id="title_label1" for="sharedmortgage_No" class="block-label">
+                                    <input id="sharedmortgage_No" name="sharedmortgage" type="radio">
                                     The mortgage is in my name only
                                 </label>
 
@@ -320,8 +320,16 @@ $(document).ready(function() {
 
 	
 	 $("#next").on("click", function (e) {
-	     if ($("#creditors").val().length > 0) {
+
+	     if ($("#creditors").val().length > 0 && $("input[name=sharedmortgage]:checked").val()) {
 	         $.cookie('mortgagecompany', $("#creditors").val(), { expires: 1, path: "/" });
+
+	         if ($("#sharedmortgage_Yes").is(':checked')){
+	             $.cookie('sharedmortgage', "Yes", { expires: 1, path: "/" });
+	         }
+	         else{
+	             $.cookie('sharedmortgage', "No", { expires: 1, path: "/" });
+	         }
 	     }
 	     else {
 	         e.preventDefault();
