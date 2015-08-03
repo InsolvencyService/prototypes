@@ -363,6 +363,7 @@ $(document).ready(function() {
 	                 propertyvalue = parseFloat($.cookie('propertyvalue'));
 	             }
 	             if (parseFloat($.cookie('mortgageamount'))) {
+                     // TODO - check if its shared
 	                 mortgageamount = parseFloat($.cookie('mortgageamount'));
 	             }
 	             var numberofsecuredloans = 0;
@@ -371,6 +372,7 @@ $(document).ready(function() {
 	             }
 	             for (i = 1; i <= numberofsecuredloans; i++) {
 	                 if (parseFloat($.cookie('securedloan' + i))) {
+                         // TODO - check if it's joint
 	                     securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
 	                 }
 	             }
