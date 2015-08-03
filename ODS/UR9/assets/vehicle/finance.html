@@ -70,9 +70,38 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
+  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
+ <style type="text/css">
+ .tt-dropdown-menu{
+	width:650px;
+}
+.tt-input{
+	width:400px;
+}
+.tt-hint{
+	display:none !important;
+}
+.choose-address{
+	color:gray;
+}
+.row > div:first-child{
+	padding-left:5px;
+	margin-left:0;	
+}
+i.glyphicon{
+	margin-right:5px;
+	color:#666666;
+}
+.input-sm{
+	width:170px;
+}
+.input-lg{
+	width:260px;
+}
 
-<style type="text/css">
-.amount-value:before { content: "£"; }
+#row-total td{
+	font-weight:bold;
+}
 
 
 .row img{
@@ -94,14 +123,17 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-#month option{
-	width:50px;
-	display:block;
-	white-space:nowrap;
-	margin:0;
-	padding:5px 4px 3px 4px;
-	border:1px gray solid !important;
+
+.btn-edit{
+	margin-right:10px;
 }
+.amount{
+	text-align:right
+}
+.totalrow td{
+	font-weight:bold !important;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -165,100 +197,286 @@ display:block;
 	
 
 
-	</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
 <div class="inner-block text">
 	
 	
 	
-	<h1 class="form-title heading-large">Finance company details</h1>
-	
+	<h1 class="form-title heading-large">Vehicle finance</h1>
+	<div class="newvisitor">
+	</div>
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<div class="clearfix"></div>
+	<p>
+	</p>
 	
-	<div class="validation-summary"  id="msg-enteramt" style="display:none">
-                <h2>There was a problem with your answers</h2>
+	
+	<div class="validation-summary"  id="msg-entervalue" style="display:none">
+                <h2>Add a creditor</h2>
                 <p></p><ol>
         <li class="error-message"> 
-              Please enter a valid amount
-         </li>
-      </ol>
-     </div>
-     
-     <div class="form-group ">
+               Enter a creditor’s name below to continue
+        </li>
+        </ol>
+    </div>
+            
+            
+
 	
-		<label for="companyname" class="form-label-bold applicant_address_town">
-		What is the name of the finance company?</label>
-		<div class="form-hint">For example ABC Finance Ltd</div>
-		<input id="companyname" name="companyname" type="text" value=""  />
+        <p class="clearfix"><br /></p>
+        <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
+           <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
+            <p>Are you sure you want to delete this creditor?</p>
+            <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
+        </div>  
+<h2 class="form-label-bold" hidden="true">Creditors</h2>
+<div id="creditorlist">
+
+<table style="width: 100%">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Reference</th>
+				<th style="text-align:right; white-space:nowrap">Amount</th>
+				<th>Date</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr id="row1" style="display:none">
+				
+				<td class="name" style="width:45%">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr id="row2" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row3" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row4" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row5" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row6" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row7" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row8" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row9" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row10" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row11" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row12" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row13" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row14" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row15" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row16" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row17" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row18" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row19" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row20" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row21" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row22" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+			<tr  id="row23" style="display:none">
+				
+				<td class="name">&nbsp;</td>
+				<td class="ref">&nbsp;</td>
+				<td class="amount">&nbsp;</td>
+				<td class="date">&nbsp;</td>
+				<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+			</tr>
+
+			<tr  class="totalrow" >
+				<td  colspan="2" class="text-right" style="white-space:nowrap"><span >Total £</span></td>
+				<td class="amount" style="width:100px; white-space:nowrap">
+						<div class="text-right" id="box-total"></div>
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+
+		</tbody>
+		</table>
+</div>
+<div  class="clearfix"><br/></div>
+<div class="form-group">
+	
+	<label  for="creditors" class="form-label-bold " id="heading-add">What is the name of the finance company</label>
+
+	<div class="form-hint">Enter the name below, for example ABC Finance. </div>
+	<input type="text" placeholder="Start typing name" id="creditors" style="width:400px"
+								  class="form-control typeahead input-lg" autocomplete="off">
+		<a class="button" href="address.html" id="next">Continue</a>
+
+	&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
+
+
+
+	<p class="clearfix"><br/></p>
 	</div>
-	
-	<div class="clearfix">&nbsp;</div>
+<div class="clearfix"></div>
 
-	<div class="form-group ">
-		<p id="disposed_label" for="vehicle_address_line_1" for="vehicle_address_line_1" class="form-label-bold">Address</p>
-		<div class="form-group ">
-			<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
-			<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" /><br>
-			<br/>
-		</div>
-		<div class="form-group ">
-			<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
-			<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" /><br>
-			<br/>
-		</div>
-		<div class="form-group ">
-			<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
-			<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" /><br>
-			<br/>
-		</div>
-		<div class="form-group ">
-			<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
-			<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" /><br>
-			<br/>
-		</div>
-		<div class="form-group ">
-			<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
-			<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" /><br>
-			<br/>
-		</div>
-		<div class="form-group ">
-			<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
-			<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-			<br/>
-		</div>
-	</div>	
-	
-	
-
-
-
-
-
-
-
-<p class="clearfix"><br/></p>
+<a class="button secondary" href="../../creditors/actionlist.html" id="btn-addedall" hidden="true">Continue - I have added all creditors</a>
+<p><br></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="finance1.html">Continue</a>
+<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+        <a style="padding-right: 30px" href="../../overview.html?section4=complete" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -268,13 +486,12 @@ display:block;
 	</form>
 	</div>
 
+	 <!-- #EndEditable -->
+
         
 </div>
 
 
-	 <!-- #EndEditable -->
-
-        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -322,25 +539,127 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
+	<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
+	<script type="text/javascript" src="../../creditors/js/creditors.js"></script>
+
 
 <script type="text/javascript">
-$('#next').click(function() {
-	writeCookies();
+$(document).ready(function() {
+	
+	var reset = getParameterByName("reset");
+	var loop = getParameterByName("loop");
+	var normalroute = $("#next").prop("href");
+	var total = 0;
+	
+
+	if (loop && loop.length > 0){
+	}
+	else{
+		$("#creditorlist").hide();
+		$("#btn-addedall").hide();
+		$(".newvisitor").show();
+	}
+
+	var numcreditors = 0;
+	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
+		numcreditors = parseInt($.cookie('numcreditors'));
+	}
+	if (numcreditors > 0){
+
+		for (i=1; i <= numcreditors; i++){
+
+			if ($.cookie('creditorname' + i) && $.cookie('creditorname' + i).length > 0 && $.cookie('creditoramount' + i)){
+				if (reset && reset.length > 0){
+					$.removeCookie('creditorname' + i);
+					$.removeCookie('creditoramount' + i);
+				}
+				else{
+					if ($.cookie('creditordeleted' + i) == null){
+						$("#creditorlist").show();
+						$("#btn-addedall").show();
+						$("#heading-add").text("Add another creditor");
+						$(".newvisitor").hide();
+						
+						$("#row" + i).show();
+						$("#row" + i + " .name").text($.cookie('creditorname' + i));
+						$("#row" + i + " .ref").text($.cookie('creditorref' + i));
+						$("#row" + i + " .amount").text(numberWithCommas(parseFloat($.cookie('creditoramount' + i))));
+						$("#row" + i + " .date").text($.cookie('incurredmonth' + i) + "/" + ($.cookie('incurredyear' + i)));
+					}
+				}
+
+				if ($.cookie('creditordeleted' + i) && reset && reset.length > 0){
+					$.removeCookie('creditordeleted' + i);		
+				}
+
+
+			}
+		}
+
+		if (reset && reset.length > 0){
+			$.removeCookie($.cookie('numcreditors'));	
+		}
+		else{
+		    total = calctotal();
+	
+			if (total && total > 0){
+				$("#box-total").text(numberWithCommas(total));
+			}
+		}
+
+
+		
+	}
+	
+	$("#next").on("click", function(e){
+		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
+			numcreditors=numcreditors + 1;
+			$.cookie('numcreditors', numcreditors, { expires: 1 });
+			$.cookie('creditorname' + numcreditors, $('#creditors.typeahead').val(), { expires: 1 });
+		}
+		else{
+			$("#msg-entervalue").show();
+			e.preventDefault();
+		}
+	});
+	var rowid = "row1";
+	var id = 1;
+	$(".btn-delete").on("click", function () {
+	    if ($(this).parent().parent().prop("id")) {
+			rowid= $(this).parent().parent().prop("id");
+			id = parseInt(rowid.substring(3, rowid.length));
+			$("#confirm-delete").show();
+	    }
+
+	    $("#btn-confirm-delete").on("click", function () {
+	        $.cookie('creditordeleted' + id, "1", { expires: 1 });
+	        $("#row" + id).hide();
+	        $("#confirm-delete").hide();
+
+	        total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
+	        $("#box-total").text(numberWithCommas(total));
+
+	    })
+	});
+	
+	
+	
+   function calctotal() {
+        var totalamount = 0;
+        $('tr td.amount').each(function () {
+            if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
+            	var amount = $(this).text();
+                totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
+                $(this).val(parseFloat($(this).text()));
+            }
+        });
+        return totalamount;
+    }
+
 });
 
-function writeCookies(){
-	// Get count
-		count = $.cookie("VehicleCount");
-			
-	// write records
-	$.cookie("VehicleFinanceCompany"+count, $("#companyname").val(), {path: '/'});
-	$.cookie("VehicleFinanceAdd1-"+count, $("#vehicle_address_line_1").val(), {path: '/'});
-	$.cookie("VehicleFinanceAdd2-"+count, $("#vehicle_address_line_2").val(), {path: '/'});
-	$.cookie("VehicleFinanceAdd3-"+count, $("#vehicle_address_line_3").val(), {path: '/'});
-	$.cookie("VehicleFinanceAdd4-"+count, $("#vehicle_address_town").val(), {path: '/'});
-	$.cookie("VehicleFinanceAdd5-"+count, $("#vehicle_address_county").val(), {path: '/'});
-	$.cookie("VehicleFinanceAdd6-"+count, $("#vehicle_address_post_code").val(), {path: '/'});
-}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -354,13 +673,9 @@ function numberWithCommas(x) {
 }
 
 function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, "")).toFixed(2);
+    return parseFloat(x.toString().replace(/,/g, ""));
 }
 
-function pad (str, max) {
-  str = str.toString();
-  return str.length < max ? pad("0" + str, max) : str;
-}
 
 </script>
 
