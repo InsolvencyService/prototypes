@@ -165,7 +165,7 @@
                                                 <td class="group-title col-sm-8">
                                                 <div>Have you owned any property in the last 3 years?</div>
                                                 </td>
-                                                <td class="actions col-sm-2">
+                                                <td class="actions col-sm-2"><span class="answerno" style="display:none">No</span>
                                                     <a href="property/list_properties.html" class="next edit button">Yes</a>
                                                  <a href="#" class="declare button">No</a>
 
@@ -377,19 +377,25 @@ $(document).ready(function() {
 	                     securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
 	                 }
 	             }
-	             if (getParameterByName("page").length > 0 && propertyvalue > 0) {
-	                 var personamount = mortgageamount;
+	             if (getParameterByName("page").length > 0) {
+	                 if (propertyvalue > 0) {
+	                     var personamount = mortgageamount;
 
-	                 if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
-	                     var ownerpercentage = 50;
-	                     if ($.cookie('ownerpercentage')) {
-	                         ownerpercentage = parseInt($.cookie('ownerpercentage'));
+	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
+	                         var ownerpercentage = 50;
+	                         if ($.cookie('ownerpercentage')) {
+	                             ownerpercentage = parseInt($.cookie('ownerpercentage'));
+	                         }
+	                         mortgageamount = mortgageamount * (ownerpercentage / 100);
+	                         personamount = (propertyvalue * (ownerpercentage / 100)) - (mortgageamount + securedloansamount);
 	                     }
-	                     mortgageamount = mortgageamount * (ownerpercentage / 100);
-	                     personamount = (propertyvalue * (ownerpercentage / 100)) - (mortgageamount + securedloansamount);
+	                     $("#assets1 .value").text(numberWithCommas(personamount));
+	                     $("thead").show();
 	                 }
-	                 $("#assets1 .value").text(numberWithCommas(personamount));
-	                 $("thead").show();
+	                 else {
+	                     $("#assets1 .answerno").show();
+
+	                 }
 	             }
 	             
 	             //Populate item amount
