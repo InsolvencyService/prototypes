@@ -242,12 +242,24 @@ legend{
 	                </thead>
 	                <tbody class="tbl-content">
 	                                     
-	                    <tr class="repeat">
-	                        <td><span class="personname">James Smith</span></td>
-	                        <td>Me</td>
-	                        <td><span id="myshare">100%</span></td>
-	                        <td>&nbsp;</td>
-	                    </tr>
+                        <tr class="repeat singleowner">
+                            <td><span id="singleownername">You</span></td>
+                            <td></td>
+                            <td><span id="myshare">100%</span></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr class="repeat sharedowner" id="sharedowner1">
+                            <td><span id="sharedowner1name">You</span></td>
+                            <td></td>
+                            <td><span id="myshare"><input type="text" value="50%"></span></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr class="repeat sharedowner" id="sharedowner1">
+                            <td><span id="sharedowner2name">Susan Smith</span></td>
+                            <td>Me</td>
+                            <td><span id="myshare"><input type="text" value="50%"></span></td>
+                            <td>&nbsp;</td>
+                        </tr>
 	                </tbody>
 	            </table>
 
@@ -371,22 +383,33 @@ $(document).ready(function () {
         numowners = parseInt($.cookie('numowners'));
     }
 
-    var name = $.cookie('member' + numowners + "-firstname")  + " " + $.cookie('member' + numowners + "-lastname");
+    var owner2name = $.cookie('member' + numowners + "-firstname")  + " " + $.cookie('member' + numowners + "-lastname");
     var relationship = $.cookie('member' + numowners + "-relationship");
+    var ownername;
 
-    if ($.cookie("firstname")) {
-        $(".personname").text($.cookie("firstname") + " " + $.cookie("lastname"));
-    }
+        if ($.cookie("firstname")) {
+            ownername = $("#singleownername").text($.cookie("firstname") + " " + $.cookie("lastname"));
+        }
+        $("#singleownername").text(ownername);
+
 
     if (numowners > 0){
-        // add row to table
-        var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-        var row = "<tr><td>" + name + "</td><td>" + relationship + "</td><td>50%</td>" + editbuttons + "</tr>";
-        $("tbody").append(row);
-        $("#myshare").text("50%");
+        //var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
+        //var row = "<tr><td>" + name + "</td><td>" + relationship + "</td><td>50%</td>" + editbuttons + "</tr>";
+        //$("tbody").append(row);
+        //$("#myshare").text("50%");
+
+        $(".singleowner").hide();
+        $(".sharedowner").show();
+        $("#sharedowner1name").text(ownername);
+        $("#sharedowner2name").text(owner2name);
+        $("#sharedowner2relationship").text(relationship);
+
         $("#next").text("Continue - I have added all joint owners");
     }
-    else{
+    else {
+        $(".singleowner").show();
+        $(".sharedowner").hide();
         $("#firstname").val($.cookie('partner-firstname'));
         $("#lastname").val($.cookie('partner-lastname'));
     }
