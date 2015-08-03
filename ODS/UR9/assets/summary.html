@@ -165,9 +165,10 @@
                                                 <td class="group-title col-sm-8">
                                                 <div>Have you owned any property in the last 3 years?</div>
                                                 </td>
-                                                <td class="actions col-sm-2"><span class="answerno" style="display:none">No</span>
+                                                <td class="actions col-sm-2">
+                                                    <span class="answerno" style="display:none">No</span>
                                                     <a href="property/list_properties.html" class="next edit button">Yes</a>
-                                                 <a href="#" class="declare button">No</a>
+                                                    <a href="#" class="declare button">No</a>
 
 
                                                 </td>
@@ -183,6 +184,7 @@
 
                                                 </td>
                                                 <td class="actions col-sm-2">
+                                                    <span class="answerno" style="display:none">No</span>
                                                     <a href="vehicle/list_vehicles.html" class="next edit button">Yes</a>
                                                  <a href="#" class="declare button">No</a>
                                                 </td>
@@ -196,6 +198,7 @@
 												<div class="form-hint">Answer yes to check more detailed questions</div>
                                                 </td>
                                                 <td class="actions col-sm-2">
+                                                    <span class="answerno" style="display:none">No</span>
                                                     <a href="items/summary.html" class="next edit button">Yes</a>
                                                  <a href="#" class="declare button">No</a>
 
@@ -211,6 +214,7 @@
 
                                                 </td>
                                                 <td class="actions col-sm-2">
+                                                    <span class="answerno" style="display:none">No</span>
                                                     <a href="#" class="next edit button">Yes</a>
                                                  <a href="#" class="declare button">No</a>
                                                 </td>
@@ -377,10 +381,10 @@ $(document).ready(function() {
 	                     securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
 	                 }
 	             }
+
 	             if (getParameterByName("page").length > 0) {
 	                 if (propertyvalue > 0) {
 	                     var personamount = mortgageamount;
-
 	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
 	                         var ownerpercentage = 50;
 	                         if ($.cookie('ownerpercentage')) {
