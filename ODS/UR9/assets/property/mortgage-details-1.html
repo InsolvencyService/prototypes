@@ -321,18 +321,25 @@ $(document).ready(function() {
 	
 	 $("#next").on("click", function (e) {
 
-	     if ($("#creditors").val().length > 0 && $("input[name=sharedmortgage]:checked").val()) {
+	     if ($("#creditors").val().length > 0) {
 	         $.cookie('mortgagecompany', $("#creditors").val(), { expires: 1, path: "/" });
-
-	         if ($("#sharedmortgage_Yes").is(':checked')){
-	             $.cookie('sharedmortgage', "Yes", { expires: 1, path: "/" });
-	         }
-	         else{
-	             $.cookie('sharedmortgage', "No", { expires: 1, path: "/" });
-	         }
 	     }
 	     else {
 	         e.preventDefault();
+	     }
+
+	     if ($.cookie('partner-firstname') && $.cookie('partner-firstname').length > 0) {
+	         if ($("input[name=sharedmortgage]:checked").val()) {
+	             if ($("#sharedmortgage_Yes").is(':checked')) {
+	                 $.cookie('sharedmortgage', "Yes", { expires: 1, path: "/" });
+	             }
+	             else {
+	                 $.cookie('sharedmortgage', "No", { expires: 1, path: "/" });
+	             }
+	         }
+	         else {
+	             e.preventDefault();
+	         }
 	     }
 	});
 
