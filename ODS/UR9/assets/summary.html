@@ -389,10 +389,11 @@ $(document).ready(function() {
 	             }
 
 	             if (getParameterByName("page").length > 0) {
+	                 var ownerpercentage = 100;
 	                 if (propertyvalue > 0) {
 	                     var personamount = mortgageamount;
 	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
-	                         var ownerpercentage = 50;
+	                         ownerpercentage = 50;
 	                         if ($.cookie('ownerpercentage')) {
 	                             ownerpercentage = parseInt($.cookie('ownerpercentage'));
 	                         }
