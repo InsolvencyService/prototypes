@@ -235,13 +235,13 @@ table td .group-title {
                                                     <a href="#" class="declare">I don't have any cash assets</a>
                                                 </td>
                                             </tr>
-
-                                            <tr class="totalhide" style="display:none"><!-- in case we need to show totals here -->
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
                                                 <td class="actions">
+                                                    <a href="#" class="declare">I have added my cash assets</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -249,8 +249,7 @@ table td .group-title {
                                         <tbody class="group-title clearfix" id="item2" data-role="household">
                                             <tr class="group-heading parent">
                                                 <td>
-                                                    <div class="group-title">Household items of exceptional value
-</div>
+                                                    <div class="group-title">Household items of exceptional value</div>
                                                     <div class="form-hint">
                                                         <p>
                                                             <a href="#details2" class="js-section">
@@ -274,7 +273,7 @@ table td .group-title {
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
                                                 <td class="value"></td>
-                                                <td class="actions">
+                                                <td class="actions"><a href="#" class="declare">I have added my household items of exceptional value</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -766,7 +765,7 @@ table td .group-title {
                     $("#item" + rowid + " tr.child").remove();
                     for (i = 1; i <= numofthistype; i++) {
                         // Change the skip button text
-                        $("#item" + rowid + " .declare").text("I have completed this section");
+                        $("#item" + rowid + " .declare").text($("#item" + rowid + " .totalhide .declare").text());
                         // append the child row 
                         if ($.cookie(type + i + 'amount') > 0) {
                             var childamount = parseFloat($.cookie(type + i + 'amount'));
