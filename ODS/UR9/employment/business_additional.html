@@ -210,7 +210,7 @@ display:block;
 		<form class="form" method="post">
 			<div class="form-group">
 				<label id="name_label0" for="name" class="form-label-bold">VAT number</label>
-				<p>If your business is VAT registered</p>
+				<p>Leave blank if your business isn't VAT registered</p>
 				<p class="form-hint">For example GB 551 6778 32</p>
 				<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 			</div>
@@ -229,26 +229,32 @@ display:block;
 			<div class="form-group" id="pnl-click">
 				<fieldset>
 					<legend id="title_label" class="form-label-bold">How do you store your business accounts?</legend>
+					<p class="form-hint">For example receipts, invoices, employee records, etc </p>
 					<div id="title-select" class="form-group inline">
 						
 						<label id="title_label0" for="hard" class="block-label">
 						<input id="hard" value="Mr" name="title" type="radio" aria-describedby="title_error title_help">
-						As hardcopies (eg paper files, etc)
+						As hardcopies (eg paper files)
 						</label>
 						
 						<label id="title_label1" for="electronic" class="block-label">
 						<input id="electronic" value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
-						Electronically (eg Sage Business software, Microsoft Excel, etc)</label>
+						Electronically (eg Sage Business software, Microsoft Excel)</label>
 						
 						<label id="title_label1" for="cloud" class="block-label">
 						<input id="cloud" value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
-						Online (eg Cloud storage, Google drive, etc) </label>
+						Online (eg Cloud storage, Google drive) </label>
+						
+						<label id="title_label1" for="accountant" class="block-label">
+						<input id="accountant" value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
+						With my accountant</label>
+
 
 					</div>
 							<p>&nbsp;</p>					
 					<div id="otheraddress" class="panel-indent">	
 					
-					<label class="form-label-bold">Enter the address where your accounts are kept</label>
+					<label class="form-label-bold">Address where you keep your records</label>
 					<p><br></p>
 						<div class="form-group ">
 							<label id="accounts_address_line_1_label" for="accounts_address_line_1" class="form-label employer_address_line_1">Building and street</label>

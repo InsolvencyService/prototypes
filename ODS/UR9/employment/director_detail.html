@@ -241,7 +241,7 @@ display:block;
 					</div>
 					<div class="form-group">
 						<label id="name_label0" for="number" class="form-label-bold">Company registration number</label>
-						<p class="form-hint">The number under which the company is registered in the UK or overseas</p>
+						<p class="form-hint">The number under which the company is registered in the <span id="ukc">UK</span><span id="overseasc">overseas</span></p>
 						<input id="number" name="number" type="text" aria-describedby="first_name_error first_name_help" value="" />
 					</div>
 				</div>
@@ -382,6 +382,8 @@ $('#pnl-ukbased input:radio').click(function() {
 		$("#incorporated").show();
 		$("#foreign").show();
 		$("#nonuk").hide();
+		$("#ukc").show();
+		$("#overseasc").hide();
 
 		country="United Kingdom";
 
@@ -389,6 +391,9 @@ $('#pnl-ukbased input:radio').click(function() {
 	else if(($("#incorporated_no").prop('checked')==true)){
 		$("#foreign").show();
 		$("#nonuk").show();
+		$("#ukc").hide();
+		$("#overseasc").show();
+
 	}
 
 });

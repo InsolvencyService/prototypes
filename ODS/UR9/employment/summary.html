@@ -143,11 +143,8 @@
 <div class="row">
 	<div class="col-sm-12">
 
-			<p>
-	            We need to know about your recent employment history. <br><br>
-				Specifically, we need to know if you have been a director of a 
-				limited company, self employed or a partner in a non-limited 
-				business or employed in the last 3 years.</p>
+			<p>We need to know about your recent employment history.</p>
+			<p>This will help us better understand your financial situation.</p>
 
 			<div class="form-group">
 
@@ -157,7 +154,7 @@
                                                 <td class="group-title col-sm-8">
 												<div>Have you been a director of a limited company 
 													in the last 12 months?</div>
-												<div class="form-hint">eg director of a company with Ltd, PLC or LLP as part of the company name like 'ABC Trading Ltd'</div>
+												<div class="form-hint">Director of a company with Ltd, PLC or LLP as part of the company name (eg 'ABC Trading Ltd')</div>
                                                 
                                                 </td>
                                                 <td class="actions col-sm-2">
@@ -171,9 +168,8 @@
 
                                             <tr class="group-heading" id="row2">
                                                 <td class="group-title col-sm-8">
-                                                <div>Have you been self-employed 
-													in the last 3 years?</div>
-												<div class="form-hint">eg as a sole trader</div>
+                                                <div>Have you been self-employed in the last 3 years?</div>
+												<div class="form-hint">For example as a sole trader</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
@@ -188,9 +184,8 @@
                                          
                                             <tr class="group-heading" id="row3">
                                                 <td class="group-title col-sm-8"><div>
-													Have you been a partner in a non-limited business 
-													in the last 3 years?</div>
-												<div class="form-hint">eg, don’t have Ltd, PLC or LLP as part of the company name, such as 'ABC Trading'  </div>
+													Have you been a partner in a non-limited business in the last 3 years?</div>
+												<div class="form-hint">Partnerships that don’t have Ltd, PLC or LLP as part of the company name (egs 'ABC Trading')</div>
 
                                                 </td>
                                                 <td class="actions col-sm-2">
@@ -204,11 +199,7 @@
                                         
                                             <tr class="group-heading" id="row4">
                                                 <td class="group-title col-sm-8"><div>
-													Have been employed in the 
-													last 12 months?</div>
-												<div class="form-hint">eg, in PAYE employment excluding CIS  </div>
-
-
+													Have been employed by someone in the last 12 months?</div>
                                                 </td>
                                                 <td class="actions col-sm-2">
                                                     <a href="list_employers.html" class="next edit button">Yes</a>
@@ -245,7 +236,7 @@
 	<div class="form-navigation form-group">
 	
 	<div>
-<a class="button" href="../overview.html?section2=complete" id="next">Continue</a>
+<a class="button"  id="next">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -330,7 +321,7 @@
 var itemnumber = 0;
 var stage = "row";
 var page = 1;
-
+var x = 0;
 $(document).ready(function() {
                 $("#next").hide();
 
@@ -409,8 +400,9 @@ $(document).ready(function() {
 				    $("#row1 .value").text(directorships);
 				}
 			
-			
+				
 				$(".declare").on("click", function () {
+					x++;
 				    $(".well").removeClass("well");
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
@@ -419,10 +411,22 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
 				    $("#" + stage + itemnumber).addClass("well");
 				    
-				    if (itemnumber > 3) {
+				    if (itemnumber > 4) {
 				        $("#next").show();
 				    }
 				});
+				
+				$("#next").on("click", function () {
+					alert(x);
+					if(x<=4){
+						$("#next").attr("href","notworking.html")
+					}
+					else{
+						$("#next").attr("href","../overview.html?section2=complete")
+					}
+				
+				});
+			
 
 				$("#btn-notemployed").on("click", function () {
 				     $("#next").attr("href","notworking.html").show();

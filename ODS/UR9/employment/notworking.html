@@ -136,10 +136,10 @@
 
 
 <!-- #BeginEditable "content" --> 
-<div id="content0" >
+<div id="content0" style="padding-left: 35px" >
 
-<div class="row">	
-	<h1 class="form-title heading-large">Your status</h1>
+<div class="row" >	
+	<h1 class="form-title heading-large" style="padding-left: 10px">Your status</h1>
 		<div class="col-md-9">
 		<form class="form" method="post">
 			
@@ -147,14 +147,28 @@
 				<label id="occupations_label" for="occupations" class="form-label-bold">
 				Are you currently:</label>
 		
-				<div id="employment-status" class="form-group">
+				<div id="employment-status" class="form-group inline">
 					<label id="title_label0" for="retired" class="block-label">
 					<input id="retired" value="Retired" name="retired" type="radio" aria-describedby="title_error title_help">Retired</label>
 	
 					<label id="title_label1" for="student" class="block-label">
 					<input id="student" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">A student</label>
+					
 					<label id="title_label2" for="notworking" class="block-label">
-					<input id="notworking" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">Not currently working</label>
+					<input id="notworking" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">Seeking work</label>
+
+					<label id="title_label2" for="sick" class="block-label">
+					<input id="sick" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">On long term sick</label>
+						
+					<label id="title_label2" for="prison" class="block-label">
+					<input id="prison" value="Student" name="retired" type="radio" aria-describedby="title_error title_help">In prison</label>
+					
+					<label id="title_label4" for="title_other" class="block-label">
+        				<input id="title_other" value="" name="retired" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+        			<input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
+     </label>
+
+
 
 				</div>				  
 			</div>
@@ -184,7 +198,7 @@
 
 
     <div class="form-navigation form-group">
-        <a id="next" class="button" href="summary.html?page=5">Continue</a><br>
+        <a id="next" class="button" href="../overview.html?section2=complete">Continue</a><br>
 
         <a href="javascript:history.go(-1)">Back</a>
     </div>
