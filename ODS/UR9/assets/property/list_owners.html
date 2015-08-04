@@ -423,7 +423,8 @@ $(document).ready(function () {
 
     $("#next").click(function () {
         var percentage = 100.0;
-        if ($("#sharedownerpercentage").val().length > 0) {
+
+        if (numowners > 0 && $("#sharedownerpercentage").val().length > 0) {
             percentage = 100 - parseInt($("#sharedownerpercentage").val());
         }
         $.cookie('ownerpercentage', percentage, { expires: 1, path: '/' });
