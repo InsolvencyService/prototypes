@@ -397,8 +397,8 @@ $(document).ready(function() {
 	                             ownerpercentage = parseInt($.cookie('ownerpercentage'));
 	                         }
 	                         mortgageamount = mortgageamount * (ownerpercentage / 100);
-	                         personamount = (propertyvalue * (ownerpercentage / 100)) - (mortgageamount + securedloansamount);
 	                     }
+	                     personamount = (propertyvalue * (ownerpercentage / 100)) - (mortgageamount + securedloansamount);
 	                     $("#assets1 .value").text(numberWithCommas(personamount));
 	                     $("thead").show();
 	                 }
