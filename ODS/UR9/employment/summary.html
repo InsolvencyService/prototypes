@@ -143,9 +143,9 @@
 <div class="row">
 	<div class="col-sm-12">
 
-			<p>We need to know about your recent employment history.</p>
-			<p>This will help us better understand your financial situation.</p>
-
+			<p class="firsttime">We need to know about your recent employment history.</p>
+			<p class="firsttime">This will help us better understand your financial situation.</p>
+            <p class="repeat">Please review your answers before continuing.</p>
 			<div class="form-group">
 
                                     <table id="assets">
@@ -322,7 +322,9 @@ var itemnumber = 0;
 var stage = "row";
 var page = 1;
 var x = 0;
-$(document).ready(function() {
+$(document).ready(function () {
+                $(".firsttime").show();
+                $(".repeat").hide();
                 $("#next").hide();
 
 				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
@@ -330,10 +332,13 @@ $(document).ready(function() {
 				}
 				if (getParameterByName("page") && getParameterByName("page").length > 0) {
 				    page = getParameterByName("page");
+				    $(".firsttime").hide();
+				    $(".repeat").show();
 				}
 
                 if (stage && stage.length > 0) {
                     $("a.edit").removeClass("button").hide();
+
                 }
 
 				if (getParameterByName("notworking") && getParameterByName("notworking").length > 0) {
