@@ -326,7 +326,6 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
- 
     var sharedowner = $.cookie('partner-firstname') + ' ' + $.cookie('partner-lastname');
     if ($.cookie('partner-firstname') && $.cookie('partner-firstname').length > 0) {
         $(".partnerdata").text(sharedowner);
@@ -360,7 +359,9 @@ $(document).ready(function() {
 	    numberofsecuredloans = numberofsecuredloans + 1;
 	}
 
-	$("#next").on("click", function(e){
+	$("#next").on("click", function (e) {
+
+
 		if ($("#amount").val()) {
 		    var securedloan = numberWithoutCommas($("#amount").val());
 			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1, path: "/" });
@@ -368,9 +369,12 @@ $(document).ready(function() {
 			$.cookie('loancompanyname' + numberofsecuredloans, $("#loancompanyname").val(), { expires: 1, path: "/" });
 			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1, path: "/" });
 			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1, path: "/" });
-			
-			$.cookie('numberofsecuredloans', parseInt(numberofsecuredloans), { expires: 1, path: "/" });
-			
+
+			if ($("#person_Yes").is(':checked') || $("#person_Another").is(':checked')) {
+			    $.cookie('loanshared' + numberofsecuredloans, true, { expires: 1, path: "/" });
+			}
+
+			$.cookie('numberofsecuredloans', parseInt(numberofsecuredloans), { expires: 1, path: "/" });	
 		}
 
 	});
