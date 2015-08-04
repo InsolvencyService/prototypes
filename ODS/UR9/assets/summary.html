@@ -72,6 +72,12 @@
     <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css">
   <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
+
+     tr td.actions a.edit {
+         width: auto;
+         display: inline-block;
+         margin-left: 0;
+     }
  </style>
 <!-- #EndEditable -->
 
@@ -146,117 +152,121 @@
 	<div class="col-sm-8">
 
 			<p>
-                We need to know about all the assets you own or have a financial interest in.  This is to help us build a complete understanding of your financial situation..
+                We need to know about all the assets you own or have a financial interest in. 
+                This is to help us build a complete understanding of your financial situation.
 </p>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
 
-			<div class="form-group">
-
-                                    <table id="assets">
-                                        <thead style="display:none">
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th>Value
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="group-title">
-                                            <tr class="group-heading" id="assets1">
-                                                <td class="group-title col-sm-8">
-                                                <div>Have you owned any property in the last 3 years?</div>
-                                                </td>
-                                                <td class="actions col-sm-2">
-                                                    <span class="answerno" style="display:none">No</span>
-                                                    <a href="property/list_properties.html" class="next edit button">Yes</a>
-                                                    <a href="#" class="declare button">No</a>
-
-
-                                                </td>
-
-                                                <td class="value col-sm-2">&nbsp;</td>
-
-                                            </tr>
-
-                                            <tr class="group-heading" id="assets2">
-                                                <td class="group-title col-sm-8">
-                                                <div>Have you owned a vehicle in the last year?</div>
- 
-
-                                                </td>
-                                                <td class="actions col-sm-2">
-                                                    <span class="answerno" style="display:none">No</span>
-                                                    <a href="vehicle/list_vehicles.html" class="next edit button">Yes</a>
-                                                 <a href="#" class="declare button">No</a>
-                                                </td>
-
-                                                <td class="value col-sm-2">&nbsp;</td>
-
-                                            </tr>
-                                            <tr class="group-heading" id="assets3">
-                                                <td class="group-title col-sm-8">
-                                                <div>Do you have any items or cash?</div>
-												<div class="form-hint">Answer yes to check more detailed questions</div>
-                                                </td>
-                                                <td class="actions col-sm-2">
-                                                    <span class="answerno" style="display:none">No</span>
-                                                    <a href="items/summary.html" class="next edit button">Yes</a>
-                                                 <a href="#" class="declare button">No</a>
+                <table id="assets">
+                    <thead style="display:none">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                Value
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="group-title">
+                        <tr class="group-heading" id="assets1">
+                            <td class="group-title col-sm-7">
+                                <div>Have you owned any property in the last 3 years?</div>
+                            </td>
+                            <td class="actions col-sm-3">
+                                <span class="answerno" style="display:none">No</span>
+                                <a href="property/list_properties.html" class="next edit button">Yes</a>
+                                <a href="#" class="declare button">No</a>
 
 
-                                                </td>
+                            </td>
 
-                                                <td class="value col-sm-2">&nbsp;</td>
+                            <td class="value col-sm-2">&nbsp;</td>
 
-                                            </tr>
-                                            <tr class="group-heading" id="assets4">
-                                                <td class="group-title col-sm-8">
-                                                <div>Do you have life insurance?</div>
+                        </tr>
 
-                                                </td>
-                                                <td class="actions col-sm-2">
-                                                    <span class="answerno" style="display:none">No</span>
-                                                    <a href="#" class="next edit button">Yes</a>
-                                                 <a href="#" class="declare button">No</a>
-                                                </td>
+                        <tr class="group-heading" id="assets2">
+                            <td class="group-title col-sm-7">
+                                <div>Have you owned a vehicle in the last year?</div>
 
-                                                <td class="value col-sm-2">&nbsp;</td>
 
-                                            </tr>
+                            </td>
+                            <td class="actions col-sm-3">
+                                <span class="answerno" style="display:none">No</span>
+                                <a href="vehicle/list_vehicles.html" class="next edit button">Yes</a>
+                                <a href="#" class="declare button">No</a>
+                            </td>
 
-									</tbody>
-								</table>
-	  				<br>
+                            <td class="value col-sm-2">&nbsp;</td>
+
+                        </tr>
+                        <tr class="group-heading" id="assets3">
+                            <td class="group-title col-sm-8">
+                                <div>Do you have any items or cash?</div>
+                                <div class="form-hint">Answer yes to check more detailed questions</div>
+                            </td>
+                            <td class="actions col-sm-2">
+                                <span class="answerno" style="display:none">No</span>
+                                <a href="items/summary.html" class="next edit button">Yes</a>
+                                <a href="#" class="declare button">No</a>
+
+
+                            </td>
+
+                            <td class="value col-sm-2">&nbsp;</td>
+
+                        </tr>
+                        <tr class="group-heading" id="assets4">
+                            <td class="group-title col-sm-8">
+                                <div>Do you have life insurance?</div>
+
+                            </td>
+                            <td class="actions col-sm-2">
+                                <span class="answerno" style="display:none">No</span>
+                                <a href="#" class="next edit button">Yes</a>
+                                <a href="#" class="declare button">No</a>
+                            </td>
+
+                            <td class="value col-sm-2">&nbsp;</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
             </div>
-	<p><br></p>
+            <p><br></p>
+            <div class="col-sm-8">
+                <p>
+                    It’s important you be as thorough as you can when telling us about your assets.
+                </p>
+                <p>We understand that mistakes can happen. If there are any questions, an Insolvency Service official will contact you discuss the information you provided, and you are unlikely to be penalised for accidental omissions.
+                <p></p>However, it is a criminal offense to purposefully mislead the Insolvency Service about your assets and those who do so can face legal action.
+                <p><br></p>
 
-	<p>
-        It’s important you be as thorough as you can when telling us about your assets.</p>
-    <p>We understand that mistakes can happen. If there are any questions, an Insolvency Service official will contact you discuss the information you provided, and you are unlikely to be penalised for accidental omissions.
-    <p></p>However, it is a criminal offense to purposefully mislead the Insolvency Service about your assets and those who do so can face legal action.
+            </div>
+     
+            <!-- For User research -->
+            <div class="form-navigation form-group">
 
-        
-<p><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<a class="button" href="../overview.html?section4=complete" id="next">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                <div>
+                    <a class="button" href="../overview.html?section4=complete" id="next">Continue</a>
+                </div>
+                <div>
+                    <br>
+                </div>
 
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	
-	</div>
+                <div>
+                    <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+
+                    <a href="#" id="cancel">Save and logout</a>
+
+                </div>
+            </div>
+
+        </div>
 </div>
         
 </div>
@@ -352,7 +362,7 @@ $(document).ready(function() {
                 $(".well").removeClass("well");  
                 
                 $(".declare").hide();    
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes +Add");
                 $("#" + stage + itemnumber +  " .declare").show();
 				$("#" + stage + itemnumber).addClass("well"); 
          
@@ -394,7 +404,7 @@ $(document).ready(function() {
 	                 var ownerpercentage = 100;
 	                 if (propertyvalue > 0) {
 	                     var personamount = mortgageamount;
-	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
+	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes +Add") {
 	                         ownerpercentage = 50;
 	                         if ($.cookie('ownerpercentage')) {
 	                             ownerpercentage = parseInt($.cookie('ownerpercentage'));
@@ -426,7 +436,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes +Add");
 				    $("#" + stage + itemnumber).addClass("well");
 
 				    if (itemnumber > 3) {

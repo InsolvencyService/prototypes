@@ -73,6 +73,11 @@
 
 
  <style type="text/css">
+     tr td.actions a.edit {
+         width: auto;
+         display:inline-block;
+         margin-left:0
+     }
  </style>
 <!-- #EndEditable -->
 
@@ -151,14 +156,14 @@
                                     <table id="assets">
                                         <tbody class="group-title">
                                             <tr class="group-heading" id="row1">
-                                                <td class="group-title col-sm-8">
+                                                <td class="group-title col-sm-7">
 												<div>Have you been a director of a limited company 
 													in the last 12 months?</div>
 												<div class="form-hint">Director of a company with Ltd, PLC or LLP as part of the company name (eg 'ABC Trading Ltd')</div>
                                                 
                                                 </td>
-                                                <td class="actions col-sm-2">
-                                                    <a href="list_directorships.html" class="next edit button">Yes</a>
+                                                <td class="actions col-sm-3">
+                                                    <a href="list_directorships.html" class="next edit button">Yes +Add</a>
 														&nbsp;<a href="#" class="declare button">No</a>
                                                 </td>
 
@@ -167,12 +172,12 @@
                                             </tr>
 
                                             <tr class="group-heading" id="row2">
-                                                <td class="group-title col-sm-8">
+                                                <td class="group-title col-sm-7">
                                                 <div>Have you been self-employed in the last 3 years?</div>
 												<div class="form-hint">For example as a sole trader</div>
 
                                                 </td>
-                                                <td class="actions col-sm-2">
+                                                <td class="actions col-sm-3">
                                                     <a href="list_businesses.html" class="next edit button">Yes</a>
                                                     &nbsp;<a href="#" class="declare button">No</a>
 
@@ -359,7 +364,7 @@ $(document).ready(function () {
 
                 $(".declare").hide();
                 
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes +Add");
                 $("#" + stage + itemnumber +  " .declare").show();
  				$("#" + stage + itemnumber).addClass("well"); 
  				       
@@ -413,7 +418,7 @@ $(document).ready(function () {
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes +Add");
 				    $("#" + stage + itemnumber).addClass("well");
 				    
 				    if (itemnumber > 4) {
