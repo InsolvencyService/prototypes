@@ -225,14 +225,20 @@ display:block;
 
 	            </div>
 			
+			<p>&nbsp;</p>
+			<p>We need to know if you have been employed <span class="firsttime">by anyone </span><span class="repeat">by anyone else </span>in the last 12 months.</p>
 			
-			<div class="form-hint">We need to know if you have been employed <span class="firsttime">by someone </span><span class="repeat">by anyone else </span>in the last 12 months.</div>
-    		<p id="director-text" style="display:none">You do not need to include <span class="companylist"></span><span class="businesslist">.</span>.</p>
+			<p class="selfemployed">We only need to know about any new employers. You don’t need to tell us again about any self employed work you have done, and we don’t need to know about all of your individual customers.
+			</p>
+
+			<p class="director">We only need to know about any new employers. You don’t need to tell us about <span class="companylist">ABC Ltd</span> again.</p>
+			<p class="director-and-selfemployed">You also don’t need to tell us about <span class="companylist">ABC Ltd</span> again.</p>
+			
 	        <p>&nbsp;</p>			
 			
 			<div class="form-group">
-				<label  class="form-label-bold"><span class="firsttime">Enter the employer's name</span><span class="repeat">Enter another employer's name</span></label>
-				<div class="form-hint">For example ABC Trading. You can add more 
+				<label  class="form-label-bold"><span class="firsttime">Enter an employer's name</span><span class="repeat">Enter another employer's name</span></label>
+				<div class="form-hint">For example ABC Employers. You can add more 
 					employers later.<br><br></div>
 	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
 	                <a id="add_employer" class="button" href="employers.html"><span class="firsttime">Add this employer</span><span class="repeat">Add another employer</span></a>
@@ -324,8 +330,10 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	//$("#pnl-employment_table").hide();	
-	
-	
+	$(".director").hide();	
+	$(".selfemployed").hide();	
+	$(".director-and-selfemployed").hide();	
+		
 	var countx;
 	countx = $.cookie("employer_count");
 	
@@ -346,17 +354,20 @@ $(document).ready(function() {
 	}
 	var directorcount = $.cookie("director_count");
 	if (directorcount && parseInt(directorcount) > 0) {
-	    $("#director-text").show();
-	    $("#director-text .companylist").text(getcompanies(directorcount));
+	    $(".companylist").text(getcompanies(directorcount));
+	    $(".director").show();
 	}
 	var businesscount = $.cookie("business_id");
 	if (businesscount && parseInt(businesscount) > 0) {
-	    $("#director-text").show();
+	    $(".selfemployed").show();
 	    var businesstext = getbusinesses(businesscount);
-	    if (directorcount > 0) {
+	    if (businesscount > 0) {
 	        businesstext = " or " + businesstext;
 	    }
-	    $(".businesslist").text(businesstext);
+	  	if (directorcount > 0) {
+	        $(".director-and-selfemployed").show();
+	    }
+		$(".businesslist").text(businesstext);
 	}
 });
 $("#add_employer").click(function(){

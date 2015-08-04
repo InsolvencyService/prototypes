@@ -208,12 +208,13 @@ display:block;
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div id="pnl-current_employer">
-				<label id="name_label" for="name" class="form-label">Please tell us about the employer<br></label>
-				<p class="form-hint">This information is for our records only and won’t be used to contact your employer.<br><br></p>
+				<label id="name_label" for="name" class="form-label">Please tell us about the employer.</label>
+				<p class="form-hint">This information is for our records only. We won’t contact your employer or pass it onto anyone outside of the Insolvency Service, and it won’t be used to contact your employer.
+<br><br></p>
 				
 				<div class="form-group">
 					<label id="name_label0" for="name" class="form-label-bold">Employer name</label>
-					<p class="form-hint">For example, ABC trading</p>
+					<p class="form-hint">For example, ABC Employers</p>
 					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
 				
@@ -222,7 +223,7 @@ display:block;
 				<div class="form-group ">
 				<label id="occupations_label" for="occupations" class="form-label-bold">
 					Address</label>
-
+					<div class="form-hint">Of the location where you work(ed). If you work(ed) from home, enter the address nearest your home.</div>
 					<label id="employer_address_line_1_label" for="employer_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 					<input id="employer_address_line_1" name="employer_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
@@ -262,18 +263,34 @@ display:block;
 			<div id="pnl-startdate" class="form-group">
 				<fieldset  class="date-of-birth">
 					<span id="date_of_birth_label" class="form-label-bold">Date you started working for this employer</span>
-					<span class="form-hint" id="start_help">For example 31 08 2012</span>
+					<span class="form-hint" id="start_help">For example Aug 2012</span>
 					
-					<div class="form-group form-group-day">
+					<div class="form-group form-group-day" style="display:none">
 						 <label id="start_label.day" for="start.day" >Day</label>
 					<input id="start_day" name="start.day" type="number" min="1" max="31"  value="" />
 					</div>
-					<div class="form-group form-group-month">
-						 <label id="start_label.month" for="date_of_birth.month">Month</label>
-					<input id="start_month" name="start.month" type="number" min="1" max="12" value="" />
-					</div>
-					<div class="form-group form-group-year">
-					<label id="start_label.year" for="date_of_birth.year">Year</label>
+		<div class="form-group" style="width:60px">
+			 <label id="start_label.month" for="month">Month</label>
+
+			<select id="start_month" name="start.month">
+				<option value="0"></option>
+				<option value="1">Jan</option>
+				<option value="2">Feb</option>
+				<option value="3">Mar</option>
+				<option value="4">Apr</option>
+				<option value="5">May</option>
+				<option value="6">Jun</option>
+				<option value="7">Jul</option>
+				<option value="8">Aug</option>
+				<option value="9">Sep</option>
+				<option value="10">Oct</option>
+				<option value="11">Nov</option>
+				<option value="12">Dec</option>
+			</select>
+		
+		</div>
+							<div class="form-group form-group-year">
+					<label id="start_label.year" for="start.year">Year</label>
 					<input id="start_year" name="start.year" type="number" min="1900" max="9999" value="" />
 					</div>
 					
@@ -284,17 +301,34 @@ display:block;
 				<div>
 				<fieldset  class="date-of-birth">
 					<span id="end_date_label" class="form-label-bold">Date you stopped working for this employer</span>
-					<span class="form-hint" id="end_date_help">For example 31 08 2012</span>
+					<span class="form-hint" id="end_date_help">For example Aug 2014</span>
 					<p>Leave blank if you still work for them</p>
 					
-					<div class="form-group form-group-day">
+					<div class="form-group form-group-day" style="display:none">
 						 <label id="end_day_label" for="end.day" >Day</label>
 						<input id="end_day" name="end.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 					</div>
-					<div class="form-group form-group-month">
-						 <label id="end_date_label.month" for="end.month">Month</label>
-						<input id="end_month" name="end.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-					</div>
+		<div class="form-group" style="width:60px">
+			 <label for="end.month">Month</label>
+
+			<select id="end_month" name="end.month" >
+				<option value="0"></option>
+				<option value="1">Jan</option>
+				<option value="2">Feb</option>
+				<option value="3">Mar</option>
+				<option value="4">Apr</option>
+				<option value="5">May</option>
+				<option value="6">Jun</option>
+				<option value="7">Jul</option>
+				<option value="8">Aug</option>
+				<option value="9">Sep</option>
+				<option value="10">Oct</option>
+				<option value="11">Nov</option>
+				<option value="12">Dec</option>
+			</select>
+		
+		</div>
+
 					<div class="form-group form-group-year">
 						<label id="date_of_birth_label.year" for="end.year">Year</label>
 						<input id="end_year" name="end.year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
@@ -422,9 +456,9 @@ $(document).ready(function() {
 $("#next").click(function(){
 
 	
-	var startx = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
-	if($("#end_day").val()!=""){
-		var endx = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
+    var startx = $("#start_month option:selected").text() + " " + $("#start_year").val();
+	if($("#end_month").val()!="0"){
+	    var endx = $("#end_month option:selected").text() + " " + $("#end_year").val();
 	}
 	else{ endx=""; }
 	
