@@ -364,7 +364,6 @@ $(document).ready(function() {
 
 		if ($("#amount").val()) {
 		    var securedloan = numberWithoutCommas($("#amount").val());
-			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1, path: "/" });
 			$.cookie('loanfor' + numberofsecuredloans, $("#loanfor").val(), { expires: 1, path: "/" });
 			$.cookie('loancompanyname' + numberofsecuredloans, $("#loancompanyname").val(), { expires: 1, path: "/" });
 			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1, path: "/" });
@@ -372,7 +371,10 @@ $(document).ready(function() {
 
 			if ($("#person_Yes").is(':checked') || $("#person_Another").is(':checked')) {
 			    $.cookie('loanshared' + numberofsecuredloans, true, { expires: 1, path: "/" });
+			    securedloan = securedloan / 2;
 			}
+			$.cookie('securedloan' + numberofsecuredloans, securedloan, { expires: 1, path: "/" });
+
 
 			$.cookie('numberofsecuredloans', parseInt(numberofsecuredloans), { expires: 1, path: "/" });	
 		}

@@ -386,14 +386,14 @@ $(document).ready(function() {
 
     for (i = 1; i <= numberofsecuredloans; i++) {
 
-        var value = numberWithCommas($.cookie('securedloan' + i));
+        var value = numberWithoutCommas($.cookie('securedloan' + i));
         var name = $.cookie('loancompanyname' + i);
         var shared = "";
         if ($.cookie('loanshared' + i)) {
-            shared = " (shared)";
+            shared = "Your share of the loan with ";
         }
         var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
-        var row = '<tr><td>' + name + shared + '</td><td class="amount"><span class="poundsign">£</span>' + value + '</td>' + editbuttons + "</tr>";
+        var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
         $("#tablebody").append(row);
 
         $(".firsttime").hide();

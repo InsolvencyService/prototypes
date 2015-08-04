@@ -379,9 +379,7 @@ $(document).ready(function() {
 	                 if (parseFloat($.cookie('securedloan' + i))) {
 	                     // TODO - check if it's joint
 	                     if ($.cookie('loanshared' + i)) {
-	                         var loanamount = parseFloat($.cookie('securedloan' + i));
-	                         loanamount = loanamount * (ownerpercentage / 100);
-	                         securedloansamount = securedloansamount + loanamount;
+	                         securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i)) * (50 / 100);
 	                     }
 	                     else
 	                     {
