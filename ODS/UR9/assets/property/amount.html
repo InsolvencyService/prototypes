@@ -223,7 +223,7 @@ display:block;
             <fieldset id="date_of_birth" class="date-of-birth">
 
                 <legend id="date_of_birth_label" class="form-label">When did you purchase or start having a financial interest in the property?</legend>
-                <div class="form-hint">For example, 2015. If it's in the last 3 years you will also need to enter a month</div>
+                <div class="form-hint">For example, 2015. If it's in the last 2 years you will also need to enter a month</div>
                 <div class="form-group form-group-day" style="display:none">
                     <label id="date_of_birth_label.day" for="day">Day</label>
                     <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
@@ -382,7 +382,7 @@ $(document).ready(function() {
 	});
 	
 	$("#year").on("change", function () {
-	    if ($(this).val() == "2015" || $(this).val() == "2014" || $(this).val() == "2013") {
+	    if ($(this).val() == "2015" || $(this).val() == "2014") {
 	        $("#monthcontrol").show();
 	        $("#month").focus();
 	    }

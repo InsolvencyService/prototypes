@@ -296,6 +296,7 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
+    var pre = $.cookie("pre");
     var housename = $.cookie("propertyline1");
     if (housename && housename.length > 0) {
         $(".data").text(housename);
@@ -304,7 +305,7 @@ $(document).ready(function() {
     var sharedowner = $.cookie('partner-firstname') + ' ' + $.cookie('partner-lastname');
 
     // check to see what they entered against ownership
-	 	if ($.cookie('partner-firstname') && $.cookie('partner-firstname').length > 0){
+	 	if (($.cookie('partner-firstname') && $.cookie('partner-firstname').length > 0) || pre){
 		 	$(".partnerdata").text(sharedowner);
 		 	$(".partner").show();
 	 	}
