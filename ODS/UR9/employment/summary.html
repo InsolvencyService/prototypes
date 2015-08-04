@@ -162,7 +162,7 @@
 														&nbsp;<a href="#" class="declare button">No</a>
                                                 </td>
 
-                                                <td class="value col-sm-2">&nbsp;</td>
+                                                <td class="value col-sm-2"></td>
 
                                             </tr>
 
@@ -178,7 +178,7 @@
 
                                                 </td>
 
-                                                <td class="value col-sm-2">&nbsp;</td>
+                                                <td class="value col-sm-2"></td>
 
                                             </tr>
                                          
@@ -193,7 +193,7 @@
                                                     &nbsp;<a href="#" class="declare button">No</a>
                                                 </td>
 
-                                                <td class="value col-sm-2">&nbsp;</td>
+                                                <td class="value col-sm-2"></td>
 
                                             </tr>
                                         
@@ -206,7 +206,7 @@
                                                     &nbsp;<a href="#" class="declare button">No</a>
                                                 </td>
 
-                                                <td class="value col-sm-2">&nbsp;</td>
+                                                <td class="value col-sm-2"></td>
 
                                             </tr>
                                             
@@ -218,7 +218,7 @@
                                                     <a href="notworking.html" class="next edit">Edit</a>
                                                 </td>
 
-                                                <td class="value col-sm-2">&nbsp;</td>
+                                                <td class="value col-sm-2"></td>
 
                                             </tr>
 
@@ -236,7 +236,7 @@
 	<div class="form-navigation form-group">
 	
 	<div>
-<a class="button"  id="next">Continue</a>
+        <a class="button" id="next" href="../overview.html?section2=complete">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -417,13 +417,16 @@ $(document).ready(function() {
 				});
 				
 				$("#next").on("click", function () {
-					alert(x);
-					if(x<=4){
+				    var notworking = true;
+				    $("tr .value").each(function () {
+				        if ($(this).text().length > 0) {
+				            notworking = false;
+				        }
+				    });
+					if(notworking){
 						$("#next").attr("href","notworking.html")
 					}
-					else{
-						$("#next").attr("href","../overview.html?section2=complete")
-					}
+
 				
 				});
 			
