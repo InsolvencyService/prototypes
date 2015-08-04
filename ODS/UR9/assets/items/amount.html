@@ -172,15 +172,45 @@ display:block;
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
                    <div class="form-group ">
-                        <label id="first_name_label" for="name" class="form-label first_name">What is the asset?</label>
-                        <div class="form-hint">For example, 50 shares in British Gas</div>
+
+                        <label for="name" class="cash" style="display:none">What is the asset?</label>
+
+                       <label for="name" class="household" style="display:none">Description of the household item</label>
+                       <div class="form-hint household" style="display:none">For example, DSLR camera or home entertainment system</div>
+
+                       <label for="name" class="compensation" style="display:none">Description of the compensation of legal claim</label>
+                       <div class="form-hint compensation" style="display:none">For example,  a claim for breach of contract or a PPI compensation claim</div>
+
+                       <label for="name" class="beneficiary" style="display:none">Description of the trust or will</label>
+                       <div class="form-hint beneficiary" style="display:none">For example, 10% interest in a trust</div>
+
+                       <label for="name" class="investments" style="display:none">Description of the stock, share or investment</label>
+                       <div class="form-hint investments" style="display:none">For example, 50 shares in British Gas</div>
+
+                       <label for="name" class="trade" style="display:none">Description of the business asset</label>
+                       <div class="form-hint trade" style="display:none">For example, 100m2 of hardwood flooring or your business' goodwill </div>
+
+                       <label for="name" class="money" style="display:none">Description of the debt</label>
+                       <div class="form-hint money" style="display:none">For example, personal loan to a family member </div>
+
+                       <label for="name" class="other" style="display:none">Describe the asset</label>
+
+
       						<input id="name"  />
                         <br />
                     </div>
 
   					<div class="form-group ">
-                        <label id="first_name_label" for="amount" class="form-label first_name">How much is it currently worth?</label>
-						<div class="form-hint">Please provide the most accurate figure you can</div>
+                          <label for="amount" class="cash household beneficiary investments trade other" style="display:none">How much is it currently worth?</label>
+                          <label for="amount" class="cash household" style="display:none">Please tell us more about the compensation or claim </label>
+                          <div class="beneficiary" style="display:none">Amount you currently receive or will receive in the future</div>
+                          <div class="money" style="display:none">How much are you currently owed?</div>
+
+                          <div class="form-hint cash household investments trade money other" style="display:none">Please provide the most accurate figure you can</div>
+                          <div class="form-hint household" style="display:none">Don't list items worth less than £1,500</div>
+                          <div class="form-hint compensation" style="display:none">For example, who your claim is against, the date of the event you have claimed about  </div>
+                          <div class="form-hint beneficiary" style="display:none">Please provide the most accurate figure you can </div>
+
 		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
                         <br />
                     </div>
@@ -188,8 +218,21 @@ display:block;
  <div class="clearfix"></div>
 
         <div class="form-group ">   
-            <label for="description">Please provide details of the asset</label>
-            <span class="form-hint">Including how long you have had it, the company it is with and if it is in joint ownership</span>
+            <label for="description" class="cash household compensation" style="display:none">Please tell us any other relevant information.</label>
+            <label for="description" class="beneficiary" style="display:none">Please tell us more about the trust or will</label>
+            <label for="description" class="investments" style="display:none">Please tell us more about the stock, share or investment</label>
+            <label for="description" class="trade" style="display:none">Please tell us more about the business asset</label>
+            <label for="description" class="money" style="display:none">Please tell us about more the debt</label>
+
+            <span class="form-hint cash" style="display:none">For example, if anyone else is claiming an interest in the asset.</span>
+            <div class="form-hint household" style="display:none">For example, when the item was purchased </div>
+            <div class="form-hint beneficiary" style="display:none">For example the name of the trust, type of asset you stand to inherit, etc</div>
+            <div class="form-hint investments" style="display:none">For example,  if it’s jointly owned, etc</div>
+            <div class="form-hint trade" style="display:none">For example, how long you have had it, whether it’s financed or you own it outright, etc </div>
+            <div class="form-hint money" style="display:none">For example, when it started, when you’re expecting repayment, the (£) amount of any expected repayments, if debt is factored, etc</div>
+            <div class="form-hint other" style="display:none">For example,  if it’s jointly owned, subject to a security, etc</div>
+
+
             <textarea rows="4" cols="75" name="about" id="description"></textarea>
             <p class="form-hint">
                 Maximum 1000 characters 
@@ -288,30 +331,35 @@ $(document).ready(function() {
     	type = getParameterByName("type");
 	}
 
-	if (type=="investments"){
-		$("h1").text("Stocks, shares and investment asset");
-	}
-	if (type == "money") {
-	    $("h1").text("Money owed to you");
-	}
+	$("." + type).show();
+
 	if (type == "cash") {
 	    $("h1").text("Cash");
 	}
-	if (type == "compensation") {
-	    $("h1").text("Compensation or legal claim"); //eg  mis-sold PPI, claim for damages, breach of contract, etc.
+	if (type == "household") {
+	    $("h1").text("Household items of exceptional value");
 	}
-	if (type == "trade") {
-	    $("h1").text("Self employed trading assets"); //(including stock, machinery, tools)
+	if (type == "compensation") {
+	    $("h1").text("Compensations and legal claims"); //eg  mis-sold PPI, claim for damages, breach of contract, etc.
 	}
 	if (type == "beneficiary") {
-	    $("h1").text("Interest in a Will or Trust");
+	    $("h1").text("Trusts and wills");
 	}
+	if (type == "investments") {
+	    $("h1").text("Stocks, shares and investments");
+	}
+	if (type == "trade") {
+	    $("h1").text("Self employed business assets"); //(including stock, machinery, tools)
+	}
+
+	if (type == "money") {
+	    $("h1").text("Money you’re owed");
+	}
+
 	if (type == "possessions") {
 	    $("h1").text("Any other assets or possessions");
 	}
-	if (type == "household") {
-	    $("h1").text("General household items");
-	}
+
 	if (type == "other") {
 	    $("h1").text("Other assets");
 	}
