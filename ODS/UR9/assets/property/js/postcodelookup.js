@@ -523,7 +523,7 @@ $(document).ready(function() {
                 $("#address_town").val(this.town);
                 $("#address_county").val(this.county);
                 $("#address_post_code").val(this.postcode);
-
+          		 $(".firsttime").hide();
                 $("#next").show();
                 $("#btn-lookup").removeClass("button");
                 found = true;
@@ -533,6 +533,7 @@ $(document).ready(function() {
         if (found == false) {
             $("#nomatch.validation-summary").show();
             $("#fulladdress").show();
+
             $("#address_line_1").val('');
             $("#address_line_2").val('');
             $("#address_line_3").val('');
