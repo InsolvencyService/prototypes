@@ -455,12 +455,13 @@ $(document).ready(function() {
 
 $("#next").click(function(){
 
-	
+    var endx = "";
     var startx = $("#start_month option:selected").text() + " " + $("#start_year").val();
-	if($("#end_month").val()!="0"){
-	    var endx = $("#end_month option:selected").text() + " " + $("#end_year").val();
-	}
-	else{ endx=""; }
+    if ($("#end_month").val() && $("#end_month option:selected")) {
+        if ($("#end_month").val() != "0") {
+            endx = $("#end_month option:selected").text() + " " + $("#end_year").val();
+        }
+    }
 	
 	var employer_address;
 	var address1=$("#employer_address_line_1").val();
