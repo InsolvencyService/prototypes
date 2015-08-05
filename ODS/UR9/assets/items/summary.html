@@ -664,7 +664,8 @@ table td .group-title {
                 if (stage == "item" && itemnumber == 2 && pensionable == false) {
                     itemnumber += 1;
                 }
- 
+                $("#" + stage + previous + " .parent a.edit").show().removeClass("button").text("Edit");
+
                 $(".declare").hide();
                 $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Add");
                 $("#" + stage + itemnumber +  " .declare").show();
@@ -691,7 +692,7 @@ table td .group-title {
 				$(".declare").on("click", function (e) {
 				    e.preventDefault();
 				    $("#" + stage + itemnumber + " .declare").hide();
-				    $("#" + stage + itemnumber + " a.edit").hide();
+				    $("#" + stage + itemnumber + " a.edit").removeClass("button").text("Edit");
 				    closehelp(stage + itemnumber);
 				    itemnumber = itemnumber + 1;
 

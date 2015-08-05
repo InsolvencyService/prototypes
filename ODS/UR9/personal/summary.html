@@ -543,10 +543,13 @@ $(document).ready(function() {
 	var othername="No";
 	var dob = $.cookie("dob-day")+"/"+$.cookie("dob-month")+"/"+$.cookie("dob-year");
 
-	if ($.cookie("othername1") && $.cookie("othername1").length > 0) {
-		othername="Yes";
-	}
-	
+    try {
+        if ($.cookie("othername1") && $.cookie("othername1").length > 0) {
+            othername = "Yes";
+        }
+    }
+    catch (e) { }
+
 	$("#user_title").text($.cookie("title"));
 	$("#user_firstname").text($.cookie("firstname"));
 	$("#user_middlename").text($.cookie("middlename"));
