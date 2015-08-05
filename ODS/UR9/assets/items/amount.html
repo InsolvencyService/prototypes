@@ -173,7 +173,7 @@ display:block;
 	
                    <div class="form-group ">
 
-                       <label for="name" class="cash possessions" style="display:none">What is the asset?</label>
+                       <label for="name" class="possessions" style="display:none">What is the asset?</label>
 
                        <label for="name" class="household" style="display:none">Description of the household item</label>
                        <div class="form-hint household" style="display:none">For example, DSLR camera or home entertainment system</div>
@@ -201,14 +201,14 @@ display:block;
                     </div>
 
   					<div class="form-group ">
-                          <label for="amount" class="cash household beneficiary possessions investments trade other" style="display:none">How much is it currently worth?</label>
-                          <label for="amount" class="cash household" style="display:none">Please tell us more about the compensation or claim </label>
+                          <label for="amount" class="household beneficiary possessions investments trade other" style="display:none">How much is it currently worth?</label>
+                          <label for="amount" class="compensation" style="display:none">How much is the claim for?</label>
                           <div class="beneficiary" style="display:none">Amount you currently receive or will receive in the future</div>
                           <div class="money" style="display:none">How much are you currently owed?</div>
+                          <div class="cash" style="display:none">Amount of cash you currently have outside of your bank accounts</div>
 
-                          <div class="form-hint cash household investments possessions trade money other" style="display:none">Please provide the most accurate figure you can</div>
+                          <div class="form-hint cash household investments possessions trade money other compensation" style="display:none">Please provide the most accurate figure you can</div>
                           <div class="form-hint household" style="display:none">Don't list items worth less than £1,500</div>
-                          <div class="form-hint compensation" style="display:none">For example, who your claim is against, the date of the event you have claimed about  </div>
                           <div class="form-hint beneficiary" style="display:none">Please provide the most accurate figure you can </div>
 
 		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
@@ -218,7 +218,9 @@ display:block;
  <div class="clearfix"></div>
 
         <div class="form-group ">   
-            <label for="description" class="cash household possessions compensation" style="display:none">Please tell us any other relevant information.</label>
+            <label for="description" class="cash household possessions" style="display:none">Please tell us any other relevant information.</label>
+            <label for="description" class="compensation" style="display:none">Please tell us more about the compensation or claim </label>
+
             <label for="description" class="beneficiary" style="display:none">Please tell us more about the trust or will</label>
             <label for="description" class="investments" style="display:none">Please tell us more about the stock, share or investment</label>
             <label for="description" class="trade" style="display:none">Please tell us more about the business asset</label>
@@ -231,6 +233,7 @@ display:block;
             <div class="form-hint trade" style="display:none">For example, how long you have had it, whether it’s financed or you own it outright, etc </div>
             <div class="form-hint money" style="display:none">For example, when it started, when you’re expecting repayment, the (£) amount of any expected repayments, if debt is factored, etc</div>
             <div class="form-hint other" style="display:none">For example,  if it’s jointly owned, subject to a security, etc</div>
+            <div class="form-hint compensation" style="display:none">For example, who your claim is against, the date of the event the claim is about</div>
 
 
             <textarea rows="4" cols="75" name="about" id="description"></textarea>
@@ -335,6 +338,7 @@ $(document).ready(function() {
 
 	if (type == "cash") {
 	    $("h1").text("Cash");
+	    $("#name").hide();
 	}
 	if (type == "household") {
 	    $("h1").text("Household items of exceptional value");
