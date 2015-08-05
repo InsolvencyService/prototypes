@@ -362,7 +362,7 @@ $(document).ready(function() {
                 $(".well").removeClass("well");  
                 
                 $(".declare").hide();    
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes +Add");
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
                 $("#" + stage + itemnumber +  " .declare").show();
 				$("#" + stage + itemnumber).addClass("well"); 
          
@@ -404,7 +404,7 @@ $(document).ready(function() {
 	                 var ownerpercentage = 100;
 	                 if (propertyvalue > 0) {
 	                     var personamount = mortgageamount;
-	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes +Add") {
+	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
 	                         ownerpercentage = 50;
 	                         if ($.cookie('ownerpercentage')) {
 	                             ownerpercentage = parseInt($.cookie('ownerpercentage'));
@@ -436,7 +436,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes +Add");
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
 				    $("#" + stage + itemnumber).addClass("well");
 
 				    if (itemnumber > 3) {
