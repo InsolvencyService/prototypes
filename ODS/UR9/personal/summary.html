@@ -540,14 +540,11 @@ $(document).ready(function() {
 
 	}
 
-	var othername="";
+	var othername="No";
 	var dob = $.cookie("dob-day")+"/"+$.cookie("dob-month")+"/"+$.cookie("dob-year");
 
-	if($.cookie("othername1")!= null){
+	if ($.cookie("othername1") && $.cookie("othername1").length > 0) {
 		othername="Yes";
-	}
-	else{
-		othername="No";
 	}
 	
 	$("#user_title").text($.cookie("title"));
