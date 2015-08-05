@@ -455,40 +455,46 @@ $(document).ready(function() {
 
 $("#next").click(function(){
 
+
     var endx = "";
-    var startx = $("#start_month option:selected").text() + " " + $("#start_year").val();
-    if ($("#end_month").val() && $("#end_month option:selected")) {
-        if ($("#end_month").val() != "0") {
-            endx = $("#end_month option:selected").text() + " " + $("#end_year").val();
+
+    try {
+        var startx = $("#start_month option:selected").text() + " " + $("#start_year").val();
+        if ($("#end_month").val() && $("#end_month option:selected")) {
+            if ($("#end_month").val() != "0") {
+                endx = $("#end_month option:selected").text() + " " + $("#end_year").val();
+            }
+        }
+	
+        var employer_address;
+        var address1=$("#employer_address_line_1").val();
+        var address2=$("#employer_address_line_2").val();
+        var address3=$("#employer_address_line_3").val();
+        var address4=$("#employer_address_town").val();
+        var address5=$("#employer_address_county").val();
+        var address6=$("#employer_address_post_code").val();
+	
+        if(address1 != ""){
+            employer_address = address1+", ";
+        }
+        if(address2 != ""){
+            employer_address = employer_address+address2+", ";
+        }
+        if(address3 != ""){
+            employer_address = employer_address+address3+", ";
+        }
+        if(address4 != ""){
+            employer_address = employer_address+address4+", ";
+        }
+        if(address5 != ""){
+            employer_address = employer_address+address5+", ";
+        }
+        if(address6 != ""){
+            employer_address = employer_address+address6;
         }
     }
-	
-	var employer_address;
-	var address1=$("#employer_address_line_1").val();
-	var address2=$("#employer_address_line_2").val();
-	var address3=$("#employer_address_line_3").val();
-	var address4=$("#employer_address_town").val();
-	var address5=$("#employer_address_county").val();
-	var address6=$("#employer_address_post_code").val();
-	
-	if(address1 != ""){
-		employer_address = address1+", ";
-	}
-	if(address2 != ""){
-		employer_address = employer_address+address2+", ";
-	}
-	if(address3 != ""){
-		employer_address = employer_address+address3+", ";
-	}
-	if(address4 != ""){
-		employer_address = employer_address+address4+", ";
-	}
-	if(address5 != ""){
-		employer_address = employer_address+address5+", ";
-	}
-	if(address6 != ""){
-		employer_address = employer_address+address6;
-	}
+    catch(err) {
+    }
 
 	$.cookie("occupations_temp", $("#occupations").val());
 	
