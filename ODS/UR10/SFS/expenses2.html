@@ -72,21 +72,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/sfs.css">
 
-<style type="text/css">
-table tbody.additional td{	
-	border: 0 transparent none;
-}
-table tbody.additional tr:first-child td{
-    border-top: 1px solid #bfc1c3;	
-}	
-table tbody.additional tr:last-child td{
-    border-bottom: 2px solid #bfc1c3;	
-}	
-
-.form-control{
-	font-size:19px;
-}
-</style>
 <!-- #EndEditable -->
 
 
@@ -152,311 +137,211 @@ table tbody.additional tr:last-child td{
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
 	<p class="form-hint">
-        <a href="summary.html">Income and expenses</a> &gt; Income
+        <a href="summary.html?stage=costs&amp;page=2">Income and expenses</a> &gt; 
+		Expenses 2 of 7
     </p>
 	
-	<h1 class="form-title heading-large">Benefits</h1>
-	<p>Enter the amount you receive from the income sources listed below.</p>
-		<form class="form" method="post">
+	
+	<h1 class="form-title heading-large">Pension, insurance and healthcare</h1>
+	
+	
+	
+	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-
-	<table class="table table-condensed">
+	
+	
+			<p>Enter the total amount you spend on each item</p>  
+			<p>If you have children, don’t include the cost of prescriptions, medicines, dentistry or opticians for them - we’ll ask you about these later.</p>
+			<table class="table table-condensed">
 	<thead>
 	<tr>
-	<th colspan="2">&nbsp;</th>
-	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
+	<th></th>
+	<th class="heading-amount">Amount</th>
 	<th style="width:200px; padding-left:20px">per week / month / year</th>
 	</tr>
 	</thead>
 	<tbody>
-	
-	<tr>
-	<td colspan="2">
-<label id="last_name_label3" for="loanname" class="form-label last_name">Child 
-	Tax Credit </label>
-		</td>
+		<tr>
+	<td><span class="form-label">Personal pension payments</span>
+	<span class="form-hint">Don’t include workplace pension payments deducted directly from your salary</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D11">
                 <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
                 <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-	</tr>
-
-	<tr>
-	<td colspan="2">
-<label id="last_name_label4" for="loanname" class="form-label last_name">Child 
-	Benefit </label>
-		</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Life insurance</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D9">
                 <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
                 <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-	</tr>
-
-	<tr>
-	<td colspan="2"><span class="form-label">Maintenance or child support</span></td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Health insurance</span>
+	<span class="form-hint">For example, medical or dental insurance</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D10">
                 <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
                 <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-	</tr>
-	<tr class="noborder"><td style="display:block;height:20px"><br></td><td>&nbsp;</td><td></td><td></td></tr>
-	<tr>
-	<td colspan="2"><span class="form-label">Universal Credit </span></td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Payment protection insurance</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D4">
                 <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
                 <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-	</tr>
-
-	<tr>
-	<td colspan="2"><span class="form-label">Jobseeker’s Allowance</span></td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Pet insurance</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D13">
                 <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
                 <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-	</tr>
-
-	<tr>
-	<td colspan="2">
-<label id="last_name_label1" for="loanname" class="form-label last_name">Income 
-	Support</label></td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Veterinary bills</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D12">
                 <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
                 <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-	</tr>
-
-
-	<tr>
-	<td colspan="2">
-<label id="last_name_label2" for="loanname" class="form-label last_name">Working 
-	Tax Credit</label></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-	<tr>
-	<td colspan="2">
-<label id="last_name_label5" for="loanname" class="form-label last_name">
-	Employment and Support Allowance or Statutory Sick Pay </label>
-		</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-
-	<tr>
-	<td colspan="2">
-<label id="last_name_label6" for="loanname" class="form-label last_name">
-	Disability Living Allowance, Attendance Allowance or Personal Independence 
-	Payment </label>
-		</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td colspan="2">
-<label id="last_name_label7" for="loanname" class="form-label last_name">Carer’s 
-	Allowance </label>
-		</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td colspan="2">
-<label id="last_name_label8" for="loanname" class="form-label last_name">Housing 
-	Benefit or Local Housing Allowance </label>
-		</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	<tr>
-	<td colspan="2">
-<label id="last_name_label9" for="loanname" class="form-label last_name">Council Tax Reduction or Council Tax Support </label>
-		</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-</tbody>
-<tbody class="additional">
-	<tr>
-	<td>
-<h3 class="heading-small">Other type of benefit</h3>
-
-		</td>
-	<td>
-	</td>
-	<td>
-	</td>
-	<td>
-	</td>
-	</tr>
-
-	<tr>
-	<td>
-<label for="benefit-type" class="form-label">What is the name of the benefit?</label>
-<span class="form-hint">For example Maternity Allowance</span>
-
-
-		</td>
-	<td colspan="3">	
-	<input id="benefit-type"  type="text" value="" class="form-control"  />
-</td>
-	</tr>
+		</tr>
 		<tr>
 	<td>
-<label id="last_name_label" for="last_name" class="form-label">Benefit amount</label>
-
-		</td>
-	<td></td>
+	<h2 class="heading-medium">Healthcare</h2>
+			</td>
+	<td>
+		&nbsp;</td>
+	<td>
+	&nbsp;</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Adult care costs</span>
+	<span class="form-hint">Expenses you have as a result of caring for someone over 16)</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
 	<td>
-	<select class="select-control">
+	<select class="select-control" name="D6">
                 <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
                 <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
                 <option value="year">per year</option>
      </select>
 	</td>
-	</tr>
-</tbody>
-
-<tbody>
-
-
-
-	<tr class="totalrow" style="display:none">
-	<td><span class="form-label text-right">Total</span></td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Prescriptions and medicines</span></td>
 	<td>
-		&nbsp;</td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D7">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Dentistry</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D14">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+		<tr>
+	<td><span class="form-label">Opticians</span>
+	<div class="form-hint">Including glasses, contact lenses, etc</div></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+	<td>
+	<select class="select-control" name="D8">
+                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     </select>
+	</td>
+		</tr>
+	<tr class="totalrow">
+	<td><span class="form-label text-right">Total</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
 		<div class="text-right amount" id="box-total"></div>
 	</td>
 	<td>
 	<div>per month</div>
-	</td>
+</td>
 	</tr>
 
-
-	</tbody>
-	</table>
-	
-
-
-
+</table>	
+	<p class="clearfix"><br/></p>
 
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-        <a id="next" class="button" href="summary.html?stage=income&page=3">Continue</a>
+		<a id="next" class="button" href="summary.html?stage=costs&page=3">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="summary.html?stage=income&page=1" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -521,26 +406,6 @@ table tbody.additional tr:last-child td{
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../shared/sfs.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-			
-            var defaultnext = $("#next").first().attr("href");
-
-            var pensionable = getParameterByName("pensionable");
-            if (pensionable && pensionable.length > 0) {
-                $("#next").attr("href", "3-pensions.html");
-            }
-
-        });
-
-
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-    </script>
 <!-- #EndEditable -->
     
 
