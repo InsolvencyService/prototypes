@@ -345,7 +345,12 @@ var count;
 
 $(document).ready(function() {
 	
-	edited = getParameterByName("edit");	
+	var edited = getParameterByName("edit");	
+	var managedparty = getParameterByName("address");
+	
+	if(managedparty=="known"){
+		$("#address_section").hide();
+	}	
 			
 	if(edited=="true"){
 		readCookies();
