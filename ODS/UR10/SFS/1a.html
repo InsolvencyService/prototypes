@@ -271,7 +271,7 @@
                 </tr>
             </tbody>
 
-            <tbody id="employment2" style="display:none">
+            <tbody id="another" style="display:none">
                 <tr><td colspan="3"><strong>Employment 2</strong></td></tr>
                 <tr>
                     <td style="border-bottom:0 transparent none">
@@ -386,7 +386,7 @@
 
             <tbody>
                 <tr>
-                    <td><span class="form-label"><a href="1a.html" id="btn-addemployment2">Add another employment</a></span></td>
+                    <td><span class="form-label"><a href="1a.html" id="btn-add">Add another employment</a></span></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -500,8 +500,8 @@ $(document).ready(function() {
     }
 
 
-    $("#btn-addemployment2").on("click", function (e) {
-        $("#employment2").show();
+    $("#btn-add").on("click", function (e) {
+        $("#another").show();
         e.preventDefault();
     });
 });

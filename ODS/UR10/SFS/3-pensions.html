@@ -160,25 +160,99 @@
 	</thead>
 	<tbody>
 
-	<tr>
-	<td>
-<label id="last_name_label0" for="loanname" class="form-label last_name">Personal or workplace pension</label></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+
 	
+        <tr>
+            <td>
+                <h3 class="heading-small">Personal or workplace pension</h3>
+
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr class="childrow">
+            <td>
+                <label for="benefit-type" class="form-label">What is the name of the pension?</label>
+
+
+
+            </td>
+            <td colspan="2">
+                <input id="benefit-type" type="text" value="" class="form-control" />
+            </td>
+        </tr>
+        <tr class="childrow">
+            <td>
+                <label id="last_name_label" for="last_name" class="form-label">Pension amount</label>
+
+            </td>
+            <td>
+                <div class="pull-left text-right pound-sign">£</div>
+                <input type="text" class="form-control text-right pull-left amount" placeholder="0">
+            </td>
+            <td>
+                <select class="select-control">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                </select>
+            </td>
+        </tr>
+
+    <tbody class="additional" id="another" style="display:none">
+        <tr>
+            <td>
+                <h3 class="heading-small">Additional pension</h3>
+
+            </td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+        <tr class="childrow">
+            <td>
+                <label for="benefit-type" class="form-label">What is the name of the pension?</label>
+
+
+
+            </td>
+            <td colspan="2">
+                <input id="benefit-type" type="text" value="" class="form-control" />
+            </td>
+        </tr>
+        <tr class="childrow">
+            <td>
+                <label id="last_name_label" for="last_name" class="form-label">Pension amount</label>
+
+            </td>
+
+            <td>
+                <div class="pull-left text-right pound-sign">£</div>
+                <input type="text" class="form-control text-right pull-left amount" placeholder="0">
+            </td>
+            <td>
+                <select class="select-control">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+
+
+
 	<tr>
 	<td>
-<label class="form-label"><a href="#"><i class="glyphicon glyphicon-plus"></i> Add another pension</a></label></td>
+<label class="form-label"><a href="#" id="btn-add"><i class="glyphicon glyphicon-plus"></i> Add another pension</a></label></td>
 	<td>
 	</td>
 	<td>
@@ -221,7 +295,7 @@
 
 
 
-	<tr class="totalrow">
+	<tr class="totalrow" style="display:none">
 	<td><span class="form-label text-right">Total</span></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
@@ -318,7 +392,13 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var defaultnext = $("#next").attr("href");
+    var defaultnext = $("#next").attr("href");
+
+    $("#btn-add").on("click", function (e) {
+        $("#another").show();
+        e.preventDefault();
+    });
+
 	$("#next").on("click", function (e) {
 
 						

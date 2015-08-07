@@ -374,7 +374,7 @@ table tbody.additional tr:last-child td{
 	</td>
 	</tr>
 </tbody>
-<tbody class="additional">
+<tbody class="additional" id="another">
 	<tr>
 	<td>
 <h3 class="heading-small">Other type of benefit</h3>
@@ -388,7 +388,7 @@ table tbody.additional tr:last-child td{
 	</td>
 	</tr>
 
-	<tr>
+	<tr class="childrow">
 	<td>
 <label for="benefit-type" class="form-label">What is the name of the benefit?</label>
 <span class="form-hint">For example Maternity Allowance</span>
@@ -399,24 +399,27 @@ table tbody.additional tr:last-child td{
 	<input id="benefit-type"  type="text" value="" class="form-control"  />
 </td>
 	</tr>
-		<tr>
-	<td>
-<label id="last_name_label" for="last_name" class="form-label">Benefit amount</label>
+    <tr class="childrow">
+        <td>
+            <label id="last_name_label" for="last_name" class="form-label">Benefit amount</label>
 
-		</td>
-	<td></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
+        </td>
+        <td></td>
+        <td>
+            <div class="pull-left text-right pound-sign">£</div>
+            <input type="text" class="form-control text-right pull-left amount" placeholder="0">
+        </td>
+        <td>
+            <select class="select-control">
+                <option value="week">per week</option>
+                <option value="fortnight">per fortnight</option>
+                <option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="quarter">per quarter</option>
                 <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+            </select>
+        </td>
+    </tr>
 </tbody>
 
 <tbody>
