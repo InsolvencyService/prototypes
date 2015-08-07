@@ -226,10 +226,10 @@ display:block;
 				<div>
 									
 					<label id="excluded_label1" for="excluded_yes" class="block-label">
-					<input id="excluded_yes"  name="excluded" value="yes" type="radio">Yes</label>
+					<input id="excluded_yes"  name="excluded" value="Yes" type="radio">Yes</label>
 					
 					<label id="excluded_label1" for="excluded_no" class="block-label">
-					<input id="excluded_no"  name="excluded" value="no" type="radio">No</label>
+					<input id="excluded_no"  name="excluded" value="No" type="radio">No</label>
 
 				</div>
 			</fieldset>
@@ -241,10 +241,10 @@ display:block;
 				<div id="pnl-personalpension">
 									
 					<label id="pension_label1" for="pension_yes" class="block-label">
-					<input id="pension_yes"  name="pension" value="yes" type="radio">Yes</label>
+					<input id="pension_yes"  name="pension" value="Yes" type="radio">Yes</label>
 					
 					<label id="pension_label1" for="pension_no" class="block-label">
-					<input id="pension_no"  name="pension" value="no" type="radio">No</label>
+					<input id="pension_no"  name="pension" value="No" type="radio">No</label>
 
 				</div>
 			</fieldset>
@@ -342,10 +342,11 @@ display:block;
 <script type="text/javascript">
 var tempname;
 var count;
+var edited;
 
 $(document).ready(function() {
 	
-	var edited = getParameterByName("edit");	
+	edited = getParameterByName("edit");	
 	var managedparty = getParameterByName("address");
 	
 	if(managedparty=="known"){
