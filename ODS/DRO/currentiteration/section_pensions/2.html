@@ -222,8 +222,8 @@ display:block;
 	
 		<div class="form-group ">
 			<p id="title_label" class="form-label-bold">Is this an approved pension?</p>
-			<fieldset class="inline">
-				<div id="excluded_debt">
+			<fieldset class="inline" id="excluded_debt">
+				<div>
 									
 					<label id="excluded_label1" for="excluded_yes" class="block-label">
 					<input id="excluded_yes"  name="excluded" value="yes" type="radio">Yes</label>
@@ -234,6 +234,31 @@ display:block;
 				</div>
 			</fieldset>
 		</div>
+		<p>&nbsp;</p>
+		<div class="form-group">
+			<p id="title_label" class="form-label-bold">Is this a personal pension?</p>
+			<fieldset class="inline">
+				<div id="pnl-personalpension">
+									
+					<label id="pension_label1" for="pension_yes" class="block-label">
+					<input id="pension_yes"  name="pension" value="yes" type="radio">Yes</label>
+					
+					<label id="pension_label1" for="pension_no" class="block-label">
+					<input id="pension_no"  name="pension" value="no" type="radio">No</label>
+
+				</div>
+			</fieldset>
+		</div>
+		
+		<div class="form-group panel-indent" id="pnl-pensionamount" hidden="true">
+			<label for="pensionvalue" class="form-label-bold applicant_address_town">
+			Value of pension</label>
+			£ <input id="pensionvalue" name="pensionvalue" type="text" value="" />
+			<br/>
+		</div>
+
+		
+
 
 		
 		
@@ -329,6 +354,16 @@ $(document).ready(function() {
 	$("#pension").text(tempname);
 });
 
+$('#pnl-personalpension').click(function() {
+	if($("#pension_yes").prop('checked')==true){
+		$("#pnl-pensionamount").show();
+	}
+	else{
+		$("#pnl-pensionamount").hide();
+	}
+});
+
+
 $("#next").on("click", function(e){
 		writeCookies();
 		$("#next").attr("href", "../section_pensions/1.html");
@@ -361,6 +396,10 @@ function writeCookies() {
 		$.cookie("DROPensionNumber"+count, $("#ref").val());
 		// excluded
 		$.cookie("DROPensionApproved"+count, $("#excluded_debt :checked").val());
+		// personal
+		$.cookie("DROPensionPersonal"+count, $("#pnl-personalpension :checked").val());
+		// value
+		$.cookie("DROPensionValue-"+count, $("#pensionvalue").val());
 		// update count
 		if(edited!="true"){
 			$.cookie("DROPensionCount", count);
