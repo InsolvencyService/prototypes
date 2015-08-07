@@ -235,7 +235,6 @@ display:block;
 				<!--<th>Address</th>--->
 				<th>Policy number</th>
 				<th>Approved pension</th>
-				<th>Personal pension</th>
 				<th>&nbsp;</th>
 			</tr>
 		</thead>
@@ -256,7 +255,7 @@ display:block;
 
 	<div class="form-hint">Enter the name of the organisation, for 
 		example A1 Pensions. </div>
-	<input type="text" id="creditors" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
+	<input type="text" id="pension" style="width:400px" class="input-lg">
 		<a class="button" id="next">Add provider</a>
 
 	&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
@@ -345,9 +344,6 @@ display:block;
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../section_creditors/js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="../section_creditors/js/creditors.js" ></script>
-
 
 
 <script type="text/javascript">
@@ -369,21 +365,47 @@ $(document).ready(function() {
 		for(i=1; i<=count; i++){	
 			$("#pensionlist").show();
 
-			pname = $.cookie("DROPensionName"+i).charAt(0).toUpperCase();			
+			pname = $.cookie("DROPensionName"+i);
+			/*paddress = ""; 
+			var address1=$.cookie("DROPensionAddress1-"+i);
+			var address2=$.cookie("DROPensionAddress2-"+i);
+			var address3=$.cookie("DROPensionAddress3-"+i);
+			var address4=$.cookie("DROPensionAddress4-"+i);
+			var address5=$.cookie("DROPensionAddress5-"+i);
+			var address6=$.cookie("DROPensionAddress6-"+i);
+			
+			if(address1 != ""){
+				paddress = address1+", ";
+			}
+			if(address2 != ""){
+				paddress = paddress +address2+", ";
+			}
+			if(address3 != ""){
+				paddress = paddress+address3+", ";
+			}
+			if(address4 != ""){
+				paddress = paddress+address4+", ";
+			}
+			if(address5 != ""){
+				paddress = paddress+address5+", ";
+			}
+			if(address6 != ""){
+				paddress = paddress+address6;
+			}
+			*/
 			pnumber = $.cookie("DROPensionNumber"+i);
-			papproved = $.cookie("DROPensionApproved"+i).charAt(0).toUpperCase();
-			ppersonal = $.cookie("DROPensionApproved"+i).charAt(0).toUpperCase();			
+			papproved = $.cookie("DROPensionApproved"+i);			
 			
 			//add pensions to table
-			$("#body").append("<tr><td>"+ pname +"</td><td>" + pnumber +"</td><td>"+ papproved +"</td><td>"+ ppersonal +"</td><td class=\"edit\"><a href=\"2.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
+			$("#body").append("<tr><td>"+ pname +"</td><td>" + pnumber +"</td><td>"+ papproved +"</td><td class=\"edit\"><a href=\"2.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
 			// removed address + paddress +"</td><td>"
 		}
 	}
 });
 
 $("#next").on("click", function(e){
-	if ($('#creditor').val() && $('#creditor').val().length > 0){
-		$.cookie('TempDROPensionProvider', $('#creditor').val());
+	if ($('#pension').val() && $('#pension').val().length > 0){
+		$.cookie('TempDROPensionProvider', $('#pension').val());
 		$("#next").attr("href", "2.html");
 	}
 	else{
