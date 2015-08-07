@@ -422,14 +422,27 @@ function readCookies() {
 		$("#pension_address_town").val($.cookie("DROPensionAddress4-"+id));
 		$("#pension_address_county").val($.cookie("DROPensionAddress5-"+id));
 		$("#pension_address_post_code").val($.cookie("DROPensionAddress6-"+id));
+		$("#pensionvalue").val($.cookie("DROPensionValue"+id));
+
 		$("#ref").val($.cookie("DROPensionNumber"+id));
 		
-		if($.cookie("DROPensionApproved"+id) == 'yes'){
+		if($.cookie("DROPensionApproved"+id) == 'Yes'){
 			$( "#excluded_yes" ).prop( "checked", true );
 		}
 		else{
 			$( "#excluded_no" ).prop( "checked", true );
 		}
+		
+		if($.cookie("DROPensionPersonal"+id) == 'Yes'){
+			$( "#pension_yes" ).prop( "checked", true );
+			$('#pnl-pensionamount').show();
+		}
+		else{
+			$( "#pension_no" ).prop( "checked", true );
+			$('#pnl-pensionamount').hide();
+
+		}
+
 		
 		
 }
