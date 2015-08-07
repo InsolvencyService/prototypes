@@ -205,12 +205,11 @@
 
     <tbody class="additional" id="another" style="display:none">
         <tr>
-            <td>
-                <h3 class="heading-small">Additional pension</h3>
+            <td colspan="2">
+                <h3 class="heading-small pull-left">Additional pension</h3><a id="btn-remove" class="pull-right" href="#" style="padding-top:15px">Delete</a>
 
             </td>
-            <td></td>
-            <td></td>
+        <td></td>
 
         </tr>
 
@@ -398,7 +397,10 @@ $(document).ready(function() {
         $("#another").show();
         e.preventDefault();
     });
-
+    $("#btn-remove").on("click", function (e) {
+        $("#another").hide();
+        e.preventDefault();
+    });
 	$("#next").on("click", function (e) {
 
 						
