@@ -188,28 +188,48 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td><h2 class="form-title heading-medium">Fines</h2></td>
+ 
+ 
+            </tbody>
 
-                    <td>
-                        &nbsp;
+
+            <tbody>
+                <tr>
+
+                    <td colspan="1">
+                        <h2 class="form-title heading-medium">Fines</h2>
+
+
                     </td>
+                    <td style="padding-top:15px"><a id="btn-remove-fine" href="#" class="fine-additional">Delete</a></td>
+                    <td></td>
+
+                </tr>
+
+                <tr class="childrow">
                     <td>
-                        &nbsp;
+                        <label for="benefit-type" class="form-label">Who issued the fine?</label>
+
+
+
+                    </td>
+                    <td colspan="2">
+                        <input id="benefit-type" type="text" value="" class="form-control" />
                     </td>
                 </tr>
-                <tr>
+                <tr class="childrow">
                     <td>
-                        <span class="form-label">Enter any amounts you have been fined by a court</span>
-                        <span class="form-hint">Don't include Penalty Charge Notices, for example parking fines from local councils.</span>
-                    </td>
+                        <label id="last_name_label" for="last_name" class="form-label">Amount of regular payment</label>
+                        <div class="form-hint">If it is a one off fine, enter the total amount</div>
 
+                    </td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
                         <input type="text" class="form-control text-right pull-left amount" placeholder="0">
                     </td>
+
                     <td>
-                        <select class="select-control" name="D2">
+                        <select class="select-control">
                             <option value="week">per week</option>
                             <option value="fortnight">per fortnight</option>
                             <option value="4weeks">per 4 weeks</option>
@@ -219,7 +239,6 @@
                         </select>
                     </td>
                 </tr>
- 
             </tbody>
 
 
@@ -239,7 +258,7 @@
 
                 <tr class="childrow">
                     <td>
-                        <label for="benefit-type" class="form-label">What is the name of the fine?</label>
+                        <label for="benefit-type" class="form-label">Who issued the fine?</label>
 
 
 
@@ -250,7 +269,8 @@
                 </tr>
                 <tr class="childrow">
                     <td>
-                        <label id="last_name_label" for="last_name" class="form-label">Amount</label>
+                        <label id="last_name_label" for="last_name" class="form-label">Amount of regular payment</label>
+                        <div class="form-hint">If it is a one off fine, enter the total amount</div>
 
                     </td>
                     <td>
