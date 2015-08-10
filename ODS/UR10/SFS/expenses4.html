@@ -453,28 +453,26 @@
 <script type="text/javascript" src="../shared/sfs.js"></script>
 
 
-<script type="text/javascript">
-$(document).ready(function() {
-    var defaultnext = $("#next").attr("href");
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var defaultnext = $("#next").attr("href");
         $(".additional").hide();
-    $("#btn-add").on("click", function (e) {
-        $(".additional").show();
-        e.preventDefault();
+        $("#btn-add").on("click", function (e) {
+            $(".additional").show();
+            e.preventDefault();
+        });
+        $("#btn-remove").on("click", function (e) {
+            $(".additional").hide();
+            e.preventDefault();
+        });
+        $("#next").on("click", function (e) {
+
+        });
+
     });
-    $("#btn-remove").on("click", function (e) {
-        $(".additional").hide();
-        e.preventDefault();
-    });
-	$("#next").on("click", function (e) {
-
-						
-		});
 
 
-});
-    
-
-</script>
+    </script>
 
 
 <!-- #EndEditable -->
