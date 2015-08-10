@@ -153,85 +153,120 @@
 	<thead>
 	<tr>
 	<th>&nbsp;</th>
-	<th style="width:160px; padding-right:25px">Source</th>
 	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
 	<th style="width:200px; padding-left:20px">per week / month / year</th>
 	</tr>
 	</thead>
-	<tbody>
-	<tr class="addanother" id="another">
-	<td>
-<h3>Add other income</h3>
-		</td>
-	<td>
-	</td>
-	<td>
-	</td>
-	<td>
-	</td>
-	</tr>
-	<tr>
-	<td><label id="last_name_label" for="last_name" class="form-label">Source and amount</label>
-	</td>
-	<td>
-	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" class="form-control"  placeholder="Source" />
-</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
+            <tbody>
+ 
 
-	<tr class="addanother">
-	<td><label id="last_name_label" for="last_name" class="form-label">Source and amount</label>
-	</td>
-	<td>
-	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" class="form-control" />
-</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
-	
-	<tr>
-	<td><span class="form-label"><a href="#" id="btn-addanother"><i class="glyphicon glyphicon-plus"></i> Add another income</a></span></td>
-	<td>
-		&nbsp;</td>
-	<td>
-	</td>
-	<td>
-	</td>
-	</tr>
+            <tbody>
+                <tr>
+
+                    <td colspan="1">
+                        <h2 class="form-title heading-medium">Other income</h2>
+
+
+                    </td>
+                    <td style="padding-top:15px"><a id="btn-remove-fine" href="#" class="fine-additional">Delete</a></td>
+                    <td></td>
+
+                </tr>
+
+                <tr class="childrow">
+                    <td>
+                        <label for="benefit-type" class="form-label">What is the income from?</label>
 
 
 
-	<tr class="totalrow">
-	<td colspan="2"><span class="form-label text-right">Total</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-		<div class="text-right amount" id="box-total"></div>
-	</td>
-	<td>
-	<div>per month</div>
-</td>
-	</tr>
+                    </td>
+                    <td colspan="2">
+                        <input id="benefit-type" type="text" value="" class="form-control" />
+                    </td>
+                </tr>
+                <tr class="childrow">
+                    <td>
+                        <label id="last_name_label" for="last_name" class="form-label">Income amount</label>
 
-</table>	
+                    </td>
+                    <td>
+                        <div class="pull-left text-right pound-sign">£</div>
+                        <input type="text" class="form-control text-right pull-left amount" placeholder="0">
+                    </td>
+
+                    <td>
+                        <select class="select-control">
+                            <option value="week">per week</option>
+                            <option value="fortnight">per fortnight</option>
+                            <option value="4weeks">per 4 weeks</option>
+                            <option value="month" selected="selected">per month</option>
+                            <option value="quarter">per quarter</option>
+                            <option value="year">per year</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+
+
+
+            <tbody class="fine-additional" id="another" style="display:none">
+                <tr>
+
+                    <td colspan="1">
+                        <h2 class="form-title heading-medium">Additional income</h2>
+
+
+                    </td>
+                    <td style="padding-top:15px"><a id="btn-remove-fine" href="#">Delete</a></td>
+                    <td></td>
+
+                </tr>
+
+                <tr class="childrow">
+                    <td>
+                        <label for="benefit-type" class="form-label">What is the income from?</label>
+
+
+
+                    </td>
+                    <td colspan="2">
+                        <input id="benefit-type" type="text" value="" class="form-control" />
+                    </td>
+                </tr>
+                <tr class="childrow">
+                    <td>
+                        <label id="last_name_label" for="last_name" class="form-label">Income amount</label>
+ 
+                    </td>
+                    <td>
+                        <div class="pull-left text-right pound-sign">£</div>
+                        <input type="text" class="form-control text-right pull-left amount" placeholder="0">
+                    </td>
+
+                    <td>
+                        <select class="select-control">
+                            <option value="week">per week</option>
+                            <option value="fortnight">per fortnight</option>
+                            <option value="4weeks">per 4 weeks</option>
+                            <option value="month" selected="selected">per month</option>
+                            <option value="quarter">per quarter</option>
+                            <option value="year">per year</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+
+
+            <tr>
+                <td>
+                    <label class="form-label"><a href="#" id="btn-add-fine"><i class="glyphicon glyphicon-plus"></i> Add another income</a></label>
+                </td>
+                <td></td>
+            </tr>
+
+
+
+	</table>	
 	<p class="clearfix"><br/></p>
 
 	
@@ -311,6 +346,41 @@
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../shared/sfs.js"></script>
 
+    <script type="text/javascript">
+$(document).ready(function() {
+    var defaultnext = $("#next").attr("href");
+    $(".fine-additional").hide();
+    $(".expense-additional").hide();
+
+    $("#btn-add-fine").on("click", function (e) {
+        $(".fine-additional").show();
+        e.preventDefault();
+    });
+    $("#btn-add-expense").on("click", function (e) {
+        $(".expense-additional").show();
+        e.preventDefault();
+    });
+
+    $("#btn-remove-fine").on("click", function (e) {
+        $(".fine-additional").hide();
+        e.preventDefault();
+    });
+
+    $("#btn-remove-expense").on("click", function (e) {
+        $(".expense-additional").hide();
+        e.preventDefault();
+    });
+
+	$("#next").on("click", function (e) {
+
+
+		});
+
+
+});
+
+
+    </script>
 <!-- #EndEditable -->
     
 
