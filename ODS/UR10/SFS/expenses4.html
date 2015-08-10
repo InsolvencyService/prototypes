@@ -275,7 +275,7 @@
                 
 
             </td>
-            <td style="padding-top:15px"><a id="btn-remove"  href="#" >Delete</a></td>
+            <td style="padding-top:15px"><a id="btn-remove" class="additional"  href="#" >Delete</a></td>
         <td></td>
 
         </tr>
@@ -318,7 +318,7 @@
         <tr>
 
             <td colspan="1">
-                <h3 class="heading-small pull-left">Additional transport expense 2</h3>
+                <h3 class="heading-small pull-left">Additional transport expense</h3>
                 
 
             </td>
@@ -456,13 +456,13 @@
 <script type="text/javascript">
 $(document).ready(function() {
     var defaultnext = $("#next").attr("href");
-
+        $(".additional").hide();
     $("#btn-add").on("click", function (e) {
-        $("#another").show();
+        $(".additional").show();
         e.preventDefault();
     });
     $("#btn-remove").on("click", function (e) {
-        $("#another").hide();
+        $(".additional").hide();
         e.preventDefault();
     });
 	$("#next").on("click", function (e) {
