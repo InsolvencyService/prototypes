@@ -159,7 +159,6 @@
 	<thead>
 	<tr>
 	<th>&nbsp;</th>
-	<th style="width:160px; padding-right:25px">Type</th>
 	<th style="width:160px; text-align:right; padding-right:25px">Amount</th>
 	<th style="width:200px; padding-left:20px">per week / month / year</th>
 	</tr>
@@ -168,8 +167,6 @@
 		<tr>
 	<td><span class="form-label">Vehicle finance</span>
 	<span class="form-hint">Including payment for any vehicle you have purchased through a personal lease, hire purchase, conditional sale, etc</span></td>
-	<td>
-		&nbsp;</td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
@@ -184,8 +181,6 @@
 		</tr>
 		<tr>
 	<td><span class="form-label">Vehicle insurance</span></td>
-	<td>
-		&nbsp;</td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
@@ -202,8 +197,6 @@
 	<td><span class="form-label">Breakdown cover</span>
 	</td>
 	<td>
-		&nbsp;</td>
-	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
@@ -218,8 +211,6 @@
 		<tr>
 	<td><span class="form-label">Vehicle tax</span></td>
 	<td>
-		&nbsp;</td>
-	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
@@ -233,8 +224,6 @@
 		</tr>
 		<tr>
 	<td><span class="form-label">MOT and ongoing maintenance</span></td>
-	<td>
-		&nbsp;</td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
@@ -251,8 +240,6 @@
 	<td><span class="form-label">Fuel, parking and toll road charges</span>
 	</td>
 	<td>
-		&nbsp;</td>
-	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
@@ -268,8 +255,6 @@
 	<td><span class="form-label">Public transport</span>
 	<span class="form-hint">To work, shopping, etc</span></td>
 	<td>
-		&nbsp;</td>
-	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
@@ -281,63 +266,111 @@
      </select>
 	</td>
 	</tr>
+</tbody>
+  <tbody>
+        <tr>
 
-	<tr id="another"  class="addanother">
-	<td>
-<h3>Add another transport expense</h3>
-		</td>
-	<td>
-	</td>
-	<td>
-	</td>
-	<td>
-	</td>
-	</tr>
+            <td colspan="1">
+                <h3 class="heading-small pull-left">Additional transport expense</h3>
+                
 
-	<tr class="addanother">
-	<td><label id="last_name_label" for="last_name" class="form-label">Type and amount</label>
-	</td>
-	<td>
-	<input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" class="form-control"  placeholder="Type" />
-</td>
+            </td>
+            <td style="padding-top:15px"><a id="btn-remove"  href="#" >Delete</a></td>
+        <td></td>
+
+        </tr>
+
+        <tr class="childrow">
+            <td>
+                <label for="benefit-type" class="form-label">What is the name of the expense?</label>
+
+
+
+            </td>
+            <td colspan="2">
+                <input id="benefit-type" type="text" value="" class="form-control" />
+            </td>
+        </tr>
+        <tr class="childrow">
+            <td>
+                <label id="last_name_label" for="last_name" class="form-label">Pension amount</label>
+
+            </td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
+
+            <td>
+                <select class="select-control">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+
+  <tbody class="additional" id="another" style="display:none">
+        <tr>
+
+            <td colspan="1">
+                <h3 class="heading-small pull-left">Additional transport expense 2</h3>
+                
+
+            </td>
+            <td style="padding-top:15px"><a id="btn-remove"  href="#" >Delete</a></td>
+        <td></td>
+
+        </tr>
+
+        <tr class="childrow">
+            <td>
+                <label for="benefit-type" class="form-label">What is the name of the expense?</label>
+
+
+
+            </td>
+            <td colspan="2">
+                <input id="benefit-type" type="text" value="" class="form-control" />
+            </td>
+        </tr>
+        <tr class="childrow">
+            <td>
+                <label id="last_name_label" for="last_name" class="form-label">Pension amount</label>
+
+            </td>
 	<td>
-	<select class="select-control">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
 	</td>
-	</tr>
+
+            <td>
+                <select class="select-control">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+
 
 
 	<tr>
 	<td>
-<label id="last_name_label10" for="loanname" class="form-label"><i class="glyphicon glyphicon-plus"></i>&nbsp;<a href="#" id="btn-addanother">Add another transport expense</a></label>
-		</td>
-	<td>
-	&nbsp;</td>
-	<td>
-	</td>
-	<td>
-	</td>
+<label class="form-label"><a href="#" id="btn-add"><i class="glyphicon glyphicon-plus"></i> Add another transport expense</a></label></td>
 	<td>
 	</td>
 	</tr>
 
-	<tr class="totalrow">
-	<td colspan="2"><span class="form-label text-right">Total</span></td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-		<div class="text-right amount" id="box-total"></div>
-	</td>
-	<td>
-	<div>per month</div>
-</td>
-	</tr>
+
 
 </table>	
 	<p class="clearfix"><br/></p>
@@ -418,6 +451,31 @@
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../shared/sfs.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var defaultnext = $("#next").attr("href");
+
+    $("#btn-add").on("click", function (e) {
+        $("#another").show();
+        e.preventDefault();
+    });
+    $("#btn-remove").on("click", function (e) {
+        $("#another").hide();
+        e.preventDefault();
+    });
+	$("#next").on("click", function (e) {
+
+						
+		});
+
+
+});
+    
+
+</script>
+
 
 <!-- #EndEditable -->
     
