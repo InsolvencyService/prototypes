@@ -176,7 +176,7 @@ table td[class*=col-], table th[class*=col-]{
                                     <table>
  										
                                         <tbody class="group-title" id="item1" data-role="cash">
-                                            <tr class="group-heading">
+                                            <tr class="group-heading parent">
                                                 <td class="group-title col-sm-8">Cash
                                                 <br/>
                                                  <a href="#" class="declare" id="btn-no">I don't have any cash</a>
@@ -199,7 +199,7 @@ table td[class*=col-], table th[class*=col-]{
                                             </tr>
 									</tbody>
                                     <tbody class="group-title clearfix" id="item2" data-role="household">
-                                            <tr class="group-heading">
+                                            <tr class="group-heading parent">
                                                 <td>
                                                     Household items of exceptional value<br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any household items of exceptional value</a>
@@ -244,7 +244,7 @@ table td[class*=col-], table th[class*=col-]{
 									</tbody>
 									
 									<tbody class="group-title" id="item4" data-role="compensation">
-                                            <tr class="group-heading" id="income4">
+                                            <tr class="group-heading parent" id="income4">
                                                 <td>
                                                     Compensation or legal claim<br />
                                                     <a href="#" style="display:none" class="declare">I have no contributions</a></td>
@@ -265,7 +265,7 @@ table td[class*=col-], table th[class*=col-]{
                                             </tr>
 									</tbody>
                                         <tbody class="group-title" id="item5" data-role="beneficiary">									
-                                            <tr class="group-heading" id="income5">
+                                            <tr class="group-heading parent" id="income5">
                                                 <td>
                                                     Interest in a will or trust<br />
                                                     <a href="#" style="display:none" class="declare">I don’t benefit from any trusts or wills</a>
@@ -278,7 +278,7 @@ table td[class*=col-], table th[class*=col-]{
                                             </tr>
 										</tbody>
 										<tbody class="group-title" id="item6" data-role="investments">
-                                            <tr class="group-heading" id="income6">
+                                            <tr class="group-heading parent" id="income6">
                                                 <td>
                                                 Stocks, shares and investment<br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any stocks, shares or investments</a>
@@ -289,7 +289,7 @@ table td[class*=col-], table th[class*=col-]{
                                                 </td>
                                                 <td class="value"></td>
                                             </tr>
-                                            <tr class="group-heading" id="income7">
+                                            <tr class="group-heading parent" id="income7">
                                                 <td>
                                                 Self employed business assets<br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any self employed trading assets</a>
@@ -301,7 +301,7 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td class="value"></td>
                                             </tr>
 
-                                            <tr class="group-heading" id="income8">
+                                            <tr class="group-heading parent" id="income8">
                                                 <td>
                                                 Money you’re owed<br />
                                                     <a href="#" style="display:none" class="declare">No one owes me any money</a>
@@ -313,7 +313,7 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td class="value"></td>
                                             </tr>
                                             
-                                            <tr class="group-heading" id="income9">
+                                            <tr class="group-heading parent" id="income9">
                                                 <td>
                                                 Other<br />
                                                     <a href="#" style="display:none" class="declare">I have added all my other assets</a>
@@ -454,7 +454,7 @@ table td[class*=col-], table th[class*=col-]{
                 $("#" + stage + previous + " .parent a.edit").show().removeClass("button").text("Edit");
 
                 $(".declare").hide();
-                $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Add");
+                $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Start");
                 $("#" + stage + itemnumber +  " .declare").show();
                 $("#" + stage + itemnumber + " .total").show();
 
