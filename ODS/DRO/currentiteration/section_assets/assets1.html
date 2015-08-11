@@ -183,145 +183,149 @@
 				<p class="form-hint">Amount of money you are owed by others.</p>
 				£ <input id="owed" name="owed" type="text" value="" />
 			</div>
-			
-			<p>&nbsp;</p>
-			
-			<div class="form-group" id="pnl-home-detail">
-				<label id="home_value_label" for="home_value" class="form-label-bold applicant_address_line_1">Do you own your own home? If so how much is it worth?</label>
-				<p class="form-hint">The current market value of your home. Leave blank if you don't own your own home.</p>
-				£ <input id="home_value" name="home_value" type="text" value="" />
-			</div>
-			
+
+		
+			<div class="form-group">
+				<fieldset class="inline">
+				<legend id="tradetools_label" class="form-label-bold">Do you have any tools that are essential to your trade?</legend>
+					<div id="pnl-tradetools" class="form-group">
+						<label id="tradetools_label1" for="tradetools_yes" class="block-label">
+						<input id="tradetools_yes" value="" name="tradetools" type="radio">Yes</label>
 					
-			<div class="form-group" id="pnl-property-detail">
-				<label id="property_value_label" for="property_value" class="form-label-bold applicant_address_line_1">Do you own any other property? If so how much is it worth?</label>
-				<p class="form-hint">The current market value of your property. Leave blank if you don't own any other property</p>
-				£ <input id="property_value" name="property_value" type="text" value="" />
+						<label id="tradetools_label2" for="tradetools_no" class="block-label">
+						<input id="tradetools_no" value="" name="tradetools" type="radio">No</label>
+					</div>
+				</fieldset>
 			</div>
 			
-			<p>&nbsp;</p>
+				<div class="form-group panel-indent" id="pnl-tradetools-detail">
+					<div class="form-group">
+						<label id="lbl-" for="" class="form-label-bold">Make</label>
+						<input id="tool_make" name="tool_make" type="text" value="" /><br><br>
+					</div>	
+					
+					<div class="form-group">
+						<label id="lbl-" for="" class="form-label-bold">Model</label>
+						<input id="tool_model" name="tool_model" type="text" value="" /><br><br>
+					</div>
+					
+					<div class="form-group">
+						<label id="lbl-" for="" class="form-label-bold">Age</label>
+						<input id="tool_age" name="tool_age" type="text" value="" /><br><br>
+					</div>
+					
+					<div class="form-group">
+						<label id="lbl-" for="" class="form-label-bold">Value</label>
+						£ <input id="tool_value" name="tool_value" type="text" value="" /><br><br>
+					</div>
+					
+					<div class="btn btn-default">
+						<i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;
+						<a id="add-tool">Add tool</a>
+					</div>
+					
+					<br><br>
+						<table id="tooltable" style="display:none" class="col-lg-10">
+						<thead>
+							<th>Make</th>
+							<th>Model</th>
+							<th>Age</th>
+							<th>Value</th>
+							<th></th>
+						</thead>
+						<tbody>
+							<tr id="tradetools_row2" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row2').hide()">Delete</a></td>
+							</tr>
+							
+							<tr id="tradetools_row3" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row3').hide()">Delete</a></td>
+							</tr>
 
-			<div>	
-					<label id="tradetools_label" class="form-label-bold">Tools of the trade</label>
-					<table id="tooltable">
-					<thead>
-						<th>Make</th>
-						<th>Model</th>
-						<th>Age</th>
-						<th>Value</th>
-						<th></th>
-					</thead>
-					<tbody>
-						<tr id="tradetools_row2" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row2').hide()">Delete</a></td>
-						</tr>
-						
-						<tr id="tradetools_row3" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row3').hide()">Delete</a></td>
-						</tr>
+							<tr id="tradetools_row4" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row4').hide()">Delete</a></td>
+							</tr>
+							<tr id="tradetools_row5" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row5').hide()">Delete</a></td>
+							</tr>
+							<tr id="tradetools_row6" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row6').hide()">Delete</a></td>
+							</tr>
+							<tr id="tradetools_row7" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row7').hide()">Delete</a></td>
+							</tr>
+							<tr id="tradetools_row8" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row8').hide()">Delete</a></td>
+							</tr>
+							<tr id="tradetools_row9" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row9').hide()">Delete</a></td>
+							</tr>
+							<tr id="tradetools_row10" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row10').hide()">Delete</a></td>
+							</tr>
+							<tr id="tradetools_row11" style="display:none">
+								<td><span class="tmake"></span></td>
+								<td><span class="tmodel"></span></td>
+								<td><span class="tage"></span></td>
+								<td>£ <span class="tvalue"></span></td>
+								<td><a onclick="$('#tradetools_row11').hide()">Delete</a></td>
+							</tr>
 
-						<tr id="tradetools_row4" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row4').hide()">Delete</a></td>
-						</tr>
-						<tr id="tradetools_row5" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row5').hide()">Delete</a></td>
-						</tr>
-						<tr id="tradetools_row6" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row6').hide()">Delete</a></td>
-						</tr>
-						<tr id="tradetools_row7" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row7').hide()">Delete</a></td>
-						</tr>
-						<tr id="tradetools_row8" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row8').hide()">Delete</a></td>
-						</tr>
-						<tr id="tradetools_row9" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row9').hide()">Delete</a></td>
-						</tr>
-						<tr id="tradetools_row10" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row10').hide()">Delete</a></td>
-						</tr>
-						<tr id="tradetools_row11" style="display:none">
-							<td><span class="tmake"></span></td>
-							<td><span class="tmodel"></span></td>
-							<td><span class="tage"></span></td>
-							<td>£ <span class="tvalue"></span></td>
-							<td><a onclick="$('#tradetools_row11').hide()">Delete</a></td>
-						</tr>
-						
-						<tr id="tradetools_final">
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td class="text-right"><a class="btn btn-default" id="open-tool"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;Add tool</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>		
+
+						</tbody>
+					</table>
+				</div>
+				
+			<div class="form-group">
+				<fieldset class="inline">
+				<legend id="vehicles_label" class="form-label-bold">Do you own any motor vehicles?</legend>
+					<div id="pnl-vehicles" class="form-group">
+						<label id="vehicles_label1" for="vehicles_yes" class="block-label">
+						<input id="vehicles_yes" value="" name="vehicles" type="radio">Yes</label>
+					
+						<label id="vehicles_label2" for="vehicles_no" class="block-label">
+						<input id="vehicles_no" value="" name="vehicles" type="radio">No</label>
+					</div>
+				</fieldset>
+			</div>
 			
-			<div class="form-group panel-indent" id="pnl-tradetools-detail" style="display:none">
-				<div class="form-group">
-					<label id="lbl-" for="" class="form-label-bold">Make</label>
-					<input id="tool_make" name="tool_make" type="text" value="" /><br><br>
-				</div>	
-				
-				<div class="form-group">
-					<label id="lbl-" for="" class="form-label-bold">Model</label>
-					<input id="tool_model" name="tool_model" type="text" value="" /><br><br>
-				</div>
-				
-				<div class="form-group">
-					<label id="lbl-" for="" class="form-label-bold">Age</label>
-					<input id="tool_age" name="tool_age" type="text" value="" /><br><br>
-				</div>
-				
-				<div class="form-group">
-					<label id="lbl-" for="" class="form-label-bold">Value</label>
-					£ <input id="tool_value" name="tool_value" type="text" value="" /><br><br>
-				</div>
-				
-				<div class="btn btn-default">
-					<a id="add-tool">Add</a>
-				</div>
-			</div>		
-				
+			
 			
 			<!--- pop up --->
 			<div id="overlay">
@@ -364,9 +368,8 @@
 			
 			
 			
-					<div class="form-group" id="pnl-vehicles-detail">
-					<p>&nbsp;</p>
-					<label id="vehicles_label" class="form-label-bold">Motor vehicles</label>			
+					<div class="form-group panel-indent" id="pnl-vehicles-detail">
+								
 					<table>
 						<thead>
 							<th>Make</th>
@@ -479,17 +482,17 @@
 								<td><a onclick="$('#vehicles_row11').hide()">Delete</a></td>
 							</tr>
 							
-							<tr id="vehicles_final">
+							<tr id="vehicles_final" style="display:none">
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
-								<td class="text-right">
+								<td>
 									<a onclick="overlay()" class="btn btn-default">
 									<i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;
-									Add vehicle</a> 
+									Add another vehicle</a> 
 								</td>
 							</tr>
 
@@ -499,11 +502,61 @@
 
 				</div>
 
+			<div class="form-group">
+				<fieldset class="inline">
+				<legend id="home_label" class="form-label-bold">Do you own your own home?</legend>
+					<div id="pnl-home" class="form-group">
+						<label id="home_label1" for="home_yes" class="block-label">
+						<input id="home_yes" value="" name="home" type="radio">Yes</label>
+					
+						<label id="home_label2" for="home_no" class="block-label">
+						<input id="home_no" value="" name="home" type="radio">No</label>
+					</div>
+				</fieldset>
+			</div>
 			
-				<div class="form-group" id="pnl-assets-detail">
-					<p>&nbsp;</p>
-					<legend id="assets_label" class="form-label-bold">Unrealised assets</legend>
-					<table>
+				<div class="form-group panel-indent" id="pnl-home-detail">
+					<label id="home_value_label" for="home_value" class="form-label-bold applicant_address_line_1">How much is your home worth?</label>
+					<p class="form-hint">The current market value of your property</p>
+					£ <input id="home_value" name="home_value" type="text" value="" />
+
+				</div>
+			
+			<div class="form-group">
+				<fieldset class="inline">
+				<legend id="property_label" class="form-label-bold">Do you own any other property?</legend>
+					<div id="pnl-property" class="form-group">
+						<label id="property_label1" for="property_yes" class="block-label">
+						<input id="property_yes" value="" name="property" type="radio">Yes</label>
+					
+						<label id="property_label2" for="property_no" class="block-label">
+						<input id="property_no" value="" name="property" type="radio">No</label>
+					</div>
+				</fieldset>
+			</div>
+			
+				<div class="form-group panel-indent" id="pnl-property-detail">
+					<label id="property_value_label" for="property_value" class="form-label-bold applicant_address_line_1">How much is your property worth?</label>
+					<p class="form-hint">The current market value of your property</p>
+					£ <input id="property_value" name="property_value" type="text" value="" />
+
+				</div>
+			
+			<div class="form-group">
+				<fieldset class="inline">
+				<legend id="assets_label" class="form-label-bold">Do you have any unrealised assets?</legend>
+					<div id="pnl-assets" class="form-group">
+						<label id="assets_label1" for="assets_yes" class="block-label">
+						<input id="assets_yes" value="" name="assets" type="radio">Yes</label>
+					
+						<label id="assets_label2" for="assets_no" class="block-label">
+						<input id="assets_no" value="" name="assets" type="radio">No</label>
+					</div>
+				</fieldset>
+			</div>
+
+				<div class="form-group panel-indent" id="pnl-assets-detail">
+					<table class="col-lg-10">
 						<thead>
 							<th class="col-lg-6">Description</th>
 							<th class="col-lg-3">Value</th>
@@ -513,68 +566,67 @@
 							<tr id="asset_row1">
 								<td><input id="asset_descripton" class="form-control-3-4" name="property_value" type="text" value="" /></td>
 								<td>£ <input id="asset_value" class="form-control-3-4" name="property_value" type="text" value="" /></td>
-								<td class="text-right"><a class="btn btn-default" id="add-asset"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;Add asset</a></td>
+								<td><a class="btn btn-default " id="add-asset"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;Add asset</a></td>
 							</tr>
 							
 							<tr id="asset_row2" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row2').hide()">Delete</a></td>
+								<td><a>Delete</a></td>
 							</tr>
 							
 							<tr id="asset_row3" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row3').hide()">Delete</a></td>
+								<td><a>Delete</a></td>
 							</tr>
 
 							<tr id="asset_row4" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row4').hide()">Delete</a></td>
+								<td><a>Delete</a></td>
 							</tr>
 							
 							<tr id="asset_row5" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row5').hide()">Delete</a></td>							
+								<td><a>Delete</a></td>							
 							</tr>
 							
 							<tr id="asset_row6" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row6').hide()">Delete</a></td>							
+								<td><a>Delete</a></td>							
 							</tr>
 							
 							<tr id="asset_row7" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row7').hide()">Delete</a></td>
+								<td><a>Delete</a></td>
 							</tr>
 		
 							<tr id="asset_row8" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row8').hide()">Delete</a></td>
+								<td><a>Delete</a></td>
 							</tr>
 							
 							<tr id="asset_row9" style="display:none">
-							
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row9').hide()">Delete</a></td>							
+								<td><a>Delete</a></td>							
 							</tr>
 							
 							<tr id="asset_row10" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row10').hide()">Delete</a></td>
+								<td><a>Delete</a></td>
 							</tr>
 							
 							<tr id="asset_row11" style="display:none">
 								<td><span class="adescription"></span></td>
 								<td>£ <span class="avalue"></span></td>
-								<td><a onclick="$('#asset_row11').hide()">Delete</a></td>
+								<td><a>Delete</a></td>
 							</tr>
 
 							
@@ -585,14 +637,14 @@
 					</table>
 				</div>
 
-			<p class="clearfix">&nbsp;</p>
+
 			<div class="form-group ">
 				<label id="comments_label" for="comments" class="form-label-bold applicant_address_line_1">Comments:</label>
 				<textarea name="comments" rows="6" cols="70"></textarea>
 			</div>
 	
 
-			<div  class="form-navigation form-group">
+			<div style="padding-left:25px" class="form-navigation form-group">
 				<a id="next" class="button">Save and continue</a><br>
 				<a id="return" >Return to overview</a><br><br>
 				<a style="padding-right: 30px" href="../application.html" id="back">Back</a>
@@ -670,11 +722,11 @@ var toolcount = 1;
 
 $(document).ready(function() {
 
-/*	$("#pnl-tradetools-detail").hide();
+	$("#pnl-tradetools-detail").hide();
 	$("#pnl-vehicles-detail").hide();
 	$("#pnl-home-detail").hide();
 	$("#pnl-property-detail").hide();
-	$("#pnl-assets-detail").hide();	*/
+	$("#pnl-assets-detail").hide();
 	
 });
 
@@ -699,9 +751,6 @@ $("#add-tool").on("click", function(e){
 	$("#tool_model").val("");
 	$("#tool_age").val("");
 	$("#tool_value").val("");
-	
-	$("#pnl-tradetools-detail").hide();	
-
 });
 
 $("#add-asset").on("click", function(e){
@@ -753,9 +802,55 @@ $("#add-vehicle").on("click", function(e){
 });
 
 
-$("#open-tool").on("click", function(e){
-	$("#pnl-tradetools-detail").show();	
+$('#pnl-tradetools input:radio').click(function() {
+	if(	($("#tradetools_yes").prop('checked')==true)){
+		$("#pnl-tradetools-detail").show();
+	}
+	else if($("#tradetools_no").prop('checked')==true){
+		$("#pnl-tradetools-detail").hide();
+	}
 });
+
+$('#pnl-vehicles input:radio').click(function() {
+	if(	($("#vehicles_yes").prop('checked')==true)){
+		overlay();
+	}
+	else if($("#vehicles_no").prop('checked')==true){
+		$("#pnl-vehicles-detail").hide();
+	}
+});
+
+
+$('#pnl-home input:radio').click(function() {
+	if(	($("#home_yes").prop('checked')==true)){
+		$("#pnl-home-detail").show();
+	}
+	else if($("#home_no").prop('checked')==true){
+		$("#pnl-home-detail").hide();
+	}
+});
+
+
+$('#pnl-property input:radio').click(function() {
+	if(	($("#property_yes").prop('checked')==true)){
+		$("#pnl-property-detail").show();
+	}
+	else if($("#property_no").prop('checked')==true){
+		$("#pnl-property-detail").hide();
+	}
+});
+
+
+$('#pnl-assets input:radio').click(function() {
+	if(	($("#assets_yes").prop('checked')==true)){
+		$("#pnl-assets-detail").show();
+	}
+	else if($("#assets_no").prop('checked')==true){
+		$("#pnl-assets-detail").hide();
+	}
+});
+
+
 
 function overlay() {
 	el = document.getElementById("overlay");
