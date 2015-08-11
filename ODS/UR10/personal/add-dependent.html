@@ -420,7 +420,7 @@ $(document).ready(function() {
 
 $("#next").on("click", function(){
 	$.cookie("other_dependent", "true");
-	$("#next").prop("href", "dependents.html?added=true");
+	$("#next").prop("href", "dependents.html?added=true&loop=true");
 });
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
