@@ -207,38 +207,35 @@ display:block;
 	        </p>
 
 			<div class="form-group" id="employer">
-				<p class="bold-small">Accounts</p>
 	            <table id="employer_table">
                     <tbody>
+
+                        <tr class="group-heading">
+                            <td colspan="3"><h3 class="bold-small">Accounts</h3></td>
+
+                        </tr>
                     	<tr class="group-heading">
-                    		<td width="60%">Number of bank accounts</td>
+                    		<td>Number of bank accounts</td>
                         	<td id="banks">2</td>
                         	<td><a href="add_bank.html">Edit</a></td>
                     	</tr>
                     </tbody>
-                </table>
-                <p><br></p>
-                 <p class="bold-small">Primary Account</p>   
-                <table id="employer_table">
-                    <tbody>
- 
-                    	<tr class="group-heading">
-                    		<td width="60%">Bank</td>
-                        	<td id="branch">0</td>
-                        	<td><a href="primary_selection">Edit</a></td>
-                    	</tr>
-                    	
-                    	<tr class="group-heading">
-                    		<td>Account number</td>
-                        	<td id="number">0</td>
-                        	<td><a href="primary_selection">Edit</a></td>
-                    	</tr>
 
-						<tr class="group-heading">
-                    		<td>Balance</td>
-                    		<td id="balance">0</td>
-                        	<td><a href="primary_selection">Edit</a></td>
+                    <tbody>
+
+                        <tr class="group-heading">
+                            <td colspan="3"><h3 class="bold-small">Primary Account</h3></td>
+                        </tr>
+                    	<tr class="group-heading">
+                    		<td>Bank</td>
+                            <td>
+                                <span id="branch">Lloyds TSB</span>
+                                <span id="number">646474747</span>
+                            <span id="balance">£-1,200.99</span>
+                            </td>
+                        	<td><a href="bank_detail.html">Edit</a></td>
                     	</tr>
+ 
 
                     </tbody>
                     
@@ -341,7 +338,9 @@ $(document).ready(function() {
 	$("#banks").text(count);
 	$("#branch").text(b);
 	$("#number").text(acc);
-	$("#balance").text("£"+bal);
+	if (bal) {
+	    $("#balance").text("£" + bal);
+	}
 
 
 });
