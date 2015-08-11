@@ -151,7 +151,14 @@ legend{
 	margin-top:23px;
 }
 
-</style>
+ .auto-style1 {
+	 display: block;
+	 color: #000000;
+	 margin-top: 8px;
+	 margin-bottom: 5px;
+ }
+
+ </style>
 <!-- #EndEditable -->
 
 
@@ -222,9 +229,9 @@ legend{
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Other names</h1>
-	<div class="form-hint">We need to know about any other names you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</div>
-	<div class="form-hint">Don't include trading names</div>
+	<h1 class="form-title heading-large">Other names <span class="repeat">summary</span></h1>
+	<div class="auto-style1 firsttime">We need to know about any other names you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</div>
+	<div class="auto-style1 firsttime">Don't include trading names.</div>
 	
 
 	<div class="col-md-9">
@@ -243,12 +250,15 @@ legend{
 
 	            
 			</div>
-	            <p>&nbsp;</p>	
+	            <p>&nbsp;</p>
+	            <p class="repeat">The table above summarises the names you have told us about</p>
+	            
+				<p class="repeat">We need to know about any other names you have been known by the last 5 years.</p>
            <fieldset>
 	<legend class="form-label-bold"><span class="firsttime">Enter your other name</span>
 	<span class="repeat">Enter another name</span></legend>
 	
-	<span class="form-hint">For example, Bob Smith</span>
+	<span class="form-hint">For example, John Smith. You can add more names later.</span>
 	<div class="form-group halfwidth">
 		 <label for="firstname">First name</label>
 			<input id="firstname"  />
@@ -258,7 +268,7 @@ legend{
 		<input id="lastname"  />
 	</div>
 	<div class="form-group partwidth">
-              	  <a id="add" class="button" href="#">Add <span class="repeat"></span></a>&nbsp;
+              	  <a id="add" class="button" href="#">Add name <span class="repeat"></span></a>&nbsp;
 					<br/>
 	</div>
 
