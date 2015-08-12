@@ -231,7 +231,7 @@
 		
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next" href="add_bank.html?loop=true">Continue</a>
+					<a class="button" id="next">Continue</a>
 			</div>
 					<a href="add_bank.html">Back</a>
 				</div>
@@ -405,7 +405,7 @@ $("#next").click(function(){
 	}
 	
 	$.cookie("acc-count",x);
-/*
+
 	if(joint_count!=0){
 		$("#next").attr("href", "joint_holders.html");
 	}
@@ -413,8 +413,8 @@ $("#next").click(function(){
 		$.cookie("acc"+x+"_joint", "None");
 		$("#next").attr("href", "add_bank.html");
 	}
-*/	
-		     if ($("input[name=shared]:checked").val()) {
+	
+		         if ($("input[name=shared]:checked").val()) {
 	             if ($("#shared_Yes").is(':checked')) {
 	                 $.cookie('sharedaccount', "Yes", { expires: 1, path: "/" });
 	                 $("#next").prop("href", "list_owners.html");
