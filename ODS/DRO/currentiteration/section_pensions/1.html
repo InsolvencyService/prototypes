@@ -366,7 +366,7 @@ $(document).ready(function() {
 	var paddress;
 	var pnumber;
 	var papproved;
-	var ppersonal;
+	var ppersonal = "";
 	
 	if(count>0){
 		for(i=1; i<=count; i++){	
@@ -377,7 +377,7 @@ $(document).ready(function() {
 			papproved = $.cookie("DROPensionApproved"+i);	
 			ppersonal = $.cookie("DROPensionPersonal"+i);
 			
-			if(ppersonal==null){
+			if(ppersonal==""){
 				ppersonal="Not applicable";			
 			}		
 			
