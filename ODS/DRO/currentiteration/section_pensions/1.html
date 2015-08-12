@@ -377,11 +377,11 @@ $(document).ready(function() {
 			papproved = $.cookie("DROPensionApproved"+i);	
 			
 			
-			if($.cookie("DROPensionPersonal"+i)){
-				ppersonal = $.cookie("DROPensionPersonal"+i);
+			if(typeof $.cookie("DROPensionPersonal"+i) === 'undefined'){
+				ppersonal="Not applicable";
 			}
 			else{
-				ppersonal="Not applicable";			
+				ppersonal = $.cookie("DROPensionPersonal"+i);			
 			}		
 			
 			//add pensions to table
