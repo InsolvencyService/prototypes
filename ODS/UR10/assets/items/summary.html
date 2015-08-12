@@ -222,7 +222,7 @@ table td[class*=col-], table th[class*=col-]{
 									</tbody>
 									
 									 <tbody id="item3" data-role="possessions">
-                                            <tr class="group-heading pensionable" id="income3">
+                                            <tr class="group-heading parent">
                                                 <td>Any other assets or possessions<br />
                                                     <a href="#" style="display:none" class="declare">I have no other items</a>
 												</td>
@@ -276,6 +276,15 @@ table td[class*=col-], table th[class*=col-]{
                                                 </td>
                                                 <td class="value"></td>
                                             </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
 										</tbody>
 										<tbody class="group-title" id="item6" data-role="investments">
                                             <tr class="group-heading parent" id="income6">
@@ -289,9 +298,20 @@ table td[class*=col-], table th[class*=col-]{
                                                 </td>
                                                 <td class="value"></td>
                                             </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        <tbody class="group-title" id="item7" data-role="trade">
                                             <tr class="group-heading parent" id="income7">
                                                 <td>
-                                                Self employed business assets<br />
+                                                    Self employed business assets<br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any self employed trading assets</a>
                                                 </td>
                                                 <td class="actions">
@@ -300,10 +320,21 @@ table td[class*=col-], table th[class*=col-]{
                                                 </td>
                                                 <td class="value"></td>
                                             </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
 
+                                        <tbody class="group-title" id="item8" data-role="money">
                                             <tr class="group-heading parent" id="income8">
                                                 <td>
-                                                Money you’re owed<br />
+                                                    Money you’re owed<br />
                                                     <a href="#" style="display:none" class="declare">No one owes me any money</a>
                                                 </td>
                                                 <td class="actions">
@@ -312,10 +343,21 @@ table td[class*=col-], table th[class*=col-]{
                                                 </td>
                                                 <td class="value"></td>
                                             </tr>
-                                            
-                                            <tr class="group-heading parent" id="income9">
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
                                                 <td>
-                                                Other<br />
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody class="group-title" id="item9" data-role="other">
+                                            <tr class="group-heading parent">
+                                                <td>
+                                                    Other<br />
                                                     <a href="#" style="display:none" class="declare">I have added all my other assets</a>
                                                 </td>
                                                 <td class="actions">
@@ -324,11 +366,20 @@ table td[class*=col-], table th[class*=col-]{
                                                 </td>
                                                 <td class="value"></td>
                                             </tr>
-
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
                                             <tr class="group-heading totalrow" id="incometotal">
                                                 <td></td>
                                                 <td class="actions" style="text-align:right">
-                                                <span style="float:right; width:100%">Total</span></td>
+                                                    <span style="float:right; width:100%">Total</span>
+                                                </td>
                                                 <td class="totalvalue"></td>
                                             </tr>
 
@@ -448,9 +499,6 @@ table td[class*=col-], table th[class*=col-]{
  
                 itemnumber = parseInt(page);
                 var previous = itemnumber - 1;
-                if (stage == "item" && itemnumber == 2 && pensionable == false) {
-                    itemnumber += 1;
-                }
                 $("#" + stage + previous + " .parent a.edit").show().removeClass("button").text("Edit");
 
                 $(".declare").hide();
@@ -471,18 +519,25 @@ table td[class*=col-], table th[class*=col-]{
                 showchildrowdata();
 
 
+                if (stage == "item" && itemnumber > 8) {
+                    $("#next").show();
+                }
+
 				var defaultnext = $(".next").first().attr("href");
 				$(".declare").on("click", function () {
+				    e.preventDefault();
 				    $("#" + stage + itemnumber + " .declare").hide();
-				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
+				    $("#" + stage + itemnumber + " a.edit").removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
-				    if (itemnumber == 3 && pensionable == false) {
-				        itemnumber = 4;
+
+				    if (itemnumber <= 9) {
+				        showchildrowdata();
+
+				        $("#" + stage + itemnumber + " .declare").show();
+				        $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
 				    }
-				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
-				    if (stage == "income" && itemnumber == 6) {
-				        $("#costs a.edit").first().text("Start").addClass("button").show();
+				    else {
+				        $("#next").show();
 				    }
 				});
 

@@ -70,12 +70,93 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../UR7/creditors/css/typeahead.css" rel="stylesheet">
+  <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
- table, thead, tbody, th, tr, td {
-  border-top: 0px solid #bfc1c3!important;
-  border-bottom: 0px solid #bfc1c3!important; }
-  
+ .tt-dropdown-menu{
+	width:650px;
+}
+.tt-input{
+	width:400px;
+}
+.tt-hint{
+	display:none !important;
+}
+.choose-address{
+	color:gray;
+}
+.row > div:first-child{
+	padding-left:5px;
+	margin-left:0;	
+}
+i.glyphicon{
+	margin-right:5px;
+	color:#666666;
+}
+.input-sm{
+	width:170px;
+}
+.input-lg{
+	width:260px;
+}
+
+#row-total td{
+	font-weight:bold;
+}
+
+
+.row img{
+width:60px;
+text-align:right;
+float:right
+}
+.row > div{
+padding-top:15px;
+}
+.row > div:first-child{
+padding-top:0px;
+}
+
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+	font-size:16px;
+}
+
+.btn-edit{
+	margin-right:10px;
+}
+.amount{
+	text-align:right
+}
+.totalrow td{
+	font-weight:bold !important;
+}
+
+legend{
+	border:0 transparent none;
+}
+.halfwidth{
+  float: left;
+  margin-right: 15px;
+  clear: none;
+	width:35%;
+}
+.partwidth{
+  float: left;
+  margin-right: 0;
+  clear: none;
+	width:15%;
+	margin-top:23px;
+}
+
+ .auto-style1 {
+	 display: block;
+	 color: #000000;
+	 margin-top: 8px;
+	 margin-bottom: 5px;
+ }
 
  </style>
 <!-- #EndEditable -->
@@ -148,92 +229,74 @@
 <div id="content" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Your bank account</h1>
+	<h1 class="form-title heading-large">Joint account holders</h1>
+	<div class="auto-style1 firsttime">Please indicate who is jointly 
+		named on the account.</div>
+	
+
 	<div class="col-md-9">
 		<form class="form" method="post">
-			<div>
-				<p>We need to know a little bit more about your account at <span id="bankname" class="bold-medium">test</span>.</p>
-				<br>
+			
+			 <div id="pnl-employment_table" class="repeat">
+	            <table style="width: 100%" class="family">
+	                <thead>
+	                    <tr>
+	                        <th>Name</th>
+                            <th>Relationship</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
+	                </thead>
+                    <tbody class="known" style="display:none">
+                        <tr>
+                            <td class="known-name">Susan Smith</td>
+                            <td class="known-relationship">Susan Smith</td>
+                            <td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
+                        </tr>
+                    </tbody>
+                    <tbody class="tbl-content"></tbody>
+	            </table>
+
+	            
 			</div>
-			
-			
+	            <p>&nbsp;</p>
+	            <p class="repeat">The table above summarises the names you have told us about. 
+				Please add any other account holders</p>
+	            
+           <fieldset>
+	<legend class="form-label-bold"><span class="firsttime">Enter other account 
+	holder name</span>
+	<span class="repeat">Enter account holder name</span></legend>
+	
+		<span class="form-hint"><span class="firsttime">For example, John Smith. You can add more names later.</span>
+	<span class="repeat">For example, John Smith</span>
+	</span>
+	
+	<div class="form-group halfwidth">
+		 <label for="firstname">First name</label>
+			<input id="firstname" class="typeahead" style="width:100%" />
 
-			<div>
-				<label  class="form-label-bold" for="ac_number">Account number</label>
-				<p class="form-hint" for="ac_number">You can find this on your account statement</p>
-				<input class="form-control-3-4" id="ac_number" style="width:250px; display:inline-block; margin-right:15px">   
-				<p>&nbsp;</p>		
-			</div>
-			
-			<div>
-				<label  class="form-label-bold" for="ac_balance">Current balance</label>
-				<p class="form-hint">For example 200.00 or -125.00</p>
-				£ <input class="form-control-1-8" id="ac_balance" >   
-				<p>&nbsp;</p>		
-			</div>
-			
-			<div class="form-group ">
-				<fieldset  class="date-of-birth">
-					<span id="date_of_birth_label" class="form-label-bold">When did you open the account?</span>
-					<span class="form-hint" id="date_of_birth_help">For example Aug 2011</span>
-					
-					<div class="form-group" style="width:60px">
-						 <label id="date_of_birth_label.month" for="month">Month</label>
-			
-						<select id="month" name="month">
-							<option value="0"></option>
-							<option value="1">Jan</option>
-							<option value="2">Feb</option>
-							<option value="3">Mar</option>
-							<option value="4">Apr</option>
-							<option value="5">May</option>
-							<option value="6">Jun</option>
-							<option value="7">Jul</option>
-							<option value="8">Aug</option>
-							<option value="9">Sep</option>
-							<option value="10">Oct</option>
-							<option value="11">Nov</option>
-							<option value="12">Dec</option>
-						</select>
-					</div>
-					
-					<div class="form-group form-group-year">
-						<label id="date_of_birth_label.year" for="start_year">Year</label>
-						<input id="start_year" name="start_year" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-					</div><br>
-				</fieldset>
-			</div>
-			<p>&nbsp;</p>				
-			   
-                       <div class="form-group" id="shared-mortgage">
-                        <p  class="form-label-bold">Is this a shared account?</p>
+	</div>
+	<div class="form-group halfwidth">
+		 <label for="lastname">Last name</label>
+		<input id="lastname"  />
+	</div>
+	<div class="form-group partwidth">
+              	  <a id="add" class="button" href="add_relationship.html">Add account holder <span class="repeat"></span></a>&nbsp;
+					<br/>
+	</div>
 
-                        <fieldset>
-                            <div id="shared" class="form-group">
+	</fieldset>
 
-                                <label for="shared_Yes" class="block-label">
-                                    <input id="shared_Yes" name="shared" type="radio">
-                                    Yes, the account is shared
-                                </label>
-
-                                <label id="title_label1" for="shared_No" class="block-label">
-                                    <input id="shared_No" name="shared" type="radio">
-                                    No, the account is in my name only
-                                   </label>
-
-                            </div>
-                         </fieldset>
-                    </div>
-		
-			<p>&nbsp;</p>	
-		
+	
+	                <p><br>
+					<a href="add_bank.html" class="button family" id="next"><span class="repeat">Continue - I have added the account holders</span>
+	                <span class="firsttime">Continue - the account is in my name only</span></a></p>
+            
+           
 		</form>
-		
+			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
-			<div>
-					<a class="button" id="next">Continue</a>
-			</div>
-					<a href="add_bank.html">Back</a>
+					<a href="../personal/1.html">Back</a>
 				</div>
 		</div>		
 		<div class="col-md-3">
@@ -243,10 +306,10 @@
                 <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                     <p class="heading-secondary">Bankruptcy fee</p>
                     <p style="font-weight:bold;font-size:large">
-                        <a href="../../UR7/personal/payments/statement.html">£0 received</a><br>
+                        <a href="../personal/payments/statement.html">£0 received</a><br>
                         <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
                     </p>
-                    <p><a href="../../UR7/personal/payments/payments.html">Make a payment</a></p>
+                    <p><a href="../personal/payments/payments.html">Make a payment</a></p>
                 </div>
                 <p><a href="#" style="display:none">Print summary</a></p>
                 <p><a href="#" style="display:none">Generate court documents</a></p>
@@ -306,127 +369,37 @@
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type="text/javascript" src="../../assets/js/jquery-1.6.2.min.js"></script>
+
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../shared/loop.js"></script>
+
+<script type="text/javascript" src="../creditors/js/tw-typeahead.js"></script>
+<script type="text/javascript" src="../shared/family.js"></script>	
+
 <script type="text/javascript">
-var count =1;
-var sortcode;
-var bank_name;
+
 $(document).ready(function() {
-   	
-	var bank = 	[
-				{sort: '000000', bank: 'HSBC', address: 'High St, Dudley, West Midlands, DY4 9PR'},
-				{sort: '111111', bank: 'Lloyds Bank PLC', address: 'High Road, Birmingham, B12 4DF'},
-				{sort: '222222', bank: 'TSB', address: 'Sutton Way, Birmingham, B12 5KG'},
-				{sort: '333333', bank: 'Santander', address: 'Temple St, Birmingham, B2 3LG'},
-				{sort: '444444', bank: 'Lloyds TSB', address: 'Colmore Row, Birmingham, B1 3RG'},
-				{sort: '555555', bank: 'Halifax Bank PLC', address: 'Colmore Row, Birmingham, B1 3RG'},
-				{sort: '666666', bank: 'Natwest Ltd', address: 'Colmore Row, Birmingham, B1 3RG'},
-				{sort: '777777', bank: 'HSBC', address: 'Colmore Row, Birmingham, B1 3RG'},
-				{sort: '888888', bank: 'Bank of Scotland', address: 'Colmore Row, Birmingham, B1 3RG'},
-				{sort: '999999', bank: 'Ulster Bank', address: 'Colmore Row, Birmingham, B1 3RG'}		
-	];
-	
-	
-	
-	if($.cookie("bank_sortcode")==null){
-		sortcode="";
-	}
-	else{
-		sortcode=$.cookie("bank_sortcode");
-	}
-	
-	if(sortcode != ""){
-		var sortcode1 = sortcode.replace(/\D/g,"");
-		
-		$.map(bank, function(a) {
-			if(a.sort==sortcode1){
-				bank_name = a.bank;
-				$("#bankname").text(bank_name);
-				$("#bankaddress").text(a.address);
-			}	
-		});
-	}
-	else{
-		bank_name = $.cookie("foreign-bank");
-		var xaddress = $.cookie("foreign-address");
-		$("#bankname").text(bank_name);
-		$("#bankaddress").text(xaddress);
-	}
-	$("#row2").hide();
-	$("#row3").hide();
-	$("#row4").hide();
-	$("#row5").hide();
-	
-	
-	$("#add_person").click(function(){
-		count++;
-		$("#row"+count).show();
-		if(count==5){
-			$("#add_person").hide();
-		}
-	});
+    // pre populate with people they entered previously
+   // $(".repeat").show();
+   // $(".firsttime").hide();
+
+    $("#firstname").val("");
+    $("#lastname").val("");
+    
+    $("#add").click(function () {
+        $.cookie("accountholderfirstname", $("#firstname").val(), { expires: 1, path: '/' });
+        $.cookie("accountholderlastname", $("#lastname").val(), { expires: 1, path: '/' });
+    });
 
 });
 
+$("#add").click(function () {
 
+    // log this user and proceed to relationship
 
-$("#next").click(function(){
-	var x = 0;
-	x = $.cookie("acc-count");
-	
-	if(x==null){
-		x=0;
-	}
-	
-	x++;
-	
-	if(x>5){
-		x=5;
-		$("#add_person").hide();
-	}	
-	
-	$.cookie("acc"+ x +"-sort", sortcode);
-	$.cookie("acc"+ x +"-number", $("#ac_number").val());
-	$.cookie("acc"+ x +"-balance", $("#ac_balance").val());
-	$.cookie("acc"+ x +"-month", $("#month :selected").val());
-	$.cookie("acc"+ x +"-year", $("#start_year").val());
-	$.cookie("acc"+ x +"-bank", bank_name);
-	
-	var joint_count=0;
-	
-	for(var i = 1; i<= count; i++){
-		if($("#firstname"+i).val()!=""){
-			$.cookie("acc"+ x +"-firstname"+i, $("#firstname"+i).val());
-			$.cookie("acc"+ x +"-lastname"+i, $("#lastname"+i).val());
-			$.cookie("acc"+x+"_joint", i);
-			joint_count=i;	
-		}
-	}
-	
-	$.cookie("acc-count",x);
-
-	if(joint_count!=0){
-		$("#next").attr("href", "joint_holders.html");
-	}
-	else{
-		$.cookie("acc"+x+"_joint", "None");
-		$("#next").attr("href", "add_bank.html");
-	}
-	
-		         if ($("input[name=shared]:checked").val()) {
-	             if ($("#shared_Yes").is(':checked')) {
-	                 $.cookie('sharedaccount', "Yes", { expires: 1, path: "/" });
-	                 $("#next").prop("href", "list_owners.html");
-	             }
-	             else {
-	                 $.cookie('sharedaccount', "No", { expires: 1, path: "/" });
-	             }
-	         }
-
+	 
 });
-
-
 
 
 
