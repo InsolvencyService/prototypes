@@ -329,6 +329,7 @@ $(document).ready(function() {
     if (getParameterByName("page") && getParameterByName("page").length > 0) {
         page = parseInt(getParameterByName("page"));
     }
+    var newpage = page + 1;
     var type = "other";
 	if (getParameterByName("type") && getParameterByName("type").length > 0){
     	type = getParameterByName("type");
@@ -379,7 +380,7 @@ $(document).ready(function() {
 
 	var normalroute = $("#next").prop("href");
 
-	$("#next").prop("href", "summary.html?stage=item&type=" + type + "&num=" + numofthistype + "&page=" + page)
+	$("#next").prop("href", "summary.html?stage=item&type=" + type + "&num=" + numofthistype + "&page=" + newpage)
 	
 	$("#next").on("click", function (e) {
 

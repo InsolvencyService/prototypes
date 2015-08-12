@@ -159,7 +159,7 @@ table td[class*=col-], table th[class*=col-]{
 
                 <h1 class="form-title heading-large">Your other items</h1>
 
-
+                <p>We need to know about other items you own. </p>
 
                 <form class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -174,7 +174,12 @@ table td[class*=col-], table th[class*=col-]{
 
                                 <div class="form-group">
                                     <table>
- 										
+<thead>
+    <tr>
+        <th>Your items</th>
+        <th colspan="2">Total</th>
+    </tr>
+</thead>	
                                         <tbody class="group-title" id="item1" data-role="cash">
                                             <tr class="group-heading parent">
                                                 <td class="group-title col-sm-8">Cash
@@ -502,6 +507,7 @@ table td[class*=col-], table th[class*=col-]{
                 $("#" + stage + previous + " .parent a.edit").show().removeClass("button").text("Edit");
 
                 $(".declare").hide();
+
                 $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Start");
                 $("#" + stage + itemnumber +  " .declare").show();
                 $("#" + stage + itemnumber + " .total").show();
@@ -524,7 +530,7 @@ table td[class*=col-], table th[class*=col-]{
                 }
 
 				var defaultnext = $(".next").first().attr("href");
-				$(".declare").on("click", function () {
+				$(".declare").on("click", function (e) {
 				    e.preventDefault();
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").removeClass("button").text("Edit");

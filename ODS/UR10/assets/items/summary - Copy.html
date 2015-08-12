@@ -157,9 +157,9 @@ table td[class*=col-], table th[class*=col-]{
 
 
 
-                <h1 class="form-title heading-large"><span lang="en-gb">Your other assets</span></h1>
+                <h1 class="form-title heading-large">Your other items</h1>
 
-
+                <p>We need to know about other items you own. </p>
 
                 <form class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -169,173 +169,218 @@ table td[class*=col-], table th[class*=col-]{
 
                         <div>
 
-                            <div id="item" class="col-sm-8">
-                                <p>We need to know about any items you own of value, or money that is owed to you or you have invested.
-                                This is needed to create a clear picture of your circumstances.  </p>
+                            <div id="income" class="col-sm-9">
+                                <h2 class="heading-medium"></h2>
 
                                 <div class="form-group">
                                     <table>
-                                        <tbody class="group-title" id="item1">
+ 										
+                                        <tbody class="group-title" id="item1" data-role="cash">
                                             <tr class="group-heading parent">
-                                                <td class="group-title col-sm-8">Stocks, shares and investments
+                                                <td class="group-title col-sm-8">Cash
+                                                <br/>
+                                                 <a href="#" class="declare" id="btn-no">I don't have any cash</a>
+
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="amount.html?type=cash&page=1" class="next edit button">Start</a>
 
                                                 </td>
                                                 <td class="value col-sm-2">&nbsp;</td>
-                                               <td class="actions col-sm-2">
-                                                    <a href="amount.html?type=investments" class="next edit button">Add</a><br/>
-                                                   <a href="#" class="declare" id="btn-no">I don't have any of these</a>
-
-                                                </td>
                                             </tr>
-
-                                            <tr class="child">
-                                                
-                                                <td>ABC shares #1234567
-                                                </td>
-
-                                                <td class="value col-sm-2">1234.50</td>
-                                                <td class="actions">
-                                                    <a href="amount.html?type=investments" class="next child-edit">Edit</a>&nbsp;
-                                                     <a href="#" class="next delete">Delete</a>
-                                                </td>
-
-                                            </tr>
-
-                                            <tr class="total">
+                                            <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                <span style="float:right; width:100%">Total</span></td>
-
-                                                <td class="totalvalue">1234.50</td>
-
-                                                <td class="actions">
-                                                    <a href="amount.html?type=investments" class="next edit button">Add another</a>
-
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
                                                 </td>
                                             </tr>
-										</tbody>
-										<tbody class="group-title" id="item2">
-                                            <tr class="group-heading">
-                                                <td>Money owed to you<br />
-                                                <div class="form-hint">For example, trade invoices, any loans you have given.</div>
-
+									</tbody>
+                                    <tbody class="group-title clearfix" id="item2" data-role="household">
+                                            <tr class="group-heading parent">
+                                                <td>
+                                                    Household items of exceptional value<br />
+                                                    <a href="#" style="display:none" class="declare">I don’t have any household items of exceptional value</a>
                                                 </td>
-
-                                               <td class="value col-sm-2">&nbsp;</td>
-                                               <td class="actions col-sm-2">
-                                                    <a href="amount.html?type=money" class="next edit button">Add</a><br/>
-
-                                                </td>
-                                            </tr>
-                                            <tr style="display:none" class="declare" >
-                                            <td></td>
-                                            <td colspan="2">
-                                            <a href="#"  id="btn-no">I don't have any money owed to me</a>
-                                            </td>
-                                            </tr>
-                                          </tbody>
-                                          
-                                          <tbody class="group-title" id="item3">
-                                            <tr class="group-heading">
-                                                <td>Cash<br />
-                                                    <a href="#" style="display:none" class="declare" id="btn-nobenefits">
-                                                    I don't have any cash in hand</a>
-												</td>
-                                                <td class="actions">
-                                                    <a href="3-pensions.html" style="display:none" class="edit">Edit</a>
+                                                <td  class="actions">
+                                                    <a href="amount.html?type=household&page=2" style="display:none" class="edit">Edit</a>
                                                 </td>
 
                                                 <td class="value"></td>
-
                                             </tr>
+                                             <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+									</tbody>
+									
+									 <tbody id="item3" data-role="possessions">
+                                            <tr class="group-heading parent">
+                                                <td>Any other assets or possessions<br />
+                                                    <a href="#" style="display:none" class="declare">I have no other items</a>
+												</td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=household&page=3" style="display:none" class="edit">Edit</a>
+                                                </td>
 
-                                            <tr class="group-heading" id="item4">
+                                                <td class="value"></td>
+                                            </tr>
+                                             <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+									</tbody>
+									
+									<tbody class="group-title" id="item4" data-role="compensation">
+                                            <tr class="group-heading parent" id="income4">
                                                 <td>
                                                     Compensation or legal claim<br />
-                                                    <a href="#" style="display:none" class="declare">
-                                                    I have no compensation or claims</a></td>
-                                                <td class="actions"><a href="amount.html?page=compensation" style="display:none" class="edit">Start</a>
+                                                    <a href="#" style="display:none" class="declare">I have no contributions</a></td>
+                                                <td class="actions"><a href="amount.html?type=household&page=4" style="display:none" class="edit">Start</a>
 												</td>
 
                                                 <td class="value">&nbsp;</td>
 
                                             </tr>
-
-                                            <tr class="group-heading" id="item5">
-                                                <td>
-                                                     Business assets or tools of the trade<br />
-                                                    <a href="#" style="display:none" class="declare">
-                                                    I am not self employed</a>
-                                                </td>
-                                                <td class="actions">
-                                                    <a href="4-other-item.html" style="display:none" class="edit">Edit</a>
-
-                                                </td>
-
-                                                <td class="value"></td>
-
-                                            </tr>
-
-                                            <tr class="group-heading" id="item5">
-                                                <td>
-                                                     Wills and trusts<br />
-                                                    <a href="#" style="display:none" class="declare">This does not apply to me</a>
-                                                </td>
-                                                <td class="actions">
-                                                    <a href="4-other-item.html" style="display:none" class="edit">Edit</a>
-
-                                                </td>
-
-                                                <td class="value"></td>
-
-                                            </tr>
-
-                                            <tr class="group-heading" id="item6">
-                                                <td>
-                                                     Luxury items (jewellery, antiques, paintings, etc)<br />
-                                                    <a href="#" style="display:none" class="declare">I have no luxury items</a>
-                                                </td>
-                                                <td class="actions">
-                                                    <a href="4-other-item.html" style="display:none" class="edit">Edit</a>
-
-                                                </td>
-
-                                                <td class="value"></td>
-
-                                            </tr>
-
-                                            <tr class="group-heading" id="item7">
-                                                <td>
-                                                     Household items<br />
-                                                    <a href="#" style="display:none" class="declare">I have no household items</a>
-                                                </td>
-                                                <td class="actions">
-                                                    <a href="4-other-item.html" style="display:none" class="edit">Edit</a>
-
-                                                </td>
-
-                                                <td class="value"></td>
-
-                                            </tr>
-
-                                            <tr class="group-heading" id="item8">
-                                                <td>
-                                                     Other assets<br />
-                                                    <a href="#" style="display:none" class="declare">I have no other assets</a>
-                                                </td>
-                                                <td class="actions">
-                                                    <a href="4-other-item.html" style="display:none" class="edit">Edit</a>
-
-                                                </td>
-
-                                                <td class="value"></td>
-
-                                            </tr>
-
-                                            <tr class="group-heading totalrow" id="itemtotal">
+                                             <tr class="totalhide" style="display:none">
                                                 <td class="actions" style="text-align:right">
-                                                <span style="float:right; width:100%">Total</span></td>
-                                                <td class="totalvalue"></td>
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
                                                 <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+									</tbody>
+                                        <tbody class="group-title" id="item5" data-role="beneficiary">									
+                                            <tr class="group-heading parent" id="income5">
+                                                <td>
+                                                    Interest in a will or trust<br />
+                                                    <a href="#" style="display:none" class="declare">I don’t benefit from any trusts or wills</a>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+
+                                                </td>
+                                                <td class="value"></td>
+                                            </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+										</tbody>
+										<tbody class="group-title" id="item6" data-role="investments">
+                                            <tr class="group-heading parent" id="income6">
+                                                <td>
+                                                Stocks, shares and investment<br />
+                                                    <a href="#" style="display:none" class="declare">I don’t have any stocks, shares or investments</a>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+
+                                                </td>
+                                                <td class="value"></td>
+                                            </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        <tbody class="group-title" id="item7" data-role="trade">
+                                            <tr class="group-heading parent" id="income7">
+                                                <td>
+                                                    Self employed business assets<br />
+                                                    <a href="#" style="display:none" class="declare">I don’t have any self employed trading assets</a>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+
+                                                </td>
+                                                <td class="value"></td>
+                                            </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody class="group-title" id="item8" data-role="money">
+                                            <tr class="group-heading parent" id="income8">
+                                                <td>
+                                                    Money you’re owed<br />
+                                                    <a href="#" style="display:none" class="declare">No one owes me any money</a>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+
+                                                </td>
+                                                <td class="value"></td>
+                                            </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody class="group-title" id="item9" data-role="other">
+                                            <tr class="group-heading parent">
+                                                <td>
+                                                    Other<br />
+                                                    <a href="#" style="display:none" class="declare">I have added all my other assets</a>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+
+                                                </td>
+                                                <td class="value"></td>
+                                            </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="group-heading totalrow" id="incometotal">
+                                                <td></td>
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%">Total</span>
+                                                </td>
+                                                <td class="totalvalue"></td>
                                             </tr>
 
                                         </tbody>
@@ -346,8 +391,8 @@ table td[class*=col-], table th[class*=col-]{
                             </div>
 
  
-                        	</div>
                         </div>
+                     </div>
                 </form>
             </div>
 
@@ -365,7 +410,7 @@ table td[class*=col-], table th[class*=col-]{
                 </div>
 
                 <div>
-                    <a style="padding-right: 30px" href="#" id="back">Back</a><!-- ../summary.html?stage=items -->
+                    <a style="padding-right: 30px" href="../../overview.html?section5=complete" id="back">Back</a>
 
 
                     <a href="#" id="cancel">Save and logout</a>
@@ -434,19 +479,11 @@ table td[class*=col-], table th[class*=col-]{
             var itemnumber = 0;
             var stage = "item";
             var page = 1;
-            var pensionable = true;
 
             $(document).ready(function () {
 				var defaultnext = $(".next").first().attr("href");
                 $("#next").hide();
-
-				if (getParameterByName("pensionable") && getParameterByName("pensionable").length > 0){
-                	pensionable = getParameterByName("pensionable");
-                
-                    $(".pensionable").show();
-                    defaultnext  += "?pensionable=true";
-                    $(".next").attr("href", defaultnext);
-                }
+                $(".total").hide();
 
 				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
 				    stage = getParameterByName("stage");
@@ -457,109 +494,93 @@ table td[class*=col-], table th[class*=col-]{
 
                 if (stage && stage.length > 0) {
                     $("a.edit").removeClass("button").hide();
-                    if (stage == "item") {
-                        $("#item a.edit").first().text("Edit").show();
-                        $("#costs a.edit").first().text("Add").show();
-                        totalitem();
-                    }
                 }
 				
  
                 itemnumber = parseInt(page);
                 var previous = itemnumber - 1;
-                $("#" + stage + previous + " a.edit").removeClass("button").text("Edit");
-                if (stage == "item" && itemnumber == 2 && pensionable == false) {
-                    itemnumber += 1;
-                }
-                $("#" + stage + itemnumber + " a.edit").show().text("Edit");
-                for (i = 1; i < itemnumber; i++) {
-                    $("#" + stage + i + " a.edit").text("Edit").show();
-                }
- 
+                $("#" + stage + previous + " .parent a.edit").show().removeClass("button").text("Edit");
+
                 $(".declare").hide();
-
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
+                $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Start");
                 $("#" + stage + itemnumber +  " .declare").show();
-          
-                $("#" + stage + itemnumber + " .parent a.declare").hide();
-                $("#" + stage + itemnumber + " .parent a.edit").hide();
+                $("#" + stage + itemnumber + " .total").show();
 
-                if (stage == "item" && itemnumber > 6) {
+                if (stage == "item" && itemnumber > 8) {
                     $("#next").show();
                 }
 
+               //show child amounts
+                var currenttype = "other";
+                if (getParameterByName("type") && getParameterByName("type").length > 0) {
+                    currenttype = getParameterByName("type");
+                }
+
+                showchildrowdata();
+
+
+                if (stage == "item" && itemnumber > 8) {
+                    $("#next").show();
+                }
 
 				var defaultnext = $(".next").first().attr("href");
-				$(".declare").on("click", function () {
+				$(".declare").on("click", function (e) {
+				    e.preventDefault();
 				    $("#" + stage + itemnumber + " .declare").hide();
-				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
+				    $("#" + stage + itemnumber + " a.edit").removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
-				    if (itemnumber == 3 && pensionable == false) {
-				        itemnumber = 4;
+
+				    if (itemnumber <= 9) {
+				        showchildrowdata();
+
+				        $("#" + stage + itemnumber + " .declare").show();
+				        $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
 				    }
-				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
-				    if (stage == "item" && itemnumber == 6) {
-				        $("#costs a.edit").first().text("Add").addClass("button").show();
+				    else {
+				        $("#next").show();
 				    }
 				});
 
 				
             });
 
-            function totalitem() {
-                var totalamount = 0;
-                var item = "item";
-                for (i = 1; i < 7; i++) {
-                    var amount = $.cookie(item + i);
-                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-                        $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
-                        if (parseFloat(amount)) {
-                            totalamount = totalamount + parseFloat(amount);
-                        }
-                    }
-                }
-                $("#itemtotal .totalvalue").text(totalamount.toFixed(2));
-                //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
-            }
-            //partneritemtotal  overalltotal  coststotal  totalvalue
-            function totalpartneritem() {
-                var totalamount = 0;
-                var item = "partneritem";
  
-                if ($.cookie(item + 1) && $.cookie(item + 1).length > 0) { 
-                    var amount = $.cookie(item + 1);
-                    $("#" + item + 1 + " .value").text(parseFloat(amount).toFixed(2)); // parseFloat($.cookie(item + i)).toFixed(2)
-                    if (parseFloat(amount)) {
-                        totalamount = totalamount + parseFloat(amount);
+           function showchildrowdata() {
+                var totalamount = 0.00;
+                for (rowid = 1; rowid <= 9; rowid++) {
+                    type = $("#item" + rowid).data("role");
+
+                    var numofthistype = 0;
+                    if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
+                        numofthistype = parseInt($.cookie("num" + type));
                     }
-                }
+                    $("#item" + rowid + " tr.child").remove();
+                    for (i = 1; i <= numofthistype; i++) {
+                        // Change the skip button text
+                        $("#item" + rowid + " .declare").text($("#item" + rowid + " .totalhide .declare").text());
+                        // append the child row 
+                        if ($.cookie(type + i + 'amount') > 0) {
+                            var childamount = parseFloat($.cookie(type + i + 'amount'));
+                            var childname = $.cookie(type + i + 'name');
+                            var insertext = '<tr class="child"><td>' + childname + '</td>';
+                            insertext = insertext + '<td class="value">' + childamount + '</td>';
+                            insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
+                            insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
+                            $("#" + stage + rowid + " .totalhide").before(insertext);
+                            $("#" + stage + rowid + " .child").show();
 
-                $("#partneritemtotal .totalvalue").text(totalamount.toFixed(2));
-                var overalltotal = totalamount;
-                if ($("#itemtotal .totalvalue").text().length > 0) {
-                    overalltotal += parseFloat($("#itemtotal .totalvalue").text());
-                }
-                //$("#overalltotal .totalvalue").text(overalltotal.toFixed(2));
-            }
-
-            function totalcosts(page) {
-                var totalamount = 0;
-                var item = "costs";
-                for (i = 1; i <= page; i++) {
-                    if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-                        var amount = $.cookie(item + i);
-                        $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
-                        if (parseFloat(amount)) {
-                            totalamount = totalamount + parseFloat(amount);
+                            totalamount = totalamount + childamount;
                         }
                     }
                 }
-                $("#coststotal .totalvalue").text(totalamount.toFixed(2));
+
+                $("#overalltotal .totalvalue").text(totalamount);
+                $.cookie("otherassetsamount", totalamount, { expires: 1, path: "/" });
+
             }
 
             function removeallcookies() {
-                var item = "item";
+                var item = "income";
                 for (i = 1; i < 6; i++) {
                     if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
                         $.removeCookie(item + i);
@@ -573,7 +594,6 @@ table td[class*=col-], table th[class*=col-]{
                         }
                     }
                 }
-
             }
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
