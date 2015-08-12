@@ -249,7 +249,7 @@ legend{
                     <tbody class="known" style="display:none">
                         <tr>
                             <td class="known-name">Susan Smith</td>
-                            <td class="known-relationship">Susan Smith</td>
+                            <td class="known-relationship">Partner</td>
                             <td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
                         </tr>
                     </tbody>
@@ -386,7 +386,11 @@ $(document).ready(function() {
 
     $("#firstname").val("");
     $("#lastname").val("");
-    
+
+    if ($.cookie("partner-firstname")) {
+        $("#known-name").val($.cookie("partner-firstname") + " " + $.cookie("partner-lastname"));
+    }
+
     $("#add").click(function () {
         $.cookie("accountholderfirstname", $("#firstname").val(), { expires: 1, path: '/' });
         $.cookie("accountholderlastname", $("#lastname").val(), { expires: 1, path: '/' });
