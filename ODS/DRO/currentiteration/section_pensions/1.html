@@ -377,7 +377,7 @@ $(document).ready(function() {
 			papproved = $.cookie("DROPensionApproved"+i);	
 			
 			
-			if($.cookie("DROPensionPersonal"+i) === undefined ){
+			if($.cookie("DROPensionPersonal"+i) == 'undefined' || $.cookie("DROPensionPersonal"+i) == null || $.cookie("DROPensionPersonal"+i) == '' ){
 				ppersonal="Not applicable";
 			}
 			else{
