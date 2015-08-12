@@ -375,9 +375,12 @@ $(document).ready(function() {
 			pname = $.cookie("DROPensionName"+i);
 			pnumber = $.cookie("DROPensionNumber"+i);
 			papproved = $.cookie("DROPensionApproved"+i);	
-			ppersonal = $.cookie("DROPensionPersonal"+i);
 			
-			if(ppersonal==""){
+			
+			if($.cookie("DROPensionPersonal"+i)){
+				ppersonal = $.cookie("DROPensionPersonal"+i);
+			}
+			else{
 				ppersonal="Not applicable";			
 			}		
 			
