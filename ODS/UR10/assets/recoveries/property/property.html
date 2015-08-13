@@ -373,18 +373,20 @@
 
             $(document).ready(function () {
                 // look for cookies coming back
-                var numproperties = 1;
-                if ($.cookie("ass-rec-prop-count") && parseInt($.cookie("ass-rec-prop-count"))) {
+                var numproperties;
+                if ($.cookie("ass-rec-prop-count") == null || $.cookie("ass-rec-prop-count") == "") {
+                	 numproperties = 1;
+               	}
+               	else{
                     numproperties = $.cookie("ass-rec-prop-count");
                 }
                 var value = 0.0;
-                
+                var address;
                 for (i = 1; i <= numproperties; i++) {
                     // TODO - make the next bit work
                     if ($.cookie('ass-rec-prop-netamount' + i)) {
-                    	var address = $.cookie("rec-propertyline1");
-                         value = numberWithCommas($.cookie('ass-rec-prop-netamount' + i));
-                         address = $.cookie('rec-propertyline' + i );
+                        value = numberWithCommas($.cookie('ass-rec-prop-netamount' + i));
+                        address = $.cookie('rec-propertyline' + i );
 
                         var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
                         var row = "<tr><td>" + address + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
