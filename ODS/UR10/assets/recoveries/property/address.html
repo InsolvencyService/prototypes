@@ -348,9 +348,9 @@ $(document).ready(function() {
 	var numproperties = 0;
 	var propertyfirstline;
 	
-	if ($.cookie('propertypostcode') && $.cookie('propertypostcode').length > 0) {
-	    var pcode = $.cookie('propertypostcode');
-	    $("#name").val(titleCaps($.cookie('propertyline1')));
+	if ($.cookie('rec-propertypostcode') && $.cookie('rec-propertypostcode').length > 0) {
+	    var pcode = $.cookie('rec-propertypostcode');
+	    $("#name").val(titleCaps($.cookie('rec-propertyline1')));
 	    $("#postcode").val(pcode.toUpperCase());
 
 	    $("#btn-lookup").trigger("click");
@@ -367,8 +367,8 @@ $(document).ready(function() {
 		count++;
 	
 	    $.cookie('propertyname', titleCaps($("#address_line_1").val()), { expires: 1 });
-	    $.cookie('propertyline1', titleCaps($("#address_line_1").val()), { expires: 1 });
-	    $.cookie("propertypostcode", $("#postcode").val());
+	    $.cookie('rec-propertyline1', titleCaps($("#address_line_1").val()), { expires: 1 });
+	    $.cookie("rec-propertypostcode", $("#postcode").val());
 	    
 	    $.cookie("ass-rec-prop-add1-"+count, $("#address_line_1").val(), { path: / } );
 	    $.cookie("ass-rec-prop-add2-"+count, $("#address_line_2").val(), { path: / } );

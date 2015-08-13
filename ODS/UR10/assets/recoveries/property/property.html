@@ -381,7 +381,7 @@
                 }
                 var value = 0.0;
                 var jointownership = "No";
-                var address = $.cookie("propertyline1");
+                var address = $.cookie("rec-propertyline1");
                 for (i = 1; i <= numproperties; i++) {
                     // TODO - make the next bit work
                     if ($.cookie('property' + i + 'joint')) {
@@ -432,8 +432,8 @@
                     $("#add").prop("href", "amount.html");
                 }
                 if (isvalidname(pcode) == true) {
-                    $.cookie("propertyline1", name);
-                    $.cookie("propertypostcode", pcode);
+                    $.cookie("rec-propertyline1", name);
+                    $.cookie("rec-propertypostcode", pcode);
                 }
                 else{
                     e.preventDefault();
