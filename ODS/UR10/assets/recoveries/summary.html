@@ -196,11 +196,11 @@
 
                             </td>
                             <td class="actions col-sm-3">
-                            <!---
+                           
                                 <span class="answerno" style="display:none">No</span>
                                 <a href="../vehicle/list_vehicles.html" class="next edit button">Yes</a>
                                 <a href="#" class="declare button">No</a>
-                            --->
+                           
                             </td>
 
                             <td class="value col-sm-3">&nbsp;</td>
@@ -211,11 +211,11 @@
                                 <div>Have you cashed in, transferred, or given away any pensions, endowments or life insurance policies in the last 5 years?</div>
                             </td>
                             <td class="actions col-sm-3">
-                            <!---
+                            
                                 <span class="answerno" style="display:none">No</span>
                                 <a href="../items/summary.html" class="next edit button">Yes</a>
                                 <a href="#" class="declare button">No</a>
-							--->
+							
 
                             </td>
 
@@ -351,7 +351,7 @@ $(document).ready(function() {
                 $("#" + stage + itemnumber +  " .declare").show();
 				$("#" + stage + itemnumber).addClass("well"); 
          		
-	             if (itemnumber > 1) {
+	             if (itemnumber > 3) {
                     $("#next").show();
                 }
 
@@ -420,11 +420,11 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
-				  //  $("#" + stage + itemnumber + " .declare").show();
-				//    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
-				  //  $("#" + stage + itemnumber).addClass("well");
+				   $("#" + stage + itemnumber + " .declare").show();
+				   $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
+				   $("#" + stage + itemnumber).addClass("well");
 
-				    if (itemnumber > 1) {
+				    if (itemnumber > 3) {
 				        $("#next").show();
 				    }
 				});
