@@ -349,16 +349,14 @@ $(document).ready(function() {
 	var propertyfirstline;
 	
 	if ($.cookie('rec-propertypostcode').length > 0 && $.cookie('rec-propertypostcode').length > 0) {
-		alert("cookie read");
+		
 	    var pcode = $.cookie('rec-propertypostcode');
 	    $("#name").val(titleCaps($.cookie('rec-propertyline1')));
 	    $("#postcode").val(pcode.toUpperCase());
 
 	    $("#btn-lookup").trigger("click");
 	}
-	else{
-		alert("no cookie read");
-	}
+	
 
 
 	$("#next").on("click", function (e) {
