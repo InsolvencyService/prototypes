@@ -382,9 +382,6 @@
                 var address = $.cookie("rec-propertyline1");
                 for (i = 1; i <= numproperties; i++) {
                     // TODO - make the next bit work
-                    if ($.cookie('property' + i + 'joint')) {
-                        jointownership = "Yes";
-                    }
                     if ($.cookie('property' + i + 'value')) {
                          value = numberWithCommas($.cookie('ass-rec-prop-netamount' + i));
                          address = $.cookie('rec-propertyline' + i );
@@ -400,12 +397,10 @@
                         value = numberWithCommas($.cookie('propertyvalue'));
                     }
 
-                    if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
-                        jointownership = "Yes";
-                    }
+                    
 
                     var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-                    var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
+                    var row = "<tr><td>" + address + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
                     $("tbody").append(row);
                 }
 
