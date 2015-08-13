@@ -338,7 +338,7 @@ legend {
         <script type="text/javascript" src="../../../shared/loop.js"></script>
 <script type="text/javascript" src="../../../../assets/js/titleCaps.js"></script>
         <script type="text/javascript" src="../../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="../../property/js/postcodelookup.js"></script>
+<script type="text/javascript" src="js/postcodelookup.js"></script>
         
 <script type="text/javascript">
 var count;
@@ -348,14 +348,17 @@ $(document).ready(function() {
 	var numproperties = 0;
 	var propertyfirstline;
 	
-	if ($.cookie('rec-propertypostcode') && $.cookie('rec-propertypostcode').length > 0) {
+	if ($.cookie('rec-propertypostcode').length > 0 && $.cookie('rec-propertypostcode').length > 0) {
+		alert("cookie read");
 	    var pcode = $.cookie('rec-propertypostcode');
 	    $("#name").val(titleCaps($.cookie('rec-propertyline1')));
 	    $("#postcode").val(pcode.toUpperCase());
 
 	    $("#btn-lookup").trigger("click");
 	}
-	
+	else{
+		alert("no cookie read");
+	}
 
 
 	$("#next").on("click", function (e) {
