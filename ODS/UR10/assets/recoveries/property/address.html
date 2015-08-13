@@ -338,7 +338,7 @@ legend {
         <script type="text/javascript" src="../../../shared/loop.js"></script>
 <script type="text/javascript" src="../../../../assets/js/titleCaps.js"></script>
         <script type="text/javascript" src="../../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="js/postcodelookup.js"></script>
+<script type="text/javascript" src="../js/postcodelookup.js"></script>
         
 <script type="text/javascript">
 var count;
@@ -373,13 +373,13 @@ $(document).ready(function() {
 	    $.cookie('rec-propertyline1', titleCaps($("#address_line_1").val()), { expires: 1 });
 	    $.cookie("rec-propertypostcode", $("#postcode").val());
 	    
-	    $.cookie("ass-rec-prop-add1-"+count, $("#address_line_1").val(), { path: / } );
-	    $.cookie("ass-rec-prop-add2-"+count, $("#address_line_2").val(), { path: / } );
-	    $.cookie("ass-rec-prop-add3-"+count, $("#address_line_3").val(), { path: / } );
-	    $.cookie("ass-rec-prop-addtown-"+count, $("#address_town").val(), { path: / } );
-	    $.cookie("ass-rec-prop-addcounty-"+count, $("#address_county").val(), { path: / } );
-	    $.cookie("ass-rec-prop-addpcode-"+count, $("#address_post_code").val(), { path: / } );
-	    $.cookie("ass-rec-prop-count", count, { path: / } );
+	    $.cookie("ass-rec-prop-add1-"+count, $("#address_line_1").val(), { path: '/' } );
+	    $.cookie("ass-rec-prop-add2-"+count, $("#address_line_2").val(), { path: '/' } );
+	    $.cookie("ass-rec-prop-add3-"+count, $("#address_line_3").val(), { path: '/' } );
+	    $.cookie("ass-rec-prop-addtown-"+count, $("#address_town").val(), { path: '/' } );
+	    $.cookie("ass-rec-prop-addcounty-"+count, $("#address_county").val(), { path: '/' } );
+	    $.cookie("ass-rec-prop-addpcode-"+count, $("#address_post_code").val(), { path: '/' } );
+	    $.cookie("ass-rec-prop-count", count, { path: '/' } );
 
 	});
 
