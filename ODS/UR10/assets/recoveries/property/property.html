@@ -394,29 +394,7 @@
                         $("tbody").append(row);
                     }
                 }
-                /*// TODO - remove this next bit when the above is working
-                if ($.cookie("ass-rec-prop-count") == null) {
-                    if ($.cookie('propertyvalue')) {
-                        value = numberWithCommas($.cookie('propertyvalue'));
-                    }
-
-                    
-
-                    var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-                    var row = "<tr><td>" + address + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
-                    $("tbody").append(row);
-                }*/
-
-
-
-                if (getParameterByName("loop")) {
-                    $("#next").prop("href", "rentlist.html");
-                }
-                if (numproperties < 1 && $.cookie("address_line_1") && $.cookie("address_line_1").length > 1) {
-                    $("#name").val($.cookie("address_line_1"));
-                    $("#postcode").val($.cookie("post_code"));
-                    //$("#add").prop("href", "amount.html");
-                }
+            
             });
 
             $("#add").click(function (e) {
