@@ -180,6 +180,28 @@ table td[class*=col-], table th[class*=col-]{
         <th colspan="2">Total</th>
     </tr>
 </thead>	
+
+                                        <tbody class="group-title" id="item0" data-role="cash">
+                                            <tr class="group-heading parent">
+                                                <td class="group-title col-sm-8">
+                                                    Cash from bank
+                                                </td>
+                                                <td class="actions col-sm-2">
+                                                    <a href="../banks/add_bank.html?loop=true" class="next edit">Edit</a>
+
+                                                </td>
+                                                <td class="value col-sm-2">£109.78</td>
+                                            </tr>
+                                            <tr class="totalhide" style="display:none">
+                                                <td class="actions" style="text-align:right">
+                                                    <span style="float:right; width:100%"></span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                         <tbody class="group-title" id="item1" data-role="cash">
                                             <tr class="group-heading parent">
                                                 <td class="group-title col-sm-8">Cash
@@ -188,7 +210,7 @@ table td[class*=col-], table th[class*=col-]{
 
                                                 </td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="amount.html?type=cash&page=1" class="next edit button">Start</a>
+                                                    <a href="cash.html?type=cash&page=1" class="next edit button">Start</a>
 
                                                 </td>
                                                 <td class="value col-sm-2">&nbsp;</td>
@@ -210,7 +232,7 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="#" style="display:none" class="declare">I don’t have any household items of exceptional value</a>
                                                 </td>
                                                 <td  class="actions">
-                                                    <a href="amount.html?type=household&page=2" style="display:none" class="edit">Edit</a>
+                                                    <a href="household.html?type=household&page=2" style="display:none" class="edit">Edit</a>
                                                 </td>
 
                                                 <td class="value"></td>
@@ -232,7 +254,7 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="#" style="display:none" class="declare">I have no other items</a>
 												</td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=3" style="display:none" class="edit">Edit</a>
+                                                    <a href="possessions.html?type=possessions&page=3" style="display:none" class="edit">Edit</a>
                                                 </td>
 
                                                 <td class="value"></td>
@@ -253,7 +275,8 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td>
                                                     Compensation or legal claim<br />
                                                     <a href="#" style="display:none" class="declare">I have no contributions</a></td>
-                                                <td class="actions"><a href="amount.html?type=household&page=4" style="display:none" class="edit">Start</a>
+                                                <td class="actions">
+                                                    <a href="compensation.html?type=compensation&page=4" style="display:none" class="edit">Start</a>
 												</td>
 
                                                 <td class="value">&nbsp;</td>
@@ -276,7 +299,7 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="#" style="display:none" class="declare">I don’t benefit from any trusts or wills</a>
                                                 </td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+                                                    <a href="beneficiary.html?type=beneficiary&page=5" style="display:none" class="edit">Edit</a>
 
                                                 </td>
                                                 <td class="value"></td>
@@ -298,7 +321,7 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="#" style="display:none" class="declare">I don’t have any stocks, shares or investments</a>
                                                 </td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+                                                    <a href="investments.html?type=investments&page=6" style="display:none" class="edit">Edit</a>
 
                                                 </td>
                                                 <td class="value"></td>
@@ -320,7 +343,7 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="#" style="display:none" class="declare">I don’t have any self employed trading assets</a>
                                                 </td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+                                                    <a href="trade.html?type=trade&page=7" style="display:none" class="edit">Edit</a>
 
                                                 </td>
                                                 <td class="value"></td>
@@ -343,7 +366,7 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="#" style="display:none" class="declare">No one owes me any money</a>
                                                 </td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+                                                    <a href="money.html?type=money&page=8" style="display:none" class="edit">Edit</a>
 
                                                 </td>
                                                 <td class="value"></td>
@@ -366,7 +389,7 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="#" style="display:none" class="declare">I have added all my other assets</a>
                                                 </td>
                                                 <td class="actions">
-                                                    <a href="amount.html?type=household&page=5" style="display:none" class="edit">Edit</a>
+                                                    <a href="other.html?type=other&page=9" style="display:none" class="edit">Edit</a>
 
                                                 </td>
                                                 <td class="value"></td>
@@ -408,14 +431,14 @@ table td[class*=col-], table th[class*=col-]{
             <div class="form-navigation form-group inner-block">
 
                 <div>
-                    <a id="next" class="button" href="../../overview.html?section6=complete">Continue</a>
+                    <a id="next" class="button" href="../summary.html?page=4">Continue</a>
                 </div>
                 <div>
                     <br>
                 </div>
 
                 <div>
-                    <a style="padding-right: 30px" href="../../overview.html?section5=complete" id="back">Back</a>
+                    <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 
                     <a href="#" id="cancel">Save and logout</a>
@@ -540,7 +563,7 @@ table td[class*=col-], table th[class*=col-]{
 				        showchildrowdata();
 
 				        $("#" + stage + itemnumber + " .declare").show();
-				        $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Add");
+				        $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
 				    }
 				    else {
 				        $("#next").show();
@@ -554,6 +577,7 @@ table td[class*=col-], table th[class*=col-]{
            function showchildrowdata() {
                 var totalamount = 0.00;
                 for (rowid = 1; rowid <= 9; rowid++) {
+                    var totalforrow = 0.00;
                     type = $("#item" + rowid).data("role");
 
                     var numofthistype = 0;
@@ -564,6 +588,8 @@ table td[class*=col-], table th[class*=col-]{
                     for (i = 1; i <= numofthistype; i++) {
                         // Change the skip button text
                         $("#item" + rowid + " .declare").text($("#item" + rowid + " .totalhide .declare").text());
+
+
                         // append the child row 
                         if ($.cookie(type + i + 'amount') > 0) {
                             var childamount = parseFloat($.cookie(type + i + 'amount'));
@@ -572,12 +598,17 @@ table td[class*=col-], table th[class*=col-]{
                             insertext = insertext + '<td class="value">' + childamount + '</td>';
                             insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
                             insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
+                            /* skip this for now */
+                            /*
                             $("#" + stage + rowid + " .totalhide").before(insertext);
+                            */
                             $("#" + stage + rowid + " .child").show();
 
-                            totalamount = totalamount + childamount;
+                            totalforrow = totalforrow + childamount;
                         }
+                        $("#item" + rowid + " .value").text(numberWithCommas(totalforrow));
                     }
+                    totalamount = totalamount + totalforrow;
                 }
 
                 $("#overalltotal .totalvalue").text(totalamount);
@@ -608,6 +639,9 @@ table td[class*=col-], table th[class*=col-]{
                 return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
             }
 
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
         </script>
 
 

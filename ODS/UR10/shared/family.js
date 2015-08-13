@@ -53,7 +53,7 @@ var addresseselectedHandler = function (eventObject, suggestionObject, suggestio
             foundmatch = false; // don't keep running this
         }
     });
-
+    $("#next").removeClass("unknown-owner");
 	$("#lastname").val(suggestionObject.lastname);
 };
 
@@ -61,7 +61,7 @@ typeaheadfirstline.on('typeahead:selected', addresseselectedHandler );
 
 $("#firstname").on("change", function () {
 	$("#add").prop("href", defaultnext);
-
+	$("#next").addClass("unknown-owner");
 	if (typeaheadfirstline.typeahead('val') == "") {
 	    $("#firstname").val('');
 	}
