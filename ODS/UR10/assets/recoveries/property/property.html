@@ -380,14 +380,14 @@
                	else{
                     numproperties = parseInt($.cookie("ass-rec-prop-count"));
                 }
-                alert(numproperties);
+                
                 var value = 0.0;
                 var address;
                 for (i = 1; i <= numproperties; i++) {
                     // TODO - make the next bit work
                     if ($.cookie('ass-rec-prop-netamount' + i)) {
                         value = numberWithCommas($.cookie('ass-rec-prop-netamount' + i));
-                        address = $.cookie('rec-propertyline' + i );
+                        address = $.cookie('ass-rec-prop-add1-' + i );
 
                         var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
                         var row = "<tr><td>" + address + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
