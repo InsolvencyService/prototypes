@@ -379,10 +379,10 @@
                 }
                 var value = 0.0;
                 
-                var address = $.cookie("rec-propertyline1");
                 for (i = 1; i <= numproperties; i++) {
                     // TODO - make the next bit work
-                    if ($.cookie('property' + i + 'value')) {
+                    if ($.cookie('ass-rec-prop-netamount' + i)) {
+                    	var address = $.cookie("rec-propertyline1");
                          value = numberWithCommas($.cookie('ass-rec-prop-netamount' + i));
                          address = $.cookie('rec-propertyline' + i );
 
@@ -391,8 +391,8 @@
                         $("tbody").append(row);
                     }
                 }
-                // TODO - remove this next bit when the above is working
-                if ($.cookie("numproperties") == null) {
+                /*// TODO - remove this next bit when the above is working
+                if ($.cookie("ass-rec-prop-count") == null) {
                     if ($.cookie('propertyvalue')) {
                         value = numberWithCommas($.cookie('propertyvalue'));
                     }
@@ -402,7 +402,7 @@
                     var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
                     var row = "<tr><td>" + address + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
                     $("tbody").append(row);
-                }
+                }*/
 
 
 
