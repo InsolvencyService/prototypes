@@ -177,19 +177,19 @@ display:block;
                             <div id="title" class="form-group">
 
                                 <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
+                                    <input id="address_Yes" name="sameaddress" type="radio"  value="detached">
                                     Detached house
                                 </label>
                                 <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
+                                    <input id="address_Yes" name="sameaddress" type="radio"  value="semi-detached">
                                     Semi-detached house
                                 </label>
                                 <label for="address_Yes" class="block-label">
-                                    <input id="address_Yes" name="sameaddress" type="radio">
+                                    <input id="address_Yes" name="sameaddress" type="radio"  value="terraced">
                                     Terraced house
                                 </label>    
                           		<label id="title_label1" for="address_Flat" class="block-label">
-                                    <input id="address_Flat" name="sameaddress" type="radio">
+                                    <input id="address_Flat" name="sameaddress" type="radio"  value="flat/maisonette">
                                     Flat/Maisonette
                                 </label>
     <label id="title_label4" for="title_other" class="block-label">
@@ -362,6 +362,8 @@ var count;
 
 $(document).ready(function() {
 
+	var prop_add = $.cookie('rec-propertyname');
+	$(".data").text(prop_add);
    
 /*
 		numproperties = numproperties + 1;
@@ -390,15 +392,20 @@ $('#pnl-mktvalue input:radio').click(function() {
 	}
 });
 
+
+$("#next").click(function() {
+	writeCookies();
+});
+
 function writeCookies() {
 	count = $.cookie("ass-rec-prop-count");
 	
-	$.cookie("ass-rec-prop-type"+count, $("#pnl-title :checked").val(), { path: / } );
-	$.cookie("ass-rec-prop-bed"+count, $("#numbedrooms").val(), { path: / } );
-	$.cookie("ass-rec-prop-tfrmonth"+count, $("#month").val(), { path: / } );
-	$.cookie("ass-rec-prop-tfryear"+count, $("#year").val(), { path: / } );
-	$.cookie("ass-rec-prop-amount"+count, $("#propertyvalue").val(), { path: / } );
-	$.cookie("ass-rec-prop-count", count, { path: / } );
+	$.cookie("ass-rec-prop-type"+count, $("#pnl-title :checked").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-bed"+count, $("#numbedrooms").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-tfrmonth"+count, $("#month").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-tfryear"+count, $("#year").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-netamount"+count, $("#propertyvalue").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-count", count, { path: '/' } );
 }
    
 function numberWithoutCommas(x) {
