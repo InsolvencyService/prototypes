@@ -229,7 +229,7 @@
         <div id="content">
 
             <div class="inner-block">
-                <h1 class="form-title heading-large">Properties</h1>
+                <h1 class="form-title heading-large">Properties <span class="repeat">summary</span></h1>
                 <div class="col-md-9">
                     <form class="form" method="post">
                     	<div id="pnl-director_table" class="repeat">
@@ -237,7 +237,6 @@
                                 <thead>
                                     <tr>
                                         <th>Address</th>
-                                        <th>Jointly owned</th>
                                         <th>Value</th>
                                         <th>&nbsp;</th>
                                     </tr>
@@ -245,7 +244,6 @@
                                 <tbody id="tablebody">
                                     <tr id="row1" class="loop" style="display:none">
                                         <td>1 The Place, AB1 2JH</td>
-                                        <td>Yes</td>
                                         <td>£150,000</td>
                                         <td>
                                             <a href="../amount.html?pre=true" class="btn-edit">Edit</a>&nbsp;&nbsp;
@@ -254,17 +252,17 @@
                                     </tr>
                                 </tbody>
                             </table>
-
+							<p class="clearfix"><br /></p>
                         </div>
-                        <p class="clearfix"><br /></p>
+                        <p class="repeat">The table above summarises the properties you have told us about.</p>
+                        <p class="repeat">We need to know about any other properties you have sold, transferred or given away in the last 5 years.</p>
                         <fieldset>
                             <legend class="form-label-bold">
                                 <span class="firsttime">Enter the first line of the property’s address and postcode</span>
-                                <span class="repeat">Enter another address</span>
+                                <span class="repeat">Enter another property's address and postcode</span>
                             </legend>
 
-                            <div class="form-hint">For example, 12 Place Street NG6 8RG</div>
-                            <div class="form-hint">Leave the postcode blank if the property isn’t in the UK.</div>
+                            <div class="form-hint">For example, 12 Place Street NG6 8RG<br>Leave the postcode blank if the property isn’t in the UK.</div>
                             <div class="form-group halfwidth">
                                 <label for="name">First line</label>
                                 <input id="name" class="typeahead" style="width:100%" />
@@ -380,7 +378,7 @@
                     numproperties = $.cookie("numproperties");
                 }
                 var value = 0.0;
-                var jointownership = "No";
+                
                 var address = $.cookie("rec-propertyline1");
                 for (i = 1; i <= numproperties; i++) {
                     // TODO - make the next bit work
@@ -388,11 +386,11 @@
                         jointownership = "Yes";
                     }
                     if ($.cookie('property' + i + 'value')) {
-                         value = numberWithCommas($.cookie('property' + i + 'value'));
-                         address = $.cookie('property' + i + 'address');
+                         value = numberWithCommas($.cookie('ass-rec-prop-netamount' + i));
+                         address = $.cookie('rec-propertyline' + i );
 
                         var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-                        var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
+                        var row = "<tr><td>" + address + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
                         $("tbody").append(row);
                     }
                 }
