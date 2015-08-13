@@ -209,7 +209,7 @@ legend {
                             </div>
                             <div class="clearfix"></div>
                             <div class="form-group">
-                                <a id="btn-lookup" class="button" href="#">Lookup address</a>&nbsp;
+                                <a id="add" class="button" href="#">Lookup address</a>&nbsp;
                                 <a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
 
                                 <br />
@@ -337,7 +337,6 @@ legend {
         <script type="text/javascript" src="../../../creditors/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../../shared/loop.js"></script>
 <script type="text/javascript" src="../../../../assets/js/titleCaps.js"></script>
-        <script type="text/javascript" src="../../../creditors/js/tw-typeahead.js"></script>
 <script type="text/javascript" src="../js/postcodelookup.js"></script>
         
 <script type="text/javascript">
@@ -354,7 +353,7 @@ $(document).ready(function() {
 	    $("#name").val(titleCaps($.cookie('rec-propertyline1')));
 	    $("#postcode").val(pcode.toUpperCase());
 
-	    $("#btn-lookup").trigger("click");
+	    $("#add").trigger("click");
 	}
 	
 
