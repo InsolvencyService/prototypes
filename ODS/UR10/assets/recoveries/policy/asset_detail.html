@@ -369,8 +369,8 @@ var count;
 
 $(document).ready(function() {
 	var companyname = $.cookie('ass-rec-pol-tempcomp');
-	
 	$(".comp_name").text(companyname);
+	count= $.cookie('ass-rec-pol-count');
 });
 
 $('#disposed input:radio').click(function() {
@@ -392,14 +392,11 @@ $("#next").click(function() {
 });
 
 function writeCookies() {
-	count = $.cookie("ass-rec-prop-count");
 	
-	$.cookie("ass-rec-prop-type"+count, $("#pnl-title :checked").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-bed"+count, $("#numbedrooms").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-tfrmonth"+count, $("#month").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-tfryear"+count, $("#year").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-netamount"+count, $("#propertyvalue").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-count", count, { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-type", $("#title :checked").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-number", $("#policynumber").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-month", $("#month").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-year", $("#year").val(), { path: '/' } );
 }
    
 function numberWithoutCommas(x) {

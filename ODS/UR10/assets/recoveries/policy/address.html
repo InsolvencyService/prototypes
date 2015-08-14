@@ -319,14 +319,14 @@ function getParameterByName(name) {
 
 function writeCookies(){
 	count ++;
-	$.cookie('ass-rec-pol-count', count);
-	$.cookie('ass-rec-pol-'+count+"-company", $("#name").val());
-	$.cookie('ass-rec-pol-'+count+"-add1", $("#applicant_address_line_1").val());
-	$.cookie('ass-rec-pol-'+count+"-add2", $("#applicant_address_line_2").val());
-	$.cookie('ass-rec-pol-'+count+"-add3", $("#applicant_address_line_3").val());
-	$.cookie('ass-rec-pol-'+count+"-add4", $("#applicant_address_town").val());
-	$.cookie('ass-rec-pol-'+count+"-add5", $("#applicant_address_county").val());
-	$.cookie('ass-rec-pol-'+count+"-add6", $("#applicant_address_post_code").val());
+	$.cookie('ass-rec-pol-count', count, { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-company", $("#name").val(), { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-add1", $("#applicant_address_line_1").val(), { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-add2", $("#applicant_address_line_2").val(), { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-add3", $("#applicant_address_line_3").val(), { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-add4", $("#applicant_address_town").val(), { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-add5", $("#applicant_address_county").val(), { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-add6", $("#applicant_address_post_code").val(), { path: '/' });
 }
 
 

@@ -414,6 +414,7 @@ display:block;
 var count;
 
 $(document).ready(function() {
+	count= $.cookie('ass-rec-pol-count');
 	var type = getParameterByName("q");
 	$("."+type).show();
 	if(type == "gifted"){
@@ -445,21 +446,7 @@ $("#next").click(function() {
 
 
 function writeCookies() {
-	count = $.cookie("ass-rec-prop-count");
-	$.cookie("ass-rec-prop-marketvalue"+count, $("#marketvalue").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-grossamount"+count, $("#actualvalue").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-companyname"+count, $("#companyname").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-firstname"+count, $("#firstname").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-lastname"+count, $("#lastname").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-add1-"+count, $("#address_line_1").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-add2-"+count, $("#address_line_2").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-add3-"+count, $("#address_line_3").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-town-"+count, $("#address_town").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-county-"+count, $("#address_county").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-postcode-"+count, $("#address_post_code").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-transfer-relationship"+count, $("#pnl-relationship :checked").val(), { path: '/' } );
-	
-	
+	$.cookie('ass-rec-pol-'+count+"-netvalue", $("#propertyvalue").val(), { path: '/' } );
 	
 }
    
