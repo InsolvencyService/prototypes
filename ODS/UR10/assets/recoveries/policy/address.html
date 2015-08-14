@@ -297,8 +297,9 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	if($.cookie('ass-rec-pol-tempcomp')!=null){
-		$("#name").val(titleCaps($.cookie('ass-rec-pol-tempcomp'));
+		companyn = $.cookie('ass-rec-pol-tempcomp');
 	}
+	$("#name").val(titleCaps(companyn);
 });
 
 $("#next").on("click", function(e){
