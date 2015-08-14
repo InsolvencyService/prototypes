@@ -295,8 +295,14 @@ display:block;
 <script type="text/javascript" src="../../../../assets/js/titleCaps.js"></script>
 
 <script type="text/javascript">
+
+var count;
 $(document).ready(function() {
 	var companyn = $.cookie('ass-rec-pol-tempcomp');
+	count= $.cookie('ass-rec-pol-count');
+	if(count == null){
+		count = 0;
+	}
 	$("#name").val(titleCaps(companyn));
 });
 
@@ -305,6 +311,18 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function writeCookies(){
+	count ++;
+	$.cookie('ass-rec-pol-count', count);
+	$.cookie('ass-rec-pol-'+count+"-company", $("#name").val());
+	$.cookie('ass-rec-pol-'+count+"-add1", $("#applicant_address_line_1").val());
+	$.cookie('ass-rec-pol-'+count+"-add2", $("#applicant_address_line_2").val());
+	$.cookie('ass-rec-pol-'+count+"-add3", $("#applicant_address_line_3").val());
+	$.cookie('ass-rec-pol-'+count+"-add4", $("#applicant_address_town").val());
+	$.cookie('ass-rec-pol-'+count+"-add5", $("#applicant_address_county").val());
+	$.cookie('ass-rec-pol-'+count+"-add6", $("#applicant_address_post_code").val());
 }
 
 
