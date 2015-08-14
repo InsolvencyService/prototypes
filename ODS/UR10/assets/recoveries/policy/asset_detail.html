@@ -361,23 +361,6 @@ $(document).ready(function() {
 	var companyname = $.cookie('ass-rec-pol-tempcomp');
 	
 	$(".comp_name").text(companyname);
-   
-/*
-		numproperties = numproperties + 1;
-		if ($("#propertyvalue").val().length > 0){
-		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1, path: "/" });
-
-		    $.cookie('numproperties', numproperties, { expires: 1, path: "/" });
-		    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#propertyvalue").val()), { expires: 1, path: "/" });
-		    $.cookie('property' + numproperties + 'address', $.cookie("propertyline1") + ", " + $.cookie("propertypostcode"), { expires: 1, path: "/" });
-
-		}
-		else{
-			$.cookie('propertyvalue', "140000", { expires: 1, path: "/" });
-		}
-		
-*/	
-
 });
 
 $('#pnl-mktvalue input:radio').click(function() {
@@ -385,7 +368,7 @@ $('#pnl-mktvalue input:radio').click(function() {
 		$("#next").prop("href", "transfer.html");
 	}
 	else if($("#mktvalue_no").prop('checked')==true){
-		$("#next").prop("href", "property.html?loop=true");	
+		$("#next").prop("href", "asset_list.html?loop=true");	
 	}
 });
 
