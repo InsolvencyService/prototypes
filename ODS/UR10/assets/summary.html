@@ -205,14 +205,10 @@
                         <tr class="group-heading" id="assets3">
                             <td class="group-title col-sm-6">
                                 <div>Do you have any items or cash?</div>
-                                <div class="form-hint">Answer yes to check more detailed questions</div>
+                                <div class="form-hint">There are detailed questions in this section</div>
                             </td>
                             <td class="actions col-sm-3">
-                                <span class="answerno" style="display:none">No</span>
-                                <a href="items/summary.html" class="next edit button">Yes</a>
-                                <a href="#" class="declare button">No</a>
-
-
+                                <a href="items/summary.html" class="next edit button">Start</a>
                             </td>
 
                             <td class="value col-sm-3">&nbsp;</td>
@@ -363,7 +359,7 @@ $(document).ready(function() {
                 $(".well").removeClass("well");  
                 
                 $(".declare").hide();    
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
+                $("#" + stage + itemnumber + " a.edit").show().addClass("button");
                 $("#" + stage + itemnumber +  " .declare").show();
 				$("#" + stage + itemnumber).addClass("well"); 
          
@@ -437,7 +433,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
-				    $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Yes");
+				    $("#" + stage + itemnumber + " a.edit").show().addClass("button");
 				    $("#" + stage + itemnumber).addClass("well");
 
 				    if (itemnumber > 3) {

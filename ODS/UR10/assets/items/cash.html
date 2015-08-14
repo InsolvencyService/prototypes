@@ -71,9 +71,7 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/sfs.css">
-
-    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-    <link href="../../creditors/css/typeahead.css" rel="stylesheet">
+<link href="../../creditors/css/typeahead.css" rel="stylesheet">
 
 <style type="text/css">
     .btn-remove{
@@ -147,10 +145,8 @@
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
 	
-	<h1 class="form-title heading-large">Cash</h1>
-    <ul id="details1" class="help">
-        <li>Cash not in a building society or bank</li>
-    </ul>	
+	<h1 class="form-title heading-large">Cash not in a building society or bank</h1>
+    <p></p>	
 	
     <form class="form" method="post" id="assetitems">
 
@@ -208,12 +204,12 @@
                     <td style="padding-top:10px">
                         <div class="form-group halfwidth">
                             <label for="firstname1">First name</label>
-                            <input id="firstname1" class="typeahead " />
+                            <input class="firstname" id="firstname1" class="typeahead " />
 
                         </div>
                         <div class="form-group halfwidth">
                             <label for="lastname1">Last name</label>
-                            <input id="lastname1" />
+                            <input class="lastname" id="lastname1" />
                         </div>
                     </td>
                     <td></td>
@@ -222,286 +218,7 @@
 
             </tbody>
 
-            <tbody class="additional" id="item2" style="display:none">
-                <tr><td colspan="3"><br /></td></tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="benefit-type2" class="form-label">What is the cash?</label>
-                    </td>
-                    <td>
-                        <input id="benefit-type2" type="text" value="" class="form-control" />
-                    </td>
-                    <td class="actions"><a class="additional btn-remove" href="#" style="display:none">Delete</a></td>
-                </tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="amount2" class="form-label">Amount of cash you currently have outside of your bank accounts?</label>
-                    </td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount2">
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="childrow">
-                    <td>
-                        <label for="shared2" class="form-label">Is it jointly owned?</label>
-                    </td>
-                    <td>
-                        <fieldset>
-                            <div id="shared2" class="form-group inline">
-
-                                <label for="shared2_Yes" class="block-label">
-                                    <input id="shared2_Yes" name="shared2" type="radio" class="radio-shared" value="Yes">
-                                    Yes
-                                </label>
-
-                                <label for="shared2_No" class="block-label">
-                                    <input id="shared2_No" name="shared2" type="radio" class="radio-shared" value="No">
-                                    No
-                                </label>
-                            </div>
-                        </fieldset>
-                    </td>
-                    <td></td>
-                </tr>
-
-                <tr class="childrow joint-owner" style="display:none" id="joint-owner2">
-                    <td>
-                        <label for="last_name2" class="form-label">Enter the name of the joint owner</label>
-                    </td>
-                    <td style="padding-top:20px">
-                        <div class="form-group halfwidth">
-                            <label for="firstname2">First name</label>
-                            <input id="firstname2" class="typeahead " />
-
-                        </div>
-                        <div class="form-group halfwidth">
-                            <label for="lastname2">Last name</label>
-                            <input id="lastname2" />
-                        </div>
-                    </td>
-                    <td></td>
-                </tr>
-
-
-            </tbody>
-
-
-            <tbody class="additional" id="item3" style="display:none">
-                <tr><td colspan="3"><br /></td></tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="benefit-type3" class="form-label">What is the cash?</label>
-                    </td>
-                    <td>
-                        <input id="benefit-type3" type="text" value="" class="form-control" />
-                    </td>
-                    <td class="actions"><a class="additional btn-remove" href="#" style="display:none">Delete</a></td>
-                </tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="amount3" class="form-label">Amount of cash you currently have outside of your bank accounts?</label>
-                    </td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount3">
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="childrow">
-                    <td>
-                        <label for="shared3" class="form-label">Is it jointly owned?</label>
-                    </td>
-                    <td>
-                        <fieldset>
-                            <div id="shared3" class="form-group inline">
-
-                                <label for="shared3_Yes" class="block-label">
-                                    <input id="shared3_Yes" name="shared3" type="radio" class="radio-shared" value="Yes">
-                                    Yes
-                                </label>
-
-                                <label for="shared3_No" class="block-label">
-                                    <input id="shared3_No" name="shared3" type="radio" class="radio-shared" value="No">
-                                    No
-                                </label>
-                            </div>
-                        </fieldset>
-                    </td>
-                    <td></td>
-                </tr>
-
-                <tr class="childrow joint-owner" style="display:none" id="joint-owner3">
-                    <td>
-                        <label for="last_name3" class="form-label">Enter the name of the joint owner</label>
-                    </td>
-                    <td style="padding-top:10px">
-                        <div class="form-group halfwidth">
-                            <label for="firstname3">First name</label>
-                            <input id="firstname3" class="typeahead " />
-
-                        </div>
-                        <div class="form-group halfwidth">
-                            <label for="lastname3">Last name</label>
-                            <input id="lastname3" />
-                        </div>
-                    </td>
-                    <td></td>
-                </tr>
-
-
-            </tbody>
-
-
-
-            <tbody class="additional" id="item4" style="display:none">
-                <tr><td colspan="3"><br /></td></tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="benefit-type4" class="form-label">What is the cash?</label>
-                    </td>
-                    <td>
-                        <input id="benefit-type4" type="text" value="" class="form-control" />
-                    </td>
-                    <td class="actions"><a class="additional btn-remove" href="#" style="display:none">Delete</a></td>
-                </tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="amount4" class="form-label">Amount of cash you currently have outside of your bank accounts?</label>
-                    </td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount4">
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="childrow">
-                    <td>
-                        <label for="shared4" class="form-label">Is it jointly owned?</label>
-                    </td>
-                    <td>
-                        <fieldset>
-                            <div id="shared4" class="form-group inline">
-
-                                <label for="shared4_Yes" class="block-label">
-                                    <input id="shared4_Yes" name="shared4" type="radio" class="radio-shared" value="Yes">
-                                    Yes
-                                </label>
-
-                                <label for="shared4_No" class="block-label">
-                                    <input id="shared4_No" name="shared4" type="radio" class="radio-shared" value="No">
-                                    No
-                                </label>
-                            </div>
-                        </fieldset>
-                    </td>
-                    <td></td>
-                </tr>
-
-                <tr class="childrow joint-owner" style="display:none" id="joint-owner4">
-                    <td>
-                        <label for="last_name4" class="form-label">Enter the name of the joint owner</label>
-                    </td>
-                    <td style="padding-top:10px">
-                        <div class="form-group halfwidth">
-                            <label for="firstname4">First name</label>
-                            <input id="firstname4" class="typeahead " />
-
-                        </div>
-                        <div class="form-group halfwidth">
-                            <label for="lastname4">Last name</label>
-                            <input id="lastname4" />
-                        </div>
-                    </td>
-                    <td></td>
-                </tr>
-
-
-            </tbody>
-
-
-
-            <tbody class="additional" id="item5" style="display:none">
-                <tr><td colspan="3"><br /></td></tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="benefit-type5" class="form-label">What is the cash?</label>
-                    </td>
-                    <td>
-                        <input id="benefit-type5" type="text" value="" class="form-control" />
-                    </td>
-                    <td class="actions"><a class="additional btn-remove" href="#" style="display:none">Delete</a></td>
-                </tr>
-                <tr class="childrow">
-                    <td class="question">
-                        <label for="amount5" class="form-label">Amount of cash you currently have outside of your bank accounts?</label>
-                    </td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount5">
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="childrow">
-                    <td>
-                        <label for="shared5" class="form-label">Is it jointly owned?</label>
-                    </td>
-                    <td>
-                        <fieldset>
-                            <div id="shared5" class="form-group inline">
-
-                                <label for="shared5_Yes" class="block-label">
-                                    <input id="shared5_Yes" name="shared5" type="radio" class="radio-shared" value="Yes">
-                                    Yes
-                                </label>
-
-                                <label for="shared5_No" class="block-label">
-                                    <input id="shared5_No" name="shared5" type="radio" class="radio-shared" value="No">
-                                    No
-                                </label>
-                            </div>
-                        </fieldset>
-                    </td>
-                    <td></td>
-                </tr>
-
-                <tr class="childrow joint-owner" style="display:none" id="joint-owner5">
-                    <td>
-                        <label for="last_name5" class="form-label">Enter the name of the joint owner</label>
-                    </td>
-                    <td style="padding-top:10px">
-                        <div class="form-group halfwidth">
-                            <label for="firstname5">First name</label>
-                            <input id="firstname5" class="typeahead " />
-
-                        </div>
-                        <div class="form-group halfwidth">
-                            <label for="lastname5">Last name</label>
-                            <input id="lastname5" />
-                        </div>
-                    </td>
-                    <td></td>
-                </tr>
-
-
-            </tbody>
-
-            <tbody>
-                <tr>
-                    <td>
-                        <label class="form-label">
-                            <a href="#" id="btn-add">
-                                <i class="glyphicon glyphicon-plus"></i>
-                                Add another amount
-                            </a>
-                        </label>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-
+  
 
         </table>
 
@@ -588,7 +305,7 @@
 <script type="text/javascript" src="../../shared/sfs.js"></script>
 
     <script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-    <script type="text/javascript" src="../../shared/family.js"></script>	
+    <script type="text/javascript" src="../../shared/joint-owner.js"></script>	
 
 <script type="text/javascript">
 $(document).ready(function() {
