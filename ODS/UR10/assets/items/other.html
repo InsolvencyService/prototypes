@@ -172,7 +172,7 @@
                     </td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount1">
+                        <input type="text" class="form-control pull-left amount" id="amount1">
                     </td>
                     <td></td>
                 </tr>
@@ -206,12 +206,12 @@
                     <td style="padding-top:10px">
                         <div class="form-group halfwidth">
                             <label for="firstname1">First name</label>
-                            <input id="firstname1" class="typeahead " />
+                            <input class="firstname" id="firstname1" class="typeahead " />
 
                         </div>
                         <div class="form-group halfwidth">
                             <label for="lastname1">Last name</label>
-                            <input id="lastname1" />
+                            <input class="lastname" id="lastname1" />
                         </div>
                     </td>
                     <td></td>
@@ -237,7 +237,7 @@
                     </td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount2">
+                        <input type="text" class="form-control pull-left amount" id="amount2">
                     </td>
                     <td></td>
                 </tr>
@@ -271,12 +271,12 @@
                     <td style="padding-top:20px">
                         <div class="form-group halfwidth">
                             <label for="firstname2">First name</label>
-                            <input id="firstname2" class="typeahead " />
+                            <input class="firstname" id="firstname2" class="typeahead " />
 
                         </div>
                         <div class="form-group halfwidth">
                             <label for="lastname2">Last name</label>
-                            <input id="lastname2" />
+                            <input class="lastname" id="lastname2" />
                         </div>
                     </td>
                     <td></td>
@@ -303,7 +303,7 @@
                     </td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount3">
+                        <input type="text" class="form-control pull-left amount" id="amount3">
                     </td>
                     <td></td>
                 </tr>
@@ -337,12 +337,12 @@
                     <td style="padding-top:10px">
                         <div class="form-group halfwidth">
                             <label for="firstname3">First name</label>
-                            <input id="firstname3" class="typeahead " />
+                            <input class="firstname" id="firstname3" class="typeahead " />
 
                         </div>
                         <div class="form-group halfwidth">
                             <label for="lastname3">Last name</label>
-                            <input id="lastname3" />
+                            <input class="lastname" id="lastname3" />
                         </div>
                     </td>
                     <td></td>
@@ -370,7 +370,7 @@
                     </td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount4">
+                        <input type="text" class="form-control pull-left amount" id="amount4">
                     </td>
                     <td></td>
                 </tr>
@@ -404,12 +404,12 @@
                     <td style="padding-top:10px">
                         <div class="form-group halfwidth">
                             <label for="firstname4">First name</label>
-                            <input id="firstname4" class="typeahead " />
+                            <input class="firstname" id="firstname4" class="typeahead " />
 
                         </div>
                         <div class="form-group halfwidth">
                             <label for="lastname4">Last name</label>
-                            <input id="lastname4" />
+                            <input class="lastname" id="lastname4" />
                         </div>
                     </td>
                     <td></td>
@@ -437,7 +437,7 @@
                     </td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount5">
+                        <input type="text" class="form-control pull-left amount" id="amount5">
                     </td>
                     <td></td>
                 </tr>
@@ -471,12 +471,12 @@
                     <td style="padding-top:10px">
                         <div class="form-group halfwidth">
                             <label for="firstname5">First name</label>
-                            <input id="firstname5" class="typeahead " />
+                            <input class="firstname" id="firstname5" class="typeahead " />
 
                         </div>
                         <div class="form-group halfwidth">
                             <label for="lastname5">Last name</label>
-                            <input id="lastname5" />
+                            <input class="lastname" id="lastname5" />
                         </div>
                     </td>
                     <td></td>
@@ -586,7 +586,7 @@
 <script type="text/javascript" src="../../shared/sfs.js"></script>
 
     <script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-    <script type="text/javascript" src="../../shared/family.js"></script>	
+    <script type="text/javascript" src="../../shared/joint-owner.js"></script>	
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -629,7 +629,7 @@ $(document).ready(function() {
 
     $("#next").on("click", function (e) {
         if ($("#next").hasClass("unknown-owner")) {
-            $("#next").prop("href", "add_relationship.html");
+            $("#next").prop("href", "add_relationship.html?stage=item&page=10");
         }
 
 

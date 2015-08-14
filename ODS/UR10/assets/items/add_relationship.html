@@ -343,7 +343,15 @@ $(document).ready(function() {
 
 
 	var number = 0;
-
+	var defaultnext = $("#next").prop("href");
+	if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
+	    stage = getParameterByName("stage");
+	}
+	if (getParameterByName("page") && getParameterByName("page").length > 0) {
+	    page = getParameterByName("page");
+        $("#next").prop("href", defaultnext + "?stage=item&page=" + page)
+	}
+    
     if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
     	number = parseInt($.cookie('familymembers')); 
 	}
@@ -359,8 +367,6 @@ $(document).ready(function() {
 	}
 	
 				
-
-	var normalroute = $("#next").prop("href");
 
 	$("#next").on("click", function(){
     	number = number + 1;
@@ -380,8 +386,8 @@ $(document).ready(function() {
 		}
 
 	    //remove the shared name
-		$.cookie('sharedfirstname', null);
-		$.cookie('sharedlastname', null);
+		//edfirstname', null);
+		//$.cookie('sharedlastname', null);
 	});
 
 });

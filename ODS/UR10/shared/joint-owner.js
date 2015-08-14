@@ -55,11 +55,15 @@ $(".joint-owner input").on("change", function () {
 	}
 	if ($(this).hasClass("firstname")){
 	    firstname = $(this).val();
-	    $.cookie('sharedfirstname', firstname, { expires: 1, path: '/' });
+	    if (firstname && firstname.length > 1) {
+	        $.cookie('sharedfirstname', firstname, { expires: 1, path: '/' });
+	    }
 	}
 	if ($(this).hasClass("lastname")){
 	    lastname = $(this).val();
-	    $.cookie('sharedlastname', lastname, { expires: 1, path: '/' });
+	    if (lastname && lastname.length > 1) {
+	        $.cookie('sharedlastname', lastname, { expires: 1, path: '/' });
+	    }
 	}
 });
 

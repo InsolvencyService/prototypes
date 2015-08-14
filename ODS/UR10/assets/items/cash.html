@@ -170,7 +170,7 @@
                     </td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" id="amount1">
+                        <input type="text" class="form-control pull-left amount" id="amount1">
                     </td>
                     <td></td>
                 </tr>
@@ -204,12 +204,12 @@
                     <td style="padding-top:10px">
                         <div class="form-group halfwidth">
                             <label for="firstname1">First name</label>
-                            <input class="firstname" id="firstname1" class="typeahead " />
+                            <input class="firstname" class="firstname" id="firstname1" class="typeahead " />
 
                         </div>
                         <div class="form-group halfwidth">
                             <label for="lastname1">Last name</label>
-                            <input class="lastname" id="lastname1" />
+                            <input class="lastname" class="lastname" id="lastname1" />
                         </div>
                     </td>
                     <td></td>
@@ -348,7 +348,7 @@ $(document).ready(function() {
 
     $("#next").on("click", function (e) {
         if ($("#next").hasClass("unknown-owner")) {
-            $("#next").prop("href", "add_relationship.html");
+            $("#next").prop("href", "add_relationship.html?stage=item&page=2");
         }
 
 
