@@ -163,7 +163,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Property description</h1>
+	<h1 class="form-title heading-large">Policy details</h1>
 	
 	
 	
@@ -171,27 +171,24 @@ display:block;
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
 	                   <div class="form-group">
-                        <p id="title_label" class="form-label-bold">What type of property is <span class="bold-medium data">1 The Place</span>?</p>
+                        <p id="title_label" class="form-label-bold">What type of policy was provided by <span class="bold-medium comp_name">[company name]</span>?</p>
 
                         <fieldset class="inline">
                             <div id="title" class="form-group">
 
                                 <label for="address_Yes" class="block-label">
                                     <input id="address_Yes" name="sameaddress" type="radio"  value="detached">
-                                    Detached house
+                                    Life insurance
                                 </label>
                                 <label for="address_Yes" class="block-label">
                                     <input id="address_Yes" name="sameaddress" type="radio"  value="semi-detached">
-                                    Semi-detached house
+                                    Endowment
                                 </label>
                                 <label for="address_Yes" class="block-label">
                                     <input id="address_Yes" name="sameaddress" type="radio"  value="terraced">
-                                    Terraced house
+                                    Pension
                                 </label>    
-                          		<label id="title_label1" for="address_Flat" class="block-label">
-                                    <input id="address_Flat" name="sameaddress" type="radio"  value="flat/maisonette">
-                                    Flat/Maisonette
-                                </label>
+                          		
     <label id="title_label4" for="title_other" class="block-label">
         <input id="title_other" value="" name="sameaddress" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
         <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
@@ -361,9 +358,9 @@ display:block;
 var count;
 
 $(document).ready(function() {
-
-	var prop_add = $.cookie('rec-propertyname');
-	$(".data").text(prop_add);
+	var companyname = $.cookie('ass-rec-pol-tempcomp');
+	
+	$(".comp_name").text(companyname);
    
 /*
 		numproperties = numproperties + 1;
