@@ -163,126 +163,51 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Policy details</h1>
+	<h1 class="form-title heading-large">Policies <span class="market" style="display:none">you've sold or transfered</span><span class="surrender" style="display:none">you've surrendered</span> </h1>
 	
 	
 	
 	<form class="form" method="post">
-		<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-		
-	   <div class="form-group">
-	        <p id="title_label" class="form-label-bold">What type of policy was provided by <span class="bold-medium comp_name">[company name]</span>?</p>
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	        <fieldset class="inline">
-	            <div id="title" class="form-group">
-	
-	                <label for="address_Yes" class="block-label">
-	                    <input id="address_Yes" name="sameaddress" type="radio"  value="life insurance">
-	                    Life insurance
-	                </label>
-	                <label for="address_Yes" class="block-label">
-	                    <input id="address_Yes" name="sameaddress" type="radio"  value="endowment">
-	                    Endowment
-	                </label>
-	                <label for="address_Yes" class="block-label">
-	                    <input id="address_Yes" name="sameaddress" type="radio"  value="pension">
-	                    Pension
-	                </label>    
-	          		
-				    <label id="title_label4" for="title_other" class="block-label">
-				        <input id="title_other" value="" name="sameaddress" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-				        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
-				     </label>
-	
-	            </div>
-	         </fieldset>
-	    </div>
-	    <p>&nbsp;</p>
-	    
-	    	
-        
-        <div class="form-group">
+		<div class="form-group">
                         
-			<label id="first_name_label" for="policynumber" class="form-label-bold">Policy number (if known)</label>
-			<input id="policynumber" name="policynumber" type="text" value=""  />
+			<label id="first_name_label" for="propertyvalue" class="form-label-bold">How much money did you receive for the policy after charges and legal fees (net value)?</label>
+			<span class="currency">£ </span><input id="propertyvalue" name="amount" type="text" value="" class="amount-value" />
                        
-        </div>
-
-        <p>&nbsp;</p>        			
+        </div>     
         
-        <div class="form-group">
-
-            <fieldset id="date_of_birth" class="date-of-birth">
-
-                <legend id="date_of_birth_label" class="form-label-bold">Date you surrendered, sold, transferred or gave away the policy?</legend>
-                <div class="form-hint">For example, Aug 2012</div>
-                <div class="form-group form-group-day" style="display:none">
-                    <label id="date_of_birth_label.day" for="day">Day</label>
-                    <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
-                </div>
-
-                <div class="form-group" id="monthcontrol" style="width:60px;">
-                    <label for="month">Month</label>
-
-                    <select id="month" name="month">
-                        <option value="0"></option>
-                        <option value="1">Jan</option>
-                        <option value="2">Feb</option>
-                        <option value="3">Mar</option>
-                        <option value="4">Apr</option>
-                        <option value="5">May</option>
-                        <option value="6">Jun</option>
-                        <option value="7">Jul</option>
-                        <option value="8">Aug</option>
-                        <option value="9">Sep</option>
-                        <option value="10">Oct</option>
-                        <option value="11">Nov</option>
-                        <option value="12">Dec</option>
-                    </select>
-
-                </div>
-                
-                <div class="form-group form-group-year">
-                    <label id="date_of_birth_label.year" for="year">Year</label>
-                    <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
-                </div>
-                
-            </fieldset>
-
-
-        </div>
         <p>&nbsp;</p>
-        <div class="form-group">
-	        <p id="title_label" class="form-label-bold">How did you dispose of the policy?</p>
-	
-	        <fieldset class="inline">
-	            <div id="disposed" class="form-group">
-					<label for="sold" class="block-label">
-	                    <input id="sold" name="dispose" type="radio"  value="sold">
-	                    Sold
-	                </label> 
-	                <label for="surrendered" class="block-label">
-	                    <input id="surrendered" name="dispose" type="radio"  value="surrendered">
-	                    Surrendered 
-	                </label>
-	                <label for="gifted" class="block-label">
-	                    <input id="gifted" name="dispose" type="radio"  value="gifted">
-	                    Given to someone I know
-	                </label>
-	                <label for="transferred" class="block-label">
-	                    <input id="transferred" name="dispose" type="radio"  value="transferred">
-	                    Transfered to someone I know
-	                </label>       
-	            </div>
-	         </fieldset>
-	    </div>
+        <div class="form-group market" style="display:none">
+			<fieldset class="inline">
+			<label id="mktvalue_label" class="form-label-bold">Was the sale or transfer for less than the market value?</label>
+			<p class="form-hint">Answer yes if you gave away the property or sold it privately for less than it could have been sold on the open market</p>
+				<div id="pnl-mktvalue" class="form-group">
+					<label id="mktvalue_label1" for="mktvalue_yes" class="block-label">
+					<input id="mktvalue_yes" value="" name="mktvalue" type="radio">Yes</label>
+				
+					<label id="mktvalue_label2" for="mktvalue_no" class="block-label">
+					<input id="mktvalue_no" value="" name="mktvalue" type="radio">No</label>
+				</div>
+			</fieldset>
+		</div>
+		
+		<div class="form-group surrender" style="display:none">
+			<fieldset class="inline" id="pnl-surrendered">
+			<label id="surrender_label" class="form-label-bold">Have you given away (gifted) any of the money you received when you surrendered the policy?</label>
+			
+				<div id="pnl-surrender" class="form-group">
+					<label id="surrender_label1" for="surrender_yes" class="block-label">
+					<input id="surrender_yes" value="" name="surrender" type="radio">Yes</label>
+				
+					<label id="surrender_label2" for="surrender_no" class="block-label">
+					<input id="surrender_no" value="" name="surrender" type="radio">No</label>
+				</div>
+			</fieldset>
+		</div>
 
-        
-        
 		
-
-		
-		
+		<p>&nbsp;</p>
         
         
    
@@ -368,23 +293,31 @@ display:block;
 var count;
 
 $(document).ready(function() {
-	var companyname = $.cookie('ass-rec-pol-tempcomp');
-	
-	$(".comp_name").text(companyname);
-});
 
-$('#disposed input:radio').click(function() {
-	if(	($("#sold").prop('checked')==true) || ($("#transferred").prop('checked')==true)){
-		$("#next").prop("href", "amount.html?q=market");
-	}
-	else if($("#surrendered").prop('checked')==true){
-		$("#next").prop("href", "amount.html?q=surrender");	
-	}
-	else if($("#gifted").prop('checked')==true){
-		$("#next").prop("href", "transfer.html?q=gifted");	
-	}
+	var type = getParameterByName("q");
+	$("."+type).show();
+   
 
 });
+
+$('#pnl-mktvalue input:radio').click(function() {
+	if(	($("#mktvalue_yes").prop('checked')==true)){
+		$("#next").prop("href", "transfer.html?q=sale");
+	}
+	else if($("#mktvalue_no").prop('checked')==true){
+		$("#next").prop("href", "asset_list.html?loop=true");	
+	}
+});
+
+$('#pnl-surrendered input:radio').click(function() {
+	if(	($("#surrender_yes").prop('checked')==true)){
+		$("#next").prop("href", "transfer.html?q=surrender");
+	}
+	else if($("#surrender_no").prop('checked')==true){
+		$("#next").prop("href", "asset_list.html?loop=true");	
+	}
+});
+
 
 
 $("#next").click(function() {
@@ -406,6 +339,14 @@ function numberWithoutCommas(x) {
     var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
     return number;
 }
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 </script>
 
