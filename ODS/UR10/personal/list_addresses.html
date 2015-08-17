@@ -431,12 +431,9 @@
                 var name = $("#name").val();
                 var pcode = $("#postcode").val();
 
-                if (name == $.cookie("address_line_1")) {
-                    $("#add").prop("href", "amount.html");
-                }
                 if (isvalidname(pcode) == true) {
-                    $.cookie("propertyline1", name);
-                    $.cookie("propertypostcode", pcode);
+                    $.cookie("prev_propertyline1", name, { expires: 1, path: "/" });
+                    $.cookie("prev_propertypostcode", pcode, { expires: 1, path: "/" });
                 }
                 else{
                     e.preventDefault();

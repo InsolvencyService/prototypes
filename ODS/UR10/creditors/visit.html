@@ -368,10 +368,10 @@ $(document).ready(function() {
 	        if (amount && amount > 0) {
 	            date = $("#day").val() + "-" + $("#month").val() + "-" + $("#year").val();
 	            //window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
-	            $.cookie("creditorrow", parseFloat(rowid), { expires: 1 });
-	            $.cookie("creditor" + rowid + "name", creditor, { expires: 1 });
-	            $.cookie("creditor" + rowid + "amount", parseFloat(amount), { expires: 1 });
-	            $.cookie("creditor" + rowid + "date", date, { expires: 1 });
+	            $.cookie("creditorrow", parseFloat(rowid), { expires: 1, path: "/" });
+	            $.cookie("creditor" + rowid + "name", creditor, { expires: 1, path: "/" });
+	            $.cookie("creditor" + rowid + "amount", parseFloat(amount), { expires: 1, path: "/" });
+	            $.cookie("creditor" + rowid + "date", date, { expires: 1, path: "/" });
 	        }
 
 

@@ -464,7 +464,7 @@ $(document).ready(function() {
 
 });
 
-$("#next").click(function(){
+$("#next").click(function(e){
 		var addr = $("#address_line_1").val();
 		if (addr && addr.length > 0){
 		    $.cookie("address", addr, { expires: 1, path: '/' });
