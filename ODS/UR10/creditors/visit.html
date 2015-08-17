@@ -335,27 +335,41 @@ $(document).ready(function() {
 	var normalroute = $("#next").prop("href");
 	var rowid = getParameterByName("row");
 	var creditor = getParameterByName("name");
+	var amount = 0;
 
 	if (creditor && creditor.length > 0){
 		$(".creditor").text(creditor);
 	}
 
 	//'<label for="item1" class="block-label"><input id="item1" name="itemstaken" type="checkbox">Old Piano</label>';
-	$("#lbl-other-item").prepend(getassetshtml());
+	$(".visit").prepend(getassetshtml());
 
-	$("#next").on("click", function(e){
+	$(".visit input[type=checkbox]").on("click", function (e) {
+	    //alert($(this).data("type") + " " + $(this).data("num"));
+	});
+
+	$("#next").on("click", function (e) {
+	    var rowid = 1;
 		//e.preventDefault();
-		var amount = $("#amount").val();
+	    $(".visit input[type=checkbox]:checked").each(function (e) {
+
+	        if ($(this).data("amount")) {
+	            amount = amount + parseFloat($(this).data("amount"));
+	        }
+	        // save the total amount against the creditorname
+	    });
+
 		var date;
-		if (amount && amount.length > 0){
+		if (amount && amount > 0){
 			date =  $("#day").val() + "-" +  $("#month").val() + "-" +  $("#year").val();
 			//window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
 	        $.cookie("creditorrow", parseFloat(rowid), { expires: 1});
-	        $.cookie("creditorname", creditor, { expires: 1});	        
-	        $.cookie("creditoramount", parseFloat(amount), { expires: 1});
-	        $.cookie("creditordate", date, { expires: 1});
-
+	        $.cookie("creditor" + rowid + "name", creditor, { expires: 1});	        
+	        $.cookie("creditor" + rowid + "amount", parseFloat(amount), { expires: 1 });
+	        $.cookie("creditor" + rowid + "date", date, { expires: 1 });
 		}
+
+
 	});
 	
 
@@ -367,7 +381,6 @@ function getassetshtml() {
     var html = "";
     var itemcount = 0;
     for (rowid = 1; rowid <= 9; rowid++) {
-
         var type = assetypes[rowid];
 
         var numofthistype = 0;
@@ -378,14 +391,12 @@ function getassetshtml() {
         for (i = 1; i <= numofthistype; i++) {
             itemcount = itemcount + 1;
             var itemname = $.cookie(type + i + 'name');
+            var itemamount = $.cookie(type + i + 'amount');
             html = html + '<label for="item' + itemcount + '" class="block-label">';
-            html = html + '<input id="item' + itemcount + '" name="itemstaken" type="checkbox">' + itemname + '</label>';
+            html = html + '<input id="item' + itemcount + '" name="itemstaken" type="checkbox" data-type="' + type + '" data-num="' + i + '" data-amount="' + itemamount + '" >' + itemname + '</label>';
         }
-
     }// for
- 
     return html;
-
 }
 
 

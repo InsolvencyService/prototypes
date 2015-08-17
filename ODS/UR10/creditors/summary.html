@@ -239,7 +239,7 @@ display:block;
             </div>
 	<h2 class="heading-medium">Enforcement visits</h2>
 	<form class="form" method="post">
-		<div id="creditorlist">
+		<div id="enforcementlist">
 			<table style="width: 100%">
 				<thead>
 					<tr>
@@ -250,12 +250,12 @@ display:block;
 					</tr>
 				</thead>
 				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
+                    <tr id="row1">
+                        <td class="name">&nbsp;</td>
+                        <td class="date"></td>
+                        <td class="amount">£ </td>
+                        <td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
+                    </tr>
 				</tbody>
 			</table>
 		</div>
@@ -264,7 +264,7 @@ display:block;
 
 	<h2 class="heading-medium">Attachments of earnings</h2>
 	<form class="form" method="post">
-		<div id="creditorlist">
+		<div id="attachmentlist">
 			<table style="width: 100%">
 				<thead>
 					<tr>
@@ -382,8 +382,46 @@ $(document).ready(function() {
 	$("#row1 .date").text($.cookie("creditordate"));
 	$("#row1 .amount").append($.cookie("creditoramount"));
 
+	$("#enforcementlist tbody").prepend(getassetshtml());
 
 });
+
+var assetypes = ["bankcash", "cash", "household", "possessions", "compensation", "beneficiary", "investments", "trade", "money", "other"];
+
+
+function getassetshtml() {
+    var html = "";
+    var itemcount = 0;
+    var creditorname = "";
+    var totalamount = 0;
+
+    var numrows = $.cookie("creditorrow");
+
+    for (rowid = 1; rowid <= numrows; rowid++) {
+        //totalamount = 0;
+        //var type = assetypes[rowid];
+
+        // TODO - calculate total amount for this creditor
+        //var numofthistype = 0;
+        //if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
+        //    numofthistype = parseInt($.cookie("num" + type));
+        //}
+
+        //for (i = 1; i <= numofthistype; i++) {
+        //    itemcount = itemcount + 1;
+        //    var itemname = $.cookie(type + i + 'name');
+        //}
+        if ($.cookie("creditor" + rowid + "amount")) {
+            var creditorname = $.cookie("creditor" + rowid + "name");
+            var amount = $.cookie("creditor" + rowid + "amount");
+            var date = $.cookie("creditor" + rowid + "date");
+
+            html = html + '<tr id="row' + itemcount + '"><td class="name">' + creditorname + '</td><td class="date">' + date + '</td>';
+            html = html + '<td class="amount">£ ' + amount + '</td><td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td></tr>';
+        }
+    }// for
+    return html;
+}
 
 
 function getParameterByName(name) {
