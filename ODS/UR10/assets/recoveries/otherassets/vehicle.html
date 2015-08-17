@@ -204,11 +204,11 @@ display:block;
 <!-- #BeginEditable "content" --> 
 <div id="content" >
 <div class="inner-block text">
-	<h1 class="form-title heading-large">Vehicles</h1>
+	<h1 class="form-title heading-large">Vehicles you sold or gave away</h1>
 			
 	<form class="form" method="post">
 		<div class="form-group">
-			<label  for="creditors" class="form-label-bold " id="heading-add" >What type of asset did you sell or give away?</label>
+			<label  for="creditors" class="form-label-bold " id="heading-add" >Which vehicle did you sell or give away?</label>
 			<div class="form-group">
 	   
 			    <fieldset class="inline">
@@ -316,24 +316,27 @@ $(document).ready(function() {
 			var make = $.cookie('VehicleMake'+i);
 			var model = $.cookie('VehicleModel'+i);
 			var VRN = $.cookie('VehicleVRN'+1);
-			var vehicle = make + " " + model + " " + VRN;
+			var vehicle = make + " " + model + " - " + VRN;
 			var checkbox = '<label for="'+VRN+'" class="block-label"><input id="'+VRN+'" name="assettype" type="radio"  value="'+VRN+'">'+ vehicle +'</label>';
-			alert(checkbox);
 			$("#asset").prepend(checkbox);	
 		}	
 });
 
-/*
+
 $("#next").on("click", function(e){
-	if ($('#vehicle').prop('checked')==true){
-		$('#next').prop('href', 'vehicle.html');		
+	if ($('#other').prop('checked')==true){
+		$('#next').prop('href', 'add-vehicle.html');			
 	}
-	else if ($('#other').prop('checked')==true){
-		$('#next').prop('href', 'other.html');		
+	else {
+		writeCookies();
+		$('#next').prop('href', 'details.html');		
 	}
 });*/
 
-
+function writeCookies() {
+	var cookiecount == $.cookie('ass-rec-oth-count');
+	$.cookie("ass-rec-oth-type-"+cookiecount, "Vehicle");
+}
 </script>
 
 

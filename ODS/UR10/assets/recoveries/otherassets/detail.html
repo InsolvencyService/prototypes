@@ -70,38 +70,9 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
+<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/bankruptcy-overrides.css">
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -122,16 +93,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
 }
 
 </style>
@@ -197,103 +158,106 @@ display:block;
 	
 
 
-	</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
-<div class="inner-block text">
-	<h1 class="form-title heading-large">Other assets</h1>
-			
-	<div id="msg-entervalue" style="display:none">
-		<div class="validation-summary">
-                <h2>Select asset type</h2>
-                <p></p>
-                <ol>
-      			  <li class="error-message">Select an asset type below to continue</li>
-        		</ol>
-    	</div>
-    </div>        
-            
-    <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
-	    <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
-        <p>Are you sure you want to delete this creditor?</p>
-        <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
-	</div>  
-</div>
- 
-<div id="creditorlist" class="inner-block text">
-
-	<table>
-		<thead>
-			<tr>
-				<th>Type</th>
-				<th>Value</th>
-				
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody id="tbody">
-
-
-		</tbody>
-		</table>
-		<p>&nbsp;</p>
-</div>
-
 <div class="inner-block text">
 	
-	<p class="repeat">The table above summarises the assets you have told us about.</p>
+	
+	
+	<h1 class="form-title heading-large"><span id="title"></span> details</h1>
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	<div id="nonvehicle" style="display:none">
+		<div class="form-group">
+			<label id="desc_label" for="desc" class="form-label-bold">Describe the asset/posession</label>
+			<p class="form-hint">For example, an LG smart TV</p>
+			<input id="desc" name="desc" class="form-control" type="text"  value="" />
+			<br/>
+		</div>
+	</div>
+	
+	
+        <div class="form-group">
 
-	<div>
-		<p>We need to know about <span class="firsttime">all the</span><span class="repeat">any</span> other assets you have sold, 
-		for less than their true value or given away in the last 5 years.</p>
+            <fieldset id="date_of_birth" class="date-of-birth">
+
+                <legend id="date_of_birth_label" class="form-label-bold">Date you sold, transferred or gave away the <span class="asset"></span>?</legend>
+                <div class="form-hint">For example, Aug 2012</div>
+                <div class="form-group form-group-day" style="display:none">
+                    <label id="date_of_birth_label.day" for="day">Day</label>
+                    <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+                </div>
+
+                <div class="form-group" id="monthcontrol" style="width:60px;">
+                    <label for="month">Month</label>
+
+                    <select id="month" name="month">
+                        <option value="0"></option>
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">Jun</option>
+                        <option value="7">Jul</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select>
+
+                </div>
+                
+                <div class="form-group form-group-year">
+                    <label id="date_of_birth_label.year" for="year">Year</label>
+                    <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
+                </div>
+                
+            </fieldset>
+
+
+        </div>
+          		
 		<p>&nbsp;</p>
-	</div>
-<form class="form" method="post">
-<div class="form-group">
-	
-	<label  for="creditors" class="form-label-bold " id="heading-add" >What type of asset did you sell or give away?</label>
-	
-			
-	<div class="form-group">
-	   
-	    <fieldset class="inline">
-	        <div id="asset" class="form-group">
-				
-	            <label for="vehicle" class="block-label">
-	                <input id="vehicle" name="assettype" type="radio"  value="Life insurance">
-	                Vehicle
-	            </label>
-	            <label for="other" class="block-label">
-	                <input id="other" name="assettype" type="radio"  value="Endowment">
-	                Other
-	            </label>
-	            <div style="padding-top:24px">
-	            	<p>&nbsp;&nbsp;&nbsp; <a class="button" id="next">Add asset</a></p>
-				</div>
-	        </div>
-	     </fieldset>
-	</div>
-</div>
-<div>&nbsp;</div>
+        
+        <div class="form-group">
+                        
+			<label id="first_name_label" for="propertyvalue" class="form-label-bold">What was the value of the <span class="asset"></span> at the time you sold, transferred or gave it away?</label>
+						
+			<div class="form-hint">Please provide the most accurate figure you can</div>
+			<span class="currency">£ </span><input id="propertyvalue" name="marketvalue" type="text" value="" class="amount-value" />
+                       
+        </div>
+        
+        <p>&nbsp;</p>
+        
+        <div class="form-group">
+                        
+			<label id="first_name_label" for="saleamount" class="form-label-bold">How much money did you receive for the <span class="asset"></span> after charges and legal fees (proceeds of sale)?</label>
+						
+			<div class="form-hint">Leave blank if you gave the property away</div>
+			<span class="currency">£ </span><input id="saleamount" name="amount" type="text" value="" class="amount-value" />
+                       
+        </div>
+   
+ 		<div class="clearfix"></div>
 
-<a class="button" href="../summary.html?page=3" id="btn-addedall">Continue - <span class="repeat">I have added all policies</span><span class="firsttime">I don't have any policies</span></a>
-<p><br></p>
+		<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
+		<a a href="transfer.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -303,13 +267,12 @@ display:block;
 	</form>
 	</div>
 
+	 <!-- #EndEditable -->
+
         
 </div>
 
 
-	 <!-- #EndEditable -->
-
-        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -355,107 +318,40 @@ display:block;
 <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="../../../creditors/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="../js/creditors.js"></script>
-	<script type="text/javascript" src="../../../shared/loop.js"></script>
-
 <script type="text/javascript">
-var count;
-var tablecount = 0;
 
+var count;
+var type = getParameterByName("id");
 $(document).ready(function() {
 	
-	var reset = getParameterByName("reset");
-	var loop = getParameterByName("loop");
-	var normalroute = $("#next").prop("href");
-	var total = 0;
-	
-
-	if (loop && loop.length > 0){
+	if(type==2){
+		$(".asset").text("asset/possession");
+		$("#title").text("Asset");
+		$("#nonvehicle").show();
+		
 	}
 	else{
-		$("#creditorlist").hide();
-		$(".newvisitor").show();
+		$(".asset").text("vehicle");
+		$("#title").text("Vehicle");
 	}
-	
-	tablecount = $.cookie('ass-rec-oth-count');
+});
 
-	if(tablecount>0){
-		for(i=1; i<=tablecount; i++){	
-			
-			tableType = $.cookie('ass-rec-oth-type-'+i+"");
-			tablevalue = $.cookie('ass-rec-oth-value-'+i+"-company");
-				
-					
-			//add pensions to table
-			$("#tbody").append("<tr><td>"+ tableType +"</td><td>" + tablevalue +"</td><td class=\"edit\"><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-			
-		}
+$("#next").on("click", function(e){
+	var cookiecount = $.cookie('ass-rec-oth-count');
+	if(type==2){
+		$.cookie("ass-rec-oth-type-"+cookiecount, $("#desc").val());
 	}
-	
-
-	$("#next").on("click", function(e){
-		if ($('#vehicle').prop('checked')==true){
-			var vehcount = $.cookie('VehicleCount');
-			if(vehcount=="" || vehcount==null){
-				$("#next").prop("href", "add-vehicle.html");
-				writeCookie();	
-			}
-			else
-			{
-				$('#next').prop('href', 'vehicle.html');
-				writeCookie();		
-			}
-		}
-		else if ($('#other').prop('checked')==true){
-			$('#next').prop('href', 'detail.html?id=2');	
-			writeCookie();		
-		}
-		else{
-			$("#msg-entervalue").show();
-			e.preventDefault();
-		}
-	});
-	
-	var rowid = "row1";
-	var id = 1;
-	$(".btn-delete").on("click", function () {
-	    if ($(this).parent().parent().prop("id")) {
-			rowid= $(this).parent().parent().prop("id");
-			id = parseInt(rowid.substring(3, rowid.length));
-			$("#confirm-delete").show();
-	    }
-	});
-	
-	$("#btn-confirm-delete").on("click", function () {
-	    $.cookie('creditordeleted' + id, "1", { expires: 1 });
-	    $("#row" + id).hide();
-	    $("#confirm-delete").hide();
-	
-	    total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
-	    $("#box-total").text(numberWithCommas(total));
-	
-	});
+	$.cookie("ass-rec-oth-value-"+cookiecount, $("#amount").val());
 
 });
 
-function writeCookie(){
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	
-	if(cookiecount == null || cookiecount ==""){
-		cookiecount = 0;
-	}
-	cookiecount++;
-	$.cookie('ass-rec-oth-count', cookiecount);
 
+   
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
 }
-
-
-
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -464,16 +360,9 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
-
 
 </script>
+
 
 
 <!-- #EndEditable -->

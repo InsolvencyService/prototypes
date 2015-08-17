@@ -70,38 +70,9 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
+<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/bankruptcy-overrides.css">
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -124,15 +95,21 @@ display:block;
 	font-size:16px;
 }
 
-.btn-edit{
-	margin-right:10px;
+.halfwidth {
+    float: left;
+    margin-right: 15px;
+    clear: none;
+    width: 35%;
 }
-.amount{
-	text-align:right
+
+.partwidth {
+    float: left;
+    margin-right: 0;
+    clear: none;
+    width: 15%;
+    margin-top: 23px;
 }
-.totalrow td{
-	font-weight:bold !important;
-}
+
 
 </style>
 <!-- #EndEditable -->
@@ -197,103 +174,161 @@ display:block;
 	
 
 
-	</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
-<div class="inner-block text">
-	<h1 class="form-title heading-large">Other assets</h1>
-			
-	<div id="msg-entervalue" style="display:none">
-		<div class="validation-summary">
-                <h2>Select asset type</h2>
-                <p></p>
-                <ol>
-      			  <li class="error-message">Select an asset type below to continue</li>
-        		</ol>
-    	</div>
-    </div>        
-            
-    <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
-	    <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
-        <p>Are you sure you want to delete this creditor?</p>
-        <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
-	</div>  
-</div>
- 
-<div id="creditorlist" class="inner-block text">
-
-	<table>
-		<thead>
-			<tr>
-				<th>Type</th>
-				<th>Value</th>
-				
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody id="tbody">
-
-
-		</tbody>
-		</table>
-		<p>&nbsp;</p>
-</div>
-
 <div class="inner-block text">
 	
-	<p class="repeat">The table above summarises the assets you have told us about.</p>
-
-	<div>
-		<p>We need to know about <span class="firsttime">all the</span><span class="repeat">any</span> other assets you have sold, 
-		for less than their true value or given away in the last 5 years.</p>
-		<p>&nbsp;</p>
-	</div>
-<form class="form" method="post">
-<div class="form-group">
 	
-	<label  for="creditors" class="form-label-bold " id="heading-add" >What type of asset did you sell or give away?</label>
 	
+	<h1 class="form-title heading-large">Transaction details</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+		
+		
+		<div>
+			<label class="form-label-bold" >Who did you sell, transfer or give the asset to?<br><br></label>
 			
-	<div class="form-group">
-	   
-	    <fieldset class="inline">
-	        <div id="asset" class="form-group">
-				
-	            <label for="vehicle" class="block-label">
-	                <input id="vehicle" name="assettype" type="radio"  value="Life insurance">
-	                Vehicle
-	            </label>
-	            <label for="other" class="block-label">
-	                <input id="other" name="assettype" type="radio"  value="Endowment">
-	                Other
-	            </label>
-	            <div style="padding-top:24px">
-	            	<p>&nbsp;&nbsp;&nbsp; <a class="button" id="next">Add asset</a></p>
+			<div>
+				<div class="form-group" >
+					<label  class="form-label" for="companyname">Company name</label>
+					<input  type="text" id="companyname"/>
 				</div>
-	        </div>
-	     </fieldset>
-	</div>
-</div>
-<div>&nbsp;</div>
+			</div>
 
-<a class="button" href="../summary.html?page=3" id="btn-addedall">Continue - <span class="repeat">I have added all policies</span><span class="firsttime">I don't have any policies</span></a>
-<p><br></p>
+			
+			<div>
+				<div class="form-group" >
+					<label  class="form-label" for="firstname">First name</label>
+					<input type="text" id="firstname"/>
+				</div>
+			</div>
+	
+			<div>
+				<div class="form-group" >
+					<label  class="form-label" for="lastname">Last name</label>
+					<input  type="text" id="lastname"/>
+				</div>
+			</div>
+			    <p>&nbsp;</p>
+			    
+			    <fieldset class="firsttime inline" id="lookupaddress">
+                    <legend class="form-label-bold">
+                        <span class="firsttime">Address</span>
+                    </legend>
+
+                    <span class="form-hint">Enter the first line and postcode of the address. For example, 2 Place Street AB1 2CD</span>
+                    <div class="form-group halfwidth">
+                        <label for="name">First line</label>
+                        <input id="name" />
+                    </div>
+                    <div class="form-group halfwidth">
+                        <label for="postcode">Postcode</label>
+                        <input id="postcode" />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <a id="add" class="button" href="#">Lookup address</a>&nbsp;
+                        <a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
+
+                        <br />
+                    </div>
+                </fieldset>
+
+				<div class="repeat" id="fulladdress">
+					
+						<div class="form-group">
+					
+							<label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
+					<input id="address_line_1" name="address_line_1" type="text" aria-describedby="address_line_1_error address_line_1_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="address_line_2" name="address_line_2" type="text" aria-describedby="address_line_2_error address_line_2_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="address_line_3" name="address_line_3" type="text" aria-describedby="address_line_3_error address_line_3_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+					<input id="address_town" name="address_town" type="text" aria-describedby="address_town_error address_town_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_county_label" for="address_county" class="form-label address_county">County</label>
+					<input id="address_county" name="address_county" type="text" aria-describedby="address_county_error address_county_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+				        <label for="address_post_code" class="form-label address_post_code">Postcode</label>
+				        <input id="address_post_code" name="address_post_code" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
+					<br/>
+					</div>
+				</div>
+
+         
+            
+		</div>
+			
+		<p>&nbsp;</p>
+
+		<div class="form-group">
+			<p id="title_label" class="form-label-bold">What is their relationship to you?</p>
+		
+			<fieldset class="inline">
+			    <div id="pnl-relationship" class="form-group">
+			
+			        <label for="relationship_relative" class="block-label">
+			            <input id="relationship_relative" name="relationship" type="radio" value="Relative">
+			            A relative
+			        </label>
+			        <label for="relationship_employer" class="block-label">
+			            <input id="relationship_employer" name="relationship" type="radio" value="Employer or employee">
+			            An employer or employee
+			        </label>
+			        <label for="relationship_company" class="block-label">
+			            <input id="relationship_company" name="relationship" type="radio" value="Company I'm a shareholder or director of">
+			            A company of which I'm a shareholder or director
+			        </label>    
+			  		<label for="relationship_3rd" class="block-label">
+			            <input id="relationship_3rd" name="relationship" type="radio" value="Unconnected third party">
+			            An unconnected third party
+			        </label>
+				    <label id="title_label4" for="relationship_other" class="block-label">
+				        <input id="relationship_other" value="" name="relationship" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+				        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
+				    </label>
+			
+			    </div>
+			</fieldset>
+		</div>
+                    
+        
+
+		<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
+		<a id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -303,13 +338,12 @@ display:block;
 	</form>
 	</div>
 
+	 <!-- #EndEditable -->
+
         
 </div>
 
 
-	 <!-- #EndEditable -->
-
-        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -355,125 +389,31 @@ display:block;
 <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="../../../creditors/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="../js/creditors.js"></script>
-	<script type="text/javascript" src="../../../shared/loop.js"></script>
-
+<script type="text/javascript" src="../js/postcodelookup.js"></script>
+<script type="text/javascript" src="../../../shared/loop.js"></script>
 <script type="text/javascript">
+
 var count;
-var tablecount = 0;
 
 $(document).ready(function() {
-	
-	var reset = getParameterByName("reset");
-	var loop = getParameterByName("loop");
-	var normalroute = $("#next").prop("href");
-	var total = 0;
-	
 
-	if (loop && loop.length > 0){
-	}
-	else{
-		$("#creditorlist").hide();
-		$(".newvisitor").show();
-	}
 	
-	tablecount = $.cookie('ass-rec-oth-count');
-
-	if(tablecount>0){
-		for(i=1; i<=tablecount; i++){	
-			
-			tableType = $.cookie('ass-rec-oth-type-'+i+"");
-			tablevalue = $.cookie('ass-rec-oth-value-'+i+"-company");
-				
-					
-			//add pensions to table
-			$("#tbody").append("<tr><td>"+ tableType +"</td><td>" + tablevalue +"</td><td class=\"edit\"><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-			
-		}
-	}
-	
-
-	$("#next").on("click", function(e){
-		if ($('#vehicle').prop('checked')==true){
-			var vehcount = $.cookie('VehicleCount');
-			if(vehcount=="" || vehcount==null){
-				$("#next").prop("href", "add-vehicle.html");
-				writeCookie();	
-			}
-			else
-			{
-				$('#next').prop('href', 'vehicle.html');
-				writeCookie();		
-			}
-		}
-		else if ($('#other').prop('checked')==true){
-			$('#next').prop('href', 'detail.html?id=2');	
-			writeCookie();		
-		}
-		else{
-			$("#msg-entervalue").show();
-			e.preventDefault();
-		}
-	});
-	
-	var rowid = "row1";
-	var id = 1;
-	$(".btn-delete").on("click", function () {
-	    if ($(this).parent().parent().prop("id")) {
-			rowid= $(this).parent().parent().prop("id");
-			id = parseInt(rowid.substring(3, rowid.length));
-			$("#confirm-delete").show();
-	    }
-	});
-	
-	$("#btn-confirm-delete").on("click", function () {
-	    $.cookie('creditordeleted' + id, "1", { expires: 1 });
-	    $("#row" + id).hide();
-	    $("#confirm-delete").hide();
-	
-	    total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
-	    $("#box-total").text(numberWithCommas(total));
-	
-	});
-
 });
 
-function writeCookie(){
-	var cookiecount = $.cookie('ass-rec-oth-count');
+$("#next").click(function() {
 	
-	if(cookiecount == null || cookiecount ==""){
-		cookiecount = 0;
-	}
-	cookiecount++;
-	$.cookie('ass-rec-oth-count', cookiecount);
+	$("#next").prop("href", "asset_list.html?loop=true");
 
-}
-
-
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
+});
+  
 function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
 }
-
 
 </script>
+
 
 
 <!-- #EndEditable -->

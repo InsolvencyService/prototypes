@@ -1,6 +1,7 @@
 $(document).ready(function() {
    
     var addresses =   [
+    { line1: '2 Place Street', line2: '', line3:'', town:'Reigate', county:'Surrey', postcode: 'AB1 2CD' },
     { line1: '274 Lesborne Road', line2: '', line3:'', town:'Reigate', county:'Surrey', postcode: 'RH2 7JP' },
     { line1: 'Walton House 56-58', line2: 'Richmond Hill', line3:'', town:'Bournemouth', county:'', postcode: 'BH2 6EX'},
     { line1: '14 Taylor St', line2: '', line3:'', town: 'St. Stephens Ward', county:'Kent', postcode: 'CT2 7PP'},

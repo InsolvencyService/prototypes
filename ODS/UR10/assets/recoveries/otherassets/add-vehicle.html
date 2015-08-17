@@ -70,38 +70,9 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
+<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/bankruptcy-overrides.css">
 
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -122,16 +93,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
 }
 
 </style>
@@ -197,103 +158,101 @@ display:block;
 	
 
 
-	</div>
-	
-
-
 <!-- #BeginEditable "content" --> 
-<div id="content" >
-<div class="inner-block text">
-	<h1 class="form-title heading-large">Other assets</h1>
-			
-	<div id="msg-entervalue" style="display:none">
-		<div class="validation-summary">
-                <h2>Select asset type</h2>
-                <p></p>
-                <ol>
-      			  <li class="error-message">Select an asset type below to continue</li>
-        		</ol>
-    	</div>
-    </div>        
-            
-    <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
-	    <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
-        <p>Are you sure you want to delete this creditor?</p>
-        <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
-	</div>  
-</div>
- 
-<div id="creditorlist" class="inner-block text">
-
-	<table>
-		<thead>
-			<tr>
-				<th>Type</th>
-				<th>Value</th>
-				
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody id="tbody">
-
-
-		</tbody>
-		</table>
-		<p>&nbsp;</p>
-</div>
-
 <div class="inner-block text">
 	
-	<p class="repeat">The table above summarises the assets you have told us about.</p>
-
+	
+	
+	<h1 class="form-title heading-large">Vehicle details</h1>
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
 	<div>
-		<p>We need to know about <span class="firsttime">all the</span><span class="repeat">any</span> other assets you have sold, 
-		for less than their true value or given away in the last 5 years.</p>
-		<p>&nbsp;</p>
-	</div>
-<form class="form" method="post">
-<div class="form-group">
-	
-	<label  for="creditors" class="form-label-bold " id="heading-add" >What type of asset did you sell or give away?</label>
-	
-			
-	<div class="form-group">
-	   
-	    <fieldset class="inline">
-	        <div id="asset" class="form-group">
-				
-	            <label for="vehicle" class="block-label">
-	                <input id="vehicle" name="assettype" type="radio"  value="Life insurance">
-	                Vehicle
-	            </label>
-	            <label for="other" class="block-label">
-	                <input id="other" name="assettype" type="radio"  value="Endowment">
-	                Other
-	            </label>
-	            <div style="padding-top:24px">
-	            	<p>&nbsp;&nbsp;&nbsp; <a class="button" id="next">Add asset</a></p>
-				</div>
-	        </div>
-	     </fieldset>
-	</div>
-</div>
-<div>&nbsp;</div>
+			<div class="form-group ">
+				<label id="make_label" for="make" class="form-label-bold">Make</label>
+				<input id="make" name="make" type="text"  value="" />
+				<br/>
+			</div>
+			<div class="form-group ">
+				<label id="model_label" class="form-label-bold" for="model">Model</label>
+				<input id="model" name="model" type="text"  value="" />
+				<br/>
+			</div>
+						<div class="form-group ">
+				<label id="vrn_label" class="form-label-bold" for="vrn">Registration number</label>
+				<input id="vrn" name="vrn" type="text"  value="" />
+				<br/><br/>
+			</div>
 
-<a class="button" href="../summary.html?page=3" id="btn-addedall">Continue - <span class="repeat">I have added all policies</span><span class="firsttime">I don't have any policies</span></a>
-<p><br></p>
+			
+			<div class="form-group" >
+			<p id="title_label" class="form-label-bold">Type of vehicle</p>
+			<fieldset class="inline">
+				<div id="pnl-type">				
+					<label id="car_label1" for="car" class="block-label">
+					<input id="car"  name="vehicle" value="car" type="radio">Car</label>
+					
+					<label id="van_label1" for="van" class="block-label">
+					<input id="van"  name="vehicle" value="van" type="radio">Van</label>
+					
+					<label id="motorcycle_label1" for="motorcycle" class="block-label">
+					<input id="motorcycle"  name="vehicle" value="motorcycle" type="radio">Motorycle</label>
+					
+					<label id="mpv_label1" for="mpv" class="block-label">
+					<input id="mpv"  name="vehicle" value="mpv" type="radio">MPV</label>
+					
+					<label id="4x4_label1" for="4x4" class="block-label">
+					<input id="4x4"  name="vehicle" value="4x4" type="radio">4X4</label>
+					
+					<label id="pickup_label1" for="pickup" class="block-label">
+					<input id="pickup"  name="vehicle" value="pickup truck" type="radio">Pickup truck</label>
+					
+					<label id="trike_label1" for="trike" class="block-label">
+					<input id="trike"  name="vehicle" value="trike" type="radio">3 wheeled vehicle</label>
+
+					<label id="quad_label1" for="quad" class="block-label">
+					<input id="quad"  name="vehicle" value="quad" type="radio">Quad bike</label>
+	
+					<label id="motorhome_label1" for="motorhome" class="block-label">
+					<input id="motorhome"  name="vehicle" value="motorhome" type="radio">Motorhome</label>
+					
+					<label id="minibus_label1" for="minibus" class="block-label">
+					<input id="minibus"  name="vehicle" value="minibus" type="radio">Minibus</label>
+					
+					<label id="commercial_label1" for="commercial" class="block-label">
+					<input id="commercial"  name="vehicle" value="commercial" type="radio">Commercial vehicle</label>
+					
+					<label id="other_label" for="other" class="block-label">
+	                    <input id="other" value="Other" name="vehicle" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
+	                    <input id="other_input" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/></span>
+	                </label>			
+				</div>
+			</fieldset>
+			<p>&nbsp;</p>
+		</div>
+	</div>
+	
+	
+	
+	
+
+       
+
+		<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	
 	<div>
-<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
+		<a href="details.html" id="next" class="button">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-        <a style="padding-right: 30px" href="" id="back">Back</a>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -303,13 +262,12 @@ display:block;
 	</form>
 	</div>
 
+	 <!-- #EndEditable -->
+
         
 </div>
 
 
-	 <!-- #EndEditable -->
-
-        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -355,125 +313,20 @@ display:block;
 <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-	<script type="text/javascript" src="../../../creditors/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="../js/creditors.js"></script>
-	<script type="text/javascript" src="../../../shared/loop.js"></script>
-
 <script type="text/javascript">
-var count;
-var tablecount = 0;
-
-$(document).ready(function() {
-	
-	var reset = getParameterByName("reset");
-	var loop = getParameterByName("loop");
-	var normalroute = $("#next").prop("href");
-	var total = 0;
-	
-
-	if (loop && loop.length > 0){
-	}
-	else{
-		$("#creditorlist").hide();
-		$(".newvisitor").show();
-	}
-	
-	tablecount = $.cookie('ass-rec-oth-count');
-
-	if(tablecount>0){
-		for(i=1; i<=tablecount; i++){	
-			
-			tableType = $.cookie('ass-rec-oth-type-'+i+"");
-			tablevalue = $.cookie('ass-rec-oth-value-'+i+"-company");
-				
-					
-			//add pensions to table
-			$("#tbody").append("<tr><td>"+ tableType +"</td><td>" + tablevalue +"</td><td class=\"edit\"><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-			
-		}
-	}
-	
-
-	$("#next").on("click", function(e){
-		if ($('#vehicle').prop('checked')==true){
-			var vehcount = $.cookie('VehicleCount');
-			if(vehcount=="" || vehcount==null){
-				$("#next").prop("href", "add-vehicle.html");
-				writeCookie();	
-			}
-			else
-			{
-				$('#next').prop('href', 'vehicle.html');
-				writeCookie();		
-			}
-		}
-		else if ($('#other').prop('checked')==true){
-			$('#next').prop('href', 'detail.html?id=2');	
-			writeCookie();		
-		}
-		else{
-			$("#msg-entervalue").show();
-			e.preventDefault();
-		}
-	});
-	
-	var rowid = "row1";
-	var id = 1;
-	$(".btn-delete").on("click", function () {
-	    if ($(this).parent().parent().prop("id")) {
-			rowid= $(this).parent().parent().prop("id");
-			id = parseInt(rowid.substring(3, rowid.length));
-			$("#confirm-delete").show();
-	    }
-	});
-	
-	$("#btn-confirm-delete").on("click", function () {
-	    $.cookie('creditordeleted' + id, "1", { expires: 1 });
-	    $("#row" + id).hide();
-	    $("#confirm-delete").hide();
-	
-	    total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
-	    $("#box-total").text(numberWithCommas(total));
-	
-	});
-
+$("#next").on("click", function(e){
+	writeCookies();
 });
 
-function writeCookie(){
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	
-	if(cookiecount == null || cookiecount ==""){
-		cookiecount = 0;
-	}
-	cookiecount++;
-	$.cookie('ass-rec-oth-count', cookiecount);
-
-}
-
-
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
+function writeCookies() {
+	var cookiecount == $.cookie('ass-rec-oth-count');
+	$.cookie("ass-rec-oth-type-"+cookiecount, "Vehicle");
 }
 
 
 </script>
+
 
 
 <!-- #EndEditable -->
