@@ -293,13 +293,13 @@ display:block;
             <div>
                 <div>
                     <div class="form-group form-group-day" style="display:none">
-                        <label id="date_of_birth_label.day" for="day">Day</label>
-                        <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+                        <label for="movedin-day">Day</label>
+                        <input id="movedin-day" name="date_of_birth.day" type="number" min="1" max="31" />
                     </div>
                     <div class="form-group" style="width:60px">
-                        <label id="date_of_birth_label.month" for="month">Month</label>
+                        <label for="movedin-month">Month</label>
 
-                        <select id="month" name="month">
+                        <select id="movedin-month" name="month">
                             <option value="0"></option>
                             <option value="1">Jan</option>
                             <option value="2">Feb</option>
@@ -317,8 +317,8 @@ display:block;
 
                     </div>
                     <div class="form-group form-group-year">
-                        <label id="date_of_birth_label.year" for="year">Year</label>
-                        <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
+                        <label for="movedin-year">Year</label>
+                        <input id="movedin-year" name="date_of_birth.year" type="number" min="1900" max="9999" />
                     </div>
                 </div>
   
@@ -326,7 +326,7 @@ display:block;
         </fieldset>
 
 <p class="clearfix"><br/></p>
-<fieldset id="movedin-date" class="date-of-birth">
+<fieldset id="movedout-date" class="date-of-birth">
 
             <legend id="date_of_birth_label" class="form-label-bold">When did you move out?</legend>
             <div class="form-hint">For example, Aug 2014</div>
@@ -334,13 +334,13 @@ display:block;
             <div>
                 <div>
                     <div class="form-group form-group-day" style="display:none">
-                        <label id="date_of_birth_label.day" for="day">Day</label>
-                        <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+                        <label for="movedout-day">Day</label>
+                        <input id="movedout-day" name="date_of_birth.day" type="number" min="1" max="31" />
                     </div>
                     <div class="form-group" style="width:60px">
-                        <label id="date_of_birth_label.month" for="month">Month</label>
+                        <label id="date_of_birth_label.month" for="movedout-month">Month</label>
 
-                        <select id="month" name="month">
+                        <select id="movedout-month" name="month">
                             <option value="0"></option>
                             <option value="1">Jan</option>
                             <option value="2">Feb</option>
@@ -358,8 +358,8 @@ display:block;
 
                     </div>
                     <div class="form-group form-group-year">
-                        <label id="date_of_birth_label.year" for="year">Year</label>
-                        <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
+                        <label for="movedout-year">Year</label>
+                        <input id="movedout-year" name="date_of_birth.year" type="number" min="1900" max="9999" />
                     </div>
                 </div>
   
@@ -514,11 +514,26 @@ $("#next").click(function(){
 			if ( $("#address_post_code")){
 				$.cookie("prev_post_code", $("#address_post_code").val(), { expires: 1, path:'/' });
 			}
+
+			var movedindate = getdatestring($("#movedin-month  option:selected").text(), $("#movedin-year").val())
+			$.cookie("prev_movedin", movedindate, { expires: 1, path: '/' });
+
+			var movedoutdate = getdatestring($("#movedout-month  option:selected").text(), $("#movedout-year").val())
+			$.cookie("prev_movedout", movedoutdate, { expires: 1, path: '/' });
+
+
 		}
 		
 });
 
+function getdatestring(month, year) {
+    return (month + " " + pad(year, 2));
+}
 
+function pad(str, max) {
+    str = str.toString();
+    return str.length < max ? pad("0" + str, max) : str;
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

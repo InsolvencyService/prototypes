@@ -241,16 +241,16 @@
                                 <thead>
                                     <tr>
                                         <th>Address</th>
-                                        <th>Jointly owned</th>
-                                        <th>Value</th>
+                                        <th>Date moved in</th>
+                                        <th>Date moved out</th>
                                         <th>&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tablebody">
                                     <tr id="row1" class="loop" style="display:none">
                                         <td>1 The Place, AB1 2JH</td>
-                                        <td>Yes</td>
-                                        <td>£150,000</td>
+                                        <td>30/04/2014</td>
+                                        <td>22/03/2015</td>
                                         <td>
                                             <a href="#e" class="btn-edit">Edit</a>&nbsp;&nbsp;
                                             <a href="#" class="btn-delete">Delete</a>
@@ -378,52 +378,29 @@
 
             $(document).ready(function () {
                 // look for cookies coming back
-                var numproperties = 1;
-                if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
-                    numproperties = $.cookie("numproperties");
-                }
-                var value = 0.0;
-                var jointownership = "No";
-                var address = $.cookie("propertyline1");
-                for (i = 1; i <= numproperties; i++) {
-                    // TODO - make the next bit work
-                    if ($.cookie('property' + i + 'joint')) {
-                        jointownership = "Yes";
-                    }
-                    if ($.cookie('property' + i + 'value')) {
-                         value = numberWithCommas($.cookie('property' + i + 'value'));
-                         address = $.cookie('property' + i + 'address');
 
-                        var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-                        var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
-                        $("tbody").append(row);
-                    }
-                }
-                // TODO - remove this next bit when the above is working
-                if ($.cookie("numproperties") == null) {
-                    if ($.cookie('propertyvalue')) {
-                        value = numberWithCommas($.cookie('propertyvalue'));
-                    }
+                var prevaddress_l1 = $.cookie("prev_address_line_1");
+                var prevaddress_l2 = $.cookie("prev_address_line_2");
+                var prevaddress_l3 = $.cookie("prev_address_line_3");
 
-                    if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
-                        jointownership = "Yes";
-                    }
+                var prevaddress_town = $.cookie("prev_town");
+                var prevaddress_county = $.cookie("prev_county");
+                var prevaddress_postcode = $.cookie("prev_post_code");
+
+                var prevaddress_start = $.cookie("prev_movedin");
+                var prevaddress_end = $.cookie("prev_movedout");
+
+  
+      
+                if (prevaddress_l1) {
+                    var address = prevaddress_l1 + ", " + prevaddress_town + ", " + prevaddress_postcode;
 
                     var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-                    var row = "<tr><td>" + address + "</td><td>" + jointownership + "</td><td>" + value + "</td>" + editbuttons + "</tr>";
+                    var row = "<tr><td>" + address + "</td><td>" + prevaddress_start + "</td><td>" + prevaddress_end + "</td>" + editbuttons + "</tr>";
                     $("tbody").append(row);
                 }
+ 
 
-
-
-                if (getParameterByName("loop")) {
-                    $("#next").prop("href", "family-members.html");
-                }
-                if (numproperties < 1 && $.cookie("address_line_1") && $.cookie("address_line_1").length > 1) {
-                    $("#name").val($.cookie("address_line_1"));
-                    $("#postcode").val($.cookie("post_code"));
-                    //$("#add").prop("href", "amount.html");
-                }
             });
 
             $("#add").click(function (e) {
