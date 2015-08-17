@@ -202,7 +202,21 @@
                             <td class="value col-sm-3">&nbsp;</td>
 
                         </tr>
-                        <tr class="group-heading" id="assets3">
+                         <tr class="group-heading" id="assets3">
+                            <td class="group-title col-sm-6">
+                                <div>Do you have a pension, life insurance or endowment?</div>
+                            </td>
+                            <td class="actions col-sm-3">
+                                <span class="answerno" style="display:none">No</span>
+                                <a href="#" class="next edit button">Yes</a>
+                                <a href="#" class="declare button">No</a>
+                            </td>
+
+                            <td class="value col-sm-3">&nbsp;</td>
+
+                        </tr>
+                        
+                        <tr class="group-heading" id="assets4">
                             <td class="group-title col-sm-6">
                                 <div>Do you have any items or cash?</div>
                                 <div class="form-hint">There are detailed questions in this section</div>
@@ -214,20 +228,7 @@
                             <td class="value col-sm-3">&nbsp;</td>
 
                         </tr>
-                        <tr class="group-heading" id="assets4">
-                            <td class="group-title col-sm-6">
-                                <div>Do you have life insurance?</div>
-
-                            </td>
-                            <td class="actions col-sm-3">
-                                <span class="answerno" style="display:none">No</span>
-                                <a href="#" class="next edit button">Yes</a>
-                                <a href="#" class="declare button">No</a>
-                            </td>
-
-                            <td class="value col-sm-3">&nbsp;</td>
-
-                        </tr>
+                       
 
                     </tbody>
                 </table>
@@ -248,7 +249,7 @@
             <div class="form-navigation form-group">
 
                 <div>
-                    <a class="button" href="../overview.html?section4=complete" id="next">Continue</a>
+                    <a class="button" href="recoveries/summary.html" id="next">Continue</a>
                 </div>
                 <div>
                     <br>
@@ -353,7 +354,7 @@ $(document).ready(function() {
 
                // $("#" + stage + itemnumber + " a.edit").show().text("Edit");
                 $("#" + stage + previous + " a.edit").show().removeClass("button");
-                if (previous != 3) {
+                if (previous != 4) {
                     $("#" + stage + previous     + " a.edit").text("Edit");
                 }
                 for (i = 1; i < itemnumber; i++) {
@@ -367,7 +368,7 @@ $(document).ready(function() {
                 $("#" + stage + itemnumber +  " .declare").show();
 				$("#" + stage + itemnumber).addClass("well"); 
          
-	             if (itemnumber > 3) {
+	             if (itemnumber > 4) {
                     $("#next").show();
                 }
 
@@ -435,7 +436,7 @@ $(document).ready(function() {
 				$(".declare").on("click", function () {
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button");
-				    if (itemnumber != 3) {
+				    if (itemnumber != 4) {
 				        $("#" + stage + itemnumber + " a.edit").text("Edit");
 				    }
 				    itemnumber = itemnumber + 1;
@@ -443,7 +444,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().addClass("button");
 				    $("#" + stage + itemnumber).addClass("well");
 
-				    if (itemnumber > 3) {
+				    if (itemnumber > 4) {
 				        $("#next").show();
 				    }
 				});
