@@ -82,7 +82,9 @@ table td[class*=col-], table th[class*=col-]{
 			padding-right:20px
 
 }
-
+.totalrow td{
+    font-weight:bold;
+}
     </style>
 
 
@@ -186,19 +188,9 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td class="group-title col-sm-8">
                                                     Cash from bank
                                                 </td>
+                                                <td class="value col-sm-2">£109.78</td>
                                                 <td class="actions col-sm-2">
                                                     <a href="../banks/add_bank.html?loop=true" class="next edit">Edit</a>
-
-                                                </td>
-                                                <td class="value col-sm-2">£109.78</td>
-                                            </tr>
-                                            <tr class="totalhide" style="display:none">
-                                                <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%"></span>
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -209,19 +201,9 @@ table td[class*=col-], table th[class*=col-]{
                                                  <a href="#" class="declare" id="btn-no">I don't have any cash</a>
 
                                                 </td>
+                                                <td class="value"></td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="cash.html?type=cash&page=1" class="next edit button">Start</a>
-
-                                                </td>
-                                                <td class="value col-sm-2">&nbsp;</td>
-                                            </tr>
-                                            <tr class="totalhide" style="display:none">
-                                                <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%"></span>
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="cash.html?type=cash&page=1" class="edit button">Start</a>
                                                 </td>
                                             </tr>
 									</tbody>
@@ -231,19 +213,19 @@ table td[class*=col-], table th[class*=col-]{
                                                     Household items of exceptional value<br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any household items of exceptional value</a>
                                                 </td>
-                                                <td  class="actions">
-                                                    <a href="household.html?type=household&page=2" style="display:none" class="edit">Edit</a>
-                                                </td>
 
-                                                <td class="value"></td>
+                                                <td></td>
+                                                <td  class="actions">
+                                                    <a href="household.html?type=household&page=2" style="display:none" class="edit button">Start</a>
+                                                </td>
                                             </tr>
-                                             <tr class="totalhide" style="display:none">
+                                             <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value"></td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="household.html?type=household&page=2&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
 									</tbody>
@@ -253,19 +235,19 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td>Any other assets or possessions<br />
                                                     <a href="#" style="display:none" class="declare">I have no other items</a>
 												</td>
-                                                <td class="actions">
-                                                    <a href="possessions.html?type=possessions&page=3" style="display:none" class="edit">Edit</a>
-                                                </td>
 
                                                 <td class="value"></td>
+                                                <td class="actions">
+                                                    <a href="possessions.html?type=possessions&page=3" style="display:none" class="edit button">Edit</a>
+                                                </td>
                                             </tr>
-                                             <tr class="totalhide" style="display:none">
+                                             <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value"></td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                     <a href="possessions.html?type=possessions&page=3&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
 									</tbody>
@@ -275,20 +257,20 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td>
                                                     Compensation or legal claim<br />
                                                     <a href="#" style="display:none" class="declare">I have no contributions</a></td>
+                                                    <td></td>
                                                 <td class="actions">
-                                                    <a href="compensation.html?type=compensation&page=4" style="display:none" class="edit">Start</a>
+                                                    <a href="compensation.html?type=compensation&page=4" style="display:none" class="edit button">Start</a>
 												</td>
 
-                                                <td class="value">&nbsp;</td>
 
                                             </tr>
-                                             <tr class="totalhide" style="display:none">
+                                             <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value">&nbsp;</td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="compensation.html?type=compensation&page=4&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
 									</tbody>
@@ -298,19 +280,19 @@ table td[class*=col-], table th[class*=col-]{
                                                     Interest in a will or trust<br />
                                                     <a href="#" style="display:none" class="declare">I don’t benefit from any trusts or wills</a>
                                                 </td>
+                                                <td class="value"></td>                                         
                                                 <td class="actions">
-                                                    <a href="beneficiary.html?type=beneficiary&page=5" style="display:none" class="edit">Edit</a>
+                                                    <a href="beneficiary.html?type=beneficiary&page=5" style="display:none" class="edit button">Start</a>
 
                                                 </td>
-                                                <td class="value"></td>
                                             </tr>
-                                            <tr class="totalhide" style="display:none">
+                                            <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value">&nbsp;</td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="beneficiary.html?type=beneficiary&page=5&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
 										</tbody>
@@ -320,19 +302,19 @@ table td[class*=col-], table th[class*=col-]{
                                                 Stocks, shares and investment<br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any stocks, shares or investments</a>
                                                 </td>
+                                                <td class="value"></td>
                                                 <td class="actions">
-                                                    <a href="investments.html?type=investments&page=6" style="display:none" class="edit">Edit</a>
+                                                    <a href="investments.html?type=investments&page=6" style="display:none" class="edit button">Start</a>
 
                                                 </td>
-                                                <td class="value"></td>
                                             </tr>
-                                            <tr class="totalhide" style="display:none">
+                                            <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value">&nbsp;</td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="investments.html?type=investments&page=6&edit=true" style="display:none" class="edit button">Edit</a>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -342,19 +324,20 @@ table td[class*=col-], table th[class*=col-]{
                                                     Self employed business assets<br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any self employed trading assets</a>
                                                 </td>
+                                                <td class="value"></td>
                                                 <td class="actions">
-                                                    <a href="trade.html?type=trade&page=7" style="display:none" class="edit">Edit</a>
+                                                    <a href="trade.html?type=trade&page=7" style="display:none" class="edit button">Start</a>
 
                                                 </td>
-                                                <td class="value"></td>
+
                                             </tr>
-                                            <tr class="totalhide" style="display:none">
+                                            <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value">&nbsp;</td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="trade.html?type=trade&page=7&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -365,19 +348,20 @@ table td[class*=col-], table th[class*=col-]{
                                                     Money you’re owed<br />
                                                     <a href="#" style="display:none" class="declare">No one owes me any money</a>
                                                 </td>
+                                                <td class="value"></td>
                                                 <td class="actions">
-                                                    <a href="money.html?type=money&page=8" style="display:none" class="edit">Edit</a>
+                                                    <a href="money.html?type=money&page=8" style="display:none" class="edit button">Start</a>
 
                                                 </td>
-                                                <td class="value"></td>
                                             </tr>
-                                            <tr class="totalhide" style="display:none">
+                                            <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value">&nbsp;</td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="money.html?type=money&page=8&edit=true" style="display:none" class="edit">Edit</a>
+
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -388,27 +372,27 @@ table td[class*=col-], table th[class*=col-]{
                                                     Other<br />
                                                     <a href="#" style="display:none" class="declare">I have added all my other assets</a>
                                                 </td>
+                                                <td class="value"></td>
                                                 <td class="actions">
-                                                    <a href="other.html?type=other&page=9" style="display:none" class="edit">Edit</a>
+                                                    <a href="other.html?type=other&page=9" style="display:none" class="edit">Start</a>
 
                                                 </td>
-                                                <td class="value"></td>
                                             </tr>
-                                            <tr class="totalhide" style="display:none">
+                                            <tr class="totalrow" style="display:none">
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%"></span>
                                                 </td>
-                                                <td></td>
+                                                <td class="value">&nbsp;</td>
                                                 <td>
-                                                    <a href="#" class="declare">I have added my cash assets</a>
+                                                    <a href="other.html?type=other&page=9&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
                                             <tr class="group-heading totalrow" id="incometotal">
                                                 <td></td>
+                                                <td class="totalvalue"></td>      
                                                 <td class="actions" style="text-align:right">
                                                     <span style="float:right; width:100%">Total</span>
                                                 </td>
-                                                <td class="totalvalue"></td>
                                             </tr>
 
                                         </tbody>
@@ -531,13 +515,6 @@ table td[class*=col-], table th[class*=col-]{
 
                 $(".declare").hide();
 
-                $("#" + stage + itemnumber + " .parent a.edit").show().addClass("button").text("Start");
-                $("#" + stage + itemnumber +  " .declare").show();
-                $("#" + stage + itemnumber + " .total").show();
-
-                if (stage == "item" && itemnumber > 8) {
-                    $("#next").show();
-                }
 
                //show child amounts
                 var currenttype = "other";
@@ -545,7 +522,7 @@ table td[class*=col-], table th[class*=col-]{
                     currenttype = getParameterByName("type");
                 }
 
-                showchildrowdata();
+                showchildrowdata(itemnumber);
 
 
                 if (stage == "item" && itemnumber > 8) {
@@ -560,10 +537,8 @@ table td[class*=col-], table th[class*=col-]{
 				    itemnumber = itemnumber + 1;
 
 				    if (itemnumber <= 9) {
-				        showchildrowdata();
+				        showchildrowdata(itemnumber);
 
-				        $("#" + stage + itemnumber + " .declare").show();
-				        $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
 				    }
 				    else {
 				        $("#next").show();
@@ -574,7 +549,7 @@ table td[class*=col-], table th[class*=col-]{
             });
 
  
-           function showchildrowdata() {
+           function showchildrowdata(currentrow) {
                 var totalamount = 0.00;
                 for (rowid = 1; rowid <= 9; rowid++) {
                     var totalforrow = 0.00;
@@ -585,30 +560,56 @@ table td[class*=col-], table th[class*=col-]{
                         numofthistype = parseInt($.cookie("num" + type));
                     }
                     $("#item" + rowid + " tr.child").remove();
+                    var numrowswithvalues = 0;
                     for (i = 1; i <= numofthistype; i++) {
                         // Change the skip button text
-                        $("#item" + rowid + " .declare").text($("#item" + rowid + " .totalhide .declare").text());
-
+                        $("#item" + rowid + " .declare").text($("#item" + rowid + " .totalrow .declare").text());
 
                         // append the child row 
                         if ($.cookie(type + i + 'amount') > 0) {
+                            numrowswithvalues = numrowswithvalues + 1;
+
                             var childamount = parseFloat($.cookie(type + i + 'amount'));
                             var childname = $.cookie(type + i + 'name');
-                            var insertext = '<tr class="child"><td>' + childname + '</td>';
-                            insertext = insertext + '<td class="value">' + childamount + '</td>';
-                            insertext = insertext + '<td class="actions"><a href="amount.html?type=" + type + "&edit=true&page=' + itemnumber + '"';
+                            var insertext = '<tr class="child childrow"><td>' + childname + '</td>';
+                            insertext = insertext + '<td class="value">' + numberWithCommas(childamount) + '</td>';
+                            insertext = insertext + '<td class="actions"><a href=' + type + '.html' + '?edit=true&page=' + itemnumber + '"';
                             insertext = insertext + ' class="child-edit">Edit</a>&nbsp;<a href="#" class="delete">Delete</a></td></tr>';
-                            /* skip this for now */
-                            /*
-                            $("#" + stage + rowid + " .totalhide").before(insertext);
-                            */
+
+                            $("#" + stage + rowid + " .totalrow").before(insertext);
                             $("#" + stage + rowid + " .child").show();
 
                             totalforrow = totalforrow + childamount;
                         }
-                        $("#item" + rowid + " .value").text(numberWithCommas(totalforrow));
                     }
-                    totalamount = totalamount + totalforrow;
+
+                    if (totalforrow > 0 && (numrowswithvalues > 1)) {
+                        if (rowid == 1) {
+                            $("#item" + rowid + " .value").text(numberWithCommas(totalforrow));
+                        }
+                        else {
+                            $("#" + stage + rowid + " .totalrow").show();
+                            $("#item" + rowid + " .totalrow .value").text(numberWithCommas(totalforrow));
+                        }
+                        totalamount = totalamount + totalforrow;
+                    }
+
+
+                    if (currentrow == rowid) {
+                        if (numrowswithvalues == 0) {
+                            $("#" + stage + rowid + " .parent a.edit").show().addClass("button").text("Start");
+                            $("#" + stage + rowid + " .declare").show();
+                            $("#" + stage + rowid + " .total").show();
+                        }
+                        else {
+                            // move to show next row with no values
+                            currentrow = currentrow + 1;
+                        }
+                    }
+
+                }// for
+                if (currentrow > 8) {
+                    $("#next").show();
                 }
 
                 $("#overalltotal .totalvalue").text(totalamount);
