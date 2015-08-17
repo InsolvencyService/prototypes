@@ -204,19 +204,7 @@
                         </tr>
                         <tr class="group-heading" id="assets3">
                             <td class="group-title col-sm-6">
-                                <div>Do you have any items or cash?</div>
-                                <div class="form-hint">There are detailed questions in this section</div>
-                            </td>
-                            <td class="actions col-sm-3">
-                                <a href="items/summary.html" class="next edit button">Start</a>
-                            </td>
-
-                            <td class="value col-sm-3">&nbsp;</td>
-
-                        </tr>
-                        <tr class="group-heading" id="assets4">
-                            <td class="group-title col-sm-6">
-                                <div>Do you have life insurance?</div>
+                                <div>Do you have pensions,life insurance or endowments?</div>
 
                             </td>
                             <td class="actions col-sm-3">
@@ -228,6 +216,19 @@
                             <td class="value col-sm-3">&nbsp;</td>
 
                         </tr>
+                        <tr class="group-heading" id="assets4">
+                            <td class="group-title col-sm-6">
+                                <div>Do you have any items or cash?</div>
+                                <div class="form-hint">There are detailed questions in this section</div>
+                            </td>
+                            <td class="actions col-sm-3">
+                                <a href="items/summary.html" class="next edit button">Start</a>
+                            </td>
+
+                            <td class="value col-sm-3">&nbsp;</td>
+
+                        </tr>
+                        
 
                     </tbody>
                 </table>
@@ -248,7 +249,7 @@
             <div class="form-navigation form-group">
 
                 <div>
-                    <a class="button" href="../overview.html?section4=complete" id="next">Continue</a>
+                    <a class="button" href="recoveries/summary.html" id="next">Continue</a>
                 </div>
                 <div>
                     <br>
@@ -367,7 +368,7 @@ $(document).ready(function() {
                 $("#" + stage + itemnumber +  " .declare").show();
 				$("#" + stage + itemnumber).addClass("well"); 
          
-	             if (itemnumber > 3) {
+	             if (itemnumber > 4) {
                     $("#next").show();
                 }
 
@@ -443,7 +444,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " a.edit").show().addClass("button");
 				    $("#" + stage + itemnumber).addClass("well");
 
-				    if (itemnumber > 3) {
+				    if (itemnumber > 4) {
 				        $("#next").show();
 				    }
 				});
