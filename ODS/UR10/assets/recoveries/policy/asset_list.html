@@ -383,11 +383,6 @@ $(document).ready(function() {
 			
 		}
 	}
-
-
-
-		
-	}
 	
 	$("#next").on("click", function(e){
 		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
@@ -404,6 +399,7 @@ $(document).ready(function() {
 			e.preventDefault();
 		}
 	});
+	
 	var rowid = "row1";
 	var id = 1;
 	$(".btn-delete").on("click", function () {
@@ -412,34 +408,31 @@ $(document).ready(function() {
 			id = parseInt(rowid.substring(3, rowid.length));
 			$("#confirm-delete").show();
 	    }
-
-	    $("#btn-confirm-delete").on("click", function () {
-	        $.cookie('creditordeleted' + id, "1", { expires: 1 });
-	        $("#row" + id).hide();
-	        $("#confirm-delete").hide();
-
-	        total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
-	        $("#box-total").text(numberWithCommas(total));
-
-	    })
 	});
 	
+	$("#btn-confirm-delete").on("click", function () {
+	    $.cookie('creditordeleted' + id, "1", { expires: 1 });
+	    $("#row" + id).hide();
+	    $("#confirm-delete").hide();
 	
+	    total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
+	    $("#box-total").text(numberWithCommas(total));
 	
-   function calctotal() {
-        var totalamount = 0;
-        $('tr td.amount').each(function () {
-            if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
-            	var amount = $(this).text();
-                totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
-                $(this).val(parseFloat($(this).text()));
-            }
-        });
-        return totalamount;
-    }
+	});
 
 });
 
+function calctotal() {
+    var totalamount = 0;
+    $('tr td.amount').each(function () {
+        if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
+        	var amount = $(this).text();
+            totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
+            $(this).val(parseFloat($(this).text()));
+        }
+    });
+    return totalamount;
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
