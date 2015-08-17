@@ -214,10 +214,7 @@ display:block;
 			    <fieldset class="inline">
 			        <div id="asset" class="form-group">
 						
-			            <label for="vehicle" class="block-label">
-			                <input id="vehicle" name="assettype" type="radio"  value="Life insurance">
-			                Vehicle
-			            </label>
+			            
 			            <label for="other" class="block-label">
 			                <input id="other" name="assettype" type="radio"  value="Endowment">
 			                Other
@@ -316,13 +313,13 @@ display:block;
 $(document).ready(function() {
 		var count = $.cookie('VehicleCount');
 		for(i=1; i<=count; i++){
-			var make = $.cookie('VehicleMark'+i);
+			var make = $.cookie('VehicleMake'+i);
 			var model = $.cookie('VehicleModel'+i);
 			var VRN = $.cookie('VehicleVRN'+1);
 			var vehicle = make + " " + model + " " + VRN;
 			var checkbox = '<label for="'+VRN+'" class="block-label"><input id="'+VRN+'" name="assettype" type="radio"  value="'+VRN+'">'+ vehicle +'</label>';
 			alert(checkbox);
-			$("#asset").append(checkbox);	
+			$("#asset").prepend(checkbox);	
 		}	
 });
 
