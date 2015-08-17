@@ -314,13 +314,8 @@ display:block;
 
 
 $(document).ready(function() {
-	var count = $.cookie('VehicleCount');
-	if(count==null || count==='undefined'){
-		$("#next").prop("href", "add-vehicle.html?unknown=true");
-		$("#next").trigger('click');
-	}
-	else{
-		for(i=1; i>count; i++){
+		var count = $.cookie('VehicleCount');
+		for(i=0; i<count; i++){
 			var make = $.cookie('VehicleMark'+i);
 			var model = $.cookie('VehicleModel'+i);
 			var VRN = $.cookie('VehicleVRN'+1);
@@ -328,9 +323,7 @@ $(document).ready(function() {
 			var checkbox = '<label for="'+VRN+'" class="block-label"><input id="'+VRN+'" name="assettype" type="radio"  value="'+VRN+'>'+ vehicle +'/label>';
 			alert(checkbox);
 			$("#asset").append(checkbox);	
-		}
-	}
-	
+		}	
 });
 
 /*

@@ -400,7 +400,14 @@ $(document).ready(function() {
 
 	$("#next").on("click", function(e){
 		if ($('#vehicle').prop('checked')==true){
-			$('#next').prop('href', 'vehicle.html');		
+			var vehcount = $.cookie('VehicleCount');
+			if(vehcount=="" || vehcount==null){
+				$("#next").prop("href", "add-vehicle.html?unknown=true");
+			}
+			else
+			{
+				$('#next').prop('href', 'vehicle.html');		
+			}
 		}
 		else if ($('#other').prop('checked')==true){
 			$('#next').prop('href', 'other.html');		
