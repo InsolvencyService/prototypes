@@ -300,9 +300,6 @@ var count;
 $(document).ready(function() {
 	var companyn = $.cookie('ass-rec-pol-tempcomp');
 	count= $.cookie('ass-rec-pol-count');
-	if(count == null){
-		count = 0;
-	}
 	$("#name").val(titleCaps(companyn));
 });
 
@@ -318,8 +315,7 @@ function getParameterByName(name) {
 }
 
 function writeCookies(){
-	count ++;
-	$.cookie('ass-rec-pol-count', count, { path: '/' });
+	
 	$.cookie('ass-rec-pol-'+count+"-company", $("#name").val(), { path: '/' });
 	$.cookie('ass-rec-pol-'+count+"-add1", $("#applicant_address_line_1").val(), { path: '/' });
 	$.cookie('ass-rec-pol-'+count+"-add2", $("#applicant_address_line_2").val(), { path: '/' });

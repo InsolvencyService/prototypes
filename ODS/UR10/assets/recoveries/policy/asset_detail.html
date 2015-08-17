@@ -393,6 +393,9 @@ function writeCookies() {
 	$.cookie('ass-rec-pol-'+count+"-number", $("#policynumber").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-month", $("#month").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-year", $("#year").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-company", $.cookie("ass-rec-pol-tempcomp"), { path: '/' });
+
+	
 }
    
 function numberWithoutCommas(x) {
