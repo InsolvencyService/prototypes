@@ -311,11 +311,11 @@ display:block;
 	<script type="text/javascript" src="../../../shared/loop.js"></script>
 
 <script type="text/javascript">
-var count="";
+
 
 $(document).ready(function() {
-	count = $.cookie('VehicleCount');
-	if(count==null || count===undefined){
+	var count = $.cookie('VehicleCount');
+	if(count==null || count==='undefined'){
 		$("#next").prop("href", "add-vehicle.html?unknown=true");
 		$("#next").trigger('click');
 	}
@@ -326,10 +326,11 @@ $(document).ready(function() {
 			var VRN = $.cookie('VehicleVRN'+1);
 			var vehicle = make + " " + model + " " + VRN;
 			var checkbox = '<label for="'+VRN+'" class="block-label"><input id="'+VRN+'" name="assettype" type="radio"  value="'+VRN+'>'+ vehicle +'/label>';
+			alert(checkbox);
 			$("#asset").append(checkbox);	
 		}
 	}
-	alert(count);
+	
 });
 
 /*
