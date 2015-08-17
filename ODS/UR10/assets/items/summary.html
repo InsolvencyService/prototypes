@@ -183,7 +183,7 @@ table td[class*=col-], table th[class*=col-]{
     </tr>
 </thead>	
 
-                                        <tbody class="group-title" id="item0" data-role="cash">
+                                        <tbody class="group-title" id="item0" data-role="bankcash">
                                             <tr class="group-heading parent">
                                                 <td class="group-title col-sm-8">
                                                     Cash from bank
@@ -553,7 +553,7 @@ table td[class*=col-], table th[class*=col-]{
                 var totalamount = 0.00;
                 for (rowid = 1; rowid <= 9; rowid++) {
                     var totalforrow = 0.00;
-                    type = $("#item" + rowid).data("role");
+                    var type = $("#item" + rowid).data("role");
 
                     var numofthistype = 0;
                     if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {

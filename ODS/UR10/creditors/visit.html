@@ -232,20 +232,22 @@ display:block;
 <p class="clearfix"><br/></p>
                     <div class="form-group">
                       <label for="inputBody" class="form-label-bold">What action did they take?</label>
-                      <p class="form-hint">Include details of any items that the enforcement officer or bailiff took possession of.</p>
-                      <div><textarea class="form-control" id="inputBody" rows="12"></textarea></div>
+                      <p class="form-hint">Select any items that the enforcement officer or bailiff took possession of.</p>
+
                     </div>
 
 <p class="clearfix"><br/></p>
+        <fieldset>
+            <div class="form-group visit">
 
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold">
-		What is the total value of the items seized?</label>
-		<div class="form-hint">Approximate value of the items</div>
-		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
-	</div>
 
+                <label for="item-other" class="block-label" id="lbl-other-item">
+                    <input id="item-other" name="itemstaken" type="checkbox">
+                    Other item not included
+                </label>
+            </div>
+        </fieldset>
+        <p class="clearfix"><br /></p>
 
 
 <p class="clearfix"><br/></p>
@@ -326,6 +328,8 @@ display:block;
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+    var assetypes = ["bankcash", "cash", "household", "possessions", "compensation", "beneficiary", "investments", "trade", "money", "other"];
+
 $(document).ready(function() {
 	
 	var normalroute = $("#next").prop("href");
@@ -335,7 +339,10 @@ $(document).ready(function() {
 	if (creditor && creditor.length > 0){
 		$(".creditor").text(creditor);
 	}
-	
+
+	//'<label for="item1" class="block-label"><input id="item1" name="itemstaken" type="checkbox">Old Piano</label>';
+	$("#lbl-other-item").prepend(getassetshtml());
+
 	$("#next").on("click", function(e){
 		//e.preventDefault();
 		var amount = $("#amount").val();
@@ -354,6 +361,32 @@ $(document).ready(function() {
 
 
 });
+
+
+function getassetshtml() {
+    var html = "";
+    var itemcount = 0;
+    for (rowid = 1; rowid <= 9; rowid++) {
+
+        var type = assetypes[rowid];
+
+        var numofthistype = 0;
+        if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
+            numofthistype = parseInt($.cookie("num" + type));
+        }
+
+        for (i = 1; i <= numofthistype; i++) {
+            itemcount = itemcount + 1;
+            var itemname = $.cookie(type + i + 'name');
+            html = html + '<label for="item' + itemcount + '" class="block-label">';
+            html = html + '<input id="item' + itemcount + '" name="itemstaken" type="checkbox">' + itemname + '</label>';
+        }
+
+    }// for
+ 
+    return html;
+
+}
 
 
 function getParameterByName(name) {
