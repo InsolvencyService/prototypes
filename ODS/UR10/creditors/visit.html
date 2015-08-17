@@ -243,7 +243,7 @@ display:block;
 
                 <label for="item-other" class="block-label" id="lbl-other-item">
                     <input id="item-other" name="itemstaken" type="checkbox">
-                    Other item not included
+                    Other item
                 </label>
             </div>
         </fieldset>
@@ -350,24 +350,29 @@ $(document).ready(function() {
 
 	$("#next").on("click", function (e) {
 	    var rowid = 1;
-		//e.preventDefault();
-	    $(".visit input[type=checkbox]:checked").each(function (e) {
+	    //e.preventDefault();
 
-	        if ($(this).data("amount")) {
-	            amount = amount + parseFloat($(this).data("amount"));
+	    if ($(".visit input#item-other").is(":checked")) {
+           $("#next").prop("href", "other-item.html");
+	    };
+
+	        $(".visit input[type=checkbox]:checked").each(function (e) {
+
+	            if ($(this).data("amount")) {
+	                amount = amount + parseFloat($(this).data("amount"));
+	            }
+	            // save the total amount against the creditorname
+	        });
+
+	        var date;
+	        if (amount && amount > 0) {
+	            date = $("#day").val() + "-" + $("#month").val() + "-" + $("#year").val();
+	            //window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
+	            $.cookie("creditorrow", parseFloat(rowid), { expires: 1 });
+	            $.cookie("creditor" + rowid + "name", creditor, { expires: 1 });
+	            $.cookie("creditor" + rowid + "amount", parseFloat(amount), { expires: 1 });
+	            $.cookie("creditor" + rowid + "date", date, { expires: 1 });
 	        }
-	        // save the total amount against the creditorname
-	    });
-
-		var date;
-		if (amount && amount > 0){
-			date =  $("#day").val() + "-" +  $("#month").val() + "-" +  $("#year").val();
-			//window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
-	        $.cookie("creditorrow", parseFloat(rowid), { expires: 1});
-	        $.cookie("creditor" + rowid + "name", creditor, { expires: 1});	        
-	        $.cookie("creditor" + rowid + "amount", parseFloat(amount), { expires: 1 });
-	        $.cookie("creditor" + rowid + "date", date, { expires: 1 });
-		}
 
 
 	});

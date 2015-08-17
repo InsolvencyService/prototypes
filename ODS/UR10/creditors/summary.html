@@ -217,22 +217,6 @@ display:block;
                         	<td></td>
                     	</tr>
                     </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="actionlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="actionlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
 
                 </table>
   				<br>
@@ -250,12 +234,7 @@ display:block;
 					</tr>
 				</thead>
 				<tbody>
-                    <tr id="row1">
-                        <td class="name">&nbsp;</td>
-                        <td class="date"></td>
-                        <td class="amount">£ </td>
-                        <td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-                    </tr>
+
 				</tbody>
 			</table>
 		</div>
@@ -377,19 +356,15 @@ $(document).ready(function() {
 	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
 	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
 
-	$("#enforcementlist tbody").prepend(getassetshtml());
+	$("#enforcementlist tbody").prepend(getenforcementhtml());
 
 });
 
 var assetypes = ["bankcash", "cash", "household", "possessions", "compensation", "beneficiary", "investments", "trade", "money", "other"];
 
 
-function getassetshtml() {
+function getenforcementhtml() {
     var html = "";
     var itemcount = 0;
     var creditorname = "";
