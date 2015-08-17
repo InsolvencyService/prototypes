@@ -189,7 +189,24 @@
 
                         </tr>
 
-                        <tr class="group-heading"  id="assets2">
+                        <tr class="group-heading" id="assets2">
+                            <td class="group-title col-sm-6">
+                                <div>Have you cashed in, transferred, or given away any pensions, endowments or life insurance policies in the last 5 years?</div>
+                            </td>
+                            <td class="actions col-sm-3">
+                            
+                                <span class="answerno" style="display:none">No</span>
+                                <a href="policy/asset_list.html" class="next edit button">Yes</a>
+                                <a href="#" class="declare button">No</a>
+							
+
+                            </td>
+
+                            <td class="value col-sm-3">&nbsp;</td>
+
+                        </tr>
+                        
+                        <tr class="group-heading"  id="assets3">
                             <td class="group-title col-sm-6">
                                 <div class="group-title">Have you sold, transferred or given away any assets or possessions in the last 5 years?</div>
 								<div class="form-hint">For example, vehicles, stocks, tools of the trade, furniture, etc</div>
@@ -201,22 +218,6 @@
                                 <a href="#" class="next edit button">Yes</a>
                                 <a href="#" class="declare button">No</a>
                            
-                            </td>
-
-                            <td class="value col-sm-3">&nbsp;</td>
-
-                        </tr>
-                        <tr class="group-heading" id="assets3">
-                            <td class="group-title col-sm-6">
-                                <div>Have you cashed in, transferred, or given away any pensions, endowments or life insurance policies in the last 5 years?</div>
-                            </td>
-                            <td class="actions col-sm-3">
-                            
-                                <span class="answerno" style="display:none">No</span>
-                                <a href="policy/asset_list.html" class="next edit button">Yes</a>
-                                <a href="#" class="declare button">No</a>
-							
-
                             </td>
 
                             <td class="value col-sm-3">&nbsp;</td>
@@ -416,7 +417,8 @@ $(document).ready(function() {
 	                 $("thead").show();
 	             }
 
-				$(".declare").on("click", function () {
+				$(".declare").on("click", function (e) {
+				 	e.preventDefault();
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;

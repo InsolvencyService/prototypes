@@ -188,7 +188,7 @@ display:block;
 		
 		
 		<div>
-			<label class="form-label-bold" >Who did you <span class="sale" style="display:none">sell or transfer the policy</span><span class="gifted" style="display:none">give the policy</span><span class="surrender" style="display:none">give part of the surrender value</span> to?<br><br></label>
+			<label class="form-label-bold" >Who did you <span class="sale" style="display:none">sell the policy</span><span class="gifted" style="display:none">give/transfer the policy</span><span class="surrender" style="display:none">give part of the surrender value</span> to?<br><br></label>
 			
 			<div>
 				<div class="form-group" >
@@ -314,14 +314,14 @@ display:block;
         <p>&nbsp;</p>
 		
 		<div class="form-group sale gifted"  style="display:none">                        
-			<label id="marketvalue_label" for="marketvalue" class="form-label-bold">What was the surrender value of the policy at the time you <span class="sale"  style="display:none">sold or transferred it</span><span class="gifted"  style="display:none">gave it away</span>?</label>	
+			<label id="marketvalue_label" for="marketvalue" class="form-label-bold">What was the surrender value of the policy at the time you <span class="sale"  style="display:none">sold it</span><span class="gifted"  style="display:none">gave/tranferred it away</span>?</label>	
 			<p class="form-hint">Please provide the most accurate figure you can</p>
 			<span class="currency">£ </span><input id="marketvalue" name="marketvalue" type="text" value="" class="amount-value" />              
         </div>
         <p>&nbsp;</p>
         
         <div class="form-group sale" style="display:none">                        
-			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">What was the actual amount for which the policy was sold or transferred (before costs of sale)?</label>	
+			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">What was the actual amount for which the policy was sold (before costs of sale)?</label>	
 			<span class="currency">£ </span><input id="actualvalue" name="actualvalue" type="text" value="" class="amount-value" />              
         </div>
         
@@ -418,13 +418,13 @@ $(document).ready(function() {
 	var type = getParameterByName("q");
 	$("."+type).show();
 	if(type == "gifted"){
-		type == "gifted part of the surrender value"
+		type == "gifted or transferred"
 	}
 	else if(type == "sale"){
-		type = "sold or transfered";
+		type = "sold";
 	}
 	else if(type == "surrender"){
-		type = "surrendered";
+		type = "gifted part of the surrender value";
 	}
 	$("#title1").text(type);
 	
