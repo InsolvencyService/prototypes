@@ -176,14 +176,14 @@
                                 <div>Have you owned any property in the last 3 years?</div>
                             </td>
                             <td class="actions col-sm-3">
-                                <span class="answerno" style="display:none">No</span>
+                                
                                 <a href="property/list_properties.html" class="next edit button">Yes</a>
                                 <a href="#" class="declare button">No</a>
 
 
                             </td>
 
-                            <td class="value col-sm-3">&nbsp;</td>
+                            <td class="value col-sm-3"><span class="answerno" style="display:none">No</span></td>
 
                         </tr>
 
@@ -195,12 +195,11 @@
 
                             </td>
                             <td class="actions col-sm-3">
-                                <span class="answerno" style="display:none">No</span>
                                 <a href="vehicle/list_vehicles.html" class="next edit button">Yes</a>
                                 <a href="#" class="declare button">No</a>
                             </td>
 
-                            <td class="value col-sm-3">&nbsp;</td>
+                            <td class="value col-sm-3"><span class="answerno" style="display:none">No</span></td>
 
                         </tr>
                         <tr class="group-heading" id="assets3">
@@ -210,19 +209,18 @@
 
                             </td>
                             <td class="actions col-sm-3">
-                                <span class="answerno" style="display:none">No</span>
                                 <a href="#" class="next edit button">Yes</a>
                                 <a href="#" class="declare button">No</a>
                             </td>
 
-                            <td class="value col-sm-3">&nbsp;</td>
+                            <td class="value col-sm-3"><span class="answerno" style="display:none">No</span></td>
 
                         </tr>
                         <tr class="group-heading" id="assets4">
                             <td class="group-title col-sm-6">
-                                <div>We need to know about any other items or possessions 
+                                <div>We need to know about any other items  
 									you currently have?</div>
-                                <div class="form-hint">For example cash, furniture, jewellry, tools etc</div>
+                                <div class="form-hint">For example cash, furniture, jewellery, tools etc</div>
                             </td>
                             <td class="actions col-sm-3">
                                 <a href="items/summary.html" class="next edit button">Start</a>
@@ -339,102 +337,117 @@ var stage = "assets";
 var page = 1;
 
 $(document).ready(function() {
-                $("#next").hide();
+    $("#next").hide();
 
-				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
-				    stage = getParameterByName("stage");
-				}
-				if (getParameterByName("page") && getParameterByName("page").length > 0) {
-				    page = getParameterByName("page");
-				}
+    if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
+        stage = getParameterByName("stage");
+    }
+    if (getParameterByName("page") && getParameterByName("page").length > 0) {
+        page = parseInt(getParameterByName("page"));
+    }
 
-                if (stage && stage.length > 0) {
-                    $("a.edit").removeClass("button").hide();
-                }
+    if (stage && stage.length > 0) {
+        $("a.edit").removeClass("button").hide();
+    }
 
-                itemnumber = parseInt(page);
-                var previous = itemnumber - 1;
+    itemnumber = parseInt(page);
+    var previous = itemnumber - 1;
 
-               // $("#" + stage + itemnumber + " a.edit").show().text("Edit");
-                $("#" + stage + previous + " a.edit").show().removeClass("button");
-                if (previous != 3) {
-                    $("#" + stage + previous     + " a.edit").text("Edit");
-                }
-                for (i = 1; i < itemnumber; i++) {
-                    $("#" + stage + i + " a.edit").text("Edit").show();
-                }
+    // $("#" + stage + itemnumber + " a.edit").show().text("Edit");
+    $("#" + stage + previous + " a.edit").show().removeClass("button");
+    if (previous != 3) {
+        $("#" + stage + previous     + " a.edit").text("Edit");
+    }
+    for (i = 1; i < itemnumber; i++) {
+        $("#" + stage + i + " a.edit").text("Edit").show();
+    }
 
-                $(".well").removeClass("well");  
+    $(".well").removeClass("well");  
                 
-                $(".declare").hide();    
-                $("#" + stage + itemnumber + " a.edit").show().addClass("button");
-                $("#" + stage + itemnumber +  " .declare").show();
-				$("#" + stage + itemnumber).addClass("well"); 
+    $(".declare").hide();    
+    $("#" + stage + itemnumber + " a.edit").show().addClass("button");
+    $("#" + stage + itemnumber +  " .declare").show();
+    $("#" + stage + itemnumber).addClass("well"); 
          
-	             if (itemnumber > 4) {
-                    $("#next").show();
+    if (itemnumber > 4) {
+        $("#next").show();
+    }
+
+    //Populate property amount - should be a negative value
+    //Property value - mortgage amount + secured loan amounts
+    var propertyvalue = 0.0;
+    var mortgageamount = 0.0;
+    var securedloansamount = 0.0;
+
+    if (parseFloat($.cookie('propertyvalue'))) {
+        propertyvalue = parseFloat($.cookie('propertyvalue'));
+    }
+    if (parseFloat($.cookie('mortgageamount'))) {
+        // TODO - check if its shared
+        mortgageamount = parseFloat($.cookie('mortgageamount'));
+    }
+    var numberofsecuredloans = 0;
+    if (parseInt($.cookie("numberofsecuredloans"))) {
+        numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
+    }
+    for (i = 1; i <= numberofsecuredloans; i++) {
+        if (parseFloat($.cookie('securedloan' + i))) {
+            // TODO - check if it's joint
+            if ($.cookie('loanshared' + i)) {
+                securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i)) * (50 / 100);
+            }
+            else
+            {
+                securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
+            }
+        }
+    }
+
+    if (getParameterByName("page").length > 0) {
+        if (page >= 1) {
+            var ownerpercentage = 100;
+            if (propertyvalue > 0) {
+                var personamount = mortgageamount;
+                if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
+                    ownerpercentage = 50;
+                    if ($.cookie('ownerpercentage')) {
+                        ownerpercentage = parseInt($.cookie('ownerpercentage'));
+                    }
+                    mortgageamount = mortgageamount * (ownerpercentage / 100);
                 }
+                personamount = (propertyvalue * (ownerpercentage / 100)) - (mortgageamount + securedloansamount);
+                $("#assets1 .value").text(numberWithCommas(personamount));
+                $("thead").show();
+            }
+            else {
+                $("#assets1 .answerno").show();
 
-                //Populate property amount - should be a negative value
-                //Property value - mortgage amount + secured loan amounts
-	             var propertyvalue = 0.0;
-	             var mortgageamount = 0.0;
-	             var securedloansamount = 0.0;
+            }
+        }
 
-	             if (parseFloat($.cookie('propertyvalue'))) {
-	                 propertyvalue = parseFloat($.cookie('propertyvalue'));
-	             }
-	             if (parseFloat($.cookie('mortgageamount'))) {
-                     // TODO - check if its shared
-	                 mortgageamount = parseFloat($.cookie('mortgageamount'));
-	             }
-	             var numberofsecuredloans = 0;
-	             if (parseInt($.cookie("numberofsecuredloans"))) {
-	                 numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
-	             }
-	             for (i = 1; i <= numberofsecuredloans; i++) {
-	                 if (parseFloat($.cookie('securedloan' + i))) {
-	                     // TODO - check if it's joint
-	                     if ($.cookie('loanshared' + i)) {
-	                         securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i)) * (50 / 100);
-	                     }
-	                     else
-	                     {
-	                         securedloansamount = securedloansamount + parseFloat($.cookie('securedloan' + i));
-	                     }
-	                 }
-	             }
+        if (page >= 2) {
+            if (parseFloat($.cookie('VehicleAssetTotal'))) {
+                $("#assets2 .value").text(numberWithCommas(parseFloat($.cookie('VehicleAssetTotal'))));
+            }
+            else {
+                $("#assets2 .answerno").show();
+            }
+        }
 
-	             if (getParameterByName("page").length > 0) {
-	                 var ownerpercentage = 100;
-	                 if (propertyvalue > 0) {
-	                     var personamount = mortgageamount;
-	                     if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
-	                         ownerpercentage = 50;
-	                         if ($.cookie('ownerpercentage')) {
-	                             ownerpercentage = parseInt($.cookie('ownerpercentage'));
-	                         }
-	                         mortgageamount = mortgageamount * (ownerpercentage / 100);
-	                     }
-	                     personamount = (propertyvalue * (ownerpercentage / 100)) - (mortgageamount + securedloansamount);
-	                     $("#assets1 .value").text(numberWithCommas(personamount));
-	                     $("thead").show();
-	                 }
-	                 else {
-	                     $("#assets1 .answerno").show();
+        if (page === 3) {
+                $("#assets3 .answerno").show();
+        }
 
-	                 }
-	             }
-	             
-	             //Populate item amount
-	             if (parseFloat($.cookie('VehicleAssetTotal'))) {
-	                 $("#assets2 .value").text(numberWithCommas(parseFloat($.cookie('VehicleAssetTotal'))));
-	             }
-                 //Populate item amount
-	             if (getParameterByName("page").length > 0 && parseFloat($.cookie('otherassetsamount'))) {
-	                 $("#assets3 .value").text(numberWithCommas(parseFloat($.cookie('otherassetsamount'))));
-	                 $("thead").show();
-	             }
+        if (page >= 4) {
+            //Populate item amount
+            if (parseFloat($.cookie('otherassetsamount'))) {
+                $("#assets4 .value").text(numberWithCommas(parseFloat($.cookie('otherassetsamount'))));
+                $("thead").show();
+            }
+            $("#assets3 .answerno").show();
+        }
+    }
+
 
 				$(".declare").on("click", function () {
 				    $("#" + stage + itemnumber + " .declare").hide();

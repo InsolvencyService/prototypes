@@ -395,31 +395,12 @@ $("#next").click(function(){
 	$.cookie("acc"+ x +"-year", $("#start_year").val());
 	$.cookie("acc"+ x +"-bank", bank_name);
 	
-	var joint_count=0;
-	
-	for(var i = 1; i<= count; i++){
-		if($("#firstname"+i).val()!=""){
-			$.cookie("acc"+ x +"-firstname"+i, $("#firstname"+i).val());
-			$.cookie("acc"+ x +"-lastname"+i, $("#lastname"+i).val());
-			$.cookie("acc"+x+"_joint", i);
-			joint_count=i;	
-		}
-	}
-	
 	$.cookie("acc-count",x);
-/*
-	if(joint_count!=0){
-		$("#next").attr("href", "joint_holders.html");
-	}
-	else{
-		$.cookie("acc"+x+"_joint", "None");
-		$("#next").attr("href", "add_bank.html");
-	}
-*/	
+
 		     if ($("input[name=shared]:checked").val()) {
 	             if ($("#shared_Yes").is(':checked')) {
 	                 $.cookie('sharedaccount', "Yes", { expires: 1, path: "/" });
-	                 $("#next").prop("href", "list_owners.html");
+	                 $("#next").prop("href", "list_owners.html?acc=" + x);
 	             }
 	             else {
 	                 $.cookie('sharedaccount', "No", { expires: 1, path: "/" });

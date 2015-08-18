@@ -341,13 +341,11 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
+    var accountid = 1;
+    if ($.cookie("acc-count")) {
+        accountid = $.cookie("acc-count");
+    }
 
-	var number = 0;
-
-    if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
-    	number = parseInt($.cookie('familymembers')); 
-	}
-	
 	var firstname = $.cookie('accountholderfirstname');
 	var lastname = $.cookie('accountholderlastname');
 	
@@ -356,28 +354,33 @@ $(document).ready(function() {
 		if (lastname){
 		    $("#last_name").val(titleCaps(lastname.toLowerCase()))
 		}
-	}
-	
-				
+	}			
 
 	var normalroute = $("#next").prop("href");
 
-	$("#next").on("click", function(){
-    	number = number + 1;
-    	if (number == 4){
-    		number = 1;
-    	}
-		$.cookie('familymembers', number, { expires: 1, path:'/' });
-		
-		$.cookie('member' + number + "-firstname", $("#first_name").val(), { expires: 1, path:'/' });	
-		$.cookie('member' + number + "-lastname", $("#last_name").val(), { expires: 1, path:'/' });		
-		$.cookie('member' + number + "-age", $("input:radio[name ='age']:checked").val(), { expires: 1, path:'/' });		
-		$.cookie('member' + number + "-relationship", $("input:radio[name ='dependent']:checked").val(), { expires: 1, path:'/' });
-		$.cookie('member' + number + "-dependent", $("input:radio[name ='dependentyesno']:checked").val(), { expires: 1, path:'/' });	
-		if ($("input:radio[name ='dependent']:checked").val() == "Husband/wife/partner") {
-		    $.cookie('partner-firstname', $("#first_name").val(), { expires: 1, path: '/' });
-		    $.cookie('partner-lastname', $("#last_name").val(), { expires: 1, path: '/' });
-		}
+	$("#next").on("click", function (e) {
+	    if ($("input:radio[name ='dependent']:checked").length == 0) {
+	        e.preventDefault();
+	    }
+	    else {
+	        var jointholders = 1;
+	        if ($.cookie("acc" + accountid + "_joint")) {
+	            jointholders = parseInt($.cookie("acc" + accountid + "_joint")) + 1;
+	        }
+
+
+	        if ($("#firstname").val() != "") {
+	            $.cookie("acc" + accountid + "-firstname" + jointholders, $("#first_name").val(), { expires: 1, path: '/' });
+	            $.cookie("acc" + accountid + "-lastname" + jointholders, $("#last_name").val(), { expires: 1, path: '/' });
+	            $.cookie("acc" + accountid + "-relationship" + jointholders, $("input:radio[name ='dependent']:checked").val(), { expires: 1, path: '/' });
+	            if ($("input:radio[name ='dependent']:checked").val() == "Husband/wife/partner") {
+	                $.cookie('partner-firstname', $("#first_name").val(), { expires: 1, path: '/' });
+	                $.cookie('partner-lastname', $("#last_name").val(), { expires: 1, path: '/' });
+	            }
+	            $.cookie("acc" + accountid + "_joint", jointholders + 1, { expires: 1, path: '/' });
+	        }
+	    }
+
 	});
 
 });
