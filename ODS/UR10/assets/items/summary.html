@@ -85,6 +85,11 @@ table td[class*=col-], table th[class*=col-]{
 .totalrow td{
     font-weight:bold;
 }
+
+.group-title > *:first-child{
+    font-weight:normal;
+    padding-bottom:0
+}
     </style>
 
 
@@ -159,16 +164,14 @@ table td[class*=col-], table th[class*=col-]{
 
 
 
-                <h1 class="form-title heading-large">Your possessions</h1>
+                <h1 class="form-title heading-large">Your other items</h1>
 
                 <p>We need to know about other items you own. </p>
 
                 <form class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-
                     <div>
-
                         <div>
 
                             <div id="income" class="col-sm-9">
@@ -176,13 +179,13 @@ table td[class*=col-], table th[class*=col-]{
 
                                 <div class="form-group">
                                     <table>
-<thead>
-    <tr>
-        <th>Your items</th>
-        <th class="text-right" style="font-weight:normal">Value</th>
-        <th></th>
-    </tr>
-</thead>	
+                                    <thead>
+                                        <tr>
+                                            <th>Your items</th>
+                                            <th class="text-right" style="font-weight:normal">Value</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>	
 
                                         <tbody class="group-title" id="item0" data-role="bankcash">
                                             <tr class="group-heading parent">
