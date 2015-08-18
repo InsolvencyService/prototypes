@@ -431,7 +431,8 @@ display:block;
 var count;
 $(document).ready(function() {
 
-
+	$("#first_name").val($.cookie("firstname"));
+	$("#last_name").val($.cookie("lastname"));
 
 	var housename;
 	
@@ -472,6 +473,7 @@ function writeCookies(){
 	if(count == null){
 		count=0;
 	}
+	count++;
 	$.cookie("oth_dep_count", count);
 	$.cookie("other_dependent", "true");
 	$.cookie("oth_dep_firstname"+count, $("#first_name").val());
