@@ -431,8 +431,8 @@ display:block;
 var count;
 $(document).ready(function() {
 
-	$("#first_name").val($.cookie("firstname"));
-	$("#last_name").val($.cookie("lastname"));
+	$("#first_name").val(capitalize($.cookie("firstname")));
+	$("#last_name").val(capitalize($.cookie("lastname")));
 
 	var housename;
 	
@@ -494,7 +494,14 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-
+function capitalize(str) {
+    strVal = '';
+    str = str.split(' ');
+    for (var chr = 0; chr < str.length; chr++) {
+        strVal += str[chr].substring(0, 1).toUpperCase() + str[chr].substring(1, str[chr].length) + ' '
+    }
+    return strVal
+}
 </script>
 
 

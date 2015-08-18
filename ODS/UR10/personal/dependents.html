@@ -390,8 +390,9 @@ $(document).ready(function() {
 	if (pre && pre.length > 1){
 		
 		var count = $.cookie("oth_dep_count")
-		var address;
+		
 		for(i=1; i<=count; i++){
+			var address="";
 			var name = $.cookie("oth_dep_firstname"+i) + " " + $.cookie("oth_dep_lastname"+i) ;
 			var relationship = $.cookie("oth_dep_relationship"+i);
 			var age = $.cookie("oth_dep_age"+i);
@@ -421,7 +422,7 @@ $(document).ready(function() {
 				address = address + address6;
 			}	
 			
-			$("#tbody").append("<tr><td>"+name+"</td><td>"+age+"</td><td>"+address+"</td><td>"+relationship+"</td><td><a href=\"#\">Edit</a>&nbsp;<a href=\"#\">Delete</a></td></tr>");			
+			$("#tbody").append("<tr><td>"+name+"</td><td>"+age+"</td><td>"+address+"</td><td>"+relationship+"</td><td><a href=\"#\">Edit</a>&nbsp;&nbsp;<a href=\"#\">Delete</a></td></tr>");			
 		}
 		
 		
