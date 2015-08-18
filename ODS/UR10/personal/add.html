@@ -421,10 +421,7 @@ $(document).ready(function() {
 	var normalroute = $("#next").prop("href");
 
 	$("#next").on("click", function(){
-    	number = number + 1;
-    	if (number == 4){
-    		number = 1;
-    	}
+    	number ++;
 		$.cookie('familymembers', number, { expires: 1, path:'/' });
 		
 		$.cookie('member' + number + "-firstname", $("#first_name").val(), { expires: 1, path:'/' });	
