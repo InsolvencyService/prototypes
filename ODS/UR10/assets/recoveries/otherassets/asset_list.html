@@ -405,8 +405,7 @@ $(document).ready(function() {
 				$("#next").prop("href", "add-vehicle.html");
 				writeCookie();	
 			}
-			else
-			{
+			else{
 				for(i=1; i<=vehcount; i++){
 					if($.cookie('VehicleUse'+i)=="Disposed of"){
 						$('#next').prop('href', 'vehicle.html');
@@ -416,9 +415,10 @@ $(document).ready(function() {
 						$("#next").prop("href", "add-vehicle.html");
 						writeCookie();			
 					}
+				}
 			}
 		}
-		else if ($('#other').prop('checked')==true){
+		else if($('#other').prop('checked')==true){
 			$('#next').prop('href', 'detail.html?id=2');	
 			writeCookie();		
 		}
