@@ -391,7 +391,7 @@ $(document).ready(function() {
 		$("#msg-enteramt").hide();
 		$("#msg-enterdate").hide();
 
-		if (amt && amt.length > 0 && month && month.length > 0 && parseInt(month) && year && year.length == 4 && parseInt(year)){	
+		if (amt && amt.length > 0 && year && year.length == 4 && parseInt(year)){	
 			if (parseFloat(numberWithoutCommas(amt)) > 10){
 				$.cookie('creditorref'  + numcreditors, $('#ref').val(), { expires: 1 });
 
