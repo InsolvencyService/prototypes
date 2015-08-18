@@ -387,10 +387,10 @@ $(document).ready(function () {
     var relationship = $.cookie('member' + numowners + "-relationship");
     var ownername;
 
-        if ($.cookie("firstname")) {
-            ownername = $("#singleownername").text($.cookie("firstname") + " " + $.cookie("lastname"));
-        }
-        $("#singleownername").text(ownername);
+    if ($.cookie("firstname")) {
+        ownername = $.cookie("firstname") + " " + $.cookie("lastname");
+    }
+    $("#singleownername").text(ownername);
 
 
     if (numowners > 0){
