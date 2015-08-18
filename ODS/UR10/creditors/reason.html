@@ -170,7 +170,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Attachment of earnings</h1>
+	<h1 class="form-title heading-large">Reason the debt was incurred</h1>
 	
 	
 	
@@ -179,43 +179,69 @@ display:block;
 	
 	<div class="clearfix"></div>
 	
-	<div class="validation-summary"  id="msg-enteramt" style="display:none">
-                <h2>There was a problem with your answers</h2>
-                <p></p><ol>
-        <li class="error-message"> 
-              Please enter a valid amount
-         </li>
-      </ol>
-     </div>
 
 	
-<div class="clearfix"></div>
-	
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold">
-        How much is deducted directly from your income to pay this debt?</label>
-		<div class="form-hint">Approximate value of the items</div>
-		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
-	</div>
 
-<p class="clearfix"><br/></p>
-	
-		<div class="form-group ">
-	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold">
-		How often it this amount taken?</label>
-		<div class="form-hint" style="display:none"></div>
-		<select class="select-control" name="D1">
-                <option value="week">per week</option>
-                <option value="fortnight">per fortnight</option>
-                <option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
 
-	</div>
+
+        <div class="form-group ">
+
+            <fieldset>
+                <legend id="title_label" class="form-label-bold">Type of debt</legend>
+                <div id="title-select" class="form-group">
+
+                    <label for="title_Mr." class="block-label">
+                        <input id="title_Mr." value="Mr" name="title" type="radio" aria-describedby="title_error title_help">
+                        Debt repayment or consolidation
+                    </label>
+
+                    <label id="title_label1" for="title_Mrs." class="block-label">
+                        <input id="title_Mrs." value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
+                        Household Bills/Living Expenses
+                    </label>
+
+                    <label id="title_label2" for="title_Miss" class="block-label">
+                        <input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title_error title_help">
+                        Holidays
+                    </label>
+
+                    <label id="title_label3" for="title_Ms." class="block-label">
+                        <input id="title_Ms." value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
+                        Home Improvements
+                    </label>
+                    <label for="type_landlord" class="block-label">
+                        <input id="type_landlord" value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
+                        Payments or gift to family/friends
+                    </label>
+                    <label id="title_label3" for="reason_trading" class="block-label">
+                        <input id="reason_trading" value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
+                        Trading Expenses
+                    </label>
+                    <label id="title_label3" for="reason_vehicle" class="block-label">
+                        <input id="reason_vehicle" value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
+                        Vehicle Purchase
+                    </label>
+                    <label id="title_label3" for="reason_wedding" class="block-label">
+                        <input id="reason_wedding" value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
+                        Wedding
+                    </label>
+                    <label id="title_label3" for="reason_gambling" class="block-label">
+                        <input id="reason_gambling" value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
+                        Gambling
+                    </label>
+                    <label id="title_label4" for="title_other" class="block-label">
+                        <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+                        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal">
+                    </label>
+
+                </div>
+            </fieldset>
+        </div>
+
+
+
+
+
 
 
 
@@ -225,14 +251,14 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="summary.html">Continue</a>
+		<a id="next" class="button" href="list.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
 	
 	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+	<a style="padding-right: 30px" href="amount.html" id="back">Back</a>
 
 	
 	<a href="#" id="cancel">Save and logout</a>
@@ -300,23 +326,12 @@ display:block;
 $(document).ready(function() {
 	
 	var normalroute = $("#next").prop("href");
-	var rowid = getParameterByName("row");
-	var creditor = getParameterByName("name");
 
-	if (creditor && creditor.length > 0){
-		$("#creditor").text(creditor);
-	}
+
 	
 	$("#next").on("click", function(e){
-		e.preventDefault();
-		var amount = $("#amount").val();
-		var date;
-		if (amount && amount.length > 0){
-			date =  $("#day").val() + "-" +  $("#month").val() + "-" +  $("#year").val();
-			window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
-		}
-	});
 	
+	});
 
 
 });
@@ -329,18 +344,6 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, "")).toFixed(2);
-}
-
-function pad (str, max) {
-  str = str.toString();
-  return str.length < max ? pad("0" + str, max) : str;
-}
 
 </script>
 

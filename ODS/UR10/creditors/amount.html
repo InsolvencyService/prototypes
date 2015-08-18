@@ -218,71 +218,131 @@ display:block;
 	
 <div class="clearfix"></div>
 	
-	 <div class="form-group">
+        <div class="form-group">
 
-	<fieldset id="date_of_birth" class="date-of-birth">
-	
-	<legend id="date_of_birth_label" class="form-label-bold">Date the debt began (was incurred)</legend>
-<div class="form-hint">For example, Apr 2013</div>
-<div class="clearfix"></div>
-	<div class="row">
-	<div class="col-sm-4">
-		<p><br/></p>
-		<p class="clearfix"><br/></p>
+            <fieldset id="date_of_birth" class="date-of-birth">
 
-        <fieldset id="date_of_birth" class="date-of-birth">
-
-            <div class="form-group form-group-day" style="display:none">
-                <label id="date_of_birth_label.day" for="day">Day</label>
-                <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
-            </div>
-
-            <div class="form-group form-group-year">
-                <label id="date_of_birth_label.year" for="year">Year</label>
-                <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
-            </div>
-
-            <div class="form-group" id="monthcontrol" style="width:60px; display:none">
-                <label for="month">Month</label>
-
-                <select id="month" name="month">
-                    <option value="0"></option>
-                    <option value="1">Jan</option>
-                    <option value="2">Feb</option>
-                    <option value="3">Mar</option>
-                    <option value="4">Apr</option>
-                    <option value="5">May</option>
-                    <option value="6">Jun</option>
-                    <option value="7">Jul</option>
-                    <option value="8">Aug</option>
-                    <option value="9">Sep</option>
-                    <option value="10">Oct</option>
-                    <option value="11">Nov</option>
-                    <option value="12">Dec</option>
-                </select>
-
-            </div>
-        </fieldset>
+                <legend id="date_of_birth_label" class="form-label-bold">Date the debt began (was incurred)</legend>
+                <div class="form-hint">For example, Apr 2013</div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-sm-5">
 
 
-	</div>
+                        <fieldset id="date_of_birth" class="date-of-birth">
 
-	<div class="col-sm-8">
-		<div class="form-hint">
-	
-		<ul class="bulleted">
-		<li>For <strong>bills</strong>, enter the first date you didn't pay the full bill</li>
-		<li>For <strong>overdrafts</strong>, enter the first date you used your overdraft </li>
-		<li>For <strong>loans</strong>, enter the date you received the money  </li>
-		<li>For <strong>credit cards</strong>, enter the  date you took out the card</li>
-		</ul>
-		</div>
-	</div>
-	</div>
-	</fieldset>
-	
+                            <div class="form-group form-group-day" style="display:none">
+                                <label id="date_of_birth_label.day" for="day">Day</label>
+                                <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+                            </div>
 
-	</div>
+                            <div class="form-group form-group-year">
+                                <label id="date_of_birth_label.year" for="year">Year</label>
+                                <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
+                            </div>
+
+                            <div class="form-group" id="monthcontrol" style="width:60px; display:none">
+                                <label for="month">Month</label>
+
+                                <select id="month" name="month">
+                                    <option value="0"></option>
+                                    <option value="1">Jan</option>
+                                    <option value="2">Feb</option>
+                                    <option value="3">Mar</option>
+                                    <option value="4">Apr</option>
+                                    <option value="5">May</option>
+                                    <option value="6">Jun</option>
+                                    <option value="7">Jul</option>
+                                    <option value="8">Aug</option>
+                                    <option value="9">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">Nov</option>
+                                    <option value="12">Dec</option>
+                                </select>
+
+                            </div>
+                        </fieldset>
+
+
+                    </div>
+
+                    <div class="col-sm-7">
+                        <div class="form-hint">
+
+                            <ul class="bulleted">
+                                <li>For <strong>bills</strong>, enter the first date you didn't pay the full bill</li>
+                                <li>For <strong>loans</strong>, enter the date you received the money  </li>
+                                <li>For <strong>credit cards</strong>, enter the  date you took out the card</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+        <div class="form-group " style="display:none">
+
+            <label id="applicant_address_town_label0" for="applicant_address_town">
+                Type of debt
+            </label>
+
+            <select id="tyoe" name="type">
+                <option value="0"></option>
+                <option value="Bank">Bank/building society account </option>
+                <option value="Credit card">Credit card</option>
+                <option value="3">Personal loan (unsecured)</option>
+                <option value="4">Secured loan or mortgage</option>
+                <option value="5">Utilities (including council tax)</option>
+                <option value="6">Landlord</option>
+                <option value="7">Employee</option>
+                <option value="8">Other</option>
+
+            </select>
+        </div>
+
+        <div class="form-group ">
+
+            <fieldset>
+                <legend id="title_label" class="form-label-bold">Type of debt</legend>
+                <div id="type-select" class="form-group">
+
+                    <label for="type_bank" class="block-label">
+                        <input id="type_bank" value="Bank" name="title" type="radio" aria-describedby="title_error title_help">
+                        Bank/building society account
+                    </label>
+
+                    <label id="title_label1" for="title_Mrs." class="block-label">
+                        <input id="title_Mrs." value="Credit card" name="title" type="radio" aria-describedby="title_error title_help">
+                        Credit card
+                    </label>
+
+                    <label id="title_label2" for="title_Miss" class="block-label">
+                        <input id="title_Miss" value="Personal loan" name="title" type="radio" aria-describedby="title_error title_help">
+                        Personal loan (unsecured)
+                    </label>
+
+                    <label id="title_label3" for="title_Ms." class="block-label">
+                        <input id="title_Ms." value="Secured loan or mortgage" name="title" type="radio" aria-describedby="title_error title_help">
+                        Secured loan or mortgage
+                    </label>
+                    <label for="type_landlord" class="block-label">
+                        <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                        Landlord
+                    </label>
+                    <label id="title_label3" for="type_employee" class="block-label">
+                        <input id="type_employee" value="Employee" name="title" type="radio" aria-describedby="title_error title_help">
+                        Employee
+                    </label>
+                    <label id="title_label4" for="title_other" class="block-label">
+                        <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+                        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal">
+                    </label>
+
+                </div>
+            </fieldset>
+        </div>
+
+
 
 
 
@@ -416,6 +476,15 @@ $(document).ready(function() {
 				$("#msg-enteramt").show();
 			}
 			e.preventDefault();
+		}
+
+		var type = $("#type-select input[type=radio]:checked").val();
+		switch(type){
+		    case "Credit card":
+		    case "Personal loan":
+		    case "Secured loan or mortgage":
+		    case "Other":
+		        $("#next").prop("href", "reason.html");
 		}
 	});
 
