@@ -189,9 +189,9 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td class="group-title col-sm-8">
                                                     Cash from bank
                                                 </td>
-                                                <td class="value col-sm-2">109.78</td>
+                                                <td class="value col-sm-2" id="positive-balance">0</td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="../banks/add_bank.html?loop=true" class="next edit">Edit</a>
+                                                    <a href="../../banks/add_bank.html?loop=true" class="next edit">Edit</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -497,6 +497,7 @@ table td[class*=col-], table th[class*=col-]{
             var itemnumber = 0;
             var stage = "item";
             var page = 1;
+            var posbal;
 
             $(document).ready(function () {
 				var defaultnext = $(".next").first().attr("href");
@@ -528,12 +529,19 @@ table td[class*=col-], table th[class*=col-]{
                     currenttype = getParameterByName("type");
                 }
 
+
+                if ($.cookie('positive_balance') && parseFloat($.cookie('positive_balance'))) {
+                    posbal = parseFloat($.cookie('positive_balance'));
+                    $("#positive-balance").text(numberWithCommas(posbal));
+                }
+
                 showchildrowdata(itemnumber);
 
 
                 if (stage == "item" && itemnumber > 8) {
                     $("#next").show();
                 }
+
 
 				var defaultnext = $(".next").first().attr("href");
 				$(".declare").on("click", function (e) {
@@ -617,8 +625,10 @@ table td[class*=col-], table th[class*=col-]{
                 if (currentrow > 8) {
                     $("#next").show();
                 }
-
-                $("#overalltotal .totalvalue").text(totalamount);
+                if (posbal && parseFloat(posbal)) {
+                    totalamount = totalamount + posbal; 
+                }
+                $("#overalltotal .totalvalue").text(numberWithCommas(totalamount));
                 $.cookie("otherassetsamount", totalamount, { expires: 1, path: "/" });
 
             }
