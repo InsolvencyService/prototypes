@@ -355,9 +355,9 @@ $(document).ready(function() {
 
     // $("#" + stage + itemnumber + " a.edit").show().text("Edit");
     $("#" + stage + previous + " a.edit").show().removeClass("button");
-    if (previous != 3) {
+
         $("#" + stage + previous     + " a.edit").text("Edit");
-    }
+
     for (i = 1; i < itemnumber; i++) {
         $("#" + stage + i + " a.edit").text("Edit").show();
     }
@@ -452,9 +452,21 @@ $(document).ready(function() {
 				$(".declare").on("click", function () {
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button");
-				    if (itemnumber != 3) {
+
 				        $("#" + stage + itemnumber + " a.edit").text("Edit");
+
+				    switch (itemnumber) {
+				        case 1:
+				            $("#assets1 .answerno").show();
+				            break;
+				        case 2:
+				            $("#assets2 .answerno").show();
+				            break;
+				        case 3:
+				            $("#assets3 .answerno").show();
+				            break;
 				    }
+
 				    itemnumber = itemnumber + 1;
 				    $("#" + stage + itemnumber + " .declare").show();
 				    $("#" + stage + itemnumber + " a.edit").show().addClass("button");
@@ -463,6 +475,8 @@ $(document).ready(function() {
 				    if (itemnumber > 4) {
 				        $("#next").show();
 				    }
+
+
 				});
 
 
