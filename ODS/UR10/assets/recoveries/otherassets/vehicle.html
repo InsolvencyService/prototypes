@@ -216,7 +216,7 @@ display:block;
 						
 			            
 			            <label for="other" class="block-label">
-			                <input id="other" name="assettype" type="radio"  value="Endowment">
+			                <input id="other" name="assettype" type="radio"  value="Other">
 			                Other
 			            </label>
 			        </div>
@@ -308,17 +308,24 @@ display:block;
 	<script type="text/javascript" src="../../../shared/loop.js"></script>
 
 <script type="text/javascript">
-
+var vehiclemonth;
+var vehicleyear;
+var vehiclevalue;
+var vehicletransfertype;
+var count;
 
 $(document).ready(function() {
-		var count = $.cookie('VehicleCount');
+		count = $.cookie('VehicleCount');
 		for(i=1; i<=count; i++){
-			var make = $.cookie('VehicleMake'+i);
-			var model = $.cookie('VehicleModel'+i);
-			var VRN = $.cookie('VehicleVRN'+i);
-			var vehicle = make + " " + model + " - " + VRN;
-			var checkbox = '<label for="'+VRN+'" class="block-label"><input id="'+VRN+'" name="assettype" type="radio"  value="'+VRN+'">'+ vehicle +'</label>';
-			$("#asset").prepend(checkbox);	
+			var type = $.cookie('VehicleUse'+i);	
+			if(type == "Disposed of"){
+				var make = $.cookie('VehicleMake'+i);
+				var model = $.cookie('VehicleModel'+i);
+				var VRN = $.cookie('VehicleVRN'+i);
+				var vehicle = make + " " + model + " - " + VRN;
+				var checkbox = '<label for="'+VRN+'" class="block-label"><input id="'+VRN+'" name="assettype" type="radio"  value="'+VRN+'">'+ vehicle +'</label>';
+				$("#asset").prepend(checkbox);	
+			}
 		}	
 });
 
@@ -336,7 +343,15 @@ $("#next").on("click", function(e){
 function writeCookies() {
 	var cookiecount = $.cookie('ass-rec-oth-count');
 	$.cookie("ass-rec-oth-type-"+cookiecount, "Vehicle");
-}
+	var reg = $("#asset :checked").val();
+	
+	for(j=1; j<=count; j++){
+		if(reg == $.cookie('VehicleVRN'+j)){
+			$.cookie('ass-rec-oth-tempvehiclevalue', $.cookie('VehicleAssetValue'+j));
+			$.cookie('ass-rec-oth-tempvehiclemonth', $.cookie('VehicleTransferMonth'+j));
+			$.cookie('ass-rec-oth-tempvehicleyear', $.cookie('VehicleTransferYear'+j));
+		}
+	}
 </script>
 
 
