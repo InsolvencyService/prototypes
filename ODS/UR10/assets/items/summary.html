@@ -179,7 +179,8 @@ table td[class*=col-], table th[class*=col-]{
 <thead>
     <tr>
         <th>Your items</th>
-        <th colspan="2">Total</th>
+        <th class="text-right" style="font-weight:normal">Value</th>
+        <th></th>
     </tr>
 </thead>	
 
@@ -188,7 +189,7 @@ table td[class*=col-], table th[class*=col-]{
                                                 <td class="group-title col-sm-8">
                                                     Cash from bank
                                                 </td>
-                                                <td class="value col-sm-2">£109.78</td>
+                                                <td class="value col-sm-2">109.78</td>
                                                 <td class="actions col-sm-2">
                                                     <a href="../banks/add_bank.html?loop=true" class="next edit">Edit</a>
                                                 </td>
@@ -387,11 +388,13 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="other.html?type=other&page=9&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
-                                            <tr class="group-heading totalrow" id="incometotal">
-                                                <td></td>
-                                                <td class="totalvalue"></td>      
-                                                <td class="actions" style="text-align:right">
-                                                    <span style="float:right; width:100%">Total</span>
+                                            <tr class="group-heading totalrow" id="overalltotal">
+                                                <td style="text-align:right">
+                                                <span style="float:right; width:100%">Total</span></td>
+                                                <td class="totalvalue text-right">
+ 
+                                                </td>      
+                                                <td class="actions">
                                                 </td>
                                             </tr>
 
@@ -567,7 +570,7 @@ table td[class*=col-], table th[class*=col-]{
 
                         // append the child row 
                         if ($.cookie(type + i + 'amount') > 0) {
-                            numrowswithvalues = numrowswithvalues + 1;
+                            numrowswithvalues++;
 
                             var childamount = parseFloat($.cookie(type + i + 'amount'));
                             var childname = $.cookie(type + i + 'name');
@@ -583,11 +586,11 @@ table td[class*=col-], table th[class*=col-]{
                         }
                     }
 
-                    if (totalforrow > 0 && (numrowswithvalues > 1)) {
+                    if (totalforrow > 0) {
                         if (rowid == 1) {
                             $("#item" + rowid + " .value").text(numberWithCommas(totalforrow));
                         }
-                        else {
+                        if (numrowswithvalues > 1) {
                             $("#" + stage + rowid + " .totalrow").show();
                             $("#item" + rowid + " .totalrow .value").text(numberWithCommas(totalforrow));
                         }
