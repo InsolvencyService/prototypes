@@ -315,7 +315,7 @@ $(document).ready(function() {
 		for(i=1; i<=count; i++){
 			var make = $.cookie('VehicleMake'+i);
 			var model = $.cookie('VehicleModel'+i);
-			var VRN = $.cookie('VehicleVRN'+1);
+			var VRN = $.cookie('VehicleVRN'+i);
 			var vehicle = make + " " + model + " - " + VRN;
 			var checkbox = '<label for="'+VRN+'" class="block-label"><input id="'+VRN+'" name="assettype" type="radio"  value="'+VRN+'">'+ vehicle +'</label>';
 			$("#asset").prepend(checkbox);	
