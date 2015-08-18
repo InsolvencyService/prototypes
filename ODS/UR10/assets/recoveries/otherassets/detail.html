@@ -334,6 +334,16 @@ $(document).ready(function() {
 	else{
 		$(".asset").text("vehicle");
 		$("#title").text("Vehicle");
+		var month = $.cookie('ass-rec-oth-tempvehiclemonth');
+		var year = $.cookie('ass-rec-oth-tempvehicleyear');
+		var amount = $.cookie('ass-rec-oth-tempvehiclevalue');
+		
+		if(amount != null || amount != 'undefined'){
+			$("#year").val(year);
+			$("#saleamount").val(amount);
+			$("#month").val(month);
+		}
+		
 	}
 });
 

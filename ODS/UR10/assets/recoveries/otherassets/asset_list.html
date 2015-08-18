@@ -407,8 +407,15 @@ $(document).ready(function() {
 			}
 			else
 			{
-				$('#next').prop('href', 'vehicle.html');
-				writeCookie();		
+				for(i=1; i<=vehcount; i++){
+					if($.cookie('VehicleUse'+i)=="Disposed of"){
+						$('#next').prop('href', 'vehicle.html');
+						writeCookie();
+					}
+					else{
+						$("#next").prop("href", "add-vehicle.html");
+						writeCookie();			
+					}
 			}
 		}
 		else if ($('#other').prop('checked')==true){
