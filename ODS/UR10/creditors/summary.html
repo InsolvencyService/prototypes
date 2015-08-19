@@ -212,7 +212,7 @@ display:block;
                     <tbody>
                     	<tr class="group-heading">
                     		<td>Number of creditors</td>
-                        	<td>2</td>
+                        	<td id="numcreditors">2</td>
                         	<td><a href="list.html">Edit</a></td>
                         	<td></td>
                     	</tr>
@@ -356,6 +356,9 @@ $(document).ready(function() {
 	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
 
+	var numcreditors = parseInt($.cookie('numcreditors'));
+
+	$("#numcreditors").text(numcreditors);
 	$("#enforcementlist tbody").prepend(getenforcementhtml());
 
 
