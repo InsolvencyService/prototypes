@@ -206,7 +206,7 @@ display:block;
 	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold">
 		How often it this amount taken?</label>
 		<div class="form-hint" style="display:none"></div>
-		<select class="select-control" name="D1">
+		<select class="select-control" name="D1" id="frequency">
                 <option value="week">per week</option>
                 <option value="fortnight">per fortnight</option>
                 <option value="4weeks">per 4 weeks</option>
@@ -310,9 +310,16 @@ $(document).ready(function() {
 	$("#next").on("click", function(e){
 		e.preventDefault();
 		var amount = $("#amount").val();
-		var date;
-		if (amount && amount.length > 0){
-			date =  $("#day").val() + "-" +  $("#month").val() + "-" +  $("#year").val();
+		var frequency = $("#frequency option:selected").text();
+
+		if (amount && amount.length > 0) {
+		    date = $("#day").val() + "-" + $("#month").val() + "-" + $("#year").val();
+		    //window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
+		    $.cookie("creditorattachmentrow", parseFloat(rowid), { expires: 1, path: "/" });
+		    $.cookie("creditorattachment" + rowid + "name", creditor, { expires: 1, path: "/" });
+		    $.cookie("creditorattachment" + rowid + "amount", parseFloat(amount), { expires: 1, path: "/" });
+		    $.cookie("creditorattachment" + rowid + "frequency", frequency, { expires: 1, path: "/" });
+
 			window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
 		}
 	});

@@ -362,7 +362,7 @@ $(document).ready(function() {
 	$("#enforcementlist tbody").prepend(getenforcementhtml());
 
 
-	//$("#attachmentlist tbody").prepend(getattachmenthtml());
+	$("#attachmentlist tbody").prepend(getattachmenthtml());
 
 });
 
@@ -381,14 +381,14 @@ function getenforcementhtml() {
    
     var rowid = $.cookie("creditorvisitrow");
  
-        if ($.cookie("creditorvisit" + rowid + "amount")) {
-            var creditorname = $.cookie("creditorvisit" + rowid + "name");
-            var amount = $.cookie("creditorvisit" + rowid + "amount");
-            var date = $.cookie("creditorvisit" + rowid + "date");
+    if ($.cookie("creditorvisit" + rowid + "amount")) {
+        var creditorname = $.cookie("creditorvisit" + rowid + "name");
+        var amount = $.cookie("creditorvisit" + rowid + "amount");
+        var date = $.cookie("creditorvisit" + rowid + "date");
 
-            html = html + '<tr id="row' + itemcount + '"><td class="name">' + creditorname + '</td><td class="date">' + date + '</td>';
-            html = html + '<td class="amount">£ ' + amount + '</td><td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td></tr>';
-        }
+        html = html + '<tr id="row' + itemcount + '"><td class="name">' + creditorname + '</td><td class="date">' + date + '</td>';
+        html = html + '<td class="amount">£ ' + amount + '</td><td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td></tr>';
+    }
    // }// for
     return html;
 }
@@ -404,12 +404,12 @@ function getattachmenthtml() {
 
     //  for (rowid = 1; rowid <= numrows; rowid++) {
 
-    var rowid = $.cookie("creditorrow");
+    var rowid = $.cookie("creditorattachmentrow");
 
-    if ($.cookie("creditor" + rowid + "amount")) {
-        var creditorname = $.cookie("creditor" + rowid + "name");
-        var amount = $.cookie("creditor" + rowid + "amount");
-        var date = $.cookie("creditor" + rowid + "date");
+    if ($.cookie("creditorattachment" + rowid + "amount")) {
+        var creditorname = $.cookie("creditorattachment" + rowid + "name");
+        var amount = $.cookie("creditorattachment" + rowid + "amount");
+        var date = $.cookie("creditorattachment" + rowid + "frequency");
 
         html = html + '<tr id="row' + itemcount + '"><td class="name">' + creditorname + '</td><td class="date">' + date + '</td>';
         html = html + '<td class="amount">£ ' + amount + '</td><td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td></tr>';
