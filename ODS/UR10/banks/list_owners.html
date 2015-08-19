@@ -377,7 +377,11 @@ legend{
 $(document).ready(function() {
     // pre populate with people they entered previously
 
-
+    var accid = 1;
+    var jointholders = 1;
+    if (getParameterByName("acc")) {
+        accid = parseInt(getParameterByName("acc"));
+    }
     $("#firstname").val("");
     $("#lastname").val("");
 
@@ -386,18 +390,31 @@ $(document).ready(function() {
         $(".known").show();
         // read back the name of the person they entered
 
-
     }
 
 
     $("#add").click(function () {
         $.cookie("accountholderfirstname", $("#firstname").val(), { expires: 1, path: '/' });
         $.cookie("accountholderlastname", $("#lastname").val(), { expires: 1, path: '/' });
+
+        if ($("#firstname").val() != "") {
+            $.cookie("acc" + accid + "-firstname" + jointholders, $("#first_name").val(), { expires: 1, path: '/' });
+            $.cookie("acc" + accid + "-lastname" + jointholders, $("#last_name").val(), { expires: 1, path: '/' });
+            $.cookie("acc" + accid + "-relationship" + jointholders, "Husband/wife/partner", { expires: 1, path: '/' });
+            $.cookie("acc" + accid + "_joint", jointholders + 1, { expires: 1, path: '/' });
+            jointholders++;
+        }
+
     });
 
 });
 
-
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 </script>
 
 

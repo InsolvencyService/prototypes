@@ -373,7 +373,7 @@ $(document).ready(function() {
 	            $.cookie("acc" + accountid + "-firstname" + jointholders, $("#first_name").val(), { expires: 1, path: '/' });
 	            $.cookie("acc" + accountid + "-lastname" + jointholders, $("#last_name").val(), { expires: 1, path: '/' });
 	            $.cookie("acc" + accountid + "-relationship" + jointholders, $("input:radio[name ='dependent']:checked").val(), { expires: 1, path: '/' });
-	            if ($("input:radio[name ='dependent']:checked").val() == "Husband/wife/partner") {
+	            if ($("input:radio[name='dependent']:checked").val() == "Husband/wife/partner") {
 	                $.cookie('partner-firstname', $("#first_name").val(), { expires: 1, path: '/' });
 	                $.cookie('partner-lastname', $("#last_name").val(), { expires: 1, path: '/' });
 	            }
