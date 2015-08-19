@@ -63,8 +63,9 @@
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
 
+    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
 
-    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
+    <!--<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">-->
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/sfs.css">
     <style type="text/css">
         .row > div:first-child {
@@ -166,8 +167,18 @@ table td[class*=col-], table th[class*=col-]{
 
                 <h1 class="form-title heading-large">Your other items</h1>
 
-                <p>We need to know about other items you own. </p>
+                <p>We need to know about any items you currently own</p>
 
+<p>Telling us about an item does’t necessary mean it will be taken away from you.</p>
+
+                <div><a href="#" id="btn-showhelp"><i class="glyphicon glyphicon-triangle-right"></i> Find out more</a></div>
+                <div class="help hidden">
+                    <p>
+                        Once your bankruptcy order is made, your applicant will be passed on to an Insolvency official for consideration. They will review your personal circumstances to determine which items could reasonably be sold to help pay your debts.
+                    </p>
+                    <p>It’s very unlikely that items you need for your daily life (e.g. washing machine, sofa, oven) will be sold.
+                    </p>
+                </div>
                 <form class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
@@ -564,6 +575,15 @@ table td[class*=col-], table th[class*=col-]{
 				    }
 				});
 
+				$("#btn-showhelp").on("click", function (e) {
+				    var helpsection = $(".help").first();
+				    if (helpsection.hasClass("hidden")) {
+				        helpsection.removeClass("hidden");
+				    }
+				    else {
+				        helpsection.addClass("hidden");
+				    }
+				});
 				
             });
 
