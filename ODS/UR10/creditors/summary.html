@@ -355,9 +355,11 @@ $(document).ready(function() {
 	
 	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
-	
 
 	$("#enforcementlist tbody").prepend(getenforcementhtml());
+
+
+	//$("#attachmentlist tbody").prepend(getattachmenthtml());
 
 });
 
@@ -372,20 +374,10 @@ function getenforcementhtml() {
 
     var numrows = $.cookie("creditorrow");
 
-    for (rowid = 1; rowid <= numrows; rowid++) {
-        //totalamount = 0;
-        //var type = assetypes[rowid];
-
-        // TODO - calculate total amount for this creditor
-        //var numofthistype = 0;
-        //if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
-        //    numofthistype = parseInt($.cookie("num" + type));
-        //}
-
-        //for (i = 1; i <= numofthistype; i++) {
-        //    itemcount = itemcount + 1;
-        //    var itemname = $.cookie(type + i + 'name');
-        //}
+  //  for (rowid = 1; rowid <= numrows; rowid++) {
+   
+    var rowid = $.cookie("creditorrow");
+ 
         if ($.cookie("creditor" + rowid + "amount")) {
             var creditorname = $.cookie("creditor" + rowid + "name");
             var amount = $.cookie("creditor" + rowid + "amount");
@@ -394,7 +386,7 @@ function getenforcementhtml() {
             html = html + '<tr id="row' + itemcount + '"><td class="name">' + creditorname + '</td><td class="date">' + date + '</td>';
             html = html + '<td class="amount">£ ' + amount + '</td><td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td></tr>';
         }
-    }// for
+   // }// for
     return html;
 }
 
