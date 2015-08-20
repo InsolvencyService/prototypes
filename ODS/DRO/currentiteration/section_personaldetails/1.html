@@ -357,9 +357,9 @@ $("#title input:radio").click(function(){
 
 
 $("#next").click(function(){
-	$.cookie("DRO-dob-day", $("#day").val());
-	$.cookie("DRO-dob-month", $("#month").val());
-	$.cookie("DRO-dob-year", $("#year").val());
+	$.cookie("DRO-dob-day", $("#day").val(), {path: '/'});
+	$.cookie("DRO-dob-month", $("#month").val(), {path: '/'});
+	$.cookie("DRO-dob-year", $("#year").val(), {path: '/'});
 });
 
 
