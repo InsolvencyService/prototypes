@@ -567,7 +567,7 @@ $('#other-addresses input:radio').click(function() {
 var normalroute = $("#next").prop("href");
 $("#otheraddress_Yes").click(function(){
 	$.cookie("section1", "inprogress",{path: '/'});
-	$("#next").prop("href","additional_address.html");
+	$("#next").prop("href", normalroute);
 	$("#return").hide();
 });
 $("#otheraddress_No").click(function(){

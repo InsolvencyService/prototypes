@@ -129,7 +129,12 @@
 		
     </div>   
 
+	</div>
+
 <!-- #BeginEditable "content" -->
+ 	
+
+ 	<div id="content" >
  	
 
  	<div class="inner-block">
@@ -185,6 +190,38 @@
 						<input id="othername_No" value="Mrs." name="othername" type="radio" aria-describedby="title_error title_help">No</label>
 					</div>
 				</fieldset>
+			</div>
+			
+			<div id="alias" class="panel-indent">
+				<div class="form-group">
+					<label id="firstname_label" for="firstname" class="form-label-bold first_name">First name</label>
+					<input id="firstname" name="firstname" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
+				</div>
+				<div class="form-group ">
+					<label id="lastname_label" for="lastname" class="form-label-bold last_name">Last name</label>
+					<input id="lastname" name="lastname" type="text" aria-describedby="last_name_error last_name_help" value="" /><br/><br/>
+				</div>
+				<div class="btn btn-default">
+					<i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;
+					<a id="add-name">Add name</a>
+				</div>
+						
+				<div id="nametable">
+				<p>&nbsp;</p>
+					<table>
+						<thead>
+							<th>First name</th>
+							<th>Last name</th>
+							<th></th>
+						</thead>
+						<tbody id="tablebody">
+							
+						</tbody>
+					
+					</table>
+				</div>
+				
+
 			</div>
 			
 			<p>&nbsp;</p>
@@ -274,12 +311,13 @@
 		</form>
 	</div>
 
-<!-- #EndEditable -->
-
         
 </div>
 
 
+<!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -331,13 +369,16 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+var tablecount;
 $(document).ready(function() {
+	$("#nametable").hide();
 	$("#o_title").hide();
+	$("#alias").hide();
 
 	var normalroute = $("#next").prop("href");
 	$("#othername_Yes").click(function(){
 		$.cookie("section1", "inprogress", {path: '/'});
-		$("#next").prop("href","additional_name.html");
+		
 	});
 	$("#othername_No").click(function(){
 		$.cookie("section1", "inprogress", {path: '/'});
@@ -345,6 +386,33 @@ $(document).ready(function() {
 	});
 
 });
+
+$("#othername input:radio").click(function(){
+	if($("#othername_Yes").prop('checked')==true){
+		$("#alias").show();
+	}
+	else{
+		$("#alias").hide();
+	}
+});
+
+
+$("#add-name").click(function() {
+	$("#nametable").show();
+	tablecount++;
+	var tabletext; 
+	var add1 = $("#firstname").val();
+	var add2 = $("#lastname").val();
+	
+	var tabletext1 = tabletext + "<tr id='"+tablecount+"'><td>"+add1+"</td><td>"+add2+"</td><td><a>Delete</a></td></tr>"
+	$("#tablebody").append(tabletext1);
+	tabletext = tabletext1;
+    $("#firstname").val('');
+    $("#lastname").val('');
+    
+
+});
+
 
 $("#title input:radio").click(function(){
 	if($("#title_other").prop('checked')==true){
