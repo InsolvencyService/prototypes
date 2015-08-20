@@ -545,6 +545,43 @@ $(document).ready(function() {
             $("#next").show();
         }
     });
+    
+    $("#add2").on("click", function (e) {
+        e.preventDefault();
+        // find match in addresses
+        var postcode2 = $("#postcode2").val();
+        var found2 = false;
+        $.each(addresses, function () {
+            if (ismatch(this.postcode,postcode2)) {
+                $("#fulladdress2").show();
+                $("#additional_address_line_1").val(this.line1);
+                $("#additional_address_line_2").val(this.line3);
+                $("#additional_address_line_3").val(this.line2);
+                $("#additional_address_town").val(this.town);
+                $("#additional_address_county").val(this.county);
+                $("#additional_address_post_code").val(this.postcode);
+          		 $(".othertime").hide();
+                //$("#next").show();
+                $("#btn-lookup").removeClass("button");
+                found = true;
+            }
+            $("#nomatch1.validation-summary").hide();
+        });
+        if (found == false) {
+            $("#nomatch1.validation-summary").show();
+            $("#fulladdress2").show();
+
+            $("#additional_address_line_1").val('');
+            $("#additional_address_line_2").val('');
+            $("#additional_address_line_3").val('');
+            $("#additional_address_town").val('');
+            $("#additional_address_county").val('');
+            $("#additional_address_post_code").val('');
+
+            //$("#next").show();
+        }
+    });
+
 
     $("#name").on("change", function () {
         if ($("#name").val() == "") {
