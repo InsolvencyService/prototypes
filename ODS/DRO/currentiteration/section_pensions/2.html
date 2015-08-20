@@ -392,10 +392,6 @@ function PensionAgeCheck() {
 	var dob_dd = $.cookie('DRO-dob-day');
 	var dob_mm = $.cookie('DRO-dob-month');
 	var dob_yyyy = $.cookie('DRO-dob-year');
-	
-	alert(dob_dd);
-	alert(dob_mm);
-	alert(dob_yyyy);
 
 	if(dob_dd != null && dob_mm != null && dob_yyyy !=null){
 		var pensionage = new Date();
@@ -427,10 +423,6 @@ function PensionAgeCheck() {
 		
 		if(dob<pensionage){
 			return "yes";
-			alert("yes");
-		}
-		else{
-			alert("no");
 		}
 	}
 	else{
