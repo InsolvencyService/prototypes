@@ -3,12 +3,16 @@
 
 	if (loop && loop.length > 0){
 
-		$(".repeat").show();
-		$(".firsttime").hide();
+		$(".loop").show();
+		//$(".repeat").show();
+		$(".firsttime").show();
+		$(".repeat").hide();
 	}
 	else{
 		$(".firsttime").show();
+		$(".loop").hide();
 		$(".repeat").hide();
+
 	}
 
 });
