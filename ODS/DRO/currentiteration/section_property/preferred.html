@@ -153,9 +153,9 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Property you've sold or given away</h1>
+	 	<h1 class="form-title heading-large">Preferred creditors</h1>
 	 	<div id="tablesummary" class="loop">
-	 		<label id="table_label" class="form-label-bold">Property summary</label>
+	 		<label id="table_label" class="form-label-bold">Preferred creditor summary</label>
 	 		<table style="width:80%">
 	 			<thead>
 	 				<th>Property</th>
@@ -182,7 +182,7 @@
 			
 			<div class="form-group">
 				<fieldset class="inline" id="previoustrade">
-				<label id="_label" class="form-label-bold">Have you given away any property or sold it for less than its true value in the last 2 years?</label>
+				<label id="_label" class="form-label-bold">Have you preferred any creditors over others in your payments in the last 2 years?</label>
 				
 					<div class="form-group">
 					
@@ -202,7 +202,7 @@
 				
 				<div class="form-group ">
 				
-					<label id="_label" for="creditor_address_line_1" class="form-label-bold">What was sold or given away?</label>
+					<label id="_label" for="creditor_address_line_1" class="form-label-bold">Name of preferred creditor?</label>
 					<input id="business name" name="" type="text" value="" />
 					<br/>
 				</div>	
@@ -210,7 +210,7 @@
 				
 				<div id="pnl-date" class="form-group">
 					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">What date did you sell or give away the property?</span>
+						<span id="date_of_birth_label" class="form-label-bold">What date did you make the payment to the preferred creditor?</span>
 						<span class="form-hint" id="date_of_birth_help">For example 31 08 1976</span>
 						
 						<div class="form-group form-group-day">
@@ -230,25 +230,12 @@
 				<p>&nbsp;</p>
 
 				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">How much did you receive for the property?</label>
+					<label id="_label" for="value" class="form-label-bold">How much did you pay the creditor?</label>
 					£ <input id="value" name="" type="number" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
 
-				<div class="form-group ">
-					<label id="_label" for="why" class="form-label-bold">Why did you sell or give away the property?</label>
-					<input id="why" name="" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
-
-				<div class="form-group ">
-					<label id="_label" for="who" class="form-label-bold">Who did you sell or give the property to?</label>
-					<input id="who" name="" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
 				<div class="form-group">
 					<label for="commments" class="form-label-bold">Additional comments</label>
 					<textarea id="comments" rows="6" cols="60"></textarea>
@@ -257,7 +244,7 @@
 				<p>&nbsp;</p>
 				<div class="form-group" id="also_employed">
 					<fieldset class="inline">
-					<label class="form-label-bold">Have you sold or given away any other properties?</label>
+					<label class="form-label-bold">Did you have any other preferred creditors?</label>
 						<div id="pnl-role" class="form-group">
 						
 							<label id="role_label" for="otheremployment" class="block-label">
@@ -281,7 +268,7 @@
 		
 		<div class="form-navigation form-group">
 			<p>&nbsp;</p>
-			<a id="next" href="../section_assets/assets1.html" class="button">Save and continue</a><br>
+			<a id="next" class="button">Save and continue</a><br>
 			<a id="return" href="../application.html" >Return to overview</a><br><br>
 			<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 		</div>
@@ -363,16 +350,18 @@ $('#previoustrade :radio').click(function() {
 	}	
 	else{
 		$("#pnl_details").hide();
+		$("#next").attr("href", "../section_creditors/1.html");
+
 	}
 });
 
 $('#also_employed :radio').click(function() {
 	if($("#otheremployment").prop('checked')==true){
-		$("#next").prop("href", "previousbusiness.html?loop=true&self="+getParameterByName("self"));
+		$("#next").prop("href", "preferred.html?loop=true");
 		
 	}	
 	else{
-		$("#next").attr("href", "preferred.html");
+		$("#next").attr("href", "../section_creditors/1.html");
 	}
 });
 
