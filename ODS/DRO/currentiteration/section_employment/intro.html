@@ -184,7 +184,7 @@
 		<div class="form-navigation form-group">
 			<p>&nbsp;</p>
 			<a id="next" class="button">Save and continue</a><br>
-			<a id="return" >Return to overview</a><br><br>
+			<a id="return" href="../application.html" >Return to overview</a><br><br>
 			<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 		</div>
 
@@ -248,7 +248,7 @@
 
 
 $('#next').click(function() {
-
+	$.cookie('section3', "in progress", {path: '/'});
 	var direct = $("#employment_type :checked").val();
 
 	if(direct==1){

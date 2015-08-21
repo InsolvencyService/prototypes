@@ -645,7 +645,7 @@
 	
 
 			<div  class="form-navigation form-group">
-				<a id="next" class="button">Save and continue</a><br>
+				<a id="next" href="../section_pensions/1.html" class="button">Save and continue</a><br>
 				<a id="return" >Return to overview</a><br><br>
 				<a style="padding-right: 30px" href="../application.html" id="back">Back</a>
 			</div>
@@ -721,7 +721,7 @@ var vehiclecount = 1;
 var toolcount = 1;
 
 $(document).ready(function() {
-
+	$.cookie('section4', "in progress", {path: '/'});
 	$("#pnl-tradetools-detail").hide();
 	$("#pnl-vehicles-detail").hide();
 	$("#pnl-home-detail").hide();
