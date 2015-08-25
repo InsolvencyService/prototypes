@@ -168,19 +168,16 @@
 		
 			<div class="form-group ">
 				<label id="bankbalance_label" for="bankbalance" class="form-label-bold applicant_address_line_1">Bank and building society balance</label>
-				<p class="form-hint">Total balance of your bank and building society accounts</p>
 				£ <input id="bankbalance" name="bankbalance" value="" />
 			</div>
 
 			<div class="form-group ">
 				<label id="externalbalance_label" for="externalbalance" class="form-label-bold applicant_address_line_1">Amount of other cash funds you have available</label>
-				<p class="form-hint">Amount of money you have not held in a bank or building society</p>
 				£ <input id="externalbalance" name="externalbalance" type="text" value="" />
 			</div>
 
 			<div class="form-group ">
 				<label id="owed_label" for="owed" class="form-label-bold applicant_address_line_1">Money you are owed</label>
-				<p class="form-hint">Amount of money you are owed by others.</p>
 				£ <input id="owed" name="owed" type="text" value="" />
 			</div>
 
@@ -328,8 +325,8 @@
 			
 			
 			<!--- pop up --->
-			<div id="overlay">
-     			<div id="overback">
+			<div class="panel-indent" id="pnl-vehicles-add">
+     			<div >
         			
         			<div class="form-group ">
 						<label id="vehicles_make_label" for="vehicles_make" class="form-label-bold">Make</label>
@@ -359,16 +356,16 @@
 
 
 
-          			<p><a id="add-vehicle" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;Add vehicle</a>
+          			<p><a id="add-vehicle" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;Add vehicle</a>
           			<span style="position:fixed;padding-top:15px; padding-left:70px;"><a onclick='overlay()'>Cancel</a></span></p>
 		  			<span class="clearfix"></span>
     			 </div>
-			</div>
 			
 			
 			
 			
-					<div class="form-group panel-indent" id="pnl-vehicles-detail">
+			
+					<div class="form-group" id="pnl-vehicles-detail">
 								
 					<table>
 						<thead>
@@ -481,25 +478,9 @@
 								<td>£ <span class="vvalue"></span></td>
 								<td><a onclick="$('#vehicles_row11').hide()">Delete</a></td>
 							</tr>
-							
-							<tr id="vehicles_final" style="display:none">
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td>
-									<a onclick="overlay()" class="btn btn-default">
-									<i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;
-									Add another vehicle</a> 
-								</td>
-							</tr>
-
-
 						</tbody>
 					</table>	
-
+					</div>
 				</div>
 
 			<div class="form-group">
@@ -517,7 +498,7 @@
 			
 				<div class="form-group panel-indent" id="pnl-home-detail">
 					<label id="home_value_label" for="home_value" class="form-label-bold applicant_address_line_1">How much is your home worth?</label>
-					<p class="form-hint">The current market value of your property</p>
+					
 					£ <input id="home_value" name="home_value" type="text" value="" />
 
 				</div>
@@ -537,14 +518,14 @@
 			
 				<div class="form-group panel-indent" id="pnl-property-detail">
 					<label id="property_value_label" for="property_value" class="form-label-bold applicant_address_line_1">How much is your property worth?</label>
-					<p class="form-hint">The current market value of your property</p>
+					
 					£ <input id="property_value" name="property_value" type="text" value="" />
 
 				</div>
 			
 			<div class="form-group">
 				<fieldset class="inline">
-				<legend id="assets_label" class="form-label-bold">Do you have any unrealised assets?</legend>
+				<label id="assets_label" class="form-label-bold">Do you have any unrealised assets?</label>
 					<div id="pnl-assets" class="form-group">
 						<label id="assets_label1" for="assets_yes" class="block-label">
 						<input id="assets_yes" value="" name="assets" type="radio">Yes</label>
@@ -556,14 +537,33 @@
 			</div>
 
 				<div class="form-group panel-indent" id="pnl-assets-detail">
-					<table class="col-lg-10">
+					<div>
+					<label id="assetsdescription_label" class="form-label-bold" for="asset_description">What is the asset?</label>
+					<input id="asset_descripton" name="property_value" type="text" value="" />
+					<p>&nbsp;</p>
+					</div>
+					
+					<div>
+					<label id="assets_value_label" class="form-label-bold" for="asset_value">How much is it worth?</label>
+					£ <input id="asset_value" name="property_value" type="text" value="" />
+					<p>&nbsp;</p>
+
+					</div>
+					
+					<a class="btn btn-default " id="add-asset"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;Add asset</a>
+					<div>
+					
+					</div>
+							
+
+					<table id="asset_table" class="col-lg-10" style="display:none">
 						<thead>
 							<th class="col-lg-6">Description</th>
 							<th class="col-lg-3">Value</th>
 							<th class="col-lg-3"></th>
 						</thead>
 						<tbody>
-							<tr id="asset_row1">
+							<tr id="asset_row1" style="display:none">
 								<td><input id="asset_descripton" class="form-control-3-4" name="property_value" type="text" value="" /></td>
 								<td>£ <input id="asset_value" class="form-control-3-4" name="property_value" type="text" value="" /></td>
 								<td><a class="btn btn-default " id="add-asset"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;Add asset</a></td>
@@ -644,8 +644,8 @@
 			</div>
 	
 
-			<div style="padding-left:25px" class="form-navigation form-group">
-				<a id="next" class="button">Save and continue</a><br>
+			<div  class="form-navigation form-group">
+				<a id="next" href="../section_pensions/1.html" class="button">Save and continue</a><br>
 				<a id="return" >Return to overview</a><br><br>
 				<a style="padding-right: 30px" href="../application.html" id="back">Back</a>
 			</div>
@@ -721,12 +721,14 @@ var vehiclecount = 1;
 var toolcount = 1;
 
 $(document).ready(function() {
-
+	$.cookie('section4', "inprogress", {path: '/'});
 	$("#pnl-tradetools-detail").hide();
 	$("#pnl-vehicles-detail").hide();
 	$("#pnl-home-detail").hide();
 	$("#pnl-property-detail").hide();
 	$("#pnl-assets-detail").hide();
+	$("#pnl-vehicles-add").hide();
+
 	
 });
 
@@ -764,7 +766,7 @@ $("#add-asset").on("click", function(e){
 	$("#asset_row"+assetcount+" .avalue").text(av);
 	
 	$("#asset_row"+assetcount).show();
-	
+	$("#asset_table").show();
 	$("#asset_descripton").val("");
 	$("#asset_value").val("");
 });
@@ -776,7 +778,6 @@ $("#add-vehicle").on("click", function(e){
 	var vy = $("#vehicles_year").val();
 	var vc = $("#vehicles_condition").val();
 	var vv = $("#vehicles_value").val();
-	overlay();
 	vehiclecount++;
 	
 	$("#vehicles_row"+vehiclecount+" .vmake").text(vmk);
@@ -813,10 +814,10 @@ $('#pnl-tradetools input:radio').click(function() {
 
 $('#pnl-vehicles input:radio').click(function() {
 	if(	($("#vehicles_yes").prop('checked')==true)){
-		overlay();
+		$("#pnl-vehicles-add").show();
 	}
 	else if($("#vehicles_no").prop('checked')==true){
-		$("#pnl-vehicles-detail").hide();
+		$("#pnl-vehicles-add").hide();
 	}
 });
 
@@ -849,6 +850,7 @@ $('#pnl-assets input:radio').click(function() {
 		$("#pnl-assets-detail").hide();
 	}
 });
+
 
 
 

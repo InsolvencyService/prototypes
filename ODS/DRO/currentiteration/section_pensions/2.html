@@ -235,9 +235,9 @@ display:block;
 			</fieldset>
 		</div>
 		<p>&nbsp;</p>
-		<div class="form-group">
+		<div class="form-group" id="personal_pension" style="display:none">
 			<p id="title_label" class="form-label-bold">Is this a personal pension?</p>
-			<p class="form-hint">Only complete this if your are over 55 years of age.</p>
+			<p class="form-hint" id="personal_pension_hint" style="display:none">Only complete this if your are over 55 years of age.</p>
 			<fieldset class="inline">
 				<div id="pnl-personalpension">
 									
@@ -346,6 +346,16 @@ var count;
 var edited;
 
 $(document).ready(function() {
+	$.cookie('section5', "inprogress", {path: '/'});
+	var pensionable_age = PensionAgeCheck();
+	
+	if(pensionable_age == "yes"){
+		$("#personal_pension").show();
+	}
+	else if(pensionable_age == "no dob"){
+		$("#personal_pension").show();
+		$("#personal_pension_hint").show();
+	}
 	
 	edited = getParameterByName("edit");	
 	var managedparty = getParameterByName("address");
@@ -376,6 +386,52 @@ $("#next").on("click", function(e){
 		$("#next").attr("href", "../section_pensions/1.html");
 
 });
+
+function PensionAgeCheck() {
+	var dob = new Date();
+	var dob_dd = $.cookie('DRO-dob-day');
+	var dob_mm = $.cookie('DRO-dob-month');
+	var dob_yyyy = $.cookie('DRO-dob-year');
+
+	if(dob_dd != null && dob_mm != null && dob_yyyy !=null){
+		var pensionage = new Date();
+		var dd = pensionage.getDate();
+		var mm = pensionage.getMonth()+1; //January is 0!
+		var yyyy = pensionage.getFullYear();
+		
+		if(dd<10) {
+		    dd='0'+dd
+		} 
+		
+		if(mm<10) {
+		    mm='0'+mm
+		} 
+	
+		yyyy= yyyy-64
+		
+		pensionage = yyyy+'-'+mm+'-'+dd;
+		
+		if(dob_dd<10) {
+		    dob_dd='0'+dob_dd;
+		} 
+		
+		if(dob_mm<10) {
+		    dob_mm='0'+dob_mm;
+		} 
+	
+		dob = dob_yyyy+'-'+dob_mm+'-'+dob_dd;
+		
+		if(dob<pensionage){
+			return "yes";
+		}
+	}
+	else{
+		return "no dob";
+	}
+
+	
+
+}
 
 function writeCookies() {
 	// Get count

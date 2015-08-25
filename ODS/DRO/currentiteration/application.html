@@ -273,14 +273,14 @@
 							<li class="row" id="section3">
                                 <div class="rowtop">
                                     <span class="col-sm-8"><h3>3. Employment details</h3></span>
-                                    <span class="col-sm-4"><a href="#"><label class="label label-default">Not started</label></a></span>
+                                    <span class="col-sm-4"><a href="section_employment/intro.html"><label class="label label-default">Not started</label></a></span>
                                 </div>
  	                       	</li>
 
                             <li class="row" id="section4">
                                 <div class="rowtop">
                                     <span class="col-sm-8"><h3>4. Assets</h3></span>
-                                    <span class="col-sm-4"><a href="/section_assets/assets.html"><label class="label label-default">Not started</label></a></span>
+                                    <span class="col-sm-4"><a href="section_assets/assets1.html"><label class="label label-default">Not started</label></a></span>
                                 </div>
                             </li>
                             <li class="row" id="section5">
@@ -294,7 +294,7 @@
                                 <div class="rowtop">
                                     <span class="col-sm-8"><h3>6. Property 
 									transactions and preferred creditors</h3></span>
-                                    <span class="col-sm-4"><a href="#"><label class="label label-default">Not started</label></a></span>
+                                    <span class="col-sm-4"><a href="section_property/property.html"><label class="label label-default">Not started</label></a></span>
                                 </div>
                             </li>
                             
@@ -430,8 +430,11 @@
 <script type="text/javascript">
 			var user = $.cookie('user');
 			var section1 = $.cookie('section1');
-			var section2 = $.cookie('section2');;
+			var section2 = $.cookie('section2');
+			var section3 = $.cookie('section3');
+			var section4 = $.cookie('section4');
 			var section5 = $.cookie('section5');
+			var section6 = $.cookie('section6');
 			var section7 = $.cookie('section7');
 			var creditors = $.cookie('creditors');
 			var total = $.cookie('ctotal');
@@ -497,6 +500,44 @@
                       
                     }
                 }
+                
+                if (section3 && section3.length > 0) {
+                    // change the colour of the button
+                    if (section3 == "inprogress") {
+                        $("#section3 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section3 .label").text("In progress");
+                        $("#section3 .edit").text("Edit");
+                
+
+                    }
+
+                    if (section3 == "complete") {
+                        $("#section3 .label").removeClass("label-default").addClass("label-success");
+                        $("#section3 .label").text("Complete");
+                        $("#section3 .edit").text("Edit");
+                      
+                    }
+                }
+                
+                if (section4 && section4.length > 0) {
+                    // change the colour of the button
+                    if (section4 == "inprogress") {
+                        $("#section4 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section4 .label").text("In progress");
+                        $("#section4 .edit").text("Edit");
+                
+
+                    }
+
+                    if (section4 == "complete") {
+                        $("#section4 .label").removeClass("label-default").addClass("label-success");
+                        $("#section4 .label").text("Complete");
+                        $("#section4 .edit").text("Edit");
+                      
+                    }
+                }
+
+
 
                 if (section5 && section5.length > 0) {
                     // change the colour of the button
@@ -515,6 +556,25 @@
                       
                     }
                 }
+                
+                if (section6 && section6.length > 0) {
+                    // change the colour of the button
+                    if (section6 == "inprogress") {
+                        $("#section6 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section6 .label").text("In progress");
+                        $("#section6 .edit").text("Edit");
+                
+
+                    }
+
+                    if (section6 == "complete") {
+                        $("#section6 .label").removeClass("label-default").addClass("label-success");
+                        $("#section6 .label").text("Complete");
+                        $("#section6 .edit").text("Edit");
+                      
+                    }
+                }
+
 
 				if (section7 && section7.length > 0) {
                     // change the colour of the button

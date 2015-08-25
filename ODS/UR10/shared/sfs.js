@@ -5,8 +5,8 @@
         $('tr td input.amount').each(function () {
             var listfrequency = $(this).parent().next().find("select");
             if ($(this).val()) {
-                var amt = $(this).val();
-                totalamount = totalamount + normalise(parseFloat(amt), listfrequency.val());
+                var amt = numberWithoutCommas($(this).val());
+                totalamount = totalamount + normalise(amt, listfrequency.val());
                 $(this).val(parseFloat(amt));
             }
         });
@@ -158,3 +158,6 @@
 			}
 });
 
+function numberWithoutCommas(x) {
+    return parseFloat(x.toString().replace(/,/g, ""));
+}

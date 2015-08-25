@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-    var firstname = $.cookie("firstname");
-    var lastname = $.cookie("lastname");
+    var firstname = $.cookie("partner-firstname");
+    var lastname = $.cookie("partner-lastname");
 var addresses =   [
 { icon: 'glyphicon-star', firstname: 'Susan', value: 'Susan Smith', lastname: 'Smith' },
 { icon: 'glyphicon-star', firstname: 'James', value: 'James Smith', lastname: 'Smith' },

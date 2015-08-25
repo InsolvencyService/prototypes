@@ -231,21 +231,23 @@ display:block;
 	</div>
 <p class="clearfix"><br/></p>
                     <div class="form-group">
-                      <label for="inputBody" class="form-label-bold">What action did they take?</label>
-                      <p class="form-hint">Include details of any items that the enforcement officer or bailiff took possession of.</p>
-                      <div><textarea class="form-control" id="inputBody" rows="12"></textarea></div>
+                      <label for="inputBody" class="form-label-bold">What assets did they seize or sell?</label>
+                      <p class="form-hint">Select any items that the enforcement officer or bailiff took possession of.</p>
+
                     </div>
 
 <p class="clearfix"><br/></p>
+        <fieldset>
+            <div class="form-group visit">
 
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold">
-		What is the total value of the items seized?</label>
-		<div class="form-hint">Approximate value of the items</div>
-		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
-	</div>
 
+                <label for="item-other" class="block-label" id="lbl-other-item">
+                    <input id="item-other" name="itemstaken" type="checkbox">
+                    Other item
+                </label>
+            </div>
+        </fieldset>
+        <p class="clearfix"><br /></p>
 
 
 <p class="clearfix"><br/></p>
@@ -326,34 +328,81 @@ display:block;
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+    var assetypes = ["bankcash", "cash", "household", "possessions", "compensation", "beneficiary", "investments", "trade", "money", "other"];
+
 $(document).ready(function() {
 	
 	var normalroute = $("#next").prop("href");
 	var rowid = getParameterByName("row");
 	var creditor = getParameterByName("name");
+	var amount = 0;
 
 	if (creditor && creditor.length > 0){
 		$(".creditor").text(creditor);
 	}
-	
-	$("#next").on("click", function(e){
-		//e.preventDefault();
-		var amount = $("#amount").val();
-		var date;
-		if (amount && amount.length > 0){
-			date =  $("#day").val() + "-" +  $("#month").val() + "-" +  $("#year").val();
-			//window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
-	        $.cookie("creditorrow", parseFloat(rowid), { expires: 1});
-	        $.cookie("creditorname", creditor, { expires: 1});	        
-	        $.cookie("creditoramount", parseFloat(amount), { expires: 1});
-	        $.cookie("creditordate", date, { expires: 1});
 
-		}
+	//'<label for="item1" class="block-label"><input id="item1" name="itemstaken" type="checkbox">Old Piano</label>';
+	$(".visit").prepend(getassetshtml());
+
+	$(".visit input[type=checkbox]").on("click", function (e) {
+	    //alert($(this).data("type") + " " + $(this).data("num"));
+	});
+
+	$("#next").on("click", function (e) {
+	    var rowid = 1;
+	    //e.preventDefault();
+
+	    if ($(".visit input#item-other").is(":checked")) {
+           $("#next").prop("href", "other-item.html");
+	    };
+
+	        $(".visit input[type=checkbox]:checked").each(function (e) {
+
+	            if ($(this).data("amount")) {
+	                amount = amount + parseFloat($(this).data("amount"));
+	            }
+	            // save the total amount against the creditorname
+	        });
+
+	        var date;
+	        if (amount && amount > 0) {
+	            date = $("#day").val() + "-" + $("#month").val() + "-" + $("#year").val();
+	            //window.location = "summary.html?row=" + rowid + "&name=" + creditor + "&amount=" + parseFloat(amount) + "&date=" + date; 
+	            $.cookie("creditorvisitrow", parseFloat(rowid), { expires: 1, path: "/" });
+	            $.cookie("creditorvisit" + rowid + "name", creditor, { expires: 1, path: "/" });
+	            $.cookie("creditorvisit" + rowid + "amount", parseFloat(amount), { expires: 1, path: "/" });
+	            $.cookie("creditorvisit" + rowid + "date", date, { expires: 1, path: "/" });
+	        }
+
+
 	});
 	
 
 
 });
+
+
+function getassetshtml() {
+    var html = "";
+    var itemcount = 0;
+    for (rowid = 1; rowid <= 9; rowid++) {
+        var type = assetypes[rowid];
+
+        var numofthistype = 0;
+        if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
+            numofthistype = parseInt($.cookie("num" + type));
+        }
+
+        for (i = 1; i <= numofthistype; i++) {
+            itemcount = itemcount + 1;
+            var itemname = $.cookie(type + i + 'name');
+            var itemamount = $.cookie(type + i + 'amount');
+            html = html + '<label for="item' + itemcount + '" class="block-label">';
+            html = html + '<input id="item' + itemcount + '" name="itemstaken" type="checkbox" data-type="' + type + '" data-num="' + i + '" data-amount="' + itemamount + '" >' + itemname + '</label>';
+        }
+    }// for
+    return html;
+}
 
 
 function getParameterByName(name) {

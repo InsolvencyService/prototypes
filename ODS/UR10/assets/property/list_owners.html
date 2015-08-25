@@ -385,12 +385,12 @@ $(document).ready(function () {
 
     var owner2name = $.cookie('member' + numowners + "-firstname")  + " " + $.cookie('member' + numowners + "-lastname");
     var relationship = $.cookie('member' + numowners + "-relationship");
-    var ownername;
+    var ownername = "You";
 
-        if ($.cookie("firstname")) {
-            ownername = $("#singleownername").text($.cookie("firstname") + " " + $.cookie("lastname"));
-        }
-        $("#singleownername").text(ownername);
+    if ($.cookie("firstname")) {
+        //ownername = $.cookie("firstname") + " " + $.cookie("lastname");
+    }
+    $("#singleownername").text(ownername);
 
 
     if (numowners > 0){

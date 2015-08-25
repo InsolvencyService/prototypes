@@ -76,6 +76,23 @@
      
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
+
+	.halfwidth {
+    float: left;
+    margin-right: 15px;
+    clear: none;
+    width: 35%;
+	}
+	
+	.partwidth {
+    float: left;
+    margin-right: 0;
+    clear: none;
+    width: 15%;
+    margin-top: 23px;
+}
+
+
 </style>
 <!-- #EndEditable -->
 
@@ -141,40 +158,70 @@
 	<p class="form-label-bold">
 	</p>
 	<div class="form-group ">
-	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-	<br/>
+		<fieldset class="firsttime inline" id="lookupaddress">
+                    <legend class="form-label-bold">
+                        <span class="firsttime">Address</span>
+                    </legend>
+
+                    <span class="form-hint">Enter the first line and postcode of the address. For example, 2 Place Street AB1 2CD</span>
+                    <div class="form-group halfwidth">
+                        <label for="name">First line&nbsp;</label>
+                        <input id="name" />
+                    </div>
+                    <div class="form-group halfwidth">
+                        <label for="postcode">Postcode&nbsp;</label>
+                        <input id="postcode" />
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <a id="add" class="button" href="#">Lookup address</a>&nbsp;
+                        <a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
+
+                        <br />
+                    </div>
+                </fieldset>
+
+				<div class="repeat" id="fulladdress">
+					
+						<div class="form-group">
+					
+							<label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
+					<input id="address_line_1" name="address_line_1" type="text" aria-describedby="address_line_1_error address_line_1_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="address_line_2" name="address_line_2" type="text" aria-describedby="address_line_2_error address_line_2_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="address_line_3" name="address_line_3" type="text" aria-describedby="address_line_3_error address_line_3_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+					<input id="address_town" name="address_town" type="text" aria-describedby="address_town_error address_town_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="address_county_label" for="address_county" class="form-label address_county">County</label>
+					<input id="address_county" name="address_county" type="text" aria-describedby="address_county_error address_county_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+				        <label for="address_post_code" class="form-label address_post_code">Postcode</label>
+				        <input id="address_post_code" name="address_post_code" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
+					<br/>
+					</div>
+				</div>
+
 	</div>
 
 	
@@ -197,20 +244,104 @@
 	</div>
 	</fieldset>
 	
+	
+	<div class="form-group panel-indent" id="other_address" style="display:none">
+		<fieldset class="othertime inline" id="lookupaddress2">
+                    <legend class="form-label-bold">
+                        <span>Previous address</span>
+                    </legend>
+
+                    <span class="form-hint">Enter the first line and postcode of the address. For example, 2 Place Street AB1 2CD</span>
+                    <div class="form-group halfwidth">
+                        <label for="name2">First line&nbsp;</label>
+                        <input id="name2" />
+                    </div>
+                    <div class="form-group halfwidth">
+                        <label for="postcode2">Postcode&nbsp;</label>
+                        <input id="postcode2" />
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <a id="add2" class="button" href="#">Lookup address</a>&nbsp;
+                        <a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
+
+                        <br />
+                    </div>
+                </fieldset>
+
+				<div class="repeat" id="fulladdress2">
+					
+						<div class="form-group">
+					
+							<label id="additional_address_line_1_label" for="additional_address_line_1" class="form-label address_line_1">Building and street</label>
+					<input id="additional_address_line_1" name="additional_address_line_1" type="text" aria-describedby="address_line_1_error address_line_1_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="additional_address_line_2_label" for="additional_address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="additional_address_line_2" name="additional_address_line_2" type="text" aria-describedby="address_line_2_error address_line_2_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="additional_address_line_3_label" for="additional_address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="additional_address_line_3" name="additional_address_line_3" type="text" aria-describedby="address_line_3_error address_line_3_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="additional_address_town_label" for="additional_address_town" class="form-label address_town">Town/city</label>
+					<input id="additional_address_town" name="additional_address_town" type="text" aria-describedby="address_town_error address_town_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+					<label id="additional_address_county_label" for="additional_address_county" class="form-label address_county">County</label>
+					<input id="additional_address_county" name="additional_address_county" type="text" aria-describedby="address_county_error address_county_help" value="" />
+					<br/>
+					</div>
+					<div class="form-group ">
+					
+				        <label for="additional_address_post_code" class="form-label address_post_code">Postcode</label>
+				        <input id="additional_address_post_code" name="additional_address_post_code" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
+						&nbsp;&nbsp;&nbsp;
+						
+						<div class="btn btn-default">
+						<i class="glyphicon glyphicon-plus-sign"></i> &nbsp;&nbsp;
+						<a id="add-address">Add address</a>
+						<br>
+					</div>
+
+					
+					</div>
+					
+					
+
+				</div>
+				
+				<div id="address_table">
+				<p>&nbsp;</p>
+					<table>
+						<thead>
+							<th>Address</th>
+							<th></th>
+							<th></th>
+							<th>Town</th>
+							<th>County</th>
+							<th>Post code</th>
+							<th></th>
+						</thead>
+						<tbody id="tablebody">
+							
+						</tbody>
+					</table>
+				</div>
+
+	</div>
 
 	<p>&nbsp;</p>
-	
-	<div class="form-group">
-		<p id="title_label" class="form-label-bold">Do you own your own home?</p>
-		<fieldset class="inline">
-			<div id="othername" class="auto-style1">
-				<label id="home_label" for="home_Yes" class="block-label">
-				<input id="home_Yes" value="Yes" name="home" type="radio" aria-describedby="title_error title_help">Yes</label>
-				<label id="home_label1" for="home_No" class="block-label">
-				<input id="home_No" value="No" name="home" type="radio" aria-describedby="title_error title_help">No</label>
-			</div>
-		</fieldset>
-	</div>
 	
 	<div class="form-group" id="pnl-residence">
 		<p id="title_label2" class="form-label-bold">Do you currently live or have your principle residence in England or Wales?</p>
@@ -347,61 +478,102 @@
 
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../DRO_assets/js/loop.js"></script>
+<script type="text/javascript" src="../../DRO_assets/js/postcodelookup.js"></script>
+
 
 <script type="text/javascript">
-$(document).ready(function() {
+var count=1;
+var tablecount=0;
 
-	var count=1;
+$(document).ready(function(){
+	$("#pnl-validation").hide();
+	$("#pnl-residence1").hide();
+	$("#pnl-business").hide();
+	$("#address_table").hide();
+		
+});
+
+$("#add-address").click(function() {
+	$("#address_table").show();
+	tablecount++;
+	var tabletext; 
+	var add1 = $("#additional_address_line_1").val();
+	var add2 = $("#additional_address_line_2").val();
+	var add3 = $("#additional_address_line_3").val();
+	var add4 = $("#additional_address_town").val();
+	var add5 = $("#additional_address_county").val();
+	var add6 = $("#additional_address_post_code").val();
+	tabletext = tabletext + "<tr><td>"+add1+"</td><td>"+add2+"</td><td>"+add3+"</td><td>"+add4+"</td><td>"+add5+"</td><td>"+add6+"</td><td><a href=\"#\">Delete</a></td></tr>"
+	$("#tablebody").append(tabletext);
 	
-	$(document).ready(function(){
-		$("#pnl-validation").hide();
+	$("#fulladdress2").hide();
+    $("#additional_address_line_1").val('');
+    $("#additional_address_line_2").val('');
+    $("#additional_address_line_3").val('');
+    $("#additional_address_town").val('');
+    $("#additional_address_county").val('');
+    $("#additional_address_post_code").val('');
+    $("#postcode2").val('');
+    $("#name2").val('');
+    $(".othertime").show();
+
+});
+
+$('#pnl-residence input:radio').click(function() {
+	
+	if(($('#residence_Yes').prop('checked')==true)){
 		$("#pnl-residence1").hide();
 		$("#pnl-business").hide();
-			
-	});
+		count=1;
 
-	$('#pnl-residence input:radio').click(function() {
+	}
+	else {
+		$("#pnl-residence1").show();
+		count++;
+
+	}
+
+});
+
+$('#pnl-residence1 input:radio').click(function() {
+	
+	if(($('#residence1_Yes').prop('checked')==true)){
+		$("#pnl-business").hide();
+		count--;
+	}
+	else {
+		$("#pnl-business").show();
+		count++;
+	}
+
+});
+
+$('#other-addresses input:radio').click(function() {
+	
+	if(($('#otheraddress_Yes').prop('checked')==true)){
+		$("#other_address").show();
 		
-		if(($('#residence_Yes').prop('checked')==true)){
-			$("#pnl-residence1").hide();
-			$("#pnl-business").hide();
-			count=1;
-
-		}
-		else {
-			$("#pnl-residence1").show();
-			count++;
-
-		}
-	
-	});
-	
-	$('#pnl-residence1 input:radio').click(function() {
+	}
+	else if(($('#otheraddress_No').prop('checked')==true)){
+		$("#other_address").hide();
 		
-		if(($('#residence1_Yes').prop('checked')==true)){
-			$("#pnl-business").hide();
-			count--;
-		}
-		else {
-			$("#pnl-business").show();
-			count++;
-		}
-	
-	});
+	}
+
+});
 
 
-	var normalroute = $("#next").prop("href");
-	$("#otheraddress_Yes").click(function(){
-		$.cookie("section1", "inprogress",{path: '/'});
-		$("#next").prop("href","additional_address.html");
-		$("#return").hide();
-	});
-	$("#otheraddress_No").click(function(){
-		$.cookie("section1", "inprogress",{path: '/'});
-		$("#next").prop("href", normalroute);
-		$("#return").show();
-	});
 
+var normalroute = $("#next").prop("href");
+$("#otheraddress_Yes").click(function(){
+	$.cookie("section1", "inprogress",{path: '/'});
+	$("#next").prop("href", normalroute);
+	$("#return").hide();
+});
+$("#otheraddress_No").click(function(){
+	$.cookie("section1", "inprogress",{path: '/'});
+	$("#next").prop("href", normalroute);
+	$("#return").show();
 });
 
 </script>

@@ -212,24 +212,8 @@ display:block;
                     <tbody>
                     	<tr class="group-heading">
                     		<td>Number of creditors</td>
-                        	<td>2</td>
+                        	<td id="numcreditors">2</td>
                         	<td><a href="list.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of enforcement visits</td>
-                        	<td>0</td>
-                        	<td><a href="actionlist.html">Edit</a></td>
-                        	<td></td>
-                    	</tr>
-                    </tbody>
-                    <tbody>
-                    	<tr class="group-heading">
-                    		<td>Number of attachments of earnings</td>
-                        	<td>0</td>
-                        	<td><a href="actionlist.html">Edit</a></td>
                         	<td></td>
                     	</tr>
                     </tbody>
@@ -239,7 +223,7 @@ display:block;
             </div>
 	<h2 class="heading-medium">Enforcement visits</h2>
 	<form class="form" method="post">
-		<div id="creditorlist">
+		<div id="enforcementlist">
 			<table style="width: 100%">
 				<thead>
 					<tr>
@@ -250,12 +234,7 @@ display:block;
 					</tr>
 				</thead>
 				<tbody>
-					<tr id="row1">
-						<td class="name">&nbsp;</td>
-						<td class="date"></td>
-						<td class="amount">£ </td>
-						<td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td>
-					</tr>
+
 				</tbody>
 			</table>
 		</div>
@@ -264,7 +243,7 @@ display:block;
 
 	<h2 class="heading-medium">Attachments of earnings</h2>
 	<form class="form" method="post">
-		<div id="creditorlist">
+		<div id="attachmentlist">
 			<table style="width: 100%">
 				<thead>
 					<tr>
@@ -376,14 +355,68 @@ $(document).ready(function() {
 	
 	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
-	
-	var rowid = $.cookie("creditorrow");
-	$("#row1 .name").text($.cookie("creditorname"));
-	$("#row1 .date").text($.cookie("creditordate"));
-	$("#row1 .amount").append($.cookie("creditoramount"));
 
+	var numcreditors = parseInt($.cookie('numcreditors'));
+
+	$("#numcreditors").text(numcreditors);
+	$("#enforcementlist tbody").prepend(getenforcementhtml());
+
+
+	$("#attachmentlist tbody").prepend(getattachmenthtml());
 
 });
+
+var assetypes = ["bankcash", "cash", "household", "possessions", "compensation", "beneficiary", "investments", "trade", "money", "other"];
+
+
+function getenforcementhtml() {
+    var html = "";
+    var itemcount = 0;
+    var creditorname = "";
+    var totalamount = 0;
+
+    var numrows = $.cookie("creditorrow");
+
+  //  for (rowid = 1; rowid <= numrows; rowid++) {
+   
+    var rowid = $.cookie("creditorvisitrow");
+ 
+    if ($.cookie("creditorvisit" + rowid + "amount")) {
+        var creditorname = $.cookie("creditorvisit" + rowid + "name");
+        var amount = $.cookie("creditorvisit" + rowid + "amount");
+        var date = $.cookie("creditorvisit" + rowid + "date");
+
+        html = html + '<tr id="row' + itemcount + '"><td class="name">' + creditorname + '</td><td class="date">' + date + '</td>';
+        html = html + '<td class="amount">£ ' + amount + '</td><td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td></tr>';
+    }
+   // }// for
+    return html;
+}
+
+
+function getattachmenthtml() {
+    var html = "";
+    var itemcount = 0;
+    var creditorname = "";
+    var totalamount = 0;
+
+    var numrows = $.cookie("creditorrow");
+
+    //  for (rowid = 1; rowid <= numrows; rowid++) {
+
+    var rowid = $.cookie("creditorattachmentrow");
+
+    if ($.cookie("creditorattachment" + rowid + "amount")) {
+        var creditorname = $.cookie("creditorattachment" + rowid + "name");
+        var amount = $.cookie("creditorattachment" + rowid + "amount");
+        var date = $.cookie("creditorattachment" + rowid + "frequency");
+
+        html = html + '<tr id="row' + itemcount + '"><td class="name">' + creditorname + '</td><td class="date">' + date + '</td>';
+        html = html + '<td class="amount">£ ' + amount + '</td><td><a href="#">Edit</a>&nbsp; <a href="#">Delete</a></td></tr>';
+    }
+    // }// for
+    return html;
+}
 
 
 function getParameterByName(name) {

@@ -109,15 +109,19 @@ display:block;
 	  padding-left: 15px;
 	  display: table-cell;
 }
-legend{
-	border: 0 transparent none;
-}
-.auto-style1 {
-	display: block;
-	color: #000000;
-	margin-top: 8px;
-	margin-bottom: 5px;
-}
+
+    legend {
+        border: 0 transparent none;
+    }
+
+    .halfwidth {
+        float: left;
+        margin-right: 15px;
+        clear: none;
+        width: 45%;
+    }
+
+
 </style>
 <!-- #EndEditable -->
 
@@ -193,50 +197,95 @@ legend{
 	
 	<h1 class="form-title heading-large">Your previous address</h1>
 	
-	<div class="auto-style1">We need your address history for the last 3 years</div>
-	<p>
+	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<div class="form-group ">
 	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-	<br/>
-	</div>
-	
-	<fieldset id="movedin-date" class="date-of-birth">
+        <div class="clearfix"></div>
+        <div class="validation-summary" style="display:none" id="nomatch">
+            <h2>We couldn't find your address</h2>
+            <p></p><ol>
+                <li class="error-message">
+                    <p id="error-reenter">Please check your postcode and try again or enter the full address below. </p>
+                </li>
+            </ol>
+        </div>
+
+
+        <fieldset class="firsttime">
+            <legend class="form-label-bold">
+                <span class="firsttime">Previous address</span>
+            </legend>
+
+            <span class="form-hint">For example, 12 Place Street  BL4 7AF</span>
+            <div class="form-group halfwidth">
+                <label for="name">First line</label>
+                <input id="name" />
+            </div>
+            <div class="form-group halfwidth">
+                <label for="postcode">Postcode</label>
+                <input id="postcode" />
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <a id="btn-lookup" class="button" href="#">Look up address</a>&nbsp;
+                <a id="btn-outsideuk" href="#" style="padding-top:6px" class="btn-link">I live abroad</a>&nbsp;
+
+                <br />
+            </div>
+        </fieldset>
+
+        <div class="repeat" id="fulladdress">
+
+            <p class="form-label-bold">
+                Address
+            </p>
+            <p>
+                <div class="form-group ">
+
+                    <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
+                    <input id="address_line_1" name="address_line_1" type="text" aria-describedby="address_line_1_error address_line_1_help" value="" />
+                    <br />
+                </div>
+                <div class="form-group ">
+
+                    <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
+                    <input id="address_line_2" name="address_line_2" type="text" aria-describedby="address_line_2_error address_line_2_help" value="" />
+                    <br />
+                </div>
+                <div class="form-group ">
+
+                    <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
+                    <input id="address_line_3" name="address_line_3" type="text" aria-describedby="address_line_3_error address_line_3_help" value="" />
+                    <br />
+                </div>
+                <div class="form-group ">
+
+                    <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+                    <input id="address_town" name="address_town" type="text" aria-describedby="address_town_error address_town_help" value="" />
+                    <br />
+                </div>
+                <div class="form-group ">
+
+                    <label id="address_county_label" for="address_county" class="form-label address_county">
+                        County
+                    </label>
+                    <input id="address_county" name="address_county" type="text" aria-describedby="address_county_error address_county_help" value="" />
+                    <br />
+                </div>
+                <div class="form-group ">
+
+                    <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postcode</label>
+                    <input id="address_post_code" name="address_post_code" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
+                    <br />
+                </div>
+            </p>
+
+        </div>
+
+<fieldset id="movedin-date" class="date-of-birth">
 
             <legend id="date_of_birth_label" class="form-label-bold">When did you move in?</legend>
             <div class="form-hint">For example, Aug 2012</div>
@@ -244,13 +293,13 @@ legend{
             <div>
                 <div>
                     <div class="form-group form-group-day" style="display:none">
-                        <label id="date_of_birth_label.day" for="day">Day</label>
-                        <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+                        <label for="movedin-day">Day</label>
+                        <input id="movedin-day" name="date_of_birth.day" type="number" min="1" max="31" />
                     </div>
                     <div class="form-group" style="width:60px">
-                        <label id="date_of_birth_label.month" for="month">Month</label>
+                        <label for="movedin-month">Month</label>
 
-                        <select id="month" name="month">
+                        <select id="movedin-month" name="month">
                             <option value="0"></option>
                             <option value="1">Jan</option>
                             <option value="2">Feb</option>
@@ -268,78 +317,106 @@ legend{
 
                     </div>
                     <div class="form-group form-group-year">
-                        <label id="date_of_birth_label.year" for="year">Year</label>
-                        <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
+                        <label for="movedin-year">Year</label>
+                        <input id="movedin-year" name="date_of_birth.year" type="number" min="1900" max="9999" />
                     </div>
                 </div>
   
             </div>
         </fieldset>
-        <p class="clearfix"><br></p>
-   </form>
+
+<p class="clearfix"><br/></p>
+<fieldset id="movedout-date" class="date-of-birth">
+
+            <legend id="date_of_birth_label" class="form-label-bold">When did you move out?</legend>
+            <div class="form-hint">For example, Aug 2014</div>
+
+            <div>
+                <div>
+                    <div class="form-group form-group-day" style="display:none">
+                        <label for="movedout-day">Day</label>
+                        <input id="movedout-day" name="date_of_birth.day" type="number" min="1" max="31" />
+                    </div>
+                    <div class="form-group" style="width:60px">
+                        <label id="date_of_birth_label.month" for="movedout-month">Month</label>
+
+                        <select id="movedout-month" name="month">
+                            <option value="0"></option>
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group form-group-year">
+                        <label for="movedout-year">Year</label>
+                        <input id="movedout-year" name="date_of_birth.year" type="number" min="1900" max="9999" />
+                    </div>
+                </div>
+  
+            </div>
+        </fieldset>
+
+<p class="clearfix"><br/></p>
+
+
+</form> 
+  <p class="clearfix"><br/></p>
+
+	</div>
+<div class="right-block">
+<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+                           
+                            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                            <br>
+                            <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+                            <p class="heading-secondary">Bankruptcy fee</p>
+                           	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
+                           	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
+                           	<p><a href="payments/payments.html">Make a payment</a></p>
+                            </div>
+                            <p><a href="#" style="display:none">Print summary</a></p>
+                            <p><a href="#" style="display:none">Generate court documents</a></p>
+                            <p><a href="#" style="display:none">Discard application</a></p>
+                        </div>
 </div>
 
-    <div class="right-block">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+<p><br></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group" style="margin-left:30px;">
+	
+	<div>
+		<a id="next" class="button repeat" href="list_addresses.html?loop=true" >Continue</a>
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="1.html" id="back">Back</a>
 
-                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-                <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
 
+	</div>
 
-        </div>
-
-        <p><br></p>
-
-        <!-- For User research -->
-        <div class="form-navigation form-group" style="margin-left:30px;">
-
-            <div>
-                <a href="dependents.html" class="button" id="next">Continue</a>
-
-            </div>
-            <div>
-                <br>
-            </div>
-
-            <div>
-                <a style="padding-right: 30px" href="family-members.html" id="back">Back</a>
-
-
-                <a href="#" id="cancel">Save and logout</a>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-	 </div>
-
-
-	 </div>
+        
+</div>
 
 
 	 <!-- #EndEditable -->
-
-        
-<div id="content" >
-
-        
-<div id="content" >
 
         
 <footer role="contentinfo" id="footer" class="group js-footer">
@@ -389,25 +466,74 @@ legend{
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../shared/loop.js"></script>
+    <script type="text/javascript" src="../assets/js/titleCaps.js"></script>
+<script type="text/javascript" src="../assets/property/js/postcodelookup.js"></script>
 
 
 <script type="text/javascript">
 $(document).ready(function() {
 
-
-
+	var line1 =  $.cookie("prev_propertyline1");
+	var postcode =  $.cookie("prev_propertypostcode");
+		
 	var housename;
-	
-	var pre  = getParameterByName("added");
-	if (pre && pre.length > 1){
+	$("#name").val(line1);
+	$("#postcode").val(postcode);
+	if (postcode && postcode.length > 0){
+		$("#btn-lookup").click();
 	}
+	
+	var pre  = getParameterByName("pre");
+	if (pre && pre.length > 1){
+		$("#address_line_1").val("110 High Street");
+		$("#address_line_2").val("Newhall");
+		$("#address_town").val("Birmingham");
+		$("#address_post_code").val("B4 3TT");
+		//$("#other-addresses").hide();
+		
+		//$("#next").prop("href", "your-addresses.html")
+	}
+	
 	
 	var normalroute = $("#next").prop("href");
 
-	
 
 });
 
+$("#next").click(function(){
+		var addr = $("#address_line_1").val();
+		if (addr && addr.length > 0){
+
+			$.cookie("prev_address_line_1", addr, { expires: 1, path:'/' });
+			$.cookie("prev_address_line_2", $("#address_line_2").val(), { expires: 1, path:'/' });
+			$.cookie("prev_address_line_3", $("#address_line_3").val(), { expires: 1, path:'/' });
+			
+			$.cookie("prev_town", $("#address_town").val(), { expires: 1, path: '/' });
+			$.cookie("prev_county", $("#address_county").val(), { expires: 1, path: '/' });
+			if ( $("#address_post_code")){
+				$.cookie("prev_post_code", $("#address_post_code").val(), { expires: 1, path:'/' });
+			}
+
+			var movedindate = getdatestring($("#movedin-month  option:selected").text(), $("#movedin-year").val())
+			$.cookie("prev_movedin", movedindate, { expires: 1, path: '/' });
+
+			var movedoutdate = getdatestring($("#movedout-month  option:selected").text(), $("#movedout-year").val())
+			$.cookie("prev_movedout", movedoutdate, { expires: 1, path: '/' });
+
+
+		}
+		
+});
+
+function getdatestring(month, year) {
+    return (month + " " + pad(year, 2));
+}
+
+function pad(str, max) {
+    str = str.toString();
+    return str.length < max ? pad("0" + str, max) : str;
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

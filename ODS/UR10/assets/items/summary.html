@@ -63,8 +63,9 @@
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
 
+    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
 
-    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
+    <!--<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">-->
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/sfs.css">
     <style type="text/css">
         .row > div:first-child {
@@ -84,6 +85,11 @@ table td[class*=col-], table th[class*=col-]{
 }
 .totalrow td{
     font-weight:bold;
+}
+
+.group-title > *:first-child{
+    font-weight:normal;
+    padding-bottom:0
 }
     </style>
 
@@ -162,14 +168,22 @@ table td[class*=col-], table th[class*=col-]{
                 <h1 class="form-title heading-large">Your <span lang="en-gb">
 				possessions</span></h1>
 
-                <p>We need to know about other items you own. </p>
+                <p>We need to know about any items you currently own</p>
 
+<p>Telling us about an item doesn’t necessarily mean it will be taken away from you.</p>
+
+                <div><a href="#" id="btn-showhelp"><i class="glyphicon glyphicon-triangle-right"></i> Find out more</a></div>
+                <div class="help hidden">
+                    <p>
+                        Once your bankruptcy order is made, your applicant will be passed on to an Insolvency official for consideration. They will review your personal circumstances to determine which items could reasonably be sold to help pay your debts.
+                    </p>
+                    <p>It’s very unlikely that items you need for your daily life (e.g. washing machine, sofa, oven) will be sold.
+                    </p>
+                </div>
                 <form class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-
                     <div>
-
                         <div>
 
                             <div id="income" class="col-sm-9">
@@ -177,27 +191,30 @@ table td[class*=col-], table th[class*=col-]{
 
                                 <div class="form-group">
                                     <table>
-<thead>
-    <tr>
-        <th>Your items</th>
-        <th colspan="2">Total</th>
-    </tr>
-</thead>	
+                                    <thead>
+                                        <tr>
+                                            <th>Your items</th>
+                                            <th class="text-right" style="font-weight:normal">Value</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>	
 
-                                        <tbody class="group-title" id="item0" data-role="cash">
+                                        <tbody class="group-title" id="item0" data-role="bankcash">
                                             <tr class="group-heading parent">
                                                 <td class="group-title col-sm-8">
-                                                    Cash from bank
+                                                    <div>Bank account balance</div>
+                                                    <div class="form-hint">The sum of all your positive account balances</div>
                                                 </td>
-                                                <td class="value col-sm-2">£109.78</td>
+                                                <td class="value col-sm-2" id="positive-balance">0</td>
                                                 <td class="actions col-sm-2">
-                                                    <a href="../banks/add_bank.html?loop=true" class="next edit">Edit</a>
+                                                    <a href="../../banks/add_bank.html?loop=true" class="next edit">Edit</a>
                                                 </td>
                                             </tr>
                                         </tbody>
                                         <tbody class="group-title" id="item1" data-role="cash">
                                             <tr class="group-heading parent">
-                                                <td class="group-title col-sm-8">Cash not in a building society or bank
+                                                <td class="group-title col-sm-8"><div>Cash</div>
+                                                    <div class="form-hint">Any cash you have that's not in a building society or bank</div>
                                                 <br/>
                                                  <a href="#" class="declare" id="btn-no">I don't have any cash</a>
 
@@ -210,9 +227,9 @@ table td[class*=col-], table th[class*=col-]{
 									</tbody>
                                     <tbody class="group-title clearfix" id="item2" data-role="household">
                                             <tr class="group-heading parent">
-                                                <td>
-                                                    Household items of exceptional value<br />
-                                                    <a href="#" style="display:none" class="declare">I don’t have any household items of exceptional value</a>
+                                                <td class="group-title">
+                                                    <div>Household items</div><br />
+                                                    <a href="#" style="display:none" class="declare">I don’t have any household items</a>
                                                 </td>
 
                                                 <td></td>
@@ -233,7 +250,8 @@ table td[class*=col-], table th[class*=col-]{
 									
 									 <tbody id="item3" data-role="possessions">
                                             <tr class="group-heading parent">
-                                                <td>Any other assets or possessions<br />
+                                                <td class="group-title"><div>Other items or possessions</div>
+                                                    <div class="form-hint">For example fine art, jewellery, bicycles, etc</div><br />
                                                     <a href="#" style="display:none" class="declare">I have no other items</a>
 												</td>
 
@@ -255,8 +273,7 @@ table td[class*=col-], table th[class*=col-]{
 									
 									<tbody class="group-title" id="item4" data-role="compensation">
                                             <tr class="group-heading parent" id="income4">
-                                                <td>
-                                                    Compensation or legal claim<br />
+                                                <td class="group-title"><div>Compensation or legal claim</div><br />
                                                     <a href="#" style="display:none" class="declare">I have no contributions</a></td>
                                                     <td></td>
                                                 <td class="actions">
@@ -277,8 +294,8 @@ table td[class*=col-], table th[class*=col-]{
 									</tbody>
                                         <tbody class="group-title" id="item5" data-role="beneficiary">									
                                             <tr class="group-heading parent" id="income5">
-                                                <td>
-                                                    Interest in a will or trust<br />
+                                                <td class="group-title">
+                                                    <div>Interest in a will or trust</div><br />
                                                     <a href="#" style="display:none" class="declare">I don’t benefit from any trusts or wills</a>
                                                 </td>
                                                 <td class="value"></td>                                         
@@ -299,8 +316,8 @@ table td[class*=col-], table th[class*=col-]{
 										</tbody>
 										<tbody class="group-title" id="item6" data-role="investments">
                                             <tr class="group-heading parent" id="income6">
-                                                <td>
-                                                Stocks, shares and investment<br />
+                                                <td class="group-title">
+                                                <div>Stocks, shares and investment</div><br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any stocks, shares or investments</a>
                                                 </td>
                                                 <td class="value"></td>
@@ -321,8 +338,8 @@ table td[class*=col-], table th[class*=col-]{
                                             </tbody>
                                         <tbody class="group-title" id="item7" data-role="trade">
                                             <tr class="group-heading parent" id="income7">
-                                                <td>
-                                                    Self employed business assets<br />
+                                                <td class="group-title">
+                                                    <div>Self employed business assets</div><br />
                                                     <a href="#" style="display:none" class="declare">I don’t have any self employed trading assets</a>
                                                 </td>
                                                 <td class="value"></td>
@@ -345,8 +362,8 @@ table td[class*=col-], table th[class*=col-]{
 
                                         <tbody class="group-title" id="item8" data-role="money">
                                             <tr class="group-heading parent" id="income8">
-                                                <td>
-                                                    Money you’re owed<br />
+                                                <td class="group-title">
+                                                    <div>Money you’re owed</div><br />
                                                     <a href="#" style="display:none" class="declare">No one owes me any money</a>
                                                 </td>
                                                 <td class="value"></td>
@@ -369,8 +386,8 @@ table td[class*=col-], table th[class*=col-]{
 
                                         <tbody class="group-title" id="item9" data-role="other">
                                             <tr class="group-heading parent">
-                                                <td>
-                                                    Other<br />
+                                                <td class="group-title">
+                                                    <div>Other</div><br />
                                                     <a href="#" style="display:none" class="declare">I have added all my other assets</a>
                                                 </td>
                                                 <td class="value"></td>
@@ -388,13 +405,18 @@ table td[class*=col-], table th[class*=col-]{
                                                     <a href="other.html?type=other&page=9&edit=true" style="display:none" class="edit">Edit</a>
                                                 </td>
                                             </tr>
-                                            <tr class="group-heading totalrow" id="incometotal">
-                                                <td></td>
-                                                <td class="totalvalue"></td>      
-                                                <td class="actions" style="text-align:right">
+
+
+                                        </tbody>
+                                        <tbody>
+                                            <tr class="group-heading totalrow" id="overalltotal">
+                                                <td style="text-align:right">
                                                     <span style="float:right; width:100%">Total</span>
                                                 </td>
+                                                <td class="totalvalue text-right"></td>
+                                                <td class="actions"></td>
                                             </tr>
+
 
                                         </tbody>
                                     </table>
@@ -416,7 +438,7 @@ table td[class*=col-], table th[class*=col-]{
             <div class="form-navigation form-group inner-block">
 
                 <div>
-                    <a id="next" class="button" href="../summary.html?page=4">Continue</a>
+                    <a id="next" class="button" href="../summary.html?page=5">Continue</a>
                 </div>
                 <div>
                     <br>
@@ -492,6 +514,7 @@ table td[class*=col-], table th[class*=col-]{
             var itemnumber = 0;
             var stage = "item";
             var page = 1;
+            var posbal;
 
             $(document).ready(function () {
 				var defaultnext = $(".next").first().attr("href");
@@ -523,12 +546,19 @@ table td[class*=col-], table th[class*=col-]{
                     currenttype = getParameterByName("type");
                 }
 
+
+                if ($.cookie('positive_balance') && parseFloat($.cookie('positive_balance'))) {
+                    posbal = parseFloat($.cookie('positive_balance'));
+                    $("#positive-balance").text(numberWithCommas(posbal));
+                }
+
                 showchildrowdata(itemnumber);
 
 
                 if (stage == "item" && itemnumber > 8) {
                     $("#next").show();
                 }
+
 
 				var defaultnext = $(".next").first().attr("href");
 				$(".declare").on("click", function (e) {
@@ -546,6 +576,15 @@ table td[class*=col-], table th[class*=col-]{
 				    }
 				});
 
+				$("#btn-showhelp").on("click", function (e) {
+				    var helpsection = $(".help").first();
+				    if (helpsection.hasClass("hidden")) {
+				        helpsection.removeClass("hidden");
+				    }
+				    else {
+				        helpsection.addClass("hidden");
+				    }
+				});
 				
             });
 
@@ -554,7 +593,7 @@ table td[class*=col-], table th[class*=col-]{
                 var totalamount = 0.00;
                 for (rowid = 1; rowid <= 9; rowid++) {
                     var totalforrow = 0.00;
-                    type = $("#item" + rowid).data("role");
+                    var type = $("#item" + rowid).data("role");
 
                     var numofthistype = 0;
                     if ($.cookie("num" + type) && parseInt($.cookie("num" + type))) {
@@ -568,7 +607,7 @@ table td[class*=col-], table th[class*=col-]{
 
                         // append the child row 
                         if ($.cookie(type + i + 'amount') > 0) {
-                            numrowswithvalues = numrowswithvalues + 1;
+                            numrowswithvalues++;
 
                             var childamount = parseFloat($.cookie(type + i + 'amount'));
                             var childname = $.cookie(type + i + 'name');
@@ -584,11 +623,11 @@ table td[class*=col-], table th[class*=col-]{
                         }
                     }
 
-                    if (totalforrow > 0 && (numrowswithvalues > 1)) {
+                    if (totalforrow > 0) {
                         if (rowid == 1) {
                             $("#item" + rowid + " .value").text(numberWithCommas(totalforrow));
                         }
-                        else {
+                        if (numrowswithvalues > 1) {
                             $("#" + stage + rowid + " .totalrow").show();
                             $("#item" + rowid + " .totalrow .value").text(numberWithCommas(totalforrow));
                         }
@@ -612,8 +651,10 @@ table td[class*=col-], table th[class*=col-]{
                 if (currentrow > 8) {
                     $("#next").show();
                 }
-
-                $("#overalltotal .totalvalue").text(totalamount);
+                if (posbal && parseFloat(posbal)) {
+                    totalamount = totalamount + posbal; 
+                }
+                $("#overalltotal .totalvalue").text(numberWithCommas(totalamount));
                 $.cookie("otherassetsamount", totalamount, { expires: 1, path: "/" });
 
             }

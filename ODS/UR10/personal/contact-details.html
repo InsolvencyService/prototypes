@@ -232,77 +232,8 @@ display:block;
         </div>
 
 
-        <fieldset class="firsttime">
-            <legend class="form-label-bold">
-                <span class="firsttime">Current address</span>
-            </legend>
-
-            <span class="form-hint">For example, 12 Place Street  BL4 7AF</span>
-            <div class="form-group halfwidth">
-                <label for="name">First line</label>
-                <input id="name" />
-            </div>
-            <div class="form-group halfwidth">
-                <label for="postcode">Postcode</label>
-                <input id="postcode" />
-            </div>
-            <div class="clearfix"></div>
-            <div class="form-group">
-                <a id="btn-lookup" class="button" href="#">Look up address</a>&nbsp;
-                <a id="btn-outsideuk" href="#" style="padding-top:6px" class="btn-link">I live abroad</a>&nbsp;
-
-                <br />
-            </div>
-        </fieldset>
-
-        <div class="repeat" id="fulladdress">
-
-            <p class="form-label-bold">
-                Address
-            </p>
-            <p>
-                <div class="form-group ">
-
-                    <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
-                    <input id="address_line_1" name="address_line_1" type="text" aria-describedby="address_line_1_error address_line_1_help" value="" />
-                    <br />
-                </div>
-                <div class="form-group ">
-
-                    <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
-                    <input id="address_line_2" name="address_line_2" type="text" aria-describedby="address_line_2_error address_line_2_help" value="" />
-                    <br />
-                </div>
-                <div class="form-group ">
-
-                    <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
-                    <input id="address_line_3" name="address_line_3" type="text" aria-describedby="address_line_3_error address_line_3_help" value="" />
-                    <br />
-                </div>
-                <div class="form-group ">
-
-                    <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
-                    <input id="address_town" name="address_town" type="text" aria-describedby="address_town_error address_town_help" value="" />
-                    <br />
-                </div>
-                <div class="form-group ">
-
-                    <label id="address_county_label" for="address_county" class="form-label address_county">
-                        County
-                    </label>
-                    <input id="address_county" name="address_county" type="text" aria-describedby="address_county_error address_county_help" value="" />
-                    <br />
-                </div>
-                <div class="form-group ">
-
-                    <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postcode</label>
-                    <input id="address_post_code" name="address_post_code" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
-                    <br />
-                </div>
-            </p>
-
-        </div>
-
+        
+        
 
 
 
@@ -333,7 +264,7 @@ display:block;
 	<div class="form-navigation form-group" style="margin-left:30px;">
 	
 	<div>
-		<a id="next" class="button repeat" href="whenmoved.html" >Continue</a>
+		<a id="next" class="button" href="address.html" >Continue</a>
 	</div>
 	<div>
 	<br>
@@ -411,20 +342,6 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
-	var housename;
-	$("#address_line_1").val("");
-	$("#address_post_code").val("");
-	var pre  = getParameterByName("pre");
-	if (pre && pre.length > 1){
-		$("#address_line_1").val("110 High Street");
-		$("#address_line_2").val("Newhall");
-		$("#address_town").val("Birmingham");
-		$("#address_post_code").val("B4 3TT");
-		//$("#other-addresses").hide();
-		
-		$("#next").prop("href", "your-addresses.html")
-	}
-	
 	$("#email").val($.cookie('email'));
 	
 	var normalroute = $("#next").prop("href");
@@ -444,21 +361,6 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
-		var addr = $("#address_line_1").val();
-		if (addr && addr.length > 0){
-		    $.cookie("address", addr, { expires: 1, path: '/' });
-		    $.cookie("applicant_address", addr, { expires: 1, path: '/' });
-
-			$.cookie("address_line_1", addr, { expires: 1, path:'/' });
-			$.cookie("address_line_2", $("#address_line_2").val(), { expires: 1, path:'/' });
-			$.cookie("address_line_3", $("#address_line_3").val(), { expires: 1, path:'/' });
-			
-			$.cookie("town", $("#address_town").val(), { expires: 1, path: '/' });
-			$.cookie("county", $("#address_county").val(), { expires: 1, path: '/' });
-			if ( $("#address_post_code")){
-				$.cookie("post_code", $("#address_post_code").val(), { expires: 1, path:'/' });
-			}
-		}
 		
 });
 
