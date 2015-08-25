@@ -590,14 +590,14 @@ $(document).ready(function() {
         }
 
     });
-
+/*
     $("#next").on("click", function (e) {
         if ($("#address_line_1").val() == '') {
             alert("Please enter an address");
             e.preventDefault();
         }
     });
-    
+  */  
     function ismatch(name1, name2) {
         name1 = name1.replace(/ /g, '');
         name2 = name2.replace(/ /g, '');

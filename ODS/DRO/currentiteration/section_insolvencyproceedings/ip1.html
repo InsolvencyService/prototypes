@@ -640,7 +640,7 @@
 			</div>
 
 			<div style="padding-left:25px" class="form-navigation form-group">
-				<a id="next" class="button">Save and continue</a><br>
+				<a id="next" href="../section_employment/intro.html" class="button">Save and continue</a><br>
 				<a id="return" >Return to overview</a><br><br>
 				<a style="padding-right: 30px" href="../application.html" id="back">Back</a>
 			</div>
@@ -712,7 +712,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-
+	$.cookie('section2', "in progress", {path: '/'});
 	$("#pnl-preceeding-date").hide();
 	$("#pnl-preceeding-dmp").hide();
 	$("#pnl-preceeding-ccao").hide();
@@ -730,7 +730,7 @@ $(document).ready(function() {
 	
 	$("#next").click(function(){
 		$.cookie("section2", "inprogress", {path: '/'});
-		$("#next").prop("href","#");
+	
 	});
 	
 	$("#return").click(function(){

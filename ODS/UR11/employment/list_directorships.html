@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -72,6 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
+
  .tt-dropdown-menu{
 	width:650px;
 }
@@ -229,7 +230,7 @@ display:block;
 			</div>
 	    <p class="repeat">The table above summarises the directorships you have told us about.</p>
 	    <p>We need to know about all<span class="repeat">any other</span> limited compan<span class="repeat">ies</span><span class="firsttime">y</span> directorships you have held in the last 12 months. in the last 12 months.</p>	
-		<p>Limited companies are those registered with Companies House and have Ltd, PLC, LLP or CIC as part of the company name, eg ABC Trading Ltd</p>
+		<p>Limited companies are those registered with Companies House and have Ltd, PLC, or LLP as part of the company name, eg ABC Trading Ltd</p>
 	     <p>&nbsp;</p>       
 
 	<div class="validation-summary" style="display:none">
@@ -237,8 +238,7 @@ display:block;
                 <p></p><ol>     
         <li class="error-message">
 
-            <p>You are entering a company name that does include <strong>Ltd</strong>, <strong>Limited</strong>, <strong>LLP</strong>, <strong>Limited liability partnership</strong>, <strong>CIC</strong>
-
+            <p>You are entering a company name that does include <strong>Ltd</strong>, <strong>Limited</strong>, <strong>LLP</strong>, <strong>Limited liability partnership</strong>
              or <strong>PLC</strong>, are you sure you wish to proceed?</p>
 
         </li>
@@ -398,7 +398,7 @@ function getParameterByName(name) {
 
 function isvalidcompany(companyname){
 	var name = companyname.toLowerCase();
-	if (name.indexOf("limited") > -1 || name.indexOf("ltd") > -1 || name.indexOf("llp") > -1 || name.indexOf("plc") > -1 || name.indexOf("cic") > -1) {
+	if (name.indexOf("limited") > -1 || name.indexOf("ltd") > -1 || name.indexOf("llp") > -1 || name.indexOf("plc") > -1){
 		return true;
 	}
 
