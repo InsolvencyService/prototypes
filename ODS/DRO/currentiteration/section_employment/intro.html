@@ -672,10 +672,12 @@ $('#next').click(function() {
 	if($("#also_other :checked").val()==1){
 		$("#next").attr('href', 'previousbusiness.html?loop=true');
 	}
-	else if($("#pnl-Other :checked").val()=="no"){
+	
+	if($("#pnl-Other :checked").val()=="no"){
 		$("#next").attr('href', '../section_assets/assets1.html');
 	}
-	else if($("#also_other :checked").val()==0){
+	
+	if($("#also_other :checked").val()==0){
 		$("#next").attr('href', '../section_assets/assets1.html');
 	}
 
