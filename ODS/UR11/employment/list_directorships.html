@@ -207,7 +207,7 @@ display:block;
 <div class="inner-block">	
 	<h1 class="form-title heading-large"><span class="firsttime">Your company directorships</span><span class="repeat">Company directorships summary</span></h1>
 	<div class="col-md-9">
-		<form class="form" method="post">
+		<form class="form">
 		
 		
 			
@@ -374,7 +374,6 @@ $(document).ready(function() {
 		$("#tablebody").append(row);
 	}
 
-	$('form.form').removeProp('method');
 	var btn_submit = $('a.button:visible').first();
 	if (btn_submit) {
 	    btn_submit.prop("type", "submit");
@@ -385,7 +384,7 @@ $(document).ready(function() {
 	}
 });
 
-$("form.form").on("submit", function (event) {
+$("form.form").on("submit", function (e) {
     var theurl = $('a.button:visible').first().prop("href");
     if (theurl && theurl.length > 3) {
         $('form.form').prop('action', theurl);

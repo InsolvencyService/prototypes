@@ -657,7 +657,7 @@ Directorships you have held in last 12 months
                                 <div class="rowtop">
                                     <span class="col-sm-8"><h3>7 Legal proceedings</h3></span>
                                     
-                                    <span class="col-sm-4"><a href="#" class="edit" style="display:none">Start</a></span>
+                                    <span class="col-sm-4"><a href="http://indigo.infragistics.com/prototype/L0YFL11X" class="edit" style="display:none">Start</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="rowmiddle">
@@ -858,6 +858,7 @@ Directorships you have held in last 12 months
 	                var section4 = getParameterByName("section4");
 					var section5 = getParameterByName("section5");
 					var section6 = getParameterByName("section6");
+					var section7 = getParameterByName("section7");
 					$(".rowbottom").hide();
 	               // if (section4 && section4.length > 0) {
 	                    // change the colour of the button
@@ -937,9 +938,20 @@ Directorships you have held in last 12 months
 	                        $("#section3 .edit").show().text("Edit");
 	                        $("#section4 .edit").show().text("Edit");
 	                        $("#section5 .edit").show().text("Edit");
-	                        $("#section6 .edit").show().text("Edit").prop("href","../SFS4a/summary.html?stage=costs&page=7");
+	                        $("#section6 .edit").show().text("Edit");
 	                        $("#section7 .edit").show().addClass("button").text("Start");
 	                        document.title = 'Overview - Legal proceedings';
+	                    }
+	                    if (section7 && section7 == "complete") {
+	                         $("#section1 .edit").show().removeClass("button").text("Edit");
+	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+	                        $("#section3 .edit").show().text("Edit");
+	                        $("#section4 .edit").show().text("Edit");
+	                        $("#section5 .edit").show().text("Edit");
+	                        $("#section6 .edit").show().text("Edit");
+	                        $("#section7 .edit").show().text("Edit");
+	                        $("#section8 .edit").show().addClass("button").text("Start");
+	                        document.title = 'Overview - Insolvency proceedings';
 	                    }
 
 	                //}
