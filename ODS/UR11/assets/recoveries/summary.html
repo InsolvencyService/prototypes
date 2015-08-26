@@ -153,12 +153,15 @@
 	<div class="col-sm-8">
 
 			<p>We need to know about any assets or possessions you have recently sold, transferred or given away.</p>
-			<p>An Insolvency Service official may later ask you to explain why you entered the transaction or how the net proceeds were spent.</p>
-			<p>In some circumstances the beneficiary of a gift can be asked to repay.</p>
-			<p>It’s important you be as thorough as you can when telling us about items you have sold, transferred and given away.</p>
-			<p>We understand that mistakes can happen. If there are any questions, an Insolvency Service official will contact you discuss the information you provided, and you are unlikely to be penalised for accidental omissions.</p> 
-			<p>However, it’s a criminal offense to purposefully mislead the Insolvency Service about any assets you have sold, transferred or given away and those who do so can face legal action.</p>
-			
+            <p><a href="#help1" class="helplink"><i class="glyphicon glyphicon-triangle-right"></i> Why we need to know</a></p>
+            <div id="help1" class="helpsection hidden">
+                <p>An Insolvency Service official may later ask you to explain why you entered the transaction or how the net proceeds were spent.</p>
+                <p>In some circumstances the beneficiary of a gift can be asked to repay.</p>
+                <p>It’s important you be as thorough as you can when telling us about items you have sold, transferred and given away.</p>
+                <p>We understand that mistakes can happen. If there are any questions, an Insolvency Service official will contact you discuss the information you provided, and you are unlikely to be penalised for accidental omissions.</p>
+                <p>However, it’s a criminal offense to purposefully mislead the Insolvency Service about any assets you have sold, transferred or given away and those who do so can face legal action.</p>
+            </div>
+
         </div>
         <div class="col-sm-12">
             <div class="form-group">
@@ -325,6 +328,7 @@ var page = 1;
 
 $(document).ready(function() {
                 $("#next").hide();
+                enablehelp();
 
 				if (getParameterByName("stage") && getParameterByName("stage").length > 0) {
 				    stage = getParameterByName("stage");
@@ -434,6 +438,24 @@ $(document).ready(function() {
 
 });
 
+function enablehelp() {
+    $(".helplink").on("click", function () {
+        if ($(this).prop("href")) {
+            var ref = $(this).prop("href").substring($(this).prop("href").indexOf("#"));
+            var helpsectionref = $(ref);
+            if (helpsectionref) {
+                if (helpsectionref.is(":visible")) {
+                    helpsectionref.addClass("hidden");
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+                }
+                else {
+                    helpsectionref.removeClass("hidden");
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                }
+            }
+        }
+    });
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
