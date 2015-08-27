@@ -224,7 +224,7 @@ display:block;
 <table style="width: 100%">
 		<thead>
 			<tr>
-				<th>Name</th>
+				<th style="vertical-align:top">Name</th>
 				<th>Are you making payments to them under an Attachment of Earnings Order? 
                 Or  Have they impounded, seized or sold any of your assets in the last 6 months? </th>
 			</tr>
@@ -593,10 +593,8 @@ display:block;
 		</table>
 </div>
 <p><br></p>
-<p><a class="button" href="actiontype.html" id="btn-selectedall">I have selected all creditors who took an action against me</a></p>
+<p><a class="button" href="summary.html" id="next">I have selected all creditors who took an action against me</a></p>
 <p><br/></p>
-<p><a class="button" href="summary.html" id="next">No creditors took any action against me</a></p>
-<p><br></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
@@ -690,9 +688,9 @@ $(document).ready(function() {
 	var reset = getParameterByName("reset");
 	var normalroute = $("#next").prop("href");
 	var total = 0;
-	var nextpage = $("#btn-selectedall").prop("href");
 
-	$("#btn-sectioncomplete").hide();
+
+	$("#next").hide();
 	$(".newvisitor").show();
 	var numcreditors = 0;
 	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
@@ -710,7 +708,7 @@ $(document).ready(function() {
 				else{
 					if ($.cookie('creditordeleted' + i) == null){
 						$("#creditorlist").show();
-						$("#btn-sectioncomplete").show();
+						$("#next").show();
 						$("#heading-add").text("Add another creditor");
 						$(".newvisitor").hide();
 						
@@ -736,15 +734,9 @@ $(document).ready(function() {
 		else{
 		    
 		}
-
-
 		
 	}
 	
-	$("#next").on("click", function(e){
-	    // check if we have a Yes click	
-
-	});
 
 	var rowid = "row1";
 	var id = 1;
@@ -771,7 +763,7 @@ $(document).ready(function() {
     $("input.Yes").click(function(){
 		var id  = $(this).prop("name").substring(7);
 		var creditor= $("#row" + id + " .name").text();
-		$("#btn-selectedall").prop("href", nextpage + "?row=" + id + "&name=" + creditor);
+		$("#next").prop("href", "actiontype.html?row=" + id + "&name=" + creditor);
 	});
 
 
