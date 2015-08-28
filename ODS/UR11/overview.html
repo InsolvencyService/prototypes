@@ -757,7 +757,7 @@ Directorships you have held in last 12 months
                         <div>
 
 
-                            <a href="brian/1-details/your-names.html" id="next" style="display:none">Continue</a>
+                            <a href="#" id="next" style="display:none" class="button">Submit your application</a>
 
                         </div>
                         <div>
@@ -847,9 +847,8 @@ Directorships you have held in last 12 months
 					}
 	                // mark sections as completed
 
-					$("ul li.row .button").removeClass("button");
+					$("a.button.edit").removeClass("button");
 					$("ul li.row .edit").hide();
-					$("#next").removeClass("button");
 	                $("#section1 .edit").addClass("button").show().text("Start");
 
 	                var section1 = getParameterByName("section1");	
@@ -859,6 +858,8 @@ Directorships you have held in last 12 months
 					var section5 = getParameterByName("section5");
 					var section6 = getParameterByName("section6");
 					var section7 = getParameterByName("section7");
+					var section8 = getParameterByName("section8");
+
 					$(".rowbottom").hide();
 	               // if (section4 && section4.length > 0) {
 	                    // change the colour of the button
@@ -952,6 +953,19 @@ Directorships you have held in last 12 months
 	                        $("#section7 .edit").show().text("Edit");
 	                        $("#section8 .edit").show().addClass("button").text("Start");
 	                        document.title = 'Overview - Insolvency proceedings';
+	                    }
+	                    if (section8 && section8 == "complete") {
+	                         $("#section1 .edit").show().removeClass("button").text("Edit");
+	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+	                        $("#section3 .edit").show().text("Edit");
+	                        $("#section4 .edit").show().text("Edit");
+	                        $("#section5 .edit").show().text("Edit");
+	                        $("#section6 .edit").show().text("Edit");
+	                        $("#section7 .edit").show().text("Edit");
+	                        $("#section8 .edit").show().text("Edit");
+
+	                        $("#next").show();
+	                        document.title = 'Ready to submit';
 	                    }
 
 	                //}
