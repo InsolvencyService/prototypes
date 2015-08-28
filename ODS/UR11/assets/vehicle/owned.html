@@ -173,7 +173,8 @@ display:block;
 	<h1 class="form-title heading-large">Vehicle you own</h1>
 	
 	<div class="form-group ">
-		<label id="value_label" class="form-label-bold" for="model">Value</label>
+		<label id="value_label" class="form-label-bold" for="model">How much is 
+		the vehicle currently worth?</label>
 		<p class="form-hint">Please provide the most accurate figure you can</p>
 		£ <input id="value" name="value" type="text"  value="" />
 		<br/>
@@ -182,10 +183,12 @@ display:block;
 	<form class="form" method="post">			
 		<div class="form-group" >
 			<p id="title_label" class="form-label-bold">What do you use the vehicle for?</p>
+			<p class="form-hint">Tick all that apply</p>
 			<fieldset class="inline">
 				<div id="pnl-use">				
 					<label id="commute_label1" for="commute" class="block-label">
-					<input id="commute"  name="used" value="commuting" type="checkbox">Commuting</label>
+					<input id="commute"  name="used" value="commuting" type="checkbox">Work 
+					and commuting</label>
 					
 					<label id="school_label1" for="school" class="block-label">
 					<input id="school"  name="used" value="school" type="checkbox">Taking children to school</label>
@@ -241,7 +244,11 @@ display:block;
 		</div>
 		<p>&nbsp;</p>
 		<div class="form-group" id="pnl-owned">
-			<p id="title_label" class="form-label-bold">Is there any finance outstanding on this vehicle?</p>
+			<p id="title_label" class="form-label-bold">Is there any finance 
+			outstanding on the vehicle?</p>
+			<p class="form-hint">For example, hire purchase,conditional sale or 
+			other financing from the dealership</p>
+
 			<fieldset class="inline">
 				<div>				
 					<label id="owned_label1" for="owned_yes" class="block-label">
