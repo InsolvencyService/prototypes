@@ -102,6 +102,22 @@ display:block;
 	padding:5px 4px 3px 4px;
 	border:1px gray solid !important;
 }
+
+.halfwidth {
+    float: left;
+    margin-right: 15px;
+    clear: none;
+    width: 35%;
+}
+
+.partwidth {
+    float: left;
+    margin-right: 0;
+    clear: none;
+    width: 15%;
+    margin-top: 23px;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -208,38 +224,67 @@ display:block;
 			</fieldset>
 		</div>
 		<p>&nbsp;</p>
-		<div class="form-group ">
+		<div id="kept" class="form-group ">
 			<p id="disposed_label" for="vehicle_address_line_1" for="vehicle_address_line_1" class="form-label-bold">Where is the vehicle kept overnight?</p>
 			<p class="form-hint">This will help us verify the information you have told us about the vehicle</p>
-			<div class="form-group ">
-				<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
-				<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
-				<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
-				<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
-				<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
-				<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" /><br>
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
-				<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-				<br/>
+			My vehicle is kept at my home address&nbsp;&nbsp;
+			<input id="home_store" name="home address" type="checkbox" /><br><br>
+			<div id="address_needed">
+				<div class="firsttime">
+					<fieldset id="lookupaddress">
+						
+				
+						<span class="form-hint">For example, 2 Place Street AB1 2CD</span>
+						<div class="form-group halfwidth">
+							<label for="name">First line</label>
+							<input id="name" />
+						</div>
+						<div class="form-group halfwidth">
+							<label for="postcode">Postcode</label>
+							<input id="postcode" />
+						</div>
+						<div class="clearfix"></div>
+						<div class="form-group">
+							<a id="btn-lookup" class="button" href="#">Lookup address</a>&nbsp;
+							<a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
+				
+							<br />
+						</div>
+					</fieldset>
+				</div>
+				
+				<div class="repeat" id="fulladdress">
+					<div class="form-group ">
+						<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
+						<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
+						<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
+						<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
+						<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
+						<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
+						<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+						<br/>
+					</div>
+				</div>
 			</div>
 		</div>
 		<p>&nbsp;</p>
@@ -339,6 +384,10 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/jquery.select-to-autocomplete.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../property/js/postcodelookup.js"></script>
+<script type="text/javascript" src="../../shared/loop.js"></script>
+
+
 
 <script type="text/javascript">
 var tempname;
@@ -357,6 +406,16 @@ $('#next').click(function() {
 		else{
 			$("#next").attr("href","finance.html");
 		}
+});
+
+$('#kept').click(function() {
+	if($('#home_store').prop('checked')==true){
+		$('#address_needed').hide();
+	}
+	else{
+		$('#address_needed').show();
+	}
+
 });
 
 function writeCookies() {
