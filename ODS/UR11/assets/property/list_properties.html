@@ -64,7 +64,7 @@
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
 
     <!-- #BeginEditable "styles" -->
-    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css"
     <link href="../../creditors/css/typeahead.css" rel="stylesheet">
     <style type="text/css">
         .tt-dropdown-menu {
@@ -86,12 +86,7 @@
         .row > div:first-child {
             padding-left: 5px;
             margin-left: 0;
-        }
-
-        i.glyphicon {
-            margin-right: 5px;
-            color: #666666;
-        }
+             }
 
         .input-sm {
             width: 170px;
@@ -238,12 +233,16 @@
                         <p class="firsttime">
                             Telling us about a property doesn’t necessarily mean it will be taken away from you.
                         </p><p class="firsttime">
-    Once your bankruptcy order is made, this information will be passed to an Insolvency Service official called the Official Receiver (OR). They will consider a number of factors when determining what will happen to your property including the total value of the property, your share of the property and any outstanding mortgages and secured loans.
-</p><p class="firsttime">
-    Any decision about whether your property will be sold will be made by OR based on your particular financial and personal circumstances.
+   
+      <p><a href="#help1" class="helplink"><i class="glyphicon glyphicon-triangle-right"></i> Find out more</a></p>
 
-</p>
+            <div id="help1" class="helpsection hidden">
 
+                <p>Once your bankruptcy order is made, your application will be passed onto an insolvency official.</p> 
+                <p>They will consider a number of factors when determining what will happen to your property, including the total value of the property, your share of the property and any oustanding mortgages and secured loans.</p>
+				<p>Any decision about whether your property will be sold will be based on your particular financial and personal circumstances. More information about the possible outcomes can be found on GOV.UK.</p>
+            </div>
+   
                         <div id="pnl-director_table" class="repeat">
                             <table style="width: 100%" class="family">
                                 <thead>
@@ -375,6 +374,47 @@
 
         <!-- #BeginEditable "scripts" -->
 
+<script type="text/javascript">
+$(document).ready(function() {
+                 enablehelp();
+
+});
+function enablehelp() {
+ 
+    $(".helplink").on("click", function () {
+ 
+        if ($(this).prop("href")) {
+ 
+            var ref = $(this).prop("href").substring($(this).prop("href").indexOf("#"));
+ 
+            var helpsectionref = $(ref);
+ 
+            if (helpsectionref) {
+ 
+                if (helpsectionref.is(":visible")) {
+ 
+                    helpsectionref.addClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+ 
+                }
+ 
+                else {
+ 
+                    helpsectionref.removeClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+ 
+                }
+ 
+            }
+ 
+        }
+ 
+    });
+ 
+}
+</script>
         <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../shared/loop.js"></script>
