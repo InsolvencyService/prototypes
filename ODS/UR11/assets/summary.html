@@ -158,11 +158,18 @@
 	<div class="col-sm-8">
 
 
-			<p>We need to know about all the assets you own or have a financial interest in.</p> 
-            <p>This information will help us build a complete understanding of your financial situation.</p>
+			<p>We need to know about all the assets you own or have a financial interest in.</p>
+			
+            <p><a href="#help1" class="helplink"><i class="glyphicon glyphicon-triangle-right"></i> Why we need to know</a></p>
+
+            <div id="help1" class="helpsection hidden">
+
+                <p>This information will help us build a complete understanding of your financial situation.</p>
             <p>Please be aware that it's a criminal offense to purposefully mislead the Insolvency Service about your assets and that those who do so can face legal action.</p>
 			<p>However, we know that mistakes sometimes happen. If there are any questions, an Insolvency Service official will contact you to discuss the information you provided.</p>
-	</div>
+
+            </div>
+       	</div>
 
 
 
@@ -523,7 +530,47 @@ style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh
 
 	 </div>
         
+<script type="text/javascript">
+$(document).ready(function() {
+                 enablehelp();
 
+});
+function enablehelp() {
+ 
+    $(".helplink").on("click", function () {
+ 
+        if ($(this).prop("href")) {
+ 
+            var ref = $(this).prop("href").substring($(this).prop("href").indexOf("#"));
+ 
+            var helpsectionref = $(ref);
+ 
+            if (helpsectionref) {
+ 
+                if (helpsectionref.is(":visible")) {
+ 
+                    helpsectionref.addClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+ 
+                }
+ 
+                else {
+ 
+                    helpsectionref.removeClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+ 
+                }
+ 
+            }
+ 
+        }
+ 
+    });
+ 
+}
+</script>
 
 	 <!-- #EndEditable -->
 
