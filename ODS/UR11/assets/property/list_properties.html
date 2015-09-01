@@ -290,9 +290,9 @@
                                 <br />
                             </div>
                         </fieldset>
-                        <p>
+                        <p class="repeat">
                             <br><a href="rent.html" class=" button" id="next">
-                                <span class="firsttime">Continue - I don't own or have a financial interest in any properties</span>
+                                
                                 <span class="repeat">Continue - I have added all my properties</span>
                             </a>
                         </p>
@@ -386,6 +386,7 @@
         <script type="text/javascript">
 
             $(document).ready(function () {
+            	e.preventDefault();
                 // look for cookies coming back
                 var numproperties = 1;
                 if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
