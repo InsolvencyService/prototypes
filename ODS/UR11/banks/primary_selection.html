@@ -221,7 +221,7 @@ display:block;
 				<th>Bank</th>
 				<th>Account number</th>
 				<th>Balance</th>
-				<th>Is your main account?</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody id="table_body">
@@ -309,11 +309,35 @@ display:block;
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript">
-$(document).ready(function() {
-                 enablehelp();
+0<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
+<script type="text/javascript">
+var acc;
+$(document).ready(function() {
+
+	 enablehelp();
+	
+	var count = $.cookie("acc-count");
+	
+	for(i=1; i<=count; i++){
+		acc= $.cookie("acc"+i+"-number");
+		bank =$.cookie("acc"+i+"-bank");
+		balance=$.cookie("acc"+i+"-balance");
+		$("#table_body").append("<tr><td>"+ bank +"</td><td>"+ acc +"</td><td>£"+ balance +"</td><td><label class=\"block-label\" for=\"radio-inline-"+i+"\"><input id=\"radio-inline-"+i+"\" type=\"radio\" name=\"primary\" value=\""+i+"\">This is my main account</label></td></tr>")
+	}
 });
+
+
+$("#next").click(function(){
+	var a = $('input[name=primary]:checked').val();
+	$.cookie("primaryaccount", a);
+	$("#next").attr("href", "summary.html");
+});
+
+
+
 function enablehelp() {
  
     $(".helplink").on("click", function () {
@@ -349,33 +373,6 @@ function enablehelp() {
     });
  
 }
-</script>
-
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-
-<script type="text/javascript">
-var acc;
-$(document).ready(function() {
-	
-	var count = $.cookie("acc-count");
-	
-	for(i=1; i<=count; i++){
-		acc= $.cookie("acc"+i+"-number");
-		bank =$.cookie("acc"+i+"-bank");
-		balance=$.cookie("acc"+i+"-balance");
-		$("#table_body").append("<tr><td>"+ bank +"</td><td>"+ acc +"</td><td>£"+ balance +"</td><td><label class=\"block-label\" for=\"radio-inline-"+i+"\"><input id=\"radio-inline-"+i+"\" type=\"radio\" name=\"primary\" value=\""+i+"\">Yes</label></td></tr>")
-	}
-});
-
-
-$("#next").click(function(){
-	var a = $('input[name=primary]:checked').val();
-	$.cookie("primaryaccount", a);
-	$("#next").attr("href", "summary.html");
-});
-
 
 </script>
 
