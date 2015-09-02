@@ -330,7 +330,7 @@ $(document).ready(function() {
 		acc= $.cookie("acc"+i+"-number");
 		bank =$.cookie("acc"+i+"-bank");
 		balance=$.cookie("acc"+i+"-balance");
-		$("#table_body").append("<tr><td>"+ bank +"</td><td>"+ acc +"</td><td>£"+ balance +"</td><td><label class=\"block-label\" for=\"radio-inline-"+i+"\"><input id=\"radio-inline-"+i+"\" type=\"checkbox\" name=\"primary\" value=\""+i+"\">This is my main account</label></td></tr>")
+		$("#table_body").append("<tr><td>"+ bank +"</td><td>"+ acc +"</td><td>£"+ balance +"</td><td><label class=\"block-label\" for=\"radio-inline-"+i+"\"><input id=\"radio-inline-"+i+"\" type=\"radio\" name=\"primary\" value=\""+i+"\">This is my main account</label></td></tr>")
 	}
 });
 
