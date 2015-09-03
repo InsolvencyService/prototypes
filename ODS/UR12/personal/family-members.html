@@ -204,16 +204,12 @@ legend{
 	
 	
 	
-	<h1 class="form-title heading-large">Your household</h1>
+	<h1 class="form-title heading-large">Your household <span class="repeat">summary </span></h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	
-
-        <p>We need to know about anyone (including children) who lives with you at <strong class="home"></strong></p>
         <div id="familylist">
         
             
@@ -314,13 +310,14 @@ legend{
                 </tbody>
             </table>
         </div>
-
-        <div class="clearfix"></div>
-		<p>This information will help us understand your household's likely expenses.</p>
+		
 	<div class="form-group " style="margin-top:20px">
-	
+		<P class="repeat">The table above summarises the household members you have told us about.</P>
+	<p>We need to know about anyone <span class="repeat">else </span> (including children) who lives with you at <strong class="home"></strong>.</p>
+	 <p>This information will help us understand your household's likely expenses.</p>
+
 	<fieldset>
-	<legend class="form-label-bold">Enter the person's first and last name</legend>
+	<label  class="form-label-bold">Enter <span class="firsttime">the </span><span class="repeat">another </span>person's first and last name</label>
 	
 	<span class="form-hint">For example, John Smith. You can add more people later.</span>
 	<div class="form-group halfwidth">
@@ -446,6 +443,7 @@ legend{
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../shared/loop.js"></script>
 
 
 <script type="text/javascript">
