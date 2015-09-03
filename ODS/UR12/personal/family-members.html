@@ -453,6 +453,7 @@ $(document).ready(function() {
 	
 	var home_address = $.cookie("applicant_address");
 	$(".home").text(home_address);
+	var loop = getParameterByName("loop");
 
 
 	
@@ -462,6 +463,7 @@ $(document).ready(function() {
 		$("#livealone").hide();	
 		$("#row1").show();
 		$("#movedin-date").hide();
+		$(".repeat").show();
 	}
 	
 	var normalroute = $("#next").prop("href");
