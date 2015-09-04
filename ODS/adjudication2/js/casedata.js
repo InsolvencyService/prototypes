@@ -119,7 +119,7 @@ for (i = 0; i < cases.length; i++) {
 			
 			
 			
-		    tablerow = '<tr>';
+		    tablerow = '<tr class="tablerow">';
 		    tablerow += '<td><a href="detail.html?'+urn+'">'+urn+'</a></td>';
 		    tablerow += '<td>'+name+'</td>';
 		    tablerow += '<td>'+date+'</td>';
