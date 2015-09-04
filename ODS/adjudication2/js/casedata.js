@@ -2,18 +2,66 @@
 
 var tablerow;
 var cases = [
-"B52S-FQ6Y-HQWP,New Approve,2015-03-24,1",
-"A56S-E889-WW5E,New Refer,2015-03-31,2",
-"A56S-E889-WW5E,Escalated,2015-03-31,3",
-"A56S-E889-WW5E,Another Escalated,2015-03-31,3",
-"A56S-E889-WW5E,Information Received,2015-03-31,4",
-"A56S-E889-WW5E,Awaiting Further Information,2015-03-31,5",
-"A56S-E889-WW5E,Review Requested,2015-03-31,6",
-"A56S-E889-WW5E,On Appeal,2015-03-31,7",
-"A56S-E889-WW5E,Order made,2015-03-31,8",
-"A56S-E889-WW5E,Refused,2015-03-31,9",
-"A56S-E889-WW5E,Review Rejected,2015-03-31,10",
-"A56S-E889-WW5E,Appeal refused,2015-03-31,11"
+"5OMQETGNFXQR,Wilbert Aguirre,2015-07-01,8",
+"2GD1KK9ZQXD6,Bobby Lamb,2015-07-07,8",
+"8VED6P3VUOL9,Devon Dotson,2015-07-09,8",
+"YBAN1NGO5R73,Jack Simpson,2015-07-10,8",
+"BQSE4LWQ8HPP,Richard Evans,2015-07-15,8",
+"2IEZ4RKXOG0E,Jeremy Shannon,2015-07-16,8",
+"N4INRYZAOBH5,Robin Massey,2015-07-17,9",
+"BWQCZEEP8X67,Sarah Garcia,2015-07-20,9",
+"CYH3QRA76SQK,Rita Larsen,2015-07-22,9",
+"TE8Q01K639IG,Taylor Shepard,2015-07-23,10",
+"XP02HT51GY43,Brian Cooper,2015-07-24,10",
+"73AC2RMVJNHQ,Claude Holmes,2015-07-27,11",
+"AG916HZI5B25,Bruce Kelley,2015-08-05,11",
+"2KJ9MW3ZFI60,Richard Evans,2015-08-06,11",
+"M1Y0CPO86ZUQ,Deborah Perez,2015-08-11,8",
+"P8S2POL0JWNY,Chester Mitchell,2015-08-13,8",
+"TSXHMSZ19ON7,Samuel Neal,2015-08-17,8",
+"530060BKIR6R,Erica Bryant,2015-08-18,7",
+"DO7KOLIIY6CO,Patrick Harper,2015-08-21,6",
+"AQW8YFLKCHQZ,Christine Coffey,2015-08-26,5",
+"HZTEDLME20MJ,Daniel Morton,2015-08-27,6",
+"HIMFCSDYGARE,Wilma Morris,2015-08-28,5",
+"AUBU71T5GF5X,Alexander Carey,2015-08-31,5",
+"UBS98Q3X0K9T,Dennis Vinson,2015-09-01,1",
+"OHW37HIF6JE7,Beverly Becker,2015-09-03,1",
+"HVXH2FIYDC8C,Angel Singleton,2015-08-10,5",
+"JZPXN4AFDAZV,Maxwell Rollins,2015-08-11,1",
+"EKL6A02L513M,Bradley Maldonado,2015-08-12,1",
+"J4XYQS9CANVF,Archie Sweeney,2015-08-13,1",
+"90JDMTT3GN2P,Marc Middleton,2015-08-14,2",
+"INDQWFSUSXK1,Rex Jordan,2015-08-17,2",
+"0JW8RYCS0M0C,Bessie Craig,2015-08-18,2",
+"OF85EN6QE9RQ,Luis Hamilton,2015-08-19,2",
+"QQPF86B5C2R1,Josephine Turner,2015-08-20,2",
+"UFM75Q94Z556,Jordan Boyd,2015-08-21,4",
+"QO3ULVFGDU2Z,Clifford Murray,2015-08-24,4",
+"7ANJ77U1SDE4,Giovanni Thomas,2015-08-25,4",
+"2W19SS2S4O7Q,Margaret Fuller,2015-08-26,3",
+"HGP0B6F7RS0Q,George Hopper,2015-08-27,3",
+"T0FN2FFH6FQ7,Maude Hopkins,2015-08-28,3",
+"3UYF2CE20Y8I,Patrick Grant,2015-08-31,3",
+"7P5L7W34YK04,Orville Stone,2015-09-01,3",
+"PYQH13QC0Y1U,Victoria Hinton,2015-09-02,3",
+"F6U7LLGDE2NR,Marsha Hardin,2015-09-03,2",
+"HBDUZ8X1LBJR,Oliver Hayes,2015-08-19,2",
+"P2VMF61QZ5EC,Marie Bradley,2015-08-20,1",
+"JC4YMS2JZTZ1,Sammy Lloyd,2015-08-21,1",
+"4CJBKRR3HXCC,Janice Key,2015-08-24,2",
+"BRU3LE8CE00Z,Kelly Osborn,2015-08-25,2",
+"1WU5C81O0K20,Mary Good,2015-08-26,1",
+"6285910BMYQD,Sharon Cline,2015-08-27,1",
+"W4QH1BT4AQIR,Stephanie Francis,2015-08-28,1",
+"Z3RJIYV5R7KM,Mary Sargent,2015-08-31,1",
+"94K9E5PKP2S9,Donnie Dorsey,2015-09-01,2",
+"18AXAZZDQC8Y,Walter Hall,2015-09-02,2",
+"ASV6UEHEC2SW,Helen Fisher,2015-09-03,1",
+"8PDRSRY1E0HL,Norma Lamb,2015-09-01,2",
+"U5RIJDHM2PU6,Terri Adams,2015-09-02,1",
+"N6H5MMCH1WJ3,Sarah Monroe,2015-09-03,1"
+
 
 ];
 
@@ -58,8 +106,7 @@ for (i = 0; i < cases.length; i++) {
 			default:
 				statuscolor = '<span class="label label-default">&nbsp;</span>';				
 			}	
-			alert(statuscolor);
-			
+		
 			
 			
 			/* Sets flag */
@@ -73,13 +120,15 @@ for (i = 0; i < cases.length; i++) {
 			
 			
 		    tablerow = '<tr>';
-		    tablerow += '<td><a href="detail.html?urn='+urn+'">'+urn+'</a></td>';
-		    tablerow += '<td><a href="detail.html?urn='+urn+'">'+name+'</a></td>';
-		    tablerow += '<td><a href="detail.html?urn='+urn+'">'+date+'</a></td>';
-			tablerow += '<td class="text-center"><a href="detail.html?urn='+urn+'">'+statuscolor+'</a></td>'
+		    tablerow += '<td><a href="detail.html?'+urn+'">'+urn+'</a></td>';
+		    tablerow += '<td>'+name+'</td>';
+		    tablerow += '<td>'+date+'</td>';
+			tablerow += '<td class="text-center">'+statuscolor+'</td>'
 			tablerow +='</tr>';
-			alert(tablerow);
+			
 			$("#tbody").append(tablerow);
+			
+			
 		}	    
 	}
 

@@ -184,15 +184,15 @@
 	                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		                	
 		                	Active 
-		                	<span class="label label-primary casecounter">32</span>
+		                	<span class="label label-primary casecounter">35</span>
  						</a>
 	                    <ul class="dropdown-menu">
-	                        <li><a href="?filter=1"><span class="label label-success casecounter">21</span> Approve</a></li>
-	                        <li><a href="?filter=2"><span class="label label-danger casecounter">8</span> Refer</a></li>
+	                        <li><a href="?filter=1"><span class="label label-success casecounter">14</span> Approve</a></li>
+	                        <li><a href="?filter=2"><span class="label label-danger casecounter">12</span> Refer</a></li>
 	                        <li class="divider"></li>
-	                        <li><a href="?filter=3"><span class="label label-danger casecounter">2</span><i class="glyphicon glyphicon-flag"></i> Escalated</a></li>
+	                        <li><a href="?filter=3"><span class="label label-danger casecounter">6</span><i class="glyphicon glyphicon-flag"></i> Escalated</a></li>
 	                        <li class="divider"></li>
-	                        <li><a href="?filter=4"><span class="label label-warning casecounter">1</span><i class="glyphicon glyphicon-flag"></i> Information received </a></li>
+	                        <li><a href="?filter=4"><span class="label label-warning casecounter">3</span><i class="glyphicon glyphicon-flag"></i> Information received </a></li>
 	                    	<li class="divider"></li>
 	                        <li><a href="#"><span class="label label-default casecounter">6</span><i class="glyphicon glyphicon-time"></i> Time sensitive cases </a></li>
 	                    	
@@ -201,23 +201,22 @@
 	                    </ul>
 	                </li>
 	                
-	                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pending <span class="label label-primary casecounter">6</span></a>
+	                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pending <span class="label label-primary casecounter">7</span></a>
 	                    <ul class="dropdown-menu">
-	                        <li><a href="#"><span class="label label-warning casecounter">4</span> Awaiting information </a></li>
+	                        <li><a href="?filter=5"><span class="label label-warning casecounter">4</span> Awaiting information </a></li>
 	                        <li class="divider"></li>
-	                        <li><a href="#"><span class="label label-default casecounter">1</span> Review requested </a></li>
-	                        <li><a href="#"><span class="label label-default casecounter">1</span> On appeal </a></li>
+	                        <li><a href="?filter=6"><span class="label label-default casecounter">2</span> Review requested </a></li>
+	                        <li><a href="?filter=7"><span class="label label-default casecounter">1</span> On appeal </a></li>
 	                    </ul>
 	                </li>
 	                
-	                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Completed <span class="label label-primary casecounter">60</span></a>
+	                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Completed <span class="label label-primary casecounter">17</span></a>
 	                    <ul class="dropdown-menu">
-	                        <li><a href="#"><span class="label label-default casecounter">39</span> Order made</a></li>
-	                        <li><a href="#"><span class="label label-default casecounter">18</span> Refused</a></li>
-	                        <li><a href="#"></a></li>
+	                        <li><a href="?filter=8"><span class="label label-default casecounter">9</span> Order made</a></li>
+	                        <li><a href="?filter=9"><span class="label label-default casecounter">3</span> Refused</a></li>
 	                        <li class="divider"></li>
-	                        <li><a href="#"><span class="label label-default casecounter">2</span> Review rejected</a></li>
-	                        <li><a href="#"><span class="label label-default casecounter">1</span> Appeal refused</a></li>
+	                        <li><a href="?filter=10"><span class="label label-default casecounter">2</span> Review rejected</a></li>
+	                        <li><a href="?filter=11"><span class="label label-default casecounter">3</span> Appeal refused</a></li>
 	                    </ul>
 	                </li>
 
@@ -261,8 +260,8 @@
 	
 	
 	
-    <div class="table-responsive">
-        <table class="table table-hover  table-list-search" id="table">
+    <div class="table-responsive" >
+        <table class="table table-hover table-list-search" >
             <thead class="hidden-xs">
                 <tr>
                 <td class="col-sm-4"><a href="javascript:;"><strong>Reference</strong></a></td>
@@ -338,14 +337,27 @@
 <script type="text/javascript" src="js/casedata.js"></script>
 <script type="text/javascript">
 var filter = getParameterByName("filter");
+if(filter==null||filter==""){
+ 	filter=1;
+ }
 $(document).ready(function() {
  //$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
  
-  
+ 
 });    
 		
 
-	var $rows = $('#table tr');
+	
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    
+ 
+ 	var $rows = $('#tbody');
 	
 	
 	
@@ -361,13 +373,6 @@ $(document).ready(function() {
 	    }).hide();
 	});
 
-
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
 
 </script>
 
