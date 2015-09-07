@@ -140,7 +140,22 @@ a.btn:visited{
   border-radius: 10px;
 }
 
+.glyphicon-ok-circle{
+	color:green;
+}
 
+.glyphicon-exclamation-sign{
+	color:red;
+	
+}
+
+.recorderror{
+	font-weight:normal;
+	color:red;
+	padding-left:10px;
+	text-decoration:none;
+	
+}
 .panel.with-nav-tabs .panel-heading{
     padding: 5px 5px 0 5px;
 }
@@ -252,7 +267,9 @@ a.btn:visited{
 
 <div style="display:block; margin-left:30px !important">
 	<h1 class="form-title heading-large">Bankruptcy adjudication</h1>
-	
+	<div class="label-danger text-center bold-medium" id="locked" style="padding:5px;color:white;margin:10px; display:none">
+	This case is currently being accessed by<br><strong>William Davies</strong>
+	</div>
 	<div class="row">
     	<div >
             <div class="panel with-nav-tabs panel-default">
@@ -266,22 +283,23 @@ a.btn:visited{
 		                <div>
 	                        <div class="col-md-8">
 	                            <div class="small" id="whenreceived" style="padding-left:10px">
-	                            Received at 10:14am, 23 May 2014
+	                            Received at 10:14am, 28 February 2015
 	                            </div>
 	                        </div>
 	                        <div class="col-md-4">
 	                			<div class="btn-group btn-group-lg pull-right">
 	                				<a class="btn btn-primary" href="../list2.html" id="btn-makeorder"><i class="glyphicon glyphicon-check"></i> Make order</a>
-	               				<a class="btn btn-warning" href="#" id="btn-refer"><i class="glyphicon glyphicon-alert"></i> Refer</a>
-								<br><br><br>
+	               					<a class="btn btn-warning" href="#" id="btn-refer"><i class="glyphicon glyphicon-alert"></i> Refer</a>
+								
 	                			</div>
+	                			<br><br><br>
 	                			<div class="spacer5 pull-right"></div>
                 			</div>
 						</div>                       
 					 <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1default" data-toggle="tab">Personal details</a></li>
                             <li><a href="#tab2default" data-toggle="tab">Scoring</a></li>
-                            <li><a href="#tab3default" data-toggle="tab">Order content preview</a></li>
+                            <li><a href="#tab3default" data-toggle="tab">Order preview</a></li>
                             <li><a href="#tab4default" data-toggle="tab">Case notes</a></li>
                             <li><a href="#tab5default" data-toggle="tab">Case documents</a></li>
                             <li><a href="#tab6default" data-toggle="tab">Actions log</a></li>
@@ -367,43 +385,111 @@ a.btn:visited{
 								
                         </div>
                         <div class="tab-pane fade" id="tab2default">
+                        	
                         	<table>
-                        		<tbody>
-                        			<tr>
-										<td>Address for last 5 years</td><td>Verified as above</td>
-									</tr>
-									
+                        		<thead style="display:none">
+	                        		<th class="col-sm-4">Check performed</th>
+	                        		<th class="col-sm-7">Result</th>
+	                        		<th class="col-sm-1">Status<i class="glyphicon glyphicon-ok-circle"></i></th>
+	                        	</thead>
+	                        	
+	                        	<tbody>
+	                        		<tr>
+	                        			<td class="col-sm-3 bolder">Address for last 5 years:</td>
+	                        			<td class="col-sm-6">Verified</td>
+	                        			<td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td class="col-sm-3 bolder">Surplus income:</td>
+	                        			<td class="col-sm-6">-&pound;580.26 per month</td>
+	                        			<td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td class="col-sm-3 bolder">Value of assets:</td>
+	                        			<td class="col-sm-6">&pound;4,526.36</td>
+	                        			<td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
+	                        		</tr>
 									<tr>
-										<td>Prior insolvency:</td><td>No</td>
-									</tr>
-									<tr>
-										<td>Total value of Assets:</td><td>£0K</td>
-									</tr>
-									<tr>
-										<td>Pension fund value:</td><td>£0</td>
-									</tr>
-									
-									<tr>
-										<td><h4>Total value of income and expenditure</h4></td>
-									</tr>
-									
-									<tr>
-									<td>Monthly income:</td><td>£1,000</td>
-									</tr>
-									
-									<tr>
-									<td>Monthly expenditure:</td><td>£1,050</td>
-									</tr>
+	                        			<td class="col-sm-3 bolder">Liabilities:</td>
+	                        			<td class="col-sm-6">&pound;64,526.36</td>
+	                        			<td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
+	                        		</tr>
 
-                        		</tbody>
+	                        		<tr>
+	                        			<td class="col-sm-3 bolder">Creditors:</td>
+	                        			<td class="col-sm-4">Numerous creditors are non UK</td>
+	                        			<td class="col-sm-3"><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i><span class="recorderror">View application</span></a></td>
+	                        		</tr>
+	                        		
+	                        		<tr>
+	                        			<td class="col-sm-3 bolder">Previous insolvency:</td>
+	                        			<td class="col-sm-4">Applicant currently shows as bankrupt on the Individual Insolvency Register.</td>
+	                        			<td class="col-sm-3"><a href="images/eiir_screen.png"><i class="glyphicon glyphicon-exclamation-sign"></i><span class="recorderror">View EIIR</span></a></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td class="col-sm-3 bolder">Real properties:</td>
+	                        			<td class="col-sm-6">
+	                        				<div>13 Wenlock Rd, Smethwick, B63 9PJ</div>
+	                        				<div>Equitable value: £12,000.00</div>
+	                        			</td>
+	                        			<td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
+	                        		</tr>
+	                        		
+
+
+
+
+	                        	</tbody>
                         	</table>
                         </div>
                         <div class="tab-pane fade" id="tab3default">
                          	<div class="alert alert-warning" style="margin-left:10px;margin-right:10px">
-								<p>It is ordered that <strong>Kim Scarlett</strong>, Unemployed, formerly known as <strong>Kimberly Red</strong>, of <strong>110 High Street, Newhall, Birmingham B4 3TT</strong> be adjudged bankrupt</p>
+								<p>It is ordered that <strong>Kim Scarlett</strong>, Unemployed, formerly known as <strong>Kimberly Red</strong>, of <span id="address"><strong>110 High Street, Newhall, Birmingham B4 3TT</strong></span> be adjudged bankrupt</p>
 								<p>It is further ordered that <strong>David Rickman</strong> be appointed trustee of the bankrupt’s estate</p>
 							</div>
+							<div class="text-right"> This person is subject to a PAV order <input type="checkbox" id="PAV"></div>
                         </div>
+                        
+                        <div class="tab-pane fade" id="tab5default">
+	                         <table>
+								<thead>
+									<tr>
+										<th>Type</th>
+										<th>Name</th>
+										<th>Date filed</th>
+										<th>Filed by</th>
+									</tr>
+								
+								</thead>
+								
+								<tbody>
+									
+									<tr>
+										<td><div class="label label-success label-as-badge">Notification</div></td>
+										<td><a href="#">Equifax report</a></td>
+										<td>29/02/2015</td>
+										<td>Auto assignee</td>
+									</tr>
+							
+									<tr>
+										<td><div class="label label-info label-as-badge">Document</div></td>
+										<td><a href="#">Bankruptcy Application</a></td>
+										<td>28/02/2015</td>
+										<td>Applicant</td>
+									</tr>
+									
+							
+									<tr class="text text-muted" id="uploadwaiting" style="display:none">
+										<td><span class="label label-danger label-as-badge" >Awaiting Approval</span>
+										</td>
+										<td class="text-muted">Proof of debt</td>
+										<td class="text-muted">08/04/2015</td>
+										<td class="text-muted">HSBC</td>
+									</tr>
+							</table>
+                         	
+                        </div>
+
                         <div class="tab-pane fade" id="tab6default">
                         	
                         	<div class="well clearfix">
@@ -548,7 +634,29 @@ a.btn:visited{
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../assets/js/bootstrap/js/toggle-button.js"></script>
 <script type="text/javascript">
- 
+
+$(document).ready(function() {   
+	var locked = getParameterByName("lock");
+	if(locked=="true"){
+		$("#locked").show();
+	}
+	else{
+		$("#locked").hide();
+	}
+});
+
+
+ $("#PAV").on("click", function (e) {
+	if($("#PAV").is(':checked')){
+		$("#address").css('backgroundColor', 'black');
+		$("#address").css('color', 'black');
+	}
+	else{
+		$("#address").css('backgroundColor', 'inherit');
+		$("#address").css('color', 'inherit');
+	}
+});
+
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),

@@ -193,7 +193,7 @@ display:block;
 	
 	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
 		What's the outstanding balance on your finance agreement?</label>
-		<div class="form-hint"><p>How much the finance company say you still owe for your vehicle.</p>
+		<div class="form-hint"><p>How much <span id="creditor">the finance company</span> say you still owe for your vehicle.</p>
 		<p>Check your latest statement or contact the finance company if you’re 
 		not sure</p></div>
 		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
@@ -338,9 +338,13 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+$(document).ready(function() {
+	$("#creditor").text($.cookie('tempcreditor'));
+});
 
 $('#next').click(function() {
 	writeCookies();
+	
 });
 
 function writeCookies(){

@@ -439,6 +439,7 @@ $(document).ready(function() {
 	$("#next").on("click", function(e){
 		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
 			numcreditors=numcreditors + 1;
+			$.cookie('tempcreditor', $('#creditors.typeahead').val(),  { expires: 1 });
 			$.cookie('numcreditors', numcreditors, { expires: 1 });
 			$.cookie('creditorname' + numcreditors, $('#creditors.typeahead').val(), { expires: 1 });
 		}
