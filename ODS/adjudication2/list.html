@@ -187,8 +187,8 @@
 		                	<span class="label label-primary casecounter">35</span>
  						</a>
 	                    <ul class="dropdown-menu">
-	                        <li><a href="?filter=1"><span class="label label-success casecounter">14</span> Approve</a></li>
-	                        <li><a href="?filter=2"><span class="label label-danger casecounter">12</span> Refer</a></li>
+	                        <li><a href="#"><span class="label label-success casecounter">11</span> Approve</a></li>
+	                        <li><a href="?filter=1"><span class="label label-danger casecounter">12</span> Refer</a></li>
 	                        <li class="divider"></li>
 	                        <li><a href="?filter=3"><span class="label label-danger casecounter">6</span><i class="glyphicon glyphicon-flag"></i> Escalated</a></li>
 	                        <li class="divider"></li>
@@ -260,20 +260,96 @@
 	
 	
 	
-    <div class="table-responsive" >
-        <table class="table table-hover table-list-search" >
-            <thead class="hidden-xs">
+    <div>
+        <table class="table table-list-search" >
+            <thead>
                 <tr>
-                <td class="col-sm-4"><a href="javascript:;"><strong>Reference</strong></a></td>
-                <td class="col-sm-4"><a href="javascript:;"><strong>Name</strong></a></td>
-                <td class="col-sm-3"><a href="javascript:;"><strong>Received</strong></a></td>
-                <td class="col-sm-1"><a href="javascript:;"><strong>Status</strong></a></td>
+                <th class="col-sm-4"><a id="urn"><strong>Reference&nbsp;&nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-4"><a id="name"><strong>Name&nbsp;&nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-3"><a id="date"><strong>Received&nbsp;&nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-1"><a href="javascript:;"><strong>Status</strong></a></th>
             </tr>
             </thead>
             
-            <tbody id="tbody">
-              
+            <tbody id="table">
+            	 
+				<tr class="activerow">
+					<td><a href="detail.html?UBS98Q3X0K9T">UBS98Q3X0K9T</a></td>
+					<td>Dennis Vinson</td>
+					<td>2015-09-01</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+				
+				<tr class="activerow">
+					<td><a href="detail.html?OHW37HIF6JE7">OHW37HIF6JE7</a></td>
+					<td>Beverly Becker</td>
+					<td>2015-09-03</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+			
+				<tr class="activerow">
+					<td><a href="detail.html?JZPXN4AFDAZV">JZPXN4AFDAZV</a></td>
+					<td>Maxwell Rollins</td>
+					<td>2015-08-11</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+			
+				<tr class="activerow">
+					<td><a href="detail.html?EKL6A02L513M">EKL6A02L513M</a></td>
+					<td>Bradley Maldonado</td>
+					<td>2015-08-12</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+				
+				<tr class="activerow">
+					<td><a href="detail.html?J4XYQS9CANVF">J4XYQS9CANVF</a></td>
+					<td>Archie Sweeney</td>
+					<td>2015-08-13</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+	
+ 				<tr class="activerow">
+					<td><a href="detail.html?P2VMF61QZ5EC">P2VMF61QZ5EC</a></td>
+					<td>Marie Bradley</td>
+					<td>2015-08-20</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
 
+				<tr class="activerow">
+					<td><a href="detail.html?JC4YMS2JZTZ1">JC4YMS2JZTZ1</a></td>
+					<td>Sammy Lloyd</td>
+					<td>2015-08-21</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+				
+				<tr class="activerow">
+					<td><a href="detail.html?1WU5C81O0K20">1WU5C81O0K20</a></td>
+					<td>Mary Good</td>
+					<td>2015-08-26</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+				
+				<tr class="activerow">
+					<td><a href="detail.html?6285910BMYQD">6285910BMYQD</a></td>
+					<td>Archie Sweeney</td>
+					<td>2015-08-13</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+				
+				<tr class="activerow">
+					<td><a href="detail.html?J4XYQS9CANVF">J4XYQS9CANVF</a></td>
+					<td>Sharon Cline</td>
+					<td>2015-08-27</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+				
+				<tr class="activerow">
+					<td><a href="detail.html?W4QH1BT4AQIR">W4QH1BT4AQIR</a></td>
+					<td>Stephanie Francis</td>
+					<td>2015-08-28</td>
+					<td><span class="label label-success">&nbsp;</span></td>
+				</tr>
+				
             </tbody>
         </table>
     </div>
@@ -340,38 +416,48 @@ var filter = getParameterByName("filter");
 if(filter==null||filter==""){
  	filter=1;
  }
-$(document).ready(function() {
- //$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
- 
- 
-});    
-		
+
+$(document).ready(function() {   
+	$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
+});
 
 	
+$("#urn").on("click", function (e) {
+	$('#urn').tablesorter();
+});
 
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
+$("#name").on("click", function (e) {
+	$('#name').tablesorter();
+
+});
+
+$("#date").on("click", function (e) {
+	$('#date').tablesorter();
+
+});
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
     
  
- 	var $rows = $('#tbody tr');
-	
-	
-	
-	$('#search').keyup(function() {
-	    
-	    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-	        reg = RegExp(val, 'i'),
-	        text;
-	    
-	    $rows.show().filter(function() {
-	        text = $(this).text().replace(/\s+/g, ' ');
-	        return !reg.test(text);
-	    }).hide();
-	});
+ 
+ 
+var $rows = $('#table tr');	
+$('#search').keyup(function() {
+    
+    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+        reg = RegExp(val, 'i'),
+        text;
+    
+    $rows.show().filter(function() {
+        text = $(this).text().replace(/\s+/g, ' ');
+        return !reg.test(text);
+    }).hide();
+});
 
 
 </script>

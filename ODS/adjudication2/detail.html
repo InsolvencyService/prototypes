@@ -70,8 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
     <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
-    <script src="../assets/js/jquery-1.10.2.min.js"></script>
-	<script src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
 	
     <style type="text/css">
 .label,.glyphicon { margin-right:5px; }
@@ -81,9 +81,6 @@
 	vertical-align:middle;
 }
 
-.navtextsize{
-	
-}
 
 #global-header #logo img {
 	width:auto !important;
@@ -266,7 +263,7 @@ a.btn:visited{
 	                            <span style="padding-left:10px">Application EHBJ8F3MKRP - Kim Scarlett</span></h3>
 	                        </div>
 	                    </div>
-		                <div class="row">
+		                <div>
 	                        <div class="col-md-8">
 	                            <div class="small" id="whenreceived" style="padding-left:10px">
 	                            Received at 10:14am, 23 May 2014
@@ -276,7 +273,7 @@ a.btn:visited{
 	                			<div class="btn-group btn-group-lg pull-right">
 	                				<a class="btn btn-primary" href="../list2.html" id="btn-makeorder"><i class="glyphicon glyphicon-check"></i> Make order</a>
 	               				<a class="btn btn-warning" href="#" id="btn-refer"><i class="glyphicon glyphicon-alert"></i> Refer</a>
-	
+								<br><br><br>
 	                			</div>
 	                			<div class="spacer5 pull-right"></div>
                 			</div>
@@ -286,7 +283,8 @@ a.btn:visited{
                             <li><a href="#tab2default" data-toggle="tab">Scoring</a></li>
                             <li><a href="#tab3default" data-toggle="tab">Order content preview</a></li>
                             <li><a href="#tab4default" data-toggle="tab">Case notes</a></li>
-                            <li><a href="#tab5default" data-toggle="tab">Actions log</a></li>
+                            <li><a href="#tab5default" data-toggle="tab">Case documents</a></li>
+                            <li><a href="#tab6default" data-toggle="tab">Actions log</a></li>
                             
                         </ul>
                 </div>
@@ -295,35 +293,77 @@ a.btn:visited{
                         <div class="tab-pane fade in active" id="tab1default">
                         	
                             <!--personal details-->	
-                            	
+                            <div>
+                            <p class="clearfix"></p>						
+								<div>	
+									<div class="col-xs-3 bolder">Name:</div>
+									<div class="col-xs-9">Kim Scarlett</div>
+								</div>
+								
+								<div>	
+									<div class="col-xs-3 bolder">Date of birth:</div>
+									<div class="col-xs-9">01/05/1992</div>
+								</div>
+								
+								<div>	
+									<div class="col-xs-3 bolder">NI number:</div>
+									<div class="col-xs-9">PZ 020012 A</div>
+								</div>
+								
+								<div>	
+									<div class="col-xs-3 bolder">Telephone:</div>
+									<div class="col-xs-9 ">07466 456 998</div>
+								</div>
+								
+								<div>	
+									<div class="col-xs-3 bolder">Address:</div>
+									<div class="col-xs-9 ">110 High Street, Newhall, Birmingham B4 3TT (lived here for 5 years)</div>
+								</div>
+								
+								<div>	
+									<div class="col-xs-3 bolder">Annual income:</div>
+									<div class="col-xs-9 ">&pound;18,000</div>
+								</div>
+								
+								<div>	
+									<div class="col-xs-3 bolder">Total debt:</div>
+									<div class="col-xs-9 ">&pound;46,653.32</div>
+								</div>
+							</div>
+							<p class="clearfix"></p>
+							<p class="clearfix"></p>
+							<h3>Employment history</h3>
 								<table>
+									<thead>
+										<th>Start date</th>
+										<th>End date</th>
+										<th>Job role</th>
+										<th>Employer</th>
+										<th>Address</th>
+									</thead>
 									<tbody>
 										<tr>
-											<td>Name:</td><td>Kim Scarlett</td>
+											<td>2015-05-1</td>
+											<td>2015-08-31</td>
+											<td>Mechanic</td>
+											<td>AA Autospares</td>
+											<td>1 High St, Ward End, Birmingham, B1 1BG</td>
 										</tr>
 										<tr>
-											<td>DOB:</td><td>01/05/1992</td>
+											<td>2015-01-31</td>
+											<td>2015-04-30</td>
+											<td>Mechanic</td>
+											<td>MOT's R US</td>
+											<td>306 New St, Ward End, Birmingham, B1 1BG</td>
 										</tr>
-										<tr>
-											<td>NI:</td><td>PZ0200AX</td>
-										</tr>
-										<tr>
-											<td>Telephone:</td><td>0789123456</td>
-										</tr>
-										<tr>
-											<td>Address:</td><td>110 High Street, Newhall, Birmingham B4 3TT (lived here for 5 years)</td>
-										</tr>
-										<tr>
-											<td>Occupation:</td><td>Unemployed</td>
-										</tr>
-										<tr>
-											<td>Annual income:</td><td>£12,000</td>
-										</tr>
-										<tr>
-											<td>Total debt:</td><td>£40,000</td>
-										</tr>
+
 									</tbody>
+								
+								
 								</table>
+
+
+
 								
                         </div>
                         <div class="tab-pane fade" id="tab2default">
@@ -364,7 +404,7 @@ a.btn:visited{
 								<p>It is further ordered that <strong>David Rickman</strong> be appointed trustee of the bankrupt’s estate</p>
 							</div>
                         </div>
-                        <div class="tab-pane fade" id="tab5default">
+                        <div class="tab-pane fade" id="tab6default">
                         	
                         	<div class="well clearfix">
                         	
@@ -507,22 +547,8 @@ a.btn:visited{
 
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript" src="../assets/js/bootstrap/js/toggle-button.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="js/casedata.js"></script>
 <script type="text/javascript">
-var filter = getParameterByName("filter");
-if(filter==null||filter==""){
- 	filter=1;
- }
-$(document).ready(function() {
- //$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
  
- 
-});    
-		
-
-	
-
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -530,24 +556,6 @@ $(document).ready(function() {
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
     
- 
- 	var $rows = $('#tbody tr');
-	
-	
-	
-	$('#search').keyup(function() {
-	    
-	    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-	        reg = RegExp(val, 'i'),
-	        text;
-	    
-	    $rows.show().filter(function() {
-	        text = $(this).text().replace(/\s+/g, ' ');
-	        return !reg.test(text);
-	    }).hide();
-	});
-
-
 </script>
 
 <!-- #EndEditable -->

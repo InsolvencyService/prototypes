@@ -25,12 +25,7 @@ var cases = [
 "HZTEDLME20MJ,Daniel Morton,2015-08-27,6",
 "HIMFCSDYGARE,Wilma Morris,2015-08-28,5",
 "AUBU71T5GF5X,Alexander Carey,2015-08-31,5",
-"UBS98Q3X0K9T,Dennis Vinson,2015-09-01,1",
-"OHW37HIF6JE7,Beverly Becker,2015-09-03,1",
 "HVXH2FIYDC8C,Angel Singleton,2015-08-10,5",
-"JZPXN4AFDAZV,Maxwell Rollins,2015-08-11,1",
-"EKL6A02L513M,Bradley Maldonado,2015-08-12,1",
-"J4XYQS9CANVF,Archie Sweeney,2015-08-13,1",
 "90JDMTT3GN2P,Marc Middleton,2015-08-14,2",
 "INDQWFSUSXK1,Rex Jordan,2015-08-17,2",
 "0JW8RYCS0M0C,Bessie Craig,2015-08-18,2",
@@ -47,22 +42,11 @@ var cases = [
 "PYQH13QC0Y1U,Victoria Hinton,2015-09-02,3",
 "F6U7LLGDE2NR,Marsha Hardin,2015-09-03,2",
 "HBDUZ8X1LBJR,Oliver Hayes,2015-08-19,2",
-"P2VMF61QZ5EC,Marie Bradley,2015-08-20,1",
-"JC4YMS2JZTZ1,Sammy Lloyd,2015-08-21,1",
 "4CJBKRR3HXCC,Janice Key,2015-08-24,2",
 "BRU3LE8CE00Z,Kelly Osborn,2015-08-25,2",
-"1WU5C81O0K20,Mary Good,2015-08-26,1",
-"6285910BMYQD,Sharon Cline,2015-08-27,1",
-"W4QH1BT4AQIR,Stephanie Francis,2015-08-28,1",
-"Z3RJIYV5R7KM,Mary Sargent,2015-08-31,1",
 "94K9E5PKP2S9,Donnie Dorsey,2015-09-01,2",
 "18AXAZZDQC8Y,Walter Hall,2015-09-02,2",
-"ASV6UEHEC2SW,Helen Fisher,2015-09-03,1",
-"8PDRSRY1E0HL,Norma Lamb,2015-09-01,2",
-"U5RIJDHM2PU6,Terri Adams,2015-09-02,1",
-"N6H5MMCH1WJ3,Sarah Monroe,2015-09-03,1"
-
-
+"8PDRSRY1E0HL,Norma Lamb,2015-09-01,2"
 ];
 
 var tarr = new Array;
@@ -85,6 +69,7 @@ for (i = 0; i < cases.length; i++) {
 		
 		if(status == filter){
 			var statuscolor = "test" ;
+			$(".activerow").hide();
 						
 			/*sets status*/
 			switch (status) {
@@ -126,11 +111,12 @@ for (i = 0; i < cases.length; i++) {
 			tablerow += '<td class="text-center">'+statuscolor+'</td>'
 			tablerow +='</tr>';
 			
-			$("#tbody").append(tablerow);
+			$("#table").append(tablerow);
 			
 			
 		}	    
 	}
-
+ 
+$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
 
 });
