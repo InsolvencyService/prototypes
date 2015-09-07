@@ -26,7 +26,7 @@ var cases = [
 "HIMFCSDYGARE,Wilma Morris,2015-08-28,5",
 "AUBU71T5GF5X,Alexander Carey,2015-08-31,5",
 "HVXH2FIYDC8C,Angel Singleton,2015-08-10,5",
-"90JDMTT3GN2P,Marc Middleton,2015-08-14,2",
+"EHBJ8F3MKRP,Kim Scarlett,2015-09-11,2",
 "INDQWFSUSXK1,Rex Jordan,2015-08-17,2",
 "0JW8RYCS0M0C,Bessie Craig,2015-08-18,2",
 "OF85EN6QE9RQ,Luis Hamilton,2015-08-19,2",
@@ -105,7 +105,7 @@ for (i = 0; i < cases.length; i++) {
 			
 			
 		    tablerow = '<tr class="tablerow">';
-		    tablerow += '<td><a href="detail.html?'+urn+'">'+urn+'</a></td>';
+		    tablerow += '<td>'+urn+'</td>';
 		    tablerow += '<td>'+name+'</td>';
 		    tablerow += '<td>'+date+'</td>';
 			tablerow += '<td class="text-center">'+statuscolor+'</td>'
