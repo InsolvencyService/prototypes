@@ -81,8 +81,8 @@
 	vertical-align:middle;
 }
 
-p{
-	margin-bottom:20px
+.navtextsize{
+	
 }
 
 #global-header #logo img {
@@ -163,39 +163,45 @@ p{
 <!-- #BeginEditable "content" -->
 
 <p>&nbsp;</p>
-<div class="inner-block well">
+<div class="inner-block">
 
+<table class="table table-bordered">
+<tr>
+<td>From</td><td>donotreply@insolvencyservice.gov.uk</td>
+</tr>
+
+<tr>
+<td>To</td><td>Kim Scarlett (kims999@gmail.com)</td>
+</tr>
+
+<tr>
+<td>CC</td><td>David Rickman</td>
+</tr>
+
+<tr>
+<td>Subject</td><td>An order has been made on your bankruptcy application</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<p>Dear Kim</p>
+<p>Your bankruptcy application <strong>EHBJ8F3MKRP</strong> is complete and an order has been made.</p>
+
+<p>You can view and dowload the order here, and find out what happens next</p>
+<p><a class="button disabled">Sign in to view order</a></p>
 <p></p>
-<h2>Bankruptcy Order on application to the Adjudicator</h2>
-<p class="bolder">
-	SCARLETT, Kim<br>
-	110 High Street, Newhall, Birmingham B4 3TT<br>
-	Birth details: 1 May 1992<br>
-</p>
-
-<p>Kim SCARLETT, unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT.</p>
-
-<p>
-	Date of application: <strong><em>11 September 2015</em></strong><br>
-	Bankruptcy order date: <strong><em>14 September 2015</em></strong><br>
-	Time of Bankruptcy order: <strong><em>09:54</em></strong><br>
-</p>
-<p>Whether Debtor's or Creditor's Petition: <strong>Debtor's</strong></p>
-<p>
-Application number: <strong>EHBJ-8F3M-KRPL</strong></p>
-<p>By virture of this order, David 
-	Rickman, official receiver, is appointed trustee of the Kim Scarlett’s 
-	bankruptcy estate.</p>
-	
-<h3>Important notice to bankrupt</h3>
-<p>The official receiver is by virtue of this order the trustee of your estate. </p>
+<p><br></p>
+<p>Thank you,</p>
+<p>Matt Owen</p>
+<p>The Adjudicators office</p>
 
 
+</td>
+
+</tr>
+</table>
 </div>
-
-<div class="col-sm-6"><a href="approve.html"><span class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i> Cancel</span></a></div>
-<div class="col-sm-6 text-right"><a href="list.html?filter=8"><span class="btn btn-primary"><i class="glyphicon glyphicon-check"></i> Make order</span></a></div>
-
+<div class="col-sm-6"><a href="ordermade.html" id="back"><span class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i> Cancel</span></a></div>
 	 <!-- #EndEditable -->
 
         
@@ -253,6 +259,7 @@ Application number: <strong>EHBJ-8F3M-KRPL</strong></p>
 
 
 <script type="text/javascript">
+
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
