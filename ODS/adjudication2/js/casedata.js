@@ -2,7 +2,7 @@
 
 var tablerow;
 var cases = [
-"5OMQETGNFXQR,Wilbert Aguirre,2015-07-01,8",
+"EHBJ8F3MKRP,Kim Scarlett,2015-09-11,8",
 "2GD1KK9ZQXD6,Bobby Lamb,2015-07-07,8",
 "8VED6P3VUOL9,Devon Dotson,2015-07-09,8",
 "YBAN1NGO5R73,Jack Simpson,2015-07-10,8",
@@ -21,7 +21,7 @@ var cases = [
 "TSXHMSZ19ON7,Samuel Neal,2015-08-17,8",
 "530060BKIR6R,Erica Bryant,2015-08-18,7",
 "DO7KOLIIY6CO,Patrick Harper,2015-08-21,6",
-"AQW8YFLKCHQZ,Christine Coffey,2015-08-26,5",
+"EHBJ8F3MKRP,Kim Scarlett,2015-09-11,5",
 "HZTEDLME20MJ,Daniel Morton,2015-08-27,6",
 "HIMFCSDYGARE,Wilma Morris,2015-08-28,5",
 "AUBU71T5GF5X,Alexander Carey,2015-08-31,5",
@@ -31,10 +31,10 @@ var cases = [
 "0JW8RYCS0M0C,Bessie Craig,2015-08-18,2",
 "OF85EN6QE9RQ,Luis Hamilton,2015-08-19,2",
 "QQPF86B5C2R1,Josephine Turner,2015-08-20,2",
-"UFM75Q94Z556,Jordan Boyd,2015-08-21,4",
+"EHBJ8F3MKRP,Kim Scarlett,2015-09-11,4",
 "QO3ULVFGDU2Z,Clifford Murray,2015-08-24,4",
 "7ANJ77U1SDE4,Giovanni Thomas,2015-08-25,4",
-"2W19SS2S4O7Q,Margaret Fuller,2015-08-26,3",
+"EHBJ8F3MKRP,Kim Scarlett,2015-09-11,3",
 "HGP0B6F7RS0Q,George Hopper,2015-08-27,3",
 "T0FN2FFH6FQ7,Maude Hopkins,2015-08-28,3",
 "3UYF2CE20Y8I,Patrick Grant,2015-08-31,3",
@@ -69,30 +69,60 @@ for (i = 0; i < cases.length; i++) {
 		
 		if(status == filter){
 			var statuscolor = "test" ;
+			var sectiontitle;
 			$(".activerow").hide();
 						
 			/*sets status*/
 			switch (status) {
 			case "1":
 				statuscolor = '<span class="label label-success">&nbsp;</span>';
+				sectiontitle= 'New approve cases';
 				break;	
 			case "2":
 				statuscolor = '<span class="label label-danger">&nbsp;</span>';
+				sectiontitle = 'New refer cases';
 				break;
 			case "3":
 				statuscolor = '<span class="label label-danger">&nbsp;</span>&nbsp;<i class=\"glyphicon glyphicon-flag\"></i>';
+				sectiontitle = 'Escalated cases';
 				break;	
 			case "4":
 				statuscolor = '<span class="label label-warning">&nbsp;</span>&nbsp;<i class=\"glyphicon glyphicon-flag\"></i>';
+				sectiontitle = 'Information received';
 				break;	
 			case "5":
 				statuscolor = '<span class="label label-warning">&nbsp;</span>';
+				sectiontitle = 'Information requested';
+				break;
+			case "6":
+				statuscolor = '<span class="label label-default">&nbsp;</span>';
+				sectiontitle = 'Review requested';
+				break;
+			case "7":
+				statuscolor = '<span class="label label-default">&nbsp;</span>';
+				sectiontitle = 'On appeal';
+				break;
+			case "8":
+				statuscolor = '<span class="label label-default">&nbsp;</span>';
+				sectiontitle = 'Order made';
+				break;
+			case "9":
+				statuscolor = '<span class="label label-default">&nbsp;</span>';
+				sectiontitle = 'Order refused';
+				break;
+			case "10":
+				statuscolor = '<span class="label label-default">&nbsp;</span>';
+				sectiontitle = 'Review rejected';
+				break;
+			case "11":
+				statuscolor = '<span class="label label-default">&nbsp;</span>';
+				sectiontitle = 'Appeal rejected';
 				break;
 			default:
 				statuscolor = '<span class="label label-default">&nbsp;</span>';				
 			}	
 		
-			
+			$("#section").html(sectiontitle);
 			
 			/* Sets flag */
 			if(flagged == 'true'){
@@ -105,7 +135,22 @@ for (i = 0; i < cases.length; i++) {
 			
 			
 		    tablerow = '<tr class="tablerow">';
-		    tablerow += '<td>'+urn+'</td>';
+		    if(name=="Kim Scarlett"&&(status==2||status==3)){
+		    	tablerow += '<td><a href="refer.html">'+urn+'</a></td>';
+		    }
+		    else if(name=="Kim Scarlett"&&(status==4)){
+		    	tablerow += '<td><a href="refer.html">'+urn+'</a></td>';
+		    }
+		    else if(name=="Kim Scarlett"&&(status==5)){
+		    	tablerow += '<td><a href="information.html">'+urn+'</a></td>';
+		    }
+		    else if(name=="Kim Scarlett"&&(status==8)){
+		    	tablerow += '<td><a href="ordermade.html">'+urn+'</a></td>';
+		    }
+
+		    else{
+		    	tablerow += '<td>'+urn+'</td>';
+		    }
 		    tablerow += '<td>'+name+'</td>';
 		    tablerow += '<td>'+date+'</td>';
 			tablerow += '<td class="text-center">'+statuscolor+'</td>'
