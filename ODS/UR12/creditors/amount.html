@@ -206,6 +206,39 @@ display:block;
 			<input id="ref" name="applicant_address_town" type="text" value="" />
 	<br/>
 	</div>
+	<fieldset>
+                <legend id="title_label" class="form-label-bold">Debt type</legend>
+                <div id="type-select" class="form-group">
+
+                  
+                    <label id="title_label1" for="title_Mrs." class="block-label">
+                        <input id="title_Mrs." value="Credit card" name="title" type="radio" aria-describedby="title_error title_help">
+                        Credit card/ store card
+                    </label>
+
+                    <label id="title_label2" for="title_Miss" class="block-label">
+                        <input id="title_Miss" value="Personal loan" name="title" type="radio" aria-describedby="title_error title_help">
+                        Personal loan (unsecured)
+                    </label>
+
+                    <label for="type_landlord" class="block-label">
+                        <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                        Rent arrears                    </label>
+                          <label for="type_landlord" class="block-label">
+                        <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                        Utilities                    </label>
+                          <label for="type_landlord" class="block-label">
+                        <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                        Telephone/ mobile phone                    </label>
+
+
+                    <label id="title_label4" for="title_other" class="block-label">
+                        <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+                        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal">
+                    </label>
+
+                </div>
+            </fieldset>
 	<div class="clearfix"></div>
 	<div class="validation-summary"  id="msg-enterdate"  style="display:none">
                 <h2>There was a problem with your answers</h2>
@@ -222,8 +255,12 @@ display:block;
 
             <fieldset id="date_of_birth" class="date-of-birth">
 
-                <legend id="date_of_birth_label" class="form-label-bold">Year the debt began (was incurred)</legend>
-                <div class="form-hint">For example, 2012</div>
+                <legend id="date_of_birth_label" class="form-label-bold">Date 
+				the debt started (was incurred)</legend>
+                <div class="form-hint">For <strong>bills</strong> (eg rent, utilities, phone), enter the first date you didn't pay the full bill.</div>
+                <div class="form-hint">For <strong>credit cards, store cards</strong> and 
+					<strong>loans</strong>, enter the date you received the card 
+					or loan.</div>
                 <div class="clearfix"></div>
                 <div class="row">
                     <div class="col-sm-5">
@@ -270,9 +307,8 @@ display:block;
                         <div class="form-hint">
 
                             <ul class="bulleted">
-                                <li>For <strong>bills</strong>, enter the first date you didn't pay the full bill</li>
-                                <li>For <strong>loans</strong>, enter the date you received the money  </li>
-                                <li>For <strong>credit cards</strong>, enter the  date you took out the card</li>
+						                               
+                                
                             </ul>
                         </div>
                     </div>
@@ -302,44 +338,7 @@ display:block;
 
         <div class="form-group ">
 
-            <fieldset>
-                <legend id="title_label" class="form-label-bold">Debt type</legend>
-                <div id="type-select" class="form-group">
-
-                    <label for="type_bank" class="block-label">
-                        <input id="type_bank" value="Bank" name="title" type="radio" aria-describedby="title_error title_help">
-                        Bank/building society account
-                    </label>
-
-                    <label id="title_label1" for="title_Mrs." class="block-label">
-                        <input id="title_Mrs." value="Credit card" name="title" type="radio" aria-describedby="title_error title_help">
-                        Credit card
-                    </label>
-
-                    <label id="title_label2" for="title_Miss" class="block-label">
-                        <input id="title_Miss" value="Personal loan" name="title" type="radio" aria-describedby="title_error title_help">
-                        Personal loan (unsecured)
-                    </label>
-
-                    <label id="title_label3" for="title_Ms." class="block-label">
-                        <input id="title_Ms." value="Secured loan or mortgage" name="title" type="radio" aria-describedby="title_error title_help">
-                        Secured loan or mortgage
-                    </label>
-                    <label for="type_landlord" class="block-label">
-                        <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
-                        Landlord
-                    </label>
-                    <label id="title_label3" for="type_employee" class="block-label">
-                        <input id="type_employee" value="Employee" name="title" type="radio" aria-describedby="title_error title_help">
-                        Employee
-                    </label>
-                    <label id="title_label4" for="title_other" class="block-label">
-                        <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-                        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal">
-                    </label>
-
-                </div>
-            </fieldset>
+            
         </div>
 
 
