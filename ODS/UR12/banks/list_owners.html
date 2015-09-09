@@ -220,7 +220,7 @@ legend{
 
 
 <!-- #BeginEditable "content" --> 
-<div id="content" >
+<div id="content0" >
 
 <div class="inner-block">	
 	<h1 class="form-title heading-large">Joint account holders <span class="repeat">summary</span></h1>
@@ -377,23 +377,38 @@ legend{
 $(document).ready(function() {
     // pre populate with people they entered previously
 
-    var accid = 1;
-    var jointholders = 1;
-    if (getParameterByName("acc")) {
-        accid = parseInt(getParameterByName("acc"));
-    }
+   
     $("#firstname").val("");
     $("#lastname").val("");
-
+/*
     if ($.cookie("partner-firstname")) {
         $("#known-name").text($.cookie("partner-firstname") + " " + $.cookie("partner-lastname"));
         $(".known").show();
         // read back the name of the person they entered
 
     }
-
+*/
 
     $("#add").click(function () {
+    
+		var accountid = 1;
+	    if ($.cookie("acc-count")) {
+	        accountid = $.cookie("acc-count");
+	    }   
+ 
+    	if (firstname && firstname.length > 0){
+			$("#first_name").val(titleCaps(firstname));
+			if (lastname){
+			    $("#last_name").val(titleCaps(lastname.toLowerCase()))
+			}
+		}
+		
+		$.cookie("acc" + accountid + "-firstname" + jointholders, $("#first_name").val(), { expires: 1, path: '/' });
+		$.cookie("acc" + accountid + "-lastname" + jointholders, $("#last_name").val(), { expires: 1, path: '/' });
+		$.cookie("acc" + accountid + "_joint", jointholders + 1, { expires: 1, path: '/' });
+		
+		
+    	/*
         $.cookie("accountholderfirstname", $("#firstname").val(), { expires: 1, path: '/' });
         $.cookie("accountholderlastname", $("#lastname").val(), { expires: 1, path: '/' });
 
@@ -404,7 +419,7 @@ $(document).ready(function() {
             $.cookie("acc" + accid + "_joint", jointholders + 1, { expires: 1, path: '/' });
             jointholders++;
         }
-
+		*/
     });
 
 });
