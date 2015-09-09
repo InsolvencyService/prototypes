@@ -228,18 +228,18 @@ display:block;
 	
 			<div class="form-group" id="pnl-click">
 				<fieldset>
-					<legend id="title_label" class="form-label-bold">How do you store your business accounts?</legend>
+					<legend id="title_label" class="form-label-bold">Where do you keep your business records?</legend>
 					<p class="form-hint">For example receipts, invoices, employee records, etc </p>
 					<div id="title-select" class="form-group inline">
 						
 						<label id="title_label0" for="hard" class="block-label">
 						<input id="hard" value="Mr" name="title" type="radio" aria-describedby="title_error title_help">
-						As hardcopies (eg paper files)
+						At my home address
 						</label>
 						
 						<label id="title_label1" for="electronic" class="block-label">
 						<input id="electronic" value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
-						Electronically (eg Sage Business software, Microsoft Excel)</label>
+						At my primary business address</label>
 						
 						<label id="title_label1" for="cloud" class="block-label">
 						<input id="cloud" value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
@@ -418,7 +418,7 @@ $("#business_addresses").append(o);
 
 	
 });
-
+/*
 $('#business_addresses').change(function() {
     var option = $("#business_addresses :selected").text()
     if(option=="Another address"){
@@ -439,7 +439,7 @@ $('#pnl-click input:radio').click(function() {
 	}
 
 });
-
+*/
 $('#next').click(function() {
 
 	if(($("#yes").prop('checked')==true)){
