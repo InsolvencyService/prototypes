@@ -276,7 +276,7 @@ legend{
 		<input id="lastname"  />
 	</div>
 	<div class="form-group partwidth">
-              	  <a id="add" class="button" href="#">Add joint account holder<span class="repeat"></span></a>&nbsp;
+              	  <a id="add" class="button" href="">Add joint account holder<span class="repeat"></span></a>&nbsp;
 					<br/>
 	</div>
 
@@ -386,7 +386,7 @@ $(document).ready(function() {
     $("#lastname").val("");
 
     if ($.cookie("partner-firstname")) {
-        $("#known-name").text($.cookie("partner-firstname") + " " + $.cookie("partner-lastname"));
+        $("#known-name").text($.cookie("accountholderfirstname") + " " + $.cookie("accountholderlastname"));
         $(".known").show();
         // read back the name of the person they entered
 
