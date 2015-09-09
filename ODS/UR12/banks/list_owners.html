@@ -220,7 +220,7 @@ legend{
 
 
 <!-- #BeginEditable "content" --> 
-<div id="content0" >
+<div id="content" >
 
 <div class="inner-block">	
 	<h1 class="form-title heading-large">Joint account holders <span class="repeat">summary</span></h1>
@@ -236,14 +236,14 @@ legend{
 	                <thead>
 	                    <tr>
 	                        <th>Name</th>
-                            <th>Relationship</th>
+                            
 	                        <th>&nbsp;</th>
 	                    </tr>
 	                </thead>
                     <tbody class="known">
                         <tr>
                             <td id="known-name">Susan Smith</td>
-                            <td id="known-relationship">Partner</td>
+                            
                             <td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
                         </tr>
                     </tbody>
@@ -377,7 +377,11 @@ legend{
 $(document).ready(function() {
     // pre populate with people they entered previously
 
-   
+    var accid = 1;
+    var jointholders = 1;
+    if (getParameterByName("acc")) {
+        accid = parseInt(getParameterByName("acc"));
+    }
     $("#firstname").val("");
     $("#lastname").val("");
 /*
@@ -390,25 +394,6 @@ $(document).ready(function() {
 */
 
     $("#add").click(function () {
-    
-		var accountid = 1;
-	    if ($.cookie("acc-count")) {
-	        accountid = $.cookie("acc-count");
-	    }   
- 
-    	if (firstname && firstname.length > 0){
-			$("#first_name").val(titleCaps(firstname));
-			if (lastname){
-			    $("#last_name").val(titleCaps(lastname.toLowerCase()))
-			}
-		}
-		
-		$.cookie("acc" + accountid + "-firstname" + jointholders, $("#first_name").val(), { expires: 1, path: '/' });
-		$.cookie("acc" + accountid + "-lastname" + jointholders, $("#last_name").val(), { expires: 1, path: '/' });
-		$.cookie("acc" + accountid + "_joint", jointholders + 1, { expires: 1, path: '/' });
-		
-		
-    	/*
         $.cookie("accountholderfirstname", $("#firstname").val(), { expires: 1, path: '/' });
         $.cookie("accountholderlastname", $("#lastname").val(), { expires: 1, path: '/' });
 
@@ -419,7 +404,7 @@ $(document).ready(function() {
             $.cookie("acc" + accid + "_joint", jointholders + 1, { expires: 1, path: '/' });
             jointholders++;
         }
-		*/
+
     });
 
 });
