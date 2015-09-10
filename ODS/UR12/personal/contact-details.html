@@ -120,8 +120,33 @@ display:block;
         clear: none;
         width: 45%;
     }
-
-
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     padding-top:80px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     
+     opacity:1;
+}
+#overback{
+	background-color:#fff;
+	opacity:1!important;
+	width: auto;
+	margin-left:auto;
+	margin-right:auto;
+	padding:30px;
+	border: 1px black solid;
+	text-align:left;
+	
+}
+.btn-success{
+	color:white!important;
+}
 </style>
 <!-- #EndEditable -->
 
@@ -244,7 +269,7 @@ display:block;
 <div class="right-block">
 <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                            
-                            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                            <p><a class="save" style="font-weight:bold">Save and logout</a></p>
                             <br>
                             <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                             <p class="heading-secondary">Bankruptcy fee</p>
@@ -274,11 +299,34 @@ display:block;
 	<a style="padding-right: 30px" href="1.html" id="back">Back</a>
 
 	
-	<a href="#" id="cancel">Save and logout</a>
+	<a class="save">Save and logout</a>
 	
 	</div>
 
 	</div>
+<p>&nbsp;</p><p>&nbsp;</p>
+<div id="overlay" >
+     <div id="overback" class="col-sm-6 col-xs-push-4">
+     	<div class="row">
+	     	<div class="font-xlarge col-xs-2">
+	     		<i class="glyphicon glyphicon-exclamation-sign "></i>
+	     	</div>
+	     	<div class="col-xs-4">
+	     		<p class="form-label-bold" style="margin-bottom:10px;">Log out</p>
+	     	</div>
+	     </div>
+          
+        	<p>&nbsp;</p>
+          <p>The information you have just entered on this page of <br>the application will not save.</p>
+          <p>All data entered prior to this page has been saved.</p>
+          <p>&nbsp;</p>
+          <div>
+          	<div class="col-xs-6"><a onclick='overlay()' class="btn btn-default"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
+          	<div class="col-xs-6 text-right"><a href="../start/logout.html" class="btn btn-success">Continue to logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a></div>
+          </div>
+          
+     </div>
+</div>
 
         
 </div>
@@ -335,7 +383,7 @@ display:block;
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="../shared/loop.js"></script>
-    <script type="text/javascript" src="../assets/js/titleCaps.js"></script>
+    <script type="text/javascript" src="../../assets/js/titleCaps.js"></script>
 <script type="text/javascript" src="../assets/property/js/postcodelookup.js"></script>
 
 
@@ -360,12 +408,15 @@ $(document).ready(function() {
 
 });
 
-$("#next").click(function(){
-		
+$(".save").click(function(){
+	 overlay();			
 });
 
 
-
+function overlay() {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
