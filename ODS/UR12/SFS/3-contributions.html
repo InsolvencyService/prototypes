@@ -69,7 +69,7 @@
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
      
 <!-- #BeginEditable "styles" -->
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap/css/bootstrap.min.css"
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/sfs.css">
 
 
@@ -135,14 +135,34 @@
 	
 
 
+	</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
+<div id="content" >
 <div class="inner-block">
 	<p class="form-hint">
         <a href="summary.html?stage=partnerincome&page=1">Income and expenses</a> &gt; Income
     </p>
 	
-	<h1 class="form-title heading-large">Contributions from others</h1>
+	<h1 class="form-title heading-large">Household income</h1>
+	<p><span class="form-label">Tell us about what other members of your 
+	household earn, including all salaries, wages and benefits.</span></p>
+	<p><span class="form-label">Their salaries, wages and benefits won't be affected by your bankruptcy, and we 
+	won't share their information with anyone outside the Insolvency Service.</span></p>
+	 <p><a href="#help1" class="helplink"><i class="glyphicon glyphicon-triangle-right"></i> Why we need to know</a></p>
+
+            <div id="help1" class="helpsection hidden">
+
+                <p>We need this information to properly understand your household's financial situation and how your income compares with that of the rest of your household.</p>
+        
+            </div>
+       	</div>
+		
+
 	
+
 	
 	
 	<form class="form" method="post">
@@ -159,8 +179,8 @@
 	</thead>
 	<tbody>
 	<tr>
-	<td><span class="form-label">Amount other members of your household contribute to household expenses</span>
-	<div class="form-hint">For example, contributions towards your food, utilities and rent costs from anyone who lives with you</div></td>
+	<td><span class="form-label">Total amount the rest of your household earns</span>
+	<div class="form-hint">Including salary, wages and benefits</div></td>
 	<td>
 		<div class="pull-left text-right pound-sign">£</div>
       	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
@@ -174,21 +194,6 @@
 	</td>
 	</tr>
 
-	<tr>
-	<td><span class="form-label">Contributions to household expenses from any other person.</span>
-	</td>
-	<td>
-		<div class="pull-left text-right pound-sign">£</div>
-      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-	</td>
-	<td>
-	<select class="select-control" name="D5">
-                <option value="week">per week</option><option value="fortnight">per fortnight</option><option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option><option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     </select>
-	</td>
-	</tr>
 
 	<tr class="totalrow">
 	<td><span class="form-label text-right">Total</span></td>
@@ -283,6 +288,47 @@
 
 <!-- #BeginEditable "scripts" -->
 
+<script type="text/javascript">
+$(document).ready(function() {
+                 enablehelp();
+
+});
+function enablehelp() {
+ 
+    $(".helplink").on("click", function () {
+ 
+        if ($(this).prop("href")) {
+ 
+            var ref = $(this).prop("href").substring($(this).prop("href").indexOf("#"));
+ 
+            var helpsectionref = $(ref);
+ 
+            if (helpsectionref) {
+ 
+                if (helpsectionref.is(":visible")) {
+ 
+                    helpsectionref.addClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+ 
+                }
+ 
+                else {
+ 
+                    helpsectionref.removeClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+ 
+                }
+ 
+            }
+ 
+        }
+ 
+    });
+ 
+}
+</script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../shared/sfs.js"></script>
 
