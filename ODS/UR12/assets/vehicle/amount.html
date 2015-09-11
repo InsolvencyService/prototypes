@@ -364,7 +364,7 @@ function writeCookies(){
 	$.cookie("VehicleFinanceYear"+count, $("#year").val(), {path: '/'});
 	$.cookie("VehicleAssetValue"+count, $("#amount").val(), {path: '/'});
 	
-	vehicle_finance += $("#amount").val();
+	vehicle_finance += parseFloat($("#amount").val());
 	$.cookie("vehicle_finance", vehicle_finance, {path: '/'});
 } 
 
