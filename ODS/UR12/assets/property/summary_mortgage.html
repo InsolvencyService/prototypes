@@ -396,7 +396,7 @@ $(document).ready(function() {
     for (i = 1; i <= numberofsecuredloans; i++) {
 
         var value = numberWithoutCommas($.cookie('securedloan' + i));
-        secured_loan_total += value;        
+        secured_loan_total += parseFloat(value);        
         var name = $.cookie('loancompanyname' + i);
         var shared = "";
         if ($.cookie('loanshared' + i)) {
