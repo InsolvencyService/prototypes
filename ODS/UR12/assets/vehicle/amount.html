@@ -339,13 +339,11 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-var vehicle_finance;
+var vehicle_finance = 0;
 $(document).ready(function() {
 	$("#creditor").text($.cookie('tempcreditor'));
 	
-	if($.cookie('vehicle_finance')==null){
-		vehicle_finance = 0;
-	}
+	
 });
 
 $('#next').click(function() {
@@ -356,13 +354,16 @@ $('#next').click(function() {
 function writeCookies(){
 	// Get count
 		count = $.cookie("VehicleCount");
-			
+	if($.cookie("vehicle_finance")){
+		vehicle_finance = $.cookie("vehicle_finance");
+	}	
 	// write records
 	$.cookie("VehicleFinanceOutstanding"+count, $("#amount").val(), {path: '/'});
 	$.cookie("VehicleFinanceRef"+count, $("#ref").val(), {path: '/'});
 	$.cookie("VehicleFinanceMonth"+count, $("#month").val(), {path: '/'});
 	$.cookie("VehicleFinanceYear"+count, $("#year").val(), {path: '/'});
 	$.cookie("VehicleAssetValue"+count, $("#amount").val(), {path: '/'});
+	
 	vehicle_finance += parseFloat($("#amount").val());
 	$.cookie("vehicle_finance", vehicle_finance, {path: '/'});
 } 
