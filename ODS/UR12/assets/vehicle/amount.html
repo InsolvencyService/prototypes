@@ -355,7 +355,7 @@ function writeCookies(){
 	// Get count
 		count = $.cookie("VehicleCount");
 	if($.cookie("vehicle_finance")){
-		vehicle_finance = $.cookie("vehicle_finance");
+		vehicle_finance = parseFloat($.cookie("vehicle_finance"));
 	}	
 	// write records
 	$.cookie("VehicleFinanceOutstanding"+count, $("#amount").val(), {path: '/'});
