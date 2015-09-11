@@ -392,10 +392,11 @@ $(document).ready(function() {
     if ($.cookie("numberofsecuredloans") && parseInt($.cookie("numberofsecuredloans"))) {
         numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
     }
-
+	var secured_loan_total = 0;
     for (i = 1; i <= numberofsecuredloans; i++) {
 
         var value = numberWithoutCommas($.cookie('securedloan' + i));
+        secured_loan_total += value;        
         var name = $.cookie('loancompanyname' + i);
         var shared = "";
         if ($.cookie('loanshared' + i)) {
@@ -408,6 +409,7 @@ $(document).ready(function() {
         $(".firsttime").hide();
         $(".repeat").show();
     }
+    $.cookie("secured_loans", secured_loan_total, {path:'/'});
 });
 
 $("#add").click(function(e){

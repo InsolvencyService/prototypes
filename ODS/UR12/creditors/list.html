@@ -207,10 +207,49 @@ display:block;
 	
 	<h1 class="form-title heading-large">Money you owe</h1>
 	<div class="newvisitor">
-	<p>Organisations and people you owe money to are known as creditors.</p>
-	<p>We need to know about all of your creditors, including family members or friends.</p>
-	<p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
-	<p><strong>Don't include any mortgages, secured loans or overdrafts you have already told us about.</strong></p>
+		<p>Organisations and people you owe money to are known as creditors.</p>
+		<p>We need to know about all of your creditors, including family members or friends.</p>
+		<p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
+	</div>
+	
+	<div id="previous_items" style="display:none">
+		<p>The table below shows all of the mortgages, secured loans and out standing finace you've already tols us about. You don't nee to add these again.</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Type</th>
+					<th>Total amount</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="mortgage_row" style="display:none">
+					<td>Mortgages</td>
+					<td>£ <span id="mortgagetotal"></span></td>
+					<td><a href="#">Edit</a></td>
+				</tr>
+				<tr id="secured_loans_row" style="display:none">
+					<td>Loans secured against your property</td>
+					<td>£ <span id="loantotal"></span></td>
+					<td><a href="#">Edit</a></td>
+				</tr>
+				<tr id="vehicle_finance_row" style="display:none">
+					<td>Vehicle finance</td>
+					<td>£ <span id="vehicletotal"></span></td>
+					<td><a href="#">Edit</a></td>
+				</tr>
+				<tr id="employee_owed_row" style="display:none">
+					<td>Employees who claim you owe them money</td>
+					<td>£ <span id="employeetotal"></span></td>
+					<td><a href="#">Edit</a></td>
+				</tr>
+				<tr id="overdraft_row" style="display:none">
+					<td>Overdrafts</td>
+					<td>£ <span id="overdrafttotal"></span></td>
+					<td><a href="#">Edit</a></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 	
 	
@@ -553,6 +592,37 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	//populate previous items table for items already documented
+	
+	var mortgagetotal, loantotal, vehicletotal, employeetotal, overdrafttotal;
+	
+	if($.cookie("mortgageamount")){
+		$("#previous_items").show();
+		$("#mortgage_row").show();
+		$("#mortgagetotal").text($.cookie("mortgageamount"));
+	}
+	if($.cookie("secured_loans")){
+		$("#previous_items").show();
+		$("#secured_loans_row").show();
+		$("#loantotal").text($.cookie("secured_loans"));
+	}
+	if($.cookie("vehicle_finance")){
+		$("#previous_items").show();
+		$("#vehicle_finance_row").show();
+		$("#vehicletotal").text($.cookie("vehicle_finance"));
+	}
+	if($.cookie("employee_owed")){
+		$("#previous_items").show();
+		$("#employee_owed_row").show();
+		$("#employeetotal").text($.cookie("employee_owed"));
+	}
+	if($.cookie("negativebalance")){
+		$("#previous_items").show();
+		$("#overdraft_row").show();
+		$("#overdrafttotal").text($.cookie("negativebalance"));
+	}	
+	// end of table population
 	
 	var reset = getParameterByName("reset");
 	var loop = getParameterByName("loop");

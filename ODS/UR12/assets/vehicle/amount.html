@@ -341,6 +341,10 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#creditor").text($.cookie('tempcreditor'));
+	var vehicle_finance;
+	if($.cookie('vehicle_finance')==null){
+		vehicle_finance = 0;
+	}
 });
 
 $('#next').click(function() {
@@ -358,6 +362,8 @@ function writeCookies(){
 	$.cookie("VehicleFinanceMonth"+count, $("#month").val(), {path: '/'});
 	$.cookie("VehicleFinanceYear"+count, $("#year").val(), {path: '/'});
 	$.cookie("VehicleAssetValue"+count, $("#amount").val(), {path: '/'});
+	vehicle_finance += $("#amount").val();
+	$.cookie('vehicle_finance', vehicle_finance, {path: '/'})
 } 
 
 
