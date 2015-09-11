@@ -213,7 +213,7 @@ display:block;
 	</div>
 	
 	<div id="previous_items" style="display:none">
-		<p>The table below shows all of the mortgages, secured loans and out standing finace you've already tols us about. You don't nee to add these again.</p>
+		<p>The table below shows all of the mortgages, secured loans and outstanding finance you've already told us about. You don't need to add these again.</p>
 		<table>
 			<thead>
 				<tr>
@@ -617,10 +617,10 @@ $(document).ready(function() {
 		$("#employee_owed_row").show();
 		$("#employeetotal").text($.cookie("employee_owed"));
 	}
-	if($.cookie("negativebalance")){
+	if($.cookie("negative_balance")){
 		$("#previous_items").show();
 		$("#overdraft_row").show();
-		$("#overdrafttotal").text($.cookie("negativebalance"));
+		$("#overdrafttotal").text($.cookie("negative_balance"));
 	}	
 	// end of table population
 	
