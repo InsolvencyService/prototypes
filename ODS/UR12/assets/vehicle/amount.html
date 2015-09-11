@@ -339,9 +339,10 @@ display:block;
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+var vehicle_finance;
 $(document).ready(function() {
 	$("#creditor").text($.cookie('tempcreditor'));
-	var vehicle_finance;
+	
 	if($.cookie('vehicle_finance')==null){
 		vehicle_finance = 0;
 	}
