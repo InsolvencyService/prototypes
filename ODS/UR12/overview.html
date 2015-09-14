@@ -740,7 +740,7 @@ Directorships you have held in last 12 months
                     <div class="col-sm-4" style="padding-top:0">
                         <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                            
-                            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                            <p><a class="save" style="font-weight:bold">Save and logout</a></p>
                             <br>
                             <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                             <p class="heading-secondary">Bankruptcy fee</p>
@@ -773,7 +773,7 @@ Directorships you have held in last 12 months
                         <div>
 
                             <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>&nbsp;
-	<a href="brian/logout.html" id="cancel">Save and logout</a>  
+	<a class="save" id="cancel">Save and logout</a>  
 
                         </div>
                     </div>
@@ -1016,6 +1016,11 @@ Directorships you have held in last 12 months
 	                    results = regex.exec(location.search);
 	                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	            }
+	            
+	            $(".save").click(function(){
+				 	$(".save").prop("href", "start/logout.html");			
+				});
+
 	
 	        </script>
 
