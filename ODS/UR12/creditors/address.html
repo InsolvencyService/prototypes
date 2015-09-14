@@ -96,6 +96,36 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
+
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     padding-top:80px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     
+     opacity:1;
+}
+#overback{
+	background-color:#fff;
+	opacity:1!important;
+	width: auto;
+	margin-left:auto;
+	margin-right:auto;
+	padding:30px;
+	border: 1px black solid;
+	text-align:left;
+	
+}
+.btn-success{
+	color:white!important;
+}
+
+
 </style>
 <!-- #EndEditable -->
 
@@ -160,87 +190,132 @@ display:block;
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block text">
+<div class="inner-block">
+	<div class="row">
+		<div class="col-sm-8">	
+			<h1 class="form-title heading-large">Creditor address</h1>
+			<form class="form" method="post">
+				<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	
-	
-	<h1 class="form-title heading-large">Creditor address</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<div class="form-group ">
-	
-	<label  for="name" class="form-label-bold">Creditor name</label>
-	<input id="name" name="applicant_address_town0" type="text" value="" />
-	</div>
-	
-	<p class="form-label-bold">
-	</p>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
-	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
-	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
-	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
-	</div>
-	<div class="form-group ">
-	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-	<br/>
-	</div>
-
-		<br/>
-
-
-<p class="clearfix"><br></p>
+				<div class="form-group ">
+					<label  for="name" class="form-label-bold">Creditor name</label>
+					<input id="name" name="applicant_address_town0" type="text" value="" />
+					<p class="form-label-bold"></p>
+				</div>
+				
+			
+				
+				<div class="form-group  firsttime">		
+					<p>&nbsp;</p>		
+					<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Enter their postcode?</label>
+					<span class="form-hint">For example, YO42 1TY</span>
+					<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+					<br/>
+					<p><br></p>
+				</div>
+				
+				
 	
 	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-		<a id="next" class="button" href="amount.html">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="list.html" id="back">Back</a>
+				<div class="form-navigation form-group">	
+					<div class=" firsttime">
+						<a id="lookup" class="button" href="?loop=true">Look up address</a><br>
+						<a href="postcode_unknown.html">I don't have a UK postcode.</a>
+					</div>
+					
+					<div class="repeat">
+						<p>&nbsp;</p>
+						<fieldset>
+			                <label id="title_label" class="form-label-bold">Address</label>
+			                <div id="type-select" class="form-group">
+			
+			                    <label id="title_label1" for="add_1" class="block-label">
+			                        <input id="add_1" value="" name="add_1" type="radio">1 Wold View, Millington, York, YO42 1TY
+			                    </label>
+			                    
+			                    <label id="title_label2" for="add_2" class="block-label">
+			                        <input id="add_2" value="" name="add_2" type="radio">2 Wold View, Millington, York, YO42 1TY			                    </label>
 
+								<label id="title_label3" for="add_3" class="block-label">
+			                        <input id="add_3" value="" name="add_3" type="radio">3 Wold View, Millington, York, YO42 1TY
+			                    </label>
+			                    
+			                    <label id="title_label4" for="add_4" class="block-label">
+			                        <input id="add_4" value="" name="add_4" type="radio">4 Wold View, Millington, York, YO42 1TY			                    </label>
+			                    
+			                    <label id="title_label5" for="add_5" class="block-label">
+			                        <input id="add_5" value="" name="add_5" type="radio">5 Wold View, Millington, York, YO42 1TY
+			                    </label>
+			                    
+			                    <label id="title_label1" for="add_6" class="block-label">
+			                        <input id="add_6" value="" name="add_6" type="radio">6 Wold View, Millington, York, YO42 1TY
+			                    </label>
+
+			                </div>
+			            </fieldset>
+
+					</div>
+					<div class="repeat">
+						<a id="next" class="button" href="amount.html">Continue</a><br>
+						<a href="postcode_unknown.html">The address is not listed</a>
+					</div>
+
+					
+					<div><br></div>
+		
 	
-	<a href="#" id="cancel">Save and logout</a>
 	
+	
+	
+	
+					<div>
+						<a style="padding-right: 30px" href="list.html" id="back">Back</a>
+						<a class="save" id="cancel">Save and logout</a>
+					</div>
+				</div>
+				
+				
+			</form>
+		</div>
+		<div class="col-sm-3 col-sm-push-1" style="">
+			<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">                 
+		        <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+		        <br>
+		        <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+		        <p class="heading-secondary">Bankruptcy fee</p>
+		       	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
+		       	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
+		       	<p><a href="payments/payments.html">Make a payment</a></p>
+		        </div>
+		        <p><a href="#" style="display:none">Print summary</a></p>
+		        <p><a href="#" style="display:none">Generate court documents</a></p>
+		        <p><a href="#" style="display:none">Discard application</a></p>
+		    </div>
+		</div>
 	</div>
-	</div>
-	</form>
-	</div>
+</div>
+<div id="overlay" >
+     <div id="overback" class="col-sm-6 col-xs-push-4">
+     	<div class="row">
+	     	<div class="font-xlarge col-xs-2">
+	     		<i class="glyphicon glyphicon-exclamation-sign "></i>
+	     	</div>
+	     	<div class="col-xs-6">
+	     		<p class="form-label-bold" style="margin-bottom:10px;">Save and log out</p>
+	     	</div>
+	     </div>
+          
+        	<p>&nbsp;</p>
+          <p>If you log out now, you will lose any new information<br> you have entered on this page.</p>
+          <p>Everything you have done before this page will be saved.</p>
+                    <p>&nbsp;</p>
+          <div>
+          	<div class="col-xs-6"><a onclick='overlay()' class="btn btn-default"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
+          	<div class="col-xs-6 text-right"><a href="../start/logout.html" class="btn btn-success">Log out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a></div>
+          </div>
+          
+     </div>
+</div>
 
 	 <!-- #EndEditable -->
 
@@ -293,7 +368,8 @@ display:block;
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../shared/loop.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../../assets/js/titleCaps.js"></script>
 
@@ -304,6 +380,10 @@ $(document).ready(function() {
 	var numcreditors = 0;
 	var creditorname;
 	
+	if($.cookie('lookup_pcode')){
+		$("#applicant_address_post_code").val($.cookie('lookup_pcode'));
+	}
+	
 	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
 		numcreditors = $.cookie('numcreditors');
 		creditorname = $.cookie('creditorname' + numcreditors);
@@ -313,7 +393,9 @@ $(document).ready(function() {
 		$("#name").val(titleCaps(creditorname));
 	}
 	
-
+	$("#lookup").on("click", function(e){
+		$.cookie('lookup_pcode', $("#applicant_address_post_code").val());
+	});
 	$("#next").on("click", function(e){
 		$.cookie('creditorname' + numcreditors, titleCaps($("#name").val()), { expires: 1 });
 	});
@@ -321,6 +403,14 @@ $(document).ready(function() {
 
 });
 
+$(".save").click(function(){
+	 overlay();			
+	});
+	
+function overlay() {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

@@ -75,7 +75,6 @@
 
 
 
-.amount-value:before { content: "£"; }
 
 
 .row img{
@@ -96,14 +95,6 @@ display:block;
 	height:90px;
 	min-width:99%;
 	font-size:16px;
-}
-#month option{
-	width:50px;
-	display:block;
-	white-space:nowrap;
-	margin:0;
-	padding:5px 4px 3px 4px;
-	border:1px gray solid !important;
 }
 
 #overlay {
@@ -133,6 +124,7 @@ display:block;
 .btn-success{
 	color:white!important;
 }
+
 
 </style>
 <!-- #EndEditable -->
@@ -199,110 +191,84 @@ display:block;
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block">
-<div class="row">
-<div class="col-sm-8">
-
+	<div class="row">
+		<div class="col-sm-8">	
+			<h1 class="form-title heading-large">Creditor address</h1>
+			<form class="form" method="post">
+				<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
+				<div class="form-group ">
+					<label  for="name" class="form-label-bold">Creditor name</label>
+					<input id="name" name="applicant_address_town0" type="text" value="" />
+				</div>
+				<p class="form-label-bold"></p>
+			
+				<div class="form-group ">
+					<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+					<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+					<br/>
+				</div>
 	
+				<div class="form-group ">
+					<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+					<br/>
+				</div>
 	
-	<h1 class="form-title heading-large">Reason for the debt</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<div class="clearfix"></div>
-	
-
-	
-
-
-
-        <div class="form-group ">
-
-            <fieldset class="inline">
-
-                <div id="title-select" class="form-group">
-
-                    <label for="title_Mr." class="block-label">
-                        <input id="title_Mr." value="Mr" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Debt repayment or consolidation
-                    </label>
-
-                    <label id="title_label1" for="title_Mrs." class="block-label">
-                        <input id="title_Mrs." value="Mrs" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Household Bills/Living Expenses
-                    </label>
-
-                    <label id="title_label2" for="title_Miss" class="block-label">
-                        <input id="title_Miss" value="Miss" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Holidays
-                    </label>
-
-                    <label id="title_label3" for="title_Ms." class="block-label">
-                        <input id="title_Ms." value="Ms" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Home Improvements
-                    </label>
-                    <label for="type_landlord" class="block-label">
-                        <input id="type_landlord" value="Ms" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Payments or gift to family/friends
-                    </label>
-                    <label id="title_label5" for="reason_trading" class="block-label">
-                        <input id="reason_trading" value="Ms" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Trading Expenses
-                    </label>
-                    <label id="title_label6" for="reason_vehicle" class="block-label">
-                        <input id="reason_vehicle" value="Ms" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Vehicle Purchase
-                    </label>
-                    <label id="title_label7" for="reason_wedding" class="block-label">
-                        <input id="reason_wedding" value="Ms" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Wedding
-                    </label>
-                    <label id="title_label8" for="reason_gambling" class="block-label">
-                        <input id="reason_gambling" value="Ms" name="title" type="checkbox" aria-describedby="title_error title_help">
-                        Gambling
-                    </label>
-                    <label id="title_label4" for="title_other" class="block-label">
-                        <input id="title_other" value="" name="title" type="checkbox" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-                        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal">
-                    </label>
-
-                </div>
-            </fieldset>
-        </div>
-
-
-
-
-
-
-
-
-<p class="clearfix"><br/></p>
+				<div class="form-group ">
+					<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
+					<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+					<br/>
+				</div>
+				<div class="form-group ">
+					<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+					<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+					<br/>
+				</div>
+				<div class="form-group ">
+					<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
+					<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+					<br/>
+				</div>
+				<div class="form-group ">				
+					<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+					<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+					<br/>
+				</div>
+				<br/>
+				<p class="clearfix"><br></p>
 	
 	<!-- For User research -->
-	<div class="form-navigation form-group">
+				<div class="form-navigation form-group">	
+					<div>
+						<a id="next" class="button" href="amount.html">Continue</a>
+					</div>
+					<div><br></div>
 	
-	<div>
-		<a id="next" class="button" href="list.html">Continue</a>
+					<div>
+						<a style="padding-right: 30px" href="list.html" id="back">Back</a>
+						<a class="save" id="cancel">Save and logout</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-3 col-sm-push-1" style="">
+			<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">                 
+		        <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+		        <br>
+		        <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+		        <p class="heading-secondary">Bankruptcy fee</p>
+		       	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
+		       	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
+		       	<p><a href="payments/payments.html">Make a payment</a></p>
+		        </div>
+		        <p><a href="#" style="display:none">Print summary</a></p>
+		        <p><a href="#" style="display:none">Generate court documents</a></p>
+		        <p><a href="#" style="display:none">Discard application</a></p>
+		    </div>
+		</div>
 	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="amount.html" id="back">Back</a>
-
-	
-	<a class="save" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	</form>
-	</div>
-
+</div>
 <div id="overlay" >
      <div id="overback" class="col-sm-6 col-xs-push-4">
      	<div class="row">
@@ -324,26 +290,6 @@ display:block;
           </div>
           
      </div>
-</div>     
-
-<div class="col-sm-3 col-sm-push-1" style="">
-	<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">                 
-        <p><a class="save" style="font-weight:bold">Save and logout</a></p>
-        <br>
-        <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-        <p class="heading-secondary">Bankruptcy fee</p>
-       	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
-       	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
-       	<p><a href="payments/payments.html">Make a payment</a></p>
-        </div>
-        <p><a href="#" style="display:none">Print summary</a></p>
-        <p><a href="#" style="display:none">Generate court documents</a></p>
-        <p><a href="#" style="display:none">Discard application</a></p>
-    </div>
-</div>
-
-     
-</div>     
 </div>
 
 	 <!-- #EndEditable -->
@@ -397,32 +343,43 @@ display:block;
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../assets/js/titleCaps.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
-	
+
 	var normalroute = $("#next").prop("href");
-
-
+	var numcreditors = 0;
+	var creditorname;
 	
+	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
+		numcreditors = $.cookie('numcreditors');
+		creditorname = $.cookie('creditorname' + numcreditors);
+	}
+	
+	if (creditorname && creditorname.length > 1){
+		$("#name").val(titleCaps(creditorname));
+	}
+	
+
 	$("#next").on("click", function(e){
-	
+		$.cookie('creditorname' + numcreditors, titleCaps($("#name").val()), { expires: 1 });
 	});
 
 
 });
 
 $(".save").click(function(){
- 	overlay();			
-});
+	 overlay();			
+	});
 	
 function overlay() {
 	el = document.getElementById("overlay");
 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
-
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

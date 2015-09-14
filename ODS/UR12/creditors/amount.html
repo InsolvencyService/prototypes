@@ -105,6 +105,35 @@ display:block;
 	padding:5px 4px 3px 4px;
 	border:1px gray solid !important;
 }
+
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     padding-top:80px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     
+     opacity:1;
+}
+#overback{
+	background-color:#fff;
+	opacity:1!important;
+	width: auto;
+	margin-left:auto;
+	margin-right:auto;
+	padding:30px;
+	border: 1px black solid;
+	text-align:left;
+	
+}
+.btn-success{
+	color:white!important;
+}
+
 </style>
 <!-- #EndEditable -->
 
@@ -169,14 +198,12 @@ display:block;
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block text">
-	
-	
-	
+<div class="inner-block">
+<div class="row">
+<div class="col-sm-8">
+
 	<h1 class="form-title heading-large">Amount you owe</h1>
-	
-	
-	
+
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
@@ -192,166 +219,134 @@ display:block;
      </div>
 
 	<div class="form-group ">
-	
-	<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
+		<label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
 		Amount <span class="creditorname">ABC Ltd</span> say you owe</label>
-		<p></p>
-		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />
+		<span class="currency">£ </span><input id="amount" name="amount" type="text" value="" class="amount-value" />
+		<p>&nbsp;</p>
 	</div>
 	
-	<p class="form-label-bold">
-	</p>
-	
-		<div class="form-group ">
-	
-	<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account or reference number</label>
-	<div class="form-hint">Leave blank if you don't have one</div>
-			<input id="ref" name="applicant_address_town" type="text" value="" />
-	<br/>
+	<div class="form-group ">
+		<label for="applicant_address_town" class="form-label-bold applicant_address_town">Account or reference number</label>
+		<p class="form-hint">Leave blank if you don't have one</p>
+		<input id="ref" name="applicant_address_town" type="text" value="" />
+		<p>&nbsp;</p>
 	</div>
-	<fieldset>
-                <legend id="title_label" class="form-label-bold">Debt type</legend>
-                <div id="type-select" class="form-group">
-
-                  
-                    <label id="title_label1" for="title_Mrs." class="block-label">
-                        <input id="title_Mrs." value="Credit card" name="title" type="radio" aria-describedby="title_error title_help">
-                        Credit card/ store card
-                    </label>
-
-                    <label id="title_label2" for="title_Miss" class="block-label">
-                        <input id="title_Miss" value="Personal loan" name="title" type="radio" aria-describedby="title_error title_help">
-                        Personal loan (unsecured)
-                    </label>
-
-                    <label for="type_landlord1" class="block-label">
-                        <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
-                        Rent arrears                    </label>
-                          <label for="type_landlord1" class="block-label">
-                        <input id="type_landlord0" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
-                        Utilities                    </label>
-                          <label for="type_landlord1" class="block-label">
-                        <input id="type_landlord1" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
-                        Telephone/ mobile phone                    </label>
-
-
-                    <label id="title_label4" for="title_other" class="block-label">
-                        <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-                        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal">
-                    </label>
-
-                </div>
-            </fieldset>
-	<div class="clearfix"></div>
-	<div class="validation-summary"  id="msg-enterdate"  style="display:none">
-                <h2>There was a problem with your answers</h2>
-                <p></p><ol>
-        <li class="error-message"> 
-               Please enter a valid date
-         </li>
-      </ol>
-     </div>
 	
-<div class="clearfix"></div>
-	
-        <div class="form-group">
-
-            <fieldset id="date_of_birth" class="date-of-birth">
-
-                <legend id="date_of_birth_label" class="form-label-bold">Date 
-				the debt started (was incurred)</legend>
-                <div class="form-hint">For <strong>bills</strong> (eg rent, utilities, phone), enter the first date you didn't pay the full bill.</div>
-                <div class="form-hint">For <strong>credit cards, store cards</strong> and 
-					<strong>loans</strong>, enter the date you received the card 
-					or loan.</div>
-                <div class="clearfix"></div>
-                <div class="row">
-                    <div class="col-sm-5">
-
-
-                        <fieldset id="date_of_birth0" class="date-of-birth">
-
-                            <div class="form-group form-group-day" style="display:none">
-                                <label id="date_of_birth_label.day" for="day">Day</label>
-                                <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
-                            </div>
-
-                            <div class="form-group form-group-year">
-                                <label id="date_of_birth_label.year" for="year">Year</label>
-                                <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
-                            </div>
-
-                            <div class="form-group" id="monthcontrol" style="width:60px; display:none">
-                                <label for="month">Month</label>
-
-                                <select id="month" name="month">
-                                    <option value="0"></option>
-                                    <option value="1">Jan</option>
-                                    <option value="2">Feb</option>
-                                    <option value="3">Mar</option>
-                                    <option value="4">Apr</option>
-                                    <option value="5">May</option>
-                                    <option value="6">Jun</option>
-                                    <option value="7">Jul</option>
-                                    <option value="8">Aug</option>
-                                    <option value="9">Sep</option>
-                                    <option value="10">Oct</option>
-                                    <option value="11">Nov</option>
-                                    <option value="12">Dec</option>
-                                </select>
-
-                            </div>
-                        </fieldset>
-
-
-                    </div>
-
-                    <div class="col-sm-7">
-                        <div class="form-hint">
-
-                            <ul class="bulleted">
-						                               
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-
-        </div>
-        <div class="form-group " style="display:none">
-
-            <label id="applicant_address_town_label1" for="applicant_address_town">
-                Type of debt
+	<fieldset class="inline">
+    	<label id="title_label" class="form-label-bold">Debt type</label>
+        <div id="type-select" class="form-group">
+ 
+            <label id="title_label1" for="title_Mrs." class="block-label">
+                <input id="title_Mrs." value="Credit card" name="title" type="radio" aria-describedby="title_error title_help">
+                Credit card/ store card
             </label>
 
-            <select id="tyoe" name="type">
-                <option value="0"></option>
-                <option value="Bank">Bank/building society account </option>
-                <option value="Credit card">Credit card</option>
-                <option value="3">Personal loan (unsecured)</option>
-                <option value="4">Secured loan or mortgage</option>
-                <option value="5">Utilities (including council tax)</option>
-                <option value="6">Landlord</option>
-                <option value="7">Employee</option>
-                <option value="8">Other</option>
+            <label id="title_label2" for="title_Miss" class="block-label">
+                <input id="title_Miss" value="Personal loan" name="title" type="radio" aria-describedby="title_error title_help">
+                Personal loan (unsecured)
+            </label>
 
-            </select>
+            <label for="type_landlord1" class="block-label">
+                <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                Rent arrears                    </label>
+                  <label for="type_landlord1" class="block-label">
+                <input id="type_landlord0" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                Utilities                    </label>
+                  <label for="type_landlord1" class="block-label">
+                <input id="type_landlord1" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                Telephone/ mobile phone                    </label>
+
+
+            <label id="title_label4" for="title_other" class="block-label">
+                <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+                <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal">
+            </label>
+
         </div>
-
-        <div class="form-group ">
-
+        <p>&nbsp;</p>
+	</fieldset>
+	
+	<div class="validation-summary"  id="msg-enterdate"  style="display:none">
+    	<h2>There was a problem with your answers</h2>
+    	<ol>
+			<li class="error-message"> 
+				Please enter a valid date
+			</li>
+	    </ol>
+	</div>
+	
+	<div class="form-group">
+		<div id="date_of_birth" class="date-of-birth">
+			<label id="date_of_birth_label" class="form-label-bold">Date the debt started (was incurred)</label>
+			<div class="form-hint">
+				For <strong>bills</strong> (eg rent, utilities, phone), enter the first date you didn't pay the full bill.<br>
+				For <strong>credit cards, store cards</strong> and <strong>loans</strong>, enter the date you received the card or loan.
+			</div>
             
-        </div>
+            <div class="row">
+            	<div class="col-sm-5">
+					<fieldset id="date_of_birth0" class="date-of-birth">
+					
+					    <div class="form-group form-group-day" style="display:none">
+					        <label id="date_of_birth_label.day" for="day">Day</label>
+					        <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+					    </div>
+					
+					    
+					
+					    <div class="form-group" id="monthcontrol" style="width:60px;">
+					        <label for="month">Month</label>
+					
+					        <select id="month" name="month">
+					            <option value="0"></option>
+					            <option value="1">Jan</option>
+					            <option value="2">Feb</option>
+					            <option value="3">Mar</option>
+					            <option value="4">Apr</option>
+					            <option value="5">May</option>
+					            <option value="6">Jun</option>
+					            <option value="7">Jul</option>
+					            <option value="8">Aug</option>
+					            <option value="9">Sep</option>
+					            <option value="10">Oct</option>
+					            <option value="11">Nov</option>
+					            <option value="12">Dec</option>
+					        </select>
+					
+					    </div>
+					    
+					    <div class="form-group form-group-year">
+					        <label id="date_of_birth_label.year" for="year">Year</label>
+					        <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
+					    </div>
+					    
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    <div class="form-group " style="display:none">
 
+        <label id="applicant_address_town_label1" for="applicant_address_town">
+            Type of debt
+        </label>
 
+        <select id="tyoe" name="type">
+            <option value="0"></option>
+            <option value="Bank">Bank/building society account </option>
+            <option value="Credit card">Credit card</option>
+            <option value="3">Personal loan (unsecured)</option>
+            <option value="4">Secured loan or mortgage</option>
+            <option value="5">Utilities (including council tax)</option>
+            <option value="6">Landlord</option>
+            <option value="7">Employee</option>
+            <option value="8">Other</option>
 
+        </select>
+    </div>
 
-
-
-
-
-<p class="clearfix"><br/></p>
+	<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
@@ -359,20 +354,61 @@ display:block;
 	<div>
 		<a id="next" class="button" href="list.html">Continue</a>
 	</div>
-	<div>
-	<br>
-	</div>
 	
 	<div>
 	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
 	
-	<a href="#" id="cancel">Save and logout</a>
+	<a class="save" id="cancel">Save and logout</a>
 	
 	</div>
 	</div>
 	</form>
-	</div>
+	
+</div>
+<div class="col-sm-3 col-sm-push-1" style="">
+	<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">                 
+        <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+        <br>
+        <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+        <p class="heading-secondary">Bankruptcy fee</p>
+       	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
+       	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
+       	<p><a href="payments/payments.html">Make a payment</a></p>
+        </div>
+        <p><a href="#" style="display:none">Print summary</a></p>
+        <p><a href="#" style="display:none">Generate court documents</a></p>
+        <p><a href="#" style="display:none">Discard application</a></p>
+    </div>
+</div>
+
+
+</div>
+</div>
+
+<div id="overlay" >
+     <div id="overback" class="col-sm-6 col-xs-push-4">
+     	<div class="row">
+	     	<div class="font-xlarge col-xs-2">
+	     		<i class="glyphicon glyphicon-exclamation-sign "></i>
+	     	</div>
+	     	<div class="col-xs-6">
+	     		<p class="form-label-bold" style="margin-bottom:10px;">Save and log out</p>
+	     	</div>
+	     </div>
+          
+        	<p>&nbsp;</p>
+          <p>If you log out now, you will lose any new information<br> you have entered on this page.</p>
+          <p>Everything you have done before this page will be saved.</p>
+                    <p>&nbsp;</p>
+          <div>
+          	<div class="col-xs-6"><a onclick='overlay()' class="btn btn-default"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
+          	<div class="col-xs-6 text-right"><a href="../start/logout.html" class="btn btn-success">Log out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a></div>
+          </div>
+          
+     </div>
+</div>
+
 
 	 <!-- #EndEditable -->
 
@@ -497,6 +533,17 @@ $(document).ready(function() {
 	    checkifrecent($(this).val());
 	});
 });
+
+
+$(".save").click(function(){
+	 overlay();			
+	});
+	
+function overlay() {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
 
 function checkifrecent(year) {
     if (year == "2015" || year == "2014") {
