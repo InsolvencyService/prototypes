@@ -452,8 +452,8 @@ display:block;
           <p>Your bankruptcy application will log out in 5 minutes<br>to protect your personal information. </p>
                     <p>&nbsp;</p>
           <div>
-          	<div class="col-xs-6"></div>
-          	<div class="col-xs-6 text-right"><a onclick='timeout()' class="btn btn-success"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
+          	<div class="col-xs-6"><a id="timeout_button" href="../start/timeout.html" style="display:none">forward</a> </div>
+          	<div class="col-xs-6 text-right"><a onclick='timeout()' href="#" class="btn btn-success"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
           </div>
           
      </div>
@@ -517,7 +517,7 @@ display:block;
 
 <script type="text/javascript">
 $(document).ready(function() {
-	setTimeout(function() { timeout(); }, 2000);
+	setTimeout(function() { timeout(); }, 6000);
 	var normalroute = $("#next").prop("href");
 	var numcreditors = 0;
 
@@ -583,6 +583,9 @@ $(document).ready(function() {
 	$("#year").keyup("change", function () {
 	    checkifrecent($(this).val());
 	});
+	
+	
+
 });
 
 
@@ -597,9 +600,10 @@ function overlay() {
 function timeout() {
 	el = document.getElementById("timeout");
 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+	setTimeout(function(){location.href="../start/timeout.html"} , 5000);
+
+
 }
-
-
 function checkifrecent(year) {
     if (year == "2015" || year == "2014") {
         $("#monthcontrol").show();
