@@ -230,25 +230,25 @@ display:block;
 			                <div id="type-select" class="form-group">
 			
 			                    <label id="title_label1" for="add_1" class="block-label">
-			                        <input id="add_1" value="" name="add_1" type="radio">1 Wold View, Millington, York, YO42 1TY
+			                        <input id="add_1" value="" name="add" type="radio">1 Wold View, Millington, York, YO42 1TY
 			                    </label>
 			                    
 			                    <label id="title_label2" for="add_2" class="block-label">
-			                        <input id="add_2" value="" name="add_2" type="radio">2 Wold View, Millington, York, YO42 1TY			                    </label>
+			                        <input id="add_2" value="" name="add" type="radio">2 Wold View, Millington, York, YO42 1TY			                    </label>
 
 								<label id="title_label3" for="add_3" class="block-label">
-			                        <input id="add_3" value="" name="add_3" type="radio">3 Wold View, Millington, York, YO42 1TY
+			                        <input id="add_3" value="" name="add" type="radio">3 Wold View, Millington, York, YO42 1TY
 			                    </label>
 			                    
 			                    <label id="title_label4" for="add_4" class="block-label">
-			                        <input id="add_4" value="" name="add_4" type="radio">4 Wold View, Millington, York, YO42 1TY			                    </label>
+			                        <input id="add_4" value="" name="add" type="radio">4 Wold View, Millington, York, YO42 1TY			                    </label>
 			                    
 			                    <label id="title_label5" for="add_5" class="block-label">
-			                        <input id="add_5" value="" name="add_5" type="radio">5 Wold View, Millington, York, YO42 1TY
+			                        <input id="add_5" value="" name="add" type="radio">5 Wold View, Millington, York, YO42 1TY
 			                    </label>
 			                    
 			                    <label id="title_label1" for="add_6" class="block-label">
-			                        <input id="add_6" value="" name="add_6" type="radio">6 Wold View, Millington, York, YO42 1TY
+			                        <input id="add_6" value="" name="add" type="radio">6 Wold View, Millington, York, YO42 1TY
 			                    </label>
 
 			                </div>
@@ -380,9 +380,7 @@ $(document).ready(function() {
 	var numcreditors = 0;
 	var creditorname;
 	
-	if($.cookie('lookup_pcode')){
-		$("#applicant_address_post_code").val($.cookie('lookup_pcode'));
-	}
+	
 	
 	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
 		numcreditors = $.cookie('numcreditors');
@@ -393,9 +391,6 @@ $(document).ready(function() {
 		$("#name").val(titleCaps(creditorname));
 	}
 	
-	$("#lookup").on("click", function(e){
-		$.cookie('lookup_pcode', $("#applicant_address_post_code").val());
-	});
 	$("#next").on("click", function(e){
 		$.cookie('creditorname' + numcreditors, titleCaps($("#name").val()), { expires: 1 });
 	});
