@@ -225,7 +225,7 @@
 
                                    <td>
                         <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0">
+                        <input id="fine_amount" type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0">
                     </td>
 
                     <td>
@@ -530,8 +530,8 @@ $(document).ready(function() {
     });
 
 	$("#next").on("click", function (e) {
-
-
+		if($("#fineamount").val()=="")
+			$.cookie("nofine", "(excluding fines");
 		});
 
 
