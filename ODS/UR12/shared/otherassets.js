@@ -97,6 +97,9 @@
 	        $.cookie(stage + thispage, totalamount, { expires: 1 });
 	        //alert(stage + thispage + " - " + totalamount);
 	    }
+		else{
+	    	$.cookie(stage + thispage, "0", { expires: 1 });
+	    }
 
 
 
