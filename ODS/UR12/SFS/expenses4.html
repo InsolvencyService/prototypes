@@ -369,6 +369,16 @@
 	</td>
 	</tr>
 
+<tr class="totalrow">
+	<td><span class="form-label text-right">Total</span></td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+		<div class="text-right amount" id="box-total"></div>
+	</td>
+	<td>
+	<div>per month</div>
+</td>
+	</tr>
 
 
 </table>	
@@ -456,20 +466,16 @@
     $(document).ready(function () {
         var defaultnext = $("#next").attr("href");
         $(".additional").hide();
-        $("#btn-add").on("click", function (e) {
-            $(".additional").show();
-            e.preventDefault();
-        });
-        $("#btn-remove").on("click", function (e) {
-            $(".additional").hide();
-            e.preventDefault();
-        });
-        $("#next").on("click", function (e) {
-
-        });
-
     });
-
+	$("#btn-add").on("click", function (e) {
+        $(".additional").show();
+        e.preventDefault();
+    });
+    
+    $("#btn-remove").on("click", function (e) {
+        $(".additional").hide();
+        e.preventDefault();
+    });
 
     </script>
 
