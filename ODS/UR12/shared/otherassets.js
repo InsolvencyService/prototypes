@@ -18,7 +18,7 @@
     if (summaryurl.indexOf("&") <= 0) {
         summaryurl = $(".form-hint > a").prop("href");
     }
-    var thispage = 4;
+    var thispage = 5;
     var stage = "income";
 
     if (summaryurl && summaryurl.indexOf("&") > 0) {
