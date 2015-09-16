@@ -533,7 +533,10 @@ $(document).ready(function() {
 		
 		if($("#fine_amount").val()!="")
 			$.cookie("fine", "(excluding fines)");
-		});
+		}
+		else{$.cookie("fine", "");}
+	});
+		
 
 
 });
