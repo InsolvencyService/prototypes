@@ -306,6 +306,110 @@
 	</td>
 		</tr>
 
+<tbody>
+        <tr>
+
+            <td colspan="1">
+                <h3 class="heading-small pull-left">Additional transport expense</h3>
+                
+
+            </td>
+            <td style="padding-top:15px"><a id="btn-remove" class="additional"  href="#" >Delete</a></td>
+        <td></td>
+
+        </tr>
+
+        <tr class="childrow">
+            <td>
+                <label for="benefit-type0" class="form-label">What is the description of the expense?</label>
+
+
+
+            </td>
+            <td colspan="2">
+                <input id="benefit-type" type="text" value="" class="form-control" />
+            </td>
+        </tr>
+        <tr class="childrow">
+            <td>
+                <label id="last_name_label" for="last_name" class="form-label">Amount</label>
+
+            </td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+
+            <td>
+                <select class="select-control">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+
+  <tbody class="additional" id="another" style="display:none">
+        <tr>
+
+            <td colspan="1">
+                <h3 class="heading-small pull-left">Additional transport expense</h3>
+                
+
+            </td>
+            <td style="padding-top:15px"><a id="btn-remove0"  href="#" >Delete</a></td>
+        <td></td>
+
+        </tr>
+
+        <tr class="childrow">
+            <td>
+                <label for="benefit-type0" class="form-label">What is the description of the expense?</label>
+
+
+
+            </td>
+            <td colspan="2">
+                <input id="benefit-type0" type="text" value="" class="form-control" />
+            </td>
+        </tr>
+        <tr class="childrow">
+            <td>
+                <label id="last_name_label0" for="last_name" class="form-label">Amount</label>
+
+            </td>
+	<td>
+		<div class="pull-left text-right pound-sign">£</div>
+      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+	</td>
+
+            <td>
+                <select class="select-control">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+
+
+
+	<tr>
+	<td>
+<label class="form-label"><a href="#" id="btn-add"><i class="glyphicon glyphicon-plus"></i> Add another transport expense</a></label></td>
+	<td>
+	</td>
+	</tr>
+
+
 
 
 	<tr class="totalrow">
@@ -318,6 +422,8 @@
 	<div>per month</div>
 </td>
 	</tr>
+	
+	
 
 </table>	
 	<p class="clearfix"><br/></p>
@@ -398,6 +504,17 @@
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../shared/sfs.js"></script>
+$(document).ready(function () {
+	$(".additional").hide();
+    $("#btn-add").on("click", function (e) {
+            $(".additional").show();
+            e.preventDefault();
+        });
+        $("#btn-remove").on("click", function (e) {
+            $(".additional").hide();
+            e.preventDefault();
+        });
+});
 
 <!-- #EndEditable -->
     
