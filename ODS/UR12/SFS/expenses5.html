@@ -310,7 +310,7 @@
         <tr>
 
             <td colspan="1">
-                <h3 class="heading-small pull-left">Additional transport expense</h3>
+                <h3 class="heading-small pull-left">Additional childcare expense</h3>
                 
 
             </td>
@@ -357,7 +357,7 @@
         <tr>
 
             <td colspan="1">
-                <h3 class="heading-small pull-left">Additional transport expense</h3>
+                <h3 class="heading-small pull-left">Additional childcare expense</h3>
                 
 
             </td>
@@ -404,7 +404,7 @@
 
 	<tr>
 	<td>
-<label class="form-label"><a href="#" id="btn-add"><i class="glyphicon glyphicon-plus"></i> Add another transport expense</a></label></td>
+<label class="form-label"><a href="#" id="btn-add"><i class="glyphicon glyphicon-plus"></i> Add another childcare expense</a></label></td>
 	<td>
 	</td>
 	</tr>
@@ -504,18 +504,21 @@
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../shared/sfs.js"></script>
+<script type="text/javascript">
 $(document).ready(function () {
 	$(".additional").hide();
-    $("#btn-add").on("click", function (e) {
-            $(".additional").show();
-            e.preventDefault();
-        });
-        $("#btn-remove").on("click", function (e) {
-            $(".additional").hide();
-            e.preventDefault();
-        });
+    
+});
+$("#btn-add").on("click", function (e) {
+    $(".additional").show();
+    e.preventDefault();
+});        
+$("#btn-remove").on("click", function (e) {
+    $(".additional").hide();
+    e.preventDefault();
 });
 
+</script>
 <!-- #EndEditable -->
     
 
