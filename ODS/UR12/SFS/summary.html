@@ -524,7 +524,8 @@ table td[class*=col-], table th[class*=col-]{
 				var defaultnext = $(".next").first().attr("href");
 				$(".declare").on("click", function () {
 				    $("#" + stage + itemnumber + " .declare").hide();
-				    $("#" + stage + itemnumber + " .value").text("0");
+				    $("#" + stage + itemnumber + " .value").text("0.00");
+				    $.cookie(stage + itemnumber, "0", { expires: 1 });
 
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
 				    itemnumber = itemnumber + 1;
