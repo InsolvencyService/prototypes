@@ -531,8 +531,8 @@ $(document).ready(function() {
 
 	$("#next").on("click", function (e) {
 		
-		if($("#fine_amount").val()=="")
-			$.cookie("nofine", "(excluding fines");
+		if($("#fine_amount").val()!="")
+			$.cookie("fine", " (excluding fines)");
 		});
 
 

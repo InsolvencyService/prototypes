@@ -348,7 +348,7 @@ table td[class*=col-], table th[class*=col-]{
                                         <tr class="group-heading totalrow" id="coststotal">
                                             <td></td>
                                             <td class="actions" style="text-align:right">
-                                               <span style="float:right;">Total</span>
+                                               <div style="float:right;">Total<span id="fines"></span></div>
                                             </td>
                                             <td class="totalvalue"></td>
                                         </tr>
@@ -448,6 +448,10 @@ table td[class*=col-], table th[class*=col-]{
 
             $(document).ready(function () {
                 var reset = getParameterByName("reset");
+                
+                if($.cookie("fine")){
+                	$("#fines").text($.cookie("fine"));
+                }
 
                 if (reset && reset.length > 0) {
                     removeallcookies();
