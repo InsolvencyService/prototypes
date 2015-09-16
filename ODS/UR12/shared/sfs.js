@@ -79,7 +79,7 @@
 	$("#next").on("click", function () {
 	    var i = 1;
 	    var totalamount = 0;
-
+		
 	    $('tr td input.amount').each(function () {
 	        var listfrequency = $(this).parent().next().find("select");
 	        if ($(this).val()) {
@@ -96,6 +96,9 @@
 	    if (totalamount && totalamount > 0) {
 	        $.cookie(stage + thispage, totalamount, { expires: 1 });
 	        //alert(stage + thispage + " - " + totalamount);
+	    }
+	    else{
+	    	$.cookie(stage + thispage, "0", { expires: 1 });
 	    }
 
 
