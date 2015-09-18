@@ -436,6 +436,8 @@
 			var section5 = $.cookie('section5');
 			var section6 = $.cookie('section6');
 			var section7 = $.cookie('section7');
+			var section7 = $.cookie('section8');
+
 			var creditors = $.cookie('creditors');
 			var total = $.cookie('ctotal');
 			
@@ -590,6 +592,24 @@
                         $("#section7 .label").removeClass("label-default").addClass("label-success");
                         $("#section7 .label").text("Complete");
                         $("#section7 .edit").text("Edit");
+                      
+                    }
+                }
+				
+				if (section8 && section8.length > 0) {
+                    // change the colour of the button
+                    if (section8 == "inprogress") {
+                        $("#section8 .label").removeClass("label-default").addClass("label-warning");
+                        $("#section8 .label").text("In progress");
+                        $("#section8 .edit").text("Edit");
+                
+
+                    }
+
+                    if (section8 == "complete") {
+                        $("#section8 .label").removeClass("label-default").addClass("label-success");
+                        $("#section8 .label").text("Complete");
+                        $("#section8 .edit").text("Edit");
                       
                     }
                 }
