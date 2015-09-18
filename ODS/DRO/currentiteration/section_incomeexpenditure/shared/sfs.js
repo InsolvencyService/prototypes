@@ -1,6 +1,10 @@
 ﻿$(document).ready(function () {
 
+	var type = getParameterByName("type");
 
+	if($.cookie(type+"-total")){
+		$("#box-total").text(parseFloat($.cookie(type+"-total")).toFixed(2));
+	}
 
     function calctotal() {
         var totalamount = 0;
