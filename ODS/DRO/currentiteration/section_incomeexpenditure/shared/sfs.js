@@ -42,12 +42,12 @@
 	$("#next").on("click", function () {
 	    var i = 1;
 	    var totalamount = 0;
-		
+		var type = getParameterByName("type");
 	    $('tr td input.amount').each(function () {
 	       
 	        if ($(this).val()) {
 	            var amt = $(this).val();
-	            var type = getParameterByName("type");
+	            
 
 	            $.cookie(type+"-value" + i, parseFloat(amt), { expires: 1});
 	           
@@ -62,7 +62,7 @@
 	        
 	    }
 	    else{
-	    	$.cookie(stage + thispage, "0", { expires: 1 });
+	    	$.cookie(type+"-total", "0", { expires: 1 });
 	    }
 
 
