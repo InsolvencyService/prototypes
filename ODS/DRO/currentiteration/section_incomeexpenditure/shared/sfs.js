@@ -70,7 +70,8 @@
 
 	            $.cookie(type+"-value" + i, parseFloat(amt), { expires: 1});
 	           
-	            totalamount = parseFloat(totalamount) + parseFloat(amt);
+	            totalamount = totalamount + parseFloat(amt);
+	            alert(totalamount);
 
 	           
 	        }
