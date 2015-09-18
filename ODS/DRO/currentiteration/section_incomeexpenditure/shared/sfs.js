@@ -33,7 +33,7 @@
 	});
   
     if (total && total > 0) {
-        $("#box-total").text(parseFloat(total).toFixed(2));
+        $("#box-total").text(total.toFixed(2));
     }
 	$("tr input").first().focus();
 	
