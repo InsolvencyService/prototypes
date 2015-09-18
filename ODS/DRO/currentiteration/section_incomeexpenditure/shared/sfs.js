@@ -17,6 +17,7 @@
 
     var total = 0;
     var type = getParameterByName("type");
+    var count=1;
 	$('tr td input.amount').each(function () {
 		if ($.cookie(type+"-value" + count) && $.cookie(type+"-value" + count).length > 0) {
 		    var amount = $.cookie(type+"-value" + count);
@@ -28,7 +29,7 @@
 		    }
 		    //alert(amountitem + count + " - " + amount + " / " + amountfreq + count + " - " + frequency);
 		}
-		count += 1;
+		count++;
 	});
   
     if (total && total > 0) {
