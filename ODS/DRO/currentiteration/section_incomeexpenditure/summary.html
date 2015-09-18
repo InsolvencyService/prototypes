@@ -258,7 +258,7 @@ $(document).ready(function() {
 	
 	$("#income").text(income);
 	$("#expenditure").text(expenditure);
-	$("#real").text(real);
+	$("#real").text(parseFloat(real).toFixed(2));
 });
  
 $("#next").on("click", function () {
