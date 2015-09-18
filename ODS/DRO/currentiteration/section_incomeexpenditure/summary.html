@@ -142,63 +142,41 @@
 
  	<div class="inner-block">
 	 	<h1 class="form-title heading-large">Monthly income</h1>
-		<div class="col-sm-8 well">
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th></th>
-						<th class="heading-amount">Amount</th>
-					</tr>
-				</thead>
-				<tr>
-					<td><span class="form-label">Salary/wages</span></td>
-					<td>
-					<div class="pull-left text-right pound-sign">
-						£</div>
-					<input class="form-control text-right pull-left amount" placeholder="0" type="text">
-					</td>
+		
+		<p class="lead text bold">Review your answers before continuing.</p>
+
+		<div class="col-sm-8">
+		<table id="ie_summary">
+			<tbody>		
+				<tr class="group-heading">
+					<td colspan="3"><h3 class="bold-small"></h3></td>
 				</tr>
-				<tr>
-					<td><span class="form-label">Benefits</span></td>
+				<tr class="group-heading">
+					<td>Total income</td>
+					<td>£ <span id="income">0.00</span></td>
+					<td><a href="income.html?type=income">Edit</a></td>
+				</tr>		
+				<tr class="group-heading">
+					<td>Total expenditure</td>
 					<td>
-					<div class="pull-left text-right pound-sign">
-						£</div>
-					<input class="form-control text-right pull-left amount" placeholder="0" type="text">
+					    £ <span id="expenditure">0.00</span>		
 					</td>
+					<td><a href="expenditure.html?type=expenditure">Edit</a></td>
 				</tr>
-				<tr>
-					<td><span class="form-label">Pensions</span></td>
+				<tr class="group-heading">
+					<td><strong>Income less expenditure</strong></td>
 					<td>
-					<div class="pull-left text-right pound-sign">
-						£</div>
-					<input class="form-control text-right pull-left amount" placeholder="0" type="text">
+					    <strong>£ <span id="realvalue">0.00</span>	</strong>	
 					</td>
+					<td></td>
 				</tr>
-				<tr>
-					<td><span class="form-label">Contibutions from others</span></td>
-					<td>
-					<div class="pull-left text-right pound-sign">
-						£</div>
-					<input class="form-control text-right pull-left amount" placeholder="0" type="text">
-					</td>
-				</tr>
-				<tr>
-					<td><span class="form-label">Other income</span></td>
-					<td>
-					<div class="pull-left text-right pound-sign">
-						£</div>
-					<input class="form-control text-right pull-left amount" placeholder="0" type="text">
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-xs-8 well">
-				<span class="bolder col-xs-6 text-left">Total income</span>
-				<span class="col-xs-6 text-right">£ <span class="amount" id="box-total">0</span></span> 
+
+			</tbody>
+		</table>
 		</div>
 		<div class="form-navigation form-group">
 			<p>&nbsp;</p>
-			<a id="next" class="button" href="expenditure.html?type=expenditure">
+			<a id="next" class="button">
 			Save and continue</a><br><a id="return" href="../application.html">Return 
 			to overview</a><br><br>
 			<a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">
@@ -263,34 +241,29 @@
 
 
 <script type="text/javascript">
-var type="income";
 $(document).ready(function() {
-
+	var expenditure = 0;
+	var income = 0;
+	var real = 0;
 	
-
-
+	if($.cookie("expenditure-total")){
+		expenditure = parseFloat($.cookie("expenditure-total")).toFixed(2);
+	}
+	
+	if($.cookie("income-total")){
+		income= parseFloat($.cookie("income-total")).toFixed(2);
+	}
+	
+	real = income - expenditure;
+	
+	$("#income").text(income);
+	$("#expenditure").text(expenditure);
+	$("#real ").text(real);
 });
 
-$(".js-section").on("click", function (e) {
-
-	alert($(this));
-    /*e.preventDefault();
-   
-	if ($(this).hasClass("open") == false) {
-		
-		$(this).addClass("open");
-		$(this).find("i").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
-		var details = $($(this).attr("href"));
-		details.show();
-		details.parent().addClass("well");
-    }
-    else {
-		
-	$(this).removeClass("open");
-	$(this).find("i").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
-	var details = $($(this).attr("href"));
-	details.hide();
-    }*/
+$("#next").on("click", function () {
+	$.cookie("section8", "inprogress", {path: '/'});
+	$("#next").attr("href", "../application.html");
 });	
 
 function getParameterByName(name) {
@@ -302,14 +275,14 @@ function getParameterByName(name) {
 
 
 </script>
-<script type="text/javascript" src="shared/sfs.js"></script>
+
 <!-- #EndEditable -->
     
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/../claims/start#" title="Edit settings" 
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
