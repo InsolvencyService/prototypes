@@ -51,7 +51,7 @@
 
 	            $.cookie(type+"-value" + i, parseFloat(amt), { expires: 1});
 	           
-	            totalamount = totalamount + amt;
+	            totalamount = parseFloat(totalamount) + parseFloat(amt);
 
 	           
 	        }
