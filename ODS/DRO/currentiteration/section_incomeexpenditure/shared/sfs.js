@@ -16,6 +16,20 @@
     }
 
     var total = 0;
+    var type = getParameterByName("type");
+	$('tr td input.amount').each(function () {
+		if ($.cookie(type+"-value" + count) && $.cookie(type+"-value" + count).length > 0) {
+		    var amount = $.cookie(type+"-value" + count);
+		    $(this).val(parseFloat(amount));
+	
+	
+		    if (parseFloat(amount)) {
+			total = total + parseFloat(amount);
+		    }
+		    //alert(amountitem + count + " - " + amount + " / " + amountfreq + count + " - " + frequency);
+		}
+		count += 1;
+	});
   
     if (total && total > 0) {
         $("#box-total").text(toDecimal(total));
