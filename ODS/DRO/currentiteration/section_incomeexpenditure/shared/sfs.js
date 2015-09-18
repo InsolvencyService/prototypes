@@ -21,11 +21,11 @@
 	$('tr td input.amount').each(function () {
 		if ($.cookie(type+"-value" + count) && $.cookie(type+"-value" + count).length > 0) {
 		    var amount = $.cookie(type+"-value" + count);
-		    $(this).val(parseFloat(amount));
+		    $(this).val(parseFloat(amount).toFixed(2));
 	
 	
 		    if (parseFloat(amount)) {
-			total = total + parseFloat(amount);
+			total = total + parseFloat(amount).toFixed(2);
 		    }
 		    //alert(amountitem + count + " - " + amount + " / " + amountfreq + count + " - " + frequency);
 		}
