@@ -242,6 +242,7 @@ display:block;
 				<option value="32 Michaelmas Road,,,Coventry,,CV3 6HG,">32 Michaelmas Road</option>
 				<option value="ABC Trading,Michaelmas Road,,Coventry,West Midlands,CV3 6HG,United Kingdom">ABC Trading, Michaelmas Road</option>
 			</select>
+			
 		</div>
 		<div class="form-group" id="select_postcode_no" style="display:none">
 	        <span class="bolder"><em>No address found</em></span>		
@@ -292,7 +293,7 @@ display:block;
                     <input id="address_line_7" name="address_country" class="form-control-1-2" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
                     <br />
                 </div>
-
+				<span><a id="clear">Clear address</a></span>
             </p>
 
         </div>
@@ -411,13 +412,7 @@ $("#btn-lookup").click(function(e){
 	else{
 		$("#select_postcode_no").show();
 		$("#select_postcode").hide();
-		$("#address_line_1").val("");
-		$("#address_line_2").val("");
-		$("#address_line_3").val("");
-		$("#address_line_4").val("");
-		$("#address_line_5").val("");
-		$("#address_line_6").val("");
-		$("#address_line_7").val("");
+		clearAddress();
 	}
 	
 });
@@ -431,7 +426,21 @@ $( "#select_postcode" ).change(function() {
     }
 });
 
+$( "#clear" ).click(function(e) {
+	clearAddress();
+});
 
+function clearAddress(){
+	$("#address_line_1").val("");
+	$("#address_line_2").val("");
+	$("#address_line_3").val("");
+	$("#address_line_4").val("");
+	$("#address_line_5").val("");
+	$("#address_line_6").val("");
+	$("#address_line_7").val("");
+	$( "#select_postcode" ).hide();
+	$("#name").val("");
+}
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
