@@ -187,88 +187,55 @@ display:block;
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<p class="form-label-bold">
-	</p>
-	
-	 <div class="form-group ">
-	
-	<fieldset class="inline">
-	<legend id="title_label" class="form-label-bold">Title</legend>
-	<div id="title-select" class="form-group">
-	
-	<label id="title_label0" for="title_Mr." class="block-label">
-	<input id="title_Mr." value="Mr" name="title" type="radio" aria-describedby="title_error title_help">
-	Mr
-	</label>
-	
-	<label id="title_label1" for="title_Mrs." class="block-label">
-	<input id="title_Mrs." value="Mrs" name="title" type="radio" aria-describedby="title_error title_help">
-	Mrs
-	</label>
-	
-	<label id="title_label2" for="title_Miss" class="block-label">
-	<input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title_error title_help">
-	Miss
-	</label>
-	
-	<label id="title_label3" for="title_Ms." class="block-label">
-	<input id="title_Ms." value="Ms" name="title" type="radio" aria-describedby="title_error title_help">
-	Ms
-	</label>
-
-    <label id="title_label4" for="title_other" class="block-label">
-        <input id="title_other" value="" name="title" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
-     </label>
-
-	</div>
-	</fieldset>
-	</div>
-
-	
-<div>
-	<div>
-		<div class="form-group" >
-		<label  class="form-label-bold" for="firstname">First name</label>
-		<input value="John" type="text" id="firstname"/>
-		</div>
-	</div>
-	<div>
-		<div class="form-group" >
-		<label  class="form-label-bold" for="middlename">Middle names</label>
-		<input value="" type="text" id="middlename"/>
-		</div>
-	</div>
-	<div>
-		<div class="form-group" >
-		<label  class="form-label-bold" for="lastname">Last name</label>
-		<input value="Williamson" type="text" id="lastname"/>
-		</div>
-	</div>
-</div>
+				
+			<div class="form-group ">
+				<fieldset class="inline">
+				<legend id="gender_label" class="form-label-bold">Gender</legend>
+					<div id="gender" class="form-group">
+						<label id="gender_label0" for="gender_woman" class="block-label">
+						<input id="gender_woman" value="Woman" name="gender" type="radio" aria-describedby="title_error title_help">Woman</label>
+		
+						<label id="gender_label1" for="gender_man" class="block-label">
+						<input id="gender_man" value="Man" name="gender" type="radio" aria-describedby="title_error title_help">Man</label>
+		
+						<label id="gender_label2" for="gender_notsay" class="block-label">
+						<input id="gender_notsay" value="Prefer not to say" name="gender" type="radio" aria-describedby="title_error title_help">I prefer not to say</label>
+					</div>
+				</fieldset>
+			</div>
+			
+			<div class="form-group ">
+				<label id="applicant_telephone_label" for="applicant_telephone" class="form-label-bold applicant_address_line_1">National Insurance number</label>
+				<input id="applicant_telephone" name="applicant_telephone" type="text" value="" />
+				<br/>
+			</div>
 
 
-<p><br/></p>
-	<div class="form-group ">
-	
-	<fieldset id="date_of_birth" class="date-of-birth">
-	<legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
-	
-	<span class="form-hint" id="date_of_birth_help">For example, 31 08 1976</span>
-	<div class="form-group form-group-day">
-		 <label id="date_of_birth_label.day" for="dob-day">Day</label>
-	<input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="31" />
-	</div>
-	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="dob-month">Month</label>
-	<input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="05" />
-	</div>
-	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="dob-year">Year</label>
-	<input id="dob-year" name="date_of_birth.year" type="number" min="1000" max="9999" pattern="[1-9]" value="1980" />
-	</div>
-	</fieldset>
-	</div>
+			
+	                                <div class="form-group ">
+                                    <p id="title_label5" class="form-label-bold ">What's your relationship status?</p>
+
+                                    <fieldset class="inline">
+                                        <div id="relationship" class="form-group">
+                                            <label id="dependent_type1_label" for="dependent_type1" class="block-label">
+                                                <input id="dependent_type1" value="Partner" name="dependent" type="radio" 
+                                                       aria-describedby="title_error title_help">Single</label>
+                                            <label id="dependent_type2_label" for="dependent_type2" class="block-label">
+                                                <input id="dependent_type2" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Married/civil partnership</label>
+                                            <label id="dependent_type2_label0" for="dependent_type3" class="block-label">
+                                                <input id="dependent_type3" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Co-habiting</label>
+                                            <label id="dependent_type2_label1" for="dependent_type4" class="block-label">
+                                                <input id="dependent_type4" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Divorced/former civil partner</label>
+                                            <label id="dependent_type2_label2" for="dependent_type4" class="block-label">
+                                                <input id="dependent_type5" value="Relative" name="dependent" type="radio" 
+                                                aria-describedby="title_error title_help">Widowed/surviving civil-partner</label>
+
+                                        </div>
+                                    </fieldset>
+                             </div>
 
   </form> 
   <p class="clearfix"><br/></p>
@@ -297,7 +264,7 @@ display:block;
 	<div class="form-navigation form-group" style="margin-left:30px;">
 	
 	<div>
-		<a id="next" class="button" href="2.html">Continue</a>
+		<a id="next" class="button" href="list_names.html">Continue</a>
 	</div>
 	<div>
 	<br>
@@ -372,39 +339,12 @@ display:block;
 <script type="text/javascript">
 $(document).ready(function() {
 
-	var othernamecount = 1;
-
-	$("#firstname").val($.cookie('firstname'));
-	$("#lastname").val($.cookie('lastname'));
-
-	$("#dob-day").val($.cookie('dob-day'));
-	$("#dob-month").val($.cookie('dob-month'));
-	$("#dob-year").val($.cookie('dob-year'));
-	$("#othername1").val($.cookie('othername1'));
-		
-	$(".other-names").hide();
-	$("#btn-addanothername").show();	
-		
-	var normalroute = $("#next").prop("href");
-
-	$("#btn-addanothername").click(function(e){
-		e.preventDefault();
-		othernamecount = othernamecount  + 1;
-		$("#other-name-" + othernamecount.toString()).show();
-	});
 	
 
 });
 
 $("#next").click(function(){
-	$.cookie("title", $("#title-select :checked").attr("value"), { expires: 1, path:'/' });
-	$.cookie("firstname", $("#firstname").val(), { expires: 1, path:'/' });
-	$.cookie("middlename", $("#middlename").val(), { expires: 1, path:'/' });
-	$.cookie("lastname", $("#lastname").val(), { expires: 1, path:'/' });
-	$.cookie("othername1", $("#othername1").val(), { expires: 1, path:'/' });
-	$.cookie('dob-day', $("#dob-day").val(), { expires: 1, path:'/' })
-	$.cookie('dob-month', $("#dob-month").val(), { expires: 1, path:'/' })
-	$.cookie('dob-year', $("#dob-year").val(), { expires: 1, path:'/' })
+	$.cookie("gender", $("#gender :checked").attr("value"), { expires: 1, path:'/' });
 
 
 	
