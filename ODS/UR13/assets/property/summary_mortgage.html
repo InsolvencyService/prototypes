@@ -405,7 +405,10 @@ $(document).ready(function() {
         if ($.cookie('ownerpercentage')) {
             ownerpercentage = parseInt($.cookie('ownerpercentage'));
         }
-		value = (value/100)*ownerpercentage;
+		if($.cookie("loanshared"+i){
+					value = (value/100)*ownerpercentage;
+		}
+		
         secured_loan_total += parseFloat(value);        
         var name = $.cookie('loancompanyname' + i);
         var loantype = $.cookie('loantype' + i);
