@@ -205,100 +205,86 @@ display:block;
 
 <!-- #BeginEditable "content" --> 
 <div id="content" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Mortgage and secured loans</h1>
-	<div class="col-md-9">
-		<form class="form" method="post">
-
-				 
-
-			<p class="heading-medium">Mortgage summary for <strong id="address" class="data">1, The Place, SG7 6BP</strong></p>
-			<div id="pnl-director_table span8">
-	            <table class="family">
-
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th class="amount">Amount</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Estimated value</td>
-                            <td class="amount"><span class="poundsign">£</span><span id="propertyvalue">150,000</span></td>
-                            <td class="amount"><a href="#">Edit</a></td>
-                        </tr>
-                        <tr>
-                            <td><span class="sharedmortgage" style="display:none">Your share of the </span>Mortgage with <span id="mortgagecompany">HSBC</span></td>
-                            <td class="amount"><span class="poundsign">£</span><span id="mortgageamount">150,000</span></td>
-                            <td class="amount"><a href="#">Edit</a></td>
-                        </tr>
-                    </tbody>
-
- 
-	            </table>
-<h2 class="heading-medium"><span class="repeat">Secured loans and charges</span></h2>
-<table>
-
-    <thead style="display:none">
-        <tr>
-            <th></th>
-            <th class="amount"></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody id="tablebody" class="repeat" style="border-top:1px solid silver"></tbody>
-</table>
-			</div>
-			<p><span class="firsttime">Besides your mortgage, we need to know about any other debts secured against <strong class="bold-medium data">1 The Place.</strong></span>
-			<span class="repeat">The table above summarises the secured debts you have told us about.We need to know about any other debts secured against <strong class="bold-medium data">1 The Place</strong>.</span></p>
-				 	<p><span class="firsttime">Include any charges or securities 
-					you have given or that have been awarded against the property (eg a charging order from the court). </span>
-					<span class="repeat">We need to know about any other debts secured against <strong class="bold-medium data">1 The Place</strong>.</span></p>
-<p>&nbsp;</p>
-<p class="repeat"><br/></p>
-				<div class="form-group">
-				<label  class="form-label-bold">
-				<span class="firsttime">Enter the name of the creditor who will be repaid if you sell your house</span>
-				<span class="repeat">Enter the name of another creditor who will be repaid if you sell your house</span></label>
-				<div class="form-hint"><span class="firsttime">For example, ABC Bank Ltd. You can add more creditors later.</span>
-				<span class="repeat">For example, ABC Bank Ltd</span></div>
-	                <input class="typeahead input-lg form-control-3-4" id="name" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
-	                <a id="add" class="button"  href="secured-debt.html">Add creditor</a>
-				<p><br></p>
-					<p>
-	                <a href="list_properties.html?loop=true" class=" button" id="next">
-	                <span class="firsttime">Continue - I don't have any secured loans or charges</span>
-	                <span class="repeat">Continue - I have added all my secured loans and charges</span></a></p>
-	            </div>
-            
-            
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="javascript: history.go(-1)">Back</a>
+	<div class="inner-block">	
+		<h1 class="form-title heading-large">Mortgage and secured loans</h1>
+		<div class="col-md-9">
+			<form class="form" method="post">
+				<div class="repeat">
+					<p class="form-label-bold">Finance summary for <span id="address" class="data">1, The Place, SG7 6BP</span></p>
+					<div id="pnl-director_table span8">
+			            <table class="family">
+		                    <thead>
+		                        <tr>
+		                            <th>Type</th>
+		                            <th class="amount">Amount</th>
+		                            <th></th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                        <tr>
+		                            <td>Estimated value</td>
+		                            <td class="amount"><span class="poundsign">£</span><span id="propertyvalue">150,000</span></td>
+		                            <td class="amount"><a href="#">Edit</a></td>
+		                        </tr>                    
+		    					<div id="tablebody" style="border-top:1px solid silver"></div>
+		    				</tbody>
+						</table>
+					</div>
 				</div>
+				<p>
+					<span class="firsttime">We need to know about any debts secured against <strong class="bold-medium data">1 The Place.</strong></span>
+					<span class="repeat">The table above summarises the secured debts you have told us about.We need to know about any other debts secured against <strong class="bold-medium data">1 The Place</strong>.</span>
+				</p>
+				<p>
+					<span class="firsttime">Include any charges or securities you have given or that have been awarded against the property (eg a charging order from the court). </span>
+					<span class="repeat">We need to know about any other debts secured against <strong class="bold-medium data">1 The Place</strong>.</span>
+				</p>
+	
+				
+				<div class="form-group">
+					<label  class="form-label-bold">
+						<span class="firsttime">Enter the name of the creditor who will be repaid if you sell your house</span>
+						<span class="repeat">Enter the name of another creditor who will be repaid if you sell your house</span>
+					</label>
+					<div class="form-hint">
+						<span class="firsttime">For example, ABC Bank Ltd. You can add more creditors later.</span>
+						<span class="repeat">For example, ABC Bank Ltd</span>
+					</div>
+			            <input class="typeahead input-lg form-control-3-4" id="name" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
+			            <a id="add" class="button"  href="secured-debt.html">Add creditor</a>
+						<p><br></p>
+						<p>
+			                <a href="list_properties.html?loop=true" class=" button" id="next">
+			                <span class="firsttime">Continue - I don't have any secured loans or charges</span>
+			                <span class="repeat">Continue - I have added all my secured loans and charges</span></a>
+			            </p>
+	            </div>    
+			</form>
+			
+			<p>&nbsp;</p>
+			
+			<div class="form-navigation form-group">
+				<a href="javascript: history.go(-1)">Back</a>
+			</div>
 		</div>		
+		
 		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
-
+	        <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+	        <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+	        <br>
+	            <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+	                <p class="heading-secondary">Bankruptcy fee</p>
+	                <p style="font-weight:bold;font-size:large">
+	                    <a href="../../personal/payments/statement.html">£0 received</a><br>
+	                    <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
+	                </p>
+	                <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
+	            </div>
+	            <p><a href="#" style="display:none">Print summary</a></p>
+	            <p><a href="#" style="display:none">Generate court documents</a></p>
+	            <p><a href="#" style="display:none">Discard application</a></p>
+	        </div>
+	    </div>
 	</div>
 </div>
 
