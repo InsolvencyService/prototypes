@@ -220,32 +220,31 @@ display:block;
 		                            <th></th>
 		                        </tr>
 		                    </thead>
-		                    <tbody>
+		                    
 		                        <tr>
 		                            <td>Estimated value</td>
 		                            <td class="amount"><span class="poundsign">£</span><span id="propertyvalue">150,000</span></td>
 		                            <td class="amount"><a href="#">Edit</a></td>
 		                        </tr> 
-		                    </tbody>
+		                    
 		                                       
 		    					<tbody id="tablebody" style="border-top:1px solid silver"></tbody>
-		    				<tfoot>
+		    				
 		    					<tr>
 		    						<td>Subtotal</td>
 		    						<td>£<span class="subtotal"></span></td>
+		    						<td></td>
 		    					</tr>
 		    					<tr>
 		    						<td>Personal share</td>
 		    						<td>£<span class="share"></span></td>
+		    						<td></td>
 		    					</tr>
 		    					<tr>
 		    						<td>Your interest</td>
 		    						<td>£<span class="interest"></span></td>
-		    					</tr>
-
-
-		    				</tfoot>
-		    				
+		    						<td></td>
+		    					</tr>		    				
 						</table>
 						<p>&nbsp;</p>
 					</div>
@@ -415,7 +414,7 @@ $(document).ready(function() {
             shared = "Your share of the "+loantype.toLowerCase()+" with ";
         }
         else{
-        	shared = loantype + " with"
+        	shared = loantype + " with ";
         	
         }
         var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
