@@ -412,7 +412,11 @@ $(document).ready(function() {
         var loantype = $.cookie('loantype' + i);
         var shared = "";
         if ($.cookie('loanshared' + i)) {
-            shared = "Your share of the "+loantype+" with ";
+            shared = "Your share of the "+loantype.toLowerCase()+" with ";
+        }
+        else{
+        	shared = loantype + " with"
+        	
         }
         var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
         var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
