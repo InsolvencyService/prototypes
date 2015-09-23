@@ -138,140 +138,123 @@
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Secured loan details</h1>
-	
-	
-	
+	<h1 class="form-title heading-large">Mortgage, secured loan and charge details</h1>
 	<form class="form" method="post">
-
-	<div class="form-group ">
-	
-        <label id="last_name_label" for="loancompanyname" class="form-label-bold last_name">Name</label>
-	<div class="form-hint">Of the creditor who will be repaid if you sell your 
-		property</div>
-        <input id="loancompanyname" name="last_name" type="text" value="" />
-	<br/>
-	</div>
-	
-	    	
-	<div class="form-group ">
-	
-	<label id="last_name_label0" for="outstanding" class="form-label-bold last_name">Reference number</label>
-	<div class="form-hint">Leave blank if you don't have one</div>
-
-	<input id="outstanding" name="last_name" type="text" value="" />
-	<br/>
-	</div>
-
-    	
-<div class="form-group ">
-	
-	<label id="email_label" for="email" class="form-label-bold email">How much is left to pay on the loan 
-	or charge?</label>
-	    <span class="currency">£</span><input id="amount" name="amount" type="text" value="" />
-</div>
-	
-	
-	<div class="form-group">
-
-	<fieldset id="date_of_birth" class="date-of-birth">
-	
-	<legend id="date_of_birth_label" class="form-label-bold">Date the loan  or charge started</legend>
-	<div class="form-hint">
-				For <strong>loans</strong>, enter the date you received the money<br>
-				For <strong>charges</strong>, enter the date the charge was made
-			</div>		<div class="form-group form-group-day" style="display:none">
-			 <label id="date_of_birth_label.day" for="day">Day</label>
-		<input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+		<div class="form-group ">
+			<label id="last_name_label" for="loancompanyname" class="form-label-bold last_name">Name</label>
+			<div class="form-hint">Of the creditor who will be repaid if you sell your property</div>
+			<input id="loancompanyname" class="form-control-3-4" name="last_name" type="text" value="" />
+			<br/>
 		</div>
-		<div class="form-group" style="width:60px">
-			 <label id="date_of_birth_label.month" for="month">Month</label>
 
-			<select id="month" name="month">
-				<option value="0"></option>
-				<option value="1">Jan</option>
-				<option value="2">Feb</option>
-				<option value="3">Mar</option>
-				<option value="4">Apr</option>
-				<option value="5">May</option>
-				<option value="6">Jun</option>
-				<option value="7">Jul</option>
-				<option value="8">Aug</option>
-				<option value="9">Sep</option>
-				<option value="10">Oct</option>
-				<option value="11">Nov</option>
-				<option value="12">Dec</option>
-			</select>
+		<div class="form-group ">
+			<label id="last_name_label0" for="outstanding" class="form-label-bold last_name">Reference number</label>
+			<div class="form-hint">Leave blank if you don't have one</div>
+			<input id="outstanding" name="last_name" type="text" value="" />
+			<br/>
+		</div>
 		
+		<div class="form-group" id="shared-mortgage">
+			<p  class="form-label-bold">Type</p>
+			<fieldset class="inline">
+				<div id="debt_type" class="form-group">
+					<label for="debt_mortgage" class="block-label">
+						<input id="debt_mortgage" value="Mortgage" name="debt" type="radio">Mortgage
+					</label>
+					<label for="debt_secured" class="block-label">
+						<input id="debt_secured" value="Secured loan" name="debt" type="radio">Secured loan
+					</label>
+					<label for="debt_charge" class="block-label">
+						<input id="debt_charge" value="Charge" name="debt" type="radio">Charge
+					</label>							
+				</div>
+			</fieldset>
 		</div>
-		<div class="form-group form-group-year">
-		<label id="date_of_birth_label.year" for="year">Year</label>
-		<input id="year" name="date_of_birth.year" type="number" min="1900" max="9999"  />
+		
+
+		<div class="form-group ">
+			<label id="email_label" for="email" class="form-label-bold email">
+				How much is left to pay on the loan or charge?
+			</label>
+			<span class="currency">£ </span><input id="amount" name="amount" type="text" value="" />
 		</div>
-	</fieldset>
+
+		<div class="form-group">
+			<fieldset id="date_of_birth" class="date-of-birth">
+				<legend id="date_of_birth_label" class="form-label-bold">Date the loan  or charge started</legend>
+				<div class="form-hint">
+					For <strong>loans</strong>, enter the date you received the money<br>
+					For <strong>charges</strong>, enter the date the charge was made
+				</div>		
+				<div class="form-group form-group-day" style="display:none">
+					<label id="date_of_birth_label.day" for="day">Day</label>
+					<input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
+				</div>
+				
+				<div class="form-group" style="width:60px">
+					<label id="date_of_birth_label.month" for="month">Month</label>
+					
+					<select id="month" name="month">
+						<option value="0"></option>
+						<option value="1">Jan</option>
+						<option value="2">Feb</option>
+						<option value="3">Mar</option>
+						<option value="4">Apr</option>
+						<option value="5">May</option>
+						<option value="6">Jun</option>
+						<option value="7">Jul</option>
+						<option value="8">Aug</option>
+						<option value="9">Sep</option>
+						<option value="10">Oct</option>
+						<option value="11">Nov</option>
+						<option value="12">Dec</option>
+					</select>
+				</div>
+				<div class="form-group form-group-year">
+					<label id="date_of_birth_label.year" for="year">Year</label>
+					<input id="year" name="date_of_birth.year" type="number" min="1900" max="9999"  />
+				</div>
+			</fieldset>
+		</div>	
+
+		<div class="form-group" id="shared-mortgage">
+			<p  class="form-label-bold">Is this a joint debt?</p>
+			<fieldset class="inline">
+				<div id="title" class="form-group">
+					<label for="person_Yes" class="block-label partner">
+						<input id="person_Yes" name="sameaddress" type="radio">
+						Yes - with <span class="bold-medium partnerdata">Susan Smith</span>
+					</label>
+
+					<label for="person_Another" class="block-label">
+						<input id="person_Another" name="sameaddress" type="radio">
+						Yes - with another person
+					</label>
+
+					<label id="title_label1" for="person_No" class="block-label">
+						<input id="person_No" name="sameaddress" type="radio">
+						No
+					</label>
+				</div>
+			</fieldset>
+		</div>
+
+
+		<p class="clearfix"><br></p>
 	
-
-	</div>
-
-				<div class="form-group" id="shared-mortgage">
-                        <p  class="form-label-bold">Is this a joint debt?</p>
-
-                        <fieldset class="inline">
-                            <div id="title" class="form-group">
-                                <label for="person_Yes" class="block-label partner">
-                                    <input id="person_Yes" name="sameaddress" type="radio">
-                                    Yes - with <span class="bold-medium partnerdata">Susan Smith</span>
-                                </label>
-
-                                <label for="person_Another" class="block-label">
-                                    <input id="person_Another" name="sameaddress" type="radio">
-                                    Yes - with another person
-                                </label>
-<div class="clearfix"></div>
-                                <label id="title_label1" for="person_No" class="block-label">
-                                    <input id="person_No" name="sameaddress" type="radio">
-                                    No
-                                </label>
-                            </div>
-                         </fieldset>
-                    </div>
-
-<div class="form-group " style="display:none">
-	
-	<label id="first_name_label" for="first_name" class="form-label first_name">
-			What was the debt for?</label>
-		<span class="form-hint" id="date_of_birth_help">eg your car, extending your property, debt consolidation</span>
-
-	<input id="loanfor" name="ref" type="text" value="" style="width:300px !important;"/>
-	<br/>
-	</div>
-
-
-	<p class="clearfix"><br></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-	<a href="summary_mortgage.html?loop=true" id="next" class="button">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
+		<!-- For User research -->
+		<div class="form-navigation form-group">
+			<div>
+				<a href="summary_mortgage.html?loop=true" id="next" class="button">Continue</a>
+			</div>
+			<p>&nbsp;</p>
+			<div>
+				<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+				<a href="#" id="cancel">Save and logout</a>
+			</div>
+		</div>
 	</form>
-	</div>
+</div>
 
 	 <!-- #EndEditable -->
 
@@ -374,7 +357,7 @@ $(document).ready(function() {
 			$.cookie('loancompanyname' + numberofsecuredloans, $("#loancompanyname").val(), { expires: 1, path: "/" });
 			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1, path: "/" });
 			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1, path: "/" });
-
+			$.cookie('loantype' + numberofsecuredloans, $("#debt_type :checked").val(), { expires: 1, path: "/" });
 			if ($("#person_Yes").is(':checked') || $("#person_Another").is(':checked')) {
 			    $.cookie('loanshared' + numberofsecuredloans, true, { expires: 1, path: "/" });
 			    securedloan = securedloan / 2;
