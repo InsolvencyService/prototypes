@@ -237,12 +237,12 @@ display:block;
 		    					</tr>
 		    					<tr>
 		    						<td>Personal share</td>
-		    						<td><span id="share"></span>%</td>
+		    						<td class="text-right"><span id="share"></span>%</td>
 		    						<td></td>
 		    					</tr>
 		    					<tr>
 		    						<td>Your interest in the property</td>
-		    						<td>£<span id="interest"></span></td>
+		    						<td class="text-right">£<span id="interest"></span></td>
 		    						<td></td>
 		    					</tr>		    				
 						</table>
@@ -427,7 +427,7 @@ $(document).ready(function() {
         $(".firsttime").hide();
         $(".repeat").show();
     }
-    $("#interest").text(secured_loan_total);
+    $("#interest").text(numberWithCommas(secured_loan_total));
     $("#share").text(ownerpercentage);
     $.cookie("secured_loans", secured_loan_total, {path:'/'});
 });
