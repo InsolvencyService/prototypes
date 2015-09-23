@@ -231,17 +231,17 @@ display:block;
 		    					<tbody id="tablebody" style="border-top:1px solid silver"></tbody>
 		    				
 		    					<tr>
-		    						<td>Subtotal</td>
-		    						<td>£<span class="subtotal"></span></td>
+		    						<td></td>
+		    						<td></td>
 		    						<td></td>
 		    					</tr>
 		    					<tr>
 		    						<td>Personal share</td>
-		    						<td>£<span class="share"></span></td>
+		    						<td><span class="share"></span>%</td>
 		    						<td></td>
 		    					</tr>
 		    					<tr>
-		    						<td>Your interest</td>
+		    						<td>Your interest in the property</td>
 		    						<td>£<span class="interest"></span></td>
 		    						<td></td>
 		    					</tr>		    				
@@ -424,6 +424,8 @@ $(document).ready(function() {
         $(".firsttime").hide();
         $(".repeat").show();
     }
+    $("#interest").text(secured_loan_total);
+    $("#share").text(ownerpercentage);
     $.cookie("secured_loans", secured_loan_total, {path:'/'});
 });
 
