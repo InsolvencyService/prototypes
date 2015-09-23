@@ -402,11 +402,17 @@ $(document).ready(function() {
     for (i = 1; i <= numberofsecuredloans; i++) {
 
         var value = numberWithoutCommas($.cookie('securedloan' + i));
+        var ownerpercentage = 50;
+        if ($.cookie('ownerpercentage')) {
+            ownerpercentage = parseInt($.cookie('ownerpercentage'));
+        }
+		value = (value/100)*ownerpercentage;
         secured_loan_total += parseFloat(value);        
         var name = $.cookie('loancompanyname' + i);
+        var loantype = $.cookie('loantype' + i);
         var shared = "";
         if ($.cookie('loanshared' + i)) {
-            shared = "Your share of the loan with ";
+            shared = "Your share of the "+loantype+" with ";
         }
         var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
         var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
