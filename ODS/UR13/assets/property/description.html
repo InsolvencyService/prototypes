@@ -177,11 +177,11 @@ display:block;
 			
 			<fieldset class="inline">
 				<div id="title" class="form-group">
-					<label for="address_Yes1" class="block-label">
+					<label for="address_Yes" class="block-label">
 					    <input id="address_Yes" name="sameaddress" type="radio">
 					    Detached house
 					</label>
-					<label for="address_Yes1" class="block-label">
+					<label for="address_Yes0" class="block-label">
 					    <input id="address_Yes0" name="sameaddress" type="radio">
 					    Semi-detached house
 					</label>
@@ -203,21 +203,22 @@ display:block;
 		
 		<p>&nbsp;</p>
 		<div class="form-group">
-			<p id="title_label" class="form-label-bold">Ownership type</p>
-			
+		<p id="title_label" class="form-label-bold">Ownership type</p>
+		
 			<fieldset class="inline">
 				<div id="title" class="form-group">
 					<label for="ownershiptype_free" class="block-label">
-					    <input id="ownershiptype_free" name="sameaddress" type="radio">
+					    <input id="ownershiptype_free" name="ownership" type="radio">
 					    Freehold
 					</label>
 					<label for="ownershiptype_lease" class="block-label">
-					    <input id="ownershiptype_lease" name="sameaddress" type="radio">
+					    <input id="ownershiptype_lease" name="ownership" type="radio">
 					   Leasehold
 					</label>
-									</div>
-				
-				<p>&nbsp;</p>
+				</div>
+			</fieldset>
+		</div>	
+		<p>&nbsp;</p>
 		
 		<div class="form-group">
 			<label id="first_name_label" for="numbedrooms" class="form-label-bold first_name">Number of bedrooms</label>
@@ -256,7 +257,6 @@ display:block;
 					    <input id="occupant_rent" name="occupant" type="checkbox">
 					    A tenant 
 					</label>
-			
 				</div>
 			</fieldset>
 		</div>
@@ -334,7 +334,7 @@ display:block;
 $(document).ready(function() {
     var housename = $.cookie("propertyline1");
 	if (housename  && housename.length > 0){
-		$(".form-label .data").text(housename);
+		$(".data").text(housename);
 	}
 });
 
