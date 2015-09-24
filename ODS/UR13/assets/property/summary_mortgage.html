@@ -220,38 +220,59 @@ display:block;
 		                            <th></th>
 		                        </tr>
 		                    </thead>
-		                    <tbody>
+		                    
 		                        <tr>
 		                            <td>Estimated value</td>
 		                            <td class="amount"><span class="poundsign">£</span><span id="propertyvalue">150,000</span></td>
 		                            <td class="amount"><a href="#">Edit</a></td>
-		                        </tr>                    
-		    					<div id="tablebody" style="border-top:1px solid silver"></div>
-		    				</tbody>
+		                        </tr> 
+		                                       
+		    					<tbody id="tablebody" style="border-top:1px solid silver"></tbody>  				
+		    					
+		    					<tr>
+		    						<td id="equitybold">Equity</td>
+		    						<td id="equitybold1" class="text-right">£<span id="equity"></span></td>
+		    						<td></td>
+		    					</tr>
+		    					<tr class="solo">
+		    						<td>Personal share (<span id="percent"></span>%)</td>
+		    						<td class="text-right">£<span id="share"></span></td>
+		    						<td></td>
+		    					</tr>    					
+		    					<tr class="solo">
+		    						<td></td>
+		    						<td></td>
+		    						<td></td>
+		    					</tr>
+		    							    					
+		    					<tbody id="tablebody2" class="solo"></tbody>
+		    					
+		    					
+		    					<tr id="total_interest" class="solo">
+		    						<td class="bolder">Your interest in the property</td>
+		    						<td class="text-right bolder">£<span id="interest"></span></td>
+		    						<td></td>
+		    					</tr>		    				
 						</table>
+						<p>&nbsp;</p>
 					</div>
 				</div>
-				<p>
-					<span class="firsttime">We need to know about any debts secured against <strong class="bold-medium data">1 The Place.</strong></span>
-					<span class="repeat">The table above summarises the secured debts you have told us about.We need to know about any other debts secured against <strong class="bold-medium data">1 The Place</strong>.</span>
-				</p>
-				<p>
-					<span class="firsttime">Include any charges or securities you have given or that have been awarded against the property (eg a charging order from the court). </span>
-					<span class="repeat">We need to know about any other debts secured against <strong class="bold-medium data">1 The Place</strong>.</span>
-				</p>
-	
+				<p class="firsttime">We need to know about any mortgages or loans secured against <span class="data firsttime">1, The Place, SG7 6BP</span><span class="repeat">the property</span></p>
+				<p class="repeat">The table above summarises the mortgages and loans you have told us about. We need to know about any other debts secured against the property.</p>
+				
+				<p>Include any charges or securities you have given or that have been awarded against the property (eg a charging order from the court).</p>
+				<p>&nbsp;</p>
 				
 				<div class="form-group">
 					<label  class="form-label-bold">
-						<span class="firsttime">Enter the name of the creditor who will be repaid if you sell your house</span>
-						<span class="repeat">Enter the name of another creditor who will be repaid if you sell your house</span>
+						<span>Enter the name of the finance company who provided the mortgage or loan</span>
 					</label>
 					<div class="form-hint">
-						<span class="firsttime">For example, ABC Bank Ltd. You can add more creditors later.</span>
+						<span class="firsttime">For example, ABC Bank Ltd. You can add more later.</span>
 						<span class="repeat">For example, ABC Bank Ltd</span>
 					</div>
 			            <input class="typeahead input-lg form-control-3-4" id="name" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
-			            <a id="add" class="button"  href="secured-debt.html">Add creditor</a>
+			            <a id="add" class="button"  href="secured-debt.html">Add company</a>
 						<p><br></p>
 						<p>
 			                <a href="list_properties.html?loop=true" class=" button" id="next">
@@ -355,44 +376,110 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-    var mortgageamount = 0.0;
+    $(".solo").hide();
     var housename = $.cookie("propertyline1");
     if (housename && housename.length > 0) {
         $(".data").text(housename);
     }
 
     if ($.cookie('propertyvalue')) {
-        $("#propertyvalue").text(numberWithCommas($.cookie('propertyvalue')));
+        $("#propertyvalue").text(numberWithCommas(parseFloat($.cookie('propertyvalue')).toFixed(2)));
     }
-    if ($.cookie('mortgagecompany')) {
-        $("#mortgagecompany").text($.cookie('mortgagecompany'));
-    }
-    if ($.cookie('mortgageamount')) {
-        mortgageamount = numberWithoutCommas($.cookie('mortgageamount'));
-    }
-    if ($.cookie('sharedmortgage') && $.cookie('sharedmortgage') == "Yes") {
-        $(".sharedmortgage").show();
-        var ownerpercentage = 50;
-        if ($.cookie('ownerpercentage')) {
-            ownerpercentage = parseInt($.cookie('ownerpercentage'));
-        }
-        mortgageamount = mortgageamount * (ownerpercentage / 100);
-    }
-
-    $("#mortgageamount").text(numberWithCommas(mortgageamount));
+    
     var numberofsecuredloans = 0;
     if ($.cookie("numberofsecuredloans") && parseInt($.cookie("numberofsecuredloans"))) {
         numberofsecuredloans = parseInt($.cookie("numberofsecuredloans"));
     }
-	var secured_loan_total = 0;
-    for (i = 1; i <= numberofsecuredloans; i++) {
+    
+	var shared_loan_total = 0;
+	var solo_loan_total = 0;
+	
+    		
+	var ownerpercentage = 100;
+	if ($.cookie('ownerpercentage')) {
+		ownerpercentage = parseInt($.cookie('ownerpercentage'));
+	}
+	if($.cookie("member1-percentage")){
+	//this is for jointly owner properties
+		for (i = 1; i <= numberofsecuredloans; i++) {
+		
+			var name = $.cookie('loancompanyname' + i);
+	        var loantype = $.cookie('loantype' + i);
+	        var shared = loantype + " with "; 
+			var value = numberWithoutCommas($.cookie('securedloan' + i));
+			var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';			
+			if($.cookie("loanshared"+i)){
+				shared_loan_total += parseFloat(value);
+				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
+		        $("#tablebody").append(row);
+			}
+			else{
+				$(".solo").show();
+				solo_loan_total += parseFloat(value);
+				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
+		        $("#tablebody2").append(row);
+			}			
+		}
+		var propertyvalue = parseFloat($.cookie('propertyvalue'));
+		var equity = propertyvalue - shared_loan_total;
+		var share = (equity/100)*ownerpercentage;
+		var interest = share-solo_loan_total;
+		
+		$("#equity").text(numberWithCommas(parseFloat(equity).toFixed(2)));
+		$("#percent").text(ownerpercentage);
+		$("#interest").text(numberWithCommas(parseFloat(interest).toFixed(2)));
+		$("#share").text(numberWithCommas(parseFloat(share).toFixed(2)));
+			
+	}
+	else{
+	//this is for sole owned properties	
+		$("#equitybold").addClass("bolder");
+		$("#equitybold1").addClass("bolder");
+		for (i = 1; i <= numberofsecuredloans; i++) {
+			var value = numberWithoutCommas($.cookie('securedloan' + i));
+			solo_loan_total += parseFloat(value);     
+			  
+	        var name = $.cookie('loancompanyname' + i);
+	        var loantype = $.cookie('loantype' + i);
+	        var shared = loantype + " with "; 
+	        
+	        var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
+	        var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(parseFloat(value).toFixed(2)) + '</td>' + editbuttons + "</tr>";
+	        $("#tablebody").append(row);
+		}
+		
+		var propertyvalue = parseFloat($.cookie('propertyvalue')).toFixed(2);
+		var equity = propertyvalue - solo_loan_total;			
+		$("#equity").text(numberWithCommas(parseFloat(equity).toFixed(2)));
+	}
+		
+		
+		
 
-        var value = numberWithoutCommas($.cookie('securedloan' + i));
+		
+		
+
+		
+       
+		 /*var ownerpercentage = 50;
+         if ($.cookie('ownerpercentage')) {
+            ownerpercentage = parseInt($.cookie('ownerpercentage'));
+        }
+		if($.cookie("loanshared"+i)){
+					value = (value/100)*ownerpercentage;
+		}
+		
         secured_loan_total += parseFloat(value);        
         var name = $.cookie('loancompanyname' + i);
+        var loantype = $.cookie('loantype' + i);
         var shared = "";
+        
         if ($.cookie('loanshared' + i)) {
-            shared = "Your share of the loan with ";
+            shared = "Your share of the "+loantype.toLowerCase()+" with ";
+        }
+        else{
+        	shared = loantype + " with ";
+        	
         }
         var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
         var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
@@ -400,8 +487,17 @@ $(document).ready(function() {
 
         $(".firsttime").hide();
         $(".repeat").show();
+       
+        
     }
+    
+    
+    
+    $("#interest").text(numberWithCommas(secured_loan_total));
+    $("#share").text(ownerpercentage);
     $.cookie("secured_loans", secured_loan_total, {path:'/'});
+    
+    */
 });
 
 $("#add").click(function(e){

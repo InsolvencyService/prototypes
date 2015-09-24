@@ -70,45 +70,9 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
 
-
-
-
-
-
-
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
-
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
+.amount-value:before { content: "£"; }
 
 
 .row img{
@@ -130,32 +94,28 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
+#month option{
+	width:50px;
+	display:block;
+	white-space:nowrap;
+	margin:0;
+	padding:5px 4px 3px 4px;
+	border:1px gray solid !important;
 }
 
-legend{
-	border:0 transparent none;
+.halfwidth {
+    float: left;
+    margin-right: 15px;
+    clear: none;
+    width: 35%;
 }
-.halfwidth{
-  float: left;
-  margin-right: 15px;
-  clear: none;
-	width:35%;
-}
-.partwidth{
-  float: left;
-  margin-right: 0;
-  clear: none;
-	width:15%;
-	margin-top:23px;
+
+.partwidth {
+    float: left;
+    margin-right: 0;
+    clear: none;
+    width: 15%;
+    margin-top: 23px;
 }
 
 </style>
@@ -214,7 +174,7 @@ legend{
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
-    This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+	This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
 	</div>
@@ -222,113 +182,121 @@ legend{
 
 
 <!-- #BeginEditable "content" --> 
-<div id="content0" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Joint <span class="firsttime"> owners</span> <span class="repeat"> owner summary</span></h1>
-
-	 <span class="firsttime">We need to know about any joint owners of 
-		<strong>1 The Place</strong>.</span>
-<div class="form-label"></div>
-
-	<div class="col-md-9" style="left: 0px; top: 0px">
-		<form class="form" method="post">
-			
-			 <div id="pnl-employment_table" class="repeat">
-            	<h2 class="form-label-bold" style="display:none">Owners<br></h2>
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Name</th>
-	                        <th>Relationship</th>
-	                        <th>Share</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody class="tbl-content">
-	                                     
-                        <tr class="repeat singleowner">
-                            <td><span id="singleownername">You</span></td>
-                            <td></td>
-                            <td><span>100%</span></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr class="repeat sharedowner" id="sharedowner1">
-                            <td><span id="sharedowner1name">You</span></td>
-                            <td></td>
-                            <td><span><input id="share1" type="text" value="50"></span>%</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr class="repeat sharedowner" id="sharedowner2">
-                            <td><span id="sharedowner2name">Susan Smith</span></td>
-                            <td><span id="sharedowner2relationship">Partner</span></td>
-                            <td><span><input id="share2" type="text" value="50" id="sharedownerpercentage"></span>%</td>
-                            <td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
-                        </tr>
-	                </tbody>
-	            </table>
-
-	            
-			</div>
-			<p><br></p>
-			<p><span class="repeat">The table above summarises the joint owners you have told us about.</span></p> 
-			<p><span class="repeat">We need to know about any other joint owners of<strong> 1 The Place</strong>.</span></p>
-
-
-	            <p>&nbsp;</p>	
-           <fieldset>
-	<legend class="form-label-bold"><span class="firsttime">Enter the joint owner's 
-	first and last name</span>
-	<span class="repeat">Enter another owner's first and last name</span></legend>
+<div class="inner-block">
 	
-	<span class="form-hint">For example, John Smith.<span class="firsttime"> You can add more owners later.</span> </span>
-	&nbsp;<div class="form-group halfwidth">
-		 <label for="firstname">First name</label>
-			<input id="firstname"  />
-	</div>
-	<div class="form-group halfwidth">
-		 <label for="lastname">Last name</label>
-		<input id="lastname"  />
-	</div>
-	<div class="form-group partwidth">
-              	  <a id="add" class="button" href="add-owner.html">Add owner <span class="repeat"></span></a>&nbsp;
-					<br/>
-	</div>
-
-	</fieldset>
 	
-	                <p><br>
-					<a href="property-scheme.html" class="button" id="next">
-	                <span class="firsttime">Continue - I am the sole owner</span><span class="repeat">Continue - I have added all joint owners</span></a></p>
-            
-           
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="javascript:history.go(-1)">Back</a>
+	
+	<h1 class="form-title heading-large">Vehicle you own</h1>
+	
+	
+	
+	<form class="form" method="post">			
+		
+		<p>&nbsp;</p>
+		<div id="kept" class="form-group ">
+			<p id="disposed_label" for="vehicle_address_line_1" for="vehicle_address_line_1" class="form-label-bold">Where is the vehicle kept overnight?</p>
+			<p class="form-hint">This will help us verify the information you have told us about the vehicle</p>
+			My vehicle is kept at my home address&nbsp;&nbsp;
+			<input id="home_store" name="home address" type="checkbox" /><br><br>
+			<div id="address_needed">
+				<div class="firsttime">
+					<fieldset id="lookupaddress">
+						
+				
+						<span class="form-hint">For example, 2 Place Street AB1 2CD</span>
+						<div class="form-group halfwidth">
+							<label for="name">First line</label>
+							<input id="name" />
+						</div>
+						<div class="form-group halfwidth">
+							<label for="postcode">Postcode</label>
+							<input id="postcode" />
+						</div>
+						<div class="clearfix"></div>
+						<div class="form-group">
+							<a id="btn-lookup" class="button" href="#">Lookup address</a>&nbsp;
+							<a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
+				
+							<br />
+						</div>
+					</fieldset>
 				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="../../personal/payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
+				
+				<div class="repeat" id="fulladdress">
+					<div class="form-group ">
+						<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
+						<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
+						<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
+						<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
+						<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
+						<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" /><br>
+						<br/>
+					</div>
+					<div class="form-group ">
+						<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
+						<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+						<br/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p>&nbsp;</p>
+		<div class="form-group" id="pnl-owned">
+			<p id="title_label" class="form-label-bold">Is there any finance 
+			outstanding on the vehicle?</p>
+			<p class="form-hint">For example, hire purchase,conditional sale or 
+			other financing from the dealership</p>
 
+			<fieldset class="inline">
+				<div>				
+					<label id="owned_label1" for="owned_yes" class="block-label">
+					<input id="owned_yes"  name="owned" value="Yes" type="radio">Yes</label>
+					
+					<label id="owned_label1" for="owned_no" class="block-label">
+					<input id="owned_no"  name="owned" value="No" type="radio">No</label>
+
+				</div>
+			</fieldset>
+		</div>
+	</form>
+		
+		
+		
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	<p>&nbsp;</p>
+	<div>
+		
+		<a id="next" class="button">Continue</a>
+			</div>
+	<div>
+	<br>
 	</div>
-</div>
-
+	
+	<div>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
@@ -346,14 +314,11 @@ legend{
             <div class="footer-meta-inner">
 
                  <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block">
-					<a class="bold-medium" href="../../../contact-us.html">Contact us</a></li>
+                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../../contact-us.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" ">
-					<a href="../../../privacy.html">Privacy</a></li>
-                    <li class="footer__link" style="">
-					<a href="../../../cookies.html">Cookies</a></li>
+                    <li class="footer__link" style=" "><a href="../../../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style=""><a href="../../../cookies.html">Cookies</a></li>
                     <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                 </ul>
 
@@ -385,79 +350,57 @@ legend{
 
 <!-- #BeginEditable "scripts" -->
 
+<script type="text/javascript" src="../../../assets/js/jquery.select-to-autocomplete.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../property/js/postcodelookup.js"></script>
 <script type="text/javascript" src="../../shared/loop.js"></script>
-	
+
+
+
 <script type="text/javascript">
+var tempname;
+var count;
 
-$(document).ready(function () {
-
-    // have we just added an owner?
-    var numowners = 0;
-
-    if ($.cookie('numowners') && parseInt($.cookie('numowners'))) {
-        numowners = parseInt($.cookie('numowners'));
-    }
-
-    var owner2name = $.cookie('member' + numowners + "-firstname")  + " " + $.cookie('member' + numowners + "-lastname");
-    var relationship = $.cookie('member' + numowners + "-relationship");
-    var ownername = "You";
-
-    if ($.cookie("firstname")) {
-        //ownername = $.cookie("firstname") + " " + $.cookie("lastname");
-    }
-    $("#singleownername").text(ownername);
-
-
-    if (numowners > 0){
-        //var editbuttons = "<td><a href='#'>Edit</a>&nbsp;&nbsp;<a href='#'>Delete</a></td></tr>";
-        //var row = "<tr><td>" + name + "</td><td>" + relationship + "</td><td>50%</td>" + editbuttons + "</tr>";
-        //$("tbody").append(row);
-        //$("#myshare").text("50%");
-
-        $(".singleowner").hide();
-        $(".sharedowner").show();
-        $("#sharedowner1name").text(ownername);
-        $("#sharedowner2name").text(owner2name);
-        $("#sharedowner2relationship").text(relationship);
-
-        $("#next").text("Continue - I have added all joint owners");
-    }
-    else {
-        $(".singleowner").show();
-        $(".sharedowner").hide();
-        $("#firstname").val($.cookie('partner-firstname'));
-        $("#lastname").val($.cookie('partner-lastname'));
-    }
-
-	$("#share1").change(function () {
-		var share = parseInt($("#share1").val());
-		share = 100-share;
-		$("#share2").val(share);
-	});
-	$("#share2").change(function () {
-		var share = parseInt($("#share2").val());
-		share = 100-share;
-		$("#share1").val(share);
-	});
-
-
-    $("#add").click(function () {
-        $.cookie("memberfirstname", $("#firstname").val(), { expires: 1, path: '/' });
-        $.cookie("memberlastname", $("#lastname").val(), { expires: 1, path: '/' });
-    });
-
-    $("#next").click(function () {
-        $.cookie('ownerpercentage', parseInt($("#share1").val()), { expires: 1, path: '/' });
-        $.cookie('member' + numowners + "-percentage", parseInt($("#share2").val()), { expires: 1, path: '/' });
-    });
+$(document).ready(function() {
+	$("#make").val($.cookie("TempVehicleMake"));
+	$("#model").val($.cookie("TempVehicleModel"));
 });
 
-function numberWithoutCommas(x) {
-    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
-    return number;
+$('#next').click(function() {
+		writeCookies();
+		if($("#owned_no").prop('checked')==true){
+			$("#next").attr("href","list_vehicles.html?loop=true");
+		}
+		else{
+			$("#next").attr("href","finance.html");
+		}
+});
+
+$('#kept').click(function() {
+	if($('#home_store').prop('checked')==true){
+		$('#address_needed').hide();
+	}
+	else{
+		$('#address_needed').show();
+	}
+
+});
+
+function writeCookies() {
+	// Get count
+		count = $.cookie("VehicleCount");
+			
+	// write records
+		
+		$.cookie("VehicleStoredAddress1-"+count, $("#vehicle_address_line_1").val(), {path: '/'});
+		$.cookie("VehicleStoredAddress2-"+count, $("#vehicle_address_line_2").val(), {path: '/'});
+		$.cookie("VehicleStoredAddress3-"+count, $("#vehicle_address_line_3").val(), {path: '/'});
+		$.cookie("VehicleStoredAddress4-"+count, $("#vehicle_address_town").val(), {path: '/'});
+		$.cookie("VehicleStoredAddress5-"+count, $("#vehicle_address_county").val(), {path: '/'});
+		$.cookie("VehicleStorednAddress6-"+count, $("#vehicle_address_post_code").val(), {path: '/'});
 }
+
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -466,7 +409,18 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
+function numberWithoutCommas(x) {
+    return parseFloat(x.toString().replace(/,/g, "")).toFixed(2);
+}
+
+function pad (str, max) {
+  str = str.toString();
+  return str.length < max ? pad("0" + str, max) : str;
+}
 
 </script>
 
