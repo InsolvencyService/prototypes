@@ -445,13 +445,13 @@ $(document).ready(function() {
 	        var shared = loantype + " with "; 
 	        
 	        var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
-	        var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
+	        var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(parseFloat(value).toFixed(2)) + '</td>' + editbuttons + "</tr>";
 	        $("#tablebody").append(row);
 		}
 		
-		var propertyvalue = parseFloat($.cookie('propertyvalue'));
-		var equity = propertyvalue - shared_loan_total;			
-		$("#equity").text(numberWithoutCommas(equity));
+		var propertyvalue = parseFloat($.cookie('propertyvalue')).toFixed(2);
+		var equity = propertyvalue - solo_loan_total;			
+		$("#equity").text(numberWithoutCommas(parseFloat(equity).toFixed(2)));
 	}
 		
 		
