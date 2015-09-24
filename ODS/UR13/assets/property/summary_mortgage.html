@@ -239,16 +239,22 @@ display:block;
 		    						<td class="text-right">£<span id="share"></span></td>
 		    						<td></td>
 		    					</tr>    					
-		    					<tr>
-		    						<td><hr></td>
+		    					<tr class="solo">
+		    						<td></td>
 		    						<td></td>
 		    						<td></td>
 		    					</tr>
+		    					<tr class="solo">
+		    						<td>Individual debts</td>
+		    						<td></td>
+		    						<td></td>
+		    					</tr>
+
 		    					
-		    					<tbody id="tablebody2" style="display:none"></tbody>
+		    					<tbody id="tablebody2" class="solo"></tbody>
 		    					
 		    					
-		    					<tr id="total_interest" style="display:none">
+		    					<tr id="total_interest" class="solo">
 		    						<td>Your interest in the property</td>
 		    						<td class="text-right">£<span id="interest"></span></td>
 		    						<td></td>
@@ -376,7 +382,7 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-    
+    $(".solo").hide();
     var housename = $.cookie("propertyline1");
     if (housename && housename.length > 0) {
         $(".data").text(housename);
@@ -415,8 +421,7 @@ $(document).ready(function() {
 		        $("#tablebody").append(row);
 			}
 			else{
-				$("#tablebody2").show();
-				$("#total_interest").show();
+				$(".solo").show();
 				solo_loan_total += parseFloat(value);
 				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
 		        $("#tablebody2").append(row);
