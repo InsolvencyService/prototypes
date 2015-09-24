@@ -231,12 +231,12 @@ display:block;
 		    					
 		    					<tr>
 		    						<td>Equity</td>
-		    						<td></td>
 		    						<td class="text-right">£<span id="equity"></span></td>
+		    						<td></td>
 		    					</tr>
 		    					<tr>
 		    						<td>Personal share (<span id="percent"></span>%)</td>
-		    						<td class="text-right"><span id="share"></span></td>
+		    						<td class="text-right">£<span id="share"></span></td>
 		    						<td></td>
 		    					</tr>    					
 		    					<tr>
@@ -394,65 +394,63 @@ $(document).ready(function() {
 	var shared_loan_total = 0;
 	var solo_loan_total = 0;
 	
-    
+    		
+	var ownerpercentage = 100;
+	if ($.cookie('ownerpercentage')) {
+		ownerpercentage = parseInt($.cookie('ownerpercentage'));
+	}
+	if($.cookie("member1-percentage")){
+	//this is for jointly owner properties
+		for (i = 1; i <= numberofsecuredloans; i++) {
 		
-		
-		var ownerpercentage = 100;
-		if ($.cookie('ownerpercentage')) {
-			ownerpercentage = parseInt($.cookie('ownerpercentage'));
-		}
-		if($.cookie("member1-percentage")){
-		//this is for jointly owner properties
-			for (i = 1; i <= numberofsecuredloans; i++) {
-			
-				var name = $.cookie('loancompanyname' + i);
-		        var loantype = $.cookie('loantype' + i);
-		        var shared = loantype + " with "; 
-				var value = numberWithoutCommas($.cookie('securedloan' + i));
-							
-				if($.cookie("loanshared"+i)){
-					shared_loan_total += parseFloat(value);
-					var row = '<tr><td>' + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
-			        $("#tablebody").append(row);
-				}
-				else{
-					$("#tablebody2").show();
-					$("#total_interest").show();
-					solo_loan_total += parseFloat(value);
-					var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
-			        $("#tablebody2").append(row);
-				}			
-			}
-			var propertyvalue = parseFloat($.cookie('propertyvalue'));
-			var equity = propertyvalue - shared_loan_total;
-			var share = (equity/100)*ownerpercentage;
-			var interest = share-solo_loan_total;
-			
-			$("#equity").text(numberWithCommas(equity));
-			$("#percent").text(ownerpercentage);
-			$("#interest").text(numberWithCommas(interest));
-			$("#share").text(numberWithCommas(share));
-				
-		}
-		else{
-		//this is for sole owned properties	
-			for (i = 1; i <= numberofsecuredloans; i++) {
-				var value = numberWithoutCommas($.cookie('securedloan' + i));
-				solo_loan_total += parseFloat(value);     
-				  
-		        var name = $.cookie('loancompanyname' + i);
-		        var loantype = $.cookie('loantype' + i);
-		        var shared = loantype + " with "; 
-		        
-		        var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
-		        var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
+			var name = $.cookie('loancompanyname' + i);
+	        var loantype = $.cookie('loantype' + i);
+	        var shared = loantype + " with "; 
+			var value = numberWithoutCommas($.cookie('securedloan' + i));
+						
+			if($.cookie("loanshared"+i)){
+				shared_loan_total += parseFloat(value);
+				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
 		        $("#tablebody").append(row);
 			}
-			
-			var propertyvalue = parseFloat($.cookie('propertyvalue'));
-			var equity = propertyvalue - shared_loan_total;			
-			$("#equity").text(numberWithoutCommas(equity));
+			else{
+				$("#tablebody2").show();
+				$("#total_interest").show();
+				solo_loan_total += parseFloat(value);
+				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
+		        $("#tablebody2").append(row);
+			}			
 		}
+		var propertyvalue = parseFloat($.cookie('propertyvalue'));
+		var equity = propertyvalue - shared_loan_total;
+		var share = (equity/100)*ownerpercentage;
+		var interest = share-solo_loan_total;
+		
+		$("#equity").text(numberWithCommas(parseFloat(equity).toFixed(2)));
+		$("#percent").text(ownerpercentage);
+		$("#interest").text(numberWithCommas(parseFloat(interest).toFixed(2)));
+		$("#share").text(numberWithCommas(parseFloat(share).toFixed(2)));
+			
+	}
+	else{
+	//this is for sole owned properties	
+		for (i = 1; i <= numberofsecuredloans; i++) {
+			var value = numberWithoutCommas($.cookie('securedloan' + i));
+			solo_loan_total += parseFloat(value);     
+			  
+	        var name = $.cookie('loancompanyname' + i);
+	        var loantype = $.cookie('loantype' + i);
+	        var shared = loantype + " with "; 
+	        
+	        var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
+	        var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas(value) + '</td>' + editbuttons + "</tr>";
+	        $("#tablebody").append(row);
+		}
+		
+		var propertyvalue = parseFloat($.cookie('propertyvalue'));
+		var equity = propertyvalue - shared_loan_total;			
+		$("#equity").text(numberWithoutCommas(equity));
+	}
 		
 		
 		
