@@ -256,13 +256,13 @@ legend{
                         <tr class="repeat sharedowner" id="sharedowner1">
                             <td><span id="sharedowner1name">You</span></td>
                             <td></td>
-                            <td><span><input type="text" value="50%"></span></td>
+                            <td><span><input id="share1" type="text" value="50%"></span></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr class="repeat sharedowner" id="sharedowner2">
                             <td><span id="sharedowner2name">Susan Smith</span></td>
                             <td><span id="sharedowner2relationship">Partner</span></td>
-                            <td><span><input type="text" value="50%" id="sharedownerpercentage"></span></td>
+                            <td><span><input id="share2" type="text" value="50%" id="sharedownerpercentage"></span></td>
                             <td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
                         </tr>
 	                </tbody>
@@ -431,6 +431,16 @@ $(document).ready(function () {
         $("#lastname").val($.cookie('partner-lastname'));
     }
 
+	$("#share1").change(function () {
+		var share = parseInt($("#share1").val())
+		share = 100-share;
+		$("#share2").val(share)
+	}
+	$("#share2").change(function () {
+		var share = parseInt($("#share2").val())
+		share = 100-share;
+		$("#share1").val(share)
+	}
 
 
     $("#add").click(function () {
