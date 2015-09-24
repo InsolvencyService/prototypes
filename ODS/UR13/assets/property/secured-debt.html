@@ -358,7 +358,7 @@ $(document).ready(function() {
 			$.cookie('loanmonth' + numberofsecuredloans, $("#loanmonth").val(), { expires: 1, path: "/" });
 			$.cookie('loanyear' + numberofsecuredloans, $("#loanyear").val(), { expires: 1, path: "/" });
 			$.cookie('loantype' + numberofsecuredloans, $("#debt_type :checked").val(), { expires: 1, path: "/" });
-			if ($("#person_Yes").is(':checked') || $("#person_Another").is(':checked')) {
+			if ($("#person_Yes").is(':checked')) {
 			    $.cookie('loanshared' + numberofsecuredloans, true, { expires: 1, path: "/" });
 			    
 			}
