@@ -383,7 +383,7 @@ $(document).ready(function() {
     }
 
     if ($.cookie('propertyvalue')) {
-        $("#propertyvalue").text(numberWithCommas($.cookie('propertyvalue')));
+        $("#propertyvalue").text(numberWithCommas(parseFloat($.cookie('propertyvalue')).toFixed(2)));
     }
     
     var numberofsecuredloans = 0;
@@ -451,7 +451,7 @@ $(document).ready(function() {
 		
 		var propertyvalue = parseFloat($.cookie('propertyvalue')).toFixed(2);
 		var equity = propertyvalue - solo_loan_total;			
-		$("#equity").text(numberWithoutCommas(parseFloat(equity).toFixed(2)));
+		$("#equity").text(numberWithoutCommas(parseFloat(equity).toFixed(2));
 	}
 		
 		
