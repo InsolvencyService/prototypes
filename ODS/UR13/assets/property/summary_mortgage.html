@@ -451,7 +451,7 @@ $(document).ready(function() {
 		
 		var propertyvalue = parseFloat($.cookie('propertyvalue')).toFixed(2);
 		var equity = propertyvalue - solo_loan_total;			
-		$("#equity").text(numberWithoutCommas(parseFloat(equity).toFixed(2)));
+		$("#equity").text(numberWithCommas(parseFloat(equity).toFixed(2)));
 	}
 		
 		
