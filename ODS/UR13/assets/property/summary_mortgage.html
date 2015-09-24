@@ -407,6 +407,7 @@ $(document).ready(function() {
 	        var loantype = $.cookie('loantype' + i);
 	        var shared = loantype + " with "; 
 			var value = numberWithoutCommas($.cookie('securedloan' + i));
+			var editbuttons = '<td  class="amount"><a href="#">Edit</a></td></tr>';
 						
 			if($.cookie("loanshared"+i)){
 				shared_loan_total += parseFloat(value);
