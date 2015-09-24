@@ -230,11 +230,11 @@ display:block;
 		    					<tbody id="tablebody" style="border-top:1px solid silver"></tbody>  				
 		    					
 		    					<tr>
-		    						<td>Equity</td>
-		    						<td class="text-right">£<span id="equity"></span></td>
+		    						<td id="equitybold">Equity</td>
+		    						<td id="equitybold1" class="text-right">£<span id="equity"></span></td>
 		    						<td></td>
 		    					</tr>
-		    					<tr>
+		    					<tr class="solo">
 		    						<td>Personal share (<span id="percent"></span>%)</td>
 		    						<td class="text-right">£<span id="share"></span></td>
 		    						<td></td>
@@ -244,19 +244,13 @@ display:block;
 		    						<td></td>
 		    						<td></td>
 		    					</tr>
-		    					<tr class="solo">
-		    						<td>Individual debts</td>
-		    						<td></td>
-		    						<td></td>
-		    					</tr>
-
-		    					
+		    							    					
 		    					<tbody id="tablebody2" class="solo"></tbody>
 		    					
 		    					
 		    					<tr id="total_interest" class="solo">
-		    						<td>Your interest in the property</td>
-		    						<td class="text-right">£<span id="interest"></span></td>
+		    						<td class="bolder">Your interest in the property</td>
+		    						<td class="text-right bolder">£<span id="interest"></span></td>
 		    						<td></td>
 		    					</tr>		    				
 						</table>
@@ -440,6 +434,8 @@ $(document).ready(function() {
 	}
 	else{
 	//this is for sole owned properties	
+		$("#equitybold").addClass("bolder");
+		$("#equitybold1").addClass("bolder");
 		for (i = 1; i <= numberofsecuredloans; i++) {
 			var value = numberWithoutCommas($.cookie('securedloan' + i));
 			solo_loan_total += parseFloat(value);     
