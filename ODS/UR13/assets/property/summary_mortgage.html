@@ -230,11 +230,11 @@ display:block;
 		    					<tbody id="tablebody" style="border-top:1px solid silver"></tbody>  				
 		    					
 		    					<tr>
-		    						<td id="equitybold">Equity</td>
-		    						<td id="equitybold1" class="text-right">£<span id="equity"></span></td>
+		    						<td id="equitybold" class="bolder">Equity</td>
+		    						<td id="equitybold1" class="text-right bolder">£<span id="equity"></span></td>
 		    						<td></td>
 		    					</tr>
-		    					<tr class="solo">
+		    					<tr class="solo" id="personal_share">
 		    						<td>Personal share (<span id="percent"></span>%)</td>
 		    						<td class="text-right">£<span id="share"></span></td>
 		    						<td></td>
@@ -414,6 +414,8 @@ $(document).ready(function() {
 		        $("#tablebody").append(row);
 			}
 			else{
+				$("#equitybold").removeClass("bolder");
+				$("#equitybold1").removeClass("bolder");
 				$(".solo").show();
 				solo_loan_total += parseFloat(value);
 				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
@@ -426,6 +428,10 @@ $(document).ready(function() {
 		var interest = share-solo_loan_total;
 		
 		$("#equity").text(numberWithCommas(parseFloat(equity).toFixed(2)));
+		if(equity<0){
+			$("#equitybold").text("Shortfall");
+			$("#personal_share").hide();
+		}
 		$("#percent").text(ownerpercentage);
 		$("#interest").text(numberWithCommas(parseFloat(interest).toFixed(2)));
 		$("#share").text(numberWithCommas(parseFloat(share).toFixed(2)));
@@ -433,8 +439,7 @@ $(document).ready(function() {
 	}
 	else{
 	//this is for sole owned properties	
-		$("#equitybold").addClass("bolder");
-		$("#equitybold1").addClass("bolder");
+		
 		for (i = 1; i <= numberofsecuredloans; i++) {
 			var value = numberWithoutCommas($.cookie('securedloan' + i));
 			solo_loan_total += parseFloat(value);     
@@ -449,7 +454,10 @@ $(document).ready(function() {
 		}
 		
 		var propertyvalue = parseFloat($.cookie('propertyvalue')).toFixed(2);
-		var equity = propertyvalue - solo_loan_total;			
+		var equity = propertyvalue - solo_loan_total;	
+		if(equity<0){
+			$("#equitybold").text("Shortfall");
+		}		
 		$("#equity").text(numberWithCommas(parseFloat(equity).toFixed(2)));
 	}
 		
