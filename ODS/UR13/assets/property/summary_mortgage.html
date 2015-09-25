@@ -425,12 +425,16 @@ $(document).ready(function() {
 		var propertyvalue = parseFloat($.cookie('propertyvalue'));
 		var equity = propertyvalue - shared_loan_total;
 		var share = (equity/100)*ownerpercentage;
-		var interest = share-solo_loan_total;
+		
 		
 		$("#equity").text(numberWithCommas(parseFloat(equity).toFixed(2)));
 		if(equity<0){
 			$("#equitybold").text("Shortfall");
 			$("#personal_share").hide();
+			var interest = equity-solo_loan_total;
+		}
+		else{
+			var interest = share-solo_loan_total;
 		}
 		$("#percent").text(ownerpercentage);
 		$("#interest").text(numberWithCommas(parseFloat(interest).toFixed(2)));
