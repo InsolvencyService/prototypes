@@ -144,20 +144,10 @@
 			<label id="last_name_label" for="loancompanyname" class="form-label-bold last_name">
 			Name</label>
 			<div class="form-hint">Of the creditor</div>
-			<input id="loancompanyname" class="form-control-3-4" name="last_name" type="text" value="" />
-			<br/>
+				<input id="outstanding" name="last_name" type="text" value="" />
+					<br/>
 		</div>
 
-		<div class="form-group ">
-			<label id="last_name_label0" for="outstanding" class="form-label-bold last_name">
-			Debt reference number</label>
-		
-			<div class="form-hint">You can find this on your annual mortgage/loan statement or on the paperwork you received when the charge was made 
-				<div class="form-hint">Leave blank if you don't have one</div>
-			<input id="outstanding" name="last_name" type="text" value="" />
-			<br/>
-		</div>
-		
 		<div class="form-group" id="shared-mortgage">
 			<p  class="form-label-bold">Type of debt</p>
 			<fieldset class="inline">
@@ -174,19 +164,22 @@
 				</div>
 			</fieldset>
 		</div>
-
-		<div class="form-group ">
-			<label id="email_label" for="email" class="form-label-bold email">
-				How much is left to pay on the loan or charge?
-			</label>
-			<span class="currency">£ </span><input id="amount" name="amount" type="text" value="" />
+	<div class="form-group ">
+			<label id="last_name_label0" for="outstanding" class="form-label-bold last_name">
+			Debt reference number</label>
+		
+			<div class="form-hint">You can find this on your annual mortgage/loan statement or on the paperwork you received when the charge was made 
+				<div class="form-hint">Leave blank if you don't have one</div>
+			<input id="outstanding" name="last_name" type="text" value="" />
+			<br/>
 		</div>
+		<p>&nbsp;</p>
 
 		<div class="form-group">
 			<fieldset id="date_of_birth" class="date-of-birth">
-				<legend id="date_of_birth_label" class="form-label-bold">Date the loan  or charge started</legend>
+				<legend id="date_of_birth_label" class="form-label-bold">Date the debt started</legend>
 				<div class="form-hint">
-					For <strong>loans</strong>, enter the date you received the money<br>
+					For <strong>loans and mortgages</strong>, enter the date you received the money<br>
 					For <strong>charges</strong>, enter the date the charge was made
 				</div>		
 				<div class="form-group form-group-day" style="display:none">
@@ -219,9 +212,18 @@
 				</div>
 			</fieldset>
 		</div>	
+<p>&nbsp;</p>
+		<div class="form-group ">
+			<label id="email_label" for="email" class="form-label-bold email">
+				How much is left to pay on the loan or charge?
+			</label>
+			<span class="currency">£ </span><input id="amount" name="amount" type="text" value="" />
+		</div>
+<p><br></p>
+<p>&nbsp;</p>
 
 		<div class="form-group" id="shared-mortgage">
-			<p  class="form-label-bold">Is this a joint debt?</p>
+			<p  class="form-label-bold">Is it a joint debt?</p>
 			<fieldset class="inline">
 				<div id="title" class="form-group">
 					<label for="person_Yes" class="block-label partner">
