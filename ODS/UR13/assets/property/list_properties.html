@@ -298,7 +298,7 @@
                             </div>
                         </fieldset>
                         <p class="repeat">
-                            <br><a href="rent.html" class=" button" id="next">
+                            <br><a href="../summary.html?page=2" class=" button" id="next">
                                 
                                 <span class="repeat">Continue - I have added all my properties</span>
                             </a>
@@ -387,48 +387,6 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript">
-$(document).ready(function() {
-                 enablehelp();
-
-});
-function enablehelp() {
- 
-    $(".helplink").on("click", function () {
- 
-        if ($(this).prop("href")) {
- 
-            var ref = $(this).prop("href").substring($(this).prop("href").indexOf("#"));
- 
-            var helpsectionref = $(ref);
- 
-            if (helpsectionref) {
- 
-                if (helpsectionref.is(":visible")) {
- 
-                    helpsectionref.addClass("hidden");
- 
-                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
- 
-                }
- 
-                else {
- 
-                    helpsectionref.removeClass("hidden");
- 
-                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
- 
-                }
- 
-            }
- 
-        }
- 
-    });
- 
-}
-</script>
         <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../shared/loop.js"></script>
@@ -441,6 +399,7 @@ function enablehelp() {
 
             $(document).ready(function () {
             	e.preventDefault();
+            	enablehelp();
                 // look for cookies coming back
                 var numproperties = 1;
                 if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
@@ -527,6 +486,43 @@ function enablehelp() {
             function numberWithCommas(x) {
                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
+            
+            function enablehelp() {
+ 
+    $(".helplink").on("click", function () {
+ 
+        if ($(this).prop("href")) {
+ 
+            var ref = $(this).prop("href").substring($(this).prop("href").indexOf("#"));
+ 
+            var helpsectionref = $(ref);
+ 
+            if (helpsectionref) {
+ 
+                if (helpsectionref.is(":visible")) {
+ 
+                    helpsectionref.addClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
+ 
+                }
+ 
+                else {
+ 
+                    helpsectionref.removeClass("hidden");
+ 
+                    $(this).find(".glyphicon").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+ 
+                }
+ 
+            }
+ 
+        }
+ 
+    });
+ 
+}
+
 
         </script>
 
