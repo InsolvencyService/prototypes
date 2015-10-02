@@ -225,9 +225,9 @@ legend{
 <div id="content0" >
 
 <div class="inner-block">	
-	<h1 class="form-title heading-large">Other beneficiaries</h1>
+	<h1 class="form-title heading-large">Joint <span class="pension">pension</span><span class="policy">policy</span> holders </h1>
 
-	 <span class="firsttime">We need to know about any who will listed to benefit from the <span class="pension">pension</span><span class="policy">policy</span>.</span>
+	 <span class="firsttime">We need to know who jointly holds this <span class="pension">pension</span><span class="policy">policy</span>.</span>
 <div class="form-label"></div>
 
 	<div class="col-md-9" style="left: 0px; top: 0px">
@@ -276,7 +276,7 @@ legend{
 
 	            <p>&nbsp;</p>	
            <fieldset>
-	<legend class="form-label-bold"><span class="firsttime">Enter the beneficiaries 
+	<legend class="form-label-bold"><span class="firsttime">Enter the joint owners 
 	first and last name</span>
 	<span class="repeat">Enter another owner's first and last name</span></legend>
 	
@@ -290,7 +290,7 @@ legend{
 		<input id="lastname"  />
 	</div>
 	<div class="form-group partwidth">
-              	  <a id="add" class="button" href="add-beneficiaries.html">Add beneficiary</a>&nbsp;
+              	  <a id="add" class="button" href="add-joint.html">Add owner</a>&nbsp;
 					<br/>
 	</div>
 
@@ -298,7 +298,7 @@ legend{
 	
 	                <p class="repeat"><br>
 					<a href="joint.html" class="button" id="next">
-	                Continue - I have added all beneficiaries</a></p>
+	                Continue - I have added all joint owners</a></p>
             
            
 		</form>
@@ -399,13 +399,13 @@ $(document).ready(function () {
 
 
     // have we just added an owner?
-    var numowners = parseInt($.cookie('b-count'));
+    var numowners = parseInt($.cookie('j-count'));
     var count =  $.cookie('Asset_Policy_Count');
 
 
    	if(numowners>0){
-		var owner2name = $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Firstname") + " " + $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Lastname");
-    	var relationship = $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Relationship");
+		var owner2name = $.cookie("Asset_Policy_"+count+"_Joint_" + numowners + "_Firstname") + " " + $.cookie("Asset_Policy_"+count+"_Joint_" + numowners + "_Lastname");
+    	var relationship = $.cookie("Asset_Policy_"+count+"_Joint_" + numowners + "_Relationship");
     }
     var ownername = "You";
 
@@ -441,12 +441,12 @@ $(document).ready(function () {
 
 
     $("#add").click(function () {
-        $.cookie("memberfirstname", $("#firstname").val(), { expires: 1, path: '/' });
-        $.cookie("memberlastname", $("#lastname").val(), { expires: 1, path: '/' });
+        $.cookie("jmemberfirstname", $("#firstname").val(), { expires: 1, path: '/' });
+        $.cookie("jmemberlastname", $("#lastname").val(), { expires: 1, path: '/' });
     });
 
     $("#next").click(function () {
-    	$.cookie("Asset_Policy_"+count+"_Beneficiary_" + number + "_Share", parseInt($("#share2").val()), parseInt($("#share2").val()));
+    	$.cookie("Asset_Policy_"+count+"_Joint_" + number + "_Share", parseInt($("#share2").val()), parseInt($("#share2").val()));
     });
 });
 

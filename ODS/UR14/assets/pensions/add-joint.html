@@ -70,45 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
 
-
-
-
-
-
-
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
-
-#row-total td{
-	font-weight:bold;
-}
+<style type="text/css">
 
 
 .row img{
@@ -131,31 +94,20 @@ display:block;
 	font-size:16px;
 }
 
-.btn-edit{
-	margin-right:10px;
+.inner-block.text{
+	float:left;
+	display: table-cell;
+    width:66.66666666%;
 }
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
-}
-
-legend{
-	border:0 transparent none;
-}
-.halfwidth{
-  float: left;
-  margin-right: 15px;
-  clear: none;
-	width:35%;
-}
-.partwidth{
-  float: left;
-  margin-right: 0;
-  clear: none;
-	width:15%;
-	margin-top:23px;
+.right-block{
+	padding-top:60px;
+	width:33.33333%;
+	float:left;
+	  position: relative;
+	  min-height: 1px;
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  display: table-cell;
 }
 
 </style>
@@ -223,94 +175,68 @@ legend{
 
 <!-- #BeginEditable "content" --> 
 <div id="content0" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Other beneficiaries</h1>
-
-	 <span class="firsttime">We need to know about any who will listed to benefit from the <span class="pension">pension</span><span class="policy">policy</span>.</span>
-<div class="form-label"></div>
-
-	<div class="col-md-9" style="left: 0px; top: 0px">
-		<form class="form" method="post">
-			
-			 <div id="pnl-employment_table" class="repeat">
-            	<h2 class="form-label-bold" style="display:none">Owners<br></h2>
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Name</th>
-	                        <th>Relationship</th>
-	                        <th>Share</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-	                <tbody class="tbl-content">
-	                                     
-                        <tr class="repeat singleowner">
-                            <td><span id="singleownername">You</span></td>
-                            <td></td>
-                            <td><span>100%</span></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr class="repeat sharedowner" id="sharedowner1">
-                            <td><span id="sharedowner1name">You</span></td>
-                            <td></td>
-                            <td><span><input id="share1" type="text" value="50"></span>%</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr class="repeat sharedowner" id="sharedowner2">
-                            <td><span id="sharedowner2name">Susan Smith</span></td>
-                            <td><span id="sharedowner2relationship">Partner</span></td>
-                            <td><span><input id="share2" type="text" value="50" id="sharedownerpercentage"></span>%</td>
-                            <td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
-                        </tr>
-	                </tbody>
-	            </table>
-
-	            
-			</div>
-			<p><br></p>
-			<p><span class="repeat">The table above summarises the joint owners you have told us about.</span></p> 
-			<p><span class="repeat">We need to know about any other joint owners of<strong> 1 The Place</strong>.</span></p>
-
-
-	            <p>&nbsp;</p>	
-           <fieldset>
-	<legend class="form-label-bold"><span class="firsttime">Enter the beneficiaries 
-	first and last name</span>
-	<span class="repeat">Enter another owner's first and last name</span></legend>
+<div class="inner-block text">
 	
-	<span class="form-hint">For example, John Smith.<span class="firsttime"> You can add more owners later.</span> </span>
-	&nbsp;<div class="form-group halfwidth">
-		 <label for="firstname">First name</label>
-			<input id="firstname"  />
-	</div>
-	<div class="form-group halfwidth">
-		 <label for="lastname">Last name</label>
-		<input id="lastname"  />
-	</div>
-	<div class="form-group partwidth">
-              	  <a id="add" class="button" href="add-beneficiaries.html">Add beneficiary</a>&nbsp;
-					<br/>
-	</div>
-
-	</fieldset>
 	
-	                <p class="repeat"><br>
-					<a href="joint.html" class="button" id="next">
-	                Continue - I have added all beneficiaries</a></p>
-            
-           
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="javascript:history.go(-1)">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
+	
+	<h1 class="form-title heading-large">Beneficiaries details</h1>
+	
+	
+	
+	<form class="form" method="post">
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+	
+	
+
+                          <div class="form-group ">
+
+                        <label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" />
+                        <br />
+                    </div>
+                    <div class="form-group ">
+
+                        <label id="last_name_label" for="last_name" class="form-label-bold ">Last name</label>
+                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" />
+                        <br />
+                    </div>
+
+
+
+
+        <p class="clearfix"></p>
+
+        <div class="form-group">
+            <p id="title_label0" class="form-label-bold  ">What's their relationship to you?</p>
+
+            <fieldset class="inline">
+                <div id="title0" class="form-group">
+                    <label id="dependent_type1_label" for="dependent_type1" class="block-label">
+                        <input id="dependent_type1" value="Husband/wife/partner" name="dependent" type="radio"
+                               aria-describedby="title_error title_help">Husband/wife/partner
+                    </label>
+                    <label id="dependent_type2_label" for="dependent_type2" class="block-label">
+                        <input id="dependent_type2" value="Child" name="dependent" type="radio" aria-describedby="title_error title_help">Child
+                    </label>
+                    <label id="dependent_type2_label0" for="dependent_type3" class="block-label">
+                        <input id="dependent_type3" value="Parent" name="dependent" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+                        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal" />
+                    </label>
+
+                </div>
+            </fieldset>
+        </div>
+
+
+</form> 
+  <p class="clearfix"><br/></p>
+
+	</div>
+    <div class="right-block">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
+
+                <p><a href="#" style="font-weight:bold">Save and logout</a></p>
+                <br>
                 <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
                     <p class="heading-secondary">Bankruptcy fee</p>
                     <p style="font-weight:bold;font-size:large">
@@ -323,10 +249,35 @@ legend{
                 <p><a href="#" style="display:none">Generate court documents</a></p>
                 <p><a href="#" style="display:none">Discard application</a></p>
             </div>
+
+
         </div>
 
-	</div>
-</div>
+        <p><br></p>
+
+        <!-- For User research -->
+        <div class="form-navigation form-group" style="margin-left:30px;">
+
+            <div>
+                <a href="beneficiaries_details.html?loop=true" class="button" id="next">Continue</a>
+
+            </div>
+            <div>
+                <br>
+            </div>
+
+            <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+
+                <a href="#" id="cancel">Save and logout</a>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 
 	 <!-- #EndEditable -->
@@ -385,75 +336,38 @@ legend{
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../shared/loop.js"></script>
-	
+<script type="text/javascript" src="../../../assets/js/titleCaps.js"></script>
+
+
 <script type="text/javascript">
+$(document).ready(function() {
 
-$(document).ready(function () {
+	var number = $.cookie('j-count');
+	var count =  $.cookie('Asset_Policy_Count');
+	
+	var firstname = $.cookie('jmemberfirstname');
+	var lastname = $.cookie('jmemberlastname');
+	
+	if (firstname && firstname.length > 0){
+		$("#first_name").val(titleCaps(firstname));
+		if (lastname){
+		    $("#last_name").val(titleCaps(lastname.toLowerCase()))
+		}
+	}
 
-	$(".pension").hide();
-	$(".policy").hide();
-	var classshow = $.cookie("Asset_Policy_TempType");
-	$("."+classshow).show();
+				
+	$("#next").on("click", function(){
+    	number ++;
+    	$.cookie('j-count', number, { expires: 1, path: '/' });
+		
+    	$.cookie("Asset_Policy_"+count+"_Joint_" + number + "_Firstname", $("#first_name").val(), { expires: 1, path: '/' });
+	    $.cookie("Asset_Policy_"+count+"_Joint_" + number + "_Lastname", $("#last_name").val(), { expires: 1, path: '/' });
+	    $.cookie("Asset_Policy_"+count+"_Joint_" + number + "_Relationship", $("#title0 :checked").val(), { expires: 1, path: '/' });
 
-
-    // have we just added an owner?
-    var numowners = parseInt($.cookie('b-count'));
-    var count =  $.cookie('Asset_Policy_Count');
-
-
-   	if(numowners>0){
-		var owner2name = $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Firstname") + " " + $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Lastname");
-    	var relationship = $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Relationship");
-    }
-    var ownername = "You";
-
-    $("#singleownername").text(ownername);
-
-
-    if (numowners > 0){
-        $(".singleowner").hide();
-        $(".sharedowner").show();
-        $("#sharedowner1name").text(ownername);
-        $("#sharedowner2name").text(owner2name);
-        $("#sharedowner2relationship").text(relationship);
-
-        $("#next").text("Continue - I have added all beneficiaries");
-    }
-    else {
-        $(".singleowner").show();
-        $(".sharedowner").hide();
-        $("#firstname").val($.cookie('partner-firstname'));
-        $("#lastname").val($.cookie('partner-lastname'));
-    }
-
-	$("#share1").change(function () {
-		var share = parseInt($("#share1").val());
-		share = 100-share;
-		$("#share2").val(share);
-	});
-	$("#share2").change(function () {
-		var share = parseInt($("#share2").val());
-		share = 100-share;
-		$("#share1").val(share);
 	});
 
-
-    $("#add").click(function () {
-        $.cookie("memberfirstname", $("#firstname").val(), { expires: 1, path: '/' });
-        $.cookie("memberlastname", $("#lastname").val(), { expires: 1, path: '/' });
-    });
-
-    $("#next").click(function () {
-    	$.cookie("Asset_Policy_"+count+"_Beneficiary_" + number + "_Share", parseInt($("#share2").val()), parseInt($("#share2").val()));
-    });
 });
 
-function numberWithoutCommas(x) {
-    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
-    return number;
-}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -461,7 +375,6 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
 
 
 </script>
