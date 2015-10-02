@@ -140,27 +140,24 @@
 	
 	
 	
-	<h1 class="form-title heading-large">Payments received</h1>
+	<h1 class="form-title heading-large"><span class="pension">Pension</span><span class="policy">Policy</span> beneficiaries</h1>
 	
 	
 	
 	<form class="form" method="post">			
-		<div class="form-group ">
-			<label id="value_label" for="value" class="form-label-bold">What is the amount you receive?</label>
-			<p class="form-hint">This is the regular income you receive from the policy</p>
-			£ <input id="value" name="value" type="text" value="" />
-			<select class="select-control" id="rate">
-                <option value="week">per week</option>
-                <option value="fortnight">per fortnight</option>
-                <option value="4weeks">per 4 weeks</option>
-                <option value="month" selected="selected">per month</option>
-                <option value="quarter">per quarter</option>
-                <option value="year">per year</option>
-     		</select>
-
-			<br/>
-		</div>
-			
+		<div class="form-group" >
+			<p id="title_label" class="form-label-bold">Apart from yourself, is anyone else listed as a beneficary on this <span class="pension">pension</span><span class="policy">policy</span>?</p>
+			<fieldset class="inline">
+				<div id="pnl-type">				
+					<label id="yes_label1" for="yes" class="block-label">
+					<input id="yes"  name="payment" value="yes" type="radio">Yes</label>
+				
+					<label id="no_label1" for="no" class="block-label">
+					<input id="no"  name="payment" value="no" type="radio">No</label>
+					
+				</div>
+			</fieldset>
+		</div>		
 		
 	
 	<!-- For User research -->
@@ -168,7 +165,7 @@
 	<p>&nbsp;</p>
 	<div>
 		
-		<a href="beneficiaries.html" id="next" class="button">Continue</a>
+		<a id="next" class="button">Continue</a>
 			</div>
 	<div>
 	<br>
@@ -240,16 +237,28 @@
 
 <script type="text/javascript">
 
-
-$('#next').click(function() {
-	writeCookies();
+$(document).ready(function() {
+	
+	
+	$(".pension").hide();
+	$(".policy").hide();
+	var classshow = $.cookie("Asset_Policy_TempType");
+	$("."+classshow).show();
+	
 });
 
-function writeCookies() {
-	var count = $.cookie("Asset_Policy_Count");
-	var payment = $("#value").val() + " per " + $("#rate :selected").val();
-	$.cookie("Asset_Policy_Payment_"+count, payment, { path: '/' });
-}
+$('#next').click(function() {
+	
+	if($("#pnl-type :checked").val()=="yes"){
+		$("#next").attr("href", "beneficiaries_details.html");
+		$.cookie("b-count",0,{path:'/'});	
+	}
+	else{
+		$("#next").attr("href", "joint.html");
+	}	
+
+});
+
 
 
 function getParameterByName(name) {
