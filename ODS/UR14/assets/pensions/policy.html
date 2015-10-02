@@ -298,14 +298,14 @@ $('#pnl-type').click(function() {
  	var type = $('#pnl-type :checked').val();
  	var type_temp;
  	if(type=="occupational pension" || type=="personal pension" ){
- 		type_temp = "pension"
+ 		type_temp = "pension";
  	}
  	else{
- 		type_temp = "policy"
+ 		type_temp = "policy";
 	}	
  	
- 	$.cookie("Asset_Policy_Type_"+count, type, {path '/'} )
-	$.cookie("Asset_Policy_TempType", type_temp, {path '/'} )	
+ 	$.cookie("Asset_Policy_Type_"+count, type, {path '/'} );
+	$.cookie("Asset_Policy_TempType", type_temp, {path '/'} );	
 
 });
 
