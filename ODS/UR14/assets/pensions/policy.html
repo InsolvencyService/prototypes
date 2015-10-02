@@ -154,13 +154,13 @@
 					<input id="occupational"  name="policy" value="occupational penison" type="radio">Occupational pension</label>
 				
 					<label id="personal_label1" for="personal" class="block-label">
-					<input id="personal"  name="policy" value="personal" type="radio">Personal pension</label>
+					<input id="personal"  name="policy" value="personal pension" type="radio">Personal pension</label>
 					
 					<label id="endowment_label1" for="endowment" class="block-label">
 					<input id="endowment"  name="policy" value="endowment" type="radio">Endowment</label>
 					
 					<label id="life_label1" for="life" class="block-label">
-					<input id="life"  name="policy" value="life" type="radio">Life insurance</label>
+					<input id="life"  name="policy" value="life insurance" type="radio">Life insurance</label>
 					
 					
 					<label id="other_label" for="other" class="block-label">
@@ -172,6 +172,17 @@
 				</div>
 			</fieldset>
 		</div>
+		
+		<p>&nbsp;</p>
+
+		
+		<div class="form-group ">
+			<label id="ref_label" for="ref" class="form-label-bold">Policy reference number?</label>
+			<p class="form-hint">You should find this on any correspondance from your policy company or broker.</p>
+			<input id="ref" name="ref" type="text"  value="" />
+			<br/>
+		</div>
+
 		
 		<p>&nbsp;</p>
 
@@ -276,11 +287,31 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-/*
+
 $(document).ready(function() {
-	
+	var count = $.cookie("Asset_Policy_Count");
+	var provider = $.cookie('Asset_Policy_Provider_' + count);
+	$("#company_name").text(provider);
 });
 
+$('#pnl-type').click(function() {
+ 	var type = $('#pnl-type :checked').val();
+ 	var type_temp;
+ 	if(type=="occupational pension" || type=="personal pension" ){
+ 		type_temp = "pension"
+ 	}
+ 	else{
+ 		type_temp = "policy"
+	}	
+ 	
+ 	$.cookie("Asset_Policy_Type_"+count, type, {path '/'} )
+	$.cookie("Asset_Policy_TempType", type_temp, {path '/'} )	
+
+});
+
+
+
+/*
 $('#next').click(function() {
 
 		

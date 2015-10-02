@@ -140,32 +140,27 @@
 	
 	
 	
-	<h1 class="form-title heading-large"><span class="pension">Pension</span><span class="policy">Policy</span> value</h1>
+	<h1 class="form-title heading-large">Payments received</h1>
 	
 	
 	
 	<form class="form" method="post">			
 		<div class="form-group ">
-			<label id="value_label" for="value" class="form-label-bold">What is the estimated value of the <span class="pension">pension</span><span class="policy">policy</span>?</label>
-			<p class="pension">You should find this on your annual pension statement.</p> 
-			<p class="policy">This is the surrender value.</p>
-			£ <input id="value" name="value" type="text"  value="" />
+			<label id="value_label" for="value" class="form-label-bold">What is the amount you receive?</label>
+			<p class="form-hint">This is the regular income you receive from the policy</p>
+			£ <input id="value" name="value" type="text" value="" />
+			<select class="select-control" id="rate">
+                <option value="week">per week</option>
+                <option value="fortnight">per fortnight</option>
+                <option value="4weeks">per 4 weeks</option>
+                <option value="month" selected="selected">per month</option>
+                <option value="quarter">per quarter</option>
+                <option value="year">per year</option>
+     		</select>
+
 			<br/>
 		</div>
-		<p>&nbsp;</p>
-		<div class="form-group" >
-			<p id="title_label" class="form-label-bold">Are you currently receiving a payment from this <span class="type">[PENSION/POLICY]</span>?</p>
-			<fieldset class="inline">
-				<div id="pnl-type">				
-					<label id="occupational_label1" for="occupational" class="block-label">
-					<input id="occupational"  name="policy" value="occupational penison" type="radio">Yes</label>
-				
-					<label id="personal_label1" for="personal" class="block-label">
-					<input id="personal"  name="policy" value="personal" type="radio">No</label>
-					
-				</div>
-			</fieldset>
-		</div>		
+			
 		
 	
 	<!-- For User research -->
@@ -244,21 +239,18 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-/*
-$(document).ready(function() {
-	
-});
+
 
 $('#next').click(function() {
-
-		
-
+	writeCookies();
 });
 
 function writeCookies() {
-	
+	var count = $.cookie("Asset_Policy_Count");
+	var payment = $("#value").val() + $("#rate :selected").val();
+	$.cookie("Asset_Policy_Payment_"+count, payment, { path: '/' });
 }
-*/
+
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

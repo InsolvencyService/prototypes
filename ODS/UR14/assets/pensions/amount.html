@@ -154,14 +154,14 @@
 		</div>
 		<p>&nbsp;</p>
 		<div class="form-group" >
-			<p id="title_label" class="form-label-bold">Are you currently receiving a payment from this <span class="type">[PENSION/POLICY]</span>?</p>
+			<p id="title_label" class="form-label-bold">Are you currently receiving a payment from this <span class="pension">pension</span><span class="policy">policy</span>?</p>
 			<fieldset class="inline">
 				<div id="pnl-type">				
-					<label id="occupational_label1" for="occupational" class="block-label">
-					<input id="occupational"  name="policy" value="occupational penison" type="radio">Yes</label>
+					<label id="yes_label1" for="yes" class="block-label">
+					<input id="yes"  name="payment" value="yes" type="radio">Yes</label>
 				
-					<label id="personal_label1" for="personal" class="block-label">
-					<input id="personal"  name="policy" value="personal" type="radio">No</label>
+					<label id="no_label1" for="no" class="block-label">
+					<input id="no"  name="payment" value="no" type="radio">No</label>
 					
 				</div>
 			</fieldset>
@@ -244,21 +244,35 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-/*
+
 $(document).ready(function() {
+	
+	
+	$(".pension").hide();
+	$(".policy").hide();
+	var classshow = $.cookie("Asset_Policy_TempType");
+	$("."+classshow).show();
 	
 });
 
 $('#next').click(function() {
-
-		
+	writeCookies();
+	if($("#pnl-type :checked").val()=="yes"){
+		$("#next").attr("href", "payout.html");	
+	}
+	else{
+		$("#next").attr("href", "beneficiaries.html");
+	}	
 
 });
 
 function writeCookies() {
+	var count = $.cookie("Asset_Policy_Count");
+	
+	$.cookie("Asset_Policy_Amount_"+count, numberWithoutCommas($("#value").val()), { path: '/' });
 	
 }
-*/
+
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
