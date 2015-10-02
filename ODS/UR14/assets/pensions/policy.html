@@ -287,14 +287,15 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-var count;
+
 $(document).ready(function() {
-	 count = $.cookie("Asset_Policy_Count");
+	var count = $.cookie("Asset_Policy_Count");
 	var provider = $.cookie('Asset_Policy_Provider_' + count);
 	$("#company_name").text(provider);
 });
 
 $('#pnl-type').click(function() {
+	var count = $.cookie("Asset_Policy_Count");
  	var type = $('#pnl-type :checked').val();
  	var type_temp;
  	if(type=="occupational pension" || type=="personal pension" ){
@@ -304,7 +305,7 @@ $('#pnl-type').click(function() {
  		type_temp = "policy";
 	}	
  	
- 	$.cookie("Asset_Policy_Type_"+count, type, {path '/'} );
+ 	$.cookie("Asset_Policy_Type_" + count, type, {path '/'} );
 	$.cookie("Asset_Policy_TempType", type_temp, {path '/'} );	
 
 });
