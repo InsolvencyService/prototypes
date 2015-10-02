@@ -287,9 +287,9 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
-
+var count;
 $(document).ready(function() {
-	var count = $.cookie("Asset_Policy_Count");
+	 count = $.cookie("Asset_Policy_Count");
 	var provider = $.cookie('Asset_Policy_Provider_' + count);
 	$("#company_name").text(provider);
 });
