@@ -76,6 +76,19 @@
 
 
 
+.halfwidth{
+  float: left;
+  margin-right: 15px;
+  clear: none;
+	width:35%;
+}
+.partwidth{
+  float: left;
+  margin-right: 0;
+  clear: none;
+	width:15%;
+	margin-top:23px;
+}
 
 
 
@@ -170,20 +183,41 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Property description</h1>
+	<h1 class="form-title heading-large">Property tennants</h1>
 	
 	
 	
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
+	 	<div id="tenant_table" class="repeat">
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>          
+		</div>
+		<p>We need to know who the tennants are who live at <span class="data">1 The Place</span><br><br></p>
+		<label class="form-label-bold"><span class="firsttime">Enter the name of your tennant.</span>
+		<span class="repeat">Enter another name or alias</span></label>
+		<p class="form-hint">For example, John Smith. <span class="firsttime">You can add more names later.</span></p>
 
-  					<div class="form-group ">
-                        <label id="first_name_label0" for="tenant" class="form-label-bold first_name">What is the name of the tenant who lives at <span class="bold-medium data">1 The Place</span></label>
-						
-						<input id="tenant" type="text" value="" class="form-control-3-4" />
-                        <br />
-                    </div>
+		<div class="form-group halfwidth">
+			 <label for="firstname">First name</label>
+				<input id="firstname"  />
+		</div>
+		<div class="form-group halfwidth">
+			 <label for="lastname">Last name</label>
+			<input id="lastname"  />
+		</div>
+		<div class="form-group partwidth">
+	              	  <a id="add" class="button" href="tenant_information.html?loop=true">Add name <span class="repeat"></span></a>&nbsp;
+						<br/>
+		</div>
    
  
 
@@ -194,7 +228,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<a id="next" class="button" href="amount.html">Continue</a>
+		<a id="next" class="button" href="amount.html">Continue - I've added all my tennants</a>
 	</div>
 	<div>
 	<br>
@@ -267,12 +301,15 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../shared/loop.js"></script>
 
   
 <script type="text/javascript">
+var tenantcount=0;
+var numproperties = 0;
 $(document).ready(function() {
 
-    var numproperties = 0;
+    
     if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
         numproperties = parseInt($.cookie("numproperties"));
     }
@@ -281,8 +318,38 @@ $(document).ready(function() {
 	if (housename  && housename.length > 0){
 		$(".form-label .data").text(housename);
 	}
-
+	
+	if ($.cookie("tenantcount")){
+		tenantcount = $.cookie("tenantcount");
+	}
+	
+	
+	// adds tenant information to table
+	if(tenantcount>0){
+		for(i=1; i < tenantcount; i++){
+			var row = "<tr><td>";
+			row+= $.cookie("Policy_"+numproperties+"_FirstName_"+tenantcount);
+			row+= "</td><td>";
+			row+= $.cookie("Policy_"+numproperties+"_LastName_"+tenantcount);
+			row += '</td><td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Edit</a></td></tr>'
+			
+			$("#tbody").append(row);
+		}
+	}
 });
+
+
+$("#add").click(function(e){
+    writeCookies();
+});
+
+
+function writeCookies(){
+	tenantcount++;
+	$.cookie("Policy_"+numproperties+"_FirstName_"+tenantcount, $("#firstname").val(), {path: '/'});
+	$.cookie("Policy_"+numproperties+"_LastName_"+tenantcount, $("#lastname").val(), {path: '/'});
+}
+
    
 function numberWithoutCommas(x) {
     var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
