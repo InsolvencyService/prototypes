@@ -260,8 +260,9 @@ $('#next').click(function() {
 		}
 		else{
 			$.cookie("Asset_Policy_"+count+"_Value", parseFloat(amount), {path: '/'});
-			$("#next").attr("href", "1.html?loop=true");
-		}		
+			
+		}
+		$("#next").attr("href", "1.html?loop=true");		
 	}	
 });
 
