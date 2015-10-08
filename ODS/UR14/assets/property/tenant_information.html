@@ -306,7 +306,7 @@ display:block;
   
 <script type="text/javascript">
 var tenantcount=0;
-var numproperties = 0;
+var numproperties = 1;
 $(document).ready(function() {
 
     
@@ -322,18 +322,16 @@ $(document).ready(function() {
 	if ($.cookie("tenantcount")){
 		tenantcount = parseInt($.cookie("tenantcount"));
 	}
-	alert(tenantcount);
-	alert(numproperties);
 
 	// adds tenant information to table
 	if(tenantcount>0){
 		for(i=1; i < tenantcount; i++){
 			var row = "<tr><td>";
-			row += $.cookie("Policy_"+numproperties+"_FirstName_"+tenantcount);
+			row += $.cookie("Policy_"+numproperties+"_FirstName_"+i);
 			row += "</td><td>";
-			row += $.cookie("Policy_"+numproperties+"_LastName_"+tenantcount);
+			row += $.cookie("Policy_"+numproperties+"_LastName_"+i);
 			row += '</td><td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Edit</a></td></tr>';
-			alert(row);
+			
 			$("#tbody").append(row);
 		}
 	}
@@ -348,8 +346,8 @@ $("#add").click(function(e){
 function writeCookies(){
 	tenantcount++;
 	$.cookie("tenantcount", tenantcount, {path: '/'})
-	$.cookie("Policy_"+numproperties+"_FirstName_"+tenantcount, $("#firstname").val(), {path: '/'});
-	$.cookie("Policy_"+numproperties+"_LastName_"+tenantcount, $("#lastname").val(), {path: '/'});
+	$.cookie("Property_"+numproperties+"_FirstName_"+tenantcount, $("#firstname").val(), {path: '/'});
+	$.cookie("Property_"+numproperties+"_LastName_"+tenantcount, $("#lastname").val(), {path: '/'});
 }
 
    
