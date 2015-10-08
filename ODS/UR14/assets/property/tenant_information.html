@@ -346,6 +346,7 @@ $("#add").click(function(e){
 
 function writeCookies(){
 	tenantcount++;
+	$.cookie("tenantcount", tenantcount, {path: '/'})
 	$.cookie("Policy_"+numproperties+"_FirstName_"+tenantcount, $("#firstname").val(), {path: '/'});
 	$.cookie("Policy_"+numproperties+"_LastName_"+tenantcount, $("#lastname").val(), {path: '/'});
 }
