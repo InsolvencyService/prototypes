@@ -327,9 +327,9 @@ $(document).ready(function() {
 	if(tenantcount>0){
 		for(i=1; i <= tenantcount; i++){
 			var row = "<tr><td>";
-			row += $.cookie("Policy_"+numproperties+"_FirstName_"+i);
+			row += $.cookie("Property_"+numproperties+"_FirstName_"+i);
 			row += "</td><td>";
-			row += $.cookie("Policy_"+numproperties+"_LastName_"+i);
+			row += $.cookie("Property_"+numproperties+"_LastName_"+i);
 			row += '</td><td><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Edit</a></td></tr>';
 			
 			$("#tbody").append(row);
