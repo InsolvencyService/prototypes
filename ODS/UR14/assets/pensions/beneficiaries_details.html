@@ -446,7 +446,14 @@ $(document).ready(function () {
     });
 
     $("#next").click(function () {
+    	var amount = $.cookie('Asset_Policy_Amount_'+count);
     	$.cookie("Asset_Policy_"+count+"_Beneficiary_" + number + "_Share", parseInt($("#share2").val()), parseInt($("#share2").val()));
+    	
+    	if($.cookie('Asset_Policy_Payment_'+count)){
+			var amount = 0;		
+		}
+		$.cookie("Asset_Policy_"+count+"_Value", parseFloat((amount/100)*parseInt($("#share1").val()), {path: '/'});
+		$("#next").attr("href", "1.html?loop=true");
     });
 });
 
