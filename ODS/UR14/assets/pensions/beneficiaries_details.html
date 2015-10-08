@@ -452,7 +452,7 @@ $(document).ready(function () {
     	if($.cookie('Asset_Policy_Payment_'+count)){
 			var amount = 0;		
 		}
-		$.cookie("Asset_Policy_"+count+"_Value", parseFloat((amount/100)*parseInt($("#share1").val()), {path: '/'});
+		$.cookie("Asset_Policy_"+count+"_Value", parseFloat((amount/100)*parseInt($("#share1").val())), {path: '/'});
 		$("#next").attr("href", "1.html?loop=true");
     });
 });
