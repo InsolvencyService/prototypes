@@ -258,10 +258,7 @@ $('#next').click(function() {
 		if($.cookie('Asset_Policy_Payment_'+count)){
 			var amount = 0;		
 		}
-		else{
-			$.cookie("Asset_Policy_"+count+"_Value", parseFloat(amount), {path: '/'});
-			
-		}
+		$.cookie("Asset_Policy_"+count+"_Value", parseFloat(amount), {path: '/'});
 		$("#next").attr("href", "1.html?loop=true");		
 	}	
 });
