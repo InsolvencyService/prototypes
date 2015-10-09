@@ -257,13 +257,19 @@ $(document).ready(function() {
 
 $('#next').click(function() {
 	writeCookies();
+	
+	
 	if($("#pnl-type :checked").val()=="yes"){
-		$("#next").attr("href", "payout.html");	
-	}
+			$("#next").attr("href", "payout.html");	
+		}
 	else{
-		$("#next").attr("href", "beneficiaries.html");
+		if($.cookie("Asset_Policy_TempType")=="pension"){
+			$("#next").attr("href", "1.html?loop=true");
+		}
+		else{
+			$("#next").attr("href", "beneficiaries.html");
+		}
 	}	
-
 });
 
 function writeCookies() {
