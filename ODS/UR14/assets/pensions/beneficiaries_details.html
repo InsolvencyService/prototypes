@@ -401,7 +401,7 @@ $(document).ready(function () {
     // have we just added an owner?
     var numowners = parseInt($.cookie('b-count'));
     var count =  $.cookie('Asset_Policy_Count');
-	$("#company_name").val($.cookie('Asset_Policy_Provider_'+count));
+	$("#company_name").text($.cookie('Asset_Policy_Provider_'+count));
 
    	if(numowners>0){
 		var owner2name = $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Firstname") + " " + $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Lastname");
