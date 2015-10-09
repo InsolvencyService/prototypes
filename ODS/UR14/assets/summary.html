@@ -152,15 +152,15 @@
 
 
 	
-	<h1 class="form-title heading-large">Assets</h1>
+	<h1 id="title" class="form-title heading-large">Assets</h1>
 
 <div class="row">
 	<div class="col-sm-8">
 
-
+			<div id="description">
 			<p>We need to know about all the assets you own or have a financial interest in.</p>
 			<p>This information will help us build a complete understanding of your financial situation.</p>
-			
+			</div>
            
 
             </div>
@@ -476,7 +476,10 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber).addClass("well");
 
 				    if (itemnumber > 4) {
+				    	$("#title").text("Asset summary")
+				    	$("#description").text("Please check you answers before continuing.");
 				        $("#next").show();
+				        
 				    }
 
 
