@@ -257,7 +257,7 @@
                         <div class="form-group">
 							
 							<h2 class="form-label-bold">Enter the name of your policy provider or broker</h2>
-							<div class="form-hint">For example, ABC Insurance Ltd. You can add more later. </div>
+							<div class="form-hint">For example, ABC Insurance Ltd. You can add more  providers later. </div>
 								
 								<input type="text" id="policy" class="form-control input-lg halfwidth">
 								<a class="button partwidth" href="address.html" id="add">
@@ -364,7 +364,7 @@
         	    var provider;
         		var type;
         		var reference; 
-        		var value = "";
+        		var value;
         		
         		            		
         		for(i=1; i<=count; i++){
@@ -373,9 +373,9 @@
           			type = $.cookie("Asset_Policy_Type_"+i);
           			reference = $.cookie("Asset_Policy_Ref_"+i);
         			value = $.cookie("Asset_Policy_"+i+"_Value");
-        			
+        			alert(value);
         			if(value!="In payment"){
-        				value =  "£"+ value;
+        				value = "£"+ parseFloat(value).toFixed(2);
         			}
         			
         			
