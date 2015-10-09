@@ -101,7 +101,6 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
 </style>
 <!-- #EndEditable -->
 
@@ -167,115 +166,78 @@ display:block;
 
 <!-- #BeginEditable "content" --> 
 <div class="inner-block text">
-	<h1 class="form-title heading-large">Property description</h1>
+	
+	
+	
+	<h1 class="form-title heading-large">Income from <span class="tenant">tenants</span><span class="lodger">lodgers</span></h1>
+	
+	
 	
 	<form class="form" method="post">
-		<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-			
-		<div class="form-group">
-			<p id="title_label" class="form-label-bold">What type of property is <span class="bold-medium data">1 The Place</span>?</p>
-			
-			<fieldset class="inline">
-				<div id="house" class="form-group">
-					<label for="address_Yes" class="block-label">
-					    <input id="address_Yes" name="sameaddress" type="radio">
-					    Detached house
-					</label>
-					<label for="address_Yes0" class="block-label">
-					    <input id="address_Yes0" name="sameaddress" type="radio">
-					    Semi-detached house
-					</label>
-					<label for="address_Yes1" class="block-label">
-					    <input id="address_Yes1" name="sameaddress" type="radio">
-					    Terraced house
-					</label>    
-					<label id="title_label1" for="address_Flat" class="block-label">
-					    <input id="address_Flat" name="sameaddress" type="radio">
-					    Flat/Maisonette
-					</label>
-					<label id="title_label4" for="title_other" class="block-label">
-					    <input id="title_other" value="" name="sameaddress" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
-					    <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
-					</label>
-				</div>
-			</fieldset>
-		</div>
-		
-		<p>&nbsp;</p>
-		<div class="form-group">
-		<p id="title_label" class="form-label-bold">Ownership type</p>
-		
-			<fieldset class="inline">
-				<div id="house_type" class="form-group">
-					<label for="ownershiptype_free" class="block-label">
-					    <input id="ownershiptype_free" name="ownership" type="radio">
-					    Freehold
-					</label>
-					<label for="ownershiptype_lease" class="block-label">
-					    <input id="ownershiptype_lease" name="ownership" type="radio">
-					   Leasehold
-					</label>
-				</div>
-			</fieldset>
-		</div>	
-		<p>&nbsp;</p>
-		
-		<div class="form-group">
-			<label id="first_name_label" for="numbedrooms" class="form-label-bold first_name">Number of bedrooms</label>
-			<input id="numbedrooms" type="number" autocomplete="off" style="width:70px" />
-			<br />
-		</div>
+	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-		<p>&nbsp;</p>
+		<div class="form-group ">
 		
-		<div class="form-group">
-			<p id="title_label" class="form-label-bold">Who lives at the property?</p>
-			<p class="form-hint">Tick all that apply</p>
-			<fieldset class="inline form-checkbox">
-				<div id="title" class="form-group">
-					<label for="occupant_you" class="block-label">
-					    <input id="occupant_you" name="occupant" type="checkbox">
-					    You
+		<label id="first_name_label" for="amount" class="form-label">How much do <span class="tenant">you rent the property</span><span class="lodger">your lodgers contribute to</span> <span class="data">1 The Place</span><span class="tenant">for</span>?</label>
+		<div class="form-hint">Please provide the total <span class="tenant">rental income</span><span class="lodger">contributions</span></div>
+		
+		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />&nbsp; 
+			<select class="select-control" name="D1">
+		<option value="week">per week</option>
+		<option value="fortnight">per fortnight</option>
+		<option value="4weeks">per 4 weeks</option>
+		<option value="month" selected="selected">per month</option>
+		<option value="quarter">per quarter</option>
+		<option value="year">per year</option>
+		</select>
+		
+		    <br />
+		</div>
+		
+		<div class="form-group tenant">
+			
+		<p id="title_label" class="form-label-bold">Do you use a managing agent?</p>
+		
+			<fieldset class="inline">
+				<div id="managing" class="form-group">
+					<label for="managing_Yes" class="block-label">
+					    <input id="managing_yes" name="ownership" type="radio">
+					    Yes
 					</label>
-					<label for="occupant_spouse" class="block-label">
-					    <input id="occupant_spouse" name="occupant" type="checkbox">
-					    Your spouse
+					<label for="managing_No" class="block-label">
+					    <input id="managing_no" name="ownership" type="radio">
+					   No
 					</label>
-					<label for="occupant_civil" class="block-label">
-					    <input id="occupant_civil" name="occupant" type="checkbox">
-					    Your civil partner
-					</label>
-					<label for="occupant_fspouse" class="block-label">
-					    <input id="occupant_fspouse" name="occupant" type="checkbox">
-					    Former spouse
-					</label>
-					<label for="occupant_fcivil" class="block-label">
-					    <input id="occupant_fcivil" name="occupant" type="checkbox">
-					    Former civil partner
-					</label>
-					<label for="occupant_rent" class="block-label">
-					    <input id="occupant_rent" name="occupant" value="tenant" type="checkbox">
-					    A tenant 
-					</label>
-					<label for="occupant_lodger" class="block-label">
-					    <input id="occupant_lodger" name="occupant" value="lodger" type="checkbox">
-					    A lodger
-					</label>
-
 				</div>
 			</fieldset>
-		</div>
+			
+		</div> 
+   
+ <div class="clearfix"></div>
 
-		<p class="clearfix"><br/></p>
-		
-		<!-- For User research -->
-		<div class="form-navigation form-group">
-			<a id="next" class="button" >Continue</a>
-			<br>
-			<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>	<a href="#" id="cancel">Save and logout</a>
-		</div>
+
+<p class="clearfix"><br/></p>
+	
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+		<a id="next" class="button">Continue</a>
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
 	</form>
-</div>
+	</div>
 
 	 <!-- #EndEditable -->
 
@@ -337,24 +299,21 @@ display:block;
   
 <script type="text/javascript">
 $(document).ready(function() {
-    var housename = $.cookie("propertyline1");
-	if (housename  && housename.length > 0){
-		$(".data").text(housename);
-	}
+	$(".tenant").hide();
+	$(".lodger").hide();
+	var classshow = $.cookie("Prop-living");
+	$("."+classshow).show();
 });
 
-$("#next").on("click", function(){
-		if($('#occupant_rent').prop('checked')==true || $('#occupant_lodger').prop('checked')==true){
-			var lives = $("#title :checked").val();
-			$.cookie("Prop-living", lives, {path:'/'});
-			$("#next").prop("href", "tenant_details.html");
-		}
-		else{
-			$("#next").prop("href", "amount.html");
+$("#next").click(function(e){
+    if($("#managing_Yes").checked == true){
+    	$("#next").attr('href', 'managing.html');
+    }
+    else{
+    	$("#next").attr('href', 'tenant_information.html');
+    }
+});
 
-		}
-		
-	});
    
 function numberWithoutCommas(x) {
     var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
