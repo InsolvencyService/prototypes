@@ -255,6 +255,8 @@ function writeCookies() {
 	var count = $.cookie("Asset_Policy_Count");
 	var payment = $("#value").val() + " per " + $("#rate :selected").val();
 	$.cookie("Asset_Policy_Payment_"+count, payment, { path: '/' });
+	$.cookie("Asset_Policy_"+count+"_Value", "In progress", {path: '/'});
+
 }
 
 
