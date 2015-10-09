@@ -249,16 +249,16 @@ $(document).ready(function() {
 
 $('#next').click(function() {
 	var count =  $.cookie('Asset_Policy_Count');
-	var amount = $.cookie('Asset_Policy_Amount_'+count);
+	var amount = parseFloat($.cookie('Asset_Policy_Amount_'+count));
 	if($("#pnl-type :checked").val()=="yes"){
 		$("#next").attr("href", "beneficiaries_details.html");
 		$.cookie("b-count",0,{path:'/'});	
 	}
 	else{
 		if($.cookie('Asset_Policy_Payment_'+count)){
-			var amount = 0;		
+			var amount = "In payment";		
 		}
-		$.cookie("Asset_Policy_"+count+"_Value", parseFloat(amount), {path: '/'});
+		$.cookie("Asset_Policy_"+count+"_Value", amount, {path: '/'});
 		$("#next").attr("href", "1.html?loop=true");		
 	}	
 });
