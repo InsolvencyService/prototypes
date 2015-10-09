@@ -156,6 +156,10 @@
 					<label id="personal_label1" for="personal" class="block-label">
 					<input id="personal"  name="policy" value="Personal pension" type="radio">Personal pension</label>
 					
+					<label id="SIPP_label1" for="SIPP" class="block-label">
+					<input id="SIPP"  name="policy" value="Self-invested personal pension" type="radio">Self-invested personal pension</label>
+
+					
 					<label id="endowment_label1" for="endowment" class="block-label">
 					<input id="endowment"  name="policy" value="Endowment insurance" type="radio">Endowment</label>
 					
@@ -166,9 +170,7 @@
 					<label id="other_label" for="other" class="block-label">
 	                    <input id="other" value="Other" name="policy" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
 	                    <input id="other_input" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/></span>
-	                </label>
-
-					
+	                </label>					
 				</div>
 			</fieldset>
 		</div>
@@ -302,7 +304,7 @@ $('#pnl-type').click(function() {
 	count = $.cookie("Asset_Policy_Count");
  	var type = $('#pnl-type :checked').val();
  	var type_temp;
- 	if(type=="Occupational pension" || type=="Personal pension" ){
+ 	if(type=="Occupational pension" || type=="Personal pension" || type=="Self-invested personal pension"){
  		type_temp = "pension";
  	}
  	else{
