@@ -178,7 +178,7 @@ display:block;
 	
 		<div class="form-group ">
 		
-		<label id="first_name_label" for="amount" class="form-label">How much do <span class="tenant">you rent the property</span><span class="lodger">your lodgers contribute to</span> <span class="data">1 The Place</span><span class="tenant">for</span>?</label>
+		<label id="first_name_label" for="amount" class="form-label">How much do <span class="tenant">you rent the property</span><span class="lodger">your lodgers contribute to</span> <span class="data">1 The Place</span><span class="tenant"> for</span>?</label>
 		<div class="form-hint">Please provide the total <span class="tenant">rental income</span><span class="lodger">contributions</span></div>
 		
 		<span class="currency">£</span><input id="amount" name="amount" type="text" value="" class="amount-value" />&nbsp; 
@@ -193,18 +193,18 @@ display:block;
 		
 		    <br />
 		</div>
-		
+		<p>&nbsp;</p>
 		<div class="form-group tenant">
 			
 		<p id="title_label" class="form-label-bold">Do you use a managing agent?</p>
 		
 			<fieldset class="inline">
 				<div id="managing" class="form-group">
-					<label for="managing_Yes" class="block-label">
+					<label for="managing_yes" class="block-label">
 					    <input id="managing_yes" name="ownership" type="radio">
 					    Yes
 					</label>
-					<label for="managing_No" class="block-label">
+					<label for="managing_no" class="block-label">
 					    <input id="managing_no" name="ownership" type="radio">
 					   No
 					</label>
@@ -306,7 +306,7 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(e){
-    if($("#managing_Yes").checked == true){
+    if($("#managing_Yes").prop('checked') == true){
     	$("#next").attr('href', 'managing.html');
     }
     else{

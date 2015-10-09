@@ -347,7 +347,7 @@ $("#next").on("click", function(){
 		if($('#occupant_rent').prop('checked')==true || $('#occupant_lodger').prop('checked')==true){
 			var lives = $("#title :checked").val();
 			$.cookie("Prop-living", lives, {path:'/'});
-			$("#next").prop("href", "tenant_details.html");
+			$("#next").prop("href", "tenant-details.html");
 		}
 		else{
 			$("#next").prop("href", "amount.html");
