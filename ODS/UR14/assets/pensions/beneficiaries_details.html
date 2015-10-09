@@ -227,7 +227,7 @@ legend{
 <div class="inner-block">	
 	<h1 class="form-title heading-large">Other beneficiaries</h1>
 
-	 <span class="firsttime">We need to know about the other beneficiaries of your policy with <span id="company_name">[POLICY COMPANY]</span>.</span>
+	 <span class="firsttime">We need to know about the other beneficiaries of your policy with <span class="company_name">[POLICY COMPANY]</span>.</span>
 <div class="form-label"></div>
 
 	<div class="col-md-9" style="left: 0px; top: 0px">
@@ -271,7 +271,7 @@ legend{
 			</div>
 			<p><br></p>
 			<p><span class="repeat">The table above summarises the other beneficiares you have told us about.</span></p> 
-			<p><span class="repeat">We need to know about any other beneficaries of your policy with <span id="company_name">[POLICY COMPANY]</span>.</span></p>
+			<p><span class="repeat">We need to know about any other beneficaries of your policy with <span class="company_name">[POLICY COMPANY]</span>.</span></p>
 
 
 	            <p>&nbsp;</p>	
@@ -401,7 +401,7 @@ $(document).ready(function () {
     // have we just added an owner?
     var numowners = parseInt($.cookie('b-count'));
     var count =  $.cookie('Asset_Policy_Count');
-	$("#company_name").text($.cookie('Asset_Policy_Provider_'+count));
+	$(".company_name").text($.cookie('Asset_Policy_Provider_'+count));
 
    	if(numowners>0){
 		var owner2name = $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Firstname") + " " + $.cookie("Asset_Policy_"+count+"_Beneficiary_" + numowners + "_Lastname");
