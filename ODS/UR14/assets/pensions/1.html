@@ -229,7 +229,7 @@
                 <div class="col-md-9">
                     <form class="form" method="post">
                     	<div class="firsttime">
-							<p>We need to know about any pension, endowment or life insurance policies you have held in the last 5 years.</p>
+							<p>We need to know about all the pension, endowment and life insurance policies you currently have.</p>
 						</div>
                         
                         <div id="pnl-director_table" class="repeat">
@@ -249,14 +249,15 @@
                             </table>
 						<p class="clearfix"><br /></p>
 						<p>The table above summarises the policies and pensions you have told us about. </p>
-						<p>We need to know about any other pension, endowment or life insurance policies you have held 
-						in the last 5 years.</p>
+						<p>We need to know about any other pension, endowment or life insurance policies you 
+						currently have.</p>
 						
                         </div>
                         
                         <div class="form-group">
 							
-							<h2 class="form-label-bold">Enter the name of your policy provider or broker</h2>
+							<h2 class="form-label-bold"><span class="firsttime">Enter the name of your policy provider or broker</span>
+							<span class="repeat">Enter the name of another policy provider or broker</span></h2>
 							<div class="form-hint">For example, ABC Insurance Ltd. You can add more  providers later. </div>
 								
 								<input type="text" id="policy" class="form-control input-lg halfwidth">
@@ -373,7 +374,7 @@
           			type = $.cookie("Asset_Policy_Type_"+i);
           			reference = $.cookie("Asset_Policy_Ref_"+i);
         			value = $.cookie("Asset_Policy_"+i+"_Value");
-        			
+        			alert(value);
         			if(value!="In payment"){
         				value = "£"+ parseFloat(value).toFixed(2);
         			}
