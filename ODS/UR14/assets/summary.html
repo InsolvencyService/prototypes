@@ -373,6 +373,8 @@ $(document).ready(function() {
     $("#" + stage + itemnumber).addClass("well"); 
          
     if (itemnumber > 4) {
+    	$("#title").text("Asset summary");
+		$("#description").text("Please check you answers before continuing.");
         $("#next").show();
     }
 
@@ -449,10 +451,6 @@ $(document).ready(function() {
             }
             $("#assets3 .answerno").show();
         }
-       if (page>4){
-       		$("#title").text("Asset summary");
-			$("#description").text("Please check you answers before continuing.");
-		}
     }
 
 
