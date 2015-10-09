@@ -372,7 +372,12 @@
           			provider= $.cookie("Asset_Policy_Provider_"+i);
           			type = $.cookie("Asset_Policy_Type_"+i);
           			reference = $.cookie("Asset_Policy_Ref_"+i);
-        			value = parseFloat($.cookie("Asset_Policy_"+i+"_Value"));
+        			value = $.cookie("Asset_Policy_"+i+"_Value");
+        			
+        			if(value!="In payment"){
+        				value = "£"+ parseFloat(value).toFixed(2);
+        			}
+        			
         			
         			tablerow = "<tr><td>"+provider+"</td><td>"+type +"</td><td>"+reference +"</td><td>£"+value+"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a>&nbsp;&nbsp;<a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
         			$("#tablebody").append(tablerow);
