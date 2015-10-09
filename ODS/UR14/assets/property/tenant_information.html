@@ -183,7 +183,7 @@ display:block;
 	
 	
 	
-	<h1 class="form-title heading-large">Property tenants</h1>
+	<h1 class="form-title heading-large">Property <span class="tenant">tenants</span><span class="lodger">lodgers</span></h1>
 	
 	
 	
@@ -202,15 +202,15 @@ display:block;
             </table> 
             <p>&nbsp;</p>         
 		</div>
-		<p class="firsttime">We need to know about any tenants who are listed on the tenancy agreement for <span class="data">1 The Place</span>.<br></p>
-		<p class="repeat">The table above summarises the tenants you have told us about.<br></p>
-		<p class="repeat">We need to know about any other tenants who are listed on the tenancy agreement for
+		<p class="firsttime">We need to know about any <span class="tenant">tenants who are listed on the tenancy agreement for</span><span class="lodger">lodgers who live at</span> <span class="data">1 The Place</span>.<br></p>
+		<p class="repeat">The table above summarises the <span class="tenant">tenants</span><span class="lodger">lodgers</span> you have told us about.<br></p>
+		<p class="repeat">We need to know about any other <span class="tenant">tenants who are listed on the tenancy agreement for</span><span class="lodger">lodgers who live at</span>
 		<span class="data">1 The Place</span><br><br></p>
 
-		<label class="form-label-bold"><span class="firsttime">Enter a tenant's 
+		<label class="form-label-bold"><span class="firsttime">Enter a <span class="tenant">tenant's</span><span class="lodger">lodger's</span> 
 		first and last name</span>
-		<span class="repeat">Enter another tenant's first and last name</span></label>
-		<p class="form-hint">For example, John Smith. <span class="firsttime">You can add more tenants later.</span></p>
+		<span class="repeat">Enter another <span class="tenant">tenant's</span><span class="lodger">lodger's</span> first and last name</span></label>
+		<p class="form-hint">For example, John Smith. <span class="firsttime">You can add more <span class="tenant">tenant's</span><span class="lodger">lodger's</span> later.</span></p>
 
 		<div class="form-group halfwidth">
 			 <label for="firstname">First name</label>
@@ -234,7 +234,7 @@ display:block;
 	<div class="form-navigation form-group">
 	
 	<div>
-		<span class="repeat"><a id="next" class="button" href="amount.html">Continue - I've added all my tenants</a></span>
+		<span class="repeat"><a id="next" class="button" href="amount.html">Continue - I've added all my <span class="tenant">tenants</span><span class="lodger">lodgers</span></a></span>
 	</div>
 	<div>
 	<br>
@@ -314,6 +314,12 @@ display:block;
 var tenantcount=0;
 var numproperties = 1;
 $(document).ready(function() {
+
+	$(".tenant").hide();
+	$(".lodger").hide();
+	var classshow = $.cookie("Prop-living");
+	$("."+classshow).show();
+
 
     
     if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {

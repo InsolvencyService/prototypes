@@ -254,9 +254,14 @@ display:block;
 					    Former civil partner
 					</label>
 					<label for="occupant_rent" class="block-label">
-					    <input id="occupant_rent" name="occupant" type="checkbox">
+					    <input id="occupant_rent" name="occupant" value="tenant" type="checkbox">
 					    A tenant 
 					</label>
+					<label for="occupant_lodger" class="block-label">
+					    <input id="occupant_lodger" name="occupant" value="lodger" type="checkbox">
+					    A tenant 
+					</label>
+
 				</div>
 			</fieldset>
 		</div>
@@ -339,7 +344,9 @@ $(document).ready(function() {
 });
 
 $("#next").on("click", function(){
-		if($('#occupant_rent').prop('checked')==true){
+		if($('#occupant_rent').prop('checked')==true || $('#occupant_lodger').prop('checked')==true){
+			var lives = $("#title :checked").val();
+			$.cookie("Prop-living", lives, {path:'/'});
 			$("#next").prop("href", "tenant_information.html");
 		}
 		else{
