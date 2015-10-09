@@ -276,6 +276,8 @@ function writeCookies() {
 	var count = $.cookie("Asset_Policy_Count");
 	
 	$.cookie("Asset_Policy_Amount_"+count, numberWithoutCommas($("#value").val()), { path: '/' });
+	$.cookie("Asset_Policy_"+count+"_Value", $("#value").val(), {path: '/'});
+
 	
 }
 
