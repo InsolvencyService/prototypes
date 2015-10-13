@@ -194,7 +194,7 @@ display:block;
         <p>&nbsp;</p>
         
         <div class="form-group">                        
-			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">What was the actual amount for which the property was sold or transferred (before costs of sale)?</label>	
+			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">What was the total amount the property was sold or transferred for (before costs of sale)?</label>	
 			<p class="form-hint">Leave blank if you gave the property away</p>
 			<span class="currency">£ </span><input id="actualvalue" name="actualvalue" type="text" value="" class="amount-value" />              
         </div>
@@ -205,6 +205,7 @@ display:block;
 			<div>
 				<div class="form-group" >
 					<label  class="form-label" for="companyname">Company name</label>
+					<div class="form-hint">Leave blank you gave, transferred or sold it to an individual</div>
 					<input  type="text" id="companyname"/>
 				</div>
 			</div>
@@ -213,6 +214,8 @@ display:block;
 			<div>
 				<div class="form-group" >
 					<label  class="form-label" for="firstname">First name</label>
+					<div class="form-hint">Leave blank you gave, transferred or sold it to a company</div>
+
 					<input type="text" id="firstname"/>
 				</div>
 			</div>
@@ -220,6 +223,8 @@ display:block;
 			<div>
 				<div class="form-group" >
 					<label  class="form-label" for="lastname">Last name</label>
+					<div class="form-hint">Leave blank you gave, transferred or sold it to a company</div>
+
 					<input  type="text" id="lastname"/>
 				</div>
 			</div>
@@ -227,10 +232,11 @@ display:block;
 			    
 			    <fieldset class="firsttime inline" id="lookupaddress">
                     <legend class="form-label-bold">
-                        <span class="firsttime">Address</span>
+                        <span class="firsttime">What's their address?</span>
                     </legend>
 
-                    <span class="form-hint">Enter the first line and postcode of the address. For example, 2 Place Street AB1 2CD</span>
+                    <span class="form-hint">Enter the first line and postcode of their address</span>
+                    <span class="form-hint">For example, 2 Place Street AB1 2CD</span>
                     <div class="form-group halfwidth">
                         <label for="name">First line</label>
                         <input id="name" />
@@ -295,7 +301,7 @@ display:block;
 		<p>&nbsp;</p>
 
 		<div class="form-group">
-			<p id="title_label" class="form-label-bold">What is their relationship to you?</p>
+			<p id="title_label" class="form-label-bold">What's their relationship to you?</p>
 		
 			<fieldset class="inline">
 			    <div id="pnl-relationship" class="form-group">

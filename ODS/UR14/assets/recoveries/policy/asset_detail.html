@@ -203,8 +203,10 @@ display:block;
         
         <div class="form-group">
                         
-			<label id="first_name_label" for="policynumber" class="form-label-bold">Policy number (if known)</label>
-			<input id="policynumber" name="policynumber" type="text" value=""  />
+			<label id="first_name_label" for="policynumber" class="form-label-bold">Policy number</label>
+			<div class="form-hint">You can find this on any correspondance from your policy provider or broker</div>
+			<div class="form-hint">Leave blank if you don't have one</div>
+						<input id="policynumber" name="policynumber" type="text" value=""  />
                        
         </div>
 
@@ -214,7 +216,7 @@ display:block;
 
             <fieldset id="date_of_birth" class="date-of-birth">
 
-                <legend id="date_of_birth_label" class="form-label-bold">Date you surrendered, sold, transferred or gave away the policy?</legend>
+                <legend id="date_of_birth_label" class="form-label-bold">Date you surrendered, sold, transferred or gave away the policy</legend>
                 <div class="form-hint">For example, Aug 2012</div>
                 <div class="form-group form-group-day" style="display:none">
                     <label id="date_of_birth_label.day" for="day">Day</label>
@@ -253,7 +255,7 @@ display:block;
         </div>
         <p>&nbsp;</p>
         <div class="form-group">
-	        <p id="title_label" class="form-label-bold">How did you dispose of the policy?</p>
+	        <p id="title_label" class="form-label-bold">Did you sell, transfer or give away the policy?</p>
 	
 	        <fieldset class="inline">
 	            <div id="disposed" class="form-group">
@@ -261,7 +263,7 @@ display:block;
 	                    <input id="sold" name="dispose" type="radio"  value="sold">
 	                    Sold
 	                it</label><label for="surrendered" class="block-label"><input id="surrendered" name="dispose" type="radio"  value="surrendered">
-	                    Surrendered 
+	                    Cashed it in 
 	                it</label><label for="gifted" class="block-label"><input id="gifted" name="dispose" type="radio"  value="gifted">
 	                    Gave/transferred it to someone I know
 	                </label>
