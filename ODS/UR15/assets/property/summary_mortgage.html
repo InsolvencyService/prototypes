@@ -420,6 +420,7 @@ $(document).ready(function() {
 				shared_loan_total += parseFloat(value);
 				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
 		        $("#tablebody").append(row);
+		        $(".solo").show();
 			}
 			else{
 				$("#equitybold").removeClass("bolder");
