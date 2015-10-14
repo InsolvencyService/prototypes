@@ -70,7 +70,7 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../creditors/css/typeahead.css" rel="stylesheet">
+  <link href="../../../UR15/creditors/css/typeahead.css" rel="stylesheet">
  <style type="text/css">
 
 
@@ -280,10 +280,10 @@ display:block;
 						</p>
 										</div>
 			            <input class="typeahead input-lg form-control-3-4" id="name" placeholder="Start typing name" style="width:250px; display:inline-block; margin-right:15px">
-			            <a id="add" class="button"  href="secured-debt.html">Add creditor</a>
+			            <a id="add" class="button"  href="../../../UR15/assets/property/secured-debt.html">Add creditor</a>
 						<p><br></p>
 						<p>
-			                <a href="list_properties.html?loop=true" class=" button" id="next">
+			                <a href="../../../UR15/assets/property/list_properties.html?loop=true" class=" button" id="next">
 			                <span class="firsttime">Continue - I don't have any secured debts</span>
 			                <span class="repeat">Continue - I have added all my secured debts</span></a>
 			            </p>
@@ -304,10 +304,10 @@ display:block;
 	            <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
 	                <p class="heading-secondary">Bankruptcy fee</p>
 	                <p style="font-weight:bold;font-size:large">
-	                    <a href="../../personal/payments/statement.html">£0 received</a><br>
+	                    <a href="../../../UR15/personal/payments/statement.html">£0 received</a><br>
 	                    <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
 	                </p>
-	                <p><a href="../../personal/payments/payments.html">Make a payment</a></p>
+	                <p><a href="../../../UR15/personal/payments/payments.html">Make a payment</a></p>
 	            </div>
 	            <p><a href="#" style="display:none">Print summary</a></p>
 	            <p><a href="#" style="display:none">Generate court documents</a></p>
@@ -374,13 +374,13 @@ display:block;
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../shared/loop.js"></script>
+<script type="text/javascript" src="../../../UR15/creditors/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../UR15/shared/loop.js"></script>
 
-<script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
-<script type="text/javascript" src="js/loancompanies.js"></script>
+<script type="text/javascript" src="../../../UR15/creditors/js/tw-typeahead.js"></script>
+<script type="text/javascript" src="../../../UR15/assets/property/js/loancompanies.js"></script>
 
-<a href="js/properties.js"></a>
+<a href="../../../UR15/assets/property/js/properties.js"></a>
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -410,7 +410,7 @@ $(document).ready(function() {
 	if($.cookie("member1-percentage")){
 	//this is for jointly owner properties
 		for (i = 1; i <= numberofsecuredloans; i++) {
-		
+			alert("Joint");
 			var name = $.cookie('loancompanyname' + i);
 	        var loantype = $.cookie('loantype' + i);
 	        var shared = loantype + " with "; 
@@ -420,6 +420,7 @@ $(document).ready(function() {
 				shared_loan_total += parseFloat(value);
 				var row = '<tr><td>' + shared + name + '</td><td class="amount"><span class="poundsign">£</span>' + numberWithCommas((parseFloat(value).toFixed(2))) + '</td>' + editbuttons + "</tr>";
 		        $("#tablebody").append(row);
+		        $(".solo").show();
 			}
 			else{
 				$("#equitybold").removeClass("bolder");
@@ -451,7 +452,7 @@ $(document).ready(function() {
 	}
 	else{
 	//this is for sole owned properties	
-		
+		alert("Single");
 		for (i = 1; i <= numberofsecuredloans; i++) {
 			var value = numberWithoutCommas($.cookie('securedloan' + i));
 			solo_loan_total += parseFloat(value);     
