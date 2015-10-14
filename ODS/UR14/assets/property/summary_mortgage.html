@@ -410,7 +410,7 @@ $(document).ready(function() {
 	if($.cookie("member1-percentage")){
 	//this is for jointly owner properties
 		for (i = 1; i <= numberofsecuredloans; i++) {
-			alert("Joint");
+			
 			var name = $.cookie('loancompanyname' + i);
 	        var loantype = $.cookie('loantype' + i);
 	        var shared = loantype + " with "; 
@@ -452,7 +452,7 @@ $(document).ready(function() {
 	}
 	else{
 	//this is for sole owned properties	
-		alert("Single");
+		
 		for (i = 1; i <= numberofsecuredloans; i++) {
 			var value = numberWithoutCommas($.cookie('securedloan' + i));
 			solo_loan_total += parseFloat(value);     
