@@ -170,7 +170,7 @@ display:block;
 	
 	
 	<h1 class="heading-large">7. Creditors</h1>
-	<p class=" heading-medium">Add creditor detail for <span id="creditor_name">[Creditor Name]</span></p>
+	<p class=" heading-medium">Add creditor detail for <span class="creditor_name">[Creditor Name]</span></p>
 	<div class="ctable">
 		<table style="width:40%">
 			<thead>
@@ -183,7 +183,7 @@ display:block;
 				
 			</tbody>				
 		</table>
-		<p><br>The table above shows records you have previously entered for <span id="creditor_name">[Creditor Name]</span></p>
+		<p><br>The table above shows records you have previously entered for <span class="creditor_name">[Creditor Name]</span></p>
 	</div>
 	
 	
@@ -443,7 +443,7 @@ $(document).ready(function() {
 		readCookies();
 	}
 	tempname = $.cookie('DROtempcreditorname');
-	$("#creditor_name").text(tempname);
+	$(".creditor_name").text(tempname);
 	$("#ctable").hide();
 	if($.cookie("DROCreditorCount")){
 		for(a=1; a<=$.cookie("DROCreditorCount"); a++){
