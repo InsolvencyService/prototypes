@@ -169,9 +169,22 @@ display:block;
 <div class="inner-block">
 	
 	
-	
-	<h1 class="form-title heading-large">Add creditor detail for <span id="creditor_name">[Creditor Name]</span></h1>
-	
+	<h1 class="heading-large">7. Creditors</h1>
+	<p class=" heading-medium">Add creditor detail for <span id="creditor_name">[Creditor Name]</span></p>
+	<div class="ctable">
+		<table style="width:40%">
+			<thead>
+				<tr>
+					<th style="width:60%">Reference</th>
+					<th>Amount owed</th>
+				</tr>
+			</thead>
+			<tbody id="tablebody">
+				
+			</tbody>				
+		</table>
+		<p><br>The table above shows records you have previously entered for <span id="creditor_name">[Creditor Name]</span></p>
+	</div>
 	
 	
 	<form class="form" method="post">
@@ -426,14 +439,25 @@ $(document).ready(function() {
 		$("#address_section").hide();
 	}
 
-	
-	
-	
 	if(edited=="true"){
 		readCookies();
 	}
 	tempname = $.cookie('DROtempcreditorname');
 	$("#creditor_name").text(tempname);
+	$("#ctable").hide();
+	if($.cookie("DROCreditorCount")){
+		for(a=1; a<=$.cookie("DROCreditorCount"); a++){
+			if($.cookie("DROCreditorName"+a) == $.cookie("DROtempcreditorname")){
+				$("#ctable").show();
+				var ref = $.cookie("DROCreditorReference"+a);
+				var amount = $.cookie("DROCreditorAmount"+a);
+				var row = '<tr><td>'+ref+'</td><td>£'+amount+'</td></tr>';
+				$("#tablebody").append(row);
+			}
+		}	
+	}
+	
+	
 });
 	
 $("#add-creditor").on("click", function (e) {
