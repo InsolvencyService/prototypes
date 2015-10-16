@@ -78,6 +78,14 @@
 <link type="text/css" rel="stylesheet" media="screen" href="shared/sfs.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 <style type="text/css">
+.btn-success{
+	background-color:#00823b;
+	color:white !important;
+}
+
+.btn a{
+	color:black  !important;
+}
 
 </style>
 <!-- #EndEditable -->
@@ -197,13 +205,14 @@
 				<span class="bolder col-xs-6 text-left">Total income</span>
 				<span class="col-xs-6 text-right">£ <span class="amount" id="box-total">0</span></span> 
 		</div>
-		<div class="form-navigation form-group">
-			<p>&nbsp;</p>
-			<a id="next" class="button" href="expenditure.html?type=expenditure">
-			Save and continue</a><br><a id="return" href="../application.html">Return 
-			to overview</a><br><br>
-			<a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">
-			Back</a> </div>
+		
+		<p>&nbsp;</p>
+		<div class="btn-group btn-group-lg">
+			<a class="btn btn-default" href="javascript:history.go(-1)"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+			<a class="btn btn-default" href="../application.html?section3=inprogress">Return to overview</a>
+			<a class="btn btn-success" id="next" href="expenditure.html?type=expenditure">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+		</div>
+		<p>&nbsp;</p>
 	</div>       
 </div>
 
