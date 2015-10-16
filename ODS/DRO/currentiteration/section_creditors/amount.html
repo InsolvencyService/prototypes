@@ -171,7 +171,7 @@ display:block;
 	
 	<h1 class="heading-large">7. Creditors</h1>
 	<p class=" heading-medium">Add creditor detail for <span class="creditor_name">[Creditor Name]</span></p>
-	<div class="ctable">
+	<div id="cdata">
 		<table style="width:40%">
 			<thead>
 				<tr>
@@ -445,13 +445,15 @@ $(document).ready(function() {
 	if(edited=="true"){
 		readCookies();
 	}
+	
 	tempname = $.cookie('DROtempcreditorname');
 	$(".creditor_name").text(tempname);
-	$("#ctable").hide();
+	
+	$("#cdata").hide();
 	if($.cookie("DROCreditorCount")){
 		for(a=1; a<=$.cookie("DROCreditorCount"); a++){
 			if($.cookie("DROCreditorName"+a) == $.cookie("DROtempcreditorname")){
-				$("#ctable").show();
+				$("#cdata").show();
 				var ref = $.cookie("DROCreditorReference"+a);
 				var amount = $.cookie("DROCreditorAmount"+a);
 				var row = '<tr><td>'+ref+'</td><td>£'+amount+'</td></tr>';
