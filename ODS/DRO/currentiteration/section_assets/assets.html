@@ -167,16 +167,17 @@
 		<form class="form" method="post">
 		
 			<div class="form-group ">
+				<label id="externalbalance_label" for="externalbalance" class="form-label-bold applicant_address_line_1">Amount of cash at hand</label>
+				<p class="form-hint">Amount of money you have not held in a bank or building society</p>
+				£ <input id="externalbalance" name="externalbalance" type="text" value="" />
+			</div>
+
+			<div class="form-group ">
 				<label id="bankbalance_label" for="bankbalance" class="form-label-bold applicant_address_line_1">Bank and building society balance</label>
 				<p class="form-hint">Total balance of your bank and building society accounts</p>
 				£ <input id="bankbalance" name="bankbalance" value="" />
 			</div>
 
-			<div class="form-group ">
-				<label id="externalbalance_label" for="externalbalance" class="form-label-bold applicant_address_line_1">Amount of other cash funds you have available</label>
-				<p class="form-hint">Amount of money you have not held in a bank or building society</p>
-				£ <input id="externalbalance" name="externalbalance" type="text" value="" />
-			</div>
 
 			<div class="form-group ">
 				<label id="owed_label" for="owed" class="form-label-bold applicant_address_line_1">Money you are owed</label>
@@ -584,13 +585,13 @@
 						</tbody>
 					</table>
 				</div>
-
+<!--- Comments box (I have a feeling this will be radded later)
 			<p class="clearfix">&nbsp;</p>
 			<div class="form-group ">
 				<label id="comments_label" for="comments" class="form-label-bold applicant_address_line_1">Comments:</label>
 				<textarea name="comments" rows="6" cols="70"></textarea>
 			</div>
-	
+--->	
 
 			<div  class="form-navigation form-group">
 				<a id="next" class="button">Save and continue</a><br>
