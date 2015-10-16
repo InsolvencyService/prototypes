@@ -144,13 +144,14 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">Monthly expenditure</h1>
+	 	<h1 class="heading-large">8. Income and expenditure</h1>
+		<p class=" heading-medium">Monthly expenditure</p>
 	 	
 	 	<div class="col-md-6 col-sm-12">  
-		 	<div class="well clearfix">
+		 	<div class="well clearfix"   id="section1">
 		 		<div class="col-sm-8"><h4 class="form-label-bold">Property expenses</h4></div>
 		 		<div class="col-sm-4 text-right">
-		 			<a href="#table1" class="js-expand open">
+		 			<a id="link1" href="#table1" class="js-expand open">
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
@@ -203,12 +204,12 @@
 				</table>
 			</div>
 			
-			<div class="clearfix well">
+			<div class="clearfix well" id="section2">
 		 		
 		 		<div class="col-sm-8"><h4 class="form-label-bold">Utilities</h4></div>
 
 		 		<div class="col-sm-4 text-right">
-		 			<a href="#table2" class="js-expand open">
+		 			<a id="link2" href="#table2" class="js-expand open">
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
@@ -261,12 +262,12 @@
 				</table>
 			</div>
 			
-			<div class="clearfix well">
+			<div class="clearfix well" id="section3">
 		 		
 		 		<div class="col-sm-8"><h4 class="form-label-bold">Personal and Leisure</h4></div>
 
 		 		<div class="col-sm-4 text-right">
-		 			<a href="#table3" class="js-expand open">
+		 			<a id="link3" href="#table3" class="js-expand open">
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
@@ -318,15 +319,12 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
-		
-		<div class="col-md-6 col-sm-12"> 	
-			<div class="clearfix well">
+			<div class="clearfix well"  id="section4">
 		 		
 		 		<div class="col-sm-8"><h4 class="form-label-bold">Pensions, loans and insurance</h4></div>
 
 		 		<div class="col-sm-4 text-right">
-		 			<a href="#table4" class="js-expand open">
+		 			<a id="link4" href="#table4" class="js-expand open">
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
@@ -373,12 +371,16 @@
 				</table>
 			</div>
 			
-			<div class="clearfix well">
+		</div>
+		
+		<div class="col-md-6 col-sm-12"> 	
+			
+			<div class="clearfix well"  id="section5">
 		 		
 		 		<div class="col-sm-8"><h4 class="form-label-bold">Childcare and maintainence</h4></div>
 
 		 		<div class="col-sm-4 text-right">
-		 			<a href="#table5" class="js-expand open">
+		 			<a  id="link5" href="#table5" class="js-expand open">
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
@@ -424,12 +426,12 @@
 				</table>
 			</div>
 			
-			<div class="clearfix well">
+			<div class="clearfix well"  id="section6">
 		 		
 		 		<div class="col-sm-8"><h4 class="form-label-bold">Health and care</h4></div>
 
 		 		<div class="col-sm-4 text-right">
-		 			<a href="#table6" class="js-expand open">
+		 			<a  id="link6" href="#table6" class="js-expand open">
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
@@ -467,12 +469,12 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="clearfix well">
+			<div class="clearfix well"  id="section7">
 		 		
 		 		<div class="col-sm-8"><h4 class="form-label-bold">Other expenses</h4></div>
 
 		 		<div class="col-sm-4 text-right">
-		 			<a href="#table7" class="js-expand open">
+		 			<a id="link7" href="#table7" class="js-expand open">
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
@@ -588,6 +590,13 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+for(var i = 1; i<=7; i++){
+	$( "#table"+i ).fadeOut( 1500 );
+	$("#link"+i).removeClass("open");
+	$("#section"+i).find("i").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+	var details = $($("#table"+i).attr("href"));
+	details.hide();
+}
 
 	
 
