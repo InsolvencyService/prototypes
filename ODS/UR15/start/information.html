@@ -386,13 +386,17 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-for(var i = 1; i<=8; i++){
-	$( "#list"+i ).fadeOut( 1500 );
-	$("#link"+i).removeClass("open");
-	var details = $($("#list"+i).attr("href"));
-	details.hide();
-	$("#link"+i).find("i").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
-}
+	for(var i = 1; i<=8; i++){
+		$( "#list"+i ).slideUp( 1500 );
+		$("#link"+i).removeClass("open");
+		var details = $($("#list"+i).attr("href"));
+		details.hide();
+		$("#link"+i).find("i").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+	}
+	
+	
+});
+
 
 $(".js-expand").on("click", function (e) {
 
@@ -414,7 +418,7 @@ $(".js-expand").on("click", function (e) {
 	details.hide();
 
     }
-});	
+	
 	
 
 
