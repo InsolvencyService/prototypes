@@ -199,8 +199,8 @@ display:block;
 	<fieldset id="date_of_birth" class="date-of-birth">
 	
 	<legend id="date_of_birth_label" class="form-label-bold">When did the agents for <span class="creditor">ABC Limited</span> visit you?</legend>
-<div class="form-hint">For example, 30 May 2015</div>
-		<div class="form-group form-group-day" >
+<div class="form-hint">For example, May 2015</div>
+		<div class="form-group form-group-day" style="display:none" >
 			 <label id="date_of_birth_label.day" for="day">Day</label>
 		<input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
 		</div>
@@ -232,22 +232,27 @@ display:block;
 	
 
 	</div>
-<p class="clearfix"><br/></p>
+				<p>&nbsp;</p>
                     <div class="form-group">
-                      <label for="inputBody" class="form-label-bold">What assets did they seize or sell?</label>
-                      <p class="form-hint">Select any items that the enforcement officer or bailiff took possession of.</p>
+                      <label for="inputBody" class="form-label-bold">Were any assets seized or sold?</label>
+                      
 
                     </div>
 
-<p class="clearfix"><br/></p>
-        <fieldset>
-            <div class="form-group visit">
 
+        <fieldset>
+            <div class="form-group inline visit">
+				
 
                 <label for="item-other" class="block-label" id="lbl-other-item">
-                    <input id="item-other" name="itemstaken" type="checkbox">
-                    Other item
+                    <input id="item-other" name="itemstaken" type="radio">
+                    Yes
                 </label>
+                <label for="item-no" class="block-label" id="lbl-no-item">
+                    <input id="item-no" name="itemstaken" type="radio">
+                    No
+                </label>
+
             </div>
         </fieldset>
         <p class="clearfix"><br /></p>
