@@ -73,6 +73,14 @@
 
 <style type="text/css">
 .amount-value:before { content: "£"; }
+.btn-success{
+	background-color:#00823b;
+	color:white !important;
+}
+
+.btn a{
+	color:black  !important;
+}
 
 
 .row img{
@@ -348,20 +356,13 @@ display:block;
 	
 	<p><a id="again" href="amount.html">Save and add another debt for this creditor</a></p>	
 	<p>&nbsp;</p>
-	<div>
 	
-	
-	<a id="next" class="button" href="1.html">Save and return</a>
-		
+	<div class="btn-group btn-group-lg">
+		<a class="btn btn-default" href="javascript:history.go(-1)">Cancel</a>
+		<a class="btn btn-success" id="btn-addedall" href="1.html">Save and return</a>
 	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-	
-	</div>
+	<p>&nbsp;</p>
+
 	</div>
 	</form>
 	</div>
