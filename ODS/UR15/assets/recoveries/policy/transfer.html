@@ -330,7 +330,7 @@ display:block;
         </div>
         
         <div class="form-group surrender" style="display:none">                        
-			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">How much money did you give them?</label>	
+			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">How much of the surrender value did you give this person?</label>	
 			<span class="currency">£ </span><input id="actualvalue" name="actualvalue" type="text" value="" class="amount-value" />              
         </div>
 
@@ -422,13 +422,13 @@ $(document).ready(function() {
 	var type = getParameterByName("q");
 	$("."+type).show();
 	if(type == "gifted"){
-		type == "gifted or transferred"
+		type == "given away or transferred"
 	}
 	else if(type == "sale"){
 		type = "sold";
 	}
 	else if(type == "surrender"){
-		type = "gifted part of the surrender value";
+		type = "cashed in";
 	}
 	$("#title1").text(type);
 	
