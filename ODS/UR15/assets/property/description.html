@@ -338,12 +338,12 @@ $(document).ready(function() {
 
 $("#next").on("click", function(){
 		if($('#occupant_rent').prop('checked')==true){
-			var lives = $("#title :checked").val();
+			var lives = $("#occupant_rent").val();
 			$.cookie("Prop-living", lives, {path:'/'});
 			$("#next").prop("href", "tenant-details.html");
 		}
 		else if($('#occupant_lodger').prop('checked')==true){
-			var lives = $("#title :checked").val();
+			var lives = $("#occupant_lodger").val();
 			$.cookie("Prop-living", lives, {path:'/'});
 			$("#next").prop("href", "tenant-details.html");
 		}
