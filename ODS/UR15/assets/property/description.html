@@ -263,7 +263,7 @@ display:block;
 		
 		<!-- For User research -->
 		<div class="form-navigation form-group">
-			<a id="next" class="button" >Continue</a>
+			<a id="next" href="amount.html" class="button" >Continue</a>
 			<br>
 			<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>	<a href="#" id="cancel">Save and logout</a>
 		</div>
@@ -337,16 +337,17 @@ $(document).ready(function() {
 });
 
 $("#next").on("click", function(){
-		if($('#occupant_rent').prop('checked')==true || $('#occupant_lodger').prop('checked')==true){
+		if($('#occupant_rent').prop('checked')==true){
 			var lives = $("#title :checked").val();
 			$.cookie("Prop-living", lives, {path:'/'});
 			$("#next").prop("href", "tenant-details.html");
 		}
-		else{
-			$("#next").prop("href", "amount.html");
-
+		else if($('#occupant_lodger').prop('checked')==true){
+			var lives = $("#title :checked").val();
+			$.cookie("Prop-living", lives, {path:'/'});
+			$("#next").prop("href", "tenant-details.html");
 		}
-		
+				
 	});
    
 function numberWithoutCommas(x) {
