@@ -71,11 +71,7 @@
 <!-- #BeginEditable "styles" -->
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
 
-   	<style>
-   	.col-sm-8{
-		padding-left:0px!important;
-	}
-   	</style>
+   
 <!-- #EndEditable -->
 
 
@@ -135,110 +131,30 @@
 	</div>
      </div>
 
-
-</div>
-
 <!-- #BeginEditable "content" -->
 
 
 
-<div id="content" >
-
-
-
 <div class="inner-block">
-	<h1 class="form-title heading-large">Application B52S-FQ6Y-HQWP</h1>
-	<div class="col-sm-8">
-		<div>
-			<h2>Current application status</h2>
-			
-			<div id="status"></div>
-			<!---
-			
-			<p>Your application is currently: <span class="text-warning bolder"> Awaiting information</span></p>
-			<div class="well clearfix">
-				<label for="Q1">Please confirm your current address.</label>
-				<p><input id="Q1" class="input-lg form-control"></p>
-				<button class="button" style="margin-top:5px">Send response</button>
-
-			</div>
-			
-			<div class="panel-indent">
-				<em class="form-hint">This will map if status is Approve, Refer, Escalated or Information Received. Other options would be:<br><br></em>
-				<p>Your application is currently: <span class=" text-primary bolder"> In adjudication</span></p>
-				<p>Your application has been: <span class=" text-success bolder"> Made</span></p>
-				<p>Your application has been: <span class=" text-danger bolder"> Declined</span></p>
-				<p>Your application is currently: <span class=" text-warning bolder"> Under review</span></p>
-				<p>Your application is currently: <span class=" text-warning bolder"> Under appeal</span></p>
-			</div>
-			--->
-		</div>
-		
-		<p>&nbsp;</p>
-		<div>
-			<h2>Electronic bankruptcy folder</h2>
-			<div>
-        		<table>
-            		<thead>
-            			<tr>
-            				<td>&nbsp;</td>
-            				<td>Name</td>
-            				<td>Date filed</td>
-            				<td>Filed by</td>
-            			</tr>
-            		
-            		</thead>
-            		
-            		<tbody>
-            			<tr id="review-declined" style="display:none">
-            				<td><div class="label label-info label-as-badge">Document</div></td>
-            				<td><a href="#">Decline of review</a></td>
-            				<td>30/10/2015</td>
-            				<td>Ajudicator</td>
-            			</tr>
-
-            			<tr id="declined" style="display:none">
-            				<td><div class="label label-info label-as-badge">Document</div></td>
-            				<td><a href="#">Decline of application</a></td>
-            				<td>24/10/2015</td>
-            				<td>Ajudicator</td>
-            			</tr>
-
-            			<tr id="question" style="display:none">
-            				<td><div class="label label-success label-as-badge">Notification</div></td>
-            				<td><a href="#">Reply to question </a></td>
-            				<td>23/10/2015</td>
-            				<td>Applicant</td>
-            			</tr>
-
-            			<tr>
-            				<td><div class="label label-info label-as-badge">Document</div></td>
-            				<td><a href="application.html">Bankruptcy Application</a></td>
-            				<td>28/09/2015</td>
-            				<td>Applicant</td>
-            			</tr>
-            			
-            		</tbody>
-            	</table>
-            </div>
-		<p>&nbsp;</p>
-		</div>
+	<h1 class="form-title heading-large">Bankruptcy application</h1>
+	<div class="col-sm-12"> 
+		<embed src="SOA.pdf" width="100%" height="600px" style="border:1px solid #aaa">
+	</div>
 	<p>&nbsp;</p>
-	</div>
-	<div class="col-sm-4">
-		<div class="panel-indent">
-			<p>Sign out</p>
-		</div>
-	</div>
-</div>
-
-
+	<div><a href="overview.html" class="button"><i class="glyphicon glyphicon-chevron-left"></i> Back</a><br><br></div>
 </div>
         
 
 
+
+
+
         
-<!-- #EndEditable -->
+
+
+
+	 <!-- #EndEditable -->
+</div>
         
 
 
@@ -293,100 +209,6 @@
 
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
-   
-	$(document).ready(function () {
-    	var status = getParameterByName("status");
-    	
-    	if(status == null){
-    		status = $.cookie("status");
-    	}
-    	
-    	var html;
-    	switch(status) {
-		    case "awaiting":
-		    	html = "<p>Your application is currently: <span class=\"text-warning bolder\"> Awaiting information</span></p>";
-		    	html += "<div class=\"well clearfix\">";
-		    	html += "<label for=\"Q1\">Please confirm your current address.</label>";
-		    	html += "<p><input id=\"Q1\" class=\"input-lg form-control\"></p>";
-		    	html += "<a id=\"mail\" href=\"overview.html\" class=\"button\" style=\"margin-top:5px\">Send response</a>";
-		    	html += "</div>";
-		    	$.cookie("status", "awaiting");		    	
-		        $("#status").html(html);
-		        $.cookie("mail", "sent");			        
-		        break;
-		    
-		    case "made":
-		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Made</span></p>";
-		    	html += "<p>&nbsp;</p>";
-		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";	
-		    	html += "<p>Order:</p>";
-		    	html += "<p class=\"bolder\">It is ordered that Kim SCARLETT, Unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT be adjudged bankrupt.</p>";
-		    	html += "<p class=\"bolder\">It is further ordered that David Rickman be appointed trustee of the bankrupt’s estate</p>";			    	
-		        $.cookie("status", "made");	
-		        $("#status").html(html);
-		        break;
-		    
-		    case "declined":
-		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Your application has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
-		    	$.cookie("status", "declined");
-		    	$("#declined").show();
-		        $("#status").html(html);
-		        break;
-		        
-		    case "review":
-		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under review</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Your application is currently under review. We will reassess your application based on the information we currently hold.</p>";
-		    	html += "<p>Our aim is to return a verdict within 28 days</p>";
-		    	$.cookie("status", "review");	
-		    	$("#declined").show();
-		    			    	
-		        $("#status").html(html);
-		        break;
-
-			case "review-declined":
-		    	html = "<p>Your application is currently: <span class=\" text-danger bolder\"> Review declined</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
-		    	html += "<p>Your review has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
-		    	$.cookie("status", "review-declined");	
-		    	$("#declined").show();
-		    	$("#review-declined").show();
-		        $("#status").html(html);
-		        break;
-		   
-		   case "appeal":
-		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
-		    	html += "<p>Your application is currently under appeal. This is dealt with independently by HM Court Service.</p>";
-		    	$.cookie("status", "appeal");
-		    	$("#declined").show();
-		    	$("#review-declined").show();		    	
-		        $("#status").html(html);awaiting
-		        
-				break;
-   
-		    default:
-		        html = "<p>Your application is currently: <span class=\" text-primary bolder\"> In adjudication</span></p>";	    	
-		        $("#status").html(html);
-		        if($.cookie("mail")){
-		        	$("#question").show();
-		        }
-
-		}
-	});
-
-
-	function getParameterByName(name) {
-	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-	        results = regex.exec(location.search);
-	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-	}
-    
 </script>
 
 <!-- #EndEditable -->
