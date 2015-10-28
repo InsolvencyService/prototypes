@@ -314,9 +314,9 @@
 		    	html += "<p><input id=\"Q1\" class=\"input-lg form-control\"></p>";
 		    	html += "<a id=\"mail\" href=\"overview.html\" class=\"button\" style=\"margin-top:5px\">Send response</a>";
 		    	html += "</div>";
-		    	$.cookie("status", "");		    	
+		    	$.cookie("status", "", {path:'/'});		    	
 		        $("#status").html(html);
-		        $.cookie("mail", "sent");			        
+		        $.cookie("mail", "sent", {path:'/'});			        
 		        break;
 		    
 		    case "made":
@@ -326,7 +326,7 @@
 		    	html += "<p>Order:</p>";
 		    	html += "<p class=\"bolder\">It is ordered that Kim SCARLETT, Unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT be adjudged bankrupt.</p>";
 		    	html += "<p class=\"bolder\">It is further ordered that David Rickman be appointed trustee of the bankrupt’s estate</p>";			    	
-		        $.cookie("status", "made");	
+		        $.cookie("status", "made", {path:'/'});	
 		        $("#status").html(html);
 		        break;
 		    
@@ -334,7 +334,7 @@
 		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
 		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>Your application has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
-		    	$.cookie("status", "declined");
+		    	$.cookie("status", "declined", {path:'/'});
 		    	$("#declined").show();
 		        $("#status").html(html);
 		        break;
@@ -344,7 +344,7 @@
 		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>Your application is currently under review. We will reassess your application based on the information we currently hold.</p>";
 		    	html += "<p>Our aim is to return a verdict within 28 days</p>";
-		    	$.cookie("status", "review");	
+		    	$.cookie("status", "review", {path:'/'});	
 		    	$("#declined").show();
 		    			    	
 		        $("#status").html(html);
@@ -355,7 +355,7 @@
 		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
 		    	html += "<p>Your review has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
-		    	$.cookie("status", "review-declined");	
+		    	$.cookie("status", "review-declined", {path:'/'});	
 		    	$("#declined").show();
 		    	$("#review-declined").show();
 		        $("#status").html(html);
@@ -366,7 +366,7 @@
 		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
 		    	html += "<p>Your application is currently under appeal. This is dealt with independently by HM Court Service.</p>";
-		    	$.cookie("status", "appeal");
+		    	$.cookie("status", "appeal", {path:'/'});
 		    	$("#declined").show();
 		    	$("#review-declined").show();		    	
 		        $("#status").html(html);awaiting
