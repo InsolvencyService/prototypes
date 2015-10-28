@@ -297,9 +297,13 @@
 	$(document).ready(function () {
     	var status = getParameterByName("status");
     	
-    	if(status == null){
+    	if(status == null || status == ""){
     		status = $.cookie("status");
     	}
+    	
+    	if($.cookie("mail")){
+        	$("#question").show();
+        }
     	
     	var html;
     	switch(status) {
@@ -372,9 +376,7 @@
 		    default:
 		        html = "<p>Your application is currently: <span class=\" text-primary bolder\"> In adjudication</span></p>";	    	
 		        $("#status").html(html);
-		        if($.cookie("mail")){
-		        	$("#question").show();
-		        }
+		        
 
 		}
 	});
