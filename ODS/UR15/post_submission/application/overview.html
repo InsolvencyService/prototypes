@@ -351,7 +351,7 @@
 		    case "awaiting":
 		    	html = "<p>Your application is currently: <span class=\"text-warning bolder\"> Awaiting information</span></p>";
 		    	html += "<p>We need more information before we can make a decision about your bankruptcy.</p>";
-		    	html += "<p>Please answer the questions below. If you can't answer them or don't have the required information, please contact us by:<p>";
+		    	html += "<p>Please answer the questions below. If you can't answer them or don't have the required information, contact us by:<p>";
 		    	html += "<ul><li>emailing theadjudicator@insolvency.gsi.gov.uk</li><li>calling us on 0330 678 0015</li></ul>";
 		    	html += "<p><br></p>";
 		    	html += "<div class=\"well clearfix\">";
@@ -365,10 +365,8 @@
 		        break;
 		    
 		    case "made":
-		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Made</span></p>";
-		    	html += "<p>&nbsp;</p>";
+		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
 		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";	
-		    	html += "<p>Order:</p>";
 		    	html += "<p class=\"bolder\">It is ordered that Kim SCARLETT, Unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT be adjudged bankrupt.</p>";
 		    	html += "<p class=\"bolder\">It is further ordered that David Rickman be appointed trustee of the bankrupt’s estate</p>";			    	
 		        $.cookie("status", "made", {path:'/'});	
@@ -420,6 +418,7 @@
    
 		    default:
 		        html = "<p>Your application is currently: <span class=\" text-primary bolder\"> Being considered</span></p>";
+		        html += "<p>Submission date: <span class=\"bolder\">24th October 2015</p>";	
 		        html += "<p>We will email you once we have made a decision about your bankruptcy. <br>This is typically within 28 days of receiving your application.</p>";	    	
 		        $("#status").html(html);
 		        
