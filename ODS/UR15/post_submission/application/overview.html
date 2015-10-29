@@ -369,7 +369,6 @@
 		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
 		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>A downloable copy of your bankruptcy order can be found in the 'Your documents' list below.</p>";
-		    	html += "<p><&nbsp;></p>";
 		    	html += "<p class=\"bolder\">What happens next</p>";
 		    	html += "<p>The early stages of a bankruptcy are normally handled by an official receiver who works for the Insolvency Service.</p>";	
 		    	html += "<p>The official receiver will write to you within 2 weeks explaining what you need to know.</p>";		    	
@@ -423,9 +422,12 @@
 		   
 		   case "appeal":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
-		    	html += "<p>Decline date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
-		    	html += "<p>Your application is currently under appeal. This is dealt with independently by HM Court Service.</p>";
+		    	html += "<p>Initial decline date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>Review decline declined: <span class=\"bolder\">30th October 2015</p>";
+		    	html += "<p>Your appeal is being dealt with independently by HM Courts & Tribunals Service.</p>";
+		    	html += "<p>They will notify you when they have made a decision.</p>";
+		    	html += "<p>We will also email you when we learn the outcome of your appeal.</p>";
+
 		    	$.cookie("status", "appeal", {path:'/'});
 		    	$("#declined").show();
 		    	$("#review-declined").show();		    	
