@@ -202,6 +202,7 @@
 					<ul>
 						<li>emailing theadjudicator@insolvency.gsi.gov.uk</li>
 						<li>calling 0330 678 0015</li>
+						</ul>
 						<p><br></p>
 				<div class="well clearfix">
 				<label for="Q1">Please confirm your current address.</label>
@@ -358,7 +359,7 @@
 		    	html = "<p>Your application is currently: <span class=\"text-warning bolder\"> Awaiting information</span></p>";
 		    	
 		    	html += "<p>We need more information before we can make a decision about your bankruptcy.</p>"; 
-				html += "<div>Please answer the questions below. If you can't answer the questions or don't have the required information, please contact us by: <ul><li>emailing theadjudicator@insolvency.gsi.gov.uk</li><li>calling 0330 678 0015</li></div>";
+				html += "<div>Please answer the questions below. If you can't answer the questions or don't have the required information, please contact us by: <ul><li>emailing theadjudicator@insolvency.gsi.gov.uk</li><li>calling 0330 678 0015</li></ul></div>";
 				html += "<div class=\"well clearfix\">";
 		    	html += "<label for=\"Q1\">Please confirm your current address.</label>";
 		    	html += "<p><input id=\"Q1\" class=\"input-lg form-control\"></p>";
@@ -371,10 +372,9 @@
 		    
 		    case "made":
 		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
-		    	html += "<p>&nbsp;</p>";
 		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";	
-		    	html += "<p>Order:</p>";
-		    	html += "<p class=\"bolder\">It is ordered that Kim SCARLETT, Unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT be adjudged bankrupt.</p>";
+		    	html += "<p>You can find a downloadable copy of your bankruptcy order within your documents list below.;
+		    	html += "<p class=\"bolder\"> What  happens next</p>";
 		    	html += "<p class=\"bolder\">It is further ordered that David Rickman be appointed trustee of the bankrupt’s estate</p>";			    	
 		        $.cookie("status", "made", {path:'/'});	
 		        $("#status").html(html);
