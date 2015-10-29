@@ -396,8 +396,8 @@
 		    case "review":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under review</span></p>";
 		    	html += "<p>Request date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>We will email you once we have finished reviewing your applicationThis is typically within 28 days of receiving your application.Your application is currently under review. We will reassess your application based on the information we currently hold.</p>";
-		    	html += "<p>Our aim is to return a verdict within 28 days</p>";
+		    	html += "<p>We will email you when we have finished reviewing your application.</p>";
+		    	html += "<p>This is typically within 28 days of receiving your review request.</p>";
 		    	$.cookie("status", "review", {path:'/'});	
 		    	$("#declined").show();
 		    			    	
@@ -430,7 +430,7 @@
 		    default:
 		        html = "<p>Your application is currently: <span class=\" text-primary bolder\"> Being considered</span></p>";
 		        html += "<p>Submission date: <span class=\"bolder\">24th October 2015</p>";	
-		        html += "<p>We will email you once we have made a decision about your bankruptcy. <br>This is typically within 28 days of receiving your application.</p>";	    	
+		        html += "<p>We will email you when we have made a decision about your bankruptcy. <br>This is typically within 28 days of receiving your application.</p>";	    	
 		        $("#status").html(html);
 		        
 
