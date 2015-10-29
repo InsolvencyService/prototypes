@@ -380,7 +380,12 @@
 		    case "declined":
 		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
 		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Your application has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
+		    	html += "<p>Your application has been declined. A full explantion of why can be found in the 'Your documents' list below.</p>";
+		    	html += "<p class=\"bolder\">What you can do</p>";
+		    	html += "<p>You can ask us to review our decision and your application again.</p>"; 
+		    	html += "<p>We must receive your review request within 14 days of when your application was declined. Instructions for requesting a review can be found in the 'Decline of bankruptcy' document below.<p>";
+
+
 		    	$.cookie("status", "declined", {path:'/'});
 		    	$("#declined").show();
 		        $("#status").html(html);
