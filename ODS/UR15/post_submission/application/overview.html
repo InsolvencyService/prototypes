@@ -369,6 +369,7 @@
 		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
 		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>A downloable copy of your bankruptcy order can be found in the 'Your documents' list below.</p>";
+		    	html += "<p><br></p>";
 		    	html += "<p class=\"bolder\">What happens next</p>";
 		    	html += "<p>The early stages of a bankruptcy are normally handled by an official receiver who works for the Insolvency Service.</p>";	
 		    	html += "<p>The official receiver will write to you within 2 weeks explaining what you need to know.</p>";		    	
@@ -379,12 +380,12 @@
 		    
 		    case "declined":
 		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>Decline date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>Your application has been declined. A full explantion of why can be found in the 'Decline of bankruptcy' document below.</p>";
 		    	html += "<p class=\"bolder\">What you can do</p>";
 		    	html += "<p>You can ask us to review our decision and look at your application again.</p>"; 
-		    	html += "<p>For a review to take place, we must receive your request within 14 days of the declined date.<p>"; 
-		    	html += "<p>Instructions for requesting a review can be found in the 'Decline of bankruptcy' document below.<p>";
+		    	html += "<p>For a review to take place, we must receive your request within 14 days of the decline date.<p>"; 
+		    	html += "<p>Instructions for requesting a review can be found in your 'Decline of bankruptcy' document.<p>";
 
 
 		    	$.cookie("status", "declined", {path:'/'});
@@ -394,8 +395,8 @@
 		        
 		    case "review":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under review</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Your application is currently under review. We will reassess your application based on the information we currently hold.</p>";
+		    	html += "<p>Request date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>We will email you once we have finished reviewing your applicationThis is typically within 28 days of receiving your application.Your application is currently under review. We will reassess your application based on the information we currently hold.</p>";
 		    	html += "<p>Our aim is to return a verdict within 28 days</p>";
 		    	$.cookie("status", "review", {path:'/'});	
 		    	$("#declined").show();
@@ -405,7 +406,7 @@
 
 			case "review-declined":
 		    	html = "<p>Your application is currently: <span class=\" text-danger bolder\"> Review declined</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>Decline date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
 		    	html += "<p>Your review has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
 		    	$.cookie("status", "review-declined", {path:'/'});	
@@ -416,7 +417,7 @@
 		   
 		   case "appeal":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>Decline date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
 		    	html += "<p>Your application is currently under appeal. This is dealt with independently by HM Court Service.</p>";
 		    	$.cookie("status", "appeal", {path:'/'});
