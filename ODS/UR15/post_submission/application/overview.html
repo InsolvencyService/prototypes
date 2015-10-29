@@ -350,9 +350,10 @@
     	switch(status) {
 		    case "awaiting":
 		    	html = "<p>Your application is currently: <span class=\"text-warning bolder\"> Awaiting information</span></p>";
-		    	html += "<p>Request date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>Information request date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>We need more information before we can make a decision about your bankruptcy.</p>";
-		    	html += "<p>Please answer the questions below. If you can't answer them or don't have the required information, contact us by:<p>";
+		    	html += "<p>Please answer the questions below. If you can't answer them or don't have the required information, please let us know using the box below.<p>"; 
+		    	html += "<p>Alternatively, you can call us on 0330 678 0015<p>";
 		    	html += "<ul class=\"list-bullet\"><li>emailing theadjudicator@insolvency.gsi.gov.uk</li><li>calling 0330 678 0015</li></ul>";
 		    	html += "<p><br></p>";
 		    	html += "<div class=\"well clearfix\">";
@@ -380,11 +381,11 @@
 		    case "declined":
 		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
 		    	html += "<p>Decline date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Your application has been declined. A full explantion of why can be found in the 'Decline of bankruptcy' document below.</p>";
+		    	html += "<p>Your application has been declined. A full explantion of why can be found in the 'Decline of application' document below.</p>";
 		    	html += "<p class=\"bolder\">What you can do</p>";
 		    	html += "<p>You can ask us to review our decision and look at your application again.</p>"; 
 		    	html += "<p>For a review to take place, we must receive your request within 14 days of the decline date.<p>"; 
-		    	html += "<p>Instructions for requesting a review can be found in your 'Decline of bankruptcy' document.<p>";
+		    	html += "<p>Instructions for requesting a review can be found in your 'Decline of application' document.<p>";
 
 
 		    	$.cookie("status", "declined", {path:'/'});
@@ -394,7 +395,7 @@
 		        
 		    case "review":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under review</span></p>";
-		    	html += "<p>Request date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>Review request date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>We will email you when we have finished reviewing your application.</p>";
 		    	html += "<p>This is typically within 28 days of receiving your review request.</p>";
 		    	$.cookie("status", "review", {path:'/'});	
@@ -405,15 +406,12 @@
 
 			case "review-declined":
 		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Reviewed and declined</span></p>";
-		    	html += "<p>Initial decline date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p> Review decline date: <span class=\"bolder\">30th October 2015</p>";
-		    	html += "<p>We have reviewed your application again and confirm that it is still declined. A full explanation of why can be found in the 'Decline of review' document below.</p>";
+		    	html += "<p>Review decline date: <span class=\"bolder\">30th October 2015</p>";
+		    	html += "<p>We have reviewed your application again and confirm that it is still declined. A full explanation of why can be found in the 'Decline of application following review' document below.</p>";
 		    	html += "<p class=\"bolder\">What you can do</p>";
 		    	html += "<p>You can go to court to appeal our decision.</p>"; 
-		    	html += "<p>You must  make your appeal within 14 days of the review decline datee.<p>"; 
-		    	html += "<p>Information about making an appeal can be found in your 'Decline of review' document.<p>";
-
-		    	html += "<p>Your review has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
+		    	html += "<p>You must  make your appeal within 14 days of the review decline date.<p>"; 
+		    	html += "<p>Information about making an appeal can be found in your 'Decline of application following review' document.<p>";
 		    	$.cookie("status", "review-declined", {path:'/'});	
 		    	$("#declined").show();
 		    	$("#review-declined").show();
@@ -422,8 +420,7 @@
 		   
 		   case "appeal":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
-		    	html += "<p>Initial decline date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Review decline declined: <span class=\"bolder\">30th October 2015</p>";
+		    	html += "<p>Review decline date: <span class=\"bolder\">30th October 2015</p>";
 		    	html += "<p>We have been made aware that you have appealed our decision to HM Courts & Tribunals Service.</p>";
 		    	html += "<p>They will notify you when they have made a decision.</p>";
 		    	html += "<p>We will also email you when we learn the outcome of your appeal.</p>";
