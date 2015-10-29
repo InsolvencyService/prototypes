@@ -369,7 +369,7 @@
 		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
 		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";
 		    	html += "<p>A downloable copy of your bankruptcy order can be found in the 'Your documents' list below.</p>";
-		    	html += "<p><br></p>";
+		    	html += "<p><&nbsp;></p>";
 		    	html += "<p class=\"bolder\">What happens next</p>";
 		    	html += "<p>The early stages of a bankruptcy are normally handled by an official receiver who works for the Insolvency Service.</p>";	
 		    	html += "<p>The official receiver will write to you within 2 weeks explaining what you need to know.</p>";		    	
@@ -407,7 +407,7 @@
 			case "review-declined":
 		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Reviewed and declined</span></p>";
 		    	html += "<p>Initial decline date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p> declined: <span class=\"bolder\">30th October 2015</p>";
+		    	html += "<p> Review decline date: <span class=\"bolder\">30th October 2015</p>";
 		    	html += "<p>Your review has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
 		    	$.cookie("status", "review-declined", {path:'/'});	
 		    	$("#declined").show();
@@ -430,7 +430,8 @@
 		    default:
 		        html = "<p>Your application is currently: <span class=\" text-primary bolder\"> Being considered</span></p>";
 		        html += "<p>Submission date: <span class=\"bolder\">24th October 2015</p>";	
-		        html += "<p>We will email you when we have made a decision about your bankruptcy. <br>This is typically within 28 days of receiving your application.</p>";	    	
+		        html += "<p>We will email you when we have made a decision about your bankruptcy.</p>";
+		        html += "<p>This is typically within 28 days of receiving your application.</p>";	    	
 		        $("#status").html(html);
 		        
 
