@@ -196,8 +196,9 @@
 			<!---
 			
 			<p>Your application is currently: <span class="text-warning bolder"> Awaiting information</span></p>
+
 			<div class="well clearfix">
-				<label for="Q1">Please confirm your current address.</label>
+							<label for="Q1">Please confirm your current address.</label>
 				<p><input id="Q1" class="input-lg form-control"></p>
 				<button class="button" style="margin-top:5px">Send response</button>
 
@@ -205,8 +206,8 @@
 			
 			<div class="panel-indent">
 				<em class="form-hint">This will map if status is Approve, Refer, Escalated or Information Received. Other options would be:<br><br></em>
-				<p>Your application is currently: <span class=" text-primary bolder"> In adjudication</span></p>
-				<p>Your application has been: <span class=" text-success bolder"> Made</span></p>
+				<p>Your application is currently: <span class=" text-primary bolder"> Being considered</span></p>
+				<p>Your application has been: <span class=" text-success bolder"> Approved</span></p>
 				<p>Your application has been: <span class=" text-danger bolder"> Declined</span></p>
 				<p>Your application is currently: <span class=" text-warning bolder"> Under review</span></p>
 				<p>Your application is currently: <span class=" text-warning bolder"> Under appeal</span></p>
@@ -216,15 +217,15 @@
 		
 		<p>&nbsp;</p>
 		<div>
-			<h2>Electronic bankruptcy folder</h2>
+			<h2>Your documents</h2>
 			<div>
         		<table>
             		<thead>
             			<tr>
             				<td>&nbsp;</td>
             				<td>Name</td>
-            				<td>Date filed</td>
-            				<td>Filed by</td>
+            				<td>Date submitted</td>
+            				<td>Submitted by</td>
             			</tr>
             		
             		</thead>
@@ -232,7 +233,7 @@
             		<tbody>
             			<tr id="review-declined" style="display:none">
             				<td><div class="label label-info label-as-badge">Document</div></td>
-            				<td><a href="#">Decline of review</a></td>
+            				<td><a href="#">Decline of application following review</a></td>
             				<td>30/10/2015</td>
             				<td>Ajudicator</td>
             			</tr>
@@ -349,6 +350,11 @@
     	switch(status) {
 		    case "awaiting":
 		    	html = "<p>Your application is currently: <span class=\"text-warning bolder\"> Awaiting information</span></p>";
+		    	html += "<p>Information request date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>We need more information before we can make a decision about your bankruptcy.</p>";
+		    	html += "<p>Please answer the questions below. If you can't answer them or don't have the required information, please let us know using the boxes below.<p>"; 
+		    	html += "<p>Alternatively, you can call us on 0330 678 0015<p>";
+		    	html += "<p><br></p>";
 		    	html += "<div class=\"well clearfix\">";
 		    	html += "<label for=\"Q1\">Please confirm your current address.</label>";
 		    	html += "<p><input id=\"Q1\" class=\"input-lg form-control\"></p>";
@@ -360,20 +366,27 @@
 		        break;
 		    
 		    case "made":
-		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Made</span></p>";
-		    	html += "<p>&nbsp;</p>";
-		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";	
-		    	html += "<p>Order:</p>";
-		    	html += "<p class=\"bolder\">It is ordered that Kim SCARLETT, Unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT be adjudged bankrupt.</p>";
-		    	html += "<p class=\"bolder\">It is further ordered that David Rickman be appointed trustee of the bankrupt’s estate</p>";			    	
+		    	html = "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
+		    	html += "<p>Order date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>A downloadable copy of your bankruptcy order can be found in the 'Your documents' list below.</p>";
+		    	html += "<p class=\"bolder\">What happens next</p>";
+		    	html += "<p>The early stages of a bankruptcy are normally handled by an official receiver who works for the Insolvency Service.</p>";	
+		    	html += "<p>The official receiver will write to you within 2 weeks explaining what you need to know.</p>";		    	
+		        html += "<p>In the meantime, you can find out more about the upcoming process in our 'Guide to bankruptcy' on GOV.UK.</p>";
 		        $.cookie("status", "made", {path:'/'});	
 		        $("#status").html(html);
 		        break;
 		    
 		    case "declined":
 		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Your application has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
+		    	html += "<p>Decline date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>Your application has been declined. A full explantion of why can be found in the 'Decline of application' document below.</p>";
+		    	html += "<p class=\"bolder\">What you can do</p>";
+		    	html += "<p>You can ask us to review our decision and look at your application again.</p>"; 
+		    	html += "<p>For a review to take place, we must receive your request within 14 days of the decline date.<p>"; 
+		    	html += "<p>Instructions for requesting a review can be found in your 'Decline of application' document.<p>";
+
+
 		    	$.cookie("status", "declined", {path:'/'});
 		    	$("#declined").show();
 		        $("#status").html(html);
@@ -381,9 +394,9 @@
 		        
 		    case "review":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under review</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Your application is currently under review. We will reassess your application based on the information we currently hold.</p>";
-		    	html += "<p>Our aim is to return a verdict within 28 days</p>";
+		    	html += "<p>Review request date: <span class=\"bolder\">24th October 2015</p>";
+		    	html += "<p>We will email you when we have finished reviewing your application.</p>";
+		    	html += "<p>This is typically within 28 days of receiving your review request.</p>";
 		    	$.cookie("status", "review", {path:'/'});	
 		    	$("#declined").show();
 		    			    	
@@ -391,10 +404,13 @@
 		        break;
 
 			case "review-declined":
-		    	html = "<p>Your application is currently: <span class=\" text-danger bolder\"> Review declined</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
-		    	html += "<p>Your review has been declined. A full explantion of why and further action you can take can be found in your Electronic Bankruptcy Folder below.</p>";
+		    	html = "<p>Your application has been: <span class=\" text-danger bolder\"> Reviewed and declined</span></p>";
+		    	html += "<p>Review decline date: <span class=\"bolder\">30th October 2015</p>";
+		    	html += "<p>We have reviewed your application again and confirm that it is still declined. A full explanation of why can be found in the 'Decline of application following review' document below.</p>";
+		    	html += "<p class=\"bolder\">What you can do</p>";
+		    	html += "<p>You can go to court to appeal our decision.</p>"; 
+		    	html += "<p>You must  make your appeal within 28 days of the review decline date.<p>"; 
+		    	html += "<p>Information about making an appeal can be found in your 'Decline of application following review' document.<p>";
 		    	$.cookie("status", "review-declined", {path:'/'});	
 		    	$("#declined").show();
 		    	$("#review-declined").show();
@@ -403,9 +419,11 @@
 		   
 		   case "appeal":
 		    	html = "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
-		    	html += "<p>Declined date: <span class=\"bolder\">24th October 2015</p>";
-		    	html += "<p>Review declined: <span class=\"bolder\">30th October 2015</p>";
-		    	html += "<p>Your application is currently under appeal. This is dealt with independently by HM Court Service.</p>";
+		    	html += "<p>Review decline date: <span class=\"bolder\">30th October 2015</p>";
+		    	html += "<p>We have been made aware that you have appealed our decision to HM Courts & Tribunals Service.</p>";
+		    	html += "<p>They will notify you when they have made a decision.</p>";
+		    	html += "<p>We will also email you when we learn the outcome of your appeal.</p>";
+
 		    	$.cookie("status", "appeal", {path:'/'});
 		    	$("#declined").show();
 		    	$("#review-declined").show();		    	
@@ -414,8 +432,10 @@
 				break;
    
 		    default:
-		        html = "<p>Your application is currently: <span class=\" text-primary bolder\"> In adjudication</span></p>";
-		        html += "<p>Our aim is to return a verdict within 28 days from the submission of your application.</p>";	    	
+		        html = "<p>Your application is currently: <span class=\" text-primary bolder\"> Being considered</span></p>";
+		        html += "<p>Submission date: <span class=\"bolder\">24th October 2015</p>";	
+		        html += "<p>We will email you when we have made a decision about your bankruptcy.</p>";
+		        html += "<p>This will be within 28 days of the submission date.</p>";	    	
 		        $("#status").html(html);
 		        
 
