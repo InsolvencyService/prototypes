@@ -144,19 +144,13 @@
  
 <div id="content0" >
 	<div class="inner-block text">
-	    	<h1 class="form-title heading-large">Contact Us</h1>
+	    	<h1 class="form-title heading-large">Contact Us - Confirmation</h1>
 	
-			<p>Having a problem? Then we're here to help. Just let us know what's causing you an issue and we'll take a look.</p>
+			<p>We'll get back you as soon as possible, this will normally be by email. If you don’t receive this email, please check your junk folder.</p>
+			<p>If you haven't provided an email address someone will call or write to you.</p>		
 			<p>&nbsp;</p>
-			<p class="form-label-bold">Application Number: B52S-FQ6Y-HQWP</p>
-			<p class="form-label-bold">Page: <span id="path">[PATH]</span></p>
-			<p>&nbsp;</p>
-			<label class="form-label-bold" for="message">How can we help?</label>
-			<textarea id="message" name="message" cols="80" rows="10"></textarea>
-			<p>&nbsp;</p>
-			<a id="next" class="button">Send</a>
-			<p>&nbsp;</p>
-			<a id="back">Back</a>
+			<a id="next" class="button">Return to your application</a>
+			
 	  		<p>&nbsp;</p>
 	</div>
 </div>
@@ -177,7 +171,7 @@
 
                  <ul class="footer__nav" style="width:100%">
                     <li class="small-btm-margin" style="text-align:left; display:block">
-					<a class="bold-medium" id="email-link" href="email.html">Contact us</a></li>
+					<a class="bold-medium" id="email-link" href="email_confirmation.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
                     <li class="footer__link" style=" ">
@@ -240,7 +234,7 @@ $(document).ready(function() {
 	$("#path").text(pathname);
 	
 	$("#next").on("click", function (e) {
-		$("#next").attr("href", "email_confirmation.html");
+		$("#next").attr("href", pathname);
 	});
 	
 	$("#back").on("click", function (e) {
