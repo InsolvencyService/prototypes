@@ -239,8 +239,11 @@ $(document).ready(function() {
 
 	$("#path").text(pathname);
 	
+	
+	
 	$("#next").on("click", function (e) {
 		$("#next").attr("href", "email_confirmation.html");
+		$.cookie("message", $("#message").val(), {path:'/'});
 	});
 	
 	$("#back").on("click", function (e) {
