@@ -306,7 +306,11 @@ $(document).ready(function() {
                 {
                     $(".payment").show();
                 }
-
+                
+var pathname = window.location.pathname; // Returns path only
+var url      = window.location.href;     // Returns full URL
+alert(pathname);
+alert(url);
 
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
