@@ -5,39 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <!-- #BeginEditable "title" -->
  <title>Resume application</title>
- <!-- #EndEditable -->
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
-
-<style type="text/css">
-
-/* Credit to bootsnipp.com for the css for the color graph */
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-form .dropdown-toggle{
-	display:block;
-	width: 300px;
-	margin-top:20px;
-	text-align:left;
-}
-form .dropdown-toggle .text-left{
-	font-weight:bold;
-	text-align:left;
-}
-
-.answerarea{
-	
-	display:block;
-	margin-top:20px;
-}
-</style>
 <!-- #EndEditable -->
 
 
@@ -104,6 +71,7 @@ form .dropdown-toggle .text-left{
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
 
+
 .row img{
 width:40px
 }
@@ -163,7 +131,7 @@ width:40px
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
-	This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+    This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
 	</div>
@@ -173,7 +141,7 @@ width:40px
 <!-- #BeginEditable "content" -->
 
  	
-	<div id="content" >
+	<div id="content0" >
 
 	<div>
 	
@@ -268,11 +236,14 @@ width:40px
             <div class="footer-meta-inner">
 
                  <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../../contact-us.html">Contact us</a></li>
+                    <li class="small-btm-margin" style="text-align:left; display:block">
+					<a class="bold-medium" id="email-link" href="../../email.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" "><a href="../../../privacy.html">Privacy</a></li>
-                    <li class="footer__link" style=""><a href="../../../cookies.html">Cookies</a></li>
+                    <li class="footer__link" style=" ">
+					<a href="../../../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style="">
+					<a href="../../../cookies.html">Cookies</a></li>
                     <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                 </ul>
 
@@ -301,6 +272,19 @@ width:40px
 <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	var url      = window.location.href;     // Returns full URL            
+ 	var pathname = window.location.pathname; // Returns path only
+ 	$("#email-link").on("click", function (e) {
+		$.cookie("url", url, {path:'/'});              
+		$.cookie("pathname", pathname, {path:'/'});
+	});
+
+});
+</script>
 
 <!-- #BeginEditable "scripts" -->
 

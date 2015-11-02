@@ -128,7 +128,7 @@
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
-	This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+    This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
 	</div>
@@ -190,7 +190,7 @@
 		<p>&nbsp;</p>
 
 		<div class="form-group" >
-			<p id="title_label" class="form-label-bold">When did you take out the policy?</p>
+			<p id="title_label0" class="form-label-bold">When did you take out the policy?</p>
 			<fieldset class="inline">
 				<div id="pnl-use">				
 					<label id="1_label1" for="1" class="block-label">
@@ -202,11 +202,11 @@
 					<label id="4_label1" for="4" class="block-label">
 					<input id="4"  name="owned" value="3-5" type="radio">3 to 5 years ago</label>
 					
-					<label id="4_label1" for="4" class="block-label">
-					<input id="4"  name="owned" value="3-5" type="radio">6 to 10 years ago</label>
+					<label id="4_label2" for="4" class="block-label">
+					<input id="40"  name="owned" value="3-5" type="radio">6 to 10 years ago</label>
 
-					<label id="4_label1" for="4" class="block-label">
-					<input id="4"  name="owned" value="3-5" type="radio">Over 10 years ago</label>
+					<label id="4_label3" for="4" class="block-label">
+					<input id="41"  name="owned" value="3-5" type="radio">Over 10 years ago</label>
 
 
 
@@ -253,11 +253,14 @@
             <div class="footer-meta-inner">
 
                  <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../../contact-us.html">Contact us</a></li>
+                    <li class="small-btm-margin" style="text-align:left; display:block">
+					<a class="bold-medium" id="email-link" href="../../email.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" "><a href="../../../privacy.html">Privacy</a></li>
-                    <li class="footer__link" style=""><a href="../../../cookies.html">Cookies</a></li>
+                    <li class="footer__link" style=" ">
+					<a href="../../../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style="">
+					<a href="../../../cookies.html">Cookies</a></li>
                     <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                 </ul>
 
@@ -286,6 +289,19 @@
 <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	var url      = window.location.href;     // Returns full URL            
+ 	var pathname = window.location.pathname; // Returns path only
+ 	$("#email-link").on("click", function (e) {
+		$.cookie("url", url, {path:'/'});              
+		$.cookie("pathname", pathname, {path:'/'});
+	});
+
+});
+</script>
 
 <!-- #BeginEditable "scripts" -->
 

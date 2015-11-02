@@ -72,6 +72,8 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <style type="text/css">
+
+
 .infobox {
     border-radius: 5px;
     background: #005EA5;
@@ -152,12 +154,8 @@
 	
 
 
-</div>
-	
-
-
 <!-- #BeginEditable "content" -->	
-<div id="content" >
+<div id="content0" >
 	<div class="content">
 		<div class="row" style="margin-left:15px;margin-right:15px;">
 	    	<div class="col-sm-8">
@@ -204,6 +202,9 @@
 	 <!-- #EndEditable -->
 
         
+</div>
+
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -214,12 +215,10 @@
             <div class="footer-meta-inner">
 
                  <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block">
-					<a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
+                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" ">
-					<a href="../../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
                     <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
                     <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                 </ul>
@@ -249,6 +248,19 @@
 <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	var url      = window.location.href;     // Returns full URL            
+ 	var pathname = window.location.pathname; // Returns path only
+ 	$("#email-link").on("click", function (e) {
+		$.cookie("url", url, {path:'/'});              
+		$.cookie("pathname", pathname, {path:'/'});
+	});
+
+});
+</script>
 
 <!-- #BeginEditable "scripts" -->
 
