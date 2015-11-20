@@ -150,72 +150,93 @@
 <div id="content0" >
 
 <div class="inner-block">
-	<h1 class="form-title heading-large">Bank details</h1>
+	<h1 class="form-title heading-large">Account details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-
-		<div class="form-group ">
-			<label id="business_name_label" for="business_name" class="form-label-bold applicant_address_line_1">Bank name</label>
-			<p class="form-hint">For example, ABC Bank Ltd</p>
-			<input id="business_name" name="business_name" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-			<br/><br/>
-		</div>
-
-
-		<div class="form-group ">
-			<label id="name_label0" for="name" class="form-label-bold">Address</label>
-			<label id="business_address_line_1_label" for="business_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
-			<input id="business_address_line_1" name="business_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
-			<br/>
-		</div>
-
-		<div class="form-group ">
-			<label id="business_address_line_2_label" for="business_address_line_2" class="visuallyhidden">Address Line 2</label>
-			<input id="business_address_line_2" name="business_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-			<br/>
-		</div>
-
-		<div class="form-group ">
-			<label id="business_address_line_3_label" for="business_address_line_3" class="visuallyhidden">Address Line 3</label>
-			<input id="business_address_line_3" name="business_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
-			<br/>
-		</div>
-
-		<div class="form-group ">
-			<label id="business_address_town_label" for="business_address_town" class="form-label-bold applicant_address_town">Town/city</label>
-			<input id="business_address_town" name="business_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
-			<br/>
-		</div>
-
-		<div class="form-group ">
-			<label id="business_address_county_label" for="business_address_county" class="form-label-bold applicant_address_county">County</label>
-			<input id="business_address_county" name="business_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-			<br/>
-		</div>
-
-		<div class="form-group ">
-			<label id="business_address_post_code_label" for="business_address_post_code" class="form-label-bold applicant_address_post_code">Postal code</label>
-			<input id="business_address_post_code" name="business_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-			<br/>
-		</div>
-
-		<div class="form-group ">
-			<label id="business_address_country_label" for="business_address_country" class="form-label-bold applicant_address_country">Country</label>
-			<input id="business_address_country" name="business_address_country" type="text" aria-describedby="applicant_address_county_error applicant_address_country_help" value="" />
-			<br/>
-		</div>
+			<div>
+				<p>Please tell us about your account with <span id="bankname" class="bold-medium">test</span>.</p>
+				<br>
+			</div>
 
 
 
+			<div>
+				<label  class="form-label-bold" for="ac_number">Account number</label>
+				<p class="form-hint" for="ac_number">You can find it on your account statement
+				or at the bottom of your debit card</p>
+				<input class="form-control-3-4" id="ac_number" style="width:250px; display:inline-block; margin-right:15px">
+				<p>&nbsp;</p>
+			</div>
 
-				<p><br></p>
+			<div>
+				<label  class="form-label-bold" for="ac_balance">Current balance</label>
+				<p class="form-hint">Please convert account currency into GBP</p>
+        <p class="form-hint">For example 200 or -125</p>
+				£ <input class="form-control-1-8" id="ac_balance" >
+				<p>&nbsp;</p>
+			</div>
 
+			<div class="form-group ">
+				<fieldset  class="date-of-birth">
+					<span id="date_of_birth_label" class="form-label-bold">Date
+					you opened the account</span>
+					<span class="form-hint" id="date_of_birth_help">For example, Aug 2012</span>
+
+					<div class="form-group" style="width:60px">
+						 <label id="date_of_birth_label.month" for="month">Month</label>
+
+						<select id="month" name="month">
+							<option value="0"></option>
+							<option value="1">Jan</option>
+							<option value="2">Feb</option>
+							<option value="3">Mar</option>
+							<option value="4">Apr</option>
+							<option value="5">May</option>
+							<option value="6">Jun</option>
+							<option value="7">Jul</option>
+							<option value="8">Aug</option>
+							<option value="9">Sep</option>
+							<option value="10">Oct</option>
+							<option value="11">Nov</option>
+							<option value="12">Dec</option>
+						</select>
+					</div>
+
+					<div class="form-group form-group-year">
+						<label id="date_of_birth_label.year" for="start_year">Year</label>
+						<input id="start_year" name="start_year" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div><br>
+				</fieldset>
+			</div>
+			<p>&nbsp;</p>
+
+                       <div class="form-group" id="shared-mortgage">
+                        <p  class="form-label-bold">Is this a joint account?</p>
+
+                        <fieldset>
+                            <div id="shared" class="form-group inline">
+
+                                <label for="shared_Yes" class="block-label">
+                                    <input id="shared_Yes" name="shared" type="radio">
+                                    Yes
+                                </label>
+
+                                <label id="title_label1" for="shared_No" class="block-label">
+                                    <input id="shared_No" name="shared" type="radio">
+                                    No
+                                   </label>
+
+                            </div>
+                         </fieldset>
+                    </div>
+
+			<p>&nbsp;</p>
 
 		</form>
 
 			<div class="form-navigation form-group">
 			<div>
-					<a class="button" id="next">Continue</a>
+					<a class="button" id="next" href="add_bank.html?loop=true">Continue</a>
 			</div>
 					<a href="add_bank.html">Back</a>
 				</div>
@@ -310,40 +331,102 @@ $(document).ready(function() {
 <script type="text/javascript" src="../../assets/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
+var count =1;
+var sortcode;
+var bank_name;
+$(document).ready(function() {
+
+	var bank = 	[
+				{sort: '000000', bank: 'HSBC', address: 'High St, Dudley, West Midlands, DY4 9PR'},
+				{sort: '111111', bank: 'Lloyds Bank PLC', address: 'High Road, Birmingham, B12 4DF'},
+				{sort: '222222', bank: 'TSB', address: 'Sutton Way, Birmingham, B12 5KG'},
+				{sort: '333333', bank: 'Santander', address: 'Temple St, Birmingham, B2 3LG'},
+				{sort: '444444', bank: 'Lloyds TSB', address: 'Colmore Row, Birmingham, B1 3RG'},
+				{sort: '555555', bank: 'Halifax Bank PLC', address: 'Colmore Row, Birmingham, B1 3RG'},
+				{sort: '666666', bank: 'Natwest Ltd', address: 'Colmore Row, Birmingham, B1 3RG'},
+				{sort: '777777', bank: 'HSBC', address: 'Colmore Row, Birmingham, B1 3RG'},
+				{sort: '888888', bank: 'Bank of Scotland', address: 'Colmore Row, Birmingham, B1 3RG'},
+				{sort: '999999', bank: 'Ulster Bank', address: 'Colmore Row, Birmingham, B1 3RG'}
+	];
+
+
+
+	if($.cookie("bank_sortcode")==null){
+		sortcode="";
+	}
+	else{
+		sortcode=$.cookie("bank_sortcode");
+	}
+
+	if(sortcode != ""){
+		var sortcode1 = sortcode.replace(/\D/g,"");
+
+		$.map(bank, function(a) {
+			if(a.sort==sortcode1){
+				bank_name = a.bank;
+				$("#bankname").text(bank_name);
+				$("#bankaddress").text(a.address);
+			}
+		});
+	}
+	else{
+		bank_name = $.cookie("foreign-bank");
+		var xaddress = $.cookie("foreign-address");
+		$("#bankname").text(bank_name);
+		$("#bankaddress").text(xaddress);
+	}
+	$("#row2").hide();
+	$("#row3").hide();
+	$("#row4").hide();
+	$("#row5").hide();
+
+
+	$("#add_person").click(function(){
+		count++;
+		$("#row"+count).show();
+		if(count==5){
+			$("#add_person").hide();
+		}
+	});
+
+});
+
+
 
 $("#next").click(function(){
-	var business_address = "";
-	var business_name = $("#business_name").val();
-	var address1=$("#business_address_line_1").val();
-	var address2=$("#business_address_line_2").val();
-	var address3=$("#business_address_line_3").val();
-	var address4=$("#business_address_town").val();
-	var address5=$("#business_address_county").val();
-	var address6=$("#business_address_post_code").val();
+	var x = 0;
+	x = $.cookie("acc-count");
 
-	if(address1 != ""){
-		business_address = address1+", ";
-	}
-	if(address2 != ""){
-		business_address = business_address+address2+", ";
-	}
-	if(address3 != ""){
-		business_address = business_address+address3+", ";
-	}
-	if(address4 != ""){
-		business_address = business_address+address4+", ";
-	}
-	if(address5 != ""){
-		business_address = business_address+address5+", ";
-	}
-	if(address6 != ""){
-		business_address = business_address+address6;
+	if(x==null){
+		x=0;
 	}
 
-	$.cookie("foreign-bank", business_name);
-	$.cookie("foreign-address", business_address);
+	x++;
 
-	$("#next").attr("href","bank_detail_foreign.html");	
+	if(x>5){
+		x=5;
+		$("#add_person").hide();
+	}
+
+	$.cookie("acc"+ x +"-sort", sortcode);
+	$.cookie("acc"+ x +"-number", $("#ac_number").val());
+	$.cookie("acc"+ x +"-balance", $("#ac_balance").val());
+	$.cookie("acc"+ x +"-month", $("#month :selected").val());
+	$.cookie("acc"+ x +"-year", $("#start_year").val());
+	$.cookie("acc"+ x +"-bank", bank_name);
+
+	$.cookie("acc-count",x);
+
+		     if ($("input[name=shared]:checked").val()) {
+	             if ($("#shared_Yes").is(':checked')) {
+	                 $.cookie('sharedaccount', "Yes", { expires: 1, path: "/" });
+	                 $("#next").prop("href", "list_owners.html?acc=" + x);
+	             }
+	             else {
+	                 $.cookie('sharedaccount', "No", { expires: 1, path: "/" });
+	             }
+	         }
+
 });
 
 
