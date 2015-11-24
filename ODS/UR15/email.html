@@ -151,7 +151,18 @@
 			<p class="form-label-bold">Application Number: B52S-FQ6Y-HQWP</p>
 			<p class="form-label-bold">Page: <span id="path">[PATH]</span></p>
 			<p>&nbsp;</p>
-			<label class="form-label-bold" for="message">How can we help?</label>
+			<label class="form-label-bold" for="email">Email address</label>
+			<input id="email" type="text" class="input-email"><br>
+			<input type="checkbox" name="telephone" id="phone" > <label for="phone">I don't have an email address</label> 
+			
+			<div id="telephone_section">
+			<br>
+				<label class="form-label-bold" for="telephone">Telephone</label>
+				<input id="telephone" type="tel" class="input">
+			</div>
+			<p>&nbsp;</p>
+			<label class="form-label-bold" for="message">Please tell us how we can help</label>
+			<p class="form-hint">Give a brief description of the problem you are facing</p>
 			<textarea id="message" name="message" cols="80" rows="10"></textarea>
 			<p>&nbsp;</p>
 			<a id="next" class="button">Send</a>
@@ -238,18 +249,29 @@ $(document).ready(function() {
 	var pathname = $.cookie("pathname"); // Returns path only
 
 	$("#path").text(pathname);
-	
+	$("#telephone_section").hide();
 	
 	
 	$("#next").on("click", function (e) {
 		$("#next").attr("href", "email_confirmation.html");
 		$.cookie("message", $("#message").val(), {path:'/'});
+		$.cookie("email", $("#email").val(), {path:'/'});
+		$.cookie("telephone", $("#telephone").val(), {path:'/'});
 	});
 	
 	$("#back").on("click", function (e) {
 		$("#back").attr("href", pathname);
 	});
 
+});
+$('#phone').click(function() {
+
+	if($("#phone").prop('checked')==true){
+		$("#telephone_section").show();
+	}
+	else{
+		$("#telephone_section").hide();
+	}
 });
 </script>
 
