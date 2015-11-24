@@ -59,22 +59,12 @@
           <tr>
           	<td>
           		<p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">Question received from: Brian Bobson</p>
-          		<p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">Reply to: <a href="">brian.bobson@mail.com</a></p>
+          		<p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">Reply to: <a id="contact" href="">[CONTACT DETAIL]</a></p>
           	</td>
           </tr>
           <tr>
             <td width="100%">
-              <p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">
-
-			  Application number:
-</p>
-			  <div>
-
-<div style="border:2px grey solid; width:380px; font-size:2em; padding:10px; text-align:center">
-<span id="urn">B52S-FQ6Y-HQWP</span></div>
-			  
-			  </div>
-			  <p></p>
+              
               <p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">
 Query page:
 </p>
@@ -123,8 +113,20 @@ Query page:
 $(document).ready(function() {
 
 	var url = $.cookie("url");
+	var email = $.cookie("email");
+	var telephone = $.cookie("telephone");
+		
 	$("#url").text(url);
 	$("#url").attr("href",url);
+	
+	if(email){
+		$("#contact").text(email);
+		$("#url").attr("href","mailto:"+email);
+	}
+	else{
+		$("#contact").text(telephone);
+	}
+	
 	$("#problem").text($.cookie("message"));
 
 });
