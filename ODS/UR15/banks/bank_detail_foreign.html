@@ -335,7 +335,7 @@ var count =1;
 var sortcode;
 var bank_name;
 $(document).ready(function() {
-
+	
 	var bank = 	[
 				{sort: '000000', bank: 'HSBC', address: 'High St, Dudley, West Midlands, DY4 9PR'},
 				{sort: '111111', bank: 'Lloyds Bank PLC', address: 'High Road, Birmingham, B12 4DF'},
@@ -388,6 +388,10 @@ $(document).ready(function() {
 			$("#add_person").hide();
 		}
 	});
+	
+	//return location for drop out of loop
+	var url = window.location.href;
+	$.cookie("bank_loop_url", "url", {path:'/'});
 
 });
 
@@ -424,6 +428,7 @@ $("#next").click(function(){
 	             }
 	             else {
 	                 $.cookie('sharedaccount', "No", { expires: 1, path: "/" });
+	                 $.cookie("bank_loop", "false", {path:'/'});
 	             }
 	         }
 

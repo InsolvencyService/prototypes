@@ -310,6 +310,10 @@ $(document).ready(function() {
 <script type="text/javascript" src="../../assets/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
+$(document).ready(function() {
+	var url = window.location.href;
+	$.cookie("bank_loop_url", "url", {path:'/'});
+});
 
 $("#next").click(function(){
 	var business_address = "";

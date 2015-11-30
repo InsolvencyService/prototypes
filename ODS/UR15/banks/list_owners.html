@@ -286,7 +286,7 @@ legend{
 
 	
 	                <p><br>
-					<a href="add_bank.html" class="button family repeat"><span class="repeat">Continue - I have added all joint account holders</span>
+					<a href="add_bank.html" id="next" class="button family repeat"><span class="repeat">Continue - I have added all joint account holders</span>
 	                </a></p>
             
            
@@ -424,6 +424,14 @@ $(document).ready(function() {
         }
 
     });
+    
+    $("#next").click(function () {
+    	$.cookie("bank_loop", "false", {path:'/'});
+    });
+    
+    //return location for drop out of loop
+	var url = window.location.href;
+	$.cookie("bank_loop_url", "url", {path:'/'});
 
 });
 

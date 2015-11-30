@@ -408,10 +408,10 @@ $(document).ready(function() {
 
 $("#addlink").click(function(){
 	var sortcode = $("#name").val();
+	$.cookie("bank_loop", "true", {path:'/'});
 	if(sortcode == "" || sortcode == null){
 		$.cookie("bank_sortcode", sortcode);
 		$("#addlink").attr("href", "bank_address.html");
-
 	}
 	else{
 		$.cookie("bank_sortcode", sortcode);

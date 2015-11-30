@@ -919,6 +919,12 @@ $(document).ready(function() {
 	                        $(details).show();
 	                        $(details).parent().addClass("well");
 	                    }
+	                    
+	                    //added 'In progress' for bank when dropped out of loop
+	                    if($.cookie("bank_loop")=='true'){
+	                    	$("#section3 .edit").show().text("In progress").prop("href", $.cookie("bank_loop_url"));                    		                    
+	                    }
+	                   
 	                    if (section3 && section3 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");	
 	                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
