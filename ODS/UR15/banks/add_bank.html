@@ -228,32 +228,44 @@ display:block;
 	            <p>&nbsp;</p>
 			</div>
 			
+			<div class="validation-summary" id="started">
+	            <h2>You have appear to have started adding an account</h2>
+	            <p></p><ol>
+	                <li class="error-message">
+	                    <p id="error-reenter">You will need to complete adding your information for your bank account or delete the account from the application before continuing.</p>
+	                    <p><a href="#" class="button">Continue adding the account</a></p>
+	                </li>
+	            </ol>
+        	</div>
 			
-			<div id="txt-intro">
-				<p class="repeat">The table above summarises the accounts you have told us about.</p>
-				<p>We need to know about <span class="firsttime">all the </span><span class="repeat">any other </span>bank, building society, creditor union and national savings accounts you have had in the last 2 years.</p> 
+			
+			<div id="normal">
+				<div id="txt-intro">
+					<p class="repeat">The table above summarises the accounts you have told us about.</p>
+					<p>We need to know about <span class="firsttime">all the </span><span class="repeat">any other </span>bank, building society, creditor union and national savings accounts you have had in the last 2 years.</p> 
+					
+					<p>This includes all of your personal accounts and savings in the UK and abroad as well as any joint, 
+					business, dormant or frozen accounts. </p>
+					
+					<p class="panel-indent firsttime">Remember that when your bankruptcy order is made your bank accounts will likely be frozen, 
+					so you'll need to make alternative arrangements for receiving money into your account, paying direct debts, etc.</p> 
+	             </div>
 				
-				<p>This includes all of your personal accounts and savings in the UK and abroad as well as any joint, 
-				business, dormant or frozen accounts. </p>
 				
-				<p class="panel-indent firsttime">Remember that when your bankruptcy order is made your bank accounts will likely be frozen, 
-				so you'll need to make alternative arrangements for receiving money into your account, paying direct debts, etc.</p> 
-             </div>
-			
-			
-			<div class="form-group">
-				<p><br></p>
-				<label  class="form-label-bold">Enter <span class="firsttime">the account </span><span class="repeat">another </span>sort code</label>
-				<p class="choose-address">You can find it on your account statement or at the bottom of your debit card           
-				<br>For example, 12 34 56. <span class="firsttime">You can add more accounts later</span></p>
-				<p class="form-hint">Leave the sort code blank it it's a foreign account</p>
-				<input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
-	            <a id="addlink" class="button">Add account</a>&nbsp;
-	        	<p><a class="firsttime" href="../overview.html?section3=complete">I haven't had any bank accounts</a></p>
-	        </div>
-	        
-	        <div class="loop"> 
-		        <p><br><a class="button family" id="next">Continue - I have added all my accounts</a></p>
+				<div class="form-group">
+					<p><br></p>
+					<label  class="form-label-bold">Enter <span class="firsttime">the account </span><span class="repeat">another </span>sort code</label>
+					<p class="choose-address">You can find it on your account statement or at the bottom of your debit card           
+					<br>For example, 12 34 56. <span class="firsttime">You can add more accounts later</span></p>
+					<p class="form-hint">Leave the sort code blank it it's a foreign account</p>
+					<input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px">
+		            <a id="addlink" class="button">Add account</a>&nbsp;
+		        	<p><a class="firsttime" href="../overview.html?section3=complete">I haven't had any bank accounts</a></p>
+		        </div>
+		        
+		        <div class="loop"> 
+			        <p><br><a class="button family" id="next">Continue - I have added all my accounts</a></p>
+	            </div>
             </div>
             
 		</form>
@@ -359,6 +371,8 @@ $(document).ready(function() {
     var negative_balance;
 
 $(document).ready(function() {
+	
+	$("#started").hide();
 	count = $.cookie("acc-count");
 	var row;
 	
@@ -387,9 +401,15 @@ $(document).ready(function() {
 	    row = row + numjoint + "</td><td>"
 	    if(i==count && $.cookie("bank_loop")=='true'){
 	    	row= row +"<a href=\"#\" class=\"btn-edit\">In progress</a>";
+	    	$("#normal").hide();
+	    	$("#started").show();
+
 	    }
 	    else{
 	    	row= row +"<a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+	    	$("#normal").show();
+	    	$("#started").hide();
+
 	    }
 		$("#tablebody").append(row);
 		if (parseFloat(balance) >= 0.0) {
