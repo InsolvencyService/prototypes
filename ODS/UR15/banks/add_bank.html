@@ -229,10 +229,10 @@ display:block;
 			</div>
 			
 			<div class="validation-summary" id="started">
-	            <h2>You have appear to have started adding an account</h2>
+	            <h2>You appear to have started adding an account</h2>
 	            <p></p><ol>
 	                <li class="error-message">
-	                    <p id="error-reenter">You will need to complete adding your information for your bank account or delete the account from the application before continuing.</p>
+	                    <p id="error-reenter">You will need to complete adding your information for the bank account or delete the account from the application before continuing.</p>
 	                    <p><a href="#" class="button">Continue adding the account</a></p>
 	                </li>
 	            </ol>
@@ -400,7 +400,7 @@ $(document).ready(function() {
 	    row = "<tr><td>" + $.cookie("acc" + i + "-bank") + "</td><td>" + $.cookie("acc" + i + "-number") + "</td><td>£" + balance + "</td><td>";
 	    row = row + numjoint + "</td><td>"
 	    if(i==count && $.cookie("bank_loop")=='true'){
-	    	row= row +"<a href=\"#\" class=\"btn-edit\">In progress</a>";
+	    	row= row + "<a href=\"#\" class=\"btn-edit\">In progress</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
 	    	$("#normal").hide();
 	    	$("#started").show();
 
