@@ -161,10 +161,10 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">6. Property transactions and preferred creditors</h1>
+	 	<h1 class="form-title heading-large">6. Undervalue transactions and preferred creditors</h1>
 
 	 	<div id="tablesummary" class="loop">
-	 		<label id="table_label" class="form-label-bold">Property summary</label>
+	 		<label id="table_label" class="form-label-bold">Undervalue transaction summary</label>
 	 		<table style="width:80%">
 	 			<thead>
 	 				<th>Property</th>
@@ -192,7 +192,7 @@
 			
 			<div class="form-group">
 				<fieldset class="inline" id="previoustrade">
-				<label id="_label" class="form-label-bold">Have you given away any property or sold it for less than its true value in the last 2 years?</label>
+				<label id="_label" class="form-label-bold">Have you given away any asset or sold it for less than its true value in the last 2 years?</label>
 				
 					<div class="form-group">
 					
@@ -220,7 +220,7 @@
 				
 				<div id="pnl-date" class="form-group">
 					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">What date did you sell or give away the property?</span>
+						<span id="date_of_birth_label" class="form-label-bold">What date did you sell or give away the asset?</span>
 						<span class="form-hint" id="date_of_birth_help">For example 31 08 1976</span>
 						
 						<div class="form-group form-group-day">
@@ -240,45 +240,49 @@
 				<p>&nbsp;</p>
 
 				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">How much did you receive for the property?</label>
+					<label id="_label" for="value" class="form-label-bold">How much did you receive for the asset?</label>
 					£ <input id="value" name="" type="number" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
 
 				<div class="form-group ">
-					<label id="_label" for="why" class="form-label-bold">Why did you sell or give away the property?</label>
+					<label id="_label" for="why" class="form-label-bold">Why did you sell or give away the asset?</label>
 					<input id="why" name="" type="text" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
 
 				<div class="form-group ">
-					<label id="_label" for="who" class="form-label-bold">Who did you sell or give the property to?</label>
+					<label id="_label" for="who" class="form-label-bold">Who did you sell or give the asset to?</label>
 					<input id="who" name="" type="text" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
+				
+				<div class="form-group ">
+					<label id="_label" for="market" class="form-label-bold">What was the market value of the asset?</label>
+					£ <input id="market" name="" type="text" value="" />
+					<br/>
+				</div>	
+				<p>&nbsp;</p>
+
+				<div class="form-group ">
+					<label id="_label" for="proceeds" class="form-label-bold">What happened to the proceeds of the sale?</label>
+					<input id="proceeds" name="" class="form-control-3-4" type="text" value="" />
+					<br/>
+				</div>	
+				<p>&nbsp;</p>
+
 				<div class="form-group">
-					<label for="commments" class="form-label-bold">Additional comments</label>
+					<label for="commments" class="form-label-bold">Provide any further details</label>
+					<p class="form-hint">For example, condition or identification marks</p>
 					<textarea id="comments" rows="6" cols="60"></textarea>
 				</div>
 			
-				<p>&nbsp;</p>
-				<div class="form-group" id="also_employed">
-					<fieldset class="inline">
-					<label class="form-label-bold">Have you sold or given away any other properties?</label>
-						<div id="pnl-role" class="form-group">
-						
-							<label id="role_label" for="otheremployment" class="block-label">
-							<input id="otheremployment" value="1" name="role" type="radio">Yes</label>
-							
-							<label id="role_label" for="noemploy" class="block-label">
-							<input id="noemploy" value="0" name="role" type="radio">No</label>
-							
-						</div>
-					</fieldset>
-				</div>
+				
+					<a id="also_employed" href="property.html?loop=true" >I have sold or given away other assets that I wish to add?</a>
+				
 				
 				
 				
@@ -375,15 +379,6 @@ $('#previoustrade :radio').click(function() {
 	}
 });
 
-$('#also_employed :radio').click(function() {
-	if($("#otheremployment").prop('checked')==true){
-		$("#next").prop("href", "property.html?loop=true");
-		
-	}	
-	else{
-		$("#next").attr("href", "preferred.html");
-	}
-});
 
 
 function getParameterByName(name) {
