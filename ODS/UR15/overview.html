@@ -891,6 +891,9 @@ $(document).ready(function() {
 					$(".rowbottom").hide();
 	               // if (section4 && section4.length > 0) {
 	                    // change the colour of the button
+	                    if($.cookie("pdetails")){
+	                    	 $("#section1 .edit").attr("href", "personal/summary.html");
+	                    }
 		                if (section1 && section1 == "complete") {
 	                        $("#section1 .edit").show().removeClass("button").text("Edit");
 	                        $("#section2 .edit").show().addClass("button").text("Start");
