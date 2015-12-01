@@ -252,6 +252,22 @@ display:block;
 			</fieldset>
 		</div>
 		
+		<div class="form-group" id="claiming_pension" style="display:none">
+			<p id="title_label" class="form-label-bold">Are you currently receiving a payment from the pension?</p>
+			<fieldset class="inline">
+				<div id="pnl-claiming">
+									
+					<label id="claiming_label1" for="claiming_yes" class="block-label">
+					<input id="claiming_yes"  name="claiming" value="Yes" type="radio">Yes</label>
+					
+					<label id="claiming_label1" for="claiming_no" class="block-label">
+					<input id="claiming_no"  name="claiming" value="No" type="radio">No</label>
+
+				</div>
+			</fieldset>
+		</div>
+
+		
 		<div class="form-group panel-indent" id="pnl-pensionamount" hidden="true">
 			<label for="pensionvalue" class="form-label-bold applicant_address_town">
 			Value of pension</label>
@@ -374,12 +390,22 @@ $(document).ready(function() {
 
 $('#pnl-personalpension').click(function() {
 	if($("#pension_yes").prop('checked')==true){
+		$("#claiming_pension").show();
+	}
+	else{
+		$("#claiming_pension").hide();
+	}
+});
+
+$('#pnl-claiming').click(function() {
+	if($("#claiming_yes").prop('checked')==false){
 		$("#pnl-pensionamount").show();
 	}
 	else{
 		$("#pnl-pensionamount").hide();
 	}
 });
+
 
 
 $("#next").on("click", function(e){
