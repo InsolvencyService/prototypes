@@ -327,6 +327,10 @@
 				<p>&nbsp;</p>
 			</div>
 			
+			
+			<a class="employed" href="employed.html?loop=true" id="also_employed">Save and add another employer</a>
+			
+			<!---
 			<div class="form-group" id="also_employed">
 				<fieldset class="inline">
 				<legend class="form-label-bold">Are you employed by anyone else?</legend>
@@ -341,6 +345,7 @@
 					</div>
 				</fieldset>
 			</div>
+			--->
 
 	
 
@@ -350,7 +355,7 @@
 		<div class="btn-group btn-group-lg">
 			<a class="btn btn-default" href="javascript:history.go(-1)"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
 			<a class="btn btn-default" href="../application.html?section3=inprogress">Return to overview</a>
-			<a class="btn btn-success" id="next">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+			<a class="btn btn-success" href="previousbusiness.html" id="next">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 		</div>
 
 		
@@ -424,14 +429,6 @@ $('#pnl_role').click(function() {
 	}
 });
 
-$('#also_employed :radio').click(function() {
-	if($("#otheremployment").prop('checked')==true){
-		$("#next").prop("href", "employed.html?loop=true");
-	}	
-	else{
-		$("#next").attr("href", "previousbusiness.html");
-	}
-});
 </script>
 
 <!-- #EndEditable -->

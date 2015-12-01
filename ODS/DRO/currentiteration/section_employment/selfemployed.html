@@ -324,8 +324,8 @@
 				</fieldset>
 			</div>
 	
-		
-			
+			<a href="selfemployed.html?loop=true">Save and add another business</a>
+			<!---
 			<div class="form-group" id="also_employed">
 				<fieldset class="inline">
 				<label class="form-label-bold">Do you have any other businesses?</label>
@@ -340,7 +340,7 @@
 					</div>
 				</fieldset>
 			</div>
-
+			--->
 	
 
 		</form>
@@ -348,7 +348,7 @@
 		<div class="btn-group btn-group-lg">
 			<a class="btn btn-default" href="javascript:history.go(-1)"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
 			<a class="btn btn-default" href="../application.html?section3=inprogress">Return to overview</a>
-			<a class="btn btn-success" id="next">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+			<a class="btn btn-success" href="previousbusiness.html?self=true" id="next">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 		</div>
 
 	</div>       
@@ -411,14 +411,6 @@
 
 <script type="text/javascript">
 
-$('#also_employed :radio').click(function() {
-	if($("#otheremployment").prop('checked')==true){
-		$("#next").prop("href", "selfemployed.html?loop=true");
-	}	
-	else{
-		$("#next").attr("href", "previousbusiness.html?self=true");
-	}
-});
 </script>
 
 <!-- #EndEditable -->

@@ -480,8 +480,8 @@
 					</fieldset>
 				</div>
 		
-			
-				
+				<a href="#" id="also_business">Save and add another business</a>
+				<!---
 				<div class="form-group" id="also_business">
 					<fieldset class="inline">
 					<label class="form-label-bold">Do you have any other businesses?</label>
@@ -496,8 +496,11 @@
 						</div>
 					</fieldset>
 				</div>
+				--->
 			</div>
 			
+			<a class="employed" href="#" id="also_employed">Save and add another employer</a>
+			<!---
 			<div class="employed">
 				<div class="form-group" id="also_employed">
 					<fieldset class="inline">
@@ -515,6 +518,7 @@
 				</div>
 	
 			</div>
+			--->
 			
 			<div class="other">
 				<div class="form-group">
@@ -651,14 +655,14 @@ $('#employment_type').click(function() {
 		$(".other").hide();
 		$(".employed").hide();
 		$(".selfemployed").hide();
-		$("#pnl-Other").show();
+		//$("#pnl-Other").show();
 	}
 });
 $('#pnl-Other').click(function() {
 	if($("#pnl-Other :checked").val()=="yes"){
 		$(".employed").hide();
 		$(".selfemployed").hide();
-		$(".other").show();
+		//$(".other").show();
 	}
 	else{
 		$(".other").hide();
@@ -667,24 +671,26 @@ $('#pnl-Other').click(function() {
 	}
 
 });
-
+$('#also_employed').click(function() {
+		$("#also_employed").attr('href', 'employed.html?loop=true');
+	});
+$('#also_business').click(function() {
+		$("#also_business").attr('href', 'selfemployed.html?loop=true');
+	});
 $('#next').click(function() {
 	$.cookie('section3', "inprogress", {path: '/'});
 	
-	var link = $("#also_employed :checked").val() + $("#also_business :checked").val();
+	//var link = $("#also_employed :checked").val() + $("#also_business :checked").val();
 	
 	
-	if($("#also_employed :checked").val()==1){
-		$("#next").attr('href', 'employed.html?loop=true');
-	}
-	else if($("#also_business :checked").val()==1){
-		$("#next").attr('href', 'selfemployed.html?loop=true');
-	}
-	else{
-		$("#next").attr('href', 'previousbusiness.html');
+	
+	
+	
+	
+	$("#next").attr('href', 'previousbusiness.html');
 
-	}
 	
+	/*
 	if($("#also_other :checked").val()==1){
 		$("#next").attr('href', 'previousbusiness.html?loop=true');
 	}
@@ -696,7 +702,7 @@ $('#next').click(function() {
 	if($("#also_other :checked").val()==0){
 		$("#next").attr('href', '../section_assets/assets1.html');
 	}
-
+	*/
 });
 </script>
 

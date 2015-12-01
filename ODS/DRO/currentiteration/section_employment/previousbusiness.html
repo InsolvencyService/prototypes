@@ -319,6 +319,8 @@
 		
 			
 				<p>&nbsp;</p>
+				<a href="#" id="also_employed">Save and add another business</a>
+				<!---
 				<div class="form-group" id="also_employed">
 					<fieldset class="inline">
 					<label class="form-label-bold">Did you have any other businesses?</label>
@@ -333,6 +335,8 @@
 						</div>
 					</fieldset>
 				</div>
+				
+				--->
 			</div>
 	
 
@@ -429,13 +433,9 @@ $('#previoustrade :radio').click(function() {
 	}
 });
 
-$('#also_employed :radio').click(function() {
-	if($("#otheremployment").prop('checked')==true){
-		$("#next").prop("href", "previousbusiness.html?loop=true&self="+getParameterByName("self"));
-	}	
-	else{
-		$("#next").attr("href", "../section_assets/assets1.html");
-	}
+$('#also_employed').click(function() {
+	$("#also_employed").prop("href", "previousbusiness.html?loop=true&self="+getParameterByName("self"));
+	
 });
 
 
