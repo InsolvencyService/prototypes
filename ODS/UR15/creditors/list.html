@@ -239,7 +239,7 @@ display:block;
 
 	<div class="col-sm-8">
 		<h1 class="form-title heading-large">Money you owe</h1>
-		<div class="newvisitor">
+		<div class="firsttime">
 			<p>Organisations and people you owe money to are known as creditors.</p>
 			<p>We need to know about all of your creditors, including family members or friends.</p>
 			<p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
@@ -299,6 +299,8 @@ display:block;
 			        </li>
     			</ol>
 			</div>
+			
+			
            
 			<div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
        			<h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
@@ -521,6 +523,14 @@ display:block;
 			<p class="repeat">We need to know about any other creditors you have, including family members or friends.</p>
 			<p class="repeat">You do not need to include any debts you have already told us about - for example, a mortgage, 
 			car financing or overdrafts.</p>
+			
+			<div class="validation-summary"  id="msg-student" style="display:none">               
+                <ol>
+			        <li class="error-message"> 
+			               This debt can't be included in your bankruptcy, and you will still have to pay back this debt in full even if you are declared bankrupt.
+			        </li>
+    			</ol>
+			</div>
 
 			<div class="form-group">
 				<label  for="creditors" class="form-label-bold " id="heading-add" style="display:none">Add creditor</label>
@@ -532,6 +542,7 @@ display:block;
 					<p class="clearfix"><br/></p>
 			</div>
 			<div class="clearfix"></div>
+			
 
 			<a class="button secondary" href="actionlist.html" id="btn-addedall">Continue - I have added all my creditors</a>
 			<p><br></p>
@@ -662,6 +673,7 @@ $(document).ready(function() {
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tw-typeahead.js"></script>
 	<script type="text/javascript" src="js/creditors.js"></script>
+	<script type="text/javascript" src="../shared/loop.js"></script>
 
 
 <script type="text/javascript">
@@ -764,13 +776,18 @@ $(document).ready(function() {
 	}
 	
 	$("#next").on("click", function(e){
-		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
+		if ($('#creditors.typeahead').val().toLowerCase().indexOf("student loan") !=-1 ){
+			$('#msg-student').show();
+			e.preventDefault();
+		}		 
+		else if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
 			numcreditors=numcreditors + 1;
 			$.cookie('numcreditors', numcreditors, { expires: 1 });
 			$.cookie('creditorname' + numcreditors, $('#creditors.typeahead').val(), { expires: 1 });
 		}
 		else{
 			$("#msg-entervalue").show();
+			$('#msg-student').hide();
 			e.preventDefault();
 		}
 	});
