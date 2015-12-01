@@ -209,78 +209,71 @@ display:block;
 	
 	
 	<h1 class="form-title heading-large">5. Pension details</h1>
-	<p>Please enter the details of any pensions you have. Click ‘Next’ if you don’t have a pension</p>
 	
 	
-	
-	<form >
-	 <!--- 	
-	<div class="validation-summary"  id="msg-entervalue" style="display:none">
-        <ol>
-        <li class="error-message"> 
-               Enter a creditor’s name below to continue
-        </li>
-        </ol>
-    </div>
-                 
-    <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
-       <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
-        <p>Are you sure you want to delete this creditor?</p>
-        <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
-    </div>  
-    --->
-
-<div id="pensionlist">
-	<p class="bold-small">Personal and occupational pensions</p>
-	
-	<table style="width: 60%">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<!--<th>Address</th>--->
-				<th>Policy number</th>
-				<th>Approved pension</th>
-				<th>Personal pension</th>
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody id="body">
-
+	<div class="form-group firsttime" id="pnl-Other">
+		<fieldset class="inline" id="previoustrade">
+		<p>&nbsp;</p>
+		<label id="_label" class="form-label-bold">Do you have a pension?</label>
 		
-
-		</tbody>
-	</table>
-</div>
-
-
-<div  class="clearfix"><br/></div>
-<div class="form-group">
-	
-	<label  for="creditors" class="form-label-bold " id="heading-add">Enter the 
-	pension providers name</label>
-
-	<div class="form-hint">Enter the name of the organisation, for 
-		example A1 Pensions. </div>
-	<input type="text" id="pension" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
-		<a class="button" id="next" href="2.html">Add provider</a>
-
-	&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
-
-
-
-<p><br></p>
-	
-			<div class="btn-group btn-group-lg">
-				<a class="btn btn-default" href="javascript:history.go(-1)"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
-				<a class="btn btn-default" href="../application.html">Return to overview</a>
-				<a class="btn btn-success" id="next" href="../section_property/property.html">Next<i class="glyphicon glyphicon-chevron-right"></i></a>
+			<div class="form-group">
+			
+				<label for="pension_yes" class="block-label">
+				<input id="pension_yes" value="yes" name="pensionyn" type="radio">Yes</label>
+				
+				<label for="pension_no" class="block-label">
+				<input id="pension_no" value="no" name="pensionyn" type="radio">No</label>
+				
 			</div>
-
-	<p>&nbsp;</p>
+		</fieldset>
 	</div>
-	</form>
+	
+	<div id="pnl-pensionyes" class="form-group" style="display:none">
+		
+		<form>
+		
+			<div id="pensionlist">
+				<p class="bold-small">Personal and occupational pensions</p>
+				<table style="width: 60%">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<!--<th>Address</th>--->
+							<th>Policy number</th>
+							<th>Approved pension</th>
+							<th>Personal pension</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody id="body">
+	
+					</tbody>
+				</table>
+			</div>
+			
+			<div  class="clearfix"><br/></div>
+	
+			<div class="form-group">
+				<label  for="creditors" class="form-label-bold " id="heading-add">Enter the pension providers name</label>
+				<p class="form-hint">Enter the name of the organisation, for example A1 Pensions. </p>
+				<input type="text" id="pension" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
+				<a class="button" id="next" href="2.html">Add provider</a>
+			</div>
+		</form>
 	</div>
-
+	
+	<p>&nbsp;</p>	
+	
+	<div class="btn-group btn-group-lg">
+		<a class="btn btn-default" href="javascript:history.go(-1)"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+		<a class="btn btn-default" href="../application.html">Return to overview</a>
+		<a class="btn btn-success" id="next0" href="../section_property/property.html">Next<i class="glyphicon glyphicon-chevron-right"></i></a>
+	</div>
+	
+			
+	<p>&nbsp;</p>	
+		
+</div>
 	 <!-- #EndEditable -->
 
         
@@ -379,6 +372,16 @@ $(document).ready(function() {
 			
 		}
 	}
+
+
+	$("#pnl-Other").on("click", function(e){
+			if($("#pnl-Other :checked").val()=="yes"){
+				$("#pnl-pensionyes").show();
+			}
+			else{
+				$("#pnl-pensionyes").hide();
+			}
+	});
 });
 
 $("#next").on("click", function(e){
