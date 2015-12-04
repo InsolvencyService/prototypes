@@ -265,25 +265,49 @@ display:block;
     	<label id="title_label" class="form-label-bold">Debt type</label>
         <div id="type-select" class="form-group">
  
-            <label id="title_label1" for="title_Mrs." class="block-label">
-                <input id="title_Mrs." value="Credit card" name="title" type="radio" aria-describedby="title_error title_help">
+            <label id="title_label1" for="cc" class="block-label">
+                <input id="cc" value="Credit card" name="title" type="radio" aria-describedby="title_error title_help">
                 Credit card/ store card
             </label>
+            
+            <label for="sl" class="block-label">
+                <input id="sl" value="Student loan" name="title" type="radio" aria-describedby="title_error title_help">
+                Student Loan                  
+            </label>
 
-            <label id="title_label2" for="title_Miss" class="block-label">
-                <input id="title_Miss" value="Personal loan" name="title" type="radio" aria-describedby="title_error title_help">
+            <label id="title_label2" for="pl" class="block-label">
+                <input id="pl" value="Personal loan" name="title" type="radio" aria-describedby="title_error title_help">
                 Personal loan (unsecured)
             </label>
 
-            <label for="type_landlord1" class="block-label">
-                <input id="type_landlord" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
-                Rent arrears                    </label>
-                  <label for="type_landlord1" class="block-label">
-                <input id="type_landlord0" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
-                Utilities                    </label>
-                  <label for="type_landlord1" class="block-label">
-                <input id="type_landlord1" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
-                Telephone/ mobile phone                    </label>
+            <label for="ra" class="block-label">
+                <input id="ra" value="Rent arrears" name="title" type="radio" aria-describedby="title_error title_help">
+                Rent arrears                    
+            </label>
+                  
+            <label for="util" class="block-label">
+                <input id="util" value="Utilities" name="title" type="radio" aria-describedby="title_error title_help">
+                Utilities                    
+            </label>
+            
+             <label for="fine" class="block-label">
+                <input id="fine" value="Fines" name="title" type="radio" aria-describedby="title_error title_help">
+                Fines                    
+            </label>
+            
+			
+
+
+			 <label for="main" class="block-label">
+                <input id="main" value="Child Maintenance" name="title" type="radio" aria-describedby="title_error title_help">
+                Child maintenance arrears
+            </label>
+
+                  
+            <label for="tele" class="block-label">
+                <input id="tele" value="Landlord" name="title" type="radio" aria-describedby="title_error title_help">
+                Telephone/ mobile phone                    
+           </label>
 
 
             <label id="title_label4" for="title_other" class="block-label">
@@ -601,6 +625,9 @@ $(document).ready(function() {
 	});
 });
 
+$("#title_other").focus(function(){
+	$("#other").focus();
+});
 
 $(".save").click(function(){
 	 overlay();			
