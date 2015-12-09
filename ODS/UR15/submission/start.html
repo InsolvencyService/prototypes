@@ -288,7 +288,7 @@ $(document).ready(function() {
 
 });
 
-$("#next").click(function() {
+$("#next").click(function(e) {
 
 	$("#pnl-error").hide();
     $("#pnl-error-debts").hide();
@@ -296,9 +296,14 @@ $("#next").click(function() {
 
 	
 	if($("#da_yes").prop('checked')==false){
+		e.preventDefault();
     	$("#pnl-error").show();
     	$("#pnl-error-financial").show();
-    	$("#next").attr("href", "identitycheck.html");
+    	var link =  "identitycheck.html";
+    	
+    	setTimeout(function(){
+         window.location = link;
+    	},5000);
     }
 	
   	if($("#previous_yes").prop('checked')==true){
@@ -318,7 +323,6 @@ $("#next").click(function() {
     	$("#next").attr("href", "identitycheck.html");		
     }   
 });
-
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
