@@ -192,6 +192,7 @@
 			<div class="form-group">
 				<fieldset class="inline" id="previoustrade">
 				<label id="_label" class="form-label-bold">Have you preferred any creditors over others in your payments in the last 2 years?</label>
+				<p class="form-hint">Do not include payments made by any third parties.</p>
 				
 					<div class="form-group">
 					
@@ -204,21 +205,7 @@
 					</div>
 				</fieldset>
 			</div>
-			<div class="form-group" id="thirdparty" style="display:none">
-				<fieldset class="inline" >
-				<label id="_label" class="form-label-bold">Was the payment made by a third party?</label>
-				
-					<div class="form-group">
-					
-						<label for="3rdyes" class="block-label">
-						<input id="3rdyes" value="" name="3rd" type="radio">Yes</label>
-						
-						<label for="3rdno" class="block-label">
-						<input id="3rdno" value="" name="3rd" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-			</div>
+			
 
 			<div id="pnl_details" style="display:none">
 				
@@ -489,31 +476,17 @@ $(document).ready(function() {
 	
 	
 	if (getParameterByName("loop") == "true"){
-		$("#thirdparty").show();
-		$("#previoustrade").hide();
+		
+		$("#previoustrade").show();
 	}	
 });
 $('#previoustrade :radio').click(function() {
 	$.cookie('section5', "inprogress", {path: '/'});
 	if($("#previousyes").prop('checked')==true){
-		$("#thirdparty").show();
-	
-	}	
-	else{
-		$("#thirdparty").hide();
-		$("#pnl_details").hide();
-	
-		$("#next").attr("href", "../section_creditors/1.html");
-
-	}
-});
-
-
-
-$('#thirdparty :radio').click(function() {
-	if($("#3rdyes").prop('checked')==false){
 		$("#pnl_details").show();
 		$("#other_payments").show();
+
+	
 	}	
 	else{
 		$("#pnl_details").hide();
@@ -522,6 +495,8 @@ $('#thirdparty :radio').click(function() {
 
 	}
 });
+
+
 
 $('#relative :radio').click(function() {
 	if($("#relative_yes").prop('checked')==true){
