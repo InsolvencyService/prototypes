@@ -79,7 +79,7 @@ img.printonly {display:none;}
 
 
 <!-- <form action=/wcc/card method=post autocomplete=off> -->
-<form action="visa-loading">
+<!-- <form action="visa-loading"> -->
 <table class="container" cellpadding="0" cellspacing="0" align="center">
 	<tr>
 		<td>
@@ -88,14 +88,16 @@ img.printonly {display:none;}
 				<tr>
 					<td class="title" colspan="2">
 						<!-- page title -->
-						<h1></h1>
+						<h1>
+              <img src="worldpay/Insolvency Service_BLK_AW.png" id="hmrc_logo" alt="Secure payment with HMRC" style="width:150px; height: 79px;" />
+            </h1>
 						<!--  end page title -->
 					</td>
 				</tr>
 <!-- end tableHead.html -->
 
 <!-- cardPage.templ $Revision$ -->
-<INPUT TYPE=hidden NAME=PaymentID VALUE="ukdc2-pz-pay05-dppr-1431509609570" />
+<!-- <INPUT TYPE=hidden NAME=PaymentID VALUE="ukdc2-pz-pay05-dppr-1431509609570" /> -->
 <!--WP start testModeMessage -->
 
 <!--WP end testModeMessage -->
@@ -135,8 +137,8 @@ img.printonly {display:none;}
 				<!--WP Card Type selected -->
 				<tr>
 					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment method</span>&nbsp;&nbsp;</td>
-					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>{{session.cardTypeFormatted}}</b></span>&nbsp;</td>
-					<td rowspan="3" class="one" valign="top" align="right"><img src="/images/logos/VISA_DEBIT.gif" style="border:0px;" alt="Visa Debit" />&nbsp;&nbsp;&nbsp;</td>
+					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>Visa</b></span>&nbsp;</td>
+					<td rowspan="3" class="one" valign="top" align="right"><img src="worldpay/VISA_DEBIT.gif" style="border:0px;" alt="Visa Debit" />&nbsp;&nbsp;&nbsp;</td>
 
 				</tr>
 
@@ -147,14 +149,14 @@ img.printonly {display:none;}
 				<tr>
 					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Description</span>&nbsp;&nbsp;</td>
 					<td class="one width190" align="left" valign="top">
-                <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>{{session.taxName}} - Payment to HMRC</b></span></td></tr>
+                <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>&pound;50 - Payment to HMRC</b></span></td></tr>
 
 
 
 
 				<tr>
 					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Amount</span>&nbsp;&nbsp;</td>
-					<td class="one" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>{{session.totalAmountFormatted}}</b></span>&nbsp;</td>
+					<td class="one" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>&pound;50</b></span>&nbsp;</td>
 				</tr>
 
 <!--WP END Description -->
@@ -204,7 +206,7 @@ For an example of the HTML code that this files need to work correctly with your
 					<td class="one" align="right">
 
 
-						<a href="/global3/payment/default/help_card_xml_en.html#card" target="_blank" title="Help with your card details - Opens in a new window."><img src="/images/buttons/help.gif" alt="Help with your card details - Opens in a new window." style="border:0px;" /></a>
+						<a href="/global3/payment/default/help_card_xml_en.html#card" target="_blank" title="Help with your card details - Opens in a new window."><img src="worldpay/help.gif" alt="Help with your card details - Opens in a new window." style="border:0px;" /></a>
 
 					</td>
 				</tr>
@@ -332,7 +334,7 @@ For an example of the HTML code that this files need to work correctly with your
 				<tr>
 
 					<td class="three" align="left"><h2>&nbsp;Cardholder details</h2></td>
-					<td class="one" align="right"><a href="/global3/payment/default/help_card_xml_en.html#contact" target="_blank" title="Help with your contact details - Opens in a new window."><img src="/images/buttons/help.gif" style="border:0px;" alt="Help with your contact details - Opens in a new window." /></a></td>
+					<td class="one" align="right"><a href="/global3/payment/default/help_card_xml_en.html#contact" target="_blank" title="Help with your contact details - Opens in a new window."><img src="worldpay/help.gif" style="border:0px;" alt="Help with your contact details - Opens in a new window." /></a></td>
 
 
 				</tr>
@@ -727,7 +729,7 @@ For an example of the HTML code that this files need to work correctly with your
 <!--WP cancel button -->
 			<tr valign="top">
 				<td class="one" valign="top" align="left">
-					<nobr><a href="payment-cancelled" tabindex="260" style="text-decoration:none;"><img src="/images/buttons/cancel.gif" alt="Cancel" style="border:0px;" /></a>&nbsp;<span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 12pt; color: #002469;"><b>Cancel</b></span></nobr>
+					<nobr><a href="payment-cancelled" tabindex="260" style="text-decoration:none;"><img src="worldpay/cancel.gif" alt="Cancel" style="border:0px;" /></a>&nbsp;<span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 12pt; color: #002469;"><b>Cancel</b></span></nobr>
 				</td>
 			</tr>
 <!--WP end cancelButton -->
@@ -775,7 +777,7 @@ For an example of the HTML code that this files need to work correctly with your
 				</tr>
 			</table>
 
-</form>
+<!-- </form> -->
 
 
                                 </td>
@@ -818,8 +820,6 @@ $( document ).ready(function() {
 
     $('form').parent().addClass('smallContainer');
 
-    $('h1').html('<img src="worldpay/hmrc_logo.png" id="hmrc_logo" alt="Secure payment with HMRC" />');
-
     $('span').find('b:contains("Start again")').closest('nobr').css( "display", "none" );
 
     // replace label copy with billing address
@@ -836,7 +836,7 @@ $( document ).ready(function() {
 
     var cancelLink = cancelElm.find('a').attr('href');
 
-    cancelElm.replaceWith('<a href="#" tabindex=250 class="cancelLink">Cancel payment</a>');
+    cancelElm.replaceWith('<a href="1-payment-amount.html" tabindex=250 class="cancelLink">Cancel payment</a>');
 
 
 
@@ -1032,7 +1032,7 @@ $( document ).ready(function() {
 
 
 
-    $('label[for="op-PMMakePayment"]').parent().html('<button name=op-PMMakePayment id=op-PMMakePayment tabindex=249 type=submit>Make payment</button>');
+    $('label[for="op-PMMakePayment"]').parent().html('<a href="4-thank-you.html" name=op-PMMakePayment id=op-PMMakePayment tabindex=249>Make payment</a>');
 
 
 
