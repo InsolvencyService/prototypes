@@ -235,7 +235,7 @@ display:block;
         </div>
 
 		
-        <div class="form-group">
+        <div class="form-group" id="search">
             <div>
                 <label for="name" class="form-label-bold">Postcode</label>
                 <p class="form-hint">For example CV3 6HG</p>
@@ -268,16 +268,11 @@ display:block;
 			</select>
 			
 		</div>
-		
-		
 		<div class="form-group" id="select_postcode_no" style="display:none">
 	        <span class="bolder"><em>No address found</em></span>		
-	        <p>&nbsp;</p>
-	        <a href="result.html?search=false" class="button">Add address</a>
 	    </div>
 
-		
-		<!---
+		<p>&nbsp;</p>
         <div id="fulladdress">
             <p>
                 <div class="form-group ">
@@ -326,8 +321,6 @@ display:block;
             </p>
 
         </div>
-        --->
-        
 </form> 
   <p class="clearfix"><br/></p>
 
@@ -353,12 +346,13 @@ display:block;
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group" style="margin-left:30px;">
-	<!---
+	
 	<div>
 		<a id="next" class="button" href="#" >Continue</a>
 	</div>
-	--->
-	
+	<div>
+	<br>
+	</div>
 	
 	<div>
 	<a style="padding-right: 30px" href="#" id="back">Back</a>
@@ -434,6 +428,16 @@ display:block;
 
 <script type="text/javascript">
 
+$(document).ready(function() {
+	
+	if(getParameterByName("search")=="false"){
+		$("#search").hide();
+		$("#clear").hide();
+	}
+	
+	
+});
+
 $("#btn-lookup").click(function(e){
 	if($("#name").val() == "CV3 6HG"){
 		$("#select_postcode").show();
@@ -447,10 +451,13 @@ $("#btn-lookup").click(function(e){
 	
 });
 
-$( "#select_postcode" ).change(function() {   
-    $.cookie("address_selected", $( "#select_postcode :selected" ).val());
-    $.cookie("postcode_selected", $( "#name" ).val());
-    window.location = "result.html";
+$( "#select_postcode" ).change(function() {
+	var strVal = $( "#select_postcode :selected" ).val();
+	var ValArray=strVal.split(',');
+ 	
+ 	for(var i=0;i<ValArray.length;i++){
+     $("#address_line_"+(i+1)).val(ValArray[i]);
+    }
 });
 
 $( "#clear" ).click(function(e) {
