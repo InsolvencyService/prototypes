@@ -166,26 +166,56 @@ table td{
       <!-- #BeginEditable "content" -->
 
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Thank you</h1>
+        <h1 class="form-title heading-large">Payments for application EHBJ-8F3M-KRP7</h1>
         <div class="row">
           <div class="col-sm-8">
             <p>
-              Thank you, your payment was succesful.
+              These are the payments you have made towards the bankruptcy fee.
             </p>
-            <p>
-              The payment will be processed over the next 24 - 48hrs
-            </p>
-            <p>&nbsp;</p>
             <table class="table">
               <tr>
-                <td>Your reference</td>
-                <td class="heading-small">payment12345</td>
+                <td>Payzone payment</td>
+                <td>01/02/2015</td>
+                <td>&pound;100.00</td>
               </tr>
               <tr>
-                <td>WorldPay Transaction ID</td>
-                <td class="heading-small">yourpayment12345</td>
+                <td>Card payment (Visa ending 1056)</td>
+                <td>10/03/2015</td>
+                <td>&pound;55.00</td>
+              </tr>
+              <tr>
+                <td class="heading-small" style="text-align:right;">Total</td>
+                <td></td>
+                <td class="heading-small">&pound;155.00</td>
               </tr>
             </table>
+            <p>
+              You have <span class="heading-small">&pound;500</span> to pay to enable your application to proceed
+            </p>
+          </div>
+          <div class="col-sm-4">
+
+            <!-- Payment Panel start -->
+            <div class="panel panel-primary no-button">
+              <h2>Bankruptcy order fee</h2>
+              <p class="payment-amount">&pound;155 received</p>
+              <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
+              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+            </div>
+            <!-- Payment Panel end -->
+
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+
+                <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+                <p><a href="security_change.html">Change your security questions</a></p>
+                <br>
+                <p><a href="#">Generate court documents</a></p>
+                <p><a href="discard.html">Discard application</a></p>
+                <br>
+                <p><a href="8-statements-page.html">View my payment history</a></p>
+                <p><a href="7-help-page.html">How can I get a refund?</a></p>
+            </div>
+
           </div>
 
         </div>
@@ -195,7 +225,12 @@ table td{
       </div>
     </div>
   <div class="form-navigation form-group" style="margin:30px;">
-    <a href="https://www.gov.uk/"><button class="button">Finish and return to GOV.UK</button></a>
+    <div>
+      <a href="../overview-payments-V1.html" id="next" class="button">Continue</a>
+    </div>
+    <div>
+      <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+    </div>
   </div>
 </main>
 
