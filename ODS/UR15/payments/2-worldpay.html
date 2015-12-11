@@ -13,7 +13,7 @@
 
 </style>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" >
-<link rel='stylesheet' href='{{assetPath}}/worldpay/wp.css' type="text/css"  />
+<link rel='stylesheet' href='worldpay/wp.css' type="text/css"  />
 <!--[if lte IE 9]>
 
 	<style>
@@ -64,7 +64,7 @@ img.printonly {display:none;}
 <!-- header.html $Revision$ -->
 <body>
   <div class="container" style="text-align:right; margin: auto; ">
-    <a href="http://www.worldpay.com" target="_blank" title="Opens in a new window"><img src="{{assetPath}}/worldpay/brand.gif" alt="Powered by WorldPay" border="0"></a>
+    <a href="http://www.worldpay.com" target="_blank" title="Opens in a new window"><img src="worldpay/brand.gif" alt="Powered by WorldPay" border="0"></a>
   </div>
 
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -720,7 +720,7 @@ For an example of the HTML code that this files need to work correctly with your
 <!--WP end start again -->
 				<td class="one" valign="top" rowspan="2" align="right">
 				<label for="op-PMMakePayment">
-					<nobr><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 12pt; color: #002469;"><b>Make payment</b></span><input name="op-PMMakePayment" id="op-PMMakePayment" tabindex="249" type="image" src="{{assetPath}}/worldpay/makepayment.png" alt="Make payment" /></nobr>
+					<nobr><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 12pt; color: #002469;"><b>Make payment</b></span><input name="op-PMMakePayment" id="op-PMMakePayment" tabindex="249" type="image" src="worldpay/makepayment.png" alt="Make payment" /></nobr>
 				</label>
 				</td>
 			</tr>
@@ -756,7 +756,7 @@ For an example of the HTML code that this files need to work correctly with your
 					<table width="100%" cellpadding="0" cellspacing="0" border="0">
 						<tr>
 							<td class="brand" width="150">
-							<a href="http://www.worldpay.com" target="_blank" title="Opens in a new window"><img src="{{assetPath}}/worldpay/brand.gif" alt="Powered by WorldPay" border="0" /></a>
+							<a href="http://www.worldpay.com" target="_blank" title="Opens in a new window"><img src="worldpay/brand.gif" alt="Powered by WorldPay" border="0" /></a>
 							</td>
 							<td class="brand"><span style=" font-family: Verdana,Geneva,Arial,Helvetica,Sans-Serif; font-size: 8pt; color: #000000;">For help with your payment visit the: <A HREF="/global3/brands/worldpay/payment/fixed/help_brand_en.html" target="_blank" title="WorldPay Help - Opens in a new window" class="brand">WorldPay Help</A>.</span></td>
 						</tr>
@@ -818,7 +818,7 @@ $( document ).ready(function() {
 
     $('form').parent().addClass('smallContainer');
 
-    $('h1').html('<img src="{{assetPath}}/worldpay/hmrc_logo.png" id="hmrc_logo" alt="Secure payment with HMRC" />');
+    $('h1').html('<img src="worldpay/hmrc_logo.png" id="hmrc_logo" alt="Secure payment with HMRC" />');
 
     $('span').find('b:contains("Start again")').closest('nobr').css( "display", "none" );
 
@@ -836,7 +836,7 @@ $( document ).ready(function() {
 
     var cancelLink = cancelElm.find('a').attr('href');
 
-    cancelElm.replaceWith('<a href="payment-cancelled" tabindex=250 class="cancelLink">Cancel payment</a>');
+    cancelElm.replaceWith('<a href="#" tabindex=250 class="cancelLink">Cancel payment</a>');
 
 
 

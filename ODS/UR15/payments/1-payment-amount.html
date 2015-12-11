@@ -153,71 +153,89 @@ table td{
 </div>
 
 <main id="content" role="main">
-
-  <div id="content">
+    <div id="content">
       <div class="inner-block">
-         <div class="phase-banner">
-           <p>
-              <strong class="phase-tag">BETA</strong>
-              This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-           </p>
-        </div>
-     </div>
+        <div class="phase-banner">
+          	<p>
+            	<strong class="phase-tag">BETA</strong>
+                This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+          	</p>
+      	</div>
+    	</div>
 
-  <!-- #BeginEditable "content" -->
+      <!-- #BeginEditable "content" -->
 
+      <div style="display:block; margin:0 30px !important">
+	      <h1 class="form-title heading-large">Make a fee payment</h1>
+        <div class="row">
+            <div class="col-sm-8">
+        				<table class="table">
+                  <tr>
+                    <td>Application reference</td>
+                    <td class="heading-small"><span id="urn">EHBJ8F3MKRP</span></td>
+                  </tr>
+          				<tr>
+            				<td>Name</td>
+            				<td class="heading-small"><span id="firstname">Brian</span>&nbsp;<span id="lastname">Bagley</span></td>
+          				</tr>
+                  <tr>
+            				<td>Left to pay</td>
+            				<td class="heading-small"><span id="lefttopay">&pound;500</span></td>
+          				</tr>
+                </table>
+          			<ul>
+        			    <li>
+      			          <p>The remaining amount of <span class="heading-small">&pound;500</span> is needed to enable the application to proceed</p>
+      			          <div class="form-group">
+        			          <label id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
+        			          £<input id="amount" type="text"  value="" />
+        			          <br/>
+      		            </div>
 
-  <div style="display:block; margin:0 30px !important">
-      <h1 class="form-title heading-large">This is your barcode</h1>
-      <div class="row">
-          <div class="col-sm-8">
+      			          <div>
+                  				<a id="btn-pay" href="https://payments:team@payment-prototype.herokuapp.com/landing?service=insolvency&amount=450&return_url=http://insolvencyservice.github.io/prototypes/ODS/brian/start.html" class="button">
+                  				Make a payment</a>
+                			</div>
+    	            </li>
+    	            <li>
+                      <h3 class="heading-small">I can't make a card payment</h3>
+                  		<p>You can also pay by cash, <a href="5-cash-payment.html">click here to find out how</a>.</p>
+                  </li>
+      	        </ul>
+              </div>
+              <div class="col-sm-4">
 
-        	    <div class="barcode">
-        				<img src="images/barcode-paypoint.png">
-        		  </div>
-        			<div class="paypoint information">
-        		    	<p>This has been sent to the email address and mobile phone number you gave on the previous page.</p>
-        		    	<p>Take this barcode to a PayPoint location to complete your transaction.</p>
-        				<p>
-        				You will be notified when your payment has been completed.</p>
-        			</div>
+                <!-- Payment Panel start -->
+                <div class="panel panel-primary no-button">
+                  <h2>Bankruptcy order fee</h2>
+                  <p class="payment-amount">&pound;155 received</p>
+                  <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
+                  <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+                </div>
+                <!-- Payment Panel end -->
 
-      				<div class="print-download-section">
-        					<ul class="print-download">
-        					       <li class="heading-small"><a href="#"><img src="images/print-icon.png">Print the barcode now</a></li>
-          					      <li class="heading-small"><a href="#"><img src="images/save-icon.png">Download a PDF of the barcode</a></li>
-        					</ul>
-      				</div>
-      		</div>
+                <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
 
-          <div class="col-sm-4">
-            <!-- Payment Panel start -->
-            <div class="panel panel-primary no-button">
-              <h2>Bankruptcy order fee</h2>
-              <p class="payment-amount"><a href="#">&pound;155 received</a></p>
-              <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
-              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
-            </div>
-            <!-- Payment Panel end -->
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-
-                <p><a class="save" style="font-weight:bold">Save and logout</a></p>
-                <p><a href="security_change.html">Change your security questions</a></p>
-                <br>
-                <p><a href="#">Generate court documents</a></p>
-                <p><a href="discard.html">Discard application</a></p>
-                <br>
-                <p><a href="#">How can I get a refund?</a></p>
-            </div>
+                    <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+                    <p><a href="security_change.html">Change your security questions</a></p>
+                    <br>
+                    <p><a href="#">Generate court documents</a></p>
+                    <p><a href="discard.html">Discard application</a></p>
+                    <br>
+                    <p><a href="#">How can I get a refund?</a></p>
+                </div>
+              </div>
           </div>
-      </div>
-	</div>
+	    <!-- #EndEditable -->
+
+
+    </div>
+  </div>
   <div class="form-navigation form-group" style="margin:30px;">
-          <a href="https://www.gov.uk/"><button class="button">Finish and return to GOV.UK</button></a>
+      <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
    </div>
-
-
 </main>
+
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
