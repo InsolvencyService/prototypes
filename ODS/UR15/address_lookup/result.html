@@ -437,6 +437,7 @@ $(document).ready(function() {
 	
 	if($.cookie("address_selected")){
 		var strVal = $.cookie("address_selected");
+		var ValArray=strVal.split(',');
 		for(var i=0;i<ValArray.length;i++){
 	     	$("#address_line_"+(i+1)).val(ValArray[i]);
 	    }
