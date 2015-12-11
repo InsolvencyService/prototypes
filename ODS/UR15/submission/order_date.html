@@ -146,80 +146,41 @@
 	<div class="content">
  		<div class="row" style="margin-left:15px;margin-right:15px;"> 
     		<div class="col-sm-10">
-    			<h1 class="form-title heading-large">Continue to submit</h1>
-				<p>Before you submit your application there are a few final questions to answer</p> 
-				<p>&nbsp;</p>
+    			<h1 class="form-title heading-large">Persons At Risk of Violence (PARV) order application</h1>
+				<p>When a Persons At Risk of Violence order has been granted by the court we be able to remove your address history [MORE WORDS NEED TO GO HERE]</p> 
+				<p>The Adjudicator will contact you shortly after you submit your application to obtain a copy of your order.</p>
 				
-				<div class="validation-summary"  id="pnl-error"  style="display:none">               
-	                <ol>
-				        <li id="pnl-error-debts" class="error-message"  style="display:none"> 
-				               Please return to the application and remove any debts you have included in the application that have also been included in another application.
-				        </li>
-				        <li id="pnl-error-financial" class="error-message"  style="display:none"> 
-				               We highly advise you to speak to a financial adviser before you submit this application.
-				        </li>
-				        <li id="pnl-error-noanswer" class="error-message"  style="display:none"> 
-				               Please make so you have completed the questions below.
-				        </li>
-
-	    			</ol>
-				</div>
+				
 				
 				<form>
-					<fieldset class="inline form-group">
-						<label id="title_label" class="form-label-bold">Have you included any of the debts from this application in another bankruptcy application?</label>
-						<p class="form-hint">We need to know about other bankruptcy applications in the UK and abroad</p>
-						<div id="previous-select" class="form-group">
-							<label id="title_previous_yes" for="previous_yes" class="block-label">
-								<input id="previous_yes" value="yes" name="previous" type="radio" aria-describedby="title_error title_help">
-								Yes
-							</label>
-							
-							<label id="title_previous_no" for="previous_no" class="block-label">
-								<input id="previous_no" value="no" name="previous" type="radio" aria-describedby="title_error title_help">
-								No
-							</label>
-						</div>
-					</fieldset>
 					
-					<fieldset class="inline form-group">
-						<label id="title_label" class="form-label-bold">Have you spoken with a debt advisor about your financial situation?</label>
-						<div id="da-select" class="form-group">
-							<label id="title_da_yes" for="da_yes" class="block-label">
-								<input id="da_yes" value="yes" name="da" type="radio">
-								Yes
-							</label>
+					<div class="form-group ">
+	
+						<fieldset id="date_of_birth" class="date-of-birth">
+							<label id="date_of_birth_label" class="form-label-bold"><span id="question">What date was the order approved?</span></label>
+							<p class="form-hint" id="date_of_birth_help">For example, 31 08 1976</p>
 							
-							<label id="title_da_no" for="da_no" class="block-label">
-								<input id="da_no" value="no" name="da" type="radio">
-								No
-							</label>
-						</div>
-					</fieldset>
-					
-					<fieldset class="inline form-group">
-						<label id="title_label" class="form-label-bold">Have you applied for a Persons At Risk of Violence (PARV) order for this application?</label>
-						<div id="parv-select" class="form-group">
-							<label id="title_parv_yes" for="parv_yes" class="block-label">
-								<input id="parv_yes" value="yes" name="parv" type="radio">
-								Yes
-							</label>
-							
-							<label id="title_parv_no" for="parv_no" class="block-label">
-								<input id="parv_no" value="no" name="parv" type="radio">
-								No
-							</label>
-						</div>
-					</fieldset>
+								<div class="form-group form-group-day">
+							 		<label id="date_of_birth_label.day" for="dob-day">Day</label>
+									<input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+								</div>
+						
+								<div class="form-group form-group-month">
+							 		<label id="date_of_birth_label.month" for="dob-month">Month</label>
+									<input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+								</div>
+								<div class="form-group form-group-year">
+									<label id="date_of_birth_label.year" for="dob-year">Year</label>
+									<input id="dob-year" name="date_of_birth.year" type="number" min="1000" max="9999" pattern="[1-9]" value="" />
+								</div>
+						</fieldset>
+					</div>
 
 					
-					<div class="form-group">
-						<label class="form-label-bold" for="email">Please use the box below to enter information about anything else you would like us to know in support of your application.</label>
-						<textarea id="message" name="message" cols="70" rows="8"></textarea>
-					</div>
+					
 				</form>
-				
-				<p><a href="#" id="next" class="button">Continue</a></p>
+				<p>&nbsp;</p>
+				<p><a href="identitycheck.html" id="next" class="button">Continue</a></p>
 				<p><a href="../overview.html?section8=complete">Back</a></p>
 				<p>&nbsp;</p>
 				
@@ -299,59 +260,15 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript">
+
 $(document).ready(function() {
-                           
 	
-
-});
-
-$("#next").click(function(e) {
-
-	$("#pnl-error").hide();
-    $("#pnl-error-debts").hide();
-    $("#pnl-error-financial").hide();
-
+	var approved = getParameterByName("approved")
 	
-	if($("#da_yes").prop('checked')==false){
-		e.preventDefault();
-    	$("#pnl-error").show();
-    	$("#pnl-error-financial").show();
-    	
-    	if($("#parv_yes").prop('checked')==true){
-    		var link =  "parv.html";
-    	}
-    	else{
-    		var link =  "identitycheck.html";
-    	}
-    	
-    	setTimeout(function(){
-         window.location = link;
-    	},5000);
-    }
-	
-  	if($("#previous_yes").prop('checked')==true){
-    	$("#pnl-error").show();
-    	$("#pnl-error-debts").show();
-    	$("#next").attr("href", "#");
-    }
- 
- 	
-    
-    if( ($("#previous_yes").prop('checked')==false) && ($("#previous_no").prop('checked')==false) || ($("#da_yes").prop('checked')==false) && ($("#da_no").prop('checked')==false) ){
-    	$("#pnl-error").show();
-    	$("#pnl-error-noanswer").show();		
-    }
-    
-    if( ($("#da_yes").prop('checked')==true) && ($("#previous_no").prop('checked')==true) ){
-    	if($("#parv_yes").prop('checked')==true){
-    		$("#next").attr("href", "parv.html");
-    	}
-    	else{
-    		$("#next").attr("href", "identitycheck.html");
-    	}
+	if(approved=="false"){
+		$("#question").text("When is the hearing date for the order?");
+	}
 
-    			
-    }   
 });
 
 function getParameterByName(name) {
