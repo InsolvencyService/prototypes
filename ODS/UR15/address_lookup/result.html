@@ -435,10 +435,25 @@ $(document).ready(function() {
 		$("#clear").hide();
 	}
 	
+	if($.cookie("address_selected")){
+		var strVal = $.cookie("address_selected");
+		for(var i=0;i<ValArray.length;i++){
+	     	$("#address_line_"+(i+1)).val(ValArray[i]);
+	    }
+		
+		$("#name").val($.cookie("postcode_selected");
+	}
+    
+
 	
 });
 
 $("#btn-lookup").click(function(e){
+
+	$.cookie("postcode_selected", "");
+	$.cookie("address_selected", "");
+
+	
 	if($("#name").val() == "CV3 6HG"){
 		$("#select_postcode").show();
 		$("#select_postcode_no").hide();
