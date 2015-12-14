@@ -152,9 +152,9 @@ table td{
     </div>
   </div>
 
-  <main id="content" role="main">
-    <div id="content">
+  <main role="main" id="wrapper">
 
+    <div id="content">
       <div class="inner-block">
         <div class="phase-banner">
           <p>
@@ -166,85 +166,124 @@ table td{
 
       <!-- #BeginEditable "content" -->
 
+
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Thank you</h1>
+        <h1 class="form-title heading-large">Post it to me</h1>
         <div class="row">
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
-            <p>Thank you, your payment was succesful.</p>
-            <p>The payment will be processed over the next 24 - 48hrs</p>
-            <p>&nbsp;</p>
-            <table class="table">
-              <tr>
-                <td>Your reference</td>
-                <td class="heading-small">payment12345</td>
-              </tr>
-              <tr>
-                <td>WorldPay Transaction ID</td>
-                <td class="heading-small">yourpayment12345</td>
-              </tr>
-            </table>
+            <div class="paypoint information">
+              <p>As you do not have a n email address we will post the barcode to your previosuly stated address, which we have added below.</p>
+              <p>Please change the address if this is not the correct address.</p>
+              <img class="payment-image" src="images/paypoint-logo.png" style="margin-bottom:20px;">
+            </div>
+      			<div class="form-group">
+      				<label class="form-label-bold" for="building-and-street">Building name/number and street</label>
+    			  	<input id="building-and-street" type="text" value="14 Street Name" style="margin-bottom:10px;"><br>
+    			  	<input id="building-and-street" type="text" value="Suburb" style="margin-bottom:10px;"><br>
+    			  	<input id="building-and-street" type="text" style="margin-bottom:10px;">
+      			</div>
+      			<div class="form-group">
+      				<label class="form-label-bold" for="town-or-city">Town or city</label>
+    			  	<input id="town-or-city" type="text" value="Town name" style="margin-bottom:10px;">
+      			</div>
+      			<div class="form-group">
+      				<label class="form-label-bold" for="county">County</label>
+      			  <input id="county" type="text" value="Warwickshire" style="margin-bottom:10px;">
+      			</div>
+      			<div class="form-group">
+      				<label class="form-label-bold" for="postcode">Postcode</label>
+      			  <input id="postcode" type="text" value="CV35 8TY" style="margin-bottom:10px;">
+      			</div>
           </div>
           <!-- Main Content Section End -->
 
-        </div>
-        <!-- #EndEditable -->
+          <!-- Side Panel Section Start -->
+          <div class="col-sm-4">
+            <!-- Payment Panel start -->
+            <div class="panel panel-primary no-button">
+              <h2>Bankruptcy order fee</h2>
+              <p class="payment-amount">&pound;155 received</p>
+              <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
+              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+            </div>
+            <!-- Payment Panel end -->
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
 
+              <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+              <p><a href="security_change.html">Change your security questions</a></p>
+              <br>
+              <p><a href="#">Generate court documents</a></p>
+              <p><a href="discard.html">Discard application</a></p>
+              <br>
+              <p><a href="8-statements-page.html">View my payment history</a></p>
+              <p><a href="7-help-page.html">How can I get a refund?</a></p>
+            </div>
+          </div>
+          <!-- Side Panel Section End -->
+
+        </div>
 
       </div>
 
       <!-- CTA Section Start -->
       <div class="form-navigation form-group" style="margin:30px;">
-        <a href="https://www.gov.uk/"><button class="button">Finish and return to GOV.UK</button></a>
-      </div>
-      <!-- CTA Section End -->
-
-    </div>
-  </main>
-
-
-  <footer role="contentinfo" id="footer" class="group js-footer">
-
-
-    <div class="footer-wrapper">
-
-      <div class="footer-meta">
-
-        <div class="footer-meta-inner">
-
-          <ul class="footer__nav" style="width:100%">
-            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
-          </ul>
-          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-          </ul>
-
-          <div class="open-government-licence">
-            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
-          </div>
+        <div>
+          <a href="6-barcode-generator.html"><button class="button">Continue</button></a>
         </div>
-
-        <div class="copyright">
-          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+        <div class="back">
+          <a href="#">Cancel</a>
         </div>
       </div>
+      <!-- CTA Section Start -->
+
+  </div>
+
+</main>
+
+
+<footer role="contentinfo" id="footer" class="group js-footer">
+
+
+  <div class="footer-wrapper">
+
+    <div class="footer-meta">
+
+      <div class="footer-meta-inner">
+
+        <ul class="footer__nav" style="width:100%">
+          <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
+        </ul>
+        <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+          <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+          <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+          <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+        </ul>
+
+        <div class="open-government-licence">
+          <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+          <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+      </div>
     </div>
+  </div>
 
-  </footer>
+</footer>
 
-  <!--end footer-->
+<!--end footer-->
 
-  <div class="app-error hidden" id="global-app-error"></div>
-  <!--
-  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+<div class="app-error hidden" id="global-app-error"></div>
+<!--
+<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-  <script type="text/javascript" src="assets/javascripts/application.js"></script>
+<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+<script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>

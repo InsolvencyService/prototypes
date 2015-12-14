@@ -154,7 +154,6 @@ table td{
 
   <main id="content" role="main">
     <div id="content">
-
       <div class="inner-block">
         <div class="phase-banner">
           <p>
@@ -167,26 +166,67 @@ table td{
       <!-- #BeginEditable "content" -->
 
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Thank you</h1>
+        <h1 class="form-title heading-large">Pay on my behalf</h1>
         <div class="row">
 
-          <!-- Main Content Section Start -->
+          <!-- Main Content Section End -->
           <div class="col-sm-8">
-            <p>Thank you, your payment was succesful.</p>
-            <p>The payment will be processed over the next 24 - 48hrs</p>
-            <p>&nbsp;</p>
             <table class="table">
               <tr>
-                <td>Your reference</td>
-                <td class="heading-small">payment12345</td>
+                <td>Payment reference</td>
+                <td class="heading-small"><span id="urn">1234-BAGL</span></td>
               </tr>
               <tr>
-                <td>WorldPay Transaction ID</td>
-                <td class="heading-small">yourpayment12345</td>
+                <td>Name</td>
+                <td class="heading-small"><span id="firstname">Brian</span>&nbsp;<span id="lastname">Bagley</span></td>
               </tr>
             </table>
+            <ul>
+              <li>
+                <div class="form-group">
+                  <label class="heading-small" for="email-address">Email address<span class="form-hint">Have the barcode sent to this email address</span>
+                  </label>
+                  <input id="email-address" type="text" style="margin-bottom:10px;">
+                </div>
+                <h3 class="heading-small">I don't have their email address</h3>
+                <p>If you don't have an email address we can post a barcode out to them.</p>
+                <a href="11-alternative-address.html">Post it to them</a>
+
+                <p>&nbsp;</p>
+
+                <div>
+                  <a id="btn-pay" href="2-worldpay-card-selection.html" class="button">Continue</a>
+                </div>
+              </li>
+            </ul>
           </div>
           <!-- Main Content Section End -->
+
+          <!-- Side Panel Section Start -->
+          <div class="col-sm-4">
+
+            <!-- Payment Panel start -->
+            <div class="panel panel-primary no-button">
+              <h2>Bankruptcy order fee</h2>
+              <p class="payment-amount">&pound;155 received</p>
+              <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
+              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+            </div>
+            <!-- Payment Panel end -->
+
+            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+
+              <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+              <p><a href="security_change.html">Change your security questions</a></p>
+              <br>
+              <p><a href="#">Generate court documents</a></p>
+              <p><a href="discard.html">Discard application</a></p>
+              <br>
+              <p><a href="8-statements-page.html">View my payment history</a></p>
+              <p><a href="7-help-page.html">How can I get a refund?</a></p>
+            </div>
+          </div>
+          <!-- Side Panel Section End -->
 
         </div>
         <!-- #EndEditable -->
@@ -196,7 +236,7 @@ table td{
 
       <!-- CTA Section Start -->
       <div class="form-navigation form-group" style="margin:30px;">
-        <a href="https://www.gov.uk/"><button class="button">Finish and return to GOV.UK</button></a>
+        <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
       </div>
       <!-- CTA Section End -->
 
