@@ -831,8 +831,10 @@ For an example of the HTML code that this files need to work correctly with your
 
 $( document ).ready(function() {
 
-	  if ($.cookie("payment-reference")) {
-	  	alert($.cookie("payment-reference"));
+	$.cookie("payment_reference", "abc123", {path:'/'} )
+
+	  if ($.cookie("payment_reference")) {
+	  	alert($.cookie("payment_reference"));
 	    $("#payment_reference").text($.cookie("payment-reference"));
 	  }
 
