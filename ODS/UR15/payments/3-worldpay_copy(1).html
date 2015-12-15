@@ -826,6 +826,7 @@ For an example of the HTML code that this files need to work correctly with your
 $( document ).ready(function() {
 
 	  if ($.cookie("payment-reference")) {
+	  	alert($.cookie("payment-reference"));
 	    $("#payment-reference").text($.cookie("payment-reference"));
 	  }
 
