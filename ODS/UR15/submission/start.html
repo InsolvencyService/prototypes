@@ -313,20 +313,25 @@ $("#next").click(function(e) {
 
 	
 	if($("#da_yes").prop('checked')==false){
-		e.preventDefault();
-    	$("#pnl-error").show();
-    	$("#pnl-error-financial").show();
-    	
+		alert("We highly advise you to speak to a financial adviser before you submit this application.");
+    	    	
     	if($("#parv_yes").prop('checked')==true){
-    		var link =  "parv.html";
+    		$("#next").attr("href","parv.html");
     	}
     	else{
-    		var link =  "identitycheck.html";
+    		$("#next").attr("href","identitycheck.html");
     	}
     	
+    	
+    	
+    	
+		
+		/*
     	setTimeout(function(){
          window.location = link;
     	},5000);
+    	*/
+    	
     }
 	
   	if($("#previous_yes").prop('checked')==true){

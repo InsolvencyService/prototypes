@@ -155,35 +155,21 @@
 				</div>
 				
 				<div class="non_success">
-					<p>Unforutunately, GOV.UK Verify was unable to verify your identity.</p>
 					<p>You can still submit your application. Once you do, we mmay be in touch to confirm your identity with you directly.</p>
 				</div>
 				
 				<p>By clicking submit you are confirming that:</p>
-				<ul class="list-bullet">
+				<ul class="list-bullet bolder">
 					<li>you are unable to pay your debts</li>
 					<li>you consent to a bankruptcy order being made in your name</li>
+					<li>you consent to a credit search to be run using the details you have provided.</li>
 					<li>you aren't aware of anyone else (eg a creditor) having already petitioned the court to make you bankrupt</li>
 					<li>you have paid the full bankruptcy fee</li>
 					<li>the information you have provided is accurate to the best of your knowledge</li>
 				</ul>
-				
-				<p>In order to process your application, we need to run a credit search using the details you have provided. If your application
-				is successful the search results will be passd tot the Insolvency Service official dealing with your bankruptcy.
-				</p>
-				
-				<div class="validation-summary"  id="pnl-error"  style="display:none">               
-	                <ol>
-				        <li id="pnl-error-consent" class="error-message"  > 
-				               You will need to consent to a credit check before you can submit your application.
-				        </li>
-				    </ol>
-				</div>
-
-				
-				<input id="consent" name="consent" type="checkbox"> <label for="consent"> I consent to a credit search</label>
+				<p>If your application is successful the credit search results will be passed onto the Insolvency Service official dealing with your bankruptcy.</p>
 				<p>&nbsp;</p>
-				<p><a href="#" id="next" class="button">Continue</a></p>
+				<p><a href="submit.html" id="next" class="button">Submit application</a></p>
 				<p><a action="javascript: history.go(-1)">Back</a></p>
 				<p>&nbsp;</p>
 				
@@ -278,16 +264,6 @@ var numberx = Math.floor( Math.random() * ( 1 + 2 - 1 ) );
 	}
                           
 });
-
-$("#next").click(function() {
-   if($("#consent").prop("checked")==true){
-   		$("#next").attr("href", "submit.html");
-   }
-   else{
-   		$("#pnl-error").show();
-   }
-});
-
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
