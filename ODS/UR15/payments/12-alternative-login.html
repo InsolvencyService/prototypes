@@ -297,11 +297,11 @@ $(document).ready(function() {
        $("#continue").on("click", function (e) {
           e.preventDefault();
           //alert($("#amount").val());
-          if ($("#payment-reference").val() == ""){
+          if ($("#payment-number").val() == ""){
           	$("#panel-error-empty").show();
           }
 
-          if ($("#payment-reference").val()) {
+          if ($("#payment-number").val()) {
             (window.location.replace("13-alternative-payment.html"));
           }
       });
