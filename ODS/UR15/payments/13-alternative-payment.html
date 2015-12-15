@@ -152,8 +152,7 @@ table td{
     </div>
   </div>
 
-  <main role="main" id="wrapper">
-
+  <main id="content" role="main">
     <div id="content">
       <div class="inner-block">
         <div class="phase-banner">
@@ -166,45 +165,50 @@ table td{
 
       <!-- #BeginEditable "content" -->
 
-
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Pay by cash using PayPoint</h1>
+        <h1 class="form-title heading-large">Make a fee payment</h1>
         <div class="row">
 
-          <!-- Main Content Section Start -->
+          <!-- Main Content Section End -->
           <div class="col-sm-8">
 
             <!-- Hidden Error messages Start -->
+            <div class="alert alert-danger" id="panel-error-greater" style="display:none">
+              You have entered an amount that is greater than the remaining fee of £500.
+            </div>
             <div class="alert alert-danger" id="panel-error-empty" style="display:none">
-              Please enter an email address
+              Please enter an amount
             </div>
             <!-- Hidden Error messages End -->
 
-            <div class="paypoint information">
-              <p>You can pay by cash at any store showing the PayPoint sign. There are over 27,000 in the UK.</p>
-              <p><a href="https://paypoint.com">Find your nearest PayPoint store</a></p>
-              <img class="payment-image" src="images/paypoint-logo.png">
-              <h2 class="heading-medium">How to use PayPoint</h2>
-              <p>We will generate a unique barcode for your payment. You can then take the barcode to a PayPoint store and make your payment.  </p>
-              <p>You can print the barcode or choose to have it sent to your email address or mobile phone.</p>
-            </div>
-            <div class="form-group">
-              <label class="heading-small" for="email-address">Email address<span class="form-hint">Have the barcode sent to this email address</span>
-              </label>
-              <input id="email-address" type="text" style="margin-bottom:10px;">
-            </div>
-            <h3 class="heading-small">I don't have and email address</h3>
-            <p>If you don't have an email address we can post a barcode out to your home address.</p>
-            <a href="9-post-it-to-me.html">Post it to me</a>
+            <table class="table">
+              <tr>
+                <td>Application reference</td>
+                <td class="heading-small"><span id="urn">8F3M-KRP1</span></td>
+              </tr>
+              <tr>
+                <td>Left to pay</td>
+                <td class="heading-small"><span id="lefttopay">&pound;500</span></td>
+              </tr>
+            </table>
+            <ul>
+              <li>
+                <p>The remaining amount of <span class="heading-small">&pound;500</span> is needed to enable the application to proceed</p>
+                <div class="form-group">
+                  <label id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
+                  £<input id="amount" type="text"  value="" />
+                  <br/>
+                </div>
+                <div>
+                  <a id="pay-online" href="2-worldpay-card-selection.html" class="button">Make a payment</a>
+                </div>
+
+              </li>
+            </ul>
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <div>
-                <a href="#"><button class="button" id="generate-barcode">Continue</button></a>
-              </div>
-              <div class="back">
-                <a href="#">Cancel</a>
-              </div>
+              <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
             </div>
             <!-- CTA Section End -->
 
@@ -222,67 +226,62 @@ table td{
             </div>
             <!-- Payment Panel end -->
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-
-              <p><a class="save" style="font-weight:bold">Save and logout</a></p>
-              <p><a href="security_change.html">Change your security questions</a></p>
-              <br>
-              <p><a href="#">Generate court documents</a></p>
-              <p><a href="discard.html">Discard application</a></p>
-              <br>
-              <p><a href="8-statements-page.html">View my payment history</a></p>
               <p><a href="7-help-page.html">How can I get a refund?</a></p>
             </div>
           </div>
           <!-- Side Panel Section End -->
 
         </div>
+        <!-- #EndEditable -->
+
+
       </div>
 
-  </div>
-</main>
+    </div>
+  </main>
 
 
-<footer role="contentinfo" id="footer" class="group js-footer">
+  <footer role="contentinfo" id="footer" class="group js-footer">
 
 
-  <div class="footer-wrapper">
+    <div class="footer-wrapper">
 
-    <div class="footer-meta">
+      <div class="footer-meta">
 
-      <div class="footer-meta-inner">
+        <div class="footer-meta-inner">
 
-        <ul class="footer__nav" style="width:100%">
-          <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
-        </ul>
-        <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-          <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-          <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-          <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-        </ul>
+          <ul class="footer__nav" style="width:100%">
+            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
+          </ul>
+          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+          </ul>
 
-        <div class="open-government-licence">
-          <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-          <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+          <div class="open-government-licence">
+            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
         </div>
       </div>
-
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-      </div>
     </div>
-  </div>
 
-</footer>
+  </footer>
 
-<!--end footer-->
+  <!--end footer-->
 
-<div class="app-error hidden" id="global-app-error"></div>
-<!--
-<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+  <div class="app-error hidden" id="global-app-error"></div>
+  <!--
+  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-<script type="text/javascript" src="assets/javascripts/application.js"></script>
+  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
@@ -309,15 +308,21 @@ $(document).ready(function() {
 
   $(document).ready(function() {
 
-       $("#generate-barcode").on("click", function (e) {
+       $("#pay-online").on("click", function (e) {
           e.preventDefault();
           //alert($("#amount").val());
-          if ($("#email-address").val() == ""){
+          if ($("#amount").val() == ""){
           	$("#panel-error-empty").show();
+            $("#panel-error-greater").hide();
           }
 
-          if ($("#email-address").val()) {
-            (window.location.replace("6-barcode-generator.html"));
+          if ($("#amount").val() && $("#amount").val() > 500){
+          	$("#panel-error-greater").show();
+            $("#panel-error-empty").hide();
+          }
+
+          else {
+            (window.location.replace("2-worldpay-card-selection.html"));
           }
       });
 
@@ -326,6 +331,8 @@ $(document).ready(function() {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+
+
 
 </script>
 
