@@ -128,15 +128,23 @@ img.printonly {display:none;}
 				<!-- display Payment reference to XML merchants -->
 
 				<tr>
-				    <td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment reference</span>&nbsp;&nbsp;</td>
-				    <td class="one" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>1233804440415V1233804440415-7DI40</b></span>&nbsp;</td>
+				    <td class="one width190" align="left" valign="top">
+              <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment reference</span>
+            </td>
+				    <td class="one" align="left" valign="top">
+              <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
+                <b>1233804440415V1233804440415-7DI40</b>
+              </span>
+            </td>
 				</tr>
 
 
         <tr>
-          <td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment reference</span>&nbsp;&nbsp;</td>
           <td class="one width190" align="left" valign="top">
-            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
+            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment number</span>
+          </td>
+          <td class="one width190" align="left" valign="top">
+            <span id="paymner-number" style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
               <b>Visa</b>
             </span>
             &nbsp;
@@ -146,7 +154,9 @@ img.printonly {display:none;}
 
 				<!--WP Card Type selected -->
 				<tr>
-					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment method</span>&nbsp;&nbsp;</td>
+					<td class="one width190" align="left" valign="top">
+            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment method</span>
+          </td>
 					<td class="one width190" align="left" valign="top">
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
               <b>Visa</b></span>
@@ -155,21 +165,26 @@ img.printonly {display:none;}
 					<td rowspan="3" class="one" valign="top" align="right"><img src="worldpay/VISA_DEBIT.gif" style="border:0px;" alt="Visa Debit" />&nbsp;&nbsp;&nbsp;</td>
 				</tr>
 
-
-
-
-
 				<tr>
-					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Description</span>&nbsp;&nbsp;</td>
 					<td class="one width190" align="left" valign="top">
-                <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>&pound;50 - Payment to HMRC</b></span></td></tr>
-
-
-
+            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Description</span>
+          </td>
+					<td class="one width190" align="left" valign="top">
+            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
+              <b>&pound;50 - Payment to HMRC</b>
+            </span>
+          </td>
+        </tr>
 
 				<tr>
-					<td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Amount</span>&nbsp;&nbsp;</td>
-					<td class="one" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>&pound;50</b></span>&nbsp;</td>
+					<td class="one width190" align="left" valign="top">
+            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Amount</span>
+          </td>
+					<td class="one" align="left" valign="top">
+            <span id="amount" style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
+              <b>&pound;50</b>
+            </span>
+          </td>
 				</tr>
 
 <!--WP END Description -->
@@ -823,7 +838,29 @@ For an example of the HTML code that this files need to work correctly with your
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+  var url      = window.location.href;     // Returns full URL
+  var pathname = window.location.pathname; // Returns path only
+  $("#email-link").on("click", function (e) {
+    $.cookie("url", url, {path:'/'});
+    $.cookie("pathname", pathname, {path:'/'});
+  });
+
+  // Cookie variable
+  if ($.cookie("payment-number")) {
+    $("#payment-number").text($.cookie("payment-number"));
+  }
+
+  if ($.cookie("amount")) {
+    $("#amount").text($.cookie("amount"));
+  }
+
+});
+</script>
 
 <script>
 
