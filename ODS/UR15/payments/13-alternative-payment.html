@@ -295,8 +295,14 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
+  // Payment prototype variables
+  $("#pay-online").on("click", function (e) {
+    $.cookie("amount", $("#amount").val(), {path:'/'});
+  });
+
 });
 </script>
+
 
 <!-- #BeginEditable "scripts" -->
 

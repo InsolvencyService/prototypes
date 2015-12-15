@@ -127,11 +127,6 @@ img.printonly {display:none;}
 
 				<!-- display Payment reference to XML merchants -->
 
-				<tr>
-				    <td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment reference</span>&nbsp;&nbsp;</td>
-				    <td class="one" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"><b>1233804440415V1233804440415-7DI40</b></span>&nbsp;</td>
-				</tr>
-
 
         <tr>
           <td class="one width190" align="left" valign="top"><span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment reference</span>&nbsp;&nbsp;</td>
@@ -829,11 +824,6 @@ $(document).ready(function() {
   if ($.cookie("payment-reference")) {
     $("#payment-reference").text($.cookie("payment-reference"));
   }
-
-  // Payment prototype variables
-  $("#continue").on("click", function (e) {
-    $.cookie("payment-reference", $("#payment-reference").val(), {path:'/'});
-  });
 
 });
 </script>
