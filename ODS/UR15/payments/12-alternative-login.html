@@ -176,7 +176,7 @@ table td{
 
             <!-- Hidden Error messages Start -->
             <div class="alert alert-danger" id="panel-error-empty" style="display:none">
-              Please enter an email address
+              Please enter an payment reference
             </div>
             <!-- Hidden Error messages End -->
 
@@ -276,8 +276,14 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
+  // Payment prototype variables
+  $("#continue").on("click", function (e) {
+    $.cookie("payment-reference", $("#payment-reference").val(), {path:'/'});
+  });
+
 });
 </script>
+
 
 <!-- #BeginEditable "scripts" -->
 

@@ -195,12 +195,12 @@ table td{
               <li>
                 <p>The remaining amount of <span class="heading-small">&pound;500</span> is needed to enable the application to proceed</p>
                 <div class="form-group">
-                  <label id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
+                  <label id="contributor-amount" for="contributor-amount" class="form-label">How much would you like to pay?</label>
                   £<input id="amount" type="text"  value="" />
                   <br/>
                 </div>
                 <div>
-                  <a id="pay-online" href="2-worldpay-card-selection.html" class="button">Make a payment</a>
+                  <button id="pay-online" href="#" class="button">Make a payment</button>
                 </div>
 
               </li>
@@ -225,7 +225,7 @@ table td{
               <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
             </div>
             <!-- Payment Panel end -->
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
+            <div class="panel-indent" style="font-size:16px; border-color:#efefef">
               <p><a href="7-help-page.html">How can I get a refund?</a></p>
             </div>
           </div>
@@ -321,7 +321,7 @@ $(document).ready(function() {
             $("#panel-error-empty").hide();
           }
 
-          else {
+          if ($("#amount").val() && $("#amount").val() < 500) {
             (window.location.replace("2-worldpay-card-selection.html"));
           }
       });
