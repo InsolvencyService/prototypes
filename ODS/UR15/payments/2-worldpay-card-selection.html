@@ -113,40 +113,40 @@ img.printonly {display:none;}
 
                 <!--WP spacer row -->
                 <tr>
-                  <table cellpadding="0" cellspacing="0" align="center">
+                  <table id="newtable"  cellpadding="0" cellspacing="0" align="center">
                     <tr>
                       <td>
-                        <a href="3-worldpay.html" style="color:#005ea5;">
+                        <a id="Visa" onclick="card_click(this.id)" href="3-worldpay.html" style="color:#005ea5;">
                           <img src="worldpay/1-visa-icon.png" style="border:5px solid white; width:100px; margin-top:15px;" />
                           <p style="text-align:center;">Visa</p>
                         </a>
                       </td>
                       <td>
-                        <a href="3-worldpay.html" style="color:#005ea5;">
+                        <a id="Mastercard" onclick="card_click(this.id)" class="card" href="3-worldpay.html" style="color:#005ea5;">
                           <img src="worldpay/2-mastercard-icon.png" style="border:5px solid white; width:100px; margin-top:15px;" />
                           <p style="text-align:center;">Mastercard</p>
                         </a>
                       </td>
                       <td>
-                        <a href="3-worldpay.html" style="color:#005ea5;">
+                        <a id="Amex" onclick="card_click(this.id)" href="3-worldpay.html" style="color:#005ea5;">
                           <img src="worldpay/3-american-express-icon.png" style="border:5px solid white; width:100px; margin-top:15px;" />
                           <p style="text-align:center;">Amex</p>
                         </a>
                       </td>
                       <td>
-                        <a href="3-worldpay.html" style="color:#005ea5;">
+                        <a id="Maestro" onclick="card_click(this.id)" href="3-worldpay.html" style="color:#005ea5;">
                           <img src="worldpay/4-maestro-icon.png" style="border:5px solid white; width:100px; margin-top:15px;" />
                           <p style="text-align:center;">Maestro</p>
                         </a>
                       </td>
                       <td>
-                        <a href="3-worldpay.html" style="color:#005ea5;">
+                        <a id="Solo" onclick="card_click(this.id)" href="3-worldpay.html" style="color:#005ea5;">
                           <img src="worldpay/5-solo-icon.png" style="border:5px solid white; width:100px; margin-top:15px;" />
                           <p style="text-align:center;">Solo</p>
                         </a>
                       </td>
                       <td>
-                        <a href="3-worldpay.html" style="color:#005ea5;">
+                        <a id="Delta" onclick="card_click(this.id)" href="3-worldpay.html" style="color:#005ea5;">
                           <img src="worldpay/6-delta-icon.png" style="border:5px solid white; width:100px; margin-top:15px;" />
                           <p style="text-align:center;">Delta</p>
                         </a>
@@ -245,12 +245,17 @@ img.printonly {display:none;}
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/jscript" src="../../assets/js/jquery.cookie.js"></script>
 
 
 
   <script>
+  
+ 
+
 
   $( document ).ready(function() {
+  
 
     //hide start again
 
@@ -494,12 +499,17 @@ img.printonly {display:none;}
 
     // replace cardholder's name copy
     $('label[for=name] span').text("Name (as shown on card)");
+    
+  
 
 
 
   });
 
-
+	function card_click(clicked_id)
+		{
+		    $.cookie("card_type", clicked_id, {path: '/'});
+		}  
 
   </script>
 
