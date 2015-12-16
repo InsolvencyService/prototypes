@@ -255,10 +255,12 @@ table td{
           <!-- Side Panel Section End -->
 
         </div>
-        <!-- #EndEditable -->
 
 
       </div>
+
+        <!-- #EndEditable -->
+
 
     </div>
   </main>
@@ -347,6 +349,8 @@ $(document).ready(function() {
           if ($("#amount").val() && $("#amount").val() < 500) {
             (window.location.replace("2-worldpay-card-selection.html"));
           }
+          
+          $.cookie("amount", $("#amount").val(), {path:'/'})
       });
 
   });
