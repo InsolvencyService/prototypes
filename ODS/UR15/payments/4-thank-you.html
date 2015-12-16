@@ -277,7 +277,12 @@ $(document).ready(function() {
 	var fee_remaining = parseFloat($.cookie("fee_remaining")).toFixed(2);
 	var payment_made = parseFloat($.cookie("amount")).toFixed(2);
 	
-	total_fee_paid = total_fee_paid + payment_made;
+	if(total_fee_paid == '0.00'){
+		total_fee_paid = payment_made;
+	}
+	else{
+		total_fee_paid = total_fee_paid + payment_made;
+	}
 	fee_remaining = fee_remaining - payment_made;
 	
 	$.cookie("fee_paid", total_fee_paid, {path:'/'})
