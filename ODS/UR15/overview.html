@@ -751,7 +751,7 @@ h3 > a {
                               <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">155</span> received</a></p>
                               <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
                               <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
-                              <a id="payment-submit" class="button" href="payments/1-payment-amount.html">Make a payment</a>
+                              <a class="button" href="payments/1-payment-amount.html">Make a payment</a>
                             </div>
                             <!-- Payment Panel end -->
 
@@ -879,10 +879,7 @@ h3 > a {
                           	$("#fee_paid").text("0.00");
                           	$("#fee_remaining").text("655.00");
                           }
-                          
-                          if($.cookie("fee_paid")=='0.00'){
-                          	$("#payment-submit").hide();
-						  }		
+
                           var reset = getParameterByName("reset");
 
                           if (reset && reset.length > 0) {
@@ -916,7 +913,7 @@ h3 > a {
                             $("#section1 .edit").attr("href", "personal/summary.html");
                           }
                           if (section1 && section1 == "complete") {
-                           $("#section1 .edit").show().removeClass("button").text("Edit");
+                            $("#section1 .edit").show().removeClass("button").text("Edit");
                             $("#section2 .edit").show().addClass("button").text("Start");
 
                             document.title = 'Overview - Employment';
