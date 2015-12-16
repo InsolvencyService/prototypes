@@ -185,7 +185,7 @@ table td{
             </div>
             <div class="form-group">
               <label class="heading-small" for="email-address">Payment reference</label>
-              <input id="payment-reference" type="text" style="margin-bottom:10px;">
+              <input id="payment-number" type="text" style="margin-bottom:10px;">
             </div>
 
             <!-- CTA Section Start -->
@@ -265,7 +265,9 @@ table td{
 <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -278,7 +280,7 @@ $(document).ready(function() {
 
   // Payment prototype variables
   $("#continue").on("click", function (e) {
-    $.cookie("payment-reference", $("#payment-reference").val(), {path:'/'});
+    $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
   });
 
 });
@@ -287,9 +289,6 @@ $(document).ready(function() {
 
 <!-- #BeginEditable "scripts" -->
 
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 
@@ -298,11 +297,11 @@ $(document).ready(function() {
        $("#continue").on("click", function (e) {
           e.preventDefault();
           //alert($("#amount").val());
-          if ($("#payment-reference").val() == ""){
+          if ($("#payment-number").val() == ""){
           	$("#panel-error-empty").show();
           }
 
-          if ($("#payment-reference").val()) {
+          if ($("#payment-number").val()) {
             (window.location.replace("13-alternative-payment.html"));
           }
       });

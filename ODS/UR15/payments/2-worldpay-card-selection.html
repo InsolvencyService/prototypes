@@ -247,6 +247,25 @@ img.printonly {display:none;}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/jscript" src="../../assets/js/jquery.cookie.js"></script>
 
+  <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+    var url      = window.location.href;     // Returns full URL
+    var pathname = window.location.pathname; // Returns path only
+    $("#email-link").on("click", function (e) {
+      $.cookie("url", url, {path:'/'});
+      $.cookie("pathname", pathname, {path:'/'});
+    });
+
+    // Payment prototype variables
+    $("#pay-online").on("click", function (e) {
+      $.cookie("amount", $("#amount").val(), {path:'/'});
+    });
+
+  });
+  </script>
 
 
   <script>
