@@ -144,7 +144,18 @@
     
 	
 	<div class="content">
- 		<div class="row" style="margin-left:15px;margin-right:15px;"> 
+	
+		<div id="payment-fail" class="row" style="margin-left:15px;margin-right:15px;">
+			<div class="col-sm-10">
+				<h1 class="form-title heading-large">Continue to submit</h1>
+				<p>You will need to pay your remaining application fee of £<span id="fee">655</span> before we can submit your application.<br><br></p>
+				<p><a href="../payments/1-payment-amount.html" id="pay" class="button">Pay application fee</a></p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+				
+
+ 		<div class="row" id="normalroute" style="margin-left:15px;margin-right:15px;"> 
     		<div class="col-sm-10">
     			<h1 class="form-title heading-large">Continue to submit</h1>
 				<p>Before you submit your application there are a few final questions to answer</p> 
@@ -211,14 +222,8 @@
 							</label>
 						</div>
 					</fieldset>
-
-					
-					<div class="form-group">
-						<label class="form-label-bold" for="email">Please use the box below to enter information about anything else you would like us to know in support of your application.</label>
-						<textarea id="message" name="message" cols="70" rows="8"></textarea>
-					</div>
 				</form>
-				
+				<p>&nbsp;</p>
 				<p><a href="#" id="next" class="button">Continue</a></p>
 				<p><a href="../overview.html?section8=complete">Back</a></p>
 				<p>&nbsp;</p>
@@ -301,7 +306,20 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function() {
                            
+	var payment_amount = parseFloat($.cookie("fee_paid"));
+	var remaining_amount= parseFloat($.cookie("fee_remaining")).toFixed(2);
 	
+	$("#fee").text(remaining_amount);
+	
+	if(payment_amount<655){
+		$("#payment-fail").show();
+		$("#normalroute").hide();		
+	}                           
+	else {
+		$("#payment-fail").hide();
+		$("#normalroute").show();	
+	}
+
 
 });
 

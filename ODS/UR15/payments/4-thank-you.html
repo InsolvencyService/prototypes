@@ -188,7 +188,7 @@ table td{
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <a href="../overview-payments-V1.html"><button class="button">Continue</button></a>
+              <a href="../overview.html"><button class="button">Continue</button></a>
             </div>
             <!-- CTA Section End -->
 
@@ -196,10 +196,12 @@ table td{
           <!-- Main Content Section End -->
 
         </div>
-        <!-- #EndEditable -->
 
 
       </div>
+
+        <!-- #EndEditable -->
+
 
     </div>
   </main>
@@ -270,110 +272,23 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function() {
-  var housename = $.cookie('house');
-  var personname = $.cookie('name');
-
-  if (personname && personname.length > 0){
-    $(".personname").text(personname);
-  }
-  if (housename && housename.length > 0){
-    $(".housename").text(housename );
-  }
-
-  var mortgagetype = "mortgage";
-  if ($.cookie('mortgagetype') && $.cookie('mortgagetype').length > 0){
-    $(".mortgagetype").text($.cookie('mortgagetype'));
-  }
-  if ($.cookie('remortgagefor') && $.cookie('remortgagefor').length > 0) {
-    $(".remortgagefor").text($.cookie('remortgagefor'));
-    $("#rowremortgagefor").show();
-    //$("#row").show();
-  }
-  var totalsecurities = 100000.00
-  var propertyvalue = 105000.00;
-  if ($.cookie('propertyvalue') && $.cookie('propertyvalue').length > 0 && $.isNumeric($.cookie('propertyvalue'))){
-    propertyvalue  = parseFloat($.cookie('propertyvalue'));
-    $(".propertyvalue").text(numberWithCommas(propertyvalue));
-  }
-
-  var mortgageamount = 70000.00;
-  if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
-    mortgageamount = parseFloat($.cookie('mortgageamount'));
-    $(".mortgageamount").text(numberWithCommas(mortgageamount));
-  }
-
-  var numberofsecuredloans = 0;
-
-  if ($.cookie('numberofsecuredloans') && $.cookie('numberofsecuredloans').length > 0 && $.isNumeric($.cookie('numberofsecuredloans'))){
-    numberofsecuredloans= parseInt($.cookie('numberofsecuredloans'));
-
-    var securedloan = 0.00;
-    var loanfor = "car";
-    var loanname = "ABC Finance Ltd";
-    var loanmonth = "4";
-    var loanyear = "2008";
-    for (i = 1; i < numberofsecuredloans + 1; i++) {
-      if ($.cookie('securedloan' + i) && $.cookie('securedloan' + i).length > 0 && $.isNumeric($.cookie('securedloan' + i))){
-        securedloan = parseFloat($.cookie('securedloan' + i));
-      }
-      if ($.cookie('loanfor' + i) && $.cookie('loanfor' + i).length > 0){
-        loanfor = $.cookie('loanfor' + i);
-      }
-      if ($.cookie('loanname' + i) && $.cookie('loanname' + i).length > 0){
-        loanname= $.cookie('loanname' + i);
-      }
-      if ($.cookie('loanmonth' + i) && $.cookie('loanmonth' + i).length > 0){
-        loanmonth= $.cookie('loanmonth' + i);
-      }
-      if ($.cookie('loanyear' + i) && $.cookie('loanyear' + i).length > 0){
-        loanyear= $.cookie('loanyear' + i);
-      }
-
-      // add to table
-      $("#row" + i).show();
-      $("#row" + i + " .loanamount").text(securedloan);
-      $("#row" + i + " .loanfor").text(loanfor);
-      $("#row" + i + " .loanname").text(loanname);
-      $("#row" + i + " .loanmonth").text(loanmonth);
-      $("#row" + i + " .loanyear").text(loanyear);
-
-    }
-  }
-
-
-  var securedloan = 0.00;
-  if ($.cookie('securedloan') && $.cookie('securedloan').length > 0 && $.isNumeric($.cookie('securedloan'))){
-    securedloan = parseFloat($.cookie('securedloan'));
-  }
-
-
-  $("#details1").hide();
-
-  $(".js-section").on("click", function (e) {
-    e.preventDefault();
-    if ($(this).hasClass("open") == false) {
-      $(this).addClass("open");
-      $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-      var details = $($(this).attr("href"));
-      details.show();
-    }
-    else {
-      $("#details1").hide();
-      $(this).removeClass("open");
-      $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
-      var details = $($(this).attr("href"));
-      details.hide();
-    }
-  });
-
-
-
+	
+	var total_fee_paid = $.cookie("fee_paid");
+	var fee_remaining = $.cookie("fee_remaining");
+	var payment_made = $.cookie("amount");
+	
+	if(total_fee_paid == '0.00'){
+		total_fee_paid = payment_made;
+	}
+	else{
+		total_fee_paid = (parseFloat(total_fee_paid) + parseFloat(payment_made)).toFixed(2);
+	}
+	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
+	
+	$.cookie("fee_paid", total_fee_paid, {path:'/'})
+	$.cookie("fee_remaining", fee_remaining, {path:'/'})
+	
 });
-
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 
 
 </script>

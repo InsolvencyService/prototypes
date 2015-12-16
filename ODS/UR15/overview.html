@@ -748,9 +748,15 @@ h3 > a {
                             <!-- Payment Panel start -->
                             <div class="panel panel-primary">
                               <h2>Bankruptcy order fee</h2>
+<<<<<<< HEAD
                               <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;155 received</a></p>
                               <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
                               <p class="updated-text">Last payment date:<br>10 December 2015 at 15:05:06</p>
+=======
+                              <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">155</span> received</a></p>
+                              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
+                              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+>>>>>>> origin/gh-pages
                               <a class="button" href="payments/1-payment-amount.html">Make a payment</a>
                             </div>
                             <!-- Payment Panel end -->
@@ -775,7 +781,7 @@ h3 > a {
                               <div>
 
 
-                                <a href="https://indigodesigned.com/share/run/j74c3a3qar7w#f=submit/continuesubmit" id="next" style="display:none" class="button">Submit your application</a>
+                                <a href="submission/start.html" id="next" style="display:none" class="button">Submit your application</a>
 
                               </div>
                               <div>
@@ -866,6 +872,18 @@ h3 > a {
                           var urn = $.cookie('urn');
                           if (urn && urn.length > 8){
                             $("#urn").text(urn);
+                          }
+                          
+                          //checking payment details
+                          if($.cookie("fee_paid")){
+                          	$("#fee_paid").text($.cookie("fee_paid"));
+                          	$("#fee_remaining").text($.cookie("fee_remaining"));
+                          }
+                          else{
+                          	$.cookie("fee_paid", "0.00", {path:'/'})
+                          	$.cookie("fee_remaining", "655.00", {path:'/'})
+                          	$("#fee_paid").text("0.00");
+                          	$("#fee_remaining").text("655.00");
                           }
 
                           var reset = getParameterByName("reset");

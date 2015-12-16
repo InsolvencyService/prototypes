@@ -155,7 +155,10 @@ img.printonly {display:none;}
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment method</span>
           </td>
 					<td class="one width190" align="left" valign="top">
-            <span id="card_type" style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"></span>
+            <span id="card-type" style="font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469; font-weight:bold">
+            	Visa
+            </span>
+            &nbsp;
           </td>
 					<td rowspan="3" class="one" valign="top" align="right"><img src="worldpay/VISA_DEBIT.gif" style="border:0px;" alt="Visa Debit" />&nbsp;&nbsp;&nbsp;</td>
 				</tr>
@@ -166,7 +169,7 @@ img.printonly {display:none;}
           </td>
 					<td class="one width190" align="left" valign="top">
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
-              <b>&pound;</b><span id="amount" style="font-weight:bold;"></span> - Payment to HMRC</b>
+              <b>Online Debt Solution Application Fee</b>
             </span>
           </td>
         </tr>
@@ -176,7 +179,7 @@ img.printonly {display:none;}
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Amount</span>
           </td>
 					<td class="one" align="left" valign="top">
-            <b>&pound;</b><span id="amount" style="font-weight:bold;"></span>
+            <span id="amountpaid" style="font-weight:bold;"></span>
           </td>
 				</tr>
 
@@ -830,9 +833,7 @@ For an example of the HTML code that this files need to work correctly with your
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -845,15 +846,13 @@ $(document).ready(function() {
 
   // Cookie variable
   if ($.cookie("payment-number")) {
-    $("#payment-number").text($.cookie("payment-number"));
+    $("#payment-number").text($.cookie("payment-number")).addClass("bolder");
   }
-
-  if ($.cookie("amount")) {
-    $("#amount").text($.cookie("amount"));
-  }
-
   if ($.cookie("card_type")) {
-    $("#card_type").text($.cookie("card_type"));
+    $("#card-type").text($.cookie("card_type")).addClass("bolder");
+  }
+  if ($.cookie("amount")) {
+    $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
   }
 
 });

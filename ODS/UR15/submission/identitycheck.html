@@ -148,18 +148,25 @@
     		<div class="col-sm-10">
     			<h1 class="form-title heading-large">Identity check</h1>
 				<p>Before you submit your application you need to have completed the following:</p> 
-				<div class="heading-medium">	
-						<p class="col-sm-12 col-sm-push-2"><span style="color:green"><i class="glyphicon glyphicon-ok-circle"></i>&nbsp;&nbsp; Paid your application fee</span></p>
-						<p class="col-sm-12 col-sm-push-2"><span style="color:red;"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp;&nbsp; Confirmed your identity</span></p>
+				<div class="heading-large">	
+						<p id="payment" class="col-sm-12 col-sm-push-1">[application fee]</p>
+						<p class="col-sm-12 col-sm-push-1"><span style="color:red;"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp;&nbsp; Confirmed your identity</span></p>
 				</div>	
 				
 				<p>&nbsp;</p>
 				
-				<p class="heading-medium">To confirm your identity, please sign in or register with GOV.UK Verify</p>
-				<p>Once you have successfully completed Verify, you'll be able to submit your application</p>
+				<div id="verify">
+					<p class="heading-medium">To confirm your identity, please sign in or register with GOV.UK Verify</p>
+					<p>Once you have successfully completed Verify, you'll be able to submit your application</p>
+					<p><a href="verify.html" id="next" class="button">Continue</a></p>
+					<p><a action="javascript: history.go(-1)">Back</a></p>
+				</div>
 				
-				<p><a href="verify.html" id="next" class="button">Continue</a></p>
-				<p><a action="javascript: history.go(-1)">Back</a></p>
+				<div id="payment-fail" style="display:none">
+					<p>You will need to pay the full application fee of £655 before we can verify your identity.<br><br></p>
+					<p><a href="#" id="pay" class="button">Pay application fee</a></p>
+				</div>
+				
 				<p>&nbsp;</p>
 				
 			</div>
@@ -239,8 +246,17 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function() {
-                           
 
+	var payment_amount = parseFloat($.cookie("fee_paid"));
+	
+	if(payment_amount<655){
+		$("#payment").html('<span style="color:red;"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp;&nbsp; Paid your application fee</span>');
+		$("#payment-fail").show();
+		$("#verify").hide();
+	}                           
+	else {
+		$("#payment").html('<span style="color:green"><i class="glyphicon glyphicon-ok-circle"></i>&nbsp;&nbsp; Paid your application fee</span>');	
+	}
 });
 
 $("#next").click(function() {
