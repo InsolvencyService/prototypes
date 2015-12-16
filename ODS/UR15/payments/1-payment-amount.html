@@ -233,8 +233,8 @@ table td{
             <!-- Payment Panel start -->
             <div class="panel panel-primary no-button">
               <h2>Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;155 received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
+              <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
+              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
               <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
             </div>
             <span class="form-hint">You can also pay by cash, <a href="5-cash-payment.html">click here to find out how</a>.</span>
@@ -332,6 +332,18 @@ $(document).ready(function() {
 <script type="text/javascript">
 
   $(document).ready(function() {
+  
+	  //checking payment details
+	  if($.cookie("fee_paid")){
+	  	$("#fee_paid").text($.cookie("fee_paid"));
+	  	$("#fee_remaining").text($.cookie("fee_remaining"));
+	  }
+	  else{
+	  	$.cookie("fee_paid", "0.00", {path:'/'})
+	  	$.cookie("fee_remaining", "655.00", {path:'/'})
+	  	$("#fee_paid").text("0.00");
+	  	$("#fee_remaining").text("655.00");
+	  }
 
        $("#pay-online").on("click", function (e) {
           e.preventDefault();
