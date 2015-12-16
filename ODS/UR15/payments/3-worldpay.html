@@ -155,9 +155,7 @@ img.printonly {display:none;}
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment method</span>
           </td>
 					<td class="one width190" align="left" valign="top">
-            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
-              <b>Visa</b></span>
-            &nbsp;
+            <span id="card_type" style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;"></span>
           </td>
 					<td rowspan="3" class="one" valign="top" align="right"><img src="worldpay/VISA_DEBIT.gif" style="border:0px;" alt="Visa Debit" />&nbsp;&nbsp;&nbsp;</td>
 				</tr>
@@ -168,7 +166,7 @@ img.printonly {display:none;}
           </td>
 					<td class="one width190" align="left" valign="top">
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">
-              <b>&pound;50 - Payment to HMRC</b>
+              <b>&pound;</b><span id="amount" style="font-weight:bold;"></span> - Payment to HMRC</b>
             </span>
           </td>
         </tr>
@@ -178,7 +176,7 @@ img.printonly {display:none;}
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Amount</span>
           </td>
 					<td class="one" align="left" valign="top">
-            <span id="amount" style="font-weight:bold;"></span>
+            <b>&pound;</b><span id="amount" style="font-weight:bold;"></span>
           </td>
 				</tr>
 
@@ -852,6 +850,10 @@ $(document).ready(function() {
 
   if ($.cookie("amount")) {
     $("#amount").text($.cookie("amount"));
+  }
+
+  if ($.cookie("card_type")) {
+    $("#card_type").text($.cookie("card_type"));
   }
 
 });
