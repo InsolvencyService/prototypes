@@ -265,6 +265,10 @@ var numberx = Math.floor( Math.random() * ( 1 + 2 - 1 ) );
                           
 });
 
+$("#next").click(function(e) {
+	window.open('submit_log.html','Submit Log','menubar=0,resizable=0,width=600,height=400');
+});
+
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
