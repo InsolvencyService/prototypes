@@ -4,21 +4,25 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Untitled 1</title>
+<script src="../../assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
-    window.onload = function () {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "http://www.telize.com/jsonip?callback=DisplayIP";
-        document.getElementsByTagName("head")[0].appendChild(script);
-    };
-    function DisplayIP(response) {
-        document.getElementById("ipaddress").innerHTML = "Your IP Address is " + response.ip;
-    }
+   $.getJSON("http://jsonip.com?callback=?", function (data) {
+    $("#ipaddress").text("Submitted from: " + data.ip);
+    
+	});
+
+$(document).ready(function() {
+	
+	var d = new Date();
+    $("#submission").text("Submitted on: " + d);
+});
 </script>
 </head>
 
 <body>
 	<form>
+		<span id="urn">Application: B52S-FQ6Y-HQWP</span><br/>
+		<span id="submission"></span><br/>
         <span id="ipaddress"></span>
     </form>
 </body>
