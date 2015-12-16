@@ -259,11 +259,6 @@ img.printonly {display:none;}
       $.cookie("pathname", pathname, {path:'/'});
     });
 
-    // Payment prototype variables
-    $("#pay-online").on("click", function (e) {
-      $.cookie("amount", $("#amount").val(), {path:'/'});
-    });
-
   });
   </script>
 
@@ -271,12 +266,12 @@ img.printonly {display:none;}
 
 
   <script>
-  
- 
+
+
 
 
   $( document ).ready(function() {
-  
+
 
     //hide start again
 
@@ -520,17 +515,17 @@ img.printonly {display:none;}
 
     // replace cardholder's name copy
     $('label[for=name] span').text("Name (as shown on card)");
-    
-  
+
+
 
 
 
   });
 
 	function card_click(clicked_id)
-		{
-		    $.cookie("card_type", clicked_id, {path: '/'});
-		}  
+	{
+    $.cookie("card_type", clicked_id, {path: '/'});
+	}
 
   </script>
 
