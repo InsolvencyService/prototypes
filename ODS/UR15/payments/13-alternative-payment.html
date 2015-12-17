@@ -186,7 +186,7 @@ table td{
             <table class="table">
               <tr>
                 <td>Application reference</td>
-                <td class="heading-small"><span id="urn"></span></td>
+                <td class="heading-small"><span id="payment-number"></span></td>
               </tr>
               <tr>
                 <td>Left to pay</td>
@@ -306,7 +306,7 @@ $(document).ready(function() {
   });
 
   // Application reference number
-  $.cookie("urn", $("#urn").val(), {path:'/'});
+  $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
 
   $("#pay-online").on("click", function (e) {
      e.preventDefault();

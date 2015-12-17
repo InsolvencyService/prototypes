@@ -177,11 +177,11 @@ table td{
             <table class="table">
               <tr>
                 <td>Your reference</td>
-                <td class="heading-small"><span id="urn"></span></td>
+                <td class="heading-small"><span id="payment-number"></span></td>
               </tr>
               <tr>
                 <td>WorldPay Transaction ID</td>
-                <td class="heading-small">Worldpay-<span id="urn"></span></td>
+                <td class="heading-small">Worldpay-<span id="payment-number"></span></td>
               </tr>
             </table>
             <p>&nbsp;</p>
@@ -263,7 +263,7 @@ $(document).ready(function() {
   });
 
   // Adding in Unique reference number
-  $("#urn").text($.cookie("urn")).addClass("bolder");
+  $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
 
 });
 
