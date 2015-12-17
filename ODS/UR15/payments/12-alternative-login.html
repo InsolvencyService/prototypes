@@ -186,7 +186,7 @@ table td{
             </div>
             <div class="form-group">
               <label class="heading-small" for="payment-number" name="payment-number">Payment reference</label><br>
-              <input id="urn" type="text" style="margin-bottom:10px;">
+              <input id="payment-number" type="text" style="margin-bottom:10px;">
             </div>
 
             <!-- CTA Section Start -->
@@ -282,17 +282,17 @@ $(document).ready(function() {
 
   // Payment prototype variables
   $("#continue").on("click", function (e) {
-    $.cookie("urn", $("#urn").val(), {path:'/'});
+    $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
   });
 
   $("#continue").on("click", function (e) {
      e.preventDefault();
      //alert($("#amount").val());
-     if ($("#urn").val() == ""){
+     if ($("#payment-number").val() == ""){
        $("#panel-error-empty").show();
      }
 
-     if ($("#urn").val()) {
+     if ($("#payment-number").val()) {
        (window.location.replace("13-alternative-payment.html"));
      }
  });
