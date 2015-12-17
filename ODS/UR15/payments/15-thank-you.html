@@ -154,6 +154,7 @@ table td{
 
   <main id="content" role="main">
     <div id="content">
+
       <div class="inner-block">
         <div class="phase-banner">
           <p>
@@ -166,72 +167,29 @@ table td{
       <!-- #BeginEditable "content" -->
 
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Make a fee payment</h1>
+        <h1 class="form-title heading-large">Thank you</h1>
         <div class="row">
 
-          <!-- Main Content Section End -->
+          <!-- Main Content Section Start -->
           <div class="col-sm-8">
-
-            <!-- Hidden Error messages Start -->
-            <div class="validation-summary" id="panel-error-greater" style="display:none">
-              <h2>Please enter a new amount</h2>
-              <a href="#contributor-amount">You have entered an amount that is greater than the remaining fee of £500.</a>
-            </div>
-            <div class="validation-summary" id="panel-error-empty" style="display:none">
-              <h2>You didn't enter a payment amount</h2>
-              <a href="#contributor-amount">Please enter an amount</a>
-            </div>
-            <!-- Hidden Error messages End -->
-
+            <p>An email has been sent to your porposed contributor.</p>
+            <p>&nbsp;</p>
             <table class="table">
               <tr>
-                <td>Application reference</td>
+                <td>Your reference</td>
                 <td class="heading-small"><span id="payment-number"></span></td>
               </tr>
-              <tr>
-                <td>Left to pay</td>
-                <td class="heading-small"><span id="lefttopay">&pound;500</span></td>
-              </tr>
             </table>
-            <ul>
-              <li>
-                <p>The remaining amount of <span class="heading-small">&pound;500</span> is needed to enable the application to proceed</p>
-                <div class="form-group">
-                  <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label">How much would you like to pay?</label>
-                  £<input id="amount" type="text"  value="" />
-                  <br/>
-                </div>
-                <div>
-                  <button id="pay-online" href="#" class="button">Make a payment</button>
-                </div>
-
-              </li>
-            </ul>
+            <p>&nbsp;</p>
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+              <a href="../overview-payments-V1.html"><button class="button">Continue</button></a>
             </div>
             <!-- CTA Section End -->
 
           </div>
           <!-- Main Content Section End -->
-
-          <!-- Side Panel Section Start -->
-          <div class="col-sm-4">
-            <!-- Payment Panel start -->
-            <div class="panel panel-primary no-button">
-              <h2>Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
-              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
-            </div>
-            <!-- Payment Panel end -->
-            <div class="panel-indent" style="font-size:16px; border-color:#efefef">
-              <p><a href="7-help-page.html">How can I get a refund?</a></p>
-            </div>
-          </div>
-          <!-- Side Panel Section End -->
 
         </div>
         <!-- #EndEditable -->
@@ -300,46 +258,8 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  // Payment prototype variables
-  $("#pay-online").on("click", function (e) {
-    $.cookie("amount", $("#amount").val(), {path:'/'});
-  });
-
-  // Application reference number
-  if ($.cookie("payment-number")) {
-    $("#payment-number").text($.cookie("payment-number"));
-  }
-
-  $("#pay-online").on("click", function (e) {
-     e.preventDefault();
-     //alert($("#amount").val());
-     if ($("#amount").val() == ""){
-       $("#panel-error-empty").show();
-       $("#panel-error-greater").hide();
-     }
-
-     if ($("#amount").val() && $("#amount").val() > 500){
-       $("#panel-error-greater").show();
-       $("#panel-error-empty").hide();
-     }
-
-     if ($("#amount").val() && $("#amount").val() < 500) {
-       (window.location.replace("2a-worldpay-card-selection-alternative.html"));
-     }
- });
-
- //checking payment details
- if($.cookie("fee_paid")){
-   $("#fee_paid").text($.cookie("fee_paid"));
-   $("#fee_remaining").text($.cookie("fee_remaining"));
-   $(".lefttopay").text($.cookie("fee_remaining"));
- }
- else{
-   $.cookie("fee_paid", "0.00", {path:'/'})
-   $.cookie("fee_remaining", "655.00", {path:'/'})
-   $("#fee_paid").text("0.00");
-   $("#fee_remaining").text("655.00");
- }
+  // Adding in Unique reference number
+  $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
 
 });
 
