@@ -281,7 +281,7 @@ $(document).ready(function() {
 	$.cookie("fee_paid", total_fee_paid, {path:'/'})
 	$.cookie("fee_remaining", fee_remaining, {path:'/'})
 	var d = new Date();
-	$.cookie("payment_timestamp", (formatDate(d, "dd MMMM yyyy") + ' at '+formatDate(d, "HH:mm:ss"), {path:'/'});
+	$.cookie("payment_timestamp", (formatDate(d, "dd MMMM yyyy") + ' at '+formatDate(d, "HH:mm:ss"), {path:'/'}));
 });
 
 function formatDate(date, format, utc) {
