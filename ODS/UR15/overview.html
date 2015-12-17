@@ -859,8 +859,6 @@ h3 > a {
                         </script>
 
                         <!-- #BeginEditable "scripts" -->
-
-                        <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
                         <script type="text/javascript">
                         $(document).ready(function () {
                           // var urn = $.cookie('urn');
@@ -870,7 +868,7 @@ h3 > a {
 
                           // Unique reference number
                           $("#make-a-payment").on("click", function (e) {
-                            $.cookie("urn", $("#urn").val(), {path:'/'});
+                            $.cookie("urn", $("#urn").text(""), {path:'/'});
                           });
 
                           //checking payment details
