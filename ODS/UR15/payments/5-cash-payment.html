@@ -285,7 +285,10 @@ table td{
 <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -301,38 +304,38 @@ $(document).ready(function() {
     $.cookie("email-address", $("#email-address").val(), {path:'/'});
   });
 
-});
-</script>
-
-<!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-
-  $(document).ready(function() {
-
-       $("#generate-barcode").on("click", function (e) {
-          e.preventDefault();
-          //alert($("#amount").val());
-          if ($("#email-address").val() == ""){
-          	$("#panel-error-empty").show();
-          }
-
-          if ($("#email-address").val()) {
-            (window.location.replace("6-barcode-generator.html"));
-          }
-      });
-
-  });
-
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  //checking payment details
+  if ($.cookie("fee_paid")) {
+    $("#fee_paid").text($.cookie("fee_paid"));
+    $("#fee_remaining").text($.cookie("fee_remaining"));
+    $(".lefttopay").text($.cookie("fee_remaining"));
+  }
+  else {
+    $.cookie("fee_paid", "0.00", {path:'/'})
+    $.cookie("fee_remaining", "655.00", {path:'/'})
+    $("#fee_paid").text("0.00");
+    $("#fee_remaining").text("655.00");
   }
 
+  $("#generate-barcode").on("click", function (e) {
+     e.preventDefault();
+     //alert($("#amount").val());
+     if ($("#email-address").val() == ""){
+       $("#panel-error-empty").show();
+     }
+
+     if ($("#email-address").val()) {
+       (window.location.replace("6-barcode-generator.html"));
+     }
+ });
+
+});
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 </script>
-
-
 <!-- #EndEditable -->
 
 

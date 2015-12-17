@@ -268,6 +268,7 @@ table td{
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -283,41 +284,26 @@ $(document).ready(function() {
     $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
   });
 
+  $("#continue").on("click", function (e) {
+     e.preventDefault();
+     //alert($("#amount").val());
+     if ($("#payment-number").val() == ""){
+       $("#panel-error-empty").show();
+     }
+
+     if ($("#payment-number").val()) {
+       (window.location.replace("13-alternative-payment.html"));
+     }
+ });
+
 });
-</script>
 
-
-<!-- #BeginEditable "scripts" -->
-
-
-<script type="text/javascript">
-
-  $(document).ready(function() {
-
-       $("#continue").on("click", function (e) {
-          e.preventDefault();
-          //alert($("#amount").val());
-          if ($("#payment-number").val() == ""){
-          	$("#panel-error-empty").show();
-          }
-
-          if ($("#payment-number").val()) {
-            (window.location.replace("13-alternative-payment.html"));
-          }
-      });
-
-  });
-
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 </script>
-
-
 <!-- #EndEditable -->
-
-
 
 
 <div id="window-resizer-tooltip" style="display: none;">

@@ -250,7 +250,10 @@ table td{
   <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -261,22 +264,10 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-});
-</script>
-
-<!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-	
-	var total_fee_paid = $.cookie("fee_paid");
+  var total_fee_paid = $.cookie("fee_paid");
 	var fee_remaining = $.cookie("fee_remaining");
 	var payment_made = $.cookie("amount");
-	
+
 	if(total_fee_paid == '0.00'){
 		total_fee_paid = payment_made;
 	}
@@ -284,16 +275,12 @@ $(document).ready(function() {
 		total_fee_paid = (parseFloat(total_fee_paid) + parseFloat(payment_made)).toFixed(2);
 	}
 	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
-	
+
 	$.cookie("fee_paid", total_fee_paid, {path:'/'})
 	$.cookie("fee_remaining", fee_remaining, {path:'/'})
-	
+
 });
-
-
 </script>
-
-
 <!-- #EndEditable -->
 
 

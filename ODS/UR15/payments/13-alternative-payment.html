@@ -287,6 +287,7 @@ table td{
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
 
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -302,46 +303,31 @@ $(document).ready(function() {
     $.cookie("amount", $("#amount").val(), {path:'/'});
   });
 
+  $("#pay-online").on("click", function (e) {
+     e.preventDefault();
+     //alert($("#amount").val());
+     if ($("#amount").val() == ""){
+       $("#panel-error-empty").show();
+       $("#panel-error-greater").hide();
+     }
+
+     if ($("#amount").val() && $("#amount").val() > 500){
+       $("#panel-error-greater").show();
+       $("#panel-error-empty").hide();
+     }
+
+     if ($("#amount").val() && $("#amount").val() < 500) {
+       (window.location.replace("2-worldpay-card-selection.html"));
+     }
+ });
+
 });
-</script>
 
-
-<!-- #BeginEditable "scripts" -->
-
-
-<script type="text/javascript">
-
-  $(document).ready(function() {
-
-       $("#pay-online").on("click", function (e) {
-          e.preventDefault();
-          //alert($("#amount").val());
-          if ($("#amount").val() == ""){
-          	$("#panel-error-empty").show();
-            $("#panel-error-greater").hide();
-          }
-
-          if ($("#amount").val() && $("#amount").val() > 500){
-          	$("#panel-error-greater").show();
-            $("#panel-error-empty").hide();
-          }
-
-          if ($("#amount").val() && $("#amount").val() < 500) {
-            (window.location.replace("2-worldpay-card-selection.html"));
-          }
-      });
-
-  });
-
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-
-
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 </script>
-
-
 <!-- #EndEditable -->
 
 

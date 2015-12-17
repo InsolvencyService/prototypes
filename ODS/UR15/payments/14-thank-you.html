@@ -238,7 +238,10 @@ table td{
   <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -250,125 +253,12 @@ $(document).ready(function() {
   });
 
 });
-</script>
-
-<!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  var housename = $.cookie('house');
-  var personname = $.cookie('name');
-
-  if (personname && personname.length > 0){
-    $(".personname").text(personname);
-  }
-  if (housename && housename.length > 0){
-    $(".housename").text(housename );
-  }
-
-  var mortgagetype = "mortgage";
-  if ($.cookie('mortgagetype') && $.cookie('mortgagetype').length > 0){
-    $(".mortgagetype").text($.cookie('mortgagetype'));
-  }
-  if ($.cookie('remortgagefor') && $.cookie('remortgagefor').length > 0) {
-    $(".remortgagefor").text($.cookie('remortgagefor'));
-    $("#rowremortgagefor").show();
-    //$("#row").show();
-  }
-  var totalsecurities = 100000.00
-  var propertyvalue = 105000.00;
-  if ($.cookie('propertyvalue') && $.cookie('propertyvalue').length > 0 && $.isNumeric($.cookie('propertyvalue'))){
-    propertyvalue  = parseFloat($.cookie('propertyvalue'));
-    $(".propertyvalue").text(numberWithCommas(propertyvalue));
-  }
-
-  var mortgageamount = 70000.00;
-  if ($.cookie('mortgageamount') && $.cookie('mortgageamount').length > 0 && $.isNumeric($.cookie('mortgageamount'))){
-    mortgageamount = parseFloat($.cookie('mortgageamount'));
-    $(".mortgageamount").text(numberWithCommas(mortgageamount));
-  }
-
-  var numberofsecuredloans = 0;
-
-  if ($.cookie('numberofsecuredloans') && $.cookie('numberofsecuredloans').length > 0 && $.isNumeric($.cookie('numberofsecuredloans'))){
-    numberofsecuredloans= parseInt($.cookie('numberofsecuredloans'));
-
-    var securedloan = 0.00;
-    var loanfor = "car";
-    var loanname = "ABC Finance Ltd";
-    var loanmonth = "4";
-    var loanyear = "2008";
-    for (i = 1; i < numberofsecuredloans + 1; i++) {
-      if ($.cookie('securedloan' + i) && $.cookie('securedloan' + i).length > 0 && $.isNumeric($.cookie('securedloan' + i))){
-        securedloan = parseFloat($.cookie('securedloan' + i));
-      }
-      if ($.cookie('loanfor' + i) && $.cookie('loanfor' + i).length > 0){
-        loanfor = $.cookie('loanfor' + i);
-      }
-      if ($.cookie('loanname' + i) && $.cookie('loanname' + i).length > 0){
-        loanname= $.cookie('loanname' + i);
-      }
-      if ($.cookie('loanmonth' + i) && $.cookie('loanmonth' + i).length > 0){
-        loanmonth= $.cookie('loanmonth' + i);
-      }
-      if ($.cookie('loanyear' + i) && $.cookie('loanyear' + i).length > 0){
-        loanyear= $.cookie('loanyear' + i);
-      }
-
-      // add to table
-      $("#row" + i).show();
-      $("#row" + i + " .loanamount").text(securedloan);
-      $("#row" + i + " .loanfor").text(loanfor);
-      $("#row" + i + " .loanname").text(loanname);
-      $("#row" + i + " .loanmonth").text(loanmonth);
-      $("#row" + i + " .loanyear").text(loanyear);
-
-    }
-  }
-
-
-  var securedloan = 0.00;
-  if ($.cookie('securedloan') && $.cookie('securedloan').length > 0 && $.isNumeric($.cookie('securedloan'))){
-    securedloan = parseFloat($.cookie('securedloan'));
-  }
-
-
-  $("#details1").hide();
-
-  $(".js-section").on("click", function (e) {
-    e.preventDefault();
-    if ($(this).hasClass("open") == false) {
-      $(this).addClass("open");
-      $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
-      var details = $($(this).attr("href"));
-      details.show();
-    }
-    else {
-      $("#details1").hide();
-      $(this).removeClass("open");
-      $(this).find("i").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
-      var details = $($(this).attr("href"));
-      details.hide();
-    }
-  });
-
-
-
-});
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-
-
 </script>
-
-
 <!-- #EndEditable -->
 
 
