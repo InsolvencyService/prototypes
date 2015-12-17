@@ -173,18 +173,20 @@ table td{
           <div class="col-sm-8">
 
             <!-- Hidden Error messages Start -->
-            <div class="alert alert-danger" id="panel-error-greater" style="display:none">
-              You have entered an amount that is greater than the remaining fee of £500.
+            <div class="validation-summary" id="panel-error-greater" style="display:none">
+              <h2>Please enter a new amount</h2>
+              <a href="#amount">You have entered an amount that is greater than the remaining fee of £500.</a>
             </div>
-            <div class="alert alert-danger" id="panel-error-empty" style="display:none">
-              Please enter an amount
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>You didn't enter a payment amount</h2>
+              <a href="#amount">Please enter an amount</a>
             </div>
             <!-- Hidden Error messages End -->
 
             <table class="table">
               <tr>
                 <td>Application reference</td>
-                <td class="heading-small"><span id="urn">EHBJ-8F3M-KRP1</span></td>
+                <td class="heading-small"><span id="urn"></span></td>
               </tr>
               <tr>
                 <td>Name</td>
@@ -197,9 +199,9 @@ table td{
             </table>
             <ul>
               <li>
-                <p>The remaining amount of &pound;<span class="heading-small lefttopay">500</span> is needed to enable the application to proceed</p>
+                <p>The remaining amount of <span class="heading-small lefttopay">&pound;500</span> is needed to enable the application to proceed</p>
                 <div class="form-group">
-                  <label id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
+                  <label name="amount" id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
                   £<input id="amount" type="text"  value="" />
                   <br/>
                 </div>
@@ -353,7 +355,10 @@ $(document).ready(function() {
       (window.location.replace("2-worldpay-card-selection.html"));
     }
 
-    $.cookie("amount", $("#amount").val(), {path:'/'})
+    $.cookie("amount", $("#amount").val(), {path:'/'});
+
+    // Unique reference number
+    $.cookie("urn", $("#urn").val(), {path:'/'});;
   });
 
 });

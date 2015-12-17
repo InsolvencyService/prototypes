@@ -173,8 +173,9 @@ table td{
           <div class="col-sm-8">
 
             <!-- Hidden Error messages Start -->
-            <div class="alert alert-danger" id="panel-error-empty" style="display:none">
-              Please enter an email address
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>You didn't enter an email address</h2>
+              <a href="#email-address">Please enter an email address</a>
             </div>
             <!-- Hidden Error messages End -->
 
@@ -191,7 +192,7 @@ table td{
             <ul>
               <li>
                 <div class="form-group">
-                  <label class="heading-small" for="email-address">Email address<span class="form-hint">Have the payment reference sent to this email address</span>
+                  <label class="heading-small" for="email-address" name="email-address">Email address<span class="form-hint">Have the payment reference sent to this email address</span>
                   </label>
                   <input id="email-address" type="text" style="margin-bottom:10px; width: 20em;">
                 </div>

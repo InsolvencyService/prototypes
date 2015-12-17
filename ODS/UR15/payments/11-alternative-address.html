@@ -175,13 +175,13 @@ table td{
           <div class="col-sm-8">
 
             <!-- Hidden Error messages Start -->
-            <div class="alert alert-danger" id="panel-error-empty" style="display:none">
-              <p>You are missing some address details:</p>
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>You are missing some address details:</h2>
               <ul>
-                <li>* Building name/number and street</li>
-                <li>* Town or city</li>
-                <li>* County</li>
-                <li>*Postcode</li>
+                <li><a href="#building-and-street">* Building name/number and street</a></li>
+                <li><a href="#town-or-city">* Town or city</a></li>
+                <li><a href="#county">* County</a></li>
+                <li><a href="#postcode">*Postcode</a></li>
               </ul>
             </div>
             <!-- Hidden Error messages End -->
@@ -198,21 +198,21 @@ table td{
             </table>
             <p>&nbsp;</p>
             <div class="form-group">
-              <label class="form-label-bold" for="building-and-street">Building name/number and street<span class="form-hint">Have the payment reference sent to this address</span></label>
+              <label class="form-label-bold" for="building-and-street" name="building-and-street">Building name/number and street<span class="form-hint">Have the payment reference sent to this address</span></label>
               <input id="building-and-street" type="text" style="margin-bottom:10px;"><br>
               <input id="building-and-street" type="text" style="margin-bottom:10px;"><br>
               <input id="building-and-street" type="text" style="margin-bottom:10px;">
             </div>
             <div class="form-group">
-              <label class="form-label-bold" for="town-or-city">Town or city</label>
+              <label class="form-label-bold" for="town-or-city" name="town-or-city">Town or city</label>
               <input id="town-or-city" type="text" style="margin-bottom:10px;">
             </div>
             <div class="form-group">
-              <label class="form-label-bold" for="county">County</label>
+              <label class="form-label-bold" for="county" name="county">County</label>
               <input id="county" type="text" style="margin-bottom:10px;">
             </div>
             <div class="form-group">
-              <label class="form-label-bold" for="postcode">Postcode</label>
+              <label class="form-label-bold" for="postcode" name="postcode">Postcode</label>
               <input id="postcode" type="text" style="margin-bottom:10px;">
             </div>
 

@@ -175,8 +175,9 @@ table td{
           <div class="col-sm-8">
 
             <!-- Hidden Error messages Start -->
-            <div class="alert alert-danger" id="panel-error-empty" style="display:none">
-              Please enter an payment reference
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>You didn't enter a payment reference</h2>
+              <a href="#payment-number">Please enter an payment reference</a>
             </div>
             <!-- Hidden Error messages End -->
 
@@ -184,7 +185,7 @@ table td{
               <p>Please enter the reference number you received to continue with the payment.</p>
             </div>
             <div class="form-group">
-              <label class="heading-small" for="email-address">Payment reference</label><br>
+              <label class="heading-small" for="payment-number" name="payment-number">Payment reference</label><br>
               <input id="payment-number" type="text" style="margin-bottom:10px;">
             </div>
 
