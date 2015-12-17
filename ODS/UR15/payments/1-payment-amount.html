@@ -236,8 +236,8 @@ table td{
             <div class="panel panel-primary no-button">
               <h2>Bankruptcy order fee</h2>
               <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
-              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining" class="lefttopay">500</span> left to pay</span>
+              <p id="updated" class="updated-text">Last updated:<br><span id="timestamp">10 December 2015 at 15:05:06</span></p>
             </div>
             <span class="form-hint">You can also pay by cash, <a href="5-cash-payment.html">click here to find out how</a>.</span>
             <!-- Payment Panel end -->
@@ -326,16 +326,17 @@ $(document).ready(function() {
   });
 
   //checking payment details
-  if($.cookie("fee_paid")){
-    $("#fee_paid").text($.cookie("fee_paid"));
-    $("#fee_remaining").text($.cookie("fee_remaining"));
-    $(".lefttopay").text($.cookie("fee_remaining"));
+  if($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
+  	$("#fee_paid").text($.cookie("fee_paid"));
+  	$(".lefttopay").text($.cookie("fee_remaining"));
+  	$("#timestamp").text($.cookie("payment_timestamp"));
   }
   else{
-    $.cookie("fee_paid", "0.00", {path:'/'})
-    $.cookie("fee_remaining", "655.00", {path:'/'})
-    $("#fee_paid").text("0.00");
-    $("#fee_remaining").text("655.00");
+  	$.cookie("fee_paid", "0.00", {path:'/'});
+  	$.cookie("fee_remaining", "655.00", {path:'/'});
+  	$("#fee_paid").text("0.00");
+  	$(".lefttopay").text("655.00");
+  	$("#updated").hide();
   }
 
   $("#pay-online").on("click", function (e) {
