@@ -751,7 +751,7 @@ h3 > a {
                               <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">155</span> received</a></p>
                               <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
                               <p id="updated" class="updated-text">Last updated:<br><span id="timestamp">10 December 2015 at 15:05:06</span></p>
-                              <a class="button" href="payments/1-payment-amount.html">Make a payment</a>
+                              <a id="make-a-payment" class="button" href="payments/1-payment-amount.html">Make a payment</a>
                             </div>
                             <!-- Payment Panel end -->
 
@@ -869,7 +869,9 @@ h3 > a {
                           // }
 
                           // Unique reference number
-                          $.cookie("urn", $("#urn").val(), {path:'/'});
+                          $("#make-a-payment").on("click", function (e) {
+                            $.cookie("urn", $("#urn").val(), {path:'/'});
+                          });
 
                           //checking payment details
                           if($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
