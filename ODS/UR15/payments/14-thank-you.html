@@ -262,8 +262,10 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  // Adding in Unique reference number
-  $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
+  // Cookie variable
+  if ($.cookie("payment-number")) {
+    $("#payment-number").text($.cookie("payment-number")).addClass("bolder");
+  }
 
 });
 

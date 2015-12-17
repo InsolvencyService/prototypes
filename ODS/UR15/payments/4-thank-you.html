@@ -263,8 +263,10 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  // Adding in Unique reference number
-  $("#urn").text($.cookie("urn")).addClass("bolder");
+  // Cookie variable
+  if ($.cookie("urn")) {
+    $("#urn").text($.cookie("urn")).addClass("bolder");
+  }
 
   var total_fee_paid = $.cookie("fee_paid");
 	var fee_remaining = $.cookie("fee_remaining");
