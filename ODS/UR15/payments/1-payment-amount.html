@@ -175,7 +175,7 @@ table td{
             <!-- Hidden Error messages Start -->
             <div class="validation-summary" id="panel-error-greater" style="display:none">
               <h2>Please enter a new amount</h2>
-              <a href="#amount">You have entered an amount that is greater than the remaining fee of £500.</a>
+              <a href="#amount">You have entered an amount that is greater than the remaining fee of £<span id="fee_remaining">500</a>.</a>
             </div>
             <div class="validation-summary" id="panel-error-empty" style="display:none">
               <h2>You didn't enter a payment amount</h2>
@@ -194,12 +194,12 @@ table td{
               </tr>
               <tr>
                 <td>Left to pay</td>
-                <td class="heading-small">&pound;<span class="lefttopay">500</span></td>
+                <td class="heading-small">&pound;<span id="fee_remaining" class="lefttopay">500</span></td>
               </tr>
             </table>
             <ul>
               <li>
-                <p>The remaining amount of <span class="heading-small lefttopay">&pound;500</span> is needed to enable the application to proceed</p>
+                <p>The remaining amount of <b>&pound;</b><span id="fee_remaining" class="heading-small lefttopay">500</span> is needed to enable the application to proceed</p>
                 <div class="form-group">
                   <label name="amount" id="applicant_address_town_label" for="applicant_address_town" class="form-label">How much would you like to pay?</label>
                   £<input id="amount" type="text"  value="" />

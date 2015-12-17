@@ -186,7 +186,7 @@ table td{
             <table class="table">
               <tr>
                 <td>Application reference</td>
-                <td class="heading-small"><span id="urn">8F3M-KRP1</span></td>
+                <td class="heading-small"><span id="urn">8F3M-BAGLEY</span></td>
               </tr>
               <tr>
                 <td>Left to pay</td>
@@ -305,6 +305,9 @@ $(document).ready(function() {
     $.cookie("amount", $("#amount").val(), {path:'/'});
   });
 
+  // Application reference number
+  $.cookie("urn", $("#urn").val(), {path:'/'});
+
   $("#pay-online").on("click", function (e) {
      e.preventDefault();
      //alert($("#amount").val());
@@ -319,7 +322,7 @@ $(document).ready(function() {
      }
 
      if ($("#amount").val() && $("#amount").val() < 500) {
-       (window.location.replace("2-worldpay-card-selection.html"));
+       (window.location.replace("2a-worldpay-card-selection-alternative.html"));
      }
  });
 
