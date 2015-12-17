@@ -855,9 +855,6 @@ h3 > a {
                             $.cookie("pathname", pathname, {path:'/'});
                           });
 
-                          // Unique reference number
-                          $.cookie("urn", $("#urn").val(), {path:'/'});
-
                         });
                         </script>
 
@@ -866,10 +863,13 @@ h3 > a {
                         <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
                         <script type="text/javascript">
                         $(document).ready(function () {
-                          var urn = $.cookie('urn');
-                          if (urn && urn.length > 8){
-                            $("#urn").text(urn);
-                          }
+                          // var urn = $.cookie('urn');
+                          // if (urn && urn.length > 8){
+                          //   $("#urn").text(urn);
+                          // }
+
+                          // Unique reference number
+                          $.cookie("urn", $("#urn").val(), {path:'/'});
 
                           //checking payment details
                           if($.cookie("fee_paid")){
