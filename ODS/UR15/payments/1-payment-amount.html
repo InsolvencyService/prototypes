@@ -233,15 +233,9 @@ table td{
             <!-- Payment Panel start -->
             <div class="panel panel-primary no-button">
               <h2>Bankruptcy order fee</h2>
-<<<<<<< HEAD
-              <p class="payment-amount">&pound;155 received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;500 left to pay</span>
-              <p class="updated-text">Last payment date:<br>10 December 2015 at 15:05:06</p>
-=======
               <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
               <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
               <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
->>>>>>> origin/gh-pages
             </div>
             <span class="form-hint">You can also pay by cash, <a href="5-cash-payment.html">click here to find out how</a>.</span>
             <!-- Payment Panel end -->
@@ -338,7 +332,7 @@ $(document).ready(function() {
 <script type="text/javascript">
 
   $(document).ready(function() {
-  
+
 	  //checking payment details
 	  if($.cookie("fee_paid")){
 	  	$("#fee_paid").text($.cookie("fee_paid"));
@@ -368,7 +362,7 @@ $(document).ready(function() {
           if ($("#amount").val() && $("#amount").val() < 500) {
             (window.location.replace("2-worldpay-card-selection.html"));
           }
-          
+
           $.cookie("amount", $("#amount").val(), {path:'/'})
       });
 
