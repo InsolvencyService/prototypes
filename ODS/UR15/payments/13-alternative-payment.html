@@ -186,7 +186,7 @@ table td{
             <table class="table">
               <tr>
                 <td>Application reference</td>
-                <td class="heading-small"><span id="urn">8F3M-KRP1</span></td>
+                <td class="heading-small"><span id="urn"></span></td>
               </tr>
               <tr>
                 <td>Left to pay</td>
@@ -305,6 +305,9 @@ $(document).ready(function() {
     $.cookie("amount", $("#amount").val(), {path:'/'});
   });
 
+  // Application reference number
+  $.cookie("urn", $("#urn").val(), {path:'/'});
+
   $("#pay-online").on("click", function (e) {
      e.preventDefault();
      //alert($("#amount").val());
@@ -319,9 +322,22 @@ $(document).ready(function() {
      }
 
      if ($("#amount").val() && $("#amount").val() < 500) {
-       (window.location.replace("2-worldpay-card-selection.html"));
+       (window.location.replace("2a-worldpay-card-selection-alternative.html"));
      }
  });
+
+ //checking payment details
+ if($.cookie("fee_paid")){
+   $("#fee_paid").text($.cookie("fee_paid"));
+   $("#fee_remaining").text($.cookie("fee_remaining"));
+   $(".lefttopay").text($.cookie("fee_remaining"));
+ }
+ else{
+   $.cookie("fee_paid", "0.00", {path:'/'})
+   $.cookie("fee_remaining", "655.00", {path:'/'})
+   $("#fee_paid").text("0.00");
+   $("#fee_remaining").text("655.00");
+ }
 
 });
 
