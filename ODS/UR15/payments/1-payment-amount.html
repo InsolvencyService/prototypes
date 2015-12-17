@@ -356,10 +356,14 @@ $(document).ready(function() {
       (window.location.replace("2-worldpay-card-selection.html"));
     }
 
-    $.cookie("amount", $("#amount").val(), {path:'/'});
+    if ($.cookie("amount")) {
+      $("#amount").text($.cookie("amount")).addClass("bolder");
+    }
 
     // Unique reference number
-    $.cookie("urn", $("#urn").val(), {path:'/'});;
+    if ($.cookie("urn")) {
+      $("#urn").text($.cookie("urn")).addClass("bolder");
+    }
   });
 
 });
