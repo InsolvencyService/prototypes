@@ -180,15 +180,18 @@ table td{
                 <td class="heading-small"><span id="payment-number"></span></td>
               </tr>
               <tr>
+                <td>Payment amount</td>
+                <td class="heading-small"><span id="amountpaid"></span></td>
+              </tr>
+              <tr>
                 <td>WorldPay Transaction ID</td>
                 <td class="heading-small">Worldpay-1234</td>
               </tr>
             </table>
-            <p>&nbsp;</p>
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <a href="12-alternative-login.html"><button class="button">Continue to gov.uk</button></a>
+              <a href="12-alternative-login.html"><button class="button">Finish</button></a>
             </div>
             <!-- CTA Section End -->
 
@@ -265,6 +268,10 @@ $(document).ready(function() {
   // Cookie variable
   if ($.cookie("payment-number")) {
     $("#payment-number").text($.cookie("payment-number")).addClass("bolder");
+  }
+
+  if ($.cookie("amount")) {
+    $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
   }
 
 });
