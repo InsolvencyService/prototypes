@@ -175,7 +175,7 @@ table td{
             <!-- Hidden Error messages Start -->
             <div class="validation-summary" id="panel-error-greater" style="display:none">
               <h2>Please enter a new amount</h2>
-              <a href="#contributor-amount">You have entered an amount that is greater than the remaining fee of £500.</a>
+              <a href="#contributor-amount">You have entered an amount that is greater than the remaining fee of <b>&pound;</b><span id="fee_remaining-3">500</span>.</a>
             </div>
             <div class="validation-summary" id="panel-error-empty" style="display:none">
               <h2>You didn't enter a payment amount</h2>
@@ -188,10 +188,10 @@ table td{
                 <td>Application reference</td>
                 <td class="heading-small"><span id="payment-number"></span></td>
               </tr>
-              <!-- <tr>
+              <tr>
                 <td>Left to pay</td>
                 <td class="heading-small"><b>&pound;</b><span id="fee_remaining-2"></span></td>
-              </tr> -->
+              </tr>
             </table>
             <div class="form-group">
               <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label">How much would you like to pay?</label>
@@ -216,14 +216,14 @@ table td{
           <!-- Side Panel Section Start -->
           <div class="col-sm-4">
             <!-- Payment Panel start -->
-            <!-- <div class="panel panel-primary no-button">
+            <div class="panel panel-primary no-button">
               <h2>Bankruptcy order fee</h2>
               <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
               <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining-1">655</span> left to pay</span>
               <p id="updated" class="updated-text" style="display:none;"><span id="timestamp"></span></p>
-            </div> -->
+            </div>
             <!-- Payment Panel end -->
-            <div class="panel-indent" style="font-size:16px; border-color:#efefef">
+            <div class="panel-indent" style="font-size:16px; border-color:#efefef; margin-top:0;">
               <p><a href="7-help-page.html">How can I get a refund?</a></p>
             </div>
           </div>
@@ -324,22 +324,22 @@ $(document).ready(function() {
     }
   });
 
-  // //checking payment details
-  // if($.cookie("fee_paid")){
-  //   $("#fee_paid").text($.cookie("fee_paid"));
-  //   $("#fee_remaining-1").text($.cookie("fee_remaining"));
-  //   $("#fee_remaining-2").text($.cookie("fee_remaining"));
-  //   $("#fee_remaining-3").text($.cookie("fee_remaining"));
-  //   $(".lefttopay").text($.cookie("fee_remaining"));
-  // }
-  // else{
-  //   $.cookie("fee_paid", "0.00", {path:'/'})
-  //   $.cookie("fee_remaining", "655.00", {path:'/'})
-  //   $("#fee_paid").text("0.00");
-  //   $("#fee_remaining-1").text("655.00");
-  //   $("#fee_remaining-2").text("655.00");
-  //   $("#fee_remaining-3").text("655.00");
-  // }
+  //checking payment details
+  if($.cookie("fee_paid")){
+    $("#fee_paid").text($.cookie("fee_paid"));
+    $("#fee_remaining-1").text($.cookie("fee_remaining"));
+    $("#fee_remaining-2").text($.cookie("fee_remaining"));
+    $("#fee_remaining-3").text($.cookie("fee_remaining"));
+    $(".lefttopay").text($.cookie("fee_remaining"));
+  }
+  else{
+    $.cookie("fee_paid", "0.00", {path:'/'})
+    $.cookie("fee_remaining", "655.00", {path:'/'})
+    $("#fee_paid").text("0.00");
+    $("#fee_remaining-1").text("655.00");
+    $("#fee_remaining-2").text("655.00");
+    $("#fee_remaining-3").text("655.00");
+  }
 
 });
 
