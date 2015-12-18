@@ -199,9 +199,9 @@ table td{
             <p>&nbsp;</p>
             <div class="form-group">
               <label class="form-label-bold" for="building-and-street" name="building-and-street">Building name/number and street<span class="form-hint">Have the payment reference sent to this address</span></label>
-              <input id="building-and-street" type="text" style="margin-bottom:10px; width:70%;"><br>
-              <input id="building-and-street" type="text" style="margin-bottom:10px; width:70%;"><br>
-              <input id="building-and-street" type="text" style="margin-bottom:10px; width:70%;">
+              <input id="building-and-street-1" type="text" style="margin-bottom:10px; width:70%;"><br>
+              <input id="building-and-street-2" type="text" style="margin-bottom:10px; width:70%;"><br>
+              <input id="building-and-street-3" type="text" style="margin-bottom:10px; width:70%;">
             </div>
             <div class="form-group">
               <label class="form-label-bold" for="town-or-city" name="town-or-city">Town or city</label>
@@ -329,8 +329,17 @@ $(document).ready(function() {
     }
 
     if ($("#building-and-street, #building-and-street, #town-or-city, #county, #postcode").val()) {
-      (window.location.replace("15-thank-you.html"));
+      (window.location.replace("19-thank-you-post.html"));
     }
+
+    $.cookie("building-and-street-1", $("#building-and-street-1").val(), {path:'/'});
+    $.cookie("building-and-street-2", $("#building-and-street-2").val(), {path:'/'});
+    $.cookie("building-and-street-3", $("#building-and-street-3").val(), {path:'/'});
+    $.cookie("town-or-city", $("#town-or-city").val(), {path:'/'});
+    $.cookie("county", $("#county").val(), {path:'/'});
+    $.cookie("postcode", $("#postcode").val(), {path:'/'});
+
+
   });
 
 });
