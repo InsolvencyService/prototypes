@@ -334,20 +334,21 @@ $(document).ready(function() {
     $.cookie("postcode", $("#postcode").val(), {path:'/'});
 
   });
-
-
-
+  
   //checking payment details
-  if ($.cookie("fee_paid")) {
+  if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
     $("#fee_paid").text($.cookie("fee_paid"));
     $("#fee_remaining").text($.cookie("fee_remaining"));
-    $(".lefttopay").text($.cookie("fee_remaining"));
+    $("#timestamp").text($.cookie("payment_timestamp"));
+    $("#updated").show();
   }
   else {
-    $.cookie("fee_paid", "0.00", {path:'/'})
-    $.cookie("fee_remaining", "655.00", {path:'/'})
+    $.cookie("fee_paid", "0.00", {path:'/'});
+    $.cookie("fee_remaining", "655.00", {path:'/'});
     $("#fee_paid").text("0.00");
-    $("#fee_remaining").text("655.00");
+    // $("#fee_remaining").text("655.00");
+    $(".lefttopay").text("655.00");
+    $("#updated").hide();
   }
 
 });
