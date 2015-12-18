@@ -196,15 +196,14 @@ table td{
                   </label>
                   <input id="email-address" type="text" style="margin-bottom:10px; width: 80%;">
                 </div>
+                <div class="form-navigation form-group" style="margin:0 0 30px 0;">
+                  <a href="#" id="continue" class="button">Continue</a>
+                </div>
+              </li>
+              <li>
                 <h3 class="heading-small">I don't have their email address</h3>
                 <p>If you don't have an email address we can post the payment reference out to them.</p>
                 <a href="11-alternative-address.html">Post it to them</a>
-
-                <p>&nbsp;</p>
-
-                <div>
-                  <a href="#" id="continue" class="button">Continue</a>
-                </div>
               </li>
             </ul>
 
@@ -335,6 +334,11 @@ $(document).ready(function() {
      if ($("#email-address").val()) {
        (window.location.replace("15-thank-you.html"));
      }
+
+     $("#submit-email-address").on("click", function (e) {
+       $.cookie("email-address", $("#email-address").val(), {path:'/'});
+     });
+
    });
 
 });

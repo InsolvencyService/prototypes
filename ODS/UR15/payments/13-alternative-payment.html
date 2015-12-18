@@ -190,7 +190,7 @@ table td{
               </tr>
               <tr>
                 <td>Left to pay</td>
-                <td class="heading-small"><b>&pound;</b><span id="fee_remaining"></span></td>
+                <td class="heading-small"><b>&pound;</b><span class="lefttopay"></span></td>
               </tr>
             </table>
             <div class="form-group">
@@ -223,7 +223,7 @@ table td{
               <p id="updated" class="updated-text" style="display:none;"><span id="timestamp"></span></p>
             </div>
             <!-- Payment Panel end -->
-            <div class="panel-indent" style="font-size:16px; border-color:#efefef; margin-top:0;">
+            <div class="panel-indent" style="font-size:16px; border-color:#efefef;">
               <p><a href="7-help-page.html">How can I get a refund?</a></p>
             </div>
           </div>
@@ -337,6 +337,7 @@ $(document).ready(function() {
     $.cookie("fee_remaining", "655.00", {path:'/'})
     $("#fee_paid").text("0.00");
     $("#fee_remaining").text("655.00");
+    $(".lefttopay").text("655.00");
   }
 
 });

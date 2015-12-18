@@ -173,11 +173,10 @@ table td{
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
             <p>An email has been sent to your porposed contributor.</p>
-            <p>&nbsp;</p>
             <table class="table">
               <tr>
-                <td>Your reference</td>
-                <td class="heading-small"><span id="payment-number"></span></td>
+                <td>Email address</td>
+                <td class="heading-small"><span id="email-address"></span></td>
               </tr>
             </table>
             <p>&nbsp;</p>
@@ -258,8 +257,10 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  // Adding in Unique reference number
-  $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
+  // Cookie variable
+  if ($.cookie("email-address")) {
+    $("#email-address").text($.cookie("email-address")).addClass("bolder");
+  }
 
 });
 
