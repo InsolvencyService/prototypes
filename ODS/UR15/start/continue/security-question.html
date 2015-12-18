@@ -313,7 +313,7 @@ $(document).ready(function() {
 	
 	// retrieve stored question and answer
 	questionx = $.cookie("question"+numberx); 
-	answerx = $.cookie("answer"+numberx); 
+	answerx = $.cookie("answer"+numberx).toLowerCase(); 
 	
 	// write question to page
 		$("#question").text(questionx);
@@ -321,7 +321,7 @@ $(document).ready(function() {
 });
 	
 $("#next").on("click", function (e) {
-	if(($("#answer").val()).toLowerCase() == answerx.toLowerCase()){
+	if(($("#answer").val()).toLowerCase() == answerx){
 		$("#next").attr("href", "../../overview.html");
 	}
 	else{
