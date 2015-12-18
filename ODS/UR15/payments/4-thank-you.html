@@ -175,7 +175,7 @@ table td{
             <p>Your payment was successful.</p>
             <table class="table">
               <tr>
-                <td>Your reference</td>
+                <td>Your application reference</td>
                 <td class="heading-small"><span id="urn"></span></td>
               </tr>
               <tr>
@@ -269,7 +269,7 @@ $(document).ready(function() {
   // Cookie variable
   if ($.cookie("urn")) {
     $("#urn").text($.cookie("urn")).addClass("bolder");
-  }  
+  }
 
   if ($.cookie("amount")) {
     $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");

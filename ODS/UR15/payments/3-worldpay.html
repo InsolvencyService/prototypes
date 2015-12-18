@@ -140,6 +140,14 @@ img.printonly {display:none;}
 
 
 				<!--WP Card Type selected -->
+        <tr>
+					<td class="one width190" align="left" valign="top">
+            <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Your application reference</span>
+          </td>
+					<td class="one" align="left" valign="top">
+            <span id="urn" style="font-weight:bold;"></span>
+          </td>
+				</tr>
 				<tr>
 					<td class="one width190" align="left" valign="top">
             <span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #002469;">Payment method</span>
@@ -840,6 +848,9 @@ $(document).ready(function() {
   }
   if ($.cookie("card_type")) {
     $("#card-type").text($.cookie("card_type")).addClass("bolder");
+  }
+  if ($.cookie("urn")) {
+    $("#urn").text($.cookie("urn")).addClass("bolder");
   }
   if ($.cookie("amount")) {
     $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
