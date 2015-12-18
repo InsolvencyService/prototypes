@@ -188,29 +188,25 @@ table td{
                 <td>Application reference</td>
                 <td class="heading-small"><span id="payment-number"></span></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>Left to pay</td>
                 <td class="heading-small"><b>&pound;</b><span id="fee_remaining-2"></span></td>
-              </tr>
+              </tr> -->
             </table>
-            <ul>
-              <li>
-                <p>The remaining amount of <b>&pound;</b><span class="heading-small" id="fee_remaining-3"></span> is needed to enable the application to proceed</p>
-                <div class="form-group">
-                  <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label">How much would you like to pay?</label>
-                  £<input id="amount" type="text"  value="" />
-                  <br/>
-                </div>
-                <div>
-                  <button id="pay-online" href="#" class="button">Make a payment</button>
-                </div>
-
-              </li>
-            </ul>
+            <div class="form-group">
+              <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label">How much would you like to pay?</label>
+              £<input id="amount" type="text"  value="" />
+              <br/>
+            </div>
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+              <div>
+                <button id="pay-online" href="#" class="button">Make a payment</button>
+              </div>
+              <div class="back">
+                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+              </div>
             </div>
             <!-- CTA Section End -->
 
@@ -220,12 +216,12 @@ table td{
           <!-- Side Panel Section Start -->
           <div class="col-sm-4">
             <!-- Payment Panel start -->
-            <div class="panel panel-primary no-button">
+            <!-- <div class="panel panel-primary no-button">
               <h2>Bankruptcy order fee</h2>
               <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
               <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining-1">655</span> left to pay</span>
               <p id="updated" class="updated-text" style="display:none;"><span id="timestamp"></span></p>
-            </div>
+            </div> -->
             <!-- Payment Panel end -->
             <div class="panel-indent" style="font-size:16px; border-color:#efefef">
               <p><a href="7-help-page.html">How can I get a refund?</a></p>
@@ -328,22 +324,22 @@ $(document).ready(function() {
     }
   });
 
-  //checking payment details
-  if($.cookie("fee_paid")){
-    $("#fee_paid").text($.cookie("fee_paid"));
-    $("#fee_remaining-1").text($.cookie("fee_remaining"));
-    $("#fee_remaining-2").text($.cookie("fee_remaining"));
-    $("#fee_remaining-3").text($.cookie("fee_remaining"));
-    $(".lefttopay").text($.cookie("fee_remaining"));
-  }
-  else{
-    $.cookie("fee_paid", "0.00", {path:'/'})
-    $.cookie("fee_remaining", "655.00", {path:'/'})
-    $("#fee_paid").text("0.00");
-    $("#fee_remaining-1").text("655.00");
-    $("#fee_remaining-2").text("655.00");
-    $("#fee_remaining-3").text("655.00");
-  }
+  // //checking payment details
+  // if($.cookie("fee_paid")){
+  //   $("#fee_paid").text($.cookie("fee_paid"));
+  //   $("#fee_remaining-1").text($.cookie("fee_remaining"));
+  //   $("#fee_remaining-2").text($.cookie("fee_remaining"));
+  //   $("#fee_remaining-3").text($.cookie("fee_remaining"));
+  //   $(".lefttopay").text($.cookie("fee_remaining"));
+  // }
+  // else{
+  //   $.cookie("fee_paid", "0.00", {path:'/'})
+  //   $.cookie("fee_remaining", "655.00", {path:'/'})
+  //   $("#fee_paid").text("0.00");
+  //   $("#fee_remaining-1").text("655.00");
+  //   $("#fee_remaining-2").text("655.00");
+  //   $("#fee_remaining-3").text("655.00");
+  // }
 
 });
 
