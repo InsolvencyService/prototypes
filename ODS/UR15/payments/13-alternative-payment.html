@@ -190,12 +190,12 @@ table td{
               </tr>
               <tr>
                 <td>Left to pay</td>
-                <td class="heading-small"><span id="lefttopay">&pound;500</span></td>
+                <td class="heading-small"><b>&pound;</b><span id="lefttopay"></span></td>
               </tr>
             </table>
             <ul>
               <li>
-                <p>The remaining amount of <span class="heading-small">&pound;500</span> is needed to enable the application to proceed</p>
+                <p>The remaining amount of <b>&pound;</b><span class="heading-small"></span> is needed to enable the application to proceed</p>
                 <div class="form-group">
                   <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label">How much would you like to pay?</label>
                   £<input id="amount" type="text"  value="" />
@@ -222,9 +222,10 @@ table td{
             <!-- Payment Panel start -->
             <div class="panel panel-primary no-button">
               <h2>Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
-              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+              <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
+              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">655</span> left to pay</span>
+              <p id="updated" class="updated-text"><br><span id="timestamp"></span></p>
+              <a id="make-a-payment" class="button" href="payments/1-payment-amount.html">Make a payment</a>
             </div>
             <!-- Payment Panel end -->
             <div class="panel-indent" style="font-size:16px; border-color:#efefef">
@@ -318,12 +319,12 @@ $(document).ready(function() {
        $("#panel-error-greater").hide();
      }
 
-     if ($("#amount").val() && $("#amount").val() > 500){
+     if ($("#amount").val() && $("#amount").val() > 655){
        $("#panel-error-greater").show();
        $("#panel-error-empty").hide();
      }
 
-     if ($("#amount").val() && $("#amount").val() < 500) {
+     if ($("#amount").val() && $("#amount").val() < 655) {
        (window.location.replace("2a-worldpay-card-selection-alternative.html"));
      }
  });

@@ -168,11 +168,12 @@ table td{
 
 
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Enter reference</h1>
         <div class="row">
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
+
+            <h1 class="form-title heading-large">Make a payment towards a bankruptcy application</h1>
 
             <!-- Hidden Error messages Start -->
             <div class="validation-summary" id="panel-error-empty" style="display:none">
@@ -182,10 +183,14 @@ table td{
             <!-- Hidden Error messages End -->
 
             <div class="paypoint information">
-              <p>Please enter the reference number you received to continue with the payment.</p>
+              <p>From this page you can make a payment.</p>
             </div>
             <div class="form-group">
-              <label class="heading-small" for="payment-number" name="payment-number">Payment reference</label><br>
+              <label class="heading-small" for="payment-number" name="payment-number">
+                Enter payment reference number<br>
+                <p class="form-hint">If you're making a payment for your own application enter your application number.</p>
+                <p class="form-hint">If you're making a payment for someone else enter the reference you have been provided - for example, 1234Smith.</p>
+              </label>
               <input id="payment-number" type="text" style="margin-bottom:10px;">
             </div>
 
@@ -195,7 +200,7 @@ table td{
                 <a href="13-alternative-payment.html" id="continue" class="button">Continue</a>
               </div>
               <div class="back">
-                <a href="#">Cancel</a>
+                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
               </div>
             </div>
             <!-- CTA Section End -->
@@ -205,14 +210,20 @@ table td{
 
           <!-- Side Panel Section Start -->
           <div class="col-sm-4">
-            <!-- Payment Panel start -->
-            <div class="panel panel-primary no-button">
-              <h2>Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
-              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
+            <div class="related-container">
+              <aside class="related" id="related">
+                <div class="inner group related-subsection">
+                  <h2 id="parent-subsection">Online debt solutions</h2>
+                  <hr>
+                  <p><a href="../brian/continue/return2.html" style="font-weight:bold;">Sign into my application</a></p>
+                  <hr>
+                  <p><a href="../brian/continue/urn-help.html">I've forgotten my application number</a></p>
+                  <p><a href="#">How do I give someone a payment reference</a></p>
+                  <p><a href="https://www.gov.uk/government/collections/insolvency-service-guidance-publications">Guide to bankruptcy</a></p>
+                </div>
+              </aside>
             </div>
-            <!-- Payment Panel end -->
+
           </div>
           <!-- Side Panel Section End -->
 
