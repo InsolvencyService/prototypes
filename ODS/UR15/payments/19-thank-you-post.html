@@ -172,11 +172,18 @@ table td{
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
-            <p>An email has been sent to your porposed contributor.</p>
+            <p>An payment reference has been sent to your porposed contributor.</p>
             <table class="table">
               <tr>
-                <td>Email address</td>
-                <td class="heading-small"><span id="email-address"></span></td>
+                <td>Postal address</td>
+                <td class="heading-small">
+                  <span id="building-and-street-1"></span>,<br>
+                  <span id="building-and-street-2"></span>,<br>
+                  <span id="building-and-street-3"></span>,<br>
+                  <span id="town-or-city"></span>,<br>
+                  <span id="county"></span>,<br>
+                  <span id="postcode"></span>.
+                </td>
               </tr>
             </table>
 
@@ -257,9 +264,25 @@ $(document).ready(function() {
   });
 
   // Cookie variable
-  if ($.cookie("email-address")) {
-    $("#email-address").text($.cookie("email-address")).addClass("bolder");
+  if ($.cookie("building-and-street-1")) {
+    $("#building-and-street-1").text($.cookie("building-and-street-1")).addClass("bolder");
   }
+  if ($.cookie("building-and-street-2")) {
+    $("#building-and-street-2").text($.cookie("building-and-street-2")).addClass("bolder");
+  }
+  if ($.cookie("building-and-street-3")) {
+    $("#building-and-street-3").text($.cookie("building-and-street-3")).addClass("bolder");
+  }
+  if ($.cookie("town-or-city")) {
+    $("#town-or-city").text($.cookie("town-or-city")).addClass("bolder");
+  }
+  if ($.cookie("county")) {
+    $("#county").text($.cookie("county")).addClass("bolder");
+  }
+  if ($.cookie("postcode")) {
+    $("#postcode").text($.cookie("postcode")).addClass("bolder");
+  }
+
 
 });
 
