@@ -153,15 +153,11 @@ width:40px
 		<h1 class="form-title heading-large">Continue your application</h1>
 	
   
-	<p class="text msg-URN" style="display:none;">
-	Your application number is 
-	<br>
-	<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">EHBJ8F3MKRP</span>  
-
-	</p>
-
-	<p>To continue, answer the security question below.</p> 
-	<p>Be sure to enter the exact answer you gave when you first set your security questions, including any spaces.</p>
+	<div id="firsttime">
+		<p>To continue, answer the security question below.</p> 
+		<p>Be sure to enter the exact answer you gave when you first set your security questions, including any spaces.</p>
+	</div>
+	
 	<div class="panel-indent">If you don't recognise the security question, check you entered your application number correctly.</div>
 	
 	
@@ -304,8 +300,8 @@ var numberx,questionx,answerx;
 $(document).ready(function() {
 
 	var error = getParameterByName("error");
-	if (error && error.length >0){
-		 $("#next").prop("href", "return-error.html");
+	if (error){
+		 $("#firsttime").hide();
 	}
 	
 	// create random number between 1 & 3
