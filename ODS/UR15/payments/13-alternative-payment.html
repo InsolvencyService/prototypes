@@ -311,35 +311,35 @@ $(document).ready(function() {
   }
 
   $("#pay-online").on("click", function (e) {
-     e.preventDefault();
-     //alert($("#amount").val());
-     if ($("#amount").val() == ""){
-       $("#panel-error-empty").show();
-       $("#panel-error-greater").hide();
-     }
+    e.preventDefault();
+    //alert($("#amount").val());
+    if ($("#amount").val() == ""){
+     $("#panel-error-empty").show();
+     $("#panel-error-greater").hide();
+    }
 
-     if ($("#amount").val() && $("#amount").val() > 655){
-       $("#panel-error-greater").show();
-       $("#panel-error-empty").hide();
-     }
+    if ($("#amount").val() && $("#amount").val() > 655){
+     $("#panel-error-greater").show();
+     $("#panel-error-empty").hide();
+    }
 
-     if ($("#amount").val() && $("#amount").val() < 655) {
-       (window.location.replace("2a-worldpay-card-selection-alternative.html"));
-     }
- });
+    if ($("#amount").val() && $("#amount").val() < 655) {
+     (window.location.replace("2a-worldpay-card-selection-alternative.html"));
+    }
+  });
 
- //checking payment details
- if($.cookie("fee_paid")){
-   $("#fee_paid").text($.cookie("fee_paid"));
-   $("#fee_remaining").text($.cookie("fee_remaining"));
-   $(".lefttopay").text($.cookie("fee_remaining"));
- }
- else{
-   $.cookie("fee_paid", "0.00", {path:'/'})
-   $.cookie("fee_remaining", "655.00", {path:'/'})
-   $("#fee_paid").text("0.00");
-   $("#fee_remaining").text("655.00");
- }
+  //checking payment details
+  if($.cookie("fee_paid")){
+    $("#fee_paid").text($.cookie("fee_paid"));
+    $("#fee_remaining").text($.cookie("fee_remaining"));
+    $(".lefttopay").text($.cookie("fee_remaining"));
+  }
+  else{
+    $.cookie("fee_paid", "0.00", {path:'/'})
+    $.cookie("fee_remaining", "655.00", {path:'/'})
+    $("#fee_paid").text("0.00");
+    $("#fee_remaining").text("655.00");
+  }
 
 });
 

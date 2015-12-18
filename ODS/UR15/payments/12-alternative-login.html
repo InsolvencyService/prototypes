@@ -306,20 +306,7 @@ $(document).ready(function() {
      if ($("#payment-number").val()) {
        (window.location.replace("13-alternative-payment.html"));
      }
- });
-
- //checking payment details
- if($.cookie("fee_paid")){
-   $("#fee_paid").text($.cookie("fee_paid"));
-   $("#fee_remaining").text($.cookie("fee_remaining"));
-   $(".lefttopay").text($.cookie("fee_remaining"));
- }
- else{
-   $.cookie("fee_paid", "0.00", {path:'/'})
-   $.cookie("fee_remaining", "655.00", {path:'/'})
-   $("#fee_paid").text("0.00");
-   $("#fee_remaining").text("655.00");
- }
+  });
 
 });
 
