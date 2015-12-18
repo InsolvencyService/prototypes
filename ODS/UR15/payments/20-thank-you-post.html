@@ -152,9 +152,9 @@ table td{
     </div>
   </div>
 
-  <main role="main" id="wrapper">
-
+  <main id="content" role="main">
     <div id="content">
+
       <div class="inner-block">
         <div class="phase-banner">
           <p>
@@ -166,138 +166,87 @@ table td{
 
       <!-- #BeginEditable "content" -->
 
-
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Post it to me</h1>
+        <h1 class="form-title heading-large">Thank you</h1>
         <div class="row">
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
-
-            <!-- Hidden Error messages Start -->
-            <div class="validation-summary" id="panel-error-empty" style="display:none">
-              <h2>You are missing some address details:</h2>
-              <ul>
-                <li><a href="#building-and-street-1">* Building name/number and street</a></li>
-                <li><a href="#town-or-city">* Town or city</a></li>
-                <li><a href="#county">* County</a></li>
-                <li><a href="#postcode">*Postcode</a></li>
-              </ul>
-            </div>
-            <!-- Hidden Error messages End -->
-
-            <div class="payzone information">
-              <p>As you do not have an email address we will post the barcode to your previosuly stated address, which we have added below.</p>
-              <p>Please change the address if this is not correct.</p>
-              <img class="payment-image" src="images/payzone_logo.png" alt="Payzone" style="margin-bottom:20px;">
-            </div>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="building-and-street">Building name/number and street</label>
-    			  	<input id="building-and-street-1" type="text" value="14 Street Name" style="margin-bottom:10px; width:70%;"><br>
-    			  	<input id="building-and-street-2" type="text" value="Suburb" style="margin-bottom:10px; width:70%;"><br>
-    			  	<input id="building-and-street-3" type="text" style="margin-bottom:10px; width:70%;">
-      			</div>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="town-or-city">Town or city</label>
-    			  	<input id="town-or-city" type="text" value="Town name" style="margin-bottom:10px; width:70%;">
-      			</div>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="county">County</label>
-      			  <input id="county" type="text" value="Warwickshire" style="margin-bottom:10px; width:70%;">
-      			</div>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="postcode">Postcode</label>
-      			  <input id="postcode" type="text" value="CV35 8TY" style="margin-bottom:10px; width:30%;">
-      			</div>
+            <p>A payment reference has been sent to your postal address.</p>
+            <table class="table">
+              <tr>
+                <td>Postal address</td>
+                <td class="heading-small">
+                  <span id="building-and-street-1"></span>,<br>
+                  <span id="building-and-street-2"></span>,<br>
+                  <span id="building-and-street-3"></span>,<br>
+                  <span id="town-or-city"></span>,<br>
+                  <span id="county"></span>,<br>
+                  <span id="postcode"></span>.
+                </td>
+              </tr>
+            </table>
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <div>
-                <a href="6-barcode-generator.html"><button class="button">Continue</button></a>
-              </div>
-              <div>
-                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
-              </div>
+              <a href="1-payment-amount.html"><button class="button">Continue</button></a>
             </div>
-            <!-- CTA Section Start -->
+            <!-- CTA Section End -->
 
           </div>
           <!-- Main Content Section End -->
 
-          <!-- Side Panel Section Start -->
-          <div class="col-sm-4">
-            <!-- Payment Panel start -->
-            <div class="panel panel-primary no-button">
-              <h2>Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
-              <p class="updated-text">Last updated:<br>10 December 2015 at 15:05:06</p>
-            </div>
-            <!-- Payment Panel end -->
-            <div class="panel-indent" style="font-size:16px; border-color:#efefef">
+        </div>
+        <!-- #EndEditable -->
 
-              <p><a class="save" style="font-weight:bold">Save and logout</a></p>
-              <p><a href="security_change.html">Change your security questions</a></p>
-              <br>
-              <p><a href="#">Generate court documents</a></p>
-              <p><a href="discard.html">Discard application</a></p>
-              <br>
-              <p><a href="8-statements-page.html">View my payment history</a></p>
-              <p><a href="7-help-page.html">How can I get a refund?</a></p>
-            </div>
+
+      </div>
+
+    </div>
+  </main>
+
+
+  <footer role="contentinfo" id="footer" class="group js-footer">
+
+
+    <div class="footer-wrapper">
+
+      <div class="footer-meta">
+
+        <div class="footer-meta-inner">
+
+          <ul class="footer__nav" style="width:100%">
+            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
+          </ul>
+          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+          </ul>
+
+          <div class="open-government-licence">
+            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
           </div>
-          <!-- Side Panel Section End -->
-
         </div>
 
-      </div>
-
-  </div>
-
-</main>
-
-
-<footer role="contentinfo" id="footer" class="group js-footer">
-
-
-  <div class="footer-wrapper">
-
-    <div class="footer-meta">
-
-      <div class="footer-meta-inner">
-
-        <ul class="footer__nav" style="width:100%">
-          <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
-        </ul>
-        <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-          <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-          <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-          <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-        </ul>
-
-        <div class="open-government-licence">
-          <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-          <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+        <div class="copyright">
+          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
         </div>
-      </div>
-
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
       </div>
     </div>
-  </div>
 
-</footer>
+  </footer>
 
-<!--end footer-->
+  <!--end footer-->
 
-<div class="app-error hidden" id="global-app-error"></div>
-<!--
-<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+  <div class="app-error hidden" id="global-app-error"></div>
+  <!--
+  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-<script type="text/javascript" src="assets/javascripts/application.js"></script>
+  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
@@ -314,41 +263,26 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  $("#continue").on("click", function (e) {
-    e.preventDefault();
-    //alert($("#amount").val());
-    if ($("#building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
-      $("#panel-error-empty").show();
-      (window.location.replace("#panel-error-empty"));
-    }
-
-    if ($("#building-and-street, #building-and-street, #town-or-city, #county, #postcode").val()) {
-      (window.location.replace("19-thank-you-post.html"));
-    }
-
-    $.cookie("building-and-street-1", $("#building-and-street-1").val(), {path:'/'});
-    $.cookie("building-and-street-2", $("#building-and-street-2").val(), {path:'/'});
-    $.cookie("building-and-street-3", $("#building-and-street-3").val(), {path:'/'});
-    $.cookie("town-or-city", $("#town-or-city").val(), {path:'/'});
-    $.cookie("county", $("#county").val(), {path:'/'});
-    $.cookie("postcode", $("#postcode").val(), {path:'/'});
-
-  });
-
-
-
-  //checking payment details
-  if ($.cookie("fee_paid")) {
-    $("#fee_paid").text($.cookie("fee_paid"));
-    $("#fee_remaining").text($.cookie("fee_remaining"));
-    $(".lefttopay").text($.cookie("fee_remaining"));
+  // Cookie variable
+  if ($.cookie("building-and-street-1")) {
+    $("#building-and-street-1").text($.cookie("building-and-street-1")).addClass("bolder");
   }
-  else {
-    $.cookie("fee_paid", "0.00", {path:'/'})
-    $.cookie("fee_remaining", "655.00", {path:'/'})
-    $("#fee_paid").text("0.00");
-    $("#fee_remaining").text("655.00");
+  if ($.cookie("building-and-street-2")) {
+    $("#building-and-street-2").text($.cookie("building-and-street-2")).addClass("bolder");
   }
+  if ($.cookie("building-and-street-3")) {
+    $("#building-and-street-3").text($.cookie("building-and-street-3")).addClass("bolder");
+  }
+  if ($.cookie("town-or-city")) {
+    $("#town-or-city").text($.cookie("town-or-city")).addClass("bolder");
+  }
+  if ($.cookie("county")) {
+    $("#county").text($.cookie("county")).addClass("bolder");
+  }
+  if ($.cookie("postcode")) {
+    $("#postcode").text($.cookie("postcode")).addClass("bolder");
+  }
+
 
 });
 

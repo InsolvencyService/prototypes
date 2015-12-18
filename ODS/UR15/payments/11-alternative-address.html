@@ -178,7 +178,7 @@ table td{
             <div class="validation-summary" id="panel-error-empty" style="display:none">
               <h2>You are missing some address details:</h2>
               <ul>
-                <li><a href="#building-and-street">* Building name/number and street</a></li>
+                <li><a href="#building-and-street-1">* Building name/number and street</a></li>
                 <li><a href="#town-or-city">* Town or city</a></li>
                 <li><a href="#county">* County</a></li>
                 <li><a href="#postcode">*Postcode</a></li>
@@ -323,7 +323,7 @@ $(document).ready(function() {
   $("#continue").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#building-and-street, #building-and-street, #town-or-city, #county, #postcode").val() == "") {
+    if ($("#building-and-street-1,, #town-or-city, #county, #postcode").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
@@ -338,7 +338,6 @@ $(document).ready(function() {
     $.cookie("town-or-city", $("#town-or-city").val(), {path:'/'});
     $.cookie("county", $("#county").val(), {path:'/'});
     $.cookie("postcode", $("#postcode").val(), {path:'/'});
-
 
   });
 
