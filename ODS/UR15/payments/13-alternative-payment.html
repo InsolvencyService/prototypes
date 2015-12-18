@@ -190,12 +190,12 @@ table td{
               </tr>
               <tr>
                 <td>Left to pay</td>
-                <td class="heading-small"><b>&pound;</b><span id="fee_remaining"></span></td>
+                <td class="heading-small"><b>&pound;</b><span id="fee_remaining-2"></span></td>
               </tr>
             </table>
             <ul>
               <li>
-                <p>The remaining amount of <b>&pound;</b><span class="heading-small" id="fee_remaining"></span> is needed to enable the application to proceed</p>
+                <p>The remaining amount of <b>&pound;</b><span class="heading-small" id="fee_remaining-3"></span> is needed to enable the application to proceed</p>
                 <div class="form-group">
                   <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label">How much would you like to pay?</label>
                   £<input id="amount" type="text"  value="" />
@@ -223,8 +223,8 @@ table td{
             <div class="panel panel-primary no-button">
               <h2>Bankruptcy order fee</h2>
               <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">655</span> left to pay</span>
-              <p id="updated" class="updated-text"><br><span id="timestamp"></span></p>
+              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining-1">655</span> left to pay</span>
+              <p id="updated" class="updated-text" style="display:none;"><span id="timestamp"></span></p>
             </div>
             <!-- Payment Panel end -->
             <div class="panel-indent" style="font-size:16px; border-color:#efefef">
@@ -331,14 +331,18 @@ $(document).ready(function() {
   //checking payment details
   if($.cookie("fee_paid")){
     $("#fee_paid").text($.cookie("fee_paid"));
-    $("#fee_remaining").text($.cookie("fee_remaining"));
+    $("#fee_remaining-1").text($.cookie("fee_remaining"));
+    $("#fee_remaining-2").text($.cookie("fee_remaining"));
+    $("#fee_remaining-3").text($.cookie("fee_remaining"));
     $(".lefttopay").text($.cookie("fee_remaining"));
   }
   else{
     $.cookie("fee_paid", "0.00", {path:'/'})
     $.cookie("fee_remaining", "655.00", {path:'/'})
     $("#fee_paid").text("0.00");
-    $("#fee_remaining").text("655.00");
+    $("#fee_remaining-1").text("655.00");
+    $("#fee_remaining-2").text("655.00");
+    $("#fee_remaining-3").text("655.00");
   }
 
 });
