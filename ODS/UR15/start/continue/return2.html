@@ -139,7 +139,14 @@ width:40px
 	
 
 
+
+
+</div>
+	
+
+
 <!-- #BeginEditable "content" -->
+	 <div id="content" >
 	 <div id="content2" >
 
  	
@@ -154,7 +161,7 @@ width:40px
     <div class="col-xs-12 col-sm-8" style="margin-left:30px">
     
 
-		<h1 class="form-title heading-large">Continue your application</h1>
+		<h1 class="form-title heading-large">Return to your application</h1>
 	
 <div class="validation-summary" style="display:none">
                 <h2>Application number is not valid</h2>
@@ -162,7 +169,7 @@ width:40px
                     
     
         <li class="error-message">
-            
+            <p></p>
             <p>Please enter a 12 digit application number</p>
 
         </li>
@@ -174,46 +181,28 @@ width:40px
 
             </div>
 
-	<p class="text msg-URN" style="display:none;">
-	Your application number is 
-	<br>
-	<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNH-J93R-5309</span>  
-
-	</p>
-
-	
+	<p>We need to know your application number and one of your security answers<br />before we can continue to your application.</p>	
 	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+		<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
 	<!-- For User research -->
-	<div class="form-navigation form-group">
-	<div class="msg-no-URN">
-	
-	<div class="form-group ">
-	
-	<label id="applicant_address_line_2_label" for="urn" class="form-label-bold">What's your application number?</label>
-		<div class="form-hint">
-			You can find this in the email we sent you </div>
-	<input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
-	<br/>
-	</div>
-
-	
-	</div>
-	
+		<div class="form-navigation form-group">
+			<div class="msg-no-URN">
+				<div class="form-group ">
+					<label id="applicant_address_line_2_label" for="urn" class="form-label-bold">What's your application number?</label>
+					<div class="form-hint">
+						You can find this in the email we sent you </div>
+						<input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+						
+					</div>
+				</div>
 		</div>
 	</form>
 
 
 	<div class="form-navigation form-group">
-	
-	<div>
-
-
-	<a href="security-question.html" id="next" class="button">Continue</a>&nbsp;&nbsp;
-        <a href="urn-help.html">I have forgotten my application details</a>
-			<div>
-	<br>
+		<a href="security-question.html" id="next" class="button">Continue</a><br />
+       	<a href="urn-help.html">I have forgotten my application details</a>
 	</div>
 	
 	<div>

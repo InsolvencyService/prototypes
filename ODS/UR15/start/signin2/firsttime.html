@@ -149,92 +149,81 @@
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" -->
 
-	<div id="content0" >
-
-	<div>
-	
-<div class="row" style="margin-left:20px;">
-    <div class="col-xs-12 col-sm-8">
+	<div id="content" >
+		<div id="content0" >
+			<div>
+				<div class="row" style="margin-left:20px;">
+    				<div class="col-xs-12 col-sm-8">
     
-    <h1 class="form-title heading-large">Create your account</h1>
-		<form role="form">
-			<p>Start by entering some basic details</p>
+    					<h1 class="form-title heading-large">Create your account</h1>
+						<form role="form">
+							<p>Start by entering some basic details</p>
 
-              <div class="form-group ">
+             				<div class="form-group ">
+								<label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
+                        		<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
+                    		</div>
+                     		
+                     		<div class="form-group ">
+								<label id="middle_name_label" for="last_name" class="form-label-bold">Middle name</label>
+                        		<p class="form-hint">
+									You <strong>must</strong> enter your middle name if you have one - we need it to process your application.
+									Leave blank if you don't have one
+								</p>
+            					<input id="middle_name" name="last_name" type="text" aria-describedby="middle_name_error middle_name_help" value="" />
+                        	</div>
 
-                        <label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
-                        <input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
-                        <br />
-                    </div>
-                     <div class="form-group ">
-
-                        <label id="middle_name_label" for="last_name" class="form-label-bold">Middle name</label>
-                        <div class="form-hint">
-				You <strong>must</strong> enter your middle name if you have one - we need it to process your application<br>
-				Leave blank if you don't have one
-			</div>
-            
-
-                        <input id="middle_name" name="last_name" type="text" aria-describedby="middle_name_error middle_name_help" value="" />
-                        <br />
-                    </div>
-
-                    <div class="form-group ">
-
-                        <label id="last_name_label" for="last_name" class="form-label-bold">Last name</label>
-                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
-                        <br />
-                    </div>
-			<div class="clearfix"></div>
+                    		<div class="form-group ">
+		                        <label id="last_name_label" for="last_name" class="form-label-bold">Last name</label>
+		                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
+                      		</div>
 			
-			<div class="form-group ">
-	
-	<fieldset id="date_of_birth" class="date-of-birth">
-	<legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
-	
-	<span class="form-hint" id="date_of_birth_help">For example, 31 08 1976</span>
-	<div class="form-group form-group-day">
-		 <label id="date_of_birth_label.day" for="dob-day">Day</label>
-	<input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-	</div>
-	<div class="form-group form-group-month">
-		 <label id="date_of_birth_label.month" for="dob-month">Month</label>
-	<input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-	</div>
-	<div class="form-group form-group-year">
-	<label id="date_of_birth_label.year" for="dob-year">Year</label>
-	<input id="dob-year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-	</div>
-	</fieldset>
-	</div>
+							<div class="form-group ">
+								<fieldset id="date_of_birth" class="date-of-birth">
+									<legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
+									<span class="form-hint" id="date_of_birth_help">For example, 31 08 1976</span>
+									
+									<div class="form-group form-group-day">
+										<label id="date_of_birth_label.day" for="dob-day">Day</label>
+										<input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+									</div>
+									<div class="form-group form-group-month">
+										<label id="date_of_birth_label.month" for="dob-month">Month</label>
+										<input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+									</div>
+									<div class="form-group form-group-year">
+										<label id="date_of_birth_label.year" for="dob-year">Year</label>
+										<input id="dob-year" name="date_of_birth.year" type="number" min="1000" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+									</div>
+								</fieldset>
+							</div>
 			
-			<div class="clearfix"></div>
 			
-			<div class="alert alert-danger" id="pnl-email-nomatch">
-			<p>Your email addresses don't match. Please check them and try again. </p>
-			</div> 
-			<div class="clearfix"></div>
-			
-		<div class="form-group ">
-            
-            <label id="email_label" for="email" class="form-label-bold email">Your email</label>
-            <span class="form-hint">Please enter your email address so we can email you instructions for logging into your application. </span>
-                       <input id="email1" name="email" type="text" class="input-email"><br>
-        </div>
+							<div class="alert alert-danger" id="pnl-email-nomatch">
+								<p>Your email addresses don't match. Please check them and try again. </p>
+							</div> 
+						
+							<div class="form-group ">  
+					            <label id="email_label" for="email" class="form-label-bold email">Your email</label>
+					            <p class="form-hint">Please enter your email address so we can email you instructions for logging into your application. </p>
+					           	<input id="email1" name="email" type="text" class="input-email"><br>
+					        </div>
 
-		<div class="form-group ">
-            
-            <label id="email_label0" for="email" class="form-label-bold email">Confirm email</label>
-            <input id="email2" name="email" type="text" class="input-email"><br>
-        </div>
+							<div class="form-group "> 
+					            <label id="email_label0" for="email" class="form-label-bold email">Confirm email</label>
+					            <input id="email2" name="email" type="text" class="input-email"><br>
+					        </div>
 			
 	
 	
 
 		
-</div>
 
 
 
@@ -260,37 +249,15 @@
 		
 
 </div>
-<!-- Modal -->
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	<div>
-	
-	
-	
-	
-		<br><br>
-	
-	
-	
-	
-	</div>
-	
-
-	</div>
-
-	</form>
-	</div>
-
-	 <!-- #EndEditable -->
+</div></div>
 
         
 </div>
 
 
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
