@@ -323,7 +323,7 @@ $(document).ready(function() {
   $("#continue").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#building-and-street-1,, #town-or-city, #county, #postcode").val() == "") {
+    if ($("#building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
