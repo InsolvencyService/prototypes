@@ -348,11 +348,13 @@ $(document).ready(function() {
     if ($("#amount").val() == ""){
       $("#panel-error-empty").show();
       $("#panel-error-greater").hide();
+      (window.location.replace("#panel-error-empty"));
     }
 
     if ($("#amount").val() && $("#amount").val() > 500){
       $("#panel-error-greater").show();
       $("#panel-error-empty").hide();
+      (window.location.replace("#panel-error-greater"));
     }
 
     if ($("#amount").val() && $("#amount").val() < 500) {
