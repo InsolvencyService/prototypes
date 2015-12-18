@@ -222,7 +222,7 @@ table td{
                 <a href="#"><button id="continue" class="button">Continue</button></a>
               </div>
               <div class="back">
-                <a href="#">Cancel</a>
+                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
               </div>
             </div>
             <!-- CTA Section Start -->
@@ -325,10 +325,11 @@ $(document).ready(function() {
     //alert($("#amount").val());
     if ($("#building-and-street, #building-and-street, #town-or-city, #county, #postcode").val() == "") {
       $("#panel-error-empty").show();
+      (window.location.replace("#panel-error-empty"));
     }
 
     if ($("#building-and-street, #building-and-street, #town-or-city, #county, #postcode").val()) {
-      (window.location.replace("14-thank-you.html"));
+      (window.location.replace("15-thank-you.html"));
     }
   });
 

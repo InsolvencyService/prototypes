@@ -436,7 +436,8 @@ h3 > a {
                       </div>
                       <div class="row">
                         <div class="col-sm-6">
-                          Account balances                                         </div>
+                          Account balances
+                        </div>
                           <div class="col-sm-6">
                           </div>
                         </div>
@@ -748,9 +749,9 @@ h3 > a {
                             <!-- Payment Panel start -->
                             <div class="panel panel-primary">
                               <h2>Bankruptcy order fee</h2>
-                              <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">155</span> received</a></p>
-                              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">500</span> left to pay</span>
-                              <p id="updated" class="updated-text">Last updated:<br><span id="timestamp">10 December 2015 at 15:05:06</span></p>
+                              <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
+                              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">655</span> left to pay</span>
+                              <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
                               <a id="make-a-payment" class="button" href="payments/1-payment-amount.html">Make a payment</a>
                             </div>
                             <!-- Payment Panel end -->
@@ -868,7 +869,7 @@ h3 > a {
 
                           // Unique reference number
                           $("#make-a-payment").on("click", function (e) {
-                            $.cookie("urn", $("#urn").text(""), {path:'/'});
+                            $.cookie( 'urn', 'B52S-FQ6Y-HQWP'), {path:'/'});
                           });
 
                           //checking payment details
@@ -876,6 +877,7 @@ h3 > a {
                           	$("#fee_paid").text($.cookie("fee_paid"));
                           	$("#fee_remaining").text($.cookie("fee_remaining"));
                           	$("#timestamp").text($.cookie("payment_timestamp"));
+                          	$("#updated").show();
                           }
                           else{
                           	$.cookie("fee_paid", "0.00", {path:'/'});

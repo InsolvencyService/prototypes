@@ -173,11 +173,14 @@ table td{
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
             <p>Your payment was successful.</p>
-            <p>&nbsp;</p>
             <table class="table">
               <tr>
                 <td>Your reference</td>
                 <td class="heading-small"><span id="urn"></span></td>
+              </tr>
+              <tr>
+                <td>Payment amount</td>
+                <td class="heading-small"><span id="amountpaid"></span></td>
               </tr>
               <tr>
                 <td>WorldPay Transaction ID</td>
@@ -266,6 +269,10 @@ $(document).ready(function() {
   // Cookie variable
   if ($.cookie("urn")) {
     $("#urn").text($.cookie("urn")).addClass("bolder");
+  }  
+
+  if ($.cookie("amount")) {
+    $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
   }
 
   var total_fee_paid = $.cookie("fee_paid");

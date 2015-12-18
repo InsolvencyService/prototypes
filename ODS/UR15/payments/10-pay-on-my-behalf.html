@@ -194,7 +194,7 @@ table td{
                 <div class="form-group">
                   <label class="heading-small" for="email-address" name="email-address">Email address<span class="form-hint">Have the payment reference sent to this email address</span>
                   </label>
-                  <input id="email-address" type="text" style="margin-bottom:10px; width: 20em;">
+                  <input id="email-address" type="text" style="margin-bottom:10px; width: 80%;">
                 </div>
                 <h3 class="heading-small">I don't have their email address</h3>
                 <p>If you don't have an email address we can post the payment reference out to them.</p>
@@ -203,7 +203,7 @@ table td{
                 <p>&nbsp;</p>
 
                 <div>
-                  <a href="15-thank-you.html" id="continue" class="button">Continue</a>
+                  <a href="#" id="continue" class="button">Continue</a>
                 </div>
               </li>
             </ul>
@@ -329,10 +329,11 @@ $(document).ready(function() {
      //alert($("#amount").val());
      if ($("#email-address").val() == ""){
        $("#panel-error-empty").show();
+       (window.location.replace("#panel-error-empty"));
      }
 
      if ($("#email-address").val()) {
-       (window.location.replace("14-thank-you.html"));
+       (window.location.replace("15-thank-you.html"));
      }
    });
 

@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 
@@ -136,7 +136,7 @@
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -146,11 +146,12 @@
 	</p>
 	</div>
 	</div>
-	
+
 
 
 </div>
-	
+
+
 
 
 <!-- #BeginEditable "content" -->
@@ -160,7 +161,7 @@
 			<div>
 				<div class="row" style="margin-left:20px;">
     				<div class="col-xs-12 col-sm-8">
-    
+
     					<h1 class="form-title heading-large">Create your account</h1>
 						<form role="form">
 							<p>Start by entering some basic details</p>
@@ -169,7 +170,7 @@
 								<label id="first_name_label" for="first_name" class="form-label-bold first_name">First name</label>
                         		<input id="first_name" name="first_name" type="text" aria-describedby="first_name_error first_name_help" value="" />
                     		</div>
-                     		
+
                      		<div class="form-group ">
 								<label id="middle_name_label" for="last_name" class="form-label-bold">Middle name</label>
                         		<p class="form-hint">
@@ -183,12 +184,12 @@
 		                        <label id="last_name_label" for="last_name" class="form-label-bold">Last name</label>
 		                        <input id="last_name" name="last_name" type="text" aria-describedby="last_name_error last_name_help" value="" />
                       		</div>
-			
+
 							<div class="form-group ">
 								<fieldset id="date_of_birth" class="date-of-birth">
 									<legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
 									<span class="form-hint" id="date_of_birth_help">For example, 31 08 1976</span>
-									
+
 									<div class="form-group form-group-day">
 										<label id="date_of_birth_label.day" for="dob-day">Day</label>
 										<input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
@@ -203,27 +204,27 @@
 									</div>
 								</fieldset>
 							</div>
-			
-			
+
+
 							<div class="alert alert-danger" id="pnl-email-nomatch">
 								<p>Your email addresses don't match. Please check them and try again. </p>
-							</div> 
-						
-							<div class="form-group ">  
+							</div>
+
+							<div class="form-group ">
 					            <label id="email_label" for="email" class="form-label-bold email">Your email</label>
 					            <p class="form-hint">Please enter your email address so we can email you instructions for logging into your application. </p>
 					           	<input id="email1" name="email" type="text" class="input-email"><br>
 					        </div>
 
-							<div class="form-group "> 
+							<div class="form-group ">
 					            <label id="email_label0" for="email" class="form-label-bold email">Confirm email</label>
 					            <input id="email2" name="email" type="text" class="input-email"><br>
 					        </div>
-			
-	
-	
 
-		
+
+
+
+
 
 
 
@@ -237,30 +238,30 @@
 			</div>
 		</form>
 	</div>
-	
+
 	<div class="col-sm-4">
 		<div class="panel-indent" style="margin-top:45px; margin-right:40px; font-size:16px; border-color:#efefef; display:none">
 		<p></p>
 		<p><a href="../agent/firsttime.html">I am acting as an agent on behalf of the debtor</a></p>
-		
+
 		</div>
 	</div>
 
-		
+
 
 </div>
 </div></div>
 
-        
+
 </div>
 
 
 	 <!-- #EndEditable -->
 
-        
+
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -308,10 +309,10 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -338,18 +339,18 @@ $(document).ready(function() {
 			confirmed = true;
 			$("#next").prop("href", "address.html?noemail=true");
 		});
-	
+
 	$("#next").on("click", function(e){
 		var email1 = $("#email1").val();
 		var email2 = $("#email2").val();
-			
+
 		if (confirmed == false){
 			if (email2 == ""){
 				e.preventDefault();
-	
+
 				$(".missing-email").show();
 				$("#pnl-email-nomatch").hide();
-			} 
+			}
 			else{
 				if (email1 != email2)
 				{
@@ -374,7 +375,7 @@ $(document).ready(function() {
 			}
 
 		}
-		
+
 
 	});
 
@@ -394,12 +395,12 @@ function htmlDecode(value){
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

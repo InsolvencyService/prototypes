@@ -341,30 +341,31 @@ $(document).ready(function() {
 
   $("#pay-online").on("click", function (e) {
     e.preventDefault();
+
+    $.cookie("amount", $("#amount").val(), {path:'/'});
+
     //alert($("#amount").val());
     if ($("#amount").val() == ""){
       $("#panel-error-empty").show();
       $("#panel-error-greater").hide();
+      (window.location.replace("#panel-error-empty"));
     }
 
     if ($("#amount").val() && $("#amount").val() > 500){
       $("#panel-error-greater").show();
       $("#panel-error-empty").hide();
+      (window.location.replace("#panel-error-greater"));
     }
 
     if ($("#amount").val() && $("#amount").val() < 500) {
       (window.location.replace("2-worldpay-card-selection.html"));
     }
-
-    if ($.cookie("amount")) {
-      $("#amount").text($.cookie("amount")).addClass("bolder");
-    }
-
-    // Unique reference number
-    if ($.cookie("urn")) {
-      $("#urn").text($.cookie("urn")).addClass("bolder");
-    }
   });
+
+  // Unique reference number
+  if ($.cookie("urn")) {
+    $("#urn").text($.cookie("urn")).addClass("bolder");
+  }
 
 });
 

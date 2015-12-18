@@ -167,30 +167,22 @@ table td{
       <!-- #BeginEditable "content" -->
 
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Thank you</h1>
+        <h1 class="form-title heading-large">Email sent</h1>
         <div class="row">
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
-            <p>This transaction will show up on the bankruptcy application.</p>
+            <p>We have sent an email to the below addres, please check your spam folder if you have not recieved the barcode.</p>
             <table class="table">
               <tr>
-                <td>Your reference</td>
-                <td class="heading-small"><span id="payment-number"></span></td>
-              </tr>
-              <tr>
-                <td>Payment amount</td>
-                <td class="heading-small"><span id="amountpaid"></span></td>
-              </tr>
-              <tr>
-                <td>WorldPay Transaction ID</td>
-                <td class="heading-small">Worldpay-1234</td>
+                <td>Email address</td>
+                <td class="heading-small"><span id="email-address"></span></td>
               </tr>
             </table>
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <a href="12-alternative-login.html"><button class="button">Finish</button></a>
+              <a href="1-payment-amount.html"><button class="button">Finish</button></a>
             </div>
             <!-- CTA Section End -->
 
@@ -265,12 +257,8 @@ $(document).ready(function() {
   });
 
   // Cookie variable
-  if ($.cookie("payment-number")) {
-    $("#payment-number").text($.cookie("payment-number")).addClass("bolder");
-  }
-
-  if ($.cookie("amount")) {
-    $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
+  if ($.cookie("email-address")) {
+    $("#email-address").text($.cookie("email-address")).addClass("bolder");
   }
 
 });

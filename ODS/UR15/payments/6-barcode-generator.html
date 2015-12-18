@@ -173,44 +173,51 @@ table td{
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
-
+            <!-- Hidden Error messages Start -->
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>Please enter an email address</h2>
+              <a href="#email-address">You have not entered an email address, please enter one before you can proceed.</a>
+            </div>
+            <!-- Hidden Error messages End -->
+            <img class="payment-image" src="images/payzone_logo.png" alt="Payzone">
+            <p>This is your barcode, take it to any Payzone outlet and use the barcode to make a payment.</p>
             <div class="barcode">
-              <p>This is your barcode, take it to any Payzone outlet and use the barcode to make a payment.</p>
-              <img src="images/barcode-paypoint.png">
+              <img src="images/barcode-payzone.png" alt="Payzone Barcode">
             </div>
-            <div class="paypoint information">
+            <div class="payzone information">
+              <a href="http://www.payzone.co.uk/Where">Find your nearest Payzone outlet</a>
+              <hr>
+              <div class="print-download-section">
+                <ul class="print-download">
+                  <li class="heading-small">
+                    <a href="#" class="small-icon"><img src="images/print-icon.png">Print the barcode now</a>
+                  </li>
+                  <li class="heading-small">
+                    <a href="#" class="small-icon"><img src="images/save-icon.png">Download a PDF of the barcode</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- CTA Section Start -->
+              <div class="form-navigation form-group" style="margin:30px 0;">
+                <a href="../overview.html"><button class="button">Finish</button></a>
+              </div>
+              <!-- CTA Section End -->
 
-              <p>This has been sent to the email address <span id="email-address" class="heading-small"></span> you gave on the previous page.</p>
-              <p>Take this barcode to a PayZone location to complete your transaction.</p>
-              <p>You will be notified when your payment has been completed.</p>
-
-
-              http://www.payzone.co.uk/Where
-
-
-
-
-
-
+              <div class="form-group">
+                <hr style="margin-top:0;">
+                <label class="heading-small" for="email-address" name="email-address">Email address<span class="form-hint">Have the barcode sent to this email address</span>
+                </label>
+                <input id="email-address" name="email-address" type="text" style="margin-bottom:10px; width:80%;"><br>
+                <button id="submit-email-address" class="button">Continue</button>
+                <hr>
+                <h3 class="heading-small">I don't have an email address</h3>
+                <p>If you don't have an email address we can post a barcode out to your home address.</p>
+                <a href="9-post-it-to-me.html">Post it to me</a>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+              </div>
             </div>
-
-            <div class="print-download-section">
-              <ul class="print-download">
-                <li class="heading-small">
-                  <a href="#" class="small-icon"><img src="images/print-icon.png">Print the barcode now</a>
-                </li>
-                <li class="heading-small">
-                  <a href="#" class="small-icon"><img src="images/save-icon.png">Download a PDF of the barcode</a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- CTA Section Start -->
-            <div class="form-navigation form-group" style="margin:30px 0;">
-              <a href="../overview-payments-V1.html"><button class="button">Finish</button></a>
-            </div>
-            <!-- CTA Section End -->
-
           </div>
           <!-- Main Content Section End -->
 
@@ -302,10 +309,10 @@ table td{
         $.cookie("pathname", pathname, {path:'/'});
       });
 
-      // Cookie variable
-      if ($.cookie("email-address")) {
-  	    $("#email-address").text($.cookie("email-address"));
-  	  }
+      // Payment prototype variables
+      $("#submit-email-address").on("click", function (e) {
+        $.cookie("email-address", $("#email-address").val(), {path:'/'});
+      });
 
       //checking payment details
       if ($.cookie("fee_paid")) {
@@ -320,9 +327,26 @@ table td{
         $("#fee_remaining").text("655.00");
       }
 
+      $("#submit-email-address").on("click", function (e) {
+         e.preventDefault();
+         //alert($("#amount").val());
+         if ($("#email-address").val() == ""){
+           $("#panel-error-empty").show();
+           (window.location.replace("#panel-error-empty"));
+         }
+
+         if ($("#email-address").val()) {
+           (window.location.replace("18-thank-you.html"));
+         }
+     });
+
     });
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     </script>
-    <!-- #EndEditable -->
 
 
 
