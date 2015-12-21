@@ -626,11 +626,9 @@ $(document).ready(function() {
 	for (i = 1; i < oth_depend+1; i++) {
 	
 		var oth_address = $.cookie("oth_dep_add1"+i) + ", ";
-		oth_address += $.cookie("oth_dep_add2"+i) + ", ";
-		oth_address += $.cookie("oth_dep_add3"+i) + ", ";
 		oth_address += $.cookie("oth_dep_town"+i) + ", ";
 		oth_address += $.cookie("oth_dep_county"+i) + ", ";
-		oth_address += $.cookie("oth_dep_postcode"+i) + ", ";
+		oth_address += $.cookie("oth_dep_postcode"+i);
 		
 		var oth_name = $.cookie("oth_dep_firstname"+i) + ' ' + $.cookie("oth_dep_lastname"+i);
 		
