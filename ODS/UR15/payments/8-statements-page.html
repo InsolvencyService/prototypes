@@ -185,7 +185,7 @@ table td{
 	              	<td></td>
 	                <td></td>
 	                <td class="heading-small" style="text-align:right;">Total</td>
-	                <td class="heading-small">&pound;155.00</td>
+	                <td class="heading-small">&pound;<span class="fee_paid">[total]</span></td>
 	              </tr>
 	              </tfoot>
               	
@@ -214,7 +214,7 @@ table td{
             <!-- Payment Panel start -->
             <div class="panel panel-primary no-button">
               <h2 class="heaing-small">Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
+              <p class="payment-amount">&pound;<span class="fee_paid">155</span> received</p>
               <span class="text-muted" style="font-weight:normal">&pound;<span class="fee_remaining">500</span> left to pay</span>
               <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
             </div>
@@ -318,7 +318,7 @@ $(document).ready(function() {
 
   //checking payment details
   if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
-    $("#fee_paid").text($.cookie("fee_paid"));
+    $(".fee_paid").text($.cookie("fee_paid"));
     $(".fee_remaining").text($.cookie("fee_remaining"));
     $("#timestamp").text($.cookie("payment_timestamp"));
     $("#updated").show();
@@ -326,8 +326,8 @@ $(document).ready(function() {
   else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
-    $("#fee_paid").text("0.00");
-    $("#fee_remaining").text("655.00");
+    $(".fee_paid").text("0.00");
+    $(".fee_remaining").text("655.00");
     $(".lefttopay").text("655.00");
     $("#updated").hide();
   }
