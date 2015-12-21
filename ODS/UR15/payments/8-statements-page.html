@@ -305,11 +305,11 @@ $(document).ready(function() {
   
   if($.cookie("payment_count")){
   	var count= parseInt($.cookie("payment_count"));
-  	for(i=1; i<count; i++){
-  		var row = "<tr><td>"+$.cookie("payment_type"+count);
-  		row += "</td><td>"+$.cookie("payment_ref"+count);
-  		row += "</td><td>"+$.cookie("payment_date"+count);
-  		row += "</td><td>"+$.cookie("payment_amount"+count);
+  	for(i=1; i<=count; i++){
+  		var row = "<tr><td>"+$.cookie("payment_type"+i);
+  		row += "</td><td>"+$.cookie("payment_ref"+i);
+  		row += "</td><td>"+$.cookie("payment_date"+i);
+  		row += "</td><td>"+$.cookie("payment_amount"+i);
   		row += "</td></tr>"
   		
   		$("#tablebody").append(row);
