@@ -70,40 +70,16 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bankruptcy-overrides.css">
 
 
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
+<style type="text/css">
 
-#row-total td{
-	font-weight:bold;
-}
+
+
+
+
+
 
 
 .row img{
@@ -125,42 +101,7 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
-}
-
-legend{
-	border:0 transparent none;
-}
-.halfwidth{
-  float: left;
-  margin-right: 15px;
-  clear: none;
-	width:35%;
-}
-.partwidth{
-  float: left;
-  margin-right: 0;
-  clear: none;
-	width:15%;
-	margin-top:23px;
-}
-
- .auto-style1 {
-	 display: block;
-	 color: #000000;
-	 margin-top: 8px;
-	 margin-bottom: 5px;
- }
-
- </style>
+</style>
 <!-- #EndEditable -->
 
 
@@ -224,86 +165,93 @@ legend{
 
 
 <!-- #BeginEditable "content" --> 
-<div id="content0" >
-
-<div class="inner-block">	
-	<h1 class="form-title heading-large">Other names or aliases <span class="repeat">summary</span></h1>
-	<div class="auto-style1 firsttime">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</div>
-	<div class="auto-style1 firsttime">Don't include trading names.</div>
+<div class="inner-block text">
 	
-
-	<div class="col-md-9">
-		<form class="form" method="post">
-			
-			 <div id="pnl-employment_table" class="repeat">
-	            <table style="width: 100%" class="family">
-	                <thead>
-	                    <tr>
-	                        <th>Name or alias</th>
-	                        <th>&nbsp;</th>
-	                    </tr>
-	                </thead>
-                    <tbody class="tbl-content"></tbody>
-	            </table>
-
-	            
-			</div>
-	            <p>&nbsp;</p>
-	            <p class="repeat">The table above summarises the names or alises you have told us about</p>
-	            
-				<p class="repeat">We need to know about any other names you have been known by the last 5 years.</p>
-           <fieldset>
-	<legend class="form-label-bold"><span class="firsttime">Enter your other name or alias</span>
-	<span class="repeat">Enter another name or alias</span></legend>
-		<p class="form-hint">For example, John Smith. <span class="firsttime">You can add more names later.</span></p>
-
-	<div class="form-group halfwidth">
-		 <label for="firstname">First name</label>
-			<input id="firstname"  />
-	</div>
-	<div class="form-group halfwidth">
-		 <label for="lastname">Last name</label>
-		<input id="lastname"  />
-	</div>
-	<div class="form-group partwidth">
-              	  <a id="add" class="button" href="#">Add name <span class="repeat"></span></a>&nbsp;
-					<br/>
-	</div>
-
-	</fieldset>
 	
-	                <p><br>
-					<a href="address.html" class="button family" id="next"><span class="repeat">Continue - I have added all my names and aliases</span>
-	                <span class="firsttime">Continue - I haven't been known by any other name or alias</span></a></p>
-            
-           
-		</form>
-			<p>&nbsp;</p>
-			<div class="form-navigation form-group">
-					<a href="1.html">Back</a>
-				</div>
-		</div>		
-		<div class="col-md-3">
-            <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
-            <p><a href="#" style="font-weight:bold">Save and logout</a></p>
-            <br>
-                <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-                    <p class="heading-secondary">Bankruptcy fee</p>
-                    <p style="font-weight:bold;font-size:large">
-                        <a href="payments/statement.html">£0 received</a><br>
-                        <span class="text-muted" style="font-weight:normal">£705 left to pay</span>
-                    </p>
-                    <p><a href="payments/payments.html">Make a payment</a></p>
-                </div>
-                <p><a href="#" style="display:none">Print summary</a></p>
-                <p><a href="#" style="display:none">Generate court documents</a></p>
-                <p><a href="#" style="display:none">Discard application</a></p>
-            </div>
-        </div>
+	
+	<h1 class="form-title heading-large">Landlord details</h1>
+	
+	
+	
+	<form class="form" method="post">         
 
+  					
+  	 	
+ 	<div class="form-group ">
+	
+	<p><span class="heading-medium">Landlord name </span></p>
+	<div class="form-hint">If you don't have a landlord put the council, housing association or managing agent you rent from</div>
+
+	<input id="name" name="last_name" type="text" value="" />
+	<br/>
 	</div>
-</div>
+       	
+      	<p><br></p>
+<p><span class="heading-medium">Landlord address</span></p>
+<div class="form-hint">If you rent the property from a managing agent, council or housing association enter the 
+	address of your local office</div>
 
+
+			<div class="form-group ">
+	
+			<label id="employer_address_line_1_label" for="employer_address_line_1" class="form-label employer_address_line_1">Building and street</label>
+
+	<input id="address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
+	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
+	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="employer_address_town_label" for="employer_address_town" class="form-label employer_address_town">Town/city</label>
+
+	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+<label id="employer_address_county_label" for="employer_address_county" class="form-label employer_address_county">County</label>
+	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+	<br/>
+	</div>
+	<div class="form-group ">
+	
+	<label id="employer_address_post_code_label" for="employer_address_post_code" class="form-label employer_address_post_code">Postcode</label>
+	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+	<br/>
+	</div>
+
+
+	<!-- For User research -->
+	<div class="form-navigation form-group">
+	
+	<div>
+	<a href="family-members.html" id="next" class="button">Continue</a>
+	</div>
+	<div>
+	<br>
+	</div>
+	
+	<div>
+	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+
+	
+	<a href="#" id="cancel">Save and logout</a>
+	
+	</div>
+	</div>
+	</form>
+	</div>
 
 	 <!-- #EndEditable -->
 
@@ -321,11 +269,14 @@ legend{
             <div class="footer-meta-inner">
 
                  <ul class="footer__nav" style="width:100%">
-                    <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../../UR15/email.html">Contact us</a></li>
+                    <li class="small-btm-margin" style="text-align:left; display:block">
+					<a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
                  </ul>
                   <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                    <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-                    <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+                    <li class="footer__link" style=" ">
+					<a href="../../privacy.html">Privacy</a></li>
+                    <li class="footer__link" style="">
+					<a href="../../cookies.html">Cookies</a></li>
                     <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
                 </ul>
 
@@ -371,29 +322,19 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../shared/loop.js"></script>
-	
+
 <script type="text/javascript">
-
 $(document).ready(function() {
-		
+                   
+	
+	
+ 
 });
 
-$("#add").click(function () {
-    $(".repeat").show();
-	 $(".firsttime").hide();
-
-	var name = $("#firstname").val() + " " + $("#lastname").val();
-	row = "<tr><td>"+ name +"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
-	$(".tbl-content").append(row);	
-	$("#firstname").val("");		
-	 $("#lastname").val("");
-});
-
-
-
-
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
+}
 </script>
 
 
