@@ -413,22 +413,12 @@ display:block;
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Age</th>
                         <th>Relationship</th>
                         <th>Address</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
-                <tbody>
-
-                    <tr>
-
-                        <td>Tania Bagley</td>
-                        <td>18</td>
-                        <td>Child</td>
-                        <td>33 Long Street, Churchtown, C22 33K</td>
-                        <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-                    </tr>
+                <tbody id="other_dep_body">
                 </tbody>
             </table>
         </div>
@@ -589,6 +579,9 @@ $(document).ready(function() {
 	$("#user_lastname").text($.cookie("lastname"));
 	$("#user_dob").text(dob);
 	$("#user_othername").text(othername);
+	$("#contact-details").text($.cookie("mobile"));
+	$("#movedin").text($.cookie("CUR_PROP_start"));
+	
 	
 
 	var number = 0;
@@ -622,6 +615,34 @@ $(document).ready(function() {
 			$.removeCookie('memberdeleted' + i);		
 		}
 	}
+	
+	
+	// populate other dependents table
+	var oth_depend = 0;
+	if ($.cookie('oth_dep_count') && $.cookie('oth_dep_count').length > 0){
+    	oth_depend = parseInt($.cookie('oth_dep_count')); 
+	}
+	
+	for (i = 1; i < oth_depend+1; i++) {
+	
+		var oth_address = $.cookie("oth_dep_add1"+i) + ", ";
+		oth_address += $.cookie("oth_dep_add2"+i) + ", ";
+		oth_address += $.cookie("oth_dep_add3"+i) + ", ";
+		oth_address += $.cookie("oth_dep_town"+i) + ", ";
+		oth_address += $.cookie("oth_dep_county"+i) + ", ";
+		oth_address += $.cookie("oth_dep_postcode"+i) + ", ";
+		
+		var oth_name = $.cookie("oth_dep_firstname"+i) + ' ' + $.cookie("oth_dep_lastname"+i);
+		
+		var other_row = "<tr><td>";
+		other_row += oth_name + "</td><td>";
+		other_row +=  $.cookie("oth_dep_relationship"+i) + "</td><td>";
+		other_row += oth_address + "</td><td>";
+		other_row += "<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td></tr>";
+		
+		$("#other_dep_body").append(other_row);	
+	}
+
 
 });
 
