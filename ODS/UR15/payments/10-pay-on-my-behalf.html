@@ -182,7 +182,7 @@ table td{
             <table class="table">
               <tr>
                 <td>Payment reference</td>
-                <td class="heading-small"><span id="urn">1234-BAGL</span></td>
+                <td class="heading-small"><span id="urn">1234Bagley</span></td>
               </tr>
               <tr>
                 <td>Name</td>
@@ -203,7 +203,7 @@ table td{
               <li>
                 <h3 class="heading-small">I don't have their email address</h3>
                 <p>If you don't have an email address we can post the payment reference out to them.</p>
-                <a href="11-alternative-address.html">Post it to them</a>
+                <a href="11-alternative-address.html" id="post-it">Post it to them</a>
               </li>
             </ul>
 
@@ -329,6 +329,9 @@ $(document).ready(function() {
   $("#continue").on("click", function (e) {
      e.preventDefault();
      //alert($("#amount").val());
+
+    $.cookie("email-address", $("#email-address").val(), {path:'/'});
+
      if ($("#email-address").val() == ""){
        $("#panel-error-empty").show();
        (window.location.replace("#panel-error-empty"));
@@ -338,11 +341,11 @@ $(document).ready(function() {
        (window.location.replace("15-thank-you.html"));
      }
 
-   });
+  });
 
-   $("#submit-email-address").on("click", function (e) {
-     $.cookie("email-address", $("#email-address").val(), {path:'/'});
-   });
+  $("#post-it").on("click", function (e) {
+    $.cookie("urn", $("#urn").text(), {path:'/'});
+  });
 
 });
 
