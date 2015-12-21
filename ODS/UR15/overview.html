@@ -765,6 +765,7 @@ h3 > a {
                               <br>
                               <p><a href="#">Generate court documents</a></p>
                               <p><a href="discard.html">Discard application</a></p>
+                              <span id="payment_record"></span>
                             </div>
 
                           </div>
@@ -886,6 +887,16 @@ h3 > a {
                           	$("#fee_remaining").text("655.00");
                            	$(".lefttopay").text("655.00");
                           	$("#updated").hide();
+                          }
+                          
+                          if($.cookie("payment_count")){
+                          
+                          	var row = "<br>";
+                          	row =+ "<p><a href="8-statements-page.html">View my payment history</a></p>";
+              				row =+ "<p><a href="7-help-page.html">How can I get a refund?</a></p>";
+              				
+              				$("#payment_record").html(row);
+                          
                           }
 
                           var reset = getParameterByName("reset");
