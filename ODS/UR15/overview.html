@@ -888,14 +888,14 @@ h3 > a {
                            	$(".lefttopay").text("655.00");
                           	$("#updated").hide();
                           }
-                          
+                         
                           if($.cookie("payment_count")){
                           
                           	var row = "<br>";
-                          	row =+ '<p><a href="8-statements-page.html">View my payment history</a></p>';
-              				row =+ '<p><a href="7-help-page.html">How can I get a refund?</a></p>';
+                          	row += '<p><a href="8-statements-page.html">View my payment history</a></p>';
+              				row += '<p><a href="7-help-page.html">How can I get a refund?</a></p>';
               				
-              				$("#payment_record").text(row.html());
+              				$("#payment_record").html(row);
                           
                           }
 
