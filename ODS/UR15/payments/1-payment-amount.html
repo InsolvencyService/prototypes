@@ -359,7 +359,7 @@ $(document).ready(function() {
       (window.location.replace("#panel-error-greater"));
     }
 
-    if ($("#amount").val() && $("#amount").val() < $.cookie("fee_remaining")) {
+    if ($("#amount").val() && $("#amount").val() <= $.cookie("fee_remaining")) {
       (window.location.replace("2-worldpay-card-selection.html"));
     }
   });
