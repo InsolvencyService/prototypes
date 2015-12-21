@@ -177,24 +177,19 @@ table td{
               These are the payments you have made towards the bankruptcy fee.
             </p>
             <table class="table">
-              <tr>
-                <td>Payzone payment</td>
-                <td>01/02/2015</td>
-                <td>&pound;100.00</td>
-              </tr>
-              <tr>
-                <td>Card payment (Visa ending 1056)</td>
-                <td>10/03/2015</td>
-                <td>&pound;55.00</td>
-              </tr>
-              <tr>
-                <td class="heading-small" style="text-align:right;">Total</td>
-                <td></td>
-                <td class="heading-small">&pound;155.00</td>
-              </tr>
+            	<tbody id="tablebody">
+	              
+	             
+	              <tr>
+	              	<td></td>
+	                <td></td>
+	                <td class="heading-small" style="text-align:right;">Total</td>
+	                <td class="heading-small">&pound;155.00</td>
+	              </tr>
+              	</tbody>
             </table>
             <p>
-              You have <span class="heading-small">&pound;500</span> to pay to enable your application to proceed
+              You have <span class="heading-small fee_remaining">&pound;500</span> to pay to enable your application to proceed
             </p>
 
             <!-- CTA Section Start -->
@@ -218,7 +213,7 @@ table td{
             <div class="panel panel-primary no-button">
               <h2 class="heaing-small">Bankruptcy order fee</h2>
               <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining" class="lefttopay">500</span> left to pay</span>
+              <span class="text-muted" style="font-weight:normal">&pound;<span class="fee_remaining">500</span> left to pay</span>
               <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
             </div>
             <!-- Payment Panel end -->
@@ -305,11 +300,24 @@ $(document).ready(function() {
     $.cookie("url", url, {path:'/'});
     $.cookie("pathname", pathname, {path:'/'});
   });
+  
+  if($.cookie("payment_count")){
+  	var count= parseInt($.cookie("payment_count"));
+  	for(i=1; i<count; i++){
+  		var row = "<tr><td>"+$.cookie("payment_type"+count);
+  		row += "</td><td>"+$.cookie("payment_ref"+count);
+  		row += "</td><td>"+$.cookie("payment_date"+count);
+  		row += "</td><td>"+$.cookie("payment_amount"+count);
+  		row += "</td></tr>"
+  		
+  		$("#tablebody").prepend(row);
+   	}
+  }
 
   //checking payment details
   if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
     $("#fee_paid").text($.cookie("fee_paid"));
-    $("#fee_remaining").text($.cookie("fee_remaining"));
+    $(".fee_remaining").text($.cookie("fee_remaining"));
     $("#timestamp").text($.cookie("payment_timestamp"));
     $("#updated").show();
   }
