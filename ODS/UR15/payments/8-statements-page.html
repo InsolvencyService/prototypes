@@ -179,14 +179,16 @@ table td{
             <table class="table">
             	<tbody id="tablebody">
 	              
-	             
+	             </tbody>
+	             <tfoot>
 	              <tr>
 	              	<td></td>
 	                <td></td>
 	                <td class="heading-small" style="text-align:right;">Total</td>
 	                <td class="heading-small">&pound;155.00</td>
 	              </tr>
-              	</tbody>
+	              </tfoot>
+              	
             </table>
             <p>
               You have <span class="heading-small fee_remaining">&pound;500</span> to pay to enable your application to proceed
@@ -310,7 +312,7 @@ $(document).ready(function() {
   		row += "</td><td>"+$.cookie("payment_amount"+count);
   		row += "</td></tr>"
   		
-  		$("#tablebody").prepend(row);
+  		$("#tablebody").append(row);
    	}
   }
 
