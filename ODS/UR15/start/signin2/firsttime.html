@@ -364,6 +364,8 @@ $(document).ready(function() {
 			$.cookie('dob-year', $("#dob-year").val(), { expires: 1, path:'/' });
 			$.cookie('firstname', $("#first_name").val(), { expires: 1, path:'/' });
 			$.cookie('lastname', $("#last_name").val(), { expires: 1, path:'/' });
+			$.cookie('middlename', $("#middle_name").val(), { expires: 1, path:'/' });
+
 
 			if ($("#pnl-missing-email").is(":visible") == true){
 				$("#next").prop("href", nextpage + "?noemail=true");

@@ -444,6 +444,7 @@ $(document).ready(function() {
 $("#next").click(function(e){
 
 	$("#next").attr("href", "family-members.html");
+	$.cookie("CUR_PROP_start", $("#month :selected").text() + ' ' + $("#year").val(), {path:'/'});
 
 	if($("#PropertyOwnership_0").prop('checked')==true){
 		$.cookie("PropertyOwnerType", "Owned", {path:'/'});
