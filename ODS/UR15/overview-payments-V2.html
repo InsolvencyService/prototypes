@@ -752,9 +752,9 @@ h3 > a {
                             <div class="payment-summary-small">
                               <h2>Bankruptcy order fee</h2>
                               <!-- <p class="payment-info"> Volcano Insurance</p> -->
-                              <p class="payment-amount">&pound;155 received</p>
-                              <h3>Amount to pay: &pound;500</h3>
-                              <p class="updated-text">Last payment date:<br>10 December 2015 at 15:05:06</p>
+                              <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
+                              <h3>Amount to pay: &pound;<span id="fee_remaining">655</span></h3>
+                              <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
                               <a class="button" href="payments/1-payment-amount.html">Make a payment</a>
                             </div>
                             <span class="form-hint">You can also pay by cash, <a href="payments/5-cash-payment.html">click here to find out how</a>.</span>
@@ -769,9 +769,6 @@ h3 > a {
                               <br>
                               <p><a href="#">Generate court documents</a></p>
                               <p><a href="discard.html">Discard application</a></p>
-                              <br>
-                              <p><a href="8-statements-page.html">View my payment history</a></p>
-                              <p><a href="7-help-page.html">How can I get a refund?</a></p>
                             </div>
 
                           </div>
@@ -781,20 +778,14 @@ h3 > a {
                           <div class="form-navigation form-group" style="margin:20PX;">
 
                             <div>
-
-
                               <a href="https://indigodesigned.com/share/run/j74c3a3qar7w#f=submit/continuesubmit" id="next" style="display:none" class="button">Submit your application</a>
-
                             </div>
                             <div>
                               <br>
                             </div>
-
                             <div>
-
                               <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>&nbsp;
                               <a class="save" id="cancel" style="font-weight:bold">Save and logout</a>
-
                             </div>
                           </div>
 
@@ -874,9 +865,30 @@ h3 > a {
                     <script type="text/javascript" src="../assets/js/jquery.cookie.js"></script>
                     <script type="text/javascript">
                     $(document).ready(function () {
-                      var urn = $.cookie('urn');
-                      if (urn && urn.length > 8){
-                        $("#urn").text(urn);
+                      // var urn = $.cookie('urn');
+                      // if (urn && urn.length > 8){
+                      //   $("#urn").text(urn);
+                      // }
+
+                      // Unique reference number
+                      $("#make-a-payment").on("click", function (e) {
+                        $.cookie("urn", $("#urn").text(), {path:'/'});
+                      });
+
+                      //checking payment details
+                      if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
+                        $("#fee_paid").text($.cookie("fee_paid"));
+                        $("#fee_remaining").text($.cookie("fee_remaining"));
+                        $("#timestamp").text($.cookie("payment_timestamp"));
+                        $("#updated").show();
+                      }
+                      else {
+                        $.cookie("fee_paid", "0.00", {path:'/'});
+                        $.cookie("fee_remaining", "655.00", {path:'/'});
+                        $("#fee_paid").text("0.00");
+                        $("#fee_remaining").text("655.00");
+                        $(".lefttopay").text("655.00");
+                        $("#updated").hide();
                       }
 
                       var reset = getParameterByName("reset");
