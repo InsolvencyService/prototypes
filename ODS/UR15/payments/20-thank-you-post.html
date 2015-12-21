@@ -177,12 +177,12 @@ table td{
               <tr>
                 <td>Postal address</td>
                 <td class="heading-small">
-                  <span id="building-and-street-1"></span>,<br>
-                  <span id="building-and-street-2"></span>,<br>
-                  <span id="building-and-street-3"></span>,<br>
-                  <span id="town-or-city"></span>,<br>
-                  <span id="county"></span>,<br>
-                  <span id="postcode"></span>.
+                  <span id="building-and-street-1" style="display:none;"></span><br>
+                  <span id="building-and-street-2" style="display:none;"></span><br>
+                  <span id="building-and-street-3" style="display:none;"></span><br>
+                  <span id="town-or-city" style="display:none;"></span><br>
+                  <span id="county" style="display:none;"></span><br>
+                  <span id="postcode" style="display:none;"></span>.
                 </td>
               </tr>
             </table>
@@ -263,24 +263,30 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  // Cookie variable
+// Cookie variable
   if ($.cookie("building-and-street-1")) {
     $("#building-and-street-1").text($.cookie("building-and-street-1")).addClass("bolder");
+    $("#building-and-street-1").show();
   }
   if ($.cookie("building-and-street-2")) {
     $("#building-and-street-2").text($.cookie("building-and-street-2")).addClass("bolder");
+    $("#building-and-street-2").show();
   }
   if ($.cookie("building-and-street-3")) {
     $("#building-and-street-3").text($.cookie("building-and-street-3")).addClass("bolder");
+    $("#building-and-street-3").show();
   }
   if ($.cookie("town-or-city")) {
     $("#town-or-city").text($.cookie("town-or-city")).addClass("bolder");
+    $("#town-or-city").show();
   }
   if ($.cookie("county")) {
     $("#county").text($.cookie("county")).addClass("bolder");
+    $("#county").show();
   }
   if ($.cookie("postcode")) {
     $("#postcode").text($.cookie("postcode")).addClass("bolder");
+    $("#postcode").show();
   }
 
 
