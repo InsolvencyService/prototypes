@@ -309,7 +309,7 @@ $(document).ready(function() {
   		var row = "<tr><td>"+$.cookie("payment_type"+i);
   		row += "</td><td>"+$.cookie("payment_ref"+i);
   		row += "</td><td>"+$.cookie("payment_date"+i);
-  		row += "</td><td>"+$.cookie("payment_amount"+i);
+  		row += "</td><td>£"+parseFloat($.cookie("payment_amount"+i)).toFixed(2);
   		row += "</td></tr>"
   		
   		$("#tablebody").append(row);
