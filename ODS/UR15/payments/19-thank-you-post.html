@@ -177,11 +177,11 @@ table td{
               <tr>
                 <td>Postal address</td>
                 <td class="heading-small">
-                  <span id="building-and-street-1" style="display:none;"></span><br>
-                  <span id="building-and-street-2" style="display:none;"></span><br>
-                  <span id="building-and-street-3" style="display:none;"></span><br>
-                  <span id="town-or-city" style="display:none;"></span><br>
-                  <span id="county" style="display:none;"></span><br>
+                  <span id="building-and-street-1" style="display:none;"></span>
+                  <span id="building-and-street-2" style="display:none;"></span>
+                  <span id="building-and-street-3" style="display:none;"></span>
+                  <span id="town-or-city" style="display:none;"></span>
+                  <span id="county" style="display:none;"></span>
                   <span id="postcode" style="display:none;"></span>.
                 </td>
               </tr>
@@ -285,7 +285,7 @@ $(document).ready(function() {
     $("#county").show();
   }
   if ($.cookie("postcode")) {
-    $("#postcode").text($.cookie("postcode")).addClass("bolder").append(",<br>");
+    $("#postcode").text($.cookie("postcode")).addClass("bolder");
     $("#postcode").show();
   }
 
