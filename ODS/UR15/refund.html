@@ -211,35 +211,53 @@ h3 > a{
 
 <!-- #BeginEditable "content" -->
 
- 	
-	<div class="inner-block">
-	
-	
-	
-	<h1 class="form-title heading-large">Discard application</h1>
+
+<div class="inner-block ">
+	<div class="text">
+		<h1 class="form-title heading-large">Fee refund</h1>
+		<p class="mixed">Our records show you have made a combination of both cash and card payments towards your application fee.</p>
+		<p class="card">Our records show you have paid your application fee via credit or debit card. </p>
+		<p class="cash">Our records show you have paid your application fee via credit or debit card. </p>
+		<span class="mixed card">All card transactions will be automatically refunded via WorldPay.</span> 
+		<span class="mixed cash">Cash payments will be repaid to the bank account you nominate below.</span>
 		
-<div class="alert  clearfix col-sm-8">
-	<div class="col-sm-2"><i class="glyphicon glyphicon-exclamation-sign font-xlarge"></i></div>
-	<div class="col-sm-10">
-		<p class="bolder">Are you sure you want to discard your application? </p>
-		<p>The application and all information you have entered will be deleted, including your account and your application number.</p>
-		<span class="col-sm-6 text-center">
-			<a id="discard_yes" class="btn btn-danger col-sm-6">
-				Yes
-			</a>
-		</span>
-		<span class="col-sm-6 text-center">
-			<a href="overview.html" class="btn btn-success col-sm-6">
-				No
-			</a>
-		</span>
+		<p>&nbsp;</p> 
 	</div>
+	
+
+	
+	<div class="text mixed cash">
+		<form>
+		
+			<div class="form-group">
+				<label  class="form-label-bold" for="sc_number">Bank sortcode</label>
+				<input  class="form-control-1-4" id="sc_number" style="display:inline-block; margin-right:15px">   		
+			</div>
+
+			<div class="form-group">
+				<label  class="form-label-bold" for="ac_number">Account number</label>
+				<input  id="ac_number" style="display:inline-block; margin-right:15px">   	
+			</div>
+			
+			<div class="form-group">
+				<label  class="form-label-bold" for="payee">Account holder</label>
+				<p class="form-hint">The full name of the person or business who the account belongs to</p>
+				<input class="form-control-1-2" id="payee" style="display:inline-block; margin-right:15px">   	
+			</div>
+			
+			<div class="form-group">
+				<label  class="form-label-bold">Transaction amount</label>
+				<label  class="form-label">&pound;155.00</label>  	
+			</div>	
+		</form>
+	</div>
+
+	<p>&nbsp;</p>
+	<a href="refund_confirmation.html" class="button">Refund fee</a><br />
+	<a href="overview.html">I don't want to discard my application</a>
+	<p>&nbsp;</p>
 </div>
-
-
-<p>&nbsp;</p>
-</div>
-
+	
 
 	 <!-- #EndEditable -->
 
@@ -310,16 +328,18 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	$(".cash").hide();
+	$(".card").hide();
+	$(".mixed").hide();
+	
+	var payment_type = getParameterByName("type");
+	
+	$("."+payment_type).show();
+
 });
 
-$("#discard_yes").on("click", function (e) {
-	if(parseInt($.cookie("fee_remaining")) != 655){
-		$("#discard_yes").attr("href", "refund.html?type=mixed");
-	}
-	else{
-		$("#discard_yes").attr("href", "https://www.surveymonkey.com/r/QX93Q2F");
-	}
-});
+
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
