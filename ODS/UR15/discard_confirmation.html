@@ -239,8 +239,9 @@ $(document).ready(function() {
 	$("."+payment_type).show();
 	
 	
-	for (var it in $.cookie()) $.removeCookie(it);
-
+	for (var it in $.cookie()){
+	 $.removeCookie(it);
+	}
 });
 
 function getParameterByName(name) {
