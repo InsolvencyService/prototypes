@@ -172,12 +172,14 @@ table td{
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
-            <p>Your payment was successful.</p>
+            <div class="govuk-box-highlight">
+              <h2 class="bold-large">Your payment was successful.</h2>
+              <p>Your application reference is<br>
+                <strong class="heading-medium"><span id="urn"></span></strong>
+              </p>
+            </div>
+            <p>We have sent you a confirmation email.</p>
             <table class="table">
-              <tr>
-                <td>Your application reference</td>
-                <td class="heading-small"><span id="urn"></span></td>
-              </tr>
               <tr>
                 <td>Payment amount</td>
                 <td class="heading-small"><span id="amountpaid"></span></td>
@@ -262,24 +264,24 @@ var ref, paydate, payment_made, total_fee_paid, fee_remaining, cookiecount;
 
 
 $(document).ready(function() {
-  
+
   //for contact us email
   var url      = window.location.href;     // Returns full URL
   var pathname = window.location.pathname; // Returns path only
   // end
-  
+
   //if an amount of payment has been entered
   ref = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
   $("#wp-ref").text(ref);
 
-  
-  
+
+
   if ($.cookie("amount")) {
  	$("#urn").text($.cookie("urn")).addClass("bolder");
  	readCookies();
- 	
+
  	$("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
- 	
+
  	if(total_fee_paid == '0.00'){
 		total_fee_paid = payment_made;
 	}
@@ -288,7 +290,7 @@ $(document).ready(function() {
 	}
 	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
 	writeCookies();
-  }	 
+  }
 });
 
 $("#email-link").on("click", function (e) {
@@ -303,11 +305,11 @@ function readCookies(){
 	}
 	cookiecount++;
 	$.cookie("payment_count", cookiecount, {path:'/'})
-	
+
 	total_fee_paid = $.cookie("fee_paid");
   	fee_remaining = $.cookie("fee_remaining");
 	payment_made = $.cookie("amount");
-	
+
 }
 
 function writeCookies(){
@@ -318,13 +320,13 @@ function writeCookies(){
 	var timea = formatDate(d, "HH:mm:ss");
 	var stamp = datea.toString() + ' at ' + timea.toString();
 	$.cookie("payment_timestamp", stamp, {path:'/'});
-	
+
 	//individual payment cookies for statement
 	$.cookie("payment_type"+cookiecount, type,  {path:'/'});
 	$.cookie("payment_date"+cookiecount, datea,  {path:'/'});
 	$.cookie("payment_ref"+cookiecount, ref,  {path:'/'});
 	$.cookie("payment_amount"+cookiecount, payment_made,  {path:'/'});
-	
+
 }
 
 
