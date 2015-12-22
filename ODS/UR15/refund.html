@@ -218,7 +218,7 @@ h3 > a{
 		<p class="mixed">Our records show you have made a combination of both cash and card payments towards your application fee.</p>
 		<p class="card">Our records show you have paid your application fee via credit or debit card. </p>
 		<p class="cash">Our records show you have paid your application fee via credit or debit card. </p>
-		<span class="mixed card">All card transactions will be automatically refunded via WorldPay.</span> 
+		<span class="mixed card">All card transactions will automatically be refunded to your card via WorldPay.</span> 
 		<span class="mixed cash">Cash payments will be repaid to the bank account you nominate below.</span>
 		
 		<p>&nbsp;</p> 
@@ -253,7 +253,7 @@ h3 > a{
 	</div>
 
 	<p>&nbsp;</p>
-	<a href="refund_confirmation.html" class="button">Refund fee</a><br />
+	<a id="next" class="button">Discard application</a><br />
 	<a href="overview.html">I don't want to discard my application</a>
 	<p>&nbsp;</p>
 </div>
@@ -327,19 +327,27 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript">
+var payment_type;
 $(document).ready(function() {
 
 	$(".cash").hide();
 	$(".card").hide();
 	$(".mixed").hide();
 	
-	var payment_type = getParameterByName("type");
+	payment_type = getParameterByName("type");
 	
 	$("."+payment_type).show();
 
 });
 
-
+$("#next").on("click", function (e) {
+	if(payment_type=="mixed" || payment_type=="cash"){
+		$("#next").attr("href", "discard_confirmation.html?payment=made");
+	}
+	else{
+		$("#next").attr("href", "discard_confirmation.html?payment=made");
+	}
+});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

@@ -78,74 +78,6 @@
 
 
 
-
-
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-.label-default{
-	background:transparent none;
-	color:gray;
-	border:thin gray solid;
-}
-
-.row.well{
-	padding-left:0;
-	padding-right:0;
-}
-.rowbottom {
-	display:block;
-	margin-left:20px;
-}
-.rowbottom hr{
-	margin:0
-}
-.rowbottom > div{
-	margin-top:6px;
-	margin-bottom:6px;
-}
-
-.label{
-	background:transparent;
-}
-.label.label-success{
-	border:1px green solid;
-	color:green;
-	padding-right:13px;
-	padding-left:13px;
-}
-.rowmiddle{
-	padding-top:0 !important;
-}
-.rowtop{
-	margin-top:10px;
-}
-h3,
-h3 > a{
-	margin-top:0 !important
-}
-.btn{
-	color:white !important;
-	font-size:medium;
-}
-
 </style>
 <!-- #EndEditable -->
 
@@ -211,35 +143,24 @@ h3 > a{
 
 <!-- #BeginEditable "content" -->
 
- 	
-	<div class="inner-block">
-	
-	
-	
-	<h1 class="form-title heading-large">Discard application</h1>
-		
-<div class="alert  clearfix col-sm-8">
-	<div class="col-sm-2"><i class="glyphicon glyphicon-exclamation-sign font-xlarge"></i></div>
-	<div class="col-sm-10">
-		<p class="bolder">Are you sure you want to discard your application? </p>
-		<p>The application and all information you have entered will be deleted, including your account and your application number.</p>
-		<span class="col-sm-6 text-center">
-			<a id="discard_yes" class="btn btn-danger col-sm-6">
-				Yes
-			</a>
-		</span>
-		<span class="col-sm-6 text-center">
-			<a href="overview.html" class="btn btn-success col-sm-6">
-				No
-			</a>
-		</span>
+
+<div class="inner-block ">
+	<div class="text">
+		<h1 class="form-title heading-large">Discard confirmation</h1>
+		<p>
+			Your application has been successfully discarded and cannot be reinstated.
+			<span class="made">Any payment you made towards your fee has been refunded but may take 7-10 days to appear on your statement.</span>
+		</p>
+		<p>&nbsp;</p>
+		<p>It would really help us if you would answer a few questions about your experience to help improve our online service. </p>
 	</div>
+	
+	<p>&nbsp;</p>
+	<a href="https://www.surveymonkey.com/r/QX93Q2F" id="next" class="button">Complete the survey</a><br />
+	<a href="http://www.gov.uk">Return to GOV.UK</a>
+	<p>&nbsp;</p>
 </div>
-
-
-<p>&nbsp;</p>
-</div>
-
+	
 
 	 <!-- #EndEditable -->
 
@@ -310,15 +231,16 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function() {
-});
 
-$("#discard_yes").on("click", function (e) {
-	if(parseInt($.cookie("fee_remaining")) != 655){
-		$("#discard_yes").attr("href", "refund.html?type=mixed");
-	}
-	else{
-		$("#discard_yes").attr("href", "discard_confirmation.html");
-	}
+
+
+	$(".made").hide();
+	var payment_type = getParameterByName("payment");
+	$("."+payment_type).show();
+	
+	
+	for (var it in $.cookie()) $.removeCookie(it);
+
 });
 
 function getParameterByName(name) {
