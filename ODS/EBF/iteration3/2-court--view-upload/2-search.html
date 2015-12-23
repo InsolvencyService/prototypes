@@ -143,21 +143,18 @@
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Log in the Electronic Bankruptcy Folder (EBF)</h1>
+        <h1 class="form-title heading-large">Enter PAT code</h1>
         <div class="col-sm-8">
           <!-- Error Validation Message - Start -->
           <div class="validation-summary" id="panel-error-empty" style="display:none">
             <h2>You are missing some log-in details:</h2>
             <ul>
-              <li><a href="#email-address">* Email address</a></li>
-              <li><a href="#firstname">* Firstname</a></li>
-              <li><a href="#surname">* Surname</a></li>
+              <li><a href="#pat-code">* PAT code</a></li>
             </ul>
           </div>
           <!-- Error Validation Message - End -->
 
-          <p>We require the following details to allow you access to the EBF.</p>
-          <p>We will then send you a PAT code to the email address you provide to verify your credentials.</p>
+          <p>Please enter the PAT code we have just sent to <span id="email-address" class="heading"-small></span></p>
           <p><br></p>
 
           <form class="form" method="post">
@@ -166,23 +163,8 @@
             <!-- For User research -->
             <div class="form-group">
               <div class="msg-no-URN">
-                <label id="email-address-label" for="email-address" class="form-label-bold">What is your email address?</label>
-                <div class="form-hint">
-                  Please enter your court email address.
-                </div>
-                <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="firstname-label" for="firstname" class="form-label-bold">Your firstname</label>
-                <input id="firstname" name="firstname" type="text" value="" class="log-in" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="surname-label" for="surname" class="form-label-bold">Your surname</label>
-                <input id="surname" name="surname" type="text" value="" class="log-in" />
+                <label id="pat-code-label" for="pat-code" class="form-label-bold">PAT code</label>
+                <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
               </div>
             </div>
           </form>
@@ -201,7 +183,7 @@
         </div>
         <div class="col-sm-4">
         </div>
-        <!-- #EndEditable -->
+      <!-- #EndEditable -->
     </div>
 
     </div>
@@ -259,6 +241,7 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
@@ -273,23 +256,37 @@ $(document).ready(function() {
   $("#next").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#email-address, #firstname, #surname").val() == "") {
+    if ($("#pat-code").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
 
-    if ($("#email-address, #firstname, #surname").val()) {
-      (window.location.replace("2-search.html"));
+    if ($("#pat-code").val()) {
+      (window.location.replace("3-pat-code.html"));
     }
 
-    $.cookie("email-address", $("#email-address").val(), {path:'/'});
-    $.cookie("firstname", $("#firstname").val(), {path:'/'});
-    $.cookie("surname", $("#surname").val(), {path:'/'});
+    $.cookie("pat-code", $("#pat-code").val(), {path:'/'});
 
   });
 
+  if ($.cookie("email-address")) {
+    $("#email-address").text($.cookie("urn")).addClass("bolder");
+  }
+
 
 });
+
+function stripped(urn){
+return urn.replace(/[\. ,:-]+/g, "");
+}
+
+function getParameterByName(name) {
+name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+results = regex.exec(location.search);
+return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 </script>
 <!-- #EndEditable -->
 
