@@ -114,7 +114,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" href="https://www.gov.uk/service-manual">Electronic Bankruptcy Folder (EBF)</span>
+            <span id="proposition-name">Welcome to the <span id="firstname"></span></span>
           </nav>
         </div>
       </div>
@@ -153,6 +153,11 @@
             </ul>
           </div>
           <!-- Error Validation Message - End -->
+
+          <div class="govuk-box-highlight awaiting">
+            <h2 class="bold-large">Welcome to the EBF</h2>
+            <p><span id="firstname"></span> <span id="surname"></span></p>
+          </div>
 
           <p>Please enter the PAT code we have just sent to <span id="email-address" class="heading-small"></span>.</p>
           <p><br></p>
@@ -272,6 +277,11 @@ $(document).ready(function() {
   if ($.cookie("email-address")) {
     $("#email-address").text($.cookie("email-address")).addClass("bolder");
   }
+
+  if ($.cookie("firstname")) {
+    $("#firstname").text($.cookie("firstname")).addClass("bolder");
+  }
+
 
 
 });
