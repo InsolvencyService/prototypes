@@ -114,7 +114,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" href="https://www.gov.uk/service-manual">Electronic Bankruptcy Folder (EBF)</span>
+            <span id="proposition-name">Welcome to the <span id="firstname"></span></span>
           </nav>
         </div>
       </div>
@@ -143,26 +143,23 @@
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Log in the Electronic Bankruptcy Folder (EBF)</h1>
+        <h1 class="form-title heading-large">Enter PAT code</h1>
         <div class="col-sm-8">
           <!-- Error Validation Message - Start -->
-          <div class="validation-summary" style="display:none">
-            <h2 class="heading-medium">Application number is not valid</h2>
-            <ol>
-              <li class="error-message">
-                <p>Please enter a 12 digit application number</p>
-                <p><a href="20-urn-help.html">I have forgotten my application number</a></p>
-              </li>
-            </ol>
+          <div class="validation-summary" id="panel-error-empty" style="display:none">
+            <h2>You are missing some log-in details:</h2>
+            <ul>
+              <li><a href="#pat-code">* PAT code</a></li>
+            </ul>
           </div>
-          <p class="text msg-URN" style="display:none;">
-            Your application number is
-            <br>
-            <span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNH-J93R-5309</span>
-          </p>
           <!-- Error Validation Message - End -->
 
-          <p>We require the following details to allow you access to the EBF.</p>
+          <div class="govuk-box-highlight awaiting">
+            <h2 class="bold-large">Welcome to the EBF</h2>
+            <p><span id="firstname"></span> <span id="surname"></span></p>
+          </div>
+
+          <p>We just need one more thing to allow you access to the Bankrutpcy application, please enter the PAT code we have just sent to <span id="email-address" class="heading-small"></span>.</p>
           <p><br></p>
 
           <form class="form" method="post">
@@ -171,23 +168,8 @@
             <!-- For User research -->
             <div class="form-group">
               <div class="msg-no-URN">
-                <label id="email-address-label" for="email-address" class="form-label-bold">What is your email address?</label>
-                <div class="form-hint">
-                  Please enter you court email address.
-                </div>
-                <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="firstname-label" for="firstname" class="form-label-bold">Your firstname</label>
-                <input id="firstname" name="firstname" type="text" value="" class="log-in" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="surname-label" for="surname" class="form-label-bold">Your surname</label>
-                <input id="surname" name="surname" type="text" value="" class="log-in" />
+                <label id="pat-code-label" for="pat-code" class="form-label-bold">PAT code</label>
+                <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
               </div>
             </div>
           </form>
@@ -196,7 +178,7 @@
 
           <div class="form-navigation form-group">
             <div>
-              <a href="security-question.html" id="next" class="button">Continue</a>
+              <a href="#" id="next" class="button">Continue</a>
               <div>
                 <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
               </div>
@@ -262,7 +244,10 @@
   <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -273,42 +258,30 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-});
-</script>
-
-<!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  var ignorevalidation = false;
-  if (getParameterByName("ignore") && getParameterByName("ignore").length > 0){
-    ignorevalidation = true;
-  }
-
-  var urn = $.cookie('urn');
-  $("#next").click( function(e) {
-
-    if (ignorevalidation == false){
-      if ($("#urn").val().length < 12){
-        e.preventDefault();
-        $(".validation-summary").show();
-      }
-      else{
-        if ($("#urn").val().length > 0){/*
-          if (stripped($("#urn").val()).toUpperCase() != stripped(urn).toUpperCase()){
-          e.preventDefault();
-          window.location = "security-question.html?error=true";
-        };
-        */
-      }
-
+  $("#next").on("click", function (e) {
+    e.preventDefault();
+    //alert($("#amount").val());
+    if ($("#pat-code").val() == "") {
+      $("#panel-error-empty").show();
+      (window.location.replace("#panel-error-empty"));
     }
+
+    if ($("#pat-code").val()) {
+      (window.location.replace("3-pat-code.html"));
+    }
+
+    $.cookie("pat-code", $("#pat-code").val(), {path:'/'});
+
+  });
+
+  if ($.cookie("email-address")) {
+    $("#email-address").text($.cookie("email-address")).addClass("bolder");
   }
 
-});
+  if ($.cookie("firstname")) {
+    $("#firstname").text($.cookie("firstname")).addClass("bolder");
+  }
+
 
 
 });
@@ -325,8 +298,6 @@ return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")
 }
 
 </script>
-
-
 <!-- #EndEditable -->
 
 

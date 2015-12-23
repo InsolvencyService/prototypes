@@ -114,7 +114,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name">Welcome to the <span id="firstname"></span></span>
+            <span id="proposition-name" class="user-name">Welcome to the EBF <span id="firstname"></span></span>
           </nav>
         </div>
       </div>
@@ -143,7 +143,6 @@
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Enter PAT code</h1>
         <div class="col-sm-8">
           <!-- Error Validation Message - Start -->
           <div class="validation-summary" id="panel-error-empty" style="display:none">
@@ -154,13 +153,10 @@
           </div>
           <!-- Error Validation Message - End -->
 
-          <div class="govuk-box-highlight awaiting">
-            <h2 class="bold-large">Welcome to the EBF</h2>
+          <div class="govuk-box-highlight awaiting top">
+            <h1 class="bold-large">Welcome to the EBF</h1>
             <p><span id="firstname"></span> <span id="surname"></span></p>
           </div>
-
-          <p>Please enter the PAT code we have just sent to <span id="email-address" class="heading-small"></span>.</p>
-          <p><br></p>
 
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -168,14 +164,15 @@
             <!-- For User research -->
             <div class="form-group">
               <div class="msg-no-URN">
-                <label id="pat-code-label" for="pat-code" class="form-label-bold">PAT code</label>
-                <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
+                <p></p>
+                <label id="urn-label" for="urn" class="form-label-bold">Request access to a Bankruptcy application</label>
+                <div class="form-hint">
+                  Please enter the Bankruptcy reference number you require access to.
+                </div>
+                <input id="urn-code" name="urn" type="text" value="" class="log-in" />
               </div>
             </div>
           </form>
-
-          <p><br></p>
-
           <div class="form-navigation form-group">
             <div>
               <a href="#" id="next" class="button">Continue</a>
@@ -184,6 +181,7 @@
               </div>
             </div>
           </div>
+          <hr>
 
         </div>
         <div class="col-sm-4">
