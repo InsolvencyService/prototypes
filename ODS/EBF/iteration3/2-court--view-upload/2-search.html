@@ -114,7 +114,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" class="user-name">Welcome to the EBF <span id="firstname"></span></span>
+            <span id="proposition-name" class="user-name">Welcome to the EBF <span id="firstname" class="firstname"></span></span>
           </nav>
         </div>
       </div>
@@ -155,7 +155,7 @@
 
           <div class="govuk-box-highlight awaiting top">
             <h1 class="bold-large">Welcome to the EBF</h1>
-            <p><span id="firstname"></span> <span id="surname"></span></p>
+            <p><span id="firstname" class="firstname"></span> <span id="surname"></span></p>
           </div>
 
           <form class="form" method="post">
@@ -278,6 +278,7 @@ $(document).ready(function() {
 
   if ($.cookie("firstname")) {
     $("#firstname").text($.cookie("firstname")).addClass("bolder");
+    $(".firstname").text($.cookie("firstname")).addClass("bolder");
   }
 
   if ($.cookie("surname")) {
