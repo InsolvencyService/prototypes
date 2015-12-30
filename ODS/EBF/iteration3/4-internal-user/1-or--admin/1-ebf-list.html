@@ -153,13 +153,9 @@
     </div>
   </div>
 
-
-
   <div id="content">
 
-
     <!-- #BeginEditable "content" -->
-
 
     <div style="display:block; margin: 0 30px 60px 30px !important">
       <div class="intro-banner">
@@ -167,23 +163,28 @@
           <h1 class="form-title heading-large">Bankruptcy adjudication: <span id="urn"></span></h1>
         </div>
         <div class="col-sm-4">
-          <a href="#"><span class="glyphicon glyphicon-log-out"></span> View another case</a>
+          <a href="../1-search.html"><span class="glyphicon glyphicon-log-out"></span> View another case</a>
         </div>
       </div>
 
-      <p>Below is a list of the documents associated with the bankruptcy application <span class="urn"></span>, Kim Scarlett.</p>
-      <p>&nbsp;</p>
+      <p>Below is a list of the documents associated with the bankruptcy application:</p>
+      <p>Application number: <span class="urn"></span></p>
+      <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
+      <hr>
       <!-- Navbar - Start -->
       <nav class="navbar navbar-default" role="navigation">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <form action="#" method="get" class="navbar-form navbar-left" role="search">
             <div class="input-group">
-              <input id="search" type="text" class="form-control" placeholder="Search" name="q" required="">
+              <input id="search" type="text" class="form-control" placeholder="Search for documents..." name="q" required="">
               <span class="input-group-btn">
                 <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button>
               </span>
             </div>
           </form>
+          <ul class="pagination see-all">
+            <li><a href="#">See all</a></li>
+          </ul>
           <ul class="pagination">
             <li>
               <a href="#" aria-label="Previous">
@@ -256,7 +257,7 @@
 
           <tr class="activerow approval-needed">
             <td><div class="label label-info label-as-badge">Document</div></td>
-            <td><a href="approve.html">Bankruptcy-order.pdf</a></td>
+            <td><a href="approve.html"><span id="document-title">Bankruptcy-order.pdf</span></a></td>
             <td>
               Beverly Becker
               <br>
@@ -266,7 +267,7 @@
             <td>2016-09-03</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok" alt="Approve"></i></a>
+              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok" alt="Approve" id="approve"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash" alt="Delete"></i></a>
             </td>
@@ -310,7 +311,7 @@
 
           <tr class="activerow approval-needed">
             <td><div class="label label-success label-as-badge">Notification</div></td>
-            <td><a href="approve.html">Reply-to-question.doc</a></td>
+            <td><a href="approve.html"><span id="document-title">Reply-to-question.doc</span></a></td>
             <td>
               Marie Bradley
               <br>
@@ -320,7 +321,7 @@
             <td>2016-08-20</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok" alt="Approve"></i></a>
+              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok" alt="Approve"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash" alt="Delete"></i></a>
             </td>
@@ -346,7 +347,7 @@
 
           <tr class="activerow approval-needed">
             <td><div class="label label-info label-as-badge">Document</div></td>
-            <td><a href="approve.html">Reply-to-question.doc</a></td>
+            <td><a href="approve.html"><span id="document-title">Reply-to-question.doc</span></a></td>
             <td>
               Kim Scarlett
               <br>
@@ -356,7 +357,7 @@
             <td>2016-08-26</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok" alt="Approve"></i></a>
+              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok" alt="Approve" id="approve"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash" alt="Delete"></i></a>
             </td>
@@ -423,6 +424,9 @@
       <!-- Navbar - Start -->
       <nav class="navbar navbar-default" role="navigation">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="pagination see-all">
+            <li><a href="#">See all</a></li>
+          </ul>
           <ul class="pagination">
             <li>
               <a href="#" aria-label="Previous">
@@ -527,8 +531,17 @@
 
       $("#date").on("click", function (e) {
         $('#date').tablesorter();
-
       });
+
+      // Approve cookies
+      $("#approve").on("click", function (e) {
+        $.cookie("document-title", $("#document-title").text(), {path:'/'});
+        $.cookie("document-type", $("#document-type").text(), {path:'/'});
+        $.cookie("document-creator", $("#document-creator").text(), {path:'/'});
+        $.cookie("document-description", $("#document-description").text(), {path:'/'});
+        $.cookie("document-date", $("#document-date").text(), {path:'/'});
+      });
+
 
       function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -536,9 +549,6 @@
         results = regex.exec(location.search);
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
-
-
-
 
       var $rows = $('#table tr');
       $('#search').keyup(function() {
@@ -552,6 +562,10 @@
           return !reg.test(text);
         }).hide();
       });
+
+      // #Search highlighted - Start
+
+      // #Search highlighted - End
 
 
       </script>
