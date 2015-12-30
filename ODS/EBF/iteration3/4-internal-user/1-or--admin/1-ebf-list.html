@@ -255,19 +255,19 @@
             </td>
           </tr>
 
-          <tr class="activerow approval-needed">
-            <td><div class="label label-info label-as-badge document-type">Document</div></td>
-            <td><a href="approve.html"><span class="document-title">Bankruptcy-order.pdf</span></a></td>
+          <tr class="activerow">
+            <td><div class="label label-info label-as-badge">Document</div></td>
+            <td><a href="approve.html">Bankruptcy-order.pdf</a></td>
             <td>
-              <span class="document-creator">Beverly Becker</span>
+              Beverly Becker
               <br>
               <span class="form-hint">Adjudicator</span>
             </td>
-            <td><span class="document-description">Quisque augue orci, malesuada ut cursus euismod, congue a magna.</span></td>
-            <td><span class="document-date">2016-09-03</span></td>
+            <td>Quisque augue orci, malesuada ut cursus euismod, congue a magna.</td>
+            <td>2016-09-03</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok approve" alt="Approve"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash" alt="Delete"></i></a>
             </td>
@@ -309,19 +309,19 @@
             </td>
           </tr>
 
-          <tr class="activerow approval-needed">
-            <td><div class="label label-success label-as-badge document-type">Notification</div></td>
-            <td><a href="approve.html"><span class="document-title">Reply-to-question.doc</span></a></td>
+          <tr class="activerow">
+            <td><div class="label label-success label-as-badge">Notification</div></td>
+            <td><a href="approve.html">Reply-to-question.doc</a></td>
             <td>
-              <span class="document-creator">Marie Bradley</span>
+              Marie Bradley
               <br>
               <span class="form-hint">HMCTS</span>
             </td>
-            <td><span class="document-description">Aliquam rutrum pulvinar velit a tempor.</span></td>
-            <td><span class="document-date">2016-08-20</span></td>
+            <td>Aliquam rutrum pulvinar velit a tempor.</td>
+            <td>2016-08-20</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok approve" alt="Approve"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash" alt="Delete"></i></a>
             </td>
@@ -346,18 +346,18 @@
           </tr>
 
           <tr class="activerow approval-needed">
-            <td><div class="label label-info label-as-badge document-type">Document</div></td>
-            <td><a href="approve.html"><span class="document-title">Reply-to-question.doc</span></a></td>
+            <td><div class="label label-info label-as-badge" id="document-type">Document</div></td>
+            <td><a href="approve.html"><span id="document-title">Reply-to-question.doc</span></a></td>
             <td>
-              <span class="document-creator">Kim Scarlett</span>
+              <span id="document-creator">Kim Scarlett</span>
               <br>
               <span class="form-hint">Applicant</span>
             </td>
-            <td><span class="document-description">Morbi porta imperdiet eros, sed sagittis lorem tincidunt vel. Morbi vel justo lobortis, accumsan mauris eget, ultrices sem.</span></td>
-            <td><span class="document-date">2016-08-26</span></td>
+            <td><span id="document-description">Morbi porta imperdiet eros, sed sagittis lorem tincidunt vel. Morbi vel justo lobortis, accumsan mauris eget, ultrices sem.</span></td>
+            <td><span id="document-date">2016-08-26</span></td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok approve" alt="Approve"></i></a>
+              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok" id="approve" alt="Approve"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
               <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash" alt="Delete"></i></a>
             </td>
@@ -534,12 +534,12 @@
       });
 
       // Approve cookies
-      $(".approve").on("click", function (e) {
-        $.cookie("document-title", $(".document-title").text(), {path:'/'});
-        $.cookie("document-type", $(".document-type").text(), {path:'/'});
-        $.cookie("document-creator", $(".document-creator").text(), {path:'/'});
-        $.cookie("document-description", $(".document-description").text(), {path:'/'});
-        $.cookie("document-date", $(".document-date").text(), {path:'/'});
+      $("#approve").on("click", function (e) {
+        $.cookie("document-title", $("#document-title").text(), {path:'/'});
+        $.cookie("document-type", $("#document-type").text(), {path:'/'});
+        $.cookie("document-creator", $("#document-creator").text(), {path:'/'});
+        $.cookie("document-description", $("#document-description").text(), {path:'/'});
+        $.cookie("document-date", $("#document-date").text(), {path:'/'});
       });
 
 
