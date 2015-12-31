@@ -142,48 +142,49 @@
 
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
-        <h1 class="heading-large">Continue with access to: <span id="urn"></span></h1>
-      </div>
 
-      <div class="inner-block well">
-        <p>Hi <span class="firstname"></span>,</p>
-        <p>You are about to access the Electronic bankruptcy folder for:</p>
-        <p>
-        	<span class="bolder">SCARLETT, Kim</span><br>
-        	110 High Street, Newhall, Birmingham B4 3TT<br>
-        	Birth details: 1 May 1992<br>
-        </p>
+        <h1 class="form-title heading-large">Enter PAT code</h1>
+        <div class="col-sm-8">
+          <!-- Error Validation Message - Start -->
+          <div class="validation-summary" id="panel-error-empty" style="display:none">
+            <h2>You are missing some log-in details:</h2>
+            <ul>
+              <li><a href="#pat-code">* PAT code</a></li>
+            </ul>
+          </div>
+          <!-- Error Validation Message - End -->
 
-        <p>Application numner: <span class="urn"></span></p>
+          <p>We just need one more thing to allow you access to the Bankrutpcy application, please enter the PAT code we have just sent to <span id="email-address" class="heading-small"></span>.</p>
+          <p><br></p>
 
-        <p class="heading-small">You will only have 15 days to view this Bankruptcy aaplication, after that time you
-          need to request a new PAT Code.</p>
+          <form class="form" method="post">
+            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor vestibulum nibh, in auctor
-          lorem dignissim sed. Aliquam sed odio placerat, porttitor libero sit amet, mollis velit.</p>
-        <p>Nunc et condimentum velit. Curabitur eros nunc, rhoncus sit amet mollis eget, molestie vel eros.
-          Nullam viverra venenatis lectus, nec laoreet justo eleifend et. Proin pretium dictum libero vitae
-          commodo. Duis finibus, turpis a imperdiet aliquam, nisl est eleifend tellus, eu ultricies arcu
-          lacus non diam. Proin tempor nisi dui, sed scelerisque augue venenatis at.</p>
-        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id accumsan dui. In vestibulum
-          sagittis sodales.</p>
+            <!-- For User research -->
+            <div class="form-group">
+              <div class="msg-no-URN">
+                <label id="pat-code-label" for="pat-code" class="form-label-bold">PAT code</label>
+                <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
+              </div>
+            </div>
+          </form>
 
-        <h2 class="heading-medium">Are you sure you wish to continue?</h2>
+          <p><br></p>
 
-      </div>
-
-      <div style="display:block; margin:0 30px !important">
-        <div class="form-navigation form-group">
-          <div>
-            <a href="6-ebf-list-view-upload.html" id="continue" class="button">Yes Continue</a>
+          <div class="form-navigation form-group">
             <div>
-              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">No go back</a>
+              <a href="#" id="next" class="button">Continue</a>
+              <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
+        </div>
+        <div class="col-sm-4">
+        </div>
       <!-- #EndEditable -->
+    </div>
 
     </div>
   </main>
@@ -252,15 +253,32 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  if ($.cookie("urn")) {
-    $("#urn").text($.cookie("urn")).addClass("bolder");
-    $(".urn").text($.cookie("urn")).addClass("bolder");
+  $("#next").on("click", function (e) {
+    e.preventDefault();
+    //alert($("#amount").val());
+    if ($("#pat-code").val() == "") {
+      $("#panel-error-empty").show();
+      (window.location.replace("#panel-error-empty"));
+    }
+
+    if ($("#pat-code").val()) {
+      (window.location.replace("5-warning-message.html"));
+    }
+
+    $.cookie("pat-code", $("#pat-code").val(), {path:'/'});
+
+  });
+
+  if ($.cookie("email-address")) {
+    $("#email-address").text($.cookie("email-address")).addClass("bolder");
   }
 
   if ($.cookie("firstname")) {
     $("#firstname").text($.cookie("firstname")).addClass("bolder");
     $(".firstname").text($.cookie("firstname")).addClass("bolder");
   }
+
+
 
 });
 
