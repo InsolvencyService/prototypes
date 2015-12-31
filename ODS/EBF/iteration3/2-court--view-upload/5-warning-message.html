@@ -142,41 +142,37 @@
 
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
-        <h1 class="heading-large">Continue with access to: <span class="urn"></span><span id="urn-returning"></span></h1>
+        <h1 class="heading-large">Continue with access to: <span class="urn"></span></h1>
       </div>
 
       <div class="inner-block well">
-        <p></p>
-        <p class="bolder">
-        	SCARLETT, Kim<br>
+        <p>Hi <span class="firstname"></span>,</p>
+        <p>You are about to access the Electronic bankruptcy folder for:</p>
+        <p>
+        	<span class="bolder">SCARLETT, Kim</span><br>
         	110 High Street, Newhall, Birmingham B4 3TT<br>
         	Birth details: 1 May 1992<br>
         </p>
 
-        <p>Kim SCARLETT, unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor vestibulum nibh, in auctor
+          lorem dignissim sed. Aliquam sed odio placerat, porttitor libero sit amet, mollis velit.</p>
+        <p>Nunc et condimentum velit. Curabitur eros nunc, rhoncus sit amet mollis eget, molestie vel eros.
+          Nullam viverra venenatis lectus, nec laoreet justo eleifend et. Proin pretium dictum libero vitae
+          commodo. Duis finibus, turpis a imperdiet aliquam, nisl est eleifend tellus, eu ultricies arcu
+          lacus non diam. Proin tempor nisi dui, sed scelerisque augue venenatis at.</p>
+        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id accumsan dui. In vestibulum
+          sagittis sodales.</p>
 
-        <p>
-        	Date of application: <strong><em>11 September 2015</em></strong><br>
-        	Bankruptcy order date: <strong><em>14 September 2015</em></strong><br>
-        	Time of Bankruptcy order: <strong><em>09:54</em></strong><br>
-        </p>
-        <p>Whether Debtor's or Creditor's Petition: <strong>Debtor's</strong></p>
-        <p>Application number: <strong>EHBJ-8F3M-KRPL</strong></p>
-        <p>By virture of this order, David
-        	Rickman, official receiver, is appointed trustee of the Kim Scarlett’s
-        	bankruptcy estate.</p>
-
-        <h3>Important notice to bankrupt</h3>
-        <p>The official receiver is by virtue of this order the trustee of your estate. </p>
+        <h2 class="heading-medium">Are you sure you wish to continue?</h2>
 
       </div>
 
       <div style="display:block; margin:0 30px !important">
         <div class="form-navigation form-group">
           <div>
-            <a href="6-ebf-list-view-upload.html" id="continue" class="button">Continue</a>
+            <a href="6-ebf-list-view-upload.html" id="continue" class="button">Yes Continue</a>
             <div>
-              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">No go back</a>
             </div>
           </div>
         </div>
@@ -250,6 +246,15 @@ $(document).ready(function() {
     $.cookie("url", url, {path:'/'});
     $.cookie("pathname", pathname, {path:'/'});
   });
+
+  if ($.cookie("urn")) {
+    $("#urn").text($.cookie("urn")).addClass("bolder");
+  }
+
+  if ($.cookie("firstname")) {
+    $("#firstname").text($.cookie("firstname")).addClass("bolder");
+    $(".firstname").text($.cookie("firstname")).addClass("bolder");
+  }
 
 });
 
