@@ -144,6 +144,12 @@
       <div style="display:block; margin:0 30px !important">
 
         <div class="col-sm-8">
+
+          <div class="govuk-box-highlight awaiting top">
+            <h1 class="bold-large">Welcome to the EBF</h1>
+            <p><span id="firstname" class="firstname"></span> <span id="surname"></span></p>
+          </div>
+
           <!-- Error Validation Message - Start -->
           <div class="validation-summary" id="panel-error-empty" style="display:none">
             <h2>You are missing some log-in details:</h2>
@@ -153,11 +159,6 @@
           </div>
           <!-- Error Validation Message - End -->
 
-          <div class="govuk-box-highlight awaiting top">
-            <h1 class="bold-large">Welcome to the EBF</h1>
-            <p><span id="firstname" class="firstname"></span> <span id="surname"></span></p>
-          </div>
-
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
@@ -165,7 +166,7 @@
             <div class="form-group">
               <div class="msg-no-URN">
                 <p></p>
-                <label id="urn-label" for="urn" class="form-label-bold">Request access to a Bankruptcy application</label>
+                <label id="urn-label" name="urn" for="urn" class="form-label-bold">Request access to a Bankruptcy application</label>
                 <div class="form-hint">
                   Please enter the Bankruptcy reference number you require access to.
                 </div>
