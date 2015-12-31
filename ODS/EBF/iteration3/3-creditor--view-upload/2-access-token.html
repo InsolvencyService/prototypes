@@ -143,22 +143,17 @@
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Log in the Electronic Bankruptcy Folder (EBF)</h1>
+        <h1 class="form-title heading-large">Welcome to the Electronic Bankruptcy Folder (EBF)</h1>
         <div class="col-sm-8">
+
           <!-- Error Validation Message - Start -->
           <div class="validation-summary" id="panel-error-empty" style="display:none">
-            <h2>You are missing some log-in details:</h2>
+            <h2>Something seems to have gone wrong:</h2>
             <ul>
-              <li><a href="#email-address">* Email address</a></li>
-              <li><a href="#firstname">* Firstname</a></li>
-              <li><a href="#surname">* Surname</a></li>
+              <li><a href="#access-token">* Please enter an access token</a></li>
             </ul>
           </div>
           <!-- Error Validation Message - End -->
-
-          <p>We require the following details to allow you access to the EBF.</p>
-          <p>We will then send you a PAT code to the email address you provide to verify your credentials.</p>
-          <p><br></p>
 
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -166,35 +161,18 @@
             <!-- For User research -->
             <div class="form-group">
               <div class="msg-no-URN">
-                <label id="email-address-label" for="email-address" class="form-label-bold">What is your email address?</label>
+                <label id="access-token-label" for="access-token" class="form-label-bold">Please enter your access token</label>
                 <div class="form-hint">
-                  Please enter your court email address.
+                  <p>Please enter the access token we have sent to you.</p>
                 </div>
-                <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="firstname-label" for="firstname" class="form-label-bold">Your firstname</label>
-                <input id="firstname" name="firstname" type="text" value="" class="log-in" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="surname-label" for="surname" class="form-label-bold">Your surname</label>
-                <input id="surname" name="surname" type="text" value="" class="log-in" />
+                <input id="access-token" name="access-token" type="text" value="" class="log-in" />
               </div>
             </div>
           </form>
 
-          <p><br></p>
-
           <div class="form-navigation form-group">
             <div>
               <a href="#" id="next" class="button">Continue</a>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-              </div>
             </div>
           </div>
 
@@ -273,18 +251,16 @@ $(document).ready(function() {
   $("#next").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#email-address, #firstname, #surname").val() == "") {
+    if ($("#access-token").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
 
-    if ($("#email-address, #firstname, #surname").val()) {
-      (window.location.replace("2-search.html"));
+    if ($("#access-token").val()) {
+      (window.location.replace("3-user-details.html"));
     }
 
-    $.cookie("email-address", $("#email-address").val(), {path:'/'});
-    $.cookie("firstname", $("#firstname").val(), {path:'/'});
-    $.cookie("surname", $("#surname").val(), {path:'/'});
+    $.cookie("access-token", $("#access-token").val(), {path:'/'});
 
   });
 

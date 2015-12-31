@@ -114,7 +114,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" class="user-name">Welcome to the EBF <span id="firstname" class="firstname"></span></span>
+            <span id="proposition-name">Electronic Bankruptcy Folder (EBF)</span>
           </nav>
         </div>
       </div>
@@ -142,48 +142,98 @@
 
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
-        <h1 class="heading-large">Continue with access to: <span id="urn"></span></h1>
-      </div>
 
-      <div class="inner-block well">
-        <p>Hi <span class="firstname"></span>,</p>
-        <p>You are about to access the Electronic bankruptcy folder for:</p>
-        <p>
-        	<span class="bolder">SCARLETT, Kim</span><br>
-        	110 High Street, Newhall, Birmingham B4 3TT<br>
-        	Birth details: 1 May 1992<br>
-        </p>
+        <h1 class="form-title heading-large">Identification verification</h1>
+        <div class="col-sm-8">
+          <!-- Error Validation Message - Start -->
+          <div class="validation-summary" id="panel-error-empty" style="display:none">
+            <h2>You are missing some log-in details:</h2>
+            <ul>
+              <li><a href="#email-address">* Email address</a></li>
+              <li><a href="#firstname">* Firstname</a></li>
+              <li><a href="#surname">* Surname</a></li>
+            </ul>
+          </div>
+          <!-- Error Validation Message - End -->
 
-        <p>Application number: <span class="urn"></span></p>
+          <p>We require the following details to allow you access to the EBF.</p>
+          <p>We will then send you a PAT code to the email address you provide to verify your credentials.</p>
+          <p><br></p>
 
-        <p class="heading-small">You will only have 15 days to view this Bankruptcy application, after that time you will
-          need to request a new PAT Code.</p>
+          <form class="form" method="post">
+            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor vestibulum nibh, in auctor
-          lorem dignissim sed. Aliquam sed odio placerat, porttitor libero sit amet, mollis velit.</p>
-        <p>Nunc et condimentum velit. Curabitur eros nunc, rhoncus sit amet mollis eget, molestie vel eros.
-          Nullam viverra venenatis lectus, nec laoreet justo eleifend et. Proin pretium dictum libero vitae
-          commodo. Duis finibus, turpis a imperdiet aliquam, nisl est eleifend tellus, eu ultricies arcu
-          lacus non diam. Proin tempor nisi dui, sed scelerisque augue venenatis at.</p>
-        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id accumsan dui. In vestibulum
-          sagittis sodales.</p>
+            <!-- For User research -->
+            <div class="form-group">
+              <div class="msg-no-URN">
+                <label id="email-address-label" for="email-address" class="form-label-bold">What is your email address?</label>
+                <div class="form-hint">
+                  Please enter your work email address.
+                </div>
+                <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="msg-no-URN">
+                <label id="firstname-label" for="firstname" class="form-label-bold">Your firstname</label>
+                <input id="firstname" name="firstname" type="text" value="" class="log-in" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="msg-no-URN">
+                <label id="surname-label" for="surname" class="form-label-bold">Your surname</label>
+                <input id="surname" name="surname" type="text" value="" class="log-in" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="msg-no-URN">
+                <label id="organisation-label" for="organisation" class="form-label-bold">Your organisation or relationship to the applicant</label>
+                <input id="organisation" name="organisation" type="text" value="" class="log-in" />
+              </div>
+            </div>
+            <div class="form-group">
+              <hr>
+              <label class="form-label-bold" for="building-and-street">Building name/number and street</label>
+              <div class="form-hint">
+                <p>Please enter the address of your place of work if you are part of an organisation.</p>
+                <p>Otherwise please enter your home address.</p>
+              </div>
+              <input id="building-and-street-1" type="text" style="margin-bottom:10px; width:70%;"><br>
+              <input id="building-and-street-2" type="text" style="margin-bottom:10px; width:70%;"><br>
+              <input id="building-and-street-3" type="text" style="margin-bottom:10px; width:70%;">
+            </div>
+            <div class="form-group">
+              <label class="form-label-bold" for="town-or-city">Town or city</label>
+              <input id="town-or-city" type="text" style="margin-bottom:10px; width:70%;">
+            </div>
+            <div class="form-group">
+              <label class="form-label-bold" for="county">County</label>
+              <input id="county" type="text" style="margin-bottom:10px; width:70%;">
+            </div>
+            <div class="form-group">
+              <label class="form-label-bold" for="postcode">Postcode</label>
+              <input id="postcode" type="text" style="margin-bottom:10px; width:30%;">
+            </div>
 
-        <h2 class="heading-medium">Are you sure you wish to continue?</h2>
 
-      </div>
+          </form>
 
-      <div style="display:block; margin:0 30px !important">
-        <div class="form-navigation form-group">
-          <div>
-            <a href="6-ebf-list-view-upload.html" id="continue" class="button">Yes Continue</a>
+          <p><br></p>
+
+          <div class="form-navigation form-group">
             <div>
-              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">No go back</a>
+              <a href="#" id="next" class="button">Continue</a>
+              <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- #EndEditable -->
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <!-- #EndEditable -->
+    </div>
 
     </div>
   </main>
@@ -240,7 +290,6 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
@@ -252,29 +301,34 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  if ($.cookie("urn")) {
-    $("#urn").text($.cookie("urn")).addClass("bolder");
-    $(".urn").text($.cookie("urn")).addClass("bolder");
-  }
+  $("#next").on("click", function (e) {
+    e.preventDefault();
+    //alert($("#amount").val());
+    if ($("#email-address, #firstname, #surname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
+      $("#panel-error-empty").show();
+      (window.location.replace("#panel-error-empty"));
+    }
 
-  if ($.cookie("firstname")) {
-    $("#firstname").text($.cookie("firstname")).addClass("bolder");
-    $(".firstname").text($.cookie("firstname")).addClass("bolder");
-  }
+    if ($("#email-address, #firstname, #surname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
+      (window.location.replace("4-pat-email.html"));
+    }
+
+    $.cookie("email-address", $("#email-address").val(), {path:'/'});
+    $.cookie("firstname", $("#firstname").val(), {path:'/'});
+    $.cookie("surname", $("#surname").val(), {path:'/'});
+    $.cookie("organisation", $("#organisation").val(), {path:'/'});
+    $.cookie("building-and-street-1", $("#building-and-street-1").val(), {path:'/'});
+    $.cookie("building-and-street-2", $("#building-and-street-2").val(), {path:'/'});
+    $.cookie("building-and-street-2", $("#building-and-street-2").val(), {path:'/'});
+    $.cookie("town-or-city", $("#town-or-city").val(), {path:'/'});
+    $.cookie("county", $("#county").val(), {path:'/'});
+    $.cookie("postcode", $("#postcode").val(), {path:'/'});
+
+
+  });
+
 
 });
-
-function stripped(urn){
-return urn.replace(/[\. ,:-]+/g, "");
-}
-
-function getParameterByName(name) {
-name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-results = regex.exec(location.search);
-return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 </script>
 <!-- #EndEditable -->
 
