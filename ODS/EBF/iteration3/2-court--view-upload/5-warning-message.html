@@ -142,105 +142,47 @@
 
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
+        <h1 class="heading-large">Continue with access to: <span class="urn"></span><span id="urn-returning"></span></h1>
+      </div>
 
-        <div class="col-sm-12">
-          <div class="govuk-box-highlight awaiting top">
-            <h1 class="bold-large">Welcome to the EBF</h1>
-            <p><span id="firstname" class="firstname"></span> <span id="surname"></span></p>
-          </div>
-        </div>
+      <div class="inner-block well">
+        <p></p>
+        <p class="bolder">
+        	SCARLETT, Kim<br>
+        	110 High Street, Newhall, Birmingham B4 3TT<br>
+        	Birth details: 1 May 1992<br>
+        </p>
 
-        <!-- /////////////////////// Log in New PAT Code - Option 1 - Start /////////////////////// -->
-        <div class="col-sm-6">
+        <p>Kim SCARLETT, unemployed, formerly known as Kimberly RED, of 110 High Street, Newhall, Birmingham B4 3TT.</p>
 
-          <!-- Error Validation Message - Start -->
-          <div class="validation-summary" id="panel-error-empty" style="display:none">
-            <h2>You are missing some log-in details:</h2>
-            <ul>
-              <li><a href="#urn">* Bankruptcy application number</a></li>
-            </ul>
-          </div>
-          <!-- Error Validation Message - End -->
+        <p>
+        	Date of application: <strong><em>11 September 2015</em></strong><br>
+        	Bankruptcy order date: <strong><em>14 September 2015</em></strong><br>
+        	Time of Bankruptcy order: <strong><em>09:54</em></strong><br>
+        </p>
+        <p>Whether Debtor's or Creditor's Petition: <strong>Debtor's</strong></p>
+        <p>Application number: <strong>EHBJ-8F3M-KRPL</strong></p>
+        <p>By virture of this order, David
+        	Rickman, official receiver, is appointed trustee of the Kim Scarlett’s
+        	bankruptcy estate.</p>
 
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+        <h3>Important notice to bankrupt</h3>
+        <p>The official receiver is by virtue of this order the trustee of your estate. </p>
 
-            <!-- For User research -->
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <p></p>
-                <label id="urn-label" name="urn" for="urn" class="form-label-bold">Request access to a Bankruptcy application</label>
-                <div class="form-hint">
-                  Please enter the Bankruptcy reference number you require access to.
-                </div>
-                <input id="urn" name="urn" type="text" value="" class="log-in" />
-              </div>
-            </div>
-          </form>
-          <div class="form-navigation form-group">
+      </div>
+
+      <div style="display:block; margin:0 30px !important">
+        <div class="form-navigation form-group">
+          <div>
+            <a href="6-ebf-list-view-upload.html" id="continue" class="button">Continue</a>
             <div>
-              <a href="#" id="next" class="button">Continue</a>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-              </div>
+              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
             </div>
           </div>
         </div>
-        <!-- /////////////////////// Log in New PAT Code - Option 1 - End /////////////////////// -->
-
-        <!-- /////////////////////// Log in Existing PAT Code - Option 2 - Start /////////////////////// -->
-        <div class="col-sm-6 seperator">
-
-          <!-- Error Validation Message - Start -->
-          <div class="validation-summary" id="panel-error-empty-returning" style="display:none">
-            <h2>You are missing some log-in details:</h2>
-            <ul>
-              <li><a href="#urn-returning">* Bankruptcy application number</a></li>
-              <li><a href="#pat-code">* PAT Code</a></li>
-            </ul>
-          </div>
-          <!-- Error Validation Message - End -->
-
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <p></p>
-                <label id="urn-returning-label" name="urn-returning" for="urn-returning" class="form-label-bold">View an existing Bankruptcy application</label>
-                <div class="form-hint">
-                  Please enter the Bankruptcy reference you already have access too.
-                </div>
-                <input id="urn-returning" name="urn-returning" type="text" value="" class="log-in" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <p></p>
-                <label id="pat-code-label" name="pat-code" for="pat-code" class="form-label-bold">Enter the PAT Code</label>
-                <div class="form-hint">
-                  Please enter the PAT code we have previosuly sent you.
-                </div>
-                <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
-              </div>
-            </div>
-
-          </form>
-          <div class="form-navigation form-group">
-            <div>
-              <a href="#" id="continue" class="button">Continue</a>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- /////////////////////// Log in Existing PAT Code - Option 2 - End /////////////////////// -->
+      </div>
 
       <!-- #EndEditable -->
-    </div>
 
     </div>
   </main>
@@ -308,56 +250,6 @@ $(document).ready(function() {
     $.cookie("url", url, {path:'/'});
     $.cookie("pathname", pathname, {path:'/'});
   });
-
-  $("#next").on("click", function (e) {
-    e.preventDefault();
-    //alert($("#amount").val());
-    if ($("#urn").val() == "") {
-      $("#panel-error-empty").show();
-      (window.location.replace("#panel-error-empty"));
-    }
-
-    if ($("#urn").val()) {
-      (window.location.replace("3-pat-email.html"));
-    }
-
-    $.cookie("urn", $("#urn").val(), {path:'/'});
-
-  });
-
-  $("#continue").on("click", function (e) {
-    e.preventDefault();
-    //alert($("#amount").val());
-    if ($("#urn").val() == "") {
-      $("#panel-error-empty-returning").show();
-      (window.location.replace("#panel-error-empty-returning"));
-    }
-
-    if ($("#urn-returning, #pat-code").val()) {
-      (window.location.replace("6-ebf-list-view-upload.html"));
-    }
-
-    $.cookie("urn-returning", $("#urn-returning").val(), {path:'/'});
-
-  });
-
-
-
-  if ($.cookie("email-address")) {
-    $("#email-address").text($.cookie("email-address")).addClass("bolder");
-  }
-
-  if ($.cookie("firstname")) {
-    $("#firstname").text($.cookie("firstname")).addClass("bolder");
-    $(".firstname").text($.cookie("firstname")).addClass("bolder");
-  }
-
-  if ($.cookie("surname")) {
-    $("#surname").text($.cookie("surname")).addClass("bolder");
-  }
-
-
-
 
 });
 

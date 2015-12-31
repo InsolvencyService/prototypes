@@ -161,7 +161,7 @@
       <div class="intro-banner">
         <div class="col-sm-8">
           <p>Below is a list of the documents associated with the bankruptcy application.</p>
-          <p>Application number: <span class="urn"></span></p>
+          <p>Application number: <span class="urn"></span><span id="urn-returning"></span></p>
           <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
         </div>
         <div class="col-sm-4">
@@ -637,6 +637,11 @@
       if ($.cookie("urn")) {
         $("#urn").text($.cookie("urn")).addClass("bolder");
         $(".urn").text($.cookie("urn")).addClass("bolder");
+      }
+
+      if ($.cookie("firstname")) {
+        $("#firstname").text($.cookie("firstname")).addClass("bolder");
+        $(".firstname").text($.cookie("firstname")).addClass("bolder");
       }
 
       if ($.cookie("urn-returning")) {
