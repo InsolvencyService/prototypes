@@ -148,6 +148,19 @@
     $(parent).find('label').text($(input).val());
   }
 
+  // jQuery.fn.highlight = function (str, highlight) {
+  //   var regex = new RegExp(str, "gi");
+  //   return this.each(function () {
+  //       $(this).contents().filter(function() {
+  //           return this.nodeType == 3 && regex.test(this.nodeValue);
+  //       }).replaceWith(function() {
+  //           return (this.nodeValue || "").replace(regex, function(match) {
+  //               return "<span class=\"" + highlight + "\">" + match + "</span>";
+  //           });
+  //       });
+  //   });
+  // };
+
 </script>
 
 <!-- ///////////// This is what makes the edit text function work - End ///////////// -->
@@ -205,18 +218,25 @@
     <!-- #BeginEditable "content" -->
 
     <div style="display:block; margin: 0 30px 60px 30px !important">
+      <h1 class="form-title heading-large">Bankruptcy adjudication: <span id="urn"></span></h1>
       <div class="intro-banner">
         <div class="col-sm-8">
-          <h1 class="form-title heading-large">Bankruptcy adjudication: <span id="urn"></span></h1>
+          <p>Below is a list of the documents associated with the bankruptcy application.</p>
+          <p>Application number: <span class="urn"></span></p>
+          <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
         </div>
         <div class="col-sm-4">
-          <a href="../1-search.html"><span class="glyphicon glyphicon-log-out"></span> View another case</a>
+          <!-- Panel Indent - Start -->
+          <div class="panel-indent" style="font-size:16px; border-color:#efefef">
+            <p><a href="../1-search.html" style="font-weight: bold;"><span class="glyphicon glyphicon-log-out"></span> View another case</a></p>
+            <br>
+            <p><a href="#">Upload a new document</a></p>
+          </div>
+          <!-- Panel Indent - End -->
+
         </div>
       </div>
 
-      <p>Below is a list of the documents associated with the bankruptcy application:</p>
-      <p>Application number: <span class="urn"></span></p>
-      <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
       <hr>
       <!-- Navbar - Start -->
       <nav class="navbar navbar-default" role="navigation">
@@ -288,10 +308,10 @@
             <td>2016-09-11</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -317,10 +337,10 @@
             <td>2016-09-01</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -346,10 +366,10 @@
             <td>2016-09-03</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -375,10 +395,10 @@
             <td>2016-08-11</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -404,10 +424,10 @@
             <td>2016-08-12</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -433,10 +453,10 @@
             <td>2016-08-20</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -462,10 +482,10 @@
             <td>2016-08-21</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -491,10 +511,10 @@
             <td><span id="document-date">2016-08-26</span></td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok approve" id="approve" alt="Approve"></i></a>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approve" alt="Approve" id="approve" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -520,10 +540,10 @@
             <td>2016-08-13</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -549,10 +569,10 @@
             <td>2016-08-27</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -578,10 +598,10 @@
             <td>2016-08-27</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit"></i></a>
+              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete"></i></a>
+              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
 
@@ -663,6 +683,7 @@
       <script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
       <script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
       <script type="text/javascript" src="js/casedata.js"></script>
+      <script type="text/javascript" src="../../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
 
       <script type="text/javascript">
@@ -686,7 +707,10 @@
 
       $(document).ready(function() {
         $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
+        // $('[data-toggle="tooltip"]').tooltip();
       });
+
+      $('[data-toggle="tooltip"]').tooltip("hide")
 
       $("#urn").on("click", function (e) {
         $('#urn').tablesorter();
