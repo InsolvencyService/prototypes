@@ -344,10 +344,6 @@ $(document).ready(function() {
 
   });
 
-  $("#post-it").on("click", function (e) {
-    $.cookie("urn", $("#urn").text(), {path:'/'});
-  });
-
   if ($.cookie("lastname")) {
     $("#lastname").text($.cookie("lastname")).addClass("bolder");
   }
