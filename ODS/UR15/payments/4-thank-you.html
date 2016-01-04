@@ -73,13 +73,14 @@
 
 <link type="text/css" rel="stylesheet" media="screen" href="css/payment-override.css">
 <script type="text/javascript">
-
+$(document).load(function() {
  if ($.cookie("amount")) {
   
   	if ($.cookie("amount")=="335"){
   		window.location.replace("4a-payment-fail.html");
   	}
 }
+});
 
 </script>
 
