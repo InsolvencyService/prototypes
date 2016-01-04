@@ -175,7 +175,7 @@ table td{
             <!-- Hidden Error messages Start -->
             <div class="validation-summary" id="panel-error-empty" style="display:none">
               <h2>You didn't enter an email address</h2>
-              <a href="#email-address">Please enter an email address</a>
+              <a href="#email">Please enter an email address</a>
             </div>
             <!-- Hidden Error messages End -->
             <p>Please provide the below reference number and link to your proposed contributor</p>
@@ -193,7 +193,7 @@ table td{
             <ul>
               <li>
                 <div class="form-group">
-                  <label class="heading-small" for="email-address" name="email-address">Email address<span class="form-hint">Have the payment reference sent to my email address</span>
+                  <label class="heading-small" for="email" name="email">Email address<span class="form-hint">Have the payment reference sent to my email address</span>
                   </label>
                   <span id="email">test@test.com</span>
                 </div>
@@ -331,14 +331,14 @@ $(document).ready(function() {
   //    e.preventDefault();
   //    //alert($("#amount").val());
   //
-  //   $.cookie("email-address", $("#email-address").val(), {path:'/'});
+  //   $.cookie("email", $("#email").val(), {path:'/'});
   //
-  //    if ($("#email-address").val() == ""){
+  //    if ($("#email").val() == ""){
   //      $("#panel-error-empty").show();
   //      (window.location.replace("#panel-error-empty"));
   //    }
   //
-  //    if ($("#email-address").val()) {
+  //    if ($("#email").val()) {
   //      (window.location.replace("15-thank-you.html"));
   //    }
   //
@@ -352,7 +352,7 @@ $(document).ready(function() {
     $("#email").text($.cookie("email")).addClass("bolder");
   }
 
-  // $("#email-address").val($.cookie("email"))
+  // $("#email").val($.cookie("email"))
 
 });
 

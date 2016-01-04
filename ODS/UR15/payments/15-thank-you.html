@@ -175,7 +175,7 @@ table td{
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your email entry was successful.</h2>
               <p>We've sent it to:<br>
-                <strong class="heading-medium"><span id="email-address"></span></strong>
+                <strong class="heading-medium"><span id="email"></span></strong>
               </p>
             </div>
             <p>Please check your inbox.</p>
@@ -257,8 +257,8 @@ $(document).ready(function() {
   });
 
   // Cookie variable
-  if ($.cookie("email-address")) {
-    $("#email-address").text($.cookie("email-address")).addClass("bolder");
+  if ($.cookie("email")) {
+    $("#email").text($.cookie("email")).addClass("bolder");
   }
 
 });

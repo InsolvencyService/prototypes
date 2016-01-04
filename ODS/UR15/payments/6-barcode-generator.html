@@ -176,7 +176,7 @@ table td{
             <!-- Hidden Error messages Start -->
             <div class="validation-summary" id="panel-error-empty" style="display:none">
               <h2>Please enter an email address</h2>
-              <a href="#email-address">You have not entered an email address, please enter one before you can proceed.</a>
+              <a href="#email">You have not entered an email address, please enter one before you can proceed.</a>
             </div>
             <!-- Hidden Error messages End -->
             <img class="payment-image" src="images/payzone_logo.png" alt="Payzone">
@@ -205,10 +205,10 @@ table td{
 
               <div class="form-group">
                 <hr style="margin-top:0;">
-                <label class="heading-small" for="email-address" name="email-address">Email address<span class="form-hint">Have the barcode sent to this email address</span>
+                <label class="heading-small" for="email" name="email">Email address<span class="form-hint">Have the barcode sent to this email address</span>
                 </label>
-                <input id="email-address" name="email-address" type="text" style="margin-bottom:10px; width:80%;"><br>
-                <button id="submit-email-address" class="button">Continue</button>
+                <input id="email" name="email" type="text" style="margin-bottom:10px; width:80%;"><br>
+                <button id="submit-email" class="button">Continue</button>
                 <hr>
                 <h3 class="heading-small">I don't have an email address</h3>
                 <p>If you don't have an email address we can post a barcode out to your home address.</p>
@@ -310,8 +310,8 @@ table td{
       });
 
       // Payment prototype variables
-      $("#submit-email-address").on("click", function (e) {
-        $.cookie("email-address", $("#email-address").val(), {path:'/'});
+      $("#submit-email").on("click", function (e) {
+        $.cookie("email", $("#email").val(), {path:'/'});
       });
 
       //checking payment details
@@ -330,15 +330,15 @@ table td{
         $("#updated").hide();
       }
 
-      $("#submit-email-address").on("click", function (e) {
+      $("#submit-email").on("click", function (e) {
          e.preventDefault();
          //alert($("#amount").val());
-         if ($("#email-address").val() == ""){
+         if ($("#email").val() == ""){
            $("#panel-error-empty").show();
            (window.location.replace("#panel-error-empty"));
          }
 
-         if ($("#email-address").val()) {
+         if ($("#email").val()) {
            (window.location.replace("18-thank-you.html"));
          }
      });

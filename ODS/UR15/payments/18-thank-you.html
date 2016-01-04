@@ -175,11 +175,11 @@ table td{
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your email entry was successful.</h2>
               <p>Email address we've sent it to:<br>
-                <strong class="heading-medium"><span id="email-address"></span></strong>
+                <strong class="heading-medium"><span id="email"></span></strong>
               </p>
             </div>
             <p>We have sent an email to the above address, please check your spam folder if you have not recieved the barcode.</p>
-          
+
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
               <a href="1-payment-amount.html"><button class="button">Finish</button></a>
@@ -257,8 +257,8 @@ $(document).ready(function() {
   });
 
   // Cookie variable
-  if ($.cookie("email-address")) {
-    $("#email-address").text($.cookie("email-address")).addClass("bolder");
+  if ($.cookie("email")) {
+    $("#email").text($.cookie("email")).addClass("bolder");
   }
 
 });
