@@ -272,7 +272,7 @@
         </thead>
 
         <tbody id="table">
-          <tr class="activerow">
+          <tr class="activerow" id="table-row-1">
             <td><div class="label label-success label-as-badge">Notification</div></td>
             <td>
               <label for="name" class="control-label">
@@ -297,9 +297,26 @@
               <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
               <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
+              <a class="controls-delete" data-toggle="modal" data-target="#myModal-1"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
+
+          <!-- ///////////////////////// Modal - Start ///////////////////////// -->
+          <div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="heading-small" id="myModalLabel">Are you sure you wish to delete this document?</h4>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="button" id="delete-row-1" data-dismiss="modal">Delete document</button>
+                  <button type="button" class="text-link" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ///////////////////////// Modal - End ///////////////////////// -->
 
           <tr class="activerow">
             <td><div class="label label-info label-as-badge">Document</div></td>
@@ -696,6 +713,10 @@
         // $('[data-toggle="tooltip"]').tooltip();
       });
 
+      $("#delete-row-1").on("click", function (e) {
+        $('#table-row-1').hide(750);
+      });
+
       $('[data-toggle="tooltip"]').tooltip("hide")
 
       $("#urn").on("click", function (e) {
@@ -704,7 +725,6 @@
 
       $("#name").on("click", function (e) {
         $('#name').tablesorter();
-
       });
 
       $("#date").on("click", function (e) {
