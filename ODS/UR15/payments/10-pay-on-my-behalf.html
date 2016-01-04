@@ -192,7 +192,7 @@ table td{
             <ul>
               <li>
                 <div class="form-group">
-                  <label class="heading-small" for="email-address" name="email-address">Email address<span class="form-hint">Have the payment reference sent to this email address</span>
+                  <label class="heading-small" for="email-address" name="email-address">Email address<span class="form-hint">Have the payment reference sent to my email address</span>
                   </label>
                   <input id="email-address" type="text" style="margin-bottom:10px; width: 80%;">
                 </div>
@@ -201,7 +201,7 @@ table td{
                 </div>
               </li>
               <li>
-                <a href="11-alternative-address.html" id="post-it">I don't have their email address</a>
+                <a href="11-alternative-address.html" id="post-it">I don't have an email address</a>
                 <!-- <p>If you don't have an email address we can post the payment reference out to them.</p>
                 Post it to them</a> -->
               </li>
@@ -346,6 +346,8 @@ $(document).ready(function() {
   $("#post-it").on("click", function (e) {
     $.cookie("urn", $("#urn").text(), {path:'/'});
   });
+
+  $("#email-address").val($.cookie("email"))
 
 });
 
