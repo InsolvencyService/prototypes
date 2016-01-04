@@ -152,6 +152,11 @@
               <li><a href="#email-address">* Email address</a></li>
               <li><a href="#firstname">* Firstname</a></li>
               <li><a href="#surname">* Surname</a></li>
+              <li><a href="#organisation">* Organisation</a></li>
+              <li><a href="#building-and-street-1">* Building and street</a></li>
+              <li><a href="#town-or-city">* Town or City</a></li>
+              <li><a href="#county">* County</a></li>
+              <li><a href="#postcode">* Postcode</a></li>
             </ul>
           </div>
           <!-- Error Validation Message - End -->
@@ -309,7 +314,7 @@ $(document).ready(function() {
       (window.location.replace("#panel-error-empty"));
     }
 
-    if ($("#email-address, #firstname, #surname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
+    if ($("#email-address, #firstname, #surname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val()) {
       (window.location.replace("4-pat-email.html"));
     }
 
