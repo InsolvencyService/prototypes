@@ -277,6 +277,12 @@ $(document).ready(function() {
 
 
   if ($.cookie("amount")) {
+  
+  	if ($.cookie("amount")=="335"){
+  		window.location.replace("4a-payment-fail.html");
+  	}
+  	else{
+  
  	$("#urn").text($.cookie("urn")).addClass("bolder");
  	readCookies();
 
@@ -290,6 +296,7 @@ $(document).ready(function() {
 	}
 	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
 	writeCookies();
+	}
   }
 });
 
