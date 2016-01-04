@@ -168,7 +168,7 @@ table td{
 
 
       <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">I don't have their email address - Pay on my behalf</h1>
+        <h1 class="form-title heading-large">I don't have an email address - Pay on my behalf</h1>
         <div class="row">
 
           <!-- Main Content Section Start -->
@@ -186,7 +186,7 @@ table td{
             </div>
             <!-- Hidden Error messages End -->
 
-            <p>If you don't have an email address we can post the payment reference out to you so you can provide your chosen contributor with the barcode.</p>
+            <p>If you don't have an email address we can post the payment reference out to you which you can provide to your chosen contributor.</p>
 
             <table class="table">
               <tr>
@@ -345,6 +345,14 @@ $(document).ready(function() {
   // Unique reference number
   if ($.cookie("urn")) {
     $("#urn").text($.cookie("urn")).addClass("bolder");
+  }
+
+  if ($.cookie("lastname")) {
+    $("#lastname").text($.cookie("lastname")).addClass("bolder");
+  }
+
+  if ($.cookie("firstname")) {
+    $("#firstname").text($.cookie("firstname")).addClass("bolder");
   }
 
 });

@@ -369,6 +369,14 @@ $(document).ready(function() {
     $("#urn").text($.cookie("urn")).addClass("bolder");
   }
 
+  if ($.cookie("firstname")) {
+    $("#firstname").text($.cookie("firstname")).addClass("bolder");
+  }
+
+  if ($.cookie("lastname")) {
+    $("#lastname").text($.cookie("lastname")).addClass("bolder");
+  }
+
 });
 
 function numberWithCommas(x) {
