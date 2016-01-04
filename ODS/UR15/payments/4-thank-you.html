@@ -72,18 +72,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
 <link type="text/css" rel="stylesheet" media="screen" href="css/payment-override.css">
-<script type="text/javascript">
-$(document).load(function() {
- if ($.cookie("amount")) {
-  
-  	if ($.cookie("amount")=="335"){
-  		window.location.replace("4a-payment-fail.html");
-  	}
-}
-});
-
-</script>
-
 <style type="text/css">
 
 
@@ -177,7 +165,7 @@ table td{
 
       <!-- #BeginEditable "content" -->
 
-      <div style="display:block; margin:0 30px !important">
+      <div id="fullpage" style="display:block; margin:0 30px !important">
         <h1 class="form-title heading-large">Thank you</h1>
         <div class="row">
 
@@ -275,7 +263,7 @@ var ref, paydate, payment_made, total_fee_paid, fee_remaining, cookiecount;
 
 
 $(document).ready(function() {
-
+  $("#fullpage").hide();
   //for contact us email
   var url      = window.location.href;     // Returns full URL
   var pathname = window.location.pathname; // Returns path only
@@ -293,7 +281,7 @@ $(document).ready(function() {
   		window.location.replace("4a-payment-fail.html");
   	}
   	else{
-  
+  	$("#fullpage").show();
  	$("#urn").text($.cookie("urn")).addClass("bolder");
  	readCookies();
 
