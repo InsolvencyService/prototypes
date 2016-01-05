@@ -744,6 +744,7 @@
       ///////////////////////// Delete Row Functionality - Start /////////////////////////
       $("#table tr").on("click", function (e) {
       	getRowNumber($(this).index()+1);
+        $.cookie("document", $("label").text(), {path:'/'});
       });
 
       $(".delete-row").on("click", function (e) {
@@ -754,10 +755,6 @@
       	// alert(row);
       	rownumber = row;
       }
-
-      $("#table tr").on("click", function (e) {
-        $.cookie("document", $(".text-info").text(), {path:'/'});
-      });
 
       if ($.cookie("document")) {
         $("#document").text($.cookie("document"));
