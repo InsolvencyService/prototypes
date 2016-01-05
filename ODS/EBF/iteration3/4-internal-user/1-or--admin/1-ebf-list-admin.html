@@ -756,7 +756,7 @@
       }
 
       $("#table tr").on("click", function (e) {
-        $.cookie("document", $("#document").text(), {path:'/'});
+        $.cookie("document", $(".text-info").text(), {path:'/'});
       });
 
       if ($.cookie("document")) {
