@@ -146,7 +146,7 @@
         <div class="col-sm-12">
           <div class="govuk-box-highlight awaiting top">
             <h1 class="bold-large">Welcome to the EBF</h1>
-            <p><span id="firstname" class="firstname"></span> <span id="surname"></span></p>
+            <p><span id="firstname" class="firstname"></span> <span id="lastname"></span></p>
           </div>
         </div>
 
@@ -350,8 +350,8 @@ $(document).ready(function() {
     $(".firstname").text($.cookie("firstname")).addClass("bolder");
   }
 
-  if ($.cookie("surname")) {
-    $("#surname").text($.cookie("surname")).addClass("bolder");
+  if ($.cookie("lastname")) {
+    $("#lastname").text($.cookie("lastname")).addClass("bolder");
   }
 
 

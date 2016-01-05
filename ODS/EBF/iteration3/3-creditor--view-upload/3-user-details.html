@@ -151,7 +151,7 @@
             <ul>
               <li><a href="#email-address">* Email address</a></li>
               <li><a href="#firstname">* Firstname</a></li>
-              <li><a href="#surname">* Surname</a></li>
+              <li><a href="#lastname">* lastname</a></li>
               <li><a href="#organisation">* Organisation</a></li>
               <li><a href="#building-and-street-1">* Building and street</a></li>
               <li><a href="#town-or-city">* Town or City</a></li>
@@ -186,8 +186,8 @@
             </div>
             <div class="form-group">
               <div class="msg-no-URN">
-                <label id="surname-label" for="surname" class="form-label-bold">Your surname</label>
-                <input id="surname" name="surname" type="text" value="" class="log-in" />
+                <label id="lastname-label" for="lastname" class="form-label-bold">Your lastname</label>
+                <input id="lastname" name="lastname" type="text" value="" class="log-in" />
               </div>
             </div>
             <div class="form-group">
@@ -309,18 +309,18 @@ $(document).ready(function() {
   $("#next").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#email-address, #firstname, #surname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
+    if ($("#email-address, #firstname, #lastname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
 
-    if ($("#email-address, #firstname, #surname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val()) {
+    if ($("#email-address, #firstname, #lastname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val()) {
       (window.location.replace("4-pat-email.html"));
     }
 
     $.cookie("email-address", $("#email-address").val(), {path:'/'});
     $.cookie("firstname", $("#firstname").val(), {path:'/'});
-    $.cookie("surname", $("#surname").val(), {path:'/'});
+    $.cookie("lastname", $("#lastname").val(), {path:'/'});
     $.cookie("organisation", $("#organisation").val(), {path:'/'});
     $.cookie("building-and-street-1", $("#building-and-street-1").val(), {path:'/'});
     $.cookie("building-and-street-2", $("#building-and-street-2").val(), {path:'/'});
