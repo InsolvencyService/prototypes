@@ -330,7 +330,7 @@
               <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
               <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a class="controls-delete" data-toggle="modal" data-target="#myModal-2"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
+              <a class="controls-delete" onclick="getRowNumber($(this).index()-1)" data-toggle="modal" data-target="#myModal-2"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
           <!-- ///////////////////////// Table Row - 2 - End ///////////////////////// -->
@@ -547,7 +547,7 @@
               <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
               <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
               <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a href="#"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
+              <a href="#" ><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
           <!-- ///////////////////////// Table Row - 9 - End ///////////////////////// -->
@@ -732,6 +732,7 @@
       <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
 
       <script type="text/javascript">
+      var rownumber;
 
       var url      = window.location.href;     // Returns full URL
       var pathname = window.location.pathname; // Returns path only
@@ -761,7 +762,7 @@
       // });
 
       $(".delete-row").on("click", function (e) {
-        $('#table-row-1').hide(750);
+        $('#table-row-'+rownumber).hide(750);
         // $('#table-row-2').hide(750);
       });
 
@@ -795,6 +796,11 @@
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      
+      function getRowNumber(row){
+      	alert(row);
+      	rownumber = row;	
       }
 
       var $rows = $('#table tr');
