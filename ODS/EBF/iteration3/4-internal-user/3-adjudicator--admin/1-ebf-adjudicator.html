@@ -933,6 +933,7 @@ a.btn:visited{
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                           <h4 class="heading-small" id="myModalLabel">Are you sure you wish to delete this document?</h4>
+                          <p><span id="document"></span></p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="button delete-row" data-dismiss="modal">Delete document</button>
@@ -1142,8 +1143,12 @@ a.btn:visited{
     });
 
     ///////////////////////// Delete Row Functionality - Start /////////////////////////
+    var documentValue;
+
     $("#table tr").on("click", function (e) {
       getRowNumber($(this).index()+1);
+      documentValue = $(this).find('td:nth-child(2)').text();
+      $("#document").text(documentValue);
     });
 
     $(".delete-row").on("click", function (e) {
@@ -1151,7 +1156,6 @@ a.btn:visited{
     });
 
     function getRowNumber(row){
-      // alert(row);
       rownumber = row;
     }
     ///////////////////////// Delete Row Functionality - End /////////////////////////

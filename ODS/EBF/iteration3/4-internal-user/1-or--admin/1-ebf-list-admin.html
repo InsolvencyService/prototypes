@@ -742,9 +742,12 @@
       });
 
       ///////////////////////// Delete Row Functionality - Start /////////////////////////
+      var documentValue;
+
       $("#table tr").on("click", function (e) {
       	getRowNumber($(this).index()+1);
-        $.cookie("document", $("label").text(), {path:'/'});
+        documentValue = $(this).find('td:nth-child(2)').text();
+        $("#document").text(documentValue);
       });
 
       $(".delete-row").on("click", function (e) {
@@ -752,14 +755,8 @@
       });
 
       function getRowNumber(row){
-      	// alert(row);
       	rownumber = row;
       }
-
-      if ($.cookie("document")) {
-        $("#document").text($.cookie("document"));
-      }
-
       ///////////////////////// Delete Row Functionality - End /////////////////////////
 
       $('[data-toggle="tooltip"]').tooltip("hide")
