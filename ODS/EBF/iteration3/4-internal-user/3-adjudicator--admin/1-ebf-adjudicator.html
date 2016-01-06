@@ -214,45 +214,46 @@ a.btn:visited{
 <!-- ///////////// This is what makes the edit text function work - Start ///////////// -->
 <script type="text/javascript">
 
-  function edit(element) {
-    var parent = $(element).parent().parent();
-    var placeholder = $(parent).find('.text-info').text();
-    //hide label
-    $(parent).find('label').hide();
-    //show input, set placeholder
-    var input = $(parent).find('input[type="text"]');
-    var textarea = $(parent).find('textarea[type="text"]');
-    var edit = $(parent).find('.controls-edit');
-    var update = $(parent).find('.controls-update');
-    $(input).show();
-    $(textarea).show();
-    $(edit).hide();
-    $(update).show();
-    //$(input).attr('placeholder', placeholder);
-    $(element).parent().find('.approved, .approve, .delete').hide();
-    // console.log($(element).parent());
-  }
+function edit(element) {
+  var parent = $(element).parent().parent();
+  var placeholder = $(parent).find('.text-info').text();
+  //hide label
+  $(parent).find('label').hide();
+  //show input, set placeholder
+  var input = $(parent).find('input[type="text"]');
+  var textarea = $(parent).find('textarea[type="text"]');
+  var edit = $(parent).find('.controls-edit');
+  var update = $(parent).find('.controls-update');
+  $(input).show();
+  $(textarea).show();
+  $(edit).hide();
+  $(update).show();
+  //$(input).attr('placeholder', placeholder);
+  $(element).parent().find('.approved, .approve, .delete').hide();
+  // console.log($(element).parent());
+}
 
-  function update(element) {
-    var parent = $(element).parent().parent().parent();
-    var placeholder = $(parent).find('.text-info').text();
-    //hide label
-    $(parent).find('label').show();
-    //show input, set placeholder
-    var input = $(parent).find('input[type="text"]');
-    var textarea = $(parent).find('textarea[type="text"]');
-    var edit = $(parent).find('.controls-edit');
-    var update = $(parent).find('.controls-update');
-    $(input).hide();
-    $(textarea).hide();
-    $(edit).show();
-    $(update).hide();
-    $(".approved").show();
-    $(".approve").show();
-    $(".delete").show();
-    //$(input).attr('placeholder', placeholder);
-    $(parent).find('label').text($(input).val());
-  }
+function update(element) {
+  var parent = $(element).parent().parent().parent();
+  var placeholder = $(parent).find('.text-info').text();
+  //hide label
+  $(parent).find('label').show();
+  //show input, set placeholder
+  var input = $(parent).find('input[type="text"]');
+  var textarea = $(parent).find('textarea[type="text"]');
+  var edit = $(parent).find('.controls-edit');
+  var update = $(parent).find('.controls-update');
+  $(input).hide();
+  $(textarea).hide();
+  $(edit).show();
+  $(update).hide();
+  $(".approved").show();
+  $(".approve").show();
+  $(".delete").show();
+  //$(input).attr('placeholder', placeholder);
+  $(parent).find('td:nth-child(2) label').text($(input).val());
+  $(parent).find('td:nth-child(4) label').text($(textarea).val());
+}
 
 </script>
 
