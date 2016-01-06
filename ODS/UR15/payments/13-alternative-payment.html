@@ -330,6 +330,7 @@ $(document).ready(function() {
   if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
     $("#fee_paid").text($.cookie("fee_paid"));
     $("#fee_remaining").text($.cookie("fee_remaining"));
+    $(".lefttopay").text($.cookie("fee_remaining"));
     $("#timestamp").text($.cookie("payment_timestamp"));
     $("#updated").show();
   }
