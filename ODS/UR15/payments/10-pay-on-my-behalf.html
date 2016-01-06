@@ -329,22 +329,22 @@ $(document).ready(function() {
     $("#updated").hide();
   }
 
-  // $("#continue").on("click", function (e) {
-  //    e.preventDefault();
-  //    //alert($("#amount").val());
-  //
-  //   $.cookie("email", $("#email").val(), {path:'/'});
-  //
-  //    if ($("#email").val() == ""){
-  //      $("#panel-error-empty").show();
-  //      (window.location.replace("#panel-error-empty"));
-  //    }
-  //
-  //    if ($("#email").val()) {
-  //      (window.location.replace("15-thank-you.html"));
-  //    }
-  //
-  // });
+  $("#continue").on("click", function (e) {
+    //  e.preventDefault();
+     //alert($("#amount").val());
+
+    $.cookie("email", $("#email").text(), {path:'/'});
+
+    //  if ($("#email").val() == ""){
+    //    $("#panel-error-empty").show();
+    //    (window.location.replace("#panel-error-empty"));
+    //  }
+     //
+    //  if ($("#email").val()) {
+    //    (window.location.replace("15-thank-you.html"));
+    //  }
+
+  });
 
   if ($.cookie("lastname")) {
     $("#lastname").text($.cookie("lastname")).addClass("bolder");
