@@ -273,7 +273,7 @@ $(document).ready(function() {
     case "failed-upload":
     html = "<div class=\"validation-summary\">";
     html += "<h2>Sorry, there appears to be a problem with the upload</h2>";
-    html += "<a href=\"#amount\">We have encountered a problem while trying to upload the file <span id=\"file-name\" class=\"bolder\"></span>.</a>";
+    html += "<a href=\"#amount\">We have encountered a problem while trying to upload the file <span class=\"file-name\" class=\"bolder\"></span>.</a>";
     html += "<p>Please try again.</p>";
     html += "</div>";
     $.cookie("status", "", {path:'/'});
@@ -289,6 +289,10 @@ $(document).ready(function() {
   $("#nextHref").on("click", function (e) {
     $.cookie("filename2", $(".filename2").text(), {path:'/'});
   });
+
+  if ($.cookie("filename2")) {
+    $(".file-name").text($.cookie("filename2")).addClass("bolder");
+  }
 
 });
 
