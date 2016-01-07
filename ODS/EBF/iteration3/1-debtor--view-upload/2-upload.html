@@ -286,6 +286,10 @@ $(document).ready(function() {
 
   }
 
+  $("#nextHref").on("click", function (e) {
+    $.cookie("filename2", $(".filename2").text(), {path:'/'});
+  )};
+
 });
 
 function getParameterByName(name) {

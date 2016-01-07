@@ -450,6 +450,11 @@ switch(status) {
   $("#status").html(html);
 
 }
+
+if ($.cookie("filename2")) {
+  $(".file-name").text($.cookie("filename2")).addClass("bolder");
+}
+
 });
 
 
