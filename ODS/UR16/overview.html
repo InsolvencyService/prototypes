@@ -755,7 +755,7 @@ h3 > a {
                               <p><a class="save" style="font-weight:bold">Save and logout</a></p>
                               <p><a href="security_change.html">Change your security questions</a></p>
                               <br>
-                              <p><a href="#">Generate court documents</a></p>
+                              <p><a href="#">Generate a copy of my application</a></p>
                               <p><a href="discard.html">Discard application</a></p>
                               <div id="payment_record"></div>
                             </div>
@@ -859,6 +859,9 @@ h3 > a {
                           // if (urn && urn.length > 8){
                           //   $("#urn").text(urn);
                           // }
+                         
+						
+                        
 
                           // Unique reference number
                           $("#make-a-payment").on("click", function (e) {
@@ -908,11 +911,11 @@ h3 > a {
                             $("#payment").show();
                           }
                           // mark sections as completed
-
                           $("a.button.edit").removeClass("button");
                           $("ul li.row .edit").hide();
                           $("#section1 .edit").addClass("button").show().text("Start");
-
+						  $(".rowbottom").hide();
+					
                           var section1 = getParameterByName("section1");
                           var section2 = getParameterByName("section2");
                           var section3 = getParameterByName("section3");
@@ -921,8 +924,16 @@ h3 > a {
                           var section6 = getParameterByName("section6");
                           var section7 = getParameterByName("section7");
                           var section8 = getParameterByName("section8");
-
-                          $(".rowbottom").hide();
+                          
+                          //check to see if a section variable in url. If not opens well and section 1 information
+                          if(window.location.href.indexOf("section") < 1) {
+       						$("#section1 .js-section").addClass("open");
+                            $("#section1 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                            var details = $("#section1 .js-section").attr("href");
+                            $(details).show();
+                            $(details).parent().addClass("well");
+    					  }
+                          
                           // if (section4 && section4.length > 0) {
                           // change the colour of the button
                           if($.cookie("pdetails")){
@@ -1056,6 +1067,7 @@ h3 > a {
                               $(this).addClass("open");
                               $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                               var details = $($(this).attr("href"));
+                              
                               details.show();
                               details.parent().addClass("well");
                             }
