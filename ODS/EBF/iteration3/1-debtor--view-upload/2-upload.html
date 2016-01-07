@@ -143,6 +143,11 @@
           <div class="inner-block">
             <h1 class="heading-large">Upload a document to the Bankruptcy application</h1>
             <div class="col-sm-8">
+
+              <!-- ////////////// Error Messaging - Start ////////////// -->
+              <div id="status"></div>
+              <!-- ////////////// Error Messaging - End ////////////// -->
+
               <p>Use this page to upload a document to your Bankruptcy Application.</p>
               <p>Upon upload we will notify our internal Bankrutpcy team and will need to approve the document.</p>
               <p>We will notify you of the outcome.</p>
@@ -257,7 +262,40 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
+  var status = getParameterByName("status");
+
+  if(status == null || status == ""){
+    status = $.cookie("status");
+  }
+
+  var html;
+  switch(status) {
+    case "failed-upload":
+    html = "<div class=\"validation-summary\">";
+    html += "<h2>Sorry, there appears to be a problem with the upload</h2>";
+    html += "<a href=\"#amount\">We have encountered a problem while trying to upload the file <span id=\"file-name\" class=\"bolder\"></span>.</a>";
+    html += "<p>Please try again.</p>";
+    html += "</div>";
+    $.cookie("status", "", {path:'/'});
+    $("#status").html(html);
+    break;
+
+    default:
+    html = "";
+    $("#status").html(html);
+
+  }
+
 });
+
+function getParameterByName(name) {
+name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+results = regex.exec(location.search);
+return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
 </script>
 <!-- #EndEditable -->
 
