@@ -9,40 +9,101 @@ ul li.row {
 }
 
 .rowtop {
-	display: inline-block;
+	/*display: inline-block;*/
 	/*width: 100%;*/
-	padding: 10px !important;
+	padding: 15px 10px !important;
 	margin: 0;
+	display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rowtop .button {
 	display: inline-block;
 	margin: 0 0 2px 0;
 	float: right;
+	font-size: 22px;
 }
 
-.rowtop {
-	display: flex;
-  align-items: center;
-  justify-content: center;
+.rowtop h3 {
+	margin: 5px 0 0 0 !important;
+	color: black !important;
+	font-size: 26px;
 }
 
-.rowtop .col-sm-8 h3 {
-	margin: 0 !important;
+.rowtop .heading-xlarge {
+	float: left;
+	margin: 0 10px 0 0;
+	font-size: 65px;
+	width: 40px;
+	height: 60px;
+	text-align: center;
 	color: black;
 }
 
-a.wrapper-button {
-	background: #dee0e2;
+a.wrapper-button, a.wrapper-button.well {
+	background: #ebedef;
 	border-radius: 5px;
-	display: inline-block;
+	display: inline-table;
   width: 100%;
+	padding: 0;
+	text-decoration: none;
+	border: none;
+	margin-bottom: 15px;
 }
 
-a.wrapper-button:hover {
-	background: #c2c5c8;
+a.wrapper-button:hover, a.wrapper-button.well:hover {
+	background: #f2f4f6;
 }
 
+/*a.wrapper-button.well button {
+	font
+}*/
+
+.well {
+	padding: 0;
+}
+
+h1.form-title.heading-xlarge {
+	font-weight: normal;
+	margin-bottom: 30px;
+	line-height: 1.34167;
+}
+
+.js-section, .edit {
+	padding: 0;
+  background: none;
+  border: none;
+  font-size: 14px;
+}
+
+.edit {
+	float: right;
+	font-size: 18px;
+}
+
+.edit.button {
+	background: #00823b;
+	padding: 0.52632em 0.78947em 0.26316em 0.78947em;
+}
+
+.rowbottom {
+	margin: 0;
+  display: block;
+  padding: 20px 30px 20px 30px;
+  background: white;
+  border: 1px #ebedef solid;
+  border-radius: 0 0 5px 5px;
+	color: black;
+}
+
+.rowbottom .row:first-of-type {
+	margin-top: 0;
+}
+
+.rowbottom .row:last-of-type {
+	margin-bottom: 0;
+}
 
 
 /* ------------------------ Overview Overide Styles - End ------------------------ */
