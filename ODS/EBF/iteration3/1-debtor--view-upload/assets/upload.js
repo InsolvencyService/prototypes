@@ -29,21 +29,21 @@ function sendFileToServer(formData,status)
 		data: formData,
 		success: function(data){
 			status.setProgress(100);
- 
-			
+
+
 		}
-	}); 
- 
+	});
+
 	status.setAbort(jqXHR);
 	status.setDelete();
 	$("#checkbox-nosubmission").attr('disabled', true);
 	$(".form-checkbox").css({opacity: 0.5});
 }
- 
+
 var rowCount=0;
 
 $(".delete").click(function(){
-	
+
 });
 
 
@@ -53,35 +53,35 @@ var numOfVisibleRows = $('.statusbar:visible').length;
 
 
 	if($(this).is(':checked')){
-		
+
 		$(".dragDrop").unbind();
 		$(".well").css({opacity: 0.5});
-		
+
 		$("#nextBtn").removeAttr('disabled');
 		$("#nextHref").attr("href", "/check-and-send");
-		
-	
+
+
 	}else{
-		
+
 		if(numOfVisibleRows>1){
 			$(".dragDrop").bind("click", handler());
 			$(".well").css({opacity: 1});
 			$("#nextBtn").removeAttr('disabled');
 			//$("#nextHref").attr("href", "/errors");
-			
+
 			}else{
 			$(".dragDrop").bind("click", handler());
 			$(".well").css({opacity: 1.0});
 			$("#nextBtn").attr('disabled',true);
 			$("#nextHref").removeAttr("href");
-		
-			
+
+
 		}
-		
+
 	}
 });
 function deleteHandler(){
-	
+
 }
 
 function createStatusbar(obj)
@@ -97,10 +97,10 @@ function createStatusbar(obj)
 	 //this.size = $("<div class='filesize'></div>").appendTo(this.statusbar);
 	 this.progressBar = $("<div class='progressBar2'><div></div></div>").appendTo(this.statusbar);
 	 this.abort = $("<a class='abort'>Cancel</a>").appendTo(this.statusbar);
-	 this.delete2 = $("<a id='delete' class='delete' style='display:none;margin-left:25px;'>Remove report</a>").appendTo(this.statusbar);
-	 
+	 this.delete2 = $("<a id='delete' class='delete' style='display:none;margin-left:25px;'>Remove document</a>").appendTo(this.statusbar);
+
 	 obj.before(this.statusbar);
-	 
+
 	this.setFileNameSize = function(name,size)
 	{
 		var sizeStr="";
@@ -114,22 +114,22 @@ function createStatusbar(obj)
 		{
 			sizeStr = sizeKB.toFixed(2)+" KB";
 		}
- 
+
 		this.filename.html(name);
 		//this.size.html(sizeStr);
 	}
 	this.setProgress = function(progress)
-	{       
-		var progressBarWidth =progress*this.progressBar.width()/ 100;  
+	{
+		var progressBarWidth =progress*this.progressBar.width()/ 100;
 		this.progressBar.find('div').animate({ width: progressBarWidth }, 10).html(progress + "% ");
 		if(parseInt(progress) >= 100)
 		{
-			this.progressBar.find('div').css({width: progressBarWidth,"width":"200px","text-align":"left","padding-left":"5px"}).html("Report uploaded – now check it for errors");
-			
+			this.progressBar.find('div').css({width: progressBarWidth,"width":"200px","text-align":"left","padding-left":"5px"});
+
 			this.abort.hide();
 			this.delete2.show();
 			$("#nextBtn").removeAttr('disabled');
-			//$("#nextHref").attr("href", "/errors");	
+			//$("#nextHref").attr("href", "/errors");
 		}
 	}
 	this.setAbort = function(jqxhr)
@@ -141,16 +141,16 @@ function createStatusbar(obj)
 			sb.hide();
 		});
 	}
-	
+
 	this.setDelete = function()
 	{
 		var sb = this.statusbar;
 		this.delete2.click(function()
 		{
-		
+
 		if($("#checkbox-nosubmission").is(':checked')){
 			return false;
-		}else{	
+		}else{
 			sb.hide();
 			sb.removeClass("statusbar");
 			if($(".statusbar").length <2){
@@ -159,7 +159,7 @@ function createStatusbar(obj)
 				$("#checkbox-nosubmission").removeAttr('disabled');
 				$(".form-checkbox").css({opacity: 1});
 			}
-		}	
+		}
 		});
 	}
 }
@@ -168,21 +168,21 @@ function handleFileUpload(files,obj)
 {
 	console.log("handlefileupload");
 	console.log(files);
-   for (var i = 0; i < files.length; i++) 
+   for (var i = 0; i < files.length; i++)
    {
 		var fd = new FormData();
 		fd.append('file', files[i]);
- 
+
 		var status = new createStatusbar(obj); //Using this we can set progress.
 		var name = files[i].name;
 		if (name.length > 30)
 		{
-			name = name.substring(0, 30) + '...';				
+			name = name.substring(0, 30) + '...';
 		}
-		
+
 		if(name.indexOf("2") >= 0) {
 			$("#nextHref").removeAttr("href");
-			$("#nextHref").attr("href", "/upload/there-is-a-problem");		
+			$("#nextHref").attr("href", "/upload/there-is-a-problem");
 		} else if(overrideRedirect != null){
 			$("#nextHref").removeAttr("href");
 			$("#nextHref").attr("href", overrideRedirect);
@@ -190,30 +190,30 @@ function handleFileUpload(files,obj)
 		 else {
 			$("#nextHref").removeAttr("href");
 			$("#nextHref").attr("href", "/upload/no-formatting-errors");
-		}	
-		
+		}
+
 		status.setFileNameSize(name,files[i].size);
-		
+
 		sendFileToServer(fd,status);
- 
+
    }
 }
 
 var handler = function start(){
 	var obj = $("#dragandrop");
-	obj.on('dragenter', function (e) 
+	obj.on('dragenter', function (e)
 	{
 		e.stopPropagation();
 		e.preventDefault();
 		$(this).css('border', '3px dashed #2E8ACA');
 		$(this).css('background', '#F8F8F8');
 	});
-	obj.on('dragover', function (e) 
+	obj.on('dragover', function (e)
 	{
 		 e.stopPropagation();
 		 e.preventDefault();
 	});
-	obj.on('drop', function (e) 
+	obj.on('drop', function (e)
 	{
 		 e.preventDefault();
 		 var files = e.originalEvent.dataTransfer.files;
@@ -222,17 +222,17 @@ var handler = function start(){
 		 //We need to send dropped files to Server
 		 handleFileUpload(files,obj);
 	});
-	$(document).on('dragenter', function (e) 
+	$(document).on('dragenter', function (e)
 	{
 		e.stopPropagation();
 		e.preventDefault();
 	});
-	$(document).on('dragover', function (e) 
+	$(document).on('dragover', function (e)
 	{
 	  e.stopPropagation();
 	  e.preventDefault();
 	});
-	$(document).on('drop', function (e) 
+	$(document).on('drop', function (e)
 	{
 		obj.css('border', '3px solid #DEE0E2');
 		obj.css('background', '#DEE0E2');
