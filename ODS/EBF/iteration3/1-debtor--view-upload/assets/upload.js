@@ -182,14 +182,14 @@ function handleFileUpload(files,obj)
 
 		if(name.indexOf("2") >= 0) {
 			$("#nextHref").removeAttr("href");
-			$("#nextHref").attr("href", "/upload/there-is-a-problem");
+			$("#nextHref").attr("href", "2-upload.html");
 		} else if(overrideRedirect != null){
 			$("#nextHref").removeAttr("href");
 			$("#nextHref").attr("href", overrideRedirect);
 		}
 		 else {
 			$("#nextHref").removeAttr("href");
-			$("#nextHref").attr("href", "/upload/no-formatting-errors");
+			$("#nextHref").attr("href", "1-overview.html");
 		}
 
 		status.setFileNameSize(name,files[i].size);
