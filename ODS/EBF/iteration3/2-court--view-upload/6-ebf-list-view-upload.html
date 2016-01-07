@@ -160,6 +160,11 @@
       <h1 class="form-title heading-large">Bankruptcy application folder: <span id="urn"></span><span id="urn-returning"></span></h1>
       <div class="intro-banner">
         <div class="col-sm-8">
+
+          <!-- Summary Panel - Start -->
+          <div id="status"></div>
+          <!-- Summary Panel - End -->
+          
           <p>Below is a list of the documents associated with the bankruptcy application.</p>
           <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
           <p>Time remaining to view files: <span class="heading-small">14 days</span></p>
@@ -170,7 +175,7 @@
           <div class="panel-indent" style="font-size:16px; border-color:#efefef">
             <p><a href="2-search.html" style="font-weight: bold;"><span class="glyphicon glyphicon-log-out"></span> View another case</a></p>
             <br>
-            <p><a href="#">Upload a new document</a></p>
+            <p><a href="7-upload.html">Upload a new document</a></p>
           </div>
           <!-- Panel Indent - End -->
 
@@ -681,6 +686,48 @@
         $.cookie("document-description", $("#document-description").text(), {path:'/'});
         $.cookie("document-date", $("#document-date").text(), {path:'/'});
       });
+
+      var status = getParameterByName("status");
+
+      if(status == null || status == ""){
+        status = $.cookie("status");
+      }
+
+      // if($.cookie("mail")){
+      //   $("#question").show();
+      // }
+
+      // if ($.cookie("filename2")) {
+      //   $(".file-name").text($.cookie("filename2")).addClass("bolder");
+      // }
+
+      var html;
+      switch(status) {
+        case "file-upload":
+        html = "<div class=\"govuk-box-highlight made\">";
+        html += "<h2 class=\"bold-large\">Your document has (or documents have) successfully uploaded</h2>";
+        html += "</div>";
+        html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
+        $.cookie("status", "file-upload", {path:'/'});
+        $("#status").html(html);file-upload
+
+        break;
+
+        default:
+        html = "";
+        $("#status").html(html);
+
+      }
+      });
+
+
+      function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
 
 
       function getParameterByName(name) {
