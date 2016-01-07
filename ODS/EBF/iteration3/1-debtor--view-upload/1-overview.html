@@ -723,16 +723,16 @@ switch(status) {
 
   break;
 
-  case "file-upload":
-  html = "<div class=\"govuk-box-highlight made\">";
-  html += "<h2 class=\"bold-large\">Your document has (or documents have) successfully uploaded</h2>";
-  html += "</div>";
-  html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
-
-  $.cookie("status", "file-upload", {path:'/'});
-  $("#status").html(html);file-upload
-
-  break;
+  // case "file-upload":
+  // html = "<div class=\"govuk-box-highlight made\">";
+  // html += "<h2 class=\"bold-large\">Your document has (or documents have) successfully uploaded</h2>";
+  // html += "</div>";
+  // html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
+  //
+  // $.cookie("status", "file-upload", {path:'/'});
+  // $("#status").html(html);file-upload
+  //
+  // break;
 
   default:
   html = "<div class=\"govuk-box-highlight processing\">";
@@ -749,10 +749,10 @@ switch(status) {
 
 
 function getParameterByName(name) {
-name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-results = regex.exec(location.search);
-return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
 </script>
