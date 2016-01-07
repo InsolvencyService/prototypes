@@ -73,13 +73,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../css/ebf-override.css">
 
 <!-- #BeginEditable "styles" -->
-<style type="text/css">
-
-
-.row img{
-  width:40px
-}
-</style>
 <!-- #EndEditable -->
 
 
@@ -114,7 +107,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
+            <span id="proposition-name">Electronic Bankruptcy Folder (EBF)</span>
           </nav>
         </div>
       </div>
@@ -141,56 +134,56 @@
       </div>
 
       <!-- #BeginEditable "content" -->
-      <div style="display:block; margin:0 30px !important">
+      <!-- /.grid-wrapper - Start -->
+      <div class="grid-wrapper">
+        <!-- /.grid - Start -->
+        <div class="grid grid-4-4">
 
-        <h1 class="form-title heading-large">Log in to your application</h1>
-        <div class="col-sm-8">
+          <!-- /.inner-block - Start -->
+          <div class="inner-block">
+            <h1 class="heading-large">Upload a document to the Bankruptcy application</h1>
+            <div class="col-sm-8">
+              <p>Use this page to upload a document to your Bankruptcy Application.</p>
+              <p>Upon upload we will notify our internal Bankrutpcy team and will need to approve the document.</p>
+              <p>We will notify you of the outcome.</p>
 
-          <div class="validation-summary" style="display:none">
-            <h2 class="heading-medium">Application number is not valid</h2>
-            <ol>
-              <li class="error-message">
-                <p>Please enter a 12 digit application number</p>
-                <p><a href="20-urn-help.html">I have forgotten my application number</a></p>
-              </li>
-            </ol>
-          </div>
-          <p class="text msg-URN" style="display:none;">
-            Your application number is
-            <br>
-            <span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNH-J93R-5309</span>
-          </p>
-
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-            <!-- For User research -->
-            <div class="form-navigation form-group">
-              <div class="msg-no-URN">
-                <label id="applicant_address_line_2_label" for="urn" class="form-label-bold">What is your application number?</label>
-                <div class="form-hint">
-                  You can find this in the email we sent you.
+              <div id="statusbar-header" style="display:none">
+                <div class="statusbar2 statusbar2-title">
+                  <div class="filename2">Report name</div>
+                  <div class="progressBar2">Status</div>
+                  <div class="actionsh">Action</div>
                 </div>
-                <input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
               </div>
-            </div>
-          </form>
+              <div id="dragandrop" class="dragDrop">
+                Drag and drop a report (or reports) here
+              </div>
+              <p>or <a id="uploadOldId" href="#">browse for a report (or reports)</a></p>
+              <form id="uploadForm">
+                <input type="file" name="tempFileId" id="tempFileId" style="display: none;" multiple>
+              </form>
 
-          <div class="form-navigation form-group">
-            <div>
-              <a href="security-question.html" id="next" class="button">Continue</a>
-              <a href="urn-help.html" style="display:none">I have forgotten my application number or security questions</a>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-              </div>
+
+              <p><a id="nextHref"><input id="nextBtn" disabled="disabled" class="button" type="button" value="Check for errors"/></a></p>
+
+              <noscript>
+                <div class="well">
+                  <div class="form-group">
+                    <input class="input-file" type="file" name="file-1" id="file1" multiple>
+                  </div>
+                </div>
+              </noscript>
             </div>
+
           </div>
+          <!-- /.inner-block - End -->
 
         </div>
-        <div class="col-sm-4">
-        </div>
+        <!-- /.grid - End -->
+
+      </div>
+      <!-- /.grid-wrapper - End -->
+
       <!-- #EndEditable -->
-    </div>
 
     </div>
   </main>
@@ -245,7 +238,10 @@
   <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/upload.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -258,58 +254,6 @@ $(document).ready(function() {
 
 });
 </script>
-
-<!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  var ignorevalidation = false;
-  if (getParameterByName("ignore") && getParameterByName("ignore").length > 0){
-    ignorevalidation = true;
-  }
-
-  var urn = $.cookie('urn');
-  $("#next").click( function(e) {
-
-    if (ignorevalidation == false){
-      if ($("#urn").val().length < 12){
-        e.preventDefault();
-        $(".validation-summary").show();
-      }
-      else{
-        if ($("#urn").val().length > 0){/*
-          if (stripped($("#urn").val()).toUpperCase() != stripped(urn).toUpperCase()){
-          e.preventDefault();
-          window.location = "security-question.html?error=true";
-        };
-        */
-      }
-
-    }
-  }
-
-});
-
-
-});
-
-function stripped(urn){
-return urn.replace(/[\. ,:-]+/g, "");
-}
-
-function getParameterByName(name) {
-name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-results = regex.exec(location.search);
-return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-</script>
-
-
 <!-- #EndEditable -->
 
 
