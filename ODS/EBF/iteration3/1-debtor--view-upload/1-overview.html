@@ -427,6 +427,23 @@ switch(status) {
 
   break;
 
+  case "file-upload":
+  html = "<div class=\"govuk-box-highlight made\">";
+  html += "<h2 class=\"bold-large\">Your file was successfully uploaded</h2>";
+  html += "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
+  html += "<p>Review decline date: <span class=\"bolder\">30th October 2016</p>";
+  html += "</div>";
+  html += "<p>We have been made aware that you have appealed our decision to HM Courts & Tribunals Service.</p>";
+  html += "<p>They will notify you when they have made a decision.</p>";
+  html += "<p>We will also email you when we learn the outcome of your appeal.</p>";
+
+  $.cookie("status", "appeal", {path:'/'});
+  $("#declined").show();
+  $("#review-declined").show();
+  $("#status").html(html);awaiting
+
+  break;
+
   default:
   html = "<div class=\"govuk-box-highlight processing\">";
   html += "<h2 class=\"bold-large\">Current application status</h2>";

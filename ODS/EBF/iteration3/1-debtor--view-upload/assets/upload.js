@@ -189,7 +189,7 @@ function handleFileUpload(files,obj)
 		}
 		 else {
 			$("#nextHref").removeAttr("href");
-			$("#nextHref").attr("href", "1-overview.html");
+			$("#nextHref").attr("href", "1-overview.html?status=file-upload");
 		}
 
 		status.setFileNameSize(name,files[i].size);
