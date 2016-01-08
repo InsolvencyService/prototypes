@@ -189,7 +189,7 @@ h3 > a {
 
   <div id="global-header-bar">
     <div class="inner-block">
-      <div class="header-bar"></div>
+      <div class="header-bar clearfix"></div>
     </div>
   </div>
 
@@ -197,12 +197,20 @@ h3 > a {
 
     <div id="content" >
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
+        <div class="phase-banner clearfix">
+      
+            
+            <div class="col-sm-9">
+		    	<strong class="phase-tag">BETA</strong>
+           		This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+            </div>
+			
+			<div id="logout" class="col-sm-3 text-right" >
+		        <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+	        </div>	
+          
         </div>
+        
       </div>
 
 
@@ -752,7 +760,6 @@ h3 > a {
 
                             <div class="panel-indent" style="font-size:16px; border-color:#efefef">
 
-                              <p><a class="save" style="font-weight:bold">Save and logout</a></p>
                               <p><a href="security_change.html">Change your security questions</a></p>
                               <br>
                               <p><a href="#">Generate a copy of my application</a></p>
@@ -774,13 +781,6 @@ h3 > a {
                               </div>
                               <div>
                                 <br>
-                              </div>
-
-                              <div>
-
-                                <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>&nbsp;
-                                <a class="save" id="cancel">Save and logout</a>
-
                               </div>
                             </div>
 
