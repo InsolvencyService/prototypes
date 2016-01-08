@@ -208,9 +208,17 @@ table td{
 
               <div class="form-group">
                 <hr style="margin-top:0;">
-                <label class="heading-small" for="email" name="email">Email address<span class="form-hint">Have the barcode sent to this email address</span>
+                <!-- <label class="heading-small" for="email" name="email">Email address<span class="form-hint">Have the barcode sent to this email address</span>
                 </label>
-                <input id="email" name="email" type="text" style="margin-bottom:10px; width:80%;"><br>
+                <input id="email" name="email" type="text" style="margin-bottom:10px; width:80%;"><br> -->
+                <div class="form-group">
+                  <label class="heading-small" for="email" name="email">Email address<span class="form-hint">Have the payment reference sent to my email address</span>
+                  </label>
+                  <p id="email">bbagley@gmail.com</p>
+                </div>
+                <div class="form-navigation form-group" style="margin:0 0 30px 0;">
+                  <a href="15-thank-you.html" id="continue" class="button">Send it to me</a>
+                </div>
                 <button id="submit-email" class="button">Continue</button>
                 <hr>
                 <h3 class="heading-small">I don't have an email address</h3>
@@ -307,10 +315,17 @@ table td{
         $.cookie("pathname", pathname, {path:'/'});
       });
 
-      // Payment prototype variables
       $("#submit-email").on("click", function (e) {
-        $.cookie("email", $("#email").val(), {path:'/'});
+        $.cookie("email", $("#email").text(), {path:'/'});
       });
+
+      if ($.cookie("lastname")) {
+        $("#lastname").text($.cookie("lastname")).addClass("bolder");
+      }
+
+      if ($.cookie("email")) {
+        $("#email").text($.cookie("email")).addClass("bolder");
+      }
 
       //checking payment details
       if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
