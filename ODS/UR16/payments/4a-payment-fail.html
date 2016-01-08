@@ -174,7 +174,7 @@ table td{
 
       <div style="display:block; margin:0 30px !important">
       	<p>&nbsp;</p>
-       
+
         <div class="row">
 
           <!-- Main Content Section Start -->
@@ -182,7 +182,7 @@ table td{
             <div class="text-center fail-box">
               <h2 class="bold-large">Your payment was unsuccessful.</h2>
             </div>
-            <p><br/>Your card payment was refused by WorldPay. To find out why please contact them by calling 0870 366 1233 quoting the payment reference below.</p>
+            <p><br/>Your card payment was refused by WorldPay. To find out why please contact them by calling <span class="bolder">0870 366 1233</span> quoting the payment reference below.</p>
             <table class="table">
               <tr>
                 <td>Payment amount</td>
@@ -202,6 +202,22 @@ table td{
 
           </div>
           <!-- Main Content Section End -->
+
+          <!-- Side Panel Section Start -->
+          <div class="col-sm-4">
+            <div class="helpline heading-small">
+              <i class="glyphicon glyphicon-earphone"></i>
+              Helpline<br>
+              0870 366 1233
+            </div>
+            <div class="panel-indent no-margin" style="font-size:16px; border-color:#efefef">
+              <p><a href="#" class="small-icon"><img src="images/print-icon.png">Print confirmation</a></p>
+              <br>
+              <p><a href="8-statements-page.html">View my payment history</a></p>
+            </div>
+          </div>
+          <!-- Side Panel Section End -->
+
 
         </div>
 
@@ -292,7 +308,7 @@ $("#email-link").on("click", function (e) {
 });
 
 function readCookies(){
-	
+
 	payment_made = $.cookie("amount");
 
 }

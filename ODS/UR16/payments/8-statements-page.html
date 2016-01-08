@@ -180,23 +180,25 @@ table td{
             	<thead>
 	            	<tr>
 		            	<td>Payment method</td>
-		            	<td>Transaction reference</td>
+                  <td>Payment reference</td>
+		            	<td>Worldpay reference</td>
 		            	<td>Date</td>
 		            	<td>Amount</td>
 	            	</tr>
             	</thead>
             	<tbody id="tablebody">
-	              
-	             </tbody>
-	             <tfoot>
-	              <tr>
-	              	<td></td>
-	                <td></td>
-	                <td class="heading-small" style="text-align:right;">Total</td>
-	                <td class="heading-small">&pound;<span class="fee_paid">[total]</span></td>
-	              </tr>
-	              </tfoot>
-              	
+
+               </tbody>
+               <tfoot>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="heading-small" style="text-align:right;">Total</td>
+                  <td class="heading-small">&pound;<span class="fee_paid">[total]</span></td>
+                </tr>
+              </tfoot>
+
             </table>
             <p>
               You have <span class="heading-small">&pound;</span><span class="heading-small fee_remaining">500</span> to pay to enable your application to proceed
@@ -220,17 +222,18 @@ table td{
           <div class="col-sm-4">
 
             <!-- Payment Panel start -->
-            <div class="panel panel-primary no-button">
+            <div class="panel panel-primary">
               <h2 class="heaing-small">Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;<span class="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span class="fee_remaining">500</span> left to pay</span>
+              <a href="payments/1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining">655</span> left to pay</span></a>
+              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid">0</span> received</p>
               <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
+              <a id="make-a-payment" class="button" href="payments/1-payment-amount.html">Make a payment</a>
             </div>
             <!-- Payment Panel end -->
 
             <div class="panel-indent" style="font-size:16px; border-color:#efefef">
 
-              
+
               <p><a href="8-statements-page.html">View my payment history</a></p>
               <p><a href="7-help-page.html">How can I get a refund?</a></p>
             </div>
@@ -305,16 +308,17 @@ $(document).ready(function() {
     $.cookie("url", url, {path:'/'});
     $.cookie("pathname", pathname, {path:'/'});
   });
-  
+
   if($.cookie("payment_count")){
   	var count= parseInt($.cookie("payment_count"));
   	for(i=1; i<=count; i++){
   		var row = "<tr><td>"+$.cookie("payment_type"+i);
   		row += "</td><td>"+$.cookie("payment_ref"+i);
+      row += "</td><td>"+$.cookie("worldpay_ref"+i);
   		row += "</td><td>"+$.cookie("payment_date"+i);
   		row += "</td><td>£"+parseFloat($.cookie("payment_amount"+i)).toFixed(2);
   		row += "</td></tr>"
-  		
+
   		$("#tablebody").append(row);
    	}
   }
@@ -333,6 +337,11 @@ $(document).ready(function() {
     $(".fee_remaining").text("655.00");
     $(".lefttopay").text("655.00");
     $("#updated").hide();
+  }
+
+  if(parseInt($.cookie("fee_paid"))==655){
+    $("#next").show();
+    $("#make-a-payment").hide();
   }
 
 });

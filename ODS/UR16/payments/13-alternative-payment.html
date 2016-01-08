@@ -194,8 +194,13 @@ table td{
               </tr>
             </table>
             <div class="form-group">
-              <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label heading-small bolder">How much would you like to pay?</label>
-              £<input id="amount" type="text"  value="" />
+              <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label heading-small bolder">
+                <span class="heading-medium">How much would you like to pay?</span><br>
+                <span class="form-hint">
+                  Minimum payment by card is <span class="bolder">&pound;5</span>
+                </span>
+              </label>
+              <span class="heading-medium">&pound;</span><input id="amount" type="text"  value="" />
               <br/>
             </div>
 
@@ -216,11 +221,11 @@ table td{
           <!-- Side Panel Section Start -->
           <div class="col-sm-4">
             <!-- Payment Panel start -->
-            <div class="panel panel-primary no-button">
+            <div class="panel panel-primary">
               <h2 class="heaing-small">Bankruptcy order fee</h2>
-              <p class="payment-amount">&pound;<span id="fee_paid">155</span> received</p>
-              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining" class="lefttopay">500</span> left to pay</span>
-              <p id="updated" class="updated-text">Last updated:<br><span id="timestamp">10 December 2015 at 15:05:06</span></p>
+              <a href="payments/1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining">655</span> left to pay</span></a>
+              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid">0</span> received</p>
+              <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
             </div>
             <!-- Payment Panel end -->
             <div class="panel-indent" style="font-size:16px; border-color:#efefef;">

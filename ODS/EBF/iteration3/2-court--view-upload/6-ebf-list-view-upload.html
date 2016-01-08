@@ -160,11 +160,6 @@
       <h1 class="form-title heading-large">Bankruptcy application folder: <span id="urn"></span><span id="urn-returning"></span></h1>
       <div class="intro-banner">
         <div class="col-sm-8">
-
-          <!-- Summary Panel - Start -->
-          <div id="status"></div>
-          <!-- Summary Panel - End -->
-
           <p>Below is a list of the documents associated with the bankruptcy application.</p>
           <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
           <p>Time remaining to view files: <span class="heading-small">14 days</span></p>
@@ -687,6 +682,14 @@
         $.cookie("document-date", $("#document-date").text(), {path:'/'});
       });
 
+
+      function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
       var $rows = $('#table tr');
       $('#search').keyup(function() {
 
@@ -700,48 +703,10 @@
         }).hide();
       });
 
-
-
       // #Search highlighted - Start
 
       // #Search highlighted - End
 
-
-      </script>
-
-      <script type="text/javascript">
-      $(document).ready(function() {
-        var status = getParameterByName("status");
-
-        if(status == null || status == ""){
-          status = $.cookie("status");
-        }
-
-        var html;
-        switch(status) {
-          case "file-upload":
-          html = "<div class=\"govuk-box-highlight made\">";
-          html += "<h2 class=\"bold-large\">Your document has (or documents have) successfully uploaded</h2>";
-          html += "</div>";
-          html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
-          $.cookie("status", "file-upload", {path:'/'});
-          $("#status").html(html);file-upload
-
-          break;
-
-          default:
-          html = "";
-          $("#status").html(html);
-
-        }
-      });
-
-      function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-      }
 
       </script>
 

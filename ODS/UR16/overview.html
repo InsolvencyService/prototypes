@@ -741,8 +741,8 @@ h3 > a {
                             <!-- Payment Panel start -->
                             <div class="panel panel-primary">
                               <h2 class="heaing-small">Bankruptcy order fee</h2>
-                              <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
-                              <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">655</span> left to pay</span>
+                              <a href="payments/1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining">655</span> left to pay</span></a>
+                              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid">0</span> received</p>
                               <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
                               <a id="make-a-payment" class="button" href="payments/1-payment-amount.html">Make a payment</a>
                             </div>
@@ -859,9 +859,9 @@ h3 > a {
                           // if (urn && urn.length > 8){
                           //   $("#urn").text(urn);
                           // }
-                         
-						
-                        
+
+
+
 
                           // Unique reference number
                           $("#make-a-payment").on("click", function (e) {
@@ -915,7 +915,7 @@ h3 > a {
                           $("ul li.row .edit").hide();
                           $("#section1 .edit").addClass("button").show().text("Start");
 						  $(".rowbottom").hide();
-					
+
                           var section1 = getParameterByName("section1");
                           var section2 = getParameterByName("section2");
                           var section3 = getParameterByName("section3");
@@ -924,7 +924,7 @@ h3 > a {
                           var section6 = getParameterByName("section6");
                           var section7 = getParameterByName("section7");
                           var section8 = getParameterByName("section8");
-                          
+
                           //check to see if a section variable in url. If not opens well and section 1 information
                           if(window.location.href.indexOf("section") < 1) {
        						$("#section1 .js-section").addClass("open");
@@ -933,7 +933,7 @@ h3 > a {
                             $(details).show();
                             $(details).parent().addClass("well");
     					  }
-                          
+
                           // if (section4 && section4.length > 0) {
                           // change the colour of the button
                           if($.cookie("pdetails")){
@@ -1067,7 +1067,7 @@ h3 > a {
                               $(this).addClass("open");
                               $(this).find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                               var details = $($(this).attr("href"));
-                              
+
                               details.show();
                               details.parent().addClass("well");
                             }
