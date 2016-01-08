@@ -175,18 +175,26 @@ table td{
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your payment was successful.</h2>
               <p>Your payment reference is<br>
-                <strong class="heading-medium"><span id="payment-number"></span></strong>
+                <strong class="heading-medium"><span class="payment-number"></span>: <span class="payment-ref"></span></strong>
               </p>
             </div>
             <p>This transaction will show up on the bankruptcy application.</p>
             <table class="table">
+              <tr>
+                <td>Payment reference</td>
+                <td class="heading-small"><span class="payment-number"></span></td>
+              </tr>
+              <tr>
+                <td>Payment reference</td>
+                <td class="heading-small"><span class="payment-ref">12345678</span></td>
+              </tr>
               <tr>
                 <td>Payment amount</td>
                 <td class="heading-small"><span id="amountpaid"></span></td>
               </tr>
               <tr>
                 <td>WorldPay Transaction ID</td>
-                <td class="heading-small">Worldpay-1234</td>
+                <td class="heading-small"><span class="wp-ref">Worldpay-1234</span></td>
               </tr>
             </table>
 
@@ -275,9 +283,17 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
+  //8 digit random number for the payment number
+  ref = Math.floor(Math.random()*1E8);
+  $(".payment-ref").text(ref).addClass("bolder");
+
+  //if an amount of payment has been entered
+  world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+  $(".wp-ref").text(world);
+
   // Cookie variable
   if ($.cookie("payment-number")) {
-    $("#payment-number").text($.cookie("payment-number")).addClass("bolder");
+    $(".payment-number").text($.cookie("payment-number")).addClass("bolder");
   }
 
   if ($.cookie("amount")) {
