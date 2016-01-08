@@ -292,13 +292,14 @@ $(document).ready(function() {
   world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
   $(".wp-ref").text(world);
 
+  if ($.cookie("fee_paid")=="655"){
+    window.location.replace("4b-payment-complete.html");
+  }
+
   if ($.cookie("amount")) {
 
   	if ($.cookie("amount")=="335"){
   		window.location.replace("4a-payment-fail.html");
-  	}
-    if ($.cookie("fee_paid")=="655"){
-  		window.location.replace("4b-payment-complete.html");
   	}
   	else {
     	$("#fullpage").show();
