@@ -181,6 +181,9 @@ table td{
           <div class="col-sm-8">
             <div class="text-center fail-box">
               <h2 class="bold-large">Your payment was unsuccessful.</h2>
+              <p>Your payment reference is<br>
+                <strong class="heading-medium"><span class="payment-ref">12345678</span></strong>
+              </p>
             </div>
             <p><br/>Your card payment was refused by WorldPay. To find out why please contact them by calling <span class="bolder">0870 366 1233</span> quoting the payment reference below.</p>
             <table class="table">
@@ -289,6 +292,10 @@ $(document).ready(function() {
   var url      = window.location.href;     // Returns full URL
   var pathname = window.location.pathname; // Returns path only
   // end
+
+  //8 digit random number for the payment number
+  ref = Math.floor(Math.random()*1E8);
+  $(".payment-ref").text(ref);
 
   //if an amount of payment has been entered
   ref = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );

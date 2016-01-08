@@ -174,11 +174,15 @@ table td{
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your payment was successful.</h2>
               <p>Your payment reference is<br>
-                <strong class="heading-medium"><span class="wp-ref">Worldpay-1234</span></strong>
+                <strong class="heading-medium"><span class="payment-ref">12345678</span></strong>
               </p>
             </div>
             <p>We have sent you a confirmation email.</p>
             <table class="table">
+              <tr>
+                <td>Application reference</td>
+                <td class="heading-small"><span id="urn"></span></td>
+              </tr>
               <tr>
                 <td>Payment amount</td>
                 <td class="heading-small"><span id="amountpaid"></span></td>
@@ -280,11 +284,13 @@ $(document).ready(function() {
   var pathname = window.location.pathname; // Returns path only
   // end
 
+  //8 digit random number for the payment number
+  ref = Math.floor(Math.random()*1E8);
+  $(".payment-ref").text(ref);
+
   //if an amount of payment has been entered
-  ref = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
-  $(".wp-ref").text(ref);
-
-
+  world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+  $(".wp-ref").text(world);
 
   if ($.cookie("amount")) {
 
@@ -324,13 +330,13 @@ function readCookies(){
 	$.cookie("payment_count", cookiecount, {path:'/'})
 
 	total_fee_paid = $.cookie("fee_paid");
-  	fee_remaining = $.cookie("fee_remaining");
+	fee_remaining = $.cookie("fee_remaining");
 	payment_made = $.cookie("amount");
 
 }
 
 function writeCookies(){
-  	$.cookie("fee_paid", total_fee_paid, {path:'/'})
+	$.cookie("fee_paid", total_fee_paid, {path:'/'})
 	$.cookie("fee_remaining", fee_remaining, {path:'/'})
 	var d = new Date();
 	var datea = formatDate(d, "dd MMMM yyyy");
@@ -342,6 +348,7 @@ function writeCookies(){
 	$.cookie("payment_type"+cookiecount, type,  {path:'/'});
 	$.cookie("payment_date"+cookiecount, datea,  {path:'/'});
 	$.cookie("payment_ref"+cookiecount, ref,  {path:'/'});
+  $.cookie("wp-ref"+cookiecount, ref,  {path:'/'});
 	$.cookie("payment_amount"+cookiecount, payment_made,  {path:'/'});
 
 }
