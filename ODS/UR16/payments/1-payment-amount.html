@@ -181,6 +181,10 @@ table td{
               <h2>You didn't enter a payment amount</h2>
               <a href="#amount">Please enter an amount</a>
             </div>
+            <div class="validation-summary" id="panel-error-min" style="display:none">
+              <h2>Please enter a value of more than <span class="bolder">&pound;5</span></h2>
+              <a href="#amount">Please enter an amount greater than &pound;5</a>
+            </div>
             <!-- Hidden Error messages End -->
 
             <table class="table">
@@ -351,17 +355,26 @@ $(document).ready(function() {
     if ($("#amount").val() == ""){
       $("#panel-error-empty").show();
       $("#panel-error-greater").hide();
+      $("#panel-error-min").hide();
       (window.location.replace("#panel-error-empty"));
     }
 
     if ($("#amount").val() && $("#amount").val() > $.cookie("fee_remaining")){
       $("#panel-error-greater").show();
       $("#panel-error-empty").hide();
+      $("#panel-error-min").hide();
       (window.location.replace("#panel-error-greater"));
     }
 
     if ($("#amount").val() && $("#amount").val() <= $.cookie("fee_remaining")) {
       (window.location.replace("2-worldpay-card-selection.html"));
+    }
+
+    if ($("#amount").val() && $("#amount").val() < 5){
+      $("#panel-error-greater").hide();
+      $("#panel-error-empty").hide();
+      $("#panel-error-min").show();
+      (window.location.replace("#panel-error-min"));
     }
   });
 
