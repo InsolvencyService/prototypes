@@ -185,7 +185,7 @@ table td{
                 <td class="heading-small"><span class="payment-number"></span></td>
               </tr>
               <tr>
-                <td>Payment reference</td>
+                <td>Payment number</td>
                 <td class="heading-small"><span class="payment-ref">12345678</span></td>
               </tr>
               <tr>
@@ -300,13 +300,6 @@ $(document).ready(function() {
     $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
   }
 
-  var url      = window.location.href;     // Returns full URL
-  var pathname = window.location.pathname; // Returns path only
-  $("#email-link").on("click", function (e) {
-    $.cookie("url", url, {path:'/'});
-    $.cookie("pathname", pathname, {path:'/'});
-  });
-
   // Cookie variable
   if ($.cookie("urn")) {
     $("#urn").text($.cookie("urn")).addClass("bolder");
@@ -320,10 +313,10 @@ $(document).ready(function() {
 	var fee_remaining = $.cookie("fee_remaining");
 	var payment_made = $.cookie("amount");
 
-	if(total_fee_paid == '0.00'){
+	if (total_fee_paid == '0.00'){
 		total_fee_paid = payment_made;
 	}
-	else{
+	else {
 		total_fee_paid = (parseFloat(total_fee_paid) + parseFloat(payment_made)).toFixed(2);
 	}
 	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);

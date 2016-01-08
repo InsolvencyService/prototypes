@@ -373,7 +373,7 @@ $(document).ready(function() {
       (window.location.replace("#panel-error-min"));
     }
 
-    if ($("#amount").val() && $("#amount").val() <= $.cookie("fee_remaining")) {
+    else if ($("#amount").val() && $("#amount").val() <= $.cookie("fee_remaining")) {
       (window.location.replace("2-worldpay-card-selection.html"));
     }
 
