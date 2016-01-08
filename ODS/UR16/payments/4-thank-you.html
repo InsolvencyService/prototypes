@@ -292,9 +292,19 @@ $(document).ready(function() {
   world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
   $(".wp-ref").text(world);
 
-  if ($.cookie("fee_paid")=="655.00"){
+  // if ($.cookie("fee_paid")=="655.00"){
+  //   window.location.replace("4b-payment-complete.html");
+  // }
+
+  var payment_amount = parseFloat($.cookie("fee_paid"));
+
+  if(payment_amount<655){
     window.location.replace("4b-payment-complete.html");
   }
+  else {
+    $("#fullpage").show();
+  }
+
 
   if ($.cookie("amount")) {
 

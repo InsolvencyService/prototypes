@@ -366,16 +366,17 @@ $(document).ready(function() {
       (window.location.replace("#panel-error-greater"));
     }
 
-    if ($("#amount").val() && $("#amount").val() <= $.cookie("fee_remaining")) {
-      (window.location.replace("2-worldpay-card-selection.html"));
-    }
-
     if ($("#amount").val() && $("#amount").val() < 5){
       $("#panel-error-greater").hide();
       $("#panel-error-empty").hide();
       $("#panel-error-min").show();
       (window.location.replace("#panel-error-min"));
     }
+
+    if ($("#amount").val() && $("#amount").val() <= $.cookie("fee_remaining")) {
+      (window.location.replace("2-worldpay-card-selection.html"));
+    }
+
   });
 
   // Unique reference number
