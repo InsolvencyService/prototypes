@@ -239,7 +239,7 @@ table td{
             <div class="panel panel-primary">
               <h2 class="heaing-small">Bankruptcy order fee</h2>
               <a href="payments/1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
-              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid">0</span> received</p>
+              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
               <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
             </div>
             <!-- Payment Panel end -->
@@ -331,6 +331,7 @@ table td{
       //checking payment details
       if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
         $("#fee_paid").text($.cookie("fee_paid"));
+        $(".fee_paid").text($.cookie("fee_paid"));
         $("#fee_remaining").text($.cookie("fee_remaining"));
         $(".lefttopay").text($.cookie("fee_remaining"));
         $("#timestamp").text($.cookie("payment_timestamp"));
@@ -340,6 +341,7 @@ table td{
         $.cookie("fee_paid", "0.00", {path:'/'});
         $.cookie("fee_remaining", "655.00", {path:'/'});
         $("#fee_paid").text("0.00");
+        $(".fee_paid").text("0.00");
         $("#fee_remaining").text("655.00");
         $(".lefttopay").text("655.00");
         $("#updated").hide();
