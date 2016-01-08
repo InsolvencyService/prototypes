@@ -188,6 +188,10 @@ table td{
             <p><br/>Your card payment was refused by WorldPay. To find out why please contact them by calling <span class="bolder">0870 366 1233</span> quoting the payment reference below.</p>
             <table class="table">
               <tr>
+                <td>Payment reference</td>
+                <td class="heading-small"><span class="payment-ref">12345678</span></td>
+              </tr>
+              <tr>
                 <td>Payment amount</td>
                 <td class="heading-small"><span id="amountpaid"></span></td>
               </tr>
@@ -298,14 +302,12 @@ $(document).ready(function() {
   $(".payment-ref").text(ref);
 
   //if an amount of payment has been entered
-  ref = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
-  $("#wp-ref").text(ref);
-
-
+  world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+  $("#wp-ref").text(world);
 
   if ($.cookie("amount")) {
- 	$("#urn").text($.cookie("urn")).addClass("bolder");
-	$("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
+   // 	$("#urn").text($.cookie("urn")).addClass("bolder");
+  	$("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
   }
 });
 

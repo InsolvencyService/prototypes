@@ -180,8 +180,8 @@ table td{
             <p>We have sent you a confirmation email.</p>
             <table class="table">
               <tr>
-                <td>Application reference</td>
-                <td class="heading-small"><span id="urn"></span></td>
+                <td>Payment reference</td>
+                <td class="heading-small"><span class="payment-ref">12345678</span></td>
               </tr>
               <tr>
                 <td>Payment amount</td>
@@ -297,22 +297,22 @@ $(document).ready(function() {
   	if ($.cookie("amount")=="335"){
   		window.location.replace("4a-payment-fail.html");
   	}
-  	else{
-  	$("#fullpage").show();
- 	$("#urn").text($.cookie("urn")).addClass("bolder");
- 	readCookies();
+  	else {
+    	$("#fullpage").show();
+     // 	$("#urn").text($.cookie("urn")).addClass("bolder");
+     	readCookies();
 
- 	$("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
+     	$("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
 
- 	if(total_fee_paid == '0.00'){
-		total_fee_paid = payment_made;
-	}
-	else{
-		total_fee_paid = (parseFloat(total_fee_paid) + parseFloat(payment_made)).toFixed(2);
-	}
-	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
-	writeCookies();
-	}
+     	if (total_fee_paid == '0.00'){
+    		total_fee_paid = payment_made;
+    	}
+    	else {
+    		total_fee_paid = (parseFloat(total_fee_paid) + parseFloat(payment_made)).toFixed(2);
+    	}
+    	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
+    	writeCookies();
+  	}
   }
 });
 
