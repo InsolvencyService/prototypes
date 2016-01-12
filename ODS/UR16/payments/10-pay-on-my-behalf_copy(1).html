@@ -152,8 +152,7 @@ table td{
     </div>
   </div>
 
-  <main role="main" id="wrapper">
-
+  <main id="content" role="main">
     <div id="content">
       <div class="inner-block">
         <div class="phase-banner">
@@ -166,120 +165,138 @@ table td{
 
       <!-- #BeginEditable "content" -->
 
-
       <div style="display:block; margin:0 30px !important">
+        <h1 class="form-title heading-large">Pay on my behalf</h1>
         <div class="row">
 
-          <!-- Main Content Section Start -->
+          <!-- Main Content Section End -->
           <div class="col-sm-8">
 
-            <h1 class="form-title heading-large">Make a payment towards a bankruptcy application</h1>
-
             <!-- Hidden Error messages Start -->
-            <div class="validation-summary" id="panel-error-empty" style="display:none">
-              <h2>You didn't enter a payment reference</h2>
-              <a href="#payment-number">Please enter an payment reference</a>
-            </div>
+            <!-- <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>You didn't enter an email address</h2>
+              <a href="#email">Please enter an email address</a>
+            </div> -->
             <!-- Hidden Error messages End -->
-
-            <div class="paypoint information">
-              <p>From this page you can make a payment towards:</p>
-              <ul class="list-bullet">
-				<li>your own bankruptcy application</li>
-				<li>someone else's bankruptcy application</li>
-			</ul>
-            </div>
-            <div class="form-group">
-              <label class="heading-small" for="payment-number" name="payment-number">
-                Enter the payment reference number<br>
-                <p class="form-hint">To make a payment for your own application enter your application number.</p>
-                <p class="form-hint">To make a payment for someone else enter the reference you have been provided. For example, 1234Smith.</p>
-              </label>
-              <input id="payment-number" type="text" style="margin-bottom:10px;">
-            </div>
+            <p>Please provide the below reference number and link to your proposed contributor</p>
+            <p>We can also email you the details so you can provide them with the deatils directly.</p>
+            <table class="table">
+              <tr>
+                <td width="31%">Payment reference</td>
+                <td class="heading-small">1234<span id="lastname">Bagley</span></td>
+              </tr>
+              <tr>
+                <td>Link</td>
+                <td class="heading-small"><a href="13-alternative-payment.html" style="word-break: break-all;">http://insolvencyservice.github.io/prototypes/ODS/payments/alternative-payment.html</a></td>
+              </tr>
+            </table>
+            <ul>
+              <li>
+                <div class="form-group">
+                  <label class="heading-small" for="email" name="email">Email address<span class="form-hint">Have the payment reference sent to my email address</span>
+                  </label>
+                  <span id="email">bbagley@gmail.com</span>
+                </div>
+                <div class="form-navigation form-group" style="margin:0 0 30px 0;">
+                  <a href="15-thank-you.html" id="continue" class="button">Send it to me</a>
+                </div>
+              </li>
+              <li>
+                <a href="11-alternative-address.html" id="post-it">I don't have an email address</a>
+                <!-- <p>If you don't have an email address we can post the payment reference out to them.</p>
+                Post it to them</a> -->
+              </li>
+            </ul>
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <div>
-                <a href="13-alternative-payment.html" id="continue" class="button">Continue</a>
-                <a href="../start/continue/urn-help.html" style="margin-top: 9px; display: inline-block;">I have forgotten my application details</a>
-              </div>
-              <div class="back">
-                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
-              </div>
+              <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
             </div>
             <!-- CTA Section End -->
+
 
           </div>
           <!-- Main Content Section End -->
 
           <!-- Side Panel Section Start -->
           <div class="col-sm-4">
-            <div class="related-container">
-              <aside class="related" id="related">
-                <div class="inner group related-subsection">
-                  <h2 id="parent-subsection">Online debt solutions</h2>
-                  <hr>
-                  <p><a href="../brian/continue/return2.html" style="font-weight:bold;">Sign into my application</a></p>
-                  <hr>
-                  <p><a href="16-help-page.html">How do I give someone a payment reference?</a></p>
-                  <p><a href="https://www.gov.uk/government/publications/guide-to-bankruptcy/guide-to-bankruptcy">Guide to bankruptcy</a></p>
-                  <p><a href="17-information-page.html">Paying the fee</a></p>
-                </div>
-              </aside>
-            </div>
 
+            <!-- Payment Panel start -->
+            <div class="panel panel-primary">
+              <h2 class="heaing-small">Bankruptcy order fee</h2>
+              <a href="payments/1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
+              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
+              <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
+            </div>
+            <!-- Payment Panel end -->
+
+            <div class="panel-indent" style="font-size:16px; border-color:#efefef">
+
+              <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+              <p><a href="security_change.html">Change your security questions</a></p>
+              <br>
+              <p><a href="#">Generate court documents</a></p>
+              <p><a href="discard.html">Discard application</a></p>
+              <br>
+              <p><a href="8-statements-page.html">View my payment history</a></p>
+              <p><a href="7-help-page.html">How can I get a refund?</a></p>
+            </div>
           </div>
           <!-- Side Panel Section End -->
 
         </div>
+
+
       </div>
 
-  </div>
-</main>
+        <!-- #EndEditable -->
 
 
-<footer role="contentinfo" id="footer" class="group js-footer">
+    </div>
+  </main>
 
 
-  <div class="footer-wrapper">
+  <footer role="contentinfo" id="footer" class="group js-footer">
 
-    <div class="footer-meta">
 
-      <div class="footer-meta-inner">
+    <div class="footer-wrapper">
 
-        <ul class="footer__nav" style="width:100%">
-          <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
-        </ul>
-        <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-          <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-          <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-          <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-        </ul>
+      <div class="footer-meta">
 
-        <div class="open-government-licence">
-          <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-          <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+        <div class="footer-meta-inner">
+
+          <ul class="footer__nav" style="width:100%">
+            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
+          </ul>
+          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+          </ul>
+
+          <div class="open-government-licence">
+            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
         </div>
       </div>
-
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-      </div>
     </div>
-  </div>
 
-</footer>
+  </footer>
 
-<!--end footer-->
+  <!--end footer-->
 
-<div class="app-error hidden" id="global-app-error"></div>
-<!--
-<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+  <div class="app-error hidden" id="global-app-error"></div>
+  <!--
+  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-<script type="text/javascript" src="assets/javascripts/application.js"></script>
+  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
@@ -296,23 +313,51 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  // Payment prototype variables
-  $("#continue").on("click", function (e) {
-    $.cookie("payment-number", $("#payment-number").val(), {path:'/'});
-  });
+  //checking payment details
+  if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
+    $("#fee_paid").text($.cookie("fee_paid"));
+    $(".fee_paid").text($.cookie("fee_paid"));
+    $("#fee_remaining").text($.cookie("fee_remaining"));
+    $(".lefttopay").text($.cookie("fee_remaining"));
+    $("#timestamp").text($.cookie("payment_timestamp"));
+    $("#updated").show();
+  }
+  else {
+    $.cookie("fee_paid", "0.00", {path:'/'});
+    $.cookie("fee_remaining", "655.00", {path:'/'});
+    $("#fee_paid").text("0.00");
+    $(".ee_paid").text("0.00");
+    $("#fee_remaining").text("655.00");
+    $(".lefttopay").text("655.00");
+    $("#updated").hide();
+  }
 
   $("#continue").on("click", function (e) {
-     e.preventDefault();
+    //  e.preventDefault();
      //alert($("#amount").val());
-     if ($("#payment-number").val() == ""){
-       $("#panel-error-empty").show();
-       (window.location.replace("#panel-error-empty"));
-     }
 
-     if ($("#payment-number").val()) {
-       (window.location.replace("13-alternative-payment.html"));
-     }
+    $.cookie("email", $("#email").text(), {path:'/'});
+
+    //  if ($("#email").val() == ""){
+    //    $("#panel-error-empty").show();
+    //    (window.location.replace("#panel-error-empty"));
+    //  }
+     //
+    //  if ($("#email").val()) {
+    //    (window.location.replace("15-thank-you.html"));
+    //  }
+
   });
+
+  if ($.cookie("lastname")) {
+    $("#lastname").text($.cookie("lastname")).addClass("bolder");
+  }
+
+  if ($.cookie("email")) {
+    $("#email").text($.cookie("email")).addClass("bolder");
+  }
+
+  // $("#email").val($.cookie("email"))
 
 });
 
@@ -322,6 +367,8 @@ function numberWithCommas(x) {
 
 </script>
 <!-- #EndEditable -->
+
+
 
 
 <div id="window-resizer-tooltip" style="display: none;">
