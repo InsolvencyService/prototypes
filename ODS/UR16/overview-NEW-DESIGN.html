@@ -218,7 +218,7 @@ h3 > a {
             <ul>
 
               <!-- //////////////// Section 1 - Start //////////////// -->
-              <li class="row" id="section1">
+              <li class="row start" id="section1">
                 <a href="personal/1.html" class="wrapper-button">
                   <div class="rowtop">
                     <span class="col-sm-8">
@@ -246,7 +246,7 @@ h3 > a {
               <!-- //////////////// Section 1 - End //////////////// -->
 
               <!-- //////////////// Section 2 - Start //////////////// -->
-              <li class="row" id="section2">
+              <li class="row not-started" id="section2">
                 <a href="employment/summary.html" class="wrapper-button">
                   <div class="rowtop">
                     <span class="col-sm-8">
@@ -275,7 +275,7 @@ h3 > a {
               <!-- //////////////// Section 2 - End //////////////// -->
 
               <!-- //////////////// Section 3 - Start //////////////// -->
-              <li class="row" id="section3">
+              <li class="row not-started" id="section3">
                 <a href="banks/add_bank.html" class="wrapper-button">
                   <div class="rowtop">
                     <span class="col-sm-8">
@@ -300,7 +300,7 @@ h3 > a {
               <!-- //////////////// Section 3 - End //////////////// -->
 
               <!-- //////////////// Section 4 - Start //////////////// -->
-              <li class="row" id="section4">
+              <li class="row not-started" id="section4">
                 <a href="assets/summary.html" class="wrapper-button">
                   <div class="rowtop">
                     <span class="col-sm-8">
@@ -327,7 +327,7 @@ h3 > a {
               <!-- //////////////// Section 4 - End //////////////// -->
 
               <!-- //////////////// Section 5 - Start //////////////// -->
-              <li class="row" id="section5">
+              <li class="row not-started" id="section5">
                 <a href="creditors/list.html" class="wrapper-button">
                   <div class="rowtop">
                     <span class="col-sm-8">
@@ -353,7 +353,7 @@ h3 > a {
               <!-- //////////////// Section 5 - End //////////////// -->
 
               <!-- //////////////// Section 6 - Start //////////////// -->
-              <li class="row" id="section6">
+              <li class="row not-started" id="section6">
                 <a href="SFS/summary.html?pensionable=true" class="wrapper-button">
                   <div class="rowtop">
                     <span class="col-sm-8">
@@ -377,7 +377,7 @@ h3 > a {
               <!-- //////////////// Section 6 - End //////////////// -->
 
               <!-- //////////////// Section 7 - Start //////////////// -->
-              <li class="row" id="section7">
+              <li class="row not-started" id="section7">
                 <!-- contact details of any creditor for debt incurred outside England &amp; Wales -->
                 <a href="https://indigodesigned.com/share/run/j74c3a3qar7w#f=legal/start" class="wrapper-button">
                   <div class="rowtop">
@@ -403,7 +403,7 @@ h3 > a {
               <!-- //////////////// Section 7 - End //////////////// -->
 
               <!-- //////////////// Section 8 - Start //////////////// -->
-              <li class="row" id="section8">
+              <li class="row not-started" id="section8">
                 <a href="https://indigodesigned.com/share/run/j74c3a3qar7w#f=insolvency/insolvency%20start" class="wrapper-button">
                   <div class="rowtop">
                     <span class="col-sm-8">
@@ -572,9 +572,9 @@ $(document).ready(function () {
 
   	var row = "<br>";
   	row += '<p><a href="payments/8-statements-page.html">View my payment history</a></p>';
-row += '<p><a href="payments/7-help-page.html">How can I get a refund?</a></p>';
+    row += '<p><a href="payments/7-help-page.html">How can I get a refund?</a></p>';
 
-$("#payment_record").html(row);
+    $("#payment_record").html(row);
 
   }
 
@@ -618,7 +618,9 @@ $("#payment_record").html(row);
     $("#section2 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section2").removeClass("start");
     $("#section2").addClass("start");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("not-started");
     $("#section4").addClass("not-started");
     $("#section5").addClass("not-started");

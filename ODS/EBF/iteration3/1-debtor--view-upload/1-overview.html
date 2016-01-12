@@ -210,12 +210,12 @@
                 <li><a href="#">See all</a></li>
               </ul>
               <ul class="pagination">
-                <li>
+                <!-- <li>
                   <a href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
-                </li>
-                <li><a href="#">1</a></li>
+                </li> -->
+                <li class="active"><a href="#">1</a></li>
                 <li><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
                 <li>
@@ -574,12 +574,12 @@
                 <li><a href="#">See all</a></li>
               </ul>
               <ul class="pagination">
-                <li>
+                <!-- <li>
                   <a href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
-                </li>
-                <li><a href="#">1</a></li>
+                </li> -->
+                <li class="active"><a href="#">1</a></li>
                 <li><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
                 <li>
@@ -645,11 +645,10 @@
 <div class="app-error hidden" id="global-app-error"></div>
 
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
-<script type="text/javascript" src="../../../assets/js/jquery.tablesorter.min.js"></script>
-<!-- <script type="text/javascript" src="js/casedata.js"></script> -->
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+
+<!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -661,37 +660,6 @@ $(document).ready(function() {
   });
 
 });
-</script>
-
-<!-- #BeginEditable "scripts" -->
-
-<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<script type="text/javascript">
-
-// var filter = getParameterByName("filter");
-// if(filter==null||filter==""){
-//   filter=1;
-// }
-//
-// $(document).ready(function() {
-//   // $('[data-toggle="tooltip"]').tooltip();
-// });
-//
-// $('[data-toggle="tooltip"]').tooltip("hide")
-//
-// var $rows = $('#table tr');
-// $('#search').keyup(function() {
-//
-//   var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-//   reg = RegExp(val, 'i'),
-//   text;
-//
-//   $rows.show().filter(function() {
-//     text = $(this).text().replace(/\s+/g, ' ');
-//     return !reg.test(text);
-//   }).hide();
-// });
-
 
 $(document).ready(function () {
   var status = getParameterByName("status");
@@ -839,6 +807,38 @@ function getParameterByName(name) {
 }
 
 </script>
+
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/casedata.js"></script>
+<script type="text/javascript">
+
+var filter = getParameterByName("filter");
+if(filter==null||filter==""){
+  filter=1;
+}
+
+$(document).ready(function() {
+  // $('[data-toggle="tooltip"]').tooltip();
+});
+
+$('[data-toggle="tooltip"]').tooltip("hide")
+
+var $rows = $('#table tr');
+$('#search').keyup(function() {
+
+  var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+  reg = RegExp(val, 'i'),
+  text;
+
+  $rows.show().filter(function() {
+    text = $(this).text().replace(/\s+/g, ' ');
+    return !reg.test(text);
+  }).hide();
+});
+
+</script>
+
 
 <!-- #EndEditable -->
 

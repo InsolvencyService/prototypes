@@ -114,7 +114,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name">Search for Bankruptcy information</span>
+            <span id="proposition-name">Electronic Bankruptcy Folder (EBF)</span>
           </nav>
         </div>
       </div>
@@ -143,16 +143,20 @@
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Search for Bankruptcy information</h1>
+        <h1 class="form-title heading-large">Identification check continued...</h1>
         <div class="col-sm-8">
           <!-- Error Validation Message - Start -->
           <div class="validation-summary" id="panel-error-empty" style="display:none">
-            <h2>There was a problem with your search:</h2>
-            <p><a href="#urn">* You have not entered a Bankruptcy application number</a></p>
+            <h2>You are missing some log-in details:</h2>
+            <ul>
+              <li><a href="#amount-owed">* Amount owed</a></li>
+              <li><a href="#account-ref">* Account Reference</a></li>
+            </ul>
           </div>
           <!-- Error Validation Message - End -->
 
-          <p>We require the following details to allow you access to the bankruptcy files.</p>
+          <p>We just need a couple more pieces of information.</p>
+          <p>PLease leave them blank if they do not apply to you.</p>
           <p><br></p>
 
           <form class="form" method="post">
@@ -160,20 +164,25 @@
 
             <!-- For User research -->
             <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="urn-label" for="urn" class="form-label-bold">What is the Application number?</label>
-                <div class="form-hint">
-                  Please enter the Application number of bankruptcy you file you are looking for.
-                </div>
-                <input id="urn" name="urn" type="text" value="" class="log-in" />
-              </div>
+              <label id="amount-owed-label" for="amount-owed" class="form-label-bold">Amount owed</label>
+              <input id="amount-owed" name="amount-owed" type="text" value="" class="log-in" />
             </div>
+            <div class="form-group">
+              <label id="account-ref-label" for="account-ref" class="form-label-bold">Account reference</label>
+              <input id="account-ref" name="account-ref" type="text" value="" class="log-in" />
+            </div>
+
           </form>
 
           <p><br></p>
 
           <div class="form-navigation form-group">
-            <a href="#" id="next" class="button">Search</a>
+            <div>
+              <a href="#" id="next" class="button">Continue</a>
+              <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -251,16 +260,17 @@ $(document).ready(function() {
   $("#next").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#urn").val() == "") {
+    if ($("#amount-owed, #account-ref").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
 
-    if ($("#urn").val()) {
-      (window.location.replace("2-index-for-internal-users.html"));
+    if ($("#amount-owed, #account-ref").val()) {
+      (window.location.replace("4-pat-email.html"));
     }
 
-    $.cookie("urn", $("#urn").val(), {path:'/'});
+    $.cookie("amount-owed", $("#amount-owed").val(), {path:'/'});
+    $.cookie("account-ref", $("#account-ref").val(), {path:'/'});
 
   });
 

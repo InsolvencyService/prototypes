@@ -143,7 +143,7 @@
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Identification verification</h1>
+        <h1 class="form-title heading-large">Identification check</h1>
         <div class="col-sm-8">
           <!-- Error Validation Message - Start -->
           <div class="validation-summary" id="panel-error-empty" style="display:none">
@@ -170,31 +170,26 @@
 
             <!-- For User research -->
             <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="email-address-label" for="email-address" class="form-label-bold">What is your email address?</label>
-                <div class="form-hint">
-                  Please enter your work email address.
-                </div>
-                <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
+              <label id="email-address-label" for="email-address" class="form-label-bold">What is your email address?</label>
+              <div class="form-hint">
+                Please enter your work email address.
               </div>
+              <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
             </div>
             <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="firstname-label" for="firstname" class="form-label-bold">Your firstname</label>
-                <input id="firstname" name="firstname" type="text" value="" class="log-in" />
-              </div>
+              <label id="firstname-label" for="firstname" class="form-label-bold">Your firstname</label>
+              <input id="firstname" name="firstname" type="text" value="" class="log-in" />
             </div>
             <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="lastname-label" for="lastname" class="form-label-bold">Your lastname</label>
-                <input id="lastname" name="lastname" type="text" value="" class="log-in" />
-              </div>
+              <label id="lastname-label" for="lastname" class="form-label-bold">Your lastname</label>
+              <input id="lastname" name="lastname" type="text" value="" class="log-in" />
             </div>
             <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="organisation-label" for="organisation" class="form-label-bold">Your organisation or relationship to the applicant</label>
-                <input id="organisation" name="organisation" type="text" value="" class="log-in" />
+              <label id="organisation-label" for="organisation" class="form-label-bold">Your organisation or relationship to the applicant</label>
+              <div class="form-hint">
+                Leave blank if this does not apply to you.
               </div>
+              <input id="organisation" name="organisation" type="text" value="" class="log-in" />
             </div>
             <div class="form-group">
               <hr>
@@ -315,7 +310,7 @@ $(document).ready(function() {
     }
 
     if ($("#email-address, #firstname, #lastname, #organisation, #building-and-street-1, #town-or-city, #county, #postcode").val()) {
-      (window.location.replace("4-pat-email.html"));
+      (window.location.replace("3a-user-details.html"));
     }
 
     $.cookie("email-address", $("#email-address").val(), {path:'/'});
