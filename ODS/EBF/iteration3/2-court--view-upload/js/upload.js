@@ -182,7 +182,7 @@ function handleFileUpload(files,obj)
 
 		if(name.indexOf("2") >= 0) {
 			$("#nextHref").removeAttr("href");
-			$("#nextHref").attr("href", "7-upload.html?status=failed-upload");
+			$("#nextHref").attr("href", "2-upload.html?status=failed-upload");
 		} else if(overrideRedirect != null){
 			$("#nextHref").removeAttr("href");
 			$("#nextHref").attr("href", overrideRedirect);
