@@ -178,31 +178,36 @@ table td{
               <a href="#email">Please enter an email address</a>
             </div> -->
             <!-- Hidden Error messages End -->
-            <p>To have someone else make an online payment on your behalf, simply provide them with the 
-			payment reference and link shown below.</p>    
-			
+            <p>To have someone else make an online payment on your behalf, simply provide them with the
+			payment reference and link shown below.</p>
+
             <p>The payment reference is associated with your application and can be used multiple times, by multiple individuals.</p>
-                   
+
              <div class="panel-indent">
-			 Never share your 12 digit application number or any other login details with a third party. 			 	
-			 </div>   
-				
-            <table class="table">
-              <tr>
-                <td width="31%">Payment reference</td>
-                <td class="heading-small">1234<span id="lastname">Bagley</span></td>
-              </tr>
-              <tr>
-                <td>Link</td>
-                <td class="heading-small"><a href="13-alternative-payment.html" style="word-break: break-all;">http://insolvencyservice.github.io/prototypes/ODS/payments/alternative-payment.html</a></td>
-              </tr>
-            </table>
+			 Never share your 12 digit application number or any other login details with a third party.
+			 </div>
+
+           <table class="table">
+             <tr>
+               <td width="31%">Payment reference</td>
+               <td class="heading-small">1234<span id="lastname">Bagley</span></td>
+             </tr>
+             <tr>
+               <td width="31%">Name</td>
+               <td class="heading-small"><span id="firstname">Brian</span> <span id="lastname">Bagley</span></td>
+             </tr>
+             <tr>
+               <td>Link</td>
+               <td class="heading-small"><a href="13-alternative-payment.html" style="word-break: break-all;">http://insolvencyservice.github.io/prototypes/ODS/payments/alternative-payment.html</a></td>
+             </tr>
+           </table>
+           <p>&nbsp;</p>
             <ul>
               <li>
                 <div class="form-group">
                   <label class="heading-medium" for="email" name="email">Email</label>
                   <p>Have the payment reference sent to my email address:</p>
-                
+
                   <span id="email">bbagley@gmail.com</span>
                 </div>
                 <div class="form-navigation form-group" style="margin:0 0 30px 0;">
@@ -356,6 +361,10 @@ $(document).ready(function() {
     //  }
 
   });
+
+  if ($.cookie("firstname")) {
+    $("#firstname").text($.cookie("firstname")).addClass("bolder");
+  }
 
   if ($.cookie("lastname")) {
     $("#lastname").text($.cookie("lastname")).addClass("bolder");
