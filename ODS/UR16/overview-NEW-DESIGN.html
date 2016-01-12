@@ -195,7 +195,7 @@ h3 > a {
 
   <main role="main" id="wrapper">
 
-    <div id="content" >
+    <div id="content">
       <div class="inner-block">
         <div class="phase-banner">
           <p>
@@ -398,7 +398,7 @@ h3 > a {
                   <li>Legal separations, divorces or dissolutions you have been involved in over the last 5 years</li>
                   <li>Ongoing claims you have made to a court, tribunal, ombudsman or adjudicator</li>
                   <li>Ongoing claims made against you to a court, tribunal, ombudsman or adjudicator</li>
-                </li>
+                </ul>
               </li>
               <!-- //////////////// Section 7 - End //////////////// -->
 
@@ -417,37 +417,14 @@ h3 > a {
                       <button class="edit" style="display:none">Start</button>
                     </span>
                   </div>
-
-                  <div class="clearfix"></div>
-                  <div class="rowbottom" id="details7">
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      When and how your debts started
-                    </div>
-                    <div class="col-sm-6">
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      Debt management options you have tried in the last 2 years (eg debt management plans, debt relief orders)
-                    </div>
-                    <div class="col-sm-6">
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      Extra payments you have made to some creditors but not others (preferential payments) in the last 2 years
-                    </div>
-                    <div class="col-sm-6">
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <!-- //////////////// Section 8 - End //////////////// -->
+                </a>
+                <ul id="details7" class="row-bottom">
+                  <li>When and how your debts started</li>
+                  <li>Debt management options you have tried in the last 2 years (eg debt management plans, debt relief orders)</li>
+                  <li>Extra payments you have made to some creditors but not others (preferential payments) in the last 2 years</li>
+                </ul>
+              </li>
+              <!-- //////////////// Section 8 - End //////////////// -->
 
           </ul>
         </div>
@@ -497,6 +474,7 @@ h3 > a {
 
     <!-- #EndEditable -->
   </div>
+</main>
 
 
   <footer role="contentinfo" id="footer" class="group js-footer">
@@ -639,6 +617,15 @@ $("#payment_record").html(row);
     $("#section1 .edit").show().removeClass("button").text("Edit information");
     $("#section2 .edit").show().addClass("button").text("Start");
 
+    $("#section1").addClass("edit-information");
+    $("#section2").addClass("start");
+    $("#section3").addClass("not-started");
+    $("#section4").addClass("not-started");
+    $("#section5").addClass("not-started");
+    $("#section6").addClass("not-started");
+    $("#section7").addClass("not-started");
+    $("#section8").addClass("not-started");
+
     document.title = 'Overview - Employment';
 
     $("#section2 .js-section").addClass("open");
@@ -656,6 +643,16 @@ $("#payment_record").html(row);
     $("#section1 .edit").show().removeClass("button").text("Edit information");
     $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
     $("#section3 .edit").show().addClass("button").text("Start");
+
+    $("#section1").addClass("edit-information");
+    $("#section2").addClass("edit-information");
+    $("#section3").addClass("start");
+    $("#section4").addClass("not-started");
+    $("#section5").addClass("not-started");
+    $("#section6").addClass("not-started");
+    $("#section7").addClass("not-started");
+    $("#section8").addClass("not-started");
+
     document.title = 'Overview - Bank';
 
     $("#section3 .js-section").addClass("open");
@@ -676,6 +673,16 @@ $("#payment_record").html(row);
     $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
     $("#section3 .edit").show().text("Edit information");
     $("#section4 .edit").show().addClass("button").text("Start");
+
+    $("#section1").addClass("edit-information");
+    $("#section2").addClass("edit-information");
+    $("#section3").addClass("edit-information");
+    $("#section4").addClass("start");
+    $("#section5").addClass("not-started");
+    $("#section6").addClass("not-started");
+    $("#section7").addClass("not-started");
+    $("#section8").addClass("not-started");
+
     document.title = 'Assets - Property';
 
     $("#section4 .js-section").addClass("open");
@@ -752,6 +759,13 @@ $("#payment_record").html(row);
     $("#section8").addClass("not-started");
 
     document.title = 'Overview - Legal proceedings';
+
+    $("#section7 .js-section").addClass("open");
+    $("#section7 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    var details = $("#section7 .js-section").attr("href");
+    $(details).show();
+    $(details).parent().addClass("well");
+
   }
   if (section7 && section7 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("Edit information");
@@ -773,6 +787,13 @@ $("#payment_record").html(row);
     $("#section8").addClass("start");
 
     document.title = 'Overview - Insolvency proceedings';
+
+    $("#section8 .js-section").addClass("open");
+    $("#section8 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    var details = $("#section8 .js-section").attr("href");
+    $(details).show();
+    $(details).parent().addClass("well");
+
   }
   if (section8 && section8 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("Edit information");
