@@ -41,15 +41,14 @@ ul li.row {
 	color: black;
 }
 
-a.wrapper-button, a.wrapper-button.well {
-	background: #ebedef;
-	border-radius: 5px;
+a.wrapper-button.well {
 	display: inline-table;
   width: 100%;
 	padding: 0;
 	text-decoration: none;
 	border: none;
-	margin-bottom: 15px;
+	margin: 0;
+	background: white;
 }
 
 a.wrapper-button:hover, a.wrapper-button.well:hover {
@@ -94,9 +93,9 @@ h1.form-title.heading-xlarge {
 .rowbottom {
 	margin: 0;
   display: block;
-  padding: 20px 30px 20px 30px;
+  padding: 20px 30px 0 30px;
   background: white;
-  border: 1px #ebedef solid;
+  /*border: 1px #ebedef solid;*/
   border-radius: 0 0 5px 5px;
 	color: black;
 }
@@ -111,3 +110,62 @@ h1.form-title.heading-xlarge {
 
 
 /* ------------------------ Overview Overide Styles - End ------------------------ */
+
+/* CSS for the status pages - Start */
+
+ul.row-bottom {
+	display: none;
+	padding: 10px 30px;
+	background: white;
+	border-radius: 0 0 5px 5px;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	border-left: 1px solid #eee;
+}
+
+ul.row-bottom li {
+	color: black;
+	border-bottom: 1px solid #eee;
+	padding: 5px 0;
+	font-size: 14px;
+}
+
+/*ul.row-bottom li:hover {
+	background: #f2f4f6;
+}*/
+
+/*ul.row-bottom li a:hover, ul.row-bottom li a:focus, ul.row-bottom li a:hover h3 {
+	text-decoration: none !important;
+}*/
+
+ul.row-bottom li:last-of-type {
+	border-bottom: none;
+	padding: 5px 0 0 0;
+}
+
+.not-started {
+	background: white;
+  border: 3px dotted #ebedef;
+	border-radius: 5px;
+	margin-bottom: 15px !important;
+}
+
+.start {
+	background: white;
+	border: 3px solid green;
+	border-radius: 5px;
+	margin-bottom: 15px !important;
+}
+
+.edit-information {
+	background: #ebedef;
+	border-radius: 5px;
+	margin-bottom: 15px !important;
+	border: none;
+}
+
+.edit-information:hover {
+	background: #f2f4f6;
+}
+
+/* CSS for the status pages - End */

@@ -195,6 +195,40 @@
           <hr>
           <h2 class="heading-large">Your documents</h2>
 
+          <!-- Navbar - Start -->
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <form action="#" method="get" class="navbar-form navbar-left" role="search">
+                <div class="input-group">
+                  <input id="search" type="text" class="form-control" placeholder="Search for documents..." name="q" required="">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                  </span>
+                </div>
+              </form>
+              <ul class="pagination see-all">
+                <li><a href="#">See all</a></li>
+              </ul>
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- Navbar - End -->
+
+
           <!-- Table - Start -->
           <table class="table table-list-search">
             <thead>
@@ -204,7 +238,7 @@
                 <th class="col-sm-2"><a id="document-owner"><strong>Created by &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
                 <th class="col-sm-4"><strong>Description</strong></th>
                 <th class="col-sm-2"><a id="document-date"><strong>Date &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
-                <th class="col-sm-2"><a id="document-status" href="javascript:;"><strong>Status &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-3"><a id="document-status" href="javascript:;"><strong>Status &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
                 <!-- <th class="col-sm-2"><strong>Actions</strong></th> -->
               </tr>
             </thead>
@@ -533,6 +567,32 @@
           </table>
           <!-- Table - End -->
 
+          <!-- Navbar - Start -->
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="pagination see-all">
+                <li><a href="#">See all</a></li>
+              </ul>
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- Navbar - End -->
+
+
         </div>
 
 
@@ -583,24 +643,22 @@
 <!--end footer-->
 
 <div class="app-error hidden" id="global-app-error"></div>
-<!--
-<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-<script type="text/javascript" src="assets/javascripts/application.js"></script>
--->
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.tablesorter.min.js"></script>
+<!-- <script type="text/javascript" src="js/casedata.js"></script> -->
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 
 $(document).ready(function() {
-var url      = window.location.href;     // Returns full URL
-var pathname = window.location.pathname; // Returns path only
-$("#email-link").on("click", function (e) {
-  $.cookie("url", url, {path:'/'});
-  $.cookie("pathname", pathname, {path:'/'});
-});
+  var url      = window.location.href;     // Returns full URL
+  var pathname = window.location.pathname; // Returns path only
+  $("#email-link").on("click", function (e) {
+    $.cookie("url", url, {path:'/'});
+    $.cookie("pathname", pathname, {path:'/'});
+  });
 
 });
 </script>
@@ -610,153 +668,174 @@ $("#email-link").on("click", function (e) {
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 
-$(document).ready(function () {
-var status = getParameterByName("status");
-
-if(status == null || status == ""){
-  status = $.cookie("status");
-}
-
-if($.cookie("mail")){
-  $("#question").show();
-}
-
-// if ($.cookie("filename2")) {
-//   $(".file-name").text($.cookie("filename2")).addClass("bolder");
+// var filter = getParameterByName("filter");
+// if(filter==null||filter==""){
+//   filter=1;
 // }
-
-var html;
-switch(status) {
-  case "awaiting":
-  html = "<div class=\"govuk-box-highlight awaiting\">";
-  html += "<h2 class=\"bold-large\">Current application status</h2>";
-  html += "<p>Your application is currently: <span class=\"text-warning bolder\"> Awaiting information</span></p>";
-  html += "<p>Information request date: <span class=\"bolder\">24th October 2016</p>";
-  html += "</div>";
-  html += "<p>We need more information before we can make a decision about your bankruptcy.</p>";
-  html += "<p>Please answer the question(s) below. If you can't answer it(them) or don't have the required information, please let us know using the box(es) below.<p>";
-  html += "<p>Alternatively, you can call us on 0330 678 0015.<p>";
-  html += "<div class=\"well clearfix\">";
-  html += "<label for=\"Q1\">Please confirm your current address.</label>";
-  html += "<p><input id=\"Q1\"></p>";
-  html += "<a id=\"mail\" href=\"overview.html\" class=\"button\" style=\"margin-top:5px\">Send response</a>";
-  html += "</div>";
-  $.cookie("status", "", {path:'/'});
-  $("#status").html(html);
-  $.cookie("mail", "sent", {path:'/'});
-  break;
-
-  case "made":
-  html = "<div class=\"govuk-box-highlight made\">";
-  html += "<h2 class=\"bold-large\">Current application status</h2>";
-  html += "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
-  html += "<p>Order date: <span class=\"bolder\">24th October 2016</p>";
-  html += "</div>";
-  html += "<p>A downloadable copy of your bankruptcy order can be found in the 'Your documents' list below.</p>";
-  html += "<p class=\"bolder\">What happens next</p>";
-  html += "<p>The early stages of a bankruptcy are normally handled by an official receiver who works for the Insolvency Service.</p>";
-  html += "<p>The official receiver will write to you within 2 weeks explaining what you need to know.</p>";
-  html += "<p>In the meantime, you can find out more about the upcoming process in our 'Guide to bankruptcy' on GOV.UK.</p>";
-  $.cookie("status", "made", {path:'/'});
-  $("#status").html(html);
-  break;
-
-  case "declined":
-  html = "<div class=\"govuk-box-highlight declined\">";
-  html += "<h2 class=\"bold-large\">Current application status</h2>";
-  html += "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
-  html += "<p>Decline date: <span class=\"bolder\">24th October 2016</p>";
-  html += "</div>";
-  html += "<p>Your application has been declined. A full explantion of why can be found in the 'Decline of application' document below.</p>";
-  html += "<p class=\"bolder\">What you can do</p>";
-  html += "<p>You can ask us to review our decision and look at your application again.</p>";
-  html += "<p>For a review to take place, we must receive your request within 14 days of the decline date.<p>";
-  html += "<p>Instructions for requesting a review can be found in your 'Decline of application' document.<p>";
+//
+// $(document).ready(function() {
+//   // $('[data-toggle="tooltip"]').tooltip();
+// });
+//
+// $('[data-toggle="tooltip"]').tooltip("hide")
+//
+// var $rows = $('#table tr');
+// $('#search').keyup(function() {
+//
+//   var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+//   reg = RegExp(val, 'i'),
+//   text;
+//
+//   $rows.show().filter(function() {
+//     text = $(this).text().replace(/\s+/g, ' ');
+//     return !reg.test(text);
+//   }).hide();
+// });
 
 
-  $.cookie("status", "declined", {path:'/'});
-  $("#declined").show();
-  $("#status").html(html);
-  break;
+$(document).ready(function () {
+  var status = getParameterByName("status");
 
-  case "review":
-  html = "<div class=\"govuk-box-highlight awaiting\">";
-  html += "<h2 class=\"bold-large\">Current application status</h2>";
-  html += "<p>Your application is currently: <span class=\" text-warning bolder\"> Under review</span></p>";
-  html += "<p>Review request date: <span class=\"bolder\">24th October 2016</p>";
-  html += "</div>";
-  html += "<p>We will email you when we have finished reviewing your application.</p>";
-  html += "<p>This is typically within 28 days of receiving your review request.</p>";
-  $.cookie("status", "review", {path:'/'});
-  $("#declined").show();
+  if(status == null || status == ""){
+    status = $.cookie("status");
+  }
 
-  $("#status").html(html);
-  break;
+  if($.cookie("mail")){
+    $("#question").show();
+  }
 
-  case "review-declined":
-  html = "<div class=\"govuk-box-highlight declined\">";
-  html += "<h2 class=\"bold-large\">Current application status</h2>";
-  html += "<p>Your application has been: <span class=\" text-danger bolder\"> Reviewed and declined</span></p>";
-  html += "<p>Review decline date: <span class=\"bolder\">30th October 2016</p>";
-  html += "</div>";
-  html += "<p>We have reviewed your application again and confirm that it is still declined. A full explanation of why can be found in the 'Decline of application following review' document below.</p>";
-  html += "<p class=\"bolder\">What you can do</p>";
-  html += "<p>You can go to court to appeal our decision.</p>";
-  html += "<p>You must  make your appeal within 28 days of the review decline date.<p>";
-  html += "<p>Information about making an appeal can be found in your 'Decline of application following review' document.<p>";
-  $.cookie("status", "review-declined", {path:'/'});
-  $("#declined").show();
-  $("#review-declined").show();
-  $("#status").html(html);
-  break;
+  var html;
+  switch(status) {
+    case "awaiting":
+    html = "<div class=\"govuk-box-highlight awaiting\">";
+    html += "<h2 class=\"bold-large\">Current application status</h2>";
+    html += "<p>Your application is currently: <span class=\"text-warning bolder\"> Awaiting information</span></p>";
+    html += "<p>Information request date: <span class=\"bolder\">24th October 2016</p>";
+    html += "</div>";
+    html += "<p>We need more information before we can make a decision about your bankruptcy.</p>";
+    html += "<p>Please answer the question(s) below. If you can't answer it(them) or don't have the required information, please let us know using the box(es) below.<p>";
+    html += "<p>Alternatively, you can call us on 0330 678 0015.<p>";
+    html += "<div class=\"well clearfix\">";
+    html += "<label for=\"Q1\">Please confirm your current address.</label>";
+    html += "<p><input id=\"Q1\"></p>";
+    html += "<a id=\"mail\" href=\"overview.html\" class=\"button\" style=\"margin-top:5px\">Send response</a>";
+    html += "</div>";
+    $.cookie("status", "", {path:'/'});
+    $("#status").html(html);
+    $.cookie("mail", "sent", {path:'/'});
+    break;
 
-  case "appeal":
-  html = "<div class=\"govuk-box-highlight awaiting\">";
-  html += "<h2 class=\"bold-large\">Current application status</h2>";
-  html += "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
-  html += "<p>Review decline date: <span class=\"bolder\">30th October 2016</p>";
-  html += "</div>";
-  html += "<p>We have been made aware that you have appealed our decision to HM Courts & Tribunals Service.</p>";
-  html += "<p>They will notify you when they have made a decision.</p>";
-  html += "<p>We will also email you when we learn the outcome of your appeal.</p>";
+    case "made":
+    html = "<div class=\"govuk-box-highlight made\">";
+    html += "<h2 class=\"bold-large\">Current application status</h2>";
+    html += "<p>Your application has been: <span class=\" text-success bolder\"> Approved</span></p>";
+    html += "<p>Order date: <span class=\"bolder\">24th October 2016</p>";
+    html += "</div>";
+    html += "<p>A downloadable copy of your bankruptcy order can be found in the 'Your documents' list below.</p>";
+    html += "<p class=\"bolder\">What happens next</p>";
+    html += "<p>The early stages of a bankruptcy are normally handled by an official receiver who works for the Insolvency Service.</p>";
+    html += "<p>The official receiver will write to you within 2 weeks explaining what you need to know.</p>";
+    html += "<p>In the meantime, you can find out more about the upcoming process in our 'Guide to bankruptcy' on GOV.UK.</p>";
+    $.cookie("status", "made", {path:'/'});
+    $("#status").html(html);
+    break;
 
-  $.cookie("status", "appeal", {path:'/'});
-  $("#declined").show();
-  $("#review-declined").show();
-  $("#status").html(html);awaiting
+    case "declined":
+    html = "<div class=\"govuk-box-highlight declined\">";
+    html += "<h2 class=\"bold-large\">Current application status</h2>";
+    html += "<p>Your application has been: <span class=\" text-danger bolder\"> Declined</span></p>";
+    html += "<p>Decline date: <span class=\"bolder\">24th October 2016</p>";
+    html += "</div>";
+    html += "<p>Your application has been declined. A full explantion of why can be found in the 'Decline of application' document below.</p>";
+    html += "<p class=\"bolder\">What you can do</p>";
+    html += "<p>You can ask us to review our decision and look at your application again.</p>";
+    html += "<p>For a review to take place, we must receive your request within 14 days of the decline date.<p>";
+    html += "<p>Instructions for requesting a review can be found in your 'Decline of application' document.<p>";
 
-  break;
 
-  case "file-upload":
-  html = "<div class=\"govuk-box-highlight made\">";
-  html += "<h2 class=\"bold-large\">Your document has (or documents have) successfully uploaded</h2>";
-  html += "</div>";
-  html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
+    $.cookie("status", "declined", {path:'/'});
+    $("#declined").show();
+    $("#status").html(html);
+    break;
 
-  $.cookie("status", "file-upload", {path:'/'});
-  $("#status").html(html);file-upload
+    case "review":
+    html = "<div class=\"govuk-box-highlight awaiting\">";
+    html += "<h2 class=\"bold-large\">Current application status</h2>";
+    html += "<p>Your application is currently: <span class=\" text-warning bolder\"> Under review</span></p>";
+    html += "<p>Review request date: <span class=\"bolder\">24th October 2016</p>";
+    html += "</div>";
+    html += "<p>We will email you when we have finished reviewing your application.</p>";
+    html += "<p>This is typically within 28 days of receiving your review request.</p>";
+    $.cookie("status", "review", {path:'/'});
+    $("#declined").show();
 
-  break;
+    $("#status").html(html);
+    break;
 
-  default:
-  html = "<div class=\"govuk-box-highlight processing\">";
-  html += "<h2 class=\"bold-large\">Current application status</h2>";
-  html += "<p>Your application is currently: <span class=\" text-primary bolder\"> Being considered</span></p>";
-  html += "<p>Submission date: <span class=\"bolder\">24th October 2016</p>";
-  html += "</div>";
-  html += "<p>We will email you when we have made a decision about your bankruptcy.</p>";
-  html += "<p>This will be within 28 days of the submission date.</p>";
-  $("#status").html(html);
+    case "review-declined":
+    html = "<div class=\"govuk-box-highlight declined\">";
+    html += "<h2 class=\"bold-large\">Current application status</h2>";
+    html += "<p>Your application has been: <span class=\" text-danger bolder\"> Reviewed and declined</span></p>";
+    html += "<p>Review decline date: <span class=\"bolder\">30th October 2016</p>";
+    html += "</div>";
+    html += "<p>We have reviewed your application again and confirm that it is still declined. A full explanation of why can be found in the 'Decline of application following review' document below.</p>";
+    html += "<p class=\"bolder\">What you can do</p>";
+    html += "<p>You can go to court to appeal our decision.</p>";
+    html += "<p>You must  make your appeal within 28 days of the review decline date.<p>";
+    html += "<p>Information about making an appeal can be found in your 'Decline of application following review' document.<p>";
+    $.cookie("status", "review-declined", {path:'/'});
+    $("#declined").show();
+    $("#review-declined").show();
+    $("#status").html(html);
+    break;
 
-}
+    case "appeal":
+    html = "<div class=\"govuk-box-highlight awaiting\">";
+    html += "<h2 class=\"bold-large\">Current application status</h2>";
+    html += "<p>Your application is currently: <span class=\" text-warning bolder\"> Under appeal</span></p>";
+    html += "<p>Review decline date: <span class=\"bolder\">30th October 2016</p>";
+    html += "</div>";
+    html += "<p>We have been made aware that you have appealed our decision to HM Courts & Tribunals Service.</p>";
+    html += "<p>They will notify you when they have made a decision.</p>";
+    html += "<p>We will also email you when we learn the outcome of your appeal.</p>";
+
+    $.cookie("status", "appeal", {path:'/'});
+    $("#declined").show();
+    $("#review-declined").show();
+    $("#status").html(html);awaiting
+
+    break;
+
+    case "file-upload":
+    html = "<div class=\"govuk-box-highlight made\">";
+    html += "<h2 class=\"bold-large\">Your document has (or documents have) successfully uploaded</h2>";
+    html += "</div>";
+    html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
+
+    $.cookie("status", "file-upload", {path:'/'});
+    $("#status").html(html);file-upload
+
+    break;
+
+    default:
+    html = "<div class=\"govuk-box-highlight processing\">";
+    html += "<h2 class=\"bold-large\">Current application status</h2>";
+    html += "<p>Your application is currently: <span class=\" text-primary bolder\"> Being considered</span></p>";
+    html += "<p>Submission date: <span class=\"bolder\">24th October 2016</p>";
+    html += "</div>";
+    html += "<p>We will email you when we have made a decision about your bankruptcy.</p>";
+    html += "<p>This will be within 28 days of the submission date.</p>";
+    $("#status").html(html);
+
+  }
+
 });
 
-
 function getParameterByName(name) {
-name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-results = regex.exec(location.search);
-return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
 </script>
