@@ -203,8 +203,9 @@ table td{
             </table>
             <ul>
               <li>
-                <p>The remaining amount of <b>&pound;</b><span id="fee_remaining" class="heading-small lefttopay">500</span> is needed to enable the application to proceed</p>
-                <div class="form-group">
+                <p>You must pay the remaining <b>&pound;</b><span id="fee_remaining" class="heading-small lefttopay">500</span> before you can submit your application.</p>
+               <br>
+				 <div class="form-group">
                   <label name="amount" id="applicant_address_town_label" for="applicant_address_town" class="form-label">
                     <span class="heading-medium">How much would you like to pay?</span><br>
                     <span class="form-hint">
@@ -215,18 +216,16 @@ table td{
                   <br/>
                 </div>
                 <div>
-                  <a id="pay-online" href="#" class="button">Make a payment</a>
+                  <a id="pay-online" href="#" class="button">Make a card payment</a>
                 </div>
 
               </li>
-              <li>
-                <h3 class="heading-small">I can't make a card payment</h3>
-                <p>You can also pay by cash, <a href="6-barcode-generator.html">click here to find out how</a>.</p>
-              </li>
-              <li>
-                <h3 class="heading-small">How does someone pay on my behalf?</h3>
-                <p>I have someone who can pay on my behalf, <a href="10-pay-on-my-behalf.html">click here to find out how</a>.</p>
-              </li>
+            
+                <li><h3 class="heading-medium">Other payment options</h3>
+                <p><a href="6-barcode-generator.html">Pay by cash</a></p></li>
+              
+              <li> <p><a href="10-pay-on-my-behalf.html">Have someone else make a payment on my  behalf</a></p>
+              </li> 
             </ul>
 
             <!-- CTA Section Start -->
@@ -244,7 +243,7 @@ table td{
             <!-- Payment Panel start -->
             <div class="panel panel-primary">
               <h2 class="heaing-small">Bankruptcy order fee</h2>
-              <a href="1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
+              <a href="payments/1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
               <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
               <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
             </div>
