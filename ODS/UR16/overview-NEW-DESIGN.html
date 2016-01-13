@@ -614,7 +614,7 @@ $(document).ready(function () {
   }
 
   if (section1 && section1 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("Edit information");
+    $("#section1 .edit").show().removeClass("button").text("View my information");
     $("#section2 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -643,8 +643,8 @@ $(document).ready(function () {
   }
 
   if (section2 && section2 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section1 .edit").show().removeClass("button").text("View my information");
+    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
     $("#section3 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -652,6 +652,7 @@ $(document).ready(function () {
     $("#section2").addClass("edit-information");
     $("#section2").removeClass("not-started");
     $("#section3").addClass("start");
+    $("#section3").removeClass("not-started");
     $("#section4").addClass("not-started");
     $("#section5").addClass("not-started");
     $("#section6").addClass("not-started");
@@ -674,9 +675,9 @@ $(document).ready(function () {
   }
 
   if (section3 && section3 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("Edit information");
+    $("#section1 .edit").show().removeClass("button").text("View my information");
+    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my information");
     $("#section4 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -686,6 +687,7 @@ $(document).ready(function () {
     $("#section3").addClass("edit-information");
     $("#section3").removeClass("not-started");
     $("#section4").addClass("start");
+    $("#section4").removeClass("not-started");
     $("#section5").addClass("not-started");
     $("#section6").addClass("not-started");
     $("#section7").addClass("not-started");
@@ -700,10 +702,10 @@ $(document).ready(function () {
     $(details).parent().addClass("well");
   }
   if (section4 && section4 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("Edit information");
-    $("#section4 .edit").show().text("Edit information");
+    $("#section1 .edit").show().removeClass("button").text("View my information");
+    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my information");
+    $("#section4 .edit").show().text("View my information");
     $("#section5 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -715,6 +717,7 @@ $(document).ready(function () {
     $("#section4").addClass("edit-information");
     $("#section4").removeClass("not-started");
     $("#section5").addClass("start");
+    $("#section5").removeClass("not-started");
     $("#section6").addClass("not-started");
     $("#section7").addClass("not-started");
     $("#section8").addClass("not-started");
@@ -729,10 +732,10 @@ $(document).ready(function () {
   }
   if (section5 && section5 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("Edit information");
-    $("#section4 .edit").show().text("Edit information");
-    $("#section5 .edit").show().text("Edit information");
+    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my information");
+    $("#section4 .edit").show().text("View my information");
+    $("#section5 .edit").show().text("View my information");
     $("#section6 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -746,6 +749,7 @@ $(document).ready(function () {
     $("#section5").addClass("edit-information");
     $("#section5").removeClass("not-started");
     $("#section6").addClass("start");
+    $("#section6").removeClass("not-started");
     $("#section7").addClass("not-started");
     $("#section8").addClass("not-started");
 
@@ -758,12 +762,12 @@ $(document).ready(function () {
     $(details).parent().addClass("well");
   }
   if (section6 && section6 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("Edit information");
-    $("#section4 .edit").show().text("Edit information");
-    $("#section5 .edit").show().text("Edit information");
-    $("#section6 .edit").show().text("Edit information");
+    $("#section1 .edit").show().removeClass("button").text("View my information");
+    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my information");
+    $("#section4 .edit").show().text("View my information");
+    $("#section5 .edit").show().text("View my information");
+    $("#section6 .edit").show().text("View my information");
     $("#section7 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -779,6 +783,7 @@ $(document).ready(function () {
     $("#section6").addClass("edit-information");
     $("#section6").removeClass("not-started");
     $("#section7").addClass("start");
+    $("#section7").removeClass("not-started");
     $("#section8").addClass("not-started");
 
     document.title = 'Overview - Legal proceedings';
@@ -791,13 +796,13 @@ $(document).ready(function () {
 
   }
   if (section7 && section7 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("Edit information");
-    $("#section4 .edit").show().text("Edit information");
-    $("#section5 .edit").show().text("Edit information");
-    $("#section6 .edit").show().text("Edit information");
-    $("#section7 .edit").show().text("Edit information");
+    $("#section1 .edit").show().removeClass("button").text("View my information");
+    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my information");
+    $("#section4 .edit").show().text("View my information");
+    $("#section5 .edit").show().text("View my information");
+    $("#section6 .edit").show().text("View my information");
+    $("#section7 .edit").show().text("View my information");
     $("#section8 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -815,6 +820,7 @@ $(document).ready(function () {
     $("#section7").addClass("edit-information");
     $("#section7").removeClass("not-started");
     $("#section8").addClass("start");
+    $("#section8").removeClass("not-started");
 
     document.title = 'Overview - Insolvency proceedings';
 
@@ -826,14 +832,14 @@ $(document).ready(function () {
 
   }
   if (section8 && section8 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("Edit information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("Edit information");
-    $("#section4 .edit").show().text("Edit information");
-    $("#section5 .edit").show().text("Edit information");
-    $("#section6 .edit").show().text("Edit information");
-    $("#section7 .edit").show().text("Edit information");
-    $("#section8 .edit").show().text("Edit information");
+    $("#section1 .edit").show().removeClass("button").text("View my information");
+    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my information");
+    $("#section4 .edit").show().text("View my information");
+    $("#section5 .edit").show().text("View my information");
+    $("#section6 .edit").show().text("View my information");
+    $("#section7 .edit").show().text("View my information");
+    $("#section8 .edit").show().text("View my information");
 
     $("#section1").addClass("edit-information");
     $("#section1").removeClass("start not-started");
