@@ -225,7 +225,7 @@ h3 > a {
                       <span class="heading-xlarge">1</span>
                       <h3>Personal details</h3>
                       <button href="#details1" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -253,7 +253,7 @@ h3 > a {
                       <span class="heading-xlarge">2</span>
                       <h3>Employment</h3>
                       <button href="#details2a" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -282,7 +282,7 @@ h3 > a {
                       <span class="heading-xlarge">3</span>
                       <h3>Bank accounts and savings</h3>
                       <button href="#details3a" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -307,7 +307,7 @@ h3 > a {
                       <span class="heading-xlarge">4</span>
                       <h3>Assets</h3>
                       <button href="#details3" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -334,7 +334,7 @@ h3 > a {
                       <span class="heading-xlarge">5</span>
                       <h3>Money you owe</h3>
                       <button href="#details4" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -360,7 +360,7 @@ h3 > a {
                       <span class="heading-xlarge">6</span>
                       <h3>Income and expenses</h3>
                       <button href="#details5" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -385,7 +385,7 @@ h3 > a {
                       <span class="heading-xlarge">7</span>
                       <h3>Legal proceedings</h3>
                       <button href="#details6" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -410,7 +410,7 @@ h3 > a {
                       <span class="heading-xlarge">8</span>
                       <h3>Debt history</h3>
                       <button href="#details7" class="js-section">
-                        <i class="glyphicon glyphicon-plus-sign"></i> This section covers
+                        <i class="glyphicon glyphicon-plus"></i> This section covers
                       </button>
                     </span>
                     <span class="col-sm-4">
@@ -618,6 +618,7 @@ $(document).ready(function () {
     $("#section2 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").removeClass("start");
     $("#section2").addClass("start");
     $("#section2").removeClass("not-started");
@@ -631,7 +632,7 @@ $(document).ready(function () {
     document.title = 'Overview - Employment';
 
     $("#section2 .js-section").addClass("open");
-    $("#section2 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    $("#section2 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     var details = $("#section2 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
@@ -647,7 +648,9 @@ $(document).ready(function () {
     $("#section3 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").addClass("edit-information");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("start");
     $("#section4").addClass("not-started");
     $("#section5").addClass("not-started");
@@ -658,7 +661,7 @@ $(document).ready(function () {
     document.title = 'Overview - Bank';
 
     $("#section3 .js-section").addClass("open");
-    $("#section3 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    $("#section3 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     var details = $("#section3 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
@@ -677,8 +680,11 @@ $(document).ready(function () {
     $("#section4 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").addClass("edit-information");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("edit-information");
+    $("#section3").removeClass("not-started");
     $("#section4").addClass("start");
     $("#section5").addClass("not-started");
     $("#section6").addClass("not-started");
@@ -688,7 +694,7 @@ $(document).ready(function () {
     document.title = 'Assets - Property';
 
     $("#section4 .js-section").addClass("open");
-    $("#section4 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    $("#section4 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     var details = $("#section4 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
@@ -701,9 +707,13 @@ $(document).ready(function () {
     $("#section5 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").addClass("edit-information");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("edit-information");
+    $("#section3").removeClass("not-started");
     $("#section4").addClass("edit-information");
+    $("#section4").removeClass("not-started");
     $("#section5").addClass("start");
     $("#section6").addClass("not-started");
     $("#section7").addClass("not-started");
@@ -712,7 +722,7 @@ $(document).ready(function () {
     document.title = 'Overview - Money you owe';
 
     $("#section5 .js-section").addClass("open");
-    $("#section5 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    $("#section5 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     var details = $("#section5 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
@@ -726,10 +736,15 @@ $(document).ready(function () {
     $("#section6 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").addClass("edit-information");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("edit-information");
+    $("#section3").removeClass("not-started");
     $("#section4").addClass("edit-information");
+    $("#section4").removeClass("not-started");
     $("#section5").addClass("edit-information");
+    $("#section5").removeClass("not-started");
     $("#section6").addClass("start");
     $("#section7").addClass("not-started");
     $("#section8").addClass("not-started");
@@ -737,7 +752,7 @@ $(document).ready(function () {
     document.title = 'Overview - Income and expenses';
 
     $("#section6 .js-section").addClass("open");
-    $("#section6 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    $("#section6 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     var details = $("#section6 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
@@ -752,18 +767,24 @@ $(document).ready(function () {
     $("#section7 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").addClass("edit-information");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("edit-information");
+    $("#section3").removeClass("not-started");
     $("#section4").addClass("edit-information");
+    $("#section4").removeClass("not-started");
     $("#section5").addClass("edit-information");
+    $("#section5").removeClass("not-started");
     $("#section6").addClass("edit-information");
+    $("#section6").removeClass("not-started");
     $("#section7").addClass("start");
     $("#section8").addClass("not-started");
 
     document.title = 'Overview - Legal proceedings';
 
     $("#section7 .js-section").addClass("open");
-    $("#section7 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    $("#section7 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     var details = $("#section7 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
@@ -780,18 +801,25 @@ $(document).ready(function () {
     $("#section8 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").addClass("edit-information");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("edit-information");
+    $("#section3").removeClass("not-started");
     $("#section4").addClass("edit-information");
+    $("#section4").removeClass("not-started");
     $("#section5").addClass("edit-information");
+    $("#section5").removeClass("not-started");
     $("#section6").addClass("edit-information");
+    $("#section6").removeClass("not-started");
     $("#section7").addClass("edit-information");
+    $("#section7").removeClass("not-started");
     $("#section8").addClass("start");
 
     document.title = 'Overview - Insolvency proceedings';
 
     $("#section8 .js-section").addClass("open");
-    $("#section8 .js-section").find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    $("#section8 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     var details = $("#section8 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
@@ -808,13 +836,21 @@ $(document).ready(function () {
     $("#section8 .edit").show().text("Edit information");
 
     $("#section1").addClass("edit-information");
+    $("#section1").removeClass("start not-started");
     $("#section2").addClass("edit-information");
+    $("#section2").removeClass("not-started");
     $("#section3").addClass("edit-information");
+    $("#section3").removeClass("not-started");
     $("#section4").addClass("edit-information");
+    $("#section4").removeClass("not-started");
     $("#section5").addClass("edit-information");
+    $("#section5").removeClass("not-started");
     $("#section6").addClass("edit-information");
+    $("#section6").removeClass("not-started");
     $("#section7").addClass("edit-information");
+    $("#section7").removeClass("not-started");
     $("#section8").addClass("edit-information");
+    $("#section8").removeClass("not-started");
 
     $("#next").show();
     document.title = 'Ready to submit';
@@ -835,7 +871,7 @@ $(document).ready(function () {
       $(".rowbottom").hide();
       $(".row.well").removeClass("well");
       $(this).addClass("open");
-      $(this).find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+      $(this).find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
       var details = $($(this).attr("href"));
       details.show();
       details.parent().addClass("well");
@@ -844,7 +880,7 @@ $(document).ready(function () {
       $(".rowbottom").hide();
       $(".row.well").removeClass("well");
       $(this).removeClass("open");
-      $(this).find("i").removeClass("glyphicon-minus-sign").addClass("glyphicon-plus-sign");
+      $(this).find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
       var details = $($(this).attr("href"));
       details.hide();
     }
