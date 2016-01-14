@@ -214,7 +214,21 @@ h3 > a {
         </h1>
 
         <div class="row">
+
           <div class="col-sm-8">
+
+            <!-- ///////////////////////// Payment Complete Message - START ///////////////////////// -->
+            <div class="next" style="display:none;">
+              <div class="govuk-box-highlight completed">
+                <h2 class="bold-large">Your application is ready to submit</h2>
+                <p><span>You final steps:</span> <a href="submission/start.html" class="button">Submit your application</a></p>
+              </div>
+              <p>If you are confident you have entered your information to the best of your ability then simply complete your application.</p>
+              <p>Alternatively you can check any of the sections below to make sure you have submitted everything corectly.</p>
+              <p>&nbsp;</p>
+            </div>
+            <!-- ///////////////////////// Payment Complete Message - END ///////////////////////// -->
+
             <ul>
 
               <!-- //////////////// Section 1 - Start //////////////// -->
@@ -432,10 +446,10 @@ h3 > a {
         <div class="col-sm-4" style="padding-top:0">
           <!-- Payment Panel start -->
           <div class="panel panel-primary">
-            <h2 class="heaing-small">Bankruptcy order fee</h2>
+            <h2 class="heading-small">Bankruptcy order fee</h2>
             <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
             <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">655</span> left to pay</span>
-            <p id="updated" class="updated-text" style="display:none;">Last updated:<br><span id="timestamp"></span></p>
+            <p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
             <a id="make-a-payment" class="button" href="payments/1-payment-amount.html">Make a payment</a>
           </div>
           <!-- Payment Panel end -->
@@ -453,6 +467,15 @@ h3 > a {
           </div>
 
         </div>
+
+        <!-- ///////////////////// Completion Message - START ///////////////////// -->
+        <div class="col-sm-12" style="padding-top:0" id="completion-message">
+          <div class="panel-indent completion-message" style="font-size:16px; border-color:#efefef">
+            <i class="glyphicon glyphicon-exclamation-sign"></i>
+            <p>You can't submit your Bankruptcy application until it is completed and paid for</p>
+          </div>
+        </div>
+        <!-- ///////////////////// Completion Message - END ///////////////////// -->
 
         <br>
 
@@ -636,6 +659,10 @@ $(document).ready(function () {
     var details = $("#section2 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
+
+    $("#next").hide();
+    $(".next").hide();
+
   }
 
   if (section4 == "inprogress") {
@@ -666,6 +693,9 @@ $(document).ready(function () {
     var details = $("#section3 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
+
+    $("#next").hide();
+    $(".next").hide();
 
   }
 
@@ -700,6 +730,10 @@ $(document).ready(function () {
     var details = $("#section4 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
+
+    $("#next").hide();
+    $(".next").hide();
+
   }
   if (section4 && section4 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("View my information");
@@ -729,6 +763,10 @@ $(document).ready(function () {
     var details = $("#section5 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
+
+    $("#next").hide();
+    $(".next").hide();
+
   }
   if (section5 && section5 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("Edit information");
@@ -760,6 +798,10 @@ $(document).ready(function () {
     var details = $("#section6 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
+
+    $("#next").hide();
+    $(".next").hide();
+
   }
   if (section6 && section6 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("View my information");
@@ -793,6 +835,9 @@ $(document).ready(function () {
     var details = $("#section7 .js-section").attr("href");
     $(details).show();
     $(details).parent().addClass("well");
+
+    $("#next").hide();
+    $(".next").hide();
 
   }
   if (section7 && section7 == "complete") {
@@ -830,6 +875,9 @@ $(document).ready(function () {
     $(details).show();
     $(details).parent().addClass("well");
 
+    $("#next").hide();
+    $(".next").hide();
+
   }
   if (section8 && section8 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("View my information");
@@ -859,6 +907,8 @@ $(document).ready(function () {
     $("#section8").removeClass("not-started");
 
     $("#next").show();
+    $(".next").show();
+    $("#completion-message").hide();
     document.title = 'Ready to submit';
   }
 

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- #BeginTemplate "../../../assets/templates/b-template.dwt" -->
+<!-- #BeginTemplate "../../template.dwt" -->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <!-- #BeginEditable "title" -->
-  <title>Resume application</title>
+  <title>Online debt solutions</title>
   <!-- #EndEditable -->
 
 
 
   <!--[if gt IE 8]><!-->
   <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/govuk-template.css"><!--<![endif]-->
-  <!--[if IE 6]>
-  <link href="../../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-  <!--[if IE 7]>
-  <link href="../../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-  <!--[if IE 8]>
-  <link href="../../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 6]><link href="../../../assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 7]><link href="../../../assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 8]><link href="../../../assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
   <link type="text/css" rel="stylesheet" media="print" href="../../../assets/stylesheets/govuk-template-print.css">
 
@@ -58,21 +56,18 @@
 
 <!--[if gt IE 8]><!-->
 <link type="text/css" rel="stylesheet" href="../../../assets/stylesheets/main.css"><!--<![endif]-->
-<!--[if IE 6]>
-<link href="../../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if IE 7]>
-<link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if IE 8]>
-<link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 6]><link href="../../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 7]><link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 8]><link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
-
-<link type="text/css" rel="stylesheet" media="screen" href="../css/ebf-override.css">
+<!--    <link type="text/css" rel="stylesheet" media="screen" href="assets/stylesheets/bootstrapbits.css"> -->
 
 <!-- #BeginEditable "styles" -->
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/bootstrapbits.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap-switch.min.css">
 <!-- #EndEditable -->
 
 
@@ -107,7 +102,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name">Electronic Bankruptcy Folder (EBF)</span>
+            <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
           </nav>
         </div>
       </div>
@@ -122,204 +117,116 @@
   </div>
 
   <main role="main" id="wrapper">
+  <!-- #BeginEditable "content" -->
 
     <div id="content">
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
-        </div>
-      </div>
 
-      <!-- #BeginEditable "content" -->
-      <!-- /.grid-wrapper - Start -->
-      <div class="grid-wrapper">
-        <!-- /.grid - Start -->
-        <div class="grid grid-4-4">
-
-          <!-- /.inner-block - Start -->
-          <div class="inner-block">
-            <h1 class="heading-large">Upload a document to the Bankruptcy application</h1>
-            <div class="col-sm-8">
-
-              <!-- ////////////// Error Messaging - Start ////////////// -->
-              <div id="status"></div>
-              <!-- ////////////// Error Messaging - End ////////////// -->
-
-              <p>Use this page to upload a document to your Bankruptcy Application.</p>
-              <p>Upon upload we will notify our internal Bankrutpcy team and will need to approve the document.</p>
-              <p>We will notify you of the outcome.</p>
-
-              <div id="statusbar-header" style="display:none">
-                <div class="statusbar2 statusbar2-title">
-                  <div class="filename2">Document name</div>
-                  <div class="progressBar2">Status</div>
-                  <div class="actionsh">Action</div>
-                </div>
-              </div>
-              <div id="dragandrop" class="dragDrop">
-                Drag and drop a document (or documents) here
-              </div>
-              <p>or <a id="uploadOldId" href="#">browse for a document (or documents)</a></p>
-              <form id="uploadForm">
-                <input type="file" name="tempFileId" id="tempFileId" style="display: none;" multiple>
-              </form>
-
-              <p>
-                <a id="nextHref">
-                  <input id="nextBtn" disabled="disabled" class="button" type="button" value="Confirm - Check for errors"/>
-                </a>
-              </p>
-
-              <p><a href="javascript:history.go(-1)">Back</a></p>
-
-              <noscript>
-                <div class="well">
-                  <div class="form-group">
-                    <input class="input-file" type="file" name="file-1" id="file1" multiple>
-                  </div>
-                </div>
-              </noscript>
-            </div>
-
+        <div class="phase-banner clearfix">
+          <div class="col-sm-9">
+            <strong class="phase-tag">BETA</strong>This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
           </div>
-          <!-- /.inner-block - End -->
-
+          <div id="logout" class="col-sm-3 text-right" >
+            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+          </div>
         </div>
-        <!-- /.grid - End -->
+
+        <div>
+          <h1 class="form-title heading-large">File upload</h1>
+          <p>Select files from your computer that you would like to upload for application
+            <span style="color: rgb(51, 51, 51); font-family: nta, Arial, sans-serif; font-size: 19px; font-style: normal; font-variant: normal; font-weight: bold; letter-spacing: normal; line-height: 25.0000095367432px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
+              <span>EHBJ-8F3M-KRPL - Kim Scarlett</span>.</p>
+          <p>Please note that the upload facility is restricted to the following types of document</p>
+          <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-inline">
+              <div class="form-group">
+                <input type="file" name="files[]" id="js-upload-files" multiple>
+              </div>
+              <p>&nbsp;</p>
+              <a class="button" href="1-overview.html?status=file-upload">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
+              <p><a href="javascript:history.go(-1)">Back</a></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div>
+          </form>
+        </div>
+
 
       </div>
-      <!-- /.grid-wrapper - End -->
-
-      <!-- #EndEditable -->
-
     </div>
   </main>
 
 
-  <footer role="contentinfo" id="footer" class="group js-footer">
+      <!-- #EndEditable -->
 
-    <div class="footer-wrapper">
 
-      <div class="footer-meta">
-        <div class="footer-meta-inner">
+      <footer role="contentinfo" id="footer" class="group js-footer">
 
-          <ul class="footer__nav" style="width:100%">
-            <li class="small-btm-margin" style="text-align:left; display:block">
-              <a class="bold-medium" id="email-link" href="../../email.html">Contact us</a>
-            </li>
-          </ul>
-          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-            <li class="footer__link" style=" ">
-              <a href="../../../privacy.html">Privacy</a>
-            </li>
-            <li class="footer__link" style="">
-              <a href="../../../cookies.html">Cookies</a>
-            </li>
-            <li class="footer__link" style=" ">
-              Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a>
-            </li>
-          </ul>
 
-          <div class="open-government-licence">
-            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+        <div class="footer-wrapper">
+
+          <div class="footer-meta">
+
+            <div class="footer-meta-inner">
+
+              <ul class="footer__nav" style="width:100%">
+                <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
+              </ul>
+              <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+                <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+                <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+                <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+              </ul>
+
+              <div class="open-government-licence">
+                <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+                <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+              </div>
+            </div>
+
+            <div class="copyright">
+              <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+            </div>
           </div>
         </div>
 
-        <div class="copyright">
-          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-        </div>
-      </div>
-    </div>
+      </footer>
 
-  </footer>
+      <!--end footer-->
 
-  <!--end footer-->
+      <div class="app-error hidden" id="global-app-error"></div>
+      <!--
+      <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+      <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-  <div class="app-error hidden" id="global-app-error"></div>
-  <!--
-  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+      <script type="text/javascript" src="assets/javascripts/application.js"></script>
+    -->
+    <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
-  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-  <script type="text/javascript" src="assets/javascripts/application.js"></script>
--->
-<script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/upload.js"></script>
-<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-<!-- #BeginEditable "scripts" -->
-<script type="text/javascript">
+    <!-- #BeginEditable "scripts" -->
 
-$(document).ready(function() {
-  var url      = window.location.href;     // Returns full URL
-  var pathname = window.location.pathname; // Returns path only
-  $("#email-link").on("click", function (e) {
-    $.cookie("url", url, {path:'/'});
-    $.cookie("pathname", pathname, {path:'/'});
-  });
+    <script type="text/javascript">
+    $(document).ready(function() {
 
-  var status = getParameterByName("status");
+    });
 
-  if(status == null || status == ""){
-    status = $.cookie("status");
-  }
-
-  var html;
-  switch(status) {
-    case "failed-upload":
-    html = "<div class=\"validation-summary\">";
-    html += "<h2>Sorry, there appears to be a problem with the upload</h2>";
-    html += "<a href=\"#amount\">We have encountered a problem while trying to upload the file <span class=\"file-name\" class=\"bolder\"></span>.</a>";
-    html += "<p>Please try again.</p>";
-    html += "</div>";
-    $.cookie("status", "", {path:'/'});
-    $("#status").html(html);
-    break;
-
-    default:
-    html = "";
-    $("#status").html(html);
-
-  }
-
-  $("#nextHref").on("click", function (e) {
-    $.cookie("filename2", $(".filename2").text(), {path:'/'});
-  });
-
-  if ($.cookie("filename2")) {
-    $(".file-name").text($.cookie("filename2")).addClass("bolder");
-  }
-
-  // var cookieString = "filename2";
-  // var res = cookieString.split(" ");
-
-});
-
-function getParameterByName(name) {
-name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-results = regex.exec(location.search);
-return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+    </script>
 
 
-</script>
-<!-- #EndEditable -->
+    <!-- #EndEditable -->
 
 
 
 
-<div id="window-resizer-tooltip" style="display: none;">
-  <a href="/claims/start#" title="Edit settings"
-  style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
-  <span class="tooltipTitle">Window size: </span>
-  <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
-  <br><span class="tooltipTitle">Viewport size: </span>
-  <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span>
-</div>
-</body><!-- #EndTemplate -->
-</html>
+    <div id="window-resizer-tooltip" style="display: none;">
+      <a href="/claims/start#" title="Edit settings"
+      style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+      <span class="tooltipTitle">Window size: </span>
+      <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
+      <br><span class="tooltipTitle">Viewport size: </span>
+      <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
+    </body><!-- #EndTemplate -->
+
+    </html>
