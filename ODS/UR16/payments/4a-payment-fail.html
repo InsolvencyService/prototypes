@@ -104,11 +104,11 @@ table td{
 
 }
 
-.fail-box{
+/*.fail-box{
 	background-color:#CC0000;
 	color:#ffffff;
 	padding:50px;
-}
+}*/
 </style>
 <!-- #EndEditable -->
 
@@ -182,11 +182,11 @@ table td{
             <div class="text-center fail-box">
               <h2 class="bold-large">Your payment was unsuccessful.</h2>
               <br>
-              <p class="bold-medium">Your transaction number is<br>
+              <p>Your transaction number is:<br>
                 <span class="payment-ref">12345678</span>
               </p>
             </div>
-            <p><br/>Your card payment was declined by WorldPay. To find out why please call them on <span class="bolder">0870 366 1233,</span> quoting the WorldPay 
+            <p><br/>Your card payment was declined by WorldPay. To find out why please call them on <span class="bolder">0870 366 1233,</span> quoting the WorldPay
 			transaction ID below.</p>
             <table class="table">
               <tr>
@@ -301,7 +301,7 @@ $(document).ready(function() {
 
   //8 digit random number for the payment number
   ref = Math.floor(Math.random()*1E8);
-  $(".payment-ref").text(ref);
+  $(".payment-ref").text(ref).addClass("bolder");
 
   //if an amount of payment has been entered
   world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
