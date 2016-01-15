@@ -1,0 +1,163 @@
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>Email</title>
+  <style type="text/css">
+
+  .auto-style1 {
+    font-family: sans-serif;
+    font-size: 19px;
+  }
+
+  </style>
+</head>
+
+
+<body style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; margin: 0; color:#0b0c0c">
+
+  <table width="" cellpadding="0" cellspacing="0" border="0">
+    <tbody>
+      <tr>
+        <td style="vertical-align:top;">
+          <img src="../images/gmail-screenshot_01.jpg" alt="" border="0">
+        </td>
+        <td style="vertical-align:top;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td style="vertical-align:top;">
+                  <img src="../images/gmail-screenshot_02.jpg" alt="" border="0">
+                </td>
+              </tr>
+              <tr>
+                <td>
+
+                  <!-- //////////////////////////// HTML Email - Start //////////////////////////// -->
+
+                  <table width="595px" cellpadding="15" cellspacing="0" border="0">
+                    <tr>
+                      <td width="100%" height="55px" bgcolor="#0b0c0c">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+                          <tr>
+                            <td width="30%" bgcolor="#0b0c0c" valign="middle">
+                              <img src="http://insolvencyservice.github.io/prototypes/RP1/assets/images/govuk/gov.uk_logotype_crown.png" alt="GOV.UK" border="0">
+                            </td>
+                            <td width="70%" style="color:#ffffff" valign="middle">
+                              <h2 style="float: left; display: block; padding-right:10px;">Online debt service</h2>
+                              <span class="phase-banner" style="margin-top: 20px; display: block; width:60px; background-color : #f47738; float:left">
+                                <strong class="phase-tag" style="display: block; ">BETA</strong>
+                              </span>
+                            </td>
+
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <table width="595px" cellpadding="15" cellspacing="0" border="0" bgcolor="#FFFFFF">
+                    <tr>
+                      <td width="100%">
+                        <img alt="" src="http://insolvencyservice.github.io/prototypes/RP1/assets/images/insolvencyservicelogo.png"
+                        style="width:140px;height :80px">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="100%">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+                          <tr>
+                            <td width="100%">
+                              <h1 class="email" style="font-weight: 700; font-size: 36px; line-height: 1.041666667; margin: 0 0 20px 0">
+                                Access to bankruptcy case - Kim Scarlett
+                              </h1>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+                              <p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">
+                                Hi <span id="firstname"></span>
+                              </p>
+
+                              <p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">
+                                Thank you for providing your details. You have been granted access.
+                              </p>
+                              <p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0;">
+                                Your personal access number is:</p>
+                              <div style="text-align:center">
+                                <div style="border:2px grey solid; width:350px; font-size:1.6em; padding:10px">0398-8372-1382-1234</div>
+                              </div>
+                              <p></p>
+                              <!-- <p style="line-height: 1.315789474; margin: 0 0 15px 0; font-variant: normal;">To access the case, follow these steps </p>
+
+                              <ol class="list-number">
+                                <li>
+                                  Visit <a href="5-pat-code.html">http://insolvencyservice.github.io/prototypes/ODS/EBF/iteration/5-pat-code</a>
+                                </li>
+                                <li><span lang="en-gb">Enter the enterprise access token sent previously by
+                                  email</span></li>
+                                  <li>Enter your personal access token</li>
+                              </ol> -->
+
+                              <a href="5-pat-code.html"><img src="../images/button.jpg" alt="" border="0" width="100px"></a>
+
+                              <p>&nbsp;<br></p>
+                              <p style="font: 19px sans-serif; line-height: 1.315789474; margin: 0 0 15px 0; font-variant: normal;">Thank you,</p>
+                              <p style="font: 19px sans-serif;"><span lang="en-gb"><span style="font-weight:bold;">David Rickman</span><br>Official Receiver</span></p>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">&nbsp;</td>
+                          </tr>
+                        </table>
+
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- //////////////////////////// HTML Email - End //////////////////////////// -->
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td style="vertical-align:top;">
+          <img src="../images/gmail-screenshot_03.jpg" alt="" border="0">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+
+  <!-- #BeginEditable "scripts" -->
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+    var url      = window.location.href;     // Returns full URL
+    var pathname = window.location.pathname; // Returns path only
+    $("#email-link").on("click", function (e) {
+      $.cookie("url", url, {path:'/'});
+      $.cookie("pathname", pathname, {path:'/'});
+    });
+
+    if ($.cookie("firstname")) {
+      $("#firstname").text($.cookie("firstname")).addClass("bolder");
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
