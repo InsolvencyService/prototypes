@@ -173,7 +173,7 @@ table td{
           <div class="col-sm-8">
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your payment was successful.</h2>
-              <p class="bold-medium">Your transaction number is:<br>
+              <p>Your transaction number is:<br>
                 <span class="payment-ref">12345678</span>
               </p>
             </div>
@@ -291,7 +291,7 @@ $(document).ready(function() {
 
   //8 digit random number for the payment number
   ref = Math.floor(Math.random()*1E8);
-  $(".payment-ref").text(ref);
+  $(".payment-ref").text(ref).addClass("bolder");
 
   //if an amount of payment has been entered
   world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
