@@ -431,6 +431,8 @@ table.application-summary tr td {
   border-radius: 0;
   margin: 15px 0;
   background: white;
+  display: flex;
+  /*flex-direction: column;*/
 }
 
 .application h2.heading-medium {
@@ -447,8 +449,13 @@ table.application-summary tr td {
 
 .application-right {
   padding: 20px !important;
-  /*background: white;
-  border-radius: 0 5px 5px 0;*/
+}
+
+.application-left, .application-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .application-right label > input {
@@ -500,6 +507,7 @@ table.application-summary tr td {
 #admin-panel {
   border: none;
   box-shadow: none;
+  margin-bottom: 40px;
 }
 
 #admin-panel .panel-heading {
@@ -517,7 +525,7 @@ table.application-summary tr td {
 
 #admin-panel .panel-heading ul li.active {
   background: #ebebeb;
-  border-top: 8px solid #337ab7;
+  border-top: 8px solid #005ea5;
   border-bottom: 1px solid #ddd;
   font-weight: bold;
 }
@@ -534,7 +542,62 @@ table.application-summary tr td {
   padding: 30px 0 0 0;
 }
 
-
-
-
 /* ------------------------ Tabs Control Panel Overide - End ------------------------ */
+
+/* ------------------------ eBF Intro Banner - Start ------------------------ */
+
+header.homepage-top {
+  background: #005ea5;
+  color: white;
+  margin-bottom: 30px;
+}
+
+header.homepage-top .homepage-top-inner {
+  padding: 20px 30px 30px 30px;
+  text-align: left;
+  margin: 0 auto;
+  width: auto;
+  max-width: 1020px;
+  /*color: white;*/
+}
+
+/*header.homepage-top .homepage-top-inner:first-of-type {
+  padding-bottom: 0;
+}*/
+
+header.homepage-top .phase-banner {
+  border-bottom: 1px solid white;
+  display: inline-block;
+  width: 100%;
+}
+
+header.homepage-top .homepage-top-inner h1 {
+  margin: 15px 0;
+}
+
+header.homepage-top .homepage-top-inner p {
+  font-size: 19px;
+  color: white;
+}
+
+header.homepage-top .homepage-top-inner .status {
+  float: left;
+  width: 75%;
+}
+
+header.homepage-top .homepage-top-inner .cta {
+  float: right;
+  width: 25%;
+  text-align: right;
+}
+
+header.homepage-top .homepage-top-inner .cta a, header.homepage-top .homepage-top-inner .cta .glyphicon {
+  color: white;
+}
+
+#global-header .header-wrapper .header-global .header-logo .content, #global-header.with-proposition .header-wrapper .header-proposition .content {
+  margin: 0;
+}
+
+
+/* ------------------------ eBF Intro Banner - End ------------------------ */
