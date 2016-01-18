@@ -213,13 +213,15 @@
     <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
     <script type="text/javascript">
+    
+    var count;
     $(document).ready(function() {
     
     if($.cookie("EBF_document_count")){
-    	var count = $.cookie("EBF_document_count");
+    	count = $.cookie("EBF_document_count");
     }
     else{
-    	var count = 1;
+    	count = 1;
     }
 	
     });
