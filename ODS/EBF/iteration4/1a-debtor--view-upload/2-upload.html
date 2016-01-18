@@ -291,7 +291,7 @@
 			count++;  
 			var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
 			$.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
-			$.cookie("EBF_document_"+count+"_descripton", $("#description").val(), {path:'/'});
+			$.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
 			$.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
 			$.cookie("EBF_document_count", count, {path:'/'});
 			
