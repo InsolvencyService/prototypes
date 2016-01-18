@@ -148,7 +148,7 @@
                   <label>Description</label><br>
                   <textarea rows="5" id="description"></textarea>
                 </div>
-                <a class="button" id="uload" href="1-overview.html">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
+                <a class="button" id="uload">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
                 <p><a href="javascript:history.go(-1)">Back</a></p>
                 <p>&nbsp;</p>
               </div>
@@ -229,15 +229,32 @@
     $("#uload").on("click", function (e) { 
     	//validation
    	   if($("#js-upload-files").val()=="" || $("#description").val() == ""){
-	   		alert("No input");
+   	   		
+			
+	   		alert(formattedDate());
 	   }
 	  
 	   else{
-	   		count++;  
+	   					
+			function formattedDate(date) {
+			    var d = new Date(date || Date.now()),
+			        month = '' + (d.getMonth() + 1),
+			        day = '' + d.getDate(),
+			        year = d.getFullYear();
+			
+			    if (month.length < 2) month = '0' + month;
+			    if (day.length < 2) day = '0' + day;
+			
+			    return [ day, month, year].join('/');
+			}
+			
+			count++;  
 			var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
 			$.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
 			$.cookie("EBF_document_"+count+"_descripton", $("#description").val(), {path:'/'});
 			$.cookie("EBF_document_count", count, {path:'/'});
+			$.cookie("EBF_document_"+count+"_descripton", $("#description").val(), {path:'/'});
+			$("#uload").attr("href", "1-overview.html");
 		}
 	});
 
