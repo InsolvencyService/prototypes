@@ -416,8 +416,8 @@ $(document).ready(function() {
 	
 	
 	// updates table with documents stored in session
-	if($.cookie("EBF_document count")){
-		for( var i=1; i<$.cookie("EBF_document_count"); i++){
+	if($.cookie("EBF_document_count")){
+		for( var i=1; i<=$.cookie("EBF_document_count"); i++){
 			
 			var doc_filename = $.cookie("EBF_document_"+i+"_filename");
 			var doc_description = $.cookie("EBF_document_"+i+"_descripton");
