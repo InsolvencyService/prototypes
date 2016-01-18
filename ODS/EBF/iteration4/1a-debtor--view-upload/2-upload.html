@@ -71,6 +71,16 @@
 
 <link type="text/css" rel="stylesheet" media="screen" href="../css/ebf-override.css">
 
+<style>
+.error-message{
+	
+	color: red !important
+	}
+}
+
+
+</style>
+
 <!-- #EndEditable -->
 
 
@@ -133,20 +143,40 @@
             <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
           </div>
         </div>
+     
 
         <div>
           <div class="col-sm-8">
+                    
             <h1 class="form-title heading-large">File upload</h1>
+            
+            <div class="validation-summary"  id="pnl-error"  style="display:none">               
+                <ol>
+			        <li class="error-message upload"  style="display:none"> 
+			               You must select a file to upload.
+			        </li>
+			        <li class="error-message descriptionlabel"  style="display:none"> 
+			               Please enter a descripton of the file.
+			        </li>
+			        
+
+    			</ol>
+			</div>
+			
             <p>Select files from your computer that you would like to upload for application <span class="bolder">EHBJ-8F3M-KRPL - Kim Scarlett</span>.</p>
             <form action="" method="post" enctype="multipart/form-data">
+              <span class="error-message upload" style="display:none">You must select a file to upload.</span>
               <div class="form-inline">
+              	
                 <div class="form-group well">
                   <label>Choose upload file</label>
                   <input type="file" name="files[]" id="js-upload-files" >
                 </div>
                 <div class="form-group">
                   <label>Description</label><br>
-                  <textarea rows="5" id="description"></textarea>
+                 <span  class="error-message descriptionlabel"  style="display:none"> 
+			               Please enter a descripton of the file.</span>
+                  <textarea rows="5" id="desc"></textarea>
                 </div>
                 <a class="button" id="uload">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
                 <p><a href="javascript:history.go(-1)">Back</a></p>
@@ -227,13 +257,23 @@
     });
     
     $("#uload").on("click", function (e) { 
-    	//validation
-   	   if($("#js-upload-files").val()=="" || $("#description").val() == ""){
-   	   		
+    
+    	$("#pnl-error").hide();
+    	$(".upload").hide();
+    	$(".descriptionlabel").hide();
+
+		//validation
+		if($("#js-upload-files").val()=="" || $("#desc").val().length == 0){ 	  
+			$("#pnl-error").show();
 			
-	   		alert(formattedDate());
-	   }
-	  
+			if($("#js-upload-files").val()=="" ){ 		
+				$(".upload").show();
+		   	}
+	   
+		   if($("#desc").val().length == 0){
+		   		$(".descriptionlabel").show();
+		   }
+	  	}
 	   else{
 	   					
 			function formattedDate(date) {
