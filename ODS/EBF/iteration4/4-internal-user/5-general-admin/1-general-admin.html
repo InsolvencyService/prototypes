@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Overview</title>
+  <title>EBF Administration</title>
   <!-- #EndEditable -->
 
 
@@ -211,55 +211,6 @@ a.btn:visited{
 
 </style>
 
-<!-- ///////////// This is what makes the edit text function work - Start ///////////// -->
-<script type="text/javascript">
-
-function edit(element) {
-  var parent = $(element).parent().parent();
-  var placeholder = $(parent).find('.text-info').text();
-  //hide label
-  $(parent).find('label').hide();
-  //show input, set placeholder
-  var input = $(parent).find('input[type="text"]');
-  var textarea = $(parent).find('textarea[type="text"]');
-  var edit = $(parent).find('.controls-edit');
-  var update = $(parent).find('.controls-update');
-  $(input).show();
-  $(textarea).show();
-  $(edit).hide();
-  $(update).show();
-  //$(input).attr('placeholder', placeholder);
-  $(element).parent().find('.approved, .approve, .delete').hide();
-  // console.log($(element).parent());
-}
-
-function update(element) {
-  var parent = $(element).parent().parent().parent();
-  var placeholder = $(parent).find('.text-info').text();
-  //hide label
-  $(parent).find('label').show();
-  //show input, set placeholder
-  var input = $(parent).find('input[type="text"]');
-  var textarea = $(parent).find('textarea[type="text"]');
-  var edit = $(parent).find('.controls-edit');
-  var update = $(parent).find('.controls-update');
-  $(input).hide();
-  $(textarea).hide();
-  $(edit).show();
-  $(update).hide();
-  $(".approved").show();
-  $(".approve").show();
-  $(".delete").show();
-  //$(input).attr('placeholder', placeholder);
-  $(parent).find('td:nth-child(2) label').text($(input).val());
-  $(parent).find('td:nth-child(4) label').text($(textarea).val());
-}
-
-</script>
-
-<!-- ///////////// This is what makes the edit text function work - End ///////////// -->
-
-
 <!-- #EndEditable -->
 
 
@@ -295,8 +246,7 @@ function update(element) {
         <div class="content">
           <nav id="proposition-menu">
             <span id="proposition-name" href="#" style="font-size:19px; font-weight:normal">
-              You are signed in as <span id="firstname">Matt</span> <span id="lastname">Owen</span>,
-              <a href="../2-search.html" style="font-weight: bold;"><span class="glyphicon glyphicon-log-out"></span> Save and Exit</a>
+              <a href="../2-search.html" style="font-weight: bold;"><span class="glyphicon glyphicon-log-out"></span> Save your work and Exit <span id="firstname">Matt</span></a>
             </span>
           </nav>
         </div>
@@ -326,7 +276,7 @@ function update(element) {
       <div class="homepage-top-inner">
         <div class="row">
           <div class="col-sm-12">
-            <h1 class="form-title heading-xlarge">Welcome to the eBF Administration</h1>
+            <h1 class="form-title heading-xlarge">Welcome to the EBF Administration</h1>
             <p>Hi <span id="firstname"></span>,</p>
             <p>Use the application below to search, edit and manage online Bankruptcy folders.</p>
           </div>
@@ -339,106 +289,426 @@ function update(element) {
       <div class="inner-block" style="display:block; margin-left:30px !important">
 
         <div class="panel with-nav-tabs panel-default" id="admin-panel">
-          <div class="panel-heading">
-            <!-- <div class="row">
-              <div class="col-xs-12">
-                <h3 title="subject">
-                  <span style="padding-left:15px" class="bolder">eBF adminisatration panel</span>
-                </h3>
-                <p style="padding-left:15px">Use the tabs below to edit the required applications.</p>
-              </div>
-            </div> -->
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab1default" data-toggle="tab">Current/Last Application</a></li>
-              <li><a href="#tab2default" data-toggle="tab">Search for Application</a></li>
-              <li><a href="#tab3default" data-toggle="tab">View all my Applications</a></li>
-            </ul>
-          </div>
             <div class="panel-body">
-              <div class="tab-content">
 
-                <!-- //////////////////// Tab 1 - Start //////////////////// -->
-                <div class="tab-pane fade in active" id="tab1default">
-                  <!--personal details-->
-                  <p>We have saved the application you worked on when you last visited the eBF administration.</p>
+              <div id="search-applications">
+                <div class="header-search-content">
+                  <label for="search-main">Search eBF Admin database</label>
+                  <input type="search" name="q" id="search-main" title="Search" placeholder="Search eBF Admin database">
+                  <button class="submit" type="submit" value="Search">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
 
-                  <!-- ///// Admin Application Item - Start //// -->
-                  <div class="row application">
-                    <div class="col-sm-6 application-left">
-                      <h2 class="heading-medium">Application ref.: <span class="bolder">JKTY-YUBD-BKT</span></h2>
-                      <table class="application-summary">
-                        <tbody>
-                          <tr>
-                            <td class="bolder">Name:</td>
-                            <td>Kim Scarlett</td>
-                          </tr>
-                          <tr>
-                            <td class="bolder">Telephone:</td>
-                            <td>07466 456 998</td>
-                          </tr>
-                          <tr>
-                            <td class="bolder">Email address:</td>
-                            <td><a href="mailto:kimscarlett@gmail.com;">kimscarlett@gmail.com</a></td>
-                          </tr>
-                          <tr>
-                            <td class="bolder">Total debt:</td>
-                            <td>&pound;46,653.32</td>
-                          </tr>
-                        </tbody>
-                      </table>
+              <hr>
+
+              <div id="recent-application">
+                <h2 class="heading-large">Recent Application</h2>
+                <p>We have saved the application you worked on when you last visited the EBF administration.</p>
+
+                <!-- ///// Admin Application Item - Start //// -->
+                <div class="row application">
+                  <div class="col-sm-6 application-left">
+                    <h2 class="heading-medium">Application ref.: <span class="urn bolder">JKTY-YUBD-BKT</span></h2>
+                    <table class="application-summary">
+                      <tbody>
+                        <tr>
+                          <td class="bolder" width="35%">Name:</td>
+                          <td>Kim Scarlett</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Telephone:</td>
+                          <td>07466 456 998</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Email address:</td>
+                          <td><a href="mailto:kimscarlett@gmail.com;">kimscarlett@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Total debt:</td>
+                          <td>&pound;46,653.32</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-sm-6 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label" name="notifications-1" for="notifications-1" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-1" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
-                    <div class="col-sm-6 application-right">
-                      <div class="form-group">
-                        <label id="notifications-label" name="notifications" for="notifications" class="col-sm-5">Notifications:</label>
-                        <input id="notifications" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    <div class="form-group">
+                      <label id="owner-label" name="owner-1" for="owner-1" class="col-sm-5">Owner:</label>
+                      <input id="owner-1" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-1"><input type="checkbox" id="PARV-1"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-5">
+                        <a href="#" class="button">Save changes</a>
                       </div>
-                      <div class="form-group">
-                        <label id="owner-label" name="owner" for="owner" class="col-sm-5">Owner:</label>
-                        <input id="owner" name="owner" type="text" value="Matt Owen" class="col-sm-7" />
-                      </div>
-                      <div class="form-group">
-                        <label for="PARV"><input type="checkbox" id="PARV"> This person is subject to a PARV order</label>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-sm-5">
-                          <a href="#">Save changes</a>
-                        </div>
-                        <div class="col-sm-5">
-                          <a href="#">Delete application</a>
-                        </div>
+                      <div class="col-sm-5">
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
                       </div>
                     </div>
-
                   </div>
-                  <!-- ///// Admin Application Item - End //// -->
 
                 </div>
-                <!-- //////////////////// Tab 1 - End //////////////////// -->
+                <!-- ///// Admin Application Item - End //// -->
+
+                <!-- ///////////////////// Completion Message - START ///////////////////// -->
+                <div class="panel-indent completion-message" style="font-size:16px; border-color:#efefef">
+                  <i class="glyphicon glyphicon-exclamation-sign"></i>
+                  <p>Last updated: <span id="lastUpdated0" class="ng-binding">12th September 2016</span></p>
+                </div>
+                <!-- ///////////////////// Completion Message - END ///////////////////// -->
 
 
-                <!-- //////////////////// Tab 2 - Start //////////////////// -->
-                <div class="tab-pane fade" id="tab2default">
-                  <p>You can search for any application within the eBF even if you're not the case admin.</p>
-                  <!-- Navbar - Start -->
-                  <div class="header-search-content">
-                    <label for="search-main">Search GOV.UK</label>
-                    <input type="search" name="q" id="search-main" title="Search" class="js-search-focus"><input class="submit" type="submit" value="Search">
+              </div>
+
+              <hr>
+
+              <div id="all-applications">
+
+                <h2 class="heading-large">All my Applications</h2>
+                <p>Here are all your currently assigned applications.</p>
+                <form action="#" class="change-all">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <label id="notifications-label" name="notifications-2" for="notifications-2">Change all applications Notifications to:</label><br>
+                      <input id="notifications-2" name="notifications-2" type="text" value="matt.owen@insolvency.gsi.gov.uk" />
+                    </div>
+                    <div class="col-sm-5">
+                      <label id="owner-label" name="owner-2" for="owner-2">Change the owner for all applications to:</label><br>
+                      <input id="owner-2" name="owner-2" type="text" value="matt.owen@insolvency.gsi.gov.uk" />
+                    </div>
+                    <div class="col-sm-2">
+                      <button href="#" class="button">Update</button>
+                    </div>
                   </div>
-                  <!-- Navbar - End -->
+                </form>
+
+                <!-- Navbar - Start -->
+                <nav class="navbar navbar-default" role="navigation">
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="pagination see-all">
+                      <li><a href="#">See all</a></li>
+                    </ul>
+                    <ul class="pagination">
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li>
+                        <a href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+            	    </div>
+                </nav>
+                <!-- Navbar - End -->
+
+                <!-- Table - Start -->
+                <!-- ///// Admin Application Item - 1 - Start //// -->
+                <div class="row application">
+                  <div class="col-sm-6 application-left">
+                    <h2 class="heading-medium">Application ref.: <span class="bolder">UPTY-NHTD-BKT</span></h2>
+                    <table class="application-summary">
+                      <tbody>
+                        <tr>
+                          <td class="bolder" width="35%">Name:</td>
+                          <td>Steve Westerling</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Telephone:</td>
+                          <td>07823 901 983</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Email address:</td>
+                          <td><a href="mailto:steve-westerling@gmail.com;">steve-westerling@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Total debt:</td>
+                          <td>&pound;69,811.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-sm-6 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label" name="notifications-3" for="notifications-3" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-3" name="notifications-3" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label id="owner-label" name="owner-3" for="owner-3" class="col-sm-5">Owner:</label>
+                      <input id="owner-3" name="owner-3" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-3"><input type="checkbox" id="PARV-3"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-5">
+                        <a href="#" class="button">Save changes</a>
+                      </div>
+                      <div class="col-sm-5">
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div>
+                    </div>
+                  </div>
 
                 </div>
-                <!-- //////////////////// Tab 2 - End //////////////////// -->
+                <!-- ///// Admin Application Item - 1 - End //// -->
 
-
-                <!-- //////////////////// Tab 3 - Start //////////////////// -->
-                <div class="tab-pane fade" id="tab3default">
-                  <div class="alert alert-warning" style="margin-left:10px;margin-right:10px">
-                    <p>It is ordered that <strong>Kim Scarlett</strong>, Unemployed, formerly known as <strong>Kimberly Red</strong>, of <span id="address"><strong>110 High Street, Newhall, Birmingham B4 3TT</strong></span> be adjudged bankrupt</p>
-                    <p>It is further ordered that <strong>David Rickman</strong> be appointed trustee of the bankrupt’s estate</p>
+                <!-- ///// Admin Application Item - 2 - Start //// -->
+                <div class="row application">
+                  <div class="col-sm-6 application-left">
+                    <h2 class="heading-medium">Application ref.: <span class="bolder">KLAT-HARY-BKT</span></h2>
+                    <table class="application-summary">
+                      <tbody>
+                        <tr>
+                          <td class="bolder" width="35%">Name:</td>
+                          <td>Jame Bonder</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Telephone:</td>
+                          <td>07416 190 568</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Email address:</td>
+                          <td><a href="mailto:jame1990@hotmail.com;">jame1990@hotmail.com</a></td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Total debt:</td>
+                          <td>&pound;150,930.34</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <div class="text-right"> This person is subject to a PARV order <input type="checkbox" id="PARV"></div>
+                  <div class="col-sm-6 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label" name="notifications-4" for="notifications-4" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-4" name="notifications-4" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label id="owner-label" name="owner-4" for="owner-4" class="col-sm-5">Owner:</label>
+                      <input id="owner-4" name="owner-4" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-4"><input type="checkbox" id="PARV-4"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-5">
+                        <a href="#" class="button">Save changes</a>
+                      </div>
+                      <div class="col-sm-5">
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-                <!-- //////////////////// Tab 3 - End //////////////////// -->
+                <!-- ///// Admin Application Item - 2 - End //// -->
+
+                <!-- ///// Admin Application Item - 3 - Start //// -->
+                <div class="row application">
+                  <div class="col-sm-6 application-left">
+                    <h2 class="heading-medium">Application ref.: <span class="bolder">AETL-AJYR-BKT</span></h2>
+                    <table class="application-summary">
+                      <tbody>
+                        <tr>
+                          <td class="bolder" width="35%">Name:</td>
+                          <td>Jane Seymour</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Telephone:</td>
+                          <td>07746 192 461</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Email address:</td>
+                          <td><a href="mailto:jane-seymour@gmail.com;">jane-seymour@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Total debt:</td>
+                          <td>&pound;25,236.01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-sm-6 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label" name="notifications-5" for="notifications-5" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-5" name="notifications-5" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label id="owner-label" name="owner-5" for="owner-5" class="col-sm-5">Owner:</label>
+                      <input id="owner-5" name="owner-5" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-5"><input type="checkbox" id="PARV-5"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-5">
+                        <a href="#" class="button">Save changes</a>
+                      </div>
+                      <div class="col-sm-5">
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- ///// Admin Application Item - 3 - End //// -->
+
+                <!-- ///// Admin Application Item - 4 - Start //// -->
+                <div class="row application">
+                  <div class="col-sm-6 application-left">
+                    <h2 class="heading-medium">Application ref.: <span class="bolder">MGSU-LAIR-BKT</span></h2>
+                    <table class="application-summary">
+                      <tbody>
+                        <tr>
+                          <td class="bolder" width="35%">Name:</td>
+                          <td>Dave Jones</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Telephone:</td>
+                          <td>07890 451 209</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Email address:</td>
+                          <td><a href="mailto:daveyjoneslocker@yahoo.com;">daveyjoneslocker@yahoo.com</a></td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Total debt:</td>
+                          <td>&pound;500,901.87</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-sm-6 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label" name="notifications-6" for="notifications-6" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-6" name="notifications-6" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label id="owner-label" name="owner-6" for="owner-6" class="col-sm-5">Owner:</label>
+                      <input id="owner-6" name="owner-6" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-6"><input type="checkbox" id="PARV-6"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-5">
+                        <a href="#" class="button">Save changes</a>
+                      </div>
+                      <div class="col-sm-5">
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- ///// Admin Application Item - 4 - End //// -->
+
+                <!-- ///// Admin Application Item - 5 - Start //// -->
+                <div class="row application">
+                  <div class="col-sm-6 application-left">
+                    <h2 class="heading-medium">Application ref.: <span class="bolder">MHAT-ALUE-BKT</span></h2>
+                    <table class="application-summary">
+                      <tbody>
+                        <tr>
+                          <td class="bolder" width="35%">Name:</td>
+                          <td>Kate Taylor</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Telephone:</td>
+                          <td>01832 948 353</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Email address:</td>
+                          <td><a href="mailto:kate-taylor1950@gmail.com;">kate-taylor1950@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Total debt:</td>
+                          <td>&pound;89,486.10</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-sm-6 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label" name="notifications-7" for="notifications-7" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-7" name="notifications-7" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label id="owner-label" name="owner-7" for="owner-7" class="col-sm-5">Owner:</label>
+                      <input id="owner-7" name="owner-7" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-7"><input type="checkbox" id="PARV-7"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-5">
+                        <a href="#" class="button">Save changes</a>
+                      </div>
+                      <div class="col-sm-5">
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- ///// Admin Application Item - 5 - End //// -->
+
+
+
+
+                <!-- ////////////////////////////////////// Modals Section - Start ////////////////////////////////////// -->
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="heading-small" id="myModalLabel">Are you sure you wish to delete this application?</h4>
+                        <p><span id="application"></span></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="button delete-row" data-dismiss="modal">Delete application</button>
+                        <button type="button" class="text-link" data-dismiss="modal">Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ////////////////////////////////////// Modals Section - End ////////////////////////////////////// -->
+
+
+                <!-- Navbar - Start -->
+                <nav class="navbar navbar-default" role="navigation">
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="pagination see-all">
+                      <li><a href="#">See all</a></li>
+                    </ul>
+                    <ul class="pagination">
+                      <!-- <li>
+                        <a href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li> -->
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li>
+                        <a href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+                <!-- Navbar - End -->
+
 
               </div>
 
@@ -448,49 +718,7 @@ function update(element) {
 
           </div>
 
-          <hr>
-
-          <!-- ///////////////////// Completion Message - START ///////////////////// -->
-          <div class="panel-indent completion-message" style="font-size:16px; border-color:#efefef">
-            <i class="glyphicon glyphicon-exclamation-sign"></i>
-            <p>Last log in: <span id="lastUpdated0" class="ng-binding">12th September 2016</span></p>
-          </div>
-          <!-- ///////////////////// Completion Message - END ///////////////////// -->
-
-
         </div><!--/col-9-->
-        <!-- /.modal compose message -->
-        <div class="modal fade" id="modalCompose">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="btn button btn-default" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Compose Message</h4>
-              </div>
-              <div class="modal-body">
-                <form role="form" class="form-horizontal ng-pristine ng-valid">
-                  <div class="form-group">
-                    <label class="col-sm-2" for="inputTo">To</label>
-                    <div class="col-sm-10"><input type="email" class="form-control" id="inputTo" placeholder="comma separated list of recipients"></div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2" for="inputSubject">Subject</label>
-                    <div class="col-sm-10"><input type="text" class="form-control" id="inputSubject" placeholder="subject"></div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-12" for="inputBody">Message</label>
-                    <div class="col-sm-12"><textarea class="form-control" id="inputBody" rows="12"></textarea></div>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-warning pull-left">Save Draft</button>
-                <button type="button" class="btn btn-primary ">Send <i class="fa fa-arrow-circle-right fa-lg"></i></button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal compose message -->
 
     </div>
 
@@ -500,7 +728,6 @@ function update(element) {
 
 
   <footer role="contentinfo" id="footer" class="group js-footer">
-
 
     <div class="footer-wrapper">
 
@@ -544,11 +771,13 @@ function update(element) {
       <script type="text/javascript" src="assets/javascripts/application.js"></script>
     -->
     <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
-
     <!-- #BeginEditable "scripts" -->
     <script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
     <script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="js/casedata.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+
     <script type="text/javascript">
 
     $(document).ready(function() {
@@ -585,23 +814,24 @@ function update(element) {
       $("#lastname").text($.cookie("lastname")).addClass("bolder");
     }
 
+    $('[data-toggle="tooltip"]').tooltip("hide")
 
     ///////////////////////// Delete Row Functionality - Start /////////////////////////
     var documentValue;
 
-    $("#table tr").on("click", function (e) {
-      getRowNumber($(this).index()+1);
-      documentValue = $(this).find('td:nth-child(2)').text();
-      $("#document").text(documentValue);
+    $(".application h2 .urn").on("click", function (e) {
+      // getRowNumber($(this).index()+1);
+      documentValue = $(this).find('.application h2 .urn').text();
+      $("#application").text(documentValue);
     });
 
-    $(".delete-row").on("click", function (e) {
-      $('#table-row-'+rownumber).hide(750);
-    });
+    // $(".delete-row").on("click", function (e) {
+    //   $('#table-row-'+rownumber).hide(750);
+    // });
 
-    function getRowNumber(row){
-      rownumber = row;
-    }
+    // function getRowNumber(row){
+    //   rownumber = row;
+    // }
     ///////////////////////// Delete Row Functionality - End /////////////////////////
 
     function getParameterByName(name) {
