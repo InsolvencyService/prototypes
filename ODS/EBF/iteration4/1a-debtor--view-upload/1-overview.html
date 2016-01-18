@@ -243,7 +243,7 @@
               </tr>
             </thead>
 			
-			<tbody id="table">
+			<tbody id="tbody">
             
             </tbody>
             
@@ -448,7 +448,8 @@ $(document).ready(function() {
 		    row += '</tr>';
 		
 			//Pre-appends to table
-			$("#table").prepend(row);
+			$("#tbody").append(row);
+			alert(row);
 		}
 	}
 });
