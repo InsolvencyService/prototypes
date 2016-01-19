@@ -247,11 +247,13 @@
               </tr>
             </thead>
 
-			<tbody id="tbody">
-
-            </tbody>
 
             <tbody >
+            	<div id="tableadd">
+            	
+            	</div>
+            	
+            	
               <tr class="activerow">
                 <td><div class="label label-success label-as-badge">Notification</div></td>
                 <td>
@@ -434,7 +436,7 @@ $(document).ready(function () {
 		    row += '</tr>';
 
 			//Pre-appends to table
-			$("#tbody").prepend(row);
+			$("#tableadd").prepend(row);
 
 		}
 	}
@@ -606,7 +608,7 @@ function getParameterByName(name) {
   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-var $rows = $('#table tr');
+var $rows = $('tbody tr');
 $('#search').keyup(function() {
 
   var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
