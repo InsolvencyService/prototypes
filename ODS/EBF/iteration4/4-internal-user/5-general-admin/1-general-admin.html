@@ -292,19 +292,54 @@ a.btn:visited{
             <div class="panel-body">
 
               <div id="search-applications">
-                <div class="header-search-content">
-                  <label for="search-main">Search eBF Admin database</label>
-                  <input type="search" name="q" id="search-main" title="Search" placeholder="Search eBF Admin database">
-                  <button class="submit" type="submit" value="Search">
-                    <i class="glyphicon glyphicon-search"></i>
-                  </button>
-                </div>
+                <form action="#" method="get" role="search">
+                  <div class="header-search-content">
+                    <label for="search-main">Search eBF Admin database</label>
+                    <input type="search" name="q" id="search" title="Search" placeholder="Search eBF Admin database" required="">
+                    <button class="submit" type="submit" value="Search">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </div>
+                  <div class="header-update-all">
+                    <a id="update-all-link"><i class="glyphicon glyphicon-plus"></i> Update all items</a>
+                  </div>
+                  <div class="header-save-content">
+                    <a href="#" class="button">Save your changes</a>
+                  </div>
+                </form>
+
               </div>
 
-              <hr>
+              <!-- /////////////////////////////////// Change all - Start /////////////////////////////////// -->
+              <div class="well" id="change-all">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <form id="update-all-notifications" action="#" class="change-all">
+                      <label id="notifications-label" for="notifications">Change all applications Notifications to:</label><br>
+                      <input id="notifications" name="notifications" type="text" value="" /><br>
+                      <button id="update-notifications">Update</button>
+                    </form>
+                  </div>
+                  <div class="col-sm-6">
+                    <form id="update-all-owners" action="#" class="change-all">
+                      <label id="owner-label" name="owner" for="owner">Change the owner for all applications to:</label><br>
+                      <input id="owner" name="owner" type="text" value="" /><br>
+                      <button id="update-owner">Update</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- /////////////////////////////////// Change all - End /////////////////////////////////// -->
+
+              <!-- Search Results - Start -->
+              <div id="search-results">
+                <h1 class="heading-large">Admin search results</h1>
+                <p id="no-results">We're sorry we can't seem to find that application, please remove your search term and try again.</p>
+              </div>
+              <!-- Search Results - End -->
 
               <div id="recent-application">
-                <h2 class="heading-large">Recent Application</h2>
+                <h1 class="heading-large">Recent Application</h1>
                 <p>We have saved the application you worked on when you last visited the EBF administration.</p>
 
                 <!-- ///// Admin Application Item - Start //// -->
@@ -334,22 +369,22 @@ a.btn:visited{
                   </div>
                   <div class="col-sm-6 application-right">
                     <div class="form-group">
-                      <label id="notifications-label" name="notifications-1" for="notifications-1" class="col-sm-5">Notifications:</label>
+                      <label id="notifications-label-1" for="notifications-1" class="col-sm-5">Notifications:</label>
                       <input id="notifications-1" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
-                      <label id="owner-label" name="owner-1" for="owner-1" class="col-sm-5">Owner:</label>
+                      <label id="owner-label-1" for="owner-1" class="col-sm-5">Owner:</label>
                       <input id="owner-1" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
                       <label for="PARV-1"><input type="checkbox" id="PARV-1"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <div class="col-sm-5">
+                      <!-- <div class="col-sm-5">
                         <a href="#" class="button">Save changes</a>
-                      </div>
-                      <div class="col-sm-5">
-                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div> -->
+                      <div>
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon glyphicon-trash"></i> Delete application</a>
                       </div>
                     </div>
                   </div>
@@ -364,30 +399,14 @@ a.btn:visited{
                 </div>
                 <!-- ///////////////////// Completion Message - END ///////////////////// -->
 
+                <hr>
 
               </div>
 
-              <hr>
-
               <div id="all-applications">
 
-                <h2 class="heading-large">All my Applications</h2>
+                <h1 class="heading-large">All my Applications</h1>
                 <p>Here are all your currently assigned applications.</p>
-                <form action="#" class="change-all">
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <label id="notifications-label" name="notifications-2" for="notifications-2">Change all applications Notifications to:</label><br>
-                      <input id="notifications-2" name="notifications-2" type="text" value="matt.owen@insolvency.gsi.gov.uk" />
-                    </div>
-                    <div class="col-sm-5">
-                      <label id="owner-label" name="owner-2" for="owner-2">Change the owner for all applications to:</label><br>
-                      <input id="owner-2" name="owner-2" type="text" value="matt.owen@insolvency.gsi.gov.uk" />
-                    </div>
-                    <div class="col-sm-2">
-                      <button href="#" class="button">Update</button>
-                    </div>
-                  </div>
-                </form>
 
                 <!-- Navbar - Start -->
                 <nav class="navbar navbar-default" role="navigation">
@@ -437,22 +456,22 @@ a.btn:visited{
                   </div>
                   <div class="col-sm-6 application-right">
                     <div class="form-group">
-                      <label id="notifications-label" name="notifications-3" for="notifications-3" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-3" name="notifications-3" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="notifications-label-3" for="notifications-3" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-3" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
-                      <label id="owner-label" name="owner-3" for="owner-3" class="col-sm-5">Owner:</label>
-                      <input id="owner-3" name="owner-3" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="owner-label-3" for="owner-3" class="col-sm-5">Owner:</label>
+                      <input id="owner-3" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
                       <label for="PARV-3"><input type="checkbox" id="PARV-3"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <div class="col-sm-5">
+                      <!-- <div class="col-sm-5">
                         <a href="#" class="button">Save changes</a>
-                      </div>
-                      <div class="col-sm-5">
-                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div> -->
+                      <div>
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon glyphicon-trash"></i> Delete application</a>
                       </div>
                     </div>
                   </div>
@@ -487,22 +506,22 @@ a.btn:visited{
                   </div>
                   <div class="col-sm-6 application-right">
                     <div class="form-group">
-                      <label id="notifications-label" name="notifications-4" for="notifications-4" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-4" name="notifications-4" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="notifications-label-4" for="notifications-4" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-4" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
-                      <label id="owner-label" name="owner-4" for="owner-4" class="col-sm-5">Owner:</label>
-                      <input id="owner-4" name="owner-4" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="owner-label-4" for="owner-4" class="col-sm-5">Owner:</label>
+                      <input id="owner-4" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
                       <label for="PARV-4"><input type="checkbox" id="PARV-4"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <div class="col-sm-5">
+                      <!-- <div class="col-sm-5">
                         <a href="#" class="button">Save changes</a>
-                      </div>
-                      <div class="col-sm-5">
-                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div> -->
+                      <div>
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon glyphicon-trash"></i> Delete application</a>
                       </div>
                     </div>
                   </div>
@@ -537,22 +556,22 @@ a.btn:visited{
                   </div>
                   <div class="col-sm-6 application-right">
                     <div class="form-group">
-                      <label id="notifications-label" name="notifications-5" for="notifications-5" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-5" name="notifications-5" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="notifications-label-5" for="notifications-5" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-5" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
-                      <label id="owner-label" name="owner-5" for="owner-5" class="col-sm-5">Owner:</label>
-                      <input id="owner-5" name="owner-5" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="owner-label-5" for="owner-5" class="col-sm-5">Owner:</label>
+                      <input id="owner-5" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
                       <label for="PARV-5"><input type="checkbox" id="PARV-5"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <div class="col-sm-5">
+                      <!-- <div class="col-sm-5">
                         <a href="#" class="button">Save changes</a>
-                      </div>
-                      <div class="col-sm-5">
-                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div> -->
+                      <div>
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon glyphicon-trash"></i> Delete application</a>
                       </div>
                     </div>
                   </div>
@@ -587,22 +606,22 @@ a.btn:visited{
                   </div>
                   <div class="col-sm-6 application-right">
                     <div class="form-group">
-                      <label id="notifications-label" name="notifications-6" for="notifications-6" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-6" name="notifications-6" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="notifications-label-6" for="notifications-6" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-6" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
-                      <label id="owner-label" name="owner-6" for="owner-6" class="col-sm-5">Owner:</label>
-                      <input id="owner-6" name="owner-6" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="owner-label-6" for="owner-6" class="col-sm-5">Owner:</label>
+                      <input id="owner-6" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
                       <label for="PARV-6"><input type="checkbox" id="PARV-6"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <div class="col-sm-5">
+                      <!-- <div class="col-sm-5">
                         <a href="#" class="button">Save changes</a>
-                      </div>
-                      <div class="col-sm-5">
-                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div> -->
+                      <div>
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon glyphicon-trash"></i> Delete application</a>
                       </div>
                     </div>
                   </div>
@@ -637,22 +656,22 @@ a.btn:visited{
                   </div>
                   <div class="col-sm-6 application-right">
                     <div class="form-group">
-                      <label id="notifications-label" name="notifications-7" for="notifications-7" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-7" name="notifications-7" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="notifications-label-7" for="notifications-7" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-7" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
-                      <label id="owner-label" name="owner-7" for="owner-7" class="col-sm-5">Owner:</label>
-                      <input id="owner-7" name="owner-7" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                      <label id="owner-label-7" for="owner-7" class="col-sm-5">Owner:</label>
+                      <input id="owner-7" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                     </div>
                     <div class="form-group">
                       <label for="PARV-7"><input type="checkbox" id="PARV-7"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <div class="col-sm-5">
+                      <!-- <div class="col-sm-5">
                         <a href="#" class="button">Save changes</a>
-                      </div>
-                      <div class="col-sm-5">
-                        <a class="controls-delete" data-toggle="modal" data-target="#myModal">Delete application</a>
+                      </div> -->
+                      <div>
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon glyphicon-trash"></i> Delete application</a>
                       </div>
                     </div>
                   </div>
@@ -814,14 +833,45 @@ a.btn:visited{
       $("#lastname").text($.cookie("lastname")).addClass("bolder");
     }
 
-    $('[data-toggle="tooltip"]').tooltip("hide")
+    $('[data-toggle="tooltip"]').tooltip("hide");
+
+    ///////////////////////// Update all notifications - Start /////////////////////////
+
+    $('#update-all-link').click(function(e) {
+      e.preventDefault();
+      $('#change-all').slideToggle('750');
+      $(this).find("i").toggleClass("glyphicon-minus");
+      // $(this).addClass("close-item");
+    });
+
+    // $('#update-all-link.close-item').on("click", function (e) {
+    //   e.preventDefault();
+    //   $('#change-all').slideUp('750');
+    //   $(this).find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    // });
+
+    $('#update-all-notifications').on("submit", function (e) {
+      e.preventDefault();
+      $('input[name=notifications]').val($('#notifications').val());
+    });
+
+    $('#update-all-owners').on("submit", function (e) {
+      e.preventDefault();
+      $('input[name=owner]').val($('#owner').val());
+    });
+    // $("#update-all").on("click", function (e) {
+    //   // $('input[name=owner]').val($('#owner').val());
+    // });
+
+
+    ///////////////////////// Update all notifications - End /////////////////////////
 
     ///////////////////////// Delete Row Functionality - Start /////////////////////////
     var documentValue;
 
-    $(".application h2 .urn").on("click", function (e) {
+    $(".application .controls-delete").on("click", function (e) {
       // getRowNumber($(this).index()+1);
-      documentValue = $(this).find('.application h2 .urn').text();
+      documentValue = $(this).closest('.application h2 .urn').text();
       $("#application").text(documentValue);
     });
 
@@ -841,7 +891,7 @@ a.btn:visited{
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
 
-    var $rows = $('#table tr');
+    var $rows = $('#all-applications .application, #recent-application .application');
     $('#search').keyup(function() {
 
       var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
@@ -852,6 +902,13 @@ a.btn:visited{
         text = $(this).text().replace(/\s+/g, ' ');
         return !reg.test(text);
       }).hide();
+
+      // if (val == '') {
+      //   $('#no-results').show();
+      // }
+
+      $('#change-all, #recent-application h1, #recent-application p, #recent-application .completion-message, #recent-application hr, #all-applications h1, #all-applications p, #all-applications form.change-all, #all-applications nav').hide();
+      $('#search-results').show();
     });
 
 
