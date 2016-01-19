@@ -74,8 +74,8 @@
 <style>
 .error-message{
 
-	color: red !important
-	}
+  color: red !important
+}
 }
 
 
@@ -130,7 +130,7 @@
   </div>
 
   <main role="main" id="wrapper">
-  <!-- #BeginEditable "content" -->
+    <!-- #BeginEditable "content" -->
 
     <div id="content">
       <div class="inner-block">
@@ -151,17 +151,17 @@
             <h1 class="form-title heading-large">File upload</h1>
 
             <div class="validation-summary"  id="pnl-error"  style="display:none">
-                <ol>
-			        <li class="error-message upload"  style="display:none">
-			               You must select a file to upload.
-			        </li>
-			        <li class="error-message descriptionlabel"  style="display:none">
-			               Please enter a descripton of the file.
-			        </li>
+              <ol>
+                <li class="error-message upload"  style="display:none">
+                  You must select a file to upload.
+                </li>
+                <li class="error-message descriptionlabel"  style="display:none">
+                  Please enter a descripton of the file.
+                </li>
 
 
-    			</ol>
-			</div>
+              </ol>
+            </div>
 
             <p>Select files from your computer that you would like to upload for application <span class="bolder">EHBJ-8F3M-KRPL - Kim Scarlett</span>.</p>
             <form action="" method="post" enctype="multipart/form-data">
@@ -174,147 +174,147 @@
                 </div>
                 <div class="form-group">
                   <label>Description</label><br>
-                 <span  class="error-message descriptionlabel"  style="display:none">
-			               Please enter a descripton of the file.</span>
-                  <textarea rows="5" id="desc"></textarea>
+                  <span  class="error-message descriptionlabel"  style="display:none">
+                    Please enter a descripton of the file.</span>
+                    <textarea rows="5" id="desc"></textarea>
+                  </div>
+                  <a class="button" id="uload">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
+                  <p><a href="javascript:history.go(-1)">Back</a></p>
+                  <p>&nbsp;</p>
                 </div>
-                <a class="button" id="uload">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
-                <p><a href="javascript:history.go(-1)">Back</a></p>
-                <p>&nbsp;</p>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
+
+
         </div>
-
-
       </div>
-    </div>
-  </main>
-
-
-      <!-- #EndEditable -->
-
-
-      <footer role="contentinfo" id="footer" class="group js-footer">
-
-
-        <div class="footer-wrapper">
-
-          <div class="footer-meta">
-
-            <div class="footer-meta-inner">
-
-              <ul class="footer__nav" style="width:100%">
-                <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
-              </ul>
-              <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-                <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-                <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-              </ul>
-
-              <div class="open-government-licence">
-                <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-                <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
-              </div>
-            </div>
-
-            <div class="copyright">
-              <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-            </div>
-          </div>
-        </div>
-
-      </footer>
-
-      <!--end footer-->
-
-      <div class="app-error hidden" id="global-app-error"></div>
-      <!--
-      <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-      <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
-
-      <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-      <script type="text/javascript" src="assets/javascripts/application.js"></script>
-    -->
-    <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
-
-    <!-- #BeginEditable "scripts" -->
-    <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-
-    <script type="text/javascript">
-
-    var count;
-    $(document).ready(function() {
-
-      if($.cookie("EBF_document_count")){
-      	count = $.cookie("EBF_document_count");
-      }
-      else{
-      	count = 0;
-      }
-	
-    });
-
-    $("#uload").on("click", function (e) {
-
-    	$("#pnl-error").hide();
-    	$(".upload").hide();
-    	$(".descriptionlabel").hide();
-
-		//validation
-		if($("#js-upload-files").val()=="" || $("#desc").val().length == 0){
-			$("#pnl-error").show();
-
-			if($("#js-upload-files").val()=="" ){
-				$(".upload").show();
-		   	}
-
-		   if($("#desc").val().length == 0){
-		   		$(".descriptionlabel").show();
-		   }
-	  	}
-	   else{
-
-			function formattedDate(date) {
-			    var d = new Date(date || Date.now()),
-			        month = '' + (d.getMonth() + 1),
-			        day = '' + d.getDate(),
-			        year = d.getFullYear();
-
-			    if (month.length < 2) month = '0' + month;
-			    if (day.length < 2) day = '0' + day;
-
-			    return [ day, month, year].join('/');
-			}
-
-			count++;
-			var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
-			$.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
-			$.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
-			$.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
-			$.cookie("EBF_document_count", count, {path:'/'});
-
-
-			$("#uload").attr("href", "1-overview.html");
-		}
-	});
-
-    </script>
+    </main>
 
 
     <!-- #EndEditable -->
 
 
+    <footer role="contentinfo" id="footer" class="group js-footer">
 
 
-    <div id="window-resizer-tooltip" style="display: none;">
-      <a href="/claims/start#" title="Edit settings"
-      style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
-      <span class="tooltipTitle">Window size: </span>
-      <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
-      <br><span class="tooltipTitle">Viewport size: </span>
-      <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
-    </body><!-- #EndTemplate -->
+      <div class="footer-wrapper">
 
-    </html>
+        <div class="footer-meta">
+
+          <div class="footer-meta-inner">
+
+            <ul class="footer__nav" style="width:100%">
+              <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
+            </ul>
+            <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+              <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+              <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+              <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+            </ul>
+
+            <div class="open-government-licence">
+              <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+              <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    <!--end footer-->
+
+    <div class="app-error hidden" id="global-app-error"></div>
+    <!--
+    <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+    <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/application.js"></script>
+  -->
+  <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+
+  <!-- #BeginEditable "scripts" -->
+  <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+
+  <script type="text/javascript">
+
+  var count;
+  $(document).ready(function() {
+
+    if($.cookie("EBF_document_count")){
+      count = $.cookie("EBF_document_count");
+    }
+    else{
+      count = 0;
+    }
+
+  });
+
+  $("#uload").on("click", function (e) {
+
+    $("#pnl-error").hide();
+    $(".upload").hide();
+    $(".descriptionlabel").hide();
+
+    //validation
+    if($("#js-upload-files").val()=="" || $("#desc").val().length == 0){
+      $("#pnl-error").show();
+
+      if($("#js-upload-files").val()=="" ){
+        $(".upload").show();
+      }
+
+      if($("#desc").val().length == 0){
+        $(".descriptionlabel").show();
+      }
+    }
+    else{
+
+      function formattedDate(date) {
+        var d = new Date(date || Date.now()),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [ day, month, year].join('/');
+      }
+
+      count++;
+      var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
+      $.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
+      $.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
+      $.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
+      $.cookie("EBF_document_count", count, {path:'/'});
+
+
+      $("#uload").attr("href", "1-overview.html?status=file-upload");
+    }
+  });
+
+  </script>
+
+
+  <!-- #EndEditable -->
+
+
+
+
+  <div id="window-resizer-tooltip" style="display: none;">
+    <a href="/claims/start#" title="Edit settings"
+    style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+    <span class="tooltipTitle">Window size: </span>
+    <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
+    <br><span class="tooltipTitle">Viewport size: </span>
+    <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
+  </body><!-- #EndTemplate -->
+
+  </html>
