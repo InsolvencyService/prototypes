@@ -156,11 +156,17 @@ table td{
     <div id="content">
 
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
+        <div class="phase-banner clearfix">
+
+          <div class="col-sm-9">
             <strong class="phase-tag">BETA</strong>
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
+          </div>
+
+          <div id="logout" class="col-sm-3 text-right" >
+            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+          </div>
+
         </div>
       </div>
 
@@ -183,7 +189,7 @@ table td{
             </ul>
             <p><b>Refunds take up to 21 days to process.</b></p>
             <p>Online payments will be refunded directly to the cards the payments came from.</p>
-            <p>For payments made at Payzone outlets, we will send a cheque or 
+            <p>For payments made at Payzone outlets, we will send a cheque or
 			Bacs transfer for the refund amount to the individual who made the payment.</p>
             <h3 class="heading-medium">Refunds after you have submitted your application</h3>
             <p>You can’t request a refund once you have submitted your application.</p>
@@ -197,7 +203,7 @@ table td{
               <li>you would get £70 back</li>
             </ul>
             <p>Online payments will be refunded directly to the cards the payments came from.</p>
-            <p>For payments made at Payzone outlets, we will send a cheque or 
+            <p>For payments made at Payzone outlets, we will send a cheque or
 			Bacs transfer for the refund amount to the individual who made the payment.</p>
 
             <!-- CTA Section Start -->
@@ -205,9 +211,11 @@ table td{
               <div>
                 <a href="1-payment-amount.html" id="continue" class="button">Continue</a>
               </div>
-              <div class="back">
-                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+              <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" id="cancel">Save and logout</a>
               </div>
+              <p>&nbsp;</p>
             </div>
             <!-- CTA Section End -->
 

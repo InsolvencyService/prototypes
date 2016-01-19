@@ -156,11 +156,17 @@ table td{
     <div id="content">
 
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
+        <div class="phase-banner clearfix">
+
+          <div class="col-sm-9">
             <strong class="phase-tag">BETA</strong>
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
+          </div>
+
+          <div id="logout" class="col-sm-3 text-right" >
+            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+          </div>
+
         </div>
       </div>
 
@@ -180,15 +186,15 @@ table td{
             </ul>
             <br>
              <p>If you can't pay the full fee yourself, you can also ask others to <a href="10-pay-on-my-behalf.html">make online payments on your behalf.</a></p>
-           
+
  			<h3 class="heading-medium">Making a payment</h3>
-            <p>To make a payment while logged into your application, simply 
-			click the  <a href="1-payment-amount.html">Make a payment</a> button at the top right hand corner of the <a href="../overview.html">application overview</a> page.</p> 
+            <p>To make a payment while logged into your application, simply
+			click the  <a href="1-payment-amount.html">Make a payment</a> button at the top right hand corner of the <a href="../overview.html">application overview</a> page.</p>
 			<br>
 			<p>Other's who want to make a payment on your behalf will need you to give them a unique <a href="10-pay-on-my-behalf.html">payment reference number</a>. You can
 			use this same payment reference number to make a payment without logging in.</p>
             <br>
-            <p>Applying for bankruptcy costs <b>£655</b>. You can pay the fee in one go or in 
+            <p>Applying for bankruptcy costs <b>£655</b>. You can pay the fee in one go or in
 			as many instalments as you need.</p>
 			 <p>For example, you could:</p>
              <ul class="help">
@@ -198,13 +204,13 @@ table td{
         <br>
             <p>The minimum payment by card is £5.</p>
 		     <p>The minimum payment in cash is £50.</p>
-			 
+
 			 <div class="panel-indent">
-			 If you're planning to pay your final instalment in cash, plan ahead to make sure you have at least £50 
-			  left to pay. 
+			 If you're planning to pay your final instalment in cash, plan ahead to make sure you have at least £50
+			  left to pay.
 			 	Otherwise, you will have to overpay the fee in order to meeting the £50 minimum for cash payments.
-			 	</div>   
-           
+			 	</div>
+
             <h3 class="heading-medium">Refunds</h3>
             <p>If you decide not to submit your application, you’ll receive a full refund of any
              money you have paid. Read our <a href="7-help-page.html">refund policy</a> to find out more.</p>
@@ -213,9 +219,11 @@ table td{
               <div>
                 <a href="12-alternative-login.html" id="continue" class="button">Continue</a>
               </div>
-              <div class="back">
-                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+              <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" id="cancel">Save and logout</a>
               </div>
+              <p>&nbsp;</p>
             </div>
             <!-- CTA Section End -->
 
@@ -225,7 +233,7 @@ table td{
             <div class="panel-indent" style="font-size:16px; border-color:#efefef">
               <p><a href="1-payment-amount.html">Make a payment</a></p>
               <p><a href="7-help-page.html">Refund policy</a></p>
-            
+
               <p><a href="../overview.html">Return to my application</a></p>
 
             </div>

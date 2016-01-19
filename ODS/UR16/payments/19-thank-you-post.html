@@ -156,11 +156,17 @@ table td{
     <div id="content">
 
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
+        <div class="phase-banner clearfix">
+
+          <div class="col-sm-9">
             <strong class="phase-tag">BETA</strong>
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
+          </div>
+
+          <div id="logout" class="col-sm-3 text-right" >
+            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+          </div>
+
         </div>
       </div>
 
@@ -179,13 +185,18 @@ table td{
 				<ul class="list-bullet">
 				<li>emailing <a href="mailto:theadjudicator@insolvency.gsi.gov.uk">onlinedebtsolutions@insolvency.gsi.gov.uk</a></li>
 				<li>calling 0330 678 0015</li>
-					</ul>	
+					</ul>
 
 
-       
+
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
               <a href="../overview.html"><button class="button">Return to my application</button></a>
+              <div>
+                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" id="cancel">Save and logout</a>
+              </div>
+              <p>&nbsp;</p>
             </div>
             <!-- CTA Section End -->
 

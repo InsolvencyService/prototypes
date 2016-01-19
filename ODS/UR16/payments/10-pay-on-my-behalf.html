@@ -155,11 +155,17 @@ table td{
   <main id="content" role="main">
     <div id="content">
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
+        <div class="phase-banner clearfix">
+
+          <div class="col-sm-9">
             <strong class="phase-tag">BETA</strong>
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
+          </div>
+
+          <div id="logout" class="col-sm-3 text-right" >
+            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+          </div>
+
         </div>
       </div>
 
@@ -224,7 +230,11 @@ table td{
               <!-- CTA Section Start -->
               <div class="form-navigation form-group" style="margin:30px 0;">
                 <a href="../overview.html" id="continue" class="button">Return to my application</a><br>
-                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+                <div>
+                  <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                  <a href="#" id="cancel">Save and logout</a>
+                </div>
+                <p>&nbsp;</p>
               </div>
               <!-- CTA Section End -->
 
@@ -246,7 +256,7 @@ table td{
 
               <div class="panel-indent" style="font-size:16px; border-color:#efefef">
 
-                <p><a class="save" style="font-weight:bold">Save and logout</a></p>
+                <!-- <p><a class="save" style="font-weight:bold">Save and logout</a></p> -->
                 <p><a href="../overview.html">Return to my application</a></p>
                 <p><a href="8-statements-page.html">View my payment history</a></p>
                 <p><a href="17-information-page.html">Find out about paying the fee</a></p>

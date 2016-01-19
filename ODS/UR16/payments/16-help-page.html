@@ -156,136 +156,161 @@ table td{
     <div id="content">
 
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
+        <div class="phase-banner clearfix">
+
+          <div class="col-sm-9">
             <strong class="phase-tag">BETA</strong>
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
+          </div>
+
+          <div id="logout" class="col-sm-3 text-right" >
+          </div>
+
         </div>
       </div>
 
       <!-- #BeginEditable "content" -->
 
-      <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">How do I give someone a payment reference?</h1>
-        <div class="row">
-
-          <!-- Main Content Section Start -->
-          <div class="col-sm-8">
-            <p>If you can't make any payments but can provide details somebody else who can on your behalf, we have an easy way for you to do it.</p>
-            <p>We have provided you with the ability to nominate someone to pay on your behalf within the <b>Make a payment</b> section.</p>
-            <p>Simply follow the instructions below:</p>
-            <ul class="help">
-              <li>Sign into you application</li>
-              <li>Click the green link labeled <b>Make a payment</b></li>
-              <li>Scroll down the make a payment page to the section labeled <b>How does someone pay on my behalf?</b></li>
-              <li>Click the link labeled <b>click here to find out how</b></li>
-              <li>This page will the provide you with details of a payment reference number that will be sent to your nominated person.</li>
-              <li>Provide us with either an email address or postal address so we can send the the correct payment details.</li>
-              <li>Click the <b>continue</b> button</li>
-              <li>We have will then send the person a link to a payment portal where they will enter the details provided and make a payment.</li>
-              <li>This payment will then be deducted from your total amount left to pay.</li>
-              <li>We will then pass you onto a thank you page from which you can go back to the <b>make a payment</b> section of you application.</li>
-            </ul>
-
-            <!-- CTA Section Start -->
-            <div class="form-navigation form-group" style="margin:30px 0;">
-              <div>
-                <a href="../brian/continue/return2.html" id="continue" class="button">Sign into my application</a>
-              </div>
-              <div class="back">
-                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
-              </div>
-            </div>
-            <!-- CTA Section End -->
-
-          </div>
-          <!-- Main Content Section End -->
-
+      <div class="col-sm-7" style="margin:0 15px">
+        <h1 class="form-title heading-large">Continue to your application</h1>
+        <p>If you are a returning applicate visit the make a payment section and follow the link "Have someone else make a payment on my behalf" and follow the instructions.</p>
+        <div class="validation-summary" style="display:none">
+          <h2>Application number is not valid</h2>
+          <p></p>
+          <ol>
+            <li class="error-message">
+              <p>Please enter a 12 digit application number</p>
+              <p><a href="urn-help.html">I have forgotten my application number</a></p>
+            </li>
+          </ol>
         </div>
 
-      </div>
-
-        <!-- #EndEditable -->
-
-    </div>
-</main>
+        <p class="text msg-URN" style="display:none;">
+          Your application number is<br>
+          <span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNH-J93R-5309</span>
+        </p>
 
 
-        <footer role="contentinfo" id="footer" class="group js-footer">
+        <form class="form" method="post">
+          <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-
-          <div class="footer-wrapper">
-
-            <div class="footer-meta">
-
-              <div class="footer-meta-inner">
-
-                <ul class="footer__nav" style="width:100%">
-                  <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
-                </ul>
-                <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                  <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-                  <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-                  <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-                </ul>
-
-                <div class="open-government-licence">
-                  <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-                  <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
-                </div>
+          <!-- For User research -->
+          <div class="form-navigation form-group">
+            <div class="form-group ">
+              <label id="applicant_address_line_2_label" for="urn" class="form-label-bold">What's your application number?</label>
+              <div class="form-hint">
+                You can find this in the email we sent you
               </div>
-
-              <div class="copyright">
-                <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-              </div>
+              <input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="">
+              <br>
             </div>
           </div>
 
-        </footer>
+        </form>
 
-        <!--end footer-->
+        <br>
 
-        <div class="app-error hidden" id="global-app-error"></div>
-        <!--
-        <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-        <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+        <div class="form-navigation form-group">
+          <div>
+            <p><a href="security-question.html" id="next" class="button">Continue</a></p>
+            <p><a href="urn-help.html">I have forgotten my application number or security questions</a></p>
+            <div><br></div>
 
-        <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-        <script type="text/javascript" src="assets/javascripts/application.js"></script>
-      -->
-      <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
-      <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+            <div>
+              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>&nbsp;
+            </div>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
 
-      <!-- #BeginEditable "scripts" -->
-      <script type="text/javascript">
-
-        $(document).ready(function() {
-          var url      = window.location.href;     // Returns full URL
-          var pathname = window.location.pathname; // Returns path only
-          $("#email-link").on("click", function (e) {
-            $.cookie("url", url, {path:'/'});
-            $.cookie("pathname", pathname, {path:'/'});
-          });
-
-        });
-        function numberWithCommas(x) {
-          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-      </script>
+      <div class="col-sm-4">
+        <div class="not-an-applicant">
+          <h1 class="form-title heading-medium">Not a Bankruptcy Applicant?</h1>
+          <p>If you require more information about how to make a payment, then please speak to the Bankruptcy applicant you wish to make a payment for.</p>
+          <p>They have the facilities within their application to provide your with all of the details needed to make a payment on their behalf.</p>
+        </div>
+      </div>
       <!-- #EndEditable -->
 
+    </div>
+  </main>
+
+
+  <footer role="contentinfo" id="footer" class="group js-footer">
+
+
+    <div class="footer-wrapper">
+
+      <div class="footer-meta">
+
+        <div class="footer-meta-inner">
+
+          <ul class="footer__nav" style="width:100%">
+            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
+          </ul>
+          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+          </ul>
+
+          <div class="open-government-licence">
+            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!--end footer-->
+
+  <div class="app-error hidden" id="global-app-error"></div>
+  <!--
+  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+
+  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/application.js"></script>
+-->
+<script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+
+<!-- #BeginEditable "scripts" -->
+<script type="text/javascript">
+
+$(document).ready(function() {
+  var url      = window.location.href;     // Returns full URL
+  var pathname = window.location.pathname; // Returns path only
+  $("#email-link").on("click", function (e) {
+    $.cookie("url", url, {path:'/'});
+    $.cookie("pathname", pathname, {path:'/'});
+  });
+
+});
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
+<!-- #EndEditable -->
 
 
 
-      <div id="window-resizer-tooltip" style="display: none;">
-        <a href="/claims/start#" title="Edit settings"
-        style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
-        <span class="tooltipTitle">Window size: </span>
-        <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
-        <br><span class="tooltipTitle">Viewport size: </span>
-        <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
-      </body><!-- #EndTemplate -->
 
-      </html>
+<div id="window-resizer-tooltip" style="display: none;">
+  <a href="/claims/start#" title="Edit settings"
+  style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+  <span class="tooltipTitle">Window size: </span>
+  <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
+  <br><span class="tooltipTitle">Viewport size: </span>
+  <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
+</body><!-- #EndTemplate -->
+
+</html>
