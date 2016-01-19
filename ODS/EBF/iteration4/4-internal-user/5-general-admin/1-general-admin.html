@@ -363,7 +363,7 @@ a.btn:visited{
                 <p>We have saved the application you worked on when you last visited the EBF administration.</p>
 
                 <!-- ///// Admin Application Item - Start //// -->
-                <div class="row application">
+                <div class="row application" id="1">
                   <div class="col-sm-6 application-left">
                     <h2 class="heading-medium">Application ref.: <span class="urn bolder">JKTY-YUBD-BKT</span></h2>
                     <table class="application-summary">
@@ -450,9 +450,9 @@ a.btn:visited{
 
                 <!-- Table - Start -->
                 <!-- ///// Admin Application Item - 1 - Start //// -->
-                <div class="row application">
+                <div class="row application" id="2">
                   <div class="col-sm-6 application-left">
-                    <h2 class="heading-medium">Application ref.: <span class="bolder">UPTY-NHTD-BKT</span></h2>
+                    <h2 class="heading-medium">Application ref.: <span class="urn bolder">UPTY-NHTD-BKT</span></h2>
                     <table class="application-summary">
                       <tbody>
                         <tr>
@@ -500,9 +500,9 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 1 - End //// -->
 
                 <!-- ///// Admin Application Item - 2 - Start //// -->
-                <div class="row application">
+                <div class="row application"  id="3">
                   <div class="col-sm-6 application-left">
-                    <h2 class="heading-medium">Application ref.: <span class="bolder">KLAT-HARY-BKT</span></h2>
+                    <h2 class="heading-medium">Application ref.: <span class="urn bolder">KLAT-HARY-BKT</span></h2>
                     <table class="application-summary">
                       <tbody>
                         <tr>
@@ -550,9 +550,9 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 2 - End //// -->
 
                 <!-- ///// Admin Application Item - 3 - Start //// -->
-                <div class="row application">
+                <div class="row application"  id="4">
                   <div class="col-sm-6 application-left">
-                    <h2 class="heading-medium">Application ref.: <span class="bolder">AETL-AJYR-BKT</span></h2>
+                    <h2 class="heading-medium">Application ref.: <span class="urn bolder">AETL-AJYR-BKT</span></h2>
                     <table class="application-summary">
                       <tbody>
                         <tr>
@@ -600,9 +600,9 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 3 - End //// -->
 
                 <!-- ///// Admin Application Item - 4 - Start //// -->
-                <div class="row application">
+                <div class="row application"  id="5">
                   <div class="col-sm-6 application-left">
-                    <h2 class="heading-medium">Application ref.: <span class="bolder">MGSU-LAIR-BKT</span></h2>
+                    <h2 class="heading-medium">Application ref.: <span class="urn bolder">MGSU-LAIR-BKT</span></h2>
                     <table class="application-summary">
                       <tbody>
                         <tr>
@@ -650,9 +650,9 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 4 - End //// -->
 
                 <!-- ///// Admin Application Item - 5 - Start //// -->
-                <div class="row application">
+                <div class="row application"  id="6">
                   <div class="col-sm-6 application-left">
-                    <h2 class="heading-medium">Application ref.: <span class="bolder">MHAT-ALUE-BKT</span></h2>
+                    <h2 class="heading-medium">Application ref.: <span class="urn bolder">MHAT-ALUE-BKT</span></h2>
                     <table class="application-summary">
                       <tbody>
                         <tr>
@@ -820,6 +820,7 @@ a.btn:visited{
     <script type="text/javascript">
 
     $(document).ready(function() {
+      
       var locked = getParameterByName("lock");
       if(locked=="true"){
         $("#locked").show();
@@ -878,17 +879,16 @@ a.btn:visited{
 
     ///////////////////////// Delete Row Functionality - Start /////////////////////////
 
-    var documentValue;
+    var documentValue, documentID;
 
     $(".application .controls-delete").on("click", function (e) {
-      // getRowNumber($(this).index()+1);
-      documentValue = $(".application h2 .urn").text();
-      $("#application").text(documentValue);
-      $(this .row).hide();
+		documentValue =  $(this).parents().eq(3).find('.urn').text();
+		documentID = this.closest('.row').id;
+		$("#application").text(documentValue);       
     });
 
     $(".delete-row").on("click", function (e) {
-      // $('#table-row-'+rownumber).hide(750);
+      	$("#"+documentID).slideUp( 500 );
     });
 
     // function getRowNumber(row){
