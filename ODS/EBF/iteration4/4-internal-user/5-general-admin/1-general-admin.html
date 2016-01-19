@@ -820,7 +820,7 @@ a.btn:visited{
     <script type="text/javascript">
 
     $(document).ready(function() {
-      
+
       var locked = getParameterByName("lock");
       if(locked=="true"){
         $("#locked").show();
@@ -882,9 +882,9 @@ a.btn:visited{
     var documentValue, documentID;
 
     $(".application .controls-delete").on("click", function (e) {
-		documentValue =  $(this).parents().eq(3).find('.urn').text();
-		documentID = this.closest('.row').id;
-		$("#application").text(documentValue);       
+  		documentValue = $(this).parents().eq(3).find('.urn').text();
+  		documentID = this.closest('.row').id;
+  		$("#application").text(documentValue);
     });
 
     $(".delete-row").on("click", function (e) {
