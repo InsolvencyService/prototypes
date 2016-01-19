@@ -178,7 +178,7 @@
                     Please enter a descripton of the file.</span>
                     <textarea rows="5" id="desc"></textarea>
                   </div>
-                  <a class="button" id="uload">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
+                  <a class="button" id="upload">Upload&nbsp;<i class="glyphicon glyphicon-upload"></i></a>
                   <p><a href="javascript:history.go(-1)">Back</a></p>
                   <p>&nbsp;</p>
                 </div>
@@ -256,7 +256,7 @@
 
   });
 
-  $("#uload").on("click", function (e) {
+  $("#upload").on("click", function (e) {
 
     $("#pnl-error").hide();
     $(".upload").hide();
@@ -296,7 +296,7 @@
       $.cookie("EBF_document_count", count, {path:'/'});
 
 
-      $("#uload").attr("href", "1-overview.html?status=file-upload");
+      $("#upload").attr("href", "1-overview.html?status=file-upload");
     }
   });
 

@@ -94,6 +94,7 @@ function createStatusbar(obj)
 	 }
 	 this.statusbar = $("<div class='statusbar2 "+row+"'></div>");
 	 this.filename = $("<div class='filename2'></div>").appendTo(this.statusbar);
+	 this.description = $("<div class='description'><textarea rows='5' id='desc'></textarea></div>").appendTo(this.statusbar);
 	 //this.size = $("<div class='filesize'></div>").appendTo(this.statusbar);
 	 this.progressBar = $("<div class='progressBar2'><div></div></div>").appendTo(this.statusbar);
 	 this.abort = $("<a class='abort'>Cancel</a>").appendTo(this.statusbar);

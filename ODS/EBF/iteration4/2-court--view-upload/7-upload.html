@@ -142,7 +142,7 @@
           <!-- /.inner-block - Start -->
           <div class="inner-block">
             <h1 class="heading-large">Upload a document to the Bankruptcy application</h1>
-            <div class="col-sm-8">
+            <div class="col-sm-12">
 
               <!-- ////////////// Error Messaging - Start ////////////// -->
               <div id="status"></div>
@@ -155,6 +155,7 @@
               <div id="statusbar-header" style="display:none">
                 <div class="statusbar2 statusbar2-title">
                   <div class="filename2">Document name</div>
+                  <div class="description">Description</div>
                   <div class="progressBar2">Status</div>
                   <div class="actionsh">Action</div>
                 </div>
@@ -168,7 +169,7 @@
               </form>
 
               <p>
-                <a id="nextHref">
+                <a id="upload">
                   <input id="nextBtn" disabled="disabled" class="button" type="button" value="Confirm - Check for errors"/>
                 </a>
               </p>
@@ -286,13 +287,13 @@ $(document).ready(function() {
 
   }
 
-  $("#nextHref").on("click", function (e) {
-    $.cookie("filename2", $(".filename2").text(), {path:'/'});
-  });
-
-  if ($.cookie("filename2")) {
-    $(".file-name").text($.cookie("filename2")).addClass("bolder");
-  }
+  // $("#upload").on("click", function (e) {
+  //   $.cookie("filename2", $(".filename2").text(), {path:'/'});
+  // });
+  //
+  // if ($.cookie("filename2")) {
+  //   $(".file-name").text($.cookie("filename2")).addClass("bolder");
+  // }
 
   // var cookieString = "filename2";
   // var res = cookieString.split(" ");
@@ -308,6 +309,71 @@ return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")
 
 
 </script>
+
+
+<!-- //////////////////////// Upload Cookie Storage - Start //////////////////////// -->
+<script type="text/javascript">
+
+var count;
+$(document).ready(function() {
+
+  if($.cookie("EBF_document_count")){
+    count = $.cookie("EBF_document_count");
+  }
+  else{
+    count = 0;
+  }
+
+});
+
+$("#upload").on("click", function (e) {
+
+  $("#pnl-error").hide();
+  $(".upload").hide();
+  $(".descriptionlabel").hide();
+
+  //validation
+  if($("#js-upload-files").val()=="" || $("#desc").val().length == 0){
+    $("#pnl-error").show();
+
+    if($("#js-upload-files").val()=="" ){
+      $(".upload").show();
+    }
+
+    if($("#desc").val().length == 0){
+      $(".descriptionlabel").show();
+    }
+  }
+  else{
+
+    function formattedDate(date) {
+      var d = new Date(date || Date.now()),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+
+      return [ day, month, year].join('/');
+    }
+
+    count++;
+    var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
+    $.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
+    $.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
+    $.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
+    $.cookie("EBF_document_count", count, {path:'/'});
+
+
+    $("#upload").attr("href", "6-ebf-list-view-upload.html?status=file-upload");
+  }
+});
+
+</script>
+<!-- //////////////////////// Upload Cookie Storage - End //////////////////////// -->
+
+
 <!-- #EndEditable -->
 
 
