@@ -70,6 +70,10 @@
 
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
+
+<script src="../../../assets/js/jquery-1.10.2.min.js"></script>
+<script src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+
 <link type="text/css" rel="stylesheet" media="screen" href="../css/ebf-override.css">
 
 <style>
@@ -165,16 +169,18 @@
 
     <div id="content">
       <div class="inner-block">
-        <div class="phase-banner">
-          <p>
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
+
+        <div class="phase-banner clearfix">
+          <div class="col-sm-9">
+            <strong class="phase-tag">BETA</strong>This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+          </div>
+          <div id="logout" class="col-sm-3 text-right" >
+            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+          </div>
         </div>
-      </div>
 
       <!-- #BeginEditable "content" -->
-      <div style="display:block; margin:0 30px !important">
+      <div style="display:block; margin:0 !important">
 
         <h1 class="form-title heading-large">Application B52S-FQ6Y-BKT</h1>
         <div class="col-sm-8">
@@ -185,8 +191,6 @@
         </div>
         <div class="col-sm-4">
           <div class="panel-indent" style="margin-top:0;">
-            <p><a href="logout.html" style="font-weight: bold;"><span class="glyphicon glyphicon-log-out"></span> Save and log-out</a></p>
-            <br>
             <p><a href="2-upload.html">Upload a new document</a></p>
           </div>
         </div>
@@ -392,6 +396,11 @@ $(document).ready(function() {
 });
 
 $(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip("hide");
+});
+
+
+$(document).ready(function () {
 	// updates table with documents stored in session
 	if($.cookie("EBF_document_count")){
 		for( var i=1; i<=$.cookie("EBF_document_count"); i++){
@@ -572,13 +581,6 @@ $(document).ready(function () {
 
 });
 
-function getParameterByName(name) {
-  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-  results = regex.exec(location.search);
-  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 </script>
 
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
@@ -592,10 +594,17 @@ if(filter==null||filter==""){
 }
 
 $(document).ready(function() {
+  $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
   // $('[data-toggle="tooltip"]').tooltip();
 });
 
-$('[data-toggle="tooltip"]').tooltip("hide")
+
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 var $rows = $('#table tr');
 $('#search').keyup(function() {

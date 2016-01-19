@@ -53,31 +53,31 @@ var tarr = new Array;
 
 
 for (i = 0; i < cases.length; i++) {
-	
+
 	tarr = cases[i].split(',');
 	var urn, name, date, status, fagged;
-				
+
 			urn = tarr[0];
 			name = tarr[1];
 			date = tarr[2];
 			status = tarr[3];
 			flagged = tarr[4];
-	
+
 
 	//alert(status);
-		
-		
+
+
 		if(status == filter){
 			var statuscolor = "test" ;
 			var sectiontitle;
 			$(".activerow").hide();
-						
+
 			/*sets status*/
 			switch (status) {
 			case "1":
 				statuscolor = '<span class="label label-success">&nbsp;</span>';
 				sectiontitle= 'New approve cases';
-				break;	
+				break;
 			case "2":
 				statuscolor = '<span class="label label-danger">&nbsp;</span>';
 				sectiontitle = 'New refer cases';
@@ -85,11 +85,11 @@ for (i = 0; i < cases.length; i++) {
 			case "3":
 				statuscolor = '<span class="label label-danger">&nbsp;</span>&nbsp;<i class=\"glyphicon glyphicon-flag\"></i>';
 				sectiontitle = 'Escalated cases';
-				break;	
+				break;
 			case "4":
 				statuscolor = '<span class="label label-warning">&nbsp;</span>&nbsp;<i class=\"glyphicon glyphicon-flag\"></i>';
 				sectiontitle = 'Information received';
-				break;	
+				break;
 			case "5":
 				statuscolor = '<span class="label label-warning">&nbsp;</span>';
 				sectiontitle = 'Information requested';
@@ -119,11 +119,11 @@ for (i = 0; i < cases.length; i++) {
 				sectiontitle = 'Appeal rejected';
 				break;
 			default:
-				statuscolor = '<span class="label label-default">&nbsp;</span>';				
-			}	
-		
+				statuscolor = '<span class="label label-default">&nbsp;</span>';
+			}
+
 			$("#section").html(sectiontitle);
-			
+
 			/* Sets flag */
 			if(flagged == 'true'){
 				flagged = " <i class=\"glyphicon glyphicon-flag\"></i>";
@@ -131,9 +131,9 @@ for (i = 0; i < cases.length; i++) {
 			else{
 				flagged="";
 			}
-			
-			
-			
+
+
+
 		    tablerow = '<tr class="tablerow">';
 		    if(name=="Kim Scarlett"&&(status==2||status==3)){
 		    	tablerow += '<td><a href="refer.html">'+urn+'</a></td>';
@@ -155,13 +155,13 @@ for (i = 0; i < cases.length; i++) {
 		    tablerow += '<td>'+date+'</td>';
 			tablerow += '<td class="text-center">'+statuscolor+'</td>'
 			tablerow +='</tr>';
-			
+
 			$("#table").append(tablerow);
-			
-			
-		}	    
+
+
+		}
 	}
- 
+
 $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
 
 });
