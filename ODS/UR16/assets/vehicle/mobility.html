@@ -167,108 +167,31 @@ display:block;
 
 
 <!-- #BeginEditable "content" --> 
-<div class="inner-block">
+<div class="inner-block text">
 	
+	<h1 class="form-title heading-large">Mobility vehicles</h1>
+	<form class="form" method="post">		
 	
-	
-	<h1 class="form-title heading-large">Vehicle details</h1>
-	
-	
-	
-	<form class="form" method="post">			
-			<div class="form-group ">
-				<label id="make_label" for="make" class="form-label-bold">Make</label>
-				<input id="make" name="make" type="text"  value="" />
-				<br/>
+			<div class="form-group">
+				<label id="firstname_label" for="firstname" class="form-label-bold">What is your mobility scheme customer reference number?</label>
+				<p class="form-hint">This can be found on any correspondance your have received from the mobility scheme</p>
+
+				<input id="mobilitynumber" name="mobilitynumber" type="text" value="" />
+				<p>&nbsp;</p>
 			</div>
-			<div class="form-group ">
-				<label id="model_label" class="form-label-bold" for="model">Model</label>
-				<input id="model" name="model" type="text"  value="" />
-				<br/>
-			</div>
-						<div class="form-group ">
-				<label id="vrn_label" class="form-label-bold" for="vrn">Registration number</label>
-				<input id="vrn" name="vrn" type="text"  value="" />
-				<br/><br/>
-			</div>
-
-			
-			<div class="form-group" >
-			<p id="title_label" class="form-label-bold">Type of vehicle</p>
-			<fieldset class="inline">
-				<div id="pnl-type">				
-					<label id="car_label1" for="car" class="block-label">
-					<input id="car"  name="vehicle" value="car" type="radio">Car</label>
-					
-					<label id="van_label1" for="van" class="block-label">
-					<input id="van"  name="vehicle" value="van" type="radio">Van</label>
-					
-					<label id="motorcycle_label1" for="motorcycle" class="block-label">
-					<input id="motorcycle"  name="vehicle" value="motorcycle" type="radio">Motorcycle</label>
-					
-					<label id="other_label" for="other" class="block-label">
-	                    <input id="other" value="Other" name="vehicle" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
-	                    <input id="other_input" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/></span>
-	                </label>
-
-					
-				</div>
-			</fieldset>
-			</div>
-
-			
-			
-			
-			
-
-
-		
-		<p>&nbsp;</p>
-		
-		<div class="form-group" >
-			<p id="title_label0" class="form-label-bold">What's the nature of your interest in the vehicle?</p>
-			<fieldset class="inline">
-				<div id="pnl-use">				
-					<label id="own_label1" for="own" class="block-label">
-					<input id="own"  name="owned" value="Owns" type="radio">I currently own it (including on finance)<br> </label>
-					
-					<label id="sold_label1" for="disposed" class="block-label">
-					<input id="disposed"  name="owned" value="Disposed of" type="radio">I sold/disposed of it in the last 12 months<br> </label>
-					
-					<label id="use_label1" for="use" class="block-label">
-					<input id="use"  name="owned" value="Uses" type="radio">I don't own 
-					it, but I use it on a regular basis</label>
-					
-					<label id="mobility_label1" for="use" class="block-label">
-					<input id="mobility"  name="owned" value="Mobility vehicle" type="radio">It's a mobility scheme vehicle</label>
-
-
-				</div>
-			</fieldset>
-		</div>
-
-		
-		
+							
+	</form>		     		
 		
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-	<p>&nbsp;</p>
-	<div>
-		
-		<a id="next" class="button">Continue</a>
-			</div>
-	<div>
-	<br>
+		<p><a id="next" href="list_vehicles.html?loop=true" class="button">Continue</a></p>
+		<p><a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a></p>
 	</div>
 	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+</div>
+
 	
-	</div>
-	</div>
-	</form>
-	</div>
 
 	 <!-- #EndEditable -->
 
@@ -345,51 +268,25 @@ $(document).ready(function() {
 <script type="text/javascript">
 var tempname;
 var count;
-
-$(document).ready(function() {
-	$("#make").val($.cookie("TempVehicleMake"));
-	$("#model").val($.cookie("TempVehicleModel"));
-});
-
 $('#next').click(function() {
-
 		writeCookies();
-		if($("#own").prop('checked')==true){
-			$("#next").attr("href","owned.html");
-		}
-		else if($("#disposed").prop('checked')==true){
-			$("#next").attr("href","sold.html");
-		}
-		else if($("#use").prop('checked')==true){
-			$("#next").attr("href","used.html");
-		}
-		else if($("#mobility").prop('checked')==true){
-			$("#next").attr("href","mobility.html");
-		}
-
-
 });
 
 function writeCookies() {
 	// Get count
 		count = $.cookie("VehicleCount");
-		if(count == null || count == ""){
-			count=0
-		}
-		count++;
-		
-		
-	
+			
 	// write records
-		// name
-		$.cookie("VehicleMake"+count, $("#make").val(), {path: '/'});
-		$.cookie("VehicleModel"+count, $("#model").val(), {path: '/'});
-		$.cookie("VehicleVRN"+count, $("#vrn").val(), {path: '/'});
-		$.cookie("VehicleType"+count, $("#pnl-type :checked").val(), {path: '/'});
-		$.cookie("VehicleUse"+count, $("#pnl-use :checked").val(), {path: '/'});
+		$.cookie("VehicleOwnerFirstName"+count, $("#firstname").val(), {path: '/'});
+		$.cookie("VehicleOwnerLastName"+count, $("#lastname").val(), {path: '/'});
+		if($("#relationship_other").prop('checked')==true){
+			$.cookie("VehicleOwnerRelationship"+count, $("#other").val(), {path: '/'});
+		}
+		else{
+			$.cookie("VehicleOwnerRelationship"+count,  $("#relationship :checked").val(), {path: '/'});
+		}
 
-		// update count
-		$.cookie("VehicleCount", count, {path: '/'});
+
 }
 
 
