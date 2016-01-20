@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Overview</title>
+  <title>Approve Document</title>
   <!-- #EndEditable -->
 
 
@@ -158,43 +158,43 @@
     <div style="display:block; margin:0 30px 0 30px !important">
 
       <h1 class="form-title heading-large">Approve document: <span id="document-title"></span></h1>
-
-      <div class="row">
-        <div class="col-sm-4" style="padding-top:15px">Type:</div>
-        <div class="col-sm-8" style="font-weight:bold">
-          <div class="form-group">
-            <label>Document type</label><br>
-            <label><input type="radio" name="document-type" value="document" checked="checked" /> <i class="label label-info label-as-badge">Document</i></label><br>
+      <form>
+        <div class="row">
+          <div class="col-sm-3">
+            Document type:
+          </div>
+          <div class="col-sm-9">
+            <label><input type="radio" name="document-type" value="document" checked="checked" /> <i class="label label-info label-as-badge">Document</i></label>
             <label><input type="radio" name="document-type" value="notification" /> <i class="label label-success label-as-badge">Notification</i></label>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-4" style="padding-top:15px">Created by:</div>
-        <div class="col-sm-8" style="font-weight:bold"><span id="document-creator"></span></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4" style="padding-top:15px">Description:</div>
-        <div class="col-sm-8" style="font-weight:bold"><span id="document-description"></span></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4" style="padding-top:15px">Date:</div>
-        <div class="col-sm-8" style="font-weight:bold">2016-08-26</div>
-      </div>
-
-      <p><br></p>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <p>&nbsp;<br></p>
-          <a href="1-ebf-list.html" class="button" style="margin-bottom:10px">Approve document</a>
-          <br>
-          <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+        <div class="row">
+          <div class="col-sm-3" style="padding-top:15px">Created by:</div>
+          <div class="col-sm-9" style="font-weight:bold"><span id="document-creator"></span></div>
         </div>
-      </div>
+
+        <div class="row">
+          <div class="col-sm-3" style="padding-top:15px">Description:</div>
+          <div class="col-sm-9" style="font-weight:bold"><span id="document-description"></span></div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-3" style="padding-top:15px">Date:</div>
+          <div class="col-sm-9" style="font-weight:bold">2016-08-26</div>
+        </div>
+
+        <p><br></p>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <button href="1-ebf-list.html" class="button" style="margin-bottom:10px">Approve document</button>
+            <a href="#" class="secondary-link">Reject Document</a>
+            <br>
+            <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+          </div>
+        </div>
+      </form>
 
       <p><br></p>
 
