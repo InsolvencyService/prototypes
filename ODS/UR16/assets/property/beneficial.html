@@ -102,7 +102,6 @@ display:block;
 	min-width:99%;
 	font-size:16px;
 }
-
 </style>
 <!-- #EndEditable -->
 
@@ -166,157 +165,32 @@ display:block;
 	
 
 
+	</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
-<div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Property description</h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	
-	<div class="form-group ">
-           <div class="form-group" id="shared-mortgage">
-            <p  class="form-label-bold">Is <strong class="data">1 The Place</strong> part of a shared ownership scheme?</p>
-            <div class="form-hint">Shared ownership schemes involve 
-				you buying a share of a property and paying rent to a housing association for the rest</div>
-
-                <fieldset class="inline">
-                    <div id="title" class="form-group">
-
-                        <label for="sameaddress_Yes" class="block-label">
-                            <input id="sameaddress_Yes" name="shared" type="radio">
-                            Yes
-                        </label>
-
-                        <label id="title_label1" for="sameaddress_No" class="block-label">
-                            <input id="sameaddress_No" name="shared" type="radio">
-                            No
-                        </label>
-                        <label id="title_label6" for="sameaddress_dontknow" class="block-label">
-                            <input id="sameaddress_dontknow" name="shared" type="radio">
-                            I don't know
-                        </label>
-
-                    </div>
-                 </fieldset>
-        	</div>
-        </div>
-        <p>&nbsp;</p>
-
-
-  					<div class="form-group ">
-                        <label id="first_name_label0" for="propertyvalue" class="form-label-bold first_name">How much is 
-						<span class="bold-medium data">1 The Place</span> currently worth?</label>
-						<div class="form-hint">Please provide the most accurate figure you can</div>
-						<div class="form-hint">If <span class="data">1 The Place</span> is part of a shared ownership scheme, 
-							we only need to know the value of your share of the 
-							property </div>		
-						<span class="currency">£</span><input id="propertyvalue" name="amount" type="text" value="" class="amount-value" />
-                        <br />
-                    </div>
-   
- <div>&nbsp;</div>
-
-
-        <div class="form-group">
-
-            <fieldset id="date_of_birth" class="date-of-birth">
-
-                <legend id="date_of_birth_label" class="form-label-bold">When did you purchase or start having a financial interest in the property?</legend>
-                <div class="form-hint">For example, Aug 2012</div>
-                <div class="form-group form-group-day" style="display:none">
-                    <label id="date_of_birth_label.day" for="day">Day</label>
-                    <input id="day" name="date_of_birth.day" type="number" min="1" max="31" />
-                </div>
-
-
-				  <div class="form-group" id="monthcontrol" style="width:60px;">
-                    <label for="month">Month</label>
-
-                    <select id="month" name="month">
-                        <option value="0"></option>
-                        <option value="1">Jan</option>
-                        <option value="2">Feb</option>
-                        <option value="3">Mar</option>
-                        <option value="4">Apr</option>
-                        <option value="5">May</option>
-                        <option value="6">Jun</option>
-                        <option value="7">Jul</option>
-                        <option value="8">Aug</option>
-                        <option value="9">Sep</option>
-                        <option value="10">Oct</option>
-                        <option value="11">Nov</option>
-                        <option value="12">Dec</option>
-                    </select>
-
-                </div>
-
-                <div class="form-group form-group-year">
-                    <label id="date_of_birth_label.year" for="year">Year</label>
-                    <input id="year" name="date_of_birth.year" type="number" min="1900" max="9999" />
-                </div>
-            </fieldset>
-
-
-        </div>
-        <div>&nbsp;</div>
-        <div class="form-group">
-            <p id="title_label5" class="form-label-bold">What is the nature of your interest in the property?</p>
-
-            <fieldset class="inline">
-                <div id="interest" class="form-group">
-
-                    <label for="interest_Sole" class="block-label">
-                        <input id="interest_Sole" name="sameaddress" type="radio">
-                        Sole owner
-                    </label>
-                    <label for="interest_Joint" class="block-label">
-                        <input id="interest_Joint" name="sameaddress" type="radio">
-                        Joint owner
-                    </label>
-                    <label for="interest_financial" class="block-label">
-                        <input id="interest_financial" name="sameaddress" type="radio">
-                        Financial interest only
-                    </label>
-
-                    <label for="interest_Other" class="block-label">
-                        <input id="interest_Other" value="" name="sameaddress" type="radio">Other <span style="font-weight:normal">- please specify:</span>
-                        <input id="other0" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal" />
-                    </label>
-
-                </div>
-            </fieldset>
-        </div>
-
-
-<p class="clearfix"><br/></p>
-	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-		<a id="next" class="button" href="list_owners.html">Continue</a>
+	<div id="content" >
+		<div class="inner-block text">
+		<h1 class="form-title heading-large">Tenancy or rental amount</h1>
+			<form class="form" method="post">
+				<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+				<div class="form-group ">
+					<label id="first_name_label" for="propertyvalue" class="form-label first_name">What do you feel the value of your 
+					interest in <span class="bold-medium data">1 The Place</span> is worth?</label>
+					<span class="currency">£ </span><input id="amount" name="amount" type="text" value="" class="amount-value" />&nbsp; 
+				</div>
+				
+				<p class="clearfix"><br/></p>
+				
+				<!-- For User research -->
+				<div class="form-navigation form-group">
+					<p><a id="next" class="button" href="list_properties.html?loop=true">Continue</a></p>
+					<p><a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a></p>
+				</div>	
+			</form>
+		</div>
 	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	</form>
-	</div>
-
 	 <!-- #EndEditable -->
 
         
@@ -391,69 +265,10 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function() {
 
-    var numproperties = 0;
-    if ($.cookie("numproperties") && parseInt($.cookie("numproperties"))) {
-        numproperties = parseInt($.cookie("numproperties"));
-    }
-
-    var housename = $.cookie("propertyline1");
-	if (housename  && housename.length > 0){
-		$(".data").text(housename);
-	}
-
-	var normalroute = $("#next").prop("href");
-	$("#jointly-owned_Yes").click(function(){
-		$("#next").prop("href","3-add-person-joint.html");
-	});
-	$("#jointly-owned_No").click(function(){
-		$("#next").prop("href", normalroute);
-	});
-	
-	$("#year").on("change", function () {
-	    if ($(this).val() == "2015" || $(this).val() == "2014") {
-	        $("#monthcontrol").show();
-	        $("#month").focus();
-	    }
-	});
-
-	var normalroute = $("#next").prop("href");
-	$("#interest_Sole").on("click", function(){
-	    $("#next").prop("href", "summary_mortgage.html");
-	});
-
-	$("#interest_Joint").on("click", function () {
-	    $("#next").prop("href", normalroute);
-	});
-	
-	$("#interest_financial").on("click", function () {
-	    $("#next").prop("href", "beneficial.html");
-	});
+	var numproperties = parseInt($.cookie("numproperties"));
+    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#amount").val()), { expires: 1, path: "/" });
 
 
-	$("#next").on("click", function(){
-		if ($("#year").val().length > 0){
-			$.cookie('purchasemonth', $("#month").val(), { expires: 1, path: "/" });
-			$.cookie('purchaseyear', $("#year").val(), { expires: 1, path: "/" });
-		}
-		else{
-			//$.cookie('purchasemonth', "6", { expires: 1, path: "/" });
-			//$.cookie('purchaseyear', "2005", { expires: 1, path: "/" });
-		}
-
-		numproperties = numproperties + 1;
-		if ($("#propertyvalue").val().length > 0){
-		    $.cookie('propertyvalue', numberWithoutCommas($("#propertyvalue").val()), { expires: 1, path: "/" });
-
-		    $.cookie('numproperties', numproperties, { expires: 1, path: "/" });
-		    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#propertyvalue").val()), { expires: 1, path: "/" });
-		    $.cookie('property' + numproperties + 'address', $.cookie("propertyline1") + ", " + $.cookie("propertypostcode"), { expires: 1, path: "/" });
-
-		}
-		else{
-			$.cookie('propertyvalue', "140000", { expires: 1, path: "/" });
-		}
-		
-	});
 
 });
    
