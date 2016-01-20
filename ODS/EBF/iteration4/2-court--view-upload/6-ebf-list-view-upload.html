@@ -632,6 +632,48 @@
         $.cookie("pathname", pathname, {path:'/'});
       });
 
+      $(document).ready(function () {
+      	// updates table with documents stored in session
+      	if($.cookie("EBF_document_count")){
+      		for( var i=1; i<=$.cookie("EBF_document_count"); i++){
+
+      			var doc_filename = $.cookie("EBF_document_"+i+"_filename");
+      			var doc_description = $.cookie("EBF_document_"+i+"_descripton");
+      			var doc_date = $.cookie("EBF_document_"+i+"_date");
+
+      			//Create table row
+      			var row = '<tr class="activerow approval-needed">';
+      			row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
+      		    row += '<td>';
+      		    row += '<label for="name" class="control-label">';
+      		    row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
+      		    row += '</label>';
+      		    row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
+      		    row += '</td>';
+      		    row += '<td>';
+      		    row += 'Kim Scarlett';
+      		    row += '<br>';
+      		    row += '<span class="form-hint">Applicant</span>';
+      		    row += '</td>';
+      		    row += '<td>';
+      		    row += '<label for="name" class="control-label">';
+      		    row += doc_description;
+      		    row += '</label>';
+      		    row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
+      		    row += '</td>';
+      		    row += '<td>'+doc_date+'</td>';
+      		    row += '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
+      		    row += '</tr>';
+
+      			//Pre-appends to table
+      			$(row).insertBefore("#mainTable tr:first");
+      			//$("#tableadd").prepend().html(row);
+
+      		}
+      	}
+      });
+
+
       if ($.cookie("urn")) {
         $("#urn").text($.cookie("urn")).addClass("bolder");
         $(".urn").text($.cookie("urn")).addClass("bolder");
