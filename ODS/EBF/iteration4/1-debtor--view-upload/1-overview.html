@@ -237,7 +237,7 @@
 
 
           <!-- Table - Start -->
-          <table id="mainTable" class="table table-list-search">
+          <table  class="table table-list-search">
             <thead>
               <tr>
                 <th class="col-sm-1"><a id="document-type"><strong>Type &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
@@ -251,7 +251,7 @@
             </thead>
 
 
-            <tbody>
+            <tbody id="mainTable">
 
 
               <tr class="activerow">
@@ -436,7 +436,7 @@ $(document).ready(function () {
 		    row += '</tr>';
 
 			//Pre-appends to table
-			$(row).insertAfter("#mainTable tr:first");
+			$(row).insertBefore("#mainTable tr:first");
 			//$("#tableadd").prepend().html(row);
 
 		}
