@@ -411,6 +411,57 @@ a.btn:visited{
 
                 </div>
                 <!-- ///// Admin Application Item - End //// -->
+                
+                                <!-- ///// Admin Application Item - Start //// -->
+                <div class="row application" id="2">
+                  <div class="col-sm-6 application-left">
+                    <h2 class="heading-medium">Application ref.: <span class="urn bolder">1234-4567-BKT</span></h2>
+                    <table class="application-summary">
+                      <tbody>
+                        <tr>
+                          <td class="bolder" width="35%">Name:</td>
+                          <td>Brian Bagley</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Telephone:</td>
+                          <td>07333 659 874</td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Email address:</td>
+                          <td><a href="mailto:bbagley@gmail.com;">bbagley@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                          <td class="bolder">Total debt:</td>
+                          <td>&pound;99,456.78</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-sm-6 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label-1" for="notifications-1" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-1" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label id="owner-label-1" for="owner-1" class="col-sm-5">Owner:</label>
+                      <input id="owner-1" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-1"><input type="checkbox" id="PARV-1"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <!-- <div class="col-sm-5">
+                        <a href="#" class="button">Save changes</a>
+                      </div> -->
+                      <div>
+                        <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon glyphicon-trash"></i> Delete application</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- ///// Admin Application Item - End //// -->
+
 
                 <!-- ///////////////////// Completion Message - START ///////////////////// -->
                 <div class="panel-indent completion-message" style="font-size:16px; border-color:#efefef">
@@ -450,7 +501,7 @@ a.btn:visited{
 
                 <!-- Table - Start -->
                 <!-- ///// Admin Application Item - 1 - Start //// -->
-                <div class="row application" id="2">
+                <div class="row application" id="3">
                   <div class="col-sm-6 application-left">
                     <h2 class="heading-medium">Application ref.: <span class="urn bolder">UPTY-NHTD-BKT</span></h2>
                     <table class="application-summary">
@@ -500,7 +551,7 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 1 - End //// -->
 
                 <!-- ///// Admin Application Item - 2 - Start //// -->
-                <div class="row application"  id="3">
+                <div class="row application"  id="4">
                   <div class="col-sm-6 application-left">
                     <h2 class="heading-medium">Application ref.: <span class="urn bolder">KLAT-HARY-BKT</span></h2>
                     <table class="application-summary">
@@ -550,7 +601,7 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 2 - End //// -->
 
                 <!-- ///// Admin Application Item - 3 - Start //// -->
-                <div class="row application"  id="4">
+                <div class="row application"  id="5">
                   <div class="col-sm-6 application-left">
                     <h2 class="heading-medium">Application ref.: <span class="urn bolder">AETL-AJYR-BKT</span></h2>
                     <table class="application-summary">
@@ -600,7 +651,7 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 3 - End //// -->
 
                 <!-- ///// Admin Application Item - 4 - Start //// -->
-                <div class="row application"  id="5">
+                <div class="row application"  id="6">
                   <div class="col-sm-6 application-left">
                     <h2 class="heading-medium">Application ref.: <span class="urn bolder">MGSU-LAIR-BKT</span></h2>
                     <table class="application-summary">
@@ -650,7 +701,7 @@ a.btn:visited{
                 <!-- ///// Admin Application Item - 4 - End //// -->
 
                 <!-- ///// Admin Application Item - 5 - Start //// -->
-                <div class="row application"  id="6">
+                <div class="row application"  id="7">
                   <div class="col-sm-6 application-left">
                     <h2 class="heading-medium">Application ref.: <span class="urn bolder">MHAT-ALUE-BKT</span></h2>
                     <table class="application-summary">
@@ -889,6 +940,10 @@ a.btn:visited{
 
     $(".delete-row").on("click", function (e) {
     	$("#"+documentID).slideUp(500);
+    	var visibleCount = $('#recent-application .application:visible').length;
+    	if(visibleCount == 1){
+    		$('#recent-application').slideUp(500);
+    	}
     });
 
     ///////////////////////// Delete Row Functionality - End /////////////////////////
