@@ -277,15 +277,8 @@ function writeCookies() {
 		count = $.cookie("VehicleCount");
 			
 	// write records
-		$.cookie("VehicleOwnerFirstName"+count, $("#firstname").val(), {path: '/'});
-		$.cookie("VehicleOwnerLastName"+count, $("#lastname").val(), {path: '/'});
-		if($("#relationship_other").prop('checked')==true){
-			$.cookie("VehicleOwnerRelationship"+count, $("#other").val(), {path: '/'});
-		}
-		else{
-			$.cookie("VehicleOwnerRelationship"+count,  $("#relationship :checked").val(), {path: '/'});
-		}
-
+		$.cookie("VehicleAssetValue"+count, '0', {path: '/'});
+		
 
 }
 

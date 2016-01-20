@@ -326,6 +326,7 @@ function writeCookies() {
 		count = $.cookie("VehicleCount");
 			
 	// write records
+		$.cookie("VehicleAssetValue"+count, '0', {path: '/'});
 		$.cookie("VehicleOwnerFirstName"+count, $("#firstname").val(), {path: '/'});
 		$.cookie("VehicleOwnerLastName"+count, $("#lastname").val(), {path: '/'});
 		if($("#relationship_other").prop('checked')==true){
