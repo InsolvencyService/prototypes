@@ -264,12 +264,12 @@ $(document).ready(function() {
   
 <script type="text/javascript">
 $(document).ready(function() {
-
 	var numproperties = parseInt($.cookie("numproperties"));
-    $.cookie('property' + numproperties + 'value', numberWithoutCommas($("#amount").val()), { expires: 1, path: "/" });
+    
+});
 
-
-
+$("#next").on("click", function(){
+	$.cookie('property' + numproperties + 'value', numberWithoutCommas($("#amount").val()), { expires: 1, path: "/" });
 });
    
 function numberWithoutCommas(x) {
