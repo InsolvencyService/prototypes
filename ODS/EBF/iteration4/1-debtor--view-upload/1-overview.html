@@ -197,8 +197,11 @@
 
         <div class="col-sm-12">
           <hr>
-          <h2 class="heading-large">Your documents</h2>
-
+          <h2 class="heading-large">
+            Your documents
+            <p class="label-key">Document approved <span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Document approved">&nbsp;</span></p>
+            <p class="label-key">Awaiting approval <span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Awaiting Approval">&nbsp;</span></p>
+          </h2>
           <!-- Navbar - Start -->
           <nav class="navbar navbar-default" role="navigation">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -249,13 +252,13 @@
 
 
             <tbody>
-            
-            	
+
+
               <tr class="activerow">
                 <td><div class="label label-success label-as-badge">Notification</div></td>
                 <td>
                   <label for="name" class="control-label">
-                    <a href="approve.html"><span class="text-info">Reply-to-question.doc</span></a>
+                    <a href="#"><span class="text-info">Reply-to-question.doc</span></a>
                   </label>
                   <input type="text" class="input-medium" style="display:none;" placeholder="Reply-to-question.doc">
                 </td>
@@ -278,7 +281,7 @@
                 <td><div class="label label-info label-as-badge">Document</div></td>
                 <td>
                   <label for="name" class="control-label">
-                    <a href="approve.html"><span class="text-info">Bankruptcy-application.pdf</span></a>
+                    <a href="#"><span class="text-info">Bankruptcy-application.pdf</span></a>
                   </label>
                   <input type="text" class="input-medium" style="display:none;" placeholder="Bankruptcy-application.pdf">
                 </td>
@@ -413,7 +416,7 @@ $(document).ready(function () {
 			row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
 		    row += '<td>';
 		    row += '<label for="name" class="control-label">';
-		    row += '<a href="approve.html"><span class="text-info">'+ doc_filename +'</span></a>';
+		    row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
 		    row += '</label>';
 		    row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
 		    row += '</td>';
