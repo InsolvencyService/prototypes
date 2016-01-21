@@ -216,7 +216,7 @@ input.log-in-email {
 	margin-bottom: 0;
 }
 
-.controls-delete, .controls-edit {
+.view-application, .controls-edit {
   cursor: pointer;
 }
 
@@ -477,11 +477,15 @@ table.application-summary tr td {
   border-bottom: 0;
 }
 
+#all-applications {
+  display: none;
+}
+
 .application {
   border: 1px solid #ddd;
   background: #f5f5f5;
   border-radius: 0;
-  margin: 15px 0;
+  margin: 15px 0 30px 0;
   background: white;
   display: flex;
   /*flex-direction: column;*/
@@ -546,13 +550,15 @@ table.application-summary tr td {
   margin: 5px 0 0px 0;
 }
 
-.application-right .controls-delete {
-  margin-top: 9px;
+.application-right .view-application {
+  margin: 9px 0 0 15px;
   display: inline-block;
+  float: left;
 }
 
 .application-right .button {
-  margin-bottom: 0;
+  margin: 0;
+  float: left;
 }
 
 
@@ -660,7 +666,7 @@ table.application-summary tr td {
 
 #search-applications .header-search-content {
   /*margin: 0 auto;*/
-  width: 50%;
+  width: 100%;
   float: left;
 }
 
