@@ -143,16 +143,17 @@
         <a href="summary.html">Income and expenses</a> &gt; Income
     </p>
     
-	<h1 class="form-title heading-large">Elf employed income</h1>
+	<h1 class="form-title heading-large">Self employed income</h1>
 	
 	
 		
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 	
-	<p><span class="lede">Add your income.</span></p>
-	<br>
-	<p><span class="lede">Don’t include salaries or wages other members of your household receive - we’ll ask you about these later.</span></p>
+	<p class="lede">Add your business's full accounting details as they appear 
+	on your lastest tax return. </p>
+	<p class="form-hint">If this is your first year trading, please tell us 
+	about your earnings and expenses since your business began.</p>
         <table class="table table-condensed">
             <thead>
                 <tr>
@@ -164,8 +165,7 @@
             <tbody id="employment1">
                 <tr>
                     <td style="border-bottom:0 transparent none">
-                        <span class="form-label">Net income</span>
-                        <span style="color:GrayText">Take home pay after deductions</span>
+                        <span class="form-label">Turnover</span>
                     </td>
                     <td style="border-bottom:0 transparent none">
                         <div class="pull-left text-right pound-sign">£</div>
@@ -176,46 +176,17 @@
                             <option value="week">per week</option>
                             <option value="fortnight">per fortnight</option>
                             <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
+                            <option value="month">per month</option>
                             <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
+                            <option value="year"  selected="selected">per year</option>
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="3" style="border-top:0 transparent none">
-                        <div class="well" style="padding-bottom:0">
-
-                            <table class="table">
-                                <tr>
-                                    <td style="">
-                                        <span class="form-label">Amount you pay in Income Tax</span>
-                                        <span class="form-hint">Check your payslips for information about your PAYE Income Tax</span>
-                                    </td>
-                                    <td style="width:160px; text-align:right;">
-                                        <div class="pull-left text-right pound-sign">£</div>
-                                        <input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0">
-                                    </td>
-                                    <td style="width:180px; padding-left:20px;">
-                                        <select class="select-control">
-                                            <option value="week">per week</option>
-                                            <option value="fortnight">per fortnight</option>
-                                            <option value="4weeks">per 4 weeks</option>
-                                            <option value="month" selected="selected">per month</option>
-                                            <option value="quarter">per quarter</option>
-                                            <option value="year">per year</option>
-                                        </select>
-                                    </td>
-                                </tr>
-
-                            </table>
-                        </div>
-                    </td>
-                </tr>
+                
 
 
                 <tr>
-                    <td><span class="form-label">Overtime</span></td>
+                    <td><span class="form-label">Expenses</span></td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
                         <input type="text" class="form-control text-right pull-left amount" placeholder="0">
@@ -225,14 +196,14 @@
                             <option value="week">per week</option>
                             <option value="fortnight">per fortnight</option>
                             <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
+                            <option value="month">per month</option>
                             <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
+                            <option value="year" selected="selected">per year</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="form-label">Bonuses</span></td>
+                    <td><span class="form-label">Net profit</span></td>
                     <td>
                         <div class="pull-left text-right pound-sign">£</div>
                         <input type="text" class="form-control text-right pull-left amount" placeholder="0">
@@ -242,171 +213,103 @@
                             <option value="week">per week</option>
                             <option value="fortnight">per fortnight</option>
                             <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
+                            <option value="month">per month</option>
                             <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
+                            <option value="year" selected="selected">per year</option>
                         </select>
                     </td>
                 </tr>
 
-                <tr>
-                    <td>
-                        <span class="form-label">Other payments from your employer</span>
-                        <span class="form-hint">For example, vehicle allowance. </span>
-                    </td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" placeholder="0">
-                    </td>
-                    <td>
-                        <select class="select-control" name="D7">
-                            <option value="week">per week</option>
-                            <option value="fortnight">per fortnight</option>
-                            <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
-                            <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
-                        </select>
-                    </td>
-                </tr>
+                
             </tbody>
 
-            <tbody id="another" style="display:none">
-                <tr><td colspan="3"><strong>Employment 2</strong></td></tr>
-                <tr>
-                    <td style="border-bottom:0 transparent none">
-                        <span class="form-label">Net income</span>
-                        <span style="color:GrayText">Take home pay after deductions</span>
-                    </td>
-                    <td style="border-bottom:0 transparent none">
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" placeholder="0">
-                    </td>
-                    <td style="border-bottom:0 transparent none">
-                        <select class="select-control" name="D1">
-                            <option value="week">per week</option>
-                            <option value="fortnight">per fortnight</option>
-                            <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
-                            <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" style="border-top:0 transparent none">
-                        <div class="well" style="padding-bottom:0">
-
-                            <table class="table">
-                                <tr>
-                                    <td style="">
-                                        <span class="form-label">Amount you pay in Income Tax</span>
-                                        <span class="form-hint">Check your payslips for information about your PAYE Income Tax</span>
-                                    </td>
-                                    <td style="width:160px; text-align:right;">
-                                        <div class="pull-left text-right pound-sign">£</div>
-                                        <input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0">
-                                    </td>
-                                    <td style="width:180px; padding-left:20px;">
-                                        <select class="select-control">
-                                            <option value="week">per week</option>
-                                            <option value="fortnight">per fortnight</option>
-                                            <option value="4weeks">per 4 weeks</option>
-                                            <option value="month" selected="selected">per month</option>
-                                            <option value="quarter">per quarter</option>
-                                            <option value="year">per year</option>
-                                        </select>
-                                    </td>
-                                </tr>
-
-                            </table>
-                        </div>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td><span class="form-label">Overtime</span></td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" placeholder="0">
-                    </td>
-                    <td>
-                        <select class="select-control" name="D5">
-                            <option value="week">per week</option>
-                            <option value="fortnight">per fortnight</option>
-                            <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
-                            <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><span class="form-label">Bonuses</span></td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" placeholder="0">
-                    </td>
-                    <td>
-                        <select class="select-control" name="D6">
-                            <option value="week">per week</option>
-                            <option value="fortnight">per fortnight</option>
-                            <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
-                            <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <span class="form-label">Other payments from your employer</span>
-                        <span class="form-hint">For example, vehicle allowance. </span>
-                    </td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <input type="text" class="form-control text-right pull-left amount" placeholder="0">
-                    </td>
-                    <td>
-                        <select class="select-control" name="D7">
-                            <option value="week">per week</option>
-                            <option value="fortnight">per fortnight</option>
-                            <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
-                            <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-
-
-
-            <tbody>
-                <tr>
-                    <td><span class="form-label"><a href="1b.html" id="btn-add">Add another income</a></span></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-
-                <tr class="totalrow">
-                    <td><span class="form-label text-right">Total</span></td>
-                    <td>
-                        <div class="pull-left text-right pound-sign">£</div>
-                        <div class="text-right amount" id="box-total"></div>
-                    </td>
-                    <td>
-                        <div>per month</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
+         </table>
+         
+         <p>&nbsp;</p>
+         <div class="form-group">
+	         <fieldset id="accounting-year-start" class="date-of-birth">
 	
+	            <label id="accounting-year-start_label" class="form-label-bold">Account period start date </label>
+				<div class="form-hint">For example, Apr 2012</div>
 	
+	            <div>
+	                <div>
+	                    <div class="form-group form-group-day" style="display:none">
+	                        <label id="accounting-year-start.day" for="accounting-year-start-day">Day</label>
+	                        <input id="accounting-year-start-day" name="accounting-year-start.day" type="number" min="1" max="31" />
+	                    </div>
+	                    <div class="form-group" style="width:60px">
+	                        <label id="accounting-year-start_label.month" for="month">Month</label>
+	
+	                        <select id="accounting-year-start-month" name="accounting-year-start-month">
+	                            <option value="0"></option>
+	                            <option value="1">Jan</option>
+	                            <option value="2">Feb</option>
+	                            <option value="3">Mar</option>
+	                            <option value="4">Apr</option>
+	                            <option value="5">May</option>
+	                            <option value="6">Jun</option>
+	                            <option value="7">Jul</option>
+	                            <option value="8">Aug</option>
+	                            <option value="9">Sep</option>
+	                            <option value="10">Oct</option>
+	                            <option value="11">Nov</option>
+	                            <option value="12">Dec</option>
+	                        </select>
+	
+	                    </div>
+	                    <div class="form-group form-group-year">
+	                        <label id="accounting-year-start_label.year" for="accounting-year-start-year">Year</label>
+	                        <input id="accounting-year-start-year" name="accounting-year-start.year" type="number" min="2000" max="2099" />
+	                    </div>
+	                </div>
+	  
+	            </div>
+	        </fieldset>
+		</div>
+	
+		<div class="form-group">
+	         <fieldset id="accounting-year-end" class="date-of-birth">
+	
+	            <label id="accounting-year-end_label" class="form-label-bold">Account period end  date </label>	            
+	            <div class="form-hint">For example, Apr 2012</div>
+	
+	            <div>
+	                <div>
+	                    <div class="form-group form-group-day" style="display:none">
+	                        <label id="accounting-year-end.day" for="accounting-year-end-day">Day</label>
+	                        <input id="accounting-year-end-day" name="accounting-year-end.day" type="number" min="1" max="31" />
+	                    </div>
+	                    <div class="form-group" style="width:60px">
+	                        <label id="accounting-year-end_label.month" for="month">Month</label>
+	
+	                        <select id="accounting-year-end-month" name="accounting-year-end.month">
+	                            <option value="0"></option>
+	                            <option value="1">Jan</option>
+	                            <option value="2">Feb</option>
+	                            <option value="3">Mar</option>
+	                            <option value="4">Apr</option>
+	                            <option value="5">May</option>
+	                            <option value="6">Jun</option>
+	                            <option value="7">Jul</option>
+	                            <option value="8">Aug</option>
+	                            <option value="9">Sep</option>
+	                            <option value="10">Oct</option>
+	                            <option value="11">Nov</option>
+	                            <option value="12">Dec</option>
+	                        </select>
+	
+	                    </div>
+	                    <div class="form-group form-group-year">
+	                        <label id="accounting-year-end.year" for="year">Year</label>
+	                        <input id="accounting-year-end-year" name="accounting-year-end.year" type="number" min="1900" max="9999" />
+	                    </div>
+	                </div>
+	  
+	            </div>
+	        </fieldset>
+		</div>
+
 	
 
 
