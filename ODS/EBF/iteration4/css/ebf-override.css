@@ -139,16 +139,21 @@ nav.navbar ul.pagination li a, nav.navbar ul.pagination li a span {
 }
 
 .label.label-info.action {
-	background: #a94442;
-	border-color: #a94442;
+	background: #B10E1E;
+	border-color: #B10E1E;
 }
 
 .label.label-success {
 	color: white;
-	background: green;
-	border-color: green;
+	background: #006435;
+	border-color: #006435;
 	padding: 7px 10px;
 	display: inline-block;
+}
+
+.label-success.awaiting {
+  background: #FFBF47;
+  border-color: #FFBF47;
 }
 
 #status .well {
@@ -241,7 +246,7 @@ input[type="radio"] {
 }
 
 .label-key span {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 /* ------------------------ EBF Overide Styles - End ------------------------ */
@@ -494,12 +499,19 @@ table.application-summary tr td {
   border-right: 1px solid #ddd;
 }
 
-.application-right {
+.application-left .key-info {
+  font-size: 29px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.application .application-right {
   padding: 20px !important;
 }
 
 .application-left, .application-right {
-  flex: 1;
+  /*flex: 1;*/
   display: flex;
   justify-content: center;
   flex-direction: column;

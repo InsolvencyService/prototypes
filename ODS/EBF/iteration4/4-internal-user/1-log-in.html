@@ -150,15 +150,15 @@
             <h2>You are missing some log-in details:</h2>
             <ul>
               <li><a href="#email-address">* Email address</a></li>
-              <li><a href="#firstname">* Firstname</a></li>
-              <li><a href="#lastname">* Lastname</a></li>
+              <!-- <li><a href="#firstname">* Firstname</a></li>
+              <li><a href="#lastname">* Lastname</a></li> -->
               <li><a href="#password">* Password</a></li>
             </ul>
           </div>
           <!-- Error Validation Message - End -->
 
           <p>We require the following details to allow you access to the EBF.</p>
-          <p>We will then send you a PAT code to the email address you provide to verify your credentials.</p>
+          <!-- <p>We will then send you a PAT code to the email address you provide to verify your credentials.</p> -->
           <p><br></p>
 
           <form class="form" method="post">
@@ -166,23 +166,23 @@
 
             <!-- For User research -->
             <div class="form-group">
-              <label id="email-address-label" for="email-address" class="form-label-bold">What is your email address?</label>
-              <div class="form-hint">
-                Please enter your court email address.
-              </div>
+              <label id="email-address-label" for="email-address" class="form-label-bold">Your email address</label>
+              <!-- <div class="form-hint">
+                Please enter your email address.
+              </div> -->
               <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label id="firstname-label" for="firstname" class="form-label-bold">Your firstname</label>
               <input id="firstname" name="firstname" type="text" value="" class="log-in" />
             </div>
             <div class="form-group">
               <label id="lastname-label" for="lastname" class="form-label-bold">Your lastname</label>
               <input id="lastname" name="lastname" type="text" value="" class="log-in" />
-            </div>
+            </div> -->
             <div class="form-group">
               <label id="password-label" for="password" class="form-label-bold">Your password</label>
-              <input id="password" type="password" placeholder="Password" name="password" type="text" value="" class="log-in" />
+              <input id="password" type="password" name="password" type="text" value="" class="log-in" />
               <br>
               <div class="form-hint">
                 <input type="checkbox" id="show-password"> <label for="show-password" style="font-weight:normal !important;">Show password</label>
@@ -289,18 +289,18 @@ $(document).ready(function() {
   $("#next").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#email-address, #firstname, #lastname").val() == "") {
+    if ($("#email-address, #password").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
 
-    if ($("#email-address, #firstname, #lastname").val()) {
-      (window.location.replace("2-search.html"));
+    if ($("#email-address, #password").val()) {
+      (window.location.replace("2-index-for-internal-users.html"));
     }
 
     $.cookie("email-address", $("#email-address").val(), {path:'/'});
-    $.cookie("firstname", $("#firstname").val(), {path:'/'});
-    $.cookie("lastname", $("#lastname").val(), {path:'/'});
+    // $.cookie("firstname", $("#firstname").val(), {path:'/'});
+    // $.cookie("lastname", $("#lastname").val(), {path:'/'});
 
   });
 
