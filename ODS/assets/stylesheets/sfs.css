@@ -2,7 +2,7 @@
     padding-left:20px;
 }
 .edit{
-      display: block;  
+      display: block;
       min-width: 100px;
   		visibility: visible;
 }
@@ -38,7 +38,7 @@ table tr td a.button{
 	border:0 transparent none !important;
 }
 .number-col{
-	
+
 	text-align:right;
 	padding-right:30px
 }
@@ -76,7 +76,7 @@ input.amount-notcounted{
 	background-color: #fff;
 	background-image: none;
 	border: 1px solid #fff;
-	
+
 	width: 100%;
 	height: 34px;
 
@@ -188,3 +188,33 @@ font-size:19px;
 	border-bottom: 1px solid #ddd;
 }
 
+/* ------------------------- SFS Overide - Start ------------------------- */
+
+#income table th, #costs table th {
+  font-size: 30px;
+  border-bottom: 0;
+}
+
+#income table th:nth-of-type(2), #costs table th:nth-of-type(2) {
+  font-size: 16px;
+}
+
+#income table td, #costs table td {
+  border-bottom: 0;
+}
+
+#income table tr#incometotal td, #costs table tr#coststotal td {
+  border-top: 3px solid #bfc1c3;
+}
+
+tr td.actions a.edit {
+  text-align: center;
+}
+
+#content .form-navigation.form-group.inner-block {
+  margin-left: 0;
+}
+
+
+
+/* ------------------------- SFS Overide - End ------------------------- */
