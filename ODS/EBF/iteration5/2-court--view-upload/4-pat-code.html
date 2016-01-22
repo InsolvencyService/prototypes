@@ -143,46 +143,48 @@
       <!-- #BeginEditable "content" -->
       <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Log into the electronic bankruptcy 
+        <h1 class="form-title heading-large">Log into the electronic bankruptcy
 		folder (EBF)</h1>
-        <div class="col-sm-8">
-          <!-- Error Validation Message - Start -->
-          <div class="validation-summary" id="panel-error-empty" style="display:none">
-            <h2>You are missing some log-in details:</h2>
-            <ul>
-              <li><a href="#pat-code">* PAT code</a></li>
-            </ul>
-          </div>
-          <!-- Error Validation Message - End -->
-
-          
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-            <!-- For User research -->
-            <div class="form-group">
-              <div class="msg-no-URN">
-                <label id="pat-code-label" for="pat-code" class="form-label-bold">
-				  What is your personal access token?</label>
-				  <div class="form-hint">You can find this in the email we sent you</div>
-                <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
-              </div>
+        <div class="row">
+          <div class="col-sm-8">
+            <!-- Error Validation Message - Start -->
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>You are missing some log-in details:</h2>
+              <ul>
+                <li><a href="#pat-code">* PAT code</a></li>
+              </ul>
             </div>
-          </form>
+            <!-- Error Validation Message - End -->
 
-          <p><br></p>
 
-          <div class="form-navigation form-group">
-            <div>
-              <a href="#" id="next" class="button">Continue</a>
+            <form class="form" method="post">
+              <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+
+              <!-- For User research -->
+              <div class="form-group">
+                <div class="msg-no-URN">
+                  <label id="pat-code-label" for="pat-code" class="form-label-bold">
+  				  What is your personal access token?</label>
+  				  <div class="form-hint">You can find this in the email we sent you</div>
+                  <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
+                </div>
+              </div>
+            </form>
+
+            <p><br></p>
+
+            <div class="form-navigation form-group">
               <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" id="next" class="button">Continue</a>
+                <div>
+                  <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                </div>
               </div>
             </div>
-          </div>
 
-        </div>
-        <div class="col-sm-4">
+          </div>
+          <div class="col-sm-4">
+          </div>
         </div>
     </div>
 

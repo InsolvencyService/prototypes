@@ -219,9 +219,9 @@ h3 > a {
           <div class="col-sm-8">
 
             <h1 class="form-title heading-xlarge">
-              Application overview:<br>
-              <span class="bolder">Scarlett</span>
+              Application overview:</h1>
             </h1>
+            <h1 class="heading-large form-hint">Kim Scarlett</h1>
             <!-- <span id="urn" class="form-hint">M52S-FQ6Y-HQWP</span> -->
 
             <!-- ///////////////////////// Payment Complete Message - START ///////////////////////// -->
@@ -453,7 +453,7 @@ h3 > a {
         <div class="col-sm-4" style="padding-top:0">
           <!-- Payment Panel start -->
           <div class="panel panel-primary">
-            <h2 class="heading-small">Bankruptcy order fee</h2>
+            <h2 class="heading-small">Adjudicator fee</h2>
             <p class="payment-amount"><a href="payments/1-payment-amount.html">&pound;<span id="fee_paid">0</span> received</a></p>
             <span class="text-muted" style="font-weight:normal">&pound;<span id="fee_remaining">655</span> left to pay</span>
             <p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
@@ -468,7 +468,7 @@ h3 > a {
             <!-- <p><a class="save" style="font-weight:bold">Save and logout</a></p> -->
             <p><a href="security_change.html">Change your security questions</a></p>
             <br>
-            <p><a href="#">Generate court documents</a></p>
+            <p><a href="#">View a printable copy of my application</a></p>
             <p><a href="discard.html">Discard application</a></p>
             <div id="payment_record"></div>
           </div>
@@ -644,7 +644,7 @@ $(document).ready(function () {
   }
 
   if (section1 && section1 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("View my information");
+    $("#section1 .edit").show().removeClass("button").text("View my answers");
     $("#section2 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -677,8 +677,8 @@ $(document).ready(function () {
   }
 
   if (section2 && section2 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("View my information");
-    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section1 .edit").show().removeClass("button").text("View my answers");
+    $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
     $("#section3 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -712,9 +712,9 @@ $(document).ready(function () {
   }
 
   if (section3 && section3 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("View my information");
-    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("View my information");
+    $("#section1 .edit").show().removeClass("button").text("View my answers");
+    $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my answers");
     $("#section4 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -743,10 +743,10 @@ $(document).ready(function () {
 
   }
   if (section4 && section4 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("View my information");
-    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("View my information");
-    $("#section4 .edit").show().text("View my information");
+    $("#section1 .edit").show().removeClass("button").text("View my answers");
+    $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my answers");
+    $("#section4 .edit").show().text("View my answers");
     $("#section5 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -777,10 +777,10 @@ $(document).ready(function () {
   }
   if (section5 && section5 == "complete") {
     $("#section1 .edit").show().removeClass("button").text("Edit information");
-    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("View my information");
-    $("#section4 .edit").show().text("View my information");
-    $("#section5 .edit").show().text("View my information");
+    $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my answers");
+    $("#section4 .edit").show().text("View my answers");
+    $("#section5 .edit").show().text("View my answers");
     $("#section6 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -811,12 +811,12 @@ $(document).ready(function () {
 
   }
   if (section6 && section6 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("View my information");
-    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("View my information");
-    $("#section4 .edit").show().text("View my information");
-    $("#section5 .edit").show().text("View my information");
-    $("#section6 .edit").show().text("View my information");
+    $("#section1 .edit").show().removeClass("button").text("View my answers");
+    $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my answers");
+    $("#section4 .edit").show().text("View my answers");
+    $("#section5 .edit").show().text("View my answers");
+    $("#section6 .edit").show().text("View my answers");
     $("#section7 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -848,13 +848,13 @@ $(document).ready(function () {
 
   }
   if (section7 && section7 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("View my information");
-    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("View my information");
-    $("#section4 .edit").show().text("View my information");
-    $("#section5 .edit").show().text("View my information");
-    $("#section6 .edit").show().text("View my information");
-    $("#section7 .edit").show().text("View my information");
+    $("#section1 .edit").show().removeClass("button").text("View my answers");
+    $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my answers");
+    $("#section4 .edit").show().text("View my answers");
+    $("#section5 .edit").show().text("View my answers");
+    $("#section6 .edit").show().text("View my answers");
+    $("#section7 .edit").show().text("View my answers");
     $("#section8 .edit").show().addClass("button").text("Start");
 
     $("#section1").addClass("edit-information");
@@ -887,14 +887,14 @@ $(document).ready(function () {
 
   }
   if (section8 && section8 == "complete") {
-    $("#section1 .edit").show().removeClass("button").text("View my information");
-    $("#section2 .edit").show().text("View my information").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-    $("#section3 .edit").show().text("View my information");
-    $("#section4 .edit").show().text("View my information");
-    $("#section5 .edit").show().text("View my information");
-    $("#section6 .edit").show().text("View my information");
-    $("#section7 .edit").show().text("View my information");
-    $("#section8 .edit").show().text("View my information");
+    $("#section1 .edit").show().removeClass("button").text("View my answers");
+    $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+    $("#section3 .edit").show().text("View my answers");
+    $("#section4 .edit").show().text("View my answers");
+    $("#section5 .edit").show().text("View my answers");
+    $("#section6 .edit").show().text("View my answers");
+    $("#section7 .edit").show().text("View my answers");
+    $("#section8 .edit").show().text("View my answers");
 
     $("#section1").addClass("edit-information");
     $("#section1").removeClass("start not-started");

@@ -73,13 +73,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../css/ebf-override.css">
 
 <!-- #BeginEditable "styles" -->
-<style type="text/css">
-
-
-.row img{
-  width:40px
-}
-</style>
 <!-- #EndEditable -->
 
 
@@ -141,73 +134,67 @@
       </div>
 
       <!-- #BeginEditable "content" -->
-      <div style="display:block; margin:0 30px !important">
+      <!-- /.grid-wrapper - Start -->
+      <div class="grid-wrapper">
+        <!-- /.grid - Start -->
+        <div class="grid grid-4-4">
 
-        <h1 class="form-title heading-large">Log into the electronic bankruptcy
-		folder (EBF)</h1>
-        <div class="row">
-          <div class="col-sm-8">
-            <!-- Error Validation Message - Start -->
-            <div class="validation-summary" id="panel-error-empty" style="display:none">
-              <h2>You are missing some log-in details:</h2>
-              <ul>
-                <li><a href="#email-address">* Email address</a></li>
-                <li><a href="#firstname">* Firstname</a></li>
-                <li><a href="#lastname">* lastname</a></li>
-              </ul>
-            </div>
-            <!-- Error Validation Message - End -->
+          <!-- /.inner-block - Start -->
+          <div class="inner-block">
+            <h1 class="heading-large">Upload a document to the Bankruptcy application</h1>
+            <div class="col-sm-12">
 
-            <p>The EBF is where you'll be able to see information about NEIL? </p>
-            <p>Too access the EBF, please fill in your details below.</p>
-            <p>We will then email you a personal access token (PAT) and instructions for logging in.</p>
-            <br>
+              <!-- ////////////// Error Messaging - Start ////////////// -->
+              <div id="status"></div>
+              <!-- ////////////// Error Messaging - End ////////////// -->
 
-            <form class="form" method="post">
-              <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+              <p>Use this page to upload a document to your Bankruptcy Application.</p>
+              <p>Upon upload we will notify our internal Bankrutpcy team and will need to approve the document.</p>
+              <p>We will notify you of the outcome.</p>
 
-              <!-- For User research -->
-              <div class="form-group">
-                <div class="msg-no-URN">
-                  <label id="email-address-label" for="email-address" class="form-label-bold">Email address</label>
-                  <div class="form-hint">
-                    Please enter your court email address
+              <div id="statusbar-header" style="display:none">
+                <div class="statusbar2 statusbar2-title">
+                  <div class="filename2">Document name</div>
+                  <div class="description">Description</div>
+                  <div class="progressBar2">Status</div>
+                  <div class="actionsh">Action</div>
+                </div>
+              </div>
+              <div id="dragandrop" class="dragDrop">
+                Drag and drop a document (or documents) here
+              </div>
+              <p>or <a id="uploadOldId" href="#">browse for a document (or documents)</a></p>
+              <form id="uploadForm">
+                <input type="file" name="tempFileId" id="tempFileId" style="display: none;" multiple>
+              </form>
+
+              <p>
+                <a id="upload">
+                  <input id="nextBtn" disabled="disabled" class="button" type="button" value="Confirm - Check for errors"/>
+                </a>
+              </p>
+
+              <p><a href="javascript:history.go(-1)">Back</a></p>
+
+              <noscript>
+                <div class="well">
+                  <div class="form-group">
+                    <input class="input-file" type="file" name="file-1" id="file1" multiple>
                   </div>
-                  <input id="email-address" name="email-address" type="text" value="" class="log-in-email" />
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="msg-no-URN">
-                  <label id="firstname-label" for="firstname" class="form-label-bold">First name</label>
-                  <input id="firstname" name="firstname" type="text" value="" class="log-in" />
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="msg-no-URN">
-                  <label id="lastname-label" for="lastname" class="form-label-bold">Last name</label>
-                  <input id="lastname" name="lastname" type="text" value="" class="log-in" />
-                </div>
-              </div>
-            </form>
-
-            <p><br></p>
-
-            <div class="form-navigation form-group">
-              <div>
-                <a href="#" id="next" class="button">Continue</a>
-                <div>
-                  <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-                </div>
-              </div>
+              </noscript>
             </div>
 
           </div>
-          <div class="col-sm-4">
-          </div>
-        </div>
-    </div>
+          <!-- /.inner-block - End -->
 
-        <!-- #EndEditable -->
+        </div>
+        <!-- /.grid - End -->
+
+      </div>
+      <!-- /.grid-wrapper - End -->
+
+      <!-- #EndEditable -->
 
     </div>
   </main>
@@ -263,6 +250,7 @@
 -->
 <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/upload.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
@@ -275,27 +263,117 @@ $(document).ready(function() {
     $.cookie("pathname", pathname, {path:'/'});
   });
 
-  $("#next").on("click", function (e) {
-    e.preventDefault();
-    //alert($("#amount").val());
-    if ($("#email-address, #firstname, #lastname").val() == "") {
-      $("#panel-error-empty").show();
-      (window.location.replace("#panel-error-empty"));
-    }
+  var status = getParameterByName("status");
 
-    if ($("#email-address, #firstname, #lastname").val()) {
-      (window.location.replace("2-search.html"));
-    }
+  if(status == null || status == ""){
+    status = $.cookie("status");
+  }
 
-    $.cookie("email-address", $("#email-address").val(), {path:'/'});
-    $.cookie("firstname", $("#firstname").val(), {path:'/'});
-    $.cookie("lastname", $("#lastname").val(), {path:'/'});
+  var html;
+  switch(status) {
+    case "failed-upload":
+    html = "<div class=\"validation-summary\">";
+    html += "<h2>Sorry, there appears to be a problem with the upload</h2>";
+    html += "<a href=\"#amount\">We have encountered a problem while trying to upload the file <span class=\"file-name\" class=\"bolder\"></span>.</a>";
+    html += "<p>Please try again.</p>";
+    html += "</div>";
+    $.cookie("status", "", {path:'/'});
+    $("#status").html(html);
+    break;
 
-  });
+    default:
+    html = "";
+    $("#status").html(html);
 
+  }
+
+  // $("#upload").on("click", function (e) {
+  //   $.cookie("filename2", $(".filename2").text(), {path:'/'});
+  // });
+  //
+  // if ($.cookie("filename2")) {
+  //   $(".file-name").text($.cookie("filename2")).addClass("bolder");
+  // }
+
+  // var cookieString = "filename2";
+  // var res = cookieString.split(" ");
 
 });
+
+function getParameterByName(name) {
+name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+results = regex.exec(location.search);
+return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
 </script>
+
+
+<!-- //////////////////////// Upload Cookie Storage - Start //////////////////////// -->
+<script type="text/javascript">
+
+var count;
+$(document).ready(function() {
+
+  if($.cookie("EBF_document_count")){
+    count = $.cookie("EBF_document_count");
+  }
+  else{
+    count = 0;
+  }
+
+});
+
+$("#upload").on("click", function (e) {
+
+  $("#pnl-error").hide();
+  $(".upload").hide();
+  $(".descriptionlabel").hide();
+
+  //validation
+  if($("#js-upload-files").val()=="" || $("#desc").val().length == 0){
+    $("#pnl-error").show();
+
+    if($("#js-upload-files").val()=="" ){
+      $(".upload").show();
+    }
+
+    if($("#desc").val().length == 0){
+      $(".descriptionlabel").show();
+    }
+  }
+  else{
+
+    function formattedDate(date) {
+      var d = new Date(date || Date.now()),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+
+      return [ day, month, year].join('/');
+    }
+
+    count++;
+    var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
+    $.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
+    $.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
+    $.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
+    $.cookie("EBF_document_count", count, {path:'/'});
+
+
+    $("#upload").attr("href", "6-ebf-list-view-upload.html?status=file-upload");
+  }
+});
+
+</script>
+<!-- //////////////////////// Upload Cookie Storage - End //////////////////////// -->
+
+
 <!-- #EndEditable -->
 
 

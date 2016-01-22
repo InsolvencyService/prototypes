@@ -1,16 +1,35 @@
 /* ------------------------ EBF Overide Styles - Start ------------------------ */
 
-/*.row > div:first-child {
-  padding-top: 0 !important;
+input, input.form-control {
+  border: 2px solid #6f777b;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.row > div {
+input:focus, input.form-control:focus {
+  border: 2px solid #FFBF47;
+  box-shadow: none;
+}
+
+input#js-upload-files {
+  border: none;
+}
+
+.row > div:first-child {
+  padding-top: 15px !important;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+/*.row > div {
   padding-top: 0 !important;
 }*/
 
-.col-sm-8, .col-sm-12 {
+/*.col-sm-8, .col-sm-12 {
   padding-left: 0px !important;
-}
+}*/
 
 .row .col-sm-8, .row .col-sm-12 {
   padding-left: 15px !important;
@@ -123,7 +142,30 @@ nav.navbar ul.pagination.see-all {
 
 nav.navbar ul.pagination li a, nav.navbar ul.pagination li a span {
 	font-size: 16px !important;
+  border-radius: 0;
+  color: #005ea5;
+  border-color: #005ea5;
 }
+
+nav.navbar ul.pagination li.active a {
+  background: #005ea5;
+  color: white;
+}
+
+.navbar-default {
+  border: none;
+  border-radius: 0;
+}
+
+nav ul.pagination li a {
+  border-radius: 0;
+}
+
+nav .btn.btn-primary {
+  border-radius: 0;
+  background: black;
+}
+
 
 .navbar-form {
 	margin: 10px 0;
@@ -221,7 +263,7 @@ input.log-in-email {
 }
 
 .form-inline .form-group {
-  margin: 10px 0 20px 0;
+  margin: 10px 0 30px 0;
 }
 
 input[type="radio"] {
@@ -766,6 +808,7 @@ table.application-summary tr td {
   margin: 25px 0 0 0;
   float: right;
 }*/
+
 
 /* ------------------------ Tabs Control Panel Overide - End ------------------------ */
 

@@ -159,21 +159,23 @@
     <div style="display:block; margin: 0 30px 60px 30px !important">
       <h1 class="form-title heading-large">Electronic bankruptcy folder: <span id="urn"></span><span id="urn-returning"></span></h1>
       <div class="intro-banner">
-        <div class="col-sm-8">
-          <p>Below is a list of the documents associated with this bankruptcy application.</p>
-          <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
-          <p>Time remaining to view files: <span class="heading-small">14 days</span></p>
+        <div class="row">
+          <div class="col-sm-8">
+            <p>Below is a list of the documents associated with this bankruptcy application.</p>
+            <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
+            <p>Time remaining to view files: <span class="heading-small">14 days</span></p>
 
-        </div>
-        <div class="col-sm-4">
-          <!-- Panel Indent - Start -->
-          <div class="panel-indent" style="font-size:16px; border-color:#efefef">
-            <p><a href="2-search.html" style="font-weight: bold;"><span class="glyphicon glyphicon-log-out"></span> View another case</a></p>
-            <br>
-            <p><a href="7-upload.html">Upload a new document</a></p>
           </div>
-          <!-- Panel Indent - End -->
+          <div class="col-sm-4">
+            <!-- Panel Indent - Start -->
+            <div class="panel-indent" style="font-size:16px; border-color:#efefef">
+              <p><a href="2-search.html" style="font-weight: bold;"><span class="glyphicon glyphicon-log-out"></span> View another case</a></p>
+              <br>
+              <p><a href="7-upload.html">Upload a new document</a></p>
+            </div>
+            <!-- Panel Indent - End -->
 
+          </div>
         </div>
       </div>
 
@@ -435,7 +437,7 @@
           </tr>
 
           <tr class="activerow approval-needed">
-            <td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>
+            <td><div class="label label-success awaiting indicator"><span id="document-type">Awaiting<br>Approval</span></div></td>
             <td>
               <label for="name" class="control-label">
                 <a href="#"><span class="text-info" id="document-title">Reply-to-question.doc</span></a>
@@ -454,7 +456,7 @@
               <textarea type="text" class="input-medium" style="display:none;" placeholder="Morbi porta imperdiet eros, sed sagittis lorem tincidunt vel. Morbi vel justo lobortis, accumsan mauris eget, ultrices sem."></textarea>
             </td>
             <td><span id="document-date">2016-08-26</span></td>
-            <td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>
+            <td class="text-center"><span class="label label-success awaiting indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>
             <!-- <td>
               <a href="2-approve-file.html"><i style="font-size:0.8em;" class="glyphicon glyphicon-ok approve" alt="Approve" id="approve" data-toggle="tooltip" data-placement="bottom" title="Approval Needed"></i>
               <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
@@ -644,7 +646,7 @@
 
       			//Create table row
       			var row = '<tr class="activerow approval-needed">';
-      			row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
+      			row += '<td><div class="label label-success awaiting indicator"><span id="document-type">Awaiting<br>Approval</span></div></td>';
       		    row += '<td>';
       		    row += '<label for="name" class="control-label">';
       		    row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
@@ -663,7 +665,7 @@
       		    row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
       		    row += '</td>';
       		    row += '<td>'+doc_date+'</td>';
-      		    row += '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
+      		    row += '<td class="text-center"><span class="label label-success awaiting indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
       		    row += '</tr>';
 
       			//Pre-appends to table
