@@ -311,7 +311,8 @@
       $.cookie("EBF_document_count", count, {path:'/'});
 
 
-      $("#upload, #return").attr("href", "7-upload.html?status=file-upload");
+      // $("#upload").attr("href", "7-upload.html?status=file-upload");
+      $("#return").attr("href", "6-ebf-list-view-upload.html");
     }
   });
 
@@ -340,7 +341,7 @@
       html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
 
       $.cookie("status", "file-upload", {path:'/'});
-      $("#status").html(html);file-upload
+      $("#status").html(html);
 
       break;
 
