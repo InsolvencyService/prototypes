@@ -265,9 +265,8 @@ a.btn:visited{
       <div class="homepage-top-inner">
         <div class="row">
           <div class="col-sm-12">
-            <h1 class="form-title heading-xlarge">Welcome to the EBF Administration</h1>
-            <p>Hi <span id="email-address"></span>,</p>
-            <p>Use the below webpage to search, edit and manage you online Bankruptcy applications.</p>
+            <h1 class="form-title heading-xlarge">Edit application: <span id="urn"></span></h1>
+            <p>You can also use the search facility below to manage other online Bankruptcy applications.</p>
           </div>
         </div>
       </div>
@@ -290,7 +289,6 @@ a.btn:visited{
                     </button>
                   </div>
                 </form>
-
               </div>
 
               <!-- Search Results - Start -->
@@ -300,10 +298,6 @@ a.btn:visited{
                 <p id="no-results">We're sorry we can't seem to find that application, please remove your search term and try again.</p>
               </div>
               <!-- Search Results - End -->
-
-              <div id="recent-application">
-                <p>Please use the search bar to find the applications you require to edit.</p>
-              </div>
 
               <div id="all-applications">
 
@@ -540,6 +534,45 @@ a.btn:visited{
 
               </div>
 
+              <div id="edit-application">
+                <hr>
+                <!-- ///// Admin Application Item - 1 - Start //// -->
+                <div class="row application">
+                  <div class="col-sm-4 application-left">
+                    <div class="form-group">
+                      Application ref.<br>
+                      <span class="key-info urn">JKTY-YUBD-BKT</span>
+                    </div>
+                    <div class="form-group">
+                      Name<br>
+                      <span class="key-info applicant">Kim Scarlett</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 application-right">
+                    <div class="form-group">
+                      <label id="notifications-label-0" for="notifications-0" class="col-sm-5">Notifications:</label>
+                      <input id="notifications-0" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label id="owner-label-0" for="owner-0" class="col-sm-5">Owner:</label>
+                      <input id="owner-0" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                    </div>
+                    <div class="form-group">
+                      <label for="PARV-0"><input type="checkbox" id="PARV-0"> This person is subject to a PARV order</label>
+                    </div>
+                    <div class="form-group">
+                      <button class="button">Save changes</button>
+                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- ///// Admin Application Item - 1 - End //// -->
+
+              </div>
+
+
             </div>
 
 
@@ -709,7 +742,7 @@ a.btn:visited{
       //   $('#no-results').show();
       // }
 
-      $('#change-all, #recent-application h1, #recent-application p, #recent-application .completion-message, #recent-application hr, #all-applications h1, #all-applications p, #all-applications form.change-all, #all-applications nav').hide();
+      $('#edit-application, #change-all, #recent-application h1, #recent-application p, #recent-application .completion-message, #recent-application hr, #all-applications h1, #all-applications p, #all-applications form.change-all, #all-applications nav').hide();
       $('#search-results').show();
       $('#all-applications').show();
     });

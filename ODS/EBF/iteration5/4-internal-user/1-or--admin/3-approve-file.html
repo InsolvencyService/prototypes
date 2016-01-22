@@ -105,6 +105,15 @@
 
 
 </style>
+
+<script type="text/javascript">
+// Checkbox interaction for the PARV section
+$(document).ready(function() {
+  document.getElementById('parv').onchange = function() {
+      document.getElementById('restricted-people').style.display = this.checked ? 'block' : 'none';
+  };
+});
+</script>
 <!-- #EndEditable -->
 
 
@@ -159,41 +168,78 @@
 
       <h1 class="form-title heading-large">Approve document: <span id="document-title"></span></h1>
       <form>
-        <div class="row">
-          <div class="col-sm-3">
-            Document type:
+        <fieldset>
+          <div class="row">
+            <div class="col-sm-3">
+              Document type:
+            </div>
+            <div class="col-sm-9">
+              <label><input type="radio" name="document-type" value="document" checked="checked" /> <i class="label label-info label-as-badge">Document</i></label>
+              <label><input type="radio" name="document-type" value="notification" /> <i class="label label-success label-as-badge">Notification</i></label>
+            </div>
           </div>
-          <div class="col-sm-9">
-            <label><input type="radio" name="document-type" value="document" checked="checked" /> <i class="label label-info label-as-badge">Document</i></label>
-            <label><input type="radio" name="document-type" value="notification" /> <i class="label label-success label-as-badge">Notification</i></label>
+
+          <div class="row">
+            <div class="col-sm-3" style="padding-top:15px">Created by:</div>
+            <div class="col-sm-9" style="font-weight:bold"><span id="document-creator"></span></div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-3" style="padding-top:15px">Created by:</div>
-          <div class="col-sm-9" style="font-weight:bold"><span id="document-creator"></span></div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-3" style="padding-top:15px">Description:</div>
-          <div class="col-sm-9" style="font-weight:bold"><span id="document-description"></span></div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-3" style="padding-top:15px">Date:</div>
-          <div class="col-sm-9" style="font-weight:bold">2016-08-26</div>
-        </div>
-
-        <p><br></p>
-
-        <div class="row">
-          <div class="col-sm-12">
-            <button href="1-ebf-list.html" class="button" style="margin-bottom:10px">Approve document</button>
-            <a href="#" class="secondary-link">Reject Document</a>
-            <br>
-            <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+          <div class="row">
+            <div class="col-sm-3" style="padding-top:15px">Description:</div>
+            <div class="col-sm-9" style="font-weight:bold"><span id="document-description"></span></div>
           </div>
-        </div>
+
+          <div class="row">
+            <div class="col-sm-3" style="padding-top:15px">Date:</div>
+            <div class="col-sm-9" style="font-weight:bold">2016-08-26</div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3" style="padding-top:15px">
+              Case under PARV?
+            </div>
+            <div class="col-sm-9" style="font-weight:bold">
+              <label for="parv"><input type="checkbox" id="parv"> Add document restritions</label>
+              <div id="restricted-people">
+                <div>
+                  <p class="form-hint">Restricting this file will only allow certain people involved in the bankruptcy to see the document.</p>
+                  <p class="form-hint">Please select who you wish to be able to view the document:</p>
+                  <label class="block-label" for="applicant">
+                    <input id="restricted-people-1" name="applicant" type="checkbox" value="applicant">
+                    Applicant
+                  </label>
+                  <label class="block-label" for="creditors">
+                    <input id="restricted-people-2" name="creditors" type="checkbox" value="creditors">
+                    Creditors
+                  </label>
+                  <label class="block-label" for="court-users">
+                    <input id="restricted-people-3" name="court-users" type="checkbox" value="court-users">
+                    Creditors
+                  </label>
+                  <label class="block-label" for="offical-reciever">
+                    <input id="restricted-people-4" name="offical-reciever" type="checkbox" value="offical-reciever">
+                    Offical Reciever
+                  </label>
+                  <label class="block-label" for="adjudicator">
+                    <input id="restricted-people-5" name="adjudicator" type="checkbox" value="adjudicator">
+                    Offical Reciever
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p><br></p>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <button href="1-ebf-list.html" class="button" style="margin-bottom:10px">Approve document</button>
+              <a href="#" class="secondary-link">Reject Document</a>
+              <br>
+              <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
+            </div>
+          </div>
+        </fieldset>
       </form>
 
       <p><br></p>
