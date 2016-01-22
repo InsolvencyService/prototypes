@@ -168,7 +168,7 @@
             </div>
 
             <p id="intro">Select files from your computer that you would like to upload for application
-              <span class="bolder" id="urn">EHBJ-8F3M-KRPL</span><span class="bolder" id="urn-returning">EHBJ-8F3M-KRPL</span> - <span class="bolder">Kim Scarlett</span>.</p>
+              <span class="bolder" id="urn"></span><span class="bolder" id="urn-returning"></span> - <span class="bolder">Kim Scarlett</span>.</p>
             <form action="" method="post" enctype="multipart/form-data">
               <span class="error-message upload" style="display:none">You must select a file to upload.</span>
               <div class="form-inline">
@@ -321,9 +321,9 @@
 
   $(document).ready(function () {
 
-    $("#upload").on("click", function (e) {
-      $("#intro").hide();
-    }
+    // $("#upload").on("click", function (e) {
+    //   $("#intro").hide();
+    // }
 
     var status = getParameterByName("status");
 
