@@ -184,7 +184,7 @@
                     <textarea rows="5" id="desc"></textarea>
                   </div>
                   <a class="button" id="upload">Upload document <i class="glyphicon glyphicon-upload"></i></a>
-                  <a href="6-ebf-list-view-upload.html" class="secondary-link ">Return to the application</a>
+                  <a href="6-ebf-list-view-upload.html" class="secondary-link" id="return">Return to the application</a>
                   <p><a href="javascript:history.go(-1)">Back</a></p>
                   <p>&nbsp;</p>
                 </div>
@@ -271,7 +271,7 @@
   }
 
 
-  $("#upload").on("click", function (e) {
+  $("#upload, #return").on("click", function (e) {
 
     $("#pnl-error").hide();
     $(".upload").hide();
@@ -311,7 +311,7 @@
       $.cookie("EBF_document_count", count, {path:'/'});
 
 
-      $("#upload").attr("href", "7-upload.html?status=file-upload");
+      $("#upload, #return").attr("href", "7-upload.html?status=file-upload");
     }
   });
 
