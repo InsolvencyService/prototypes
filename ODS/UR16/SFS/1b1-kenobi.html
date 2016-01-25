@@ -167,13 +167,12 @@
           <fieldset>
             <legend>Turnover (total income before expenses)</legend>
             <div class="amount">
-              <label for="turnover-amount">Amount (£)</label>
-              <br>
+              <label for="turnover-amount">Amount</label>
               <input type="text" id="turnover-amount" placeholder="0">
+              <div class="currency">£</div>
             </div>
             <div class="per">
               <label for="per">per week / month / year</label>
-              <br>
               <select name="D1">
                 <option value="week">per week</option>
                 <option value="fortnight">per fortnight</option>
@@ -189,16 +188,21 @@
           <!-- ///////////////// Fieldset 2 - Start ///////////////// -->
           <fieldset>
             <legend>Expenses</legend>
-            <label for="expenses-amount">Amount (£)</label>
-            <input type="text" id="expenses-amount" placeholder="0">
-            <select name="D5">
-              <option value="week">per week</option>
-              <option value="fortnight">per fortnight</option>
-              <option value="4weeks">per 4 weeks</option>
-              <option value="month">per month</option>
-              <option value="quarter">per quarter</option>
-              <option value="year" selected="selected">per year</option>
-            </select>
+            <div class="amount">
+              <label for="expenses-amount">Amount</label>
+              <input type="text" id="expenses-amount" placeholder="0">
+              <div class="currency">£</div>
+            </div>
+            <div class="per">
+              <select name="D5">
+                <option value="week">per week</option>
+                <option value="fortnight">per fortnight</option>
+                <option value="4weeks">per 4 weeks</option>
+                <option value="month">per month</option>
+                <option value="quarter">per quarter</option>
+                <option value="year" selected="selected">per year</option>
+              </select>
+            </div>
           </fieldset>
           <!-- ///////////////// Fieldset 2 - End ///////////////// -->
 
@@ -218,6 +222,7 @@
           </fieldset>
           <!-- ///////////////// Fieldset 3 - End ///////////////// -->
 
+          <hr>
 
           <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
           <fieldset id="accounting-year-start" class="date-of-birth">
