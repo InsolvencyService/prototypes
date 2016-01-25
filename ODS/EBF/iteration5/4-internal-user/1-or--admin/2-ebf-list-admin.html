@@ -470,7 +470,6 @@
       <!-- #BeginEditable "scripts" -->
       <script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
       <script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
-      <script type="text/javascript" src="js/casedata.js"></script>
       <script type="text/javascript" src="../../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
 
@@ -495,7 +494,7 @@
       }
 
       $(document).ready(function() {
-        $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
+        
         // $('[data-toggle="tooltip"]').tooltip();
         
         
@@ -576,12 +575,8 @@
 				
 			}
 		}
-		
-		
-        
-        
-        
-      });
+		$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
+	});
 
       ///////////////////////// Delete Row Functionality - Start /////////////////////////
       var documentValue;
