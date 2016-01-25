@@ -651,9 +651,33 @@
 				var doc_filename = $.cookie("EBF_document_"+i+"_filename");
 				var doc_description = $.cookie("EBF_document_"+i+"_descripton");
 				var doc_date = $.cookie("EBF_document_"+i+"_date");
+				var doc_status = $.cookie("EBF_document_"+i+"_filestatus");
+
 				
 				//Create table row
-				var row = '<tr class="activerow approval-needed">';
+				
+				var row; 
+				
+				switch(doc_status) {
+				    case "Awaiting approval":
+				        row = '<tr class="activerow approval-needed">';
+						row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting approval</span></div></td>';
+				        break;
+				    case "Notification":
+				        row = '<tr class="activerow">';
+						row += '<td></td><div class="label label-success label-as-badge">Notification</div></td>';
+				        break;
+				    case "Document":
+				        row = '<tr class="activerow approval-needed">';
+						row += '<td><div class="label label-info label-as-badge">Document</div></td>';
+				        break;
+				    case "Rejected":
+				        row = '<tr class="activerow rejected">';
+						row += '<td><div class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Document Rejected">Document Rejected</div></td>';
+				        break;
+				}
+				
+				row = '<tr class="activerow approval-needed">';
 				row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
 				row += '<td>';
 				row += '<label for="name" class="control-label">';

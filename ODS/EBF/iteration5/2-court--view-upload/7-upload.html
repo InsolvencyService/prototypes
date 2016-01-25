@@ -319,7 +319,7 @@
       count++;
       var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
       
-      $.cookie("EBF_document_"+count+"_filestatus", "Awaiting Approval", {path:'/'});
+      $.cookie("EBF_document_"+count+"_filestatus", "Awaiting approval", {path:'/'});
       $.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
       $.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
       $.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
