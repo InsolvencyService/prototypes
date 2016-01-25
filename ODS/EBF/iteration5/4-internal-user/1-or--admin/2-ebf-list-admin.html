@@ -475,7 +475,7 @@
 
       <script type="text/javascript">
    
-/*   var rownumber;
+	  var rownumber;
 
       var url      = window.location.href;     // Returns full URL
       var pathname = window.location.pathname; // Returns path only
@@ -493,7 +493,7 @@
       if(filter==null||filter==""){
         filter=1;
       }
-*/
+
       $(document).ready(function() {
         
         // $('[data-toggle="tooltip"]').tooltip();
@@ -502,7 +502,7 @@
         // Add data to table
         
         if($.cookie("EBF_document_count")){
-        	alert($.cookie("EBF_document_count"));
+        	
 			for( var i=1; i<=$.cookie("EBF_document_count"); i++){
 	
 				var doc_filename = $.cookie("EBF_document_"+i+"_filename");
@@ -572,15 +572,15 @@
 				
 				//Pre-appends to table
 				$(row).insertBefore("#table tr:first");
-				alert(row);
+				
 				
 			}
 		}
-		//$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
+		$("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
 	});
 
       ///////////////////////// Delete Row Functionality - Start /////////////////////////
-/*      var documentValue;
+      var documentValue;
 
       $("#table tr").on("click", function (e) {
       	getRowNumber($(this).index()+1);
@@ -644,7 +644,7 @@
 
       // #Search highlighted - End
 
-*/
+
       </script>
 
       <!-- #EndEditable -->
