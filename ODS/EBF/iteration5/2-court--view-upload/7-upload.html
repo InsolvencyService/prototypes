@@ -261,6 +261,17 @@
     else{
       count = 0;
     }
+    
+    var status = getParameterByName("status");
+	if(status == "uploaded"){
+		var html;
+		html = "<div class=\"govuk-box-highlight made\">";
+    	html += "<h2 class=\"bold-large\">Your document has successfully uploaded</h2>";
+      	html += "</div>";
+      	html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
+		$("#status").html(html);
+		$("#upload").html('Upload another document <i class="glyphicon glyphicon-upload"></i>');
+	}
 
   });
 
@@ -273,7 +284,7 @@
   }
 
 
-  $("#upload, #return").on("click", function (e) {
+  $("#upload").on("click", function (e) {
 
     $("#pnl-error").hide();
     $(".upload").hide();
@@ -307,53 +318,21 @@
 
       count++;
       var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
+      
+      $.cookie("EBF_document_"+count+"_filestatus", "Awaiting Approval", {path:'/'});
       $.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
       $.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
       $.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
       $.cookie("EBF_document_count", count, {path:'/'});
 
 
-      // $("#upload").attr("href", "7-upload.html?status=file-upload");
-      $("#return").attr("href", "6-ebf-list-view-upload.html");
+      $("#upload").attr("href", "7-upload.html?status=uploaded");
+      //$("#return").attr("href", "6-ebf-list-view-upload.html");
     }
   });
 
-  </script>
+ 
 
-  <script type="text/javascript">
-
-  $(document).ready(function () {
-
-    // $("#upload").on("click", function (e) {
-    //   $("#intro").hide();
-    // }
-
-    var status = getParameterByName("status");
-
-    if(status == null || status == ""){
-      status = $.cookie("status");
-    }
-
-    var html;
-    switch(status) {
-      case "file-upload":
-      html = "<div class=\"govuk-box-highlight made\">";
-      html += "<h2 class=\"bold-large\">Your document has (or documents have) successfully uploaded</h2>";
-      html += "</div>";
-      html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
-
-      $.cookie("status", "file-upload", {path:'/'});
-      $("#status").html(html);
-
-      break;
-
-      default:
-      html = "";
-      $("#status").html(html);
-
-    }
-
-  });
 
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

@@ -219,6 +219,77 @@
       <!-- Navbar - End -->
 
       <!-- Table - Start -->
+      <!-- Table - Start -->
+          <table  class="table table-list-search">
+            <thead>
+              <tr>
+                <th class="col-sm-1"><a id="document-type"><strong>Type &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-2"><a id="document-name"><strong>File name &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-2"><a id="document-owner"><strong>Created by &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-4"><strong>Description</strong></th>
+                <th class="col-sm-2"><a id="document-date"><strong>Date &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <th class="col-sm-3"><a id="document-status" href="javascript:;"><strong>Status &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
+                <!-- <th class="col-sm-2"><strong>Actions</strong></th> -->
+              </tr>
+            </thead>
+
+
+            <tbody id="mainTable">
+
+
+              <tr class="activerow">
+                <td><div class="label label-success label-as-badge">Notification</div></td>
+                <td>
+                  <label for="name" class="control-label">
+                    <a href="../SOA-Document.pdf"><span class="text-info">Reply-to-question.doc</span></a>
+                  </label>
+                  <input type="text" class="input-medium" style="display:none;" placeholder="Reply-to-question.doc">
+                </td>
+                <td>
+                  Kim Scarlett
+                  <br>
+                  <span class="form-hint">Applicant</span>
+                </td>
+                <td>
+                  <label for="name" class="control-label">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </label>
+                  <textarea type="text" class="input-medium" style="display:none;" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>
+                </td>
+                <td>2016-09-11</td>
+                <td class="text-center"><span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="Document approved">&nbsp;</span></td>
+             </tr>
+
+              <tr class="activerow">
+                <td><div class="label label-info label-as-badge">Document</div></td>
+                <td>
+                  <label for="name" class="control-label">
+                    <a href="../SOA-Document.pdf"><span class="text-info">Bankruptcy-application.pdf</span></a>
+                  </label>
+                  <input type="text" class="input-medium" style="display:none;" placeholder="Bankruptcy-application.pdf">
+                </td>
+                <td>
+                  Kim Scarlett
+                  <br>
+                  <span class="form-hint">Applicant</span>
+                </td>
+                <td>
+                  <label for="name" class="control-label">
+                    Aliquam non viverra ligula.
+                  </label>
+                  <textarea type="text" class="input-medium" style="display:none;" placeholder="Aliquam non viverra ligula."></textarea>
+                </td>
+                <td>2016-09-01</td>
+                <td class="text-center"><span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="Document approved">&nbsp;</span></td>
+              </tr>
+            </tbody>
+
+          </table>
+          <!-- Table - End -->
+
+      
+      
+      <!--- old table 
       <table class="table table-list-search">
         <thead>
           <tr>
@@ -228,9 +299,9 @@
             <th class="col-sm-4"><strong>Description</strong></th>
             <th class="col-sm-2"><a id="document-date"><strong>Date &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
             <th class="col-sm-2"><a id="document-status" href="javascript:;"><strong>Status &nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
-            <!-- <th class="col-sm-2"><strong>Actions</strong></th> -->
+            <!-- <th class="col-sm-2"><strong>Actions</strong></th> --> <!---
           </tr>
-        </thead>
+        </thead> 
 
         <tbody id="mainTable">
           <tr class="activerow">
@@ -488,6 +559,10 @@
 
         </tbody>
       </table>
+      
+      --->
+      
+      
       <!-- Table - End -->
 
       <!-- Navbar - Start -->
@@ -572,42 +647,42 @@
       $(document).ready(function () {
       	// updates table with documents stored in session
       	if($.cookie("EBF_document_count")){
-      		for( var i=1; i<=$.cookie("EBF_document_count"); i++){
-
-      			var doc_filename = $.cookie("EBF_document_"+i+"_filename");
-      			var doc_description = $.cookie("EBF_document_"+i+"_descripton");
-      			var doc_date = $.cookie("EBF_document_"+i+"_date");
-
-      			//Create table row
-      			var row = '<tr class="activerow approval-needed">';
-      			row += '<td><div class="label label-success awaiting indicator"><span id="document-type">Awaiting<br>Approval</span></div></td>';
-      		    row += '<td>';
-      		    row += '<label for="name" class="control-label">';
-      		    row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
-      		    row += '</label>';
-      		    row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
-      		    row += '</td>';
-      		    row += '<td>';
-      		    row += 'Kim Scarlett';
-      		    row += '<br>';
-      		    row += '<span class="form-hint">Applicant</span>';
-      		    row += '</td>';
-      		    row += '<td>';
-      		    row += '<label for="name" class="control-label">';
-      		    row += doc_description;
-      		    row += '</label>';
-      		    row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
-      		    row += '</td>';
-      		    row += '<td>'+doc_date+'</td>';
-      		    row += '<td class="text-center"><span class="label label-success awaiting indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
-      		    row += '</tr>';
-
-      			//Pre-appends to table
-      			$(row).insertBefore("#mainTable tr:first");
-      			//$("#tableadd").prepend().html(row);
-
-      		}
-      	}
+			for( var i=1; i<=$.cookie("EBF_document_count"); i++){
+	
+				var doc_filename = $.cookie("EBF_document_"+i+"_filename");
+				var doc_description = $.cookie("EBF_document_"+i+"_descripton");
+				var doc_date = $.cookie("EBF_document_"+i+"_date");
+	
+				//Create table row
+				var row = '<tr class="activerow approval-needed">';
+				row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
+			    row += '<td>';
+			    row += '<label for="name" class="control-label">';
+			    row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
+			    row += '</label>';
+			    row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
+			    row += '</td>';
+			    row += '<td>';
+			    row += 'Kim Scarlett';
+			    row += '<br>';
+			    row += '<span class="form-hint">Applicant</span>';
+			    row += '</td>';
+			    row += '<td>';
+			    row += '<label for="name" class="control-label">';
+			    row += doc_description;
+			    row += '</label>';
+			    row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
+			    row += '</td>';
+			    row += '<td>'+doc_date+'</td>';
+			    row += '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
+			    row += '</tr>';
+	
+				//Pre-appends to table
+				$(row).insertBefore("#mainTable tr:first");
+				//$("#tableadd").prepend().html(row);
+	
+			}
+		}
       });
 
 
