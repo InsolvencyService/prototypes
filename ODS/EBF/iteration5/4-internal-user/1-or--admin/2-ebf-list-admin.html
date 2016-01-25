@@ -523,16 +523,15 @@
 						approve = '<a href="3-approve-file.html?id='+i+'" class="button">Approve</a>';
 				        break;
 				    case "Notification":
-				        row = '<tr class="activerow">';
+				        row = '<tr class="activerow" id="'+row_count+'">';
 						row += '<td></td><div class="label label-success label-as-badge">Notification</div></td>';
 				        break;
 				    case "Document":
-				        row = '<tr class="activerow approval-needed">';
-						row += '<td><div class="label label-info label-as-badge">Document</div></td>';
-						
+				        row = '<tr class="activerow" id="'+row_count+'">';
+				   		row += '<td><div class="label label-info label-as-badge">Document</div></td>';
 				        break;
 				    case "Rejected":
-				        row = '<tr class="activerow rejected">';
+				        row = '<tr class="activerow" id="'+row_count+'">';
 						row += '<td><div class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Document Rejected">Document Rejected</div></td>';
 						
 				        break;

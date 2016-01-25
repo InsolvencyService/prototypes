@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../../../assets/templates/adjudicator-template.dwt" -->
 <head>
@@ -164,7 +164,7 @@ $(document).ready(function() {
   </div>
 
   <div id="content">
-	<!-- #BeginEditable "content" -->
+
     <div style="display:block; margin:0 30px 0 30px !important">
 
       <form>
@@ -179,9 +179,9 @@ $(document).ready(function() {
               <div class="col-sm-3">
                 Document type:
               </div>
-              <div class="col-sm-9" id="document_type">
-                <label><input type="radio" name="document-type" value="Document" checked="checked" /> <i class="label label-info label-as-badge">Document</i></label>
-                <label><input type="radio" name="document-type" value="Notification" /> <i class="label label-success label-as-badge">Notification</i></label>
+              <div class="col-sm-9">
+                <label><input type="radio" name="document-type" value="document" checked="checked" /> <i class="label label-info label-as-badge">Document</i></label>
+                <label><input type="radio" name="document-type" value="notification" /> <i class="label label-success label-as-badge">Notification</i></label>
               </div>
             </div>
 
@@ -238,7 +238,7 @@ $(document).ready(function() {
             <p><br></p>
             <div class="row">
               <div class="col-sm-12">
-                <a id="approve" class="button" style="margin-bottom:10px">Approve document</a>
+                <button href="#" class="button" style="margin-bottom:10px">Approve document</button>
                 <a id="reject-document" class="secondary-link">Reject Document</a>
                 <br>
                 <a style="padding-right: 30px" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
@@ -278,7 +278,7 @@ $(document).ready(function() {
       <p><br></p>
 
     </div>
-<!-- #EndEditable -->
+
   </div>
 
   <footer role="contentinfo" id="footer" class="group js-footer">
@@ -327,7 +327,6 @@ $(document).ready(function() {
 
   <script type="text/javascript">
 	var count = getParameterByName("id");
-
 	$(document).ready(function() {
 	
 	
@@ -339,7 +338,7 @@ $(document).ready(function() {
 	});
 	
 	if ($.cookie("document-title")) {
-	  $("#document-title").text($.cookie("EBF_document_"+ count +"_filename")).addClass("bolder");
+	  $("#document-title").text($.cookie("document-title")).addClass("bolder");
 	}
 	
 	if ($.cookie("document-type")) {
@@ -351,18 +350,14 @@ $(document).ready(function() {
 	}
 	
 	if ($.cookie("document-description")) {
-	  $("#document-description").text($.cookie("EBF_document_"+ count +"_description")).addClass("bolder");
+	  $("#document-description").text($.cookie("document-description")).addClass("bolder");
 	}
 	
 	if ($.cookie("document-date")) {
-	  $("#document-date").text($.cookie("EBF_document_"+ count +"_date")).addClass("bolder");
+	  $("#document-date").text($.cookie("document-date")).addClass("bolder");
 	}
 	
-	$("#approve").on("click", function (e) {
-	 $.cookie("EBF_document_"+count+"_filestatus", $("#document_type :checked").val(), {path:'/'});
-	 $("#approve").attr("href", "2-ebf-list-admin.html");
-	});
-
+	
 	
 	$("#reject-document").on("click", function (e) {
 	  $("#approve-document").slideUp();
