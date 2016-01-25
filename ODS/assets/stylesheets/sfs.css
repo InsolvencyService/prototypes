@@ -1,4 +1,20 @@
-﻿.childrow td:first-child{
+/* ================================= SFS General Overide - Start ================================= */
+
+input, input.form-control, textarea {
+  border: 2px solid #6f777b;
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #6f777b;
+}
+
+input:focus, input.form-control:focus {
+  border: 2px solid #FFBF47;
+  box-shadow: none;
+}
+
+/* ================================= SFS General Overide - End ================================= */
+
+.childrow td:first-child{
     padding-left:20px;
 }
 .edit{
@@ -188,15 +204,18 @@ font-size:19px;
 	border-bottom: 1px solid #ddd;
 }
 
-/* ------------------------- SFS Overide - Start ------------------------- */
+/* ================================= SFS Overide - Start ================================= */
 
 #income table th, #costs table th {
-  font-size: 30px;
+  font-size: 26px;
   border-bottom: 0;
+  padding: 0.5em 1em 0.5em 0.6em;
 }
 
 #income table th:nth-of-type(2), #costs table th:nth-of-type(2) {
   font-size: 16px;
+  color: #6f777b;
+  border-radius: 0 5px 5px 0;
 }
 
 #income table td, #costs table td {
@@ -215,6 +234,48 @@ tr td.actions a.edit {
   margin-left: 0;
 }
 
+#income tr.group-heading td, #costs tr.group-heading td {
+	padding: 25px 0;
+}
+
+#income tr.group-heading td.value, #costs tr.group-heading td.value {
+  font-weight: bold;
+}
 
 
-/* ------------------------- SFS Overide - End ------------------------- */
+#income table thead, #costs table thead {
+  background: #eee;
+}
+
+#income table thead th:first-of-type, #costs table thead th:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+
+#income tbody tr.group-heading td, #costs tbody tr.group-heading td {
+  padding: 25px 15px;
+}
+
+fieldset legend, fieldset .amount, fieldset .per {
+  float: left;
+  /*font-weight: bold;*/
+  width: 33.3%;
+  border-bottom: 0;
+}
+
+fieldset .amount, fieldset .per {
+  text-align: right;
+}
+
+#form-intro {
+  border-bottom: 5px solid #eee;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#form-intro legend {
+  font-size: 24px;
+}
+
+
+
+/* ================================= SFS Overide - End ================================= */
