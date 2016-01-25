@@ -656,12 +656,13 @@
 				
 				//Create table row
 				
-				var row; 
+				var row, row_status; 
 				
 				switch(doc_status) {
 				    case "Awaiting approval":
 				        row = '<tr class="activerow approval-needed">';
 						row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting approval</span></div></td>';
+						row_status = '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
 				        break;
 				    case "Notification":
 				        row = '<tr class="activerow">';
@@ -670,10 +671,12 @@
 				    case "Document":
 				        row = '<tr class="activerow approval-needed">';
 						row += '<td><div class="label label-info label-as-badge">Document</div></td>';
+						row_status = '<td class="text-center"><span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="Document approved">&nbsp;</span></td>';
 				        break;
 				    case "Rejected":
 				        row = '<tr class="activerow rejected">';
 						row += '<td><div class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Document Rejected">Document Rejected</div></td>';
+						row_status = '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Document rejected">&nbsp;</span></td>';
 				        break;
 				}
 				
@@ -697,7 +700,7 @@
 				row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
 				row += '</td>';
 				row += '<td>'+doc_date+'</td>';
-				row += '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
+				row += row_status;
 				row += '</tr>';
 				
 				//Pre-appends to table
