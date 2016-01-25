@@ -1,9 +1,10 @@
 /* ------------------------ EBF Overide Styles - Start ------------------------ */
 
-input, input.form-control {
+input, input.form-control, textarea {
   border: 2px solid #6f777b;
   border-radius: 0;
   box-shadow: none;
+  border-color: #6f777b;
 }
 
 input:focus, input.form-control:focus {
@@ -105,25 +106,54 @@ table.table .label {
 	width: 100%;
 }
 
-table.table .label.indicator {
+/*table.table .label.indicator {
 	width: auto;
-}
+}*/
 
-table.table tr th:first-of-type, table.table tr td:first-of-type {
+/*table.table tr th:first-of-type, table.table tr td:first-of-type {
 	padding-left: 0;
-}
+}*/
 
-table.table tr th:last-of-type, table.table tr td:last-of-type {
+/*table.table tr th:last-of-type, table.table tr td:last-of-type {
 	padding-right: 0;
+}*/
+
+table.table tr.approval-needed, table.table tr.rejected {
+	/*opacity: 0.75;*/
+	background: #f8f8f8;
 }
 
-table.table tr.approval-needed {
-	/*opacity: 0.75;*/
-	background: #e7e7e7;
+table.table tr.rejected td {
+  color: #6f777b;
+}
+
+table.table > thead > tr > th {
+  padding: 8px;
+  border-bottom: 5px solid #ddd;
+}
+
+table.table td {
+  border: none;
+}
+
+table.table > tbody > tr > td {
+  padding: 25px 8px;
+  border-top: none;
+  border-bottom: none;
 }
 
 .glyphicon.approved {
 	color: green;
+}
+
+.approval-needed .button {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 0;
+}
+
+.activerow td:last-of-type, th.header:last-of-type {
+  text-align: right;
 }
 
 nav.navbar .glyphicon {
@@ -362,7 +392,7 @@ input[type="radio"] {
 textarea {
   resize: none;
 	width: 100%;
-	border-color: #dfdfdf;
+	/*border-color: #dfdfdf;*/
 }
 
 table.table label {
@@ -714,10 +744,18 @@ table.application-summary tr td {
   width: 100%;
 }
 
+#search-applications {
+  margin-top: 1.875em;
+}
+
 #search-applications .header-search-content {
   /*margin: 0 auto;*/
   width: 50%;
   float: left;
+}
+
+#search-applications .heading-medium {
+  margin-bottom: 20px;
 }
 
 #search-applications .header-update-all {
@@ -785,7 +823,7 @@ table.application-summary tr td {
 }
 
 #saved .panel-indent {
-  margin: 30px 15px 15px 0;
+  margin: 0px 15px 15px 0;
 }
 
 #recent-application {
@@ -824,7 +862,7 @@ table.application-summary tr td {
 }*/
 
 #restricted-people {
-  margin-top: 20px;
+  margin: 20px 0;
   padding: 0px 0 0 20px;
   border-left: 5px solid #EEE;
   display: none;
@@ -847,7 +885,7 @@ table.application-summary tr td {
 header.homepage-top {
   background: #005ea5;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 header.homepage-top .homepage-top-inner {
@@ -899,3 +937,14 @@ header.homepage-top .homepage-top-inner .cta a, header.homepage-top .homepage-to
 
 
 /* ------------------------ eBF Intro Banner - End ------------------------ */
+
+/* ------------------------ Approve Document - Start ------------------------ */
+
+#rejected-document {
+  display: none;
+}
+
+
+
+/* ------------------------ Approve Document - End ------------------------ */
+
