@@ -276,39 +276,10 @@
 
         <tbody id="table">
 
-          <!-- ///////////////////////// Table Row - 1 - Start ///////////////////////// -->
-          <tr class="activerow" id="table-row-1">
-            <td><div class="label label-success label-as-badge">Notification</div></td>
-            <td>
-              <label for="name" class="control-label">
-                <a href="#"><span class="text-info">Reply-to-question.doc</span></a>
-              </label>
-              <input type="text" class="input-medium" style="display:none;" placeholder="Reply-to-question.doc">
-            </td>
-            <td>
-              Kim Scarlett
-              <br>
-              <span class="form-hint">Applicant</span>
-            </td>
-            <td>
-              <label for="description" class="control-label">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </label>
-              <textarea type="text" class="input-medium" style="display:none;" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>
-            </td>
-            <td>2016-09-11</td>
-            <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
-            <td>
-              <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
-              <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
-            </td>
-          </tr>
-          <!-- ///////////////////////// Table Row - 1 - End ///////////////////////// -->
+          
 
           <!-- ///////////////////////// Table Row - 2 - Start ///////////////////////// -->
-          <tr class="activerow" id="table-row-2">
+          <tr class="activerow" id="table-row-1">
             <td><div class="label label-info label-as-badge">Document</div></td>
             <td>
               <label for="name" class="control-label">
@@ -323,53 +294,21 @@
             </td>
             <td>
               <label for="description" class="control-label">
-                Aliquam non viverra ligula.
+                Submitted bankruptcy application form
               </label>
               <textarea type="text" class="input-medium" style="display:none;" placeholder="Aliquam non viverra ligula."></textarea>
             </td>
-            <td>2016-09-01</td>
+            <td>24/01/2016</td>
             <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
             <td>
               <i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
-              <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
             </td>
           </tr>
           <!-- ///////////////////////// Table Row - 2 - End ///////////////////////// -->
 
         
 
-          <!-- ///////////////////////// Table Row - 8 - Start ///////////////////////// -->
-          <tr class="activerow approval-needed" id="table-row-8">
-            <td><div class="label label-success awaiting indicator"><span id="document-type">Approval<br>Needed</span></div></td>
-            <td>
-              <label for="name" class="control-label">
-                <a href="#"><span class="text-info" id="document-title">Reply-to-question.doc</span></a>
-              </label>
-              <input type="text" class="input-medium" style="display:none;" placeholder="Reply-to-question.doc">
-            </td>
-            <td>
-              <span id="document-creator">Kim Scarlett</span>
-              <br>
-              <span class="form-hint">Applicant</span>
-            </td>
-            <td>
-              <label for="description" class="control-label">
-                <span id="document-description">Morbi porta imperdiet eros, sed sagittis lorem tincidunt vel. Morbi vel justo lobortis, accumsan mauris eget, ultrices sem.</span>
-              </label>
-              <textarea type="text" class="input-medium" style="display:none;" placeholder="Morbi porta imperdiet eros, sed sagittis lorem tincidunt vel. Morbi vel justo lobortis, accumsan mauris eget, ultrices sem."></textarea>
-            </td>
-            <td><span id="document-date">2016-08-26</span></td>
-            <!-- <td class="text-center"><span class="label label-success">&nbsp;</span></td> -->
-            <td>
-              <a href="3-approve-file.html" class="button">Approve</a>
-              <a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>
-              <div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>
-              <a class="controls-delete" data-toggle="modal" data-target="#myModal"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>
-            </td>
-          </tr>
-          <!-- ///////////////////////// Table Row - 8 - End ///////////////////////// -->
+         
 
           
         </tbody>
@@ -566,9 +505,8 @@
 				row += '<td>';
 				row += approve;
 	  			row += '<a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>';
-	  			row += '<div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>';
-	  			row += '<a class="controls-delete" data-toggle="modal" data-target="#myModal"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>';
-				row += '</td>';
+	  			row += '<div class="controls-update" style="display:none;"><a class="button" href="3-approve-file.html?id='+i+'">Update</a></div>';
+	  			row += '</td>';
 				
 				row += '</tr>';
 				
