@@ -633,7 +633,6 @@
       <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
       <script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
       <script type="text/javascript" src="../../../assets/js/jquery.tablesorter.min.js"></script>
-      <script type="text/javascript" src="../../../assets/js/casedata.js"></script>
 
       <script type="text/javascript">
 
@@ -652,38 +651,37 @@
 				var doc_filename = $.cookie("EBF_document_"+i+"_filename");
 				var doc_description = $.cookie("EBF_document_"+i+"_descripton");
 				var doc_date = $.cookie("EBF_document_"+i+"_date");
-	
+				
 				//Create table row
 				var row = '<tr class="activerow approval-needed">';
 				row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
-			    row += '<td>';
-			    row += '<label for="name" class="control-label">';
-			    row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
-			    row += '</label>';
-			    row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
-			    row += '</td>';
-			    row += '<td>';
-			    row += 'Kim Scarlett';
-			    row += '<br>';
-			    row += '<span class="form-hint">Applicant</span>';
-			    row += '</td>';
-			    row += '<td>';
-			    row += '<label for="name" class="control-label">';
-			    row += doc_description;
-			    row += '</label>';
-			    row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
-			    row += '</td>';
-			    row += '<td>'+doc_date+'</td>';
-			    row += '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
-			    row += '</tr>';
-	
+				row += '<td>';
+				row += '<label for="name" class="control-label">';
+				row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
+				row += '</label>';
+				row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
+				row += '</td>';
+				row += '<td>';
+				row += 'Kim Scarlett';
+				row += '<br>';
+				row += '<span class="form-hint">Applicant</span>';
+				row += '</td>';
+				row += '<td>';
+				row += '<label for="name" class="control-label">';
+				row += doc_description;
+				row += '</label>';
+				row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
+				row += '</td>';
+				row += '<td>'+doc_date+'</td>';
+				row += '<td class="text-center"><span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Awaiting Approval">&nbsp;</span></td>';
+				row += '</tr>';
+				
 				//Pre-appends to table
 				$(row).insertBefore("#mainTable tr:first");
-				//$("#tableadd").prepend().html(row);
-	
+				
 			}
 		}
-      });
+
 
 
       if ($.cookie("urn")) {
@@ -704,7 +702,9 @@
       if(filter==null||filter==""){
         filter=1;
       }
-
+      });
+      
+      
       $(document).ready(function() {
         $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
         // $('[data-toggle="tooltip"]').tooltip();
@@ -741,7 +741,7 @@
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
 
-      var $rows = $('#table tr');
+      var $rows = $('table tr');
       $('#search').keyup(function() {
 
         var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
