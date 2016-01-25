@@ -257,7 +257,7 @@ $(document).ready(function() {
                 <h1 class="form-title heading-xlarge" style="font-weight: normal;">Reject file: <br>
                   <span id="document-title" class="bolder"></span>
                 </h1>
-                <p>Please provide the doument owner with a reason of the rejection of the letter:</p>
+                <p>Please provide the document owner with a reason of the rejection of the letter:</p>
                 <textarea rows="10" id="reason-for-rejection"></textarea>
               </div>
             </div>
@@ -341,10 +341,12 @@ $(document).ready(function() {
 	  $.cookie("pathname", pathname, {path:'/'});
 	});
 	
+	var d_name = $.cookie("EBF_document_"+ count +"_filename");
+	var d_desc = $.cookie("EBF_document_"+ count +"_description");
 	
-	$("#document-title").val($.cookie("EBF_document_"+ count +"_filename"));
+	$("#document-title").val(d_name);
 	$("#document-creator").text($.cookie("EBF_document_"+ count +"_creator"));
-	$("#document-description").val($.cookie("EBF_document_"+ count +"_description"));
+	$("#document-description").val(d_desc);
 	$("#document-uploader").text($.cookie("EBF_document_"+ count +"_uploader"));
 	$("#document-date").text($.cookie("EBF_document_"+ count +"_date"));
 	
