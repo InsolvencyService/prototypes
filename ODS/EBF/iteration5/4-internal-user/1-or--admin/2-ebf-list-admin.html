@@ -502,6 +502,7 @@
         // Add data to table
         
         if($.cookie("EBF_document_count")){
+        	alert($.cookie("EBF_document_count"));
 			for( var i=1; i<=$.cookie("EBF_document_count"); i++){
 	
 				var doc_filename = $.cookie("EBF_document_"+i+"_filename");
@@ -512,8 +513,8 @@
 				
 				//Create table row
 				
-				var row, row_status, row_count; 
-				row_count = (i+1);
+				var row, row_status; 
+				var row_count = parseInt(i)+1;
 				
 				switch(doc_status) {
 				    case "Awaiting approval":
