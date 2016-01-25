@@ -512,13 +512,12 @@
 				
 				//Create table row
 				
-				var row, row_status; 
-				
-				
+				var row, row_status, row_count; 
+				row_count = (i+1);
 				
 				switch(doc_status) {
 				    case "Awaiting approval":
-				        row = '<tr class="activerow approval-needed" id="'i+1'">';
+				        row = '<tr class="activerow approval-needed" id="'+rowcount+'">';
 						row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting approval</span></div></td>';
 						approve = '<a href="3-approve-file.html?id='+i+'" class="button">Approve</a>';
 				        break;
@@ -568,12 +567,6 @@
 	  			row += '<a class="controls-delete" data-toggle="modal" data-target="#myModal"><i style="font-size:0.8em;" class="glyphicon glyphicon-trash delete" alt="Delete" data-toggle="tooltip" data-placement="bottom" title="Delete document"></i></a>';
 				row += '</td>';
 				
-				
-				
-				3-approve-file.html?id='+i+'
-				
-				
-				row += row_status;
 				row += '</tr>';
 				
 				//Pre-appends to table
