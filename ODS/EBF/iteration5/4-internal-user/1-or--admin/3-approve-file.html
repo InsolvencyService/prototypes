@@ -359,7 +359,6 @@ $(document).ready(function() {
 	}
 	
 	$("#approve").on("click", function (e) {
-	 alert($("#document_type :checked").val());
 	 $.cookie("EBF_document_"+count+"_filestatus", $("#document_type :checked").val(), {path:'/'});
 	 $("#approve").attr("href", "2-ebf-list-admin.html");
 	});
