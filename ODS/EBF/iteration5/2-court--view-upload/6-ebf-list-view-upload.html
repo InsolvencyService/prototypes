@@ -657,7 +657,7 @@
 				//Create table row
 				
 				var row, row_status; 
-				alert(doc_status);
+				
 				switch(doc_status) {
 				    case "Awaiting approval":
 				        row = '<tr class="activerow approval-needed">';
@@ -680,8 +680,7 @@
 				        break;
 				}
 				
-				row = '<tr class="activerow approval-needed">';
-				row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
+				
 				row += '<td>';
 				row += '<label for="name" class="control-label">';
 				row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
