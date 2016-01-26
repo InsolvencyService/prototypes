@@ -275,47 +275,112 @@ fieldset {
 }
 
 fieldset .amount, fieldset .per {
-  text-align: right;
-}
-
-#form-intro {
-  border-bottom: 5px solid #eee;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-#form-intro legend {
-  font-size: 24px;
-}
-
-legend {
-  margin: 0;
+  text-align: left;
 }
 
 fieldset div.amount label, fieldset div.per label {
   text-indent: -10000px;
   text-align: left;
-  margin: 0;
+  /*margin: 0;*/
   /*height: 0;*/
 }
 
 fieldset div.amount .currency {
   font-weight: bold;
-  float: right;
+  float: left;
   display: inline-block;
-  margin: 5px 10px 0 0;
+  margin: 7px 10px 0 0;
 }
 
-fieldset div.amount input {
-  float: right;
+fieldset.fine div.amount .currency {
+  margin-top: 36px;
 }
 
-hr {
+fieldset div.amount input, fieldset div input {
+  float: left;
+  width: 65%;
+  border: 2px solid #6f777b;
+  height: 35px;
+  padding: 2px;
+  line-height: 30px;
+  text-align: left;
+}
+
+fieldset div.per select {
+  float: left;
+  width: 40%;
+}
+
+fieldset .row > div:first-child {
+  padding-top: 15px;
+}
+
+fieldset.fine, fieldset.fine-additional {
+  margin-bottom: 30px;
+}
+
+fieldset.fine .amount label {
+  text-indent: 0;
+}
+
+.form-intro {
+  border-bottom: 5px solid #eee;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.form-intro.large-margin-top {
+  margin-top: 60px;
+}
+
+.form-intro legend {
+  font-size: 36px;
+}
+
+.form-intro legend.amount, .form-intro legend.per {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+legend {
+  margin: 4px 0 0 0;
+}
+
+hr.seperator {
   width: 100%;
   display: inline-block;
+  border-top: 5px solid #eee;
 }
 
+#accounting-year-start, #accounting-year-end {
+  display: inline-block;
+  width: 50%;
+  border-left: 5px solid #eee;
+  padding: 0 0 0 3%;
+  clear: none;
+  margin: 50px 0 70px 0;
+}
 
+.breadcrumb {
+  background: #eee;
+  padding: 10px;
+  margin: 20px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+fieldset.fine #btn-remove-fine {
+  margin-top: 34px;
+  position: absolute;
+}
+
+fieldset.fine #btn-remove-fine .glyphicon {
+  margin: 0 10px 0 0;
+}
+
+#another {
+  display: none;
+}
 
 
 /* ================================= SFS Overide - End ================================= */
