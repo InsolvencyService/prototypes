@@ -7,9 +7,27 @@ input, input.form-control, textarea {
   border-color: #6f777b;
 }
 
-input:focus, input.form-control:focus {
+input:focus, input.form-control:focus, select:focus {
   border: 2px solid #FFBF47;
   box-shadow: none;
+}
+
+select {
+  margin: 0 10px 0 0;
+  border: 2px solid #6f777b;
+  border-radius: 0;
+  background: transparent;
+  padding: 2px 35px 2px 2px;
+  font-size: 16px;
+  height: 35px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../images/svgs/arrow-down.svg) 96% / 20px no-repeat #fff;
+}
+
+select:focus {
+  background: url(../images/svgs/arrow-up.svg) 96% / 20px no-repeat #fff;
 }
 
 /* ================================= SFS General Overide - End ================================= */
@@ -151,7 +169,8 @@ table.table {
 	border-bottom: 1px solid #ddd !important;
 }
 #box-total{
-	width:90%;padding-right:0
+	width: auto;
+  padding-right: 0;
 }
 .totalrow .pound-sign{
 	font-weight:normal; padding-left:0;
@@ -258,20 +277,20 @@ tr td.actions a.edit {
 fieldset legend, fieldset .amount, fieldset .per {
   float: left;
   /*font-weight: bold;*/
-  width: 43.3%;
+  /*width: 43.3%;*/
   border-bottom: 0;
 }
 
-fieldset .per {
+/*fieldset .per {
   width: 33.3%;
 }
 
 fieldset .amount {
   width: 23.3%;
-}
+}*/
 
 fieldset {
-  padding: 20px 0;
+  padding: 0 0 20px 0;
 }
 
 fieldset .amount, fieldset .per {
@@ -290,9 +309,10 @@ fieldset div.amount .currency {
   float: left;
   display: inline-block;
   margin: 7px 10px 0 0;
+  text-indent: 0;
 }
 
-fieldset.fine div.amount .currency {
+fieldset.input-item div.amount .currency {
   margin-top: 36px;
 }
 
@@ -308,18 +328,39 @@ fieldset div.amount input, fieldset div input {
 
 fieldset div.per select {
   float: left;
-  width: 40%;
+  /*width: 40%;*/
 }
 
 fieldset .row > div:first-child {
   padding-top: 15px;
 }
 
-fieldset.fine, fieldset.fine-additional {
-  margin-bottom: 30px;
+fieldset.add-item {
+  margin-top: 20px;
+  border-left: 5px solid #005ea5;
+  padding: 20px 0 20px 20px;
 }
 
-fieldset.fine .amount label {
+fieldset.additional-item {
+  padding-top: 10px;
+  /*margin-top: 20px;*/
+}
+
+h2.additional-item-intro {
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  width: 100%;
+  padding-top: 30px;
+  /*display: inline-block !important;*/
+}
+
+fieldset.title-holder {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+}
+
+fieldset.input-item .amount label {
   text-indent: 0;
 }
 
@@ -330,7 +371,7 @@ fieldset.fine .amount label {
 }
 
 .form-intro.large-margin-top {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .form-intro legend {
@@ -367,14 +408,16 @@ hr.seperator {
   margin: 20px 0;
   display: inline-block;
   width: 100%;
+  font-size: 14px;
 }
 
-fieldset.fine #btn-remove-fine {
+fieldset.input-item .delete-button {
   margin-top: 34px;
   position: absolute;
+  font-size: 18px;
 }
 
-fieldset.fine #btn-remove-fine .glyphicon {
+fieldset.input-item .delete-button .glyphicon {
   margin: 0 10px 0 0;
 }
 
@@ -382,5 +425,177 @@ fieldset.fine #btn-remove-fine .glyphicon {
   display: none;
 }
 
+input.description {
+  width: 100%;
+}
+
+.col-sm-2.amount {
+  width: 16.666667%;
+}
+
+.col-sm-2.amount input {
+  width: 81%;
+}
+
+.section-total-value {
+  border-top: 5px solid #eee;
+  font-size: 26px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.section-total-value.summary-page .totalvalue {
+  float: right;
+  text-align: right;
+}
+
+.section-total-value .description {
+  text-align: right;
+}
+
+.section-total-value .description label {
+  text-indent: 0;
+}
+
+.section-total-value .total div {
+  float: left;
+}
+
 
 /* ================================= SFS Overide - End ================================= */
+
+/* ================================= SFS Summary Overide - Start ================================= */
+
+.form-intro.summary {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.form-intro.summary label {
+  float: right;
+  margin: 87px 0 0 0;
+}
+
+.form-intro.summary h1.form-title {
+  margin: 65px 0 0 0;
+}
+
+.section {
+  padding: 15px;
+  color: #b1b3b6 !important;
+  margin-bottom: 20px;
+  border: 3px dotted #ebedef;
+  border-radius: 5px;
+  background: white;
+}
+
+.section .heading-xlarge {
+  float: left;
+  margin: -5px 10px 0 0;
+  font-size: 65px;
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  color: black;
+}
+
+.section legend {
+  width: auto;
+  float: left;
+  font-size: 25px;
+  margin-top: 0;
+}
+
+.section .form-hint {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
+  padding-top:0;
+}
+
+.section.active {
+  color: black !important;
+  background: #ebedef;
+}
+
+.section.complete {
+  color: black !important;
+  background: white;
+  border-left: 5px solid #005ea5;
+  border-radius: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.section.complete legend, .section.complete .heading-xlarge {
+  color: black !important;
+}
+
+.section legend, .section .heading-xlarge {
+  color: #b1b3b6 !important;
+}
+
+.section .heading-xlarge.double-digits {
+  width: 60px;
+}
+
+.section.active legend, .section.active .heading-xlarge {
+  color: black !important;
+}
+
+/*.section.active:hover {
+  background: #dee2e6;
+}*/
+
+.section .main-cta .button {
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  width: auto;
+  display: none;
+}
+
+.section.active .main-cta .button {
+  display: inline-block;
+  float: right;
+}
+
+.section .opt-out {
+  text-align: right;
+  position: absolute;
+  right: 137px;
+  width: 270px;
+}
+
+.declare, .edit {
+  display: none;
+}
+
+.section.complete .edit {
+  display: inline-block;
+  float: left;
+  min-width: auto;
+  margin-top: 17px;
+}
+
+.section.complete .value {
+  float: right;
+  font-weight: bold;
+  font-size: 21px;
+  margin-top: 17px;
+}
+
+.section.active .declare {
+  display: inline-block;
+}
+
+.section-total-value#incometotal, .section-total-value#household-total, .section-total-value#coststotal {
+  margin-top: 0;
+  border-top: 0;
+}
+
+/* ================================= SFS Summary Overide - End ================================= */

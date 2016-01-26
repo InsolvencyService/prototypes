@@ -133,8 +133,6 @@
         </div>
       </div>
 
-
-
       <!-- #BeginEditable "content" -->
       <div class="inner-block">
 
@@ -151,36 +149,53 @@
           <p class="lede">Also add any fines in your name and your contributions towards any other household or personal expenses.</p>
           <br>
           <p class="lede">If you don't contribute towards something, leave it blank.</p>
+          <p><br></p>
 
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token0" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
             <fieldset class="form-intro">
-              <legend>Savings</legend>
-              <legend class="amount">Amount</legend>
-              <legend class="per">per week / month / year</legend>
+              <div class="row">
+                <div class="col-sm-5">
+                  <legend>Savings</legend>
+                </div>
+                <div class="col-sm-2">
+                  <legend class="amount">Amount</legend>
+                </div>
+                <div class="col-sm-3">
+                  <legend class="per">per week / month / year</legend>
+                </div>
+                <div class="col-sm-2">
+                </div>
+              </div>
             </fieldset>
             <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
 
             <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
             <fieldset>
-              <legend>Enter the amount you regularly pay into a savings account</legend>
-              <div class="amount">
-                <label for="turnover-amount">Amount</label>
-                <div class="currency">&pound;</div>
-                <input type="text" id="savings-amount" placeholder="0" class="amount">
-              </div>
-              <div class="per">
-                <label for="per">per week / month / year</label>
-                <select name="D1">
-                  <option value="week">per week</option>
-                  <option value="fortnight">per fortnight</option>
-                  <option value="4weeks">per 4 weeks</option>
-                  <option value="month" selected="selected">per month</option>
-                  <option value="quarter">per quarter</option>
-                  <option value="year">per year</option>
-                </select>
+              <div class="row">
+                <div class="col-sm-5">
+                  <legend>Enter the amount you regularly pay into a savings account</legend>
+                </div>
+                <div class="col-sm-2 amount">
+                  <label for="turnover-amount">Amount</label>
+                  <label for="turnover-amount" class="currency">&pound;</label>
+                  <input type="text" id="turnover-amount" placeholder="0" class="amount">
+                </div>
+                <div class="col-sm-3 per">
+                  <label for="per">per week / month / year</label>
+                  <select id="per" name="D1">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                </div>
               </div>
             </fieldset>
             <!-- ///////////////// Fieldset 1 - End ///////////////// -->
@@ -197,357 +212,287 @@
             <p class="form-hint">Check the notification if you're unsure whether something is a fine.</p>
 
             <!-- ///////////////// Fieldset 2 - Start ///////////////// -->
-            <fieldset class="fine">
+            <fieldset class="input-item fine">
               <div class="row">
-                <div class="col-sm-7">
-                  <label>Who issued the fine?</label><br>
-                  <input id="fine-type" type="text" value="" class="col-sm-12">
+                <div class="col-sm-5">
+                  <label for="fine-type-1">Who issued the fine?</label><br>
+                  <input id="fine-type-1" type="text" value="" class="description">
                 </div>
-                <div class="col-sm-4 amount">
-                  <label id="fine-amount" for="fine-amount">Amount</label>
-                  <div class="currency">&pound;</div>
-                  <input id="fine_amount" type="text" placeholder="0">
+                <div class="col-sm-2 amount">
+                  <label for="fine-amount-1">Amount</label>
+                  <label for="fine-amount-1" class="currency">&pound;</label>
+                  <input id="fine-amount-1" type="text" placeholder="0">
+                </div>
+                <div class="col-sm-3">
                 </div>
                 <div class="col-sm-2">
-                  <a id="btn-remove-fine" href="#" class="fine-additional"><i class="glyphicon glyphicon-trash delete"></i>Delete fine</a>
+                  <a href="#" class="delete-button"><i class="glyphicon glyphicon-trash delete"></i>Delete fine</a>
                 </div>
               </div>
             </fieldset>
             <!-- ///////////////// Fieldset 2 - End ///////////////// -->
 
             <!-- ///////////////// Fieldset 3 - Start ///////////////// -->
-            <fieldset class="fine fine-additional" id="another">
+            <fieldset class="title-holder">
+              <h2 class="additional-item-intro fine">Additional penalty charges:</h2>
+            </fieldset>
+            <fieldset class="input-item additional-item fine">
               <div class="row">
-                <div class="col-sm-12">
-                  Additional penalty charges:
+                <div class="col-sm-5">
+                  <label for="fine-type-2">Who issued the fine?</label><br>
+                  <input id="fine-type-2" type="text" value="" class="description">
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-7">
-                  <label for="benefit-type2">Who issued the fine?</label><br>
-                  <input id="fine-type" type="text" value="" class="col-sm-12">
+                <div class="col-sm-2 amount">
+                  <label for="fine-amount-2">Amount</label>
+                  <label for="fine-amount-2" class="currency">&pound;</label>
+                  <input id="fine-amount-2" type="text" placeholder="0">
                 </div>
-                <div class="col-sm-4 amount">
-                  <label id="fine-amount" for="fine-amount">Amount</label>
-                  <div class="currency">&pound;</div>
-                  <input id="fine_amount" type="text" placeholder="0">
+                <div class="col-sm-3">
                 </div>
                 <div class="col-sm-2">
-                  <a id="btn-remove-fine0" href="#"><i class="glyphicon glyphicon-trash delete"></i>Delete fine</a>
+                  <a class="delete-button additional-fine" href="#"><i class="glyphicon glyphicon-trash delete"></i>Delete fine</a>
                 </div>
               </div>
             </fieldset>
             <!-- ///////////////// Fieldset 3 - End ///////////////// -->
 
+            <!-- ///////////////// Add Item - Start ///////////////// -->
+            <fieldset class="add-item">
+              <a href="#" id="btn-add-fine"><i class="glyphicon glyphicon-plus"></i> Add another fine</a>
+            </fieldset>
+            <!-- ///////////////// Add Item - End ///////////////// -->
 
-            <label class="form-label"><a href="#" id="btn-add-fine"><i class="glyphicon glyphicon-plus"></i> Add another fine</a></label>
+            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+            <fieldset class="form-intro large-margin-top">
+              <legend>Other expense</legend>
+            </fieldset>
+            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
 
-
-
-
-
-
-
-
-            <table class="table table-condensed">
-
-
-
-
-
-                  <tbody class="fine-additional" style="display:none">
-
-                      <tr class="childrow">
-                        <td colspan="2">
-                          <input id="benefit-type0" type="text" value="" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr class="childrow">
-                        <td>
-                          <label id="last_name_label0" for="last_name" class="form-label">Amount</label>
-
-                        </td>
-                        <td>
-                          <div class="pull-left text-right pound-sign">£</div>
-                          <input type="text" class="form-control text-right pull-left amount-notcounted" placeholder="0">
-                        </td>
-
-                    </tr>
-                  </tbody>
-
-
-
-                  <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-                  <fieldset class="form-intro large-margin-top">
-                    <legend>Other expense</legend>
-                  </fieldset>
-                  <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-
-
-                  <tbody>
-                    <tr>
-
-                      <td style="padding-top:15px"><a id="btn-remove-expense" class="expense-additional" href="#">Delete</a></td>
-                      <td></td>
-
-                    </tr>
-
-                    <tr class="childrow">
-                      <td>
-                        <label for="benefit-type2" class="form-label">What's the
-                          expense?</label>
-
-
-
-                        </td>
-                        <td colspan="2">
-                          <input id="benefit-type1" type="text" value="" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr class="childrow">
-                        <td>
-                          <label id="last_name_label1" for="last_name" class="form-label">Amount</label>
-
-                        </td>
-                        <td>
-                          <div class="pull-left text-right pound-sign">£</div>
-                          <input type="text" class="form-control text-right pull-left amount" placeholder="0">
-                        </td>
-
-                        <td>
-                          <select class="select-control">
-                            <option value="week">per week</option>
-                            <option value="fortnight">per fortnight</option>
-                            <option value="4weeks">per 4 weeks</option>
-                            <option value="month" selected="selected">per month</option>
-                            <option value="quarter">per quarter</option>
-                            <option value="year">per year</option>
-                          </select>
-                        </td>
-                      </tr>
-                    </tbody>
-
-                    <tbody class="expense-additional" id="another0" style="display:none">
-                      <tr>
-
-                        <td colspan="1">
-                          <h3 class="heading-small pull-left">Additional expense</h3>
-
-
-                        </td>
-                        <td style="padding-top:15px">
-                          <a id="btn-remove-expense0" href="#">Delete</a></td>
-                          <td></td>
-
-                        </tr>
-
-                        <tr class="childrow">
-                          <td>
-                            <label for="benefit-type2" class="form-label">What's the
-                              expense?</label>
-
-
-
-                            </td>
-                            <td colspan="2">
-                              <input id="benefit-type2" type="text" value="" class="form-control" />
-                            </td>
-                          </tr>
-                          <tr class="childrow">
-                            <td>
-                              <label id="last_name_label2" for="last_name" class="form-label">Amount</label>
-
-                            </td>
-                            <td>
-                              <div class="pull-left text-right pound-sign">£</div>
-                              <input type="text" class="form-control text-right pull-left amount" placeholder="0">
-                            </td>
-
-                            <td>
-                              <select class="select-control">
-                                <option value="week">per week</option>
-                                <option value="fortnight">per fortnight</option>
-                                <option value="4weeks">per 4 weeks</option>
-                                <option value="month" selected="selected">per month</option>
-                                <option value="quarter">per quarter</option>
-                                <option value="year">per year</option>
-                              </select>
-                            </td>
-                          </tr>
-                        </tbody>
-
-
-
-                        <tr>
-                          <td>
-                            <label class="form-label"><a href="#" id="btn-add-expense"><i class="glyphicon glyphicon-plus"></i> Add another expense</a></label>
-                          </td>
-                          <td></td>
-                        </tr>
-
-                        <tr class="totalrow">
-                          <td><span class="form-label text-right">Total</span></td>
-                          <td>
-                            <div class="pull-left text-right pound-sign">£</div>
-                            <div class="text-right amount" id="box-total"></div>
-                          </td>
-                          <td>
-                            <div>per month</div>
-                          </td>
-                        </tr>
-
-                      </table>
-                    </form>
-                    <form class="form" method="post">
-                      <p class="clearfix"><br/></p>
-
-
-                      <!-- For User research -->
-                      <div class="form-navigation form-group">
-
-                        <div>
-                          <a id="next" class="button" href="summary.html?stage=costs&page=8">Continue</a>
-                        </div>
-                        <div>
-                          <br>
-                        </div>
-
-                        <div>
-                          <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-
-                          <a href="#" id="cancel">Save and logout</a>
-
-                        </div>
-                      </div>
-                      <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-
-
-                    </form>
-                  </div>
-
-                  <!-- #EndEditable -->
-
-
+            <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
+            <fieldset class="input-item expense">
+              <div class="row">
+                <div class="col-sm-5">
+                  <label for="expense-label-1">What's the expense?</label><br>
+                  <input id="expense-label-1" type="text" value="" class="description">
                 </div>
-              </main>
+                <div class="col-sm-2 amount">
+                  <label for="expense-amount-1">Amount</label>
+                  <label for="expense-amount-1" class="currency">&pound;</label>
+                  <input id="expense-amount-1" class="amount" type="text" placeholder="0">
+                </div>
+                <div class="col-sm-3">
+                  <label for="expense-per-1">per week / month / year</label>
+                  <select id="expense-per-1">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <a class="delete-button" href="#"><i class="glyphicon glyphicon-trash delete"></i>Delete expense</a>
+                </div>
+              </div>
+            </fieldset>
+            <!-- ///////////////// Fieldset 4 - End ///////////////// -->
+
+            <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
+            <fieldset class="title-holder">
+              <h2 class="additional-item-intro expense">Additional expense:</h2>
+            </fieldset>
+            <fieldset class="input-item additional-item expense">
+              <div class="row">
+                <div class="col-sm-5">
+                  <label for="expense-label-2">What's the expense?</label><br>
+                  <input id="expense-label-2" type="text" value="" class="description">
+                </div>
+                <div class="col-sm-2 amount">
+                  <label for="expense-amount-2">Amount</label>
+                  <label for="expense-amount-2" class="currency">&pound;</label>
+                  <input id="expense-amount-2" class="amount" type="text" placeholder="0">
+                </div>
+                <div class="col-sm-3">
+                  <label for="expense-per-2">per week / month / year</label>
+                  <select id="expense-per-2">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month" selected="selected">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year">per year</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <a class="delete-button additional-expense" href="#"><i class="glyphicon glyphicon-trash delete"></i>Delete expense</a>
+                </div>
+              </div>
+            </fieldset>
+            <!-- ///////////////// Fieldset 5 - End ///////////////// -->
+
+            <!-- ///////////////// Add Item - Start ///////////////// -->
+            <fieldset class="add-item">
+              <a href="#" id="btn-add-expense"><i class="glyphicon glyphicon-plus"></i> Add another expense</a>
+            </fieldset>
+            <!-- ///////////////// Add Item - End ///////////////// -->
+
+            <!-- ///////////////// Total Value - Start ///////////////// -->
+            <fieldset class="total-value">
+              <div class="row">
+                <div class="col-sm-5 description">
+                  <label>Total</label>
+                </div>
+                <div class="col-sm-2 total">
+                  <div>£</div>
+                  <div class="amount" id="box-total">0.00</div>
+                </div>
+                <div class="col-sm-3 frequency">
+                  <div>per month</div>
+                </div>
+                <div class="col-sm-2">
+                </div>
+              </div>
+            </fieldset>
+            <!-- ///////////////// Total Value - End ///////////////// -->
+
+          </form>
+
+          <form class="form" method="post">
+            <p><br/></p>
+
+            <!-- For User research -->
+            <div class="form-navigation form-group">
+              <a id="next" class="button" href="summary.html?stage=costs&page=8">Continue</a>
+            </div>
+            <br>
+            <div>
+              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+              <a href="#" id="cancel">Save and logout</a>
+            </div>
+            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+          </form>
+        </div>
+
+        <!-- #EndEditable -->
+
+      </div>
+    </main>
 
 
-                <footer role="contentinfo" id="footer" class="group js-footer">
+    <footer role="contentinfo" id="footer" class="group js-footer">
+      <div class="footer-wrapper">
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            <ul class="footer__nav" style="width:100%">
+              <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
+            </ul>
+            <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+              <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+              <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+              <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+            </ul>
+            <div class="open-government-licence">
+              <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+              <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--end footer-->
+
+    <div class="app-error hidden" id="global-app-error"></div>
+    <!--
+    <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+    <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/application.js"></script>
+    -->
+    <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+      var url      = window.location.href;     // Returns full URL
+      var pathname = window.location.pathname; // Returns path only
+      $("#email-link").on("click", function (e) {
+        $.cookie("url", url, {path:'/'});
+        $.cookie("pathname", pathname, {path:'/'});
+      });
+
+    });
+    </script>
+
+    <!-- #BeginEditable "scripts" -->
+
+    <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../shared/sfs-new.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var defaultnext = $("#next").attr("href");
+      $(".additional-item").hide();
+      $(".expense-additional").hide();
+      $(".delete-button").hide();
+      $(".additional-item-intro").hide();
 
 
-                  <div class="footer-wrapper">
+      $("#btn-add-fine").on("click", function (e) {
+        $(".additional-item.fine").show();
+        $(".input-item.fine .delete-button").show();
+        $(".additional-item-intro.fine").show();
+        e.preventDefault();
+      });
 
-                    <div class="footer-meta">
+      $(".additional-fine").on("click", function (e) {
+        $(".additional-item.fine").hide();
+        $(".input-item.fine .delete-button").hide();
+        $(".additional-item-intro.fine").hide();
+        e.preventDefault();
+      });
 
-                      <div class="footer-meta-inner">
+      $("#btn-add-expense").on("click", function (e) {
+        $(".additional-item.expense").show();
+        $(".input-item.expense .delete-button").show();
+        $(".additional-item-intro.expense").show();
+        e.preventDefault();
+      });
 
-                        <ul class="footer__nav" style="width:100%">
-                          <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
-                        </ul>
-                        <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-                          <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-                          <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-                          <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-                        </ul>
+      $(".additional-expense").on("click", function (e) {
+        $(".additional-item.expense").hide();
+        $(".input-item.expense .delete-button").hide();
+        $(".additional-item-intro.expense").hide();
+        e.preventDefault();
+      });
 
-                        <div class="open-government-licence">
-                          <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-                          <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
-                        </div>
-                      </div>
+      $("#next").on("click", function (e) {
 
-                      <div class="copyright">
-                        <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-                      </div>
-                    </div>
-                  </div>
+        if($("#fine-amount-1").val()!=""){
+          $.cookie("fine", "(excluding fines)");
+        }
+        else{$.cookie("fine", "");}
+      });
 
-                </footer>
+    });
 
-                <!--end footer-->
+    </script>
 
-                <div class="app-error hidden" id="global-app-error"></div>
-                <!--
-                <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-                <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+    <!-- #EndEditable -->
 
-                <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-                <script type="text/javascript" src="assets/javascripts/application.js"></script>
-              -->
-              <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
-              <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-              <script type="text/javascript">
+    <div id="window-resizer-tooltip" style="display: none;">
+      <a href="/claims/start#" title="Edit settings"
+      style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+      <span class="tooltipTitle">Window size: </span>
+      <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
+      <br><span class="tooltipTitle">Viewport size: </span>
+      <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span>
+    </div>
+  </body><!-- #EndTemplate -->
 
-              $(document).ready(function() {
-                var url      = window.location.href;     // Returns full URL
-                var pathname = window.location.pathname; // Returns path only
-                $("#email-link").on("click", function (e) {
-                  $.cookie("url", url, {path:'/'});
-                  $.cookie("pathname", pathname, {path:'/'});
-                });
-
-              });
-              </script>
-
-              <!-- #BeginEditable "scripts" -->
-
-              <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-              <script type="text/javascript" src="../shared/sfs.js"></script>
-
-              <script type="text/javascript">
-              $(document).ready(function() {
-                var defaultnext = $("#next").attr("href");
-                $(".fine-additional").hide();
-                $(".expense-additional").hide();
-
-                $("#btn-add-fine").on("click", function (e) {
-                  $(".fine-additional").show();
-                  e.preventDefault();
-                });
-                $("#btn-add-expense").on("click", function (e) {
-                  $(".expense-additional").show();
-                  e.preventDefault();
-                });
-
-                $("#btn-remove-fine").on("click", function (e) {
-                  $(".fine-additional").hide();
-                  e.preventDefault();
-                });
-
-                $("#btn-remove-expense").on("click", function (e) {
-                  $(".expense-additional").hide();
-                  e.preventDefault();
-                });
-
-                $("#next").on("click", function (e) {
-
-                  if($("#fine_amount").val()!=""){
-                    $.cookie("fine", "(excluding fines)");
-                  }
-                  else{$.cookie("fine", "");}
-                });
-
-
-
-              });
-
-
-              </script>
-
-              <!-- #EndEditable -->
-
-
-
-
-              <div id="window-resizer-tooltip" style="display: none;">
-                <a href="/claims/start#" title="Edit settings"
-                style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
-                <span class="tooltipTitle">Window size: </span>
-                <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
-                <br><span class="tooltipTitle">Viewport size: </span>
-                <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
-              </body><!-- #EndTemplate -->
-
-              </html>
+</html>
