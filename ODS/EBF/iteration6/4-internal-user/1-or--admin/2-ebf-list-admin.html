@@ -504,11 +504,16 @@
 				
 				row += '<td>';
 				row += approve;
-	  			row += '<a class="controls-edit" href="3-approve-file.html?id='+i+'"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>';
-	  			row += '<div class="controls-update" style="display:none;"><a class="button" href="3-approve-file.html?id='+i+'">Update</a></div>';
+	  			row += '<a class="controls-edit" onclick="edit(this);"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>';
+	  			row += '<div class="controls-update" style="display:none;"><a class="button" onclick="update(this);">Update</a></div>';
 	  			row += '</td>';
 				
 				row += '</tr>';
+				
+				<i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>
+                         
+                          
+
 				
 				//Pre-appends to table
 				$(row).insertBefore("#table tr:first");
