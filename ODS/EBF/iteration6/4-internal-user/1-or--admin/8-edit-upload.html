@@ -272,11 +272,11 @@
   <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
 
   <script type="text/javascript">
-
+	var count;
   
   $(document).ready(function() {
 
-    var count = getParameterByName("id");
+    count = getParameterByName("id");
     
     $("#filenamex").val($.cookie("EBF_document_"+count+"_filename"));
 	$("#desc").val($.cookie("EBF_document_"+count+"_descripton"));
