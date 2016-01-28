@@ -815,7 +815,8 @@ $(document).ready(function () {
     $("#section2 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
     $("#section3 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
     $("#section4 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
-    $("#section5 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+    $("#section5 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section6 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
     $("#section1 #details1").hide();
     $("#section2 #details2a").hide();
     $("#section3 #details3a").hide();
@@ -854,14 +855,20 @@ $(document).ready(function () {
 
     document.title = 'Overview - Legal proceedings';
 
-    $("#section7 .js-section").addClass("open");
+    $("#section1 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section2 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section3 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section4 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section5 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section6 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
     $("#section7 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
-    var details = $("#section7 .js-section").attr("href");
-    $(details).show();
-    $(details).parent().addClass("well");
-
-    $("#next").hide();
-    $(".next").hide();
+    $("#section1 #details1").hide();
+    $("#section2 #details2a").hide();
+    $("#section3 #details3a").hide();
+    $("#section4 #details3").hide();
+    $("#section5 #details4").hide();
+    $("#section6 #details4").hide();
+    $("#section7 #details4").show();
 
   }
   if (section7 && section7 == "complete") {
@@ -893,11 +900,22 @@ $(document).ready(function () {
 
     document.title = 'Overview - Insolvency proceedings';
 
-    $("#section8 .js-section").addClass("open");
+    $("#section1 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section2 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section3 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section4 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section5 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section6 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section7 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
     $("#section8 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
-    var details = $("#section8 .js-section").attr("href");
-    $(details).show();
-    $(details).parent().addClass("well");
+    $("#section1 #details1").hide();
+    $("#section2 #details2a").hide();
+    $("#section3 #details3a").hide();
+    $("#section4 #details3").hide();
+    $("#section5 #details4").hide();
+    $("#section6 #details4").hide();
+    $("#section7 #details4").hide();
+    $("#section8 #details4").show();
 
     $("#next").hide();
     $(".next").hide();
@@ -929,6 +947,23 @@ $(document).ready(function () {
     $("#section7").removeClass("not-started");
     $("#section8").addClass("edit-information");
     $("#section8").removeClass("not-started");
+
+    $("#section1 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section2 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section3 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section4 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section5 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section6 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section7 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section8 .js-section").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+    $("#section1 #details1").hide();
+    $("#section2 #details2a").hide();
+    $("#section3 #details3a").hide();
+    $("#section4 #details3").hide();
+    $("#section5 #details4").hide();
+    $("#section6 #details4").hide();
+    $("#section7 #details4").hide();
+    $("#section8 #details4").hide();
 
     $("#next").show();
     $(".next").show();
