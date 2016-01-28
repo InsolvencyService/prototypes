@@ -370,6 +370,7 @@ $(document).ready(function () {
 			var doc_description = $.cookie("EBF_document_"+i+"_descripton");
 			var doc_date = $.cookie("EBF_document_"+i+"_date");
 			var doc_status = $.cookie("EBF_document_"+i+"_filestatus");
+			var row;
 			
 			switch(doc_status) {
 			    case "Awaiting approval":
@@ -397,9 +398,7 @@ $(document).ready(function () {
 
 
 			//Create table row
-			var row = '<tr class="activerow approval-needed">';
-			row += '<td><div class="label label-info label-as-badge action"><span id="document-type">Awaiting<br>Approval</span></div></td>';
-		    row += '<td>';
+			row += '<td>';
 		    row += '<label for="name" class="control-label">';
 		    row += '<a href="#"><span class="text-info">'+ doc_filename +'</span></a>';
 		    row += '</label>';
