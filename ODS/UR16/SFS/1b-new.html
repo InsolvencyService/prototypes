@@ -97,7 +97,7 @@
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -109,7 +109,7 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
+            <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
           </nav>
         </div>
       </div>
@@ -123,7 +123,7 @@
     </div>
   </div>
 
-  <main role="main" id="wrapper">
+  <main id="wrapper">
 
     <div id="content">
 
@@ -161,13 +161,13 @@
           <fieldset class="form-intro">
             <div class="row">
               <div class="col-sm-6">
-                <legend>Accounting details</legend>
+                <label>Accounting details</label>
               </div>
               <div class="col-sm-3">
-                <legend class="amount">Amount</legend>
+                <label class="amount">Amount</label>
               </div>
               <div class="col-sm-3">
-                <legend class="per">per week / month / year</legend>
+                <label class="per">per week / month / year</label>
               </div>
             </div>
           </fieldset>
@@ -178,7 +178,7 @@
           <fieldset>
             <div class="row">
               <div class="col-sm-6">
-                <legend>Turnover (total income before expenses)</legend>
+                <label>Turnover (total income before expenses)</label>
               </div>
               <div class="col-sm-3 amount">
                 <label for="turnover-amount">Amount</label>
@@ -187,7 +187,7 @@
               </div>
               <div class="col-sm-3 per">
                 <label for="per">per week / month / year</label>
-                <select name="D1">
+                <select name="D1" id="per">
                   <option value="week">per week</option>
                   <option value="fortnight">per fortnight</option>
                   <option value="4weeks">per 4 weeks</option>
@@ -204,7 +204,7 @@
           <fieldset>
             <div class="row">
               <div class="col-sm-6">
-                <legend>Expenses</legend>
+                <label>Expenses</label>
               </div>
               <div class="col-sm-3 amount">
                 <label for="expenses-amount">Amount</label>
@@ -212,7 +212,8 @@
                 <input type="text" id="expenses-amount" placeholder="0">
               </div>
               <div class="col-sm-3 per">
-                <select name="D5">
+                <label for="per">per week / month / year</label>
+                <select name="D5" id="per">
                   <option value="week">per week</option>
                   <option value="fortnight">per fortnight</option>
                   <option value="4weeks">per 4 weeks</option>
@@ -229,7 +230,7 @@
           <fieldset>
             <div class="row">
               <div class="col-sm-6">
-                <legend>Net profit</legend>
+                <label>Net profit</label>
               </div>
               <div class="col-sm-3 amount">
                 <label for="net-profit-amount">Amount</label>
@@ -237,7 +238,8 @@
                 <input type="text" id="net-profit-amount" class="amount" placeholder="0">
               </div>
               <div class="col-sm-3 per">
-                <select name="D6">
+                <label for="per">per week / month / year</label>
+                <select name="D6" id="per">
                   <option value="week">per week</option>
                   <option value="fortnight">per fortnight</option>
                   <option value="4weeks">per 4 weeks</option>
@@ -277,7 +279,7 @@
               </div>
               <div class="col-sm-4">
                 <label for="start-year">Year</label><br>
-                <input id="start-year" character name="start-year" type="number" min="2000" max="2016" />
+                <input id="start-year" name="start-year" type="number" min="2000" max="2016" />
               </div>
             </div>
           </fieldset>
@@ -332,7 +334,7 @@
   </main>
 
 
-  <footer role="contentinfo" id="footer" class="group js-footer">
+  <footer id="footer" class="group js-footer">
     <div class="footer-wrapper">
       <div class="footer-meta">
         <div class="footer-meta-inner">
