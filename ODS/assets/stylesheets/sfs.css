@@ -81,20 +81,19 @@ table tr td a.button{
 	margin-top:0;
 }
 input.amount{
-font-size:19px !important;
-		border: 1px solid #fff;
-		padding-top:12px;
--webkit-box-shadow: none;
+  font-size:19px !important;
+	border: 1px solid #fff;
+	padding-top:12px;
+  -webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
 }
 
-input.amount,
-input.amount-notcounted{
+input.amount, input.amount-notcounted{
 	width:70%; font-size:19px;
-		border: 1px solid #fff;
-		padding-top:12px;
--webkit-box-shadow: none;
+	border: 1px solid #fff;
+	padding-top:12px;
+  -webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
 }
@@ -297,7 +296,7 @@ fieldset .amount, fieldset .per {
   text-align: left;
 }
 
-fieldset div.amount label, fieldset div.per label {
+fieldset .amount label, fieldset div.per label {
   text-indent: -10000px;
   text-align: left;
   /*margin: 0;*/
@@ -305,7 +304,7 @@ fieldset div.amount label, fieldset div.per label {
   width: 0;
 }
 
-fieldset div.amount .currency {
+fieldset .amount .currency {
   font-weight: bold;
   float: left;
   display: inline-block;
@@ -313,11 +312,15 @@ fieldset div.amount .currency {
   text-indent: 0;
 }
 
-fieldset.input-item div.amount .currency {
+fieldset.fine .amount .currency, fieldset.expense .amount .currency {
+  margin: 7px 20px 0 0;
+}
+
+fieldset.input-item .amount .currency {
   margin-top: 36px;
 }
 
-fieldset div.amount input, fieldset div input {
+fieldset .amount input, fieldset div input {
   float: left;
   width: 65%;
   border: 2px solid #6f777b;
@@ -325,9 +328,14 @@ fieldset div.amount input, fieldset div input {
   padding: 2px;
   line-height: 30px;
   text-align: left;
+  /*clear: left;*/
 }
 
-fieldset div.per select {
+fieldset.expense .amount input.amount, fieldset.fine .amount input {
+  margin-top: 29px;
+}
+
+fieldset .per select {
   float: left;
   /*width: 40%;*/
 }
@@ -375,8 +383,13 @@ fieldset.input-item .amount label {
   margin-top: 100px;
 }
 
-.form-intro label {
+.form-intro label, .form-intro legend {
   font-size: 36px;
+}
+
+.form-intro legend {
+  margin-bottom: 0;
+  border: 0;
 }
 
 .form-intro label.amount, .form-intro label.per {
@@ -401,6 +414,15 @@ hr.seperator {
   padding: 0;
   clear: none;
   margin: 50px 0 70px 0;
+}
+
+#accounting-year-start .form-hint, #accounting-year-end .form-hint {
+  float: left;
+  width: 100%;
+}
+
+#accounting-year-start input, #accounting-year-end input {
+  clear: left;
 }
 
 .breadcrumb {
@@ -441,7 +463,7 @@ input.description {
 .section-total-value {
   border-top: 5px solid #eee;
   font-size: 26px;
-  margin-top: 40px;
+  margin: 40px 0;
   font-weight: bold;
 }
 
@@ -456,6 +478,8 @@ input.description {
 
 .section-total-value .description label {
   text-indent: 0;
+  float: right;
+  margin-top: 0;
 }
 
 .section-total-value .total div {
