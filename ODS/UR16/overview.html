@@ -882,10 +882,10 @@ h3 > a {
                         $("#timestamp").text($.cookie("payment_timestamp"));
                         $("#updated").show();
                         $("#payment-info").hide();
-                        $("#next").hide();
-                        $(".next").hide();
-                        $("#make-a-payment").show();
-                        $("#completion-message").show();
+                        $("#next").show();
+                        $(".next").show();
+                        $("#make-a-payment").hide();
+                        $("#completion-message").hide();
                       } else {
                         $.cookie("fee_paid", "0.00", {path:'/'});
                         $.cookie("fee_remaining", "655.00", {path:'/'});
@@ -896,9 +896,9 @@ h3 > a {
                         $("#updated").hide();
                         $("#payment-info").show();
                         $("#next").hide();
-                        $(".next").show();
-                        $("#make-a-payment").hide();
-                        $("#completion-message").hide();
+                        $(".next").hide();
+                        $("#make-a-payment").show();
+                        $("#completion-message").show();
                       }
 
                       if(parseInt($.cookie("fee_paid"))==655){

@@ -569,7 +569,7 @@ $(document).ready(function () {
     $("#next").show();
     $(".next").show();
     $("#make-a-payment").hide();
-    $("#completion-message").show();
+    $("#completion-message").hide();
   } else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
@@ -582,7 +582,7 @@ $(document).ready(function () {
     $("#next").hide();
     $(".next").hide();
     $("#make-a-payment").show();
-    $("#completion-message").hide();
+    $("#completion-message").show();
   }
 
   // if(parseInt($.cookie("fee_paid"))==655){
