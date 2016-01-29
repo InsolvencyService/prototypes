@@ -246,7 +246,7 @@ h3 > a {
                     <h3>Personal details</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -272,7 +272,7 @@ h3 > a {
                     <h3>Employment</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -299,7 +299,7 @@ h3 > a {
                     <h3>Bank accounts and savings</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -322,7 +322,7 @@ h3 > a {
                     <h3>Assets</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -347,7 +347,7 @@ h3 > a {
                     <h3>Money you owe</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -371,7 +371,7 @@ h3 > a {
                     <h3>Income and expenses</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -394,7 +394,7 @@ h3 > a {
                     <h3>Legal proceedings</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span onclick="document.location.href = ''; return false" class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -417,7 +417,7 @@ h3 > a {
                     <h3>Debt history</h3>
                   </div>
                   <div class="col-sm-4">
-                    <span class="edit button">Edit</span>
+                    <span class="edit">Edit</span>
                   </div>
                 </a>
                 <a class="js-section">
@@ -566,9 +566,9 @@ $(document).ready(function () {
     $("#timestamp").text($.cookie("payment_timestamp"));
     $("#updated").show();
     $("#payment-info").hide();
-    $("#next").hide();
-    $(".next").hide();
-    $("#make-a-payment").show();
+    $("#next").show();
+    $(".next").show();
+    $("#make-a-payment").hide();
     $("#completion-message").show();
   } else {
     $.cookie("fee_paid", "0.00", {path:'/'});
@@ -579,9 +579,9 @@ $(document).ready(function () {
     $(".lefttopay").text("655.00");
     $("#updated").hide();
     $("#payment-info").show();
-    $("#next").show();
-    $(".next").show();
-    $("#make-a-payment").hide();
+    $("#next").hide();
+    $(".next").hide();
+    $("#make-a-payment").show();
     $("#completion-message").hide();
   }
 
@@ -614,7 +614,7 @@ $(document).ready(function () {
   // mark sections as completed
 
   $("a.button.edit").removeClass("button");
-  $("ul li.row .edit").hide();
+  $(".edit").hide();
   $("#section1 .edit").addClass("button").show().text("Start");
   $("#section1 .js-section").find("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
   $("#section1 #details1").show();
