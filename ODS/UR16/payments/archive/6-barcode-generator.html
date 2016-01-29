@@ -180,43 +180,40 @@ table td{
 
           <!-- Main Content Section Start -->
           <div class="col-sm-8">
-            <p>If you cannot pay by card you can pay the full amount of the Bankruptcy fee by cash at your local bank.</p>
-            <p>Simply take the full <span class="bolder">&pound;655</span> to any bank and provide them with the following details to make the payment.</p>
-            <hr>
-            <p>Bank:</p>
-            <h2 class="heading-medium no-margin">RBS (Royal Bank of Scotland)</h2>
-            <p><br></p>
-            <p>Sort code:</p>
-            <p class="heading-medium no-margin">20-20-20</p>
-            <p><br></p>
-            <p>Account number:</p>
-            <p class="heading-medium no-margin">00000000</p>
-            <p><br></p>
-            <p>Your ADJ reference number:</p>
-            <p class="heading-medium no-margin">12345678ADJ</p>
-
-            <div class="panel panel-border-wide">
-              <p>Please note that you must pay the full <span class="bolder">&pound;655</span> in cash, we cannot process the application if you do not do this.</p>
+            <!-- Hidden Error messages Start -->
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>Please enter an email address</h2>
+              <a href="#email">You have not entered an email address, please enter one before you can proceed.</a>
             </div>
-
+            <!-- Hidden Error messages End -->
+            <img class="payment-image" src="images/payzone_logo.png" alt="Payzone">
+            <p>Below is your barcode. Take the barcode to any Payzone outlet and use it to make a payment.</p>
+            <p>Minimum payment in cash is <span class="bolder">&pound;50</span></p>
+            <div class="barcode">
+              <img src="images/barcode-payzone.png" alt="Payzone Barcode">
+            </div>
             <p>It takes Payzone 7-10 working days to clear cash payments.</p>
-            <hr>
-            <div class="print-download-section">
-              <ul class="print-download">
-                <li class="heading-small">
-                  <a href="#" class="small-icon"><img src="images/print-icon.png">Print the bank details now</a>
-                </li>
-                <li class="heading-small">
-                  <a href="#" class="small-icon"><img src="images/save-icon.png">Download a PDF of the bank details</a>
-                </li>
-              </ul>
+            <p>Your outstanding balance won't be updated after Payzone has cleared it.</p>
+            <div class="payzone information">
+              <a href="http://www.payzone.co.uk/Where">Find your nearest Payzone outlet</a>
+              <hr>
+              <div class="print-download-section">
+                <ul class="print-download">
+                  <li class="heading-small">
+                    <a href="#" class="small-icon"><img src="images/print-icon.png">Print the barcode now</a>
+                  </li>
+                  <li class="heading-small">
+                    <a href="#" class="small-icon"><img src="images/save-icon.png">Download a PDF of the barcode</a>
+                  </li>
+                </ul>
+              </div>
+              <hr>
             </div>
-            <hr>
             <ul>
               <li>
                 <div class="form-group">
                   <label for="email" name="email">Email</label>
-                  <p>Have the bank details barcode sent to my email address:</p>
+                  <p>Have the Payzone barcode sent to my email address:</p>
 
                   <span id="email">bbagley@gmail.com</span>
                 </div>
