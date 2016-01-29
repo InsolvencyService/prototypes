@@ -192,14 +192,12 @@ table td{
             </div>
             <!-- Hidden Error messages End -->
 
-            <div class="payzone information">
-              <p>As you don't have an email address we will post the Bank details to your previously stated address, shown below.</p>
-              <p>Please change the address if it isn't correct.</p>
-              <img class="payment-image" src="images/payzone_logo.png" alt="Payzone" style="margin-bottom:20px;">
-            </div>
+            <p>As you don't have an email address we will post the Bank details to your previously stated address, shown below.</p>
+            <p>Please change the address if it isn't correct.</p>
+            <p><br></p>
       			<div class="form-group">
       				<label class="form-label-bold" for="building-and-street">Building and street</label>
-    			  	<input id="building-and-street-1" type="text" value="14 Street Name" style="margin-bottom:10px; width:70%;"><br>
+    			  	<input id="building-and-street" type="text" value="14 Street Name" style="margin-bottom:10px; width:70%;"><br>
     			  	<input id="building-and-street-2" type="text" style="margin-bottom:10px; width:70%;"><br>
     			  	<input id="building-and-street-3" type="text" style="margin-bottom:10px; width:70%;">
       			</div>
@@ -320,7 +318,7 @@ $(document).ready(function() {
   $("#continue").on("click", function (e) {
     e.preventDefault();
     //alert($("#amount").val());
-    if ($("#building-and-street-1, #town-or-city, #county, #postcode").val() == "") {
+    if ($("#building-and-street, #town-or-city, #county, #postcode").val() == "") {
       $("#panel-error-empty").show();
       (window.location.replace("#panel-error-empty"));
     }
@@ -329,7 +327,7 @@ $(document).ready(function() {
       (window.location.replace("20-thank-you-post.html"));
     }
 
-    $.cookie("building-and-street-1", $("#building-and-street-1").val(), {path:'/'});
+    $.cookie("building-and-street", $("#building-and-street-1").val(), {path:'/'});
     $.cookie("building-and-street-2", $("#building-and-street-2").val(), {path:'/'});
     $.cookie("building-and-street-3", $("#building-and-street-3").val(), {path:'/'});
     $.cookie("town-or-city", $("#town-or-city").val(), {path:'/'});
