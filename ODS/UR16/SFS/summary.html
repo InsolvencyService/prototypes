@@ -757,15 +757,19 @@ table td[class*=col-], table th[class*=col-]{
       //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
     }
     
-    // Household income total
-    if($.cookie("householdpartner0")){
-    	var amount = $.cookie("householdpartner0");
-    	$("#household-total .totalvalue").text(parseFloat(amount).toFixed(2));  
-    }
+    
     
     
     //partnerincometotal  overalltotal  coststotal  totalvalue
     function totalpartnerincome() {
+      // Household income total
+	    if($.cookie("householdpartner0")){
+	    	var amount = $.cookie("householdpartner0");
+	    	$("#household-total .totalvalue").text(parseFloat(amount).toFixed(2));  
+	    }
+	    
+	    
+      /*
       var totalamount = 0;
       var item = "partnerincome";
 
@@ -775,6 +779,8 @@ table td[class*=col-], table th[class*=col-]{
         if (parseFloat(amount)) {
           totalamount = totalamount + parseFloat(amount);
         }
+        
+      */
       }
 
       $("#partnerincometotal .totalvalue").text(totalamount.toFixed(2));
