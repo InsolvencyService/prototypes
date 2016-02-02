@@ -597,7 +597,7 @@ table td[class*=col-], table th[class*=col-]{
           totalincome();
         }
 
-        if (stage == "house") {
+        if (stage == "income" && page === 6) {
           $("#income a.edit").text("Edit").show();
           //$("#household-income-1 a.edit").text("Edit").show();
           // $("#costs a.edit").first().text("Start").show();
@@ -656,7 +656,7 @@ table td[class*=col-], table th[class*=col-]{
         $("#income5").addClass("active");
       }
 
-      if (stage == "house" && itemnumber === 1) {
+      if (stage == "income" && itemnumber === 6) {
         $("#income1, #income2, #income3, #income4, #income5").removeClass("active").addClass("complete");
         $("#household-income-1").addClass("active");
         $("#household-income-1 a.edit").first().text("Start").addClass("button").show();
