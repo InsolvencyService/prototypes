@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     function calctotal() {
         var totalamount = 0;
-        $('input.amount').each(function () {
+        $('.amount').each(function () {
             var listfrequency = $(this).parent().next().find("select");
             if ($(this).val()) {
                 var amt = numberWithoutCommas($(this).val());
@@ -29,9 +29,9 @@ $(document).ready(function () {
     var amountitem = stage + thispage + "-value";
     var amountfreq = stage + thispage + "-frequency";
     var count = 1;
-    var countitems = $('input.amount').length;
+    var countitems = $('.amount').length;
 
-    $('input.amount').each(function () {
+    $('.amount').each(function () {
         var listfrequency = $(this).parent().next().find("select");
 
         if ($.cookie(amountitem + count) && $.cookie(amountitem + count).length > 0) {
@@ -57,10 +57,10 @@ $(document).ready(function () {
 
 
 	//$("tr select").first().keydown();
-	$("input").first().focus();
+	$(".amount").first().focus();
 	//$("tr input").first().parent().parent().addClass("active");
 
-	$("input").on("change", function(e){
+	$(".amount").on("change", function(e){
 	    var total = calctotal();
 
 		if (total && total > 0){
