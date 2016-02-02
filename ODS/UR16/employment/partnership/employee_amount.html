@@ -329,7 +329,7 @@ $(document).ready(function() {
 var count;
 var x;
 $(document).ready(function() {
-	x = $.cookie("business_id");
+	x = $.cookie("partnership_id");
 	$(".business_name").text($.cookie('business'+x+'_name'));	
 	var str =$.cookie("employee_name");
 	if(str!=null){	
@@ -346,7 +346,7 @@ $(document).ready(function() {
 
 $("#next").click(function(){
 	
-	count = $.cookie("business"+x+"_employee_count");
+	count = $.cookie("partnership"+x+"_employee_count");
 	
 	if(count == null){
 		count = 1;
@@ -362,7 +362,7 @@ $("#next").click(function(){
 	}
 	
 
-	$.cookie("business"+x+"_employee_amount"+count, amountx);
+	$.cookie("partnership"+x+"_employee_amount"+count, amountx);
 
 });
 

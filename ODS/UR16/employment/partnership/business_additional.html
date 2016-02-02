@@ -199,7 +199,12 @@ display:block;
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" -->
+	 <div id="content" >
 	 <div id="content1" >
 <div id="content0" >
 
@@ -378,11 +383,11 @@ var o;
 var a1;
 	//$(".Business_Name").text($.cookie('business'+x+'_name'));
 	
-	var x = $.cookie("business_id");	
-	var count = $.cookie("business"+x+"_address_count");
+	var x = $.cookie("partnership_id");	
+	var count = $.cookie("partnership"+x+"_address_count");
 
 	for (var i = 1; i <= count; i++) {
-		a1 = $.cookie("business"+x+"_address"+i); 
+		a1 = $.cookie("partnership"+x+"_address"+i); 
 		o = new Option(a1,"");
 				
 		if(i==1){

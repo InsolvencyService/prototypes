@@ -367,8 +367,8 @@ var count;
 var x;
 
 $(document).ready(function() {
-	x = $.cookie("business_id");
-	$(".business_name").text($.cookie('business'+x+'_name'));
+	x = $.cookie("partnership_id");
+	$(".business_name").text($.cookie('partnership'+x+'_name'));
 	var str = $.cookie('partner_name');
 	if(str!=null){
 		var ret = str.split(" ");
@@ -378,7 +378,7 @@ $(document).ready(function() {
 });
 
 $("#next").click(function(){
-	count = $.cookie("business"+x+"_partner_count");
+	count = $.cookie("partnership"+x+"_partner_count");
 	
 	if(count == null){
 		count = 1;
@@ -415,9 +415,9 @@ $("#next").click(function(){
 	}
 
 	
-	$.cookie("business"+x+"_partner_count", count);
-	$.cookie("business"+x+"_partner_name"+count, $("#firstname").val()+" "+$("#lastname").val());
-	$.cookie("business"+x+"_partner_address"+count, partner_address);
+	$.cookie("partnership"+x+"_partner_count", count);
+	$.cookie("partnership"+x+"_partner_name"+count, $("#firstname").val()+" "+$("#lastname").val());
+	$.cookie("partnership"+x+"_partner_address"+count, partner_address);
 	//$("#next").prop("href","add_partnership.html");
 });
 

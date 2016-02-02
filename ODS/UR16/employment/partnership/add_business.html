@@ -445,10 +445,10 @@ var x;
 
 $(document).ready(function() {
 
-	var tempname = $.cookie("business_name_temp");
+	var tempname = $.cookie("partnership_name_temp");
 	$("#name").val(tempname);
 	
-	x = $.cookie("business_id");
+	x = $.cookie("partnership_id");
 	
 	$.cookie("trading_count", 0);
 	
@@ -504,7 +504,7 @@ $('#next').click(function() {
 	var enddate;
 	
 	x++;
-	$.cookie("business_id", x);
+	$.cookie("partnership_id", x);
 	
 	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
 	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
@@ -513,24 +513,24 @@ $('#next').click(function() {
 		enddate="";
 	}	
 	
-	$.cookie("business"+x+"_name", $("#name").val());
-	$.cookie("business"+x+"_nature", $("#nature").val());
-	$.cookie("business"+x+"_startdate", startdate);
-	$.cookie("business"+x+"_enddate", enddate);
+	$.cookie("partnership"+x+"_name", $("#name").val());
+	$.cookie("partnership"+x+"_nature", $("#nature").val());
+	$.cookie("partnership"+x+"_startdate", startdate);
+	$.cookie("partnership"+x+"_enddate", enddate);
 	
 	for(var i = 1; i<= count; i++){
 		if($("#trade_name"+i).val()!=""){
-			$.cookie("business"+x+"_tradename"+i, $("#trade_name"+i).val());
+			$.cookie("partnership"+x+"_tradename"+i, $("#trade_name"+i).val());
 			$.cookie("trading_count", i);
 		}
 	}
 		
 	
 	if($("#partner").prop('checked')==true){
-		$.cookie("business"+x+"_type", "Partnership");	
+		$.cookie("partnership"+x+"_type", "Partnership");	
 	}
 	else{
-		$.cookie("business"+x+"_type", "Sole trader");
+		$.cookie("partnership"+x+"_type", "Sole trader");
 	}
 	
 	//$('#next').attr('href', 'business_address.html');

@@ -421,54 +421,54 @@ $(document).ready(function() {
 		$("#director-text").show();
 		$(".companylist").text(getcompanies(directorcount));
 	}
-	var x = $.cookie("business_id");
-	$("#business_name").text($.cookie('business'+x+'_name'));
+	var x = $.cookie("partnership_id");
+	$("#business_name").text($.cookie('partnership'+x+'_name'));
 
 
 	var tradedas="";
 	$("#partners").hide();
 	for(i=1; i<=$.cookie("trading_count"); i++){
-		tradedas += $.cookie("business"+x+"_tradename"+i)+", ";
+		tradedas += $.cookie("partnership"+x+"_tradename"+i)+", ";
 	}
 	
-	$("#businessname").text($.cookie("business"+x+"_name"));
+	$("#businessname").text($.cookie("partnership"+x+"_name"));
 	$("#trading").text(tradedas);
-	$("#nature").text($.cookie("business"+x+"_nature"));
-	$("#type").text($.cookie("business"+x+"_type"));
-	$("#start").text($.cookie("business"+x+"_startdate"));
-	$("#end").text($.cookie("business"+x+"_enddate"));
+	$("#nature").text($.cookie("partnership"+x+"_nature"));
+	$("#type").text($.cookie("partnership"+x+"_type"));
+	$("#start").text($.cookie("partnership"+x+"_startdate"));
+	$("#end").text($.cookie("partnership"+x+"_enddate"));
 	
-	if($.cookie("business"+x+"_address_count")>0){
-		$("#no_addresses").text($.cookie("business"+x+"_address_count"));
+	if($.cookie("partnership"+x+"_address_count")>0){
+		$("#no_addresses").text($.cookie("partnership"+x+"_address_count"));
 	}
 	else{
 		$("#no_addresses").text("0");
 	}
 	
-	if($.cookie("business"+x+"_partner_count")>0){
-		$("#no_partners").text($.cookie("business"+x+"_partner_count"));
+	if($.cookie("partnership"+x+"_partner_count")>0){
+		$("#no_partners").text($.cookie("partnership"+x+"_partner_count"));
 		$("#partners").show();
 	}
 	else{
 		$("#no_partners").text("0");
 	}
 	
-	if($.cookie("business"+x+"_accountant_count")>0){
-		$("#no_accountants").text($.cookie("business"+x+"_accountant_count"));
+	if($.cookie("partnership"+x+"_accountant_count")>0){
+		$("#no_accountants").text($.cookie("partnership"+x+"_accountant_count"));
 	}
 	else{
 		$("#no_accountants").text("0");
 	}
 	
-	if($.cookie("business"+x+"_employee_count")>0){
-		$("#no_employees").text($.cookie("business"+x+"_employee_count"));
+	if($.cookie("partnership"+x+"_employee_count")>0){
+		$("#no_employees").text($.cookie("partnership"+x+"_employee_count"));
 	}
 	else{
 		$("#no_employees").text("0");
 	}
 	
-	if($.cookie("business"+x+"_femployee_count")>0){
-		$("#no_femployees").text($.cookie("business"+x+"_femployee_count"));
+	if($.cookie("partnership"+x+"_femployee_count")>0){
+		$("#no_femployees").text($.cookie("partnership"+x+"_femployee_count"));
 	}
 	else{
 		$("#no_femployees").text("0");
@@ -480,7 +480,7 @@ $(document).ready(function() {
 	
 $("#add_business").click(function(){
 	var employername = $("#name").val();
-	$.cookie("business_name_temp", employername);
+	$.cookie("partnership_name_temp", employername);
 	
 });
 	

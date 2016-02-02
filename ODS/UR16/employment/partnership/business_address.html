@@ -404,10 +404,10 @@ var count;
 var x;
 
 $(document).ready(function() {
-	x = $.cookie("business_id");
+	x = $.cookie("partnership_id");
 	$("#business_address_line_1").val($.cookie("address"));
 	$("#bname").text($.cookie('business'+x+'_name'));
-	count = $.cookie("business"+x+"_address_count");
+	count = $.cookie("partnership"+x+"_address_count");
 	if(count == null){
 		count=0;
 	}
@@ -452,10 +452,10 @@ $('#next').click(function() {
 			business_address = business_address+address6;
 		}
 
-		$.cookie("business"+x+"_address"+count, business_address);
-		$.cookie("business"+x+"_address_count", count);
-		$.cookie("business"+x+"_address_start", startdate);
-		$.cookie("business"+x+"_address_end", enddate);
+		$.cookie("partnership"+x+"_address"+count, business_address);
+		$.cookie("partnership"+x+"_address_count", count);
+		$.cookie("partnership"+x+"_address_start", startdate);
+		$.cookie("partnership"+x+"_address_end", enddate);
 		
 		//$("#next").prop("href","business_address_summary.html");
 });

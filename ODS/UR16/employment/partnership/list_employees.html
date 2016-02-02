@@ -373,16 +373,16 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     var x = 1;
-    if ($.cookie("business_id") && parseInt($.cookie("business_id"))) {
-        x = parseInt($.cookie("business_id"));
+    if ($.cookie("partnership_id") && parseInt($.cookie("partnership_id"))) {
+        x = parseInt($.cookie("partnership_id"));
     }
 	
-	$(".business_name").text($.cookie("business"+x+"_name"));
+	$(".business_name").text($.cookie("partnership"+x+"_name"));
 	
 	var count;
 	var row;
 	
-	count = $.cookie("business"+x+"_employee_count");
+	count = $.cookie("partnership"+x+"_employee_count");
 	
 	if(count == null){
 		count=0;
@@ -390,7 +390,7 @@ $(document).ready(function() {
 	
 	
 	for(var i=1; i<=count; i++){
-		row = "<tr><td>" + $.cookie("business"+x+"_employee_name"+i) + "</td><td>" + $.cookie("business"+x+"_employee_address"+i) + "</td><td>£ " + $.cookie("business"+x+"_employee_amount"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+		row = "<tr><td>" + $.cookie("partnership"+x+"_employee_name"+i) + "</td><td>" + $.cookie("partnership"+x+"_employee_address"+i) + "</td><td>£ " + $.cookie("partnership"+x+"_employee_amount"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
 		$("#tablebody").append(row);
 	}
 	

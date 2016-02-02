@@ -361,14 +361,14 @@ var x;
 $(document).ready(function() {
 	$("#name").attr("value", $.cookie("accountant_name"));	
 	
-	x = $.cookie("business_id");
-	$(".business_name").text($.cookie('business'+x+'_name'));
+	x = $.cookie("partnership_id");
+	$(".business_name").text($.cookie('partnership'+x+'_name'));
 	
 
 });
 
 $("#next").click(function(){
-	count = $.cookie("business"+x+"_accountant_count");
+	count = $.cookie("partnership"+x+"_accountant_count");
 	
 	if(count == null || count == ""){
 		count = 1;
@@ -406,9 +406,9 @@ $("#next").click(function(){
 	}
 
 	
-	$.cookie("business"+x+"_accountant_count", count);
-	$.cookie("business"+x+"_accountant_name"+count, $("#name").val());
-	$.cookie("business"+x+"_accountant_address"+count, accountant_address);
+	$.cookie("partnership"+x+"_accountant_count", count);
+	$.cookie("partnership"+x+"_accountant_name"+count, $("#name").val());
+	$.cookie("partnership"+x+"_accountant_address"+count, accountant_address);
 	$("#next").prop("href","add_accountant.html");
 });
 
