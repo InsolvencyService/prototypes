@@ -6,7 +6,6 @@ $(document).ready(function () {
             var listfrequency = $(this).parent().next().find("select");
             if ($(this).val()) {
                 var amt = numberWithoutCommas($(this).val());
-                alert(amt);
                 totalamount = totalamount + normalise(amt, listfrequency.val());
                 $(this).val(parseFloat(amt));
             }
