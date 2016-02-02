@@ -418,6 +418,10 @@ $(document).ready(function () {
 				if($.cookie("business_id") && parseInt($.cookie("business_id"))){
 					    $("#row2 .value").text($.cookie("business" + parseInt($.cookie("business_id")) + "_name"));
 				}
+				if($.cookie("partnership_id") && parseInt($.cookie("partnership_id"))){
+					    $("#row2 .value").text($.cookie("partnership" + parseInt($.cookie("partnership_id")) + "_name"));
+				}
+
 				if ($.cookie('director_count') && parseInt($.cookie("director_count"))) {
 				    var count = parseInt($.cookie("director_count"));
 				    var directorships = "";

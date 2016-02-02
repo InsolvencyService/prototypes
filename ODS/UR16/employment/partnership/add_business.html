@@ -504,7 +504,7 @@ $('#next').click(function() {
 	var enddate;
 	
 	x++;
-	$.cookie("partnership_id", x);
+	$.cookie("partnership_id", x, {path:'/'});
 	
 	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
 	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
@@ -513,7 +513,7 @@ $('#next').click(function() {
 		enddate="";
 	}	
 	
-	$.cookie("partnership"+x+"_name", $("#name").val());
+	$.cookie("partnership"+x+"_name", $("#name").val(), {path:'/'});
 	$.cookie("partnership"+x+"_nature", $("#nature").val());
 	$.cookie("partnership"+x+"_startdate", startdate);
 	$.cookie("partnership"+x+"_enddate", enddate);
