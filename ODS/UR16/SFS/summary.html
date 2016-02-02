@@ -270,7 +270,7 @@ table td[class*=col-], table th[class*=col-]{
                     <label>Total</label>
                   </div>
                   <div class="col-sm-3 total">
-                    <div>£</div>
+                    
                     <div class="amount totalvalue">8000.00</div>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ table td[class*=col-], table th[class*=col-]{
                     <label>Total</label>
                   </div>
                   <div class="col-sm-3 total">
-                    <div>£</div>
+                    
                     <div class="amount totalvalue">0.00</div>
                   </div>
                 </div>
@@ -489,7 +489,7 @@ table td[class*=col-], table th[class*=col-]{
                     <label>Total</label>
                   </div>
                   <div class="col-sm-3 total">
-                    <div>£</div>
+                    
                     <div class="amount totalvalue">0.00</div>
                   </div>
                 </div>
@@ -748,13 +748,13 @@ table td[class*=col-], table th[class*=col-]{
       for (i = 1; i < 7; i++) {
         var amount = $.cookie(item + i);
         if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-          $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
+          $("#" + item + i + " .value").text("£" + parseFloat(amount).toFixed(2));
           if (parseFloat(amount)) {
             totalamount = totalamount + parseFloat(amount);
           }
         }
       }
-      $("#incometotal .totalvalue").text(totalamount.toFixed(2));
+      $("#incometotal .totalvalue").text("£" + totalamount.toFixed(2));
       //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
     }
     
@@ -766,8 +766,8 @@ table td[class*=col-], table th[class*=col-]{
       // Household income total
 	    if($.cookie("partnerincome0")){
 	    	var amount = $.cookie("partnerincome0");
-	    	$("#household-income-1 .value").text(parseFloat(amount).toFixed(2));
-	    	$("#household-total .total .totalvalue").text(parseFloat(amount).toFixed(2));  
+	    	$("#household-income-1 .value").text("£" + parseFloat(amount).toFixed(2));
+	    	$("#household-total .total .totalvalue").text("£" + parseFloat(amount).toFixed(2));  
 	    }
 	    
 	    
@@ -799,13 +799,13 @@ table td[class*=col-], table th[class*=col-]{
       for (i = 1; i <= page; i++) {
         if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
           var amount = $.cookie(item + i);
-          $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
+          $("#" + item + i + " .value").text("£" + parseFloat(amount).toFixed(2));
           if (parseFloat(amount)) {
             totalamount = totalamount + parseFloat(amount);
           }
         }
       }
-      $("#coststotal .totalvalue").text(totalamount.toFixed(2));
+      $("#coststotal .totalvalue").text("£" + totalamount.toFixed(2));
     }
 
     function removeallcookies() {
