@@ -192,9 +192,11 @@
 				
 				<form>
 					<fieldset class="inline form-group">
-						<label id="title_label" class="form-label-bold">Have you included any of the debts from this application in a 
-						past bankruptcy application?</label>
-						<p class="form-hint">We need to know about past bankruptcy applications in the UK and abroad</p>
+						<label id="title_label" class="form-label-bold">If you've 
+						been bankrupt before, are any of the debts from your 
+						previous bankruptcy also included in this application?</label>
+						<p class="form-hint">This includes bankruptcy 
+						proceedings anywhere in the world</p>
 						<div id="previous-select" class="form-group">
 							<label id="title_previous_yes" for="previous_yes" class="block-label">
 								<input id="previous_yes" value="yes" name="previous" type="radio" aria-describedby="title_error title_help">
@@ -224,7 +226,9 @@
 					</fieldset>
 					
 					<fieldset class="inline form-group">
-						<label id="title_label" class="form-label-bold">Have you applied for a Persons At Risk of Violence (PARV) order for this application?</label>
+						<label id="title_label" class="form-label-bold">Do you 
+						have a Persons At Risk of Violence order for this application?</label>
+						<p class="form-hint">You can find out more about.... LINK TO GOV.UK</p>
 						<div id="parv-select" class="form-group">
 							<label id="title_parv_yes" for="parv_yes" class="block-label">
 								<input id="parv_yes" value="yes" name="parv" type="radio">
@@ -339,42 +343,41 @@ $(document).ready(function() {
 
 
 });
-
+var visible = false;
 $("#next").click(function(e) {
-
+	
 	$("#pnl-error").hide();
     $("#pnl-error-debts").hide();
     $("#pnl-error-financial").hide();
 
 	
-	if($("#da_yes").prop('checked')==false){
-		alert("We highly advise you to speak to a financial adviser before you submit this application.");
-    	    	
+	if($("#da_yes").prop('checked')==false){  	    	
     	if($("#parv_yes").prop('checked')==true){
     		$("#next").attr("href","parv.html");
     	}
     	else{
-    		$("#next").attr("href","identitycheck.html");
-    	}
-    	
-    	
-    	
-    	
-		
-		/*
-    	setTimeout(function(){
-         window.location = link;
-    	},5000);
-    	*/
-    	
+    		$("#next").attr("href","verify_return.html");
+    	}	
     }
 	
   	if($("#previous_yes").prop('checked')==true){
-    	$("#pnl-error").show();
-    	$("#pnl-error-debts").show();
-    	$("#next").attr("href", "#");
+  		if(visible==true){
+    		if($("#parv_yes").prop('checked')==true){
+    			$("#next").attr("href","parv.html");
+	    	}
+	    	else{
+	    		$("#next").attr("href","verify_return.html");
+	    	}
+    	}
+    	else{
+	    	$("#pnl-error").show();
+	    	$("#pnl-error-debts").show();
+	    	$("#next").attr("href", "#");
+	    	visible=true;
+	    }
+    	
     }
- 
+ 	
  	
     
     if( ($("#previous_yes").prop('checked')==false) && ($("#previous_no").prop('checked')==false) || ($("#da_yes").prop('checked')==false) && ($("#da_no").prop('checked')==false) ){
