@@ -756,6 +756,14 @@ table td[class*=col-], table th[class*=col-]{
       $("#incometotal .totalvalue").text(totalamount.toFixed(2));
       //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
     }
+    
+    // Household income total
+    if($.cookie("householdpartner0")){
+    	var amount = $.cookie("householdpartner0");
+    	$("#household-total.amount").text(parseFloat(amount).toFixed(2);  
+    }
+    
+    
     //partnerincometotal  overalltotal  coststotal  totalvalue
     function totalpartnerincome() {
       var totalamount = 0;
