@@ -599,7 +599,7 @@ table td[class*=col-], table th[class*=col-]{
 
         if (stage == "house") {
           $("#income a.edit").text("Edit").show();
-          $("#household-income-1 a.edit").text("Edit").show();
+          //$("#household-income-1 a.edit").text("Edit").show();
           // $("#costs a.edit").first().text("Start").show();
           totalincome();
           totalpartnerincome();
@@ -656,9 +656,11 @@ table td[class*=col-], table th[class*=col-]{
         $("#income5").addClass("active");
       }
 
-      if (stage == "income" && itemnumber === 6) {
+      if (stage == "house" && itemnumber === 1) {
         $("#income1, #income2, #income3, #income4, #income5").removeClass("active").addClass("complete");
         $("#household-income-1").addClass("active");
+        $("#household-income-1 a.edit").first().text("Start").addClass("button").show();
+
       }
 
       if (stage == "costs" && itemnumber === 1) {
@@ -707,7 +709,7 @@ table td[class*=col-], table th[class*=col-]{
       if (stage == "income" && itemnumber > 6) {
         $("#costs1 a.edit").addClass("button").text("Start");
       }
-      if (stage == "house" && itemnumber === 6) {
+      if (stage == "house" && itemnumber === 1) {
         $("#household-income-1 a.edit").addClass("button").text("Start");
       }
       if (stage == "costs" && itemnumber > 7) {
@@ -728,7 +730,7 @@ table td[class*=col-], table th[class*=col-]{
         }
         $("#" + stage + itemnumber + " .declare").show();
         $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
-        if (stage == "income" && itemnumber == 6) {
+        if (stage == "house" && itemnumber === 1) {
           $("#household-income-1 a.edit").first().text("Start").addClass("button").show();
         }
         if (stage == "income" && itemnumber == 7) {
