@@ -376,7 +376,7 @@ $(document).ready(function() {
 	});
 	
 	$("#add_address").click(function(){
-		$.cookie("address", $("#name").val());
+		$.cookie("address", $("#name").val(), {path:'/'});
 		$("#add_address").attr("href", "business_address.html");
 	});
 		

@@ -450,9 +450,9 @@ $("#next").click(function(){
 	}
 
 	
-	$.cookie("business"+x+"_employee_count", count);
-	$.cookie("business"+x+"_employee_name"+count, $("#firstname").val()+" "+$("#lastname").val());
-	$.cookie("business"+x+"_employee_address"+count, employee_address);
+	$.cookie("business"+x+"_employee_count", count, {path:'/'});
+	$.cookie("business"+x+"_employee_name"+count, $("#firstname").val()+" "+$("#lastname").val(), {path:'/'});
+	$.cookie("business"+x+"_employee_address"+count, employee_address, {path:'/'});
 
 });
 

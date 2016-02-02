@@ -381,7 +381,7 @@ $(document).ready(function() {
 
 $("#add_accountant").click(function(){
 	var accountant= $("#name").val();
-	$.cookie("accountant_name", accountant);
+	$.cookie("accountant_name", accountant, {path:'/'});
 	$("#add_accountant").prop("href","accountant_detail.html");
 	
 });

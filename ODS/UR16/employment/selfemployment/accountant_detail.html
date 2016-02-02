@@ -406,9 +406,9 @@ $("#next").click(function(){
 	}
 
 	
-	$.cookie("business"+x+"_accountant_count", count);
-	$.cookie("business"+x+"_accountant_name"+count, $("#name").val());
-	$.cookie("business"+x+"_accountant_address"+count, accountant_address);
+	$.cookie("business"+x+"_accountant_count", count, {path:'/'});
+	$.cookie("business"+x+"_accountant_name"+count, $("#name").val(), {path:'/'});
+	$.cookie("business"+x+"_accountant_address"+count, accountant_address, {path:'/'});
 	$("#next").prop("href","add_accountant.html");
 });
 

@@ -453,10 +453,10 @@ $("#next").click(function(){
 	}
 	
 
-	$.cookie("business"+x+"_femployee_amount"+count, amountx);
-	$.cookie("business"+x+"_femployee_count", count);
-	$.cookie("business"+x+"_femployee_name"+count, $("#firstname").val()+" "+$("#lastname").val());
-	$.cookie("business"+x+"_femployee_address"+count, employee_address);
+	$.cookie("business"+x+"_femployee_amount"+count, amountx, {path:'/'});
+	$.cookie("business"+x+"_femployee_count", count, {path:'/'});
+	$.cookie("business"+x+"_femployee_name"+count, $("#firstname").val()+" "+$("#lastname").val(), {path:'/'});
+	$.cookie("business"+x+"_femployee_address"+count, employee_address, {path:'/'});
 
 });
 

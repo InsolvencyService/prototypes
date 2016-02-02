@@ -500,7 +500,7 @@ $('#next').click(function() {
 	var enddate;
 	
 	x++;
-	$.cookie("business_id", x);
+	$.cookie("business_id", x, {path:'/'});
 	
 	startdate = $("#start_day").val() + "/" + $("#start_month").val() + "/" + $("#start_year").val();
 	enddate = $("#end_day").val() + "/" + $("#end_month").val() + "/" + $("#end_year").val();
@@ -509,24 +509,24 @@ $('#next').click(function() {
 		enddate="";
 	}	
 	
-	$.cookie("business"+x+"_name", $("#name").val());
-	$.cookie("business"+x+"_nature", $("#nature").val());
-	$.cookie("business"+x+"_startdate", startdate);
-	$.cookie("business"+x+"_enddate", enddate);
+	$.cookie("business"+x+"_name", $("#name").val(), {path:'/'});
+	$.cookie("business"+x+"_nature", $("#nature").val(), {path:'/'});
+	$.cookie("business"+x+"_startdate", startdate, {path:'/'});
+	$.cookie("business"+x+"_enddate", enddate, {path:'/'});
 	
 	for(var i = 1; i<= count; i++){
 		if($("#trade_name"+i).val()!=""){
-			$.cookie("business"+x+"_tradename"+i, $("#trade_name"+i).val());
-			$.cookie("trading_count", i);
+			$.cookie("business"+x+"_tradename"+i, $("#trade_name"+i).val(), {path:'/'});
+			$.cookie("trading_count", i, {path:'/'});
 		}
 	}
 		
 	
 	if($("#partner").prop('checked')==true){
-		$.cookie("business"+x+"_type", "Partnership");	
+		$.cookie("business"+x+"_type", "Partnership", {path:'/'});	
 	}
 	else{
-		$.cookie("business"+x+"_type", "Sole trader");
+		$.cookie("business"+x+"_type", "Sole trader", {path:'/'});
 	}
 	
 	//$('#next').attr('href', 'business_address.html');

@@ -452,10 +452,10 @@ $('#next').click(function() {
 			business_address = business_address+address6;
 		}
 
-		$.cookie("business"+x+"_address"+count, business_address);
-		$.cookie("business"+x+"_address_count", count);
-		$.cookie("business"+x+"_address_start", startdate);
-		$.cookie("business"+x+"_address_end", enddate);
+		$.cookie("business"+x+"_address"+count, business_address, {path:'/'});
+		$.cookie("business"+x+"_address_count", count, {path:'/'});
+		$.cookie("business"+x+"_address_start", startdate, {path:'/'});
+		$.cookie("business"+x+"_address_end", enddate, {path:'/'});
 		
 		//$("#next").prop("href","business_address_summary.html");
 });
