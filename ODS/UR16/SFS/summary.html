@@ -765,6 +765,7 @@ table td[class*=col-], table th[class*=col-]{
       // Household income total
 	    if($.cookie("partnerincome0")){
 	    	var amount = $.cookie("partnerincome0");
+	    	$("#household-income-1 .value").text(parseFloat(amount).toFixed(2));
 	    	$("#household-total .total .totalvalue").text(parseFloat(amount).toFixed(2));  
 	    }
 	    
