@@ -81,7 +81,7 @@ $(document).ready(function () {
 	    var i = 1;
 	    var totalamount = 0;
 
-	    $('tr td input.amount').each(function () {
+	    $('.amount').each(function () {
 	        var listfrequency = $(this).parent().next().find("select");
 	        if ($(this).val()) {
 	            var amt = $(this).val();
