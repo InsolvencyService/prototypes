@@ -710,7 +710,7 @@ table td[class*=col-], table th[class*=col-]{
       if (stage == "income" && itemnumber > 6) {
         $("#costs1 a.edit").addClass("button").text("Start");
       }
-      if (stage == "house" && itemnumber === 1) {
+      if (stage == "income" && itemnumber === 6) {
         $("#household-income-1 a.edit").addClass("button").text("Start");
       }
       if (stage == "costs" && itemnumber > 7) {
@@ -731,7 +731,7 @@ table td[class*=col-], table th[class*=col-]{
         }
         $("#" + stage + itemnumber + " .declare").show();
         $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
-        if (stage == "house" && itemnumber === 1) {
+        if (stage == "income" && itemnumber === 6) {
           $("#household-income-1 a.edit").first().text("Start").addClass("button").show();
         }
         if (stage == "income" && itemnumber == 7) {
