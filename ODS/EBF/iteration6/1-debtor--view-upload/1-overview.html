@@ -167,7 +167,8 @@
 
         <div class="phase-banner clearfix">
           <div class="col-sm-9">
-            <strong class="phase-tag">BETA</strong>This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+            <p><strong class="phase-tag">BETA</strong>
+            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it</p>
           </div>
           <div id="logout" class="col-sm-3 text-right" >
             <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
@@ -218,7 +219,7 @@
               <tbody id="mainTable">
 
 
-                
+
 
                 <tr class="activerow">
                   <td><div class="label label-info label-as-badge">Document</div></td>
@@ -243,7 +244,7 @@
                   <td class="text-center"><span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="Document approved">&nbsp;</span></td>
                 </tr>
 
-                
+
 
               </tbody>
 
@@ -333,7 +334,7 @@ $(document).ready(function () {
 			var doc_date = $.cookie("EBF_document_"+i+"_date");
 			var doc_status = $.cookie("EBF_document_"+i+"_filestatus");
 			var row;
-			
+
 			switch(doc_status) {
 			    case "Awaiting approval":
 			        row = '<tr class="activerow approval-needed">';
@@ -353,7 +354,7 @@ $(document).ready(function () {
 			    case "Rejected":
 			        row = '<tr class="activerow">';
 					row += '<td><div class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Document Rejected">Document Rejected</div></td>';
-					
+
 			        break;
 			}
 

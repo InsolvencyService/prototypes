@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../../../assets/templates/adjudicator-template.dwt" -->
 <head>
@@ -111,7 +111,7 @@
 // Checkbox interaction for the PARV section
 $(document).ready(function() {
   document.getElementById('parv').onchange = function() {
-      document.getElementById('restricted-people').style.display = this.checked ? 'block' : 'none';
+    document.getElementById('restricted-people').style.display = this.checked ? 'block' : 'none';
   };
 });
 </script>
@@ -164,7 +164,7 @@ $(document).ready(function() {
   </div>
 
   <div id="content">
-	<!-- #BeginEditable "content" -->
+    <!-- #BeginEditable "content" -->
     <div style="display:block; margin:0 30px 0 30px !important">
 
       <form>
@@ -175,7 +175,7 @@ $(document).ready(function() {
             <p>The file below was uploaded by a third party and requires approval. </p>
             <div class="row form-group">
               <div class="col-sm-3" ><label for="document-name">File name</label></div>
-              <div class="col-sm-9 bolder"><input type="text" id="document-name" class="input-lg form-control-3-4"></div>
+              <div class="col-sm-9 bolder"><input type="text" id="document-name" class="form-control-3-4"></div>
             </div>
 
             <div class="row form-group bolder">
@@ -194,7 +194,7 @@ $(document).ready(function() {
             </div>
             <div class="row form-group">
               <div class="col-sm-3"><label for="document-description">Description</label></div>
-              <div class="col-sm-9 bolder"><input type="text" id="document-description" class="input-lg form-control-3-4"></div>
+              <div class="col-sm-9 bolder"><textarea rows="5" id="document-description" class="form-control-3-4"></textarea></div>
             </div>
             <div class="row form-group bolder">
               <div class="col-sm-3" >Uploaded by</div>
@@ -281,7 +281,7 @@ $(document).ready(function() {
       <p><br></p>
 
     </div>
-<!-- #EndEditable -->
+    <!-- #EndEditable -->
   </div>
 
   <footer role="contentinfo" id="footer" class="group js-footer">
@@ -311,99 +311,99 @@ $(document).ready(function() {
 
   </footer>
 
-    <!--end footer-->
+  <!--end footer-->
 
-    <div class="app-error hidden" id="global-app-error"></div>
-    <!--
-    <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-    <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+  <div class="app-error hidden" id="global-app-error"></div>
+  <!--
+  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-    <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-    <script type="text/javascript" src="assets/javascripts/application.js"></script>
-  -->
-  <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/application.js"></script>
+-->
+<script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
-  <!-- #BeginEditable "scripts" -->
-  <script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
-  <script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
-  <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+<!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
+<script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
 
-  <script type="text/javascript">
-	var count = getParameterByName("id");
+<script type="text/javascript">
+var count = getParameterByName("id");
 
-	$(document).ready(function() {
-	
-	
-	var url      = window.location.href;     // Returns full URL
-	var pathname = window.location.pathname; // Returns path only
-	$("#email-link").on("click", function (e) {
-	  $.cookie("url", url, {path:'/'});
-	  $.cookie("pathname", pathname, {path:'/'});
-	});
-	
-	var d_name = $.cookie("EBF_document_"+ count +"_filename");
-	var d_desc = $.cookie("EBF_document_"+ count +"_description");
-	
-	$("#document-title").val(d_name);
-	$("#document-creator").text($.cookie("EBF_document_"+ count +"_creator"));
-	$("#document-description").val(d_desc);
-	$("#document-uploader").text($.cookie("EBF_document_"+ count +"_uploader"));
-	$("#document-date").text($.cookie("EBF_document_"+ count +"_date"));
-	
-	if($.cookie("EBF_document_"+ count +"_filestatus")){
-		var s = $.cookie("EBF_document_"+ count +"_filestatus");
-		if(s=="Document"){
-			$("#Document").attr(checked, "checked");
-		}
-		else if(s=="Notification"){
-			$("#Notification").attr(checked, "checked");
-		}
-	}
-	
-	$("#approve").on("click", function (e) {
-	 $.cookie("EBF_document_"+count+"_filestatus", $("#document_type :checked").val(), {path:'/'});
-	 $("#approve").attr("href", "2-ebf-list-admin.html");
-	});
+$(document).ready(function() {
 
-	
-	$("#reject-document").on("click", function (e) {
-	  $("#approve-document").slideUp();
-	  $("#rejected-document").slideDown();
-	});
-	
-	$("#cancel").on("click", function (e) {
-	  $("#approve-document").slideDown();
-	  $("#rejected-document").slideUp();
-	});
-	
-	
-	});
-  
-  
-  function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+  var url      = window.location.href;     // Returns full URL
+  var pathname = window.location.pathname; // Returns path only
+  $("#email-link").on("click", function (e) {
+    $.cookie("url", url, {path:'/'});
+    $.cookie("pathname", pathname, {path:'/'});
+  });
+
+  var d_name = $.cookie("EBF_document_"+ count +"_filename");
+  var d_desc = $.cookie("EBF_document_"+ count +"_description");
+
+  $("#document-title").val(d_name);
+  $("#document-creator").text($.cookie("EBF_document_"+ count +"_creator"));
+  $("#document-description").val(d_desc);
+  $("#document-uploader").text($.cookie("EBF_document_"+ count +"_uploader"));
+  $("#document-date").text($.cookie("EBF_document_"+ count +"_date"));
+
+  if($.cookie("EBF_document_"+ count +"_filestatus")){
+    var s = $.cookie("EBF_document_"+ count +"_filestatus");
+    if(s=="Document"){
+      $("#Document").attr(checked, "checked");
+    }
+    else if(s=="Notification"){
+      $("#Notification").attr(checked, "checked");
+    }
   }
 
-
-  </script>
-  <script type="text/javascript" src="js/casedata.js"></script>
-
-
-  <!-- #EndEditable -->
+  $("#approve").on("click", function (e) {
+    $.cookie("EBF_document_"+count+"_filestatus", $("#document_type :checked").val(), {path:'/'});
+    $("#approve").attr("href", "2-ebf-list-admin.html");
+  });
 
 
+  $("#reject-document").on("click", function (e) {
+    $("#approve-document").slideUp();
+    $("#rejected-document").slideDown();
+  });
+
+  $("#cancel").on("click", function (e) {
+    $("#approve-document").slideDown();
+    $("#rejected-document").slideUp();
+  });
 
 
-  <div id="window-resizer-tooltip" style="display: none;">
-    <a href="/claims/start#" title="Edit settings"
-    style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
-    <span class="tooltipTitle">Window size: </span>
-    <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
-    <br><span class="tooltipTitle">Viewport size: </span>
-    <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
-  </body><!-- #EndTemplate -->
+});
 
-  </html>
+
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+</script>
+<script type="text/javascript" src="js/casedata.js"></script>
+
+
+<!-- #EndEditable -->
+
+
+
+
+<div id="window-resizer-tooltip" style="display: none;">
+  <a href="/claims/start#" title="Edit settings"
+  style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+  <span class="tooltipTitle">Window size: </span>
+  <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
+  <br><span class="tooltipTitle">Viewport size: </span>
+  <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span></div>
+</body><!-- #EndTemplate -->
+
+</html>

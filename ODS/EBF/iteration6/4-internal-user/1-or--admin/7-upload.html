@@ -147,7 +147,7 @@
           </div>
         </div>
 
-		
+
         <div class="row">
           <div class="col-sm-8">
 
@@ -177,16 +177,16 @@
             <form action="" method="post" enctype="multipart/form-data">
               <span class="error-message upload" style="display:none">You must select a file to upload.</span>
               <div class="form-inline">
-              
+
               	<div class="form-group">
                   <label class="form-label-bold">Choose file to upload</label>
                   <input type="file" name="files[]" id="js-upload-files" >
                 </div>
-              
+
               	<div class="form-group">
               		<label class="form-label-bold" for="filenamex">File name</label>
               		<p class="form-hint">The file name you would like the file saved as</p>
-              		<input type="text" id="filenamex">
+              		<input type="text" class="col-sm-7" id="filenamex">
               	</div>
 
                 <div class="form-group" id="document_status">
@@ -196,9 +196,9 @@
 		                <label><input type="radio" name="document-type" value="Notification" /> <i class="label label-success label-as-badge">Notification</i></label>
               		</fieldset>
 
-              		
+
               	</div>
-                
+
                 <div class="form-group">
                   <label class="form-label-bold">File description</label><br>
                   <span  class="error-message descriptionlabel"  style="display:none">
@@ -281,7 +281,7 @@
     else{
       count = 0;
     }
-    
+
     var status = getParameterByName("status");
 	if(status == "uploaded"){
 		var html;
@@ -289,7 +289,7 @@
     	html += "<h2 class=\"bold-large\">Your document has successfully uploaded</h2>";
     	html += "<a href=\"2-ebf-list-admin.html\"><p class=\"white\">Return to EBF</p></a>";
       	html += "</div>";
-      	
+
 		$("#status").html(html);
 		$("#upload").html('Upload another document <i class="glyphicon glyphicon-upload"></i>');
 	}
@@ -339,7 +339,7 @@
 
       count++;
       var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
-      
+
       $.cookie("EBF_document_"+count+"_filestatus", $("#document_status :checked").val(), {path:'/'});
       $.cookie("EBF_document_"+count+"_filename", $("#filenamex").val(), {path:'/'});
       $.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
@@ -352,7 +352,7 @@
     }
   });
 
- 
+
 
 
   function getParameterByName(name) {

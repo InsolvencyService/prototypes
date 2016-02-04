@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- #BeginTemplate "../../template.dwt" -->
+<!-- #BeginTemplate "../../../template.dwt" -->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -20,7 +20,7 @@
 
   <!--[if IE 8]>
   <script type="text/javascript">
-  (function(){if(window.opera){return;}
+  (function(){if(window.opera){../../../assets;}
   setTimeout(function(){var a=document,g,b={families:(g=
   ["nta"]),urls:["/public/stylesheets/fonts-ie8.css"]},
   c="/public/javascripts/vendor/goog/webfont-debug.js",d="script",
@@ -76,6 +76,9 @@
 
   color: red !important
 }
+
+.white{
+	color: white !important
 }
 
 
@@ -167,25 +170,42 @@
               </ol>
             </div>
 
-            <p>You can upload documents related to this case for the Official Receiver or Adjudicator to review.</p>
+            <p>You can upload documents related to this case for the official receiver or adjudicator to review.</p>
             <br>
             <p id="intro">Select files from your computer that you would like to upload for application
-              <span class="bolder" id="urn"></span><span class="bolder" id="urn-returning"></span> - <span class="bolder">Kim Scarlett</span>.</p>
+              <span class="bolder" id="urn"></span><span class="bolder" id="urn-../../../assetsing"></span> - <span class="bolder">Kim Scarlett</span>.</p>
             <form action="" method="post" enctype="multipart/form-data">
               <span class="error-message upload" style="display:none">You must select a file to upload.</span>
               <div class="form-inline">
 
-                <div class="form-group well">
-                  <label>Choose upload file</label>
+              	<div class="form-group">
+                  <label class="form-label-bold">Choose file to upload</label>
                   <input type="file" name="files[]" id="js-upload-files" >
                 </div>
+
+              	<div class="form-group">
+              		<label class="form-label-bold" for="filenamex">File name</label>
+              		<p class="form-hint">The file name you would like the file saved as</p>
+              		<input type="text" class="col-sm-7" id="filenamex">
+              	</div>
+
+                <div class="form-group" id="document_status">
+              		<label class="form-label-bold">File type</label>
+              		<fieldset>
+		                <label><input type="radio" name="document-type" value="Record" /> <i class="label label-info label-as-badge">Record</i></label>
+		                <label><input type="radio" name="document-type" value="Notification" /> <i class="label label-success label-as-badge">Notification</i></label>
+              		</fieldset>
+
+
+              	</div>
+
                 <div class="form-group">
-                  <label>File description</label><br>
+                  <label class="form-label-bold">File description</label><br>
                   <span  class="error-message descriptionlabel"  style="display:none">
                     Please enter a descripton of the file.</span>
                     <textarea rows="5" id="desc"></textarea>
                   </div>
-                  <a class="button" id="upload">Upload document <i class="glyphicon glyphicon-upload"></i></a>
+                  <a class="button" id="upload">Upload file <i class="glyphicon glyphicon-upload"></i></a>
                   <a href="6-ebf-list-view-upload.html" class="secondary-link" id="return">Return to the EBF</a>
                   <p><a href="javascript:history.go(-1)">Back</a></p>
                   <p>&nbsp;</p>
@@ -213,11 +233,11 @@
           <div class="footer-meta-inner">
 
             <ul class="footer__nav" style="width:100%">
-              <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
+              <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../../contact-us.html">Contact us</a></li>
             </ul>
             <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-              <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-              <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+              <li class="footer__link" style=" "><a href="../../../privacy.html">Privacy</a></li>
+              <li class="footer__link" style=""><a href="../../../cookies.html">Cookies</a></li>
               <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
             </ul>
 
@@ -261,14 +281,15 @@
     else{
       count = 0;
     }
-    
+
     var status = getParameterByName("status");
 	if(status == "uploaded"){
 		var html;
 		html = "<div class=\"govuk-box-highlight made\">";
     	html += "<h2 class=\"bold-large\">Your document has successfully uploaded</h2>";
+    	html += "<a href=\"2-ebf-list-admin.html\"><p class=\"white\">Return to EBF</p></a>";
       	html += "</div>";
-      	html += "<p>One of our independent adjudicators will be reviewing the file very soon, we will notify you when the has been approved or rejected.</p>";
+
 		$("#status").html(html);
 		$("#upload").html('Upload another document <i class="glyphicon glyphicon-upload"></i>');
 	}
@@ -318,9 +339,9 @@
 
       count++;
       var splitPath =$("#js-upload-files").val().split('\\').pop().split('/').pop();
-      
-      $.cookie("EBF_document_"+count+"_filestatus", "Awaiting approval", {path:'/'});
-      $.cookie("EBF_document_"+count+"_filename", splitPath, {path:'/'});
+
+      $.cookie("EBF_document_"+count+"_filestatus", $("#document_status :checked").val(), {path:'/'});
+      $.cookie("EBF_document_"+count+"_filename", $("#filenamex").val(), {path:'/'});
       $.cookie("EBF_document_"+count+"_descripton", $("#desc").val(), {path:'/'});
       $.cookie("EBF_document_"+count+"_date", formattedDate(), {path:'/'});
       $.cookie("EBF_document_count", count, {path:'/'});
@@ -331,7 +352,7 @@
     }
   });
 
- 
+
 
 
   function getParameterByName(name) {
