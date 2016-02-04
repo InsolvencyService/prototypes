@@ -267,7 +267,7 @@ a.btn:visited{
           <div class="col-sm-12">
 
             <h1 class="form-title heading-xlarge">Welcome to the electronic bankruptcy folder (EBF)</h1>
-         
+
             <p class="heading-large">Use the EBF to search, edit and manage bankruptcy cases</p>
           </div>
         </div>
@@ -299,6 +299,20 @@ a.btn:visited{
                 <hr>
                 <h1 class="heading-large">Admin search results</h1>
                 <p id="no-results">We're sorry we can't seem to find that application, please remove your search term and try again.</p>
+
+                <!-- /////////////////////////////////// Change all - Start /////////////////////////////////// -->
+                <div id="saved">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="panel-indent completion-message" style="font-size:16px; border-color:#efefef">
+                        <i class="glyphicon glyphicon-exclamation-sign"></i>
+                        <p>Your application changes have been saved: <span id="changed">12th September 2016</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /////////////////////////////////// Change all - End /////////////////////////////////// -->
+
               </div>
               <!-- Search Results - End -->
 
@@ -329,7 +343,7 @@ a.btn:visited{
                       <label for="PARV-1"><input type="checkbox" id="PARV-1"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -362,7 +376,7 @@ a.btn:visited{
                       <label for="PARV-2"><input type="checkbox" id="PARV-2"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -395,7 +409,7 @@ a.btn:visited{
                       <label for="PARV-3"><input type="checkbox" id="PARV-3"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -428,7 +442,7 @@ a.btn:visited{
                       <label for="PARV-4"><input type="checkbox" id="PARV-4"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -461,7 +475,7 @@ a.btn:visited{
                       <label for="PARV-5"><input type="checkbox" id="PARV-5"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -494,7 +508,7 @@ a.btn:visited{
                       <label for="PARV-6"><input type="checkbox" id="PARV-6"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -527,7 +541,7 @@ a.btn:visited{
                       <label for="PARV-7"><input type="checkbox" id="PARV-7"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -713,7 +727,7 @@ a.btn:visited{
 
     ///////////////////////// Save Changes - Start /////////////////////////
 
-    $('#save-changes').click(function(e) {
+    $('.save-changes').click(function(e) {
       e.preventDefault();
       $('#saved').slideToggle('750');
       $('#saved').delay(5000).hide(750);

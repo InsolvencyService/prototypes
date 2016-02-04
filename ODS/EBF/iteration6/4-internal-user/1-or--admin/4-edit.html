@@ -266,7 +266,7 @@ a.btn:visited{
         <div class="row">
           <div class="col-sm-12">
             <h1 class="form-title heading-xlarge">Edit application: <span id="urn"></span></h1>
-            
+
           </div>
         </div>
       </div>
@@ -278,7 +278,7 @@ a.btn:visited{
 
         <div class="panel with-nav-tabs panel-default" id="admin-panel">
             <div class="panel-body">
-			
+
 			<p class="heading-medium">Search for another case</p>
               <div id="search-applications">
                 <form action="#" method="get" role="search">
@@ -327,7 +327,7 @@ a.btn:visited{
                       <label for="PARV-1"><input type="checkbox" id="PARV-1"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -360,7 +360,7 @@ a.btn:visited{
                       <label for="PARV-2"><input type="checkbox" id="PARV-2"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -393,7 +393,7 @@ a.btn:visited{
                       <label for="PARV-3"><input type="checkbox" id="PARV-3"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -426,7 +426,7 @@ a.btn:visited{
                       <label for="PARV-4"><input type="checkbox" id="PARV-4"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -459,7 +459,7 @@ a.btn:visited{
                       <label for="PARV-5"><input type="checkbox" id="PARV-5"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -492,7 +492,7 @@ a.btn:visited{
                       <label for="PARV-6"><input type="checkbox" id="PARV-6"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -525,7 +525,7 @@ a.btn:visited{
                       <label for="PARV-7"><input type="checkbox" id="PARV-7"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">View application</a>
                     </div>
                   </div>
@@ -537,6 +537,20 @@ a.btn:visited{
 
               <div id="edit-application">
                 <hr>
+
+                <!-- /////////////////////////////////// Change all - Start /////////////////////////////////// -->
+                <div id="saved">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="panel-indent completion-message" style="font-size:16px; border-color:#efefef">
+                        <i class="glyphicon glyphicon-exclamation-sign"></i>
+                        <p>Your application changes have been saved: <span id="changed">12th September 2016</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /////////////////////////////////// Change all - End /////////////////////////////////// -->
+
                 <!-- ///// Admin Application Item - 1 - Start //// -->
                 <div class="row application">
                   <div class="col-sm-4 application-left">
@@ -562,7 +576,7 @@ a.btn:visited{
                       <label for="PARV-0"><input type="checkbox" id="PARV-0"> This person is subject to a PARV order</label>
                     </div>
                     <div class="form-group">
-                      <button class="button" id="save-changes">Save changes</button>
+                      <button class="button save-changes">Save changes</button>
                       <a class="view-application" href="2-ebf-list-admin.html">Back to application</a>
                     </div>
                   </div>
@@ -764,7 +778,7 @@ a.btn:visited{
 
     ///////////////////////// Save Changes - Start /////////////////////////
 
-    $('#save-changes').click(function(e) {
+    $('.save-changes').click(function(e) {
       e.preventDefault();
       $('#saved').slideToggle('750');
       $('#saved').delay(5000).hide(750);
