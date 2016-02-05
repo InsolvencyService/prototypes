@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../assets/templates/b-template.dwt" -->
 <head>
@@ -105,9 +105,9 @@ table td{
 }
 
 .fail-box{
-	background-color:#CC0000;
-	color:#ffffff;
-	padding:50px;
+  background-color:#CC0000;
+  color:#ffffff;
+  padding:50px;
 }
 </style>
 <!-- #EndEditable -->
@@ -132,7 +132,7 @@ table td{
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -158,140 +158,134 @@ table td{
     </div>
   </div>
 
-  <main id="content" role="main">
-    <div id="content">
+  <main id="content">
 
-      <div class="inner-block">
-        <div class="phase-banner clearfix">
+    <div class="inner-block">
+      <div class="phase-banner clearfix">
 
-          <div class="col-sm-9">
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </div>
-
-          <div id="logout" class="col-sm-3 text-right" >
-            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
-          </div>
-
+        <div class="col-sm-9">
+          <strong class="phase-tag">BETA</strong>
+          This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
         </div>
+
+        <div id="logout" class="col-sm-3 text-right" >
+          <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+        </div>
+
       </div>
 
       <!-- #BeginEditable "content" -->
 
-      <div style="display:block; margin:0 30px !important">
-      	<p>&nbsp;</p>
+      <p>&nbsp;</p>
 
-        <div class="row">
+      <div class="row">
 
-          <!-- Main Content Section Start -->
-          <div class="col-sm-8">
-            <div class="govuk-box-highlight">
-              <h2 class="bold-large">You have completed payment for your bankruptcy application.</h2>
+        <!-- Main Content Section Start -->
+        <div class="col-md-8 col-xs-12">
+          <div class="govuk-box-highlight">
+            <h2 class="bold-large">You have completed payment for your bankruptcy application.</h2>
 
-              <p>Your transaction number is:<br>
-                <span class="payment-ref">12345678</span>
-              </p>
-            </div>
-            <p><br/>You can now submit your application.</p>
-            <table class="table">
-               <!-- <tr>
-                <td>Payment reference</td>
-                <td class="heading-small"><span class="payment-number"></span></td>
-              </tr> -->
-
-              <tr>
-                <td>Transaction number</td>
-                <td class="heading-small"><span class="payment-ref">12345678</span></td>
-              </tr>
-              <tr>
-                <td>Payment amount</td>
-                <td class="heading-small"><span id="amountpaid"></span></td>
-              </tr>
-              <tr>
-                <td>WorldPay Transaction ID</td>
-                <td class="heading-small"><span id="wp-ref">Worldpay-1234</span></td>
-              </tr>
-            </table>
-
-            <!-- CTA Section Start -->
-            <div class="form-navigation form-group" style="margin:30px 0;">
-              <a href="../submission/start.html"><button class="button">Submit my application</button></a>
-              <a href="../overview.html" class="secondary-link ">Return to my application</a>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-                <a href="#" id="cancel">Save and logout</a>
-              </div>
-              <p>&nbsp;</p>
-            </div>
-            <!-- CTA Section End -->
-
+            <p>Your transaction number is:<br>
+              <span class="payment-ref">12345678</span>
+            </p>
           </div>
-          <!-- Main Content Section End -->
+          <p><br/>You can now submit your application.</p>
+          <table class="table">
+            <!-- <tr>
+            <td>Payment reference</td>
+            <td class="heading-small"><span class="payment-number"></span></td>
+          </tr> -->
 
-          <!-- Side Panel Section Start -->
-          <div class="col-sm-4">
-            <div class="panel-indent no-margin" style="font-size:16px; border-color:#efefef">
-              <p><a href="#" class="small-icon"><img src="images/print-icon.png">Print confirmation</a></p>
-              <br>
-              <p><a href="8-statements-page.html">View my payment history</a></p>
-            </div>
+          <tr>
+            <td>Transaction number</td>
+            <td class="heading-small"><span class="payment-ref">12345678</span></td>
+          </tr>
+          <tr>
+            <td>Payment amount</td>
+            <td class="heading-small"><span id="amountpaid"></span></td>
+          </tr>
+          <tr>
+            <td>WorldPay Transaction ID</td>
+            <td class="heading-small"><span id="wp-ref">Worldpay-1234</span></td>
+          </tr>
+        </table>
+
+        <!-- CTA Section Start -->
+        <div class="form-navigation form-group" style="margin:30px 0;">
+          <a href="../submission/start.html"><button class="button">Submit my application</button></a>
+          <a href="../overview.html" class="secondary-link ">Return to my application</a>
+          <div>
+            <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+            <a href="#" id="cancel">Save and logout</a>
           </div>
-          <!-- Side Panel Section End -->
-
-
+          <p>&nbsp;</p>
         </div>
-
+        <!-- CTA Section End -->
 
       </div>
+      <!-- Main Content Section End -->
 
-        <!-- #EndEditable -->
+      <!-- Side Panel Section Start -->
+      <div class="col-md-4 col-xs-12">
+        <div class="panel-indent no-margin">
+          <p><a href="#" class="small-icon"><img src="images/print-icon.png">Print confirmation</a></p>
+          <br>
+          <p><a href="8-statements-page.html">View my payment history</a></p>
+        </div>
+      </div>
+      <!-- Side Panel Section End -->
 
 
     </div>
-  </main>
+
+    <!-- #EndEditable -->
 
 
-  <footer role="contentinfo" id="footer" class="group js-footer">
+  </div>
+</main>
 
 
-    <div class="footer-wrapper">
+<footer role="contentinfo" id="footer" class="group js-footer">
 
-      <div class="footer-meta">
 
-        <div class="footer-meta-inner">
+  <div class="footer-wrapper">
 
-          <ul class="footer__nav" style="width:100%">
-            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
-          </ul>
-          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-          </ul>
+    <div class="footer-meta">
 
-          <div class="open-government-licence">
-            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
-          </div>
-        </div>
+      <div class="footer-meta-inner">
 
-        <div class="copyright">
-          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+        <ul class="footer__nav" style="width:100%">
+          <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
+        </ul>
+        <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+          <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+          <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+          <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+        </ul>
+
+        <div class="open-government-licence">
+          <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+          <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
         </div>
       </div>
+
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+      </div>
     </div>
+  </div>
 
-  </footer>
+</footer>
 
-  <!--end footer-->
+<!--end footer-->
 
-  <div class="app-error hidden" id="global-app-error"></div>
-  <!--
-  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+<div class="app-error hidden" id="global-app-error"></div>
+<!--
+<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-  <script type="text/javascript" src="assets/javascripts/application.js"></script>
+<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+<script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>
@@ -319,19 +313,19 @@ $(document).ready(function() {
   $("#wp-ref").text(world);
 
   if ($.cookie("amount")) {
-   // 	$("#urn").text($.cookie("urn")).addClass("bolder");
-  	$("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
+    // 	$("#urn").text($.cookie("urn")).addClass("bolder");
+    $("#amountpaid").text('£'+$.cookie("amount")).addClass("bolder");
   }
 });
 
 $("#email-link").on("click", function (e) {
-    $.cookie("url", url, {path:'/'});
-    $.cookie("pathname", pathname, {path:'/'});
+  $.cookie("url", url, {path:'/'});
+  $.cookie("pathname", pathname, {path:'/'});
 });
 
 function readCookies(){
 
-	payment_made = $.cookie("amount");
+  payment_made = $.cookie("amount");
 
 }
 

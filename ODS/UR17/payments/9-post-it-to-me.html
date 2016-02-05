@@ -126,7 +126,7 @@ table td{
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -152,154 +152,145 @@ table td{
     </div>
   </div>
 
-  <main role="main" id="wrapper">
+  <main id="content">
+    <div class="inner-block">
+      <div class="phase-banner clearfix">
 
-    <div id="content">
-      <div class="inner-block">
-        <div class="phase-banner clearfix">
-
-          <div class="col-sm-9">
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </div>
-
-          <div id="logout" class="col-sm-3 text-right" >
-            <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
-          </div>
-
+        <div class="col-sm-9">
+          <strong class="phase-tag">BETA</strong>
+          This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
         </div>
+
+        <div id="logout" class="col-sm-3 text-right" >
+          <a id="logout-link">Save and logout &nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+        </div>
+
       </div>
 
       <!-- #BeginEditable "content" -->
 
+      <h1 class="form-title heading-large">Post it to me</h1>
+      <div class="row">
 
-      <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Post it to me</h1>
-        <div class="row">
+        <!-- Main Content Section Start -->
+        <div class="col-md-8 col-xs-12">
 
-          <!-- Main Content Section Start -->
-          <div class="col-sm-8">
-
-            <!-- Hidden Error messages Start -->
-            <div class="validation-summary" id="panel-error-empty" style="display:none">
-              <h2>You are missing some address details:</h2>
-              <ul>
-                <li><a href="#building-and-street-1">* Building and street</a></li>
-                <li><a href="#town-or-city">* Town/city</a></li>
-                <li><a href="#county">* County</a></li>
-                <li><a href="#postcode">*Postal code</a></li>
-              </ul>
-            </div>
-            <!-- Hidden Error messages End -->
-
-            <p>If you don't have an email address, we can send you the bank details by post.</p>
-        
-            <p><br></p>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="building-and-street">Building and street</label>
-    			  	<input id="building-and-street" type="text" value="14 Street Name" style="margin-bottom:10px; width:70%;"><br>
-    			  	<input id="building-and-street-2" type="text" style="margin-bottom:10px; width:70%;"><br>
-    			  	<input id="building-and-street-3" type="text" style="margin-bottom:10px; width:70%;">
-      			</div>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="town-or-city">Town/city</label>
-    			  	<input id="town-or-city" type="text" value="Coventry" style="margin-bottom:10px; width:70%;">
-      			</div>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="county">County</label>
-      			  <input id="county" type="text" value="Warwickshire" style="margin-bottom:10px; width:70%;">
-      			</div>
-      			<div class="form-group">
-      				<label class="form-label-bold" for="postcode">Postal code</label>
-      			  <input id="postcode" type="text" value="CV35 8TY" style="margin-bottom:10px; width:30%;">
-      			</div>
-
-            <!-- CTA Section Start -->
-            <div class="form-navigation form-group" style="margin:30px 0;">
-              <div>
-                <a href="#"><button id="continue" class="button">Continue</button></a>
-              </div>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-                <a href="#" id="cancel">Save and logout</a>
-              </div>
-              <p>&nbsp;</p>
-            </div>
-            <!-- CTA Section Start -->
-
+          <!-- Hidden Error messages Start -->
+          <div class="validation-summary" id="panel-error-empty" style="display:none">
+            <h2>You are missing some address details:</h2>
+            <ul>
+              <li><a href="#building-and-street-1">* Building and street</a></li>
+              <li><a href="#town-or-city">* Town/city</a></li>
+              <li><a href="#county">* County</a></li>
+              <li><a href="#postcode">*Postal code</a></li>
+            </ul>
           </div>
-          <!-- Main Content Section End -->
+          <!-- Hidden Error messages End -->
 
-          <!-- Side Panel Section Start -->
-          <div class="col-sm-4">
-            <!-- Payment Panel start -->
-            <div class="panel panel-primary">
-              <h2 class="heading-small">Bankruptcy order fee</h2>
-              <a href="1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
-              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
-              <p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
-            </div>
-            <!-- Payment Panel end -->
-            <div class="panel-indent" style="font-size:16px; border-color:#efefef">
+          <p>If you don't have an email address, we can send you the bank details by post.</p>
 
-
-                <p><a href="../overview.html">Return to my application</a></p>
-                           <p><a href="8-statements-page.html">View my payment history</a></p>
-              <p><a href="7-help-page.html">Refund policy</a></p>
-                         </div>
+          <p><br></p>
+          <div class="form-group">
+            <label class="form-label-bold" for="building-and-street">Building and street</label>
+            <input id="building-and-street" type="text" value="14 Street Name" style="margin-bottom:10px; width:70%;"><br>
+            <input id="building-and-street-2" type="text" style="margin-bottom:10px; width:70%;"><br>
+            <input id="building-and-street-3" type="text" style="margin-bottom:10px; width:70%;">
           </div>
-          <!-- Side Panel Section End -->
+          <div class="form-group">
+            <label class="form-label-bold" for="town-or-city">Town/city</label>
+            <input id="town-or-city" type="text" value="Coventry" style="margin-bottom:10px; width:70%;">
+          </div>
+          <div class="form-group">
+            <label class="form-label-bold" for="county">County</label>
+            <input id="county" type="text" value="Warwickshire" style="margin-bottom:10px; width:70%;">
+          </div>
+          <div class="form-group">
+            <label class="form-label-bold" for="postcode">Postal code</label>
+            <input id="postcode" type="text" value="CV35 8TY" style="margin-bottom:10px; width:30%;">
+          </div>
+
+          <!-- CTA Section Start -->
+          <div class="form-navigation form-group" style="margin:30px 0;">
+            <div>
+              <a href="#"><button id="continue" class="button">Continue</button></a>
+            </div>
+            <div>
+              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+              <a href="#" id="cancel">Save and logout</a>
+            </div>
+            <p>&nbsp;</p>
+          </div>
+          <!-- CTA Section Start -->
 
         </div>
+        <!-- Main Content Section End -->
+
+        <!-- Side Panel Section Start -->
+        <div class="col-md-4 col-xs-12">
+          <!-- Payment Panel start -->
+          <div class="panel panel-primary">
+            <h2 class="heading-small">Bankruptcy order fee</h2>
+            <a href="1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
+            <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
+            <p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
+          </div>
+          <!-- Payment Panel end -->
+          <div class="panel-indent">
+            <p><a href="../overview.html">Return to my application</a></p>
+            <p><a href="8-statements-page.html">View my payment history</a></p>
+            <p><a href="7-help-page.html">Refund policy</a></p>
+          </div>
+        </div>
+        <!-- Side Panel Section End -->
 
       </div>
 
-  </div>
+    </div>
 
-</main>
-
-
-<footer role="contentinfo" id="footer" class="group js-footer">
+  </main>
 
 
-  <div class="footer-wrapper">
+  <footer id="footer" class="group js-footer">
 
-    <div class="footer-meta">
 
-      <div class="footer-meta-inner">
+    <div class="footer-wrapper">
 
-        <ul class="footer__nav" style="width:100%">
-          <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
-        </ul>
-        <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-          <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-          <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-          <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-        </ul>
+      <div class="footer-meta">
 
-        <div class="open-government-licence">
-          <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-          <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+        <div class="footer-meta-inner">
+
+          <ul class="footer__nav" style="width:100%">
+            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
+          </ul>
+          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+          </ul>
+
+          <div class="open-government-licence">
+            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+          </div>
         </div>
-      </div>
 
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+        <div class="copyright">
+          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+        </div>
       </div>
     </div>
-  </div>
 
-</footer>
+  </footer>
 
-<!--end footer-->
+  <!--end footer-->
 
-<div class="app-error hidden" id="global-app-error"></div>
-<!--
-<script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-<script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+  <div class="app-error hidden" id="global-app-error"></div>
+  <!--
+  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-<script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-<script type="text/javascript" src="assets/javascripts/application.js"></script>
+  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/application.js"></script>
 -->
 <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap/js/bootstrap.min.js"></script>

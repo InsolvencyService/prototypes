@@ -126,7 +126,7 @@ table td{
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -152,90 +152,84 @@ table td{
     </div>
   </div>
 
-  <main id="content" role="main">
-    <div id="content">
+  <main id="content">
 
-      <div class="inner-block">
-        <div class="phase-banner clearfix">
+    <div class="inner-block">
+      <div class="phase-banner clearfix">
 
-          <div class="col-sm-9">
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </div>
-
-          <div id="logout" class="col-sm-3 text-right" >
-          </div>
-
+        <div class="col-sm-9">
+          <strong class="phase-tag">BETA</strong>
+          This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
         </div>
+
+        <div id="logout" class="col-sm-3 text-right" >
+        </div>
+
       </div>
 
       <!-- #BeginEditable "content" -->
 
-      <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Thank you</h1>
-        <div class="row">
+      <h1 class="form-title heading-large">Thank you</h1>
+      <div class="row">
 
-          <!-- Main Content Section Start -->
-          <div class="col-sm-8">
-            <div class="govuk-box-highlight">
-              <h2 class="bold-large">Your payment was successful.</h2>
-              <p class="bold-medium">Your transaction number is:<br>
-               <span class="payment-number"></span> <span class="payment-ref"></span>
-              </p>
-            </div>
-
-            <table class="table">
-              <tr>
-                <td>Payment reference</td>
-                <td class="heading-small"><span class="payment-number"></span></td>
-              </tr>
-              <tr>
-                <td>Transaction number</td>
-                <td class="heading-small"><span class="payment-ref">12345678</span></td>
-              </tr>
-              <tr>
-                <td>Payment amount</td>
-                <td class="heading-small"><span id="amountpaid"></span></td>
-              </tr>
-              <tr>
-                <td>WorldPay Transaction ID</td>
-                <td class="heading-small"><span class="wp-ref">Worldpay-1234</span></td>
-              </tr>
-            </table>
-
-            <!-- CTA Section Start -->
-            <div class="form-navigation form-group" style="margin:30px 0;">
-              <a href="12-alternative-login.html"><button class="button">Finish</button></a>
-            </div>
-            <!-- CTA Section End -->
-
+        <!-- Main Content Section Start -->
+        <div class="col-md-8 col-xs-12">
+          <div class="govuk-box-highlight">
+            <h2 class="bold-large">Your payment was successful.</h2>
+            <p class="bold-medium">Your transaction number is:<br>
+              <span class="payment-number"></span> <span class="payment-ref"></span>
+            </p>
           </div>
-          <!-- Main Content Section End -->
 
-          <!-- Side Panel Section Start -->
-          <div class="col-sm-4">
-            <div class="panel-indent no-margin" style="font-size:16px; border-color:#efefef">
-              <p><a href="#" class="small-icon"><img src="images/print-icon.png">Print confirmation</a></p>
-            <br>
-             <p><a href="7-help-page.html">Refund policy</a></p>
-            </div>
+          <table class="table">
+            <tr>
+              <td>Payment reference</td>
+              <td class="heading-small"><span class="payment-number"></span></td>
+            </tr>
+            <tr>
+              <td>Transaction number</td>
+              <td class="heading-small"><span class="payment-ref">12345678</span></td>
+            </tr>
+            <tr>
+              <td>Payment amount</td>
+              <td class="heading-small"><span id="amountpaid"></span></td>
+            </tr>
+            <tr>
+              <td>WorldPay Transaction ID</td>
+              <td class="heading-small"><span class="wp-ref">Worldpay-1234</span></td>
+            </tr>
+          </table>
+
+          <!-- CTA Section Start -->
+          <div class="form-navigation form-group" style="margin:30px 0;">
+            <a href="12-alternative-login.html"><button class="button">Finish</button></a>
           </div>
-          <!-- Side Panel Section End -->
-
+          <!-- CTA Section End -->
 
         </div>
+        <!-- Main Content Section End -->
+
+        <!-- Side Panel Section Start -->
+        <div class="col-md-4 col-xs-12">
+          <div class="panel-indent no-margin">
+            <p><a href="#" class="small-icon"><img src="images/print-icon.png">Print confirmation</a></p>
+            <br>
+            <p><a href="7-help-page.html">Refund policy</a></p>
+          </div>
+        </div>
+        <!-- Side Panel Section End -->
 
 
       </div>
 
-        <!-- #EndEditable -->
+      <!-- #EndEditable -->
 
 
     </div>
   </main>
 
 
-  <footer role="contentinfo" id="footer" class="group js-footer">
+  <footer id="footer" class="group js-footer">
 
 
     <div class="footer-wrapper">
@@ -319,107 +313,107 @@ $(document).ready(function() {
   }
 
   var total_fee_paid = $.cookie("fee_paid");
-	var fee_remaining = $.cookie("fee_remaining");
-	var payment_made = $.cookie("amount");
+  var fee_remaining = $.cookie("fee_remaining");
+  var payment_made = $.cookie("amount");
 
-	if (total_fee_paid == '0.00'){
-		total_fee_paid = payment_made;
-	}
-	else {
-		total_fee_paid = (parseFloat(total_fee_paid) + parseFloat(payment_made)).toFixed(2);
-	}
-	fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
+  if (total_fee_paid == '0.00'){
+    total_fee_paid = payment_made;
+  }
+  else {
+    total_fee_paid = (parseFloat(total_fee_paid) + parseFloat(payment_made)).toFixed(2);
+  }
+  fee_remaining = (parseFloat(fee_remaining) - parseFloat(payment_made)).toFixed(2);
 
-	$.cookie("fee_paid", total_fee_paid, {path:'/'})
-	$.cookie("fee_remaining", fee_remaining, {path:'/'})
-	var d = new Date();
-	var datea = formatDate(d, "dd MMMM yyyy");
-	var timea = formatDate(d, "HH:mm:ss");
-	var stamp = datea.toString() + ' at ' + timea.toString();
-	$.cookie("payment_timestamp", stamp, {path:'/'});
+  $.cookie("fee_paid", total_fee_paid, {path:'/'})
+  $.cookie("fee_remaining", fee_remaining, {path:'/'})
+  var d = new Date();
+  var datea = formatDate(d, "dd MMMM yyyy");
+  var timea = formatDate(d, "HH:mm:ss");
+  var stamp = datea.toString() + ' at ' + timea.toString();
+  $.cookie("payment_timestamp", stamp, {path:'/'});
 });
 
 function formatDate(date, format, utc) {
-    var MMMM = ["\x00", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var MMM = ["\x01", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var dddd = ["\x02", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    var ddd = ["\x03", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var MMMM = ["\x00", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var MMM = ["\x01", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var dddd = ["\x02", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var ddd = ["\x03", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-    function ii(i, len) {
-        var s = i + "";
-        len = len || 2;
-        while (s.length < len) s = "0" + s;
-        return s;
-    }
+  function ii(i, len) {
+    var s = i + "";
+    len = len || 2;
+    while (s.length < len) s = "0" + s;
+    return s;
+  }
 
-    var y = utc ? date.getUTCFullYear() : date.getFullYear();
-    format = format.replace(/(^|[^\\])yyyy+/g, "$1" + y);
-    format = format.replace(/(^|[^\\])yy/g, "$1" + y.toString().substr(2, 2));
-    format = format.replace(/(^|[^\\])y/g, "$1" + y);
+  var y = utc ? date.getUTCFullYear() : date.getFullYear();
+  format = format.replace(/(^|[^\\])yyyy+/g, "$1" + y);
+  format = format.replace(/(^|[^\\])yy/g, "$1" + y.toString().substr(2, 2));
+  format = format.replace(/(^|[^\\])y/g, "$1" + y);
 
-    var M = (utc ? date.getUTCMonth() : date.getMonth()) + 1;
-    format = format.replace(/(^|[^\\])MMMM+/g, "$1" + MMMM[0]);
-    format = format.replace(/(^|[^\\])MMM/g, "$1" + MMM[0]);
-    format = format.replace(/(^|[^\\])MM/g, "$1" + ii(M));
-    format = format.replace(/(^|[^\\])M/g, "$1" + M);
+  var M = (utc ? date.getUTCMonth() : date.getMonth()) + 1;
+  format = format.replace(/(^|[^\\])MMMM+/g, "$1" + MMMM[0]);
+  format = format.replace(/(^|[^\\])MMM/g, "$1" + MMM[0]);
+  format = format.replace(/(^|[^\\])MM/g, "$1" + ii(M));
+  format = format.replace(/(^|[^\\])M/g, "$1" + M);
 
-    var d = utc ? date.getUTCDate() : date.getDate();
-    format = format.replace(/(^|[^\\])dddd+/g, "$1" + dddd[0]);
-    format = format.replace(/(^|[^\\])ddd/g, "$1" + ddd[0]);
-    format = format.replace(/(^|[^\\])dd/g, "$1" + ii(d));
-    format = format.replace(/(^|[^\\])d/g, "$1" + d);
+  var d = utc ? date.getUTCDate() : date.getDate();
+  format = format.replace(/(^|[^\\])dddd+/g, "$1" + dddd[0]);
+  format = format.replace(/(^|[^\\])ddd/g, "$1" + ddd[0]);
+  format = format.replace(/(^|[^\\])dd/g, "$1" + ii(d));
+  format = format.replace(/(^|[^\\])d/g, "$1" + d);
 
-    var H = utc ? date.getUTCHours() : date.getHours();
-    format = format.replace(/(^|[^\\])HH+/g, "$1" + ii(H));
-    format = format.replace(/(^|[^\\])H/g, "$1" + H);
+  var H = utc ? date.getUTCHours() : date.getHours();
+  format = format.replace(/(^|[^\\])HH+/g, "$1" + ii(H));
+  format = format.replace(/(^|[^\\])H/g, "$1" + H);
 
-    var h = H > 12 ? H - 12 : H == 0 ? 12 : H;
-    format = format.replace(/(^|[^\\])hh+/g, "$1" + ii(h));
-    format = format.replace(/(^|[^\\])h/g, "$1" + h);
+  var h = H > 12 ? H - 12 : H == 0 ? 12 : H;
+  format = format.replace(/(^|[^\\])hh+/g, "$1" + ii(h));
+  format = format.replace(/(^|[^\\])h/g, "$1" + h);
 
-    var m = utc ? date.getUTCMinutes() : date.getMinutes();
-    format = format.replace(/(^|[^\\])mm+/g, "$1" + ii(m));
-    format = format.replace(/(^|[^\\])m/g, "$1" + m);
+  var m = utc ? date.getUTCMinutes() : date.getMinutes();
+  format = format.replace(/(^|[^\\])mm+/g, "$1" + ii(m));
+  format = format.replace(/(^|[^\\])m/g, "$1" + m);
 
-    var s = utc ? date.getUTCSeconds() : date.getSeconds();
-    format = format.replace(/(^|[^\\])ss+/g, "$1" + ii(s));
-    format = format.replace(/(^|[^\\])s/g, "$1" + s);
+  var s = utc ? date.getUTCSeconds() : date.getSeconds();
+  format = format.replace(/(^|[^\\])ss+/g, "$1" + ii(s));
+  format = format.replace(/(^|[^\\])s/g, "$1" + s);
 
-    var f = utc ? date.getUTCMilliseconds() : date.getMilliseconds();
-    format = format.replace(/(^|[^\\])fff+/g, "$1" + ii(f, 3));
-    f = Math.round(f / 10);
-    format = format.replace(/(^|[^\\])ff/g, "$1" + ii(f));
-    f = Math.round(f / 10);
-    format = format.replace(/(^|[^\\])f/g, "$1" + f);
+  var f = utc ? date.getUTCMilliseconds() : date.getMilliseconds();
+  format = format.replace(/(^|[^\\])fff+/g, "$1" + ii(f, 3));
+  f = Math.round(f / 10);
+  format = format.replace(/(^|[^\\])ff/g, "$1" + ii(f));
+  f = Math.round(f / 10);
+  format = format.replace(/(^|[^\\])f/g, "$1" + f);
 
-    var T = H < 12 ? "AM" : "PM";
-    format = format.replace(/(^|[^\\])TT+/g, "$1" + T);
-    format = format.replace(/(^|[^\\])T/g, "$1" + T.charAt(0));
+  var T = H < 12 ? "AM" : "PM";
+  format = format.replace(/(^|[^\\])TT+/g, "$1" + T);
+  format = format.replace(/(^|[^\\])T/g, "$1" + T.charAt(0));
 
-    var t = T.toLowerCase();
-    format = format.replace(/(^|[^\\])tt+/g, "$1" + t);
-    format = format.replace(/(^|[^\\])t/g, "$1" + t.charAt(0));
+  var t = T.toLowerCase();
+  format = format.replace(/(^|[^\\])tt+/g, "$1" + t);
+  format = format.replace(/(^|[^\\])t/g, "$1" + t.charAt(0));
 
-    var tz = -date.getTimezoneOffset();
-    var K = utc || !tz ? "Z" : tz > 0 ? "+" : "-";
-    if (!utc) {
-        tz = Math.abs(tz);
-        var tzHrs = Math.floor(tz / 60);
-        var tzMin = tz % 60;
-        K += ii(tzHrs) + ":" + ii(tzMin);
-    }
-    format = format.replace(/(^|[^\\])K/g, "$1" + K);
+  var tz = -date.getTimezoneOffset();
+  var K = utc || !tz ? "Z" : tz > 0 ? "+" : "-";
+  if (!utc) {
+    tz = Math.abs(tz);
+    var tzHrs = Math.floor(tz / 60);
+    var tzMin = tz % 60;
+    K += ii(tzHrs) + ":" + ii(tzMin);
+  }
+  format = format.replace(/(^|[^\\])K/g, "$1" + K);
 
-    var day = (utc ? date.getUTCDay() : date.getDay()) + 1;
-    format = format.replace(new RegExp(dddd[0], "g"), dddd[day]);
-    format = format.replace(new RegExp(ddd[0], "g"), ddd[day]);
+  var day = (utc ? date.getUTCDay() : date.getDay()) + 1;
+  format = format.replace(new RegExp(dddd[0], "g"), dddd[day]);
+  format = format.replace(new RegExp(ddd[0], "g"), ddd[day]);
 
-    format = format.replace(new RegExp(MMMM[0], "g"), MMMM[M]);
-    format = format.replace(new RegExp(MMM[0], "g"), MMM[M]);
+  format = format.replace(new RegExp(MMMM[0], "g"), MMMM[M]);
+  format = format.replace(new RegExp(MMM[0], "g"), MMM[M]);
 
-    format = format.replace(/\\(.)/g, "$1");
+  format = format.replace(/\\(.)/g, "$1");
 
-    return format;
+  return format;
 };
 
 

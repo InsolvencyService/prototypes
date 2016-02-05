@@ -1,5 +1,9 @@
 /* ------------------------ EBF Overide Styles - Start ------------------------ */
 
+header a, header a:hover, header a:visited, header a:active, header a:focus {
+  color: white !important;
+}
+
 input, input.form-control, textarea {
   border: 2px solid #6f777b;
   border-radius: 0;
@@ -562,8 +566,20 @@ table.application-summary tr td {
   border-bottom: 0;
 }
 
-#all-applications {
+#all-applications, #view-all-applications {
   display: none;
+}
+
+#view-all-applications .application-right {
+  display: block;
+}
+
+#view-all-applications .application-right .form-group label {
+  margin-top: 0;
+}
+
+#view-all-applications .application-left .form-group:last-of-type {
+  margin-bottom: 0;
 }
 
 .application {

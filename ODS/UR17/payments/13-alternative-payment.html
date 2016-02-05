@@ -126,7 +126,7 @@ table td{
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -152,111 +152,105 @@ table td{
     </div>
   </div>
 
-  <main id="content" role="main">
-    <div id="content">
-      <div class="inner-block">
-        <div class="phase-banner clearfix">
+  <main id="content">
+    <div class="inner-block">
+      <div class="phase-banner clearfix">
 
-          <div class="col-sm-9">
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </div>
-
-          <div id="logout" class="col-sm-3 text-right" >
-          </div>
-
+        <div class="col-sm-9">
+          <strong class="phase-tag">BETA</strong>
+          This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
         </div>
+
+        <div id="logout" class="col-sm-3 text-right" >
+        </div>
+
       </div>
 
       <!-- #BeginEditable "content" -->
 
-      <div style="display:block; margin:0 30px !important">
-        <h1 class="form-title heading-large">Make a fee payment</h1>
-        <div class="row">
+      <h1 class="form-title heading-large">Make a fee payment</h1>
+      <div class="row">
 
-          <!-- Main Content Section End -->
-          <div class="col-sm-8">
+        <!-- Main Content Section End -->
+        <div class="col-md-8 col-xs-12">
 
-            <!-- Hidden Error messages Start -->
-            <div class="validation-summary" id="panel-error-greater" style="display:none">
-              <h2>Please enter a new amount</h2>
-              <a href="#contributor-amount">You have entered an amount that is greater than the remaining fee of <b>&pound;<span id="fee_remaining">500</span></b>.</a>
-            </div>
-            <div class="validation-summary" id="panel-error-empty" style="display:none">
-              <h2>You didn't enter a payment amount</h2>
-              <a href="#contributor-amount">Please enter an amount</a>
-            </div>
-            <div class="validation-summary" id="panel-error-min" style="display:none">
-              <h2>Please enter a value of more than <span class="bolder">&pound;5</span></h2>
-              <a href="#amount">Please enter an amount greater than &pound;5</a>
-            </div>
-            <!-- Hidden Error messages End -->
-
-            <table class="table">
-              <tr>
-                <td>Payment reference</td>
-                <td class="heading-small"><span id="payment-number"></span></td>
-              </tr>
-              <tr>
-                <td>Left to pay</td>
-                <td class="heading-small"><b>&pound;</b><span class="lefttopay"></span></td>
-              </tr>
-            </table>
-            <div class="form-group">
-              <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label heading-small bolder">
-                <span class="heading-medium">How much would you like to pay?</span><br>
-                <span class="form-hint">
-                  Minimum card payment is <span class="bolder">&pound;5</span>
-                </span>
-              </label>
-              <span class="heading-medium">&pound;</span><input id="amount" type="text"  value="" />
-              <br/>
-            </div>
-
-            <!-- CTA Section Start -->
-            <div class="form-navigation form-group" style="margin:30px 0;">
-              <div>
-                <button id="pay-online" href="#" class="button">Make a card payment</button>
-              </div>
-              <div class="back">
-                <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
-              </div>
-            </div>
-            <!-- CTA Section End -->
-
+          <!-- Hidden Error messages Start -->
+          <div class="validation-summary" id="panel-error-greater" style="display:none">
+            <h2>Please enter a new amount</h2>
+            <a href="#contributor-amount">You have entered an amount that is greater than the remaining fee of <b>&pound;<span id="fee_remaining">500</span></b>.</a>
           </div>
-          <!-- Main Content Section End -->
+          <div class="validation-summary" id="panel-error-empty" style="display:none">
+            <h2>You didn't enter a payment amount</h2>
+            <a href="#contributor-amount">Please enter an amount</a>
+          </div>
+          <div class="validation-summary" id="panel-error-min" style="display:none">
+            <h2>Please enter a value of more than <span class="bolder">&pound;5</span></h2>
+            <a href="#amount">Please enter an amount greater than &pound;5</a>
+          </div>
+          <!-- Hidden Error messages End -->
 
-          <!-- Side Panel Section Start -->
-          <div class="col-sm-4">
-            <!-- Payment Panel start -->
-            <div class="panel panel-primary">
-              <h2 class="heading-small">Bankruptcy order fee</h2>
-              <a href="1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
-              <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
-              <p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
+          <table class="table">
+            <tr>
+              <td>Payment reference</td>
+              <td class="heading-small"><span id="payment-number"></span></td>
+            </tr>
+            <tr>
+              <td>Left to pay</td>
+              <td class="heading-small"><b>&pound;</b><span class="lefttopay"></span></td>
+            </tr>
+          </table>
+          <div class="form-group">
+            <label id="contributor-amount" for="contributor-amount" name="contributor-amount" class="form-label heading-small bolder">
+              <span class="heading-medium">How much would you like to pay?</span><br>
+              <span class="form-hint">
+                Minimum card payment is <span class="bolder">&pound;5</span>
+              </span>
+            </label>
+            <span class="heading-medium">&pound;</span><input id="amount" type="text"  value="" />
+            <br/>
+          </div>
+
+          <!-- CTA Section Start -->
+          <div class="form-navigation form-group" style="margin:30px 0;">
+            <div>
+              <button id="pay-online" href="#" class="button">Make a card payment</button>
             </div>
-            <!-- Payment Panel end -->
-            <div class="panel-indent" style="font-size:16px; border-color:#efefef;">
-              <p><a href="17-information-page.html">Find out about paying the fee</a></p>
-              <p><a href="7-help-page.html">Refund policy</a></p>
+            <div class="back">
+              <a id="back" href="javascript:history.go(-1)" style="padding-right: 30px">Back</a>
             </div>
           </div>
-          <!-- Side Panel Section End -->
+          <!-- CTA Section End -->
 
         </div>
+        <!-- Main Content Section End -->
 
+        <!-- Side Panel Section Start -->
+        <div class="col-md-4 col-xs-12">
+          <!-- Payment Panel start -->
+          <div class="panel panel-primary">
+            <h2 class="heading-small">Bankruptcy order fee</h2>
+            <a href="1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
+            <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
+            <p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
+          </div>
+          <!-- Payment Panel end -->
+          <div class="panel-indent">
+            <p><a href="17-information-page.html">Find out about paying the fee</a></p>
+            <p><a href="7-help-page.html">Refund policy</a></p>
+          </div>
+        </div>
+        <!-- Side Panel Section End -->
 
       </div>
 
-        <!-- #EndEditable -->
+      <!-- #EndEditable -->
 
 
     </div>
   </main>
 
 
-  <footer role="contentinfo" id="footer" class="group js-footer">
+  <footer id="footer" class="group js-footer">
 
 
     <div class="footer-wrapper">
@@ -327,17 +321,17 @@ $(document).ready(function() {
     e.preventDefault();
     //alert($("#amount").val());
     if ($("#amount").val() == ""){
-     $("#panel-error-empty").show();
-     $("#panel-error-greater").hide();
-     $("#panel-error-min").hide();
-     (window.location.replace("#panel-error-empty"));
+      $("#panel-error-empty").show();
+      $("#panel-error-greater").hide();
+      $("#panel-error-min").hide();
+      (window.location.replace("#panel-error-empty"));
     }
 
     if ($("#amount").val() && $("#amount").val() > 655){
-     $("#panel-error-greater").show();
-     $("#panel-error-empty").hide();
-     $("#panel-error-min").hide();
-     (window.location.replace("#panel-error-greater"));
+      $("#panel-error-greater").show();
+      $("#panel-error-empty").hide();
+      $("#panel-error-min").hide();
+      (window.location.replace("#panel-error-greater"));
     }
 
     if ($("#amount").val() && $("#amount").val() <= 5){
@@ -348,7 +342,7 @@ $(document).ready(function() {
     }
 
     else if ($("#amount").val() && $("#amount").val() <= 655) {
-     (window.location.replace("2a-worldpay-card-selection-alternative.html"));
+      (window.location.replace("2a-worldpay-card-selection-alternative.html"));
     }
 
   });
