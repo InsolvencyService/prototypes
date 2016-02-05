@@ -754,13 +754,6 @@ a.btn:visited{
       }
     });
 
-    function getParameterByName(name) {
-      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-      results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-
     var $rows = $('#table tr');
     $('#search').keyup(function() {
 
@@ -832,7 +825,7 @@ a.btn:visited{
           //Create table row
           row += '<td>';
           row += '<label for="name" class="control-label">';
-          row += '<a href="../SOA-Document.pdf"><span class="text-info">'+ doc_filename +'</span></a>';
+          row += '<a href="../../SOA-Document.pdf"><span class="text-info">'+ doc_filename +'</span></a>';
           row += '</label>';
           row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
           row += '</td>';
