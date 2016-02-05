@@ -211,7 +211,7 @@
           </tr>
         </thead>
 
-        <tbody id="table">
+        <tbody id="mainTable">
 
           <!-- ///////////////// Table Item - 1 - Start /////////////////-->
           <tr class="activerow">
@@ -286,162 +286,91 @@
 <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
 <!-- #BeginEditable "scripts" -->
-<script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
-<script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="js/casedata.js"></script>
-<script type="text/javascript" src="../../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
+<script type="text/javascript" src="../../../assets/js/jquery.tablesorter.min.js"></script>
 
 <script type="text/javascript">
 
-var rownumber;
-
-var url      = window.location.href;     // Returns full URL
-var pathname = window.location.pathname; // Returns path only
-$("#email-link").on("click", function (e) {
-  $.cookie("url", url, {path:'/'});
-  $.cookie("pathname", pathname, {path:'/'});
+$(document).ready(function() {
+  var url      = window.location.href;     // Returns full URL
+  var pathname = window.location.pathname; // Returns path only
+  $("#email-link").on("click", function (e) {
+    $.cookie("url", url, {path:'/'});
+    $.cookie("pathname", pathname, {path:'/'});
+  });
 });
 
-if ($.cookie("urn")) {
-  $("#urn").text($.cookie("urn")).addClass("bolder");
-  $(".urn").text($.cookie("urn")).addClass("bolder");
-}
-
-var filter = getParameterByName("filter");
-if(filter==null||filter==""){
-  filter=1;
-}
-
-$(document).ready(function() {
-
-  // $('[data-toggle="tooltip"]').tooltip();
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip("hide");
+});
 
 
-  // Add data to table
-
+$(document).ready(function () {
+  // updates table with documents stored in session
   if($.cookie("EBF_document_count")){
-
     for( var i=1; i<=$.cookie("EBF_document_count"); i++){
 
       var doc_filename = $.cookie("EBF_document_"+i+"_filename");
       var doc_description = $.cookie("EBF_document_"+i+"_descripton");
       var doc_date = $.cookie("EBF_document_"+i+"_date");
       var doc_status = $.cookie("EBF_document_"+i+"_filestatus");
-
-
-      //Create table row
-
-      var row, row_status;
-      var row_count = parseInt(i)+1;
-      var approve = "";
+      var row;
 
       switch(doc_status) {
         case "Awaiting approval":
-        row = '<tr class="activerow approval-needed" id="'+row_count+'">';
+        row = '<tr class="activerow approval-needed">';
         row += '<td><div class="label label-success awaiting indicator"><span id="document-type">Awaiting<br>approval</span></div></td>';
         approve = '<a href="3-approve-file.html?id='+i+'" class="button">Index upload</a>';
         break;
         case "Notification":
-        row = '<tr class="activerow" id="'+row_count+'">';
+        row = '<tr class="activerow">';
         row += '<td><div class="label label-success label-as-badge">Notification</div></td>';
         approve = '<i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>';
         break;
         case "Record":
-        row = '<tr class="activerow" id="'+row_count+'">';
+        row = '<tr class="activerow">';
         row += '<td><div class="label label-info label-as-badge">Record</div></td>';
         approve = '<i style="font-size:0.8em;" class="glyphicon glyphicon-ok-sign approved" alt="Approved" data-toggle="tooltip" data-placement="bottom" title="Document approved"></i>'
         break;
         case "Rejected":
-        row = '<tr class="activerow" id="'+row_count+'">';
+        row = '<tr class="activerow">';
         row += '<td><div class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="Document Rejected">Document Rejected</div></td>';
 
         break;
       }
 
 
+
+      //Create table row
       row += '<td>';
       row += '<label for="name" class="control-label">';
-      row += '<a href="../../SOA-Document.pdf"><span class="text-info" id="document-title">'+ doc_filename +'</span></a>';
+      row += '<a href="../SOA-Document.pdf"><span class="text-info">'+ doc_filename +'</span></a>';
       row += '</label>';
       row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
       row += '</td>';
-
       row += '<td>';
-      row += '<span id="document-creator">Matt Owen</span>';
+      row += 'Matt Owen';
       row += '<br>';
       row += '<span class="form-hint">OR Staff</span>';
       row += '</td>';
-
       row += '<td>';
-      row += '<label for="description" class="control-label">';
+      row += '<label for="name" class="control-label">';
       row += doc_description;
       row += '</label>';
       row += '<textarea type="text" class="input-medium" style="display:none;" placeholder="'+doc_description+'"></textarea>';
       row += '</td>';
-
-      row += '<td><span id="document-date">'+doc_date+'</span></td>';
-
-      row += '<td>';
-      row += approve;
-      row += '<a class="controls-edit" href="8-edit-upload.html?id='+(parseInt(row_count)-1)+'"><i style="font-size:0.8em;" class="glyphicon glyphicon-edit" alt="Edit" data-toggle="tooltip" data-placement="bottom" title="Edit details"></i></a>';
-      row += '</td>';
-
+      row += '<td>'+doc_date+'</td>';
+      row += '<td class="text-center"><span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="Document approved">&nbsp;</span></td>';
       row += '</tr>';
 
-
-
-
-
-
       //Pre-appends to table
-      $(row).insertBefore("#table tr:first");
-
+      $(row).insertBefore("#mainTable tr:first");
+      //$("#tableadd").prepend().html(row);
 
     }
   }
-  $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
-});
-
-///////////////////////// Delete Row Functionality - Start /////////////////////////
-var documentValue;
-
-$("#table tr").on("click", function (e) {
-  getRowNumber($(this).index()+1);
-  documentValue = $(this).find('td:nth-child(2)').text();
-  $("#document").text(documentValue);
-});
-
-$(".delete-row").on("click", function (e) {
-  $('#table-row-'+rownumber).hide(750);
-});
-
-function getRowNumber(row){
-  rownumber = row;
-}
-///////////////////////// Delete Row Functionality - End /////////////////////////
-
-$('[data-toggle="tooltip"]').tooltip("hide")
-
-$("#urn").on("click", function (e) {
-  $('#urn').tablesorter();
-});
-
-$("#name").on("click", function (e) {
-  $('#name').tablesorter();
-});
-
-$("#date").on("click", function (e) {
-  $('#date').tablesorter();
-});
-
-// Approve cookies
-$("#approve").on("click", function (e) {
-  $.cookie("document-title", $("#document-title").text(), {path:'/'});
-  $.cookie("document-type", $("#document-type").text(), {path:'/'});
-  $.cookie("document-creator", $("#document-creator").text(), {path:'/'});
-  $.cookie("document-description", $("#document-description").text(), {path:'/'});
-  $.cookie("document-date", $("#document-date").text(), {path:'/'});
 });
 
 function getParameterByName(name) {
@@ -450,24 +379,6 @@ function getParameterByName(name) {
   results = regex.exec(location.search);
   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
-var $rows = $('#table tr');
-$('#search').keyup(function() {
-
-  var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-  reg = RegExp(val, 'i'),
-  text;
-
-  $rows.show().filter(function() {
-    text = $(this).text().replace(/\s+/g, ' ');
-    return !reg.test(text);
-  }).hide();
-});
-
-// #Search highlighted - Start
-
-// #Search highlighted - End
-
 
 </script>
 
