@@ -233,7 +233,7 @@ a.btn:visited{
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -258,7 +258,7 @@ a.btn:visited{
 
   <!-- #BeginEditable "content" -->
 
-  <main role="main" id="wrapper">
+  <main id="wrapper">
 
     <header class="homepage-top">
 
@@ -274,277 +274,293 @@ a.btn:visited{
 
     <div id="content">
 
-      <div class="inner-block" style="display:block; margin-left:30px !important">
+      <div class="inner-block">
 
         <div class="panel with-nav-tabs panel-default" id="admin-panel">
-            <div class="panel-body">
-              <div id="recent-application">
-                <p class="heading-medium">Enter a case reference below to search for a bankruptcy</p>
+          <div class="panel-body">
+            <p class="heading-medium">Enter a case reference below to search for a bankruptcy</p>
+            <div class="row">
+              <div class="col-md-7 col-sm-7 col-xs-12">
+                <div id="search-applications">
+                  <form action="#" method="get" role="search">
+                    <div class="header-search-content">
+                      <label for="search-main">Search eBF Admin database</label>
+                      <input type="search" name="q" id="search" title="Search" placeholder="Search eBF Admin database" required="">
+                      <button class="submit" type="submit" value="Search">
+                        <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </form>
+
+                </div>
               </div>
+            </div>
 
-              <div id="search-applications">
-                <form action="#" method="get" role="search">
-                  <div class="header-search-content">
-                    <label for="search-main">Search eBF Admin database</label>
-                    <input type="search" name="q" id="search" title="Search" placeholder="Search eBF Admin database" required="">
-                    <button class="submit" type="submit" value="Search">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </button>
+            <!-- Search Results - Start -->
+            <div id="search-results">
+              <hr>
+              <h1 class="heading-large">Admin search results</h1>
+              <p id="no-results">We're sorry we can't seem to find that application, please remove your search term and try again.</p>
+
+              <!-- /////////////////////////////////// Change all - Start /////////////////////////////////// -->
+              <div id="saved">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="panel-indent completion-message" style="font-size:16px; border-color:#efefef">
+                      <i class="glyphicon glyphicon-exclamation-sign"></i>
+                      <p>Your application changes have been saved: <span id="changed">12th September 2016</span></p>
+                    </div>
                   </div>
-                </form>
-
+                </div>
               </div>
+              <!-- /////////////////////////////////// Change all - End /////////////////////////////////// -->
 
-              <!-- Search Results - Start -->
-              <div id="search-results">
-                <hr>
-                <h1 class="heading-large">Admin search results</h1>
-                <p id="no-results">We're sorry we can't seem to find that application, please remove your search term and try again.</p>
-              </div>
-              <!-- Search Results - End -->
 
-              <div id="all-applications">
+            </div>
+            <!-- Search Results - End -->
 
-                <!-- ///// Admin Application Item - 1 - Start //// -->
-                <div class="row application">
-                  <div class="col-sm-4 application-left">
-                    <div class="form-group">
-                      Application ref.<br>
-                      <span class="key-info urn">JKTY-YUBD-BKT</span>
-                    </div>
-                    <div class="form-group">
-                      Name<br>
-                      <span class="key-info applicant">Kim Scarlett</span>
-                    </div>
+            <div id="all-applications">
+
+              <!-- ///// Admin Application Item - 1 - Start //// -->
+              <div class="row application">
+                <div class="col-sm-4 application-left">
+                  <div class="form-group">
+                    Application ref.<br>
+                    <span class="key-info urn">JKTY-YUBD-BKT</span>
                   </div>
-                  <div class="col-sm-8 application-right">
-                    <div class="form-group">
-                      <label id="notifications-label-1" for="notifications-1" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-1" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label id="owner-label-1" for="owner-1" class="col-sm-5">Owner:</label>
-                      <input id="owner-1" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label for="PARV-1"><input type="checkbox" id="PARV-1"> This person is subject to a PARV order</label>
-                    </div>
-                    <div class="form-group">
-                      <button class="button">Save changes</button>
-                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
-                    </div>
+                  <div class="form-group">
+                    Name<br>
+                    <span class="key-info applicant">Kim Scarlett</span>
                   </div>
-
                 </div>
-                <!-- ///// Admin Application Item - 1 - End //// -->
-
-                <!-- ///// Admin Application Item - 2 - Start //// -->
-                <div class="row application">
-                  <div class="col-sm-4 application-left">
-                    <div class="form-group">
-                      Application ref.<br>
-                      <span class="key-info">1234-4567-BKT</span>
-                    </div>
-                    <div class="form-group">
-                      Name<br>
-                      <span class="key-info">Brian Bagley</span>
-                    </div>
+                <div class="col-sm-8 application-right">
+                  <div class="form-group">
+                    <label id="notifications-label-1" for="notifications-1" class="col-sm-5">Notifications:</label>
+                    <input id="notifications-1" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                   </div>
-                  <div class="col-sm-8 application-right">
-                    <div class="form-group">
-                      <label id="notifications-label-2" for="notifications-2" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-2" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label id="owner-label-2" for="owner-2" class="col-sm-5">Owner:</label>
-                      <input id="owner-2" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label for="PARV-2"><input type="checkbox" id="PARV-2"> This person is subject to a PARV order</label>
-                    </div>
-                    <div class="form-group">
-                      <button class="button">Save changes</button>
-                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
-                    </div>
+                  <div class="form-group">
+                    <label id="owner-label-1" for="owner-1" class="col-sm-5">Owner:</label>
+                    <input id="owner-1" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
                   </div>
-
+                  <div class="form-group">
+                    <label for="PARV-1"><input type="checkbox" id="PARV-1"> This person is subject to a PARV order</label>
+                  </div>
+                  <div class="form-group">
+                    <button class="button save-changes">Save changes</button>
+                    <a class="view-application" href="2-ebf-adjudicator.html">View application</a>
+                  </div>
                 </div>
-                <!-- ///// Admin Application Item - 2 - End //// -->
-
-                <!-- ///// Admin Application Item - 3 - Start //// -->
-                <div class="row application">
-                  <div class="col-sm-4 application-left">
-                    <div class="form-group">
-                      Application ref.<br>
-                      <span class="key-info">UPTY-NHTD-BKT</span>
-                    </div>
-                    <div class="form-group">
-                      Name<br>
-                      <span class="key-info">Steve Westerling</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-8 application-right">
-                    <div class="form-group">
-                      <label id="notifications-label-3" for="notifications-3" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-3" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label id="owner-label-3" for="owner-3" class="col-sm-5">Owner:</label>
-                      <input id="owner-3" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label for="PARV-3"><input type="checkbox" id="PARV-3"> This person is subject to a PARV order</label>
-                    </div>
-                    <div class="form-group">
-                      <button class="button">Save changes</button>
-                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- ///// Admin Application Item - 3 - End //// -->
-
-                <!-- ///// Admin Application Item - 4 - Start //// -->
-                <div class="row application">
-                  <div class="col-sm-4 application-left">
-                    <div class="form-group">
-                      Application ref.<br>
-                      <span class="key-info">KLAT-HARY-BKT</span>
-                    </div>
-                    <div class="form-group">
-                      Name<br>
-                      <span class="key-info">James Bonder</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-8 application-right">
-                    <div class="form-group">
-                      <label id="notifications-label-4" for="notifications-4" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-4" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label id="owner-label-4" for="owner-4" class="col-sm-5">Owner:</label>
-                      <input id="owner-4" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label for="PARV-4"><input type="checkbox" id="PARV-4"> This person is subject to a PARV order</label>
-                    </div>
-                    <div class="form-group">
-                      <button class="button">Save changes</button>
-                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- ///// Admin Application Item - 4 - End //// -->
-
-                <!-- ///// Admin Application Item - 5 - Start //// -->
-                <div class="row application">
-                  <div class="col-sm-4 application-left">
-                    <div class="form-group">
-                      Application ref.<br>
-                      <span class="key-info">AETL-AJYR-BKT</span>
-                    </div>
-                    <div class="form-group">
-                      Name<br>
-                      <span class="key-info">Jane Seymour</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-8 application-right">
-                    <div class="form-group">
-                      <label id="notifications-label-5" for="notifications-5" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-5" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label id="owner-label-5" for="owner-5" class="col-sm-5">Owner:</label>
-                      <input id="owner-5" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label for="PARV-5"><input type="checkbox" id="PARV-5"> This person is subject to a PARV order</label>
-                    </div>
-                    <div class="form-group">
-                      <button class="button">Save changes</button>
-                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- ///// Admin Application Item - 5 - End //// -->
-
-                <!-- ///// Admin Application Item - 6 - Start //// -->
-                <div class="row application">
-                  <div class="col-sm-4 application-left">
-                    <div class="form-group">
-                      Application ref.<br>
-                      <span class="key-info">MGSU-LAIR-BKT</span>
-                    </div>
-                    <div class="form-group">
-                      Name<br>
-                      <span class="key-info">Dave Jones</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-8 application-right">
-                    <div class="form-group">
-                      <label id="notifications-label-6" for="notifications-6" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-6" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label id="owner-label-6" for="owner-6" class="col-sm-5">Owner:</label>
-                      <input id="owner-6" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label for="PARV-6"><input type="checkbox" id="PARV-6"> This person is subject to a PARV order</label>
-                    </div>
-                    <div class="form-group">
-                      <button class="button">Save changes</button>
-                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- ///// Admin Application Item - 6 - End //// -->
-
-                <!-- ///// Admin Application Item - 7 - Start //// -->
-                <div class="row application">
-                  <div class="col-sm-4 application-left">
-                    <div class="form-group">
-                      Application ref.<br>
-                      <span class="key-info">MHAT-ALUE-BKT</span>
-                    </div>
-                    <div class="form-group">
-                      Name<br>
-                      <span class="key-info">Kate Taylor</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-8 application-right">
-                    <div class="form-group">
-                      <label id="notifications-label-7" for="notifications-7" class="col-sm-5">Notifications:</label>
-                      <input id="notifications-7" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label id="owner-label-7" for="owner-7" class="col-sm-5">Owner:</label>
-                      <input id="owner-7" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
-                    </div>
-                    <div class="form-group">
-                      <label for="PARV-7"><input type="checkbox" id="PARV-7"> This person is subject to a PARV order</label>
-                    </div>
-                    <div class="form-group">
-                      <button class="button">Save changes</button>
-                      <a class="view-application" href="2-ebf-list-admin.html">View application</a>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- ///// Admin Application Item - 7 - End //// -->
 
               </div>
+              <!-- ///// Admin Application Item - 1 - End //// -->
+
+              <!-- ///// Admin Application Item - 2 - Start //// -->
+              <div class="row application">
+                <div class="col-sm-4 application-left">
+                  <div class="form-group">
+                    Application ref.<br>
+                    <span class="key-info">1234-4567-BKT</span>
+                  </div>
+                  <div class="form-group">
+                    Name<br>
+                    <span class="key-info">Brian Bagley</span>
+                  </div>
+                </div>
+                <div class="col-sm-8 application-right">
+                  <div class="form-group">
+                    <label id="notifications-label-2" for="notifications-2" class="col-sm-5">Notifications:</label>
+                    <input id="notifications-2" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label id="owner-label-2" for="owner-2" class="col-sm-5">Owner:</label>
+                    <input id="owner-2" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label for="PARV-2"><input type="checkbox" id="PARV-2"> This person is subject to a PARV order</label>
+                  </div>
+                  <div class="form-group">
+                    <button class="button save-changes">Save changes</button>
+                    <a class="view-application" href="2-ebf-adjudicator.html">View application</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- ///// Admin Application Item - 2 - End //// -->
+
+              <!-- ///// Admin Application Item - 3 - Start //// -->
+              <div class="row application">
+                <div class="col-sm-4 application-left">
+                  <div class="form-group">
+                    Application ref.<br>
+                    <span class="key-info">UPTY-NHTD-BKT</span>
+                  </div>
+                  <div class="form-group">
+                    Name<br>
+                    <span class="key-info">Steve Westerling</span>
+                  </div>
+                </div>
+                <div class="col-sm-8 application-right">
+                  <div class="form-group">
+                    <label id="notifications-label-3" for="notifications-3" class="col-sm-5">Notifications:</label>
+                    <input id="notifications-3" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label id="owner-label-3" for="owner-3" class="col-sm-5">Owner:</label>
+                    <input id="owner-3" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label for="PARV-3"><input type="checkbox" id="PARV-3"> This person is subject to a PARV order</label>
+                  </div>
+                  <div class="form-group">
+                    <button class="button save-changes">Save changes</button>
+                    <a class="view-application" href="2-ebf-adjudicator.html">View application</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- ///// Admin Application Item - 3 - End //// -->
+
+              <!-- ///// Admin Application Item - 4 - Start //// -->
+              <div class="row application">
+                <div class="col-sm-4 application-left">
+                  <div class="form-group">
+                    Application ref.<br>
+                    <span class="key-info">KLAT-HARY-BKT</span>
+                  </div>
+                  <div class="form-group">
+                    Name<br>
+                    <span class="key-info">James Bonder</span>
+                  </div>
+                </div>
+                <div class="col-sm-8 application-right">
+                  <div class="form-group">
+                    <label id="notifications-label-4" for="notifications-4" class="col-sm-5">Notifications:</label>
+                    <input id="notifications-4" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label id="owner-label-4" for="owner-4" class="col-sm-5">Owner:</label>
+                    <input id="owner-4" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label for="PARV-4"><input type="checkbox" id="PARV-4"> This person is subject to a PARV order</label>
+                  </div>
+                  <div class="form-group">
+                    <button class="button save-changes">Save changes</button>
+                    <a class="view-application" href="2-ebf-adjudicator.html">View application</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- ///// Admin Application Item - 4 - End //// -->
+
+              <!-- ///// Admin Application Item - 5 - Start //// -->
+              <div class="row application">
+                <div class="col-sm-4 application-left">
+                  <div class="form-group">
+                    Application ref.<br>
+                    <span class="key-info">AETL-AJYR-BKT</span>
+                  </div>
+                  <div class="form-group">
+                    Name<br>
+                    <span class="key-info">Jane Seymour</span>
+                  </div>
+                </div>
+                <div class="col-sm-8 application-right">
+                  <div class="form-group">
+                    <label id="notifications-label-5" for="notifications-5" class="col-sm-5">Notifications:</label>
+                    <input id="notifications-5" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label id="owner-label-5" for="owner-5" class="col-sm-5">Owner:</label>
+                    <input id="owner-5" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label for="PARV-5"><input type="checkbox" id="PARV-5"> This person is subject to a PARV order</label>
+                  </div>
+                  <div class="form-group">
+                    <button class="button save-changes">Save changes</button>
+                    <a class="view-application" href="2-ebf-adjudicator.html">View application</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- ///// Admin Application Item - 5 - End //// -->
+
+              <!-- ///// Admin Application Item - 6 - Start //// -->
+              <div class="row application">
+                <div class="col-sm-4 application-left">
+                  <div class="form-group">
+                    Application ref.<br>
+                    <span class="key-info">MGSU-LAIR-BKT</span>
+                  </div>
+                  <div class="form-group">
+                    Name<br>
+                    <span class="key-info">Dave Jones</span>
+                  </div>
+                </div>
+                <div class="col-sm-8 application-right">
+                  <div class="form-group">
+                    <label id="notifications-label-6" for="notifications-6" class="col-sm-5">Notifications:</label>
+                    <input id="notifications-6" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label id="owner-label-6" for="owner-6" class="col-sm-5">Owner:</label>
+                    <input id="owner-6" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label for="PARV-6"><input type="checkbox" id="PARV-6"> This person is subject to a PARV order</label>
+                  </div>
+                  <div class="form-group">
+                    <button class="button save-changes">Save changes</button>
+                    <a class="view-application" href="2-ebf-adjudicator.html">View application</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- ///// Admin Application Item - 6 - End //// -->
+
+              <!-- ///// Admin Application Item - 7 - Start //// -->
+              <div class="row application">
+                <div class="col-sm-4 application-left">
+                  <div class="form-group">
+                    Application ref.<br>
+                    <span class="key-info">MHAT-ALUE-BKT</span>
+                  </div>
+                  <div class="form-group">
+                    Name<br>
+                    <span class="key-info">Kate Taylor</span>
+                  </div>
+                </div>
+                <div class="col-sm-8 application-right">
+                  <div class="form-group">
+                    <label id="notifications-label-7" for="notifications-7" class="col-sm-5">Notifications:</label>
+                    <input id="notifications-7" name="notifications" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label id="owner-label-7" for="owner-7" class="col-sm-5">Owner:</label>
+                    <input id="owner-7" name="owner" type="text" value="matt.owen@insolvency.gsi.gov.uk" class="col-sm-7" />
+                  </div>
+                  <div class="form-group">
+                    <label for="PARV-7"><input type="checkbox" id="PARV-7"> This person is subject to a PARV order</label>
+                  </div>
+                  <div class="form-group">
+                    <button class="button save-changes">Save changes</button>
+                    <a class="view-application" href="2-ebf-adjudicator.html">View application</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- ///// Admin Application Item - 7 - End //// -->
 
             </div>
 
-
-
           </div>
 
-        </div><!--/col-9-->
+
+
+        </div>
+
+      </div><!--/col-9-->
 
     </div>
 
@@ -553,7 +569,7 @@ a.btn:visited{
   <!-- #EndEditable -->
 
 
-  <footer role="contentinfo" id="footer" class="group js-footer">
+  <footer id="footer" class="group js-footer">
 
     <div class="footer-wrapper">
 
@@ -669,9 +685,9 @@ a.btn:visited{
     // var documentValue, documentID;
     //
     // $(".application .controls-delete").on("click", function (e) {
-  	// 	documentValue = $(this).parents().eq(3).find('.urn').text();
-  	// 	documentID = this.closest('.row').id;
-  	// 	$("#application").text(documentValue);
+    // 	documentValue = $(this).parents().eq(3).find('.urn').text();
+    // 	documentID = this.closest('.row').id;
+    // 	$("#application").text(documentValue);
     // });
     //
     // $(".delete-row").on("click", function (e) {
@@ -714,7 +730,7 @@ a.btn:visited{
 
     ///////////////////////// Save Changes - Start /////////////////////////
 
-    $('#save-changes').click(function(e) {
+    $('.save-changes').click(function(e) {
       e.preventDefault();
       $('#saved').slideToggle('750');
       $('#saved').delay(5000).hide(750);

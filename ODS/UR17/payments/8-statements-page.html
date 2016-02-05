@@ -170,7 +170,7 @@ table td{
 
       <!-- #BeginEditable "content" -->
 
-      <h1 class="form-title heading-large">Payments for application EHBJ-8F3M-KRP7</h1>
+      <h1 class="form-title heading-large">Payments for application</h1>
       <div class="row">
 
         <!-- Main Content Section End -->
@@ -182,8 +182,8 @@ table td{
             <thead>
               <tr>
                 <td class="bolder">Payment method</td>
-                <td class="bolder">Payment reference</td>
-                <td class="bolder">Worldpay reference</td>
+                <!-- <td class="bolder">Payment reference</td> -->
+                <td class="bolder">WorldPay transaction ID</td>
                 <td class="bolder">Date</td>
                 <td class="bolder">Amount</td>
               </tr>
@@ -194,7 +194,7 @@ table td{
             <tfoot>
               <tr>
                 <td></td>
-                <td></td>
+                <!-- <td></td> -->
                 <td></td>
                 <td class="heading-small" style="text-align:right;">Total</td>
                 <td class="heading-small">&pound;<span class="fee_paid">[total]</span></td>
@@ -311,14 +311,14 @@ $(document).ready(function() {
   });
 
   //if an amount of payment has been entered
-  ref = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+  ref = "WorldPay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
   $(".wp-ref").text(ref);
 
   if($.cookie("payment_count")){
     var count= parseInt($.cookie("payment_count"));
     for(i=1; i<=count; i++){
       var row = "<tr><td>"+$.cookie("payment_type"+i);
-      row += "</td><td>"+$.cookie("payment_ref"+i);
+      // row += "</td><td>"+$.cookie("payment_ref"+i);
       row += "</td><td>"+$.cookie("wp-ref"+i);
       row += "</td><td>"+$.cookie("payment_date"+i);
       row += "</td><td>£"+parseFloat($.cookie("payment_amount"+i)).toFixed(2);

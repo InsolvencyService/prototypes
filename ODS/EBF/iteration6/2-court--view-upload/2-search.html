@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -128,256 +128,255 @@
     </div>
   </div>
 
-  <main role="main" id="wrapper">
+  <main id="content">
 
-    <div id="content">
-      <div class="inner-block">
-        <div class="phase-banner">
-          <p>
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
-        </div>
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+          This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+        </p>
       </div>
 
       <!-- #BeginEditable "content" -->
-      <div style="display:block; margin:0 15px !important">
 
-        <div class="col-sm-12">
+      <div class="row">
+        <div class="col-xs-12">
           <div class="govuk-box-highlight awaiting top">
-            <h1 class="bold-large">Welcome to the electronic bankruptcy folder 
-			(EBF)</h1>
-            <p><span id="firstname" class="firstname"></span> <span id="lastname"></span></p>
+            <h1 class="bold-large">Welcome to the electronic bankruptcy folder
+              (EBF)</h1>
+              <p><span id="firstname" class="firstname"></span> <span id="lastname"></span></p>
+            </div>
           </div>
         </div>
 
-        <!-- /////////////////////// Log in New PAT Code - Option 1 - Start /////////////////////// -->
-        <div class="col-sm-6">
+        <div class="row">
+          <!-- /////////////////////// Log in New PAT Code - Option 1 - Start /////////////////////// -->
+          <div class="col-md-6 col-sm-6 col-xs-12">
 
-          <!-- Error Validation Message - Start -->
-          <div class="validation-summary" id="panel-error-empty" style="display:none">
-            <h2>You are missing some log-in details:</h2>
-            <ul>
-              <li><a href="#urn">* Bankruptcy application number</a></li>
-            </ul>
-          </div>
-          <!-- Error Validation Message - End -->
-
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-            <!-- For User research -->
-            <div class="form-group">
-              <p></p>
-              <label id="urn-label" name="urn" for="urn" class="form-label-bold">Request access to a bankruptcy application</label>
-              <div class="form-hint">
-               Enter the application number of the bankruptcy you need access to
-              </div>
-              <input id="urn" name="urn" type="text" value="" class="log-in" />
+            <!-- Error Validation Message - Start -->
+            <div class="validation-summary" id="panel-error-empty" style="display:none">
+              <h2>You are missing some log-in details:</h2>
+              <ul>
+                <li><a href="#urn">* Bankruptcy application number</a></li>
+              </ul>
             </div>
-          </form>
-          <div class="form-navigation form-group">
-            <div>
-              <a href="#" id="next" class="button">Continue</a>
+            <!-- Error Validation Message - End -->
+
+            <form class="form" method="post">
+              <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+
+              <!-- For User research -->
+              <div class="form-group">
+                <p></p>
+                <label id="urn-label" name="urn" for="urn" class="form-label-bold">Request access to a bankruptcy application</label>
+                <div class="form-hint">
+                  Enter the application number of the bankruptcy you need access to
+                </div>
+                <input id="urn" name="urn" type="text" value="" class="log-in" />
+              </div>
+            </form>
+            <div class="form-navigation form-group">
               <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" id="next" class="button">Continue</a>
+                <div>
+                  <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- /////////////////////// Log in New PAT Code - Option 1 - End /////////////////////// -->
+          <!-- /////////////////////// Log in New PAT Code - Option 1 - End /////////////////////// -->
 
-        <!-- /////////////////////// Log in Existing PAT Code - Option 2 - Start /////////////////////// -->
-        <div class="col-sm-6 seperator">
+          <!-- /////////////////////// Log in Existing PAT Code - Option 2 - Start /////////////////////// -->
+          <div class="col-md-6 col-sm-6 col-xs-12 seperator">
 
-          <!-- Error Validation Message - Start -->
-          <div class="validation-summary" id="panel-error-empty-returning" style="display:none">
-            <h2>You are missing some log-in details:</h2>
-            <ul>
-              <li><a href="#urn-returning">* Bankruptcy application number</a></li>
-              <li><a href="#pat-code">* PAT Code</a></li>
-            </ul>
-          </div>
-          <!-- Error Validation Message - End -->
-
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-            <div class="form-group">
-              <p></p>
-              <label id="urn-returning-label" name="urn-returning" for="urn-returning" class="form-label-bold">View a bankruptcy application you already have access to</label>
-              <div class="form-hint">
-                Enter the application number 
-				  for the case</div>
-              <input id="urn-returning" name="urn-returning" type="text" value="" class="log-in" />
+            <!-- Error Validation Message - Start -->
+            <div class="validation-summary" id="panel-error-empty-returning" style="display:none">
+              <h2>You are missing some log-in details:</h2>
+              <ul>
+                <li><a href="#urn-returning">* Bankruptcy application number</a></li>
+                <li><a href="#pat-code">* PAT Code</a></li>
+              </ul>
             </div>
+            <!-- Error Validation Message - End -->
 
-            <div class="form-group">
-              <label id="pat-code-label" name="pat-code" for="pat-code" class="form-label-bold">Enter the personal access token (PAT) </label>
-              <div class="form-hint">
-                  Enter the PAT we sent you for the case
+            <form class="form" method="post">
+              <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+
+              <div class="form-group">
+                <p></p>
+                <label id="urn-returning-label" name="urn-returning" for="urn-returning" class="form-label-bold">View a bankruptcy application you already have access to</label>
+                <div class="form-hint">
+                  Enter the application number
+                  for the case</div>
+                  <input id="urn-returning" name="urn-returning" type="text" value="" class="log-in" />
+                </div>
+
+                <div class="form-group">
+                  <label id="pat-code-label" name="pat-code" for="pat-code" class="form-label-bold">Enter the personal access token (PAT) </label>
+                  <div class="form-hint">
+                    Enter the PAT we sent you for the case
+                  </div>
+                  <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
+                </div>
+
+              </form>
+              <div class="form-navigation form-group">
+                <div>
+                  <a href="#" id="continue" class="button">Continue</a>
+                  <div>
+                    <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+                  </div>
+                </div>
               </div>
-              <input id="pat-code" name="pat-code" type="text" value="" class="log-in" />
-            </div>
 
-          </form>
-          <div class="form-navigation form-group">
-            <div>
-              <a href="#" id="continue" class="button">Continue</a>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
+            </div>
+          </div>
+          <!-- /////////////////////// Log in Existing PAT Code - Option 2 - End /////////////////////// -->
+
+          <!-- #EndEditable -->
+
+        </div>
+      </main>
+
+
+      <footer id="footer" class="group js-footer">
+
+        <div class="footer-wrapper">
+
+          <div class="footer-meta">
+            <div class="footer-meta-inner">
+
+              <ul class="footer__nav" style="width:100%">
+                <li class="small-btm-margin" style="text-align:left; display:block">
+                  <a class="bold-medium" id="email-link" href="../../email.html">Contact us</a>
+                </li>
+              </ul>
+              <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+                <li class="footer__link" style=" ">
+                  <a href="../../../privacy.html">Privacy</a>
+                </li>
+                <li class="footer__link" style="">
+                  <a href="../../../cookies.html">Cookies</a>
+                </li>
+                <li class="footer__link" style=" ">
+                  Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a>
+                </li>
+              </ul>
+
+              <div class="open-government-licence">
+                <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+                <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
               </div>
             </div>
-          </div>
 
-        </div>
-        <!-- /////////////////////// Log in Existing PAT Code - Option 2 - End /////////////////////// -->
-
-    </div>
-
-      <!-- #EndEditable -->
-
-    </div>
-  </main>
-
-
-  <footer role="contentinfo" id="footer" class="group js-footer">
-
-    <div class="footer-wrapper">
-
-      <div class="footer-meta">
-        <div class="footer-meta-inner">
-
-          <ul class="footer__nav" style="width:100%">
-            <li class="small-btm-margin" style="text-align:left; display:block">
-              <a class="bold-medium" id="email-link" href="../../email.html">Contact us</a>
-            </li>
-          </ul>
-          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-            <li class="footer__link" style=" ">
-              <a href="../../../privacy.html">Privacy</a>
-            </li>
-            <li class="footer__link" style="">
-              <a href="../../../cookies.html">Cookies</a>
-            </li>
-            <li class="footer__link" style=" ">
-              Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a>
-            </li>
-          </ul>
-
-          <div class="open-government-licence">
-            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+            <div class="copyright">
+              <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+            </div>
           </div>
         </div>
 
-        <div class="copyright">
-          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-        </div>
-      </div>
+      </footer>
+
+      <!--end footer-->
+
+      <div class="app-error hidden" id="global-app-error"></div>
+      <!--
+      <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+      <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+
+      <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+      <script type="text/javascript" src="assets/javascripts/application.js"></script>
+    -->
+    <script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
+
+    <!-- #BeginEditable "scripts" -->
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+      var url      = window.location.href;     // Returns full URL
+      var pathname = window.location.pathname; // Returns path only
+      $("#email-link").on("click", function (e) {
+        $.cookie("url", url, {path:'/'});
+        $.cookie("pathname", pathname, {path:'/'});
+      });
+
+      $("#next").on("click", function (e) {
+        e.preventDefault();
+        //alert($("#amount").val());
+        if ($("#urn").val() == "") {
+          $("#panel-error-empty").show();
+          (window.location.replace("#panel-error-empty"));
+        }
+
+        if ($("#urn").val()) {
+          (window.location.replace("3-pat-email.html"));
+        }
+
+        $.cookie("urn", $("#urn").val(), {path:'/'});
+
+      });
+
+      $("#continue").on("click", function (e) {
+        e.preventDefault();
+        //alert($("#amount").val());
+        if ($("#urn").val() == "") {
+          $("#panel-error-empty-returning").show();
+          (window.location.replace("#panel-error-empty-returning"));
+        }
+
+        if ($("#urn-returning, #pat-code").val()) {
+          (window.location.replace("6-ebf-list-view-upload.html"));
+        }
+
+        $.cookie("urn-returning", $("#urn-returning").val(), {path:'/'});
+
+      });
+
+      if ($.cookie("email-address")) {
+        $("#email-address").text($.cookie("email-address")).addClass("bolder");
+      }
+
+      if ($.cookie("firstname")) {
+        $("#firstname").text($.cookie("firstname")).addClass("bolder");
+        $(".firstname").text($.cookie("firstname")).addClass("bolder");
+      }
+
+      if ($.cookie("lastname")) {
+        $("#lastname").text($.cookie("lastname")).addClass("bolder");
+      }
+
+
+
+
+    });
+
+    function stripped(urn){
+      return urn.replace(/[\. ,:-]+/g, "");
+    }
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    </script>
+    <!-- #EndEditable -->
+
+
+
+
+    <div id="window-resizer-tooltip" style="display: none;">
+      <a href="/claims/start#" title="Edit settings"
+      style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
+      <span class="tooltipTitle">Window size: </span>
+      <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
+      <br><span class="tooltipTitle">Viewport size: </span>
+      <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span>
     </div>
-
-  </footer>
-
-  <!--end footer-->
-
-  <div class="app-error hidden" id="global-app-error"></div>
-  <!--
-  <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-  <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
-
-  <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-  <script type="text/javascript" src="assets/javascripts/application.js"></script>
--->
-<script type="text/javascript" src="../../../assets/js/bootstrap-switch/jquery.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
-
-<!-- #BeginEditable "scripts" -->
-<script type="text/javascript">
-
-$(document).ready(function() {
-  var url      = window.location.href;     // Returns full URL
-  var pathname = window.location.pathname; // Returns path only
-  $("#email-link").on("click", function (e) {
-    $.cookie("url", url, {path:'/'});
-    $.cookie("pathname", pathname, {path:'/'});
-  });
-
-  $("#next").on("click", function (e) {
-    e.preventDefault();
-    //alert($("#amount").val());
-    if ($("#urn").val() == "") {
-      $("#panel-error-empty").show();
-      (window.location.replace("#panel-error-empty"));
-    }
-
-    if ($("#urn").val()) {
-      (window.location.replace("3-pat-email.html"));
-    }
-
-    $.cookie("urn", $("#urn").val(), {path:'/'});
-
-  });
-
-  $("#continue").on("click", function (e) {
-    e.preventDefault();
-    //alert($("#amount").val());
-    if ($("#urn").val() == "") {
-      $("#panel-error-empty-returning").show();
-      (window.location.replace("#panel-error-empty-returning"));
-    }
-
-    if ($("#urn-returning, #pat-code").val()) {
-      (window.location.replace("6-ebf-list-view-upload.html"));
-    }
-
-    $.cookie("urn-returning", $("#urn-returning").val(), {path:'/'});
-
-  });
-
-  if ($.cookie("email-address")) {
-    $("#email-address").text($.cookie("email-address")).addClass("bolder");
-  }
-
-  if ($.cookie("firstname")) {
-    $("#firstname").text($.cookie("firstname")).addClass("bolder");
-    $(".firstname").text($.cookie("firstname")).addClass("bolder");
-  }
-
-  if ($.cookie("lastname")) {
-    $("#lastname").text($.cookie("lastname")).addClass("bolder");
-  }
-
-
-
-
-});
-
-function stripped(urn){
-return urn.replace(/[\. ,:-]+/g, "");
-}
-
-function getParameterByName(name) {
-name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-results = regex.exec(location.search);
-return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-</script>
-<!-- #EndEditable -->
-
-
-
-
-<div id="window-resizer-tooltip" style="display: none;">
-  <a href="/claims/start#" title="Edit settings"
-  style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
-  <span class="tooltipTitle">Window size: </span>
-  <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
-  <br><span class="tooltipTitle">Viewport size: </span>
-  <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span>
-</div>
-</body><!-- #EndTemplate -->
-</html>
+  </body><!-- #EndTemplate -->
+  </html>

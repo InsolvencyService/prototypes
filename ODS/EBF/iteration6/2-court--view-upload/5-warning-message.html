@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -128,9 +128,8 @@
     </div>
   </div>
 
-  <main role="main" id="wrapper">
+  <main id="content">
 
-    <div id="content">
       <div class="inner-block">
         <div class="phase-banner">
           <p>
@@ -138,38 +137,39 @@
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
           </p>
         </div>
-      </div>
 
       <!-- #BeginEditable "content" -->
-      <div style="display:block; margin:0 30px !important">
-        <h1 class="heading-large">Continue with access to: <span id="urn"></span></h1>
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="heading-large">Continue with access to: <span id="urn"></span></h1>
+
+          <div class="well">
+            <p>Hi <span class="firstname"></span>,</p>
+            <p>You are about to access the electronic bankruptcy folder for:</p>
+            <p>
+            	<span class="bolder">SCARLETT, Kim</span><br>
+            	110 High Street, Newhall, Birmingham B4 3TT<br>
+            	Date of birth: 1 May 1992<br>
+            </p>
+
+            <p>Application number: <span class="urn"></span></p>
+
+            <p class="heading-small">You will only have 15 days to view this bankruptcy application. After that time you will
+              need to request a new personal access token.</p>
+              <br>
+
+            <p>By continuing forward from this page, you are confirming that you have a right to access this case are
+            doing so for legitimate reasons. </p>
+
+            <h2 class="heading-medium">Are you sure you want to continue?</h2>
+
+          </div>
+        </div>
       </div>
 
-      <div class="inner-block well">
-        <p>Hi <span class="firstname"></span>,</p>
-        <p>You are about to access the electronic bankruptcy folder for:</p>
-        <p>
-        	<span class="bolder">SCARLETT, Kim</span><br>
-        	110 High Street, Newhall, Birmingham B4 3TT<br>
-        	Date of birth: 1 May 1992<br>
-        </p>
-
-        <p>Application number: <span class="urn"></span></p>
-
-        <p class="heading-small">You will only have 15 days to view this bankruptcy application. After that time you will
-          need to request a new personal access token.</p>
-          <br>
-
-        <p>By continuing forward from this page, you are confirming that you have a right to access this case are
-        doing so for legitimate reasons. </p>
-              
-        <h2 class="heading-medium">Are you sure you want to continue?</h2>
-
-      </div>
-
-      <div style="display:block; margin:0 30px !important">
-        <div class="form-navigation form-group">
-          <div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-navigation form-group">
             <a href="6-ebf-list-view-upload.html" id="continue" class="button">Yes - continue</a>
             <div>
               <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">No - go back</a>

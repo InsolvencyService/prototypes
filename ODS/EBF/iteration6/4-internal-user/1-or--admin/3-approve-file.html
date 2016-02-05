@@ -137,7 +137,7 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -163,9 +163,9 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <div id="content">
+  <main id="content">
     <!-- #BeginEditable "content" -->
-    <div style="display:block; margin:0 30px 0 30px !important">
+    <div class="inner-block">
 
       <form>
         <fieldset>
@@ -174,37 +174,37 @@ $(document).ready(function() {
             <h1 class="form-title heading-xlarge" >Index upload</h1>
             <p>The file below was uploaded by a third party and requires approval. </p>
             <div class="row form-group">
-              <div class="col-sm-3" ><label for="document-name">File name</label></div>
-              <div class="col-sm-9 bolder"><input type="text" id="document-name" class="form-control-3-4"></div>
+              <div class="col-xs-4"><label for="document-name">File name</label></div>
+              <div class="col-xs-8 bolder"><input type="text" id="document-name" class="form-control-3-4"></div>
             </div>
 
             <div class="row form-group bolder">
-              <div class="col-sm-3">
+              <div class="col-xs-4">
                 File type
               </div>
-              <div class="col-sm-9" id="document_type">
+              <div class="col-xs-8" id="document_type">
                 <label><input id="Document" type="radio" name="document-type" value="Document" checked="checked" /> <i class="label label-info label-as-badge">Document</i></label>
                 <label><input id="Notification" type="radio" name="document-type" value="Notification" /> <i class="label label-success label-as-badge">Notification</i></label>
               </div>
             </div>
 
             <div class="row form-group bolder">
-              <div class="col-sm-3" >Created by</div>
-              <div class="col-sm-9 bolder" id="document-creator"></div>
+              <div class="col-xs-4" >Created by</div>
+              <div class="col-xs-8 bolder" id="document-creator"></div>
             </div>
             <div class="row form-group">
-              <div class="col-sm-3"><label for="document-description">Description</label></div>
-              <div class="col-sm-9 bolder"><textarea rows="5" id="document-description" class="form-control-3-4"></textarea></div>
+              <div class="col-xs-4"><label for="document-description">Description</label></div>
+              <div class="col-xs-8 bolder"><textarea rows="5" id="document-description" class="form-control-3-4"></textarea></div>
             </div>
             <div class="row form-group bolder">
-              <div class="col-sm-3" >Uploaded by</div>
-              <div class="col-sm-9" ></div>
+              <div class="col-xs-4" >Uploaded by</div>
+              <div class="col-xs-8" ></div>
             </div>
             <div class="row form-group bolder">
-              <div class="col-sm-3" style="padding-top:15px">
+              <div class="col-xs-4" style="padding-top:15px">
                 Case under PARV?
               </div>
-              <div class="col-sm-9" style="font-weight:bold">
+              <div class="col-xs-8" style="font-weight:bold">
                 <label for="parv"><input type="checkbox" id="parv"> Add document restritions</label>
                 <div id="restricted-people">
                   <div>
@@ -235,8 +235,8 @@ $(document).ready(function() {
               </div>
             </div>
             <div class="row bolder" >
-              <div class="col-sm-3" style="padding-top:15px">Uploaded on</div>
-              <div class="col-sm-9 bolder" id="document-date">2016-08-26</div>
+              <div class="col-xs-4" style="padding-top:15px">Uploaded on</div>
+              <div class="col-xs-8 bolder" id="document-date">2016-08-26</div>
             </div>
             <p><br></p>
             <div class="row">
@@ -282,7 +282,7 @@ $(document).ready(function() {
 
     </div>
     <!-- #EndEditable -->
-  </div>
+  </main>
 
   <footer role="contentinfo" id="footer" class="group js-footer">
     <div class="footer-wrapper">

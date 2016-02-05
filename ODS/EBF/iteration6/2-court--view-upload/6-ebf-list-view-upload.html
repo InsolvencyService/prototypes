@@ -126,7 +126,7 @@
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -152,9 +152,8 @@
     </div>
   </div>
 
-  <main role="main" id="wrapper">
+  <main id="content">
 
-    <div id="content">
       <div class="inner-block">
 
         <div class="phase-banner clearfix">
@@ -172,13 +171,13 @@
           <h1 class="form-title heading-large">Electronic bankruptcy folder: <span id="urn"></span><span id="urn-returning"></span></h1>
           <div class="intro-banner">
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-md-8 col-sm-8 col-xs-12">
                 <p>Below is a list of the documents associated with this bankruptcy application.</p>
                 <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
                 <p>Time remaining to view files: <span class="heading-small">14 days</span></p>
 
               </div>
-              <div class="col-sm-4">
+              <div class="col-md-4 col-sm-4 col-xs-12">
                 <!-- Panel Indent - Start -->
                 <div class="panel-indent">
                   <p><a href="7-upload.html">Upload a new document</a></p>
@@ -191,41 +190,25 @@
 
           <hr>
           <!-- Navbar - Start -->
-          <div class="key-container">
-            <p class="label-key">Rejected<span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Document rejected">&nbsp;</span></p>
-            <p class="label-key">Awaiting approval<span class="label label-success awaiting indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Awaiting Approval">&nbsp;</span></p>
-            <p class="label-key">Approved <span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Document approved">&nbsp;</span></p>
+          <div class="navbar navbar-default row">
+            <div class="col-md-6 col-sm-4 col-xs-12">
+              <div id="bs-example-navbar-collapse-1">
+                <form action="#" method="get" class="navbar-form navbar-left" role="search">
+                  <div class="input-group">
+                    <input id="search" type="text" class="form-control" placeholder="Search for documents..." name="q" required="">
+                    <span class="input-group-btn">
+                      <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-8 col-xs-12">
+              <p class="label-key">Rejected<span class="label label-info action indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Document rejected">&nbsp;</span></p>
+              <p class="label-key">Awaiting approval<span class="label label-success awaiting indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Awaiting Approval">&nbsp;</span></p>
+              <p class="label-key">Approved <span class="label label-success indicator" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Document approved">&nbsp;</span></p>
+            </div>
           </div>
-          <nav class="navbar navbar-default" role="navigation">
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <form action="#" method="get" class="navbar-form navbar-left" role="search">
-                <div class="input-group">
-                  <input id="search" type="text" class="form-control" placeholder="Search for documents..." name="q" required="">
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                  </span>
-                </div>
-              </form>
-              <ul class="pagination see-all">
-                <li><a href="#">See all</a></li>
-              </ul>
-              <ul class="pagination">
-                <!-- <li>
-                <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li> -->
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
       <!-- Navbar - End -->
 
       <!-- Table - Start -->
@@ -298,34 +281,9 @@
 
       <!-- Table - End -->
 
-      <!-- Navbar - Start -->
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="pagination see-all">
-            <li><a href="#">See all</a></li>
-          </ul>
-          <ul class="pagination">
-            <!-- <li>
-            <a href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li> -->
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li>
-          <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- Navbar - End -->
 
   <!-- #EndEditable -->
 
-</div>
 </div>
 </main>
 
@@ -437,7 +395,7 @@ $(document).ready(function() {
 
       row += '<td>';
       row += '<label for="name" class="control-label">';
-      row += '<a href="#"><span class="text-info" id="document-title">'+ doc_filename +'</span></a>';
+      row += '<a href="../SOA-Document.pdf"><span class="text-info" id="document-title">'+ doc_filename +'</span></a>';
       row += '</label>';
       row += '<input type="text" class="input-medium" style="display:none;" placeholder="'+ doc_filename +'">';
       row += '</td>';

@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -128,70 +128,63 @@
     </div>
   </div>
 
-  <main role="main" id="wrapper">
+  <main id="content">
 
-    <div id="content">
-      <div class="inner-block">
-        <div class="phase-banner">
-          <p>
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-          </p>
-        </div>
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+          This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+        </p>
       </div>
 
       <!-- #BeginEditable "content" -->
-      <div style="display:block; margin:0 30px !important">
 
-        <h1 class="form-title heading-large">Identification check continued...</h1>
-        <div class="row">
-          <div class="col-sm-8">
-            <!-- Error Validation Message - Start -->
-            <div class="validation-summary" id="panel-error-empty" style="display:none">
-              <h2>You are missing some log-in details:</h2>
-              <ul>
-                <li><a href="#amount-owed">* Amount owed</a></li>
-                <li><a href="#account-ref">* Account Reference</a></li>
-              </ul>
+      <h1 class="form-title heading-large">Identification check continued...</h1>
+      <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <!-- Error Validation Message - Start -->
+          <div class="validation-summary" id="panel-error-empty" style="display:none">
+            <h2>You are missing some log-in details:</h2>
+            <ul>
+              <li><a href="#amount-owed">* Amount owed</a></li>
+              <li><a href="#account-ref">* Account Reference</a></li>
+            </ul>
+          </div>
+          <!-- Error Validation Message - End -->
+
+          <p>We just need a couple more pieces of information.</p>
+          <p>PLease leave them blank if they do not apply to you.</p>
+          <p><br></p>
+
+          <form class="form" method="post">
+            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+
+            <!-- For User research -->
+            <div class="form-group">
+              <label id="amount-owed-label" for="amount-owed" class="form-label-bold">Amount owed</label>
+              <input id="amount-owed" name="amount-owed" type="text" value="" class="log-in" />
             </div>
-            <!-- Error Validation Message - End -->
-
-            <p>We just need a couple more pieces of information.</p>
-            <p>PLease leave them blank if they do not apply to you.</p>
-            <p><br></p>
-
-            <form class="form" method="post">
-              <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-              <!-- For User research -->
-              <div class="form-group">
-                <label id="amount-owed-label" for="amount-owed" class="form-label-bold">Amount owed</label>
-                <input id="amount-owed" name="amount-owed" type="text" value="" class="log-in" />
-              </div>
-              <div class="form-group">
-                <label id="account-ref-label" for="account-ref" class="form-label-bold">Account reference</label>
-                <input id="account-ref" name="account-ref" type="text" value="" class="log-in" />
-              </div>
-
-            </form>
-
-            <p><br></p>
-
-            <div class="form-navigation form-group">
-              <div>
-                <a href="#" id="next" class="button">Continue</a>
-                <div>
-                  <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-                </div>
-              </div>
+            <div class="form-group">
+              <label id="account-ref-label" for="account-ref" class="form-label-bold">Account reference</label>
+              <input id="account-ref" name="account-ref" type="text" value="" class="log-in" />
             </div>
 
+          </form>
+
+          <p><br></p>
+
+          <div class="form-navigation form-group">
+            <a href="#" id="next" class="button">Continue</a>
+            <br>
+            <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
           </div>
-          <div class="col-sm-4">
-          </div>
+
         </div>
-        <!-- #EndEditable -->
-    </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+        </div>
+      </div>
+      <!-- #EndEditable -->
 
     </div>
   </main>

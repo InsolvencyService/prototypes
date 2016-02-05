@@ -206,7 +206,7 @@ table td{
           </tr>
           <tr>
             <td>WorldPay Transaction ID</td>
-            <td class="heading-small"><span id="wp-ref">Worldpay-1234</span></td>
+            <td class="heading-small"><span id="wp-ref">WorldPay-1234</span></td>
           </tr>
         </table>
 
@@ -293,7 +293,7 @@ table td{
 
 <!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
-var type = "World Pay";
+var type = "WorldPay";
 var ref, paydate, payment_made, total_fee_paid, fee_remaining, cookiecount;
 
 
@@ -309,7 +309,7 @@ $(document).ready(function() {
   $(".payment-ref").text(ref);
 
   //if an amount of payment has been entered
-  world = "Worldpay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+  world = "WorldPay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
   $("#wp-ref").text(world);
 
   if ($.cookie("amount")) {
