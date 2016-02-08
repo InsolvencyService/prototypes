@@ -162,23 +162,24 @@
 
  	<div class="inner-block">
 	 	<h1 class="form-title heading-large">6. Undervalue transactions and preferred creditors</h1>
+
 	 	<div id="tablesummary" class="loop">
-	 		<label id="table_label" class="form-label-bold">Preferred creditor summary</label>
+	 		<label id="table_label" class="form-label-bold">Undervalue transaction summary</label>
 	 		<table style="width:80%">
 	 			<thead>
-	 				<th>Creditor</th>
-	 				<th>Amount paid</th>
-	 				
+	 				<th>Property</th>
+	 				<th>Sold/given to</th>
+	 				<th>Received</th>
 	 				<th>Date</th>
 	 				<th></th>
 	 			</thead>
 	 			<tbody>
 		 			<tr>
-		 				
+		 				<td>3 bedroom house</td>
 		 				<td>Fred Smith</td>
+		 				<td>£89,000.00</td>
+		 				<td>01/02/2015</td>
 		 				
-		 				<td>£890.00</td>
-		 				<td>01/02/2014</td>
 		 				<td><a>Edit</a> <a>Delete</a></td>
 		 			</tr>
 	 			</tbody>
@@ -191,8 +192,7 @@
 			
 			<div class="form-group">
 				<fieldset class="inline" id="previoustrade">
-				<label id="_label" class="form-label-bold text">Have you made any extra payments to some creditors but not others (called preferential payments) in the last 2 years?</label>
-				<p class="form-hint">Do not include payments made by any third parties.</p>
+				<label id="_label" class="form-label-bold">Have you given away any asset or sold it for less than its true value in the last 2 years?</label>
 				
 					<div class="form-group">
 					
@@ -206,29 +206,13 @@
 				</fieldset>
 			</div>
 			
-
 			<div id="pnl_details" style="display:none">
 				
 				<p>&nbsp;</p>
 				
-				<fieldset class="inline" id="relative">
-				<label class="form-label-bold">Did you make this payment to a friend or relative?</label>
-				
-					<div class="form-group">
-					
-						<label for="relative_yes" class="block-label">
-						<input id="relative_yes" value="" name="relative" type="radio">Yes</label>
-						
-						<label for="relative_no" class="block-label">
-						<input id="relative_no" value="" name="relative" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
-				
 				<div class="form-group ">
 				
-					<label id="_label" for="creditor_address_line_1" class="form-label-bold">Name of preferred creditor</label>
+					<label id="_label" for="creditor_address_line_1" class="form-label-bold">What was sold or given away?</label>
 					<input id="business name" name="" type="text" value="" />
 					<br/>
 				</div>	
@@ -236,7 +220,7 @@
 				
 				<div id="pnl-date" class="form-group">
 					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">What date did you make the payment to the preferred creditor?</span>
+						<span id="date_of_birth_label" class="form-label-bold">What date did you sell or give away the asset?</span>
 						<span class="form-hint" id="date_of_birth_help">For example 31 08 1976</span>
 						
 						<div class="form-group form-group-day">
@@ -256,148 +240,53 @@
 				<p>&nbsp;</p>
 
 				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">How much did you pay the creditor?</label>
+					<label id="_label" for="value" class="form-label-bold">How much did you receive for the asset?</label>
 					£ <input id="value" name="" type="number" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
-				
-				<fieldset class="inline" >
-				<label class="form-label-bold">Were you insolvent at the time you made the payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="insolventyes" class="block-label">
-						<input id="insolventyes" value="" name="insolvent" type="radio">Yes</label>
-						
-						<label for="insolventno" class="block-label">
-						<input id="insolventno" value="" name="insolvent" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
-
-				<fieldset class="inline" >
-				<label class="form-label-bold">Did you become insolvent as a result of this payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="result_yes" class="block-label">
-						<input id="result_yes" value="" name="result" type="radio">Yes</label>
-						
-						<label for="result_no" class="block-label">
-						<input id="result_no" value="" name="result" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
 
 				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">Why did you make the payment?</label>
-					<input  class="form-control-3-4" type="text" value="" />
+					<label id="_label" for="why" class="form-label-bold">Why did you sell or give away the asset?</label>
+					<input id="why" name="" type="text" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
-				
-				<fieldset class="inline" >
-				<label class="form-label-bold">Was there any payment agreement in place when you made this payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="agreement_yes" class="block-label">
-						<input id="agreement_yes" value="" name="agreement" type="radio">Yes</label>
-						
-						<label for="agreement_no" class="block-label">
-						<input id="agreement_no" value="" name="agreement" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
 
 				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">Why didn't you split the funds between your other creditors?</label>
-					<input  class="form-control-3-4" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
-				
-				<fieldset class="inline" >
-				<label class="form-label-bold">Did the creditor put you under pressure to make this payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="pressure_yes" class="block-label">
-						<input id="pressure_yes" value="" name="pressure" type="radio">Yes</label>
-						
-						<label for="agreement_no" class="block-label">
-						<input id="pressure_no" value="" name="pressure" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
-				
-				
-				<fieldset class="inline" id="relative_debt" style="display:none">
-				<label class="form-label-bold">Do you have evidence of the debt you had with your friend or relative?</label>
-				
-					<div class="form-group">
-					
-						<label for="relative_debt_yes" class="block-label">
-						<input id="relative_debt_yes" value="" name="relative_debt" type="radio">Yes</label>
-						
-						<label for="relative_debt_no" class="block-label">
-						<input id="relative_debt_no" value="" name="relative_debt" type="radio">No</label>
-						
-					</div>
-					<p>&nbsp;</p>
-				</fieldset>
-				
-
-				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">How did you get the funds to make the payment?</label>
-					<input  class="form-control-3-4" type="text" value="" />
+					<label id="_label" for="who" class="form-label-bold">Who did you sell or give the asset to?</label>
+					<input id="who" name="" type="text" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
 				
 				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">Did you have any funds remaining after the payment?</label>
-					<input  class="form-control-3-4" type="text" value="" />
+					<label id="_label" for="market" class="form-label-bold">What was the market value of the asset?</label>
+					£ <input id="market" name="" type="text" value="" />
 					<br/>
 				</div>	
 				<p>&nbsp;</p>
 
-				
-				</div>
-				<p id="other_payments"><a href="preferred.html?loop=true">I have made payments to another creditor in the last two years?</a></p>
+				<div class="form-group ">
+					<label id="_label" for="proceeds" class="form-label-bold">What happened to the proceeds of the sale?</label>
+					<input id="proceeds" name="" class="form-control-3-4" type="text" value="" />
+					<br/>
+				</div>	
+				<p>&nbsp;</p>
 
-
-
-<!---
 				<div class="form-group">
-					<label for="commments" class="form-label-bold">Additional comments</label>
+					<label for="commments" class="form-label-bold">Provide any further details</label>
+					<p class="form-hint">For example, condition or identification marks</p>
 					<textarea id="comments" rows="6" cols="60"></textarea>
 				</div>
 			
-				<p>&nbsp;</p>
-				<div class="form-group" id="also_employed">
-					<fieldset class="inline">
-					<label class="form-label-bold">Did you have any other preferred creditors?</label>
-						<div id="pnl-role" class="form-group">
-						
-							<label id="role_label" for="otheremployment" class="block-label">
-							<input id="otheremployment" value="1" name="role" type="radio">Yes</label>
-							
-							<label id="role_label" for="noemploy" class="block-label">
-							<input id="noemploy" value="0" name="role" type="radio">No</label>
-							
-						</div>
-					</fieldset>
-				</div>
 				
---->			
+					<a id="also_employed" href="property.html?loop=true" >I have sold or given away other assets that I wish to add?</a>
 				
-			
+				
+				
+				
+			</div>
 			
 			
 	
@@ -407,11 +296,9 @@
 		<div class="btn-group btn-group-lg">
 			<a class="btn btn-default" href="javascript:history.go(-1)"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
 			<a class="btn btn-default" href="../application.html">Return to overview</a>
-			<a class="btn btn-success" id="next" href="../section_creditors/1.html">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+			<a class="btn btn-success" id="next" href="preferred.html">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 		</div>
-
 		<p>&nbsp;</p>
-
 	</div>       
 </div>
 <!-- #EndEditable -->
@@ -473,53 +360,25 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	var self = getParameterByName("self");
-	$("#other_payments").hide();
 	
 	
 	if (getParameterByName("loop") == "true"){
-		
-		$("#previoustrade").show();
-	}	
+		$("#pnl_details").show();
+		$("#previoustrade").hide();
+	}
+	
+	
 });
 $('#previoustrade :radio').click(function() {
-	$.cookie('section5', "inprogress", {path: '/'});
+	$.cookie('section6', "inprogress", {path: '/'});
 	if($("#previousyes").prop('checked')==true){
 		$("#pnl_details").show();
-		$("#other_payments").show();
-
-	
 	}	
 	else{
 		$("#pnl_details").hide();
-		$("#next").attr("href", "../section_creditors/1.html");
-		$("#other_payments").show();
-
 	}
 });
 
-
-
-$('#relative :radio').click(function() {
-	if($("#relative_yes").prop('checked')==true){
-		$("#relative_debt").show();
-	}	
-	else{
-		$("#relative_debt").hide();
-		$("#next").attr("href", "../section_creditors/1.html");
-
-	}
-});
-
-
-$('#also_employed :radio').click(function() {
-	if($("#otheremployment").prop('checked')==true){
-		$("#next").prop("href", "preferred.html?loop=true");
-		
-	}	
-	else{
-		$("#next").attr("href", "../section_creditors/1.html");
-	}
-});
 
 
 function getParameterByName(name) {

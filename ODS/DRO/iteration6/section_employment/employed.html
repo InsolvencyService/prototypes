@@ -99,6 +99,7 @@
 	color:black  !important;
 }
 
+
 </style>
 <!-- #EndEditable -->
 
@@ -161,256 +162,189 @@
  	
 
  	<div class="inner-block">
-	 	<h1 class="form-title heading-large">6. Undervalue transactions and preferred creditors</h1>
+	 	<h1 class="form-title heading-large">3. Employment details</h1>
 	 	<div id="tablesummary" class="loop">
-	 		<label id="table_label" class="form-label-bold">Preferred creditor summary</label>
-	 		<table style="width:80%">
+	 		<label id="table_label" class="form-label-bold">Employment summary</label>
+	 		<table style="width:60%">
 	 			<thead>
-	 				<th>Creditor</th>
-	 				<th>Amount paid</th>
-	 				
-	 				<th>Date</th>
+	 				<th>Role</th>
+	 				<th>Company</th>
 	 				<th></th>
 	 			</thead>
 	 			<tbody>
 		 			<tr>
-		 				
-		 				<td>Fred Smith</td>
-		 				
-		 				<td>£890.00</td>
-		 				<td>01/02/2014</td>
+		 				<td>Postman</td>
+		 				<td>Royal Mail</td>
 		 				<td><a>Edit</a> <a>Delete</a></td>
 		 			</tr>
 	 			</tbody>
 	 		</table>
-	 		<p>&nbsp;</p>
+	 		<p>&nbsp;</p><p>&nbsp;</p>
 	 	</div>
 	 	
 		<form class="form" method="post">
+			<div class="form-group ">
+				<label id="_label" for="creditor_address_line_1" class="form-label-bold">What is your job title</label>
+				<input id="" name="" class="form-control-1-2" type="text" value="" />
+				<br/>
+			</div>
+			<p>&nbsp;</p>
 			
-			
-			<div class="form-group">
-				<fieldset class="inline" id="previoustrade">
-				<label id="_label" class="form-label-bold text">Have you made any extra payments to some creditors but not others (called preferential payments) in the last 2 years?</label>
-				<p class="form-hint">Do not include payments made by any third parties.</p>
-				
-					<div class="form-group">
+			<div class="form-group" id="employment_role">
+				<fieldset class="inline">
+				<legend class="form-label-bold">What is your job role</legend>
+					<div id="pnl_role" class="form-group">
 					
-						<label for="previousyes" class="block-label">
-						<input id="previousyes" value="" name="previous" type="radio">Yes</label>
+						<label id="role_label" for="a" class="block-label">
+						<input id="a" value="1" name="role" type="radio">Managers &amp; Senior Officials</label>
 						
-						<label for="previousno" class="block-label">
-						<input id="previousno" value="" name="previous" type="radio">No</label>
+						<label id="role_label" for="s" class="block-label">
+						<input id="s" value="0" name="role" type="radio">Professionals</label>
+						
+						<label id="role_label" for="d" class="block-label">
+						<input id="d" value="0" name="role" type="radio">Administrative &amp; Technical</label>
+						
+						<label id="role_label" for="f" class="block-label">
+						<input id="f" value="0" name="role" type="radio">Skilled Trades</label>
+						
+						<label id="role_label" for="g" class="block-label">
+						<input id="g" value="0" name="role" type="radio">Personal Service</label>
+						
+						<label id="role_label" for="h" class="block-label">
+						<input id="h" value="0" name="role" type="radio">Sales &amp; Customer Service</label>
+						
+						<label id="role_label" for="j" class="block-label">
+						<input id="j" value="0" name="role" type="radio">Process, Plant &amp; Machine Operatives</label>
+						
+						<label id="role_label" for="k" class="block-label">
+						<input id="k" value="0" name="role" type="radio">Elementary Occupation</label>
 						
 					</div>
 				</fieldset>
 			</div>
 			
-
-			<div id="pnl_details" style="display:none">
-				
-				<p>&nbsp;</p>
-				
-				<fieldset class="inline" id="relative">
-				<label class="form-label-bold">Did you make this payment to a friend or relative?</label>
-				
-					<div class="form-group">
+			<p>&nbsp;</p>
+			<div id="pnl-date" class="form-group">
+				<fieldset  class="date-of-birth">
+					<span id="date_of_birth_label" class="form-label-bold">Date of employment began</span>
+					<span class="form-hint" id="date_of_birth_help">For example 31 08 1976</span>
 					
-						<label for="relative_yes" class="block-label">
-						<input id="relative_yes" value="" name="relative" type="radio">Yes</label>
-						
-						<label for="relative_no" class="block-label">
-						<input id="relative_no" value="" name="relative" type="radio">No</label>
-						
+					<div class="form-group form-group-day">
+						 <label id="date_of_birth_label.day" for="date_of_birth.day" >Day</label>
+					<input id="day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-month">
+						 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
+					<input id="month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
+					</div>
+					<div class="form-group form-group-year">
+					<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
+					<input id="year" name="date_of_birth.year" type="number" min="1900" max="2100" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 					</div>
 				</fieldset>
-				<p>&nbsp;</p>
-				
-				<div class="form-group ">
-				
-					<label id="_label" for="creditor_address_line_1" class="form-label-bold">Name of preferred creditor</label>
-					<input id="business name" name="" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
-				
-				<div id="pnl-date" class="form-group">
-					<fieldset  class="date-of-birth">
-						<span id="date_of_birth_label" class="form-label-bold">What date did you make the payment to the preferred creditor?</span>
-						<span class="form-hint" id="date_of_birth_help">For example 31 08 1976</span>
-						
-						<div class="form-group form-group-day">
-							 <label id="date_of_birth_label.day" for="date_of_birth.day" >Day</label>
-						<input id="day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div>
-						<div class="form-group form-group-month">
-							 <label id="date_of_birth_label.month" for="date_of_birth.month">Month</label>
-						<input id="month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div>
-						<div class="form-group form-group-year">
-						<label id="date_of_birth_label.year" for="date_of_birth.year">Year</label>
-						<input id="year" name="date_of_birth.year" type="number" min="1900" max="2100" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
-						</div>
-					</fieldset>
-				</div>
-				<p>&nbsp;</p>
+			</div>
+			<p>&nbsp;</p>
+			<div class="form-group ">
+				<label id="_label" for="creditor_address_line_1" class="form-label-bold">Business name</label>
+				<input id="business name" name="" class="form-control-1-2" type="text" value="" />
+				<br/>
+			</div>	
+			
+			<fieldset class="firsttime inline" id="lookupaddress">
+                <legend class="form-label-bold">
+                    <span class="firsttime">Business address</span>
+                </legend>
 
-				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">How much did you pay the creditor?</label>
-					£ <input id="value" name="" type="number" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
-				
-				<fieldset class="inline" >
-				<label class="form-label-bold">Were you insolvent at the time you made the payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="insolventyes" class="block-label">
-						<input id="insolventyes" value="" name="insolvent" type="radio">Yes</label>
-						
-						<label for="insolventno" class="block-label">
-						<input id="insolventno" value="" name="insolvent" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
+                <span class="form-hint">Enter the first line and postcode of the address. For example, 2 Place Street AB1 2CD</span>
+                <div class="form-group halfwidth">
+                    <label for="name">First line&nbsp;</label>
+                    <input id="name" />
+                </div>
+                <div class="form-group halfwidth">
+                    <label for="postcode">Postcode&nbsp;</label>
+                    <input id="postcode" />
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group">
+                    <a id="add" class="button" href="#">Lookup address</a>&nbsp;
+                    <a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
 
-				<fieldset class="inline" >
-				<label class="form-label-bold">Did you become insolvent as a result of this payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="result_yes" class="block-label">
-						<input id="result_yes" value="" name="result" type="radio">Yes</label>
-						
-						<label for="result_no" class="block-label">
-						<input id="result_no" value="" name="result" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
+                    <br />
+                </div>
+            </fieldset>
 
-				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">Why did you make the payment?</label>
-					<input  class="form-control-3-4" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
+			<div class="repeat" id="fulladdress">
 				
-				<fieldset class="inline" >
-				<label class="form-label-bold">Was there any payment agreement in place when you made this payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="agreement_yes" class="block-label">
-						<input id="agreement_yes" value="" name="agreement" type="radio">Yes</label>
-						
-						<label for="agreement_no" class="block-label">
-						<input id="agreement_no" value="" name="agreement" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
-
-				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">Why didn't you split the funds between your other creditors?</label>
-					<input  class="form-control-3-4" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
-				
-				<fieldset class="inline" >
-				<label class="form-label-bold">Did the creditor put you under pressure to make this payment?</label>
-				
-					<div class="form-group">
-					
-						<label for="pressure_yes" class="block-label">
-						<input id="pressure_yes" value="" name="pressure" type="radio">Yes</label>
-						
-						<label for="agreement_no" class="block-label">
-						<input id="pressure_no" value="" name="pressure" type="radio">No</label>
-						
-					</div>
-				</fieldset>
-				<p>&nbsp;</p>
-				
-				
-				<fieldset class="inline" id="relative_debt" style="display:none">
-				<label class="form-label-bold">Do you have evidence of the debt you had with your friend or relative?</label>
-				
-					<div class="form-group">
-					
-						<label for="relative_debt_yes" class="block-label">
-						<input id="relative_debt_yes" value="" name="relative_debt" type="radio">Yes</label>
-						
-						<label for="relative_debt_no" class="block-label">
-						<input id="relative_debt_no" value="" name="relative_debt" type="radio">No</label>
-						
-					</div>
-					<p>&nbsp;</p>
-				</fieldset>
-				
-
-				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">How did you get the funds to make the payment?</label>
-					<input  class="form-control-3-4" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
-				
-				<div class="form-group ">
-					<label id="_label" for="value" class="form-label-bold">Did you have any funds remaining after the payment?</label>
-					<input  class="form-control-3-4" type="text" value="" />
-					<br/>
-				</div>	
-				<p>&nbsp;</p>
-
-				
-				</div>
-				<p id="other_payments"><a href="preferred.html?loop=true">I have made payments to another creditor in the last two years?</a></p>
-
-
-
-<!---
 				<div class="form-group">
-					<label for="commments" class="form-label-bold">Additional comments</label>
-					<textarea id="comments" rows="6" cols="60"></textarea>
+					<label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
+					<input id="address_line_1" name="address_line_1" type="text" aria-describedby="address_line_1_error address_line_1_help" value="" />
+					<br/>
 				</div>
-			
+				<div class="form-group ">
+					<label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
+					<input id="address_line_2" name="address_line_2" type="text" aria-describedby="address_line_2_error address_line_2_help" value="" />
+					<br/>
+				</div>
+				<div class="form-group ">
+				
+				<label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
+				<input id="address_line_3" name="address_line_3" type="text" aria-describedby="address_line_3_error address_line_3_help" value="" />
+				<br/>
+				</div>
+				<div class="form-group ">
+				
+				<label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+				<input id="address_town" name="address_town" type="text" aria-describedby="address_town_error address_town_help" value="" />
+				<br/>
+				</div>
+				<div class="form-group ">
+				
+				<label id="address_county_label" for="address_county" class="form-label address_county">County</label>
+				<input id="address_county" name="address_county" type="text" aria-describedby="address_county_error address_county_help" value="" />
+				<br/>
+				</div>
+				<div class="form-group ">
+				
+			        <label for="address_post_code" class="form-label address_post_code">Postcode</label>
+			        <input id="address_post_code" name="address_post_code" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
+				<br/>
+				</div>
 				<p>&nbsp;</p>
-				<div class="form-group" id="also_employed">
-					<fieldset class="inline">
-					<label class="form-label-bold">Did you have any other preferred creditors?</label>
-						<div id="pnl-role" class="form-group">
+			</div>
+			
+			
+			<a class="employed" href="employed.html?loop=true" id="also_employed">Save and add another employer</a>
+			
+			<!---
+			<div class="form-group" id="also_employed">
+				<fieldset class="inline">
+				<legend class="form-label-bold">Are you employed by anyone else?</legend>
+					<div id="pnl-role" class="form-group">
+					
+						<label id="role_label" for="otheremployment" class="block-label">
+						<input id="otheremployment" value="1" name="role" type="radio">Yes</label>
 						
-							<label id="role_label" for="otheremployment" class="block-label">
-							<input id="otheremployment" value="1" name="role" type="radio">Yes</label>
-							
-							<label id="role_label" for="noemploy" class="block-label">
-							<input id="noemploy" value="0" name="role" type="radio">No</label>
-							
-						</div>
-					</fieldset>
-				</div>
-				
---->			
-				
-			
-			
-			
+						<label id="role_label" for="noemploy" class="block-label">
+						<input id="noemploy" value="0" name="role" type="radio">No</label>
+						
+					</div>
+				</fieldset>
+			</div>
+			--->
+
 	
 
 		</form>
+		
 		<p>&nbsp;</p>
 		<div class="btn-group btn-group-lg">
 			<a class="btn btn-default" href="javascript:history.go(-1)"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
-			<a class="btn btn-default" href="../application.html">Return to overview</a>
-			<a class="btn btn-success" id="next" href="../section_creditors/1.html">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+			<a class="btn btn-default" href="../application.html?section3=inprogress">Return to overview</a>
+			<a class="btn btn-success" href="previousbusiness.html" id="next">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 		</div>
 
-		<p>&nbsp;</p>
+		
+		
 
 	</div>       
 </div>
@@ -471,64 +405,6 @@
 
 
 <script type="text/javascript">
-$(document).ready(function() {
-	var self = getParameterByName("self");
-	$("#other_payments").hide();
-	
-	
-	if (getParameterByName("loop") == "true"){
-		
-		$("#previoustrade").show();
-	}	
-});
-$('#previoustrade :radio').click(function() {
-	$.cookie('section5', "inprogress", {path: '/'});
-	if($("#previousyes").prop('checked')==true){
-		$("#pnl_details").show();
-		$("#other_payments").show();
-
-	
-	}	
-	else{
-		$("#pnl_details").hide();
-		$("#next").attr("href", "../section_creditors/1.html");
-		$("#other_payments").show();
-
-	}
-});
-
-
-
-$('#relative :radio').click(function() {
-	if($("#relative_yes").prop('checked')==true){
-		$("#relative_debt").show();
-	}	
-	else{
-		$("#relative_debt").hide();
-		$("#next").attr("href", "../section_creditors/1.html");
-
-	}
-});
-
-
-$('#also_employed :radio').click(function() {
-	if($("#otheremployment").prop('checked')==true){
-		$("#next").prop("href", "preferred.html?loop=true");
-		
-	}	
-	else{
-		$("#next").attr("href", "../section_creditors/1.html");
-	}
-});
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 
 </script>
 
