@@ -144,119 +144,158 @@
         </div>
         <!-- .breadcrumb - End -->
 
-        <h1 class="form-title heading-xlarge">Self employed income</h1>
-
         <form class="form" method="post">
           <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-          <p class="lede">Add your business's full accounting details as they appear on your lastest accounts.</p>
-          <br>
-          <p class="lede">If this is your first year trading, please tell us about your earnings and expenses since your business began.</p>
-          <br>
+          <div class="row">
+            <div class="col-xs-12">
 
-          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-          <fieldset class="form-intro">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-5">
-                <label class="heading-large">Accounting details</label>
+              <h1 class="form-title heading-xlarge">Self employed income</h1>
+              <p class="lede">Add your business's full accounting details as they appear on your lastest accounts.</p>
+              <br>
+              <p class="lede">If this is your first year trading, please tell us about your earnings and expenses since your business began.</p>
+              <br>
+
+              <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+              <fieldset class="form-intro">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-5">
+                    <label class="heading-large">Accounting details</label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="heading-small amount">Amount</label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-4">
+                    <label class="heading-small per">per week / month / year</label>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+
+              <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
+              <!-- <fieldset>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-5">
+                    <label for="turnover-amount">Turnover (total income before expenses)</label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 amount">
+                    <label for="turnover-amount">Amount</label>
+                    <div class="currency">&pound;</div>
+                    <input type="text" id="turnover-amount" placeholder="0">
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-4 per">
+                    <label for="per-d1">per week / month / year</label>
+                    <select name="D1" id="per-d1">
+                      <option value="week">per week</option>
+                      <option value="fortnight">per fortnight</option>
+                      <option value="4weeks">per 4 weeks</option>
+                      <option value="month">per month</option>
+                      <option value="quarter">per quarter</option>
+                      <option value="year" selected="selected">per year</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset> -->
+              <!-- ///////////////// Fieldset 1 - End ///////////////// -->
+
+              <!-- ///////////////// Fieldset 2 - Start ///////////////// -->
+              <!-- <fieldset>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-5">
+                    <label for="expenses-amount">Expenses</label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 amount">
+                    <label for="expenses-amount">Amount</label>
+                    <div class="currency">&pound;</div>
+                    <input type="text" id="expenses-amount" placeholder="0">
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-4 per">
+                    <label for="per-d5">per week / month / year</label>
+                    <select name="D5" id="per-d5">
+                      <option value="week">per week</option>
+                      <option value="fortnight">per fortnight</option>
+                      <option value="4weeks">per 4 weeks</option>
+                      <option value="month">per month</option>
+                      <option value="quarter">per quarter</option>
+                      <option value="year" selected="selected">per year</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset> -->
+              <!-- ///////////////// Fieldset 2 - End ///////////////// -->
+
+              <!-- ///////////////// Fieldset 3 - Start ///////////////// -->
+              <fieldset>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-5">
+                    <label for="net-profit-amount">Net profit</label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 amount">
+                    <label for="net-profit-amount">Amount</label>
+                    <div class="currency">&pound;</div>
+                    <input type="text" id="net-profit-amount" class="amount" placeholder="0">
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-4 per">
+                    <label for="per-d6">per week / month / year</label>
+                    <select name="D6" id="per-d6">
+                      <option value="week">per week</option>
+                      <option value="fortnight">per fortnight</option>
+                      <option value="4weeks">per 4 weeks</option>
+                      <option value="month">per month</option>
+                      <option value="quarter">per quarter</option>
+                      <option value="year" selected="selected">per year</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///////////////// Fieldset 3 - End ///////////////// -->
+
+              <div class="panel panel-border-wide">
+                <i class="glyphicon glyphicon-exclamation-sign"></i>
+                <p>Net profit is taking your turnover or amount earn't and deducting the expences incurred by the business, this total give you your Net profit.</p>
               </div>
-              <div class="col-md-3 col-sm-3 col-xs-3">
-                <label class="heading-small amount">Amount</label>
-              </div>
-              <div class="col-md-3 col-sm-3 col-xs-4">
-                <label class="heading-small per">per week / month / year</label>
-              </div>
+
             </div>
-          </fieldset>
-          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+
+              <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+              <fieldset class="form-intro">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-5">
+                    <label class="heading-large">Accounting period</label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="heading-small"></label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-4">
+                    <label class="heading-small"></label>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <p>Blurb about Accounting period</p>
+                </div>
+              </div>
 
 
-          <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
-          <fieldset>
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-5">
-                <label for="turnover-amount">Turnover (total income before expenses)</label>
-              </div>
-              <div class="col-md-3 col-sm-3 col-xs-3 amount">
-                <label for="turnover-amount">Amount</label>
-                <div class="currency">&pound;</div>
-                <input type="text" id="turnover-amount" placeholder="0">
-              </div>
-              <div class="col-md-3 col-sm-3 col-xs-4 per">
-                <label for="per-d1">per week / month / year</label>
-                <select name="D1" id="per-d1">
-                  <option value="week">per week</option>
-                  <option value="fortnight">per fortnight</option>
-                  <option value="4weeks">per 4 weeks</option>
-                  <option value="month">per month</option>
-                  <option value="quarter">per quarter</option>
-                  <option value="year" selected="selected">per year</option>
-                </select>
-              </div>
             </div>
-          </fieldset>
-          <!-- ///////////////// Fieldset 1 - End ///////////////// -->
+          </div>
 
-          <!-- ///////////////// Fieldset 2 - Start ///////////////// -->
-          <fieldset>
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-5">
-                <label for="expenses-amount">Expenses</label>
-              </div>
-              <div class="col-md-3 col-sm-3 col-xs-3 amount">
-                <label for="expenses-amount">Amount</label>
-                <div class="currency">&pound;</div>
-                <input type="text" id="expenses-amount" placeholder="0">
-              </div>
-              <div class="col-md-3 col-sm-3 col-xs-4 per">
-                <label for="per-d5">per week / month / year</label>
-                <select name="D5" id="per-d5">
-                  <option value="week">per week</option>
-                  <option value="fortnight">per fortnight</option>
-                  <option value="4weeks">per 4 weeks</option>
-                  <option value="month">per month</option>
-                  <option value="quarter">per quarter</option>
-                  <option value="year" selected="selected">per year</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-          <!-- ///////////////// Fieldset 2 - End ///////////////// -->
 
-          <!-- ///////////////// Fieldset 3 - Start ///////////////// -->
-          <fieldset>
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-5">
-                <label for="net-profit-amount">Net profit</label>
-              </div>
-              <div class="col-md-3 col-sm-3 col-xs-3 amount">
-                <label for="net-profit-amount">Amount</label>
-                <div class="currency">&pound;</div>
-                <input type="text" id="net-profit-amount" class="amount" placeholder="0">
-              </div>
-              <div class="col-md-3 col-sm-3 col-xs-4 per">
-                <label for="per-d6">per week / month / year</label>
-                <select name="D6" id="per-d6">
-                  <option value="week">per week</option>
-                  <option value="fortnight">per fortnight</option>
-                  <option value="4weeks">per 4 weeks</option>
-                  <option value="month">per month</option>
-                  <option value="quarter">per quarter</option>
-                  <option value="year" selected="selected">per year</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-          <!-- ///////////////// Fieldset 3 - End ///////////////// -->
-
-          <hr class="seperator">
 
           <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
 
+
               <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
               <fieldset id="accounting-year-start">
-                <label for="start-month" class="form-label-bold">Accounting period start date </label><br>
+                <label for="start-month" class="form-label-bold">Start date</label><br>
                 <div class="form-hint">For example, Apr 2012</div>
                 <div class="row">
                   <div class="col-md-3 col-sm-3 col-xs-3">
@@ -291,7 +330,7 @@
 
               <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
               <fieldset id="accounting-year-end">
-                <label for="month-end" class="form-label-bold">Accounting period end  date </label><br>
+                <label for="month-end" class="form-label-bold">End date</label><br>
                 <div class="form-hint">For example, Apr 2012</div>
                 <div class="row">
                   <div class="col-md-3 col-sm-3 col-xs-3">
