@@ -136,7 +136,11 @@
         </div>
       <!-- .inner-block - End -->
 
+      </div>
+
       <!-- #BeginEditable "content" -->
+
+        <div class="inner-block">
 
         <!-- .breadcrumb - Start -->
         <div class="breadcrumb form-hint">
@@ -151,9 +155,9 @@
             <div class="col-xs-12">
 
               <h1 class="form-title heading-xlarge">Self employed income</h1>
-              <p class="lede">Add your business's full accounting details as they appear on your lastest accounts.</p>
+              <p class="lede">Add your business's full accounting details as they appear on your latest Self Assessment tax return.</p>
               <br>
-              <p class="lede">If this is your first year trading, please tell us about your earnings and expenses since your business began.</p>
+              <p class="lede">If this is your first year trading and you haven't submitted a Self Assessment tax return, please tell us about your earnings and expenses since your business began.</p>
               <br>
 
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
@@ -229,6 +233,7 @@
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-5">
                     <label for="net-profit-amount">Net profit</label>
+                    <div class="form-hint">Total amount you earned minus all your business expenses</div>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3 amount">
                     <label for="net-profit-amount">Amount</label>
@@ -250,11 +255,7 @@
               </fieldset>
               <!-- ///////////////// Fieldset 3 - End ///////////////// -->
 
-              <div class="panel panel-border-wide">
-                <i class="glyphicon glyphicon-exclamation-sign"></i>
-                <p>Net profit is taking your turnover or amount earn't and deducting the expences incurred by the business, this total give you your Net profit.</p>
-              </div>
-
+              
             </div>
           </div>
 
@@ -279,7 +280,13 @@
 
               <div class="row">
                 <div class="col-xs-12">
-                  <p>Blurb about Accounting period</p>
+                  <p>The accounting period is the period of time during which 
+				  you earned the net profit shown above. The accounting period 
+				  start and end dates should match the 
+				  information you included in 
+				  your Self Assessment tax return. </p>
+				       <p>If you haven't completed a Self Assessment tax return yet, the start date should be the date your business began.</p>
+
                 </div>
               </div>
 
@@ -295,7 +302,7 @@
 
               <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
               <fieldset id="accounting-year-start">
-                <label for="start-month" class="form-label-bold">Start date</label><br>
+                <label for="start-month" class="form-label-bold">Accounting period start date</label><br>
                 <div class="form-hint">For example, Apr 2012</div>
                 <div class="row">
                   <div class="col-md-3 col-sm-3 col-xs-3">
@@ -330,8 +337,8 @@
 
               <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
               <fieldset id="accounting-year-end">
-                <label for="month-end" class="form-label-bold">End date</label><br>
-                <div class="form-hint">For example, Apr 2012</div>
+                <label for="month-end" class="form-label-bold">Accounting period end date</label><br>
+                <div class="form-hint">For example, Mar 2013</div>
                 <div class="row">
                   <div class="col-md-3 col-sm-3 col-xs-3">
                     <label for="month-end">Month</label><br>
