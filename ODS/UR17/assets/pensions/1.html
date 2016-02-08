@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css">
     <link href="../../creditors/css/typeahead.css" rel="stylesheet">
@@ -158,7 +158,7 @@
             margin-right: 0;
             clear: none;
             margin-top:3px;
-            
+
         }
     </style>
 <!-- #EndEditable -->
@@ -210,7 +210,7 @@
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -220,7 +220,7 @@
 	</p>
 	</div>
 	</div>
-	
+
 
 
 <!-- #BeginEditable "content" -->
@@ -234,7 +234,7 @@
 							<p>We need to know about all the pension, endowment and life insurance policies you currently have.</p>
 							<p>Don't include any your State Pension or any policies you have cashed in, transferred, or given away - we'll ask you about these later.</p>
 							</div>
-                        
+
                         <div id="pnl-director_table" class="repeat">
                             <table style="width: 100%" class="family">
                                 <thead>
@@ -247,41 +247,41 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tablebody">
-                                    
+
                                 </tbody>
                             </table>
 						<p class="clearfix"><br /></p>
 						<p>The table above summarises the policies and pensions you have told us about. </p>
-						<p>We need to know about any other pension, endowment or life insurance policies you 
+						<p>We need to know about any other pension, endowment or life insurance policies you
 						currently have.</p>
-						
+
                         </div>
-                        
+
                         <div class="form-group">
-							
+
 							<h2 class="form-label-bold"><span class="firsttime">Enter the name of your policy provider or broker</span>
 							<span class="repeat">Enter the name of another policy provider or broker</span></h2>
 							<div class="form-hint">For example, ABC Insurance Ltd. You can add more  providers later. </div>
 							<div class="form-hint">For workplace pensions, you can enter the name of your employer</div>
-								
+
 								<input type="text" id="policy" class="form-control input-lg halfwidth">
 								<a class="button partwidth" href="address.html" id="add">
 									Add policy provider
-								</a>								
+								</a>
 							</div>
 
-                      	
+
                         <p class="repeat">
-                          	<a href="#" class="button" id="next"> 
+                          	<a href="#" class="button" id="next">
                        			<span class="repeat">Continue - I have added all my policies</span>
-                            </a> 
+                            </a>
                         </p>
 
                     </form>
-                   
+
                     <div class="form-navigation form-group">
                         <a href="javascript: history.go(-1)">Back</a>
-                        
+
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -308,13 +308,13 @@
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -362,10 +362,10 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -380,38 +380,38 @@ $(document).ready(function() {
         <script type="text/javascript">
 			var count = 0;
             $(document).ready(function () {
-            	            	
+
             	if($.cookie("Asset_Policy_Count")){
             		count = $.cookie("Asset_Policy_Count");
             	}
 
         	    var provider;
         		var type;
-        		var reference; 
+        		var reference;
         		var value;
-        		
-        		            		
+
+
         		for(i=1; i<=count; i++){
-          			
+
           			provider= $.cookie("Asset_Policy_Provider_"+i);
           			type = $.cookie("Asset_Policy_Type_"+i);
           			reference = $.cookie("Asset_Policy_Ref_"+i);
-        			value = $.cookie("Asset_Policy_"+i+"_Value");
+          			value = $.cookie("Asset_Policy_"+i+"_Value");
         			
         			if(value!="In payment"){
         				value = "£"+ parseFloat(value).toFixed(2);
         			}
-        			
-        			
+
+
         			tablerow = "<tr><td>"+provider+"</td><td>"+type +"</td><td>"+reference +"</td><td>"+value+"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a>&nbsp;&nbsp;<a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
         			$("#tablebody").append(tablerow);
-        		}            	
+        		}
             });
 
             $("#add").click(function (e) {
 				$.cookie("TempPolicy", $("#policy").val(), {path: '/'});
 			});
-            
+
             $("#next").click(function (e) {
             	$("#next").attr("href", "../summary.html?page=4");
             });
@@ -441,12 +441,12 @@ $(document).ready(function() {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
