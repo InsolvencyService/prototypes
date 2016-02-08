@@ -71,7 +71,7 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="payments/css/payment-override.css">
-<!-- <link type="text/css" rel="stylesheet" media="screen" href="assets/overview-design-changes.css"> -->
+<link type="text/css" rel="stylesheet" media="screen" href="assets/overview-design-changes.css">
 <style type="text/css">
 
 .row img {
@@ -189,7 +189,7 @@ h3 > a {
 
   <div id="global-header-bar">
     <div class="inner-block">
-      <div class="header-bar clearfix"></div>
+      <div class="header-bar"></div>
     </div>
   </div>
 
@@ -221,7 +221,10 @@ h3 > a {
 
 
 
-        <h1 class="form-title heading-large">Application <span id="urn">M52S-FQ6Y-HQWP</span> overview</h1>
+        <h1 class="form-title heading-xlarge">
+          Application overview:
+        </h1>
+        <h1 class="heading-large form-hint">Kim Scarlett</h1>
 
         <div class="row">
           <div class="col-sm-8">
@@ -779,26 +782,21 @@ h3 > a {
 
                         <br>
 
-                        <div class="form-navigation form-group" style="margin:20PX;">
-
-                          <div>
-
-
-                            <!-- <a href="submission/start.html" id="next" style="display:none" class="button">Submit application</a> -->
-
-                          </div>
-                          <div>
-                            <br>
-                          </div>
-                        </div>
-
                       </div>
+                      <div class="row">
+                        <div class="col-md-12 form-navigation form-group">
+                          <a href="javascript:history.go(-1)">Back</a>
+                          <a class="save" id="cancel">Save and logout</a>
+                        </div>
+                      </div>
+
                     </div>
 
                     <!-- #EndEditable -->
 
 
                   </div>
+                </main>
 
 
                   <footer role="contentinfo" id="footer" class="group js-footer">
@@ -1041,6 +1039,9 @@ h3 > a {
                         $("#section6 .edit").show().text("Edit");
                         $("#section7 .edit").show().addClass("button").text("Start");
                         document.title = 'Overview - Legal proceedings';
+                        var details = $("#section7 .js-section").attr("href");
+                        $(details).show();
+                        $(details).parent().addClass("well");
                       }
                       if (section7 && section7 == "complete") {
                         $("#section1 .edit").show().removeClass("button").text("Edit");
@@ -1052,6 +1053,9 @@ h3 > a {
                         $("#section7 .edit").show().text("Edit");
                         $("#section8 .edit").show().addClass("button").text("Start");
                         document.title = 'Overview - Insolvency proceedings';
+                        var details = $("#section8 .js-section").attr("href");
+                        $(details).show();
+                        $(details).parent().addClass("well");
                       }
                       if (section8 && section8 == "complete") {
                         $("#section1 .edit").show().removeClass("button").text("Edit");
