@@ -123,9 +123,8 @@
     </div>
   </div>
 
-  <main id="wrapper">
+  <main id="content">
 
-    <div id="content">
 
       <!-- .inner-block - Start -->
       <div class="inner-block">
@@ -135,11 +134,9 @@
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
           </p>
         </div>
-      </div>
       <!-- .inner-block - End -->
 
       <!-- #BeginEditable "content" -->
-      <div class="inner-block">
 
         <!-- .breadcrumb - Start -->
         <div class="breadcrumb form-hint">
@@ -152,7 +149,7 @@
         <form class="form" method="post">
           <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-          <p class="lede">Add your business's full accounting details as they appear on your lastest accounts. </p>
+          <p class="lede">Add your business's full accounting details as they appear on your lastest accounts.</p>
           <br>
           <p class="lede">If this is your first year trading, please tell us about your earnings and expenses since your business began.</p>
           <br>
@@ -160,14 +157,14 @@
           <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
           <fieldset class="form-intro">
             <div class="row">
-              <div class="col-sm-6">
-                <label>Accounting details</label>
+              <div class="col-md-6 col-sm-6 col-xs-5">
+                <label class="heading-large">Accounting details</label>
               </div>
-              <div class="col-sm-3">
-                <label>Amount</label>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <label class="heading-small amount">Amount</label>
               </div>
-              <div class="col-sm-3">
-                <label class="per">per week / month / year</label>
+              <div class="col-md-3 col-sm-3 col-xs-4">
+                <label class="heading-small per">per week / month / year</label>
               </div>
             </div>
           </fieldset>
@@ -177,15 +174,15 @@
           <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
           <fieldset>
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-md-6 col-sm-6 col-xs-5">
                 <label>Turnover (total income before expenses)</label>
               </div>
-              <div class="col-sm-3 amount">
+              <div class="col-md-3 col-sm-3 col-xs-3 amount">
                 <label for="turnover-amount">Amount</label>
                 <div class="currency">&pound;</div>
                 <input type="text" id="turnover-amount" placeholder="0">
               </div>
-              <div class="col-sm-3 per">
+              <div class="col-md-3 col-sm-3 col-xs-4 per">
                 <label for="per-d1">per week / month / year</label>
                 <select name="D1" id="per-d1">
                   <option value="week">per week</option>
@@ -203,15 +200,15 @@
           <!-- ///////////////// Fieldset 2 - Start ///////////////// -->
           <fieldset>
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-md-6 col-sm-6 col-xs-5">
                 <label>Expenses</label>
               </div>
-              <div class="col-sm-3 amount">
+              <div class="col-md-3 col-sm-3 col-xs-3 amount">
                 <label for="expenses-amount">Amount</label>
                 <div class="currency">&pound;</div>
                 <input type="text" id="expenses-amount" placeholder="0">
               </div>
-              <div class="col-sm-3 per">
+              <div class="col-md-3 col-sm-3 col-xs-4 per">
                 <label for="per-d5">per week / month / year</label>
                 <select name="D5" id="per-d5">
                   <option value="week">per week</option>
@@ -229,15 +226,15 @@
           <!-- ///////////////// Fieldset 3 - Start ///////////////// -->
           <fieldset>
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-md-6 col-sm-6 col-xs-5">
                 <label>Net profit</label>
               </div>
-              <div class="col-sm-3 amount">
+              <div class="col-md-3 col-sm-3 col-xs-3 amount">
                 <label for="net-profit-amount">Amount</label>
                 <div class="currency">&pound;</div>
                 <input type="text" id="net-profit-amount" class="amount" placeholder="0">
               </div>
-              <div class="col-sm-3 per">
+              <div class="col-md-3 col-sm-3 col-xs-4 per">
                 <label for="per-d6">per week / month / year</label>
                 <select name="D6" id="per-d6">
                   <option value="week">per week</option>
@@ -254,73 +251,88 @@
 
           <hr class="seperator">
 
-          <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
-          <fieldset id="accounting-year-start">
-            <label for="start-month" class="form-label-bold">Accounting period start date </label><br>
-            <div class="form-hint">For example, Apr 2012</div>
-            <div class="row">
-              <div class="col-sm-2">
-                <label for="start-month">Month</label><br>
-                <select id="start-month" name="start-month">
-                  <option value="0">--</option>
-                  <option value="1">Jan</option>
-                  <option value="2">Feb</option>
-                  <option value="3">Mar</option>
-                  <option value="4">Apr</option>
-                  <option value="5">May</option>
-                  <option value="6">Jun</option>
-                  <option value="7">Jul</option>
-                  <option value="8">Aug</option>
-                  <option value="9">Sep</option>
-                  <option value="10">Oct</option>
-                  <option value="11">Nov</option>
-                  <option value="12">Dec</option>
-                </select>
-              </div>
-              <div class="col-sm-4">
-                <label for="start-year">Year</label><br>
-                <input id="start-year" name="start-year" type="number" min="2000" max="2016" />
-              </div>
-            </div>
-          </fieldset>
-          <!-- ///////////////// Fieldset 4 - End ///////////////// -->
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
 
-          <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
-          <fieldset id="accounting-year-end">
-            <label for="month-end" class="form-label-bold">Accounting period end  date </label><br>
-            <div class="form-hint">For example, Apr 2012</div>
-            <div class="row">
-              <div class="col-sm-2">
-                <label for="month-end">Month</label><br>
-                <select id="month-end" name="month-end">
-                  <option value="0">--</option>
-                  <option value="1">Jan</option>
-                  <option value="2">Feb</option>
-                  <option value="3">Mar</option>
-                  <option value="4">Apr</option>
-                  <option value="5">May</option>
-                  <option value="6">Jun</option>
-                  <option value="7">Jul</option>
-                  <option value="8">Aug</option>
-                  <option value="9">Sep</option>
-                  <option value="10">Oct</option>
-                  <option value="11">Nov</option>
-                  <option value="12">Dec</option>
-                </select>
-              </div>
-              <div class="col-sm-4">
-                <label for="year-end">Year</label><br>
-                <input id="year-end" name="year-end" type="number" min="2000" max="2016" />
-              </div>
-            </div>
-          </fieldset>
-          <!-- ///////////////// Fieldset 5 - End ///////////////// -->
+              <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
+              <fieldset id="accounting-year-start">
+                <label for="start-month" class="form-label-bold">Accounting period start date </label><br>
+                <div class="form-hint">For example, Apr 2012</div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="start-month">Month</label><br>
+                    <select id="start-month" name="start-month">
+                      <option value="0">--</option>
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <label for="start-year">Year</label><br>
+                    <input id="start-year" name="start-year" type="number" min="2000" max="2016" />
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///////////////// Fieldset 4 - End ///////////////// -->
 
-          <div class="form-navigation form-group">
-            <a id="next" class="button" href="summary.html?stage=income&amp;page=2">Continue</a>
-            <div>
-              <a style="padding-right: 30px" href="summary.html" id="back">Back</a>
-              <a href="#" id="cancel">Save and logout</a>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+
+              <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
+              <fieldset id="accounting-year-end">
+                <label for="month-end" class="form-label-bold">Accounting period end  date </label><br>
+                <div class="form-hint">For example, Apr 2012</div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="month-end">Month</label><br>
+                    <select id="month-end" name="month-end">
+                      <option value="0">--</option>
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <label for="year-end">Year</label><br>
+                    <input id="year-end" name="year-end" type="number" min="2000" max="2016" />
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///////////////// Fieldset 5 - End ///////////////// -->
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+              <div class="form-navigation form-group">
+                <a id="next" class="button" href="summary.html?stage=income&amp;page=2">Continue</a>
+                <br>
+                <a style="padding-right: 30px" href="summary.html" id="back">Back</a>
+                <a href="#" id="cancel">Save and logout</a>
+              </div>
+
             </div>
           </div>
 
@@ -329,8 +341,6 @@
 
       <!-- #EndEditable -->
 
-
-    </div>
   </main>
 
 

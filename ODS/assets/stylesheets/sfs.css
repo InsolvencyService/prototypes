@@ -20,6 +20,8 @@ select {
   padding: 2px 35px 2px 2px;
   font-size: 16px;
   height: 35px;
+  clear: left;
+  float: left;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -28,6 +30,10 @@ select {
 
 select:focus {
   background: url(../images/svgs/arrow-up.svg) 96% / 20px no-repeat #fff;
+}
+
+.row > div:first-child {
+  padding-top: 15px;
 }
 
 /* ================================= SFS General Overide - End ================================= */
@@ -304,7 +310,7 @@ fieldset .amount label, fieldset div.per label {
   text-indent: -10000px;
   text-align: left;
   /*margin: 0;*/
-  /*height: 0;*/
+  height: 0;
   width: 0;
 }
 
@@ -339,10 +345,10 @@ fieldset.expense .amount input.amount, fieldset.fine .amount input {
   margin-top: 29px;
 }
 
-fieldset .per select {
+/*fieldset .per select {
   float: left;
-  /*width: 40%;*/
-}
+  width: 40%;
+}*/
 
 fieldset .row > div:first-child {
   padding-top: 15px;
@@ -388,7 +394,7 @@ fieldset.input-item .amount label {
 }
 
 .form-intro label, .form-intro legend {
-  font-size: 36px;
+  margin: 0;
 }
 
 .form-intro legend {
@@ -397,12 +403,12 @@ fieldset.input-item .amount label {
 }
 
 .form-intro label.amount, .form-intro label.per {
-  font-size: 20px;
-  margin-top: 20px;
+  /*font-size: 19px;*/
+  margin-top: 13px;
 }
 
 label {
-  margin: 4px 0 0 0;
+  margin: 0;
 }
 
 hr.seperator {
@@ -413,11 +419,11 @@ hr.seperator {
 
 #accounting-year-start, #accounting-year-end {
   display: inline-block;
-  width: 50%;
+  /*width: 50%;*/
   border-left: 0;
   padding: 0;
   clear: none;
-  margin: 50px 0 70px 0;
+  margin: 20px 0 70px 0;
 }
 
 #accounting-year-start .form-hint, #accounting-year-end .form-hint {
