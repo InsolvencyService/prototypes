@@ -333,7 +333,7 @@ a.well{
                     <div class="col-sm-12">
 
                       <fieldset class="inline">
-                          <p class="form-label-bold">Date the debt started (was incurred)</p>
+                          <legend class="form-label-bold">Date the debt started (was incurred)</legend>
                           <label id="1_label1" for="1" class="block-label">
                           <input id="1"  name="debt-incurred" value="0-6m" type="radio">0 to 6 months ago</label>
 
@@ -346,10 +346,10 @@ a.well{
                           <label id="4_label1" for="4" class="block-label">
                           <input id="4"  name="debt-incurred" value="3-5y" type="radio">3 to 5 years ago</label>
 
-                          <label id="4_label2" for="4" class="block-label">
+                          <label id="4_label2" for="5" class="block-label">
                           <input id="5"  name="debt-incurred" value="6-10y" type="radio">6 to 10 years ago</label>
 
-                          <label id="4_label3" for="4" class="block-label">
+                          <label id="4_label3" for="6" class="block-label">
                           <input id="6"  name="debt-incurred" value="over-10y" type="radio">Over 10 years ago</label>
                       </fieldset>
 
@@ -565,8 +565,9 @@ a.well{
               var amount = parseFloat(numberWithoutCommas(amt)).toFixed(2);
 
               $.cookie('creditoramount' + numcreditors, amount, { expires: 1 });
+              $.cookie("debt-incurred" + number + "-date", $("input:radio[name ='debt-incurred']:checked").val(), { expires: 1, path:'/' });
               //$.cookie('incurredday' + numcreditors, $('#day').val(), { expires: 1 });
-              $.cookie('incurredmonth' + numcreditors, pad(month,2), { expires: 1 });
+              // $.cookie('incurredmonth' + numcreditors, pad(month,2), { expires: 1 });
               $.cookie('incurredyear' + numcreditors, year, { expires: 1 });
             }
             else{

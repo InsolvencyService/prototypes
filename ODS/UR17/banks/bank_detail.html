@@ -179,7 +179,7 @@ table, thead, tbody, th, tr, td {
 
                   <div class="form-group">
                     <fieldset class="inline">
-                      <p class="form-label-bold">Date you opened the account</p>
+                      <legend class="form-label-bold">Date you opened the account</legend>
                         <!-- <span class="form-hint" id="date_of_birth_help">For example, Aug 2012</span> -->
                       <label id="1_label1" for="1" class="block-label">
                       <input id="1"  name="opened-account" value="0-6m" type="radio">0 to 6 months ago</label>
@@ -193,10 +193,10 @@ table, thead, tbody, th, tr, td {
                       <label id="4_label1" for="4" class="block-label">
                       <input id="4"  name="opened-account" value="3-5y" type="radio">3 to 5 years ago</label>
 
-                      <label id="4_label2" for="4" class="block-label">
+                      <label id="4_label2" for="5" class="block-label">
                       <input id="5"  name="opened-account" value="6-10y" type="radio">6 to 10 years ago</label>
 
-                      <label id="4_label3" for="4" class="block-label">
+                      <label id="4_label3" for="6" class="block-label">
                       <input id="6"  name="opened-account" value="over-10y" type="radio">Over 10 years ago</label>
 
                         <!-- <div class="form-group" style="width:60px">
@@ -432,7 +432,7 @@ table, thead, tbody, th, tr, td {
           $.cookie("acc"+ x +"-sort", sortcode);
           $.cookie("acc"+ x +"-number", $("#ac_number").val());
           $.cookie("acc"+ x +"-balance", $("#ac_balance").val());
-          $.cookie("acc" + x + "-date", $("input:radio[name ='opened-account']:checked").val());
+          $.cookie("acc"+ x + "-date", $("input:radio[name ='opened-account']:checked").val(), { expires: 1, path:'/' });
           // $.cookie("acc"+ x +"-month", $("#month :selected").val());
           // $.cookie("acc"+ x +"-year", $("#start_year").val());
           $.cookie("acc"+ x +"-bank", bank_name);
