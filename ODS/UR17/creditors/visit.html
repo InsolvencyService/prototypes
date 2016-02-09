@@ -391,6 +391,9 @@ a.well{
     });
 
     $("#next").on("click", function (e) {
+
+      $.cookie("agents-visit" + number + "-date", $("input:radio[name ='agents-visit']:checked").val(), { expires: 1, path:'/' });
+
       var rowid = 1;
       //e.preventDefault();
 
