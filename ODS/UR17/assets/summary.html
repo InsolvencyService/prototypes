@@ -464,20 +464,21 @@ tr td.actions a.edit {
     $(".declare").on("click", function () {
       $("#" + stage + itemnumber + " .declare").hide();
       $("#" + stage + itemnumber + " a.edit").show().removeClass("button");
+      $("#" + stage + itemnumber + " .value").text("No").addClass("bolder");
       $(".well").removeClass("well");
       $("#" + stage + itemnumber + " a.edit").text("Edit");
 
-      switch (itemnumber) {
-        case 1:
-        $("#assets1 .answerno").show().addClass("bolder");
-        break;
-        case 2:
-        $("#assets2 .answerno").show().addClass("bolder");
-        break;
-        case 3:
-        $("#assets3 .answerno").show().addClass("bolder");
-        break;
-      }
+      // switch (itemnumber) {
+      //   case 1:
+      //   $("#assets1 .answerno").show().addClass("bolder");
+      //   break;
+      //   case 2:
+      //   $("#assets2 .answerno").show().addClass("bolder");
+      //   break;
+      //   case 3:
+      //   $("#assets3 .answerno").show().addClass("bolder");
+      //   break;
+      // }
 
       itemnumber = itemnumber + 1;
       $("#" + stage + itemnumber + " .declare").show();
