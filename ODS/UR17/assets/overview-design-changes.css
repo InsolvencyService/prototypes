@@ -44,7 +44,7 @@ ul li.row {
 
 a.wrapper-button:hover {
 	text-decoration: none;
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 
 a.wrapper-button:hover button.edit {
@@ -163,7 +163,7 @@ h1.form-title.heading-xlarge {
 
 ul.row-bottom {
 	display: none;
-	padding: 10px 30px;
+	padding: 20px 30px 20px 45px;
 	background: white;
 	border-radius: 0 0 5px 5px;
 	border-right: 1px solid #eee;
@@ -178,7 +178,7 @@ ul.row-bottom {
 
 ul.row-bottom li {
 	color: black;
-	border-bottom: 1px solid #eee;
+	border-bottom: none;
 	padding: 5px 0;
 	font-size: 14px;
 }
@@ -203,17 +203,41 @@ ul.row-bottom li:last-of-type {
 	margin-bottom: 20px !important;
 }
 
+.not-started:hover, .not-started a:hover {
+	cursor: default !important;
+}
+
 .not-started .heading-xlarge, .not-started h3 {
 	color: #a0a3a7 !important;
 }
 
-.not-started:hover, .not-started a:hover {
-	text-decoration: none !important;
-	cursor: default;
+.not-started a.js-section, .not-started:hover a.js-section:hover {
+	/*text-decoration: none !important;*/
+	cursor: pointer !important;
 }
 
 .not-started ul {
 	border: none;
+}
+
+ul.row-bottom {
+	list-style: initial;
+	/*box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.15);*/
+  background: white;
+	border-top: 3px solid #eee;
+}
+
+.start ul.row-bottom {
+	border-top: none;
+}
+
+li.not-started:hover {
+	/*background-color: #ebedef;*/
+	/*border: 3px dotted #ebedef;*/
+}
+
+li.not-started:hover ul.row-bottom {
+	background-color: white;
 }
 
 .edit-information {
@@ -272,14 +296,18 @@ ul#overview-panels li {
 	position: relative;
 }
 
-ul#overview-panels li:hover {
+/*ul#overview-panels li:hover {
 	cursor: pointer;
-}
+}*/
 
 ul#overview-panels li .js-section {
 	position: absolute;
 	left: 73px;
 	top: 50px;
+}
+
+a.rowtop.wrapper-button {
+	text-decoration: none;
 }
 
 /* CSS for the status pages - End */

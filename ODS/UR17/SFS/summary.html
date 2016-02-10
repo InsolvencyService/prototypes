@@ -75,13 +75,13 @@
 }
 /*div[class*=col-]{
   padding-left:0;
-}
+}*/
 
 table td[class*=col-], table th[class*=col-]{
   padding-left:0;
   padding-right:20px
 
-}*/
+}
 
 </style>
 
@@ -107,7 +107,7 @@ table td[class*=col-], table th[class*=col-]{
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header">
+  <header class="with-proposition" id="global-header" role="banner">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -119,7 +119,7 @@ table td[class*=col-], table th[class*=col-]{
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
+            <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
           </nav>
         </div>
       </div>
@@ -133,425 +133,283 @@ table td[class*=col-], table th[class*=col-]{
     </div>
   </div>
 
-  <main id="wrapper">
+  <main id="content">
 
-    <div id="content">
+    <div class="inner-block">
 
-      <div class="inner-block">
-        <div class="phase-banner">
-          <p>
-            <strong class="phase-tag">BETA</strong>
-            This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
-          </p>
-        </div>
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+          This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+        </p>
+      </div>
 
-        <!-- #BeginEditable "content" -->
-        <form class="form" method="post">
-          <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+      <!-- #BeginEditable "content" -->
+      <div class="row">
 
-          <!-- //////////////////////////////////////////////// Income - Start //////////////////////////////////////////////// -->
-          <div class="row">
-            <div id="income" class="col-sm-12">
+        <div class="col-sm-12">
 
-              <!-- /////////////////// Intro - Start /////////////////// -->
-              <fieldset class="form-intro summary">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h1 class="form-title heading-xlarge">Your income</h1>
-                  </div>
-                  <div class="col-sm-4">
-                    <label class="sub-header">Amount per month</label>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Intro - End /////////////////// -->
+          <h1 class="form-title heading-large">Income and expenses</h1>
 
-              <!-- /////////////////// Section - 1 - Start /////////////////// -->
-              <fieldset class="section active" id="income1">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">1</span>
-                    <label>Self-employed income</label><br>
-                    <span class="form-hint">Yearly income from any self-employed businesses you have</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                      <a href="#" class="declare btn-no">I'm not<br>self-employed</a>
+          <form class="form" method="post">
+            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+
+            <div class="row">
+              <div id="income" class="col-sm-6">
+
+                <div class="form-group">
+                  <table>
+                    <thead class="group-title">
+                      <tr class="group-heading" id="income1">
+                        <th>Your income</th>
+                        <th colspan="2" style="text-align:right; font-weight:normal">Amount per month</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody class="group-title">
+                      <tr class="group-heading" id="income1">
+                        <td class="group-title col-sm-8">Self employed income
+                          <br/>
+                          <a href="#" class="declare" id="btn-no">I don't receive any self employed income</a>
+
+                        </td>
+                        <td class="actions col-sm-2">
+                          <a href="1b.html" class="next edit button">Start</a>
+
+                        </td>
+
+                        <td class="value col-sm-2">&nbsp;</td>
+
+                      </tr>
+
+                      <tr class="group-heading" id="income2">
+                        <td class="group-title col-sm-8">Salary or wages
+                          <br/>
+                          <a href="#" class="declare" id="btn-no">I don't receive any salary or wages</a>
+
+                        </td>
+                        <td class="actions col-sm-2">
+                          <a href="1a.html" class="next edit button">Start</a>
+
+                        </td>
+
+                        <td class="value col-sm-2">&nbsp;</td>
+
+                      </tr>
+
+                      <tr class="group-heading" id="income3">
+                        <td>
+                          Benefits<br />
+                          <a href="#" style="display:none" class="declare" id="btn-nobenefits">I don't receive benefits</a>
+                        </td>
+                        <td  class="actions">
+                          <a href="2.html" style="display:none" class="edit">Edit</a>
+                        </td>
+
+                        <td class="value"></td>
+
+                      </tr>
+                      <tr class="group-heading pensionable" id="income4">
+                        <td>Pensions<br />
+                          <a href="#" style="display:none" class="declare" id="btn-nobenefits">I don't receive a pension</a>
+                        </td>
+                        <td class="actions">
+                          <a href="3-pensions.html" style="display:none" class="edit">Edit</a>
+                        </td>
+
+                        <td class="value"></td>
+
+                      </tr>
+
+                      <tr class="group-heading" id="income5">
+                        <td>
+                          Household income<br />
+                          <a href="#" style="display:none" class="declare">I live alone</a></td>
+                          <td class="actions"><a href="3-contributions.html" style="display:none" class="edit">Start</a>
+                          </td>
+
+                          <td class="value">&nbsp;</td>
+
+                        </tr>
+
+                        <tr class="group-heading" id="income6">
+                          <td>
+                            Other income<br />
+                            <a href="#" style="display:none" class="declare">I don't have other income</a>
+                          </td>
+                          <td class="actions">
+                            <a href="4-other-income.html" style="display:none" class="edit">Edit</a>
+
+                          </td>
+
+                          <td class="value"></td>
+
+                        </tr>
+
+                        <tr class="group-heading totalrow" id="incometotal">
+                          <td></td>
+                          <td class="actions" style="text-align:right">
+                            <span style="float:right; width:100%">Total</span></td>
+                            <td class="totalvalue"></td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+
                     </div>
-                    <span class="value"></span>
-                    <a href="1b.html" class="edit">Edit</a>
                   </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 1 - End /////////////////// -->
 
-              <!-- /////////////////// Section - 2 - Start /////////////////// -->
-              <fieldset class="section" id="income2">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">2</span>
-                    <label>Salary or wages</label><br>
-                    <span class="form-hint">Income from all full-time and part-time work</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                      <a href="#" class="declare btn-no">I don't receive any<br>salary or wages</a>
+                  <div id="costs" class="col-sm-6">
+
+                    <div class="form-group">
+                      <table id="fixed">
+                        <thead class="group-title">
+                          <tr class="group-heading" id="income1">
+                            <th>Expenses</th>
+                            <th colspan="2" style="text-align:right; font-weight:normal">Amount per month</th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody class="group-title">
+                          <tr class="group-heading" id="costs1">
+                            <td class="group-title col-sm-8">Home and utilities</td>
+                            <td class="actions col-sm-2">
+                              <a href="expenses1.html" class="edit">Start</a>
+                            </td>
+
+                            <td class="value col-sm-2"></td>
+
+                          </tr>
+
+                          <tr class="group-heading" id="costs2">
+                            <td>Pension, insurance and health care</td>
+                            <td>
+                              <a href="expenses2.html" style="display:none" class="edit">Edit</a>
+                            </td>
+
+                            <td class="value"></td>
+
+                          </tr>
+                          <tr class="group-heading" id="costs3">
+                            <td>Food and housekeeping</td>
+                            <td>
+                              <a href="expenses3.html" style="display:none" class="edit">Edit</a>
+                            </td>
+
+                            <td class="value"></td>
+
+                          </tr>
+
+                          <tr class="group-heading" id="costs4">
+                            <td>Transport and travel</td>
+                            <td>
+                              <a href="expenses4.html" style="display:none" class="edit">Edit</a>
+                            </td>
+                            <td class="value"></td>
+                          </tr>
+                          <tr class="group-heading" id="costs5">
+                            <td>Childcare and maintenance
+                              <br/>
+                              <a href="#" class="declare" id="btn-no">I don't have children
+                              </a>
+                            </td>
+                            <td>
+                              <a href="expenses5.html" style="display:none" class="edit">Edit</a>
+                            </td>
+
+                            <td class="value"></td>
+
+                          </tr>
+                          <tr class="group-heading" id="costs6">
+                            <td>Personal and leisure</td>
+                            <td>
+                              <a href="expenses6.html" style="display:none" class="edit">Edit</a>
+                            </td>
+
+                            <td class="value"></td>
+
+                          </tr>
+
+                          <tr class="group-heading" id="costs7">
+                            <td>Regular savings, fines and other expenses</td>
+                            <td>
+                              <a href="expenses7.html" style="display:none" class="edit">Edit</a>
+                            </td>
+
+                            <td class="value"></td>
+
+                          </tr>
+                          <tr class="group-heading totalrow" id="coststotal">
+
+                            <td colspan="2" class="actions" style="text-align:right">
+                              <div style="float:right;">Total<span id="fines"></span></div>
+                            </td>
+                            <td class="totalvalue"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+
                     </div>
-                    <span class="value"></span>
-                    <a href="1a.html" class="edit">Edit</a>
                   </div>
                 </div>
-              </fieldset>
-              <!-- /////////////////// Section - 2 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 3 - Start /////////////////// -->
-              <fieldset class="section" id="income3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">3</span>
-                    <label>Benefits</label><br>
-                    <span class="form-hint">Income from any benefits that are paid directly to you</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                      <a href="#" class="declare btn-no">I don't receive<br>benefits</a>
-                    </div>
-                    <span class="value"></span>
-                    <a href="2.html" class="edit">Edit</a>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 3 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 4 - Start /////////////////// -->
-              <fieldset class="section" id="income4">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">4</span>
-                    <label>Pensions</label><br>
-                    <span class="form-hint">Income from any pension payments that are paid directly to you</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                      <a href="#" class="declare btn-no">I don't receive<br>a pension</a>
-                    </div>
-                    <a href="3-pensions.html" class="edit">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 4 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 5 - Start /////////////////// -->
-              <fieldset class="section" id="income5">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">5</span>
-                    <label>Other income</label><br>
-                    <span class="form-hint">Any other income that's paid directly to you</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                      <a href="#" class="declare btn-no">I don't have<br>other income</a>
-                    </div>
-                    <a href="4-other-income.html" class="edit">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 5 - End /////////////////// -->
-
-              <!-- ///////////////// Total Value - Start ///////////////// -->
-              <fieldset class="section-total-value summary-page" id="incometotal">
-                <div class="row">
-                  <div class="col-sm-7">
-                  </div>
-                  <div class="col-sm-2 description">
-                    <label>Total</label>
-                  </div>
-                  <div class="col-sm-3 total">
-
-                    <div class="amount totalvalue">8000.00</div>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- ///////////////// Total Value - End ///////////////// -->
-
-            </div>
+              </form>
           </div>
-          <!-- //////////////////////////////////////////////// Income - End //////////////////////////////////////////////// -->
 
-          <!-- //////////////////////////////////////////////// Household Income - Start //////////////////////////////////////////////// -->
-          <div class="row">
-            <div id="household-income" class="col-sm-12">
-
-              <!-- /////////////////// Intro - Start /////////////////// -->
-              <fieldset class="form-intro summary">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h1 class="form-title heading-xlarge">Household income</h1>
-                  </div>
-                  <div class="col-sm-4">
-                    <label class="sub-header">Amount per month</label>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Intro - End /////////////////// -->
-
-              <!-- /////////////////// Section - 6 - Start /////////////////// -->
-              <fieldset class="section" id="household-income-1">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">6</span>
-                    <label>Household income</label><br>
-                    <span class="form-hint">What other members of your household earn (eg salary, pension, benefits, etc)</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                      <a href="summary.html?stage=costs" class="declare btn-no">I live<br>alone</a>
-                    </div>
-                    <span class="value"></span>
-                    <a href="3-contributions.html" class="edit">Edit</a>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 6 - End /////////////////// -->
-
-              <!-- ///////////////// Total Value - Start ///////////////// -->
-              <fieldset class="section-total-value summary-page" id="household-total">
-                <div class="row">
-                  <div class="col-sm-7">
-                  </div>
-                  <div class="col-sm-2 description">
-                    <label>Total</label>
-                  </div>
-                  <div class="col-sm-3 total">
-
-                    <div class="amount totalvalue">0.00</div>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- ///////////////// Total Value - End ///////////////// -->
-            </div>
-          </div>
-          <!-- //////////////////////////////////////////////// Household Income - End //////////////////////////////////////////////// -->
-
-          <!-- //////////////////////////////////////////////// Household Income - Start //////////////////////////////////////////////// -->
-          <div class="row">
-            <div id="costs" class="col-sm-12">
-
-              <!-- /////////////////// Intro - Start /////////////////// -->
-              <fieldset class="form-intro summary">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h1 class="form-title heading-xlarge">Expenses</h1>
-                  </div>
-                  <div class="col-sm-4">
-                    <label class="sub-header">Amount per month</label>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Intro - End /////////////////// -->
-
-              <!-- /////////////////// Section - 7 - Start /////////////////// -->
-              <fieldset class="section" id="costs1">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">7</span>
-                    <label>Home and utilities</label><br>
-                    <span class="form-hint">Your contributions to your household's home and utility costs</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                    </div>
-                    <a href="expenses1.html" class="edit button">Start</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 7 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 8 - Start /////////////////// -->
-              <fieldset class="section" id="costs2">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">8</span>
-                    <label>Pension, insurance and health care</label><br>
-                    <span class="form-hint">Your contributions to your household's pension, insurance and health care costs</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                    </div>
-                    <a href="expenses2.html" class="edit button">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 8 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 9 - Start /////////////////// -->
-              <fieldset class="section" id="costs3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge">9</span>
-                    <label>Food and housekeeping</label><br>
-                    <span class="form-hint">Your contributions to your household'sfood and housekeeping costs</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                    </div>
-                    <a href="expenses3.html" class="edit button">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 9 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 10 - Start /////////////////// -->
-              <fieldset class="section" id="costs4">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge double-digits">10</span>
-                    <label>Transport and travel</label><br>
-                    <span class="form-hint">Your contributions to your household's transport and travel costs</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                    </div>
-                    <a href="expenses4.html" class="edit button">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 10 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 11 - Start /////////////////// -->
-              <fieldset class="section" id="costs5">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge double-digits">11</span>
-                    <label>Childcare and maintenance</label><br>
-                    <span class="form-hint">Your contributions to your household's childcare and maintenance costs</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                      <a href="#" class="declare btn-no">I don't have<br>children</a>
-                    </div>
-                    <a href="expenses5.html" class="edit button">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 11 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 12 - Start /////////////////// -->
-              <fieldset class="section" id="costs6">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge double-digits">12</span>
-                    <label>Personal and leisure</label><br>
-                    <span class="form-hint">Your contributions to your household's personal and leisure costs</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                    </div>
-                    <a href="expenses6.html" class="edit button">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 12 - End /////////////////// -->
-
-              <!-- /////////////////// Section - 13 - Start /////////////////// -->
-              <fieldset class="section" id="costs7">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <span class="heading-xlarge double-digits">13</span>
-                    <label>Regular savings, fines and other expenses</label><br>
-                    <span class="form-hint">Your contributions to your household's regular savings and to any fine payments or other expenses</span>
-                  </div>
-                  <div class="col-sm-3 main-cta">
-                    <div class="opt-out">
-                    </div>
-                    <a href="expenses7.html" class="edit button">Edit</a>
-                    <span class="value"></span>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- /////////////////// Section - 13 - End /////////////////// -->
-
-              <!-- ///////////////// Total Value - Start ///////////////// -->
-              <fieldset class="section-total-value summary-page" id="coststotal">
-                <div class="row">
-                  <div class="col-sm-7">
-                  </div>
-                  <div class="col-sm-2 description">
-                    <label>Total</label>
-                  </div>
-                  <div class="col-sm-3 total">
-
-                    <div class="amount totalvalue">0.00</div>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- ///////////////// Total Value - End ///////////////// -->
-            </div>
-          </div>
-          <!-- //////////////////////////////////////////////// Household Income - End //////////////////////////////////////////////// -->
-
-          <div class="form-navigation form-group">
+          <!-- For User research -->
+          <div class="form-navigation form-group inner-block">
             <a id="next" class="button" href="../overview.html?section6=complete">Continue</a>
-          </div>
-          <div>
+            <br>
             <a style="padding-right: 30px" href="../overview.html?section5=complete" id="back">Back</a>
             <a href="#" id="cancel">Save and logout</a>
           </div>
-        </form>
+
+
+        </div>
 
       </div>
 
-    </div>
+    </main>
 
-  </main>
-
-  <footer id="footer" class="group js-footer">
-    <div class="footer-wrapper">
-      <div class="footer-meta">
-        <div class="footer-meta-inner">
-          <ul class="footer__nav" style="width:100%">
-            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
-          </ul>
-          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-          </ul>
-          <div class="open-government-licence">
-            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+    <footer role="contentinfo" id="footer" class="group js-footer">
+      <div class="footer-wrapper">
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            <ul class="footer__nav" style="width:100%">
+              <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
+            </ul>
+            <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+              <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+              <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+              <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+            </ul>
+            <div class="open-government-licence">
+              <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+              <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
           </div>
         </div>
-        <div class="copyright">
-          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
-        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-    <!--end footer-->
+      <!--end footer-->
 
-    <div class="app-error hidden" id="global-app-error"></div>
-    <!--
-    <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-    <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+      <div class="app-error hidden" id="global-app-error"></div>
+      <!--
+      <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
+      <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
 
-    <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-    <script type="text/javascript" src="assets/javascripts/application.js"></script>
+      <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
+      <script type="text/javascript" src="assets/javascripts/application.js"></script>
     -->
     <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
     <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../assets/js/sfs.js"></script>
+    <!--  <script type="text/javascript" src="../assets/js/sfs.js"></script>-->
 
     <script type="text/javascript">
     var itemnumber = 0;
@@ -597,14 +455,6 @@ table td[class*=col-], table th[class*=col-]{
           totalincome();
         }
 
-        if (stage == "income" && page === 6) {
-          $("#household-income-1 a").text("Edit").show();
-          //$("#household-income-1 a.edit").text("Edit").show();
-          // $("#costs a.edit").first().text("Start").show();
-          totalincome();
-          totalpartnerincome();
-        }
-
         if (stage == "costs") {
           $("#income a.edit").text("Edit").show();
           $("#costs a.edit").first().text("Start").show();
@@ -634,84 +484,8 @@ table td[class*=col-], table th[class*=col-]{
       $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
       $("#" + stage + itemnumber +  " .declare").show();
 
-      /* ////////////////////////////////////////////////
-      This adds the style to the specific sections as the user goes through the application - Start
-      //////////////////////////////////////////////// */
-      if (stage == "income" && itemnumber === 2) {
-        $("#income1").removeClass("active").addClass("complete");
-        $("#income2").addClass("active");
-      }
-      if (stage == "income" && itemnumber === 3) {
-        $("#income1, #income2").removeClass("active").addClass("complete");
-        $("#income3").addClass("active");
-      }
-
-      if (stage == "income" && itemnumber === 4) {
-        $("#income1, #income2, #income3").removeClass("active").addClass("complete");
-        $("#income4").addClass("active");
-      }
-
-      if (stage == "income" && itemnumber === 5) {
-        $("#income1, #income2, #income3, #income4").removeClass("active").addClass("complete");
-        $("#income5").addClass("active");
-      }
-
-      if (stage == "income" && itemnumber === 6) {
-        $("#income1, #income2, #income3, #income4, #income5").removeClass("active").addClass("complete");
-        $("#household-income-1").addClass("active");
-        $("#household-income-1 .declare").show();
-        $("#household-income-1 a.edit").first().text("Start").addClass("button").show();
-
-      }
-
-      if (stage == "costs" && itemnumber === 1) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1").removeClass("active").addClass("complete");
-        $("#costs1").addClass("active");
-      }
-
-      if (stage == "costs" && itemnumber === 2) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1, #costs1").removeClass("active").addClass("complete");
-        $("#costs2").addClass("active");
-      }
-
-      if (stage == "costs" && itemnumber === 3) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1, #costs1, #costs2").removeClass("active").addClass("complete");
-        $("#costs3").addClass("active");
-      }
-
-      if (stage == "costs" && itemnumber === 4) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1, #costs1, #costs2, #costs3").removeClass("active").addClass("complete");
-        $("#costs4").addClass("active");
-      }
-
-      if (stage == "costs" && itemnumber === 5) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1, #costs1, #costs2, #costs3, #costs4").removeClass("active").addClass("complete");
-        $("#costs5").addClass("active");
-      }
-
-      if (stage == "costs" && itemnumber === 6) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1, #costs1, #costs2, #costs3, #costs4, #costs5").removeClass("active").addClass("complete");
-        $("#costs6").addClass("active");
-      }
-
-      if (stage == "costs" && itemnumber === 7) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1, #costs1, #costs2, #costs3, #costs4, #costs5, #costs6").removeClass("active").addClass("complete");
-        $("#costs7").addClass("active");
-      }
-
-      if (stage == "costs" && itemnumber === 8) {
-        $("#income1, #income2, #income3, #income4, #income5, #household-income-1, #costs1, #costs2, #costs3, #costs4, #costs5, #costs6, #costs7").removeClass("active").addClass("complete");
-      }
-
-      /* ////////////////////////////////////////////////
-      This adds the style to the specific sections as the user goes through the application - End
-      //////////////////////////////////////////////// */
-
-      if (stage == "income" && itemnumber > 6) {
+      if (stage == "income" && itemnumber > 5) {
         $("#costs1 a.edit").addClass("button").text("Start");
-      }
-      if (stage == "income" && itemnumber === 6) {
-        $("#household-income-1 a.edit").addClass("button").text("Start");
       }
       if (stage == "costs" && itemnumber > 7) {
         $("#next").show();
@@ -731,10 +505,7 @@ table td[class*=col-], table th[class*=col-]{
         }
         $("#" + stage + itemnumber + " .declare").show();
         $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
-        if (stage == "income" && itemnumber === 6) {
-          $("#household-income-1 a.edit").first().text("Start").addClass("button").show();
-        }
-        if (stage == "income" && itemnumber == 7) {
+        if (stage == "income" && itemnumber == 6) {
           $("#costs a.edit").first().text("Start").addClass("button").show();
         }
       });
@@ -748,30 +519,17 @@ table td[class*=col-], table th[class*=col-]{
       for (i = 1; i < 7; i++) {
         var amount = $.cookie(item + i);
         if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-          $("#" + item + i + " .value").text("£" + parseFloat(amount).toFixed(2));
+          $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
           if (parseFloat(amount)) {
             totalamount = totalamount + parseFloat(amount);
           }
         }
       }
-      $("#incometotal .totalvalue").text("£" + totalamount.toFixed(2));
+      $("#incometotal .totalvalue").text(totalamount.toFixed(2));
       //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
     }
-
-
-
-
     //partnerincometotal  overalltotal  coststotal  totalvalue
     function totalpartnerincome() {
-      // Household income total
-	    if($.cookie("partnerincome0")){
-	    	var amount = $.cookie("partnerincome0");
-	    	$("#household-income-1 .value").text("£" + parseFloat(amount).toFixed(2));
-	    	$("#household-total .total .totalvalue").text("£" + parseFloat(amount).toFixed(2));
-	    }
-
-
-      /*
       var totalamount = 0;
       var item = "partnerincome";
 
@@ -781,15 +539,13 @@ table td[class*=col-], table th[class*=col-]{
         if (parseFloat(amount)) {
           totalamount = totalamount + parseFloat(amount);
         }
-
-
       }
 
       $("#partnerincometotal .totalvalue").text(totalamount.toFixed(2));
       var overalltotal = totalamount;
       if ($("#incometotal .totalvalue").text().length > 0) {
         overalltotal += parseFloat($("#incometotal .totalvalue").text());
-      }*/
+      }
       //$("#overalltotal .totalvalue").text(overalltotal.toFixed(2));
     }
 
@@ -799,13 +555,13 @@ table td[class*=col-], table th[class*=col-]{
       for (i = 1; i <= page; i++) {
         if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
           var amount = $.cookie(item + i);
-          $("#" + item + i + " .value").text("£" + parseFloat(amount).toFixed(2));
+          $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
           if (parseFloat(amount)) {
             totalamount = totalamount + parseFloat(amount);
           }
         }
       }
-      $("#coststotal .totalvalue").text("£" + totalamount.toFixed(2));
+      $("#coststotal .totalvalue").text(totalamount.toFixed(2));
     }
 
     function removeallcookies() {
@@ -846,4 +602,4 @@ table td[class*=col-], table th[class*=col-]{
     </div>
   </body><!-- #EndTemplate -->
 
-</html>
+  </html>

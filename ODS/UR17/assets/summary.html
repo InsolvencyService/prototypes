@@ -441,12 +441,12 @@ $(document).ready(function() {
                 $("#assets2 .value").text(numberWithCommas(parseFloat($.cookie('VehicleAssetTotal')))).addClass("bolder");
             }
             else {
-                $("#assets2 .answerno").show().addClass("bolder");
+              $("#assets2 .answerno").show().addClass("bolder");
             }
         }
 
         if (page === 3) {
-                $("#assets3 .answerno").show().addClass("bolder");
+          $("#assets3 .answerno").hide().addClass("bolder");
         }
 
         if (page >= 4) {
@@ -464,7 +464,7 @@ $(document).ready(function() {
 				    $("#" + stage + itemnumber + " .declare").hide();
 				    $("#" + stage + itemnumber + " a.edit").show().removeClass("button");
             $(".well").removeClass("well");
-				        $("#" + stage + itemnumber + " a.edit").text("Edit");
+		        $("#" + stage + itemnumber + " a.edit").text("Edit");
 
 				    switch (itemnumber) {
 				        case 1:
