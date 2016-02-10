@@ -177,12 +177,14 @@
                     Ms
                   </label>
 
-                  <label id="title_label4" for="other" class="block-label">
-                    <input id="title_other" value="" name="title" type="radio" for="other" aria-describedby="title-select title_label4">Other <span>- please specify:</span>
-                    <label id="title_label4a" for="other" class="block-label">
-                      <input id="other" name="other" type="text" value=""/>
+                  <div class="wrap-radio-button">
+                    <label id="title_label4" for="title_other" class="block-label">
+                      <input id="title_other" value="" name="title" type="radio" aria-describedby="title-select title_label4">
+                      Other
                     </label>
-                  </label>
+                    <label for="title_answer" class="specify">- please specify:</label>
+                    <input id="other" name="other" type="text" value=""/>
+                  </div>
 
                 </div>
               </fieldset>
@@ -223,7 +225,7 @@
                 </div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.year" for="dob-year">Year</label>
-                  <input id="dob-year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-describedby="date_of_birth date_of_birth_label.year" pattern="[1-9]" value="1980" />
+                  <input id="dob-year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-describedby="date_of_birth date_of_birth_label.year" value="1980" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 5 - END ///// -->
