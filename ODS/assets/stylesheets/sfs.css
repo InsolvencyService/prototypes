@@ -13,7 +13,7 @@ input:focus, input.form-control:focus, select:focus {
 }
 
 select {
-  margin: 0 10px 0 0;
+  margin: 1px 10px 0 0;
   border: 2px solid #6f777b;
   border-radius: 0;
   background: transparent;
@@ -314,11 +314,12 @@ fieldset {
   padding: 0 0 20px 0;
 }
 
-fieldset .amount, fieldset .per {
+.amount, .per {
   text-align: left;
+  font-weight: bold;
 }
 
-fieldset .amount label, fieldset div.per label {
+.amount label, .per label {
   text-indent: -10000px;
   text-align: left;
   /*margin: 0;*/
@@ -326,7 +327,7 @@ fieldset .amount label, fieldset div.per label {
   width: 0;
 }
 
-fieldset .amount .currency {
+.amount .currency {
   font-weight: bold;
   float: left;
   display: inline-block;
@@ -339,10 +340,10 @@ fieldset .amount .currency {
 }*/
 
 fieldset.input-item .amount .currency {
-  margin-top: 36px;
+  margin-top: 32px;
 }
 
-fieldset .amount input, fieldset div input {
+.amount input, fieldset div input {
   float: left;
   width: 65%;
   border: 2px solid #6f777b;
@@ -353,8 +354,9 @@ fieldset .amount input, fieldset div input {
   /*clear: left;*/
 }
 
-fieldset.expense .amount input.amount, fieldset.fine .amount input {
-  margin-top: 29px;
+.expense .amount input.amount, .fine .amount input {
+  margin-top: 26px;
+  font-weight: normal;
 }
 
 /*fieldset .per select {
@@ -366,13 +368,13 @@ fieldset .row > div:first-child {
   padding-top: 15px;
 }
 
-fieldset.add-item {
+.add-item {
   margin: 20px 0;
   border-left: 5px solid #005ea5;
   padding: 20px 0 20px 20px;
 }
 
-fieldset.additional-item {
+.additional-item {
   padding-top: 10px;
   /*margin-top: 20px;*/
 }
@@ -385,7 +387,7 @@ h2.additional-item-intro {
   /*display: inline-block !important;*/
 }
 
-fieldset.title-holder {
+.title-holder {
   display: inline-block;
   width: 100%;
   padding: 0;
