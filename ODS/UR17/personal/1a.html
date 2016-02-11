@@ -148,16 +148,19 @@
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <fieldset>
+            <!-- ///// Main Form Action - START ///// -->
+            <fieldset class="form-group">
 
               <legend class="hidden">Please enter your title</legend>
+              <label class="form-label-bold" for="firstname">Enter title</label>
+              <input type="text" id="firstname"/>
 
-              <fieldset class="form-group">
-                <label class="form-label-bold" for="firstname">Enter title</label>
-                <input type="text" id="firstname"/>
-              </fieldset>
+            </fieldset>
+            <!-- ///// Main Form Action - END ///// -->
 
-              <!-- ///// CTA Section - START ///// -->
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <legend class="hidden">Please continue with your application</legend>
               <div class="row">
                 <div class="col-md-12 col-xs-12">
                   <div class="form-navigation form-group">
@@ -168,9 +171,8 @@
                   </div>
                 </div>
               </div>
-              <!-- ///// CTA Section - END ///// -->
-
             </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->
