@@ -8,8 +8,8 @@
   		visibility: visible;
 }
 .totalvalue{
-    font-weight:bold;
-    width:100px;
+  font-weight:bold;
+  width: auto;
 }
 .actions{
     width:100px;
@@ -488,10 +488,16 @@ input.description {
   margin-bottom: 0;
 }
 
-.form-intro.summary label {
+.form-intro.summary h2, .description h2 {
   float: right;
-  margin: 47px 0 0 0;
+  margin: 47px 0 15px 0;
   font-size: 15px;
+  font-weight: bold;
+}
+
+.description h2 {
+  margin: 0px 0 0 0;
+  font-size: 26px;
 }
 
 .form-intro.summary h1.form-title {
@@ -507,6 +513,11 @@ input.description {
   background: white;
 }
 
+.section .row > div {
+  padding-top: 0;
+}
+
+
 .section .heading-xlarge {
   float: left;
   margin: -5px 10px 0 0;
@@ -517,19 +528,19 @@ input.description {
   color: black;
 }
 
-.section label {
+.section h2 {
   width: 100%;
   float: left;
   font-size: 25px;
   margin-top: 0;
 }
 
-.section.active label span {
+.section.active h2 span {
   display: inline-block;
   margin-right: 5px;
 }
 
-.section label span {
+.section h2 span {
   display: none;
 }
 
@@ -557,12 +568,12 @@ fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
   border-bottom: 0;
 }
 
-.section.complete label, .section.complete .heading-xlarge {
+.section.complete h2, .section.complete .heading-xlarge {
   color: black !important;
   margin-bottom: 0;
 }
 
-.section label, .section .heading-xlarge {
+.section h2, .section .heading-xlarge {
   color: #a0a3a7 !important;
   margin-bottom: 0;
   font-weight: normal;
@@ -573,7 +584,7 @@ fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
   width: 60px;
 }
 
-.section.active label, .section.active .heading-xlarge {
+.section.active h2, .section.active .heading-xlarge {
   color: black !important;
   font-weight: bold;
   font-size: 20px;
@@ -652,8 +663,8 @@ fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
   font-size: 30px;
 }
 
-#household-income label.sub-header {
-  margin: 10px 0 0 0;
+#household-income h2.sub-header {
+  margin: 10px 0 15px 0;
 }
 
 #household-income .form-intro.summary h1.form-title {
