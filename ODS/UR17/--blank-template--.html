@@ -142,37 +142,23 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12">
 
-          <h1 class="form-title heading-large">Your title</h1>
+          <h1 class="form-title heading-large"></h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <!-- ///// Main Form Action - START ///// -->
-            <fieldset class="form-group">
+            <fieldset>
 
-              <legend class="hidden">Please enter your title</legend>
-              <label class="form-label-bold" for="firstname">Enter title</label>
-              <input type="text" id="firstname"/>
+              <legend class="hidden"></legend>
+
+
+              <!-- ///// CTA Section - START ///// -->
+
+              <!-- ///// CTA Section - END ///// -->
+
 
             </fieldset>
-            <!-- ///// Main Form Action - END ///// -->
-
-            <!-- ///// CTA Section - START ///// -->
-            <fieldset class="form-group">
-              <legend class="hidden">Please continue with your application</legend>
-              <div class="row">
-                <div class="col-md-12 col-xs-12">
-                  <div class="form-navigation form-group">
-                    <input type="button" onclick="location.href='2.html';" id="next" class="button" value="Continue">
-                    <br>
-                    <a href="javascript:history.go(-1)" id="back">Back</a>
-                    <a href="#" class="cancel">Save and logout</a>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -182,9 +168,7 @@
 
         <!-- ///// Right content - START ///// -->
         <div class="col-md-4 col-xs-12">
-          <div class="panel-indent">
-            <p><a href="#" class="cancel">Save and logout</a></p>
-          </div>
+
         </div>
         <!-- ///// Right content - END ///// -->
 
@@ -237,18 +221,12 @@
   });
   </script>
 
+  <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-  }
-
-
   </script>
-  <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
+  <!-- #EndEditable "scripts" -->
+  <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
 
 </body><!-- #EndTemplate -->
 
