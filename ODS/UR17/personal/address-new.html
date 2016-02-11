@@ -67,6 +67,9 @@
 
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
 <!-- #EndEditable -->
 
 
@@ -142,28 +145,7 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12">
 
-          <h1 class="form-title heading-large">Other names or aliases <span class="repeat">summary</span></h1>
-
-          <p>We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</p>
-          <p>Don't include trading names.</p>
-
-          <!-- ///// Table repeat - START ///// -->
-          <div id="pnl-employment_table" class="repeat">
-            <table style="width: 100%" class="family">
-              <thead>
-                <tr>
-                  <th>Name or alias</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody class="tbl-content"></tbody>
-            </table>
-            <p>&nbsp;</p>
-            <p>The table above summarises the names or alises you have told us about</p>
-     				<p>We need to know about any other names you have been known by the last 5 years.</p>
-            <p>&nbsp;</p>
-   			  </div>
-          <!-- ///// Table repeat - END ///// -->
+          <h1 class="form-title heading-large"></h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -171,47 +153,11 @@
 
             <fieldset>
 
-              <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="form-group" id="loop">
-                <legend class="form-label-bold">
-                  <span class="firsttime">Enter your other name or alias</span>
-                  <span class="repeat">Enter another name or alias</span>
-                </legend>
-                <p class="form-hint">
-                  For example, John Smith.
-                  <span class="firsttime">You can add more names later.</span>
-                </p>
-                <div class="row">
-                  <div class="col-md-4 col-xs-12">
-                    <label for="firstname">First name</label>
-                    <input id="firstname" />
-                  </div>
-                  <div class="col-md-4 col-xs-12">
-                    <label for="lastname">Last name</label>
-                    <input id="lastname" />
-                  </div>
-                  <div class="col-md-4 col-xs-12">
-                    <a id="add" class="button" href="#">Add name <span class="repeat"></span></a>
-                  </div>
-                </div>
-              </fieldset>
-              <!-- ///// Fieldset/Group 1 - END ///// -->
+              <legend class="hidden"></legend>
+
 
               <!-- ///// CTA Section - START ///// -->
-              <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
-                <div class="row">
-                  <div class="col-md-12 col-xs-12">
-                    <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='address.html';" id="next1" class="button firsttime" value="Continue - I haven't been known by any other name or alias">
-                      <input type="button" onclick="location.href='address.html';" id="next2" class="button repeat" value="Continue - I have added all my names and aliases">
-                      <br>
-                      <a href="javascript:history.go(-1)" id="back">Back</a>
-                      <a href="#" class="cancel">Save and logout</a>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
+
               <!-- ///// CTA Section - END ///// -->
 
 
@@ -225,9 +171,7 @@
 
         <!-- ///// Right content - START ///// -->
         <div class="col-md-4 col-xs-12">
-          <div class="panel-indent">
-            <a href="#">Save and logout</a>
-          </div>
+
         </div>
         <!-- ///// Right content - END ///// -->
 
@@ -267,8 +211,10 @@
   <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-  <script type="text/javascript" src="../creditors/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../shared/loop.js"></script>
+  <script type="text/javascript" src="../assets/js/titleCaps.js"></script>
+  <script type="text/javascript" src="../assets/property/js/postcodelookup.js"></script>
+
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -285,16 +231,67 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#add").click(function () {
-      $(".repeat").show();
-    	$(".firsttime").hide();
+    $(document).ready(function() {
 
-    	var name = $("#firstname").val() + " " + $("#lastname").val();
-    	row = "<tr><td>"+ name +"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
-    	$(".tbl-content").append(row);
-    	$("#firstname").val("");
-    	$("#lastname").val("");
+    	$("#email").val($.cookie('email'));
+
+    	var housename;
+    	$("#address_line_1").val("");
+    	$("#address_post_code").val("");
+    	var pre  = getParameterByName("pre");
+    	if (pre && pre.length > 1){
+    		$("#address_line_1").val("110 High Street");
+    		$("#address_line_2").val("Newhall");
+    		$("#address_town").val("Birmingham");
+    		$("#address_post_code").val("B4 3TT");
+    		//$("#other-addresses").hide();
+
+    		$("#next").prop("href", "your-addresses.html")
+    	}
+
+    	$("#email").val($.cookie('email'));
+
+    	var normalroute = $("#next").prop("href");
+
+    	$("#otheraddress_Yes").click(function(){
+    		$("#next").prop("href","list_addresses.html");
+    	});
+    	$("#otheraddress_No").click(function(){
+    		$("#next").prop("href", normalroute);
+    	});
+
+    	$("#btn-addanothername").click(function(){
+    		$("#other-name-2").show();
+    	});
+
     });
+
+    $("#next").click(function(e){
+    		var addr = $("#address_line_1").val();
+    		if (addr && addr.length > 0){
+  		    $.cookie("address", addr, { expires: 1, path: '/' });
+  		    $.cookie("applicant_address", addr, { expires: 1, path: '/' });
+
+  		    $.cookie("mobile", $("#mobile").val(), {path: '/' });
+
+    			$.cookie("address_line_1", addr, { expires: 1, path:'/' });
+    			$.cookie("address_line_2", $("#address_line_2").val(), { expires: 1, path:'/' });
+    			$.cookie("address_line_3", $("#address_line_3").val(), { expires: 1, path:'/' });
+
+    			$.cookie("town", $("#address_town").val(), { expires: 1, path: '/' });
+    			$.cookie("county", $("#address_county").val(), { expires: 1, path: '/' });
+    			if ( $("#address_post_code")){
+    				$.cookie("post_code", $("#address_post_code").val(), { expires: 1, path:'/' });
+    			}
+    		}
+    });
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
 
   </script>
   <!-- #EndEditable "scripts" -->
