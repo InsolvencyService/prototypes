@@ -164,23 +164,23 @@
               <p><br></p>
 
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-              <div class="form-intro">
+              <div class="form-intro" role="header">
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-5">
-                    <h1 class="heading-large">Accounting details</h1>
+                    <h2 class="heading-large">Accounting details</h2>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3">
-                    <h1 class="heading-small amount">Amount</h1>
+                    <h2 class="heading-small amount" aria-hidden="true">Amount</h2>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-4">
-                    <h1 class="heading-small per">per week / month / year</h1>
+                    <h2 class="heading-small per" aria-hidden="true">per week / month / year</h2>
                   </div>
                 </div>
               </div>
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
 
               <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
-              <fieldset>
+              <fieldset role="main" id="net-profit" aria-labelledby="net-profit">
                 <legend class="hidden">Net profit</legend>
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-5">
@@ -189,11 +189,11 @@
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3 amount">
                     <div class="currency">&pound;</div>
-                    <input type="text" id="net-profit-amount" class="amount" placeholder="0">
+                    <input type="text" id="net-profit-amount" class="amount" placeholder="0" aria-describedby="net-profit net-profit-amount">
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-4 per">
                     <label for="per-d6">per week / month / year</label>
-                    <select name="D6" id="per-d6">
+                    <select name="D6" id="per-d6" aria-describedby="net-profit per-d6">
                       <option value="week">per week</option>
                       <option value="fortnight">per fortnight</option>
                       <option value="4weeks">per 4 weeks</option>
@@ -211,14 +211,14 @@
 
           <p><br></p>
 
-          <div class="row">
+          <div class="row" role="header">
             <div class="col-xs-12">
 
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
               <div class="form-intro">
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-5">
-                    <h1 class="heading-large">Accounting period</h1>
+                    <h2 class="heading-large">Accounting period</h2>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3">
                   </div>
@@ -240,17 +240,17 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row" role="main">
             <div class="col-md-6 col-sm-6 col-xs-12">
 
               <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
-              <fieldset id="accounting-year-start">
+              <fieldset id="accounting-year-start" aria-labelledby="accounting-year-start">
                 <legend class="form-label-bold">Accounting period start date</legend>
                 <p class="form-hint">For example, Apr 2012</p>
                 <div class="row">
-                  <div class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="col-md-3 col-sm-3 col-xs-3" role="group">
                     <label for="start-month">Month</label><br>
-                    <select id="start-month" name="start-month">
+                    <select id="start-month" name="start-month" aria-describedby="accounting-year-start start-month">
                       <option value="0">--</option>
                       <option value="1">Jan</option>
                       <option value="2">Feb</option>
@@ -266,9 +266,9 @@
                       <option value="12">Dec</option>
                     </select>
                   </div>
-                  <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="col-md-5 col-sm-5 col-xs-5" role="group">
                     <label for="start-year">Year</label><br>
-                    <input id="start-year" name="start-year" type="number" min="2000" max="2016" />
+                    <input id="start-year" name="start-year" type="number" min="2000" max="2016" aria-describedby="accounting-year-start start-year" />
                   </div>
                 </div>
               </fieldset>
@@ -279,13 +279,13 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
 
               <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
-              <fieldset id="accounting-year-end">
+              <fieldset id="accounting-year-end" aria-labelledby="accounting-year-end">
                 <legend class="form-label-bold">Accounting period end date</legend>
                 <p class="form-hint">For example, Mar 2013</p>
                 <div class="row">
-                  <div class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="col-md-3 col-sm-3 col-xs-3" role="group">
                     <label for="month-end">Month</label><br>
-                    <select id="month-end" name="month-end">
+                    <select id="month-end" name="month-end" aria-describedby="accounting-year-end month-end">
                       <option value="0">--</option>
                       <option value="1">Jan</option>
                       <option value="2">Feb</option>
@@ -301,9 +301,9 @@
                       <option value="12">Dec</option>
                     </select>
                   </div>
-                  <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="col-md-5 col-sm-5 col-xs-5" role="group">
                     <label for="year-end">Year</label><br>
-                    <input id="year-end" name="year-end" type="number" min="2000" max="2016" />
+                    <input id="year-end" name="year-end" type="number" min="2000" max="2016" aria-describedby="accounting-year-end year-end" />
                   </div>
                 </div>
               </fieldset>
