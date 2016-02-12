@@ -191,7 +191,7 @@ table td{
             </tr>
             <tr>
               <td>Transaction number</td>
-              <td class="heading-small"><span class="payment-ref">12345678</span></td>
+              <td class="heading-small"><span class="payment-ref">ADJ12345678</span></td>
             </tr>
             <tr>
               <td>Payment amount</td>
@@ -295,7 +295,7 @@ $(document).ready(function() {
   });
 
   //8 digit random number for the payment number
-  ref = Math.floor(Math.random()*1E8);
+  ref = "ADJ" + Math.floor(Math.random()*1E8);
   $(".payment-ref").text(ref).addClass("bolder");
 
   //if an amount of payment has been entered
