@@ -156,10 +156,10 @@
               <fieldset id="movedin-date" class="date-of-birth">
                 <legend id="date_of_birth_label" class="form-label-bold">When did you move in?</legend>
                 <div class="form-hint">For example, Aug 2012</div>
-                <div class="form-group" style="width:60px">
+                <div class="form-group form-group-year">
                   <label id="date_of_birth_label.month" for="month">Month</label>
                   <select id="month" name="month">
-                    <option value="0"></option>
+                    <option value="0">&nbsp;</option>
                     <option value="1">Jan</option>
                     <option value="2">Feb</option>
                     <option value="3">Mar</option>
@@ -198,12 +198,14 @@
                   No - I live with a family member or friend
                 </label>
 
-                <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label">
-                  <input id="PropertyOwnership_Other" value="Other" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_Other_Label" type="radio" >Other
-                  <span style="font-weight:normal">- please specify:</span>
-                  <input id="PropertyOwnership_OtherText" name="PropertyOwnership_OtherText" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal" type="text">
-                </label>
-
+                <div class="wrap-radio-button">
+                  <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label">
+                    <input id="PropertyOwnership_Other" value="" name="PropertyOwnership" type="radio" aria-describedby="PropertyOwnership PropertyOwnership_Other_Label">
+                    Other
+                  </label>
+                  <label for="title_answer" class="specify">- please specify:</label>
+                  <input id="PropertyOwnership_OtherText" name="PropertyOwnership_OtherText" type="text" value=""/>
+                </div>
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
