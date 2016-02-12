@@ -157,7 +157,7 @@ table td[class*=col-], table th[class*=col-]{
                   <div id="income" class="col-xs-12">
 
                     <!-- /////////////////// Intro - Start /////////////////// -->
-                    <div class="form-intro summary" role="header">
+                    <header class="form-intro summary">
                       <div class="row">
                         <div class="col-sm-8">
                           <h1 class="form-title heading-large">Your income</h1>
@@ -166,7 +166,7 @@ table td[class*=col-], table th[class*=col-]{
                           <h2 class="sub-header">Amount per month</h2>
                         </div>
                       </div>
-                    </div>
+                    </header>
                     <!-- /////////////////// Intro - End /////////////////// -->
 
                     <div class="main" role="main">
@@ -249,7 +249,7 @@ table td[class*=col-], table th[class*=col-]{
                     </div>
 
                     <!-- ///////////////// Total Value - Start ///////////////// -->
-                    <div class="section-total-value summary-page" id="incometotal" role="footer">
+                    <footer class="section-total-value summary-page" id="incometotal" role="footer">
                       <div class="row">
                         <div class="col-sm-5">
                         </div>
@@ -260,7 +260,7 @@ table td[class*=col-], table th[class*=col-]{
                           <div class="amount totalvalue">8000.00</div>
                         </div>
                       </div>
-                    </div>
+                    </footer>
                     <!-- ///////////////// Total Value - End ///////////////// -->
 
                   </div>
@@ -270,7 +270,7 @@ table td[class*=col-], table th[class*=col-]{
                   <div id="household-income" class="col-sm-12">
 
                     <!-- /////////////////// Intro - Start /////////////////// -->
-                    <div class="form-intro summary" role="header" aria-hidden="true">
+                    <header class="form-intro summary" aria-hidden="true">
                       <div class="row">
                         <div class="col-sm-8">
                           <h1 class="form-title heading-xlarge">Household income</h1>
@@ -279,7 +279,7 @@ table td[class*=col-], table th[class*=col-]{
                           <h2 class="sub-header">Amount per month</h2>
                         </div>
                       </div>
-                    </div>
+                    </header>
                     <!-- /////////////////// Intro - End /////////////////// -->
 
                     <div class="main" role="main">
@@ -302,7 +302,7 @@ table td[class*=col-], table th[class*=col-]{
                     </div>
 
                     <!-- ///////////////// Total Value - Start ///////////////// -->
-                    <div class="section-total-value summary-page" id="household-total" role="footer" aria-hidden="true">
+                    <footer class="section-total-value summary-page" id="household-total" role="footer" aria-hidden="true">
                       <div class="row">
                         <div class="col-sm-5">
                         </div>
@@ -313,7 +313,7 @@ table td[class*=col-], table th[class*=col-]{
                           <div class="amount totalvalue">0.00</div>
                         </div>
                       </div>
-                    </div>
+                    </footer>
                     <!-- ///////////////// Total Value - End ///////////////// -->
                   </div>
                 </div>
@@ -328,7 +328,7 @@ table td[class*=col-], table th[class*=col-]{
               <fieldset>
                 <legend class="hidden" aria-hidden="true">Tell us your expenses</legend>
                 <!-- /////////////////// Intro - Start /////////////////// -->
-                <div class="form-intro summary" role="header" aria-hidden="true">
+                <header class="form-intro summary" aria-hidden="true">
                   <div class="row">
                     <div class="col-sm-8">
                       <h1 class="form-title heading-large">Your expenses</h1>
@@ -337,7 +337,7 @@ table td[class*=col-], table th[class*=col-]{
                       <h2 class="sub-header">Amount per month</h2>
                     </div>
                   </div>
-                </div>
+                </header>
                 <!-- /////////////////// Intro - End /////////////////// -->
 
                 <div class="main" role="main">
@@ -444,7 +444,7 @@ table td[class*=col-], table th[class*=col-]{
                 </div>
 
                 <!-- ///////////////// Total Value - Start ///////////////// -->
-                <div class="section-total-value summary-page" id="coststotal" role="footer" aria-hidden="true">
+                <footer class="section-total-value summary-page" id="coststotal" role="footer" aria-hidden="true">
                   <div class="row">
                     <div class="col-sm-5">
                     </div>
@@ -455,20 +455,21 @@ table td[class*=col-], table th[class*=col-]{
                       <div class="amount totalvalue">0.00</div>
                     </div>
                   </div>
-                </div>
+                </footer>
                 <!-- ///////////////// Total Value - End ///////////////// -->
-              </fieldset>
+              </div>
             </div>
+
+            <div class="form-navigation form-group">
+              <input type="button" onclick="location.href='../overview.html?section6=complete';" id="next" class="button" value="Continue">
+              <a href="javascript:history.go(-1)" id="back">Back</a>
+              <a href="#" class="cancel">Save and logout</a>
+            </div>
+
+
           </div>
           <!-- //////////////////////////////////////////////// Expenses - End //////////////////////////////////////////////// -->
 
-          <div class="form-navigation form-group">
-            <input type="button" onclick="location.href='../overview.html?section6=complete';" id="next" class="button" value="Continue">
-          </div>
-          <div>
-            <a href="javascript:history.go(-1)" id="back">Back</a>
-            <a href="#" class="cancel">Save and logout</a>
-          </div>
         </form>
 
     </div>
