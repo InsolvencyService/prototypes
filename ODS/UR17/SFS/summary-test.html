@@ -471,7 +471,7 @@ table td[class*=col-], table th[class*=col-]{
               </div>
             </div>
           </div>
-          
+
           <!-- //////////////////////////////////////////////// Expenses - End //////////////////////////////////////////////// -->
 
         </form>
@@ -613,6 +613,7 @@ table td[class*=col-], table th[class*=col-]{
       if (stage == "income" && itemnumber === 2) {
         $("#income1").removeClass("active").addClass("complete");
         $("#income2").addClass("active");
+        $("<section class=\"section\" id=\"income2\" aria-hidden=\"true\">").replaceWith("<section class=\"section\" id=\"income2\" aria-hidden=\"false\">");
       }
       if (stage == "income" && itemnumber === 3) {
         $("#income1, #income2").removeClass("active").addClass("complete");
