@@ -142,7 +142,7 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12">
 
-          <h1 class="form-title heading-large">Residency details</h1>
+          <h1 class="form-title heading-large">Your household <span class="repeat">summary</span></h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -153,61 +153,24 @@
               <legend class="hidden"></legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset id="movedin-date" class="date-of-birth">
-                <legend id="date_of_birth_label" class="form-label-bold">When did you move in?</legend>
-                <div class="form-hint">For example, Aug 2012</div>
-                <div class="form-group form-group-year">
-                  <label id="date_of_birth_label.month" for="month">Month</label>
-                  <select id="month" name="month">
-                    <option value="0">&nbsp;</option>
-                    <option value="1">Jan</option>
-                    <option value="2">Feb</option>
-                    <option value="3">Mar</option>
-                    <option value="4">Apr</option>
-                    <option value="5">May</option>
-                    <option value="6">Jun</option>
-                    <option value="7">Jul</option>
-                    <option value="8">Aug</option>
-                    <option value="9">Sep</option>
-                    <option value="10">Oct</option>
-                    <option value="11">Nov</option>
-                    <option value="12">Dec</option>
-                  </select>
+              <fieldset id="loop">
+                <legend class="form-label-bold">Enter <span class="firsttime">the </span><span class="repeat">another </span>person's first and last name</legend>
+                <span class="form-hint">For example, John Smith. You can add more people later.</span>
+                <div class="row">
+                  <div class="col-md-4 col-xs-12">
+              		  <label for="firstname">First name</label>
+              			<input id="firstname" />
+              	  </div>
+                  <div class="col-md-4 col-xs-12">
+                		<label for="lastname">Last name</label>
+                		<input id="lastname" />
+                	</div>
+                  <div class="col-md-4 col-xs-12">
+                    <a href="add.html" class="button" id="add">Add person</a>
+              	  </div>
                 </div>
-                <div class="form-group form-group-year">
-                  <label id="date_of_birth_label.year" for="year">Year</label>
-                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" />
-                </div>
-              </fieldset>
+            	</fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
-
-              <!-- ///// Fieldset/Group 2 - START ///// -->
-              <fieldset class="inline form-group" aria-labelledby="PropertyOwnership" id="PropertyOwnership">
-                <legend id="PropertyOwnership_Label" class="form-label-bold">Do you own the property?</legend>
-
-                <label id="PropertyOwnership_0_Label" for="PropertyOwnership_0" class="block-label">
-                  <input id="PropertyOwnership_0" value="Yes - I own it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_0_Label" type="radio">
-                  Yes - I own it
-                </label>
-                <label id="PropertyOwnership_1_Label" for="PropertyOwnership_1" class="block-label">
-                  <input id="PropertyOwnership_1" value="No - I rent it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_1_Label" type="radio">
-                  No - I rent it
-                </label>
-                <label id="PropertyOwnership_2_Label" for="PropertyOwnership_2" class="block-label">
-                  <input id="PropertyOwnership_2" value="No - I live with a family member or friend" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_2_Label" type="radio">
-                  No - I live with a family member or friend
-                </label>
-
-                <div class="wrap-radio-button">
-                  <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label">
-                    <input id="PropertyOwnership_Other" value="" name="PropertyOwnership" type="radio" aria-describedby="PropertyOwnership PropertyOwnership_Other_Label">
-                    Other
-                  </label>
-                  <label for="PropertyOwnership_OtherText" class="specify">- please specify:</label>
-                  <input id="PropertyOwnership_OtherText" name="PropertyOwnership_OtherText" type="text" value=""/>
-                </div>
-              </fieldset>
-              <!-- ///// Fieldset/Group 2 - END ///// -->
 
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="form-group">
@@ -215,7 +178,8 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" id="next" class="button" value="Continue">
+                      <input type="button" onclick="location.href='list_addresses.html';" id="livealone" class="button" value="Continue - I live alone">
+                      <input type="button" onclick="location.href='list_addresses.html';" id="next" class="button family repeat" value="Continue - I have added everyone who lives with me">
                       <br>
                       <a href="javascript:history.go(-1)" id="back">Back</a>
                       <a href="#" class="cancel">Save and logout</a>
@@ -296,32 +260,65 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#next").click(function(e){
+    $(document).ready(function() {
 
-    	$("#next").attr("href", "family-members.html");
-    	$.cookie("CUR_PROP_start", $("#month :selected").text() + ' ' + $("#year").val(), {path:'/'});
+    	$(".family").hide();
 
-    	if($("#PropertyOwnership_0").prop('checked')==true){
-    		$.cookie("PropertyOwnerType", "Owned", {path:'/'});
+    	var home_address = $.cookie("applicant_address");
+    	$(".home").text(home_address);
+    	var loop = getParameterByName("loop");
+
+    	var pre  = getParameterByName("added");
+    	if (pre && pre.length > 1){
+    		$(".family").show();
+    		$("#livealone").hide();
+    		$("#row1").show();
+    		$("#movedin-date").hide();
+    		$(".repeat").show();
     	}
-    	else if($("#PropertyOwnership_1").prop('checked')==true){
-    		$.cookie("PropertyOwnerType", "Rented", {path:'/'});
-    		$("#next").attr("href", "rent.html");
-    	}
-    	else if($("#PropertyOwnership_2").prop('checked')==true){
-    		$.cookie("PropertyOwnerType", "Living with relative", {path:'/'});
-    	}
-    	else{
-    		$.cookie("PropertyOwnerType", "Other", {path:'/'});
+
+    	var normalroute = $("#next").prop("href");
+
+    	$("#add").on("click", function(){
+    		$.cookie('memberfirstname', $("#firstname").val(), { expires: 1, path:'/' });
+    		$.cookie('memberlastname', $("#lastname").val(), { expires: 1, path:'/' });
+    	});
+
+    	var number = 0;
+      if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
+      	number = parseInt($.cookie('familymembers'));
+  	   }
+
+    	for (i = 1; i < number + 1; i++) {
+    		if ($.cookie('member' + i + "-firstname") && $.cookie('member' + i + "-firstname").length > 0){
+  				if ($.cookie('memberdeleted' + i) == null){
+  					$(".family").show();
+
+  					$("#row" + i).show();
+  					var firstname = $.cookie('member' + i + "-firstname");
+  					var lastname = $.cookie('member' + i + "-lastname");
+  					$("#row" + i + " .name").text(firstname + " " + lastname);
+  					$("#row" + i + " .age").text($.cookie('member' + i + "-age"));
+  					$("#row" + i + " .relationship").text($.cookie('member' + i + "-relationship"));
+  					$("#row" + i + " .dependent").text($.cookie('member' + i + "-dependent"));
+
+  				}
+    			$(".family").show();
+    			$("#livealone").hide();
+    			$("#row1").show();
+    			$("#movedin-date").hide();
+
+    			$.removeCookie('memberdeleted' + i);
+    		}
     	}
 
     });
 
     function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
 
   </script>
