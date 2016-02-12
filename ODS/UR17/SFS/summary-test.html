@@ -512,6 +512,7 @@ table td[class*=col-], table th[class*=col-]{
 
     <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="../assets/js/sfs.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/sfs-new.js"></script> -->
 
     <script type="text/javascript">
     var itemnumber = 0;
@@ -613,7 +614,7 @@ table td[class*=col-], table th[class*=col-]{
       if (stage == "income" && itemnumber === 2) {
         $("#income1").removeClass("active").addClass("complete");
         $("#income2").addClass("active");
-        $("<section class=\"section\" id=\"income2\" aria-hidden=\"true\">").replaceWith("<section class=\"section\" id=\"income2\" aria-hidden=\"false\">");
+        $("#income2").attr("aria-hidden", "false");
       }
       if (stage == "income" && itemnumber === 3) {
         $("#income1, #income2").removeClass("active").addClass("complete");
