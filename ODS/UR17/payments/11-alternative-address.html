@@ -194,7 +194,7 @@ table td{
             <table class="table">
               <tr>
                 <td width="31%">Payment reference</td>
-                <td class="heading-small">1234<span id="lastname">Bagley</span></td>
+                <td class="heading-small payment-ref">ADJ12345678</td>
               </tr>
               <tr>
                 <td width="31%">Name</td>
@@ -324,6 +324,10 @@ $(document).ready(function() {
     $.cookie("url", url, {path:'/'});
     $.cookie("pathname", pathname, {path:'/'});
   });
+
+  //8 digit random number for the payment number
+  ref = "ADJ" + Math.floor(Math.random()*1E8);
+  $(".payment-ref").text(ref).addClass("bolder");
 
   //checking payment details
   if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){

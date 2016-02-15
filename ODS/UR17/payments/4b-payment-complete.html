@@ -185,8 +185,8 @@ table td{
           <div class="govuk-box-highlight">
             <h2 class="bold-large">You have completed payment for your bankruptcy application.</h2>
 
-            <p>Your transaction number is:<br>
-              <span class="payment-ref">12345678</span>
+            <p>Your payment reference is:<br>
+              <span class="payment-ref">ADJ12345678</span>
             </p>
           </div>
           <p><br/>You can now submit your application.</p>
@@ -309,7 +309,7 @@ $(document).ready(function() {
   $(".payment-ref").text(ref);
 
   //if an amount of payment has been entered
-  world = "WorldPay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+  world = ref + "-" + Math.floor( Math.random()*1E4);
   $("#wp-ref").text(world);
 
   if ($.cookie("amount")) {

@@ -62,11 +62,11 @@
 
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
 
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <!-- #EndEditable -->
 
 
@@ -140,7 +140,7 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12">
+        <div class="col-md-8 col-xs-12" role="main">
 
           <h1 class="form-title heading-large">Residency details</h1>
 
@@ -150,15 +150,15 @@
 
             <fieldset>
 
-              <legend class="hidden"></legend>
+              <legend class="hidden">We require your current place of residence</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset id="movedin-date" class="date-of-birth">
+              <fieldset id="movedin-date" class="date-of-birth" aria-labelledby="movedin-date">
                 <legend id="date_of_birth_label" class="form-label-bold">When did you move in?</legend>
                 <div class="form-hint">For example, Aug 2012</div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.month" for="month">Month</label>
-                  <select id="month" name="month">
+                  <select id="month" name="month" tabindex="1" aria-describedby="movedin-date date_of_birth_label.month">
                     <option value="0">&nbsp;</option>
                     <option value="1">Jan</option>
                     <option value="2">Feb</option>
@@ -176,7 +176,7 @@
                 </div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.year" for="year">Year</label>
-                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" />
+                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" tabindex="2" aria-describedby="movedin-date date_of_birth_label.year" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
@@ -185,27 +185,35 @@
               <fieldset class="inline form-group" aria-labelledby="PropertyOwnership" id="PropertyOwnership">
                 <legend id="PropertyOwnership_Label" class="form-label-bold">Do you own the property?</legend>
 
-                <label id="PropertyOwnership_0_Label" for="PropertyOwnership_0" class="block-label">
+                <label id="PropertyOwnership_0_Label" for="PropertyOwnership_0" class="block-label" tabindex="3">
                   <input id="PropertyOwnership_0" value="Yes - I own it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_0_Label" type="radio">
                   Yes - I own it
                 </label>
-                <label id="PropertyOwnership_1_Label" for="PropertyOwnership_1" class="block-label">
+                <label id="PropertyOwnership_1_Label" for="PropertyOwnership_1" class="block-label" tabindex="4">
                   <input id="PropertyOwnership_1" value="No - I rent it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_1_Label" type="radio">
                   No - I rent it
                 </label>
-                <label id="PropertyOwnership_2_Label" for="PropertyOwnership_2" class="block-label">
+                <label id="PropertyOwnership_2_Label" for="PropertyOwnership_2" class="block-label" tabindex="5">
                   <input id="PropertyOwnership_2" value="No - I live with a family member or friend" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_2_Label" type="radio">
                   No - I live with a family member or friend
                 </label>
 
+
                 <div class="wrap-radio-button">
-                  <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label">
-                    <input id="PropertyOwnership_Other" value="" name="PropertyOwnership" type="radio" aria-describedby="PropertyOwnership PropertyOwnership_Other_Label">
-                    Other
-                  </label>
-                  <label for="PropertyOwnership_OtherText" class="specify">- please specify:</label>
-                  <input id="PropertyOwnership_OtherText" name="PropertyOwnership_OtherText" type="text" value=""/>
+                  <div class="row">
+                    <div class="col-md-7 col-xs-5">
+                      <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label" tabindex="5">
+                        <input id="PropertyOwnership_Other" value="" name="PropertyOwnership" type="radio" aria-describedby="PropertyOwnership PropertyOwnership_Other_Label">
+                        Other - please specify:
+                      </label>
+                    </div>
+                    <div class="col-md-5 col-xs-7">
+                      <label for="PropertyOwnership_OtherText" class="hidden">Enter here:</label>
+                      <input id="PropertyOwnership_OtherText" name="PropertyOwnership_OtherText" type="text" value="" tabindex="6"/>
+                    </div>
+                  </div>
                 </div>
+
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
@@ -215,10 +223,10 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" id="next" class="button" value="Continue">
+                      <input type="button" id="next" class="button" value="Continue" tabindex="8">
                       <br>
-                      <a href="javascript:history.go(-1)" id="back">Back</a>
-                      <a href="#" class="cancel">Save and logout</a>
+                      <a href="javascript:history.go(-1)" id="back" tabindex="9">Back</a>
+                      <a href="#" class="cancel" tabindex="10">Save and logout</a>
                     </div>
                   </div>
                 </div>
@@ -235,11 +243,11 @@
         <!-- ///// Left content - END ///// -->
 
         <!-- ///// Right content - START ///// -->
-        <div class="col-md-4 col-xs-12">
+        <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <p><a href="#" class="cancel">Save and logout</a></p>
+            <p><a href="#" class="cancel" tabindex="11">Save and logout</a></p>
           </div>
-        </div>
+        </aside>
         <!-- ///// Right content - END ///// -->
 
       </div>

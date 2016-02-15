@@ -195,9 +195,7 @@ table td{
             <p class="heading-medium no-margin">00000000</p>
             <p><br></p>
             <p>Your payment reference:</p>
-            <p class="heading-medium no-margin">ADJ1234567</p>
-
-
+            <p class="heading-medium no-margin payment-ref">ADJ12345678</p>
 
             <hr>
             <div class="print-download-section">
@@ -328,6 +326,10 @@ table td{
       $.cookie("url", url, {path:'/'});
       $.cookie("pathname", pathname, {path:'/'});
     });
+
+    //8 digit random number for the payment number
+    ref = "ADJ" + Math.floor(Math.random()*1E8);
+    $(".payment-ref").text(ref);
 
     $("#submit-email").on("click", function (e) {
       $.cookie("email", $("#email").text(), {path:'/'});

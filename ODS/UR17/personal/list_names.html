@@ -62,11 +62,11 @@
 
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
 
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <!-- #EndEditable -->
 
 
@@ -140,15 +140,15 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12">
+        <div class="col-md-8 col-xs-12" role="main">
 
           <h1 class="form-title heading-large">Other names or aliases <span class="repeat">summary</span></h1>
 
-          <p>We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</p>
-          <p>Don't include trading names.</p>
+          <p aria-hidden="true">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</p>
+          <p aria-hidden="true">Don't include trading names.</p>
 
           <!-- ///// Table repeat - START ///// -->
-          <div id="pnl-employment_table" class="repeat">
+          <div id="pnl-employment_table" class="repeat" aria-hidden="true">
             <table style="width: 100%" class="family">
               <thead>
                 <tr>
@@ -171,8 +171,11 @@
 
             <fieldset>
 
+              <legend class="hidden">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.
+              <br>Don't include trading names.</legend>
+
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="form-group" id="loop">
+              <fieldset class="form-group" id="loop" aria-labelledby="loop">
                 <legend class="form-label-bold">
                   <span class="firsttime">Enter your other name or alias</span>
                   <span class="repeat">Enter another name or alias</span>
@@ -183,15 +186,15 @@
                 </p>
                 <div class="row">
                   <div class="col-md-4 col-xs-12">
-                    <label for="firstname">First name</label>
-                    <input id="firstname" />
+                    <label id="firstname-label" for="firstname">First name</label>
+                    <input id="firstname" aria-describedby="loop firstname-label" tabindex="1" />
                   </div>
                   <div class="col-md-4 col-xs-12">
-                    <label for="lastname">Last name</label>
-                    <input id="lastname" />
+                    <label id="lastname-label" for="lastname">Last name</label>
+                    <input id="lastname" aria-describedby="loop lastname-label" tabindex="2" />
                   </div>
                   <div class="col-md-4 col-xs-12">
-                    <a id="add" class="button" href="#">Add name <span class="repeat"></span></a>
+                    <a id="add" class="button" href="#" tabindex="3">Add name <span class="repeat"></span></a>
                   </div>
                 </div>
               </fieldset>
@@ -203,11 +206,11 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='address.html';" id="next1" class="button firsttime" value="Continue - I haven't been known by any other name or alias">
-                      <input type="button" onclick="location.href='address.html';" id="next2" class="button repeat" value="Continue - I have added all my names and aliases">
+                      <input type="button" onclick="location.href='address.html';" id="next1" class="button firsttime" value="Continue - I haven't been known by any other name or alias" tabindex="4">
+                      <input type="button" onclick="location.href='address.html';" id="next2" class="button repeat" value="Continue - I have added all my names and aliases" tabindex="5">
                       <br>
-                      <a href="javascript:history.go(-1)" id="back">Back</a>
-                      <a href="#" class="cancel">Save and logout</a>
+                      <a href="javascript:history.go(-1)" id="back" tabindex="6">Back</a>
+                      <a href="#" class="cancel" tabindex="7">Save and logout</a>
                     </div>
                   </div>
                 </div>
@@ -224,11 +227,11 @@
         <!-- ///// Left content - END ///// -->
 
         <!-- ///// Right content - START ///// -->
-        <div class="col-md-4 col-xs-12">
+        <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <a href="#">Save and logout</a>
+            <a href="#" tabindex="8">Save and logout</a>
           </div>
-        </div>
+        </aside>
         <!-- ///// Right content - END ///// -->
 
       </div>
@@ -288,9 +291,10 @@
     $("#add").click(function () {
       $(".repeat").show();
     	$(".firsttime").hide();
+      $("#pnl-employment_table").attr("aria-hidden", "false");
 
     	var name = $("#firstname").val() + " " + $("#lastname").val();
-    	row = "<tr><td>"+ name +"</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
+    	row = "<tr><td>"+ name +"</td><td><a href=\"#\" class=\"btn-edit\" tabindex=\"9\">Edit</a><a href=\"#\" class=\"btn-delete\" tabindex=\"10\">Delete</a></td></tr>";
     	$(".tbl-content").append(row);
     	$("#firstname").val("");
     	$("#lastname").val("");

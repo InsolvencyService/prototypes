@@ -190,7 +190,7 @@ padding:50px;
             </p>
           </div>
           <p><br/>Your card payment was declined by WorldPay. To find out why please call them on <span class="bolder">0870 366 1233,</span> quoting the WorldPay
-            transaction ID below.</p>
+            payment reference below.</p>
             <table class="table">
               <tr>
                 <td>Payment reference</td>
@@ -202,7 +202,7 @@ padding:50px;
               </tr>
               <tr>
                 <td>WorldPay transaction ID</td>
-                <td class="heading-small"><span id="wp-ref">WorldPay-1234</span></td>
+                <td class="heading-small"><span id="wp-ref">ADJ12345678-1234</span></td>
               </tr>
             </table>
 
@@ -310,7 +310,7 @@ padding:50px;
     $(".payment-ref").text(ref).addClass("bolder");
 
     //if an amount of payment has been entered
-    world = "WorldPay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+    world = ref + "-" + Math.floor( Math.random()*1E4);
     $("#wp-ref").text(world);
 
     if ($.cookie("amount")) {

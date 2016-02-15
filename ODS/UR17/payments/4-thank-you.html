@@ -177,8 +177,8 @@ table td{
           <div class="col-md-8 col-xs-12">
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your payment was successful.</h2>
-              <p>Your transaction number is:<br>
-                <span class="payment-ref">12345678</span>
+              <p>Your payment reference is:<br>
+                <span class="payment-ref">ADJ12345678</span>
               </p>
             </div>
             <!-- <p>We have sent you a confirmation email.</p> -->
@@ -198,7 +198,7 @@ table td{
             </tr>
             <tr>
               <td>WorldPay Transaction ID</td>
-              <td class="heading-small"><span class="wp-ref">WorldPay-1234</span></td>
+              <td class="heading-small"><span class="wp-ref">ADJ12345678-1234</span></td>
             </tr>
           </table>
 
@@ -304,7 +304,7 @@ $(document).ready(function() {
   $(".payment-ref").text(ref).addClass("bolder");
 
   //if an amount of payment has been entered
-  world = "WorldPay-"+ Math.floor( Math.random() * ( 1 + 99999 - 1 ) );
+  world = ref + "-"  + Math.floor( Math.random()*1E4);
   $(".wp-ref").text(world);
 
   // if ($.cookie("fee_paid")=="655.00"){
