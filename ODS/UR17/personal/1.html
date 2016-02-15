@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions</title>
+  <title>Online debt solutions -  your personal details, title, firstname, middle name, last name and date of birth</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -62,11 +62,11 @@
 
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
 
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <!-- #EndEditable -->
 
 
@@ -140,7 +140,7 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12">
+        <div class="col-md-8 col-xs-12" role="main">
 
           <h1 class="form-title heading-large">Personal details</h1>
 
@@ -177,36 +177,45 @@
                 </label>
 
                 <div class="wrap-radio-button">
-                  <label id="title_label4" for="title_other" class="block-label">
-                    <input id="title_other" value="" name="title" type="radio" aria-describedby="title-select title_label4">
-                    Other
-                  </label>
-                  <label for="title_answer" class="specify">- please specify:</label>
-                  <input id="title_answer" name="title_answer" type="text" value=""/>
+                  <div class="row">
+                    <div class="col-md-7 col-xs-5">
+                      <label id="title_label4" for="title_other" class="block-label">
+                        <input id="title_other" value="" name="title" type="radio" aria-describedby="title-select title_label4">
+                        Other - please specify:
+                      </label>
+                    </div>
+                    <div class="col-md-5 col-xs-7">
+                      <label for="title_answer" class="hidden">Enter here:</label>
+                      <input id="title_answer" name="title_answer" type="text" value=""/>
+                    </div>
+                  </div>
                 </div>
 
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
-              <div class="inline form-group">
+              <fieldset class="inline form-group">
+                <legend class="hidden">Please tell us your first name</legend>
                 <label  class="form-label-bold" for="firstname">First name</label>
                 <input value="John" type="text" id="firstname"/>
-              </div>
+              </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
               <!-- ///// Fieldset/Group 3 - START ///// -->
-              <div class="inline form-group">
+              <fieldset class="inline form-group">
+                <legend class="hidden">Please tell us your middle names</legend>
                 <label  class="form-label-bold" for="middlename">Middle names</label>
                 <input value="" type="text" id="middlename"/>
-              </div>
+              </fieldset>
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
               <!-- ///// Fieldset/Group 4 - START ///// -->
-              <div class="inline form-group">
+              <fieldset class="inline form-group">
+                <legend class="hidden">Please tell us your last name</legend>
                 <label  class="form-label-bold" for="lastname">Last name</label>
                 <input value="Williamson" type="text" id="lastname"/>
-              </div>
+              </fieldset>
               <!-- ///// Fieldset/Group 4 - END ///// -->
 
               <!-- ///// Fieldset/Group 5 - START ///// -->
@@ -254,11 +263,11 @@
         <!-- ///// Left content - END ///// -->
 
         <!-- ///// Right content - START ///// -->
-        <div class="col-md-4 col-xs-12">
+        <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
             <p><a href="#" class="cancel">Save and logout</a></p>
           </div>
-        </div>
+        </aside>
         <!-- ///// Right content - END ///// -->
 
       </div>
