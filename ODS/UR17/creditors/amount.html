@@ -245,6 +245,15 @@ a.well{
                   </li>
                 </ol>
               </div>
+              
+              <div class="validation-summary"  id="msg-enterdate"  style="display:none">
+                  <h2>There was a problem with your answers</h2>
+                  <ol>
+                    <li class="error-message">
+                      Please enter a valid date
+                    </li>
+                  </ol>
+               </div>
 
               <div class="form-group ">
                 <label id="applicant_address_town_label0" for="applicant_address_town" class="form-label-bold applicant_address_town">
@@ -319,20 +328,13 @@ a.well{
                   <p>&nbsp;</p>
                 </fieldset>
 
-                <div class="validation-summary"  id="msg-enterdate"  style="display:none">
-                  <h2>There was a problem with your answers</h2>
-                  <ol>
-                    <li class="error-message">
-                      Please enter a valid date
-                    </li>
-                  </ol>
-                </div>
+                
 
                 <div class="form-group">
                   <div class="row">
                     <div class="col-sm-12">
 
-                      <fieldset class="inline">
+                      <fieldset class="inline" id="date_select">
                           <legend class="form-label-bold">Date the debt started (was incurred)</legend>
                           <label id="1_label1" for="1" class="block-label">
                           <input id="1"  name="debt-incurred" value="0-6m" type="radio">0 to 6 months ago</label>
@@ -535,7 +537,7 @@ a.well{
       <script type="text/javascript">
       $(document).ready(function() {
 
-
+		
         var normalroute = $("#next").prop("href");
         var numcreditors = 0;
 
@@ -550,15 +552,19 @@ a.well{
           $(".creditorname").text(creditorname);
         }
 
+		
 
         $("#next").on("click", function(e){
+       
           var amt = $('#amount').val();
           var month= $('#month').val();
           var year  = $('#year').val();
           $("#msg-enteramt").hide();
           $("#msg-enterdate").hide();
+          
+         
 
-          if (amt && amt.length > 0 && year && year.length == 4 && parseInt(year)){
+          if (amt && amt.length > 0 && $("input:radio[name ='debt-incurred']:checked").val()!=null){
             if (parseFloat(numberWithoutCommas(amt)) > 10){
               $.cookie('creditorref'  + numcreditors, $('#ref').val(), { expires: 1 });
 
