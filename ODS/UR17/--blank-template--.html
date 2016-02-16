@@ -62,11 +62,11 @@
 
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
 
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <!-- #EndEditable -->
 
 
@@ -140,7 +140,7 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12">
+        <div class="col-md-8 col-xs-12" role="main">
 
           <h1 class="form-title heading-large"></h1>
 
@@ -152,9 +152,29 @@
 
               <legend class="hidden"></legend>
 
+              <!-- ///// Fieldset/Group 1 - START ///// -->
+              <fieldset class="inline form-group" id="" aria-labelledby="">
+                <legend class="hidden"></legend>
+                <label class="form-label-bold" for="" id=""></label>
+                <input value="" type="text" id="" aria-describedby="" tabindex=""/>
+              </fieldset>
+              <!-- ///// Fieldset/Group 1 - END ///// -->
+
 
               <!-- ///// CTA Section - START ///// -->
-
+              <fieldset class="form-group">
+                <legend class="hidden"></legend>
+                <div class="row">
+                  <div class="col-md-12 col-xs-12">
+                    <div class="form-navigation form-group">
+                      <input type="button" onclick="location.href='#.html';" id="" class="button" value="" tabindex="">
+                      <br>
+                      <a href="javascript:history.go(-1)" id="" tabindex="">Back</a>
+                      <a href="#" class="cancel" tabindex="">Save and logout</a>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
               <!-- ///// CTA Section - END ///// -->
 
 
@@ -167,9 +187,11 @@
         <!-- ///// Left content - END ///// -->
 
         <!-- ///// Right content - START ///// -->
-        <div class="col-md-4 col-xs-12">
-
-        </div>
+        <aside class="col-md-4 col-xs-12">
+          <div class="panel-indent">
+            <p><a href="#" class="cancel" tabindex="">Save and logout</a></p>
+          </div>
+        </aside>
         <!-- ///// Right content - END ///// -->
 
       </div>

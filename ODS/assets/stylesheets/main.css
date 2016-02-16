@@ -526,7 +526,8 @@ pre, code {
   float: left;
   width: 100%;
   clear: both;
-  margin-bottom: 15px; }
+  margin-bottom: 30px;
+}
   .form-group:after {
     content: "";
     display: block;
@@ -672,7 +673,8 @@ fieldset {
 
 @media (max-width: 640px) {
   .form .button {
-    width: 100%; } }
+    width: initial; }
+  }
 
 .js-enabled .toggle-content {
   display: none; }
@@ -956,7 +958,7 @@ ul li, ol li {
   clear: both;
   border-left: 4px solid #bfc1c3;
   padding: 10px 0 10px 15px;
-  margin: 45px 15px 45px 0;
+  margin: 55px 15px 45px 0;
 }
 .panel-indent:after {
   content: "";
@@ -1242,8 +1244,14 @@ legend {
   background-color: #dee0e2;
   display: inline-block;
   border: 1px solid #dee0e2;
-  padding-right: 30px;
+  padding-right: 15px;
   margin: 5px 15px 5px 0;
+}
+
+@media (max-width: 640px) {
+  .wrap-radio-button {
+    width: 100%;
+  }
 }
 
 .wrap-radio-button:hover {
