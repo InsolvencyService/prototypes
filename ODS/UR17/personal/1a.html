@@ -89,7 +89,7 @@
   <!-- ///// Skip Message - START ///// -->
   <div id="skiplink-container">
     <div>
-      <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+      <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
   <!-- ///// Skip Message - END ///// -->
@@ -140,20 +140,20 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large">Your title</h1>
+          <h1 class="form-title heading-large" role="header">Your title</h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Main Form Action - START ///// -->
-            <fieldset class="form-group" id="yourtitle" aria-labelledby="yourtitle">
+            <fieldset class="form-group" id="yourtitle">
 
-              <legend class="hidden">Please enter your title</legend>
+              <legend class="hidden" tabindex="1">Please enter your title</legend>
               <label class="form-label-bold" for="firstname" id="yourtitle-label">Enter title</label>
-              <input type="text" id="firstname" aria-describedby="yourtitle yourtitle-label" tabindex="1"/>
+              <input type="text" id="firstname" tabindex="2"/>
 
             </fieldset>
             <!-- ///// Main Form Action - END ///// -->
@@ -164,10 +164,10 @@
               <div class="row">
                 <div class="col-md-12 col-xs-12">
                   <div class="form-navigation form-group">
-                    <input type="button" onclick="location.href='2.html';" id="next" class="button" value="Continue" tabindex="2">
+                    <input type="button" onclick="location.href='2.html';" id="next" class="button" value="Continue" tabindex="3">
                     <br>
-                    <a href="javascript:history.go(-1)" id="back" tabindex="3">Back</a>
-                    <a href="#" class="cancel" tabindex="4">Save and logout</a>
+                    <a href="javascript:history.go(-1)" id="back" tabindex="4">Back</a>
+                    <a href="#" class="cancel" tabindex="5">Save and logout</a>
                   </div>
                 </div>
               </div>
@@ -183,7 +183,7 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <p><a href="#" class="cancel" tabindex="5">Save and logout</a></p>
+            <p><a href="#" class="cancel" tabindex="6">Save and logout</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->

@@ -89,7 +89,7 @@
   <!-- ///// Skip Message - START ///// -->
   <div id="skiplink-container">
     <div>
-      <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+      <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
   <!-- ///// Skip Message - END ///// -->
@@ -140,9 +140,9 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large">Personal details</h1>
+          <h1 class="form-title heading-large" role="header">Personal details</h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -150,56 +150,56 @@
 
             <fieldset>
 
-              <legend class="hidden">We need to know more about you, please fill in the below information</legend>
+              <legend class="hidden">We require you to answer 3 questions, please enter your personal details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
               <fieldset class="inline form-group" id="gender" aria-labelledby="gender">
-                <legend id="gender_label" class="form-label-bold">Gender</legend>
-                <label id="gender_label0" for="gender_woman" class="block-label" tabindex="1">
+                <legend id="gender_label" class="form-label-bold" tabindex="1">Gender</legend>
+                <label id="gender_label0" for="gender_woman" class="block-label" tabindex="2">
                   <input id="gender_woman" value="Woman" name="gender" type="radio" aria-describedby="gender gender_label0">
-                  Woman
+                  <span class="hidden">Gender - </span>Woman
                 </label>
 
-                <label id="gender_label1" for="gender_man" class="block-label" tabindex="2">
+                <label id="gender_label1" for="gender_man" class="block-label" tabindex="3">
                   <input id="gender_man" value="Man" name="gender" type="radio" aria-describedby="gender gender_label1">
-                  Man
+                  <span class="hidden">Gender - </span>Man
                 </label>
 
-                <label id="gender_label2" for="gender_notsay" class="block-label" tabindex="3">
+                <label id="gender_label2" for="gender_notsay" class="block-label" tabindex="4">
                   <input id="gender_notsay" value="Prefer not to say" name="gender" type="radio" aria-describedby="gender gender_label2">
-                  I prefer not to say
+                  <span class="hidden">Gender - </span>I prefer not to say
                 </label>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
               <fieldset class="inline form-group" id="national-insurance" aria-labelledby="national-insurance">
-                <legend class="hidden">Tell us your National Insurance number</legend>
+                <legend class="hidden" tabindex="5">Tell us your National Insurance number</legend>
                 <label id="national-insurance-number_label" for="national-insurance-number" class="form-label-bold">National Insurance number</label>
-                <input id="national-insurance-number" name="national-insurance-number" type="text" value="" aria-describedby="national-insurance national-insurance-number_label" tabindex="4" />
+                <input id="national-insurance-number" name="national-insurance-number" type="text" value="" aria-describedby="national-insurance national-insurance-number_label" tabindex="6" />
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
               <!-- ///// Fieldset/Group 3 - START ///// -->
               <fieldset class="inline form-group" id="relationship" aria-labelledby="relationship">
-                <legend id="title_label5" class="form-label-bold">What's your relationship status?</legend>
-                <label id="dependent_type1_label" for="dependent_type1" class="block-label" tabindex="5">
+                <legend id="title_label5" class="form-label-bold" tabindex="7">What's your relationship status?</legend>
+                <label id="dependent_type1_label" for="dependent_type1" class="block-label" tabindex="8">
                   <input id="dependent_type1" value="Partner" name="dependent" type="radio" aria-describedby="relationship dependent_type1_label">
                   Single
                 </label>
-                <label id="dependent_type2_label" for="dependent_type2" class="block-label" tabindex="6">
+                <label id="dependent_type2_label" for="dependent_type2" class="block-label" tabindex="9">
                   <input id="dependent_type2" value="Relative" name="dependent" type="radio" aria-describedby="relationship dependent_type2_label">
                   Married/civil partnership
                 </label>
-                <label id="dependent_type2_label0" for="dependent_type3" class="block-label" tabindex="7">
+                <label id="dependent_type2_label0" for="dependent_type3" class="block-label" tabindex="10">
                   <input id="dependent_type3" value="Relative" name="dependent" type="radio" aria-describedby="relationship dependent_type2_label0">
                   Living together
                 </label>
-                <label id="dependent_type2_label1" for="dependent_type4" class="block-label" tabindex="8">
+                <label id="dependent_type2_label1" for="dependent_type4" class="block-label" tabindex="11">
                   <input id="dependent_type4" value="Relative" name="dependent" type="radio" aria-describedby="relationship dependent_type2_label1">
                   Divorced/former civil partner
                 </label>
-                <label id="dependent_type2_label2" for="dependent_type5" class="block-label" tabindex="9">
+                <label id="dependent_type2_label2" for="dependent_type5" class="block-label" tabindex="12">
                   <input id="dependent_type5" value="Relative" name="dependent" type="radio" aria-describedby="relationship dependent_type2_label2">
                   Widowed/surviving civil-partner
                 </label>
@@ -212,10 +212,10 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='list_names.html';" id="next" class="button" value="Continue" tabindex="10">
+                      <input type="button" onclick="location.href='list_names.html';" id="next" class="button" value="Continue" tabindex="13">
                       <br>
-                      <a href="javascript:history.go(-1)" id="back" tabindex="11">Back</a>
-                      <a href="#" class="cancel" tabindex="12">Save and logout</a>
+                      <a href="javascript:history.go(-1)" id="back" tabindex="14">Back</a>
+                      <a href="#" class="cancel" tabindex="15">Save and logout</a>
                     </div>
                   </div>
                 </div>
@@ -234,7 +234,7 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <p><a href="#" class="cancel" tabindex="13">Save and logout</a></p>
+            <p><a href="#" class="cancel" tabindex="16">Save and logout</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->

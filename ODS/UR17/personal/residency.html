@@ -89,7 +89,7 @@
   <!-- ///// Skip Message - START ///// -->
   <div id="skiplink-container">
     <div>
-      <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+      <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
   <!-- ///// Skip Message - END ///// -->
@@ -140,9 +140,9 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large">Residency details</h1>
+          <h1 class="form-title heading-large" role="header">Residency details</h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -150,66 +150,65 @@
 
             <fieldset>
 
-              <legend class="hidden">We require your current place of residence</legend>
+              <legend class="hidden">We require you to answer 2 questions, please enter your residency details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
               <fieldset id="movedin-date" class="date-of-birth" aria-labelledby="movedin-date">
-                <legend id="date_of_birth_label" class="form-label-bold">When did you move in?</legend>
-                <div class="form-hint">For example, Aug 2012</div>
+                <legend id="date_of_birth_label" class="form-label-bold" tabindex="1">When did you move in?</legend>
+                <div class="form-hint" tabindex="2">For example, Aug 2012</div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.month" for="month">Month</label>
-                  <select id="month" name="month" tabindex="1" aria-describedby="movedin-date date_of_birth_label.month">
+                  <select id="month" name="month" tabindex="3" aria-describedby="movedin-date date_of_birth_label.month">
                     <option value="0">&nbsp;</option>
-                    <option value="1">Jan</option>
-                    <option value="2">Feb</option>
-                    <option value="3">Mar</option>
-                    <option value="4">Apr</option>
-                    <option value="5">May</option>
-                    <option value="6">Jun</option>
-                    <option value="7">Jul</option>
-                    <option value="8">Aug</option>
-                    <option value="9">Sep</option>
-                    <option value="10">Oct</option>
-                    <option value="11">Nov</option>
-                    <option value="12">Dec</option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
                   </select>
                 </div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.year" for="year">Year</label>
-                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" tabindex="2" aria-describedby="movedin-date date_of_birth_label.year" />
+                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" tabindex="4" aria-describedby="movedin-date date_of_birth_label.year" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
               <fieldset class="inline form-group" aria-labelledby="PropertyOwnership" id="PropertyOwnership">
-                <legend id="PropertyOwnership_Label" class="form-label-bold">Do you own the property?</legend>
+                <legend id="PropertyOwnership_Label" class="form-label-bold" tabindex="5">Do you own the property?</legend>
 
-                <label id="PropertyOwnership_0_Label" for="PropertyOwnership_0" class="block-label" tabindex="3">
+                <label id="PropertyOwnership_0_Label" for="PropertyOwnership_0" class="block-label" tabindex="6">
                   <input id="PropertyOwnership_0" value="Yes - I own it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_0_Label" type="radio">
                   Yes - I own it
                 </label>
-                <label id="PropertyOwnership_1_Label" for="PropertyOwnership_1" class="block-label" tabindex="4">
+                <label id="PropertyOwnership_1_Label" for="PropertyOwnership_1" class="block-label" tabindex="6">
                   <input id="PropertyOwnership_1" value="No - I rent it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_1_Label" type="radio">
                   No - I rent it
                 </label>
-                <label id="PropertyOwnership_2_Label" for="PropertyOwnership_2" class="block-label" tabindex="5">
+                <label id="PropertyOwnership_2_Label" for="PropertyOwnership_2" class="block-label" tabindex="8">
                   <input id="PropertyOwnership_2" value="No - I live with a family member or friend" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_2_Label" type="radio">
                   No - I live with a family member or friend
                 </label>
 
-
                 <div class="wrap-radio-button">
                   <div class="row">
                     <div class="col-md-7 col-xs-5">
-                      <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label" tabindex="5">
+                      <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label" tabindex="9">
                         <input id="PropertyOwnership_Other" value="" name="PropertyOwnership" type="radio" aria-describedby="PropertyOwnership PropertyOwnership_Other_Label">
                         Other - please specify:
                       </label>
                     </div>
                     <div class="col-md-5 col-xs-7">
                       <label for="PropertyOwnership_OtherText" class="hidden">Enter here:</label>
-                      <input id="PropertyOwnership_OtherText" name="PropertyOwnership_OtherText" type="text" value="" tabindex="6"/>
+                      <input id="PropertyOwnership_OtherText" name="PropertyOwnership_OtherText" type="text" value="" tabindex="10"/>
                     </div>
                   </div>
                 </div>
@@ -223,10 +222,10 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" id="next" class="button" value="Continue" tabindex="8">
+                      <input type="button" onclick="location.href='family-members.html';" id="next" class="button" value="Continue" tabindex="11">
                       <br>
-                      <a href="javascript:history.go(-1)" id="back" tabindex="9">Back</a>
-                      <a href="#" class="cancel" tabindex="10">Save and logout</a>
+                      <a href="javascript:history.go(-1)" id="back" tabindex="12">Back</a>
+                      <a href="#" class="cancel" tabindex="13">Save and logout</a>
                     </div>
                   </div>
                 </div>
@@ -245,7 +244,7 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <p><a href="#" class="cancel" tabindex="11">Save and logout</a></p>
+            <p><a href="#" class="cancel" tabindex="14">Save and logout</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->
