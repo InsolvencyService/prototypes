@@ -89,7 +89,7 @@
   <!-- ///// Skip Message - START ///// -->
   <div id="skiplink-container">
     <div>
-      <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+      <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
   <!-- ///// Skip Message - END ///// -->
@@ -140,12 +140,12 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large">Other names or aliases <span class="repeat">summary</span></h1>
+          <h1 class="form-title heading-large" role="header" tabindex="1">Other names or aliases <span class="repeat">summary</span></h1>
 
-          <p aria-hidden="true">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</p>
-          <p aria-hidden="true">Don't include trading names.</p>
+          <p>We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</p>
+          <p>Don't include trading names.</p>
 
           <!-- ///// Table repeat - START ///// -->
           <div id="pnl-employment_table" class="repeat" aria-hidden="true">
@@ -171,30 +171,30 @@
 
             <fieldset>
 
-              <legend class="hidden">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.
-              <br>Don't include trading names.</legend>
+              <legend class="hidden" tabindex="2">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.
+              Don't include trading names.</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
               <fieldset class="form-group" id="loop" aria-labelledby="loop">
-                <legend class="form-label-bold">
+                <legend class="form-label-bold" tabindex="3">
                   <span class="firsttime">Enter your other name or alias</span>
                   <span class="repeat">Enter another name or alias</span>
                 </legend>
-                <p class="form-hint">
+                <p class="form-hint" tabindex="4">
                   For example, John Smith.
                   <span class="firsttime">You can add more names later.</span>
                 </p>
                 <div class="row">
                   <div class="col-md-4 col-xs-12">
                     <label id="firstname-label" for="firstname">First name</label>
-                    <input id="firstname" aria-describedby="loop firstname-label" tabindex="1" />
+                    <input id="firstname" aria-describedby="loop firstname-label" tabindex="5" />
                   </div>
                   <div class="col-md-4 col-xs-12">
                     <label id="lastname-label" for="lastname">Last name</label>
-                    <input id="lastname" aria-describedby="loop lastname-label" tabindex="2" />
+                    <input id="lastname" aria-describedby="loop lastname-label" tabindex="6" />
                   </div>
                   <div class="col-md-4 col-xs-12">
-                    <a id="add" class="button" href="#" tabindex="3">Add name <span class="repeat"></span></a>
+                    <a id="add" class="button" href="#" tabindex="7">Add name <span class="repeat"></span></a>
                   </div>
                 </div>
               </fieldset>
@@ -206,11 +206,11 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='address.html';" id="next1" class="button firsttime" value="Continue - I haven't been known by any other name or alias" tabindex="4">
-                      <input type="button" onclick="location.href='address.html';" id="next2" class="button repeat" value="Continue - I have added all my names and aliases" tabindex="5">
+                      <input type="button" onclick="location.href='address.html';" id="next1" class="button firsttime" value="Continue - I haven't been known by any other name or alias" tabindex="8">
+                      <input type="button" onclick="location.href='address.html';" id="next2" class="button repeat" value="Continue - I have added all my names and aliases" tabindex="9">
                       <br>
-                      <a href="javascript:history.go(-1)" id="back" tabindex="6">Back</a>
-                      <a href="#" class="cancel" tabindex="7">Save and logout</a>
+                      <a href="javascript:history.go(-1)" id="back" tabindex="10">Back</a>
+                      <a href="#" class="cancel" tabindex="11">Save and logout</a>
                     </div>
                   </div>
                 </div>
@@ -229,7 +229,7 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <a href="#" tabindex="8">Save and logout</a>
+            <a href="#" tabindex="12">Save and logout</a>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->
