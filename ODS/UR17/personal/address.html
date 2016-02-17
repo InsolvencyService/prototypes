@@ -163,7 +163,7 @@
 
             <fieldset>
 
-              <legend class="hidden" tabindex="2">We require your contact details to procees with the application</legend>
+              <legend class="hidden" role="header" tabindex="2">We require you to answer 5 questions, please enter your address details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
               <fieldset class="form-group" id="email-section">
@@ -191,41 +191,40 @@
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
               <!-- ///// Fieldset/Group 4 - START ///// -->
-              <fieldset id="fulladdress" aria-labelledby="fulladdress">
-                <legend class="hidden" tabindex="9">You can use the search address function to find your address or alternatively enter it manually.</legend>
-                <div class="form-group">
+              <fieldset id="fulladdress">
+                <legend class="hidden" tabindex="9">Enter your address below.</legend>
+                <div class="form-group" aria-hidden="true">
                   <label class="form-label-bold" for="search"><span class="firsttime">Search address</span></label>
               	  <input class="input-email" id="search" placeholder="Start typing your address" tabindex="10"/>
                 </div>
                 <div class="form-group">
-                  <legend class="hidden" tabindex="11">If you not wish to search for your address enter your address below, if you have search please ignore this message.</legend>
                   <h2 class="form-label-bold">Address</h2>
                   <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
-                  <input id="address_line_1" name="address_line_1" type="text" aria-describedby="fulladdress address_line_1_label" value="" tabindex="12" />
+                  <input id="address_line_1" name="address_line_1" type="text" value="" tabindex="12" />
                 </div>
                 <div class="form-group">
                   <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
-                  <input id="address_line_2" name="address_line_2" type="text" aria-describedby="fulladdress address_line_2_label" value="" tabindex="13" />
+                  <input id="address_line_2" name="address_line_2" type="text" value="" tabindex="13" />
                 </div>
                 <div class="form-group">
                   <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
-                  <input id="address_line_3" name="address_line_3" type="text" aria-describedby="fulladdress address_line_3_label" value="" tabindex="14" />
+                  <input id="address_line_3" name="address_line_3" type="text" value="" tabindex="14" />
                 </div>
                 <div class="form-group">
                   <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
-                  <input id="address_town" name="address_town" type="text" aria-describedby="fulladdress address_town_label" value="" tabindex="15" />
+                  <input id="address_town" name="address_town" type="text" value="" tabindex="15" />
                 </div>
                 <div class="form-group">
                   <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
-                  <input id="address_county" name="address_county" type="text" aria-describedby="fulladdress address_county_label" value="" tabindex="16" />
+                  <input id="address_county" name="address_county" type="text" value="" tabindex="16" />
                 </div>
                 <div class="form-group">
                   <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
-                  <input id="address_post_code" name="address_post_code" type="text" aria-describedby="fulladdress address_post_code_label" value="" tabindex="17" />
+                  <input id="address_post_code" name="address_post_code" type="text" value="" tabindex="17" />
                 </div>
                 <div class="form-group">
                   <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
-                  <input id="address_country" name="address_country" type="text" aria-describedby="fulladdress address_county_label0" value="" tabindex="18" />
+                  <input id="address_country" name="address_country" type="text" value="" tabindex="18" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 4 - END ///// -->
