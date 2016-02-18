@@ -89,7 +89,7 @@
   <!-- ///// Skip Message - START ///// -->
   <div id="skiplink-container">
     <div>
-      <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+      <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
   <!-- ///// Skip Message - END ///// -->
@@ -140,48 +140,13 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large">Your household <span class="repeat">summary</span></h1>
+          <h1 class="form-title heading-large" role="header" tabindex="1">Your household <span class="repeat">summary</span></h1>
 
           <p aria-hidden="true">We need to know about anyone <span class="repeat">else</span> (including children) who lives with you at <strong class="home"></strong>.</p>
-          <p class="firsttime">This information will help us understand your household's likely expenses.</p>
+          <p aria-hidden="true" class="firsttime">This information will help us understand your household's likely expenses.</p>
           <p>&nbsp;</p>
-
-          <!-- ///// Table repeat - START ///// -->
-          <div id="familylist" class="repeat" aria-hidden="true">
-            <table class="family">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Age</th>
-                  <th>Relationship</th>
-                  <th>Dependant</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr id="row1" style="display:none">
-                  <td class="name" >Susan Bagley</td>
-                  <td class="age">23+</td>
-                  <td class="relationship">Wife</td>
-                  <td class="dependent">No</td>
-                  <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-                </tr>
-                <tr id="row2" style="display:none">
-                  <td class="name" >James Bagley</td>
-                  <td class="age">1-3</td>
-                  <td class="relationship">Son</td>
-                  <td class="dependent">Yes</td>
-                  <td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-                </tr>
-              </tbody>
-            </table>
-            <p>&nbsp;</p>
-            <p>The table above summarises the household members you have told us about.</p>
-            <p>&nbsp;</p>
-          </div>
-          <!-- ///// Table repeat - END ///// -->
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -189,27 +154,92 @@
 
             <fieldset>
 
-              <legend class="hidden">We need to know about anyone <span class="repeat">else</span> (including children) who lives with you at <strong class="home"></strong>.</legend>
+              <legend class="hidden" tabindex="2">We need to know about anyone <span class="repeat">else</span> (including children) who lives with you at <strong class="home"></strong>. This information will help us understand your household's likely expenses.</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset id="loop" aria-labelledby="loop">
-                <legend class="form-label-bold">Enter <span class="firsttime">the </span><span class="repeat">another </span>person's first and last name</legend>
-                <span class="form-hint">For example, John Smith. You can add more people later.</span>
+              <fieldset id="loop">
+                <legend class="form-label-bold" tabindex="3">Enter <span class="firsttime">the </span><span class="repeat">another </span>person's first and last name</legend>
+                <span class="form-hint" tabindex="4">For example, John Smith. You can add more people later.</span>
                 <div class="row">
                   <div class="col-md-4 col-xs-12">
               		  <label id="firstname-label" for="firstname">First name</label>
-              			<input id="firstname" tabindex="1" aria-describedby="loop firstname-label" />
+              			<input id="firstname" tabindex="5" />
               	  </div>
                   <div class="col-md-4 col-xs-12">
                 		<label id="lastname-label" for="lastname">Last name</label>
-                		<input id="lastname" tabindex="2" aria-describedby="loop lastname-label" />
+                		<input id="lastname" tabindex="6" />
                 	</div>
                   <div class="col-md-4 col-xs-12">
-                    <a href="add.html" class="button" id="add" tabindex="3">Add person</a>
+                    <input type="button" onclick="location.href='add.html';" id="add" class="button" value="Add person" tabindex="7">
               	  </div>
                 </div>
             	</fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
+
+              <!-- ///// Table repeat - START ///// -->
+              <div id="familylist" class="repeat family" aria-hidden="true">
+                <p tabindex="8">The table below summarises the household members you have told us about.</p>
+                <header>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                      <h2 class="heading-small" tabindex="9">Name</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <h2 class="heading-small" tabindex="10">Age</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <h2 class="heading-small" tabindex="11">Relationship</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <h2 class="heading-small" tabindex="12">Dependant</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <h2 class="heading-small" tabindex="13">Actions</h2>
+                    </div>
+                  </div>
+                </header>
+                <main class="main-content">
+                  <!-- Row 1 - Start -->
+                  <div class="row" id="row1" style="display:none">
+                    <div class="col-md-3 col-sm-3 col-xs-3 name">
+                      <h2 class="heading-small" tabindex="14">Susan Bagley</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 age">
+                      <h2 class="heading-small" tabindex="15">23+</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 relationship">
+                      <h2 class="heading-small" tabindex="16">Wife</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 dependent">
+                      <h2 class="heading-small" tabindex="17">No</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 edit">
+                      <a href="#" class="btn-edit" tabindex="18">Edit</a><a href="#" class="btn-delete" tabindex="19">Delete</a>
+                    </div>
+                  </div>
+                  <!-- Row 1 - End -->
+                  <!-- Row 2 - Start -->
+                  <div class="row" id="row2" style="display:none">
+                    <div class="col-md-3 col-sm-3 col-xs-3 name">
+                      <h2 class="heading-small" tabindex="20">James Bagley</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 age">
+                      <h2 class="heading-small" tabindex="21">1-3</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 relationship">
+                      <h2 class="heading-small" tabindex="22">Son</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 dependent">
+                      <h2 class="heading-small" tabindex="23">Yes</h2>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 edit">
+                      <a href="#" class="btn-edit" tabindex="24">Edit</a><a href="#" class="btn-delete" tabindex="25">Delete</a>
+                    </div>
+                  </div>
+                  <!-- Row 2 - End -->
+                </header>
+              </div>
+              <!-- ///// Table repeat - END ///// -->
 
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="form-group">
@@ -217,11 +247,11 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='list_addresses.html';" id="livealone" class="button" value="Continue - I live alone" tabindex="4">
-                      <input type="button" onclick="location.href='list_addresses.html';" id="next" class="button family repeat" value="Continue - I have added everyone who lives with me" tabindex="5">
+                      <input type="button" onclick="location.href='list_addresses.html';" id="livealone" class="button" value="Continue - I live alone" tabindex="26">
+                      <input type="button" onclick="location.href='list_addresses.html';" id="next" class="button family repeat" value="Continue - I have added everyone who lives with me" tabindex="27">
                       <br>
-                      <a href="javascript:history.go(-1)" id="back" tabindex="6">Back</a>
-                      <a href="#" class="cancel" tabindex="7">Save and logout</a>
+                      <a href="javascript:history.go(-1)" id="back" tabindex="28">Back</a>
+                      <a href="#" class="cancel" tabindex="29">Save and logout</a>
                     </div>
                   </div>
                 </div>
@@ -240,7 +270,8 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <p><a href="#" class="cancel" tabindex="8">Save and logout</a></p>
+            <p><a href="#" class="cancel" tabindex="30">Save and logout</a></p>
+            <p><a href="../overview.html" class="cancel" tabindex="31">Back to application overview</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->
@@ -321,6 +352,7 @@
     	$("#add").on("click", function(){
     		$.cookie('memberfirstname', $("#firstname").val(), { expires: 1, path:'/' });
     		$.cookie('memberlastname', $("#lastname").val(), { expires: 1, path:'/' });
+        $("#familylist").attr("aria-hidden", "false");
     	});
 
     	var number = 0;

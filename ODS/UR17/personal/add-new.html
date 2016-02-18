@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions - your contact details</title>
+  <title>Online debt solutions - add a household member</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,15 +67,12 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
-
-<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
-<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
 <!-- #EndEditable -->
 
 
 </head>
 
-<body>
+<body class="js-enabled js-enabled">
 
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
@@ -145,100 +142,85 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header" tabindex="1">Your contact details</h1>
+          <h1 class="form-title heading-large" role="header" tabindex="1">Add a family member</h1>
 
-          <!-- ///// Error message - START ///// -->
-          <div class="validation-summary" style="display:none" id="nomatch">
-            <h2>We couldn't find your postal code</h2>
-            <ol>
-              <li class="error-message">
-                <p id="error-reenter">Please enter your full address below.</p>
-              </li>
-            </ol>
-          </div>
-          <!-- ///// Error message - START ///// -->
-
+          <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <fieldset>
 
-              <legend class="hidden" role="header" tabindex="2">We require you to answer 5 questions, please enter your contact details in the following fields</legend>
+              <legend class="hidden" role="header" tabindex="2">We require you to answer 5 questions, please enter their details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="form-group" id="email-section">
-                <legend class="hidden" tabindex="3">Please provide your email address</legend>
-                <label id="email_label" for="email" class="form-label-bold email">Email</label>
-                <input id="email" name="email" type="text" class="input-email" value="brian.bagley@gmail.com" tabindex="4">
+              <fieldset class="inline form-group">
+                <legend class="hidden" tabindex="3">Please enter their first name</legend>
+                <label id="first_name_label" for="first_name" class="form-label-bold">First name</label>
+                <input id="first_name" name="first_name" type="text" value="Susan" tabindex="4" />
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
-              <fieldset class="form-group" id="mobile-number">
-                <legend class="hidden" tabindex="5">Please provide your mobile number</legend>
-                <label id="mobile_label0" for="mobile" class="form-label-bold">Mobile</label>
-                <span class="form-hint" tabindex="6">We won't share this with anyone outside of the Insolvency Service and will only use it to contact you about your bankruptcy</span>
-                <input id="mobile" name="mobile" type="text" tabindex="7">
+              <fieldset class="inline form-group">
+                <legend class="hidden" tabindex="5">Please enter their last name</legend>
+                <label id="last_name_label" for="last_name" class="form-label-bold">Last name</label>
+                <input id="last_name" name="last_name" type="text" value="Bagley" tabindex="6" />
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
               <!-- ///// Fieldset/Group 3 - START ///// -->
-              <fieldset class="form-group" id="telephone-number">
-                <legend class="hidden" tabindex="8">Please provide your home telephone number</legend>
-                <label id="mobile0_label1" for="mobile0" class="form-label-bold">Telephone</label>
-                <input id="mobile0" name="mobile0" type="text" tabindex="9">
+              <fieldset class="inline form-group" id="their-age" aria-labelledby="their-age">
+                <legend class="form-label-bold" tabindex="7">Please enter their Age</legend>
+
+                <label id="age1-label" for="age1" class="block-label" tabindex="8">
+                    <input id="age1" value="0-3" name="age" type="radio" aria-describedby="their-age age1-label">
+                    <span aria-hidden="true">0-3</span><span class="hidden" aria-hidden="false">0 to 3 years old</span>
+                </label>
+                <label id="age2-label" for="age2" class="block-label" tabindex="9">
+                    <input id="age2" value="4-11" name="age" type="radio" aria-describedby="their-age age2-label">
+                    <span aria-hidden="true">4-11</span><span class="hidden" aria-hidden="false">4 to 11 years old</span>
+                </label>
+                <label id="age3-label" for="age3" class="block-label" tabindex="10">
+                    <input id="age3" value="12-18" name="age" type="radio" aria-describedby="their-age age3-label">
+                    <span aria-hidden="true">12-18</span><span class="hidden" aria-hidden="false">12 to 18 years old</span>
+                </label>
+                <label id="age4-label" for="age4" class="block-label" tabindex="11">
+                    <input id="age4" value="19-23" name="age" type="radio" aria-describedby="their-age age4-label">
+                    <span aria-hidden="true">19-23</span><span class="hidden" aria-hidden="false">19 to 23 years old</span>
+                </label>
+                <label id="age5-label" for="age5" class="block-label" tabindex="12">
+                    <input id="age5" value="24-30" name="age" type="radio" aria-describedby="their-age age5-label">
+                    <span aria-hidden="true">24-30</span><span class="hidden" aria-hidden="false">24 to 30 years old</span>
+                </label>
+
+                <label id="age6-label" for="age6" class="block-label" tabindex="13">
+                    <input id="age6" value="31-50" name="age" type="radio" aria-describedby="their-age age6-label">
+                    <span aria-hidden="true">31-50</span><span class="hidden" aria-hidden="false">31 to 50 years old</span>
+                </label>
+
+                <label id="age7-label" for="age7" class="block-label" tabindex="14">
+                    <input id="age7" value="51-65" name="age" type="radio" aria-describedby="their-age age7-label">
+                    <span aria-hidden="true">51-65</span><span class="hidden" aria-hidden="false">51 to 65 years old</span>
+                </label>
+
+                <label id="age8-label" for="age8" class="block-label" tabindex="15">
+                    <input id="age8" value="66+" name="age" type="radio" aria-describedby="their-age age8-label">
+                    <span aria-hidden="true">66+</span><span class="hidden" aria-hidden="false">More than 66 years old</span>
+                </label>
+
               </fieldset>
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
-              <!-- ///// Fieldset/Group 4 - START ///// -->
-              <fieldset id="fulladdress">
-                <legend class="hidden" tabindex="10">Enter your address below.</legend>
-                <div class="form-group" aria-hidden="true">
-                  <label class="form-label-bold" for="search"><span class="firsttime">Search address</span></label>
-              	  <input class="input-email" id="search" placeholder="Start typing your address" tabindex="11"/>
-                </div>
-                <div class="form-group">
-                  <h2 class="form-label-bold" tabindex="12">Address</h2>
-                  <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street <span class="hidden">line 1</span></label>
-                  <input id="address_line_1" name="address_line_1" type="text" value="" tabindex="13" />
-                </div>
-                <div class="form-group">
-                  <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Building and street line 2</label>
-                  <input id="address_line_2" name="address_line_2" type="text" value="" tabindex="14" />
-                </div>
-                <div class="form-group">
-                  <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Building and street line 3</label>
-                  <input id="address_line_3" name="address_line_3" type="text" value="" tabindex="15" />
-                </div>
-                <div class="form-group">
-                  <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
-                  <input id="address_town" name="address_town" type="text" value="" tabindex="16" />
-                </div>
-                <div class="form-group">
-                  <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
-                  <input id="address_county" name="address_county" type="text" value="" tabindex="17" />
-                </div>
-                <div class="form-group">
-                  <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
-                  <input id="address_post_code" name="address_post_code" type="text" value="" tabindex="18" />
-                </div>
-                <div class="form-group">
-                  <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
-                  <input id="address_country" name="address_country" type="text" value="" tabindex="19" />
-                </div>
-              </fieldset>
-              <!-- ///// Fieldset/Group 4 - END ///// -->
-
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
+                <legend class="hidden"></legend>
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='residency.html';" id="next" class="button" value="Continue" tabindex="20">
+                      <input type="button" onclick="location.href='family-members.html?added=true';" id="next" class="button" value="Continue" tabindex="">
                       <br>
-                      <a href="javascript:history.go(-1)" id="back" tabindex="21">Back</a>
-                      <a href="#" class="cancel" tabindex="22">Save and logout</a>
+                      <a href="javascript:history.go(-1)" id="back" tabindex="">Back</a>
+                      <a href="#" class="cancel" tabindex="">Save and logout</a>
                     </div>
                   </div>
                 </div>
@@ -257,8 +239,8 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <p><a href="#" class="cancel" tabindex="23">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel" tabindex="24">Back to application overview</a></p>
+            <p><a href="#" class="cancel" tabindex="">Save and logout</a></p>
+            <p><a href="../overview.html" class="cancel" tabindex="">Back to application overview</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->
@@ -299,10 +281,7 @@
   <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-  <script type="text/javascript" src="../shared/loop.js"></script>
-  <script type="text/javascript" src="../assets/js/titleCaps.js"></script>
-  <script type="text/javascript" src="../assets/property/js/postcodelookup.js"></script>
-
+  <script type="text/javascript" src="../../assets/js/titleCaps.js"></script>
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -319,67 +298,50 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $(document).ready(function() {
 
-    	$("#email").val($.cookie('email'));
+  $(document).ready(function() {
 
-    	var housename;
-    	$("#address_line_1").val("");
-    	$("#address_post_code").val("");
-    	var pre  = getParameterByName("pre");
-    	if (pre && pre.length > 1){
-    		$("#address_line_1").val("110 High Street");
-    		$("#address_line_2").val("Newhall");
-    		$("#address_town").val("Birmingham");
-    		$("#address_post_code").val("B4 3TT");
-    		//$("#other-addresses").hide();
+  	var number = 0;
 
-    		$("#next").prop("href", "your-addresses.html")
-    	}
+    if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
+    	number = parseInt($.cookie('familymembers'));
+  	}
 
-    	$("#email").val($.cookie('email'));
+  	var firstname = $.cookie('memberfirstname');
+  	var lastname = $.cookie('memberlastname');
 
-    	var normalroute = $("#next").prop("href");
+  	if (firstname && firstname.length > 0){
+  		$("#first_name").val(titleCaps(firstname));
+  		if (lastname){
+  			$("#last_name").val(titleCaps(lastname.toLowerCase()))		}
+  	};
 
-    	$("#otheraddress_Yes").click(function(){
-    		$("#next").prop("href","list_addresses.html");
-    	});
-    	$("#otheraddress_No").click(function(){
-    		$("#next").prop("href", normalroute);
-    	});
+  	var normalroute = $("#next").prop("href");
 
-    	$("#btn-addanothername").click(function(){
-    		$("#other-name-2").show();
-    	});
+  	$("#next").on("click", function(){
+      	number ++;
+  		$.cookie('familymembers', number, { expires: 1, path:'/' });
 
-    });
+  		$.cookie('member' + number + "-firstname", $("#first_name").val(), { expires: 1, path:'/' });
+  		$.cookie('member' + number + "-lastname", $("#last_name").val(), { expires: 1, path:'/' });
+  		$.cookie('member' + number + "-age", $("input:radio[name ='age']:checked").val(), { expires: 1, path:'/' });
+  		$.cookie('member' + number + "-relationship", $("input:radio[name ='dependent']:checked").val(), { expires: 1, path:'/' });
+  		$.cookie('member' + number + "-dependent", $("input:radio[name ='dependentyesno']:checked").val(), { expires: 1, path:'/' });
+  		if ($("input:radio[name ='dependent']:checked").val() == "Husband/wife/partner") {
+		    $.cookie('partner-firstname', $("#first_name").val(), { expires: 1, path: '/' });
+		    $.cookie('partner-lastname', $("#last_name").val(), { expires: 1, path: '/' });
+  		}
+  	});
 
-    $("#next").click(function(e){
-    		var addr = $("#address_line_1").val();
-    		if (addr && addr.length > 0){
-  		    $.cookie("address", addr, { expires: 1, path: '/' });
-  		    $.cookie("applicant_address", addr, { expires: 1, path: '/' });
+  });
 
-  		    $.cookie("mobile", $("#mobile").val(), {path: '/' });
 
-    			$.cookie("address_line_1", addr, { expires: 1, path:'/' });
-    			$.cookie("address_line_2", $("#address_line_2").val(), { expires: 1, path:'/' });
-    			$.cookie("address_line_3", $("#address_line_3").val(), { expires: 1, path:'/' });
-
-    			$.cookie("town", $("#address_town").val(), { expires: 1, path: '/' });
-    			$.cookie("county", $("#address_county").val(), { expires: 1, path: '/' });
-    			if ( $("#address_post_code")){
-    				$.cookie("post_code", $("#address_post_code").val(), { expires: 1, path:'/' });
-    			}
-    		}
-    });
-
-    function getParameterByName(name) {
-      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-          results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
 
   </script>
   <!-- #EndEditable "scripts" -->
