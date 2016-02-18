@@ -144,122 +144,116 @@
 
           <h1 class="form-title heading-large" role="header" tabindex="1">Your household <span class="repeat">summary</span></h1>
 
-          <p aria-hidden="true">We need to know about anyone <span class="repeat">else</span> (including children) who lives with you at <strong class="home"></strong>.</p>
-          <p aria-hidden="true" class="firsttime">This information will help us understand your household's likely expenses.</p>
-          <p>&nbsp;</p>
+          <p aria-hidden="true" class="firsttime" tabindex="2">We need to know about anyone <span class="repeat">else</span> (including children) who lives with you at <strong class="home"></strong>.
+          <br>
+          <br>This information will help us understand your household's likely expenses.</p>
+          <p class="firsttime">&nbsp;</p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <fieldset>
-
-              <legend class="hidden" tabindex="2">We need to know about anyone <span class="repeat">else</span> (including children) who lives with you at <strong class="home"></strong>. This information will help us understand your household's likely expenses.</legend>
-
-              <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset id="loop">
-                <legend class="form-label-bold" tabindex="3">Enter <span class="firsttime">the </span><span class="repeat">another </span>person's first and last name</legend>
-                <span class="form-hint" tabindex="4">For example, John Smith. You can add more people later.</span>
-                <div class="row">
-                  <div class="col-md-4 col-xs-12">
-              		  <label id="firstname-label" for="firstname">First name</label>
-              			<input id="firstname" tabindex="5" />
-              	  </div>
-                  <div class="col-md-4 col-xs-12">
-                		<label id="lastname-label" for="lastname">Last name</label>
-                		<input id="lastname" tabindex="6" />
-                	</div>
-                  <div class="col-md-4 col-xs-12">
-                    <input type="button" onclick="location.href='add.html';" id="add" class="button" value="Add person" tabindex="7">
-              	  </div>
-                </div>
-            	</fieldset>
-              <!-- ///// Fieldset/Group 1 - END ///// -->
-
-              <!-- ///// Table repeat - START ///// -->
-              <div id="familylist" class="repeat family" aria-hidden="true">
-                <p tabindex="8">The table below summarises the household members you have told us about.</p>
-                <header>
-                  <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                      <h2 class="heading-small" tabindex="9">Name</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <h2 class="heading-small" tabindex="10">Age</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <h2 class="heading-small" tabindex="11">Relationship</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <h2 class="heading-small" tabindex="12">Dependant</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <h2 class="heading-small" tabindex="13">Actions</h2>
-                    </div>
-                  </div>
-                </header>
-                <main class="main-content">
-                  <!-- Row 1 - Start -->
-                  <div class="row" id="row1" style="display:none">
-                    <div class="col-md-3 col-sm-3 col-xs-3 name">
-                      <h2 class="heading-small" tabindex="14">Susan Bagley</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 age">
-                      <h2 class="heading-small" tabindex="15">23+</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 relationship">
-                      <h2 class="heading-small" tabindex="16">Wife</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 dependent">
-                      <h2 class="heading-small" tabindex="17">No</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 edit">
-                      <a href="#" class="btn-edit" tabindex="18">Edit</a><a href="#" class="btn-delete" tabindex="19">Delete</a>
-                    </div>
-                  </div>
-                  <!-- Row 1 - End -->
-                  <!-- Row 2 - Start -->
-                  <div class="row" id="row2" style="display:none">
-                    <div class="col-md-3 col-sm-3 col-xs-3 name">
-                      <h2 class="heading-small" tabindex="20">James Bagley</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 age">
-                      <h2 class="heading-small" tabindex="21">1-3</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 relationship">
-                      <h2 class="heading-small" tabindex="22">Son</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 dependent">
-                      <h2 class="heading-small" tabindex="23">Yes</h2>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 edit">
-                      <a href="#" class="btn-edit" tabindex="24">Edit</a><a href="#" class="btn-delete" tabindex="25">Delete</a>
-                    </div>
-                  </div>
-                  <!-- Row 2 - End -->
-                </header>
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset id="loop">
+              <legend class="form-label-bold" tabindex="3">Enter <span class="firsttime">the </span><span class="repeat">another </span>person's first and last name</legend>
+              <span class="form-hint" tabindex="4">For example, John Smith. You can add more people later.</span>
+              <div class="row">
+                <div class="col-md-4 col-xs-12">
+            		  <label id="firstname-label" for="firstname">First name</label>
+            			<input id="firstname" tabindex="5" />
+            	  </div>
+                <div class="col-md-4 col-xs-12">
+              		<label id="lastname-label" for="lastname">Last name</label>
+              		<input id="lastname" tabindex="6" />
+              	</div>
+                <div class="col-md-4 col-xs-12">
+                  <input type="button" onclick="location.href='add.html';" id="add" class="button" value="Add person" tabindex="7">
+            	  </div>
               </div>
-              <!-- ///// Table repeat - END ///// -->
+          	</fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
 
-              <!-- ///// CTA Section - START ///// -->
-              <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
+            <!-- ///// Table repeat - START ///// -->
+            <div id="familylist" class="repeat family" aria-hidden="true">
+              <p tabindex="8">The table below summarises the household members you have told us about.</p>
+              <header>
                 <div class="row">
-                  <div class="col-md-12 col-xs-12">
-                    <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='list_addresses.html';" id="livealone" class="button" value="Continue - I live alone" tabindex="26">
-                      <input type="button" onclick="location.href='list_addresses.html';" id="next" class="button family repeat" value="Continue - I have added everyone who lives with me" tabindex="27">
-                      <br>
-                      <a href="javascript:history.go(-1)" id="back" tabindex="28">Back</a>
-                      <a href="#" class="cancel" tabindex="29">Save and logout</a>
-                    </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <h2 class="heading-small" tabindex="9" role="header">Name</h2>
+                  </div>
+                  <div class="col-md-1 col-sm-1 col-xs-1">
+                    <h2 class="heading-small" tabindex="10" role="header">Age</h2>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <h2 class="heading-small" tabindex="11" role="header">Relationship</h2>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <h2 class="heading-small" tabindex="12" role="header">Dependant</h2>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <h2 class="heading-small" tabindex="13" role="header">Actions</h2>
                   </div>
                 </div>
-              </fieldset>
-              <!-- ///// CTA Section - END ///// -->
+              </header>
+              <main class="main-content">
+                <!-- Row 1 - Start -->
+                <div class="row" id="row1" style="display:none">
+                  <div class="col-md-3 col-sm-3 col-xs-3 name">
+                    <p tabindex="14">Susan Bagley</p>
+                  </div>
+                  <div class="col-md-1 col-sm-1 col-xs-1 age">
+                    <p tabindex="15">23+</p>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 relationship">
+                    <p tabindex="16">Wife</p>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 dependent">
+                    <p tabindex="17">No</p>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 edit">
+                    <a href="#" class="btn-edit" tabindex="18">Edit</a><a href="#" class="btn-delete" tabindex="19">Delete</a>
+                  </div>
+                </div>
+                <!-- Row 1 - End -->
+                <!-- Row 2 - Start -->
+                <div class="row" id="row2" style="display:none">
+                  <div class="col-md-3 col-sm-3 col-xs-3 name">
+                    <p tabindex="20">James Bagley</p>
+                  </div>
+                  <div class="col-md-1 col-sm-1 col-xs-1 age">
+                    <p tabindex="21">1-3</p>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 relationship">
+                    <p tabindex="22">Son</p>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 dependent">
+                    <p tabindex="23">Yes</p>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 edit">
+                    <a href="#" class="btn-edit" tabindex="24">Edit</a><a href="#" class="btn-delete" tabindex="25">Delete</a>
+                  </div>
+                </div>
+                <!-- Row 2 - End -->
+              </header>
+            </div>
+            <!-- ///// Table repeat - END ///// -->
 
-
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <legend class="hidden">Please continue with your application</legend>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <input type="button" onclick="location.href='list_addresses.html';" id="livealone" class="button" value="Continue - I live alone" tabindex="26">
+                    <input type="button" onclick="location.href='list_addresses.html';" id="next" class="button family repeat" value="Continue - I have added everyone who lives with me" tabindex="27">
+                    <br>
+                    <a href="javascript:history.go(-1)" id="back" tabindex="28">Back</a>
+                    <a href="#" class="cancel" tabindex="29">Save and logout</a>
+                  </div>
+                </div>
+              </div>
             </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -345,6 +339,9 @@
     		$("#row1").show();
     		$("#movedin-date").hide();
     		$(".repeat").show();
+        $(".firsttime").hide();
+        $("#familylist").attr("aria-hidden", "false");
+        $("#intro").attr("aria-hidden", "true");
     	}
 
     	var normalroute = $("#next").prop("href");
@@ -358,7 +355,7 @@
     	var number = 0;
       if ($.cookie('familymembers') && $.cookie('familymembers').length > 0){
       	number = parseInt($.cookie('familymembers'));
-  	   }
+  	  }
 
     	for (i = 1; i < number + 1; i++) {
     		if ($.cookie('member' + i + "-firstname") && $.cookie('member' + i + "-firstname").length > 0){
