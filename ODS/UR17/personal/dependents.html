@@ -142,9 +142,9 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header" tabindex="1">Dependants who don't live with you <span class="repeat">summary</span></h1>
+          <h1 class="form-title heading-large">Dependants who don't live with you <span class="repeat">summary</span></h1>
 
-          <p class="firsttime" aria-hidden="false" tabindex="2">We need to know about any financial dependants who don't live with you. This information will help us understand your regular expenses.
+          <p class="firsttime" aria-hidden="false">We need to know about any financial dependants who don't live with you. This information will help us understand your regular expenses.
         	<br>
           <br>Include anyone who relies on you to pay for their food, clothing and other daily needs (eg children or elderly relatives).</p>
 
@@ -154,22 +154,22 @@
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
             <fieldset class="inline form-group" id="loop" role="group">
-          		<legend class="form-label-bold" tabindex="3">
+          		<legend class="form-label-bold">
                 <span class="firsttime" aria-hidden="false">Enter your dependant's first and last name</span>
                 <span class="repeat" aria-hidden="true">Enter another dependant's first and last name</span>
               </legend>
-            	<p class="form-hint" tabindex="4">For example, John Smith. <span class="firsttime" aria-hidden="false">You can add more dependants later.</span></p>
+            	<p class="form-hint">For example, John Smith. <span class="firsttime" aria-hidden="false">You can add more dependants later.</span></p>
               <div class="row">
                 <div class="col-md-4 col-xs-12">
                   <label for="firstname">First name</label>
-                  <input id="firstname" type="text" tabindex="5" />
+                  <input id="firstname" type="text" />
                 </div>
                 <div class="col-md-4 col-xs-12">
                   <label for="lastname">Last name</label>
-                  <input id="lastname" type="text" tabindex="6" />
+                  <input id="lastname" type="text" />
               	</div>
                 <div class="col-md-4 col-xs-12">
-                  <input type="button" onclick="location.href='add-dependent.html';" id="add" class="button" value="Add dependant" tabindex="7">
+                  <input type="button" onclick="location.href='add-dependent.html';" id="add" class="button" value="Add dependant">
                 </div>
             	</div>
             </fieldset>
@@ -177,26 +177,26 @@
 
             <!-- ///// Fieldset/Group 2 - START ///// -->
             <div id="familylist" class="dependents" aria-hidden="true">
-              <h2 class="heading-medium" tabindex="8">Dependants</h2>
-              <p class="repeat" tabindex="9">The table above summarises the non-resident dependants you have told us about.<br>
+              <h2 class="heading-medium">Dependants</h2>
+              <p class="repeat">The table above summarises the non-resident dependants you have told us about.<br>
               <br>We need to know about any other financial dependants who don't live with you.<br>
               <br>Include anyone who relies on your to pay for their food, clothing and other daily needs (eg children or elderly relatives).</p>
               <header>
                 <div class="row">
                   <div class="col-md-2 col-sm-2 col-xs-2">
-                    <h2 class="heading-small" role="header" tabindex="10">Name</h2>
+                    <h2 class="heading-small" role="header">Name</h2>
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-2">
-                    <h2 class="heading-small" role="header" tabindex="11">Age</h2>
+                    <h2 class="heading-small" role="header">Age</h2>
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-2">
-                    <h2 class="heading-small" role="header" tabindex="12">Address</h2>
+                    <h2 class="heading-small" role="header">Address</h2>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3">
-                    <h2 class="heading-small" role="header" tabindex="13">Relationship</h2>
+                    <h2 class="heading-small" role="header">Relationship</h2>
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-2">
-                    <h2 class="heading-small" role="header" tabindex="14">Actions</h2>
+                    <h2 class="heading-small" role="header">Actions</h2>
                   </div>
                 </div>
               </header>
@@ -211,11 +211,11 @@
               <div class="row">
                 <div class="col-md-12 col-xs-12">
                   <div class="form-navigation form-group">
-                    <input type="button" onclick="location.href='summary.html';" id="livealone" class="button" value="Continue - I don't have any dependants who don't live with me" tabindex="20">
-                    <input type="button" onclick="location.href='summary.html';" class="button dependents" value="Continue - I have added all dependants who don't live with me" tabindex="21">
+                    <input type="button" onclick="location.href='summary.html';" id="livealone" class="button" value="Continue - I don't have any dependants who don't live with me">
+                    <input type="button" onclick="location.href='summary.html';" class="button dependents" value="Continue - I have added all dependants who don't live with me">
                     <br>
-                    <a href="javascript:history.go(-1)" id="back" tabindex="22">Back</a>
-                    <a href="#" class="cancel" tabindex="23">Save and logout</a>
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
                   </div>
                 </div>
               </div>
@@ -231,8 +231,8 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <p><a href="#" class="cancel" tabindex="24">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel" tabindex="25">Back to application overview</a></p>
+            <p><a href="#" class="cancel">Save and logout</a></p>
+            <p><a href="../overview.html" class="cancel">Back to application overview</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->
@@ -332,11 +332,11 @@
     				address = address + address6;
     			}
 
-    			$("#mainbody").append("<div class=\"row\"><div class=\"col-md-2 col-sm-2 col-xs-2\"><p tabindex=\"15\">" + name +
-                                "</p></div><div class=\"col-md-2 col-sm-2 col-xs-2\"><p tabindex=\"16\">" + age +
-                                "</p></div><div class=\"col-md-2 col-sm-2 col-xs-2\"><p tabindex=\"17\">" + address +
-                                "</p></div><div class=\"col-md-3 col-sm-3 col-xs-3\"><p tabindex=\"18\">" + relationship +
-                                "</p></div><div class=\"col-md-2 col-sm-2 col-xs-2\"><a href=\"#\" tabindex=\"19\">Edit</a>&nbsp;&nbsp;<a href=\"#\" tabindex=\"20\">Delete</a></p></div></div>");
+    			$("#mainbody").append("<div class=\"row\"><div class=\"col-md-2 col-sm-2 col-xs-2\"><p>" + name +
+                                "</p></div><div class=\"col-md-2 col-sm-2 col-xs-2\"><p>" + age +
+                                "</p></div><div class=\"col-md-2 col-sm-2 col-xs-2\"><p>" + address +
+                                "</p></div><div class=\"col-md-3 col-sm-3 col-xs-3\"><p>" + relationship +
+                                "</p></div><div class=\"col-md-2 col-sm-2 col-xs-2\"><a href=\"#\">Edit</a>&nbsp;&nbsp;<a href=\"#\">Delete</a></p></div></div>");
           }
 
     		$(".dependents").show();
