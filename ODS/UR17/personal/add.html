@@ -156,7 +156,7 @@
               <fieldset class="inline form-group">
                 <legend class="hidden">Please enter their first name</legend>
                 <label id="first_name_label" for="first_name" class="form-label-bold">First name</label>
-                <input id="first_name" name="first_name" type="text" value="Susan" />
+                <input id="first_name" name="first_name" type="text" value="Susan" aria-labelledby="first_name_label intro" />
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -164,47 +164,47 @@
               <fieldset class="inline form-group">
                 <legend class="hidden">Please enter their last name</legend>
                 <label id="last_name_label" for="last_name" class="form-label-bold">Last name</label>
-                <input id="last_name" name="last_name" type="text" value="Bagley" />
+                <input id="last_name" name="last_name" type="text" value="Bagley" aria-labelledby="last_name_label intro" />
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
               <!-- ///// Fieldset/Group 3 - START ///// -->
-              <fieldset class="inline form-group" id="their-age" aria-labelledby="their-age" role="group">
+              <fieldset class="inline form-group" id="their-age" role="radiogroup">
                 <legend class="form-label-bold">Please select their Age</legend>
 
                 <label id="age1-label" for="age1" class="block-label">
-                    <input id="age1" value="0-3" name="age" type="radio" aria-describedby="their-age age1-label">
+                    <input id="age1" value="0-3" name="age" type="radio" aria-labelledby="age1-label">
                     <span aria-hidden="true">0-3</span><span class="hidden" aria-hidden="false">0 to 3 years old</span>
                 </label>
                 <label id="age2-label" for="age2" class="block-label">
-                    <input id="age2" value="4-11" name="age" type="radio" aria-describedby="their-age age2-label">
+                    <input id="age2" value="4-11" name="age" type="radio" aria-labelledby="age2-label">
                     <span aria-hidden="true">4-11</span><span class="hidden" aria-hidden="false">4 to 11 years old</span>
                 </label>
                 <label id="age3-label" for="age3" class="block-label">
-                    <input id="age3" value="12-18" name="age" type="radio" aria-describedby="their-age age3-label">
+                    <input id="age3" value="12-18" name="age" type="radio" aria-labelledby="age3-label">
                     <span aria-hidden="true">12-18</span><span class="hidden" aria-hidden="false">12 to 18 years old</span>
                 </label>
                 <label id="age4-label" for="age4" class="block-label">
-                    <input id="age4" value="19-23" name="age" type="radio" aria-describedby="their-age age4-label">
+                    <input id="age4" value="19-23" name="age" type="radio" aria-labelledby="age4-label">
                     <span aria-hidden="true">19-23</span><span class="hidden" aria-hidden="false">19 to 23 years old</span>
                 </label>
                 <label id="age5-label" for="age5" class="block-label">
-                    <input id="age5" value="24-30" name="age" type="radio" aria-describedby="their-age age5-label">
+                    <input id="age5" value="24-30" name="age" type="radio" aria-labelledby="age5-label">
                     <span aria-hidden="true">24-30</span><span class="hidden" aria-hidden="false">24 to 30 years old</span>
                 </label>
 
                 <label id="age6-label" for="age6" class="block-label">
-                    <input id="age6" value="31-50" name="age" type="radio" aria-describedby="their-age age6-label">
+                    <input id="age6" value="31-50" name="age" type="radio" aria-labelledby="age6-label">
                     <span aria-hidden="true">31-50</span><span class="hidden" aria-hidden="false">31 to 50 years old</span>
                 </label>
 
                 <label id="age7-label" for="age7" class="block-label">
-                    <input id="age7" value="51-65" name="age" type="radio" aria-describedby="their-age age7-label">
+                    <input id="age7" value="51-65" name="age" type="radio" aria-labelledby="age7-label">
                     <span aria-hidden="true">51-65</span><span class="hidden" aria-hidden="false">51 to 65 years old</span>
                 </label>
 
                 <label id="age8-label" for="age8" class="block-label">
-                    <input id="age8" value="66+" name="age" type="radio" aria-describedby="their-age age8-label">
+                    <input id="age8" value="66+" name="age" type="radio" aria-labelledby="age8-label">
                     <span aria-hidden="true">66+</span><span class="hidden" aria-hidden="false">More than 66 years old</span>
                 </label>
 
@@ -212,14 +212,14 @@
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
               <!-- ///// Fieldset/Group 4 - START ///// -->
-              <fieldset class="inline form-group" id="relationship-status" aria-labelledby="relationship-status" role="group">
+              <fieldset class="inline form-group" id="relationship-status" role="radiogroup">
                 <legend class="form-label-bold">What's their relationship to you?</legend>
                 <label id="dependent_type1_label" for="dependent_type1" class="block-label">
-                  <input id="dependent_type1" value="Husband/wife/partner" name="dependent" type="radio" aria-describedby="relationship-status dependent_type1_label">
+                  <input id="dependent_type1" value="Husband/wife/partner" name="dependent" type="radio" aria-labelledby="dependent_type1_label">
                   <span aria-hidden="true">Husband/wife/partner</span><span aria-hidden="false" class="hidden">Husband, wife or partner</span>
                 </label>
                 <label id="dependent_type2_label" for="dependent_type2" class="block-label">
-                  <input id="dependent_type2" value="Child" name="dependent" type="radio" aria-describedby="relationship-status dependent_type2_label">
+                  <input id="dependent_type2" value="Child" name="dependent" type="radio" aria-labelledby="dependent_type2_label">
                   Child
                 </label>
 
@@ -227,7 +227,7 @@
                   <div class="row">
                     <div class="col-md-7 col-xs-5">
                       <label id="dependent_type2_label0" for="dependent_type3" class="block-label">
-                        <input id="dependent_type3" value="Parent" name="dependent" type="radio" aria-describedby="relationship-status dependent_type2_label0">
+                        <input id="dependent_type3" value="Parent" name="dependent" type="radio" aria-labelledby="dependent_type2_label0">
                         Other - please specify:
                       </label>
                     </div>
@@ -242,17 +242,17 @@
               <!-- ///// Fieldset/Group 4 - END ///// -->
 
               <!-- ///// Fieldset/Group 5 - START ///// -->
-              <fieldset class="inline form-group" id="title0" aria-labelledby="title0" role="group">
+              <fieldset class="inline form-group" id="title0" role="radiogroup">
                 <legend class="form-label-bold">Is this person financially dependent on you?</legend>
                 <p class="form-hint">A financial dependant is someone who relies on you to pay for their food, clothing and other daily needs.
                 <br>
                 <br>For example, children or elderly relatives</p>
                 <label id="dependent_answer1" for="dependent_yes" class="block-label">
-                  <input id="dependent_yes" value="Yes" name="dependentyesno" type="radio" aria-describedby="title0 dependent_answer1">
+                  <input id="dependent_yes" value="Yes" name="dependentyesno" type="radio" aria-labelledby="dependent_answer1">
                   Yes
                 </label>
                 <label id="dependent_answer2" for="dependent_no" class="block-label">
-                  <input id="dependent_no" value="No" name="dependentyesno" type="radio" aria-describedby="title0 dependent_answer2">
+                  <input id="dependent_no" value="No" name="dependentyesno" type="radio" aria-labelledby="dependent_answer2">
                   No
                 </label>
               </fieldset>

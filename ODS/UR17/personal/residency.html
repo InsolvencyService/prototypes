@@ -153,12 +153,12 @@
               <legend class="hidden">We require you to answer 2 questions, please enter your residency details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset id="movedin-date" class="date-of-birth" aria-labelledby="movedin-date" role="group">
+              <fieldset id="movedin-date" class="date-of-birth" role="group">
                 <legend id="date_of_birth_label" class="form-label-bold">When did you move in?</legend>
                 <div class="form-hint">For example, Aug 2012</div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.month" for="month">Month</label>
-                  <select id="month" name="month" aria-describedby="movedin-date date_of_birth_label.month">
+                  <select id="month" name="month" aria-labelledby="date_of_birth_label.month intro">
                     <option value="">&nbsp;</option>
                     <option value="Jan">Jan</option>
                     <option value="Feb">Feb</option>
@@ -176,25 +176,25 @@
                 </div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.year" for="year">Year</label>
-                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-describedby="movedin-date date_of_birth_label.year" />
+                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-labelledby="date_of_birth_label.year intro" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
-              <fieldset class="inline form-group" aria-labelledby="PropertyOwnership" id="PropertyOwnership" role="group">
+              <fieldset class="inline form-group" aria-labelledby="PropertyOwnership" id="PropertyOwnership" role="radiogroup">
                 <legend id="PropertyOwnership_Label" class="form-label-bold">Do you own the property?</legend>
 
                 <label id="PropertyOwnership_0_Label" for="PropertyOwnership_0" class="block-label">
-                  <input id="PropertyOwnership_0" value="Yes - I own it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_0_Label" type="radio">
+                  <input id="PropertyOwnership_0" value="Yes - I own it" name="PropertyOwnership" type="radio" aria-labelledby="PropertyOwnership_Label">
                   Yes - I own it
                 </label>
                 <label id="PropertyOwnership_1_Label" for="PropertyOwnership_1" class="block-label">
-                  <input id="PropertyOwnership_1" value="No - I rent it" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_1_Label" type="radio">
+                  <input id="PropertyOwnership_1" value="No - I rent it" name="PropertyOwnership" type="radio" aria-labelledby="PropertyOwnership_Label">
                   No - I rent it
                 </label>
                 <label id="PropertyOwnership_2_Label" for="PropertyOwnership_2" class="block-label">
-                  <input id="PropertyOwnership_2" value="No - I live with a family member or friend" name="PropertyOwnership" aria-describedby="PropertyOwnership PropertyOwnership_2_Label" type="radio">
+                  <input id="PropertyOwnership_2" value="No - I live with a family member or friend" name="PropertyOwnership" type="radio" aria-labelledby="PropertyOwnership_Label">
                   No - I live with a family member or friend
                 </label>
 
@@ -202,7 +202,7 @@
                   <div class="row">
                     <div class="col-md-7 col-xs-5">
                       <label id="PropertyOwnership_Other_Label" for="PropertyOwnership_Other" class="block-label">
-                        <input id="PropertyOwnership_Other" value="" name="PropertyOwnership" type="radio" aria-describedby="PropertyOwnership PropertyOwnership_Other_Label">
+                        <input id="PropertyOwnership_Other" value="" name="PropertyOwnership" type="radio" aria-labelledby="PropertyOwnership_Label">
                         Other - please specify:
                       </label>
                     </div>

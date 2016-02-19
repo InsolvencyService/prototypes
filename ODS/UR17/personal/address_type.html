@@ -158,7 +158,7 @@
                 <div class="form-hint">For example, Aug 2012</div>
                 <div class="form-group">
                   <label id="date_of_birth_label.month" for="month">Month</label>
-                  <select id="month" name="month">
+                  <select id="month" name="month" aria-labelledby="date_of_birth_label.month date_of_birth_label">
                     <option value="">&nbsp;</option>
                     <option value="Jan">Jan</option>
                     <option value="Feb">Feb</option>
@@ -176,32 +176,32 @@
                 </div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.year" for="year">Year</label>
-                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" />
+                  <input id="year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-labelledby="date_of_birth_label.year date_of_birth_label" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
-              <fieldset class="inline form-group" role="group" id="property" aria-labelledby="property">
+              <fieldset class="inline form-group" role="radiogroup" id="property">
                 <legend id="title_label" class="form-label-bold">Do you own the property?</legend>
                 <div id="title-select" class="form-group">
                   <label id="title_label0" for="title_Mr." class="block-label">
-                    <input id="title_Mr." value="Mr" name="title" type="radio" aria-describedby="property title_label0">
+                    <input id="title_Mr." value="Mr" name="title" type="radio" aria-labelledby="title_label0">
                     Yes - I own it
                   </label>
                   <label id="title_label1" for="title_Mrs." class="block-label">
-                    <input id="title_Mrs." value="Mrs" name="title" type="radio" aria-describedby="property title_label1">
+                    <input id="title_Mrs." value="Mrs" name="title" type="radio" aria-labelledby="title_label1">
                     No - I rent it
                   </label>
                   <label id="title_label2" for="title_Miss" class="block-label">
-                    <input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="property title_label2">
+                    <input id="title_Miss" value="Miss" name="title" type="radio" aria-labelledby="title_label2">
                     No - I live with a family member or friend
                   </label>
                   <div class="wrap-radio-button">
                     <div class="row">
                       <div class="col-md-7 col-xs-5">
                         <label id="title_label4" for="title_other" class="block-label">
-                          <input id="title_other" value="" name="title" type="radio" aria-describedby="title-select title_label4">
+                          <input id="title_other" value="" name="title" type="radio" aria-labelledby="title_label4">
                           Other - please specify:
                         </label>
                       </div>

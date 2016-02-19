@@ -153,26 +153,26 @@
               <legend class="hidden">We require you to answer 5 questions, please enter your personal details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="inline form-group" id="title-select" aria-labelledby="title-select" role="group">
+              <fieldset class="inline form-group" id="title-select" role="radiogroup">
                 <legend id="title_label" class="form-label-bold">Title</legend>
 
                 <label id="title_label0" for="title_Mr." class="block-label">
-                  <input id="title_Mr." value="Mr" name="title" type="radio" aria-describedby="title-select title_label0">
+                  <input id="title_Mr." value="Mr" name="title" type="radio" aria-labelledby="title_label">
                   Mr
                 </label>
 
                 <label id="title_label1" for="title_Mrs." class="block-label">
-                  <input id="title_Mrs." value="Mrs" name="title" type="radio" aria-describedby="title-select title_label1">
+                  <input id="title_Mrs." value="Mrs" name="title" type="radio" aria-labelledby="title_label">
                   Mrs
                 </label>
 
                 <label id="title_label2" for="title_Miss" class="block-label">
-                  <input id="title_Miss" value="Miss" name="title" type="radio" aria-describedby="title-select title_label2">
+                  <input id="title_Miss" value="Miss" name="title" type="radio" aria-labelledby="title_label">
                   Miss
                 </label>
 
                 <label id="title_label3" for="title_Ms." class="block-label">
-                  <input id="title_Ms." value="Ms" name="title" type="radio" aria-describedby="title-select title_label3">
+                  <input id="title_Ms." value="Ms" name="title" type="radio" aria-labelledby="title_label">
                   Ms
                 </label>
 
@@ -180,7 +180,7 @@
                   <div class="row">
                     <div class="col-md-7 col-xs-5">
                       <label id="title_label4" for="title_other" class="block-label">
-                        <input id="title_other" value="" name="title" type="radio" aria-describedby="title-select title_label4">
+                        <input id="title_other" value="" name="title" type="radio" aria-labelledby="title_label">
                         Other <span id="other-section">- please specify:</span>
                       </label>
                     </div>
@@ -195,44 +195,44 @@
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
-              <fieldset class="inline form-group" id="firstname-section" aria-labelledby="firstname-section">
+              <fieldset class="inline form-group" id="firstname-section">
                 <legend class="hidden">Please tell us your first name</legend>
                 <label class="form-label-bold" for="firstname" id="firstname-label">First name</label>
-                <input value="John" type="text" id="firstname" aria-describedby="firstname-section firstname-label"/>
+                <input value="John" type="text" id="firstname" aria-labelledby="firstname-label intro"/>
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
               <!-- ///// Fieldset/Group 3 - START ///// -->
-              <fieldset class="inline form-group" id="middlename-section" aria-labelledby="middlename-section">
+              <fieldset class="inline form-group" id="middlename-section">
                 <legend class="hidden">Please tell us your middle names</legend>
                 <label class="form-label-bold" for="middlename" id="middlename-label">Middle names</label>
-                <input value="" type="text" id="middlename" aria-describedby="middlename-section middlename-label"/>
+                <input value="" type="text" id="middlename" aria-labelledby="middlename-label intro"/>
               </fieldset>
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
               <!-- ///// Fieldset/Group 4 - START ///// -->
-              <fieldset class="inline form-group" id="lastname-section" aria-labelledby="lastname-section">
+              <fieldset class="inline form-group" id="lastname-section">
                 <legend class="hidden">Please tell us your last name</legend>
                 <label  class="form-label-bold" for="lastname" id="lastname-label">Last name</label>
-                <input value="Williamson" type="text" id="lastname" aria-describedby="lastname-section lastname-label"/>
+                <input value="Williamson" type="text" id="lastname" aria-labelledby="lastname-label intro"/>
               </fieldset>
               <!-- ///// Fieldset/Group 4 - END ///// -->
 
               <!-- ///// Fieldset/Group 5 - START ///// -->
-              <fieldset id="date_of_birth" aria-labelledby="date_of_birth" class="inline form-group date-of-birth">
+              <fieldset id="date_of_birth" class="inline form-group date-of-birth">
                 <legend id="date_of_birth_label" class="form-label-bold">Date of birth</legend>
                 <span class="form-hint" id="date_of_birth_help">For example, 31 08 1976</span>
                 <div class="form-group form-group-day">
                   <label id="date_of_birth_label.day" for="dob-day">Day</label>
-                  <input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-describedby="date_of_birth date_of_birth_label.day" value="31" />
+                  <input id="dob-day" name="date_of_birth.day" type="number" min="1" max="31" aria-labelledby="date_of_birth_label.day date_of_birth_label" value="31" />
                 </div>
                 <div class="form-group form-group-month">
                   <label id="date_of_birth_label.month" for="dob-month">Month</label>
-                  <input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-describedby="date_of_birth date_of_birth_label.month" value="05" />
+                  <input id="dob-month" name="date_of_birth.month" type="number" min="1" max="12" aria-labelledby="date_of_birth_label.month date_of_birth_label" value="05" />
                 </div>
                 <div class="form-group form-group-year">
                   <label id="date_of_birth_label.year" for="dob-year">Year</label>
-                  <input id="dob-year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-describedby="date_of_birth date_of_birth_label.year" value="1980" />
+                  <input id="dob-year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-labelledby="date_of_birth_label.year date_of_birth_label" value="1980" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 5 - END ///// -->
