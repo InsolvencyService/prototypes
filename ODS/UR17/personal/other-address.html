@@ -171,12 +171,12 @@
                 <span class="form-hint">For example, 12 Place Street  BL4 7AF</span>
                 <div class="row">
                   <div class="col-md-4 col-sm-4 col-xs-12">
-                    <label for="name">First line</label>
-                    <input id="name" type="text" />
+                    <label id="name_label" for="name">First line</label>
+                    <input id="name" type="text" aria-labelledby="name_label intro" />
                   </div>
                   <div class="col-md-4 col-sm-4 col-xs-12">
-                    <label for="postcode">Postcode</label>
-                    <input id="postcode" type="text" />
+                    <label id="postcode_label" for="postcode">Postcode</label>
+                    <input id="postcode" type="text" aria-labelledby="postcode_label intro" />
                   </div>
                 </div>
                 <div class="row">
@@ -194,31 +194,31 @@
                 <legend class="form-label-bold">Address</legend>
                 <div class="form-group">
                   <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
-                  <input id="address_line_1" name="address_line_1" type="text" aria-describedby="fulladdress address_line_1_label" value="" />
+                  <input id="address_line_1" name="address_line_1" type="text" aria-labelledby="address_line_1_label intro" value="" />
                 </div>
                 <div class="form-group">
                   <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
-                  <input id="address_line_2" name="address_line_2" type="text" aria-describedby="fulladdress address_line_2_label" value="" />
+                  <input id="address_line_2" name="address_line_2" type="text" aria-labelledby="address_line_2_label intro" value="" />
                 </div>
                 <div class="form-group">
                   <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
-                  <input id="address_line_3" name="address_line_3" type="text" aria-describedby="fulladdress address_line_3_label" value="" />
+                  <input id="address_line_3" name="address_line_3" type="text" aria-labelledby="address_line_3_label intro" value="" />
                 </div>
                 <div class="form-group">
                   <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
-                  <input id="address_town" name="address_town" type="text" aria-describedby="fulladdress address_town_label" value="" />
+                  <input id="address_town" name="address_town" type="text" aria-labelledby="address_town_label intro" value="" />
                 </div>
                 <div class="form-group">
                   <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
-                  <input id="address_county" name="address_county" type="text" aria-describedby="fulladdress address_county_label" value="" />
+                  <input id="address_county" name="address_county" type="text" aria-labelledby="address_county_label intro" value="" />
                 </div>
                 <div class="form-group">
                   <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
-                  <input id="address_post_code" name="address_post_code" type="text" aria-describedby="fulladdress address_post_code_label" value="" />
+                  <input id="address_post_code" name="address_post_code" type="text" aria-labelledby="address_post_code_label intro" value="" />
                 </div>
                 <div class="form-group">
                   <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
-                  <input id="address_country" name="address_country" type="text" aria-describedby="fulladdress address_county_label0" value="" />
+                  <input id="address_country" name="address_country" type="text" aria-labelledby="address_county_label0 intro" value="" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
@@ -228,8 +228,8 @@
                 <legend id="date_of_birth_label" class="form-label-bold">When did you move in?</legend>
                 <div class="form-hint">For example, Aug 2012</div>
                 <div class="form-group">
-                  <label for="movedin-month">Month</label>
-                  <select id="movedin-month" name="month">
+                  <label id="movedin_month_label" for="movedin-month">Month</label>
+                  <select id="movedin-month" name="month" aria-labelledby="movedin_month_label intro">
                     <option value="">&nbsp;</option>
                     <option value="Jan">Jan</option>
                     <option value="Feb">Feb</option>
@@ -246,8 +246,8 @@
                   </select>
                 </div>
                 <div class="form-group form-group-year">
-                  <label for="movedin-year">Year</label>
-                  <input id="movedin-year" name="date_of_birth.year" type="number" min="1900" max="2016" />
+                  <label id="movedin_year_label" for="movedin-year">Year</label>
+                  <input id="movedin-year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-labelledby="movedin_year_label intro" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 3 - END ///// -->
@@ -258,7 +258,7 @@
                 <div class="form-hint">For example, Aug 2014</div>
                 <div class="form-group">
                   <label id="date_of_birth_label.month" for="movedout-month">Month</label>
-                  <select id="movedout-month" name="month">
+                  <select id="movedout-month" name="month" aria-labelledby="date_of_birth_label.month intro">
                     <option value="">&nbsp;</option>
                     <option value="Jan">Jan</option>
                     <option value="Feb">Feb</option>
@@ -275,8 +275,8 @@
                   </select>
                 </div>
                 <div class="form-group form-group-year">
-                  <label for="movedout-year">Year</label>
-                  <input id="movedout-year" name="date_of_birth.year" type="number" min="1900" max="2016" />
+                  <label id="movedout_year_label" for="movedout-year">Year</label>
+                  <input id="movedout-year" name="date_of_birth.year" type="number" min="1900" max="2016" aria-labelledby="movedout_year_label intro" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 4 - END ///// -->

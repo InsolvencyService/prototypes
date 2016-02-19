@@ -169,7 +169,7 @@
               <fieldset class="form-group" id="email-section">
                 <legend class="hidden">Please provide your email address</legend>
                 <label id="email_label" for="email" class="form-label-bold email">Email</label>
-                <input id="email" name="email" type="text" class="input-email" value="brian.bagley@gmail.com">
+                <input id="email" name="email" type="text" class="input-email" value="brian.bagley@gmail.com" aria-labelledby="email_label intro">
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -178,7 +178,7 @@
                 <legend class="hidden">Please provide your mobile number</legend>
                 <label id="mobile_label0" for="mobile" class="form-label-bold">Mobile</label>
                 <span class="form-hint">We won't share this with anyone outside of the Insolvency Service and will only use it to contact you about your bankruptcy</span>
-                <input id="mobile" name="mobile" type="text">
+                <input id="mobile" name="mobile" type="text" aria-labelledby="mobile_label0 intro">
               </fieldset>
               <!-- ///// Fieldset/Group 2 - END ///// -->
 
@@ -186,7 +186,7 @@
               <fieldset class="form-group" id="telephone-number">
                 <legend class="hidden">Please provide your home telephone number</legend>
                 <label id="mobile0_label1" for="mobile0" class="form-label-bold">Telephone</label>
-                <input id="mobile0" name="mobile0" type="text">
+                <input id="mobile0" name="mobile0" type="text" aria-labelledby="mobile0_label1 intro">
               </fieldset>
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
@@ -194,37 +194,37 @@
               <fieldset id="fulladdress" role="group">
                 <legend class="hidden">Enter your address below.</legend>
                 <div class="form-group" aria-hidden="true">
-                  <label class="form-label-bold" for="search"><span class="firsttime">Search address</span></label>
-              	  <input class="input-email" id="search" placeholder="Start typing your address"/>
+                  <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+              	  <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
                 </div>
                 <div class="form-group">
                   <h2 class="form-label-bold">Address</h2>
                   <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street <span class="hidden">line 1</span></label>
-                  <input id="address_line_1" name="address_line_1" type="text" value="" />
+                  <input id="address_line_1" name="address_line_1" type="text" value="" aria-labelledby="address_line_1_label intro" />
                 </div>
                 <div class="form-group">
                   <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Building and street line 2</label>
-                  <input id="address_line_2" name="address_line_2" type="text" value="" />
+                  <input id="address_line_2" name="address_line_2" type="text" value="" aria-labelledby="address_line_2_label intro" />
                 </div>
                 <div class="form-group">
                   <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Building and street line 3</label>
-                  <input id="address_line_3" name="address_line_3" type="text" value="" />
+                  <input id="address_line_3" name="address_line_3" type="text" value="" aria-labelledby="address_line_3_label intro" />
                 </div>
                 <div class="form-group">
                   <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
-                  <input id="address_town" name="address_town" type="text" value="" />
+                  <input id="address_town" name="address_town" type="text" value="" aria-labelledby="address_town_label intro" />
                 </div>
                 <div class="form-group">
                   <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
-                  <input id="address_county" name="address_county" type="text" value="" />
+                  <input id="address_county" name="address_county" type="text" value="" aria-labelledby="address_county_label intro" />
                 </div>
                 <div class="form-group">
                   <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
-                  <input id="address_post_code" name="address_post_code" type="text" value="" />
+                  <input id="address_post_code" name="address_post_code" type="text" value="" aria-labelledby="address_post_code_label intro" />
                 </div>
                 <div class="form-group">
                   <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
-                  <input id="address_country" name="address_country" type="text" value="" />
+                  <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 4 - END ///// -->
