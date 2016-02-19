@@ -144,81 +144,77 @@
 
           <h1 class="form-title heading-large" role="header" tabindex="1">Other names or aliases <span class="repeat">summary</span></h1>
 
-          <p>We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.</p>
-          <p>Don't include trading names.</p>
-
-          <!-- ///// Table repeat - START ///// -->
-          <div id="pnl-employment_table" class="repeat" aria-hidden="true">
-            <table style="width: 100%" class="family">
-              <thead>
-                <tr>
-                  <th>Name or alias</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody class="tbl-content"></tbody>
-            </table>
-            <p>&nbsp;</p>
-            <p>The table above summarises the names or alises you have told us about</p>
-     				<p>We need to know about any other names you have been known by the last 5 years.</p>
-            <p>&nbsp;</p>
-   			  </div>
-          <!-- ///// Table repeat - END ///// -->
+          <p class="firsttime" tabindex="2">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.
+          <br>
+          <br>Don't include trading names.</p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <fieldset>
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset class="form-group" id="loop" aria-labelledby="loop" role="group">
 
-              <legend class="hidden" tabindex="2">We need to know about any other names or aliases you have been known by in the last 5 years. Include maiden names and short names such as 'Bob' for Robert.
-              Don't include trading names.</legend>
-
-              <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="form-group" id="loop" aria-labelledby="loop">
-                <legend class="form-label-bold" tabindex="3">
-                  <span class="firsttime">Enter your other name or alias</span>
-                  <span class="repeat">Enter another name or alias</span>
-                </legend>
-                <p class="form-hint" tabindex="4">
-                  For example, John Smith.
-                  <span class="firsttime">You can add more names later.</span>
-                </p>
-                <div class="row">
-                  <div class="col-md-4 col-xs-12">
-                    <label id="firstname-label" for="firstname">First name</label>
-                    <input id="firstname" aria-describedby="loop firstname-label" tabindex="5" />
-                  </div>
-                  <div class="col-md-4 col-xs-12">
-                    <label id="lastname-label" for="lastname">Last name</label>
-                    <input id="lastname" aria-describedby="loop lastname-label" tabindex="6" />
-                  </div>
-                  <div class="col-md-4 col-xs-12">
-                    <a id="add" class="button" href="#" tabindex="7">Add name <span class="repeat"></span></a>
-                  </div>
+              <legend class="form-label-bold" tabindex="3">
+                <span class="firsttime">Enter your other name or alias</span>
+                <span class="repeat">Enter another name or alias</span>
+              </legend>
+              <p class="form-hint" tabindex="4">
+                For example, John Smith.
+                <span class="firsttime">You can add more names later.</span>
+              </p>
+              <div class="row">
+                <div class="col-md-4 col-xs-12">
+                  <label id="firstname-label" for="firstname">First name</label>
+                  <input id="firstname" aria-describedby="loop firstname-label" tabindex="5" />
                 </div>
-              </fieldset>
-              <!-- ///// Fieldset/Group 1 - END ///// -->
-
-              <!-- ///// CTA Section - START ///// -->
-              <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
-                <div class="row">
-                  <div class="col-md-12 col-xs-12">
-                    <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='address.html';" id="next1" class="button firsttime" value="Continue - I haven't been known by any other name or alias" tabindex="8">
-                      <input type="button" onclick="location.href='address.html';" id="next2" class="button repeat" value="Continue - I have added all my names and aliases" tabindex="9">
-                      <br>
-                      <a href="javascript:history.go(-1)" id="back" tabindex="10">Back</a>
-                      <a href="#" class="cancel" tabindex="11">Save and logout</a>
-                    </div>
-                  </div>
+                <div class="col-md-4 col-xs-12">
+                  <label id="lastname-label" for="lastname">Last name</label>
+                  <input id="lastname" aria-describedby="loop lastname-label" tabindex="6" />
                 </div>
-              </fieldset>
-              <!-- ///// CTA Section - END ///// -->
-
-
+                <div class="col-md-4 col-xs-12">
+                  <input type="button" onclick="location.href='#maincontent';" id="add" class="button" value="Add name" tabindex="8">
+                </div>
+              </div>
             </fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
+
+            <!-- ///// Table repeat - START ///// -->
+            <div id="newcontent" class="repeat" aria-hidden="true">
+              <p tabindex="9">The table below summarises the names or alises you have told us about</p>
+              <p tabindex="10">You can add more names if you need to, or continue with your application.</p>
+              <header>
+                <div class="row">
+                  <div class="col-md-8 col-sm-8 col-xs-8">
+                    <h2 class="heading-small" tabindex="11" role="header">Name or alias</h2>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h2 class="heading-small" tabindex="12" role="header">Actions</h2>
+                  </div>
+                </div>
+              </header>
+              <main class="main-content">
+              </main>
+              <p>&nbsp;</p>
+            </div>
+            <!-- ///// Table repeat - END ///// -->
+
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <legend class="hidden">Please continue with your application</legend>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <input type="button" onclick="location.href='address.html';" id="next1" class="button firsttime" value="Continue - I haven't been known by any other name or alias" tabindex="16">
+                    <input type="button" onclick="location.href='address.html';" id="next2" class="button repeat" value="Continue - I have added all my names and aliases" tabindex="17">
+                    <br>
+                    <a href="javascript:history.go(-1)" id="back" tabindex="18">Back</a>
+                    <a href="#" class="cancel" tabindex="19">Save and logout</a>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -229,7 +225,8 @@
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
-            <a href="#" tabindex="12">Save and logout</a>
+            <a href="#" tabindex="20">Save and logout</a>
+            <p><a href="../overview.html" class="cancel" tabindex="21">Back to application overview</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->
@@ -291,11 +288,14 @@
     $("#add").click(function () {
       $(".repeat").show();
     	$(".firsttime").hide();
-      $("#pnl-employment_table").attr("aria-hidden", "false");
+      $("#newcontent").attr("aria-hidden", "false");
+      $("#legend").attr("aria-hidden", "true");
+
+      // $("#newcontent").focus();
 
     	var name = $("#firstname").val() + " " + $("#lastname").val();
-    	row = "<tr><td>"+ name +"</td><td><a href=\"#\" class=\"btn-edit\" tabindex=\"9\">Edit</a><a href=\"#\" class=\"btn-delete\" tabindex=\"10\">Delete</a></td></tr>";
-    	$(".tbl-content").append(row);
+    	row = "<div class=\"row\"><div class=\"col-md-8 col-sm-8 col-xs-8\" tabindex=\"13\">"+ name +"</div><div class=\"col-md-4 col-sm-4 col-xs-4\"><a href=\"#\" class=\"btn-edit\" tabindex=\"14\">Edit</a><a href=\"#\" class=\"btn-delete\" tabindex=\"15\">Delete</a></div></div>";
+    	$(".main-content").append(row);
     	$("#firstname").val("");
     	$("#lastname").val("");
     });
