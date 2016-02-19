@@ -140,9 +140,9 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent" aria-labelledby="intro">
 
-          <h1 class="form-title heading-large">Personal details</h1>
+          <h1 class="form-title heading-xlarge" id="intro">Personal details</h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -295,6 +295,12 @@
     $("#next").click(function(){
       $.cookie("gender", $("#gender :checked").attr("value"), { expires: 1, path:'/' });
     });
+
+    // Unique reference number
+    if ($.cookie("ninumber")) {
+      $("#national-insurance-number").text($.cookie("ninumber")).addClass("bolder");
+    }
+
 
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

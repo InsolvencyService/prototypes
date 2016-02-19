@@ -205,6 +205,13 @@
 								</fieldset>
 							</div>
 
+              <!-- ///// Fieldset/Group 2 - START ///// -->
+              <fieldset class="inline form-group" id="national-insurance" aria-labelledby="national-insurance">
+                <legend class="hidden">Tell us your National Insurance number</legend>
+                <label id="national-insurance-number_label" for="national-insurance-number" class="form-label-bold">National Insurance number</label>
+                <input id="national-insurance-number" name="national-insurance-number" type="text" value="" aria-describedby="national-insurance national-insurance-number_label" />
+              </fieldset>
+              <!-- ///// Fieldset/Group 2 - END ///// -->
 
 							<div class="alert alert-danger" id="pnl-email-nomatch">
 								<p>Your email addresses don't match. Please check them and try again. </p>
@@ -365,6 +372,7 @@ $(document).ready(function() {
 			$.cookie('firstname', $("#first_name").val(), { expires: 1, path:'/' });
 			$.cookie('lastname', $("#last_name").val(), { expires: 1, path:'/' });
 			$.cookie('middlename', $("#middle_name").val(), { expires: 1, path:'/' });
+      $.cookie('ninumber', $("#national-insurance-number").val(), { expires: 1, path:'/' });
 
 
 			if ($("#pnl-missing-email").is(":visible") == true){
