@@ -71,7 +71,7 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../assets/js/bootstrap/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="payments/css/payment-override.css">
-<link type="text/css" rel="stylesheet" media="screen" href="assets/overview-design-changes.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../assets/stylesheets/overview-design-changes.css">
 <style type="text/css">
 
 .row img {
@@ -195,7 +195,7 @@ h3 > a {
 
   <main role="main" id="wrapper">
 
-    <div id="content" >
+    <div id="content">
       <div class="inner-block">
         <div class="phase-banner clearfix">
 
@@ -217,7 +217,7 @@ h3 > a {
       <!-- #BeginEditable "content" -->
 
 
-      <div style="display:block; margin:0 30px 30px 30px !important">
+      <div style="display:block; margin:0 30px 30px 30px !important" id="overview-old">
 
 
 
@@ -370,6 +370,7 @@ h3 > a {
                         <div class="col-sm-6">
                         </div>
                       </div>
+                      <hr>
                       <div class="row">
                         <div class="col-sm-6">
                           Non-limited partnerships you have had in the last 3 years
@@ -377,6 +378,7 @@ h3 > a {
                         <div class="col-sm-6">
                         </div>
                       </div>
+                      <hr>
                       <div class="row">
                         <div class="col-sm-6">
                           Information about your businesses (eg trading addresses, business partners, VAT number, Unique Taxpayer Reference)
@@ -384,7 +386,7 @@ h3 > a {
                         <div class="col-sm-6">
                         </div>
                       </div>
-
+                      <hr>
                       <div class="row">
                         <div class="col-sm-6">
                           Current employees
@@ -392,7 +394,7 @@ h3 > a {
                         <div class="col-sm-6">
                         </div>
                       </div>
-
+                      <hr>
 
                       <div class="row">
                         <div class="col-sm-6">
@@ -401,7 +403,7 @@ h3 > a {
                         <div class="col-sm-6">
                         </div>
                       </div>
-
+                      <hr>
                       <div class="row">
                         <div class="col-sm-6">
                           Accountants, financial advisers or bookkeepers you have used in the last 5 years
@@ -945,7 +947,7 @@ h3 > a {
                         $("#section1 .js-section").addClass("open");
                         $("#section1 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                         var details = $("#section1 .js-section").attr("href");
-                        $(details).show();
+                        $(details).hide();
                         $(details).parent().addClass("well");
                       }
 
