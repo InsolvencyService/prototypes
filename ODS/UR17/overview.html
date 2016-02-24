@@ -553,7 +553,33 @@ $(document).ready(function () {
   });
 
   //checking payment details
-  if ($.cookie("fee_paid") === "0.00") {
+  if ($.cookie("fee_paid") > "0.00" && $.cookie("fee_paid") < "655.00") {
+    $("#fee_paid").text($.cookie("fee_paid"));
+    $(".fee_paid").text($.cookie("fee_paid"));
+    $("#fee_remaining").text($.cookie("fee_remaining"));
+    $(".lefttopay").text($.cookie("fee_remaining"));
+    $("#timestamp").text($.cookie("payment_timestamp"));
+    $("#updated").show();
+    $("#payment-info").hide();
+    $("#make-a-payment").show();
+    $("#next").hide();
+    $(".next").hide();
+    $("#completion-message").hide();
+    $(".payment-amount").show();
+    $(".payment-made").hide();
+  } else if ($.cookie("fee_paid") === "655.00") {
+    $("#fee_paid").text($.cookie("fee_paid"));
+    $(".fee_paid").text($.cookie("fee_paid"));
+    $("#timestamp").text($.cookie("payment_timestamp"));
+    $("#updated").show();
+    $(".payment-amount").hide();
+    $(".payment-made").show();
+    $("#completion-message").show();
+    $("#next").show();
+    $(".next").show();
+    $("#make-a-payment").hide();
+    $("#payment-info").hide();
+  } else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
     $("#fee_paid").text("0.00");
@@ -568,32 +594,6 @@ $(document).ready(function () {
     $("#completion-message").hide();
     $(".payment-amount").show();
     $(".payment-made").hide();
-  } else if ($.cookie("fee_paid") > "0.00" && $.cookie("fee_paid") < "655.00") {
-    $("#fee_paid").text($.cookie("fee_paid"));
-    $(".fee_paid").text($.cookie("fee_paid"));
-    $("#fee_remaining").text($.cookie("fee_remaining"));
-    $(".lefttopay").text($.cookie("fee_remaining"));
-    $("#timestamp").text($.cookie("payment_timestamp"));
-    $("#updated").show();
-    $("#payment-info").hide();
-    $("#make-a-payment").show();
-    $("#next").hide();
-    $(".next").hide();
-    $("#completion-message").hide();
-    $(".payment-amount").show();
-    $(".payment-made").hide();
-  } else ($.cookie("fee_paid") === "655.00") {
-    $("#fee_paid").text($.cookie("fee_paid"));
-    $(".fee_paid").text($.cookie("fee_paid"));
-    $("#timestamp").text($.cookie("payment_timestamp"));
-    $("#updated").show();
-    $(".payment-amount").hide();
-    $(".payment-made").show();
-    $("#completion-message").show();
-    $("#next").show();
-    $(".next").show();
-    $("#make-a-payment").hide();
-    $("#payment-info").hide();
   }
   // if(parseInt($.cookie("fee_paid"))==655){
   // 	$("#next").show();
