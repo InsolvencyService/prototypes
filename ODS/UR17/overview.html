@@ -564,6 +564,9 @@ $(document).ready(function () {
     $(".next").show();
     $("#make-a-payment").hide();
     $("#completion-message").hide();
+    var payment = $("<a href=\"payments/1-payment-amount.html\"><span class=\"payment-amount\">£<span id=\"fee_remaining\" class=\"lefttopay\">0.00</span> left to pay</span></a>");
+    var paymentChange = $("<span class=\"heading-medium\">Fully paid</span>");
+    $(".panel.panel-primary").hide(payment).show(paymentChange);
   } else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
