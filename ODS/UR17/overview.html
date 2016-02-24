@@ -553,7 +553,7 @@ $(document).ready(function () {
   });
 
   //checking payment details
-  if ($.cookie("fee_paid") === "0.00"){
+  if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
     $("#fee_paid").text($.cookie("fee_paid"));
     $(".fee_paid").text($.cookie("fee_paid"));
     $("#fee_remaining").text($.cookie("fee_remaining"));
@@ -561,24 +561,21 @@ $(document).ready(function () {
     $("#timestamp").text($.cookie("payment_timestamp"));
     $("#updated").show();
     $("#payment-info").hide();
-    $("#next").show();
-    $(".next").show();
+    $("#next").hide();
+    $(".next").hide();
     $("#make-a-payment").hide();
     $("#completion-message").hide();
     $(".payment-amount").show();
     $(".payment-made").hide();
-  } else if ($.cookie("fee_paid") === "655.00"){
-    $("#fee_paid").text($.cookie("fee_paid"));
-    $(".fee_paid").text($.cookie("fee_paid"));
-    $("#timestamp").text($.cookie("payment_timestamp"));
-    $("#updated").show();
-    $("#payment-info").hide();
-    $("#next").show();
-    $(".next").show();
-    $("#make-a-payment").hide();
-    $("#completion-message").show();
+    // var payment = $("<a href=\"payments/1-payment-amount.html\"></a>");
+    // var paymentChange = $("<span class=\"heading-medium payment-made\">Fully paid</span>");
+    // $(".panel.panel-primary").hide(payment).show(paymentChange);
+  } else if ($.cookie("fee_paid")!="655.00"){
     $(".payment-amount").hide();
     $(".payment-made").show();
+    $("#completion-message").show();
+    $("#next").show();
+    $(".next").show();
   } else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
