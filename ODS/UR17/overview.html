@@ -432,7 +432,8 @@ h3 > a {
         <!-- Payment Panel start -->
         <div class="panel panel-primary">
           <h2 class="heading-small">Application fee</h2>
-          <a href="payments/1-payment-amount.html"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
+          <a href="payments/1-payment-amount.html" class="payment-amount"><span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">655</span> left to pay</span></a>
+          <span class="heading-medium payment-made">Fully paid</span>
           <p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
           <p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
           <p id="payment-info"><a href="payments/17-information-page.html">Find out about paying the fee</a></p>
@@ -564,9 +565,11 @@ $(document).ready(function () {
     $(".next").show();
     $("#make-a-payment").hide();
     $("#completion-message").hide();
-    var payment = $("<a href=\"payments/1-payment-amount.html\"><span class=\"payment-amount\">£<span id=\"fee_remaining\" class=\"lefttopay\">0.00</span> left to pay</span></a>");
-    var paymentChange = $("<span class=\"heading-medium\">Fully paid</span>");
-    $(".panel.panel-primary").hide(payment).show(paymentChange);
+    $(".payment-amount").hide();
+    $(".payment-made").show();
+    // var payment = $("<a href=\"payments/1-payment-amount.html\"></a>");
+    // var paymentChange = $("<span class=\"heading-medium payment-made\">Fully paid</span>");
+    // $(".panel.panel-primary").hide(payment).show(paymentChange);
   } else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
@@ -580,6 +583,8 @@ $(document).ready(function () {
     $(".next").hide();
     $("#make-a-payment").show();
     $("#completion-message").show();
+    $(".payment-amount").show();
+    $(".payment-made").hide();
   }
 
   // if(parseInt($.cookie("fee_paid"))==655){
