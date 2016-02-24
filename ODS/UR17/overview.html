@@ -570,7 +570,7 @@ $(document).ready(function () {
     // var payment = $("<a href=\"payments/1-payment-amount.html\"></a>");
     // var paymentChange = $("<span class=\"heading-medium payment-made\">Fully paid</span>");
     // $(".panel.panel-primary").hide(payment).show(paymentChange);
-  } else if ($.cookie("fee_paid")!="655.00"){
+  } else if ($.cookie("fee_paid") === "655.00"){
     $(".payment-amount").hide();
     $(".payment-made").show();
     $("#completion-message").show();
