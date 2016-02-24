@@ -563,7 +563,7 @@ $(document).ready(function () {
     $("#payment-info").hide();
     $("#next").hide();
     $(".next").hide();
-    $("#make-a-payment").hide();
+    $("#make-a-payment").show();
     $("#completion-message").hide();
     $(".payment-amount").show();
     $(".payment-made").hide();
@@ -576,6 +576,7 @@ $(document).ready(function () {
     $("#completion-message").show();
     $("#next").show();
     $(".next").show();
+    $("#make-a-payment").hide();
   } else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
