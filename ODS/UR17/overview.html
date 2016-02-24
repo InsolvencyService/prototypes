@@ -553,7 +553,7 @@ $(document).ready(function () {
   });
 
   //checking payment details
-  if ($.cookie("fee_paid")!="0.00"){
+  if ($.cookie("fee_paid") === "0.00"){
     $("#fee_paid").text($.cookie("fee_paid"));
     $(".fee_paid").text($.cookie("fee_paid"));
     $("#fee_remaining").text($.cookie("fee_remaining"));
@@ -567,11 +567,9 @@ $(document).ready(function () {
     $("#completion-message").hide();
     $(".payment-amount").show();
     $(".payment-made").hide();
-  } else if ($.cookie("fee_paid")!="655.00"){
+  } else if ($.cookie("fee_paid") === "655.00"){
     $("#fee_paid").text($.cookie("fee_paid"));
     $(".fee_paid").text($.cookie("fee_paid"));
-    $("#fee_remaining").text($.cookie("fee_remaining"));
-    $(".lefttopay").text($.cookie("fee_remaining"));
     $("#timestamp").text($.cookie("payment_timestamp"));
     $("#updated").show();
     $("#payment-info").hide();
