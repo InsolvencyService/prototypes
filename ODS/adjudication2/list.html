@@ -108,7 +108,7 @@
   <!--end header-->
 
   <!-- //////////////////// start main //////////////////// -->
-  <main id="wrapper">
+  <main id="maincontent">
 
     <!-- ///////// Header - START ///////// -->
     <header class="homepage-top">
@@ -173,7 +173,8 @@
                   <li><a href="?filter=7"><span class="label label-default casecounter">1</span> On appeal </a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Completed <span class="label label-primary casecounter">17</span></a>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Completed <span class="label label-primary casecounter">17</span></a>
                 <ul class="dropdown-menu">
                   <li><a href="?filter=8"><span class="label label-default casecounter">9</span> Order made</a></li>
                   <li><a href="?filter=9"><span class="label label-default casecounter">3</span> Refused</a></li>
@@ -187,106 +188,240 @@
         </nav>
         <!-- ///////// Navigation - END ///////// -->
 
-        <h3 id="section" class="heading-medium">New approve cases</h3>
-
-          <div>
-            <table class="table table-list-search" >
-              <thead>
-                <tr>
-                  <th class="col-sm-4"><a id="urn"><strong>Reference&nbsp;&nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
-                  <th class="col-sm-4"><a id="name"><strong>Name&nbsp;&nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
-                  <th class="col-sm-3"><a id="date"><strong>Received&nbsp;&nbsp;<i style="font-size:0.8em" class="glyphicon glyphicon-sort"></i></strong></a></th>
-                  <th class="col-sm-1"><a href="javascript:;"><strong>Status</strong></a></th>
-                </tr>
-              </thead>
-
-              <tbody id="table">
-                <tr class="activerow">
-                  <td><a href="approve.html">EHBJ8F3MKRP</a></td>
-                  <td>Kim Scarlett</td>
-                  <td>2015-09-11</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>UBS98Q3X0K9T</td>
-                  <td>Dennis Vinson</td>
-                  <td>2015-09-01</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>OHW37HIF6JE7</td>
-                  <td>Beverly Becker</td>
-                  <td>2015-09-03</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>JZPXN4AFDAZV</td>
-                  <td>Maxwell Rollins</td>
-                  <td>2015-08-11</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>EKL6A02L513M</td>
-                  <td>Bradley Maldonado</td>
-                  <td>2015-08-12</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>P2VMF61QZ5EC</td>
-                  <td>Marie Bradley</td>
-                  <td>2015-08-20</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>JC4YMS2JZTZ1</td>
-                  <td>Sammy Lloyd</td>
-                  <td>2015-08-21</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>1WU5C81O0K20</td>
-                  <td>Mary Good</td>
-                  <td>2015-08-26</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>6285910BMYQD</td>
-                  <td>Archie Sweeney</td>
-                  <td>2015-08-13</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>J4XYQS9CANVF</td>
-                  <td>Sharon Cline</td>
-                  <td>2015-08-27</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-                <tr class="activerow">
-                  <td>W4QH1BT4AQIR</td>
-                  <td>Stephanie Francis</td>
-                  <td>2015-08-28</td>
-                  <td class="text-center"><span class="label label-success">&nbsp;</span></td>
-                </tr>
-
-              </tbody>
-            </table>
+        <!-- ///////// Title - START ///////// -->
+        <div class="row section-title">
+          <div class="col-md-7 col-sm-7 col-xs-12">
+            <h2 id="section" class="heading-large">New approve cases</h2>
+          </div>
+          <div class="col-md-5 col-sm-5 col-xs-0 sortby-section">
+            <label id="sortby-label" for="sortby">Sort by:</label>
+            <a id="refBnt">Reference</a>
+            <a id="nameBnt">Name</a>
+            <a id="dateBnt">Received</a>
           </div>
         </div>
+        <!-- ///////// Title - END ///////// -->
+
+        <!-- ///////// Content - START ///////// -->
+        <div id="application-list" role="main">
+          <!-- ///////// Section 1 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">EHBJ8F3MKRP</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Kim Scarlett</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-09-11</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 1 - END ///////// -->
+
+          <!-- ///////// Section 2 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">UBS98Q3X0K9T</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Dennis Vinson</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-09-01</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 2 - END ///////// -->
+
+          <!-- ///////// Section 3 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">OHW37HIF6JE7</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Beverly Becker</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-09-03</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 3 - END ///////// -->
+
+          <!-- ///////// Section 4 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">JZPXN4AFDAZV</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Maxwell Rollins</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-11</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 4 - END ///////// -->
+
+          <!-- ///////// Section 5 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">EKL6A02L513M</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Bradley Maldonado</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-12</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 5 - END ///////// -->
+
+          <!-- ///////// Section 6 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">P2VMF61QZ5EC</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Marie Bradley</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-20</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 6 - END ///////// -->
+
+          <!-- ///////// Section 7 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">JC4YMS2JZTZ1</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Sammy Lloyd</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-21</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 7 - END ///////// -->
+
+          <!-- ///////// Section 8 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">1WU5C81O0K20</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Mary Good</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-26</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 8 - END ///////// -->
+
+          <!-- ///////// Section 9 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">6285910BMYQD</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Archie Sweeney</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-13</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 9 - END ///////// -->
+
+          <!-- ///////// Section 10 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">J4XYQS9CANVF</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Sharon Cline</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-27</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 10 - END ///////// -->
+
+          <!-- ///////// Section 10 - START ///////// -->
+          <a href="approve.html" class="section-wrapper">
+            <section class="application">
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h2 class="heading-medium">W4QH1BT4AQIR</h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h3><span class="form-hint">Applicant:</span> Stephanie Francis</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <h4><span class="form-hint">Received:</span> 2015-08-28</h4>
+                </div>
+              </div>
+            </section>
+            <div class="label label-success"><i class="glyphicon glyphicon-ok"></i></div>
+          </a>
+          <!-- ///////// Section 10 - END ///////// -->
+
+        </div>
+
+        <!-- ///////// Content - END ///////// -->
+      </div>
     </div>
 
-      <!-- #EndEditable -->
-    </main>
-    <!-- //////////////////// end main //////////////////// -->
+    <!-- #EndEditable -->
+  </main>
+  <!-- //////////////////// end main //////////////////// -->
 
     <!-- //////////////////// start footer //////////////////// -->
     <footer id="footer" class="group js-footer">
@@ -323,14 +458,40 @@
   <script type="text/javascript" src="../assets/js/jquery.tablesorter.min.js"></script>
   <script type="text/javascript" src="js/casedata.js"></script>
   <script type="text/javascript">
+
+    // This section sorts the content on the page - START
+    var $divs = $("a.section-wrapper");
+
+    $('#refBnt').on('click', function () {
+        var alphabeticallyOrderedDivs = $divs.sort(function (a, b) {
+            return $(a).find("h2").text() > $(b).find("h2").text();
+        });
+        $("#application-list").html(alphabeticallyOrderedDivs);
+    });
+
+    $('#nameBnt').on('click', function () {
+        var alphabeticallyOrderedDivs = $divs.sort(function (a, b) {
+            return $(a).find("h3").text() > $(b).find("h3").text();
+        });
+        $("#application-list").html(alphabeticallyOrderedDivs);
+    });
+
+    $('#dateBnt').on('click', function () {
+      var numericallyOrderedDivs = $divs.sort(function (a, b) {
+          return $(a).find("h4").text() > $(b).find("h4").text();
+      });
+      $("#application-list").html(numericallyOrderedDivs);
+  });
+  // This section sorts the content on the page - END
+
     var filter = getParameterByName("filter");
     if(filter==null||filter==""){
       filter=1;
     }
 
-    $(document).ready(function() {
-      $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
-    });
+    // $(document).ready(function() {
+    //   $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
+    // });
 
     $("#urn").on("click", function (e) {
       $('#urn').tablesorter();

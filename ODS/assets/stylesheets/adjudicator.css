@@ -7,7 +7,7 @@
   padding-top: 2px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   #global-header .header-proposition #proposition-name {
     float: left;
   }
@@ -32,6 +32,245 @@ header.homepage-top .homepage-top-inner h1 {
 
 header .row > div {
   padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .sortby-section {
+    display: none;
+  }
+}
+.sortby-section {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 20px;
+  }
+}
+
+.section-title a {
+  padding: 0 10px;
+  border-right: 1px solid #eee;
+  cursor: pointer;
+}
+
+.section-title a:last-of-type {
+  padding-right: 0;
+  border-right: none;
+}
+
+#sortby {
+  float: none;
+  margin-left: 10px;
+  margin-right: 0;
+  clear: none;
+}
+
+#sortby-label {
+  width: auto;
+  /*float: left;*/
+  padding-top: 7px;
+  display: inline-block;
+}
+
+/* ================ Nav changes - START ================ */
+nav .navbar-collapse {
+  padding: 0;
+  /*display: inline-block;*/
+  width: 100%;
+}
+
+nav .collapse.in {
+  display: inline-block;
+}
+
+nav li.dropdown {
+  border-bottom: 5px solid #005ea5;
+  margin-right: 1%;
+  width: 25%;
+  float: left;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  nav li.dropdown {
+    width: 31.3333%;
+    margin-right: 3%;
+  }
+  nav li.dropdown:last-of-type {
+    margin-right: 0;
+  }
+}
+
+nav li.dropdown:hover {
+  background: #ebebeb;
+}
+
+nav li.dropdown a {
+  padding: 25px 0;
+  text-decoration: none;
+}
+
+nav li.dropdown a .label-primary {
+  margin-left: 5px;
+}
+
+.navbar-toggle {
+  margin-right: 0;
+  background-color: #005ea5;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: white;
+  float: right;
+  clear: right;
+  height: 3px;
+}
+
+.icon-bar:first-of-type {
+  margin-top: 5px;
+}
+
+.nav > li {
+  display: inline-block;
+}
+
+.navbar-collapse.in {
+  overflow-y: visible;
+}
+
+.navbar-nav {
+  margin: 7.5px 0 18px 0;
+  width: 100%;
+}
+
+h2#section {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  h2#section {
+    width: 80%;
+    float: left;
+    margin-top: 0;
+  }
+  .navbar-toggle {
+    margin: 0;
+  }
+}
+
+ul.dropdown-menu {
+  width: 100%;
+  top: 105%;
+  padding: 0;
+}
+
+ul.dropdown-menu li {
+  margin: 0;
+}
+
+ul.dropdown-menu li a {
+  padding: 15px;
+}
+
+.dropdown-menu .divider {
+  margin: 0;
+}
+
+nav ul li .label {
+  padding-bottom: 0.1em;
+  margin-right: 5px;
+}
+
+.navbar-header {
+  display: inline-block;
+  float: right;
+  width: 100%;
+  background: #f5f5f5;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.sr-only {
+  position: inherit;
+  width: auto;
+  height: auto;
+  color: white;
+  margin: 0;
+  float: left;
+  margin-right: 10px;
+  font-size: 15px;
+}
+/* ================ Nav changes - END ================ */
+
+.section-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.section-wrapper i {
+  padding: 1em 0.25em 0em 0.25em;
+  font-size: 24px;
+  line-height: 0;
+  align-self: center;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .section-wrapper .label {
+    min-width: 15%;
+    padding-top: 1.75em;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-wrapper .label {
+    min-width: 20%;
+  }
+}
+
+
+section {
+  background: #f5f5f5;
+  padding: 0;
+  color: black;
+  width: 100%;
+  padding: 15px;
+  /*position: relative;*/
+  /*flex-direction: column;*/
+}
+
+section h2.heading-medium {
+  margin: 0;
+  color: #005ea5;
+  line-height: 1;
+}
+
+section .row > div {
+  padding-top: 0;
+}
+
+/*section h3 {
+  font-weight: bold;
+}*/
+
+@media (max-width: 480px) {
+  section h3 {
+    font-size: 16px;
+  }
+}
+
+section span.form-hint {
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  section h3 span.form-hint {
+    display: none;
+  }
 }
 
 /* ================================= Changes for Adjudicator - END ================================= */
