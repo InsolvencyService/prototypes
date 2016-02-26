@@ -21,18 +21,78 @@
   font-size: 26px;
 }
 
+/* ================ Header - START ================ */
+
 header.homepage-top {
   margin-bottom: 30px;
-  padding: 20px 0;
+  /*padding: 20px 0;*/
+}
+
+header.homepage-top .homepage-top-inner {
+  padding: 40px 30px 40px 30px;
 }
 
 header.homepage-top .homepage-top-inner h1 {
   margin-top: 0;
 }
 
+header.homepage-top .homepage-top-inner p {
+  margin: 0;
+  opacity: 0.6;
+}
+
+header.homepage-top .homepage-top-inner h2 {
+  margin: 0;
+}
+
 header .row > div {
   padding-top: 0;
 }
+
+header.homepage-top .homepage-top-inner {
+  position: relative;
+}
+
+header .cta-container {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  padding: 20px;
+  background: black;
+  width: 30%;
+  min-height: 8.5em;
+}
+
+@media (max-width: 768px) {
+  header.homepage-top .homepage-top-inner {
+    height: 360px;
+  }
+  header .cta-container {
+    width: 100%;
+    width: 91.75%;
+  }
+}
+
+@media (max-width: 480px) {
+  header.homepage-top .homepage-top-inner {
+    height: 330px;
+  }
+}
+
+
+header .cta-container a.button {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+header .cta-container a {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ================ Header - START ================ */
 
 @media (max-width: 768px) {
   .sortby-section {
@@ -74,7 +134,7 @@ header .row > div {
   display: inline-block;
 }
 
-/* ================ Nav changes - START ================ */
+/* ================ Nav changes - List Page - START ================ */
 nav .navbar-collapse {
   padding: 0;
   /*display: inline-block;*/
@@ -94,6 +154,10 @@ nav li.dropdown {
   text-align: center;
 }
 
+nav li.dropdown:hover {
+  background: #ebebeb;
+}
+
 @media (max-width: 768px) {
   nav li.dropdown {
     width: 31.3333%;
@@ -102,10 +166,6 @@ nav li.dropdown {
   nav li.dropdown:last-of-type {
     margin-right: 0;
   }
-}
-
-nav li.dropdown:hover {
-  background: #ebebeb;
 }
 
 nav li.dropdown a {
@@ -202,14 +262,76 @@ nav ul li .label {
   margin-right: 10px;
   font-size: 15px;
 }
-/* ================ Nav changes - END ================ */
+/* ================ Nav changes - List Page - END ================ */
 
-.section-wrapper {
+/* ================ Nav changes - Main Page - START ================ */
+.collapse.navbar-collapse {
+  padding: 0;
+}
+
+.collapse.navbar-collapse .nav.nav-tabs {
+  border-bottom: 5px solid #ddd;
+  /*margin-bottom: 40px;*/
+}
+
+.collapse.navbar-collapse .nav.nav-tabs li {
+  /*border-bottom: 5px solid #005ea5;*/
+  margin-right: 1%;
+  margin-bottom: 4px;
+  float: left;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.collapse.navbar-collapse .nav.nav-tabs li a {
+  margin-right: 0;
+x  border: none;
+  border-radius: 0;
+}
+
+.collapse.navbar-collapse .nav.nav-tabs li.active {
+  border-bottom: 5px solid #005ea5;
+  background: #ebebeb;
+  margin-bottom: -5px;
+  padding-bottom: 8px;
+}
+
+.collapse.navbar-collapse .nav.nav-tabs li.active a {
+  background: none;
+  border: none;
+}
+
+.collapse.navbar-collapse .nav.nav-tabs li:hover {
+  background: #ebebeb;
+}
+/* ================ Nav changes - Main Page - END ================ */
+
+.jobs h4 {
+  margin: 0;
+}
+
+.jobs h4.heading-small {
+  margin: 0 0 20px 0;
+}
+
+.jobs p {
+  margin: 0;
+}
+
+.jobs p.heading-small {
+  margin: 0 0 20px 0;
+}
+
+.jobs p.form-hint {
+  margin: 0 0 20px 0;
+}
+
+.section-wrapper, .new-wrapper {
   display: flex;
   margin-bottom: 20px;
 }
 
-.section-wrapper i {
+.section-wrapper i, .new-wrapper i {
   padding: 1em 0.25em 0em 0.25em;
   font-size: 24px;
   line-height: 0;
@@ -218,18 +340,17 @@ nav ul li .label {
 }
 
 @media (max-width: 768px) {
-  .section-wrapper .label {
+  .section-wrapper .label, .new-wrapper .label {
     min-width: 15%;
     padding-top: 1.75em;
   }
 }
 
 @media (max-width: 480px) {
-  .section-wrapper .label {
+  .section-wrapper .label, .new-wrapper .label {
     min-width: 20%;
   }
 }
-
 
 section {
   background: #f5f5f5;
@@ -271,6 +392,19 @@ section span.form-hint {
   section h3 span.form-hint {
     display: none;
   }
+}
+
+.completion-message i {
+  font-size: 2.6em;
+  color: #a0a3a7;
+  margin-right: 10px;
+  float: left;
+}
+
+.completion-message p {
+  font-size: 19px;
+  float: left;
+  margin-top: 14px;
 }
 
 /* ================================= Changes for Adjudicator - END ================================= */
