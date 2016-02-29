@@ -75,7 +75,6 @@
 <script type="text/javascript" src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
 <!-- #EndEditable -->
 
-
 </head>
 
 <body>
@@ -115,9 +114,9 @@
     <header class="homepage-top">
       <div class="homepage-top-inner">
         <div class="row">
-          <div class="col-md-9 col-sm-9 col-xs-12">
-            <h1 class="form-title heading-xlarge">Bankruptcy adjudication</h1>
-            <h2 class="heading-medium">Application EHBJ8F3MKRP - Kim Scarlett</h2>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+            <h1 class="form-title heading-xlarge">Bankruptcy application:</h1>
+            <h2 class="heading-medium">EHBJ8F3MKRP - Kim Scarlett</h2>
             <p class="small" id="whenreceived">Received 11th September 2015 at 10:14am</p>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12 holder">
@@ -125,8 +124,8 @@
         </div>
         <div class="cta-container">
           <a class="button" href="makeorder.html" id="btn-makeorder"><i class="glyphicon glyphicon-check"></i> Make order</a>
-          <a href="list.html?filter=3" id="btn-refer"><i class="glyphicon glyphicon-alert"></i> Refer</a>
-          <a href="javascript:history.go(-1)" id="back"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+          <a href="list.html?filter=3" id="btn-refer"><i class="glyphicon glyphicon-alert"></i> Refer application</a>
+          <a href="javascript:history.go(-1)" id="back">Back</a>
         </div>
       </div>
     </header>
@@ -143,11 +142,12 @@
           <nav class="collapse navbar-collapse" role="navigation">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tab1default" data-toggle="tab">Personal details</a></li>
-              <li><a href="#tab2default" data-toggle="tab">Scoring</a></li>
-              <li><a href="#tab3default" data-toggle="tab">Order preview</a></li>
-              <li><a href="#tab4default" data-toggle="tab">Case notes</a></li>
-              <li><a href="#tab5default" data-toggle="tab">Case documents</a></li>
-              <li><a href="#tab6default" data-toggle="tab">Actions log</a></li>
+              <li><a href="#tab2default" data-toggle="tab">Credit</a></li>
+              <li><a href="#tab3default" data-toggle="tab">Scoring</a></li>
+              <li><a href="#tab4default" data-toggle="tab">Order preview</a></li>
+              <li><a href="#tab5default" data-toggle="tab">Case notes</a></li>
+              <li><a href="#tab6default" data-toggle="tab">Case documents</a></li>
+              <li><a href="#tab7default" data-toggle="tab">Actions log</a></li>
             </ul>
           </nav>
           <!-- ///////// Tabs - END ///////// -->
@@ -157,109 +157,296 @@
             <!-- ///////// Tab content 1 - START ///////// -->
             <div class="tab-pane fade in active" id="tab1default" role="main">
 
-              <h3 class="heading-large">Personal details</h3>
+              <!-- //// Section 1 - START //// -->
               <div class="row">
-                <div class="col-xs-3">Name:</div>
-                <div class="col-xs-9 bolder">Kim Scarlett</div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="followMeBar">
+                    <h3 class="heading-large">Personal details</h3>
+                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-3">Title:</div>
+                    <div class="col-xs-9 bolder">Mr</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Name:</div>
+                    <div class="col-xs-9 bolder">Kim Scarlett</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Aliases:</div>
+                    <div class="col-xs-9 bolder">No aliases found</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Date of birth:</div>
+                    <div class="col-xs-9 bolder">15/11/1976</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">NI number:</div>
+                    <div class="col-xs-9 bolder">PZ 020012 A</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Telephone:</div>
+                    <div class="col-xs-9 bolder">07466 456 998</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Email:</div>
+                    <div class="col-xs-9 bolder"><a href="mailto:enquiries@onlinedebtsolutions.org.uk"></a></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Current address:</div>
+                    <div class="col-xs-9 bolder">110 High Street, Newhall, Birmingham B4 3TT</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Moved In Date:</div>
+                    <div class="col-xs-9 bolder">31/07/2015</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Previous address:</div>
+                    <div class="col-xs-9 bolder">Old Building, Old Street, Old Lane, Old Town, Old County, OLD 7WN, UK</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Moved In Date:</div>
+                    <div class="col-xs-9 bolder">01/01/2011</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Annual income:</div>
+                    <div class="col-xs-9 bolder">&pound;18,000</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Total debt:</div>
+                    <div class="col-xs-9 bolder">&pound;46,653.32</div>
+                  </div>
+                </div>
               </div>
-              <div class="row">
-                <div class="col-xs-3">Date of birth:</div>
-                <div class="col-xs-9 bolder">1st May 1992</div>
-              </div>
-              <div class="row">
-                <div class="col-xs-3">NI number:</div>
-                <div class="col-xs-9 bolder">PZ 020012 A</div>
-              </div>
-              <div class="row">
-                <div class="col-xs-3">Telephone:</div>
-                <div class="col-xs-9 bolder">07466 456 998</div>
-              </div>
-              <div class="row">
-                <div class="col-xs-3">Address:</div>
-                <div class="col-xs-9 bolder">110 High Street, Newhall, Birmingham B4 3TT (lived here for 5 years)</div>
-              </div>
-              <div class="row">
-                <div class="col-xs-3">Annual income:</div>
-                <div class="col-xs-9 bolder">&pound;18,000</div>
-              </div>
-              <div class="row">
-                <div class="col-xs-3">Total debt:</div>
-                <div class="col-xs-9 bolder">&pound;46,653.32</div>
-              </div>
+              <!-- //// Section 1 - END //// -->
 
-              <h3 class="heading-large">Employment history</h3>
+              <hr>
+
+              <!-- //// Section 2 - START //// -->
               <div class="row jobs">
-                <div class="col-sm-6 col-xs-12">
-                  <h4 class="heading-medium">AA Autospares</h4>
-                  <p class="form-hint">1 High St, Ward End, Birmingham, B1 1BG</p>
-                  <h4 class="heading-small">Mechanic</h4>
-                  <p>Start date:</p>
-                  <p class="heading-small">31st August 2015</p>
-                  <p>End date:</p>
-                  <p class="heading-small">1st May 2015</p>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="followMeBar">
+                    <h3 class="heading-large">Employment history</h3>
+                  </div>
                 </div>
-                <div class="col-sm-6 col-xs-12">
-                  <h4 class="heading-medium">MOT's R US</h4>
-                  <p class="form-hint">306 New St, Ward End, Birmingham, B1 1BG</p>
-                  <h4 class="heading-small">Mechanic</h4>
-                  <p>Start date:</p>
-                  <p class="heading-small">31st January 2015</p>
-                  <p>End date:</p>
-                  <p class="heading-small">30th April 2015</p>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="heading-medium">AA Autospares</h4>
+                      <p class="form-hint">1 High St, Ward End, Birmingham, B1 1BG</p>
+                      <h4 class="heading-small">Mechanic</h4>
+                      <p>Start date:</p>
+                      <p class="heading-small">31st August 2015</p>
+                      <p>End date:</p>
+                      <p class="heading-small">1st May 2015</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="heading-medium">MOT's R US</h4>
+                      <p class="form-hint">306 New St, Ward End, Birmingham, B1 1BG</p>
+                      <h4 class="heading-small">Mechanic</h4>
+                      <p>Start date:</p>
+                      <p class="heading-small">31st January 2015</p>
+                      <p>End date:</p>
+                      <p class="heading-small">30th April 2015</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- //// Section 2 - END //// -->
+
+              <hr>
+
+              <!-- //// Section 3 - START //// -->
+              <div class="row jobs">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="followMeBar">
+                    <h3 class="heading-large">Employment history</h3>
+                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="heading-medium">AA Autospares</h4>
+                      <p class="form-hint">1 High St, Ward End, Birmingham, B1 1BG</p>
+                      <h4 class="heading-small">Mechanic</h4>
+                      <p>Start date:</p>
+                      <p class="heading-small">31st August 2015</p>
+                      <p>End date:</p>
+                      <p class="heading-small">1st May 2015</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="heading-medium">MOT's R US</h4>
+                      <p class="form-hint">306 New St, Ward End, Birmingham, B1 1BG</p>
+                      <h4 class="heading-small">Mechanic</h4>
+                      <p>Start date:</p>
+                      <p class="heading-small">31st January 2015</p>
+                      <p>End date:</p>
+                      <p class="heading-small">30th April 2015</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //// Section 3 - END //// -->
+
+              <hr>
+
+              <!-- //// Section 4 - START //// -->
+              <div class="row jobs">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="followMeBar">
+                    <h3 class="heading-large">Assets</h3>
+                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-3">Properties:</div>
+                    <div class="col-xs-9 bolder">No properties found</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Total assets:</div>
+                    <div class="col-xs-9 bolder">0</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Total Pensions:</div>
+                    <div class="col-xs-9 bolder">0</div>
+                  </div>
+                </div>
+              </div>
+              <!-- //// Section 4 - END //// -->
+
+              <hr>
+
+              <!-- //// Section 5 - START //// -->
+              <div class="row jobs">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="followMeBar">
+                    <h3 class="heading-large">Unsecured liabilities</h3>
+                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-3">Unsecured liabilities:</div>
+                    <div class="col-xs-9 bolder">1000.00</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Vehicles:</div>
+                    <div class="col-xs-9 bolder">No vehicles found</div>
+                  </div>
+                </div>
+              </div>
+              <!-- //// Section 5 - END //// -->
+
+              <hr>
+
+              <!-- //// Section 6 - START //// -->
+              <div class="row jobs">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="followMeBar">
+                    <h3 class="heading-large">Legal proceedings</h3>
+                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-3">Separated?:</div>
+                    <div class="col-xs-9 bolder">N/A</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3">Legal Proceedings?:</div>
+                    <div class="col-xs-9 bolder">N/A</div>
+                  </div>
+                </div>
+              </div>
+              <!-- //// Section 6 - END //// -->
+
             </div>
             <!-- ///////// Tab content 1 - END ///////// -->
 
             <!-- ///////// Tab content 2 - START ///////// -->
             <div class="tab-pane fade" id="tab2default">
-              <table>
-                <thead style="display:none">
-                  <th class="col-sm-4">Check performed</th>
-                  <th class="col-sm-7">Result</th>
-                  <th class="col-sm-1">Status<i class="glyphicon glyphicon-ok-circle"></i></th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="col-sm-3 bolder">Address for last 5 years:</td>
-                    <td class="col-sm-6">Verified</td>
-                    <td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-3 bolder">Surplus income:</td>
-                    <td class="col-sm-6">-&pound;580.26 per month</td>
-                    <td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-3 bolder">Value of assets:</td>
-                    <td class="col-sm-6">&pound;4,526.36</td>
-                    <td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-3 bolder">Liabilities:</td>
-                    <td class="col-sm-6">&pound;64,526.36</td>
-                    <td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-3 bolder">Creditors:</td>
-                    <td class="col-sm-4">All creditors are based in the UK</td>
-                    <td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-3 bolder">Previous insolvency:</td>
-                    <td class="col-sm-4">No record found on the EiiR.</td>
-                    <td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-3 bolder">Real properties:</td>
-                    <td class="col-sm-6">
-                      <div>13 Wenlock Rd, Smethwick, B63 9PJ</div>
-                      <div>Equitable value: £12,000.00</div>
-                    </td>
-                    <td class="col-sm-3 bold-medium"><i class="glyphicon glyphicon-ok-circle"></i></td>
-                  </tr>
-                </tbody>
-              </table>
+              <h3 class="heading-large">Application scoring</h3>
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  Address for last 5 years:
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
+                  Verified
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                  <i class="glyphicon glyphicon-ok-circle"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  Surplus income:
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
+                  -&pound;580.26 per month
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                  <i class="glyphicon glyphicon-ok-circle"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  Value of assets:
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
+                  &pound;4,526.36
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                  <i class="glyphicon glyphicon-ok-circle"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  Liabilities:
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
+                  &pound;64,526.36
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                  <i class="glyphicon glyphicon-ok-circle"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  Creditors:
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
+                  All creditors are based in the UK
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                  <i class="glyphicon glyphicon-ok-circle"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  Previous insolvency:
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
+                  No record found on the EiiR.
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                  <i class="glyphicon glyphicon-ok-circle"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  Real properties:
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
+                  13 Wenlock Rd, Smethwick, B63 9PJ</br>
+                  Equitable value: £12,000.00
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                  <i class="glyphicon glyphicon-ok-circle"></i>
+                </div>
+              </div>
             </div>
             <!-- ///////// Tab content 2 - END ///////// -->
 
@@ -439,34 +626,103 @@
     <script type="text/javascript" src="../assets/js/bootstrap/js/toggle-button.js"></script>
     <script type="text/javascript">
 
-    $(document).ready(function() {
-      var locked = getParameterByName("lock");
-      if(locked=="true"){
-        $("#locked").show();
+      $(document).ready(function() {
+        var locked = getParameterByName("lock");
+        if(locked=="true"){
+          $("#locked").show();
+        }
+        else{
+          $("#locked").hide();
+        }
+      });
+
+
+      $("#PAV").on("click", function (e) {
+        if($("#PAV").is(':checked')){
+          $("#address").css('backgroundColor', 'black');
+          $("#address").css('color', 'black');
+        }
+        else{
+          $("#address").css('backgroundColor', 'inherit');
+          $("#address").css('color', 'inherit');
+        }
+      });
+
+      function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
-      else{
-        $("#locked").hide();
-      }
+
+      // This is what makes the headers stick - Start
+      var stickyHeaders = (function() {
+
+        var $window = $(window),
+            $stickies;
+
+        var load = function(stickies) {
+
+          if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
+
+            $stickies = stickies.each(function() {
+
+              var $thisSticky = $(this).wrap('<div class="followWrap" />');
+
+              $thisSticky
+                  .data('originalPosition', $thisSticky.offset().top)
+                  .data('originalHeight', $thisSticky.outerHeight())
+                    .parent()
+                    .height($thisSticky.outerHeight());
+            });
+
+            $window.off("scroll.stickies").on("scroll.stickies", function() {
+      		  _whenScrolling();
+            });
+          }
+        };
+
+        var _whenScrolling = function() {
+
+        $stickies.each(function(i) {
+
+          var $thisSticky = $(this),
+              $stickyPosition = $thisSticky.data('originalPosition');
+
+          if ($stickyPosition <= $window.scrollTop()) {
+
+            var $nextSticky = $stickies.eq(i + 1),
+                $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
+
+            $thisSticky.addClass("fixed");
+
+            if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
+
+              $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
+            }
+
+          } else {
+
+            var $prevSticky = $stickies.eq(i - 1);
+
+            $thisSticky.removeClass("fixed");
+
+            if ($prevSticky.length > 0 && $window.scrollTop() <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
+
+              $prevSticky.removeClass("absolute").removeAttr("style");
+            }
+          }
+        });
+      };
+
+      return {
+        load: load
+      };
+    })();
+
+    $(function() {
+      stickyHeaders.load($(".followMeBar"));
     });
-
-
-    $("#PAV").on("click", function (e) {
-      if($("#PAV").is(':checked')){
-        $("#address").css('backgroundColor', 'black');
-        $("#address").css('color', 'black');
-      }
-      else{
-        $("#address").css('backgroundColor', 'inherit');
-        $("#address").css('color', 'inherit');
-      }
-    });
-
-    function getParameterByName(name) {
-      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-      results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
 
     </script>
 

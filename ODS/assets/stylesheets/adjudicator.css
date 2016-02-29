@@ -75,21 +75,21 @@ header .cta-container {
 
 @media (max-width: 480px) {
   header.homepage-top .homepage-top-inner {
-    height: 330px;
+    height: 315px;
   }
 }
-
 
 header .cta-container a.button {
   margin-bottom: 20px;
   text-align: center;
+  width: 100%;
 }
 
 header .cta-container a {
   color: white;
   font-weight: bold;
-  margin-bottom: 10px;
-  display: block;
+  margin: 0 30px 10px 0;
+  display: inline-block;
 }
 
 /* ================ Header - START ================ */
@@ -265,18 +265,17 @@ nav ul li .label {
 /* ================ Nav changes - List Page - END ================ */
 
 /* ================ Nav changes - Main Page - START ================ */
+
 .collapse.navbar-collapse {
   padding: 0;
 }
 
 .collapse.navbar-collapse .nav.nav-tabs {
   border-bottom: 5px solid #ddd;
-  /*margin-bottom: 40px;*/
 }
 
 .collapse.navbar-collapse .nav.nav-tabs li {
-  /*border-bottom: 5px solid #005ea5;*/
-  margin-right: 1%;
+  margin-right: 4px;
   margin-bottom: 4px;
   float: left;
   background: #f5f5f5;
@@ -285,8 +284,10 @@ nav ul li .label {
 
 .collapse.navbar-collapse .nav.nav-tabs li a {
   margin-right: 0;
-x  border: none;
+  border: none;
   border-radius: 0;
+  font-size: 15px;
+  padding: 10px;
 }
 
 .collapse.navbar-collapse .nav.nav-tabs li.active {
@@ -299,6 +300,8 @@ x  border: none;
 .collapse.navbar-collapse .nav.nav-tabs li.active a {
   background: none;
   border: none;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .collapse.navbar-collapse .nav.nav-tabs li:hover {
@@ -324,6 +327,15 @@ x  border: none;
 
 .jobs p.form-hint {
   margin: 0 0 20px 0;
+}
+
+.tab-pane hr {
+  margin-top: 40px;
+}
+
+.with-nav-tabs.panel-default {
+  border-bottom: 5px solid #ddd;
+  padding-bottom: 40px;
 }
 
 .section-wrapper, .new-wrapper {
@@ -405,6 +417,46 @@ section span.form-hint {
   font-size: 19px;
   float: left;
   margin-top: 14px;
+}
+
+.panel-indent {
+  margin-top: 40px;
+}
+
+.followMeBar {
+  background: white;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  color: black;
+}
+
+.followMeBar h3 {
+  margin-top: 15px;
+}
+
+.followMeBar.fixed {
+  position: fixed;
+  top: 0;
+  width: 25%;
+  background: white;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .followMeBar.fixed {
+    width: 100%;
+  }
+}
+
+.followMeBar .row > div {
+  padding-top: 0;
+}
+
+.followMeBar.fixed.absolute {
+  position: absolute;
+  display: none;
 }
 
 /* ================================= Changes for Adjudicator - END ================================= */
