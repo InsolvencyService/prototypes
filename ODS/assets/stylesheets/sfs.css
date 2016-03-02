@@ -281,11 +281,11 @@ fieldset {
 }
 
 .amount label, .per label {
-  text-indent: -10000px;
-  text-align: left;
+  /*text-indent: -10000px;
+  text-align: left;*/
   /*margin: 0;*/
-  height: 0;
-  width: 0;
+  /*height: 0;
+  width: 0;*/
 }
 
 .amount .currency {
@@ -314,6 +314,10 @@ fieldset.input-item .amount .currency {
   text-align: left;
   /*clear: left;*/
   font-weight: normal;
+}
+
+.amount input {
+  width: auto;
 }
 
 .expense .amount input.amount, .fine .amount input {
@@ -525,7 +529,6 @@ input.description {
   padding-top: 0;
 }
 
-
 .section .heading-xlarge {
   float: left;
   margin: -5px 10px 0 0;
@@ -601,8 +604,6 @@ fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
 .heading-xlarge.start {
   margin-bottom: 0;
 }
-
-
 
 /*.section.active:hover {
   background: #dee2e6;

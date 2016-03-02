@@ -79,6 +79,10 @@ header .cta-container {
   }
 }
 
+header.homepage-top#list-search .homepage-top-inner {
+  height: initial;
+}
+
 header .cta-container a.button {
   margin-bottom: 20px;
   text-align: center;
@@ -308,27 +312,59 @@ nav ul li .label {
   background: #ebebeb;
 }
 
-.fail .glyphicon {
-  color: #B10E1E;
+/*.fail {
+  border: 3px solid #B10E1E;
+  background: white;
+}*/
+
+/*.fail a:hover span {
+  text-decoration: none;
+}*/
+
+.fail label, .pass label {
+  color: white;
+  border-radius: 3px;
+  width: 100%;
+  padding: 5px 5px;
+  /*text-transform: uppercase;*/
+  font-size: 16px;
+  text-align: center;
 }
 
-.pass .glyphicon {
-  color: #00823B;
+.fail label {
+  background: #B10E1E;
 }
+
+.pass label {
+  background: #00823B;
+}
+
+nav .fail label, nav .pass label {
+  padding: 0 5px;
+  width: auto;
+}
+
+section label, section label {
+  margin-top: -3px;
+  display: block;
+}
+
 
 /* ================ Nav changes - Main Page - END ================ */
 
-#tab2default .glyphicon {
-  color: #00823B;
+/*.credit-check .row {
+  margin-bottom: 10px;
+}*/
+
+a.open-close {
+  float: right;
+  font-size: 14px;
+  text-decoration: underline;
+  margin: 0;
 }
 
-#tab2default .fail-row {
-  background: #f5f5f5;
-  padding: 0 0 10px 0;
-}
-
-#tab2default .fail-row .glyphicon {
-  color: #B10E1E;
+a.open-close i {
+  color: #337ab7;
 }
 
 .jobs h4 {
@@ -363,7 +399,6 @@ nav ul li .label {
 hr.bolder {
   border-bottom: 5px solid #ddd;
 }
-
 
 .tab-pane hr {
   margin-top: 40px;
@@ -408,6 +443,28 @@ section {
   padding: 15px;
   /*position: relative;*/
   /*flex-direction: column;*/
+}
+
+#tab2default section {
+  background: white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+#tab2default section.fail-row, #tab2default section.open {
+  background: #f5f5f5;
+}
+
+#tab2default .fail-row {
+  padding-bottom: 10px;
+}
+
+.credit-info-hidden {
+  margin-top: 10px;
+  padding: 15px 0;
+  background: white;
+  border-right: 10px solid #f5f5f5;
+  border-left: 10px solid #f5f5f5;
 }
 
 section h2.heading-medium {

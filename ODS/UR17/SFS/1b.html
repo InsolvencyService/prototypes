@@ -56,20 +56,19 @@
 <meta content="assets/images/opengraph-image.png" property="og:image">
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 
-<!--[if gt IE 8]><!-->
-<link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css"><!--<![endif]-->
 <!--[if IE 6]>
 <link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 7]>
 <link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 8]>
 <link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
+<!--[if gt IE 8]><!-->
+<link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css"><!--<![endif]-->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
 
 <!-- #BeginEditable "styles" -->
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/sfs.css">
 
 <style type="text/css">
@@ -80,7 +79,7 @@
 
 </head>
 
-<body class="js-enabled js-enabled">
+<body>
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
   <div id="global-cookie-message" style="display: none; height:0">
@@ -93,7 +92,7 @@
 
   <div id="skiplink-container">
     <div>
-      <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+      <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
 
@@ -127,7 +126,7 @@
 
 
       <!-- .inner-block - Start -->
-      <div class="inner-block">
+      <div class="inner-block" role="main">
         <div class="phase-banner">
           <p>
             <strong class="phase-tag">BETA</strong>
@@ -136,11 +135,7 @@
         </div>
       <!-- .inner-block - End -->
 
-      </div>
-
       <!-- #BeginEditable "content" -->
-
-        <div class="inner-block">
 
         <!-- .breadcrumb - Start -->
         <nav class="breadcrumbs" aria-label="breadcrumb">
@@ -157,7 +152,7 @@
           <div class="row">
             <div class="col-xs-12">
 
-              <h1 class="form-title heading-xlarge">Self-employed income</h1>
+              <h1 class="form-title heading-xlarge" id="maincontent">Self-employed income</h1>
               <p class="lede">Add your business's full accounting details as they appear on your latest Self Assessment tax return.</p>
               <br>
               <p class="lede">If this is your first year trading and you haven't submitted a Self Assessment tax return, please tell us about your earnings since your business began.</p>
@@ -172,42 +167,31 @@
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
               <header class="form-intro">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-5">
-                    <h2 class="heading-large">Accounting details</h2>
-                  </div>
-                  <div class="col-md-3 col-sm-3 col-xs-3">
-                    <h2 class="heading-small amount" aria-hidden="true">Amount</h2>
-                  </div>
-                  <div class="col-md-3 col-sm-3 col-xs-4">
-                    <h2 class="heading-small per" aria-hidden="true">per week / month / year</h2>
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="heading-large"id="net-profit-amount-header">Accounting details</h2>
                   </div>
                 </div>
               </header>
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
 
               <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
-              <fieldset role="main" id="net-profit" aria-labelledby="net-profit">
-                <legend class="hidden">Net profit</legend>
-                <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-5">
-                    <label for="net-profit-amount" class="form-label-bold">Net profit</label>
-                    <div class="form-hint">Total amount earned minus all your business expenses</div>
-                  </div>
-                  <div class="col-md-3 col-sm-3 col-xs-3 amount">
-                    <div class="currency">&pound;</div>
-                    <input type="text" id="net-profit-amount" class="amount" placeholder="0" aria-describedby="net-profit net-profit-amount">
-                  </div>
-                  <div class="col-md-3 col-sm-3 col-xs-4 per">
-                    <label for="per-d6">per week / month / year</label>
-                    <select name="D6" id="per-d6" aria-describedby="net-profit per-d6">
-                      <option value="week">per week</option>
-                      <option value="fortnight">per fortnight</option>
-                      <option value="4weeks">per 4 weeks</option>
-                      <option value="month">per month</option>
-                      <option value="quarter">per quarter</option>
-                      <option value="year" selected="selected">per year</option>
-                    </select>
-                  </div>
+              <fieldset>
+                <legend class="hidden">Accounting details Net profit</legend>
+                <div class="form-group amount">
+                  <label for="net-profit-amount" class="form-label-bold" id="net-profit-amount-label">Net profit</label>
+                  <div class="form-hint" id="net-profit-amount-label2">Total amount earned minus all your business expenses</div>
+                  <input type="text" id="net-profit-amount" placeholder="0" aria-labelledby="net-profit-amount-label net-profit-amount-label2">
+                </div>
+                <div class="form-group per">
+                  <label for="per-d6" class="form-label-bold" id="per-d6-label">per week / month / year</label>
+                  <select name="D6" id="per-d6" aria-labelledby="net-profit-amount-header net-profit-amount-label per-d6-label">
+                    <option value="week">per week</option>
+                    <option value="fortnight">per fortnight</option>
+                    <option value="4weeks">per 4 weeks</option>
+                    <option value="month">per month</option>
+                    <option value="quarter">per quarter</option>
+                    <option value="year" selected="selected">per year</option>
+                  </select>
                 </div>
               </fieldset>
               <!-- ///////////////// Fieldset 1 - End ///////////////// -->
@@ -222,7 +206,7 @@
               <div class="form-intro">
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-5">
-                    <h2 class="heading-large">Accounting period</h2>
+                    <h2 class="heading-large" id="accounting-period-header">Accounting period</h2>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3">
                   </div>
@@ -234,7 +218,7 @@
 
               <div class="row">
                 <div class="col-xs-12">
-                  <p>The accounting period is the period of time for which your business's financial statements are prepared. 				  Your accounting period
+                  <p>The accounting period is the period of time for which your business's financial statements are prepared. Your accounting period
 				            start and end dates should match the information you included in your most recent Self Assessment tax return. </p>
 				          <p>If you haven't completed a Self Assessment tax return yet, the start date should be the date your business began.</p>
                 </div>
@@ -244,90 +228,87 @@
             </div>
           </header>
 
-          <div class="row" role="main">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
 
-                  <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
-                  <fieldset id="accounting-year-start" aria-labelledby="accounting-year-start">
-                    <legend class="form-label-bold">Accounting period start date</legend>
-                    <p class="form-hint">For example, Apr 2012</p>
-                    <div class="row">
-                      <div class="col-md-3 col-sm-3 col-xs-3" role="group">
-                        <label for="start-month">Month</label><br>
-                        <select id="start-month" name="start-month" aria-describedby="accounting-year-start start-month">
-                          <option value="0">--</option>
-                          <option value="1">Jan</option>
-                          <option value="2">Feb</option>
-                          <option value="3">Mar</option>
-                          <option value="4">Apr</option>
-                          <option value="5">May</option>
-                          <option value="6">Jun</option>
-                          <option value="7">Jul</option>
-                          <option value="8">Aug</option>
-                          <option value="9">Sep</option>
-                          <option value="10">Oct</option>
-                          <option value="11">Nov</option>
-                          <option value="12">Dec</option>
-                        </select>
-                      </div>
-                      <div class="col-md-5 col-sm-5 col-xs-5" role="group">
-                        <label for="start-year">Year</label><br>
-                        <input id="start-year" name="start-year" type="number" min="2000" max="2016" aria-describedby="accounting-year-start start-year" />
-                      </div>
-                    </div>
-                  </fieldset>
-                  <!-- ///////////////// Fieldset 4 - End ///////////////// -->
-
+              <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
+              <fieldset>
+                <legend class="hidden">Accounting period start date</legend>
+                <label class="form-label-bold" id="accounting-start-date-header">Accounting period start date</label>
+                <p class="form-hint">For example, Apr 2012</p>
+                <div class="row">
+                  <div class="col-md-3 col-sm-3 col-xs-3" role="group">
+                    <label id="start-month-label" for="start-month">Month</label><br>
+                    <select id="start-month" name="start-month" aria-labelledby="accounting-start-date-header start-month-label">
+                      <option value="0">--</option>
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-5" role="group">
+                    <label id="start-year-label" for="start-year">Year</label><br>
+                    <input id="start-year" name="start-year" type="number" min="2000" max="2016" aria-labelledby="accounting-start-date-header start-year-label" />
+                  </div>
                 </div>
-              </div>
+              </fieldset>
+              <!-- ///////////////// Fieldset 4 - End ///////////////// -->
+
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
+          </div>
+          <p></p>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
 
-                  <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
-                  <fieldset id="accounting-year-end" aria-labelledby="accounting-year-end">
-                    <legend class="form-label-bold">Accounting period end date</legend>
-                    <p class="form-hint">For example, Mar 2013</p>
-                    <div class="row">
-                      <div class="col-md-3 col-sm-3 col-xs-3" role="group">
-                        <label for="month-end">Month</label><br>
-                        <select id="month-end" name="month-end" aria-describedby="accounting-year-end month-end">
-                          <option value="0">--</option>
-                          <option value="1">Jan</option>
-                          <option value="2">Feb</option>
-                          <option value="3">Mar</option>
-                          <option value="4">Apr</option>
-                          <option value="5">May</option>
-                          <option value="6">Jun</option>
-                          <option value="7">Jul</option>
-                          <option value="8">Aug</option>
-                          <option value="9">Sep</option>
-                          <option value="10">Oct</option>
-                          <option value="11">Nov</option>
-                          <option value="12">Dec</option>
-                        </select>
-                      </div>
-                      <div class="col-md-5 col-sm-5 col-xs-5" role="group">
-                        <label for="year-end">Year</label><br>
-                        <input id="year-end" name="year-end" type="number" min="2000" max="2016" aria-describedby="accounting-year-end year-end" />
-                      </div>
-                    </div>
-                  </fieldset>
-                  <!-- ///////////////// Fieldset 5 - End ///////////////// -->
-
+              <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
+              <fieldset>
+                <legend class="hidden">Accounting period end date</legend>
+                <label class="form-label-bold" id="accounting-year-end-header">Accounting period end date</label>
+                <p class="form-hint">For example, Mar 2013</p>
+                <div class="row">
+                  <div class="col-md-3 col-sm-3 col-xs-3" role="group">
+                    <label id="month-end-label" for="month-end">Month</label><br>
+                    <select id="month-end" name="month-end" aria-labelledby="accounting-year-end-header month-end-label">
+                      <option value="0">--</option>
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-5" role="group">
+                    <label id="year-end-label" for="year-end">Year</label><br>
+                    <input id="year-end" name="year-end" type="number" min="2000" max="2016" aria-labelledby="accounting-year-end-header year-end-label" />
+                  </div>
                 </div>
-              </div>
+              </fieldset>
+              <!-- ///////////////// Fieldset 5 - End ///////////////// -->
+
             </div>
           </div>
 
           <footer class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-
+              <h3 class="hidden" id="continue">Continue with your application form</h3>
               <div class="form-navigation form-group">
-                <input type="button" onclick="location.href='summary-test.html?stage=income&amp;page=2';" id="next" class="button" value="Continue">
+                <input type="button" onclick="location.href='summary-test.html?stage=income&amp;page=2';" id="next" class="button" value="Continue" aria-labelledby="continue">
                 <br>
                 <a href="javascript:history.go(-1)" id="back">Back</a>
                 <a href="#" id="cancel">Save and logout</a>

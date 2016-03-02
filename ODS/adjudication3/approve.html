@@ -142,8 +142,12 @@
           <nav class="collapse navbar-collapse" role="navigation">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tab1default" data-toggle="tab">Personal details</a></li>
-              <li class="fail"><a href="#tab2default" data-toggle="tab">Credit <i class="glyphicon glyphicon-remove-sign"></i></a></li>
-              <li><a href="#tab3default" data-toggle="tab">Scoring</a></li>
+              <li class="fail">
+                <a href="#tab2default" data-toggle="tab">
+                  Scoring - <label>Fail</label>
+                </a>
+              </li>
+              <li><a href="#tab3default" data-toggle="tab">Credit</a></li>
               <li><a href="#tab4default" data-toggle="tab">Order preview</a></li>
               <li><a href="#tab5default" data-toggle="tab">Case notes</a></li>
               <li><a href="#tab6default" data-toggle="tab">Case documents</a></li>
@@ -424,99 +428,214 @@
             <!-- ///////// Tab content 2 - START ///////// -->
             <div class="tab-pane fade" id="tab2default">
               <h3 class="heading-large">Application scoring</h3>
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  Address for last 5 years:
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
-                  Verified
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                  <i class="glyphicon glyphicon-ok-sign"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  Surplus income:
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
-                  -&pound;580.26 per month
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                  <i class="glyphicon glyphicon-ok-sign"></i>
-                </div>
-              </div>
-              <div class="row fail-row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  Value of assets:
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
-                  &pound;4,526.36
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                  <i class="glyphicon glyphicon-remove-sign"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  Liabilities:
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
-                  &pound;64,526.36
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                  <i class="glyphicon glyphicon-ok-sign"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  Creditors:
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
-                  All creditors are based in the UK
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                  <i class="glyphicon glyphicon-ok-sign"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  Previous insolvency:
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
-                  No record found on the EiiR.
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                  <i class="glyphicon glyphicon-ok-sign"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  Real properties:
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12 bolder">
-                  13 Wenlock Rd, Smethwick, B63 9PJ</br>
-                  Equitable value: £12,000.00
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                  <i class="glyphicon glyphicon-ok-sign"></i>
-                </div>
+              <div class="credit-check">
+
+                <!-- // Status check - 1 - START // -->
+                <section>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      Address for last 5 years:
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 bolder">
+                      Verified
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a class="open-close"><i class="glyphicon glyphicon-plus"></i> More information</a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 pass">
+                      <label>Pass</label>
+                    </div>
+                  </div>
+                  <div class="row credit-info-hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      Hidden content for the above item...
+                    </div>
+                  </div>
+                </section>
+                <!-- // Status check - 1 - END // -->
+
+                <!-- // Status check - 2 - START // -->
+                <section>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      Surplus income:
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 bolder">
+                      -&pound;580.26 per month
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a class="open-close"><i class="glyphicon glyphicon-plus"></i> More information</a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 pass">
+                      <label>Pass</label>
+                    </div>
+                  </div>
+                  <div class="row credit-info-hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      Hidden content for the above item...
+                    </div>
+                  </div>
+                </section>
+                <!-- // Status check - 2 - END // -->
+
+                <!-- // Status check - 3 - START // -->
+                <section class="fail-row">
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      Value of assets:
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 bolder">
+                      &pound;4,526.36
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a class="open-close"><i class="glyphicon glyphicon-plus"></i> More information</a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 fail">
+                      <label>Fail</label>
+                    </div>
+                  </div>
+                  <div class="row credit-info-hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      Hidden content for the above item...
+                    </div>
+                  </div>
+                </section>
+                <!-- // Status check - 3 - END // -->
+
+                <!-- // Status check - 4 - START // -->
+                <section>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      Liabilities:
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 bolder">
+                      &pound;64,526.36
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a class="open-close"><i class="glyphicon glyphicon-plus"></i> More information</a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 pass">
+                      <label>Pass</label>
+                    </div>
+                  </div>
+                  <div class="row credit-info-hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      Hidden content for the above item...
+                    </div>
+                  </div>
+                </section>
+                <!-- // Status check - 4 - END // -->
+
+                <!-- // Status check - 5 - START // -->
+                <section>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      Creditors:
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 bolder">
+                      All creditors are based in the UK
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a class="open-close"><i class="glyphicon glyphicon-plus"></i> More information</a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 pass">
+                      <label>Pass</label>
+                    </div>
+                  </div>
+                  <div class="row credit-info-hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      Hidden content for the above item...
+                    </div>
+                  </div>
+                </section>
+                <!-- // Status check - 5 - END // -->
+
+                <!-- // Status check - 6 - START // -->
+                <section>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      Previous insolvency:
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 bolder">
+                      No record found on the EiiR.
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a class="open-close"><i class="glyphicon glyphicon-plus"></i> More information</a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 pass">
+                      <label>Pass</label>
+                    </div>
+                  </div>
+                  <div class="row credit-info-hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      Hidden content for the above item...
+                    </div>
+                  </div>
+                </section>
+                <!-- // Status check - 6 - END // -->
+
+                <!-- // Status check - 7 - START // -->
+                <section>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      Real properties:
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 bolder">
+                      13 Wenlock Rd, Smethwick, B63 9PJ</br>
+                      Equitable value: £12,000.00
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a class="open-close"><i class="glyphicon glyphicon-plus"></i> More information</a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 pass">
+                      <label>Pass</label>
+                    </div>
+                  </div>
+                  <div class="row credit-info-hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      Hidden content for the above item...
+                    </div>
+                  </div>
+                </section>
+                <!-- // Status check - 7 - END // -->
+
               </div>
             </div>
             <!-- ///////// Tab content 2 - END ///////// -->
 
             <!-- ///////// Tab content 3 - START ///////// -->
             <div class="tab-pane fade" id="tab3default">
-              <div class="alert alert-warning">
-                <p>It is ordered that <strong>Kim Scarlett</strong>, Unemployed, formerly known as <strong>Kimberly Red</strong>, of <span id="address"><strong>110 High Street, Newhall, Birmingham B4 3TT</strong></span> be adjudged bankrupt</p>
-                <p>It is further ordered that <strong>David Rickman</strong> be appointed trustee of the bankrupt’s estate</p>
-              </div>
-              <div class="text-right"> This person is subject to a PAV order <input type="checkbox" id="PAV"></div>
             </div>
             <!-- ///////// Tab content 3 - END ///////// -->
 
             <!-- ///////// Tab content 4 - START ///////// -->
             <div class="tab-pane fade" id="tab4default">
+              <h3 class="heading-large">Order preview</h3>
+              <form action="/ApplicationDetail/SaveOrderOverviewSimple" method="post">
+                <fieldset class="form-group">
+                  <div class="form-group">
+                    <label class="form-label-bold">Bankruptcy order description</label>
+                    <textarea htmlattributes="{ }" id="SimpleOrderPreview" name="SimpleOrderPreview" rows="5">MrBrianBagley, of The Building, The Street, The Suburb, The City, The County, TH3 9CD, UK be declared bankrupt.</textarea>
+                  </div>
+                  <div class="form-group text-right" id="AddCaseNote">
+                    <button type="submit" class="button">Update</button>
+                  </div>
+                </fieldset>
+              </form>
+              <form action="/ApplicationDetail/SaveOrderOverview" method="post"><input id="Urn" name="Urn" type="hidden" value="BF567YT3DE26">        <p>Gazzete order description</p>
+                <div class="editor-field">
+                  <textarea htmlattributes="{ }" cols="95" id="OrderPreview" name="OrderPreview" rows="10">It is ordered that Brian  Bagley,Employed, Self Employed, of The Building, The Street, The Suburb, The City, The County, TH3 9CD, UK formerly of Old Building, Old Street, Old Lane, Old Town, Old County, OLD 7WN and formerly of Oldest Building, Oldest Street, Oldest Lane, Oldest Town, Oldest County, OLD 3ST and LATELY carrying on business as Ibanez also known as Gibson, Fender, LTD from 111, 222, 333, 444, 555, 1, United Kingdom  and lately trading from 523 Hagley Road West, Birmingham, WEST MIDLANDS, B32 1HP, United Kingdom  be declared bankrupt.</textarea>
+                </div>
+                <div class="col-sm-12 text-right" id="AddCaseNote">
+                  <button type="submit" class="button">Update</button>
+                </div>
+              </form>
+              <div class="text-right"> This person is subject to a PAV order <input type="checkbox" id="PAV"></div>
+            </div>
+            <!-- ///////// Tab content 4 - END ///////// -->
+
+            <!-- ///////// Tab content 5 - START ///////// -->
+            <div class="tab-pane fade" id="tab5default">
               <div id="note_input" class="clearfix">
                 <label for="casenotes" class="col-sm-2">Case notes</label>
                 <textarea id="casenotes" class="col-sm-10" rows="5" required></textarea>
@@ -528,10 +647,10 @@
                 <p class="col-sm-12 text-right bold-xsmall"><em>12th September 2015 at 2:16pm by Matt Owen</em></p>
               </div>
             </div>
-            <!-- ///////// Tab content 4 - END ///////// -->
+            <!-- ///////// Tab content 5 - END ///////// -->
 
-            <!-- ///////// Tab content 5 - START ///////// -->
-            <div class="tab-pane fade" id="tab5default">
+            <!-- ///////// Tab content 6 - START ///////// -->
+            <div class="tab-pane fade" id="tab6default">
               <table>
                 <thead>
                   <tr>
@@ -556,10 +675,10 @@
                   </tr>
                 </table>
               </div>
-              <!-- ///////// Tab content 5 - END ///////// -->
+              <!-- ///////// Tab content 6 - END ///////// -->
 
-              <!-- ///////// Tab content 6 - START ///////// -->
-              <div class="tab-pane fade" id="tab6default">
+              <!-- ///////// Tab content 7 - START ///////// -->
+              <div class="tab-pane fade" id="tab7default">
                 <div class="well clearfix">
                   <div class="bold-xsmall">
                     <div class="col-sm-2"><em>Date</em></div>
@@ -578,7 +697,7 @@
                   </div>
                 </div>
               </div>
-              <!-- ///////// Tab content 6 - END ///////// -->
+              <!-- ///////// Tab content 7 - END ///////// -->
 
             </div>
 
@@ -691,7 +810,6 @@
         }
       });
 
-
       $("#PAV").on("click", function (e) {
         if($("#PAV").is(':checked')){
           $("#address").css('backgroundColor', 'black');
@@ -710,27 +828,41 @@
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
 
+      // Hide and show of the credit info - START
+
+      $(".credit-info-hidden").hide();
+
+      // function ShowBox() {
+      //    var that = this;
+      //    $(function(){
+      //        $( that ).parent().siblings(".credit-info-hidden").show();
+      //    });
+      // }
+
+      $(document).ready(function() {
+    		$(".open-close").click(function() {
+    			$(this).parents("section").find(".credit-info-hidden").slideToggle("slow");
+          $(this).parents("section").find(".open-close i").toggleClass("glyphicon-minus");
+          $(this).parents("section").toggleClass("open");
+    		});
+    	});
+
+      // Hide and show of the credit info - END
+
       // This is what makes the headers stick - Start
       var stickyHeaders = (function() {
-
         var $window = $(window),
             $stickies;
-
         var load = function(stickies) {
-
           if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
-
             $stickies = stickies.each(function() {
-
               var $thisSticky = $(this).wrap('<div class="followWrap" />');
-
               $thisSticky
                   .data('originalPosition', $thisSticky.offset().top)
                   .data('originalHeight', $thisSticky.outerHeight())
                     .parent()
                     .height($thisSticky.outerHeight());
             });
-
             $window.off("scroll.stickies").on("scroll.stickies", function() {
       		  _whenScrolling();
             });
@@ -738,46 +870,36 @@
         };
 
         var _whenScrolling = function() {
-
         $stickies.each(function(i) {
-
           var $thisSticky = $(this),
               $stickyPosition = $thisSticky.data('originalPosition');
-
           if ($stickyPosition <= $window.scrollTop()) {
-
             var $nextSticky = $stickies.eq(i + 1),
                 $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
-
             $thisSticky.addClass("fixed");
-
             if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
-
               $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
             }
-
           } else {
-
-            var $prevSticky = $stickies.eq(i - 1);
-
-            $thisSticky.removeClass("fixed");
-
-            if ($prevSticky.length > 0 && $window.scrollTop() <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
-
-              $prevSticky.removeClass("absolute").removeAttr("style");
+              var $prevSticky = $stickies.eq(i - 1);
+              $thisSticky.removeClass("fixed");
+              if ($prevSticky.length > 0 && $window.scrollTop() <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
+                $prevSticky.removeClass("absolute").removeAttr("style");
+              }
             }
-          }
-        });
-      };
+          });
+        };
 
-      return {
-        load: load
-      };
-    })();
+        return {
+          load: load
+        };
+      })();
 
-    $(function() {
-      stickyHeaders.load($(".followMeBar"));
-    });
+      $(function() {
+        stickyHeaders.load($(".followMeBar"));
+      });
+      // This is what makes the headers stick - END
+
 
     </script>
 
