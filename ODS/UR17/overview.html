@@ -553,7 +553,7 @@ $(document).ready(function () {
   });
 
   //checking payment details
-  if ($.cookie("fee_paid") != "655") {
+  if (parseInt($.cookie("fee_paid")) != 655) {
     $("#fee_paid").text($.cookie("fee_paid"));
     $(".fee_paid").text($.cookie("fee_paid"));
     $("#fee_remaining").text($.cookie("fee_remaining"));
@@ -568,7 +568,7 @@ $(document).ready(function () {
     $(".payment-amount").show();
     $(".payment-made").hide();
   } 
-  else if ($.cookie("fee_paid") == "655") {
+  else if (parseInt($.cookie("fee_paid")) == 655) {
     $("#fee_paid").text($.cookie("fee_paid"));
     $(".fee_paid").text($.cookie("fee_paid"));
     $("#timestamp").text($.cookie("payment_timestamp"));
