@@ -72,6 +72,10 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/js/bootstrap-switch/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/bankruptcy-overrides.css">
 
+<style type="text/css">
+
+
+</style>
 <!-- #EndEditable -->
 
 
@@ -113,7 +117,7 @@
     </div>
 </header>
 <!--end header-->
-
+<div class="content">
 <div id="global-header-bar">
     <div class="inner-block">
         <div class="header-bar"></div>
@@ -121,9 +125,9 @@
 </div>
 
 <main role="main" id="wrapper">
-    
- <div id="content" >
+<div id="content" >
  <div class="inner-block">
+
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
@@ -134,86 +138,225 @@
 	
 
 
-<!-- #BeginEditable "content" --> 
-<div class="inner-block text">
+
+</div>
 	
-	<h1 class="form-title heading-large">Property transfer details</h1>
-	
-	<form class="form" method="post">
-		<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-		<div class="form-group">
-            <fieldset id="date_of_birth" class="date-of-birth">
 
-                <legend id="transfer-date" class="form-label-bold">Date you sold, transferred or gave away the property</legend>
-                <p class="form-hint">For example, Aug 2015</p>
-               
-				<div class="form-group" id="monthcontrol" class="form-control-1-4">
-                    <label id="month-label" for="month">Month</label>
 
-                    <select id="month" name="month" aria-labelledby="month-label" aria-describedby="transfer-date">
-                        <option value="0"></option>
-                        <option value="1">Jan</option>
-                        <option value="2">Feb</option>
-                        <option value="3">Mar</option>
-                        <option value="4">Apr</option>
-                        <option value="5">May</option>
-                        <option value="6">Jun</option>
-                        <option value="7">Jul</option>
-                        <option value="8">Aug</option>
-                        <option value="9">Sep</option>
-                        <option value="10">Oct</option>
-                        <option value="11">Nov</option>
-                        <option value="12">Dec</option>
-                    </select>
 
-                </div>
-                
-                <div class="form-group">
-                    <label id="date_of_birth_label.year" for="year">Year</label>
-                    <input id="year" name="year" type="number" min="1930" max="2016" class="form-control-1-4" aria-describedby="transfer-date" />
-                </div>
-                
-            </fieldset>
-        </div>
-                
-        <div class="form-group">
-            <br>            
-			<label id="first_name_label0" for="propertyvalue" class="form-label-bold">How much money did you receive for the property after charges and legal fees (proceeds of sale)?</label>
-						
-			<div class="form-hint">Leave blank if you gave the property away</div>
-			<span class="currency">£ </span><input id="propertyvalue" name="amount" type="text" value="" class="amount-value" />
-                       
-        </div>
-   
- 		<div class="form-group">
-			<br>
-			<legend id="mktvalue_label" class="form-label-bold">Was the sale or transfer for less than the market value?</legend>
-			<p class="form-hint">Answer yes if you gave the property away or sold it privately for less than it could have been sold on the open market</p>
+<!-- #BeginEditable "content" -->
 
-				<fieldset id="pnl-mktvalue" class="form-group inline">
-					<label id="mktvalue_label1" for="mktvalue_yes" class="block-label">
-					<input id="mktvalue_yes" value="" name="mktvalue" type="radio">Yes</label>
-				
-					<label id="mktvalue_label2" for="mktvalue_no" class="block-label">
-					<input id="mktvalue_no" value="" name="mktvalue" type="radio">No</label>
-				</fieldset>
+
+
+	<div id="content" >
+
+
+
+<div class="inner-block">
+	<h1 class="form-title heading-large">Sold, transfered or gifted property summary.</h1>
+		
+	<fieldset>
+		<legend class="form-label-bold">Property details</legend>
+
+		<header>
+			<div class="row">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <h2 class="heading-small visuallyhidden">Question</h2>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <h2 class="heading-small visuallyhidden">Your answer</h2>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <h2 class="heading-small visuallyhidden">Actions</h2>
+			  </div>
+			</div>
+		</header>
+
+    	<section id="property_table" role="main">		
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Property address</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="address">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="address.html">Change your answers</a>
+			  </div>
+			</div>
 			
-		</div>
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Type of property</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="type">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="address.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Number of bedrooms</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="bedrooms">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="address.html">Change your answers</a>
+			  </div>
+			</div>
+		</section>
+	</fieldset>
+	<p>&nbsp;</p>
+	<fieldset>
+		<legend class="form-label-bold">Transfer details</legend>
+
+		<header>
+			<div class="row">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <h2 class="heading-small visuallyhidden">Question</h2>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <h2 class="heading-small visuallyhidden">Your answer</h2>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <h2 class="heading-small visuallyhidden">Actions</h2>
+			  </div>
+			</div>
+		</header>
+
+    	<section id="property_table" role="main">		
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Date of transfer</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="date">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="address.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>How much money did you receive for the property after charges and legal fees (proceeds of sale)?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="net">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="address.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Was the sale or transfer for less than the market value?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="undervalue">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="address.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="annex">
+
+				<!--- only show if yes --->
+				<div class="row group-heading">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>What was the market value of the property at the time you sold, transferred or gave it away?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="market">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="address.html">Change your answers</a>
+				  </div>
+				</div>
+				
+				<div class="row group-heading">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>How much did you sell or transfer the property for (before costs of sale)?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="gross">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="address.html">Change your answers</a>
+				  </div>
+				</div>
+				
+				<div class="row group-heading">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>Who did you sell, transfer or give the property to?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="who">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="address.html">Change your answers</a>
+				  </div>
+				</div>
 	
-		<!-- For User research -->
+				<div class="row group-heading">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>Their address</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="theiraddress">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="address.html">Change your answers</a>
+				  </div>
+				</div>
+				
+				<div class="row group-heading">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>What's their relationship to you?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="relationship">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="address.html">Change your answers</a>
+				  </div>
+				</div>
+			</div>
+		</section>
+	</fieldset>
+
+
+	
+                    
+        
+
+		<p class="clearfix"><br/></p>
+	
+	<!-- For User research -->
 		<div class="form-navigation form-group">
-			<a role="button" id="next" class="button">Continue</a>
+			<a role="button" id="next" class="button" href="summary.html">Continue</a>
 			<br>
 			<a href="property.html" id="back">Back</a>
 		</div>
-	</form>
+	
 </div>
-
+	 </div>
 	 <!-- #EndEditable -->
 
         
-</div>
+
+
+
+	<div id="content" >
+
+
+
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
@@ -279,39 +422,92 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+
 <script type="text/javascript">
 
-var count = $.cookie("ass-rec-prop-count");
 
 $(document).ready(function() {
 
-
-});
-
-$('#pnl-mktvalue input:radio').click(function() {
-	if(	($("#mktvalue_yes").prop('checked')==true)){
-		$("#next").prop("href", "transfer.html");
-		$.cookie("ass-rec-prop-undervalue"+count, "true", { path: '/' } );
-	}
-	else if($("#mktvalue_no").prop('checked')==true){
-		$("#next").prop("href", "summary.html");
-		$.cookie("ass-rec-prop-undervalue"+count, "false", { path: '/' } );	
-	}
-});
-
-
-$("#next").click(function() {
-	writeCookies();
-});
-
-function writeCookies() {
-	count = $.cookie("ass-rec-prop-count");
+	$("#annex").hide();
 	
-	$.cookie("ass-rec-prop-tfrmonth"+count, $("#month").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-tfryear"+count, $("#year").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-netamount"+count, $("#propertyvalue").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-count", count, { path: '/' } );
-}
+	var count= $.cookie("ass-rec-prop-count");
+	$("#type").text($.cookie("ass-rec-prop-type"+count));
+	$("#bed").text($.cookie("ass-rec-prop-bed"+count));
+	$("#date").text($.cookie("ass-rec-prop-tfrmonth"+count) + " " + $.cookie("ass-rec-prop-tfryear"+count));
+	$("#net").text($.cookie("ass-rec-prop-netamount"+count));
+	
+	var property_address;
+	if($.cookie("ass-rec-prop-add1-"+count)){
+		property_address = $.cookie("ass-rec-prop-add1-"+count);
+	}
+	if($.cookie("ass-rec-prop-add2-"+count)){
+		property_address += ", "+$.cookie("ass-rec-prop-add2-"+count);
+	}
+	if($.cookie("ass-rec-prop-add3-"+count)){
+		property_address += ", "+$.cookie("ass-rec-prop-add3-"+count);
+	}
+    if($.cookie("ass-rec-prop-addtown-"+count)){
+    	property_address += ", "+$.cookie("ass-rec-prop-addtown-"+count);
+    }
+    if($.cookie("ass-rec-prop-addcounty-"+count)){
+    	property_address += ", "+$.cookie("ass-rec-prop-addcounty-"+count);
+	}	
+    if($.cookie("ass-rec-prop-addpcode-"+count)){
+    	property_address += ", "+$.cookie("ass-rec-prop-addpcode-"+count);
+	}   
+	$("#address").text(property_address); 
+	$("#undervalue").text($.cookie("ass-rec-prop-undervalue"+count));
+	
+	if($.cookie("ass-rec-prop-undervalue"+count)=="yes"){
+	
+		$("#annex").show();
+		$("#market").text($.cookie("ass-rec-prop-marketvalue"+count));
+		$("#gross").text($.cookie("ass-rec-prop-grossamount"+count));
+		
+		var transfered_to;
+		if($.cookie("ass-rec-prop-transfer-companyname"+count)){
+			transfered_to = $.cookie("ass-rec-prop-transfer-companyname"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-firstname"+count)){
+			transfered_to = $.cookie("ass-rec-prop-transfer-firstname"+count)
+		}
+		if($.cookie("ass-rec-prop-transfer-lastname"+count)){
+			transfered_to += $.cookie("ass-rec-prop-transfer-lastname"+count) 
+		}
+		$("#who").text(transfered_to);
+	
+		var transfer_address;
+		if($.cookie("ass-rec-prop-transfer-add1-"+count)){
+			transfer_address = $.cookie("ass-rec-prop-transfer-add1-"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-add2-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-add2-"+count);	
+		}
+		if($.cookie("ass-rec-prop-transfer-add3-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-add3-"+count);	
+		}
+		if($.cookie("ass-rec-prop-transfer-town-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-town-"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-county-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-county-"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-postcode-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-postcode-"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-relationship"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-relationship"+count);
+		}
+		$("#theiraddress").text(transfered_address);
+
+	}
+	
+	
+	
+	
+	
+});
+
    
 function numberWithoutCommas(x) {
     var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
