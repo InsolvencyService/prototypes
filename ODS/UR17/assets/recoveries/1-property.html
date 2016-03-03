@@ -258,8 +258,12 @@
   <script type="text/javascript">
 	$("#yes").on("click", function (e) {
 		$.cookie("recovery_1", "yes");
-		$("#yes").attr("href", "property/property.html");
-
+		if($.cookie(ass-rec-prop-count){
+			$("#yes").attr("href", "property/overview.html");
+		}
+		else{
+			$("#yes").attr("href", "property/address.html");
+		}
 	});
 	
 	$("#no").on("click", function (e) {
