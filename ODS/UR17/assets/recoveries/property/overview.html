@@ -124,7 +124,7 @@
 
 <main role="main" id="wrapper">
     
- 
+ <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
 	<p>
@@ -136,15 +136,14 @@
 	
 
 
-	</div>
 	
 
 
 <!-- #BeginEditable "content" --> 
-<div id="content" >
+
 	<div class="inner-block ">
 				
-		<h1 class="heading-large">Sold gifted and transfered properties overview</h1>
+		<h1 class=" form-title heading-xlarge">Sold gifted and transfered properties overview</h1>
 		<p class="lede">You've already told us about the following properties:</p>
 		
 		<fieldset>
@@ -152,10 +151,10 @@
 
 			<header>
 				<div class="row">
-				  <div class="col-md-9 col-sm-9 col-xs-9">
+				  <div class="col-md-9 col-sm-9 col-xs-8">
 				    <h2 class="heading-small visuallyhidden">Property</h2>
 				  </div>
-				  <div class="col-md-2 col-sm-2 col-xs-2">
+				  <div class="col-md-2 col-sm-2 col-xs-3">
 				    <h2 class="heading-small visuallyhidden">Actions</h2>
 				  </div>
 				</div>
@@ -170,10 +169,11 @@
 		<p>&nbsp;</p>
 		
 		<form class="form" method="post">
-			<div class="form-group">
+			<div class="form-group">				
 				<fieldset>
 					<legend class=" form-label-bold">Do you have any other sold, gifted or transfered properties to add?</legend>
-					<p><a role="button" class="button" href="address.html">Yes</a> <a role="button" class="button" href="../2-policies.html">No</a></p>				
+					<a role="button" class="button" href="address.html">Yes</a>
+					<a role="button" class="button" href="../2-policies.html">No</a>				
 				</fieldset>
 			</div>
 				
@@ -295,9 +295,9 @@ $(document).ready(function() {
 		}  
 		
 		
-		var row= '<div class="row group-heading"><div class="col-md-9 col-sm-9 col-xs-9"><p>';
+		var row= '<div class="row group-heading"><div class="col-xs-8"><p>';
 		row += property_address;
-		row += '</p></div><div class="col-md-2 col-sm-2 col-xs-2"><a href="summary.html?p='+i+'">Change your answers</a></div></div>'
+		row += '</p></div><div class="col-xs-3"><a href="summary.html?p='+i+'">View your answers</a></div></div>'
 		
 		$("#property_table").append(row);
 		
