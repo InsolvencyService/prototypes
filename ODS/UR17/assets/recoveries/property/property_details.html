@@ -155,20 +155,20 @@
 			<fieldset id="property_type" class="inline">
 			
 				<legend class="visuallyhidden">What type of property is it?</legend>
-            	<label for="address_Yes1" class="block-label">
-            		<input id="address_Yes" name="sameaddress" type="radio"  value="detached">Detached house
+            	<label for="address_detached" class="block-label">
+            		<input id="address_detached" name="sameaddress" type="radio"  value="Detached">Detached house
           		</label>
                             
-                <label for="address_Yes1" class="block-label">
-                	<input id="address_Yes0" name="sameaddress" type="radio"  value="semi-detached">Semi-detached house
+                <label for="address_semi" class="block-label">
+                	<input id="address_semi" name="sameaddress" type="radio"  value="Semi-detached">Semi-detached house
                 </label>
                             
-                <label for="address_Yes1" class="block-label">
-                	<input id="address_Yes1" name="sameaddress" type="radio"  value="terraced">Terraced house
+                <label for="address_terrace" class="block-label">
+                	<input id="address_terrace" name="sameaddress" type="radio"  value="Terraced">Terraced house
                 </label>    
                       		
-                <label id="title_label1" for="address_Flat" class="block-label">
-                	<input id="address_Flat" name="sameaddress" type="radio"  value="flat/maisonette">Flat/Maisonette
+                <label id="title_Flat" for="address_Flat" class="block-label">
+                	<input id="address_Flat" name="sameaddress" type="radio"  value="Flat/maisonette">Flat/Maisonette
                 </label>
 
 				<label id="title_label4" for="title_other" class="block-label">
@@ -277,9 +277,11 @@ $(document).ready(function() {
 
 });
 
+
 $("#next").click(function() {
 	count = $.cookie("ass-rec-prop-count");
-	$.cookie("ass-rec-prop-type"+count, $("#pnl-title :checked").val(), { path: '/' } );
+	
+	$.cookie("ass-rec-prop-type"+count, $("#property_type :checked").val(), { path: '/' } );
 	$.cookie("ass-rec-prop-bed"+count, $("#numbedrooms").val(), { path: '/' } );
 });
 

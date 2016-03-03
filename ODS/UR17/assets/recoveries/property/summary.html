@@ -202,7 +202,7 @@
 			    <p>Number of bedrooms</p>
 			  </div>
 			  <div class="col-md-5 col-sm-5 col-xs-5">
-			    <p class="bolder" id="bedrooms">Your answer</p>
+			    <p class="bolder" id="bed">Your answer</p>
 			  </div>
 			  <div class="col-md-2 col-sm-2 col-xs-2">
 			    <a href="address.html">Change your answers</a>
@@ -268,7 +268,7 @@
 			<div class="annex">
 
 				<!--- only show if yes --->
-				<div class="row group-heading">
+				<div class="row group-heading annex">
 				  <div class="col-md-4 col-sm-4 col-xs-4">
 				    <p>What was the market value of the property at the time you sold, transferred or gave it away?</p>
 				  </div>
@@ -280,7 +280,7 @@
 				  </div>
 				</div>
 				
-				<div class="row group-heading">
+				<div class="row group-heading annex">
 				  <div class="col-md-4 col-sm-4 col-xs-4">
 				    <p>How much did you sell or transfer the property for (before costs of sale)?</p>
 				  </div>
@@ -292,7 +292,7 @@
 				  </div>
 				</div>
 				
-				<div class="row group-heading">
+				<div class="row group-heading annex">
 				  <div class="col-md-4 col-sm-4 col-xs-4">
 				    <p>Who did you sell, transfer or give the property to?</p>
 				  </div>
@@ -304,7 +304,7 @@
 				  </div>
 				</div>
 	
-				<div class="row group-heading">
+				<div class="row group-heading annex">
 				  <div class="col-md-4 col-sm-4 col-xs-4">
 				    <p>Their address</p>
 				  </div>
@@ -316,7 +316,7 @@
 				  </div>
 				</div>
 				
-				<div class="row group-heading">
+				<div class="row group-heading annex">
 				  <div class="col-md-4 col-sm-4 col-xs-4">
 				    <p>What's their relationship to you?</p>
 				  </div>
@@ -428,7 +428,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-	$("#annex").hide();
+	$(".annex").hide();
 	
 	var count= $.cookie("ass-rec-prop-count");
 	$("#type").text($.cookie("ass-rec-prop-type"+count));
@@ -460,7 +460,7 @@ $(document).ready(function() {
 	
 	if($.cookie("ass-rec-prop-undervalue"+count)=="True"){
 	
-		$("#annex").show();
+		$(".annex").show();
 		$("#market").text($.cookie("ass-rec-prop-marketvalue"+count));
 		$("#gross").text($.cookie("ass-rec-prop-grossamount"+count));
 		
