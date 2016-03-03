@@ -139,7 +139,6 @@
 
 
 
-</div>
 	
 
 
@@ -148,13 +147,10 @@
 
 
 
-	<div id="content" >
-
-
 
 <div class="inner-block">
 	<h1 class="form-title heading-large">Sold, transfered or gifted property summary.</h1>
-		
+	<p class="lede">Please check your answers carefully</p>	
 	<fieldset>
 		<legend class="form-label-bold">Property details</legend>
 
@@ -340,7 +336,7 @@
 	
 	<!-- For User research -->
 		<div class="form-navigation form-group">
-			<a role="button" id="next" class="button" href="summary.html">Continue</a>
+			<a role="button" id="next" class="button" href="overview.html">Continue</a>
 			<br>
 			<a href="property.html" id="back">Back</a>
 		</div>
@@ -434,7 +430,7 @@ $(document).ready(function() {
 	$("#type").text($.cookie("ass-rec-prop-type"+count));
 	$("#bed").text($.cookie("ass-rec-prop-bed"+count));
 	$("#date").text($.cookie("ass-rec-prop-tfrmonth"+count) + " " + $.cookie("ass-rec-prop-tfryear"+count));
-	$("#net").text($.cookie("ass-rec-prop-netamount"+count));
+	$("#net").text("£"+$.cookie("ass-rec-prop-netamount"+count));
 	
 	var property_address;
 	if($.cookie("ass-rec-prop-add1-"+count)){
@@ -461,8 +457,8 @@ $(document).ready(function() {
 	if($.cookie("ass-rec-prop-undervalue"+count)=="True"){
 	
 		$(".annex").show();
-		$("#market").text($.cookie("ass-rec-prop-marketvalue"+count));
-		$("#gross").text($.cookie("ass-rec-prop-grossamount"+count));
+		$("#market").text("£"+$.cookie("ass-rec-prop-marketvalue"+count));
+		$("#gross").text("£"+$.cookie("ass-rec-prop-grossamount"+count));
 		$("#who").text($.cookie("ass-rec-prop-transfer-companyname"+count));
 	
 		var transfer_address;
