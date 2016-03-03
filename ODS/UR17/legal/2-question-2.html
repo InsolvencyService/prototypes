@@ -157,11 +157,11 @@
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
             <fieldset class="inline form-group" aria-labelledby="">
-              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Are you involved in any ongoing legal claims?</label>
+              <label class="form-label-bold" for="question2-yes question2-no" id="question1-label">Are you involved in any ongoing legal claims?</label>
               <p class="form-hint">Include any claims currently with a court, tribunal obudsman or adjudicator</p>
               <br>
-              <input type="button" onclick="location.href='#.html';" id="question1-yes" class="button" value="Yes" aria-labelledby="question1-label">
-              <input type="button" onclick="location.href='#.html';" id="question1-no" class="button" value="No" aria-labelledby="question1-label">
+              <input type="button" onclick="location.href='#.html';" id="question2-yes" class="button" value="Yes" aria-labelledby="question2-label">
+              <input type="button" onclick="location.href='#.html';" id="question2-no" class="button" value="No" aria-labelledby="question2-label">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -188,7 +188,7 @@
         <aside class="col-md-4 col-xs-12">
           <div class="panel-indent">
             <p><a href="#" class="cancel">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel" tabindex="31">Back to application overview</a></p>
+            <p><a href="../overview.html" class="cancel">Back to application overview</a></p>
           </div>
         </aside>
         <!-- ///// Right content - END ///// -->
@@ -244,6 +244,14 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
+
+    $("#question2-no").on("click", function (e) {
+      $.cookie("question2", $("#question2-no").val(), {path:'/'});
+    });
+
+    $("#question2-yes").on("click", function (e) {
+      $.cookie("question2", $("#question2-yes").val(), {path:'/'});
+    });
 
   </script>
   <!-- #EndEditable "scripts" -->
