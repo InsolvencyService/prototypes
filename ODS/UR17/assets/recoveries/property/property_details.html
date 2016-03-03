@@ -73,8 +73,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/bankruptcy-overrides.css">
 
 <style type="text/css">
-
-
 </style>
 <!-- #EndEditable -->
 
@@ -126,7 +124,7 @@
 
 <main role="main" id="wrapper">
     
- <div id="content" >
+ 
  <div class="inner-block">
 	<div class="phase-banner">
 	<p>
@@ -138,47 +136,72 @@
 	
 
 
+</div>
+	
+
+
 <!-- #BeginEditable "content" --> 
+
+ <div id="content" >
 <div class="inner-block text">
 	
-	
-	
-	<h1 class="form-title heading-large">Sale or transfer details</h1>
-	
-	
-	
+	<h1 class="form-title heading-large">Property details</h1>
+		
 	<form class="form" method="post">
 		<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 		
-		<div class="form-group">                        
-			<label id="marketvalue_label" for="marketvalue" class="form-label-bold">What was the market value of the property at the time you sold, transferred or gave it away?</label>	
-			<p class="form-hint">Please provide the most accurate figure you can</p>
-			<span class="currency">£ </span><input id="marketvalue" name="marketvalue" type="text" value="" class="amount-value" />              
-        </div>
-        
-        
-        <div class="form-group">     
-        	<br>                   
-			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">How much did you sell or transfer the property for (before costs of sale)?</label>	
-			<p class="form-hint">Leave blank if you gave the property away</p>
-			<span class="currency">£ </span><input id="actualvalue" name="actualvalue" type="text" value="" class="amount-value" />              
-        </div>
-        
-		<!-- For User research -->
+    	<div class="form-group">
+        	<p id="title_label" class="form-label-bold">What type of property is <span class="bold-medium data">1 The Place</span>?</p>
+			<fieldset id="property_type" class="inline">
+			
+				<legend class="visuallyhidden">What type of property is it?</legend>
+            	<label for="address_Yes1" class="block-label">
+            		<input id="address_Yes" name="sameaddress" type="radio"  value="detached">Detached house
+          		</label>
+                            
+                <label for="address_Yes1" class="block-label">
+                	<input id="address_Yes0" name="sameaddress" type="radio"  value="semi-detached">Semi-detached house
+                </label>
+                            
+                <label for="address_Yes1" class="block-label">
+                	<input id="address_Yes1" name="sameaddress" type="radio"  value="terraced">Terraced house
+                </label>    
+                      		
+                <label id="title_label1" for="address_Flat" class="block-label">
+                	<input id="address_Flat" name="sameaddress" type="radio"  value="flat/maisonette">Flat/Maisonette
+                </label>
+
+				<label id="title_label4" for="title_other" class="block-label">
+    				<input id="title_other" value="" name="sameaddress" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span> 
+    				<input id="other" name="other" class="text-right" type="text" value="" />
+    				
+ 				</label>                      
+            </fieldset>
+       	</div>
+       	
+		<div class="form-group">
+			<br>
+			<label id="first_name_label" for="numbedrooms" class="form-label-bold">Number of bedrooms?</label>
+  			<input id="numbedrooms" type="number" autocomplete="off" class="form-control-1-8" />
+        </div>					 
+	
 		<div class="form-navigation form-group">
-			<a role="button" id="next" class="button" href="transfered_to.html">Continue</a>
+			<a role="button" id="next" class="button" href="amount.html">Continue</a>
 			<br>
 			<a href="property.html" id="back">Back</a>
 		</div>
 	</form>
-</div>
-
-	 <!-- #EndEditable -->
-
+	
         
 </div>
 
 
+	 </div>
+
+
+	 <!-- #EndEditable -->
+
+        
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
@@ -248,26 +271,18 @@ var count;
 
 $(document).ready(function() {
 
-	
+	var prop_add = $.cookie('rec-propertyname');
+	$(".data").text(prop_add);
+   
+
 });
 
 $("#next").click(function() {
-	writeCookies();
-
-
+	count = $.cookie("ass-rec-prop-count");
+	$.cookie("ass-rec-prop-type"+count, $("#pnl-title :checked").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-bed"+count, $("#numbedrooms").val(), { path: '/' } );
 });
 
-
-function writeCookies() {
-	count = $.cookie("ass-rec-prop-count");
-	$.cookie("ass-rec-prop-marketvalue"+count, $("#marketvalue").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-grossamount"+count, $("#actualvalue").val(), { path: '/' } );	
-}
-   
-function numberWithoutCommas(x) {
-    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
-    return number;
-}
 
 </script>
 

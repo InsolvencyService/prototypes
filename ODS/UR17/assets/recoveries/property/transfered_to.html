@@ -117,7 +117,7 @@
     </div>
 </header>
 <!--end header-->
-
+<div class="content">
 <div id="global-header-bar">
     <div class="inner-block">
         <div class="header-bar"></div>
@@ -125,9 +125,9 @@
 </div>
 
 <main role="main" id="wrapper">
-    
- <div id="content" >
+<div id="content" >
  <div class="inner-block">
+
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
@@ -138,33 +138,116 @@
 	
 
 
+	
+
+
+
+	
+
+
+	
+
+
 <!-- #BeginEditable "content" --> 
+
+
 <div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Sale or transfer details</h1>
-	
-	
-	
+	<h1 class="form-title heading-large">Property transfered to</h1>
+		
 	<form class="form" method="post">
 		<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 		
-		<div class="form-group">                        
-			<label id="marketvalue_label" for="marketvalue" class="form-label-bold">What was the market value of the property at the time you sold, transferred or gave it away?</label>	
-			<p class="form-hint">Please provide the most accurate figure you can</p>
-			<span class="currency">£ </span><input id="marketvalue" name="marketvalue" type="text" value="" class="amount-value" />              
-        </div>
+		
+		<div class="form-group">
+			<label id="company-name-label"class="form-label-bold" for="companyname" >Who did you sell, transfer or give the property to?</label>
+			<p class="form-hint">For example, John Smith or A1 Properties Ltd</p>
+			<input  type="text" id="companyname" aria-describedby="companyname company-name-label" class="form-control-3-4"/>
+		</div>
+		<p>&nbsp;</p>	    
+		<fieldset class="form-group form-group-related">
+			
+			<label id="search_address_label" for="search_address" class="form-label-bold">Search address</label>
+			<legend id="address_line_3_label" class="visuallyhidden">Start typing an address</legend>
+			<input id="search_address" name="search_address" type="text" aria-describedby="search_address_label" class="input-lg form-control-3-4" placeholder="Start typing an address" value="" />
+			<br/><br/>
+		</fieldset>
+		
+		<p>&nbsp;</p>	  
+		<fieldset>
+				
+			<fieldset class="form-group">
+				<label id="address_line_1_label" for="address_line_1" class="form-label-bold address_line_1">Building and street</label>
+				<input id="address_line_1" name="address_line_1" type="text" aria-describedby="address_line_1_label" class="form-control-3-4" />
+			</fieldset>
+			
+			<fieldset class="form-group">
+				<legend id="address_line_2_label" class="visuallyhidden">Address Line 2</legend>
+				<input id="address_line_2" name="address_line_2" type="text" aria-describedby="address_line_2_label" class="form-control-3-4"  />
+			</fieldset>
+			
+			<fieldset class="form-group">		
+				<legend id="address_line_3_label" class="visuallyhidden">Address Line 3</legend>
+				<input id="address_line_3" name="address_line_3" type="text" aria-describedby="address_line_3_label" class="form-control-3-4" />
+			</fieldset>
+			
+			
+			<fieldset class="form-group">
+				<label id="address_town_label" for="address_town" class="form-label-bold address_town">Town/city</label>
+				<input id="address_town" name="address_town" type="text" aria-describedby="address_town_label" class="form-control-1-2"/>
+			</fieldset>
+			
+			<fieldset class="form-group ">
+				<label id="address_county_label" for="address_county" class="form-label-bold address_county">County</label>
+				<input id="address_county" name="address_county" type="text" aria-describedby="address_county_label" class="form-control-1-2" />
+			</fieldset>
+			
+			<fieldset class="form-group ">
+		        <label for="address_post_code" class="form-label-bold address_post_code">Postal code</label>
+		        <input id="address_post_code" name="address_post_code" type="text" aria-describedby="address_post_code"/>
+			</fieldset>
+			<fieldset class="form-group ">		
+				<label id="address_country_label" for="address_country" class="form-label-bold address_country">Country</label>
+				<input id="address_country" name="address_country" type="text" aria-describedby="address_country_error address_country_help" class="form-control-1-2" />
+			</fieldset>
+		</fieldset>
+
+		<p>&nbsp;</p>	  
+		<div class="form-group">
+			<legend id="title_label" class="form-label-bold">What's their relationship to you?</legend>
+		
+			<fieldset class="inline">
+			    <div id="pnl-relationship" class="form-group">
+			
+			        <label for="relationship_relative" class="block-label">
+			            <input id="relationship_relative" name="relationship" type="radio" value="Relative">
+			            A relative
+			        </label>
+			        <label for="relationship_employer" class="block-label">
+			            <input id="relationship_employer" name="relationship" type="radio" value="Employer or employee">
+			            An employer or employee
+			        </label>
+			        <label for="relationship_company" class="block-label">
+			            <input id="relationship_company" name="relationship" type="radio" value="Company I'm a shareholder or director of">
+			            A company of which I'm a shareholder or director
+			        </label>    
+			  		<label for="relationship_3rd" class="block-label">
+			            <input id="relationship_3rd" name="relationship" type="radio" value="Unconnected third party">
+			            An unconnected third party
+			        </label>
+				    <label id="title_label4" for="relationship_other" class="block-label">
+				        <input id="relationship_other" value="" name="relationship" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+				        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
+				    </label>
+			
+			    </div>
+			</fieldset>
+		</div>
+                    
         
-        
-        <div class="form-group">     
-        	<br>                   
-			<label id="actualvalue_label" for="actualvalue" class="form-label-bold">How much did you sell or transfer the property for (before costs of sale)?</label>	
-			<p class="form-hint">Leave blank if you gave the property away</p>
-			<span class="currency">£ </span><input id="actualvalue" name="actualvalue" type="text" value="" class="amount-value" />              
-        </div>
-        
-		<!-- For User research -->
+
+		<p class="clearfix"><br/></p>
+	
+	<!-- For User research -->
 		<div class="form-navigation form-group">
 			<a role="button" id="next" class="button" href="transfered_to.html">Continue</a>
 			<br>
@@ -172,11 +255,11 @@
 		</div>
 	</form>
 </div>
-
+</div>
 	 <!-- #EndEditable -->
 
         
-</div>
+
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
@@ -242,9 +325,10 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+
 <script type="text/javascript">
 
-var count;
+var count = $.cookie("ass-rec-prop-count");
 
 $(document).ready(function() {
 
@@ -253,15 +337,27 @@ $(document).ready(function() {
 
 $("#next").click(function() {
 	writeCookies();
-
+	$("#next").prop("href", ("summary.html?t="+count));
 
 });
 
 
 function writeCookies() {
 	count = $.cookie("ass-rec-prop-count");
-	$.cookie("ass-rec-prop-marketvalue"+count, $("#marketvalue").val(), { path: '/' } );
-	$.cookie("ass-rec-prop-grossamount"+count, $("#actualvalue").val(), { path: '/' } );	
+	
+	$.cookie("ass-rec-prop-transfer-companyname"+count, $("#companyname").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-firstname"+count, $("#firstname").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-lastname"+count, $("#lastname").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-add1-"+count, $("#address_line_1").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-add2-"+count, $("#address_line_2").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-add3-"+count, $("#address_line_3").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-town-"+count, $("#address_town").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-county-"+count, $("#address_county").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-postcode-"+count, $("#address_post_code").val(), { path: '/' } );
+	$.cookie("ass-rec-prop-transfer-relationship"+count, $("#pnl-relationship :checked").val(), { path: '/' } );
+	
+	
+	
 }
    
 function numberWithoutCommas(x) {
