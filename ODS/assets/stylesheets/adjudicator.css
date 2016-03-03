@@ -275,7 +275,7 @@ nav ul li .label {
 }
 
 .collapse.navbar-collapse .nav.nav-tabs {
-  border-bottom: 5px solid #ddd;
+  border-bottom: 5px solid #005ea5;
 }
 
 .collapse.navbar-collapse .nav.nav-tabs li {
@@ -295,10 +295,10 @@ nav ul li .label {
 }
 
 .collapse.navbar-collapse .nav.nav-tabs li.active {
-  border-bottom: 5px solid #005ea5;
-  background: #ebebeb;
-  margin-bottom: -5px;
-  padding-bottom: 8px;
+  /*border-bottom: 5px solid #005ea5;*/
+  background: #005ea5;
+  margin-bottom: 0;
+  padding-bottom: 5px;
 }
 
 .collapse.navbar-collapse .nav.nav-tabs li.active a {
@@ -306,10 +306,15 @@ nav ul li .label {
   border: none;
   font-weight: bold;
   text-decoration: none;
+  color: white;
 }
 
 .collapse.navbar-collapse .nav.nav-tabs li:hover {
   background: #ebebeb;
+}
+
+.collapse.navbar-collapse .nav.nav-tabs li.active:hover {
+  background: #005ea5;
 }
 
 /*.fail {
@@ -550,6 +555,15 @@ section span.form-hint {
 .followMeBar.fixed.absolute {
   position: absolute;
   display: none;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#tab4default .button {
+  margin-right: 0;
 }
 
 /* ================================= Changes for Adjudicator - END ================================= */

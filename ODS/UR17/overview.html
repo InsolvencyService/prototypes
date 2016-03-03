@@ -150,7 +150,7 @@ h3 > a {
 
 </head>
 
-<body class="js-enabled js-enabled">
+<body>
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
   <div id="global-cookie-message" style="display: none; height:0">
@@ -447,7 +447,6 @@ h3 > a {
 
           <!-- <p><a class="save" style="font-weight:bold">Save and logout</a></p> -->
           <p><a href="security_change.html">Change your security questions</a></p>
-          <br>
           <p><a href="#">View a printable copy of my application</a></p>
           <p><a href="discard.html">Discard application</a></p>
           <div id="payment_record"></div>
@@ -567,7 +566,7 @@ $(document).ready(function () {
     $("#completion-message").show();
     $(".payment-amount").show();
     $(".payment-made").hide();
-  } 
+  }
   else if (parseInt($.cookie("fee_paid")) == 655) {
     $("#fee_paid").text($.cookie("fee_paid"));
     $(".fee_paid").text($.cookie("fee_paid"));
@@ -580,7 +579,7 @@ $(document).ready(function () {
     $(".next").show();
     $("#make-a-payment").hide();
     $("#payment-info").hide();
-  } 
+  }
   else {
     $.cookie("fee_paid", "0.00", {path:'/'});
     $.cookie("fee_remaining", "655.00", {path:'/'});
@@ -607,6 +606,7 @@ $(document).ready(function () {
   	var row = "<br>";
   	row += '<p><a href="payments/8-statements-page.html">View my payment history</a></p>';
     row += '<p><a href="payments/7-help-page.html">How can I get a refund?</a></p>';
+    row += '<br>';
 
     $("#payment_record").html(row);
 

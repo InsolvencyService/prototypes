@@ -142,43 +142,41 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header" tabindex="1"></h1>
+          <div class="new-title-format">
+            <h1 class="form-title heading-xlarge" role="header">
+              Legal proceedings
+            </h1>
+            <h2 class="heading-large form-hint" role="header">Question 2 of 2</h2>
+          </div>
+
+          <p class="lede">We need to know about legal proceedings you have recently been involved in.</p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <fieldset>
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset class="inline form-group" aria-labelledby="">
+              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Are you involved in any ongoing legal claims?</label>
+              <p class="form-hint">Include any claims currently with a court, tribunal obudsman or adjudicator</p>
+              <br>
+              <input type="button" onclick="location.href='#.html';" id="question1-yes" class="button" value="Yes" aria-labelledby="question1-label">
+              <input type="button" onclick="location.href='#.html';" id="question1-no" class="button" value="No" aria-labelledby="question1-label">
+            </fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
 
-              <legend class="hidden"></legend>
-
-              <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="inline form-group" id="" aria-labelledby="">
-                <legend class="hidden"></legend>
-                <label class="form-label-bold" for="" id=""></label>
-                <input value="" type="text" id="" aria-describedby=""/>
-              </fieldset>
-              <!-- ///// Fieldset/Group 1 - END ///// -->
-
-
-              <!-- ///// CTA Section - START ///// -->
-              <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
-                <div class="row">
-                  <div class="col-md-12 col-xs-12">
-                    <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='#.html';" id="" class="button" value="">
-                      <br>
-                      <a href="javascript:history.go(-1)" id="">Back</a>
-                      <a href="#" class="cancel">Save and logout</a>
-                    </div>
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
                   </div>
                 </div>
-              </fieldset>
-              <!-- ///// CTA Section - END ///// -->
-
-
+              </div>
             </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->

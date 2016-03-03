@@ -614,23 +614,29 @@
               <form action="/ApplicationDetail/SaveOrderOverviewSimple" method="post">
                 <fieldset class="form-group">
                   <div class="form-group">
-                    <label class="form-label-bold">Bankruptcy order description</label>
+                    <label for="SimpleOrderPreview" class="form-label-bold">Bankruptcy order description</label>
                     <textarea htmlattributes="{ }" id="SimpleOrderPreview" name="SimpleOrderPreview" rows="5">MrBrianBagley, of The Building, The Street, The Suburb, The City, The County, TH3 9CD, UK be declared bankrupt.</textarea>
                   </div>
-                  <div class="form-group text-right" id="AddCaseNote">
+                  <div class="form-group" id="AddCaseNote">
                     <button type="submit" class="button">Update</button>
                   </div>
                 </fieldset>
               </form>
-              <form action="/ApplicationDetail/SaveOrderOverview" method="post"><input id="Urn" name="Urn" type="hidden" value="BF567YT3DE26">        <p>Gazzete order description</p>
-                <div class="editor-field">
-                  <textarea htmlattributes="{ }" cols="95" id="OrderPreview" name="OrderPreview" rows="10">It is ordered that Brian  Bagley,Employed, Self Employed, of The Building, The Street, The Suburb, The City, The County, TH3 9CD, UK formerly of Old Building, Old Street, Old Lane, Old Town, Old County, OLD 7WN and formerly of Oldest Building, Oldest Street, Oldest Lane, Oldest Town, Oldest County, OLD 3ST and LATELY carrying on business as Ibanez also known as Gibson, Fender, LTD from 111, 222, 333, 444, 555, 1, United Kingdom  and lately trading from 523 Hagley Road West, Birmingham, WEST MIDLANDS, B32 1HP, United Kingdom  be declared bankrupt.</textarea>
-                </div>
-                <div class="col-sm-12 text-right" id="AddCaseNote">
-                  <button type="submit" class="button">Update</button>
-                </div>
+              <form action="/ApplicationDetail/SaveOrderOverview" method="post">
+                <input id="Urn" name="Urn" type="hidden" value="BF567YT3DE26">
+                <fieldset class="form-group">
+                  <div class="form-group">
+                    <label for="OrderPreview" class="form-label-bold">Gazzete order description</label>
+                    <textarea htmlattributes="{ }" cols="95" id="OrderPreview" name="OrderPreview" rows="10">It is ordered that Brian  Bagley,Employed, Self Employed, of The Building, The Street, The Suburb, The City, The County, TH3 9CD, UK formerly of Old Building, Old Street, Old Lane, Old Town, Old County, OLD 7WN and formerly of Oldest Building, Oldest Street, Oldest Lane, Oldest Town, Oldest County, OLD 3ST and LATELY carrying on business as Ibanez also known as Gibson, Fender, LTD from 111, 222, 333, 444, 555, 1, United Kingdom  and lately trading from 523 Hagley Road West, Birmingham, WEST MIDLANDS, B32 1HP, United Kingdom  be declared bankrupt.</textarea>
+                  </div>
+                  <div class="form-group" id="AddCaseNote">
+                    <button type="submit" class="button">Update</button>
+                  </div>
+                  <div class="form-group">
+                    This person is subject to a PAV order <input type="checkbox" id="PAV">
+                  </div>
+                </fieldset>
               </form>
-              <div class="text-right"> This person is subject to a PAV order <input type="checkbox" id="PAV"></div>
             </div>
             <!-- ///////// Tab content 4 - END ///////// -->
 
@@ -704,67 +710,57 @@
           </div>
           <!-- ///////// Tabbed content - END ///////// -->
 
-      <!-- ///// Time updated - START ///// -->
-      <div class="row">
-        <div class="col-md-12" id="lastupdated">
-          <div class="panel-indent completion-message">
-            <i class="glyphicon glyphicon-exclamation-sign"></i>
-            <p><em>Last updated: <span id="lastUpdated0" class="ng-binding">12th September 2015</span></em></p>
+        <!-- ///// Time updated - START ///// -->
+        <div class="row">
+          <div class="col-md-12" id="lastupdated">
+            <div class="panel-indent completion-message">
+              <i class="glyphicon glyphicon-exclamation-sign"></i>
+              <p><em>Last updated: <span id="lastUpdated0" class="ng-binding">12th September 2016</span></em></p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- ///// Time updated - END ///// -->
+        <!-- ///// Time updated - END ///// -->
 
     </div>
+
+  </div>
 
   </main>
   <!-- //////////////////// Main - END //////////////////// -->
 
 
-        <!-- /.modal compose message -->
-        <div class="modal fade" id="modalCompose">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="btn button btn-default" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Compose Message</h4>
-              </div>
-              <div class="modal-body">
-                <form role="form" class="form-horizontal ng-pristine ng-valid">
-                  <div class="form-group">
-                    <label class="col-sm-2" for="inputTo">To</label>
-                    <div class="col-sm-10"><input type="email" class="form-control" id="inputTo" placeholder="comma separated list of recipients"></div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2" for="inputSubject">Subject</label>
-                    <div class="col-sm-10"><input type="text" class="form-control" id="inputSubject" placeholder="subject"></div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-12" for="inputBody">Message</label>
-                    <div class="col-sm-12"><textarea class="form-control" id="inputBody" rows="12"></textarea></div>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-warning pull-left">Save Draft</button>
-                <button type="button" class="btn btn-primary ">Send <i class="fa fa-arrow-circle-right fa-lg"></i></button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal compose message -->
-        <div><!--/row ng-controller-->
-
-        </div><!--/container-->
-
-
-        <div class="clearfix"><br/></div>
-      </div>
-
-    </div>
-
-
-  </div>
+  <!-- /.modal compose message -->
+  <div class="modal fade" id="modalCompose">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="btn button btn-default" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Compose Message</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form" class="form-horizontal ng-pristine ng-valid">
+            <div class="form-group">
+              <label class="col-sm-2" for="inputTo">To</label>
+              <div class="col-sm-10"><input type="email" class="form-control" id="inputTo" placeholder="comma separated list of recipients"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="inputSubject">Subject</label>
+              <div class="col-sm-10"><input type="text" class="form-control" id="inputSubject" placeholder="subject"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-12" for="inputBody">Message</label>
+              <div class="col-sm-12"><textarea class="form-control" id="inputBody" rows="12"></textarea></div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-warning pull-left">Save Draft</button>
+          <button type="button" class="btn btn-primary ">Send <i class="fa fa-arrow-circle-right fa-lg"></i></button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal compose message -->
 
   <!-- //////////////////// Footer - START //////////////////// -->
   <footer id="footer" class="group js-footer">
