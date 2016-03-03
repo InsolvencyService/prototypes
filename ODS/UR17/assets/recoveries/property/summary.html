@@ -463,18 +463,7 @@ $(document).ready(function() {
 		$(".annex").show();
 		$("#market").text($.cookie("ass-rec-prop-marketvalue"+count));
 		$("#gross").text($.cookie("ass-rec-prop-grossamount"+count));
-		
-		var transfered_to;
-		if($.cookie("ass-rec-prop-transfer-companyname"+count)){
-			transfered_to = $.cookie("ass-rec-prop-transfer-companyname"+count);
-		}
-		if($.cookie("ass-rec-prop-transfer-firstname"+count)){
-			transfered_to = $.cookie("ass-rec-prop-transfer-firstname"+count)
-		}
-		if($.cookie("ass-rec-prop-transfer-lastname"+count)){
-			transfered_to += $.cookie("ass-rec-prop-transfer-lastname"+count) 
-		}
-		$("#who").text(transfered_to);
+		$("#who").text($.cookie("ass-rec-prop-transfer-companyname"+count);
 	
 		var transfer_address;
 		if($.cookie("ass-rec-prop-transfer-add1-"+count)){
@@ -495,10 +484,8 @@ $(document).ready(function() {
 		if($.cookie("ass-rec-prop-transfer-postcode-"+count)){
 			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-postcode-"+count);
 		}
-		if($.cookie("ass-rec-prop-transfer-relationship"+count)){
-			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-relationship"+count);
-		}
-		$("#theiraddress").text(transfered_address);
+		$("#theiraddress").text(transfer_address);
+		$("#relationship").text($.cookie("ass-rec-prop-transfer-relationship"+count));
 
 	}
 	
