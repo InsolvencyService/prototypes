@@ -373,31 +373,35 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  // Court cookie details
-	$("#court-name").text($.cookie("title"));
-	$("#court-ref").text($.cookie("firstname"));
-	$("#finish-month").text($.cookie("middlename"));
-	$("#finish-year").text($.cookie("lastname"));
-	$("#asset-division").text("dob");
+  $(document).ready(function() {
 
-  // Solicitor cookie details
-	$("#solicitor-name").text("othername");
-	$("#address_line_1").text($.cookie("mobile"));
-	$("#address_line_2").text($.cookie("CUR_PROP_start"));
-  $("#address_line_3").text($.cookie("mobile"));
-  $("#town").text($.cookie("mobile"));
-  $("#county").text($.cookie("mobile"));
-  $("#country").text($.cookie("mobile"));
-  $("#post_code").text($.cookie("mobile"));
+    // Court cookie details
+  	$("#court-name").text($.cookie("name-of-court"));
+  	$("#court-ref").text($.cookie("court-reference"));
+  	$("#finish-month").text($.cookie("process-finish-month"));
+  	$("#finish-year").text($.cookie("process-finish-year"));
+  	$("#asset-division").text("asset-division");
 
-  // Hides/shows the appropriate section to show the solicitor details
-  if ($.cookie("question1")) != "Yes") {
-    $("#solicitor-details-yes").show();
-    $("#solicitor-details-no").hide();
-  } else {
-    $("#solicitor-details-yes").hide();
-    $("#solicitor-details-no").show();
-  }
+    // Solicitor cookie details
+  	$("#solicitor-name").text("solicitor-name");
+  	$("#address_line_1").text($.cookie("address_line_1"));
+  	$("#address_line_2").text($.cookie("address_line_2"));
+    $("#address_line_3").text($.cookie("address_line_3"));
+    $("#town").text($.cookie("town"));
+    $("#county").text($.cookie("county"));
+    $("#country").text($.cookie("country"));
+    $("#post_code").text($.cookie("post_code"));
+
+    // Hides/shows the appropriate section to show the solicitor details
+    if ($.cookie("question1")) != "Yes") {
+      $("#solicitor-details-yes").show();
+      $("#solicitor-details-no").hide();
+    } else {
+      $("#solicitor-details-yes").hide();
+      $("#solicitor-details-no").show();
+    }
+
+  )};
 
 
   </script>
