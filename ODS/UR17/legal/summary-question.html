@@ -385,21 +385,21 @@
     // Solicitor cookie details
   	$("#solicitor-name").text($.cookie("solicitor-name"));
   	$("#address_line_1").html($.cookie("address_line_1") + ",<br>");
-    $("#town").text($.cookie("town") + ",<br>");
-    $("#county").text($.cookie("county") + ",<br>");
-    $("#country").text($.cookie("country") + ".<br>");
-    $("#post_code").text($.cookie("post_code"));
+    $("#town").html($.cookie("town") + ",<br>");
+    $("#county").html($.cookie("county") + ",<br>");
+    $("#country").html($.cookie("country") + ".<br>");
+    $("#post_code").html($.cookie("post_code"));
 
     if ($.cookie("address_line_2") === "") {
       $("#address_line_2").hide();
     } else {
-      $("#address_line_2").show().text($.cookie("address_line_2") + ",<br>");
+      $("#address_line_2").show().html($.cookie("address_line_2") + ",<br>");
     }
 
     if ($.cookie("address_line_3") === "") {
       $("#address_line_3").hide();
     } else {
-      $("#address_line_3").show().text($.cookie("address_line_3") + ",<br>");
+      $("#address_line_3").show().html($.cookie("address_line_3") + ",<br>");
     }
 
     // Hides/shows the appropriate section to show the solicitor details
