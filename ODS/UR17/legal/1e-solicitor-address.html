@@ -309,21 +309,21 @@
 
       $("#next").click(function(e){
         count = $.cookie("legal-prop-count");
-        
+
       		var addr = $("#address_line_1").val();
       		if (addr && addr.length > 0){
-    		    $.cookie("address"+count, addr, { path: '/' });
-    		    $.cookie("applicant_address"+count, addr, { path: '/' });
+    		    $.cookie("address_"+count, addr, { path: '/' });
+    		    $.cookie("applicant_address_"+count, addr, { path: '/' });
 
-      			$.cookie("address_line_1"+count, addr, { path:'/' });
-      			$.cookie("address_line_2"+count, $("#address_line_2").val(), { path:'/' });
-      			$.cookie("address_line_3"+count, $("#address_line_3").val(), { path:'/' });
+      			$.cookie("address_line_1_"+count, addr, { path:'/' });
+      			$.cookie("address_line_2_"+count, $("#address_line_2").val(), { path:'/' });
+      			$.cookie("address_line_3_"+count, $("#address_line_3").val(), { path:'/' });
 
-      			$.cookie("town"+count, $("#address_town").val(), { path: '/' });
-      			$.cookie("county"+count, $("#address_county").val(), { path: '/' });
-            $.cookie("country"+count, $("#address_country").val(), { path: '/' });
+      			$.cookie("town_"+count, $("#address_town").val(), { path: '/' });
+      			$.cookie("county_"+count, $("#address_county").val(), { path: '/' });
+            $.cookie("country_"+count, $("#address_country").val(), { path: '/' });
       			if ( $("#address_post_code")+count){
-      				$.cookie("post_code"+count, $("#address_post_code").val(), { path:'/' });
+      				$.cookie("post_code_"+count, $("#address_post_code").val(), { path:'/' });
       			}
       		}
       });

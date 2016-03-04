@@ -314,16 +314,16 @@
       //   count = 0;
       // }
       // count++;
-        $.cookie("court-reference"+count, $("#court-ref").val(), {path:'/'});
-        $.cookie("process-finish-month"+count, $("#finish-month").val(), {path:'/'});
-        $.cookie("process-finish-year"+count, $("#finish-year").val(), {path:'/'});
-        $.cookie("asset-division"+count, $("#asset-division :checked").attr("value"), {path:'/' });
+        $.cookie("court-reference_"+count, $("#court-ref").val(), {path:'/'});
+        $.cookie("process-finish-month_"+count, $("#finish-month").val(), {path:'/'});
+        $.cookie("process-finish-year_"+count, $("#finish-year").val(), {path:'/'});
+        $.cookie("asset-division_"+count, $("#asset-division :checked").attr("value"), {path:'/' });
     });
 
   });
 
-  if ($.cookie("name-of-court")) {
-    $("#court-name").text($.cookie("name-of-court"));
+  if ($.cookie("name-of-court_")) {
+    $("#court-name").text($.cookie("name-of-court_"));
   }
 
   $("#solicitor-no").on("click", function (e) {

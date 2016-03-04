@@ -256,12 +256,12 @@
   $(document).ready(function() {
 
     $("#solicitor-name-cont").on("click", function (e) {
-      count = $.cookie("legal-prop-count");
+      count = $.cookie("legal-prop-count_");
       // if(count == "" || count == null){
       //   count = 0;
       // }
       // count++;
-      $.cookie("solicitor-name"+count, $("#solicitor-name").val(), {path:'/'});
+      $.cookie("solicitor-name_"+count, $("#solicitor-name").val(), {path:'/'});
     });
 
   });

@@ -384,30 +384,30 @@
   	}
 
     // Court cookie details
-  	$("#court-name").text($.cookie("name-of-court"+count));
-  	$("#court-ref").text($.cookie("court-reference"+count));
-  	$("#finish-month").text($.cookie("process-finish-month"+count));
-  	$("#finish-year").text($.cookie("process-finish-year"+count));
-  	$("#asset-division").text($.cookie("asset-division"+count));
+  	$("#court-name").text($.cookie("name-of-court_"+count));
+  	$("#court-ref").text($.cookie("court-reference_"+count));
+  	$("#finish-month").text($.cookie("process-finish-month_"+count));
+  	$("#finish-year").text($.cookie("process-finish-year_"+count));
+  	$("#asset-division").text($.cookie("asset-division_"+count));
 
     // Solicitor cookie details
-  	$("#solicitor-name").text($.cookie("solicitor-name"+count));
-  	$("#address_line_1").html($.cookie("address_line_1"+count) + ",<br>");
-    $("#town").html($.cookie("town"+count) + ",<br>");
-    $("#county").html($.cookie("county"+count) + ",<br>");
-    $("#country").html($.cookie("country"+count) + ".<br>");
-    $("#post_code").html($.cookie("post_code"+count));
+  	$("#solicitor-name").text($.cookie("solicitor-name_"+count));
+  	$("#address_line_1").html($.cookie("address_line_1_"+count) + ",<br>");
+    $("#town").html($.cookie("town_"+count) + ",<br>");
+    $("#county").html($.cookie("county_"+count) + ",<br>");
+    $("#country").html($.cookie("country_"+count) + ".<br>");
+    $("#post_code").html($.cookie("post_code_"+count));
 
-    if ($.cookie("address_line_2") === "") {
+    if ($.cookie("address_line_2_") === "") {
       $("#address_line_2").hide();
     } else {
-      $("#address_line_2").show().html($.cookie("address_line_2"+count) + ",<br>");
+      $("#address_line_2").show().html($.cookie("address_line_2_"+count) + ",<br>");
     }
 
     if ($.cookie("address_line_3") === "") {
       $("#address_line_3").hide();
     } else {
-      $("#address_line_3").show().html($.cookie("address_line_3"+count) + ",<br>");
+      $("#address_line_3").show().html($.cookie("address_line_3_"+count) + ",<br>");
     }
 
   });
@@ -422,7 +422,7 @@
   $(document).ready(function() {
 
     // Hides/shows the appropriate section to show the solicitor details
-    if ($.cookie("question1") === "Yes") {
+    if ($.cookie("solicitor-used") === "Yes") {
       $("#solicitor-details-yes").show();
       $("#solicitor-details-no").hide();
     } else {
