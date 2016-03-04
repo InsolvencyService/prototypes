@@ -261,12 +261,12 @@
                     <span class="form-hint">Address:</span>
                   </div>
                   <div class="col-md-7 col-sm-7 col-xs-12">
-                    <span id="address_line_1" class="heading-small">Building and street line 1</span>,<br>
-                    <span id="address_line_2" class="heading-small">Building and street line 2</span>,<br>
-                    <span id="address_line_3" class="heading-small">Building and street line 3</span>,<br>
-                    <span id="town" class="heading-small">Town/city</span>,<br>
-                    <span id="county" class="heading-small">County</span>,<br>
-                    <span id="country" class="heading-small">Postal code</span>.<br>
+                    <span id="address_line_1" class="heading-small">Building and street line 1</span><br>
+                    <span id="address_line_2" class="heading-small">Building and street line 2</span><br>
+                    <span id="address_line_3" class="heading-small">Building and street line 3</span><br>
+                    <span id="town" class="heading-small">Town/city</span><br>
+                    <span id="county" class="heading-small">County</span><br>
+                    <span id="country" class="heading-small">Postal code</span><br>
                     <span id="post_code" class="heading-small">Country</span>
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-12">
@@ -384,12 +384,12 @@
 
     // Solicitor cookie details
   	$("#solicitor-name").text($.cookie("solicitor-name"));
-  	$("#address_line_1").text($.cookie("address_line_1"));
-  	$("#address_line_2").text($.cookie("address_line_2"));
-    $("#address_line_3").text($.cookie("address_line_3"));
-    $("#town").text($.cookie("town"));
-    $("#county").text($.cookie("county"));
-    $("#country").text($.cookie("country"));
+  	$("#address_line_1").text($.cookie("address_line_1") + ",");
+  	$("#address_line_2").text($.cookie("address_line_2") + ",");
+    $("#address_line_3").text($.cookie("address_line_3") + ",");
+    $("#town").text($.cookie("town") + ",");
+    $("#county").text($.cookie("county") + ",");
+    $("#country").text($.cookie("country") + ".");
     $("#post_code").text($.cookie("post_code"));
 
     // Hides/shows the appropriate section to show the solicitor details
