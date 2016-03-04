@@ -388,7 +388,7 @@
   	$("#court-ref").text($.cookie("court-reference"+count));
   	$("#finish-month").text($.cookie("process-finish-month"+count));
   	$("#finish-year").text($.cookie("process-finish-year"+count));
-  	$("#asset-division").text("asset-division"+count);
+  	$("#asset-division").text($.cookie("asset-division"+count));
 
     // Solicitor cookie details
   	$("#solicitor-name").text($.cookie("solicitor-name"+count));
@@ -409,7 +409,7 @@
     } else {
       $("#address_line_3").show().html($.cookie("address_line_3"+count) + ",<br>");
     }
-  	
+
   });
 
   function getParameterByName(name) {
