@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions</title>
+  <title>Legal proceedings - Solicitor address</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,6 +67,10 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
 <!-- #EndEditable -->
 
 
@@ -108,6 +112,11 @@
         <div class="content">
           <nav id="proposition-menu">
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
+            <ul id="proposition-links">
+              <li><a href="../overview.html" class="">Application Overview</a></li>
+              <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+              <li><a href="#" class="cancel">Save and logout</a></li>
+            </ul>
           </nav>
         </div>
       </div>
@@ -137,29 +146,73 @@
       </div>
       <!-- ///// Phase Banner - END ///// -->
 
+      <!-- .breadcrumb - Start -->
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <ol>
+          <li><a href="summary.html">Legal proceedings</a></li>
+          <li><a href="1a-legally-separated.html">Legally separated</a></li>
+          <li><a href="1b-name-of-court.html">Name of court</a></li>
+          <li><a href="1c-court-details.html">Court details</a></li>
+          <li><a href="1d-solicitor.html">Solicitor details</a></li>
+          <li>Solicitor address</li>
+        </ol>
+      </nav>
+      <!-- .breadcrumb - End -->
+
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent" aria-labelledby="intro">
 
-          <h1 class="form-title heading-large" role="header"></h1>
+          <h1 class="form-title heading-xlarge" role="header" id="court-name">Solicitors address</h1>
 
-          <!-- ///// Form - START ///// -->
+          <p class="lede">Please tell us the solicitors address below:</p>
+
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <fieldset>
 
-              <legend class="hidden"></legend>
+              <legend class="hidden">We require you to answer 5 questions, please enter your contact details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="inline form-group" id="" aria-labelledby="">
-                <legend class="hidden"></legend>
-                <label class="form-label-bold" for="" id=""></label>
-                <input value="" type="text" id="" aria-describedby=""/>
+              <fieldset id="fulladdress" role="group">
+                <legend class="hidden">Enter your address below.</legend>
+                <div class="form-group" aria-hidden="true">
+                  <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Find address</span></label>
+              	  <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+                </div>
+                <div class="form-group">
+                  <h2 class="form-label-bold">Address</h2>
+                  <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street <span class="hidden">line 1</span></label>
+                  <input id="address_line_1" name="address_line_1" type="text" value="" aria-labelledby="address_line_1_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Building and street line 2</label>
+                  <input id="address_line_2" name="address_line_2" type="text" value="" aria-labelledby="address_line_2_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Building and street line 3</label>
+                  <input id="address_line_3" name="address_line_3" type="text" value="" aria-labelledby="address_line_3_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+                  <input id="address_town" name="address_town" type="text" value="" aria-labelledby="address_town_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
+                  <input id="address_county" name="address_county" type="text" value="" aria-labelledby="address_county_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
+                  <input id="address_post_code" name="address_post_code" type="text" value="" aria-labelledby="address_post_code_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
+                  <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
+                </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
-
 
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="form-group">
@@ -167,9 +220,9 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='#.html';" id="" class="button" value="">
+                      <input type="button" onclick="location.href='summary-question.html';" id="next" class="button" value="Continue">
                       <br>
-                      <a href="javascript:history.go(-1)" id="">Back</a>
+                      <a href="javascript:history.go(-1)" id="back">Back</a>
                       <a href="#" class="cancel">Save and logout</a>
                     </div>
                   </div>
@@ -188,10 +241,6 @@
 
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
-          <div class="panel-indent">
-            <p><a href="#" class="cancel">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel">Back to application overview</a></p>
-          </div>
         </aside>
         <!-- ///// Right content - END ///// -->
 
@@ -231,6 +280,10 @@
   <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../shared/loop.js"></script>
+  <script type="text/javascript" src="../assets/js/titleCaps.js"></script>
+  <script type="text/javascript" src="../assets/property/js/postcodelookup.js"></script>
+
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -246,6 +299,36 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
+
+    if ($.cookie("solicitor-name")) {
+      $("#solicitor-name").text($.cookie("solicitor-name"));
+    }
+
+    $("#next").click(function(e){
+    		var addr = $("#address_line_1").val();
+    		if (addr && addr.length > 0){
+  		    $.cookie("address", addr, { path: '/' });
+  		    $.cookie("applicant_address", addr, { path: '/' });
+
+    			$.cookie("address_line_1", addr, { path:'/' });
+    			$.cookie("address_line_2", $("#address_line_2").val(), { path:'/' });
+    			$.cookie("address_line_3", $("#address_line_3").val(), { path:'/' });
+
+    			$.cookie("town", $("#address_town").val(), { path: '/' });
+    			$.cookie("county", $("#address_county").val(), { path: '/' });
+          $.cookie("country", $("#address_country").val(), { path: '/' });
+    			if ( $("#address_post_code")){
+    				$.cookie("post_code", $("#address_post_code").val(), { path:'/' });
+    			}
+    		}
+    });
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
 
   </script>
   <!-- #EndEditable "scripts" -->

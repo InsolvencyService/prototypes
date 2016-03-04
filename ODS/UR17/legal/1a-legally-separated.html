@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions</title>
+  <title>Legal proceedings - legal separation</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,6 +67,7 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
 <!-- #EndEditable -->
 
 
@@ -108,6 +109,11 @@
         <div class="content">
           <nav id="proposition-menu">
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
+            <ul id="proposition-links">
+              <li><a href="../overview.html" class="">Application Overview</a></li>
+              <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+              <li><a href="#" class="cancel">Save and logout</a></li>
+            </ul>
           </nav>
         </div>
       </div>
@@ -137,48 +143,58 @@
       </div>
       <!-- ///// Phase Banner - END ///// -->
 
+      <!-- .breadcrumb - Start -->
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <ol>
+          <li><a href="summary.html">Legal proceedings</a></li>
+          <li>Legally separated</li>
+        </ol>
+      </nav>
+      <!-- .breadcrumb - End -->
+
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header"></h1>
+          <div class="new-title-format">
+            <h1 class="form-title heading-xlarge" role="header" id="heading-1">
+              Legal proceedings
+            </h1>
+            <h2 class="heading-large form-hint" role="header" id="heading-2">Question 1 of 2</h2>
+          </div>
+
+          <p class="lede" id="heading-3">We need to know about legal proceedings you have recently been involved in.</p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <fieldset>
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset class="inline form-group">
+              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Have you legally separated, divorced or dissolved a civil partnership in the last 5 years?</label>
+              <span class="form-hint" id="hint-1">Include any ongoing divorces, legal separations, etc</span>
+              <span class="form-hint" id="hint-2">This will help us understand any changes to your financial situation during this time</span>
+              <br>
+              <label class="hidden" id="button-title-1">Yes</label>
+              <label class="hidden" id="button-title-2">No</label>
+              <input type="button" onclick="location.href='1b-name-of-court.html';" id="question1-yes" class="button" value="Yes" aria-labelledby="heading-1 heading-2 heading-3 question1-label hint-1 hint-2 button-title-1">
+              <input type="button" onclick="location.href='2a-legal-claims.html';" id="question1-no" class="button" value="No" aria-labelledby="question1-label button-title-2">
+            </fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
 
-              <legend class="hidden"></legend>
-
-              <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="inline form-group" id="" aria-labelledby="">
-                <legend class="hidden"></legend>
-                <label class="form-label-bold" for="" id=""></label>
-                <input value="" type="text" id="" aria-describedby=""/>
-              </fieldset>
-              <!-- ///// Fieldset/Group 1 - END ///// -->
-
-
-              <!-- ///// CTA Section - START ///// -->
-              <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
-                <div class="row">
-                  <div class="col-md-12 col-xs-12">
-                    <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='#.html';" id="" class="button" value="">
-                      <br>
-                      <a href="javascript:history.go(-1)" id="">Back</a>
-                      <a href="#" class="cancel">Save and logout</a>
-                    </div>
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
                   </div>
                 </div>
-              </fieldset>
-              <!-- ///// CTA Section - END ///// -->
-
-
+              </div>
             </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -188,10 +204,6 @@
 
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
-          <div class="panel-indent">
-            <p><a href="#" class="cancel">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel">Back to application overview</a></p>
-          </div>
         </aside>
         <!-- ///// Right content - END ///// -->
 
@@ -246,6 +258,14 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
+
+    $("#question1-no").on("click", function (e) {
+      $.cookie("question1", $("#question1-no").val(), {path:'/'});
+    });
+
+    $("#question1-yes").on("click", function (e) {
+      $.cookie("question1", $("#question1-yes").val(), {path:'/'});
+    });
 
   </script>
   <!-- #EndEditable "scripts" -->

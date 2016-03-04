@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions</title>
+  <title>Legal proceedings - court details</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,6 +67,7 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
 <!-- #EndEditable -->
 
 
@@ -109,6 +110,11 @@
           <nav id="proposition-menu">
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
           </nav>
+          <ul id="proposition-links">
+            <li><a href="../overview.html" class="">Application Overview</a></li>
+            <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+            <li><a href="#" class="cancel">Save and logout</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -137,48 +143,105 @@
       </div>
       <!-- ///// Phase Banner - END ///// -->
 
+      <!-- .breadcrumb - Start -->
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <ol>
+          <li><a href="summary.html">Legal proceedings</a></li>
+          <li><a href="1a-legally-separated.html">Legally separated</a></li>
+          <li><a href="1b-name-of-court.html">Name of court</a></li>
+          <li>Court details</li>
+        </ol>
+      </nav>
+      <!-- .breadcrumb - End -->
+
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header"></h1>
+          <h1 class="form-title heading-xlarge" role="header" id="court-name">Court name</h1>
+
+          <p class="lede">Please give us some more details about this courtcase.</p>
+
+          <p></p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <fieldset>
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset class="inline form-group">
+              <label class="form-label-bold" for="court-ref" id="court-ref-label">Reference number</label>
+              <span class="form-hint" id="form-hint-desc1">Leave blank if you don't have one</span>
+              <input type="text" id="court-ref" aria-labelledby="court-ref-label form-hint-desc1">
+            </fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
 
-              <legend class="hidden"></legend>
+            <!-- ///// Fieldset/Group 2 - START ///// -->
+            <fieldset class="inline form-group" role="group">
+              <legend id="process-date-label" class="form-label-bold">Date the process finished</legend>
+              <span class="form-hint" id="process-date-hint-1">For example, the date of your decree absolute or final order</span>
+              <span class="form-hint" id="process-date-hint-2">Leave blank if the process hasn't finished</span>
+              <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-2" role="group">
+                  <label id="finish-month-label" for="finish-month">Month</label><br>
+                  <select id="finish-month" name="finish-month" aria-labelledby="process-date-label process-date-hint-1 process-date-hint-2 finish-month-label">
+                    <option value="0">--</option>
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                  </select>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4" role="group">
+                  <label id="finish-year-label" for="finish-year">Year</label><br>
+                  <input id="finish-year" name="finish-year" type="number" min="2000" max="2016" aria-labelledby="process-date-label finish-year-label" />
+                </div>
+              </div>
+            </fieldset>
+            <!-- ///// Fieldset/Group 2 - END ///// -->
 
-              <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="inline form-group" id="" aria-labelledby="">
-                <legend class="hidden"></legend>
-                <label class="form-label-bold" for="" id=""></label>
-                <input value="" type="text" id="" aria-describedby=""/>
-              </fieldset>
-              <!-- ///// Fieldset/Group 1 - END ///// -->
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset class="inline form-group" role="radiogroup" id="asset-division">
+              <legend id="asset-title" class="form-label-bold">Has there been a division of your assets?</legend>
+              <span class="form-hint" id="asset-title-hint">Leave blank if the process hasn't finished</span>
+              <label id="asset-yes-label" for="asset-yes" class="block-label">
+                <input id="asset-yes" value="Yes" name="title" type="radio" aria-labelledby="asset-title asset-yes">
+                Yes
+              </label>
+              <label id="asset-no-label" for="asset-no" class="block-label">
+                <input id="asset-no" value="No" name="title" type="radio" aria-labelledby="asset-title asset-no">
+                No
+              </label>
+            </fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
 
-
-              <!-- ///// CTA Section - START ///// -->
-              <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
-                <div class="row">
-                  <div class="col-md-12 col-xs-12">
-                    <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='#.html';" id="" class="button" value="">
-                      <br>
-                      <a href="javascript:history.go(-1)" id="">Back</a>
-                      <a href="#" class="cancel">Save and logout</a>
-                    </div>
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <label class="form-label-bold" for="solicitor-yes solicitor-no" id="solicitor-label">Did you use a solicitor for the courtcase?</label>
+              <br>
+              <label class="hidden" id="button-title-1">Yes</label>
+              <label class="hidden" id="button-title-2">No</label>
+              <input type="button" onclick="location.href='1d-solicitor.html';" id="solicitor-yes" class="button" value="Yes" aria-labelledby="solicitor-label button-title-1">
+              <input type="button" onclick="location.href='summary-question.html';" id="solicitor-no" class="button" value="No" aria-labelledby="solicitor-label button-title-2">
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
                   </div>
                 </div>
-              </fieldset>
-              <!-- ///// CTA Section - END ///// -->
-
-
+              </div>
             </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -188,10 +251,6 @@
 
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
-          <div class="panel-indent">
-            <p><a href="#" class="cancel">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel">Back to application overview</a></p>
-          </div>
         </aside>
         <!-- ///// Right content - END ///// -->
 
@@ -246,6 +305,25 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
+
+  $("#solicitor-yes, #solicitor-no").on("click", function (e) {
+    $.cookie("court-reference", $("#court-ref").val(), {path:'/'});
+    $.cookie("process-finish-month", $("#finish-month").val(), {path:'/'});
+    $.cookie("process-finish-year", $("#finish-year").val(), {path:'/'});
+    $.cookie("asset-division", $("#asset-division :checked").attr("value"), {path:'/' });
+  });
+
+  if ($.cookie("name-of-court")) {
+    $("#court-name").text($.cookie("name-of-court"));
+  }
+
+  $("#solicitor-no").on("click", function (e) {
+    $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
+  });
+
+  $("#solicitor-yes").on("click", function (e) {
+    $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
+  });
 
   </script>
   <!-- #EndEditable "scripts" -->

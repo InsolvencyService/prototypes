@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions</title>
+  <title>Legal proceedings - name of court</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,12 +67,13 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
 <!-- #EndEditable -->
 
 
 </head>
 
-<body class="js-enabled js-enabled">
+<body>
 
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
@@ -108,6 +109,11 @@
         <div class="content">
           <nav id="proposition-menu">
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
+            <ul id="proposition-links">
+              <li><a href="../overview.html" class="">Application Overview</a></li>
+              <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+              <li><a href="#" class="cancel">Save and logout</a></li>
+            </ul>
           </nav>
         </div>
       </div>
@@ -137,32 +143,33 @@
       </div>
       <!-- ///// Phase Banner - END ///// -->
 
+      <!-- .breadcrumb - Start -->
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <ol>
+          <li><a href="summary.html">Legal proceedings</a></li>
+          <li><a href="1a-legally-separated.html">Legally separated</a></li>
+          <li>Name of court</li>
+        </ol>
+      </nav>
+      <!-- .breadcrumb - End -->
+
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <div class="new-title-format">
-            <h1 class="form-title heading-xlarge" role="header">
-              Legal proceedings
-            </h1>
-            <h2 class="heading-large form-hint" role="header">Question 1 of 2</h2>
-          </div>
-
-          <p class="lede">We need to know about legal proceedings you have recently been involved in.</p>
+          <h1 class="form-title heading-xlarge" role="header">Legal separation, divorce or dissolution</h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline form-group" aria-labelledby="">
-              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Have you legally separated, divorced or dissolved a civil partnership in the last 5 years?</label>
-              <p class="form-hint">Include any ongoing divorces, legal separations, etc</p>
-              <p class="form-hint">This will help us understand any changes to your financial situation during this time</p>
-              <br>
-              <input type="button" onclick="location.href='#.html';" id="question1-yes" class="button" value="Yes" aria-labelledby="question1-label">
-              <input type="button" onclick="location.href='2-question-2.html';" id="question1-no" class="button" value="No" aria-labelledby="question1-label">
+            <fieldset class="inline form-group">
+              <label class="form-label-bold" for="name-of-court" id="name-of-court-label">Enter the name of the court, justice centre or unit where you sent the forms</label>
+              <span class="form-hint" id="form-hint-desc">For example West Midlands Divorce Unit or Birmingham Civil and Family Justice Centre.</span>
+              <input type="text" class="input-with-button" id="name-of-court" aria-labelledby="name-of-court-label form-hint-desc">
+              <input type="button" onclick="location.href='1c-court-details.html';" id="continue" class="button" value="Add court">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -187,10 +194,6 @@
 
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
-          <div class="panel-indent">
-            <p><a href="#" class="cancel">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel">Back to application overview</a></p>
-          </div>
         </aside>
         <!-- ///// Right content - END ///// -->
 
@@ -246,12 +249,8 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#question1-no").on("click", function (e) {
-      $.cookie("question1", $("#question1-no").val(), {path:'/'});
-    });
-
-    $("#question1-yes").on("click", function (e) {
-      $.cookie("question1", $("#question1-yes").val(), {path:'/'});
+    $("#continue").on("click", function (e) {
+      $.cookie("name-of-court", $("#name-of-court").val(), {path:'/'});
     });
 
   </script>

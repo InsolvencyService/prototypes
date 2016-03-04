@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions</title>
+  <title>Legal proceedings - Solicitor details</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,12 +67,13 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
 <!-- #EndEditable -->
 
 
 </head>
 
-<body class="js-enabled js-enabled">
+<body>
 
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
@@ -108,6 +109,11 @@
         <div class="content">
           <nav id="proposition-menu">
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
+            <ul id="proposition-links">
+              <li><a href="../overview.html" class="">Application Overview</a></li>
+              <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+              <li><a href="#" class="cancel">Save and logout</a></li>
+            </ul>
           </nav>
         </div>
       </div>
@@ -137,45 +143,50 @@
       </div>
       <!-- ///// Phase Banner - END ///// -->
 
+      <!-- .breadcrumb - Start -->
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <ol>
+          <li><a href="summary.html">Legal proceedings</a></li>
+          <li><a href="1a-legally-separated.html">Legally separated</a></li>
+          <li><a href="1b-name-of-court.html">Name of court</a></li>
+          <li><a href="1c-court-details.html">Court details</a></li>
+          <li>Solicitor details</li>
+        </ol>
+      </nav>
+      <!-- .breadcrumb - End -->
+
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <div class="new-title-format">
-            <h1 class="form-title heading-xlarge" role="header">
-              Legal proceedings
-            </h1>
-            <h2 class="heading-large form-hint" role="header">Question 2 of 2</h2>
-          </div>
+          <h1 class="form-title heading-xlarge" role="header">Solicitor details</h1>
 
-          <p class="lede">We need to know about legal proceedings you have recently been involved in.</p>
+          <p class="lede">We need to know about any solicitors you used for your legal separation, divorce or dissolution.</p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline form-group" aria-labelledby="">
-              <label class="form-label-bold" for="question2-yes question2-no" id="question1-label">Are you involved in any ongoing legal claims?</label>
-              <p class="form-hint">Include any claims currently with a court, tribunal obudsman or adjudicator</p>
-              <br>
-              <input type="button" onclick="location.href='#.html';" id="question2-yes" class="button" value="Yes" aria-labelledby="question2-label">
-              <input type="button" onclick="location.href='#.html';" id="question2-no" class="button" value="No" aria-labelledby="question2-label">
+            <fieldset class="inline form-group">
+              <label class="form-label-bold" for="solicitor-name" id="solicitor-name-label">Enter the name of the solicitor's firm</label>
+              <span class="form-hint" id="form-hint-desc1">For example, ABC Legal LLP or J. Smith Solicitors.</span>
+              <span class="form-hint" id="form-hint-desc2">If you used more than one solicitor, just tell us about the most recent one. </span>
+              <input type="text" class="input-with-button" id="solicitor-name" aria-labelledby="name-of-court-label form-hint-desc">
+              <input type="button" onclick="location.href='1e-solicitor-address.html';" id="solicitor-name-cont" class="button" value="Add solicitor">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
             <!-- ///// CTA Section - START ///// -->
-            <fieldset class="form-group">
-              <div class="row">
-                <div class="col-md-12 col-xs-12">
-                  <div class="form-navigation form-group">
-                    <a href="javascript:history.go(-1)" id="back">Back</a>
-                    <a href="#" class="cancel">Save and logout</a>
-                  </div>
+            <div class="row">
+              <div class="col-md-12 col-xs-12">
+                <div class="form-navigation form-group">
+                  <a href="javascript:history.go(-1)" id="back">Back</a>
+                  <a href="#" class="cancel">Save and logout</a>
                 </div>
               </div>
-            </fieldset>
+            </div>
             <!-- ///// CTA Section - END ///// -->
 
           </form>
@@ -186,10 +197,6 @@
 
         <!-- ///// Right content - START ///// -->
         <aside class="col-md-4 col-xs-12">
-          <div class="panel-indent">
-            <p><a href="#" class="cancel">Save and logout</a></p>
-            <p><a href="../overview.html" class="cancel">Back to application overview</a></p>
-          </div>
         </aside>
         <!-- ///// Right content - END ///// -->
 
@@ -245,12 +252,8 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#question2-no").on("click", function (e) {
-      $.cookie("question2", $("#question2-no").val(), {path:'/'});
-    });
-
-    $("#question2-yes").on("click", function (e) {
-      $.cookie("question2", $("#question2-yes").val(), {path:'/'});
+    $("#solicitor-name-cont").on("click", function (e) {
+      $.cookie("solicitor-name", $("#solicitor-name").val(), {path:'/'});
     });
 
   </script>
