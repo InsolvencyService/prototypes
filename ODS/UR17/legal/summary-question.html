@@ -390,6 +390,15 @@
   $("#country").text($.cookie("mobile"));
   $("#post_code").text($.cookie("mobile"));
 
+  // Hides/shows the appropriate section to show the solicitor details
+  if ($.cookie("question1")) != "Yes") {
+    $("#solicitor-details-yes").show();
+    $("#solicitor-details-no").hide();
+  } else {
+    $("#solicitor-details-yes").hide();
+    $("#solicitor-details-no").show();
+  }
+
 
   </script>
   <!-- #EndEditable "scripts" -->
