@@ -308,6 +308,8 @@
     $(document).ready(function() {
 
       $("#next").click(function(e){
+        count = $.cookie("legal-prop-count");
+        
       		var addr = $("#address_line_1").val();
       		if (addr && addr.length > 0){
     		    $.cookie("address"+count, addr, { path: '/' });
