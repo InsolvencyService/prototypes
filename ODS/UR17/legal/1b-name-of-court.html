@@ -249,9 +249,20 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
+  var count;
+  $(document).ready(function() {
+
     $("#continue").on("click", function (e) {
-      $.cookie("name-of-court", $("#name-of-court").val(), {path:'/'});
+      count = $.cookie("legal-prop-count");
+      if(count == "" || count == null){
+        count = 0;
+      }
+      count++;
+        $.cookie("name-of-court"+count, $("#name-of-court").val(), {path:'/'});
+        $.cookie("legal-prop-count", count, { path: '/' } );
     });
+
+  });
 
   </script>
   <!-- #EndEditable "scripts" -->

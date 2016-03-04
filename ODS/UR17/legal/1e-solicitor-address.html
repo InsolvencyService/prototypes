@@ -304,24 +304,30 @@
       $("#solicitor-name").text($.cookie("solicitor-name"));
     }
 
-    $("#next").click(function(e){
-    		var addr = $("#address_line_1").val();
-    		if (addr && addr.length > 0){
-  		    $.cookie("address", addr, { path: '/' });
-  		    $.cookie("applicant_address", addr, { path: '/' });
+    var count;
+    $(document).ready(function() {
 
-    			$.cookie("address_line_1", addr, { path:'/' });
-    			$.cookie("address_line_2", $("#address_line_2").val(), { path:'/' });
-    			$.cookie("address_line_3", $("#address_line_3").val(), { path:'/' });
+      $("#next").click(function(e){
+      		var addr = $("#address_line_1").val();
+      		if (addr && addr.length > 0){
+    		    $.cookie("address"+count, addr, { path: '/' });
+    		    $.cookie("applicant_address"+count, addr, { path: '/' });
 
-    			$.cookie("town", $("#address_town").val(), { path: '/' });
-    			$.cookie("county", $("#address_county").val(), { path: '/' });
-          $.cookie("country", $("#address_country").val(), { path: '/' });
-    			if ( $("#address_post_code")){
-    				$.cookie("post_code", $("#address_post_code").val(), { path:'/' });
-    			}
-    		}
+      			$.cookie("address_line_1"+count, addr, { path:'/' });
+      			$.cookie("address_line_2"+count, $("#address_line_2").val(), { path:'/' });
+      			$.cookie("address_line_3"+count, $("#address_line_3").val(), { path:'/' });
+
+      			$.cookie("town"+count, $("#address_town").val(), { path: '/' });
+      			$.cookie("county"+count, $("#address_county").val(), { path: '/' });
+            $.cookie("country"+count, $("#address_country").val(), { path: '/' });
+      			if ( $("#address_post_code")+count){
+      				$.cookie("post_code"+count, $("#address_post_code").val(), { path:'/' });
+      			}
+      		}
+      });
+
     });
+
 
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

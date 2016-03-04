@@ -252,9 +252,19 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
+  var count;
+  $(document).ready(function() {
+
     $("#solicitor-name-cont").on("click", function (e) {
-      $.cookie("solicitor-name", $("#solicitor-name").val(), {path:'/'});
+      count = $.cookie("legal-prop-count");
+      // if(count == "" || count == null){
+      //   count = 0;
+      // }
+      // count++;
+        $.cookie("solicitor-name"+count, $("#solicitor-name").val(), {path:'/'});
     });
+
+  });
 
   </script>
   <!-- #EndEditable "scripts" -->

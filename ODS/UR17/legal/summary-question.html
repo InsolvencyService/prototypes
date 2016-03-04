@@ -375,32 +375,51 @@
 
   $(document).ready(function() {
 
+  	$(".annex").hide();
+
+  	if(getParameterByName('p')){
+  		count = getParameterByName('p');
+  	} else {
+  		var count= $.cookie("legal-prop-count");
+  	}
+
     // Court cookie details
-  	$("#court-name").text($.cookie("name-of-court"));
-  	$("#court-ref").text($.cookie("court-reference"));
-  	$("#finish-month").text($.cookie("process-finish-month"));
-  	$("#finish-year").text($.cookie("process-finish-year"));
-  	$("#asset-division").text("asset-division");
+  	$("#court-name").text($.cookie("name-of-court"+count));
+  	$("#court-ref").text($.cookie("court-reference"+count));
+  	$("#finish-month").text($.cookie("process-finish-month"+count));
+  	$("#finish-year").text($.cookie("process-finish-year"+count));
+  	$("#asset-division").text("asset-division"+count);
 
     // Solicitor cookie details
-  	$("#solicitor-name").text($.cookie("solicitor-name"));
-  	$("#address_line_1").html($.cookie("address_line_1") + ",<br>");
-    $("#town").html($.cookie("town") + ",<br>");
-    $("#county").html($.cookie("county") + ",<br>");
-    $("#country").html($.cookie("country") + ".<br>");
-    $("#post_code").html($.cookie("post_code"));
+  	$("#solicitor-name").text($.cookie("solicitor-name"+count));
+  	$("#address_line_1").html($.cookie("address_line_1"+count) + ",<br>");
+    $("#town").html($.cookie("town"+count) + ",<br>");
+    $("#county").html($.cookie("county"+count) + ",<br>");
+    $("#country").html($.cookie("country"+count) + ".<br>");
+    $("#post_code").html($.cookie("post_code"+count));
 
     if ($.cookie("address_line_2") === "") {
       $("#address_line_2").hide();
     } else {
-      $("#address_line_2").show().html($.cookie("address_line_2") + ",<br>");
+      $("#address_line_2").show().html($.cookie("address_line_2"+count) + ",<br>");
     }
 
     if ($.cookie("address_line_3") === "") {
       $("#address_line_3").hide();
     } else {
-      $("#address_line_3").show().html($.cookie("address_line_3") + ",<br>");
+      $("#address_line_3").show().html($.cookie("address_line_3"+count) + ",<br>");
     }
+  	
+  });
+
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+  $(document).ready(function() {
 
     // Hides/shows the appropriate section to show the solicitor details
     if ($.cookie("question1") === "Yes") {
