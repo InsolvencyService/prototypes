@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 
@@ -120,6 +120,10 @@ display:block;
 }
 
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -169,7 +173,7 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -179,30 +183,30 @@ display:block;
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div class="inner-block">
-	
-	
-	
+
+
+
 	<h1 class="form-title heading-large">Vehicle you own</h1>
-	
-	
-	
-	<form class="form" method="post">			
-		
+
+
+
+	<form class="form" method="post">
+
 		<div id="kept" class="form-group ">
 			<p id="disposed_label" for="vehicle_address_line_1" for="vehicle_address_line_1" class="form-label-bold">Where do you keep the vehicle overnight?</p>
 			<p class="form-hint">This will help us confirm the information you have told us about the vehicle</p>
 			My vehicle is kept at my home address&nbsp;&nbsp;
 			<input id="home_store" name="home address" type="checkbox" /><br><br>
 			<div id="address_needed">
-				<div class="firsttime">
+				<!-- <div class="firsttime">
 					<fieldset id="lookupaddress">
-						
-				
+
+
 						<span class="form-hint">For example, 2 Place Street AB1 2CD</span>
 						<div class="form-group halfwidth">
 							<label for="name">First line</label>
@@ -216,57 +220,64 @@ display:block;
 						<div class="form-group">
 							<a id="btn-lookup" class="button" href="#">Lookup address</a>&nbsp;
 							<a id="btn-outsideuk" href="#" style="padding-top:6px; display:none" class="btn-link">I live abroad</a>&nbsp;
-				
 							<br />
 						</div>
 					</fieldset>
-				</div>
-				
-				<div class="repeat" id="fulladdress">
-					<div class="form-group ">
+				</div> -->
+
+				<div id="fulladdress">
+
+          <!-- ///// Fieldset/Group 1 - START ///// -->
+          <fieldset id="fulladdress" role="group">
+            <legend class="hidden">Enter the address below.</legend>
+            <div class="form-group" aria-hidden="true">
+              <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+              <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+            </div>
+          </fieldset>
+          <!-- ///// Fieldset/Group 1 - END ///// -->
+
+          <p>&nbsp;</p>
+
+					<div class="form-group">
+            <label for="vehicle_address_line_1" class="form-label-bold">Address</label>
 						<label id="vehicle_address_line_1_label" for="vehicle_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
 						<input id="vehicle_address_line_1" name="vehicle_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" /><br>
-						<br/>
 					</div>
 					<div class="form-group ">
 						<label id="vehicle_address_line_2_label" for="vehicle_address_line_2" class="visuallyhidden">Address Line 2</label>
 						<input id="vehicle_address_line_2" name="vehicle_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" /><br>
-						<br/>
 					</div>
 					<div class="form-group ">
 						<label id="vehicle_address_line_3_label" for="vehicle_address_line_3" class="visuallyhidden">Address Line 3</label>
 						<input id="vehicle_address_line_3" name="vehicle_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" /><br>
-						<br/>
 					</div>
 					<div class="form-group ">
 						<label id="vehicle_address_town_label" for="vehicle_address_town" class="form-label applicant_address_town">Town/city</label>
 						<input id="vehicle_address_town" name="vehicle_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" /><br>
-						<br/>
 					</div>
 					<div class="form-group ">
 						<label id="vehicle_address_county_label" for="vehicle_address_county" class="form-label applicant_address_county">County</label>
 						<input id="vehicle_address_county" name="vehicle_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" /><br>
-						<br/>
 					</div>
 					<div class="form-group ">
 						<label id="vehicle_address_post_code_label" for="vehicle_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
 						<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-						<br/>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="form-group" id="pnl-owned">
-			<p id="title_label" class="form-label-bold">Is there any finance 
+			<p id="title_label" class="form-label-bold">Is there any finance
 			outstanding on the vehicle?</p>
 			<p class="form-hint">For example, if you're still making payments on a hire purchase or conditional sale agreement with the dealership</p>
 			<p class="form-hint">Don't include personal loans you used to buy the vehicle outright.</p>
 			<fieldset class="inline">
-				<div>				
+				<div>
 					<label id="owned_label1" for="owned_yes" class="block-label">
 					<input id="owned_yes"  name="owned" value="Yes" type="radio">Yes</label>
-					
+
 					<label id="owned_label2" for="owned_no" class="block-label">
 					<input id="owned_no"  name="owned" value="No" type="radio">No</label>
 
@@ -274,24 +285,24 @@ display:block;
 			</fieldset>
 		</div>
 	</form>
-		
-		
-		
-	
+
+
+
+
 	<!-- For User research -->
 	<div class="form-navigation form-group">
 	<p>&nbsp;</p>
 	<div>
-		
+
 		<a id="next" class="button">Continue</a>
 			</div>
 	<div>
 	<br>
 	</div>
-	
+
 	<div>
 	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-	
+
 	</div>
 	</div>
 	</form>
@@ -299,13 +310,13 @@ display:block;
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -353,10 +364,10 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -405,9 +416,9 @@ $('#kept').click(function() {
 function writeCookies() {
 	// Get count
 		count = $.cookie("VehicleCount");
-			
+
 	// write records
-		
+
 		$.cookie("VehicleStoredAddress1-"+count, $("#vehicle_address_line_1").val(), {path: '/'});
 		$.cookie("VehicleStoredAddress2-"+count, $("#vehicle_address_line_2").val(), {path: '/'});
 		$.cookie("VehicleStoredAddress3-"+count, $("#vehicle_address_line_3").val(), {path: '/'});
@@ -445,12 +456,12 @@ function pad (str, max) {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

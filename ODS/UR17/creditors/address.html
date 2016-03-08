@@ -64,10 +64,10 @@
 <link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
 
@@ -108,7 +108,7 @@ display:block;
      height:100%;
      text-align:center;
      z-index: 1000;
-     
+
      opacity:1;
 }
 #overback{
@@ -120,7 +120,7 @@ display:block;
 	padding:30px;
 	border: 1px black solid;
 	text-align:left;
-	
+
 }
 .btn-success{
 	color:white!important;
@@ -128,6 +128,10 @@ display:block;
 
 
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -177,7 +181,7 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -187,101 +191,144 @@ display:block;
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div class="inner-block">
 	<div class="row">
-		<div class="col-sm-8">	
+		<div class="col-sm-8">
 			<h1 class="form-title heading-large">Creditor address</h1>
 			<form class="form" method="post">
 				<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
+
 				<div class="form-group ">
 					<label  for="name" class="form-label-bold">Creditor name</label>
 					<input id="name" name="applicant_address_town0" type="text" value="" />
 					<p class="form-label-bold"></p>
 				</div>
-				
-			
-				
-				<div class="form-group  firsttime">		
-					<p>&nbsp;</p>		
+
+
+
+				<!-- <div class="form-group  firsttime">
+					<p>&nbsp;</p>
 					<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Enter their postcode?</label>
 					<span class="form-hint">For example, B28 9AA</span>
 					<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 					<br/>
 					<p><br></p>
-				</div>
-				
-				
-	
+				</div> -->
+
+
+
 	<!-- For User research -->
-				<div class="form-navigation form-group">	
-					<div class=" firsttime">
-						<a id="lookup" class="button" href="address.html?loop=true">Look up address</a><br>
+				<div class="form-navigation">
+
+          <!-- ///// Fieldset/Group 1 - START ///// -->
+          <fieldset id="fulladdress" role="group">
+            <legend class="hidden">Enter the address below.</legend>
+            <div class="form-group" aria-hidden="true">
+              <label class="form-label-bold" id="search_label" for="search">Search address</label>
+              <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+            </div>
+            <div class="form-group">
+              <h2 class="form-label-bold">Address</h2>
+              <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street <span class="hidden">line 1</span></label>
+              <input id="address_line_1" name="address_line_1" type="text" value="" aria-labelledby="address_line_1_label intro" />
+            </div>
+            <div class="form-group">
+              <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Building and street line 2</label>
+              <input id="address_line_2" name="address_line_2" type="text" value="" aria-labelledby="address_line_2_label intro" />
+            </div>
+            <div class="form-group">
+              <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Building and street line 3</label>
+              <input id="address_line_3" name="address_line_3" type="text" value="" aria-labelledby="address_line_3_label intro" />
+            </div>
+            <div class="form-group">
+              <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+              <input id="address_town" name="address_town" type="text" value="" aria-labelledby="address_town_label intro" />
+            </div>
+            <div class="form-group">
+              <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
+              <input id="address_county" name="address_county" type="text" value="" aria-labelledby="address_county_label intro" />
+            </div>
+            <div class="form-group">
+              <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
+              <input id="address_post_code" name="address_post_code" type="text" value="" aria-labelledby="address_post_code_label intro" />
+            </div>
+            <div class="form-group">
+              <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
+              <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
+            </div>
+          </fieldset>
+          </fieldset>
+          <!-- ///// Fieldset/Group 1 - END ///// -->
+
+          <p>&nbsp;</p>
+
+					<div>
+						<a id="lookup" class="button" href="amount.html">Continue</a><br>
 						<a href="postcode_unknown.html">I don't have a UK postcode.</a>
 					</div>
-					
-					<div class="repeat">
+
+					<!-- <div class="repeat">
 						<p>&nbsp;</p>
 						<fieldset>
 			                <label id="title_label" class="form-label-bold">Address</label>
 			                <div id="type-select" class="form-group">
-			
+
 			                    <label id="title_label1" for="add_1" class="block-label">A Star Road Services Ltd, Cambrai Court, 1229 Stratford Road, Hall Green
 			                        <input id="add_1" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label2" for="add_2" class="block-label">Arthur Marsh &amp; Sons, Cambrai Court, 1231 Stratford Road, Hall Green
-			                        <input id="add_2" value="" name="add" type="radio">			                    
+			                        <input id="add_2" value="" name="add" type="radio">
 			                    </label>
 
 								<label id="title_label3" for="add_3" class="block-label">Birmingham Retirement Service, 1237 Stratford Road, Hall Green
 			                        <input id="add_3" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label4" for="add_4" class="block-label">Capitax &amp; Co Ltd, Cambrai Court, 1229 Stratford Road, Hall Green
-			                        <input id="add_4" value="" name="add" type="radio">		                    
+			                        <input id="add_4" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label5" for="add_5" class="block-label">Corps Security, Cambrai Court, 1233 Stratford Road, Hall Green
 			                        <input id="add_5" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label6" for="add_6" class="block-label">Cox Cooper Ltd, Cambrai Court, 1235 Stratford Road, Hall Green
 			                        <input id="add_6" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label7" for="add_7" class="block-label">E S S (Utility Consultants) Ltd, Cambrai Court, 1229 Stratford Road, Hall Green
 			                        <input id="add_7" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label8" for="add_8" class="block-label">Fircone South, Birmingham Retirement Service, 1237 Stratford Road, Hall Green
 			                        <input id="add_8" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label9" for="add_9" class="block-label">Flaming Ltd, Cambrai Court, 1229 Stratford Road, Hall Green
 			                        <input id="add_9" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label10" for="add_10" class="block-label">Hall Green Conservative Club, 1243 Stratford Road, Hall Green
 			                        <input id="add_10" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label11" for="add_11" class="block-label">Illahi &amp; Co, Cambrai Court, 1229 Stratford Road, Hall Green
 			                        <input id="add_11" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label12" for="add_12" class="block-label">Profile Development Ltd, Cambrai Court, 1229 Stratford Road, Hall Green
 			                        <input id="add_12" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label13" for="add_13" class="block-label">Sabre Health, 1229 Stratford Road, Hall Green
 			                        <input id="add_13" value="" name="add" type="radio">
 			                    </label>
-			                    
+
 			                    <label id="title_label14" for="add_14" class="block-label">Vaughans Night Club, 1239 Stratford Road, Hall Green
 			                        <input id="add_14" value="" name="add" type="radio">
 			                    </label>
@@ -289,31 +336,31 @@ display:block;
 			                </div>
 			            </fieldset>
 
-					</div>
-					<div class="repeat">
+					</div> -->
+					<!-- <div class="repeat">
 						<a id="next" class="button" href="amount.html">Continue</a><br>
 						<a href="postcode_unknown.html">The address is not listed</a>
-					</div>
+					</div> -->
 
-					
+
 					<div><br></div>
-		
-	
-	
-	
-	
-	
+
+
+
+
+
+
 					<div>
 						<a style="padding-right: 30px" href="list.html" id="back">Back</a>
 						<a class="save" id="cancel">Save and logout</a>
 					</div>
 				</div>
-				
-				
+
+
 			</form>
 		</div>
 		<div class="col-sm-3 col-sm-push-1" style="">
-			<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">                 
+			<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
 		        <p><a class="save" style="font-weight:bold">Save and logout</a></p>
 		        <br>
 		        <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
@@ -339,7 +386,7 @@ display:block;
 	     		<p class="form-label-bold" style="margin-bottom:10px;">Save and log out</p>
 	     	</div>
 	     </div>
-          
+
         	<p>&nbsp;</p>
           <p>If you log out now, you will lose any new information<br> you have entered on this page.</p>
           <p>Everything you have done before this page will be saved.</p>
@@ -348,19 +395,19 @@ display:block;
           	<div class="col-xs-6"><a onclick='overlay()' class="btn btn-default"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
           	<div class="col-xs-6 text-right"><a href="../start/logout.html" class="btn btn-success">Log out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a></div>
           </div>
-          
+
      </div>
 </div>
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -405,10 +452,10 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -428,18 +475,18 @@ $(document).ready(function() {
 	var normalroute = $("#next").prop("href");
 	var numcreditors = 0;
 	var creditorname;
-	
-	
-	
+
+
+
 	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
 		numcreditors = $.cookie('numcreditors');
 		creditorname = $.cookie('creditorname' + numcreditors);
 	}
-	
+
 	if (creditorname && creditorname.length > 1){
 		$("#name").val(titleCaps(creditorname));
 	}
-	
+
 	$("#next").on("click", function(e){
 		$.cookie('creditorname' + numcreditors, titleCaps($("#name").val()), { expires: 1 });
 	});
@@ -448,9 +495,9 @@ $(document).ready(function() {
 });
 
 $(".save").click(function(){
-	 overlay();			
+	 overlay();
 	});
-	
+
 function overlay() {
 	el = document.getElementById("overlay");
 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
@@ -468,12 +515,12 @@ function getParameterByName(name) {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

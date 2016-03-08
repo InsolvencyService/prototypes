@@ -64,10 +64,10 @@
 <link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../creditors/css/typeahead.css" rel="stylesheet">
@@ -89,7 +89,7 @@
 }
 .row > div:first-child{
 	padding-left:5px;
-	margin-left:0;	
+	margin-left:0;
 }
 i.glyphicon{
 	margin-right:5px;
@@ -137,6 +137,10 @@ display:block;
 	font-weight:bold !important;
 }
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -186,7 +190,7 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -196,13 +200,13 @@ display:block;
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div id="content0" >
 
-<div class="inner-block">	
+<div class="inner-block">
 	<h1 class="form-title heading-large">Employer details</h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
@@ -210,15 +214,27 @@ display:block;
 				<label id="name_label" for="name" class="form-label">Please tell us about the employer.</label>
 				<p class="form-label">This information is for our records only. We won’t contact your employer or pass it onto anyone outside of the Insolvency Service, and it won’t be used to contact your employer.
 <br><br></p>
-				
+
 				<div class="form-group">
 					<label id="name_label0" for="name" class="form-label-bold">Employer name</label>
 					<p class="form-hint">For example, ABC Employers</p>
 					<input id="name" name="name" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
-				
+
 				<p>&nbsp;</p>
-						
+
+        <!-- ///// Fieldset/Group 1 - START ///// -->
+        <fieldset id="fulladdress" role="group">
+          <legend class="hidden">Enter the address below.</legend>
+          <div class="form-group" aria-hidden="true">
+            <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+            <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+          </div>
+        </fieldset>
+        <!-- ///// Fieldset/Group 1 - END ///// -->
+
+        <p>&nbsp;</p>
+
 				<div class="form-group ">
 				<label id="occupations_label" for="occupations" class="form-label-bold">
 					Address</label>
@@ -227,31 +243,31 @@ display:block;
 					<input id="employer_address_line_1" name="employer_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 					<br/>
 				</div>
-		
+
 				<div class="form-group ">
 					<label id="employer_address_line_2_label" for="employer_address_line_2" class="visuallyhidden">Address Line 2</label>
 					<input id="employer_address_line_2" name="employer_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
 					<br/>
 				</div>
-				
+
 				<div class="form-group ">
 					<label id="employer_address_line_3_label" for="employer_address_line_3" class="visuallyhidden">Address Line 3</label>
 					<input id="employer_address_line_3" name="employer_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
 					<br/>
 				</div>
-				
+
 				<div class="form-group ">
 					<label id="employer_address_town_label" for="employer_address_town" class="form-label employer_address_town">Town/city</label>
 					<input id="employer_address_town" name="employer_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
 					<br/>
 				</div>
-				
+
 				<div class="form-group ">
 					<label id="employer_address_county_label" for="employer_address_county" class="form-label employer_address_county">County</label>
 					<input id="employer_address_county" name="employer_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
 					<br/>
 				</div>
-				
+
 				<div class="form-group ">
 					<label id="employer_address_post_code_label" for="employer_address_post_code" class="form-label employer_address_post_code">Postal code</label>
 					<input id="employer_address_post_code" name="employer_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
@@ -262,7 +278,7 @@ display:block;
 					<input id="employer_address_country" name="employer_address_country" type="text" aria-describedby="employer_address_country_error applicant_address_country_help" value="" />
 					<br/>
 				</div>
-				
+
 
 			</div>
 			<p>&nbsp;</p>
@@ -270,7 +286,7 @@ display:block;
 				<fieldset  class="date-of-birth">
 					<span id="date_of_birth_label" class="form-label-bold">Date you started working for this employer</span>
 					<span class="form-hint" id="start_help">For example Aug 2012</span>
-					
+
 					<div class="form-group form-group-day" style="display:none">
 						 <label id="start_label.day" for="start.day" >Day</label>
 					<input id="start_day" name="start.day" type="number" min="1" max="31"  value="" />
@@ -293,13 +309,13 @@ display:block;
 				<option value="11">Nov</option>
 				<option value="12">Dec</option>
 			</select>
-		
+
 		</div>
 							<div class="form-group form-group-year">
 					<label id="start_label.year" for="start.year">Year</label>
 					<input id="start_year" name="start.year" type="number" min="1900" max="9999" value="" />
 					</div>
-					
+
 				</fieldset>
 			</div>
 			<p>&nbsp;</p>
@@ -309,7 +325,7 @@ display:block;
 					<span id="end_date_label" class="form-label-bold">Date you stopped working for this employer</span>
 					<span class="form-hint" id="end_date_help">For example Aug 2014
 					<p>Leave blank if you still work for them</p></span>
-					
+
 					<div class="form-group form-group-day" style="display:none">
 						 <label id="end_day_label" for="end.day" >Day</label>
 						<input id="end_day" name="end.day" type="number" min="1" max="31" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
@@ -332,7 +348,7 @@ display:block;
 				<option value="11">Nov</option>
 				<option value="12">Dec</option>
 			</select>
-		
+
 		</div>
 
 					<div class="form-group form-group-year">
@@ -340,20 +356,20 @@ display:block;
 						<input id="end_year" name="end.year" type="number" min="1900" max="9999" aria-describedby="date_of_birth_error date_of_birth_help" value="" />
 					</div><br>
 				</fieldset>
-					
+
 				</div>
 			</div>
-			
-						
+
+
 		</form>
-		
+
 			<div class="form-navigation form-group">
 			<div>
 					<a class="button" id="next" href="list_employers.html?loop=true">Continue</a>
 			</div>
 					<a href="javascript:history.go(-1)">Back</a>
 				</div>
-		</div>		
+		</div>
 		<div class="col-md-3">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
             <p><a href="#" style="font-weight:bold">Save and logout</a></p>
@@ -378,13 +394,13 @@ display:block;
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -429,10 +445,10 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -447,7 +463,7 @@ $(document).ready(function() {
 <script type="text/javascript" src="js/occupations.js"></script>
 <script type="text/javascript" src="../creditors/js/tw-typeahead.js"></script>
 
-	
+
 <script type="text/javascript">
 var countx;
 $(document).ready(function() {
@@ -455,15 +471,15 @@ $(document).ready(function() {
 	if ($.cookie("occupations_temp") && $.cookie("occupations_temp").length > 0){
 		$("#pnl-occupation_type").hide();
 	}
-	
-	
+
+
 	countx = $.cookie("employer_count");
 	if(countx==""||countx==null){
 		countx=0;
 	}
-	
+
 	if(countx!=0){
-		
+
 		$("#other").text("Other employer's");
 		$("#loop").text("additional employer's");
 	}
@@ -471,7 +487,7 @@ $(document).ready(function() {
 		$("#other").text("Employer");
 		$("#loop").text("current or most recent employer");
 	}
-	
+
 
 });
 
@@ -487,7 +503,7 @@ $("#next").click(function(){
                 endx = $("#end_month option:selected").text() + " " + $("#end_year").val();
             }
         }
-	
+
         var employer_address;
         var address1=$("#employer_address_line_1").val();
         var address2=$("#employer_address_line_2").val();
@@ -495,7 +511,7 @@ $("#next").click(function(){
         var address4=$("#employer_address_town").val();
         var address5=$("#employer_address_county").val();
         var address6=$("#employer_address_post_code").val();
-	
+
         if(address1 != ""){
             employer_address = address1+", ";
         }
@@ -519,20 +535,20 @@ $("#next").click(function(){
     }
 
 	$.cookie("occupations_temp", $("#occupations").val());
-	
+
 	countx++;
-	
+
 	$.cookie("employer_count", countx);
 	$.cookie("employer_role"+countx, $("#occupations").val());
 	$.cookie("employer_name"+countx, $("#name").val());
 	$.cookie("employer_address"+countx, employer_address);
 	$.cookie("employer_startdate"+countx, startx);
 	$.cookie("employer_enddate"+countx, endx);
-	
-	
+
+
 	//$("#next").prop("href","employer_detail.html");
-	
-	
+
+
 });
 
 
@@ -540,12 +556,12 @@ $("#next").click(function(){
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

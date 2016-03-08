@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 
@@ -104,6 +104,10 @@ display:block;
 	border:1px gray solid !important;
 }
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -153,7 +157,7 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -163,41 +167,53 @@ display:block;
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div id="content0" >
 <div class="inner-block text">
-	
-	
-	
+
+
+
 	<h1 class="form-title heading-large">Finance company details</h1>
-	
-	
-	
+
+
+
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
+
 	<div class="clearfix"></div>
-	
+
 	<div class="validation-summary"  id="msg-enteramt" style="display:none">
                 <h2>There was a problem with your answers</h2>
                 <p></p><ol>
-        <li class="error-message"> 
+        <li class="error-message">
               Please enter a valid amount
          </li>
       </ol>
      </div>
-     
+
      <div class="form-group ">
-	
+
 		<label for="companyname" class="form-label-bold applicant_address_town">
 		 Company name</label>
 		<input id="companyname" name="companyname" type="text" value=""  />
 	</div>
-	
-	<div class="clearfix">&nbsp;</div>
+
+  <p>&nbsp;</p>
+
+  <!-- ///// Fieldset/Group 1 - START ///// -->
+  <fieldset id="fulladdress" role="group">
+    <legend class="hidden">Enter the address below.</legend>
+    <div class="form-group" aria-hidden="true">
+      <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+      <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+    </div>
+  </fieldset>
+  <!-- ///// Fieldset/Group 1 - END ///// -->
+
+  <p>&nbsp;</p>
 
 	<div class="form-group ">
 		<p id="disposed_label" for="vehicle_address_line_1" for="vehicle_address_line_1" class="form-label-bold">Address</p>
@@ -231,9 +247,9 @@ display:block;
 			<input id="vehicle_address_post_code" name="vehicle_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 			<br/>
 		</div>
-	</div>	
-	
-	
+	</div>
+
+
 
 
 
@@ -242,41 +258,41 @@ display:block;
 
 
 <p class="clearfix"><br/></p>
-	
+
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-	
+
 	<div>
 		<a id="next" class="button" href="finance1.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
-	
+
 	<div>
 	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
 
-	
+
 	<a href="#" id="cancel">Save and logout</a>
-	
+
 	</div>
 	</div>
 	</form>
 	</div>
 
-        
+
 </div>
 
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -324,10 +340,10 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -346,7 +362,7 @@ $('#next').click(function() {
 function writeCookies(){
 	// Get count
 		count = $.cookie("VehicleCount");
-			
+
 	// write records
 	$.cookie("VehicleFinanceCompany"+count, $("#companyname").val(), {path: '/'});
 	$.cookie("VehicleFinanceAdd1-"+count, $("#vehicle_address_line_1").val(), {path: '/'});
@@ -381,12 +397,12 @@ function pad (str, max) {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 
@@ -122,6 +122,10 @@ legend {
 }
 
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -171,7 +175,7 @@ legend {
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -181,27 +185,39 @@ legend {
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div class="inner-block text">
-			
+
 	<h1 class="form-title heading-large">Property address</h1>
 
-	
+
 	<form class="form" method="post">
-	
-        <div class="clearfix"></div>
-        <div class="validation-summary" style="display:none" id="nomatch">
+
+        <!-- <div class="validation-summary" style="display:none" id="nomatch">
             <h2>We couldn't find your address</h2>
             <p></p><ol>
                 <li class="error-message">
                     <p id="error-reenter">Please check your postcode and try again or enter the full address below. </p>
                 </li>
             </ol>
-        </div>
-				<fieldset class="firsttime" id="lookupaddress">
+        </div> -->
+
+        <!-- ///// Fieldset/Group 1 - START ///// -->
+        <fieldset id="fulladdress" role="group">
+          <legend class="hidden">Enter the address below.</legend>
+          <div class="form-group" aria-hidden="true">
+            <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+            <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+          </div>
+        </fieldset>
+        <!-- ///// Fieldset/Group 1 - END ///// -->
+
+        <p>&nbsp;</p>
+
+				<!-- <fieldset class="firsttime" id="lookupaddress">
                             <legend class="form-label-bold">
                                 <span class="firsttime">Address</span>
                             </legend>
@@ -222,49 +238,49 @@ legend {
 
                                 <br />
                             </div>
-                        </fieldset>
+                        </fieldset> -->
 
-<div class="repeat" id="fulladdress">
-	
+<div id="fulladdress">
+
 		<div class="form-group">
-	
-			<label id="address_line_1_label" for="address_line_1" class="form-label-bold address_line_1">Building and street</label>
+      <label id="address_line_1_label" for="address_line_1" class="form-label-bold">Address</label>
+			<label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street</label>
 	<input id="address_line_1" name="address_line_1" type="text" aria-describedby="address_line_1_error address_line_1_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
+
 	<label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Address Line 2</label>
 	<input id="address_line_2" name="address_line_2" type="text" aria-describedby="address_line_2_error address_line_2_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
+
 	<label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Address Line 3</label>
 	<input id="address_line_3" name="address_line_3" type="text" aria-describedby="address_line_3_error address_line_3_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
-	<label id="address_town_label" for="address_town" class="form-label-bold address_town">Town/city</label>
+
+	<label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
 	<input id="address_town" name="address_town" type="text" aria-describedby="address_town_error address_town_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
-	<label id="address_county_label" for="address_county" class="form-label-bold address_county">County</label>
+
+	<label id="address_county_label" for="address_county" class="form-label address_county">County</label>
 	<input id="address_county" name="address_county" type="text" aria-describedby="address_county_error address_county_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
-        <label for="address_post_code" class="form-label-bold address_post_code">Postal code</label>
+
+        <label for="address_post_code" class="form-label address_post_code">Postal code</label>
         <input id="address_post_code" name="address_post_code" type="text" aria-describedby="address_post_code_error address_post_code_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
-	<label id="address_country_label" for="address_country" class="form-label-bold address_country">Country</label>
+
+	<label id="address_country_label" for="address_country" class="form-label address_country">Country</label>
 	<input id="address_country" name="address_country" type="text" aria-describedby="address_country_error address_country_help" value="" />
 	<br/>
 	</div>
@@ -274,23 +290,23 @@ legend {
 
 
 <p class="clearfix"><br></p>
-	
+
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-	
+
 	<div>
-		<a id="next" class="button repeat" href="description.html">Continue</a>
+		<a id="next" class="button" href="description.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
-	
+
 	<div>
 	<a style="padding-right: 30px" href="list_properties.html" id="back">Back</a>
 
-	
+
 	<a href="#" id="cancel">Save and logout</a>
-	
+
 	</div>
 	</div>
 	</form>
@@ -298,13 +314,13 @@ legend {
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -352,10 +368,10 @@ legend {
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -370,14 +386,14 @@ $(document).ready(function() {
 <script type="text/javascript" src="../../../assets/js/titleCaps.js"></script>
         <script type="text/javascript" src="../../creditors/js/tw-typeahead.js"></script>
 <script type="text/javascript" src="js/postcodelookup.js"></script>
-        
+
 <script type="text/javascript">
 $(document).ready(function() {
 
 	var normalroute = $("#next").prop("href");
 	var numproperties = 0;
 	var propertyfirstline;
-	
+
 	if ($.cookie('propertypostcode') && $.cookie('propertypostcode').length > 0) {
 	    var pcode = $.cookie('propertypostcode');
 	    $("#name").val(titleCaps($.cookie('propertyline1')));
@@ -385,7 +401,7 @@ $(document).ready(function() {
 
 	    $("#btn-lookup").trigger("click");
 	}
-	
+
 
 
 	$("#next").on("click", function (e) {
@@ -410,12 +426,12 @@ function getParameterByName(name) {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

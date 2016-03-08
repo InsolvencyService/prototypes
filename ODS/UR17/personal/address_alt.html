@@ -69,6 +69,8 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <!-- #EndEditable -->
 
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
 
 </head>
 
@@ -160,7 +162,7 @@
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset class="firsttime form-group" id="loop" role="group">
+              <!-- <fieldset class="firsttime form-group" id="loop" role="group">
                 <legend class="form-label-bold">Current address</legend>
                 <span class="form-hint">For example, 12 Place Street  BL4 7AF</span>
                 <div class="row">
@@ -177,11 +179,11 @@
                   </div>
                 </div>
                 <a id="btn-outsideuk" href="#" class="btn-link">I live abroad</a>
-              </fieldset>
+              </fieldset> -->
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
-              <fieldset class="repeat" id="fulladdress" role="group" aria-hidden="true">
+              <!-- <fieldset class="repeat" id="fulladdress" role="group" aria-hidden="true">
                 <legend class="form-label-bold">Address</legend>
                 <div class="form-group">
                   <label id="address_line_1_label" for="address_line_1" class="form-label">Building and street <span class="visuallyhidden">- line 1</span></label>
@@ -211,8 +213,48 @@
                   <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
                   <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
                 </div>
-              </fieldset>
+              </fieldset> -->
               <!-- ///// Fieldset/Group 2 - END ///// -->
+
+              <!-- ///// Fieldset/Group 1 - START ///// -->
+              <fieldset id="fulladdress" role="group">
+                <legend class="hidden">Enter your address below.</legend>
+                <div class="form-group" aria-hidden="true">
+                  <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+              	  <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+                </div>
+                <div class="form-group">
+                  <h2 class="form-label-bold">Address</h2>
+                  <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street <span class="hidden">line 1</span></label>
+                  <input id="address_line_1" name="address_line_1" type="text" value="" aria-labelledby="address_line_1_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Building and street line 2</label>
+                  <input id="address_line_2" name="address_line_2" type="text" value="" aria-labelledby="address_line_2_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Building and street line 3</label>
+                  <input id="address_line_3" name="address_line_3" type="text" value="" aria-labelledby="address_line_3_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+                  <input id="address_town" name="address_town" type="text" value="" aria-labelledby="address_town_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
+                  <input id="address_county" name="address_county" type="text" value="" aria-labelledby="address_county_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
+                  <input id="address_post_code" name="address_post_code" type="text" value="" aria-labelledby="address_post_code_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
+                  <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
+                </div>
+              </fieldset>
+              <a id="btn-outsideuk" href="#" class="btn-link">I live abroad</a>
+              <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="form-group">

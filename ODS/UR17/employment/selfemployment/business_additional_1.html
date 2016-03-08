@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../../creditors/css/typeahead.css" rel="stylesheet">
@@ -89,7 +89,7 @@
 }
 .row > div:first-child{
 	padding-left:5px;
-	margin-left:0;	
+	margin-left:0;
 }
 i.glyphicon{
 	margin-right:5px;
@@ -137,6 +137,10 @@ display:block;
 	font-weight:bold !important;
 }
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -186,7 +190,7 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -196,15 +200,15 @@ display:block;
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div id="content0" >
 
-<div class="inner-block">	
+<div class="inner-block">
 	<h1 class="form-title heading-large">Your computerised records</h1>
-	
+
 	<div class="col-md-9">
 		<form class="form" method="post">
 			<div id="computerdetail">
@@ -213,66 +217,81 @@ display:block;
 					<p class="form-hint">For example SAGE, Microsoft Excel</p>
 					<input id="application" name="application" type="text" aria-describedby="first_name_error first_name_help" value="" /><br/>
 				</div>
-				
+
 				<div class="form-group">
 					<label id="name_label1" for="records" class="form-label-bold">What records are held on the computer</label>
 					<p class="form-hint"></p>
 					<textarea id="records" rows="4" cols="50"></textarea>
 				</div>
-				
+
 				<div class="form-group">
 					<label id="name_label2" for="passwords" class="form-label-bold">What passwords, if any, are required to access the files?</label>
 					<p class="form-hint"></p>
 					<textarea id="passwords" rows="4" cols="50"></textarea>
 				</div>
-				
+
 				<fieldset>
 					<label class="form-label-bold">Where is your computer stored?</label>
-											
+
+          <p>&nbsp;</p>
+          
+          <!-- ///// Fieldset/Group 1 - START ///// -->
+          <fieldset id="fulladdress" role="group">
+            <legend class="hidden">Enter the address below.</legend>
+            <div class="form-group" aria-hidden="true">
+              <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+              <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+            </div>
+          </fieldset>
+          <!-- ///// Fieldset/Group 1 - END ///// -->
+
+          <p>&nbsp;</p>
+
 						<div class="form-group">
+              <label id="name_label1" for="accountant_address_line_1" class="form-label-bold">Address</label>
 							<label id="computer_address_line_1_label" for="computer_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 							<input id="computer_address_line_1" name="computer_address_line_1" type="text" aria-describedby="employer_address_line_1_error applicant_address_line_1_help" value="" />
 							<br/>
 						</div>
-				
+
 						<div class="form-group ">
 							<label id="computer_address_line_2_label" for="computer_address_line_2" class="visuallyhidden">Address Line 2</label>
 							<input id="computer_address_line_2" name="computer_address_line_2" type="text" aria-describedby="employer_address_line_2_error applicant_address_line_2_help" value="" />
 							<br/>
 						</div>
-						
+
 						<div class="form-group ">
 							<label id="computer_address_line_3_label" for="computer_address_line_3" class="visuallyhidden">Address Line 3</label>
 							<input id="computer_address_line_3" name="computer_address_line_3" type="text" aria-describedby="employer_address_line_3_error applicant_address_line_3_help" value="" />
 							<br/>
 						</div>
-						
+
 						<div class="form-group ">
 							<label id="computer_address_town_label" for="computer_address_town" class="form-label employer_address_town">Town/city</label>
 							<input id="computer_address_town" name="computer_address_town" type="text" aria-describedby="employer_address_town_error applicant_address_town_help" value="" />
 							<br/>
 						</div>
-						
+
 						<div class="form-group ">
 							<label id="computer_address_county_label" for="computer_address_county" class="form-label employer_address_county">County</label>
 							<input id="computer_address_county" name="computer_address_county" type="text" aria-describedby="employer_address_county_error applicant_address_county_help" value="" />
 							<br/>
 						</div>
-						
+
 						<div class="form-group ">
 							<label id="computer_address_post_code_label" for="computer_address_post_code" class="form-label employer_address_post_code">Postcode</label>
 							<input id="computer_address_post_code" name="computer_address_post_code" type="text" aria-describedby="employer_address_post_code_error applicant_address_post_code_help" value="" />
 							<br/>
 						</div>
-				
-				</fieldset>
-			</div>	
-			
 
-			
+				</fieldset>
+			</div>
+
+
+
 		</form>
 			<p>&nbsp;</p>
-			
+
 				<div>
 					<a class="button" href="employees.html" id="next">Continue</a>
 				</div>
@@ -280,7 +299,7 @@ display:block;
 				<div class="form-navigation form-group">
 					<a href="javascript:history.go(-1)">Back</a>
 				</div>
-		</div>		
+		</div>
 		<div class="col-md-3">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
             <p><a href="#" style="font-weight:bold">Save and logout</a></p>
@@ -305,13 +324,13 @@ display:block;
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -359,10 +378,10 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -375,7 +394,7 @@ $(document).ready(function() {
 <!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
 <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
 
-	
+
 <script type="text/javascript">
 
 
@@ -383,12 +402,12 @@ $(document).ready(function() {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

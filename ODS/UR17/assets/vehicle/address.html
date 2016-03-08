@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
 
@@ -95,6 +95,10 @@ display:block;
 	font-size:16px;
 }
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -144,7 +148,7 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -154,63 +158,75 @@ display:block;
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div class="inner-block text">
-	
-	
-	
+
+
+
 	<h1 class="form-title heading-large">Finance company details</h1>
-	
-	
-	
+
+
+
 	<form class="form" method="post">
 	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
+
 	<div class="form-group ">
-	
+
 	<label  for="name" class="form-label-bold">Name</label>
 	<p class="form-hint">Of the finance company or dealership</p>
 	<input id="name" name="applicant_address_town0" type="text" value="" />
 	</div>
-	
-	<p class="form-label-bold">
-	</p>
+
+  <p>&nbsp;</p>
+
+  <!-- ///// Fieldset/Group 1 - START ///// -->
+  <fieldset id="fulladdress" role="group">
+    <legend class="hidden">Enter the address below.</legend>
+    <div class="form-group" aria-hidden="true">
+      <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+      <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+    </div>
+  </fieldset>
+  <!-- ///// Fieldset/Group 1 - END ///// -->
+
+  <p>&nbsp;</p>
+
 	<div class="form-group ">
-	
-	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label-bold applicant_address_line_1">Building and street</label>
+    <label for="applicant_address_line_1" class="form-label-bold">Address</label>
+	<label id="applicant_address_line_1_label" for="applicant_address_line_1" class="form-label applicant_address_line_1">Building and street</label>
 	<input id="applicant_address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
+
 	<label id="applicant_address_line_2_label" for="applicant_address_line_2" class="visuallyhidden">Address Line 2</label>
 	<input id="applicant_address_line_2" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
+
 	<label id="applicant_address_line_3_label" for="applicant_address_line_3" class="visuallyhidden">Address Line 3</label>
 	<input id="applicant_address_line_3" name="applicant_address_line_3" type="text" aria-describedby="applicant_address_line_3_error applicant_address_line_3_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
-	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label-bold applicant_address_town">Town/city</label>
+
+	<label id="applicant_address_town_label" for="applicant_address_town" class="form-label applicant_address_town">Town/city</label>
 	<input id="applicant_address_town" name="applicant_address_town" type="text" aria-describedby="applicant_address_town_error applicant_address_town_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label-bold applicant_address_county">County</label>
+
+	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label applicant_address_county">County</label>
 	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
 	<br/>
 	</div>
 	<div class="form-group ">
-	
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label-bold applicant_address_post_code">Postcode</label>
+
+	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
 	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
 	<br/>
 	</div>
@@ -219,23 +235,23 @@ display:block;
 
 
 <p class="clearfix"><br></p>
-	
+
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-	
+
 	<div>
 		<a id="next" class="button" href="amount.html">Continue</a>
 	</div>
 	<div>
 	<br>
 	</div>
-	
+
 	<div>
 	<a style="padding-right: 30px" href="finance.html" id="back">Back</a>
 
-	
+
 	<a href="#" id="cancel">Save and logout</a>
-	
+
 	</div>
 	</div>
 	</form>
@@ -243,13 +259,13 @@ display:block;
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -297,10 +313,10 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -318,16 +334,16 @@ $(document).ready(function() {
 	var normalroute = $("#next").prop("href");
 	var numcreditors = 0;
 	var creditorname;
-	
+
 	if ($.cookie('numcreditors') && $.cookie('numcreditors').length > 0){
 		numcreditors = $.cookie('numcreditors');
 		creditorname = $.cookie('creditorname' + numcreditors);
 	}
-	
+
 	if (creditorname && creditorname.length > 1){
 		$("#name").val(titleCaps(creditorname));
 	}
-	
+
 
 	$("#next").on("click", function(e){
 		$.cookie('creditorname' + numcreditors, titleCaps($("#name").val()), { expires: 1 });
@@ -349,12 +365,12 @@ function getParameterByName(name) {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

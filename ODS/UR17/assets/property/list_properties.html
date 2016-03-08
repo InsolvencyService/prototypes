@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap/css/bootstrap.min.css"
     <link href="../../creditors/css/typeahead.css" rel="stylesheet">
@@ -216,7 +216,7 @@
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -226,7 +226,7 @@
 	</p>
 	</div>
 	</div>
-	
+
 
 
 <!-- #BeginEditable "content" -->
@@ -237,18 +237,18 @@
                 <div class="col-md-9">
                     <form class="form" method="post">
                         <p>
-                            <span class="firsttime">We need to know about any properties you  
+                            <span class="firsttime">We need to know about any properties you
 							own or have a financial interest in.
                         </span></p>
                         <p><span class="firsttime">
-                            Telling us about a property doesn’t necessarily mean 
-							it will be sold - it'll depend on how much equity 
-							you have.</span></p> 
+                            Telling us about a property doesn’t necessarily mean
+							it will be sold - it'll depend on how much equity
+							you have.</span></p>
                             <p><span class="firsttime">Equity is the total value of your property minus what's left on your mortgage and any secured loans or charges.</span></p>
-                           
-                         
-                         
-           
+
+
+
+
                         <div id="pnl-director_table" class="repeat">
                             <table style="width: 100%" class="family">
                                 <thead>
@@ -280,30 +280,31 @@
 
 							 <fieldset>
                             <legend class="form-label-bold">
-                                <span class="firsttime">Enter the first line of the property’s address and postal code</span>
-                                <span class="repeat">Enter another property's address and postal code</span>
+                                <span class="firsttime">Add a property</span>
+                                <span class="repeat">Add another property</span>
                             </legend>
 
-                            <div class="form-hint">For example, 12 Place Street NG6 8RG. <span class="firsttime">You can add more properties later.</span></div>
-                            
+                            <!-- <div class="form-hint">For example, 12 Place Street NG6 8RG. <span class="firsttime">You can add more properties later.</span></div> -->
 
 
-                            <div class="form-group halfwidth">
+
+                            <!-- <div class="form-group halfwidth">
                                 <label for="name">First line</label>
                                 <input id="name" class="typeahead" style="width:100%" />
                             </div>
                             <div class="form-group halfwidth">
                                 <label for="postcode">Postal code</label>
                                 <input id="postcode" class="typeahead" style="width:100%" />
-                            </div>
-                            <div class="form-group partwidth">
+                            </div> -->
+                            <br>
+                            <div class="form-group">
                                 <a id="add" class="button" href="address.html">Add property<span class="repeat"></span></a>&nbsp;
                                 <br />
                             </div>
                         </fieldset>
                         <p class="repeat">
                             <br><a href="../summary.html?page=2" class=" button" id="next">
-                                
+
                                 <span class="repeat">Continue - I have added all my properties</span>
                             </a>
                         </p>
@@ -312,7 +313,7 @@
                     <p>&nbsp;</p>
                     <div class="form-navigation form-group">
                         <a class="firsttime" href="javascript: history.go(-1)">Back</a>
-                        
+
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -339,13 +340,13 @@
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -393,10 +394,10 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -416,7 +417,7 @@ $(document).ready(function() {
         <script type="text/javascript">
 
             $(document).ready(function () {
-            	
+
             	enablehelp();
                 // look for cookies coming back
                 var numproperties = 1;
@@ -472,9 +473,9 @@ $(document).ready(function() {
                 var name = $("#name").val();
                 var pcode = $("#postcode").val();
 
-                if (name == $.cookie("address_line_1")) {
-                    $("#add").prop("href", "amount.html");
-                }
+                // if (name == $.cookie("address_line_1")) {
+                //     $("#add").prop("href", "amount.html");
+                // }
                 if (isvalidname(pcode) == true) {
                     $.cookie("propertyline1", name);
                     $.cookie("propertypostcode", pcode);
@@ -504,41 +505,41 @@ $(document).ready(function() {
             function numberWithCommas(x) {
                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
-            
+
             function enablehelp() {
- 
+
     $(".helplink").on("click", function () {
- 
+
         if ($(this).prop("href")) {
- 
+
             var ref = $(this).prop("href").substring($(this).prop("href").indexOf("#"));
- 
+
             var helpsectionref = $(ref);
- 
+
             if (helpsectionref) {
- 
+
                 if (helpsectionref.is(":visible")) {
- 
+
                     helpsectionref.addClass("hidden");
- 
+
                     $(this).find(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-right");
- 
+
                 }
- 
+
                 else {
- 
+
                     helpsectionref.removeClass("hidden");
- 
+
                     $(this).find(".glyphicon").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
- 
+
                 }
- 
+
             }
- 
+
         }
- 
+
     });
- 
+
 }
 
 
@@ -546,12 +547,12 @@ $(document).ready(function() {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

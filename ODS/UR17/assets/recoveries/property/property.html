@@ -64,16 +64,16 @@
 <link href="../../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
     <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/js/bootstrap-switch/bootstrap.min.css">
     <link href="../../../creditors/css/typeahead.css" rel="stylesheet">
     <style type="text/css">
 
-  
+
     </style>
 <!-- #EndEditable -->
 
@@ -124,7 +124,7 @@
 </div>
 
 <main role="main" id="wrapper">
-  <div id="content" >   
+  <div id="content" >
 
  <div class="inner-block">
 	<div class="phase-banner">
@@ -133,12 +133,12 @@
     This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
-	</div>	
-	
+	</div>
+
 
 
 <!-- #BeginEditable "content" -->
-     
+
 
             <div class="inner-block">
                 <h1 class="form-title heading-xlarge">Properties <span class="repeat">summary</span></h1>
@@ -170,11 +170,11 @@
                         <p class="repeat">We need to know about any other properties you have sold, transferred or given away in the last 5 years.</p>
                         <fieldset>
                             <legend class="form-label-bold">
-                                <span class="firsttime">Enter the first line of the property’s address and postal code</span>
-                                <span class="repeat">Enter another property's address and postal code</span>
+                                <span class="firsttime">Add a property</span>
+                                <span class="repeat">Add another property</span>
                             </legend>
 
-                            <div class="form-hint">For example, 12 Place Street NG6 8RG. <span class="firsttime">You can add more properties later.</span></div>
+                            <!-- <div class="form-hint">For example, 12 Place Street NG6 8RG. <span class="firsttime">You can add more properties later.</span></div>
                             <div class="form-group halfwidth">
                                 <label for="name">First line</label>
                                 <input id="name" class="typeahead" style="width:100%" />
@@ -182,8 +182,9 @@
                             <div class="form-group halfwidth">
                                 <label for="postcode">Postal code</label>
                                 <input id="postcode" class="typeahead" style="width:100%" />
-                            </div>
-                            <div class="form-group partwidth">
+                            </div> -->
+                            <div class="form-group">
+                              <br>
                                 <a id="add" class="button" href="address.html">Add property<span class="repeat"></span></a>&nbsp;
                                 <br />
                             </div>
@@ -198,7 +199,7 @@
                     <p>&nbsp;</p>
                     <div class="form-navigation form-group">
                         <a class="firsttime" href="javascript: history.go(-1)">Back</a>
-                        
+
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -225,13 +226,13 @@
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -279,10 +280,10 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -296,7 +297,7 @@ $(document).ready(function() {
         <script type="text/javascript" src="../../../shared/loop.js"></script>
 
         <script type="text/javascript" src="../../../creditors/js/tw-typeahead.js"></script>
-        
+
         <script type="text/javascript" src="../js/properties.js"></script>
 
         <script type="text/javascript">
@@ -310,7 +311,7 @@ $(document).ready(function() {
                	else{
                     numproperties = parseInt($.cookie("ass-rec-prop-count"));
                 }
-                
+
                 var value = 0.0;
                 var address;
                 for (i = 1; i <= numproperties; i++) {
@@ -324,7 +325,7 @@ $(document).ready(function() {
                         $("tbody").append(row);
                     }
                 }
-            
+
             });
 
             $("#add").click(function (e) {
@@ -369,12 +370,12 @@ $(document).ready(function() {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

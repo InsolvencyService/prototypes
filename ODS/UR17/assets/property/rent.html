@@ -102,6 +102,10 @@ a.well{
   font-size:16px;
 }
 </style>
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
+
 <!-- #EndEditable -->
 
 
@@ -187,13 +191,27 @@ a.well{
           </div>
 
           <p><br></p>
+
           <p><span class="heading-medium">Landlord address</span></p>
           <div class="form-hint">If you rent the property from a managing agent, council or housing association enter the
             address of your local office</div>
 
+            <p>&nbsp;</p>
+
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset id="fulladdress" role="group">
+              <legend class="hidden">Enter the address below.</legend>
+              <div class="form-group" aria-hidden="true">
+                <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+                <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+              </div>
+            </fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
+
+            <p>&nbsp;</p>
 
             <div class="form-group ">
-
+              <label for="employer_address_line_1" class="form-label-bold employer_address_line_1">Address</label>
               <label id="employer_address_line_1_label" for="employer_address_line_1" class="form-label employer_address_line_1">Building and street</label>
 
               <input id="address_line_1" name="applicant_address_line_1" type="text" aria-describedby="applicant_address_line_1_error applicant_address_line_1_help" value="" />
@@ -350,7 +368,7 @@ a.well{
             $("#next").on("click", function(){
 
               $.cookie("purchasedate" + x + "-date", $("input:radio[name ='property']:checked").val());
-              
+
               if ($("#mortgageamount").val() && $("#mortgageamount").val().length > 0) {
                 var mortgageamount = parseFloat(numberWithoutCommas($("#mortgageamount").val()));
                 $.cookie('mortgageamount', mortgageamount, { expires: 1 });

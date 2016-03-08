@@ -69,6 +69,8 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <!-- #EndEditable -->
 
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
 
 </head>
 
@@ -166,7 +168,13 @@
               	<legend class="form-label-bold">Landlord address</legend>
               	<div class="form-hint">If you rent the property from a managing agent, council or housing association enter the
                 	address of your local office</div>
+                <br>
+                <div class="form-group" aria-hidden="true">
+                  <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+              	  <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
+                </div>
                 <div class="form-group">
+                  <h2 class="form-label-bold">Address</h2>
             			<label id="address_line_1_label" for="address_line_1" class="form-label">Building and street <span class="hidden">- line 1</span></label>
                 	<input id="address_line_1" name="address_line_1" type="text" value="" aria-labelledby="address_line_1_label intro" />
               	</div>
@@ -196,12 +204,14 @@
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="form-group">
                 <legend class="hidden">Please continue with your application</legend>
-                <div class="col-md-12 col-xs-12">
-                  <div class="form-navigation form-group">
-                    <input type="button" onclick="location.href='family-members.html';" id="next" class="button" value="Continue">
-                    <br>
-                    <a href="javascript:history.go(-1)" id="back">Back</a>
-                    <a href="#" class="cancel">Save and logout</a>
+                <div class="row">
+                  <div class="col-md-12 col-xs-12">
+                    <div class="form-navigation form-group">
+                      <input type="button" onclick="location.href='family-members.html';" id="next" class="button" value="Continue">
+                      <br>
+                      <a href="javascript:history.go(-1)" id="back">Back</a>
+                      <a href="#" class="cancel">Save and logout</a>
+                    </div>
                   </div>
                 </div>
               </fieldset>

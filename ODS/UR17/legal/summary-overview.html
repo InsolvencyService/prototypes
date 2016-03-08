@@ -127,11 +127,11 @@
         </p>
       </div>
 
-      <h1 class="form-title heading-xlarge">Sold gifted and transfered properties overview</h1>
-      <p class="lede">You've already told us about the following properties:</p>
+      <h1 class="form-title heading-xlarge">Legal proceedings overview</h1>
+      <p class="lede">You've already told us about the following legal proceedings:</p>
 
       <fieldset>
-        <legend class="visuallyhidden">Properties you've already told us you have sold transfered or gifted.</legend>
+        <legend class="visuallyhidden">Legal proceedings you've already told us you have.</legend>
 
         <header>
           <div class="row">
@@ -155,19 +155,16 @@
       <form class="form" method="post">
         <div class="form-group">
           <fieldset>
-            <legend class=" form-label-bold">Do you have any other sold, gifted or transfered properties to add?</legend>
-            <a role="button" class="button" href="address.html">Yes</a>
-            <a role="button" class="button" href="../2-policies.html">No</a>
+            <legend class=" form-label-bold">Do you have any other legal proceedings to add?</legend>
+            <input type="button" onclick="location.href='2a-legal-claims.html';" id="question1-yes" class="button" value="Yes" aria-labelledby="heading-1 heading-2 heading-3 question1-label hint-1 hint-2 button-title-1">
+
+            <a role="button" class="button" href="overview.html">No</a>
           </fieldset>
         </div>
 
         <!-- For User research -->
         <div class="form-navigation form-group">
-
-          <fieldset class="form-group ">
-
-            <a href="property.html" id="back">Back</a>
-          </fieldset>
+          <a href="javascript:history.go(-1)" id="back">Back</a>
         </div>
       </form>
     </div>
@@ -228,26 +225,26 @@
   var count;
   $(document).ready(function() {
 
-    count= $.cookie("ass-rec-prop-count");
+    count= $.cookie("legal-prop-count");
 
     for (i = 1; i <= count; i++) {
-      if($.cookie("ass-rec-prop-add1-"+i)){
-        property_address = $.cookie("ass-rec-prop-add1-"+i);
+      if($.cookie("legal-prop-add1-"+i)){
+        property_address = $.cookie("legal-prop-add1-"+i);
       }
-      if($.cookie("ass-rec-prop-add2-"+i)){
-        property_address += ", "+$.cookie("ass-rec-prop-add2-"+i);
+      if($.cookie("legal-prop-add2-"+i)){
+        property_address += ", "+$.cookie("legal-prop-add2-"+i);
       }
-      if($.cookie("ass-rec-prop-add3-"+i)){
-        property_address += ", "+$.cookie("ass-rec-prop-add3-"+i);
+      if($.cookie("legal-prop-add3-"+i)){
+        property_address += ", "+$.cookie("legal-prop-add3-"+i);
       }
-      if($.cookie("ass-rec-prop-addtown-"+i)){
-        property_address += ", "+$.cookie("ass-rec-prop-addtown-"+i);
+      if($.cookie("legal-prop-addtown-"+i)){
+        property_address += ", "+$.cookie("legal-prop-addtown-"+i);
       }
-      if($.cookie("ass-rec-prop-addcounty-"+i)){
-        property_address += ", "+$.cookie("ass-rec-prop-addcounty-"+i);
+      if($.cookie("legal-prop-addcounty-"+i)){
+        property_address += ", "+$.cookie("legal-prop-addcounty-"+i);
       }
-      if($.cookie("ass-rec-prop-addpcode-"+i)){
-        property_address += ", "+$.cookie("ass-rec-prop-addpcode-"+i);
+      if($.cookie("legal-prop-addpcode-"+i)){
+        property_address += ", "+$.cookie("legal-prop-addpcode-"+i);
       }
 
       var row= '<div class="row group-heading"><div class="col-xs-8"><p>';

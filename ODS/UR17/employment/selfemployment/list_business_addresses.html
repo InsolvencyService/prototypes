@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../../creditors/css/typeahead.css" rel="stylesheet">
@@ -89,7 +89,7 @@
 }
 .row > div:first-child{
 	padding-left:5px;
-	margin-left:0;	
+	margin-left:0;
 }
 i.glyphicon{
 	margin-right:5px;
@@ -186,7 +186,7 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -196,23 +196,23 @@ display:block;
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div id="content0" >
 
-<div class="inner-block">	
+<div class="inner-block">
 	<h1 class="form-title heading-large">Business address<span class="firsttime">es</span><span class="repeat"> summary</span></h1>
 
-	
+
 
 	<div class="col-md-9">
 		<form class="form" method="post">
-			
+
 			 <div  class="repeat">
             	<h2 class="form-label-bold firsttime">Addresses<br></h2>
-            	
+
 			<table style="width: 100%" >
 			<thead>
 				<tr>
@@ -221,7 +221,7 @@ display:block;
 				</tr>
 			</thead>
 			<tbody id="tablebody">
-				
+
 			</tbody>
 			</table>
 
@@ -229,22 +229,23 @@ display:block;
 			</div>
 			<p class="repeat">The table above summarises the self-employed business addresses you have told us about. </p>
 			<div>We need to know about <span class="firsttime">all the</span><span class="repeat">any other</span> addresses your business has traded from since your debts started.</div>
-	            <p>&nbsp;</p>			
+	            <p>&nbsp;</p>
 			<div class="form-group">
-				<label  class="form-label-bold"><span class="firsttime">Enter the first line of the latest address</span><span class="repeat">Enter the first line of another address</span></label>
-				<div class="form-hint">If your business doesn’t have a set trading address, enter your own.<br>For example 12 Place Street. You can add more addresses later.<br><br></div>
-	                <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" >
-	                <a id="add_address" class="button">Add address</a>
-	                <p><br><a href="business_additional.html" class="button family repeat" id="next" >Continue - I have added all my business addresses</a></p>
-	    	</div>
-            
-           
+				<label  class="form-label-bold"><span class="firsttime">Add latest business address</span><span class="repeat">Add another business address</span></label>
+				<!-- <div class="form-hint">If your business doesn’t have a set trading address, enter your own.<br>For example 12 Place Street. You can add more addresses later.<br><br></div> -->
+        <!-- <input class="input-lg form-control-3-4" id="name" style="width:250px; display:inline-block; margin-right:15px" > -->
+        <br>
+        <a id="add_address" class="button">Add address</a>
+        <p><br><a href="business_additional.html" class="button family repeat" id="next" >Continue - I have added all my business addresses</a></p>
+    	</div>
+
+
 		</form>
 			<p>&nbsp;</p>
 			<div class="form-navigation form-group">
 					<a href="javascript:history.go(-1)">Back</a>
 				</div>
-		</div>		
+		</div>
 		<div class="col-md-3">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
             <p><a href="#" style="font-weight:bold">Save and logout</a></p>
@@ -269,13 +270,13 @@ display:block;
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -323,10 +324,10 @@ display:block;
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -338,13 +339,13 @@ $(document).ready(function() {
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../shared/loop.js"></script>
-	
+
 <script type="text/javascript">
 
 $(document).ready(function() {
-	//$("#pnl-employment_table").hide();	
-	
-	
+	//$("#pnl-employment_table").hide();
+
+
 	x = $.cookie("business_id");
 	var count;
 	var row;
@@ -354,12 +355,12 @@ $(document).ready(function() {
 	if(count == null){
 		count=0;
 	}
-	
+
 	for(var i=1; i<=count; i++){
 		row = "<tr><td>" + $.cookie("business"+x+"_address"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
 		$("#tablebody").append(row);
 	}
-	
+
 	if(count>1){
 		$(".plural").append("es")
 	}
@@ -372,14 +373,14 @@ $(document).ready(function() {
 		else{
 			$("#next").attr("href", "business_additional.html");
 		}
-		
+
 	});
-	
+
 	$("#add_address").click(function(){
 		$.cookie("address", $("#name").val(), {path:'/'});
 		$("#add_address").attr("href", "business_address.html");
 	});
-		
+
 
 });
 
@@ -392,12 +393,12 @@ $(document).ready(function() {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>

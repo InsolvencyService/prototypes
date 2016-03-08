@@ -152,25 +152,26 @@
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="form-group" id="loop" aria-labelledby="loop" role="group">
+            <fieldset class="form-group" aria-labelledby="loop" role="group">
 
               <legend class="form-label-bold">
-                <span class="firsttime" aria-hidden="false">Enter the first line of the address and postal code</span>
+                <span class="firsttime" aria-hidden="false">Need to add another address?</span>
                 <span class="repeat" aria-hidden="true">Enter another address and postal code</span>
               </legend>
-              <div class="form-hint">For example, 12 Place Street NG6 8RG.<span class="firsttime" aria-hidden="false"> You can add more addresses later.</span></div>
+              <p class="form-hint">Click the link below to add more addresses</p>
+              <!-- <div class="form-hint">For example, 12 Place Street NG6 8RG.<span class="firsttime" aria-hidden="false"> You can add more addresses later.</span></div> -->
 
               <div class="row">
-                <div class="col-md-4 col-xs-12">
+                <!-- <div class="col-md-4 col-xs-12">
                   <label id="name_label" for="name">First line</label>
                   <input id="name" aria-describedby="loop name-label" type="text" aria-labelledby="name_label intro" />
-                </div>
-                <div class="col-md-4 col-xs-12">
+                </div> -->
+                <!-- <div class="col-md-4 col-xs-12">
                   <label id="postcode_label" for="postcode">Postal code</label>
                   <input id="postcode" aria-describedby="loop postcode-label" type="text" aria-labelledby="postcode_label intro" />
-                </div>
+                </div> -->
                 <div class="col-md-4 col-xs-12">
-                  <input type="button" onclick="location.href='other-address.html';" id="add" class="button" value="Add address">
+                  <input type="button" onclick="location.href='other-address.html';" id="add" class="button" value="Add another address">
                 </div>
               </div>
             </fieldset>
@@ -220,10 +221,10 @@
 
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="form-group">
-              <legend class="hidden">Please continue with your application</legend>
+              <legend class="form-label-bold">Or continue with your application</legend>
               <div class="row">
                 <div class="col-md-12 col-xs-12">
-                  <div class="form-navigation form-group">
+                  <div class="form-group">
                     <input type="button" onclick="location.href='dependents.html';" id="next" class="button" value="Continue - I have added all my previous addresses">
                     <br>
                     <a href="javascript:history.go(-1)" id="back">Back</a>
