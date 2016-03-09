@@ -301,7 +301,7 @@
       row += '<p><span class="form-hint">Court reference:</span></p>';
       row += '</div>';
       row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p>' + court_details_CourtRef + '</p>';
+      row += '<p class="bolder">' + court_details_CourtRef + '</p>';
       row += '</div>';
       row += '</div>';
       // row 3
@@ -310,7 +310,7 @@
       row += '<p><span class="form-hint">Date the process finished:</span></p>';
       row += '</div>';
       row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p>' + court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
+      row += '<p class="bolder">' + court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
       row += '</div>';
       row += '</div>';
       // row 4
@@ -319,7 +319,7 @@
       row += '<p><span class="form-hint">Division of your assets:</span></p>';
       row += '</div>';
       row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p>' + court_details_Asset + '</p>';
+      row += '<p class="bolder">' + court_details_Asset + '</p>';
       row += '</div>';
       row += '</div>';
       // row 5
@@ -366,7 +366,7 @@
         outstanding_details_CourtRef = $.cookie("claims-court-reference_"+i);
       }
       if($.cookie("claims-type_"+i)){
-        outstanding_details_Claim = $.cookie("claims-type-_"+i);
+        outstanding_details_Claim = $.cookie("claims-type_"+i);
       }
       if($.cookie("claims-origin_"+i)){
         outstanding_details_ClaimOrigin = $.cookie("claims-origin_"+i);
@@ -389,16 +389,16 @@
       row += '<p><span class="form-hint">Court reference:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p>' + outstanding_details_CourtRef + '</p>';
+      row += '<p class="bolder">' + outstanding_details_CourtRef + '</p>';
       row += '</div>';
       row += '</div>';
       // row 3
       row += '<div class="row">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Date the process finished:</span>';
+      row += '<p><span class="form-hint">What\'s the claim about:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p>' + outstanding_details_Claim + '</p>';
+      row += '<p class="bolder">' + outstanding_details_Claim + '</p>';
       row += '</div>';
       row += '</div>';
       // row 4
@@ -407,7 +407,7 @@
       row += '<p><span class="form-hint">Did you start this claim:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p>' + outstanding_details_ClaimOrigin + '</p>';
+      row += '<p class="bolder">' + outstanding_details_ClaimOrigin + '</p>';
       row += '</div>';
       row += '</div>';
       // row 5
@@ -416,7 +416,7 @@
       row += '<p><span class="form-hint">Has the claim been settled out of court?:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p>' + outstanding_details_Settled + '</p>';
+      row += '<p class="bolder">' + outstanding_details_Settled + '</p>';
       row += '</div>';
       row += '</div>';
       // row 6
