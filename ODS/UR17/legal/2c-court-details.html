@@ -169,23 +169,23 @@
               <label class="form-label-bold" for="claim-type" id="claim-type-label">What's the claim about?</label>
               <span class="form-hint" id="form-hint-desc2">Select the type of claim</span>
               <label id="claim-type-label1" for="claim-type1" class="block-label">
-                <input id="claim-type1" value="Criminal" name="title" type="radio" aria-labelledby="legal-court-name claim-type-label form-hint-desc2 claim-type1">
+                <input id="claim-type1" value="Criminal" name="type-of-claim" type="radio" aria-labelledby="legal-court-name claim-type-label form-hint-desc2 claim-type1">
                 Criminal
               </label>
               <label id="claim-type-label2" for="claim-type2" class="block-label">
-                <input id="claim-type2" value="Civil dispute" name="title" type="radio" aria-labelledby="claim-type-label claim-type2">
+                <input id="claim-type2" value="Civil dispute" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type2">
                 Civil dispute
               </label>
               <label id="claim-type-label3" for="claim-type3" class="block-label">
-                <input id="claim-type3" value="Employment tribunal" name="title" type="radio" aria-labelledby="claim-type-label claim-type3">
+                <input id="claim-type3" value="Employment tribunal" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type3">
                 Employment tribunal
               </label>
               <label id="claim-type-label4" for="claim-type4" class="block-label">
-                <input id="claim-type4" value="Financial ombudsman" name="title" type="radio" aria-labelledby="claim-type-label claim-type4">
+                <input id="claim-type4" value="Financial ombudsman" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type4">
                 Financial ombudsman
               </label>
               <label id="claim-type-label5" for="claim-type5" class="block-label">
-                <input id="claim-type5" value="Car accident or other personal injury claim" name="title" type="radio" aria-labelledby="claim-type-label claim-type5">
+                <input id="claim-type5" value="Car accident or other personal injury claim" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type5">
                 Car accident or other personal injury claim
               </label>
 
@@ -193,13 +193,13 @@
                 <div class="row">
                   <div class="col-md-7 col-xs-5">
                     <label id="claim-type-label6" for="title_other" class="block-label">
-                      <input id="claim-type6" value="" name="title" type="radio" aria-labelledby="claim-type-label6">
+                      <input id="claim-type6" value="" name="type-of-claim" type="radio" aria-labelledby="claim-type-label6">
                       Other - please specify:
                     </label>
                   </div>
                   <div class="col-md-5 col-xs-7">
                     <label for="claim-type6_answer" class="hidden">Enter here:</label>
-                    <input id="claim-type6_answer" name="title_answer" type="text" value=""/>
+                    <input id="claim-type6_answer" name="type-of-claim_answer" type="text" value=""/>
                   </div>
                 </div>
               </div>
@@ -212,11 +212,11 @@
               <label class="form-label-bold" for="origin" id="origin-label">Did you start this claim?</label>
               <span class="form-hint" id="form-hint-desc3">Leave blank if you don't have one</span>
               <label id="origin-yes-label" for="origin-yes" class="block-label">
-                <input id="origin-yes" value="Yes" name="title" type="radio" aria-labelledby="legal-court-name origin-label form-hint-desc3 origin-yes">
+                <input id="origin-yes" value="Yes" name="claim-origin" type="radio" aria-labelledby="legal-court-name origin-label form-hint-desc3 origin-yes">
                 Yes - I started it
               </label>
               <label id="origin-no-label" for="origin-no" class="block-label">
-                <input id="origin-no" value="No" name="title" type="radio" aria-labelledby="origin-label origin-no">
+                <input id="origin-no" value="No" name="claim-origin" type="radio" aria-labelledby="origin-label origin-no">
                 No - It was brought against me
               </label>
             </fieldset>
@@ -226,11 +226,11 @@
             <fieldset class="inline form-group" role="radiogroup" id="settled-claim">
               <legend id="settled-title" class="form-label-bold">Has the claim been settled out of court (interim settlement)?</legend>
               <label id="settled-yes-label" for="settled-yes" class="block-label">
-                <input id="settled-yes" value="Yes" name="title" type="radio" aria-labelledby="legal-court-name settled-title asset-yes">
+                <input id="settled-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="legal-court-name settled-title asset-yes">
                 Yes
               </label>
               <label id="settled-no-label" for="settled-no" class="block-label">
-                <input id="settled-no" value="No" name="title" type="radio" aria-labelledby="settled-title asset-no">
+                <input id="settled-no" value="No" name="settled-claim" type="radio" aria-labelledby="settled-title asset-no">
                 No
               </label>
             </fieldset>
@@ -318,8 +318,9 @@
   var count;
   $(document).ready(function() {
 
+    count = $.cookie("legal-prop-count");
+
     $("#next").on("click", function (e) {
-      count = $.cookie("legal-prop-count");
       // if(count == "" || count == null){
       //   count = 0;
       // }
@@ -331,7 +332,6 @@
     });
 
     if ($.cookie("name-of-court_"+count)) {
-      count = $.cookie("legal-prop-count");
       $("#legal-court-name").text($.cookie("name-of-court_"+count));
     }
 
