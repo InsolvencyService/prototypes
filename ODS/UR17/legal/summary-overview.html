@@ -255,32 +255,80 @@
 
   <script type="text/javascript">
 
-  var court_details;
-  var outstanding_details;
+  // Court details variables
+  var court_details_Name;
+  var court_details_CourtRef;
+  var court_details_FinishMonth;
+  var court_details_FinishYear;
+  var court_details_Asset;
+
+  // Oustanding legal claims details variables
+  var outstanding_details_Name;
+  var outstanding_details_CourtRef;
+  var outstanding_details_Claim;
+  var outstanding_details_ClaimOrigin;
+  var outstanding_details_Settled;
+
   var count;
   $(document).ready(function() {
 
     count= $.cookie("legal-prop-count");
 
     for (i = 1; i <= count; i++) {
+
+      // Court details variable cookies
       if($.cookie("name-of-court_"+i)){
-        court_details = $.cookie("name-of-court_"+i);
+        court_details_Name = $.cookie("name-of-court_"+i);
       }
       if($.cookie("court-reference_"+i)){
-        court_details = $.cookie("court-reference_"+i);
+        court_details_CourtRef = $.cookie("court-reference_"+i);
       }
       if($.cookie("process-finish-month_"+i)){
-        court_details = $.cookie("process-finish-month_"+i);
+        court_details_FinishMonth = $.cookie("process-finish-month_"+i);
       }
       if($.cookie("process-finish-year_"+i)){
-        court_details = $.cookie("process-finish-year_"+i);
+        court_details_FinishYear = $.cookie("process-finish-year_"+i);
       }
       if($.cookie("asset-division_"+i)){
-        court_details = $.cookie("asset-division_"+i);
+        court_details_Asset = $.cookie("asset-division_"+i);
       }
-      var row= '<div class="row group-heading"><div class="col-xs-9"><p>';
-      row += court_details;
-      row += '</p></div><div class="col-xs-3"><a href="#.html?p='+i+'">Edit</a>&nbsp;&nbsp; <a href="#">Delete</a></div></div>'
+
+      // Oustanding legal claims variables cookies
+      // if($.cookie("name-of-court_"+i)){
+      //   court_details_Name = $.cookie("name-of-court_"+i);
+      // }
+      // if($.cookie("court-reference_"+i)){
+      //   court_details_CourtRef = $.cookie("court-reference_"+i);
+      // }
+      // if($.cookie("process-finish-month_"+i)){
+      //   court_details_FinishMonth = $.cookie("process-finish-month_"+i);
+      // }
+      // if($.cookie("process-finish-year_"+i)){
+      //   court_details_FinishYear = $.cookie("process-finish-year_"+i);
+      // }
+      // if($.cookie("asset-division_"+i)){
+      //   court_details_Asset = $.cookie("asset-division_"+i);
+      // }
+
+
+
+      var row= '<div class="row"><div class="col-md-9 col-sm-9 col-xs-12">'
+      row += '<h3 class="heading-medium">';
+      row += court_details_Name;
+      row += '</h3></div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#.html?p='+i+'">Edit court name</a><a href="#">Delete court case</a></div>';
+      row += '</div>';
+      row += '<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">';
+      row += '<p id="court-ref-appearance"><span class="form-hint">Court reference:</span> ' + court_details_CourtRef + '</p>';
+      row += '<p><span class="form-hint">Date the process finished:</span> ' + court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
+      row += '<p><span class="form-hint">Division of your assets:</span> ' + court_details_Asset + '</p>';
+      row += '</div></div>'
+
+      if($.cookie("court-reference_"+i) === "") {
+        $("#court-ref-appearance").hide();
+      } else {
+        $("#court-ref-appearance").show();
+      }
 
       $("#court-cases").append(row);
 
