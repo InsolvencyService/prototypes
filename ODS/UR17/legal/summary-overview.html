@@ -312,13 +312,14 @@
 
 
 
-      var row= '<div class="row">'
+      var row= '<div class="new-item">'
+      row += '<div class="row">'
       row += '<div class="col-md-9 col-sm-9 col-xs-12">'
       row += '<h3 class="heading-medium">';
       row += court_details_Name;
       row += '</h3>';
       row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit court name</a>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit court name</a></div>';
       row += '</div>';
       row += '<div class="row">'
       row += '<div class="col-md-3 col-sm-3 col-xs-12">'
@@ -331,6 +332,7 @@
       row += '<p><span class="form-hint">Division of your assets:</span> ' + court_details_Asset + '</p>';
       row += '</div>';
       row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
+      row += '</div>';
       row += '</div>';
 
       if($.cookie("court-reference_"+i) === "") {
