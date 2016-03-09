@@ -330,11 +330,12 @@
         $.cookie("settled-claim_"+count, $("#settled-claim :checked").attr("value"), { path:'/' });
     });
 
-  });
+    if ($.cookie("name-of-court_"+count)) {
+      count = $.cookie("legal-prop-count");
+      $("#legal-court-name").text($.cookie("name-of-court_"+count));
+    }
 
-  if ($.cookie("name-of-court_"+count)) {
-    $("#legal-court-name").text($.cookie("name-of-court_"+count));
-  }
+  });
 
   // $("#solicitor-no").on("click", function (e) {
   //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
