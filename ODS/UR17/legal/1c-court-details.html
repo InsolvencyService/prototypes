@@ -325,11 +325,11 @@
         $.cookie("asset-division_"+count, $("#asset-division :checked").attr("value"), {path:'/' });
     });
 
-  });
+    if ($.cookie("name-of-court_"+count)) {
+      $("#court-name").text($.cookie("name-of-court_"+count));
+    }
 
-  if ($.cookie("name-of-court_"+count)) {
-    $("#court-name").text($.cookie("name-of-court_"+count));
-  }
+  });
 
   // $("#solicitor-no").on("click", function (e) {
   //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
