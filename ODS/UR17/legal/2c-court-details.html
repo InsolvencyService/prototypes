@@ -223,7 +223,7 @@
             <!-- ///// Fieldset/Group 3 - END ///// -->
 
             <!-- ///// Fieldset/Group 4 - START ///// -->
-            <fieldset class="inline form-group" role="radiogroup">
+            <fieldset class="inline form-group" role="radiogroup" id="settled-claim">
               <legend id="settled-title" class="form-label-bold">Has the claim been settled out of court (interim settlement)?</legend>
               <label id="settled-yes-label" for="settled-yes" class="block-label">
                 <input id="settled-yes" value="Yes" name="title" type="radio" aria-labelledby="legal-court-name settled-title asset-yes">
@@ -325,11 +325,9 @@
       // }
       // count++;
         $.cookie("court-reference_"+count, $("#court-ref").val(), {path:'/'});
-        $.cookie("process-finish-month_"+count, $("#finish-month").val(), {path:'/'});
-        $.cookie("process-finish-year_"+count, $("#finish-year").val(), {path:'/'});
-        $.cookie("asset-division_"+count, $("#asset-division :checked").attr("value"), {path:'/' });
         $.cookie("type-of-claim_"+count, $("#type-of-claim :checked").attr("value"), { path:'/' });
         $.cookie("claim-origin_"+count, $("#claim-origin :checked").attr("value"), { path:'/' });
+        $.cookie("settled-claim_"+count, $("#settled-claim :checked").attr("value"), { path:'/' });
     });
 
   });
