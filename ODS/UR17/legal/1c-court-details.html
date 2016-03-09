@@ -313,8 +313,9 @@
   var count;
   $(document).ready(function() {
 
+    count = $.cookie("legal-prop-count");
+
     $("#next").on("click", function (e) {
-      count = $.cookie("legal-prop-count");
       // if(count == "" || count == null){
       //   count = 0;
       // }
@@ -326,7 +327,6 @@
     });
 
     if ($.cookie("name-of-court_"+count)) {
-      count = $.cookie("legal-prop-count");
       $("#court-name").text($.cookie("name-of-court_"+count));
     }
 
