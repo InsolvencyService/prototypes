@@ -197,7 +197,7 @@
             </fieldset>
             <!-- ///// Fieldset/Group 2 - END ///// -->
 
-            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <!-- ///// Fieldset/Group 3 - START ///// -->
             <fieldset class="inline form-group" role="radiogroup" id="asset-division">
               <legend id="asset-title" class="form-label-bold">Has there been a division of your assets?</legend>
               <span class="form-hint" id="asset-title-hint">Leave blank if the process hasn't finished</span>
@@ -210,10 +210,26 @@
                 No
               </label>
             </fieldset>
-            <!-- ///// Fieldset/Group 1 - END ///// -->
+            <!-- ///// Fieldset/Group 3 - END ///// -->
 
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="form-group">
+              <legend class="hidden">Please continue with your application</legend>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <input type="button" onclick="location.href='2a-legal-claims.html';" id="next" class="button" value="Continue">
+                    <br>
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <!-- ///// CTA Section - END ///// -->
+
+            <!-- ///// CTA Section - START ///// -->
+            <!-- <fieldset class="form-group">
               <label class="form-label-bold" for="solicitor-yes solicitor-no" id="solicitor-label">Did you use a solicitor for the court case?</label>
               <br>
               <label class="hidden" id="button-title-1">Yes</label>
@@ -228,7 +244,7 @@
                   </div>
                 </div>
               </div>
-            </fieldset>
+            </fieldset> -->
             <!-- ///// CTA Section - END ///// -->
 
           </form>
@@ -297,7 +313,7 @@
   var count;
   $(document).ready(function() {
 
-    $("#solicitor-yes, #solicitor-no").on("click", function (e) {
+    $("#next").on("click", function (e) {
       count = $.cookie("legal-prop-count");
       // if(count == "" || count == null){
       //   count = 0;
@@ -315,13 +331,13 @@
     $("#court-name").text($.cookie("name-of-court_"));
   }
 
-  $("#solicitor-no").on("click", function (e) {
-    $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
-  });
-
-  $("#solicitor-yes").on("click", function (e) {
-    $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
-  });
+  // $("#solicitor-no").on("click", function (e) {
+  //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
+  // });
+  //
+  // $("#solicitor-yes").on("click", function (e) {
+  //   $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
+  // });
 
   </script>
   <!-- #EndEditable "scripts" -->

@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Legal proceedings - review your legal proceedings</title>
+  <title>Ongoing legal claims? - name of court</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -52,7 +52,6 @@
 
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <meta content="assets/images/opengraph-image.png" property="og:image">
-<link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 
 <!--[if IE 6]>
 <link href="../../assets/stylesheets/main-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -60,13 +59,14 @@
 <link href="../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 8]>
 <link href="../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<link type="text/css" rel="stylesheet" href="../../assets/stylesheets/elements-page.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/js/bootstrap-switch/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/complete.css">
-<!--[if gt IE 8]><!-->
-<link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css"><!--<![endif]-->
 
 <!-- #BeginEditable "styles" -->
+<link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
 <!-- #EndEditable -->
 
@@ -74,22 +74,28 @@
 </head>
 
 <body>
+
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-  <div id="global-cookie-message" style="display: none; height:0">
+  <!-- ///// Cookie Message - START ///// -->
+  <div id="global-cookie-message" style="display: none;">
     <div class="outer-block" style="display: none;">
       <div class="inner-block">
         <p>The Redundancy Payments Service uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
       </div>
     </div>
   </div>
+  <!-- ///// Cookie Message - END ///// -->
 
+  <!-- ///// Skip Message - START ///// -->
   <div id="skiplink-container">
     <div>
       <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
+  <!-- ///// Skip Message - END ///// -->
 
+  <!-- ////////////////////////////////////////////// Header - START ////////////////////////////////////////////// -->
   <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
@@ -102,110 +108,91 @@
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
+            <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
+            <ul id="proposition-links">
+              <li><a href="../overview.html" class="">Application Overview</a></li>
+              <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+              <li><a href="#" class="cancel">Save and logout</a></li>
+            </ul>
           </nav>
         </div>
       </div>
     </div>
   </header>
-  <!--end header-->
+  <!-- ////////////////////////////////////////////// Header - END ////////////////////////////////////////////// -->
 
+  <!-- ///// Blue Bar - START ///// -->
   <div id="global-header-bar">
     <div class="inner-block">
       <div class="header-bar"></div>
     </div>
   </div>
+  <!-- ///// Blue Bar - END ///// -->
 
   <!-- ////////////////////////////////////////////// Main - START ////////////////////////////////////////////// -->
   <main id="content">
 
     <div class="inner-block">
+
+      <!-- ///// Phase Banner - START ///// -->
       <div class="phase-banner">
         <p>
           <strong class="phase-tag">BETA</strong>
           This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
         </p>
       </div>
+      <!-- ///// Phase Banner - END ///// -->
 
-      <h1 class="form-title heading-xlarge" id="maincontent">Legal proceedings overview</h1>
+      <div class="row">
 
-      <p class="lede">You've already told us about the following legal proceedings:</p>
+        <!-- ///// Left content - START ///// -->
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-      <!-- ///// Form - START ///// -->
-      <form class="form" method="post">
+          <h1 class="form-title heading-xlarge" role="header">Ongoing legal claims</h1>
 
-        <!-- ///// Fieldset/Group 1 - START ///// -->
-        <fieldset class="section-overview">
-          <legend class="visuallyhidden">Your answers are below</legend>
+          <!-- ///// Form - START ///// -->
+          <form class="form" method="post">
+            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-          <header>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <h2 class="heading-large">Legal separation, divorce or dissolution cases</h2>
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset class="inline form-group">
+              <label class="form-label-bold" for="name-of-court" id="name-of-court-label">Enter the name of the court, tribunal, ombudsman or adjudicator where the claim  was made</label>
+              <span class="form-hint" id="form-hint-desc">For example, County Court Money Claims Centre or Wales Employment Tribunal. You can add more claims later.</span>
+              <input type="text" class="input-with-button" id="name-of-court" aria-labelledby="name-of-court-label form-hint-desc">
+              <input type="button" onclick="location.href='2c-court-details.html';" id="continue" class="button" value="Add court">
+            </fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
+
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </header>
+            </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
-          <section id="court-cases" role="main">
+          </form>
+          <!-- ///// Form - END ///// -->
 
-          </section>
-        </fieldset>
-        <!-- ///// Fieldset/Group 1 - END ///// -->
+        </div>
+        <!-- ///// Left content - END ///// -->
 
-        <!-- ///////////////// Add Item - Start ///////////////// -->
-        <fieldset class="add-item">
-          <legend class="hidden">Add another seperation</legend>
-          <input name="Add another fine" id="btn-add-seperation" type="submit" class="link-lookalike" role="button" value="Add another seperation">
-        </fieldset>
-        <!-- ///////////////// Add Item - End ///////////////// -->
+        <!-- ///// Right content - START ///// -->
+        <aside class="col-md-4 col-xs-12">
+        </aside>
+        <!-- ///// Right content - END ///// -->
 
-        <!-- ///// Fieldset/Group 2 - START ///// -->
-        <fieldset class="section-overview">
-          <legend class="visuallyhidden">Your answers are below</legend>
-
-          <header>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <h2 class="heading-large">Ongoing legal claims</h2>
-              </div>
-            </div>
-          </header>
-
-          <section id="ongoing-cases" role="main">
-
-          </section>
-        </fieldset>
-        <!-- ///// Fieldset/Group 2 - END ///// -->
-
-        <!-- ///////////////// Add Item - Start ///////////////// -->
-        <fieldset class="add-item">
-          <legend class="hidden">Add another outstanding legal claim</legend>
-          <input name="Add another fine" id="btn-add-outstanding" type="submit" class="link-lookalike" role="button" value="Add another outstanding legal claim">
-        </fieldset>
-        <!-- ///////////////// Add Item - End ///////////////// -->
-
-        <!-- ///// CTA Section - START ///// -->
-        <fieldset class="form-navigation">
-          <legend class="hidden" id="continue-label">Please continue with your application</legend>
-          <div class="form-group">
-            <input type="button" onclick="location.href='overview.html';" id="continue" class="button" value="Contine" aria-labelledby="continue-label">
-          </div>
-          <br>
-          <div class="form-group">
-            <a href="javascript:history.go(-1)" id="back">Back</a>
-            <a href="#" class="cancel">Save and logout</a>
-          </div>
-        </fieldset>
-        <!-- ///// CTA Section - END ///// -->
-
-      </form>
-      <!-- ///// Form - END ///// -->
+      </div>
 
     </div>
 
   </main>
   <!-- ////////////////////////////////////////////// Main - END ////////////////////////////////////////////// -->
-
 
   <!-- ////////////////////////////////////////////// Footer - START ////////////////////////////////////////////// -->
   <footer id="footer" class="group js-footer">
@@ -236,8 +223,6 @@
   <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-  <script type="text/javascript" src="../../../creditors/js/bootstrap.min.js"></script>
-
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -252,52 +237,25 @@
   </script>
 
   <!-- #BeginEditable "scripts" -->
-
   <script type="text/javascript">
 
-  var property_address;
   var count;
   $(document).ready(function() {
 
-    count= $.cookie("legal-prop-count");
-
-    for (i = 1; i <= count; i++) {
-      if($.cookie("legal-prop-add1-"+i)){
-        property_address = $.cookie("legal-prop-add1-"+i);
+    $("#continue").on("click", function (e) {
+      count = $.cookie("legal-prop-count");
+      if(count == "" || count == null){
+        count = 0;
       }
-      if($.cookie("legal-prop-add2-"+i)){
-        property_address += ", "+$.cookie("legal-prop-add2-"+i);
-      }
-      if($.cookie("legal-prop-add3-"+i)){
-        property_address += ", "+$.cookie("legal-prop-add3-"+i);
-      }
-      if($.cookie("legal-prop-addtown-"+i)){
-        property_address += ", "+$.cookie("legal-prop-addtown-"+i);
-      }
-      if($.cookie("legal-prop-addcounty-"+i)){
-        property_address += ", "+$.cookie("legal-prop-addcounty-"+i);
-      }
-      if($.cookie("legal-prop-addpcode-"+i)){
-        property_address += ", "+$.cookie("legal-prop-addpcode-"+i);
-      }
-
-      var row= '<div class="row group-heading"><div class="col-xs-8"><p>';
-      row += property_address;
-      row += '</p></div><div class="col-xs-3"><a href="summary.html?p='+i+'">View your answers</a>&nbsp;&nbsp; <a href="#">Delete</a></div></div>'
-
-      $("#court-cases").append(row);
-
-      var row= '<div class="row group-heading"><div class="col-xs-8"><p>';
-      row += property_address;
-      row += '</p></div><div class="col-xs-3"><a href="summary.html?p='+i+'">View your answers</a>&nbsp;&nbsp; <a href="#">Delete</a></div></div>'
-
-      $("#ongoing-cases").append(row);
-
-    }
+      count++;
+        $.cookie("name-of-court_"+count, $("#name-of-court").val(), {path:'/'});
+        $.cookie("legal-prop-count", count, { path: '/' } );
+    });
 
   });
 
   </script>
+  <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
 
 </body><!-- #EndTemplate -->

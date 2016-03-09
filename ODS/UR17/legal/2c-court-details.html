@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Legal proceedings - ongoing legal claims?</title>
+  <title>Ongoing legal claims? - court details</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -109,12 +109,12 @@
         <div class="content">
           <nav id="proposition-menu">
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
-            <ul id="proposition-links">
-              <li><a href="../overview.html" class="">Application Overview</a></li>
-              <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
-              <li><a href="#" class="cancel">Save and logout</a></li>
-            </ul>
           </nav>
+          <ul id="proposition-links">
+            <li><a href="../overview.html" class="">Application Overview</a></li>
+            <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+            <li><a href="#" class="cancel">Save and logout</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -148,31 +148,102 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-xlarge" role="header" id="heading-1">Legal proceedings</h1>
+          <h1 class="form-title heading-xlarge" role="header" id="legal-court-name">Claim details</h1>
 
-          <p class="lede" id="heading-2">We need to know about legal proceedings you have recently been involved in.</p>
+          <p></p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline form-group" aria-labelledby="">
-              <label class="form-label-bold" for="question2-yes question2-no" id="question2-label">Are you involved in any ongoing legal claims?</label>
-              <span class="form-hint" id="hint-1">Include any claims currently with a court, tribunal obudsman or adjudicator</span>
-              <br>
-              <label class="hidden" id="button-title-1">Yes</label>
-              <label class="hidden" id="button-title-2">No</label>
-              <input type="button" onclick="location.href='2b-name-of-court.html';" id="question2-yes" class="button" value="Yes" aria-labelledby="heading-1 heading-2 question2-label hint-1 button-title-1">
-              <input type="button" onclick="location.href='summary-overview.html';" id="question2-no" class="button" value="No" aria-labelledby="question2-label button-title-2">
+            <fieldset class="inline form-group">
+              <label class="form-label-bold" for="court-ref" id="court-ref-label">Court Reference</label>
+              <span class="form-hint" id="form-hint-desc1">Leave blank if you don't have one</span>
+              <input type="text" id="court-ref" aria-labelledby="court-ref-label form-hint-desc1">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
+            <!-- ///// Fieldset/Group 2 - START ///// -->
+            <fieldset class="inline form-group" role="radiogroup" id="type-of-claim">
+              <label class="form-label-bold" for="claim-type" id="claim-type-label">What's the claim about?</label>
+              <span class="form-hint" id="form-hint-desc2">Select the type of claim</span>
+              <label id="claim-type-label1" for="claim-type1" class="block-label">
+                <input id="claim-type1" value="Criminal" name="title" type="radio" aria-labelledby="legal-court-name claim-type-label form-hint-desc2 claim-type1">
+                Criminal
+              </label>
+              <label id="claim-type-label2" for="claim-type2" class="block-label">
+                <input id="claim-type2" value="Civil dispute" name="title" type="radio" aria-labelledby="claim-type-label claim-type2">
+                Civil dispute
+              </label>
+              <label id="claim-type-label3" for="claim-type3" class="block-label">
+                <input id="claim-type3" value="Employment tribunal" name="title" type="radio" aria-labelledby="claim-type-label claim-type3">
+                Employment tribunal
+              </label>
+              <label id="claim-type-label4" for="claim-type4" class="block-label">
+                <input id="claim-type4" value="Financial ombudsman" name="title" type="radio" aria-labelledby="claim-type-label claim-type4">
+                Financial ombudsman
+              </label>
+              <label id="claim-type-label5" for="claim-type5" class="block-label">
+                <input id="claim-type5" value="Car accident or other personal injury claim" name="title" type="radio" aria-labelledby="claim-type-label claim-type5">
+                Car accident or other personal injury claim
+              </label>
+
+              <div class="wrap-radio-button">
+                <div class="row">
+                  <div class="col-md-7 col-xs-5">
+                    <label id="claim-type-label6" for="title_other" class="block-label">
+                      <input id="claim-type6" value="" name="title" type="radio" aria-labelledby="claim-type-label6">
+                      Other - please specify:
+                    </label>
+                  </div>
+                  <div class="col-md-5 col-xs-7">
+                    <label for="claim-type6_answer" class="hidden">Enter here:</label>
+                    <input id="claim-type6_answer" name="title_answer" type="text" value=""/>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+            <!-- ///// Fieldset/Group 2 - END ///// -->
+
+            <!-- ///// Fieldset/Group 3 - START ///// -->
+            <fieldset class="inline form-group" role="radiogroup" id="claim-origin">
+              <label class="form-label-bold" for="origin" id="origin-label">Did you start this claim?</label>
+              <span class="form-hint" id="form-hint-desc3">Leave blank if you don't have one</span>
+              <label id="origin-yes-label" for="origin-yes" class="block-label">
+                <input id="origin-yes" value="Yes" name="title" type="radio" aria-labelledby="legal-court-name origin-label form-hint-desc3 origin-yes">
+                Yes - I started it
+              </label>
+              <label id="origin-no-label" for="origin-no" class="block-label">
+                <input id="origin-no" value="No" name="title" type="radio" aria-labelledby="origin-label origin-no">
+                No - It was brought against me
+              </label>
+            </fieldset>
+            <!-- ///// Fieldset/Group 3 - END ///// -->
+
+            <!-- ///// Fieldset/Group 4 - START ///// -->
+            <fieldset class="inline form-group" role="radiogroup">
+              <legend id="settled-title" class="form-label-bold">Has the claim been settled out of court (interim settlement)?</legend>
+              <label id="settled-yes-label" for="settled-yes" class="block-label">
+                <input id="settled-yes" value="Yes" name="title" type="radio" aria-labelledby="legal-court-name settled-title asset-yes">
+                Yes
+              </label>
+              <label id="settled-no-label" for="settled-no" class="block-label">
+                <input id="settled-no" value="No" name="title" type="radio" aria-labelledby="settled-title asset-no">
+                No
+              </label>
+            </fieldset>
+            <!-- ///// Fieldset/Group 4 - END ///// -->
+
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="form-group">
+              <legend class="hidden">Please continue with your application</legend>
               <div class="row">
                 <div class="col-md-12 col-xs-12">
                   <div class="form-navigation form-group">
+                    <input type="button" onclick="location.href='summary-overview.html';" id="next" class="button" value="Continue">
+                    <br>
                     <a href="javascript:history.go(-1)" id="back">Back</a>
                     <a href="#" class="cancel">Save and logout</a>
                   </div>
@@ -244,13 +315,36 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#question2-no").on("click", function (e) {
-      $.cookie("question2", $("#question2-no").val(), {path:'/'});
+  var count;
+  $(document).ready(function() {
+
+    $("#next").on("click", function (e) {
+      count = $.cookie("legal-prop-count");
+      // if(count == "" || count == null){
+      //   count = 0;
+      // }
+      // count++;
+        $.cookie("court-reference_"+count, $("#court-ref").val(), {path:'/'});
+        $.cookie("process-finish-month_"+count, $("#finish-month").val(), {path:'/'});
+        $.cookie("process-finish-year_"+count, $("#finish-year").val(), {path:'/'});
+        $.cookie("asset-division_"+count, $("#asset-division :checked").attr("value"), {path:'/' });
+        $.cookie("type-of-claim_"+count, $("#type-of-claim :checked").attr("value"), { path:'/' });
+        $.cookie("claim-origin_"+count, $("#claim-origin :checked").attr("value"), { path:'/' });
     });
 
-    $("#question2-yes").on("click", function (e) {
-      $.cookie("question2", $("#question2-yes").val(), {path:'/'});
-    });
+  });
+
+  if ($.cookie("name-of-court_"+count)) {
+    $("#legal-court-name").text($.cookie("name-of-court_"+count));
+  }
+
+  // $("#solicitor-no").on("click", function (e) {
+  //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
+  // });
+  //
+  // $("#solicitor-yes").on("click", function (e) {
+  //   $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
+  // });
 
   </script>
   <!-- #EndEditable "scripts" -->
