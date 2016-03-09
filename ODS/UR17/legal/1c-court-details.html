@@ -320,14 +320,14 @@
       //   count = 0;
       // }
       // count++;
-        $.cookie("court-reference_"+firstCount, $("#court-ref").val(), {path:'/'});
-        $.cookie("process-finish-month_"+firstCount, $("#finish-month").val(), {path:'/'});
-        $.cookie("process-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
-        $.cookie("asset-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
+        $.cookie("seperation-court-reference_"+firstCount, $("#court-ref").val(), {path:'/'});
+        $.cookie("seperation-finish-month_"+firstCount, $("#finish-month").val(), {path:'/'});
+        $.cookie("seperation-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
+        $.cookie("seperation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
     });
 
-    if ($.cookie("name-of-court_"+firstCount)) {
-      $("#court-name").text($.cookie("name-of-court_"+firstCount));
+    if ($.cookie("seperation-court_"+firstCount)) {
+      $("#court-name").text($.cookie("seperation-court_"+firstCount));
     }
 
   });

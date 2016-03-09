@@ -271,20 +271,20 @@
     for (i = 1; i <= firstCount; i++) {
 
       // Court details variable cookies
-      if($.cookie("name-of-court_"+i)){
-        court_details_Name = $.cookie("name-of-court_"+i);
+      if($.cookie("seperation-court_"+i)){
+        court_details_Name = $.cookie("seperation-court_"+i);
       }
-      if($.cookie("court-reference_"+i)){
-        court_details_CourtRef = $.cookie("court-reference_"+i);
+      if($.cookie("seperation-court-reference_"+i)){
+        court_details_CourtRef = $.cookie("seperation-court-reference_"+i);
       }
-      if($.cookie("process-finish-month_"+i)){
-        court_details_FinishMonth = $.cookie("process-finish-month_"+i);
+      if($.cookie("seperation-finish-month_"+i)){
+        court_details_FinishMonth = $.cookie("seperation-finish-month_"+i);
       }
-      if($.cookie("process-finish-year_"+i)){
-        court_details_FinishYear = $.cookie("process-finish-year_"+i);
+      if($.cookie("seperation-finish-year_"+i)){
+        court_details_FinishYear = $.cookie("seperation-finish-year_"+i);
       }
-      if($.cookie("asset-division_"+i)){
-        court_details_Asset = $.cookie("asset-division_"+i);
+      if($.cookie("seperation-division_"+i)){
+        court_details_Asset = $.cookie("seperation-division_"+i);
       }
 
       var row= '<div class="new-item">'
@@ -297,20 +297,16 @@
       row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit court name</a></div>';
       row += '</div>';
       row += '<div class="row">'
-      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
+      row += '<div class="col-md-9 col-sm-9 col-xs-12">'
       row += '<p id="court-ref-appearance"><span class="form-hint">Court reference:</span> ' + court_details_CourtRef + '</p>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
       row += '<p><span class="form-hint">Date the process finished:</span> ' + court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
       row += '<p><span class="form-hint">Division of your assets:</span> ' + court_details_Asset + '</p>';
       row += '</div>';
       row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
       row += '</div>';
       row += '</div>';
 
-      if($.cookie("court-reference_"+i) === "") {
+      if($.cookie("seperation-court-reference_"+i) === "") {
         $("#court-ref-appearance").hide();
       } else {
         $("#court-ref-appearance").show();
@@ -338,20 +334,20 @@
     for (i = 1; i <= secondCount; i++) {
 
       // Oustanding legal claims variables cookies
-      if($.cookie("name-of-court_"+i)){
-        outstanding_details_Name = $.cookie("name-of-court_"+i);
+      if($.cookie("claims-court_"+i)){
+        outstanding_details_Name = $.cookie("claims-court_"+i);
       }
-      if($.cookie("court-reference_"+i)){
-        outstanding_details_CourtRef = $.cookie("court-reference_"+i);
+      if($.cookie("claims-court-reference_"+i)){
+        outstanding_details_CourtRef = $.cookie("claims-court-reference_"+i);
       }
-      if($.cookie("type-of-claim_"+i)){
-        outstanding_details_Claim = $.cookie("type-of-claim_"+i);
+      if($.cookie("claims-type_"+i)){
+        outstanding_details_Claim = $.cookie("claims-type-_"+i);
       }
-      if($.cookie("claim-origin_"+i)){
-        outstanding_details_ClaimOrigin = $.cookie("claim-origin_"+i);
+      if($.cookie("claims-origin_"+i)){
+        outstanding_details_ClaimOrigin = $.cookie("claims-origin_"+i);
       }
-      if($.cookie("settled-claim_"+i)){
-        outstanding_details_Settled = $.cookie("settled-claim_"+i);
+      if($.cookie("claims-settled_"+i)){
+        outstanding_details_Settled = $.cookie("claims-settled_"+i);
       }
 
       var row= '<div class="new-item">'
@@ -364,23 +360,17 @@
       row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit court name</a></div>';
       row += '</div>';
       row += '<div class="row">'
-      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
+      row += '<div class="col-md-9 col-sm-9 col-xs-12">'
       row += '<p id="court-ref-appearance"><span class="form-hint">Court reference:</span> ' + outstanding_details_CourtRef + '</p>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
       row += '<p><span class="form-hint">Date the process finished:</span> ' + outstanding_details_Claim + '</p>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
       row += '<p><span class="form-hint">Date the process finished:</span> ' + outstanding_details_ClaimOrigin + '</p>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
       row += '<p><span class="form-hint">Division of your assets:</span> ' + outstanding_details_Settled + '</p>';
       row += '</div>';
       row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
       row += '</div>';
       row += '</div>';
 
-      if($.cookie("court-reference_"+i) === "") {
+      if($.cookie("claims-court-reference_"+i) === "") {
         $("#court-ref-appearance").hide();
       } else {
         $("#court-ref-appearance").show();

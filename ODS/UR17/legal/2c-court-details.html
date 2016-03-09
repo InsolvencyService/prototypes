@@ -325,14 +325,14 @@
       //   count = 0;
       // }
       // count++;
-        $.cookie("court-reference_"+secondCount, $("#court-ref").val(), {path:'/'});
-        $.cookie("type-of-claim_"+secondCount, $("#type-of-claim :checked").attr("value"), { path:'/' });
-        $.cookie("claim-origin_"+secondCount, $("#claim-origin :checked").attr("value"), { path:'/' });
-        $.cookie("settled-claim_"+secondCount, $("#settled-claim :checked").attr("value"), { path:'/' });
+        $.cookie("claims-court-reference_"+secondCount, $("#court-ref").val(), {path:'/'});
+        $.cookie("claims-type"+secondCount, $("#type-of-claim :checked").attr("value"), { path:'/' });
+        $.cookie("claims-origin_"+secondCount, $("#claim-origin :checked").attr("value"), { path:'/' });
+        $.cookie("claims-settled_"+secondCount, $("#settled-claim :checked").attr("value"), { path:'/' });
     });
 
-    if ($.cookie("name-of-court_"+secondCount)) {
-      $("#claims-court-name").text($.cookie("name-of-court_"+secondCount));
+    if ($.cookie("claims-court_"+secondCount)) {
+      $("#claims-court-name").text($.cookie("claims-court_"+secondCount));
     }
 
   });
