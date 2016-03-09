@@ -255,6 +255,8 @@
 
   <script type="text/javascript">
 
+  var count;
+
   // Court details variables
   var court_details_Name;
   var court_details_CourtRef;
@@ -262,14 +264,6 @@
   var court_details_FinishYear;
   var court_details_Asset;
 
-  // Oustanding legal claims details variables
-  var outstanding_details_Name;
-  var outstanding_details_CourtRef;
-  var outstanding_details_Claim;
-  var outstanding_details_ClaimOrigin;
-  var outstanding_details_Settled;
-
-  var count;
   $(document).ready(function() {
 
     count= $.cookie("legal-prop-count");
@@ -293,25 +287,6 @@
         court_details_Asset = $.cookie("asset-division_"+i);
       }
 
-      // Oustanding legal claims variables cookies
-      // if($.cookie("name-of-court_"+i)){
-      //   court_details_Name = $.cookie("name-of-court_"+i);
-      // }
-      // if($.cookie("court-reference_"+i)){
-      //   court_details_CourtRef = $.cookie("court-reference_"+i);
-      // }
-      // if($.cookie("process-finish-month_"+i)){
-      //   court_details_FinishMonth = $.cookie("process-finish-month_"+i);
-      // }
-      // if($.cookie("process-finish-year_"+i)){
-      //   court_details_FinishYear = $.cookie("process-finish-year_"+i);
-      // }
-      // if($.cookie("asset-division_"+i)){
-      //   court_details_Asset = $.cookie("asset-division_"+i);
-      // }
-
-
-
       var row= '<div class="new-item">'
       row += '<div class="row">'
       row += '<div class="col-md-9 col-sm-9 col-xs-12">'
@@ -330,6 +305,74 @@
       row += '</div>';
       row += '<div class="col-md-3 col-sm-3 col-xs-12">'
       row += '<p><span class="form-hint">Division of your assets:</span> ' + court_details_Asset + '</p>';
+      row += '</div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
+      row += '</div>';
+      row += '</div>';
+
+      if($.cookie("court-reference_"+i) === "") {
+        $("#court-ref-appearance").hide();
+      } else {
+        $("#court-ref-appearance").show();
+      }
+
+      $("#ongoing-cases").append(row);
+
+    }
+
+  });
+
+  // Oustanding legal claims details variables
+  var outstanding_details_Name;
+  var outstanding_details_CourtRef;
+  var outstanding_details_Claim;
+  var outstanding_details_ClaimOrigin;
+  var outstanding_details_Settled;
+
+  $(document).ready(function() {
+
+    count= $.cookie("claims-prop-count");
+
+    for (i = 1; i <= count; i++) {
+
+      // Oustanding legal claims variables cookies
+      if($.cookie("name-of-court_"+i)){
+        outstanding_details_Name = $.cookie("name-of-court_"+i);
+      }
+      if($.cookie("court-reference_"+i)){
+        outstanding_details_CourtRef = $.cookie("court-reference_"+i);
+      }
+      if($.cookie("type-of-claim_"+i)){
+        outstanding_details_Claim = $.cookie("type-of-claim_"+i);
+      }
+      if($.cookie("claim-origin_"+i)){
+        outstanding_details_ClaimOrigin = $.cookie("claim-origin_"+i);
+      }
+      if($.cookie("settled-claim_"+i)){
+        outstanding_details_Settled = $.cookie("settled-claim_"+i);
+      }
+
+      var row= '<div class="new-item">'
+      row += '<div class="row">'
+      row += '<div class="col-md-9 col-sm-9 col-xs-12">'
+      row += '<h3 class="heading-medium">';
+      row += outstanding_details_Name;
+      row += '</h3>';
+      row += '</div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit court name</a></div>';
+      row += '</div>';
+      row += '<div class="row">'
+      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
+      row += '<p id="court-ref-appearance"><span class="form-hint">Court reference:</span> ' + outstanding_details_CourtRef + '</p>';
+      row += '</div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
+      row += '<p><span class="form-hint">Date the process finished:</span> ' + outstanding_details_Claim + '</p>';
+      row += '</div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
+      row += '<p><span class="form-hint">Date the process finished:</span> ' + outstanding_details_ClaimOrigin + '</p>';
+      row += '</div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12">'
+      row += '<p><span class="form-hint">Division of your assets:</span> ' + outstanding_details_Settled + '</p>';
       row += '</div>';
       row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
       row += '</div>';

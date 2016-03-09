@@ -243,13 +243,13 @@
   $(document).ready(function() {
 
     $("#continue").on("click", function (e) {
-      count = $.cookie("legal-prop-count");
+      count = $.cookie("claims-prop-count");
       if(count == "" || count == null){
         count = 0;
       }
       count++;
         $.cookie("name-of-court_"+count, $("#name-of-court").val(), {path:'/'});
-        $.cookie("legal-prop-count", count, { path: '/' } );
+        $.cookie("claims-prop-count", count, { path: '/' } );
     });
 
   });
