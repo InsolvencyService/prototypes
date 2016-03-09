@@ -255,43 +255,34 @@
 
   <script type="text/javascript">
 
-  var property_address;
+  var court_details;
+  var outstanding_details;
   var count;
   $(document).ready(function() {
 
     count= $.cookie("legal-prop-count");
 
     for (i = 1; i <= count; i++) {
-      if($.cookie("legal-prop-add1-"+i)){
-        property_address = $.cookie("legal-prop-add1-"+i);
+      if($.cookie("name-of-court_"+i)){
+        court_details = $.cookie("name-of-court_"+i);
       }
-      if($.cookie("legal-prop-add2-"+i)){
-        property_address += ", "+$.cookie("legal-prop-add2-"+i);
+      if($.cookie("court-reference_"+i)){
+        court_details = $.cookie("court-reference_"+i);
       }
-      if($.cookie("legal-prop-add3-"+i)){
-        property_address += ", "+$.cookie("legal-prop-add3-"+i);
+      if($.cookie("process-finish-month_"+i)){
+        court_details = $.cookie("process-finish-month_"+i);
       }
-      if($.cookie("legal-prop-addtown-"+i)){
-        property_address += ", "+$.cookie("legal-prop-addtown-"+i);
+      if($.cookie("process-finish-year_"+i)){
+        court_details = $.cookie("process-finish-year_"+i);
       }
-      if($.cookie("legal-prop-addcounty-"+i)){
-        property_address += ", "+$.cookie("legal-prop-addcounty-"+i);
+      if($.cookie("asset-division_"+i)){
+        court_details = $.cookie("asset-division_"+i);
       }
-      if($.cookie("legal-prop-addpcode-"+i)){
-        property_address += ", "+$.cookie("legal-prop-addpcode-"+i);
-      }
-
-      var row= '<div class="row group-heading"><div class="col-xs-8"><p>';
-      row += property_address;
-      row += '</p></div><div class="col-xs-3"><a href="summary.html?p='+i+'">View your answers</a>&nbsp;&nbsp; <a href="#">Delete</a></div></div>'
+      var row= '<div class="row group-heading"><div class="col-xs-9"><p>';
+      row += court_details;
+      row += '</p></div><div class="col-xs-3"><a href="#.html?p='+i+'">Edit</a>&nbsp;&nbsp; <a href="#">Delete</a></div></div>'
 
       $("#court-cases").append(row);
-
-      var row= '<div class="row group-heading"><div class="col-xs-8"><p>';
-      row += property_address;
-      row += '</p></div><div class="col-xs-3"><a href="summary.html?p='+i+'">View your answers</a>&nbsp;&nbsp; <a href="#">Delete</a></div></div>'
-
-      $("#ongoing-cases").append(row);
 
     }
 
