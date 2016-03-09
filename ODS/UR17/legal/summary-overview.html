@@ -255,7 +255,7 @@
 
   <script type="text/javascript">
 
-  var count;
+  var firstCount;
 
   // Court details variables
   var court_details_Name;
@@ -266,9 +266,9 @@
 
   $(document).ready(function() {
 
-    count= $.cookie("legal-prop-count");
+    firstCount= $.cookie("legal-prop-count");
 
-    for (i = 1; i <= count; i++) {
+    for (i = 1; i <= firstCount; i++) {
 
       // Court details variable cookies
       if($.cookie("name-of-court_"+i)){
@@ -322,6 +322,8 @@
 
   });
 
+  var secondCount;
+
   // Oustanding legal claims details variables
   var outstanding_details_Name;
   var outstanding_details_CourtRef;
@@ -331,9 +333,9 @@
 
   $(document).ready(function() {
 
-    count= $.cookie("claims-prop-count");
+    secondCount= $.cookie("claims-prop-count");
 
-    for (i = 1; i <= count; i++) {
+    for (i = 1; i <= secondCount; i++) {
 
       // Oustanding legal claims variables cookies
       if($.cookie("name-of-court_"+i)){

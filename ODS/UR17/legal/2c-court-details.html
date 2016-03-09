@@ -315,24 +315,24 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  var count;
+  var secondCount;
   $(document).ready(function() {
 
-    count = $.cookie("claims-prop-count");
+    secondCount = $.cookie("claims-prop-count");
 
     $("#next").on("click", function (e) {
       // if(count == "" || count == null){
       //   count = 0;
       // }
       // count++;
-        $.cookie("court-reference_"+count, $("#court-ref").val(), {path:'/'});
-        $.cookie("type-of-claim_"+count, $("#type-of-claim :checked").attr("value"), { path:'/' });
-        $.cookie("claim-origin_"+count, $("#claim-origin :checked").attr("value"), { path:'/' });
-        $.cookie("settled-claim_"+count, $("#settled-claim :checked").attr("value"), { path:'/' });
+        $.cookie("court-reference_"+secondCount, $("#court-ref").val(), {path:'/'});
+        $.cookie("type-of-claim_"+secondCount, $("#type-of-claim :checked").attr("value"), { path:'/' });
+        $.cookie("claim-origin_"+secondCount, $("#claim-origin :checked").attr("value"), { path:'/' });
+        $.cookie("settled-claim_"+secondCount, $("#settled-claim :checked").attr("value"), { path:'/' });
     });
 
-    if ($.cookie("name-of-court_"+count)) {
-      $("#claims-court-name").text($.cookie("name-of-court_"+count));
+    if ($.cookie("name-of-court_"+secondCount)) {
+      $("#claims-court-name").text($.cookie("name-of-court_"+secondCount));
     }
 
   });

@@ -239,17 +239,17 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  var count;
+  var firstCount;
   $(document).ready(function() {
 
     $("#continue").on("click", function (e) {
-      count = $.cookie("legal-prop-count");
-      if(count == "" || count == null){
-        count = 0;
+      firstCount = $.cookie("legal-prop-count");
+      if(firstCount == "" || firstCount == null){
+        firstCount = 0;
       }
-      count++;
-        $.cookie("name-of-court_"+count, $("#name-of-court").val(), {path:'/'});
-        $.cookie("legal-prop-count", count, { path: '/' } );
+      firstCount++;
+        $.cookie("name-of-court_"+firstCount, $("#name-of-court").val(), {path:'/'});
+        $.cookie("legal-prop-count", firstCount, { path: '/' } );
     });
 
   });

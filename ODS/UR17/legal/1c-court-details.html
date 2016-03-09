@@ -310,24 +310,24 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  var count;
+  var firstCount;
   $(document).ready(function() {
 
-    count = $.cookie("legal-prop-count");
+    firstCount = $.cookie("legal-prop-count");
 
     $("#next").on("click", function (e) {
       // if(count == "" || count == null){
       //   count = 0;
       // }
       // count++;
-        $.cookie("court-reference_"+count, $("#court-ref").val(), {path:'/'});
-        $.cookie("process-finish-month_"+count, $("#finish-month").val(), {path:'/'});
-        $.cookie("process-finish-year_"+count, $("#finish-year").val(), {path:'/'});
-        $.cookie("asset-division_"+count, $("#asset-division :checked").attr("value"), {path:'/' });
+        $.cookie("court-reference_"+firstCount, $("#court-ref").val(), {path:'/'});
+        $.cookie("process-finish-month_"+firstCount, $("#finish-month").val(), {path:'/'});
+        $.cookie("process-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
+        $.cookie("asset-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
     });
 
-    if ($.cookie("name-of-court_"+count)) {
-      $("#court-name").text($.cookie("name-of-court_"+count));
+    if ($.cookie("name-of-court_"+firstCount)) {
+      $("#court-name").text($.cookie("name-of-court_"+firstCount));
     }
 
   });
