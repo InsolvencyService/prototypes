@@ -195,6 +195,7 @@ legend{
 	
 	<label id="email_label" for="email" class="form-label-bold email">Email 
 			address</label>
+	<p class="form-hint">Please leave blank if you didn't register with an email address</p>
 	<input id="email" name="email" type="text" value="" style="width:350px;"/>
 	<br/>
 	</div>
@@ -298,9 +299,14 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript">
-$(document).ready(function() {
-
-});
+$("#next").on("click", function (e) {
+		if($("#email").val()==""){
+			$("#next").attr("href", "address.html");
+		}
+		else{
+			$("#next").attr("href", "sent.html");
+		}
+	});
 
 </script>
 
