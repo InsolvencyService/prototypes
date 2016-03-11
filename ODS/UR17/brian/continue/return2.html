@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <!-- #BeginTemplate "../../../assets/templates/b-template.dwt" -->
 <head>
@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
 
@@ -125,7 +125,7 @@ width:40px
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -135,14 +135,14 @@ width:40px
 	</p>
 	</div>
 	</div>
-	
+
 
 
 <!-- #BeginEditable "content" -->
 
- 	
 
- 	
+
+
 <div id="content0" >
 	<div class="row">
 		<div class="col-xs-12 col-sm-8" style="margin-left:30px">
@@ -152,18 +152,18 @@ width:40px
             	<p></p>
             	<ol>
 			        <li class="error-message">
-			    
+
 			            <p>Please enter a 12 digit application number</p>
 			            <p><a href="urn-help.html">I have forgotten my application number</a></p>
-			
+
 			        </li>
 			    </ol>
 			</div>
 
 			<p class="text msg-URN" style="display:none;">
-				Your application number is 
+				Your application number is
 				<br>
-				<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNH-J93R-5309</span>  
+				<span class="bg-primary text-center col-sm-5" style="height:42px; padding-top:10px">GBNH-J93R-5309</span>
 			</p>
 
 
@@ -175,13 +175,13 @@ width:40px
 					<div class="form-group ">
 						<label id="applicant_address_line_2_label" for="urn" class="form-label-bold">What's your application number?</label>
 							<div class="form-hint">
-								You can find this in the email we sent you 
+								You can find this in the email we sent you
 							</div>
 						<input id="urn" name="applicant_address_line_2" type="text" aria-describedby="applicant_address_line_2_error applicant_address_line_2_help" value="" />
 						<br/>
 					</div>
 				</div>
-				
+
 			</form>
 
 			<br>
@@ -189,7 +189,7 @@ width:40px
 			<div class="form-navigation form-group">
 				<div>
 					<p><a href="../../start/continue/urn-help.html" id="next" class="button">Continue</a></p>
-    				<p><a href="urn-help.html">I have forgotten my application number</a></p>
+    				<p><a href="urn-help.html">I have forgotten my application details</a></p>
 					<div><br></div>
 
 					<div>
@@ -198,7 +198,7 @@ width:40px
 				</div>
 			</div>
 		</div>
-	</div>     
+	</div>
 </div>
 
 
@@ -241,13 +241,13 @@ width:40px
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -295,10 +295,10 @@ width:40px
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -316,11 +316,11 @@ $(document).ready(function() {
 	if (getParameterByName("ignore") && getParameterByName("ignore").length > 0){
 		ignorevalidation = true;
 	}
-	
+
 	var urn = $.cookie('urn');
 	$("#next").click( function(e) {
 
-		if (ignorevalidation == false){	
+		if (ignorevalidation == false){
 			if ($("#urn").val().length < 12){
 				e.preventDefault();
 				$(".validation-summary").show();
@@ -330,7 +330,7 @@ $(document).ready(function() {
 					if (stripped($("#urn").val()).toUpperCase() != stripped(urn).toUpperCase()){
 						e.preventDefault();
 						window.location = "security-question.html?error=true";
-					};	
+					};
 					*/
 				}
 
@@ -357,12 +357,12 @@ function getParameterByName(name) {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
