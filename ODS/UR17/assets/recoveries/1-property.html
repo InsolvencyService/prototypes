@@ -143,7 +143,7 @@
         </p>
       </div>
       <!-- ///// Phase Banner - END ///// -->
-      <!-- #BeginEditable "content" --> 
+      <!-- #BeginEditable "content" -->
 
       <div class="row">
 
@@ -157,10 +157,10 @@
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-            	
+
                	<fieldset class="form-group" role="main">
-					<label id="property-question" for="property-question">
-						In the last 5 years, have you sold, transferred or given away any properties?</label>
+					<legend id="property-question" for="property-question">
+						In the last 5 years, have you sold, transferred or given away any properties?</legend>
 					<p class="form-hint">Include any properties you have transferred into trusts</p>
 					<div class="row" id="property-question">
 						<div class="col-sm-2 col-xs-4 text-left" >
@@ -170,25 +170,25 @@
 							<a id="no" role="button" class="button">No</a>
 						</div>
 						<div class="col-sm-8 col-xs-4">
-							
+
 						</div>
 					</div>
 				</fieldset>
 				<!-- ///// CTA Section - START ///// -->
-				<fieldset class=" form-group" >
+
 					<div class="row">
 					  <div class="col-md-12 col-xs-12">
 					    <div class="form-navigation form-group">
-					       <a href="javascript:history.go(-1)" id="back">Back</a>					  
+					       <a href="javascript:history.go(-1)" id="back">Back</a>
 					    </div>
 					  </div>
 					</div>
-				</fieldset>
-				
-				<!-- ///// CTA Section - END ///// -->
-			
 
-            
+
+				<!-- ///// CTA Section - END ///// -->
+
+
+
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -265,13 +265,13 @@
 			$("#yes").attr("href", "property/address.html");
 		}
 	});
-	
+
 	$("#no").on("click", function (e) {
 		$.cookie("recovery_1", "no");
 		$("#no").attr("href", "2-policies.html");
 	});
 
-  
+
 
   function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
