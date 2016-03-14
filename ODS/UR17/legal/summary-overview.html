@@ -154,7 +154,7 @@
 
         <!-- ///////////////// Add Item - Start ///////////////// -->
         <fieldset class="add-item">
-          <legend class="hidden">Add another seperation</legend>
+          <legend class="hidden">Add a seperation</legend>
           <input name="Add another fine" id="btn-add-seperation" type="submit" class="link-lookalike" role="button" value="Add another seperation">
         </fieldset>
         <!-- ///////////////// Add Item - End ///////////////// -->
@@ -179,7 +179,7 @@
 
         <!-- ///////////////// Add Item - Start ///////////////// -->
         <fieldset class="add-item">
-          <legend class="hidden">Add another outstanding legal claim</legend>
+          <legend class="hidden">Add a outstanding legal claim</legend>
           <input name="Add another fine" id="btn-add-outstanding" type="submit" class="link-lookalike" role="button" value="Add another outstanding legal claim">
         </fieldset>
         <!-- ///////////////// Add Item - End ///////////////// -->
@@ -293,7 +293,7 @@
       row += '<div class="col-md-9 col-sm-9 col-xs-12">';
       row += '<h3 class="heading-medium">' + court_details_Name + '</h3>';
       row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit court name</a></div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit</a><a class="delete-item">Delete</a></div>';
       row += '</div>';
       // row 2
       row += '<div class="row" id="court-ref-appearance">';
@@ -381,7 +381,7 @@
       row += '<div class="col-md-9 col-sm-9 col-xs-12">';
       row += '<h3 class="heading-medium">' + outstanding_details_Name + '</h3>';
       row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit court name</a></div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1b-name-of-court.html?p='+i+'">Edit</a><a class="delete-item">Delete</a></div>';
       row += '</div>';
       // row 2
       row += '<div class="row" id="court-ref-appearance">';
@@ -435,6 +435,15 @@
       $("#ongoing-cases").append(row);
 
     }
+
+  });
+
+  // Delete item
+  $(document).ready(function() {
+
+    $(".delete-item").on("click", function (e) {
+      $(this).parents(".new-item").hide("slow");
+    });
 
   });
 
