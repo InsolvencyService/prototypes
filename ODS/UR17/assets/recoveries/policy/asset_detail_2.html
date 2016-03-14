@@ -177,9 +177,9 @@ display:block;
 	
 	        <fieldset class="inline">
 	            <div id="disposed" class="form-group">
-					<label for="sold" class="block-label"><input id="sold" name="dispose" type="radio"  value="sold">Sold it</label>
-	                <label for="surrendered" class="block-label"><input id="surrendered" name="dispose" type="radio"  value="surrendered">Cashed it in</label>
-	                <label for="gifted" class="block-label"><input id="gifted" name="dispose" type="radio"  value="gifted">
+					<label for="sold" class="block-label"><input id="sold" name="dispose" type="radio"  value="Sold it">Sold it</label>
+	                <label for="surrendered" class="block-label"><input id="surrendered" name="dispose" type="radio"  value="Cashed it in">Cashed it in</label>
+	                <label for="gifted" class="block-label"><input id="gifted" name="dispose" type="radio"  value="Gave/transferred it to someone">
 	                    Gave/transferred it to someone
 	                </label>
 	            </div>
@@ -329,19 +329,14 @@ $('#disposed input:radio').click(function() {
 
 });
 
-
 $("#next").click(function() {
 	writeCookies();
 });
 
-function writeCookies() {
-	
-	
+function writeCookies() {	
+	$.cookie('ass-rec-pol-'+count+"-action", $("#disposed :checked").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-month", $("#month").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-year", $("#year").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-company", $.cookie("ass-rec-pol-tempcomp"), { path: '/' });
-
-	
 }
    
 function numberWithoutCommas(x) {

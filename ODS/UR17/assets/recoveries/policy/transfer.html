@@ -466,16 +466,15 @@ $("#next").click(function() {
 
 });
 
-
 function writeCookies() {
 	$.cookie('ass-rec-pol-'+count+"-transfer-name", $("#companyname").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-transfer-address1", $("#address_line_1").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-transfer-address2", $("#address_line_2").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-transfer-address3", $("#address_line_3").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-transfer-addresstown", $("#address_town").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-transfer-addresscounty", $("#address_county").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-transfer-addresspostcode", $("#address_post_code").val(), { path: '/' } );
-	$.cookie('ass-rec-pol-'+count+"-transfer-addresscountry", $("#address_country").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-add1", $("#address_line_1").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-add2", $("#address_line_2").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-add3", $("#address_line_3").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-add4", $("#address_town").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-add5", $("#address_county").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-add6", $("#address_post_code").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-add7", $("#address_country").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-transfer-relationship", $("#pnl-relationship :checked").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-transfer-marketvalue", $("#marketvalue").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-transfer-grossvalue", $("#actualvalue").val(), { path: '/' } );
