@@ -243,16 +243,28 @@
   $(document).ready(function() {
 
     $("#continue").on("click", function (e) {
-      secondCount = $.cookie("claims-prop-count");
-      if(secondCount == "" || secondCount == null){
-        secondCount = 0;
+      if (getParameterByName('p')) {
+        firstCount = getParameterByName('p');
       }
-      secondCount++;
+      else {
+        secondCount = $.cookie("claims-prop-count");
+        if(secondCount == "" || secondCount == null){
+          secondCount = 0;
+        }
+        secondCount++;
         $.cookie("claims-court_"+secondCount, $("#name-of-court").val(), {path:'/'});
         $.cookie("claims-prop-count", secondCount, { path: '/' } );
+      }
     });
 
   });
+
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
 
   </script>
   <!-- #EndEditable "scripts" -->

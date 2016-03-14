@@ -243,16 +243,28 @@
   $(document).ready(function() {
 
     $("#continue").on("click", function (e) {
-      firstCount = $.cookie("legal-prop-count");
-      if(firstCount == "" || firstCount == null){
-        firstCount = 0;
+      if (getParameterByName('p')) {
+        firstCount = getParameterByName('p');
       }
-      firstCount++;
+      else {
+        firstCount = $.cookie("legal-prop-count");
+        if(firstCount == "" || firstCount == null){
+          firstCount = 0;
+        }
+        firstCount++;
         $.cookie("seperation-court_"+firstCount, $("#name-of-court").val(), {path:'/'});
         $.cookie("legal-prop-count", firstCount, { path: '/' } );
+      }
     });
 
   });
+
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
 
   </script>
   <!-- #EndEditable "scripts" -->
