@@ -137,11 +137,7 @@
 
 
 
-	
-
-
 <!-- #BeginEditable "content" --> 
-
 
 <div class="inner-block text">
 	
@@ -151,10 +147,10 @@
 		<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 		
     	<div class="form-group">
-        	<p id="title_label" class="form-label-bold">What type of property is <span class="bold-medium data">1 The Place</span>?</p>
+        	
 			<fieldset id="property_type" class="inline">
 			
-				<legend class="visuallyhidden">What type of property is it?</legend>
+				<legend id="title_label" class="form-label-bold">What type of property is <span class="bold-medium data">1 The Place</span>?</legend>
             	<label for="address_detached" class="block-label">
             		<input id="address_detached" name="sameaddress" type="radio"  value="Detached">Detached house
           		</label>
@@ -170,12 +166,13 @@
                 <label id="title_Flat" for="address_Flat" class="block-label">
                 	<input id="address_Flat" name="sameaddress" type="radio"  value="Flat/maisonette">Flat/Maisonette
                 </label>
-
+				
 				<label id="title_label4" for="title_other" class="block-label">
     				<input id="title_other" value="" name="sameaddress" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span> 
-    				<input id="other" name="other" class="text-right" type="text" value="" />
+    				<label for="other" class="visually-hidden">Enter other property type</label><input id="other" name="other" class="text-right" type="text" value="" />
     				
- 				</label>                      
+ 				</label>  
+ 				                    
             </fieldset>
        	</div>
        	
