@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Legal proceedings - Solicitor address</title>
+  <title>Ongoing legal claims? - court details</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -68,9 +68,6 @@
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
-
-<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
-<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
 <!-- #EndEditable -->
 
 
@@ -112,12 +109,12 @@
         <div class="content">
           <nav id="proposition-menu">
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
-            <ul id="proposition-links">
-              <li><a href="../overview.html" class="">Application Overview</a></li>
-              <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
-              <li><a href="#" class="cancel">Save and logout</a></li>
-            </ul>
           </nav>
+          <ul id="proposition-links">
+            <li><a href="../overview.html" class="">Application Overview</a></li>
+            <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+            <li><a href="#" class="cancel">Save and logout</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -149,76 +146,121 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main" id="maincontent" aria-labelledby="intro">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-xlarge" role="header" id="court-name">Solicitors address</h1>
+          <h1 class="form-title heading-xlarge" role="header" id="solicitor-name">Solicitor details</h1>
 
-          <p class="lede">Please tell us the solicitors address below:</p>
+          <p class="lede">Please tell us the solicitors details below:</p>
 
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <fieldset>
 
-              <legend class="hidden">We require you to answer 5 questions, please enter your contact details in the following fields</legend>
+              <legend class="hidden"></legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
-              <fieldset id="fulladdress" role="group">
-                <legend class="hidden">Enter your address below.</legend>
-                <div class="form-group" aria-hidden="true">
-                  <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
-              	  <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
-                </div>
-                <div class="form-group">
-                  <h2 class="form-label-bold">Address</h2>
-                  <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street <span class="hidden">line 1</span></label>
-                  <input id="address_line_1" name="address_line_1" type="text" value="" aria-labelledby="address_line_1_label intro" />
-                </div>
-                <div class="form-group">
-                  <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Building and street line 2</label>
-                  <input id="address_line_2" name="address_line_2" type="text" value="" aria-labelledby="address_line_2_label intro" />
-                </div>
-                <div class="form-group">
-                  <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Building and street line 3</label>
-                  <input id="address_line_3" name="address_line_3" type="text" value="" aria-labelledby="address_line_3_label intro" />
-                </div>
-                <div class="form-group">
-                  <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
-                  <input id="address_town" name="address_town" type="text" value="" aria-labelledby="address_town_label intro" />
-                </div>
-                <div class="form-group">
-                  <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
-                  <input id="address_county" name="address_county" type="text" value="" aria-labelledby="address_county_label intro" />
-                </div>
-                <div class="form-group">
-                  <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
-                  <input id="address_post_code" name="address_post_code" type="text" value="" aria-labelledby="address_post_code_label intro" />
-                </div>
-                <div class="form-group">
-                  <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
-                  <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
+              <fieldset class="inline form-group" role="group" id="your-cases">
+                <legend id="your-cases-label" class="form-label-bold">Please select from your cases below which one this Solicitor helped you with</legend>
+                <span class="form-hint" id="your-cases-hint-1">Leave blank if this does not apply to any of them</span>
+                <div class="case-item">
+                  <label id="your-case-label0" for="your-case0" class="block-label">
+                    <input id="your-case0" value="Conveyancing" name="Conveyancing" type="checkbox" aria-labelledby="action_label">
+                    <span class="court-name bolder">Court Name</span>
+                    <span class="court-reference">Court reference</span>
+                    <span class="claim-type">Claim type</span>
+                    <span class="legal-seperation">Legal separation</span>
+                  </label>
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
-              <!-- ///// CTA Section - START ///// -->
-              <fieldset class="form-group">
-                <legend class="hidden">Please continue with your application</legend>
+              <!-- ///// Fieldset/Group 2 - START ///// -->
+              <fieldset class="inline form-group" role="group">
+                <legend id="instructed-date-label" class="form-label-bold">Date you instructed your solicitor</legend>
+                <span class="form-hint" id="instructed-date-hint-1">Leave blank if the date is in the future</span>
                 <div class="row">
-                  <div class="col-md-12 col-xs-12">
-                    <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='summary-question.html';" id="next" class="button" value="Continue">
-                      <br>
-                      <a href="javascript:history.go(-1)" id="back">Back</a>
-                      <a href="#" class="cancel">Save and logout</a>
+                  <div class="col-md-2 col-sm-2 col-xs-2" role="group">
+                    <label id="instructed-month-label" for="instructed-month">Month</label><br>
+                    <select id="instructed-month" name="instructed-month" aria-labelledby="instructed-date-label instructed-date-hint-1 instructed-month-label">
+                      <option value="Jan">Jan</option>
+                      <option value="Feb">Feb</option>
+                      <option value="Mar">Mar</option>
+                      <option value="Apr">Apr</option>
+                      <option value="May">May</option>
+                      <option value="Jun">Jun</option>
+                      <option value="Jul">Jul</option>
+                      <option value="Aug">Aug</option>
+                      <option value="Sep">Sep</option>
+                      <option value="Oct">Oct</option>
+                      <option value="Nov">Nov</option>
+                      <option value="Dec">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4" role="group">
+                    <label id="instructed-year-label" for="instructed-year">Year</label><br>
+                    <input id="instructed-year" name="instructed-year" type="number" min="2000" max="2016" aria-labelledby="instructed-date-label instructed-year-label" />
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///// Fieldset/Group 2 - END ///// -->
+
+              <!-- ///// Fieldset/Group 3 - START ///// -->
+              <fieldset class="inline form-group" id="action-select" role="radiogroup">
+                <legend id="action_label" class="form-label-bold">What type of action did they assist you with?</legend>
+                <span class="form-hint" id="action-date-hint-1">Please tick all that apply</span>
+                <label id="action_label0" for="action0" class="block-label">
+                  <input id="action0" value="Conveyancing" name="Conveyancing" type="checkbox" aria-labelledby="action_label">
+                  Conveyancing
+                </label>
+                <label id="action_label1" for="action1" class="block-label">
+                  <input id="action1" value="Disputes" name="Disputes" type="checkbox" aria-labelledby="action_label">
+                  Disputes
+                </label>
+                <label id="action_label2" for="action2" class="block-label">
+                  <input id="action2" value="Acting as defendent" name="Acting as defendent" type="checkbox" aria-labelledby="action_label">
+                  Acting as defendent
+                </label>
+                <label id="action_label3" for="action3" class="block-label">
+                  <input id="action3" value="Trust" name="Trust" type="checkbox" aria-labelledby="action_label">
+                  Trust
+                </label>
+                <label id="action_label4" for="action4" class="block-label">
+                  <input id="action4" value="Criminal proceedings" name="Criminal proceedings" type="checkbox" aria-labelledby="action_label">
+                  Criminal proceedings
+                </label>
+                <div class="wrap-radio-button">
+                  <div class="row">
+                    <div class="col-md-7 col-xs-5">
+                      <label id="action_label5" for="action_other" class="block-label">
+                        <input id="action_other" value="" name="title" type="checkbox" aria-labelledby="action_label">
+                        Other - please specify:
+                      </label>
+                    </div>
+                    <div class="col-md-5 col-xs-7">
+                      <label for="action_answer" class="hidden">Enter here:</label>
+                      <input id="action_answer" name="action_answer" type="text" value=""/>
                     </div>
                   </div>
                 </div>
               </fieldset>
-              <!-- ///// CTA Section - END ///// -->
+              <!-- ///// Fieldset/Group 3 - END ///// -->
 
-
+            <!-- ///// CTA Section - START ///// -->
+            <fieldset class="form-group">
+              <legend class="hidden">Please continue with your application</legend>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <input type="button" onclick="location.href='summary-overview.html';" id="next" class="button" value="Continue">
+                    <br>
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
+                  </div>
+                </div>
+              </div>
             </fieldset>
+            <!-- ///// CTA Section - END ///// -->
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -267,10 +309,6 @@
   <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-  <script type="text/javascript" src="../shared/loop.js"></script>
-  <script type="text/javascript" src="../assets/js/titleCaps.js"></script>
-  <script type="text/javascript" src="../assets/property/js/postcodelookup.js"></script>
-
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -287,43 +325,42 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    if ($.cookie("solicitor-name")) {
-      $("#solicitor-name").text($.cookie("solicitor-name"));
-    }
+  var thirdCount;
+  $(document).ready(function() {
 
-    var count;
-    $(document).ready(function() {
+    thirdCount = $.cookie("solicitor-prop-count_");
 
-      $("#next").click(function(e){
-        count = $.cookie("legal-prop-count");
-
-      		var addr = $("#address_line_1").val();
-      		if (addr && addr.length > 0){
-    		    $.cookie("address_"+count, addr, { path: '/' });
-    		    $.cookie("applicant_address_"+count, addr, { path: '/' });
-
-      			$.cookie("address_line_1_"+count, addr, { path:'/' });
-      			$.cookie("address_line_2_"+count, $("#address_line_2").val(), { path:'/' });
-      			$.cookie("address_line_3_"+count, $("#address_line_3").val(), { path:'/' });
-
-      			$.cookie("town_"+count, $("#address_town").val(), { path: '/' });
-      			$.cookie("county_"+count, $("#address_county").val(), { path: '/' });
-            $.cookie("country_"+count, $("#address_country").val(), { path: '/' });
-      			if ( $("#address_post_code")+count){
-      				$.cookie("post_code_"+count, $("#address_post_code").val(), { path:'/' });
-      			}
-      		}
-      });
-
+    $("#next").on("click", function (e) {
+      // if(count == "" || count == null){
+      //   count = 0;
+      // }
+      // count++;
+        $.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
+        $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").attr("value"), { path:'/' });
+        $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").attr("value"), { path:'/' });
+        $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").attr("value"), { path:'/' });
     });
 
-
-    function getParameterByName(name) {
-      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-          results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    if ($.cookie("solicitor-name_"+thirdCount)) {
+      $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
     }
+
+  });
+
+  // $("#solicitor-no").on("click", function (e) {
+  //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
+  // });
+  //
+  // $("#solicitor-yes").on("click", function (e) {
+  //   $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
+  // });
+
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
 
   </script>
   <!-- #EndEditable "scripts" -->

@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Solicitors - Name</title>
+  <title>Solicitors - address</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -68,6 +68,9 @@
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
+
+<link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
+<script type="text/javascript" src="http://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=zf49-kc12-rd33-ex99"></script>
 <!-- #EndEditable -->
 
 
@@ -146,36 +149,76 @@
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
+        <div class="col-md-8 col-xs-12" role="main" id="maincontent" aria-labelledby="intro">
 
-          <h1 class="form-title heading-xlarge" role="header">Solicitor details</h1>
+          <h1 class="form-title heading-xlarge" role="header" id="solicitor-name">Solicitors address</h1>
 
-          <p class="lede">We need to know about any solicitors you used for your legal separation, divorce or dissolution.</p>
+          <p class="lede">Please tell us the solicitors address below:</p>
 
-          <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline form-group">
-              <label class="form-label-bold" for="solicitor-name" id="solicitor-name-label">Enter the name of the solicitor's firm</label>
-              <span class="form-hint" id="form-hint-desc1">For example, ABC Legal LLP or J. Smith Solicitors.</span>
-              <span class="form-hint" id="form-hint-desc2">If you used more than one solicitor, just tell us about the most recent one. </span>
-              <input type="text" class="input-with-button" id="solicitor-name" aria-labelledby="name-of-court-label form-hint-desc">
-              <input type="button" onclick="location.href='3c-solicitor-address.html';" id="solicitor-name-cont" class="button" value="Add solicitor">
-            </fieldset>
-            <!-- ///// Fieldset/Group 1 - END ///// -->
+            <fieldset>
 
-            <!-- ///// CTA Section - START ///// -->
-            <div class="row">
-              <div class="col-md-12 col-xs-12">
-                <div class="form-navigation form-group">
-                  <a href="javascript:history.go(-1)" id="back">Back</a>
-                  <a href="#" class="cancel">Save and logout</a>
+              <legend class="hidden">We require you to answer 5 questions, please enter your contact details in the following fields</legend>
+
+              <!-- ///// Fieldset/Group 1 - START ///// -->
+              <fieldset id="fulladdress" role="group">
+                <legend class="hidden">Enter your address below.</legend>
+                <div class="form-group" aria-hidden="true">
+                  <label class="form-label-bold" id="search_label" for="search"><span class="firsttime">Search address</span></label>
+              	  <input class="input-email" id="search" placeholder="Start typing your address" aria-labelledby="search_label intro"/>
                 </div>
-              </div>
-            </div>
-            <!-- ///// CTA Section - END ///// -->
+                <div class="form-group">
+                  <h2 class="form-label-bold">Address</h2>
+                  <label id="address_line_1_label" for="address_line_1" class="form-label address_line_1">Building and street <span class="hidden">line 1</span></label>
+                  <input id="address_line_1" name="address_line_1" type="text" value="" aria-labelledby="address_line_1_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_line_2_label" for="address_line_2" class="visuallyhidden">Building and street line 2</label>
+                  <input id="address_line_2" name="address_line_2" type="text" value="" aria-labelledby="address_line_2_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_line_3_label" for="address_line_3" class="visuallyhidden">Building and street line 3</label>
+                  <input id="address_line_3" name="address_line_3" type="text" value="" aria-labelledby="address_line_3_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_town_label" for="address_town" class="form-label address_town">Town/city</label>
+                  <input id="address_town" name="address_town" type="text" value="" aria-labelledby="address_town_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_county_label" for="address_county" class="form-label address_county">County</label>
+                  <input id="address_county" name="address_county" type="text" value="" aria-labelledby="address_county_label intro" />
+                </div>
+                <div class="form-group">
+                  <label id="address_post_code_label" for="address_post_code" class="form-label address_post_code">Postal code</label>
+                  <input id="address_post_code" name="address_post_code" type="text" value="" aria-labelledby="address_post_code_label intro" class="post-code" />
+                </div>
+                <div class="form-group">
+                  <label id="address_county_label0" for="address_country" class="form-label address_country">Country</label>
+                  <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
+                </div>
+              </fieldset>
+              <!-- ///// Fieldset/Group 1 - END ///// -->
+
+              <!-- ///// CTA Section - START ///// -->
+              <fieldset class="form-group">
+                <legend class="hidden">Please continue with your application</legend>
+                <div class="row">
+                  <div class="col-md-12 col-xs-12">
+                    <div class="form-navigation form-group">
+                      <input type="button" onclick="location.href='3d-solicitor-details.html';" id="next" class="button" value="Continue">
+                      <br>
+                      <a href="javascript:history.go(-1)" id="back">Back</a>
+                      <a href="#" class="cancel">Save and logout</a>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///// CTA Section - END ///// -->
+
+
+            </fieldset>
 
           </form>
           <!-- ///// Form - END ///// -->
@@ -224,6 +267,10 @@
   <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../shared/loop.js"></script>
+  <script type="text/javascript" src="../assets/js/titleCaps.js"></script>
+  <script type="text/javascript" src="../assets/property/js/postcodelookup.js"></script>
+
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -240,19 +287,46 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  var thirdCount;
-  $(document).ready(function() {
+    if ($.cookie("solicitor-name")) {
+      $("#solicitor-name").text($.cookie("solicitor-name"));
+    }
 
-    $("#solicitor-name-cont").on("click", function (e) {
-      thirdCount = $.cookie("solicitor-prop-count_");
-      // if(count == "" || count == null){
-      //   count = 0;
-      // }
-      // count++;
-      $.cookie("solicitor-name_"+thirdCount, $("#solicitor-name").val(), {path:'/'});
+    var thirdCount;
+    $(document).ready(function() {
+
+      $("#next").click(function(e){
+        thirdCount = $.cookie("solicitor-prop-count_");
+
+      		var addr = $("#address_line_1").val();
+      		if (addr && addr.length > 0){
+    		    $.cookie("address_"+thirdCount, addr, { path: '/' });
+    		    $.cookie("applicant_address_"+thirdCount, addr, { path: '/' });
+
+      			$.cookie("address_line_1_"+thirdCount, addr, { path:'/' });
+      			$.cookie("address_line_2_"+thirdCount, $("#address_line_2").val(), { path:'/' });
+      			$.cookie("address_line_3_"+thirdCount, $("#address_line_3").val(), { path:'/' });
+
+      			$.cookie("town_"+thirdCount, $("#address_town").val(), { path: '/' });
+      			$.cookie("county_"+thirdCount, $("#address_county").val(), { path: '/' });
+            $.cookie("country_"+thirdCount, $("#address_country").val(), { path: '/' });
+      			if ( $("#address_post_code")+thirdCount){
+      				$.cookie("post_code_"+thirdCount, $("#address_post_code").val(), { path:'/' });
+      			}
+      		}
+      });
+
+      if ($.cookie("solicitor-name_"+thirdCount)) {
+        $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
+      }
+
     });
 
-  });
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
 
   </script>
   <!-- #EndEditable "scripts" -->

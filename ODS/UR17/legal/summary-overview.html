@@ -146,6 +146,13 @@
             </div>
           </header>
 
+          <!-- ///// No Answer - START ///// -->
+          <section id="question1-no">
+            <hr>
+            <h3>No legal separartion cases entered</h3>
+          </section>
+          <!-- ///// No Answer - END ///// -->
+
           <section id="court-cases" role="main">
 
           </section>
@@ -171,6 +178,13 @@
             </div>
           </header>
 
+          <!-- ///// No Answer - START ///// -->
+          <section id="question2-no">
+            <hr>
+            <h3>No ongoing legal claims entered</h3>
+          </section>
+          <!-- ///// No Answer - END ///// -->
+
           <section id="ongoing-cases" role="main">
 
           </section>
@@ -189,7 +203,7 @@
         <fieldset class="form-navigation">
           <legend class="hidden" id="continue-label">Please continue with your application</legend>
           <div class="form-group">
-            <input type="button" onclick="location.href='overview.html';" id="continue" class="button" value="Contine with application" aria-labelledby="continue-label">
+            <input type="button" onclick="location.href='3a-solicitors.html';" id="continue" class="button" value="Contine with application" aria-labelledby="continue-label">
           </div>
           <br>
           <div class="form-group">
@@ -270,6 +284,9 @@
     firstCount= $.cookie("legal-prop-count");
 
     for (i = 1; i <= firstCount; i++) {
+
+      // no answers display
+      $("#question1-no").hide();
 
       // Court details variable cookies
       if($.cookie("seperation-court_"+i)){
@@ -356,6 +373,9 @@
     secondCount= $.cookie("claims-prop-count");
 
     for (i = 1; i <= secondCount; i++) {
+
+      // no answers display
+      $("#question2-no").hide();
 
       // Oustanding legal claims variables cookies
       if($.cookie("claims-court_"+i)){
