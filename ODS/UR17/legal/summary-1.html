@@ -127,10 +127,6 @@
         </p>
       </div>
 
-      <h1 class="form-title heading-xlarge" id="maincontent">Legal proceedings overview</h1>
-
-      <p class="lede">You've already told us about the following legal proceedings:</p>
-
       <!-- ///// Form - START ///// -->
       <form class="form" method="post">
 
@@ -141,7 +137,7 @@
           <header>
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <h2 class="heading-large">Legal separation, divorce or dissolution cases</h2>
+                <h1 class="heading-large" id="maincontent">Legal separation, divorce or dissolution cases</h1>
               </div>
             </div>
           </header>
@@ -149,7 +145,7 @@
           <!-- ///// No Answer - START ///// -->
           <section id="question1-no">
             <hr>
-            <h3>No legal separartion cases entered</h3>
+            <h3>No legal separation cases entered</h3>
           </section>
           <!-- ///// No Answer - END ///// -->
 
@@ -161,40 +157,8 @@
 
         <!-- ///////////////// Add Item - Start ///////////////// -->
         <fieldset class="add-item">
-          <legend class="hidden">Add a seperation</legend>
-          <input type="button" onclick="location.href='1b-name-of-court.html';" id="btn-add-seperation" class="link-lookalike" value="Add seperation">
-        </fieldset>
-        <!-- ///////////////// Add Item - End ///////////////// -->
-
-        <!-- ///// Fieldset/Group 2 - START ///// -->
-        <fieldset class="section-overview">
-          <legend class="visuallyhidden">Your answers are below</legend>
-
-          <header>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <h2 class="heading-large">Ongoing legal claims</h2>
-              </div>
-            </div>
-          </header>
-
-          <!-- ///// No Answer - START ///// -->
-          <section id="question2-no">
-            <hr>
-            <h3>No ongoing legal claims entered</h3>
-          </section>
-          <!-- ///// No Answer - END ///// -->
-
-          <section id="ongoing-cases" role="main">
-
-          </section>
-        </fieldset>
-        <!-- ///// Fieldset/Group 2 - END ///// -->
-
-        <!-- ///////////////// Add Item - Start ///////////////// -->
-        <fieldset class="add-item">
-          <legend class="hidden">Add a outstanding legal claim</legend>
-          <input type="button" onclick="location.href='2b-name-of-court.html';" id="btn-add-outstanding" class="link-lookalike" value="Add outstanding legal claim">
+          <legend class="hidden">Add a separation</legend>
+          <input type="button" onclick="location.href='1b-name-of-court.html';" id="btn-add-separation" class="link-lookalike" value="Add separation">
         </fieldset>
         <!-- ///////////////// Add Item - End ///////////////// -->
 
@@ -203,7 +167,7 @@
         <fieldset class="form-navigation">
           <legend class="hidden" id="continue-label">Please continue with your application</legend>
           <div class="form-group">
-            <input type="button" onclick="location.href='3a-solicitors.html';" id="continue" class="button" value="Contine with application" aria-labelledby="continue-label">
+            <input type="button" onclick="location.href='2a-legal-claims.html';" id="continue" class="button" value="Contine" aria-labelledby="continue-label">
           </div>
           <br>
           <div class="form-group">
@@ -289,20 +253,20 @@
       $("#question1-no").hide();
 
       // Court details variable cookies
-      if($.cookie("seperation-court_"+i)){
-        court_details_Name = $.cookie("seperation-court_"+i);
+      if($.cookie("separation-court_"+i)){
+        court_details_Name = $.cookie("separation-court_"+i);
       }
-      if($.cookie("seperation-court-reference_"+i)){
-        court_details_CourtRef = $.cookie("seperation-court-reference_"+i);
+      if($.cookie("separation-court-reference_"+i)){
+        court_details_CourtRef = $.cookie("separation-court-reference_"+i);
       }
-      if($.cookie("seperation-finish-month_"+i)){
-        court_details_FinishMonth = $.cookie("seperation-finish-month_"+i);
+      if($.cookie("separation-finish-month_"+i)){
+        court_details_FinishMonth = $.cookie("separation-finish-month_"+i);
       }
-      if($.cookie("seperation-finish-year_"+i)){
-        court_details_FinishYear = $.cookie("seperation-finish-year_"+i);
+      if($.cookie("separation-finish-year_"+i)){
+        court_details_FinishYear = $.cookie("separation-finish-year_"+i);
       }
-      if($.cookie("seperation-division_"+i)){
-        court_details_Asset = $.cookie("seperation-division_"+i);
+      if($.cookie("separation-division_"+i)){
+        court_details_Asset = $.cookie("separation-division_"+i);
       }
 
       var row= '<div class="new-item">';
@@ -347,7 +311,7 @@
       // End wrapping container
       row += '</div>';
 
-      if($.cookie("seperation-court-reference_"+i) === "") {
+      if($.cookie("separation-court-reference_"+i) === "") {
         $("#court-ref-appearance").hide();
       } else {
         $("#court-ref-appearance").show();
