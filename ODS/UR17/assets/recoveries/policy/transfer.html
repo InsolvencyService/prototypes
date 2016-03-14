@@ -329,9 +329,9 @@ display:block;
         </div>
 
         <div class="form-group surrender" style="display:none">
-			<label id="actualvalue_label0" for="actualvalue" class="form-label-bold">How much money did you give them?</label>
+			<label id="giftedvalue_label0" for="giftedvalue" class="form-label-bold">How much money did you give them?</label>
 			<span class="currency">£ </span>
-			<input id="actualvalue0" name="actualvalue" type="text" value="" class="amount-value" />
+			<input id="giftedvalue" name="giftedvalue" type="text" value="" class="amount-value" />
         </div>
 
 
@@ -468,8 +468,18 @@ $("#next").click(function() {
 
 
 function writeCookies() {
-	$.cookie('ass-rec-pol-'+count+"-netvalue", $("#propertyvalue").val(), { path: '/' } );
-
+	$.cookie('ass-rec-pol-'+count+"-transfer-name", $("#companyname").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-address1", $("#address_line_1").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-address2", $("#address_line_2").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-address3", $("#address_line_3").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-addresstown", $("#address_town").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-addresscounty", $("#address_county").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-addresspostcode", $("#address_post_code").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-addresscountry", $("#address_country").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-relationship", $("#pnl-relationship :selected").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-marketvalue", $("#marketvalue").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-grossvalue", $("#actualvalue").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-transfer-gifted", $("#giftedvalue").val(), { path: '/' } );
 }
 
 function numberWithoutCommas(x) {
