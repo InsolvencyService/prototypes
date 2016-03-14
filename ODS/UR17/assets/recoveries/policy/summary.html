@@ -75,27 +75,6 @@
 <style type="text/css">
 
 
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
 </style>
 <!-- #EndEditable -->
 
@@ -138,7 +117,7 @@ display:block;
     </div>
 </header>
 <!--end header-->
-
+<div class="content">
 <div id="global-header-bar">
     <div class="inner-block">
         <div class="header-bar"></div>
@@ -146,9 +125,9 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
- <div id="content" >
+<div id="content" >
  <div class="inner-block">
+
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
@@ -159,90 +138,210 @@ display:block;
 	
 
 
-<!-- #BeginEditable "content" --> 
-<div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Policies <span class="market" style="display:none">you have sold</span><span class="surrender" style="display:none">you have cashed in</span><span class="gifted" style="display:none">you have given away or transferred</span> </h1>
-	
-	
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-		<div class="form-group">
-                        
-			<label id="first_name_label" for="propertyvalue" class="form-label-bold">
-			How much money did you receive for the policy after charges and 
-			legal fees (proceeds of sale)?</label>
-			<span class="currency">£ </span><input id="propertyvalue" name="amount" type="text" value="" class="amount-value" />
-                       
-        </div>     
-        
-        <p>&nbsp;</p>
-        <div class="form-group market" style="display:none">
-			<fieldset class="inline">
-			<label id="mktvalue_label" class="form-label-bold">Was the sale for less than the market value?</label>
-			<p class="form-hint">Answer yes if you sold the policy privately for less than it could have been sold on the open market</p>
-				<div id="pnl-mktvalue" class="form-group">
-					<label id="mktvalue_label1" for="mktvalue_yes" class="block-label">
-					<input id="mktvalue_yes" value="" name="mktvalue" type="radio">Yes</label>
-				
-					<label id="mktvalue_label2" for="mktvalue_no" class="block-label">
-					<input id="mktvalue_no" value="" name="mktvalue" type="radio">No</label>
-				</div>
-			</fieldset>
-		</div>
-		
-		<div class="form-group surrender" style="display:none">
-			<fieldset class="inline" id="pnl-surrendered">
-			<label id="surrender_label" class="form-label-bold">Have you given away any of the money you received when you cashed in the policy?</label>
-			
-				<div id="pnl-surrender" class="form-group">
-					<label id="surrender_label1" for="surrender_yes" class="block-label">
-					<input id="surrender_yes" value="" name="surrender" type="radio">Yes</label>
-				
-					<label id="surrender_label2" for="surrender_no" class="block-label">
-					<input id="surrender_no" value="" name="surrender" type="radio">No</label>
-				</div>
-			</fieldset>
-		</div>
+<!-- #BeginEditable "content" -->
+<div class="inner-block">
+	<h1 class="form-title heading-xlarge">Sold, transfered or gifted property summary.</h1>
+	<p class="lede">Please check your answers carefully</p>	
+	<fieldset>
+		<legend class="form-label-bold">Property details</legend>
 
-		
-		<p>&nbsp;</p>
+		<header>
+			<div class="row">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <h2 class="heading-small visuallyhidden">Question</h2>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <h2 class="heading-small visuallyhidden">Your answer</h2>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <h2 class="heading-small visuallyhidden">Actions</h2>
+			  </div>
+			</div>
+		</header>
+
+    	<section id="property_table" role="main">		
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Property address</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="address">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="../property/address.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Type of property</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="type">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="../property/property_details.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Number of bedrooms</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="bed">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="../property/property_details.html">Change your answers</a>
+			  </div>
+			</div>
+		</section>
+	</fieldset>
+	<p>&nbsp;</p>
+	<fieldset>
+		<legend class="form-label-bold">Transfer details</legend>
+
+		<header>
+			<div class="row">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <h2 class="heading-small visuallyhidden">Question</h2>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <h2 class="heading-small visuallyhidden">Your answer</h2>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <h2 class="heading-small visuallyhidden">Actions</h2>
+			  </div>
+			</div>
+		</header>
+
+    	<section id="property_table" role="main">		
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Date of transfer</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="date">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="../property/amount.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>How much money did you receive for the property after charges and legal fees (proceeds of sale)?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="net">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="../property/amount.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Was the sale or transfer for less than the market value?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="undervalue">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="../property/amount.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="annex">
+
+				<!--- only show if yes --->
+				<div class="row group-heading annex">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>What was the market value of the property at the time you sold, transferred or gave it away?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="market">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="../property/transfer.html">Change your answers</a>
+				  </div>
+				</div>
+				
+				<div class="row group-heading annex">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>How much did you sell or transfer the property for (before costs of sale)?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="gross">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="../property/transfer.html">Change your answers</a>
+				  </div>
+				</div>
+				
+				<div class="row group-heading annex">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>Who did you sell, transfer or give the property to?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="who">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="../property/transfered_to.html">Change your answers</a>
+				  </div>
+				</div>
+	
+				<div class="row group-heading annex">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>Their address</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="theiraddress">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="../property/transfered_to.html">Change your answers</a>
+				  </div>
+				</div>
+				
+				<div class="row group-heading annex">
+				  <div class="col-md-4 col-sm-4 col-xs-4">
+				    <p>What's their relationship to you?</p>
+				  </div>
+				  <div class="col-md-5 col-sm-5 col-xs-5">
+				    <p class="bolder" id="relationship">Your answer</p>
+				  </div>
+				  <div class="col-md-2 col-sm-2 col-xs-2">
+				    <a href="../property/transfered_to.html">Change your answers</a>
+				  </div>
+				</div>
+			</div>
+		</section>
+	</fieldset>
+
+
+	
+                    
         
-        
-   
- 		<div class="clearfix"></div>
 
 		<p class="clearfix"><br/></p>
 	
 	<!-- For User research -->
-	<div class="form-navigation form-group">
+		<div class="form-navigation form-group">
+			<a role="button" id="next" class="button" href="../property/overview.html">Continue</a>
+			<br>
+			<a href="../property/property.html" id="back">Back</a>
+		</div>
 	
-	<div>
-		<a id="next" class="button">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	</form>
-	</div>
-
+</div>
+	 </div>
 	 <!-- #EndEditable -->
 
         
-</div>
+
+
+
+
+
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
@@ -308,51 +407,84 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+
 <script type="text/javascript">
 
-var count;
 
 $(document).ready(function() {
 
-	var type = getParameterByName("q");
-	$("."+type).show();
-	count= $.cookie('ass-rec-pol-count');
-   
-
-});
-
-$('#pnl-mktvalue input:radio').click(function() {
-	if(	($("#mktvalue_yes").prop('checked')==true)){
-		$("#next").prop("href", "transfer.html?q=sale");
+	$(".annex").hide();
+	
+	if(getParameterByName('p')){
+		count = getParameterByName('p');
 	}
-	else if($("#mktvalue_no").prop('checked')==true){
-		$("#next").prop("href", "summary.html");	
+	else{
+		var count= $.cookie("ass-rec-prop-count");
 	}
-});
-
-$('#pnl-surrendered input:radio').click(function() {
-	if(	($("#surrender_yes").prop('checked')==true)){
-		$("#next").prop("href", "transfer.html?q=surrender");
+	
+	$("#type").text($.cookie("ass-rec-prop-type"+count));
+	$("#bed").text($.cookie("ass-rec-prop-bed"+count));
+	$("#date").text($.cookie("ass-rec-prop-tfrmonth"+count) + " " + $.cookie("ass-rec-prop-tfryear"+count));
+	$("#net").text("£"+$.cookie("ass-rec-prop-netamount"+count));
+	
+	var property_address;
+	if($.cookie("ass-rec-prop-add1-"+count)){
+		property_address = $.cookie("ass-rec-prop-add1-"+count);
 	}
-	else if($("#surrender_no").prop('checked')==true){
-		$("#next").prop("href", "asset_list.html?loop=true");	
+	if($.cookie("ass-rec-prop-add2-"+count)){
+		property_address += ", "+$.cookie("ass-rec-prop-add2-"+count);
 	}
+	if($.cookie("ass-rec-prop-add3-"+count)){
+		property_address += ", "+$.cookie("ass-rec-prop-add3-"+count);
+	}
+    if($.cookie("ass-rec-prop-addtown-"+count)){
+    	property_address += ", "+$.cookie("ass-rec-prop-addtown-"+count);
+    }
+    if($.cookie("ass-rec-prop-addcounty-"+count)){
+    	property_address += ", "+$.cookie("ass-rec-prop-addcounty-"+count);
+	}	
+    if($.cookie("ass-rec-prop-addpcode-"+count)){
+    	property_address += ", "+$.cookie("ass-rec-prop-addpcode-"+count);
+	}   
+	$("#address").text(property_address); 
+	$("#undervalue").text($.cookie("ass-rec-prop-undervalue"+count));
+	
+	if($.cookie("ass-rec-prop-undervalue"+count)=="True"){
+	
+		$(".annex").show();
+		$("#market").text("£"+$.cookie("ass-rec-prop-marketvalue"+count));
+		$("#gross").text("£"+$.cookie("ass-rec-prop-grossamount"+count));
+		$("#who").text($.cookie("ass-rec-prop-transfer-companyname"+count));
+	
+		var transfer_address;
+		if($.cookie("ass-rec-prop-transfer-add1-"+count)){
+			transfer_address = $.cookie("ass-rec-prop-transfer-add1-"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-add2-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-add2-"+count);	
+		}
+		if($.cookie("ass-rec-prop-transfer-add3-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-add3-"+count);	
+		}
+		if($.cookie("ass-rec-prop-transfer-town-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-town-"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-county-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-county-"+count);
+		}
+		if($.cookie("ass-rec-prop-transfer-postcode-"+count)){
+			transfer_address += ", "+$.cookie("ass-rec-prop-transfer-postcode-"+count);
+		}
+		$("#theiraddress").text(transfer_address);
+		$("#relationship").text($.cookie("ass-rec-prop-transfer-relationship"+count));
+
+	}
+	
+	
+	
+	
+	
 });
-
-
-
-$("#next").click(function() {
-	writeCookies();
-});
-
-function writeCookies() {
-	$.cookie('ass-rec-pol-'+count+"-netvalue", $("#propertyvalue").val(), { path: '/' } );
-}
-   
-function numberWithoutCommas(x) {
-    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
-    return number;
-}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -361,6 +493,11 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+   
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
+}
 
 </script>
 
