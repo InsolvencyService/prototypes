@@ -237,96 +237,7 @@
 
   <script type="text/javascript">
 
-  var firstCount;
-
-  // Court details variables
-  var court_details_Name;
-  var court_details_CourtRef;
-  var court_details_FinishMonth;
-  var court_details_FinishYear;
-  var court_details_Asset;
-
-  $(document).ready(function() {
-
-    firstCount= $.cookie("legal-prop-count");
-
-    for (i = 1; i <= firstCount; i++) {
-
-      // no answers display
-      $("#question1-no").hide();
-
-      // Court details variable cookies
-      if($.cookie("separation-court_"+i)){
-        court_details_Name = $.cookie("separation-court_"+i);
-      }
-      if($.cookie("separation-court-reference_"+i)){
-        court_details_CourtRef = $.cookie("separation-court-reference_"+i);
-      }
-      if($.cookie("separation-finish-month_"+i)){
-        court_details_FinishMonth = $.cookie("separation-finish-month_"+i);
-      }
-      if($.cookie("separation-finish-year_"+i)){
-        court_details_FinishYear = $.cookie("separation-finish-year_"+i);
-      }
-      if($.cookie("separation-division_"+i)){
-        court_details_Asset = $.cookie("separation-division_"+i);
-      }
-
-      var row= '<div class="new-item">';
-      // row 1
-      row += '<div class="row">';
-      row += '<div class="col-md-9 col-sm-9 col-xs-12">';
-      row += '<h3 class="heading-medium">' + court_details_Name + '</h3>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#" class="delete-item">Delete</a><a href="1b-name-of-court.html?p='+i+'">Edit</a></div>';
-      row += '</div>';
-      // row 2
-      row += '<div class="row" id="court-ref-appearance">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Court reference:</span></p>';
-      row += '</div>';
-      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p class="bolder">' + court_details_CourtRef + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 3
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Date the process finished:</span></p>';
-      row += '</div>';
-      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p class="bolder">' + court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 4
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Division of your assets:</span></p>';
-      row += '</div>';
-      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p class="bolder">' + court_details_Asset + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 5
-      // row += '<div class="row">';
-      // row += '<div class="col-md-4 col-sm-4 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
-      // row += '</div>';
-      // End wrapping container
-      row += '</div>';
-
-      if($.cookie("separation-court-reference_"+i) === "") {
-        $("#court-ref-appearance").hide();
-      } else {
-        $("#court-ref-appearance").show();
-      }
-
-      $("#court-cases").append(row);
-
-    }
-
-  });
-
-  var secondCount;
+  var thirdCount;
 
   // Oustanding legal claims details variables
   var outstanding_details_Name;
@@ -337,12 +248,12 @@
 
   $(document).ready(function() {
 
-    secondCount= $.cookie("claims-prop-count");
+    thirdCount= $.cookie("solicitor-prop-count");
 
-    for (i = 1; i <= secondCount; i++) {
+    for (i = 1; i <= thirdCount; i++) {
 
       // no answers display
-      $("#question2-no").hide();
+      $("#question3-no").hide();
 
       // Oustanding legal claims variables cookies
       if($.cookie("claims-court_"+i)){

@@ -244,15 +244,28 @@
   $(document).ready(function() {
 
     $("#solicitor-name-cont").on("click", function (e) {
-      thirdCount = $.cookie("solicitor-prop-count_");
-      // if(count == "" || count == null){
-      //   count = 0;
-      // }
-      // count++;
-      $.cookie("solicitor-name_"+thirdCount, $("#solicitor-name").val(), {path:'/'});
+      if (getParameterByName('p')) {
+        thirdCount = getParameterByName('p');
+      }
+      else {
+        thirdCount = $.cookie("solicitor-prop-count");
+        if(thirdCount == "" || thirdCount == null){
+          thirdCount = 0;
+        }
+        thirdCount++;
+        $.cookie("solicitor-name_"+thirdCount, $("#solicitor-name").val(), {path:'/'});
+        $.cookie("solicitor-prop-count", secondCount, { path: '/' } );
+      }
     });
 
   });
+
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
 
   </script>
   <!-- #EndEditable "scripts" -->
