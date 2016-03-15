@@ -150,30 +150,34 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent" aria-labelledby="intro">
 
-          <h1 class="form-title heading-xlarge" id="intro">Sold, transferred or gifted properties</h1>
+          <h1 class="form-title heading-large" id="intro">Sold, transferred or gifted properties</h1>
           <p>We need to know about any assets or possessions you have recently sold, transferred or given away.</p>
           <p>If an asset or possession was only sold, transferred or given away because you knew you would be applying for bankruptcy, the new owner might have to return it.</p>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-               	<fieldset class="form-group" role="main">
-					<legend id="property-question" for="property-question">
-						In the last 5 years, have you sold, transferred or given away any properties?</legend>
+			
+				<fieldset class="form-group not-started rowtop" role="main">
+					<legend class="visuallyhidden">sold, transferred or gifted properties</legend>
+					<label id="property-other" for="property-question">
+						<span class="heading-xlarge">1</span>
+						In the last 5 years, have you sold, transferred or given away any properties?</label>
 					<p class="form-hint">Include any properties you have transferred into trusts</p>
-					<div class="row" id="property-question">
-						<div class="col-sm-2 col-xs-4 text-left" >
-							<a id="yes" role="button" class="button">Yes</a>
+					<div class="row" id="property-other">
+						
+						<div class="col-md-2 col-xs-4" id="q1-yes">
+							<a id="yes" role="button" class="button" aria-disabled="true">Yes</a>
 						</div>
-						<div class="col-sm-2 col-xs-4" >
-							<a id="no" role="button" class="button">No</a>
+						<div class="col-md-2 col-xs-4" id="q1-no">
+							<a id="no" role="button" class="button" aria-disabled="true">No</a>
 						</div>
-						<div class="col-sm-8 col-xs-4">
-
+						<div class="col-md-8 col-xs-4">
 						</div>
 					</div>
 				</fieldset>
+
+               	
 				<!-- ///// CTA Section - START ///// -->
 
 					<div class="row">

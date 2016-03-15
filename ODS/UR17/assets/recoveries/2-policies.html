@@ -150,28 +150,31 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent" aria-labelledby="intro">
 
-          <h1 class="form-title heading-xlarge" id="intro">Sold, transferred or gifted asset</h1>
+          <h1 class="form-title heading-large" id="intro">Sold, transferred or gifted policies</h1>
           
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-            	
-               	<fieldset class="form-group" role="main">
-					<label id="property-ploicy" for="property-question">
+			
+				<fieldset class="form-group not-started rowtop" role="main">
+					<legend class="visuallyhidden">sold, transferred or gifted properties</legend>
+					<label id="property-other" for="property-question">
+						<span class="heading-xlarge">2</span>
 						In the last 5 years, have you cashed in, sold, transferred, or given away any pension, endowment or life insurance policies?</label>
 					<p class="form-hint">Include any policies you have transferred into trusts</p>
-					<div class="row" id="property-policy">
-						<div class="col-md-2 col-xs-4" >
-							<a id="yes" role="button" class="button">Yes</a>
+					<div class="row" id="property-other">
+						
+						<div class="col-md-2 col-xs-4" id="q1-yes">
+							<a id="yes" role="button" class="button" aria-disabled="true">Yes</a>
 						</div>
-						<div class="col-md-2 col-xs-4" >
-							<a id="no" role="button" class="button">No</a>
+						<div class="col-md-2 col-xs-4" id="q1-no">
+							<a id="no" role="button" class="button" aria-disabled="true">No</a>
 						</div>
 						<div class="col-md-8 col-xs-4">
 						</div>
-
 					</div>
 				</fieldset>
+            	
 
 				
 				<!-- ///// CTA Section - START ///// -->
@@ -260,8 +263,13 @@
   <script type="text/javascript">
   	$("#yes").on("click", function (e) {
 		$.cookie("recovery_2", "yes");
-		$("#yes").attr("href", "policy/address.html");
-
+		
+		if($.cookie("ass-rec-pol-count")){
+			$("#yes").attr("href", "policy/asset_list.html");
+		}
+		else{
+			$("#yes").attr("href", "property/address.html");
+		}
 	});
 	
 	$("#no").on("click", function (e) {
