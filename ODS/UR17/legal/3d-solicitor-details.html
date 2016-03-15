@@ -367,10 +367,10 @@
 
     	var item = '<label id="your-case-label'+j+'" for="your-case'+j+'" class="block-label">';
     	item += '<input id="your-case'+j+'" value="$.cookie("claims-court-reference_"+j)" name="case-list" type="checkbox" aria-labelledby="case-list">';
-    	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+i) + ')';
+    	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
-    	if ($.cookie("claims-settled_"+i == "No")) {
+    	if ($.cookie("claims-settled_"+j == "No")) {
     		item += ' - Ongoing legal claim</span>';
     	}
     	else {
