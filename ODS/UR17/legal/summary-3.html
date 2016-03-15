@@ -299,7 +299,6 @@
       if($.cookie("post_code_"+i)){
       	property_address += ", "+$.cookie("post_code_"+i);
     	}
-      $("#address").text(property_address);
       // Solicitor Case
       if($.cookie("solicitor-cases_"+i)){
         solicitor_CaseCourt = $.cookie("solicitor-cases_"+i);
@@ -378,6 +377,7 @@
       //   $(".address-hide").show();
       // }
 
+      $("#address").text(property_address);
       $("#solicitors-used").append(row);
 
     }
