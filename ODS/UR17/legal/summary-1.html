@@ -173,6 +173,7 @@
           <legend class="hidden" id="continue-label">Please continue with your application</legend>
           <div class="form-group">
             <label class="form-label-bold" for="continue">Have you finished adding your legal separations?</label>
+            <br>
             <input type="button" onclick="location.href='2a-legal-claims.html';" id="continue" class="button" value="Contine" aria-labelledby="continue-label">
           </div>
           <br>
@@ -251,7 +252,7 @@
 
   $(document).ready(function() {
 
-    firstCount= $.cookie("legal-prop-count");
+    firstCount = $.cookie("legal-prop-count");
 
     for (i = 1; i <= firstCount; i++) {
 
