@@ -138,7 +138,7 @@
 	<div class="inner-block ">
 				
 		<h1 class="form-title heading-xlarge">Sold gifted and transfered properties overview</h1>
-		<p class="lede">You've already told us about the following properties:</p>
+		<p class="lede">You've already told us about:</p>
 		
 		<fieldset>
 		<legend class="visuallyhidden">Properties you've already told us you have sold transfered or gifted.</legend>
@@ -289,9 +289,13 @@ $(document).ready(function() {
 		}  
 		
 		
-		var row= '<div class="row group-heading"><div class="col-xs-8"><p>';
+		row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
 		row += property_address;
-		row += '</p></div><div class="col-xs-3"><a href="summary.html?p='+i+'">View your answers</a>&nbsp;&nbsp; <a href="#">Delete</a></div></div>'
+		row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
+		row += 'summary.html?p='+i;
+		row += '">View your answers</a>&nbsp;<a href="#" class="delete-item">Delete</a></div></div></div>';
+		
+		
 		
 		$("#property_table").append(row);
 		
