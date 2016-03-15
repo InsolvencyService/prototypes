@@ -324,6 +324,7 @@
 	
     thirdCount = parseInt($.cookie("solicitor-prop-count"));
 	fourthCount =  parseInt($.cookie("claims-prop-count"));
+	fifthCount = parseInt($.cookie("legal-prop-count"));
 	
 	
     $("#yes, #no").on("click", function (e) {
@@ -355,9 +356,9 @@
   // Label - START
   
   // My added code
-  alert("start of first loop - "+thirdCount);
-  for(var i=1; i<=thirdCount; i++){
-	alert("first loop "+i )
+  ;
+  for(var i=1; i<=fifthCount; i++){
+	
 	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
 	item += '<input id="your-case'+i+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
 	item += '<span class="court-name bolder">'+$.cookie("seperation-court_"+i)+'</span> ';
@@ -372,9 +373,9 @@
 	alert(item);
 	$("#case-list").append(item);
   }
-  alert("start of second loop - "+fourthCount);
+  
   for(var j=1; j<=fourthCount; j++){
-	alert("Second loop "+j )
+	
 	var item = '<label id="your-case-label'+j+'" for="your-case'+j+'" class="block-label">';
 	item += '<input id="your-case'+j+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
 	item += '<span class="court-name bolder">'+$.cookie("claims-court_"+j)+'</span> ';
@@ -389,7 +390,7 @@
 	alert(item)
 	$("#case-list").append(item);
   }
-  alert("end loops");
+
   // my added code end
   
   
