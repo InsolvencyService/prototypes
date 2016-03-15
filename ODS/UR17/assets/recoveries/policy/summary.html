@@ -626,7 +626,7 @@ $(document).ready(function() {
 	}
 	
 	//populate mail table
-	$("#name").text($.cookie("ass-rec-pol-"+count+"-company"));
+	$("#company").text($.cookie("ass-rec-pol-"+count+"-company"));
 	
 	var address;
 	if($.cookie("ass-rec-pol-"+count+"-add1")){
@@ -651,10 +651,10 @@ $(document).ready(function() {
 		address += ", "+$.cookie("ass-rec-pol-"+count+"-add7");
 	}
 	$("#address").text(address);
-	$("#type").text($.cookie("ass-rec-pol-"+count+"-company"));
-	$("#number").text($.cookie("ass-rec-pol-"+count+"-company"));
-	$("#action").text($.cookie("ass-rec-pol-"+count+"-company"));
-	$("#date").text($.cookie("ass-rec-prop-tfrmonth"+count) + " " + $.cookie("ass-rec-prop-tfryear"+count));
+	$("#type").text($.cookie("ass-rec-pol-"+count+"-type"));
+	$("#number").text($.cookie("ass-rec-pol-"+count+"-number"));
+	$("#action").text($.cookie("ass-rec-pol-"+count+"-action"));
+	$("#date").text($.cookie("ass-rec-pol-"+count+"month") + " " + $.cookie("ass-rec-pol-"+count+"-year"));
 	// end table
 	
 	//populate alternative tables
@@ -690,7 +690,7 @@ $(document).ready(function() {
 	
 	$(".theiraddress").text(theiraddress);
 	$(".relationship").text($.cookie("ass-rec-pol-"+count+"-transfer-relationship"));
-	$(".actualvalue").text($.cookie("ass-rec-pol-"+count+"-transfer-actualvalue"));
+	$(".actualvalue").text($.cookie("ass-rec-pol-"+count+"-transfer-marketvalue"));
 	$(".grossvalue").text($.cookie("ass-rec-pol-"+count+"-transfer-grossvalue"));
 	$(".giftedvalue").text($.cookie("ass-rec-pol-"+count+"-transfer-giftedvalue"));
 	
