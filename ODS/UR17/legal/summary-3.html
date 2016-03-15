@@ -172,9 +172,6 @@
         <fieldset class="form-navigation">
           <legend class="hidden" id="continue-label">Please continue with your application</legend>
           <div class="form-group">
-            <label class="form-label-bold" for="continue">Continue, I have finished adding all of my solicitors</label>
-            <br>
-            <!-- <input type="button" onclick="location.href='../overview.html?section7=complete';" id="continue" class="button" value="Continue" aria-labelledby="continue-label"> -->
             <input type="button" onclick="location.href='overview.html';" id="continue" class="button" value="Continue" aria-labelledby="continue-label">
           </div>
           <br>
@@ -264,7 +261,7 @@
 
   $(document).ready(function() {
 
-    thirdCount= $.cookie("solicitor-prop-count");
+    thirdCount = $.cookie("solicitor-prop-count");
 
     for (i = 1; i <= thirdCount; i++) {
 
@@ -277,27 +274,28 @@
         solicitor_Name = $.cookie("solicitor-name_"+i);
       }
       // Solicitor Address
+      var property_address;
       if($.cookie("address_line_1_"+i)){
-        solicitor_Address1 = $.cookie("address_line_1_"+i);
-      }
+    		property_address = $.cookie("address_line_1_"+i);
+    	}
       if($.cookie("address_line_2_"+i)){
-        solicitor_Address2 = $.cookie("address_line_2_"+i);
-      }
+    		property_address += ", "+$.cookie("address_line_2_"+i);
+    	}
       if($.cookie("address_line_3_"+i)){
-        solicitor_Address3 = $.cookie("address_line_3_"+i);
-      }
+    		property_address += ", "+$.cookie("address_line_3_"+i);
+    	}
       if($.cookie("town_"+i)){
-        solicitor_Town = $.cookie("town_"+i);
+      	property_address += ", "+$.cookie("town_"+i);
       }
       if($.cookie("county_"+i)){
-        solicitor_County = $.cookie("county_"+i);
-      }
+      	property_address += ", "+$.cookie("county_"+i);
+    	}
       if($.cookie("country_"+i)){
-        solicitor_Country = $.cookie("country_"+i);
-      }
+      	property_address += ", "+$.cookie("country_"+i);
+    	}
       if($.cookie("post_code_"+i)){
-        solicitor_Postcode = $.cookie("post_code_"+i);
-      }
+      	property_address += ", "+$.cookie("post_code_"+i);
+    	}
       // Solicitor Case
       if($.cookie("solicitor-cases_"+i)){
         solicitor_CaseCourt = $.cookie("solicitor-cases_"+i);
@@ -326,22 +324,16 @@
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
       row += '<p><span class="form-hint">Address:</span>';
       row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + solicitor_Address1 + '</p>';
-      row += '<p class="bolder address-hide">' + solicitor_Address2 + '</p>';
-      row += '<p class="bolder address-hide">' + solicitor_Address3 + '</p>';
-      row += '<p class="bolder">' + solicitor_Town + '</p>';
-      row += '<p class="bolder">' + solicitor_County + '</p>';
-      row += '<p class="bolder">' + solicitor_Country + '</p>';
-      row += '<p class="bolder">' + solicitor_Postcode + '</p>';
+      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
+      row += '<p id="address" class="bolder">' + property_address +'</p>';
       row += '</div>';
       row += '</div>';
       // row 3
       row += '<div class="row">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint"The case details:</span>';
+      row += '<p><span class="form-hint">The case details:</span>';
       row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
       row += '<p class="bolder">' + solicitor_CaseCourt + '</p>';
       row += '</div>';
       row += '</div>';
@@ -350,7 +342,7 @@
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
       row += '<p><span class="form-hint">Date you instructed your solicitor:</span>';
       row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
       row += '<p class="bolder">' + solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
       row += '</div>';
       row += '</div>';
@@ -359,7 +351,7 @@
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
       row += '<p><span class="form-hint">What type of action did they assist you with?:</span>';
       row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
       row += '<p class="bolder">' + solicitor_Action + '</p>';
       row += '</div>';
       row += '</div>';
@@ -376,11 +368,11 @@
         $("#court-ref-appearance").show();
       }
 
-      if($.cookie("address_line_2_"+i) === "" || $.cookie("address_line_3_"+i) === "") {
-        $(".address-hide").hide();
-      } else {
-        $(".address-hide").show();
-      }
+      // if ($.cookie("address_line_2_"+i) === "" || $.cookie("address_line_3_"+i) === "") {
+      //   $(".address-hide").hide();
+      // } else {
+      //   $(".address-hide").show();
+      // }
 
       $("#solicitors-used").append(row);
 

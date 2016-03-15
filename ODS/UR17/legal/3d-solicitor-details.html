@@ -325,8 +325,20 @@
   	fourthCount =  parseInt($.cookie("claims-prop-count"));
   	fifthCount = parseInt($.cookie("legal-prop-count"));
 
+<<<<<<< HEAD
     $("#yes").on("click", function (e) {
       WriteCookies();
+=======
+    $("#yes, #no").on("click", function (e) {
+      // if(count == "" || count == null){
+      //   count = 0;
+      // }
+      // count++;
+      $.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").val(), { path:'/' });
+      $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
+      $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
+      $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").val(), { path:'/' });
+>>>>>>> 934b1c8d1c7926db897e7af38f202711c6d496c6
     });
     
     $("#no").on("click", function (e) {
