@@ -137,19 +137,19 @@
           <header>
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <h1 class="heading-xlarge" id="maincontent">Ongoing legal claims</h1>
+                <h1 class="heading-xlarge" id="maincontent">Solicitors used</h1>
               </div>
             </div>
           </header>
 
           <!-- ///// No Answer - START ///// -->
-          <section id="question2-no">
+          <section id="question3-no">
             <hr>
-            <h3>No ongoing legal claims entered</h3>
+            <h3>No solicitors entered</h3>
           </section>
           <!-- ///// No Answer - END ///// -->
 
-          <section id="ongoing-cases" role="main">
+          <section id="solicitors-used" role="main">
 
           </section>
         </fieldset>
@@ -157,18 +157,20 @@
 
         <!-- ///////////////// Add Item - Start ///////////////// -->
         <fieldset class="add-item">
-          <legend class="hidden">Add a outstanding legal claim</legend>
-          <input type="button" onclick="location.href='2b-name-of-court.html';" id="btn-add-outstanding" class="link-lookalike" value="Add outstanding legal claim">
+          <legend class="hidden">Add a solicitor</legend>
+          <input type="button" onclick="location.href='3b-solicitor-name.html';" id="btn-add-solicitor" class="link-lookalike" value="Add a solicitor">
         </fieldset>
         <!-- ///////////////// Add Item - End ///////////////// -->
 
         <!-- ///// CTA Section - START ///// -->
-        <hr>
+        <p>&nbsp;</p>
         <fieldset class="form-navigation">
           <legend class="hidden" id="continue-label">Please continue with your application</legend>
           <div class="form-group">
-            <label class="form-label-bold" for="continue">Have you finished adding your ongoing legal claims?</label>
-            <input type="button" onclick="location.href='3a-solicitors.html';" id="continue" class="button" value="Continue" aria-labelledby="continue-label">
+            <label class="form-label-bold" for="continue">Continue, I have finished adding all of my legal proceedings</label>
+            <br>
+            <!-- <input type="button" onclick="location.href='../overview.html?section7=complete';" id="continue" class="button" value="Continue" aria-labelledby="continue-label"> -->
+            <input type="button" onclick="location.href='overview.html';" id="continue" class="button" value="Continue" aria-labelledby="continue-label">
           </div>
           <br>
           <div class="form-group">
@@ -324,6 +326,103 @@
 
   });
 
+  var secondCount;
+
+  // Oustanding legal claims details variables
+  var outstanding_details_Name;
+  var outstanding_details_CourtRef;
+  var outstanding_details_Claim;
+  var outstanding_details_ClaimOrigin;
+  var outstanding_details_Settled;
+
+  $(document).ready(function() {
+
+    secondCount= $.cookie("claims-prop-count");
+
+    for (i = 1; i <= secondCount; i++) {
+
+      // no answers display
+      $("#question2-no").hide();
+
+      // Oustanding legal claims variables cookies
+      if($.cookie("claims-court_"+i)){
+        outstanding_details_Name = $.cookie("claims-court_"+i);
+      }
+      if($.cookie("claims-court-reference_"+i)){
+        outstanding_details_CourtRef = $.cookie("claims-court-reference_"+i);
+      }
+      if($.cookie("claims-type_"+i)){
+        outstanding_details_Claim = $.cookie("claims-type_"+i);
+      }
+      if($.cookie("claims-origin_"+i)){
+        outstanding_details_ClaimOrigin = $.cookie("claims-origin_"+i);
+      }
+      if($.cookie("claims-settled_"+i)){
+        outstanding_details_Settled = $.cookie("claims-settled_"+i);
+      }
+
+      var row= '<div class="new-item">';
+      // row 1
+      row += '<div class="row">';
+      row += '<div class="col-md-9 col-sm-9 col-xs-12">';
+      row += '<h3 class="heading-medium">' + outstanding_details_Name + '</h3>';
+      row += '</div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#" class="delete-item">Delete</a><a href="1b-name-of-court.html?p='+i+'">Edit</a></div>';
+      row += '</div>';
+      // row 2
+      row += '<div class="row" id="court-ref-appearance">';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p><span class="form-hint">Court reference:</span>';
+      row += '</div>';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p class="bolder">' + outstanding_details_CourtRef + '</p>';
+      row += '</div>';
+      row += '</div>';
+      // row 3
+      row += '<div class="row">';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p><span class="form-hint">What\'s the claim about:</span>';
+      row += '</div>';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p class="bolder">' + outstanding_details_Claim + '</p>';
+      row += '</div>';
+      row += '</div>';
+      // row 4
+      row += '<div class="row">';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p><span class="form-hint">Did you start this claim:</span>';
+      row += '</div>';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p class="bolder">' + outstanding_details_ClaimOrigin + '</p>';
+      row += '</div>';
+      row += '</div>';
+      // row 5
+      row += '<div class="row">';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p><span class="form-hint">Has the claim been settled out of court?:</span>';
+      row += '</div>';
+      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
+      row += '<p class="bolder">' + outstanding_details_Settled + '</p>';
+      row += '</div>';
+      row += '</div>';
+      // row 6
+      // row += '<div class="row">';
+      // row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
+      // row += '</div>';
+      // End wrapping container
+      row += '</div>';
+
+      if($.cookie("claims-court-reference_"+i) === "") {
+        $("#court-ref-appearance").hide();
+      } else {
+        $("#court-ref-appearance").show();
+      }
+
+      $("#ongoing-cases").append(row);
+
+    }
+
+  });
 
   // Delete item
   $(document).ready(function() {
