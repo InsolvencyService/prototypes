@@ -72,7 +72,7 @@
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../../../creditors/css/typeahead.css" rel="stylesheet">
 
-
+<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/legal.css">
  
 
 
@@ -136,75 +136,37 @@
 	</p>
 	</div>
 	</div>
+
 	
 	
 
 
 <!-- #BeginEditable "content" --> 
-     <div class="inner-block">
 
-        <!-- ///// Left content - START ///// -->
-        <div class="col-md-8 col-xs-12" role="main" id="maincontent" aria-labelledby="intro">
+	<div class="inner-block text" role="main" id="maincontent" aria-labelledby="intro">
+		<h1 class="form-title heading-large" id="intro">Pensions, endowments and life insurance</h1>
 
-          	<h1 class="form-title heading-large" id="intro">Pensions, endowments and life insurance</h1>
-
-			<form class="form" method="post">
-		
-				<div id="msg-entervalue" style="display:none">
-					<p>&nbsp;</p>
-					<div class="validation-summary"  >
-					                <h2>Add a policy company</h2>
-				                <p></p><ol>
-				        <li class="error-message"> 
-				               Enter a policy companies name below to continue
-				        </li>
-				        </ol>
-				    </div>
-			    </div>        
-	    
-		        <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
-		           <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
-		            <p>Are you sure you want to delete this creditor?</p>
-		            <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
-		        </div>  
-	
-				<div id="creditorlist">
-					<table style="width: 100%">
-						<thead>
-							<tr>
-								<th>Type</th>
-								<th>Policy supplied by</th>
-								<th>Policy Reference</th>
-								<th>&nbsp;</th>
-							</tr>
-						</thead>
-						<tbody id="tbody">
+		<form class="form" method="post">
+			<p class="lede">You've already added:</p>
+				
+			<div id="policylist">	
 				
 				
-						</tbody>
-					</table>
-				</div>
-	
-				<div class="form-group">
-					<h2 class="form-label-bold"><span class="firsttime">Enter the name of your policy provider or broker</span>
-					<span class="repeat">Enter the name of another policy provider or broker</span></h2>
-					<div class="form-hint">For example, ABC Insurance Ltd. You can add more  providers later. </div>
-					<input type="text" id="creditors" class="form-control typeahead input-lg">
-					<a class="button" role="button" href="address.html" id="next">Add policy provider</a>
-				</div>
-	
-	
-	
-				<div  class="repeat">
-					<a class="button" href="../summary.html?page=4" id="btn-addedall">
-					Continue - I have added all relevant policies
-					</a>
-				</div>
-	    		<a style="padding-right: 30px" href="" id="back">Back</a>
-			</form>
-		</div>    
-	</div>
-</div>
+			</div>
+
+			<div class="form-group">
+				<label for="additional_policy">Do you have any other pensions, endowments or life insurances you have cashed in, sold, transferred, or given away in the last 5 years?</label>
+				<a class="button" role="button" href="address.html">Yes</a> 
+				<a class="button" role="button" href="../3-other.html">No</a> 
+				<p><a href="" id="back">Back</a></p>
+			</div>
+
+			
+			
+		</form>
+	</div>  
+</div>  
+
 
 	 <!-- #EndEditable -->
 
@@ -280,27 +242,25 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 var count;
-var tablecount = 0;
+
 
 $(document).ready(function() {
 	
-	var reset = getParameterByName("reset");
-	var loop = getParameterByName("loop");
-	var normalroute = $("#next").prop("href");
-	var total = 0;
-	
+	count = $.cookie('ass-rec-pol-count');
 
-	if (loop && loop.length > 0){
-	}
-	else{
-		$("#creditorlist").hide();
-		$(".newvisitor").show();
-	}
+	for(i=1; i<=count; i++){	
+	var row;
 	
-	tablecount = $.cookie('ass-rec-pol-count');
-
-	if(tablecount>0){
-		for(i=1; i<=tablecount; i++){	
+	row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
+	row += $.cookie('ass-rec-pol-'+i+'type');
+	row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
+	row += 'summary.html?p='+i;
+	row += '">Edit</a>&nbsp;<a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12">	<p><span class="bolder">Policy provider:</span> <span>'; 
+	row += $.cookie('ass-rec-pol-'+i+'company');
+	row += '</span></p><p><span class="bolder">Policy reference:</span> <span>';
+	row += $.cookie('ass-rec-pol-'+i+'-[number');
+	row += '</span></p></div></div></div>';
+	}
 			
 			tableType = $.cookie('ass-rec-pol-'+i+"-type");
 			tableCompany = $.cookie('ass-rec-pol-'+i+"-company");
