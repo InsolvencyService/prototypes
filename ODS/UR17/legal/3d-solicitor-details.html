@@ -341,7 +341,7 @@
       $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
     }
 
-  });
+ 
 
   // These lines display the cases the user has previously told us about
   if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
@@ -404,7 +404,7 @@
   // Wrapping container - END
   $("#case-list").append('</div>');
 
-
+ });
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
