@@ -74,26 +74,6 @@
 <style type="text/css">
 
 
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
 </style>
 
 <link rel="stylesheet" type="text/css" href="http://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=zf49-kc12-rd33-ex99" />
@@ -152,11 +132,11 @@ display:block;
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
-	<p>
-	<strong class="phase-tag">BETA</strong>
-    This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
-	</p>
-	</div>
+		<p>
+		<strong class="phase-tag">BETA</strong>
+		This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+		</p>
+		</div>
 	</div>
 
 
@@ -218,16 +198,19 @@ display:block;
 	<br/>
 	</div>
 	<div class="form-group ">
-
-	<label id="applicant_address_county_label" for="applicant_address_county" class="form-label applicant_address_county">County</label>
-	<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
-	<br/>
+		<label id="applicant_address_county_label" for="applicant_address_county" class="form-label applicant_address_county">County</label>
+		<input id="applicant_address_county" name="applicant_address_county" type="text" aria-describedby="applicant_address_county_error applicant_address_county_help" value="" />
+		<br/>
 	</div>
 	<div class="form-group ">
-
-	<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
-	<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
-	<br/>
+		<label id="applicant_address_post_code_label" for="applicant_address_post_code" class="form-label applicant_address_post_code">Postcode</label>
+		<input id="applicant_address_post_code" name="applicant_address_post_code" type="text" aria-describedby="applicant_address_post_code_error applicant_address_post_code_help" value="" />
+		<br/>
+	</div>
+	<div class="form-group ">
+		<label id="applicant_address_country_label" for="applicant_address_country" class="form-label applicant_address_country">Country</label>
+		<input id="applicant_address_country" name="applicant_address_country" type="text" aria-describedby="applicant_address_country_error applicant_address_county_help" value="" />
+		<br/>
 	</div>
 
 		<br/>
@@ -237,22 +220,12 @@ display:block;
 
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-
-	<div>
-		<a id="next" class="button" href="asset_detail.html">Continue</a>
-	</div>
-	<div>
-	<br>
+		<a role="button" id="next" class="button" href="asset_detail.html">Continue</a>
+		<br>
+		<a href="javascript:history.back()" id="back">Back</a>
 	</div>
 
-	<div>
-	<a style="padding-right: 30px" href="" id="back">Back</a>
-
-
-	<a href="#" id="cancel">Save and logout</a>
-
-	</div>
-	</div>
+	
 	</form>
 	</div>
 
@@ -356,6 +329,7 @@ function writeCookies(){
 	$.cookie('ass-rec-pol-'+count+"-add4", $("#applicant_address_town").val(), { path: '/' });
 	$.cookie('ass-rec-pol-'+count+"-add5", $("#applicant_address_county").val(), { path: '/' });
 	$.cookie('ass-rec-pol-'+count+"-add6", $("#applicant_address_post_code").val(), { path: '/' });
+	$.cookie('ass-rec-pol-'+count+"-add7", $("#applicant_address_country").val(), { path: '/' });
 }
 
 
