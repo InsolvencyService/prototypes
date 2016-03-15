@@ -327,12 +327,12 @@
       row += '<p><span class="form-hint">Address:</span>';
       row += '</div>';
       row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p class="bolder">' + solicitor_Address1 + '</p>';
-      row += '<p class="bolder address-hide">' + solicitor_Address2 + '</p>';
-      row += '<p class="bolder address-hide">' + solicitor_Address3 + '</p>';
-      row += '<p class="bolder">' + solicitor_Town + '</p>';
-      row += '<p class="bolder">' + solicitor_County + '</p>';
-      row += '<p class="bolder">' + solicitor_Country + '</p>';
+      row += '<p class="bolder">' + solicitor_Address1 + ', ';
+      row += '<span class="address-hide">' + solicitor_Address2 + ', </span>';
+      row += '<span class="address-hide">' + solicitor_Address3 + ', </span>';
+      row += + solicitor_Town + ', ';
+      row += + solicitor_County + ', ';
+      row += + solicitor_Country + '.';
       row += '<p class="bolder">' + solicitor_Postcode + '</p>';
       row += '</div>';
       row += '</div>';
@@ -370,13 +370,13 @@
       // End wrapping container
       row += '</div>';
 
-      if($.cookie("claims-court-reference_"+i) === .val("")) {
+      if($.cookie("claims-court-reference_"+i) === "") {
         $("#court-ref-appearance").hide();
       } else {
         $("#court-ref-appearance").show();
       }
 
-      if($.cookie("address_line_2_"+i) === .val("") || $.cookie("address_line_3_"+i) === .val("")) {
+      if($.cookie("address_line_2_"+i) === "" || $.cookie("address_line_3_"+i) === "") {
         $(".address-hide").hide();
       } else {
         $(".address-hide").show();
