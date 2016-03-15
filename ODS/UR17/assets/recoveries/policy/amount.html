@@ -187,10 +187,10 @@ display:block;
 			<p class="form-hint">Answer yes if you sold the policy privately for less than it could have been sold on the open market</p>
 				<div id="pnl-mktvalue" class="form-group">
 					<label id="mktvalue_label1" for="mktvalue_yes" class="block-label">
-					<input id="mktvalue_yes" value="" name="mktvalue" type="radio">Yes</label>
+					<input id="mktvalue_yes" value="Yes" name="mktvalue" type="radio">Yes</label>
 				
 					<label id="mktvalue_label2" for="mktvalue_no" class="block-label">
-					<input id="mktvalue_no" value="" name="mktvalue" type="radio">No</label>
+					<input id="mktvalue_no" value="Yes" name="mktvalue" type="radio">No</label>
 				</div>
 			</fieldset>
 		</div>
@@ -347,7 +347,6 @@ $("#next").click(function() {
 
 function writeCookies() {
 	$.cookie('ass-rec-pol-'+count+"-netvalue", $("#propertyvalue").val(), { path: '/' } );
-	alert( $("#pnl-surrender :checked").val());
 	$.cookie('ass-rec-pol-'+count+"-undervalue", $("#pnl-mktvalue :checked").val(), { path: '/' } );
 	$.cookie('ass-rec-pol-'+count+"-givenaway", $("pnl-surrendered :checked").val(), { path: '/' } );
 }
