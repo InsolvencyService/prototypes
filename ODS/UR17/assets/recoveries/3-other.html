@@ -255,9 +255,17 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
-  
-  
-
+   $(document).ready(function() {
+		$("#yes").on("click", function (e) {
+			$.cookie("recovery_3", "yes");
+			$("#yes").attr("href", "otherassets/asset_list.html");
+		});
+	
+		$("#no").on("click", function (e) {
+			$.cookie("recovery_3", "no");
+			$("#no").attr("href", "recovery_summary.html");
+		});
+	});
   function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
