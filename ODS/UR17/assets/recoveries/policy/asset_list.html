@@ -251,13 +251,13 @@ $(document).ready(function() {
 		var row;
 		
 		row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
-		row += $.cookie('ass-rec-pol-'+i+'type');
+		row += $.cookie("ass-rec-pol-"+i+"-type");
 		row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
 		row += 'summary.html?p='+i;
 		row += '">Edit</a>&nbsp;<a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12">	<p><span class="bolder">Policy provider:</span> <span>'; 
-		row += $.cookie('ass-rec-pol-'+i+'company');
+		row += $.cookie("ass-rec-pol-"+i+"-company");
 		row += '</span></p><p><span class="bolder">Policy reference:</span> <span>';
-		row += $.cookie('ass-rec-pol-'+i+'-[number');
+		row += $.cookie("ass-rec-pol-"+i+"-number");
 		row += '</span></p></div></div></div>';
 		$("#policylist").append(row);
 	}
