@@ -161,7 +161,7 @@
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
               <fieldset class="inline form-group" role="group" id="your-cases">
-                <legend id="your-cases-label" class="form-label-bold">Please select from your cases below which one this Solicitor helped you with</legend>
+                <legend id="your-cases-label" class="form-label-bold">Please select from your cases below which one these Solicitors helped you with</legend>
                 <span class="form-hint" id="your-cases-hint-1">Do not tick any of your cases in list below if this does not apply to any of them</span>
                 <div id="case-list">
                 </div>
@@ -320,90 +320,68 @@
   var thirdCount;
   var fourthCount;
   $(document).ready(function() {
-	
-	
+
     thirdCount = parseInt($.cookie("solicitor-prop-count"));
-	fourthCount =  parseInt($.cookie("claims-prop-count"));
-	fifthCount = parseInt($.cookie("legal-prop-count"));
-	
-	
+  	fourthCount =  parseInt($.cookie("claims-prop-count"));
+  	fifthCount = parseInt($.cookie("legal-prop-count"));
+
+
     $("#yes, #no").on("click", function (e) {
       // if(count == "" || count == null){
       //   count = 0;
       // }
       // count++;
-        $.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
-        $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").attr("value"), { path:'/' });
-        $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").attr("value"), { path:'/' });
-        $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").attr("value"), { path:'/' });
+      $.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
+      $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").attr("value"), { path:'/' });
+      $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").attr("value"), { path:'/' });
+      $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").attr("value"), { path:'/' });
     });
 
     if ($.cookie("solicitor-name_"+thirdCount)) {
       $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
     }
 
- 
+    // These lines display the cases the user has previously told us about
+    if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
+      $("#your-cases").hide();
+    } else if ($.cookie("question1") === "Yes" || $.cookie("question2") === "Yes") {
+      $("#your-cases").show();
+    }
 
-  // These lines display the cases the user has previously told us about
-  if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
-    $("#your-cases").hide();
-  } else if ($.cookie("question1") === "Yes" || $.cookie("question2") === "Yes") {
-    $("#your-cases").show();
-  }
+    // Wrapping container - START
+    $("#case-list").append('<div class="case-item">');
+    // Label - START
 
-  // Wrapping container - START
-  $("#case-list").append('<div class="case-item">');
-  // Label - START
-  
-  // My added code
-  ;
-  for(var i=1; i<=fifthCount; i++){
-	
-	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
-	item += '<input id="your-case'+i+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
-	item += '<span class="court-name bolder">'+ $.cookie("separation-court_"+i) +'</span> ';
-	item += '<span class="court-type">Legal separation';
-	if($.cookie("separation-finish-year_"+i)){
-		item += '/Ongoing legal claim</span>';
-	}
-	else{
-		item += '</span>';
-	}
-	item += '</label>';
-	$("#case-list").append(item);
-  }
-  
-  for(var j=1; j<=fourthCount; j++){
-	
-	var item = '<label id="your-case-label'+j+'" for="your-case'+j+'" class="block-label">';
-	item += '<input id="your-case'+j+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
-	item += '<span class="court-name bolder">'+$.cookie("claims-court_"+j)+'</span> ';
-	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
-	if($.cookie("claims-settled_"+i=="No")){
-		item += '/Ongoing legal claim</span>';
-	}
-	else{
-		item += '</span>';
-	}
-    item += '</label>';
-	$("#case-list").append(item);
-  }
+    // My added code
+    for (var i = 1; i <= fifthCount; i++) {
+    	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
+    	item += '<input id="your-case'+i+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	item += '<span class="court-name bolder">' + $.cookie("separation-court_"+i) + '</span>, ';
+    	item += '<span class="court-type">Legal separation</span>';
+    	item += '</label>';
+    	$("#case-list").append(item);
+    }
 
-  // my added code end
-  
-  
-  /* Your original code
-  row += '<label id="your-case-label0" for="your-case0" class="block-label">';
-  row += '<input id="your-case0" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
-  row += '<span class="court-name bolder">Court Name</span>';
-  row += '<span class="court-type">Legal separation/Ongoing legal claim</span>';
-  */
-  
-  // Label - END
-  // Wrapping container - END
-  $("#case-list").append('</div>');
+    for (var j = 1; j <= fourthCount; j++) {
+
+    	var item = '<label id="your-case-label'+j+'" for="your-case'+j+'" class="block-label">';
+    	item += '<input id="your-case'+j+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> ';
+    	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
+    	if ($.cookie("claims-settled_"+i == "No")) {
+    		item += ' - Ongoing legal claim</span>';
+    	}
+    	else {
+    		item += '</span>';
+    	}
+      item += '</label>';
+    	$("#case-list").append(item);
+    }
+
+    $("#case-list").append('</div>');
 
  });
+
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
