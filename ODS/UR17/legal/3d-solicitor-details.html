@@ -318,10 +318,14 @@
   <script type="text/javascript">
 
   var thirdCount;
+  var fourthCount;
   $(document).ready(function() {
-
+	
+	
     thirdCount = $.cookie("solicitor-prop-count_");
-
+	fourthCount =  $.cookie("claims-prop-count");
+	
+	
     $("#yes, #no").on("click", function (e) {
       // if(count == "" || count == null){
       //   count = 0;
@@ -349,10 +353,42 @@
   // Wrapping container - START
   var row= '<div class="case-item">';
   // Label - START
+  
+  // My added code
+  for(var i; i<thirdCount; i++){
+	row += '<label id="your-case-label'+i+'" for="your-case'+i'" class="block-label">';
+	row += '<input id="your-case'+i+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
+	row += '<span class="court-name bolder">'+$.cookie("seperation-court_"+i)'</span> ';
+	row += '<span class="court-type">'+Legal seperation;
+	if($.cookie("seperation-finish-year_"+i){
+		row += '/Ongoing legal claim</span>';
+	}
+	else{
+		row += '</span>';
+	}
+  }
+  for(var j; j<fourthCount; j++){
+	row += '<label id="your-case-label'+j+'" for="your-case'+j'" class="block-label">';
+	row += '<input id="your-case'+j+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
+	row += '<span class="court-name bolder">'+$.cookie("claims-court_"+j)'</span> ';
+	row += '<span class="court-type">'+ $.cookie("claims-type_"+j);
+	if($.cookie("claims-settled_"+i=="No"){
+		row += '/Ongoing legal claim</span>';
+	}
+	else{
+		row += '</span>';
+	}
+  }
+  // my added code end
+  
+  
+  /* Your original code
   row += '<label id="your-case-label0" for="your-case0" class="block-label">';
   row += '<input id="your-case0" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
   row += '<span class="court-name bolder">Court Name</span>';
   row += '<span class="court-type">Legal separation/Ongoing legal claim</span>';
+  */
+  
   // Label - END
   row += '</label>';
   // Wrapping container - END
