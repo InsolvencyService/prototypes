@@ -156,16 +156,16 @@
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
             	<fieldset class="form-group not-started rowtop" role="main">
 					<label id="property-other" for="property-question">
-						<span class="heading-xlarge">3</span>
+						<span class="heading-xlarge">4</span>
 						In the last 5 years, have you sold, transferred or given away assets worth more than £500 each for less than they're worth?</label>
 					<p class="form-hint">For example, vehicles, stocks, tools of the trade, furniture, etc worth more than £500 each</p>
 					<div class="row" id="property-other">
 						
 						<div class="col-md-2 col-xs-4" id="q1-yes">
-							<a id="#yes" role="button" class="button" aria-disabled="true">Yes</a>
+							<a id="yes" role="button" class="button" aria-disabled="true">Yes</a>
 						</div>
 						<div class="col-md-2 col-xs-4" id="q1-no">
-							<a id="#no" href="" role="button" class="button" aria-disabled="true">No</a>
+							<a id="no" role="button" class="button" aria-disabled="true">No</a>
 						</div>
 						<div class="col-md-8 col-xs-4">
 						</div>
@@ -266,6 +266,8 @@
 			$("#no").attr("href", "recovery_summary.html");
 		});
 	});
+	
+	
   function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
