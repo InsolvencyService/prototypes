@@ -142,7 +142,7 @@
 
 
 
-	<div class="inner-block text" role="main" id="maincontent" aria-labelledby="intro">
+	<div class="inner-block col-xs-12 col-md-9" role="main" id="maincontent" aria-labelledby="intro">
 		<h1 class="form-title heading-large" id="intro">Pensions, endowments and life insurance</h1>
 
 		<form class="form" method="post">
@@ -152,11 +152,12 @@
 				
 				
 			</div>
-
+			<p>&nbsp;</p>
 			<div class="form-group">
 				<label for="additional_policy">Do you have any other pensions, endowments or life insurances you have cashed in, sold, transferred, or given away in the last 5 years?</label>
 				<a class="button" role="button" href="address.html">Yes</a> 
 				<a class="button" role="button" href="../3-other.html">No</a> 
+				<p>&nbsp;</p>
 				<p><a href="" id="back">Back</a></p>
 			</div>
 
@@ -250,7 +251,7 @@ $(document).ready(function() {
 	for(i=1; i<=count; i++){	
 		var row;
 		
-		row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
+		row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bolder">';
 		row += $.cookie("ass-rec-pol-"+i+"-type");
 		row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
 		row += 'summary.html?p='+i;
