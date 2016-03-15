@@ -321,10 +321,9 @@
   var fourthCount;
   $(document).ready(function() {
 
-    thirdCount = parseInt($.cookie("solicitor-prop-count"));
+    thirdCount = $.cookie("solicitor-prop-count");
   	fourthCount =  parseInt($.cookie("claims-prop-count"));
   	fifthCount = parseInt($.cookie("legal-prop-count"));
-
 
     $("#yes, #no").on("click", function (e) {
       // if(count == "" || count == null){
