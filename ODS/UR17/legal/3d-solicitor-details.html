@@ -362,10 +362,10 @@
     	$("#case-list").append(item);
     }
 
-    for (var j = 100; j <= fourthCount; j++) {
+    for (var j = 1; j <= fourthCount; j++) {
 
-    	var item = '<label id="your-case-label'+j+'" for="your-case'+j+'" class="block-label">';
-    	item += '<input id="your-case'+j+'" value="'+$.cookie("claims-court-reference_"+j)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	var item = '<label id="your-case-label_'+j+'" for="your-case_'+j+'" class="block-label">';
+    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court-reference_"+j)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
