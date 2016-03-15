@@ -325,16 +325,14 @@
   	fourthCount =  parseInt($.cookie("claims-prop-count"));
   	fifthCount = parseInt($.cookie("legal-prop-count"));
 
-    $("#yes, #no").on("click", function (e) {
-      // if(count == "" || count == null){
-      //   count = 0;
-      // }
-      // count++;
-      $.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
-      $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
-      $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
-      $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").text(), { path:'/' });
+    $("#yes").on("click", function (e) {
+      WriteCookies();
     });
+    
+    $("#no").on("click", function (e) {
+      WriteCookies();
+    });
+
 
     if ($.cookie("solicitor-name_"+thirdCount)) {
       $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
@@ -389,6 +387,14 @@
       results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
+  
+  function WriteCookies() {
+	$.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
+      $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
+      $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
+      $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").text(), { path:'/' });
+
+	}
 
   </script>
   <!-- #EndEditable "scripts" -->
