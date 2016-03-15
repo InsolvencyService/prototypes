@@ -347,6 +347,8 @@ $("#next").click(function() {
 
 function writeCookies() {
 	$.cookie('ass-rec-pol-'+count+"-netvalue", $("#propertyvalue").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-undervalue", $("#pnl-mktvalue :checked").val(), { path: '/' } );
+	$.cookie('ass-rec-pol-'+count+"-givenaway", $("pnl-surrender :checked").val(), { path: '/' } );
 }
    
 function numberWithoutCommas(x) {
