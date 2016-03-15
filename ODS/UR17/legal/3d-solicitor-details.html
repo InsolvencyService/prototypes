@@ -333,7 +333,7 @@
       $.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
       $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").attr("value"), { path:'/' });
       $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").attr("value"), { path:'/' });
-      $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").attr("value"), { path:'/' });
+      $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").text(), { path:'/' });
     });
 
     if ($.cookie("solicitor-name_"+thirdCount)) {
@@ -354,7 +354,7 @@
     // My added code
     for (var i = 1; i <= fifthCount; i++) {
     	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
-    	item += '<input id="your-case'+i+'" value="$.cookie("separation-court-reference_"+i)" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	item += '<input id="your-case'+i+'" value="'$.cookie("separation-court-reference_"+i)'" name="case-list" type="checkbox" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("separation-court_"+i) + '</span> (' + $.cookie("separation-court-reference_"+i) + ')';
       item += '<br>';
     	item += '<span class="court-type">Legal separation</span>';
@@ -365,7 +365,7 @@
     for (var j = 1; j <= fourthCount; j++) {
 
     	var item = '<label id="your-case-label'+j+'" for="your-case'+j+'" class="block-label">';
-    	item += '<input id="your-case'+j+'" value="$.cookie("claims-court-reference_"+j)" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	item += '<input id="your-case'+j+'" value="'$.cookie("claims-court-reference_"+j)'" name="case-list" type="checkbox" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);

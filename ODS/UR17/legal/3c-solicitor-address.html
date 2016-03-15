@@ -311,11 +311,11 @@
       		}
       });
 
-      if ($.cookie("solicitor-name_"+thirdCount)) {
-        $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
-      }
-
     });
+
+    if ($.cookie("solicitor-name_"+thirdCount)) {
+      $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
+    }
 
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
