@@ -270,7 +270,7 @@
 				    <p class="bolder  netvalue" >Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				     <a href="../property/amount.html">Change your answers</a>
+				     <a href="#">Change your answers</a>
 				  </div>
 				</div>
 				
@@ -282,7 +282,7 @@
 				    <p class="bolder undervalue" >Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				    <a href="../property/amount.html">Change your answers</a>
+				    <a href="#">Change your answers</a>
 				  </div>
 				</div>
 				
@@ -297,7 +297,7 @@
 					    <p class="bolder name">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfer.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>
 					
@@ -309,7 +309,7 @@
 					    <p class="bolder theiraddress">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfer.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>
 					
@@ -333,7 +333,7 @@
 					    <p class="bolder actualvalue">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfered_to.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>
 					
@@ -345,7 +345,7 @@
 					    <p class="bolder grossvalue">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfered_to.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>
 				</div>
@@ -382,7 +382,7 @@
 				    <p class="bolder netvalue">Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				     <a href="../property/amount.html">Change your answers</a>
+				     <a href="#">Change your answers</a>
 				  </div>
 				</div>
 				
@@ -394,7 +394,7 @@
 				    <p class="bolder givenaway">Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				    <a href="../property/amount.html">Change your answers</a>
+				    <a href="#">Change your answers</a>
 				  </div>
 				</div>
 				
@@ -409,7 +409,7 @@
 					    <p class="bolder name">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfer.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>
 					
@@ -421,7 +421,7 @@
 					    <p class="bolder theiraddress">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfer.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>
 					
@@ -433,7 +433,7 @@
 					    <p class="bolder relationship">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfered_to.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>
 		
@@ -445,7 +445,7 @@
 					    <p class="bolder grossvalue">Your answer</p>
 					  </div>
 					  <div class="col-xs-3">
-					    <a href="../property/transfered_to.html">Change your answers</a>
+					    <a href="#">Change your answers</a>
 					  </div>
 					</div>					
 				</div>
@@ -483,7 +483,7 @@
 				    <p class="bolder name" >Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				    <a href="../property/transfer.html">Change your answers</a>
+				    <a href="#">Change your answers</a>
 				  </div>
 				</div>
 					
@@ -495,7 +495,7 @@
 				    <p class="bolder theiraddress" id="gross">Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				    <a href="../property/transfer.html">Change your answers</a>
+				    <a href="#">Change your answers</a>
 				  </div>
 				</div>
 					
@@ -507,7 +507,7 @@
 				    <p class="bolder relationship">Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				    <a href="../property/transfered_to.html">Change your answers</a>
+				    <a href="#">Change your answers</a>
 				  </div>
 				</div>
 		
@@ -519,7 +519,7 @@
 				    <p class="bolder giftedvalue">Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
-				    <a href="../property/transfered_to.html">Change your answers</a>
+				    <a href="#">Change your answers</a>
 				  </div>
 				</div>					
 				
@@ -623,6 +623,28 @@ $(document).ready(function() {
 	}
 	else{
 		var count= $.cookie("ass-rec-pol-count");
+	}
+	
+	$("#sale").hide();
+	$("#cashed").hide();
+	$("#gifted").hide();
+	$("sale_annex").hide();
+	$("#cashed_annex").hide();
+	
+	if(($.cookie("ass-rec-pol-"+count+"-action")=="Sold it")){
+		$("#sale").show();
+		if($.cookie('ass-rec-pol-'+count+"-undervalue")){
+			$("sale_annex").show();
+		}
+	}
+	else if(($.cookie("ass-rec-pol-"+count+"-action")=="Cashed it in")){
+		$("#cashed").show();
+		if($.cookie('ass-rec-pol-'+count+"-givenaway")){
+			$("#cashed_annex").hide();
+		{
+	}
+	else if(($.cookie("ass-rec-pol-"+count+"-action")=="Gave/transferred it to someone")){
+		$("#gifted").show();
 	}
 	
 	//populate mail table
