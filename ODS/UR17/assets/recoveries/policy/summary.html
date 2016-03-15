@@ -516,7 +516,7 @@
 				    <p>What was the value of the policy at the time you gave/tranferred it away?</p>
 				  </div>
 				  <div class="col-xs-5">
-				    <p class="bolder giftedvalue">Your answer</p>
+				    <p class="bolder actualvalue">Your answer</p>
 				  </div>
 				  <div class="col-xs-3">
 				    <a href="#">Change your answers</a>
@@ -647,7 +647,7 @@ $(document).ready(function() {
 		$("#gifted").show();
 	}
 	
-	//populate mail table
+	//populate main table
 	$("#company").text($.cookie("ass-rec-pol-"+count+"-company"));
 	
 	var address;
@@ -680,7 +680,7 @@ $(document).ready(function() {
 	// end table
 	
 	//populate alternative tables
-	$(".netvalue").text($.cookie("ass-rec-pol-"+count+"-netvalue"));
+	$(".netvalue").text("£"+$.cookie("ass-rec-pol-"+count+"-netvalue"));
 	$(".undervalue").text($.cookie("ass-rec-pol-"+count+"-undervalue"));
 	$(".givenaway").text($.cookie("ass-rec-pol-"+count+"-givenaway"));
 	
@@ -712,10 +712,10 @@ $(document).ready(function() {
 	
 	$(".theiraddress").text(theiraddress);
 	$(".relationship").text($.cookie("ass-rec-pol-"+count+"-transfer-relationship"));
-	$(".actualvalue").text($.cookie("ass-rec-pol-"+count+"-transfer-marketvalue"));
-	$(".grossvalue").text($.cookie("ass-rec-pol-"+count+"-transfer-grossvalue"));
-	$(".giftedvalue").text($.cookie("ass-rec-pol-"+count+"-transfer-giftedvalue"));
-	$(".gifted").text($.cookie("ass-rec-pol-"+count+"-transfer-gifted"));
+	$(".actualvalue").text("£"+$.cookie("ass-rec-pol-"+count+"-transfer-marketvalue"));
+	$(".grossvalue").text("£"+$.cookie("ass-rec-pol-"+count+"-transfer-grossvalue"));
+	$(".giftedvalue").text("£"+$.cookie("ass-rec-pol-"+count+"-transfer-giftedvalue"));
+	$(".gifted").text($.cookie("£"+"ass-rec-pol-"+count+"-transfer-gifted"));
 
 	
 	
