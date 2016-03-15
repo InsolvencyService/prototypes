@@ -135,13 +135,12 @@
     This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
-	</div>
-
-	
-	
+	</div>	
 
 
 <!-- #BeginEditable "content" --> 
+
+
 
 	<div class="inner-block text" role="main" id="maincontent" aria-labelledby="intro">
 		<h1 class="form-title heading-large" id="intro">Pensions, endowments and life insurance</h1>
@@ -249,79 +248,31 @@ $(document).ready(function() {
 	count = $.cookie('ass-rec-pol-count');
 
 	for(i=1; i<=count; i++){	
-	var row;
-	
-	row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
-	row += $.cookie('ass-rec-pol-'+i+'type');
-	row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
-	row += 'summary.html?p='+i;
-	row += '">Edit</a>&nbsp;<a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12">	<p><span class="bolder">Policy provider:</span> <span>'; 
-	row += $.cookie('ass-rec-pol-'+i+'company');
-	row += '</span></p><p><span class="bolder">Policy reference:</span> <span>';
-	row += $.cookie('ass-rec-pol-'+i+'-[number');
-	row += '</span></p></div></div></div>';
-	$("#policylist").append(row);
+		var row;
+		
+		row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
+		row += $.cookie('ass-rec-pol-'+i+'type');
+		row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
+		row += 'summary.html?p='+i;
+		row += '">Edit</a>&nbsp;<a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12">	<p><span class="bolder">Policy provider:</span> <span>'; 
+		row += $.cookie('ass-rec-pol-'+i+'company');
+		row += '</span></p><p><span class="bolder">Policy reference:</span> <span>';
+		row += $.cookie('ass-rec-pol-'+i+'-[number');
+		row += '</span></p></div></div></div>';
+		$("#policylist").append(row);
 	}
-			
-			tableType = $.cookie('ass-rec-pol-'+i+"-type");
-			tableCompany = $.cookie('ass-rec-pol-'+i+"-company");
-			tableReference = $.cookie('ass-rec-pol-'+i+"-number");	
-					
-			//add pensions to table
-			$("#tbody").append("<tr><td>"+ tableType +"</td><td>" + tableCompany +"</td><td>"+ tableReference +"</td><td class=\"edit\"><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-			
-		}
-	}
+		
 	
 	$("#next").on("click", function(e){
-		if ($('#creditors.typeahead').val() && $('#creditors.typeahead').val().length > 0){
-			$.cookie('ass-rec-pol-tempcomp', $('#creditors.typeahead').val(), { path: '/' });
-			count= $.cookie('ass-rec-pol-count');
-			if(count == null){
-				count = 0;
-			}
-			count ++;
-			$.cookie('ass-rec-pol-count', count, { path: '/' });		
+		if(count == null){
+			count = 0;
 		}
-		else{
-			$("#msg-entervalue").show();
-			e.preventDefault();
-		}
+		count++;
+		$.cookie('ass-rec-pol-count', count, { path: '/' });		
 	});
 	
-	var rowid = "row1";
-	var id = 1;
-	$(".btn-delete").on("click", function () {
-	    if ($(this).parent().parent().prop("id")) {
-			rowid= $(this).parent().parent().prop("id");
-			id = parseInt(rowid.substring(3, rowid.length));
-			$("#confirm-delete").show();
-	    }
-	});
-	
-	$("#btn-confirm-delete").on("click", function () {
-	    $.cookie('creditordeleted' + id, "1", { expires: 1 });
-	    $("#row" + id).hide();
-	    $("#confirm-delete").hide();
-	
-	    total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
-	    $("#box-total").text(numberWithCommas(total));
-	
-	});
-
 });
 
-function calctotal() {
-    var totalamount = 0;
-    $('tr td.amount').each(function () {
-        if ($(this).parent().is(":visible") && parseFloat($(this).text())) {
-        	var amount = $(this).text();
-            totalamount = totalamount + parseFloat(numberWithoutCommas(amount));
-            $(this).val(parseFloat($(this).text()));
-        }
-    });
-    return totalamount;
-}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -330,13 +281,6 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
 
 
 </script>
