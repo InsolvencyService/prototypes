@@ -355,29 +355,33 @@
   // Label - START
   
   // My added code
-  for(var i; i<thirdCount; i++){
-	row += '<label id="your-case-label'+i+'" for="your-case'+i'" class="block-label">';
+  for(var i=1; i<=thirdCount; i++){
+	row += '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
 	row += '<input id="your-case'+i+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
-	row += '<span class="court-name bolder">'+$.cookie("seperation-court_"+i)'</span> ';
-	row += '<span class="court-type">'+Legal seperation;
-	if($.cookie("seperation-finish-year_"+i){
+	row += '<span class="court-name bolder">'+$.cookie("seperation-court_"+i)+'</span> ';
+	row += '<span class="court-type">Legal seperation';
+	if($.cookie("seperation-finish-year_"+i)){
 		row += '/Ongoing legal claim</span>';
 	}
 	else{
 		row += '</span>';
 	}
+	  row += '</label>';
+
   }
-  for(var j; j<fourthCount; j++){
-	row += '<label id="your-case-label'+j+'" for="your-case'+j'" class="block-label">';
+  for(var j=1; j<=fourthCount; j++){
+	row += '<label id="your-case-label'+j+'" for="your-case'+j+'" class="block-label">';
 	row += '<input id="your-case'+j+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
-	row += '<span class="court-name bolder">'+$.cookie("claims-court_"+j)'</span> ';
+	row += '<span class="court-name bolder">'+$.cookie("claims-court_"+j)+'</span> ';
 	row += '<span class="court-type">'+ $.cookie("claims-type_"+j);
-	if($.cookie("claims-settled_"+i=="No"){
+	if($.cookie("claims-settled_"+i=="No")){
 		row += '/Ongoing legal claim</span>';
 	}
 	else{
 		row += '</span>';
 	}
+    row += '</label>';
+
   }
   // my added code end
   
@@ -390,7 +394,6 @@
   */
   
   // Label - END
-  row += '</label>';
   // Wrapping container - END
   row += '</div>';
 
