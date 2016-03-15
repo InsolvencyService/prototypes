@@ -361,16 +361,15 @@
 	
 	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
 	item += '<input id="your-case'+i+'" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
-	item += '<span class="court-name bolder">'+$.cookie("seperation-court_"+i)+'</span> ';
-	item += '<span class="court-type">Legal seperation';
-	if($.cookie("seperation-finish-year_"+i)){
+	item += '<span class="court-name bolder">'+ $.cookie("separation-court_"+i) +'</span> ';
+	item += '<span class="court-type">Legal separation';
+	if($.cookie("separation-finish-year_"+i)){
 		item += '/Ongoing legal claim</span>';
 	}
 	else{
 		item += '</span>';
 	}
 	item += '</label>';
-	alert(item);
 	$("#case-list").append(item);
   }
   
@@ -387,7 +386,6 @@
 		item += '</span>';
 	}
     item += '</label>';
-	alert(item)
 	$("#case-list").append(item);
   }
 
