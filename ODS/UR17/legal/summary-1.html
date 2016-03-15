@@ -104,6 +104,11 @@
           <nav id="proposition-menu">
             <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
           </nav>
+          <ul id="proposition-links">
+            <li><a href="../overview.html" class="">Application Overview</a></li>
+            <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+            <li><a href="#" class="cancel">Save and logout</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -319,104 +324,6 @@
       }
 
       $("#court-cases").append(row);
-
-    }
-
-  });
-
-  var secondCount;
-
-  // Oustanding legal claims details variables
-  var outstanding_details_Name;
-  var outstanding_details_CourtRef;
-  var outstanding_details_Claim;
-  var outstanding_details_ClaimOrigin;
-  var outstanding_details_Settled;
-
-  $(document).ready(function() {
-
-    secondCount= $.cookie("claims-prop-count");
-
-    for (i = 1; i <= secondCount; i++) {
-
-      // no answers display
-      $("#question2-no").hide();
-
-      // Oustanding legal claims variables cookies
-      if($.cookie("claims-court_"+i)){
-        outstanding_details_Name = $.cookie("claims-court_"+i);
-      }
-      if($.cookie("claims-court-reference_"+i)){
-        outstanding_details_CourtRef = $.cookie("claims-court-reference_"+i);
-      }
-      if($.cookie("claims-type_"+i)){
-        outstanding_details_Claim = $.cookie("claims-type_"+i);
-      }
-      if($.cookie("claims-origin_"+i)){
-        outstanding_details_ClaimOrigin = $.cookie("claims-origin_"+i);
-      }
-      if($.cookie("claims-settled_"+i)){
-        outstanding_details_Settled = $.cookie("claims-settled_"+i);
-      }
-
-      var row= '<div class="new-item">';
-      // row 1
-      row += '<div class="row">';
-      row += '<div class="col-md-9 col-sm-9 col-xs-12">';
-      row += '<h3 class="heading-medium">' + outstanding_details_Name + '</h3>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#" class="delete-item">Delete</a><a href="1b-name-of-court.html?p='+i+'">Edit</a></div>';
-      row += '</div>';
-      // row 2
-      row += '<div class="row" id="court-ref-appearance">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Court reference:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_CourtRef + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 3
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">What\'s the claim about:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_Claim + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 4
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Did you start this claim:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_ClaimOrigin + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 5
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Has the claim been settled out of court?:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_Settled + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 6
-      // row += '<div class="row">';
-      // row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
-      // row += '</div>';
-      // End wrapping container
-      row += '</div>';
-
-      if($.cookie("claims-court-reference_"+i) === "") {
-        $("#court-ref-appearance").hide();
-      } else {
-        $("#court-ref-appearance").show();
-      }
-
-      $("#ongoing-cases").append(row);
 
     }
 

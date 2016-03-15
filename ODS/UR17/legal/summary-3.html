@@ -104,6 +104,11 @@
           <nav id="proposition-menu">
             <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
           </nav>
+          <ul id="proposition-links">
+            <li><a href="../overview.html" class="">Application Overview</a></li>
+            <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+            <li><a href="#" class="cancel">Save and logout</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -167,7 +172,7 @@
         <fieldset class="form-navigation">
           <legend class="hidden" id="continue-label">Please continue with your application</legend>
           <div class="form-group">
-            <label class="form-label-bold" for="continue">Continue, I have finished adding all of my legal proceedings</label>
+            <label class="form-label-bold" for="continue">Continue, I have finished adding all of my solicitors</label>
             <br>
             <!-- <input type="button" onclick="location.href='../overview.html?section7=complete';" id="continue" class="button" value="Continue" aria-labelledby="continue-label"> -->
             <input type="button" onclick="location.href='overview.html';" id="continue" class="button" value="Continue" aria-labelledby="continue-label">
@@ -240,11 +245,25 @@
   var thirdCount;
 
   // Oustanding legal claims details variables
-  var outstanding_details_Name;
-  var outstanding_details_CourtRef;
-  var outstanding_details_Claim;
-  var outstanding_details_ClaimOrigin;
-  var outstanding_details_Settled;
+  // Solicitor Name
+  var solicitor_Name;
+  // Solicitor Address
+  var solicitor_Address1;
+  var solicitor_Address2;
+  var solicitor_Address3;
+  var solicitor_Town;
+  var solicitor_County;
+  var solicitor_Country;
+  var solicitor_Postcode;
+  // Solicitor Case
+  var solicitor_CaseCourt;
+  var solicitor_CaseCourtRef;
+  var solicitor_CaseCourtType;
+  var solicitor_CaseCourtLegalSep;
+  var solicitor-InstructedMonth;
+  var solicitor-InstructedMonth;
+  // Solicitor Action
+  var solicitor_Action;
 
   $(document).ready(function() {
 
@@ -256,20 +275,50 @@
       $("#question3-no").hide();
 
       // Oustanding legal claims variables cookies
-      if($.cookie("claims-court_"+i)){
-        outstanding_details_Name = $.cookie("claims-court_"+i);
+      // Solicitor Name
+      if($.cookie("solicitor-name_"+i)){
+        solicitor_Name = $.cookie("solicitor-name_"+i);
       }
-      if($.cookie("claims-court-reference_"+i)){
-        outstanding_details_CourtRef = $.cookie("claims-court-reference_"+i);
+      // Solicitor Address
+      if($.cookie("address_line_1_"+i)){
+        solicitor_Address1 = $.cookie("address_line_1_"+i);
       }
-      if($.cookie("claims-type_"+i)){
-        outstanding_details_Claim = $.cookie("claims-type_"+i);
+      if($.cookie("address_line_2_"+i)){
+        solicitor_Address2 = $.cookie("address_line_2_"+i);
       }
-      if($.cookie("claims-origin_"+i)){
-        outstanding_details_ClaimOrigin = $.cookie("claims-origin_"+i);
+      if($.cookie("address_line_3_"+i)){
+        solicitor_Address3 = $.cookie("address_line_3_"+i);
       }
-      if($.cookie("claims-settled_"+i)){
-        outstanding_details_Settled = $.cookie("claims-settled_"+i);
+      if($.cookie("town_"+i)){
+        solicitor_Town = $.cookie("town_"+i);
+      }
+      if($.cookie("county_"+i)){
+        solicitor_County = $.cookie("county_"+i);
+      }
+      if($.cookie("country_"+i)){
+        solicitor_Country = $.cookie("country_"+i);
+      }
+      if($.cookie("post_code_"+i)){
+        solicitor_Postcode = $.cookie("post_code_"+i);
+      }
+      // Solicitor Case
+      if($.cookie("address_line_1_"+i)){
+        solicitor_CaseCourt = $.cookie("address_line_1_"+i);
+      }
+
+
+
+      var ;
+      var solicitor_CaseCourtRef;
+      var solicitor_CaseCourtType;
+      var solicitor_CaseCourtLegalSep;
+      var solicitor-InstructedMonth;
+      var solicitor-InstructedMonth;
+
+
+      // Solicitor Action
+      if($.cookie("solicitor-action_"+i)){
+        solicitor_Action = $.cookie("solicitor-action_"+i);
       }
 
       var row= '<div class="new-item">';

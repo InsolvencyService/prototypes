@@ -162,15 +162,8 @@
               <!-- ///// Fieldset/Group 1 - START ///// -->
               <fieldset class="inline form-group" role="group" id="your-cases">
                 <legend id="your-cases-label" class="form-label-bold">Please select from your cases below which one this Solicitor helped you with</legend>
-                <span class="form-hint" id="your-cases-hint-1">Leave blank if this does not apply to any of them</span>
-                <div class="case-item">
-                  <label id="your-case-label0" for="your-case0" class="block-label">
-                    <input id="your-case0" value="Conveyancing" name="Conveyancing" type="checkbox" aria-labelledby="action_label">
-                    <span class="court-name bolder">Court Name</span>
-                    <span class="court-reference">Court reference</span>
-                    <span class="claim-type">Claim type</span>
-                    <span class="legal-seperation">Legal separation</span>
-                  </label>
+                <span class="form-hint" id="your-cases-hint-1">Do not tick any of your cases in list below if this does not apply to any of them</span>
+                <div id="case-list">
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
@@ -346,13 +339,26 @@
 
   });
 
-  // $("#solicitor-no").on("click", function (e) {
-  //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
-  // });
-  //
-  // $("#solicitor-yes").on("click", function (e) {
-  //   $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
-  // });
+  // These lines display the cases the user has previously told us about
+  if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
+    $("#your-cases").hide();
+  } else if ($.cookie("question1") === "Yes" || $.cookie("question2") === "Yes") {
+    $("#your-cases").show();
+  }
+
+  // Wrapping container - START
+  var row= '<div class="case-item">';
+  // Label - START
+  row += '<label id="your-case-label0" for="your-case0" class="block-label">';
+  row += '<input id="your-case0" value="Conveyancing" name="case-list" type="checkbox" aria-labelledby="case-list">';
+  row += '<span class="court-name bolder">Court Name</span>';
+  row += '<span class="court-type">Legal separation/Ongoing legal claim</span>';
+  // Label - END
+  row += '</label>';
+  // Wrapping container - END
+  row += '</div>';
+
+  $("#case-list").append(row);
 
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
