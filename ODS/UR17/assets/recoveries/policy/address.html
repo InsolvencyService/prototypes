@@ -304,6 +304,15 @@ $(document).ready(function() {
 
 var count;
 $(document).ready(function() {
+	if($.cookie('ass-rec-pol-count'){
+		count = $.cookie('ass-rec-pol-count');
+	}
+	else{
+		count = 0;
+	}
+	count++;
+	$.cookie('ass-rec-pol-count', count, { path: '/' });
+
 	var companyn = $.cookie('ass-rec-pol-tempcomp');
 	count= $.cookie('ass-rec-pol-count');
 	$("#name").val(titleCaps(companyn));
