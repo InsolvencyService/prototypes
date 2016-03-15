@@ -257,11 +257,8 @@
   var solicitor_Postcode;
   // Solicitor Case
   var solicitor_CaseCourt;
-  var solicitor_CaseCourtRef;
-  var solicitor_CaseCourtType;
-  var solicitor_CaseCourtLegalSep;
-  var solicitor-InstructedMonth;
-  var solicitor-InstructedMonth;
+  var solicitor_InstructedMonth;
+  var solicitor_InstructedYear;
   // Solicitor Action
   var solicitor_Action;
 
@@ -302,20 +299,15 @@
         solicitor_Postcode = $.cookie("post_code_"+i);
       }
       // Solicitor Case
-      if($.cookie("address_line_1_"+i)){
-        solicitor_CaseCourt = $.cookie("address_line_1_"+i);
+      if($.cookie("solicitor-cases_"+i)){
+        solicitor_CaseCourt = $.cookie("solicitor-cases_"+i);
       }
-
-
-
-      var ;
-      var solicitor_CaseCourtRef;
-      var solicitor_CaseCourtType;
-      var solicitor_CaseCourtLegalSep;
-      var solicitor-InstructedMonth;
-      var solicitor-InstructedMonth;
-
-
+      if($.cookie("solicitor-instructed-month_"+i)){
+        solicitor_InstructedMonth = $.cookie("solicitor-instructed-month_"+i);
+      }
+      if($.cookie("solicitor-instructed-year_"+i)){
+        solicitor_InstructedYear = $.cookie("solicitor-instructed-year_"+i);
+      }
       // Solicitor Action
       if($.cookie("solicitor-action_"+i)){
         solicitor_Action = $.cookie("solicitor-action_"+i);
@@ -325,44 +317,50 @@
       // row 1
       row += '<div class="row">';
       row += '<div class="col-md-9 col-sm-9 col-xs-12">';
-      row += '<h3 class="heading-medium">' + outstanding_details_Name + '</h3>';
+      row += '<h3 class="heading-medium">' + solicitor_Name + '</h3>';
       row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#" class="delete-item">Delete</a><a href="1b-name-of-court.html?p='+i+'">Edit</a></div>';
+      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#" class="delete-item">Delete</a><a href="3b-solicitor-name.html?p='+i+'">Edit</a></div>';
       row += '</div>';
       // row 2
       row += '<div class="row" id="court-ref-appearance">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Court reference:</span>';
+      row += '<p><span class="form-hint">Address:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_CourtRef + '</p>';
+      row += '<p class="bolder">' + solicitor_Address1 + '</p>';
+      row += '<p class="bolder address-hide">' + solicitor_Address2 + '</p>';
+      row += '<p class="bolder address-hide">' + solicitor_Address3 + '</p>';
+      row += '<p class="bolder">' + solicitor_Town + '</p>';
+      row += '<p class="bolder">' + solicitor_County + '</p>';
+      row += '<p class="bolder">' + solicitor_Country + '</p>';
+      row += '<p class="bolder">' + solicitor_Postcode + '</p>';
       row += '</div>';
       row += '</div>';
       // row 3
       row += '<div class="row">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">What\'s the claim about:</span>';
+      row += '<p><span class="form-hint"The case details:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_Claim + '</p>';
+      row += '<p class="bolder">' + solicitor_CaseCourt + '</p>';
       row += '</div>';
       row += '</div>';
       // row 4
       row += '<div class="row">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Did you start this claim:</span>';
+      row += '<p><span class="form-hint">Date you instructed your solicitor:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_ClaimOrigin + '</p>';
+      row += '<p class="bolder">' + solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
       row += '</div>';
       row += '</div>';
       // row 5
       row += '<div class="row">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Has the claim been settled out of court?:</span>';
+      row += '<p><span class="form-hint">What type of action did they assist you with?:</span>';
       row += '</div>';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_Settled + '</p>';
+      row += '<p class="bolder">' + solicitor_Action + '</p>';
       row += '</div>';
       row += '</div>';
       // row 6
@@ -376,6 +374,12 @@
         $("#court-ref-appearance").hide();
       } else {
         $("#court-ref-appearance").show();
+      }
+
+      if($.cookie("address_line_2_"+i) === "" || $.cookie("address_line_3_"+i) === "") {
+        $(".address-hide").hide();
+      } else {
+        $(".address-hide").show();
       }
 
       $("#ongoing-cases").append(row);
