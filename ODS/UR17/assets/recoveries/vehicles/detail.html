@@ -228,7 +228,7 @@ display:block;
 			<label id="first_name_label" for="propertyvalue" class="form-label-bold">What was the value of the <span class="asset"></span> at the time you sold, transferred or gave it away?</label>
 						
 			<div class="form-hint">Please provide the most accurate figure you can</div>
-			<span class="currency">£ </span><input id="propertyvalue" name="marketvalue" type="text" value="" class="amount-value" />
+			<span class="currency">£ </span><input id="value" name="marketvalue" type="text" value="" class="amount-value" />
                        
         </div>
         
@@ -239,7 +239,7 @@ display:block;
 			<label id="first_name_label0" for="saleamount" class="form-label-bold">How much money did you receive for the <span class="asset"></span> after any charges and legal fees (proceeds of sale)?</label>
 						
 			<div class="form-hint">Leave blank if you gave the <span class="asset"></span> away</div>
-			<span class="currency">£ </span><input id="saleamount" name="amount" type="text" value="" class="amount-value" />
+			<span class="currency">£ </span><input id="sale" name="amount" type="text" value="" class="amount-value" />
                        
         </div>
    
@@ -343,34 +343,26 @@ var count;
 var type = getParameterByName("id");
 $(document).ready(function() {
 	
-	if(type==2){
-		$(".asset").text("item");
-		$("#title").text("Asset");
-		$("#nonvehicle").show();
-		
-	}
-	else{
-		$(".asset").text("vehicle");
-		$("#title").text("Vehicle");
-		var month = $.cookie('ass-rec-oth-tempvehiclemonth');
-		var year = $.cookie('ass-rec-oth-tempvehicleyear');
-		var amount = $.cookie('ass-rec-oth-tempvehiclevalue');
-		
-		if(amount != null || amount != 'undefined'){
-			$("#year").val(year);
-			$("#saleamount").val(amount);
-			$("#month").val(month);
-		}
-		
+	$(".asset").text("vehicle");
+	$("#title").text("Vehicle");
+	
+	if($.cookie('ass-rec-oth-tempvehiclemonth')){
+		$("#year").val($.cookie('ass-rec-oth-tempvehiclemonth'));
+		$("#month").val($.cookie('ass-rec-oth-tempvehicleyear'));
+		$("#year").prop('disabled','disabled');
+		$("#month").prop('disabled','disabled');
 	}
 });
 
 $("#next").on("click", function(e){
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	if(type==2){
-		$.cookie("ass-rec-oth-type-"+cookiecount, $("#desc").val());
-	}
-	$.cookie("ass-rec-oth-value-"+cookiecount, $("#saleamount").val());
+	count=$.cookie('ass-rec-veh-count');
+	
+	$.cookie('ass-rec-veh-month'+count, $("#month").val(), {path:'/'});
+	$.cookie('ass-rec-veh-year'+count, $("#year").val(), {path:'/'});
+	$.cookie('ass-rec-veh-marketvalue'+count, $("#value").val(), {path:'/'});
+	$.cookie('ass-rec-veh-net'+count, $("#sale").val(), {path:'/'});
+	
+	
 
 });
 
