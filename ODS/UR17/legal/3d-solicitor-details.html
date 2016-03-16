@@ -395,7 +395,7 @@
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
     $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").val(), { path:'/' });
 	}
-  function WriteSelectCookie(s_input, countx) {
+  function WriteSelectCookie(var countx) {
 	alert(countx);
 	$.cookie("solicitor-cases_"+countx, $(this).val(), { path:'/' });
   }
