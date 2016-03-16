@@ -243,11 +243,11 @@ $(document).ready(function() {
 		var row;
 		
 		row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
-		row += $.cookie("ass-rec-veh-"+i+"-make") + " " + $.cookie("ass-rec-veh-"+i+"-model");
+		row += $.cookie("ass-rec-veh-make-"+i) + " " + $.cookie("ass-rec-veh-model-"+i);
 		row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
 		row += 'summary.html?p='+i;
 		row += '">View your answers</a>&nbsp;<a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12">	<p><span class="bolder">Registration number:</span> <span>'; 
-		row += $.cookie("ass-rec-veh-"+i+"-vrn");
+		row += $.cookie("ass-rec-veh-vrn-"+i);
 		row += '</span></p></div></div></div>';
 		$("#vehiclelist").append(row);
 	
