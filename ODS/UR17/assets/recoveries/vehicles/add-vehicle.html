@@ -339,6 +339,7 @@ $(document).ready(function() {
 
 $("#next").on("click", function(e){
 	writeCookies();
+	
 });
 
 function writeCookies() {
@@ -355,7 +356,7 @@ function writeCookies() {
 	$.cookie("ass-rec-veh-make-"+count, $("#make").val(), {path:'/'});
 	$.cookie("ass-rec-veh-model-"+count, $("#model").val(), {path:'/'});
 	$.cookie("ass-rec-veh-vrn-"+count, $("#vrn").val(), {path:'/'});
-	$.cookie("ass-rec-veh-type-"+count, $("#type :checked").val(), {path:'/'});
+	$.cookie("ass-rec-veh-type-"+count, $("#pnl-type :checked").val(), {path:'/'});
 }
 
 
