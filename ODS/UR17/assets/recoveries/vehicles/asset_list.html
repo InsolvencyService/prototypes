@@ -259,6 +259,27 @@ $(document).ready(function() {
 
 });
 
+$("#yes").on("click", function(e){
+	var x = $.cookie('VehicleCount');
+	var y=false;
+	
+	for(i=1; i<=x; i++){
+		var type = $.cookie('VehicleUse'+i);	
+		if(type == "Disposed of"){
+			y=true;
+		}
+	
+	}	
+	
+	if(y==true){
+		$("#yes").attr('href', 'vehicle.html');
+	}
+	else{
+		$("#yes").attr('href', 'add-vehicle.html');
+	}
+});
+
+
 
 
 </script>
