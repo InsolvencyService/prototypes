@@ -265,8 +265,8 @@
    $(document).ready(function() {
 		$("#yes").on("click", function(e){
 		
-			if($.cookie("ass-rec-veh-count"){
-				$("#yes").attr('href', 'asset_list.html');
+			if($.cookie("ass-rec-veh-count")){
+				$("#yes").attr('href', 'vehicles/asset_list.html');
 			}
 			else{
 				var x = $.cookie('VehicleCount');
@@ -281,10 +281,10 @@
 				}	
 				
 				if(y==true){
-					$("#yes").attr('href', 'vehicle.html');
+					$("#yes").attr('href', 'vehicles/vehicle.html');
 				}
 				else{
-					$("#yes").attr('href', 'add-vehicle.html');
+					$("#yes").attr('href', 'vehicles/add-vehicle.html');
 				}
 			}
 		});
