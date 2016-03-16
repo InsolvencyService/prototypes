@@ -200,10 +200,13 @@ display:block;
 					<label id="motorcycle_label1" for="motorcycle" class="block-label">
 					<input id="motorcycle"  name="vehicle" value="motorcycle" type="radio">Motorcycle</label>
 								
-					<label id="other_label" for="other" class="block-label">
-	                    <input id="other" value="Other" name="vehicle" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
-	                    <input id="other_input" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/></span>
-	                </label>			
+					
+	                
+					<label id="other_label" for="type_other" class="block-label">
+				        <input id="type_other" value="" name="vehicle" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span>
+				        <input id="other" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/>
+				    </label>
+		
 				</div>
 			</fieldset>
 			<p>&nbsp;</p>
@@ -309,13 +312,38 @@ $(document).ready(function() {
 
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
+
+$(document).ready(function() {
+
+	$("#make").val($.cookie('ass-rec-veh-tempvehiclemake'));
+	$("#model").val($.cookie('ass-rec-veh-tempvehiclevrn'));
+	$("#vrn").val($.cookie('ass-rec-veh-tempvehiclevrn'));
+	
+	var type = $.cookie('ass-rec-veh-tempvehicletype');
+	$("#"+type).attr(checked, "checked");
+
+
+});
+
 $("#next").on("click", function(e){
 	writeCookies();
 });
 
 function writeCookies() {
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	$.cookie("ass-rec-oth-type-"+cookiecount, "Vehicle");
+	var count;
+	if($.cookie('ass-rec-veh-count')){
+		count=$.cookie('ass-rec-veh-count');
+	}
+	else{
+		count=0
+	}
+	
+	count++;
+	
+	$.cookie("ass-rec-veh-make-"+count, $("#make").val(), {path:'/'});
+	$.cookie("ass-rec-veh-model-"+count, $("#model").val(), {path:'/'});
+	$.cookie("ass-rec-veh-vrn-"+count, $("#vrn").val(), {path:'/'});
+	$.cookie("ass-rec-veh-type-"+count, $("#type :checked").val(), {path:'/'});
 }
 
 

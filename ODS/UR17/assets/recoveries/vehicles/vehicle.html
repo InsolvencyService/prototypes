@@ -328,7 +328,7 @@ var vehiclemonth;
 var vehicleyear;
 var vehiclevalue;
 var vehicletransfertype;
-var count;
+var count = 0;
 
 $(document).ready(function() {
 		count = $.cookie('VehicleCount');
@@ -352,20 +352,23 @@ $("#next").on("click", function(e){
 	}
 	else {
 		writeCookies();
-		$('#next').prop('href', 'detail.html');		
+		$('#next').prop('href', 'add-vehicle.html');		
 	}
 });
 
 function writeCookies() {
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	$.cookie("ass-rec-oth-type-"+cookiecount, "Vehicle");
+	
 	var reg = $("#asset :checked").val();
 	
 	for(j=1; j<=count; j++){
 		if(reg == $.cookie('VehicleVRN'+j)){
-			$.cookie('ass-rec-oth-tempvehiclevalue', $.cookie('VehicleAssetValue'+j));
-			$.cookie('ass-rec-oth-tempvehiclemonth', $.cookie('VehicleTransferMonth'+j));
-			$.cookie('ass-rec-oth-tempvehicleyear', $.cookie('VehicleTransferYear'+j));
+			$.cookie('ass-rec-veh-tempvehiclemake', $.cookie('VehicleMake'+j));
+			$.cookie('ass-rec-veh-tempvehiclemodel', $.cookie('VehicleModel'+j));
+			$.cookie('ass-rec-veh-tempvehiclevrn', $.cookie('VehicleVRN'+j));
+			$.cookie('ass-rec-veh-tempvehicletype', $.cookie('VehicleType'+j));
+			$.cookie('ass-rec-veh-tempvehiclemonth', $.cookie('VehicleTransferMonth'+j));
+			$.cookie('ass-rec-veh-tempvehicleyear', $.cookie('VehicleTransferYear'+j));
+
 		}
 	}
 }
