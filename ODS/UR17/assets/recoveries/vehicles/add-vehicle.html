@@ -319,9 +319,9 @@ $(document).ready(function() {
 		$("#model").val($.cookie('ass-rec-veh-tempvehiclemodel'));
 		$("#vrn").val($.cookie('ass-rec-veh-tempvehiclevrn'));
 		
-		var type = "#"+$.cookie('ass-rec-veh-tempvehicletype');
+		var type = '"#'+$.cookie('ass-rec-veh-tempvehicletype')+'"';
 		alert(type);
-		$(type).attr(checked, "checked");
+		$(type).prop(checked, true);
 	}
 	
 	
