@@ -331,10 +331,6 @@ $(document).ready(function() {
 		$("#type_other").prop('disabled','disabled');
 		$("#other").prop('disabled','disabled');
 	}
-	
-	
-
-
 });
 
 $("#next").on("click", function(e){
@@ -352,7 +348,7 @@ function writeCookies() {
 	}
 	
 	count++;
-	
+	$.cookie('ass-rec-veh-count', count, {path:'/'})
 	$.cookie("ass-rec-veh-make-"+count, $("#make").val(), {path:'/'});
 	$.cookie("ass-rec-veh-model-"+count, $("#model").val(), {path:'/'});
 	$.cookie("ass-rec-veh-vrn-"+count, $("#vrn").val(), {path:'/'});
