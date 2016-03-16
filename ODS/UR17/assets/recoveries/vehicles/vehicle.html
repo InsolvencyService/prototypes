@@ -348,6 +348,7 @@ $(document).ready(function() {
 
 $("#next").on("click", function(e){
 	if ($('#other').prop('checked')==true){
+		clearCookies();
 		$('#next').prop('href', 'add-vehicle.html');			
 	}
 	else {
@@ -355,6 +356,23 @@ $("#next").on("click", function(e){
 		$('#next').prop('href', 'add-vehicle.html');		
 	}
 });
+
+function clearCookies() {
+	
+	var reg = $("#asset :checked").val();
+	
+	for(j=1; j<=count; j++){
+		if(reg == $.cookie('VehicleVRN'+j)){
+			$.cookie('ass-rec-veh-tempvehiclemake', '');
+			$.cookie('ass-rec-veh-tempvehiclemodel', '');
+			$.cookie('ass-rec-veh-tempvehiclevrn', '');
+			$.cookie('ass-rec-veh-tempvehicletype', '');
+			$.cookie('ass-rec-veh-tempvehiclemonth', '');
+			$.cookie('ass-rec-veh-tempvehicleyear', '');
+
+		}
+	}
+}
 
 function writeCookies() {
 	
@@ -372,6 +390,7 @@ function writeCookies() {
 		}
 	}
 }
+
 </script>
 
 

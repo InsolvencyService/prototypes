@@ -192,7 +192,7 @@ display:block;
 			<fieldset class="inline">
 				<div id="pnl-type">				
 					<label id="car_label1" for="car" class="block-label">
-					<input id="car"  name="vehicle" value="car" type="radio">Car</label>
+					<input id="car" name="vehicle" value="car" type="radio">Car</label>
 					
 					<label id="van_label1" for="van" class="block-label">
 					<input id="van"  name="vehicle" value="van" type="radio">Van</label>
@@ -314,13 +314,17 @@ $(document).ready(function() {
 <script type="text/javascript">
 
 $(document).ready(function() {
-
-	$("#make").val($.cookie('ass-rec-veh-tempvehiclemake'));
-	$("#model").val($.cookie('ass-rec-veh-tempvehiclevrn'));
-	$("#vrn").val($.cookie('ass-rec-veh-tempvehiclevrn'));
+	if($.cookie('ass-rec-veh-tempvehiclemake')!=''){
+		$("#make").val($.cookie('ass-rec-veh-tempvehiclemake'));
+		$("#model").val($.cookie('ass-rec-veh-tempvehiclemodel'));
+		$("#vrn").val($.cookie('ass-rec-veh-tempvehiclevrn'));
+		
+		var type = "#"+$.cookie('ass-rec-veh-tempvehicletype');
+		alert(type);
+		$(type).attr(checked, "checked");
+	}
 	
-	var type = $.cookie('ass-rec-veh-tempvehicletype');
-	$("#"+type).attr(checked, "checked");
+	
 
 
 });
