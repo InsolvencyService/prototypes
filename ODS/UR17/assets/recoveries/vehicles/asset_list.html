@@ -70,72 +70,8 @@
      
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/js/bootstrap-switch/bootstrap.min.css">
-  <link href="../../../creditors/css/typeahead.css" rel="stylesheet">
- <style type="text/css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/legal.css">
 
- .tt-dropdown-menu{
-	width:650px;
-}
-.tt-input{
-	width:400px;
-}
-.tt-hint{
-	display:none !important;
-}
-.choose-address{
-	color:gray;
-}
-.row > div:first-child{
-	padding-left:5px;
-	margin-left:0;	
-}
-i.glyphicon{
-	margin-right:5px;
-	color:#666666;
-}
-.input-sm{
-	width:170px;
-}
-.input-lg{
-	width:260px;
-}
-
-#row-total td{
-	font-weight:bold;
-}
-
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
-.btn-edit{
-	margin-right:10px;
-}
-.amount{
-	text-align:right
-}
-.totalrow td{
-	font-weight:bold !important;
-}
-
-</style>
 <!-- #EndEditable -->
 
 
@@ -200,108 +136,25 @@ display:block;
 
 <!-- #BeginEditable "content" --> 
 <div id="content0" >
-<div class="inner-block text">
-	<h1 class="form-title heading-large">Assets sold, transferred or given away</h1>
+	<div class="inner-block col-xs-12 col-md-9" role="main" id="maincontent" aria-labelledby="intro">
 			
-	<div id="msg-entervalue" style="display:none">
-		<div class="validation-summary">
-                <h2>Select asset type</h2>
-                <p></p>
-                <ol>
-      			  <li class="error-message">Select an asset type below to continue</li>
-        		</ol>
-    	</div>
-    </div>        
-            
-    <div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
-	    <h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
-        <p>Are you sure you want to delete this creditor?</p>
-        <p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
-	</div>  
-</div>
- 
-<div id="creditorlist" class="inner-block text">
-
-	<table>
-		<thead>
-			<tr>
-				<th>Type</th>
-				<th>Amount received</th>
-				
-				<th>&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody id="tbody">
-
-
-		</tbody>
-		</table>
-		<p>&nbsp;</p>
-</div>
-
-<div class="inner-block text">
-	
-	<p class="repeat">The table above summarises the assets you have told us about.</p>
-
-	<div>
-		<p class="repeat">We need to know about any other assets you have sold, 
-		transferred or given away for less than their market value in the last 5 years.</p>
-		<p>&nbsp;</p>
-	</div>
-<form class="form" method="post">
-<div class="form-group">
-	
-	<label  for="creditors" class="form-label-bold " id="heading-add" >What type of asset 
-	was it?</label>
-	
+		<h1 class="form-title heading-large" id="intro">Sold, transferred or gifted vehicle summary</h1>
+		<p class="lede">You already told us about:</p>
+		
+		<div id="vehiclelist">
+		
 			
-	<div class="form-group">
-	   
-	    <fieldset class="inline">
-	        <div id="asset" class="form-group">
-				
-	            <label for="vehicle" class="block-label">
-	                <input id="vehicle" name="assettype" type="radio"  value="Life insurance">
-	                Vehicle
-	            </label>
-	            <label for="other" class="block-label">
-	                <input id="other" name="assettype" type="radio"  value="Endowment">
-	                Other
-	            </label>
-	            <div style="padding-top:24px">
-	            	<p>&nbsp;&nbsp;&nbsp; <a class="button" id="next">Add asset type</a></p>
-				</div>
-	        </div>
-	     </fieldset>
-	</div>
-</div>
-<div>&nbsp;</div>
-<div class="repeat">
-	<a class="button" href="../summary.html?page=4" id="btn-addedall">
-	Continue - I have added all sold, transferred and gifted assets</a>
-</div>
-
-<p><br></p>
+		</div>
 	
-	<!-- For User research -->
-	<div class="form-navigation form-group">
-	
-	<div>
-<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-        <a style="padding-right: 30px" href="" id="back">Back</a>
-
-	
-	
-	
-	</div>
-	</div>
-	</form>
+		
+		<p>&nbsp;</p>
+		<div class="form-group">
+			<label class="form-label-bold" for="additional_policy">Do you have any other vehicles you have sold, transferred, or given away in the last 5 years for less than they were worth?</label>
+			<p><a class="button" role="button" id="yes">Yes</a> 
+			<a class="button" role="button" id="no" href="../4-other.html">No</a> </p>
+			<p>&nbsp;</p>
+			<p><a href="" id="back">Back</a></p>
+		</div>
 	</div>
 
         
@@ -379,125 +232,37 @@ $(document).ready(function() {
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
 <!--	<script type="text/javascript" src="../../DRO/creditors/js/jquery1.10.2.js"></script> -->
 	<script type="text/javascript" src="../../../creditors/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/tw-typeahead.js"></script>
-	<script type="text/javascript" src="../js/creditors.js"></script>
-	<script type="text/javascript" src="../../../shared/loop.js"></script>
 
 <script type="text/javascript">
 var count;
-var tablecount = 0;
-
 $(document).ready(function() {
 	
-	var reset = getParameterByName("reset");
-	var loop = getParameterByName("loop");
-	var normalroute = $("#next").prop("href");
-	var total = 0;
-	
+	count = $.cookie('ass-rec-veh-count');
 
-	if (loop && loop.length > 0){
-	}
-	else{
-		$("#creditorlist").hide();
-		$(".newvisitor").show();
-	}
+	for(i=1; i<=count; i++){	
+		var row;
+		
+		row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
+		row += $.cookie("ass-rec-veh-"+i+"-make") + " " + $.cookie("ass-rec-veh-"+i+"-model");
+		row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
+		row += 'summary.html?p='+i;
+		row += '">View your answers</a>&nbsp;<a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12">	<p><span class="bolder">Registration number:</span> <span>'; 
+		row += $.cookie("ass-rec-veh-"+i+"-vrn");
+		row += '</span></p></div></div></div>';
+		$("#vehiclelist").append(row);
 	
-	tablecount = $.cookie('ass-rec-oth-count');
-
-	if(tablecount>0){
-		for(i=1; i<=tablecount; i++){	
 			
-			tableType = $.cookie('ass-rec-oth-type-'+i);
-			tablevalue = $.cookie('ass-rec-oth-value-'+i);
-			
-					
-			//add pensions to table
-			$("#tbody").append("<tr><td>"+ tableType +"</td><td>£ " + tablevalue +"</td><td class=\"edit\"><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
-			
-		}
 	}
 	
 
-	$("#next").on("click", function(e){
-		if ($('#vehicle').prop('checked')==true){
-			var vehcount = $.cookie('VehicleCount');
-			if(vehcount=="" || vehcount==null){
-				$("#next").prop("href", "add-vehicle.html");
-				writeCookie();	
-			}
-			else{
-				for(i=1; i<=vehcount; i++){
-					if($.cookie('VehicleUse'+i)=="Disposed of"){
-						$('#next').prop('href', 'vehicle.html');
-						writeCookie();
-					}
-					else{
-						$("#next").prop("href", "add-vehicle.html");
-						writeCookie();			
-					}
-				}
-			}
-		}
-		else if($('#other').prop('checked')==true){
-			$('#next').prop('href', 'detail.html?id=2');	
-			writeCookie();		
-		}
-		else{
-			$("#msg-entervalue").show();
-			e.preventDefault();
-		}
+	$("#yes").on("click", function(e){
+		
 	});
 	
-	var rowid = "row1";
-	var id = 1;
-	$(".btn-delete").on("click", function () {
-	    if ($(this).parent().parent().prop("id")) {
-			rowid= $(this).parent().parent().prop("id");
-			id = parseInt(rowid.substring(3, rowid.length));
-			$("#confirm-delete").show();
-	    }
-	});
 	
-	$("#btn-confirm-delete").on("click", function () {
-	    $.cookie('creditordeleted' + id, "1", { expires: 1 });
-	    $("#row" + id).hide();
-	    $("#confirm-delete").hide();
-	
-	    total = total - parseFloat(numberWithoutCommas($("#row" + id + " td.amount").text()));
-	    $("#box-total").text(numberWithCommas(total));
-	
-	});
 
 });
 
-function writeCookie(){
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	
-	if(cookiecount == null || cookiecount ==""){
-		cookiecount = 0;
-	}
-	cookiecount++;
-	$.cookie('ass-rec-oth-count', cookiecount);
-
-}
-
-
-
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function numberWithoutCommas(x) {
-    return parseFloat(x.toString().replace(/,/g, ""));
-}
 
 
 </script>
