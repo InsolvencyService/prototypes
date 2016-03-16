@@ -393,10 +393,8 @@
   	$.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
     $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
-    $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").val(), { path:'/' });
 	}
   function WriteSelectCookie(countx) {
-	alert(countx);
 	$.cookie("solicitor-cases_"+countx, $("#your-case"+countx).val(), { path:'/' });
   }
   
