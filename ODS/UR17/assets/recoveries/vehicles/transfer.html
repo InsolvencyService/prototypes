@@ -433,15 +433,16 @@ $("#next").click(function() {
 });
 
 function writeCookies(){
-	$.cookie('ass-rec-veh-name'+count, $("#companyname").val(), {path:'/'});
-	$.cookie('ass-rec-veh-add1'+count, $("#address_line_1").val(), {path:'/'});
-	$.cookie('ass-rec-veh-add2'+count, $("#address_line_2").val(), {path:'/'});
-	$.cookie('ass-rec-veh-add3'+count, $("#address_line_3").val(), {path:'/'});
-	$.cookie('ass-rec-veh-add4'+count, $("#address_town").val(), {path:'/'});
-	$.cookie('ass-rec-veh-add5'+count, $("#address_county").val(), {path:'/'});
-	$.cookie('ass-rec-veh-add6'+count, $("#address_post_code").val(), {path:'/'});
-	$.cookie('ass-rec-veh-add7'+count, $("#address_country").val(), {path:'/'});
-	$.cookie('ass-rec-veh-relationship'+count, $("#pnl-relationship :checked").val(), {path:'/'});
+	count=$.cookie('ass-rec-veh-count');
+	$.cookie('ass-rec-veh-name-'+count, $("#companyname").val(), {path:'/'});
+	$.cookie('ass-rec-veh-add1-'+count, $("#address_line_1").val(), {path:'/'});
+	$.cookie('ass-rec-veh-add2-'+count, $("#address_line_2").val(), {path:'/'});
+	$.cookie('ass-rec-veh-add3-'+count, $("#address_line_3").val(), {path:'/'});
+	$.cookie('ass-rec-veh-add4-'+count, $("#address_town").val(), {path:'/'});
+	$.cookie('ass-rec-veh-add5-'+count, $("#address_county").val(), {path:'/'});
+	$.cookie('ass-rec-veh-add6-'+count, $("#address_post_code").val(), {path:'/'});
+	$.cookie('ass-rec-veh-add-7'+count, $("#address_country").val(), {path:'/'});
+	$.cookie('ass-rec-veh-relationship-'+count, $("#pnl-relationship :checked").val(), {path:'/'});
 }
 
 function numberWithoutCommas(x) {
