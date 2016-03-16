@@ -418,15 +418,15 @@ $(document).ready(function() {
 		var count= $.cookie("ass-rec-veh-count");
 	}
 	
-	$("#make").text($.cookie("ass-rec-veh-make"+count));
-	$("#model").text($.cookie("ass-rec-veh-model"+count));
-	$("#vrn").text($.cookie("ass-rec-veh-vrn"+count));
-	$("#type").text($.cookie("ass-rec-veh-type"+count));
-	$("#date").text($.cookie("ass-rec-veh-month"+count) + " " + $.cookie("ass-rec-prop-year"+count));
-	$("#marketvalue").text("£"+$.cookie("ass-rec-veh-marketvalue"+count));
-	$("#netvalue").text("£"+$.cookie("ass-rec-veh-netvalue"+count));
-	$("#who").text($.cookie("ass-rec-veh-name"+count));
-	$("#relationship").text($.cookie("ass-rec-veh-relationship"+count));
+	$("#make").text($.cookie("ass-rec-veh-make-"+count));
+	$("#model").text($.cookie("ass-rec-veh-model-"+count));
+	$("#vrn").text($.cookie("ass-rec-veh-vrn-"+count));
+	$("#type").text($.cookie("ass-rec-veh-type-"+count));
+	$("#date").text($.cookie("ass-rec-veh-month-"+count) + " " + $.cookie("ass-rec-prop-year"+count));
+	$("#marketvalue").text("£"+$.cookie("ass-rec-veh-marketvalue-"+count));
+	$("#netvalue").text("£"+$.cookie("ass-rec-veh-netvalue-"+count));
+	$("#who").text($.cookie("ass-rec-veh-name-"+count));
+	$("#relationship").text($.cookie("ass-rec-veh-relationship-"+count));
 	
 	var address;
 	if($.cookie("ass-rec-veh-add1-"+count)){
@@ -450,7 +450,7 @@ $(document).ready(function() {
 	if($.cookie("ass-rec-veh-add7-"+count)){
     	address += ", "+$.cookie("ass-rec-veh-add7-"+count);
 	}   
-	$("#address").text(address); 
+	$("#theiraddress").text(address); 
 	
 	
 	
