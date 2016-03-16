@@ -316,19 +316,12 @@
 		</section>
 	</fieldset>
 
-
-	
-                    
-        
-
-		<p class="clearfix"><br/></p>
-	
-	<!-- For User research -->
-		<div class="form-navigation form-group">
-			<a role="button" id="next" class="button" href="../property/overview.html">Continue</a>
-			<br>
-			<a href="../property/property.html" id="back">Back</a>
-		</div>
+<!-- For User research -->
+	<div class="form-navigation form-group">
+		<a role="button" id="next" class="button" href="asset_list.html">Continue</a>
+		<br>
+		<a href="javascript:history.back()" id="back">Back</a>
+	</div>
 	
 </div>
 	 </div>
@@ -422,9 +415,9 @@ $(document).ready(function() {
 	$("#model").text($.cookie("ass-rec-veh-model-"+count));
 	$("#vrn").text($.cookie("ass-rec-veh-vrn-"+count));
 	$("#type").text($.cookie("ass-rec-veh-type-"+count));
-	$("#date").text($.cookie("ass-rec-veh-month-"+count) + " " + $.cookie("ass-rec-prop-year"+count));
+	$("#date").text($.cookie("ass-rec-veh-month-"+count) + " " + $.cookie("ass-rec-veh-year"+count));
 	$("#marketvalue").text("£"+$.cookie("ass-rec-veh-marketvalue-"+count));
-	$("#netvalue").text("£"+$.cookie("ass-rec-veh-netvalue-"+count));
+	$("#netvalue").text("£"+$.cookie("ass-rec-veh-net-"+count));
 	$("#who").text($.cookie("ass-rec-veh-name-"+count));
 	$("#relationship").text($.cookie("ass-rec-veh-relationship-"+count));
 	
