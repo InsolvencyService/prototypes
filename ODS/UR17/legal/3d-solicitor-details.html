@@ -316,7 +316,7 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
-
+  var countx
   var thirdCount;
   var fourthCount;
   $(document).ready(function() {
@@ -395,7 +395,7 @@
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
     $.cookie("solicitor-cases_"+thirdCount, $("#your-cases :checked").val(), { path:'/' });
 	}
-  function WriteSelectCookie(var countx) {
+  function WriteSelectCookie(countx) {
 	alert(countx);
 	$.cookie("solicitor-cases_"+countx, $(this).val(), { path:'/' });
   }
