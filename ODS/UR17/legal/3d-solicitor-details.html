@@ -397,9 +397,9 @@
     
     var tempCount = 0;
   	if($.cookie("sol_temp")){
-  		tempcount = $.cookie("sol_temp");
+  		tempcount == $.cookie("sol_temp");
   	}
-  	tempcount++
+  	tempcount++;
 	$.cookie("sol_temp", tempCount, { path:'/' });
     $.cookie("solicitor-cases_"+tempcount, solicitor_cases, { path:'/' });
 
@@ -410,11 +410,9 @@
   
   function WriteSelectCookie1(countx) {
 	solicitor_cases = $("#your-case"+countx).val();
-	alert(solicitor_cases);
   }
   function WriteSelectCookie2(countx) {
 	solicitor_cases = $("#your-case_"+countx).val();
-	alert(solicitor_cases);
   }
 
   
