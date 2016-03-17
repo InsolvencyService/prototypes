@@ -153,26 +153,6 @@
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset id="loop" role="group">
-              <legend class="form-label-bold">Enter <span class="firsttime">the </span><span class="repeat">another </span>person's first and last name</legend>
-              <span class="form-hint">For example, John Smith. You can add more people later.</span>
-              <div class="row">
-                <div class="col-md-4 col-xs-12">
-            		  <label id="firstname_label" for="firstname">First name</label>
-            			<input id="firstname" aria-labelledby="firstname_label intro" />
-            	  </div>
-                <div class="col-md-4 col-xs-12">
-              		<label id="lastname_label" for="lastname">Last name</label>
-              		<input id="lastname" aria-labelledby="lastname_label intro" />
-              	</div>
-                <div class="col-md-4 col-xs-12">
-                  <input type="button" onclick="location.href='add.html';" id="add" class="button" value="Add person">
-            	  </div>
-              </div>
-          	</fieldset>
-            <!-- ///// Fieldset/Group 1 - END ///// -->
-
             <!-- ///// Table repeat - START ///// -->
             <div id="familylist" class="repeat family" aria-hidden="true">
               <p>The table below summarises the household members you have told us about.</p>
@@ -238,6 +218,26 @@
               </section>
             </div>
             <!-- ///// Table repeat - END ///// -->
+
+            <!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset id="loop" role="group">
+              <legend class="form-label-bold">Enter <span class="firsttime">the </span><span class="repeat">another </span>person in your household</legend>
+              <span class="form-hint">For example, John Smith. You can add more people later.</span>
+              <div class="row">
+                <div class="col-md-4 col-xs-12">
+            		  <label id="firstname_label" for="firstname">First name</label>
+            			<input id="firstname" aria-labelledby="firstname_label intro" />
+            	  </div>
+                <div class="col-md-4 col-xs-12">
+              		<label id="lastname_label" for="lastname">Last name</label>
+              		<input id="lastname" aria-labelledby="lastname_label intro" />
+              	</div>
+                <div class="col-md-4 col-xs-12">
+                  <input type="button" onclick="location.href='add.html';" id="add" class="button" value="Add person">
+            	  </div>
+              </div>
+          	</fieldset>
+            <!-- ///// Fieldset/Group 1 - END ///// -->
 
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="form-group">
