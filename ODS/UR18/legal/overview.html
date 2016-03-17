@@ -130,14 +130,22 @@
       <!-- ///// Form - START ///// -->
       <form class="form" method="post">
 
+        <h1 class="heading-xlarge" id="maincontent">Overview - Legal proceedings</h1>
+
         <!-- ///// Fieldset/Group 1 - START ///// -->
         <fieldset class="section-overview">
           <legend class="visuallyhidden">Your answers are below</legend>
 
           <header>
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <h1 class="heading-xlarge" id="maincontent">Overview - Legal proceedings</h1>
+              <div class="col-md-7 col-sm-7 col-xs-7">
+                <h2 class="heading-small">Question</h2>
+              </div>
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <h2 class="heading-small">Answer</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <h2 class="heading-small">Action</h2>
               </div>
             </div>
           </header>
@@ -145,11 +153,13 @@
           <!-- ///// Section 1 - START ///// -->
           <section class="overview-panels">
             <div class="row">
-              <div class="col-md-9 col-sm-9 col-xs-12">
+              <div class="col-md-7 col-sm-7 col-xs-7">
                 <h2>Have you legally separated, divorced or dissolved a civil partnership in the last 5 years?</h2>
-                <h3 class="heading-xlarge" id="question1-answer">No</h3>
               </div>
-              <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <h3 class="heading-small" id="question1-answer">No</h3>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
                 <a href="1a-legally-separated.html">Edit my answer</a>
               </div>
             </div>
@@ -159,11 +169,13 @@
           <!-- ///// Section 2 - START ///// -->
           <section class="overview-panels">
             <div class="row">
-              <div class="col-md-9 col-sm-9 col-xs-12">
+              <div class="col-md-7 col-sm-7 col-xs-7">
                 <h2>Are you involved in any ongoing legal claims?</h2>
-                <h3 class="heading-xlarge" id="question2-answer">No</h3>
               </div>
-              <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <h3 class="heading-small" id="question2-answer">No</h3>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
                 <a href="2a-legal-claims.html">Edit my answer</a>
               </div>
             </div>
@@ -173,14 +185,17 @@
           <!-- ///// Section 3 - START ///// -->
           <section class="overview-panels">
             <div class="row">
-              <div class="col-md-9 col-sm-9 col-xs-12">
+              <div class="col-md-7 col-sm-7 col-xs-7">
                 <h2>Have you used any solicitors in the last 5 years?</h2>
-                <h3 class="heading-xlarge" id="question3-answer">No</h3>
               </div>
-              <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <h3 class="heading-small" id="question3-answer">No</h3>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
                 <a href="3a-solicitors.html">Edit my answer</a>
               </div>
             </div>
+          </section>
           </section>
           <!-- ///// Section 3 - END ///// -->
 
@@ -261,199 +276,19 @@
 
   <script type="text/javascript">
 
-  var firstCount;
-
-  // Court details variables
-  var court_details_Name;
-  var court_details_CourtRef;
-  var court_details_FinishMonth;
-  var court_details_FinishYear;
-  var court_details_Asset;
-
   $(document).ready(function() {
 
-    firstCount= $.cookie("legal-prop-count");
-
-    for (i = 1; i <= firstCount; i++) {
-
-      // no answers display
-      $("#question1-no").hide();
-
-      // Court details variable cookies
-      if($.cookie("separation-court_"+i)){
-        court_details_Name = $.cookie("separation-court_"+i);
-      }
-      if($.cookie("separation-court-reference_"+i)){
-        court_details_CourtRef = $.cookie("separation-court-reference_"+i);
-      }
-      if($.cookie("separation-finish-month_"+i)){
-        court_details_FinishMonth = $.cookie("separation-finish-month_"+i);
-      }
-      if($.cookie("separation-finish-year_"+i)){
-        court_details_FinishYear = $.cookie("separation-finish-year_"+i);
-      }
-      if($.cookie("separation-division_"+i)){
-        court_details_Asset = $.cookie("separation-division_"+i);
-      }
-
-      var row= '<div class="new-item">';
-      // row 1
-      row += '<div class="row">';
-      row += '<div class="col-md-9 col-sm-9 col-xs-12">';
-      row += '<h3 class="heading-medium">' + court_details_Name + '</h3>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#" class="delete-item">Delete</a><a href="1b-name-of-court.html?p='+i+'">Edit</a></div>';
-      row += '</div>';
-      // row 2
-      row += '<div class="row" id="court-ref-appearance">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Court reference:</span></p>';
-      row += '</div>';
-      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p class="bolder">' + court_details_CourtRef + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 3
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Date the process finished:</span></p>';
-      row += '</div>';
-      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p class="bolder">' + court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 4
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Division of your assets:</span></p>';
-      row += '</div>';
-      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p class="bolder">' + court_details_Asset + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 5
-      // row += '<div class="row">';
-      // row += '<div class="col-md-4 col-sm-4 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
-      // row += '</div>';
-      // End wrapping container
-      row += '</div>';
-
-      if($.cookie("separation-court-reference_"+i) === "") {
-        $("#court-ref-appearance").hide();
-      } else {
-        $("#court-ref-appearance").show();
-      }
-
-      $("#court-cases").append(row);
-
+    if ($.cookie("question1")) {
+      $("#question1-answer").text($.cookie("question1"));
     }
 
-  });
-
-  var secondCount;
-
-  // Oustanding legal claims details variables
-  var outstanding_details_Name;
-  var outstanding_details_CourtRef;
-  var outstanding_details_Claim;
-  var outstanding_details_ClaimOrigin;
-  var outstanding_details_Settled;
-
-  $(document).ready(function() {
-
-    secondCount= $.cookie("claims-prop-count");
-
-    for (i = 1; i <= secondCount; i++) {
-
-      // no answers display
-      $("#question2-no").hide();
-
-      // Oustanding legal claims variables cookies
-      if($.cookie("claims-court_"+i)){
-        outstanding_details_Name = $.cookie("claims-court_"+i);
-      }
-      if($.cookie("claims-court-reference_"+i)){
-        outstanding_details_CourtRef = $.cookie("claims-court-reference_"+i);
-      }
-      if($.cookie("claims-type_"+i)){
-        outstanding_details_Claim = $.cookie("claims-type_"+i);
-      }
-      if($.cookie("claims-origin_"+i)){
-        outstanding_details_ClaimOrigin = $.cookie("claims-origin_"+i);
-      }
-      if($.cookie("claims-settled_"+i)){
-        outstanding_details_Settled = $.cookie("claims-settled_"+i);
-      }
-
-      var row= '<div class="new-item">';
-      // row 1
-      row += '<div class="row">';
-      row += '<div class="col-md-9 col-sm-9 col-xs-12">';
-      row += '<h3 class="heading-medium">' + outstanding_details_Name + '</h3>';
-      row += '</div>';
-      row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="#" class="delete-item">Delete</a><a href="1b-name-of-court.html?p='+i+'">Edit</a></div>';
-      row += '</div>';
-      // row 2
-      row += '<div class="row" id="court-ref-appearance">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Court reference:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_CourtRef + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 3
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">What\'s the claim about:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_Claim + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 4
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Did you start this claim:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_ClaimOrigin + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 5
-      row += '<div class="row">';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Has the claim been settled out of court?:</span>';
-      row += '</div>';
-      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p class="bolder">' + outstanding_details_Settled + '</p>';
-      row += '</div>';
-      row += '</div>';
-      // row 6
-      // row += '<div class="row">';
-      // row += '<div class="col-md-3 col-sm-3 col-xs-12"><a href="1c-court-details.html?p='+i+'">Edit court details</a></div>';
-      // row += '</div>';
-      // End wrapping container
-      row += '</div>';
-
-      if($.cookie("claims-court-reference_"+i) === "") {
-        $("#court-ref-appearance").hide();
-      } else {
-        $("#court-ref-appearance").show();
-      }
-
-      $("#ongoing-cases").append(row);
-
+    if ($.cookie("question2")) {
+      $("#question2-answer").text($.cookie("question2"));
     }
 
-  });
-
-  // Delete item
-  $(document).ready(function() {
-
-    $(".delete-item").on("click", function (e) {
-      $(this).parents(".new-item").hide("slow");
-    });
+    if ($.cookie("solicitor")) {
+      $("#question3-answer").text($.cookie("solicitor"));
+    }
 
   });
 
