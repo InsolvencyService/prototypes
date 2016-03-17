@@ -111,8 +111,8 @@
             <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
           </nav>
           <ul id="proposition-links">
-            <li><a href="../overview.html" class="">Application Overview</a></li>
-            <li><a href="../payments/1-payment-amount.html" class="">Pay for my application</a></li>
+            <li><a href="../../UR17/overview.html" class="">Application Overview</a></li>
+            <li><a href="../../UR17/payments/1-payment-amount.html" class="">Pay for my application</a></li>
             <li><a href="#" class="cancel">Save and logout</a></li>
           </ul>
         </div>
@@ -278,7 +278,7 @@
       <div class="footer-meta">
         <div class="footer-meta-inner">
           <ul class="footer__nav">
-            <li class="small-btm-margin"><a class="bold-medium" id="email-link" href="../email.html">Contact us</a></li>
+            <li class="small-btm-margin"><a class="bold-medium" id="email-link" href="../../UR17/email.html">Contact us</a></li>
           </ul>
           <ul class="footer__nav">
             <li class="footer__link"><a href="../../privacy.html">Privacy</a></li>
@@ -319,6 +319,7 @@
   var countx
   var thirdCount;
   var fourthCount;
+  var solicitor_cases;
   $(document).ready(function() {
 
     thirdCount = $.cookie("solicitor-prop-count");
@@ -352,7 +353,7 @@
     // My added code
     for (var i = 1; i <= fifthCount; i++) {
     	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
-    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie('+i+')" value="'+$.cookie("separation-court_"+i)+', '+$.cookie("separation-court-reference_"+i)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie1('+i+')" value="'+$.cookie("separation-court-reference_"+i)+'" name="case-list" type="radio" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("separation-court_"+i) + '</span> (' + $.cookie("separation-court-reference_"+i) + ')';
       item += '<br>';
     	item += '<span class="court-type">Legal separation</span>';
@@ -362,8 +363,8 @@
 
     for (var j = 1; j <= fourthCount; j++) {
 
-    	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie('+j+')" for="your-case_'+j+'" class="block-label">';
-    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court_"+j)+', '+$.cookie("claims-court-reference_"+j)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie2('+j+')" for="your-case_'+j+'" class="block-label">';
+    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court-reference_"+j)+'" name="case-list" type="radio" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
@@ -393,11 +394,28 @@
   	$.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
     $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
+    
+    var tempCount = 0;
+  	if($.cookie("sol_temp")){
+  		tempCount = parseInt($.cookie("sol_temp"));
+  	}
+  	tempCount++;
+	$.cookie("sol_temp", tempCount, { path:'/' });
+    $.cookie("solicitor-cases_"+tempCount, solicitor_cases, { path:'/' });
+
 	}
-  function WriteSelectCookie(countx) {
-  	$.cookie("solicitor-cases_"+countx, $("#your-case"+countx).val(), { path:'/' });
+  
+  
+  
+  
+  function WriteSelectCookie1(countx) {
+	solicitor_cases = $("#your-case"+countx).val();
+  }
+  function WriteSelectCookie2(countx) {
+	solicitor_cases = $("#your-case_"+countx).val();
   }
 
+  
   </script>
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
