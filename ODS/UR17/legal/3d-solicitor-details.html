@@ -397,7 +397,7 @@
     
     var tempCount = 0;
   	if($.cookie("sol_temp")){
-  		tempCount == parseInt($.cookie("sol_temp"));
+  		tempCount = parseInt($.cookie("sol_temp"));
   	}
   	tempCount++;
 	$.cookie("sol_temp", tempCount, { path:'/' });
