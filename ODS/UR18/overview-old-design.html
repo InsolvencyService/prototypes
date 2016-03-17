@@ -944,10 +944,10 @@ h3 > a {
 
                       //check to see if a section variable in url. If not opens well and section 1 information
                       if(window.location.href.indexOf("section") < 1) {
-                        $("#section1 .js-section").addClass("open");
-                        $("#section1 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        // $("#section1 .js-section").addClass("open");
+                        // $("#section1 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                         var details = $("#section1 .js-section").attr("href");
-                        $(details).hide();
+                        // $(details).hide();
                         $(details).parent().addClass("well");
                       }
 
@@ -962,10 +962,10 @@ h3 > a {
 
                         document.title = 'Overview - Employment';
 
-                        $("#section2 .js-section").addClass("open");
-                        $("#section2 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        // $("#section2 .js-section").addClass("open");
+                        // $("#section2 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                         var details = $("#section2 .js-section").attr("href");
-                        $(details).show();
+                        // $(details).show();
                         $(details).parent().addClass("well");
                       }
 
@@ -978,10 +978,10 @@ h3 > a {
                         $("#section3 .edit").show().addClass("button").text("Start");
                         document.title = 'Overview - Bank';
 
-                        $("#section3 .js-section").addClass("open");
-                        $("#section3 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        // $("#section3 .js-section").addClass("open");
+                        // $("#section3 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                         var details = $("#section3 .js-section").attr("href");
-                        $(details).show();
+                        // $(details).show();
                         $(details).parent().addClass("well");
                       }
 
@@ -997,10 +997,10 @@ h3 > a {
                         $("#section4 .edit").show().addClass("button").text("Start");
                         document.title = 'Assets - Property';
 
-                        $("#section4 .js-section").addClass("open");
-                        $("#section4 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        // $("#section4 .js-section").addClass("open");
+                        // $("#section4 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                         var details = $("#section4 .js-section").attr("href");
-                        $(details).show();
+                        // $(details).show();
                         $(details).parent().addClass("well");
                       }
                       if (section4 && section4 == "complete") {
@@ -1011,25 +1011,27 @@ h3 > a {
                         $("#section5 .edit").show().addClass("button").text("Start");
                         document.title = 'Overview - Money you owe';
 
-                        $("#section5 .js-section").addClass("open");
-                        $("#section5 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        // $("#section5 .js-section").addClass("open");
+                        // $("#section5 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                         var details = $("#section5 .js-section").attr("href");
-                        $(details).show();
+                        // $(details).show();
                         $(details).parent().addClass("well");
                       }
                       if (section5 && section5 == "complete") {
-                        $("#section1 .edit").show().removeClass("button").text("Edit");
-                        $("#section2 .edit").show().text("Edit").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
-                        $("#section3 .edit").show().text("Edit");
-                        $("#section4 .edit").show().text("Edit");
-                        $("#section5 .edit").show().text("Edit");
+                        $("#section1 .edit").show().removeClass("button").text("View my answers");
+                        $("#section2 .edit").show().text("View my answers").prop("href", $("#section2 .edit").prop("href") + "?loop=true");
+                        $("#section3 .edit").show().text("View my answers");
+                        $("#section4 .edit").show().text("View my answers");
+                        $("#section5 .edit").show().text("View my answers");
                         $("#section6 .edit").show().addClass("button").text("Start");
                         document.title = 'Overview - Income and expenses';
 
-                        $("#section6 .js-section").addClass("open");
-                        $("#section6 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
+                        $("#section1, #section2, #section3, #section4, #section5").addClass("done");
+
+                        // $("#section6 .js-section").addClass("open");
+                        // $("#section6 .js-section").find("i").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-top");
                         var details = $("#section6 .js-section").attr("href");
-                        $(details).show();
+                        // $(details).show();
                         $(details).parent().addClass("well");
                       }
                       if (section6 && section6 == "complete") {
@@ -1042,7 +1044,7 @@ h3 > a {
                         $("#section7 .edit").show().addClass("button").text("Start");
                         document.title = 'Overview - Legal proceedings';
                         var details = $("#section7 .js-section").attr("href");
-                        $(details).show();
+                        // $(details).show();
                         $(details).parent().addClass("well");
                       }
                       if (section7 && section7 == "complete") {
@@ -1056,7 +1058,7 @@ h3 > a {
                         $("#section8 .edit").show().addClass("button").text("Start");
                         document.title = 'Overview - Insolvency proceedings';
                         var details = $("#section8 .js-section").attr("href");
-                        $(details).show();
+                        // $(details).show();
                         $(details).parent().addClass("well");
                       }
                       if (section8 && section8 == "complete") {

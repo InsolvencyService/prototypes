@@ -363,7 +363,7 @@
     for (var j = 1; j <= fourthCount; j++) {
 
     	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie('+j+')" for="your-case_'+j+'" class="block-label">';
-    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court-reference_"+j)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	item += '<input id="your-case_'+j+'" value="'+$.cookie("solicitor-name_"+j)+', '+$.cookie("claims-court-reference_"+j)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
@@ -395,9 +395,9 @@
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
 	}
   function WriteSelectCookie(countx) {
-	$.cookie("solicitor-cases_"+countx, $("#your-case"+countx).val(), { path:'/' });
+  	$.cookie("solicitor-cases_"+countx, $("#your-case"+countx).val(), { path:'/' });
   }
-  
+
   </script>
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->

@@ -17,11 +17,18 @@ ul li.row {
 	/*width: 100%;*/
 	padding: 15px 10px !important;
 	margin: 0;
-	display: flex;
+	display: inline-block;
+	width: 100%;
+	/*display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
 }
 
+@media (max-width: 768px) {
+	.rowtop {
+		padding: 15px 0px !important;
+	}
+}
 .rowtop .button {
 	display: inline-block;
 	margin: 0 0 2px 0;
@@ -30,21 +37,38 @@ ul li.row {
 }
 
 .rowtop h3 {
-	margin: 5px 0 0 0 !important;
+	margin: 15px 0 0 0 !important;
 	color: black !important;
-	font-size: 26px;
+	font-size: 30px;
 	font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.rowtop h3 {
+		margin: 6px 0 0 0 !important;
+		font-size: 19px;
+	}
 }
 
 .rowtop .heading-xlarge {
 	float: left;
-	margin: 0 10px 0 0;
+	margin: 0 15px 0 0;
 	font-size: 65px;
 	width: 40px;
 	height: 60px;
 	text-align: center;
 	color: black;
 }
+
+@media (max-width: 768px) {
+	.rowtop .heading-xlarge {
+		margin: 0 10px 0 0;
+		font-size: 30px;
+		width: 30px;
+		height: 30px;
+	}
+}
+
 
 a.wrapper-button:hover {
 	text-decoration: none;
@@ -299,8 +323,42 @@ ul#overview-panels li .js-section {
 
 a.rowtop.wrapper-button {
 	text-decoration: none;
+	position: relative;
 }
 
+a.rowtop.wrapper-button .edit {
+	position: absolute;
+	right: 15px;
+	top: 22px;
+	text-align: right;
+}
+
+@media (max-width: 768px) {
+	a.rowtop.wrapper-button .edit {
+		position: relative;
+		display: inline-block;
+		top: initial;
+		right: initial;
+		font-size: 13px;
+		float: left;
+		margin-left: 5px;
+	}
+}
+
+a.rowtop.wrapper-button .edit.button {
+	position: relative;;
+	right: inherit;
+	top: inherit;
+}
+
+@media (max-width: 768px) {
+	a.rowtop.wrapper-button .edit.button {
+		font-size: 18px;
+		text-align: center;
+		margin-left: 0;
+		margin-top: 10px;
+	}
+}
 /* CSS for the status pages - End */
 
 /* ==================================== Overview Overide Styles - OLD - Start ==================================== */
@@ -315,7 +373,7 @@ a.rowtop.wrapper-button {
 }
 
 #overview-old .rowtop {
-	padding-bottom: 0 !important;
+	padding-bottom: 6px !important;
 }
 
 #overview-old li .clearfix {
@@ -323,13 +381,14 @@ a.rowtop.wrapper-button {
 }
 
 #overview-old ul li.row.well .rowmiddle, #overview-old ul li.row .rowmiddle {
-	padding: 10px 10px 5px 10px;
-  display: inline-block;
-  width: 100%;
+	/*padding: 10px 10px 5px 10px;*/
+  display: none;
+  /*width: 100%;*/
 }
 
-#overview-old ul li.row .rowmiddle {
-	padding: 10px 10px 5px 10px;
+#overview-old ul li.row .rowmiddle, #overview-old ul li.row .rowbottom {
+	display: none;
+	/*padding: 10px 10px 5px 10px;*/
 }
 
 #overview-old ul li.row.well {
@@ -387,6 +446,19 @@ a.rowtop.wrapper-button {
 	border-radius: 5px;
 }
 
+#overview-old ul li.row.done {
+	border-left: 5px solid #005ea5;
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+	border-radius: 0;
+}
+
+#overview-old ul li.row.done .rowtop h3 {
+	color: black !important;
+}
+
+
 #overview-old ul li.row.well .rowtop h3, #overview-old ul li.row .rowtop h3 {
 	margin-top: 0 !important;
 	color: black !important;
@@ -398,7 +470,8 @@ a.rowtop.wrapper-button {
 }
 
 #overview-old ul li.row.well .rowtop h3 {
-	font-size: 29px;
+	font-size: 30px;
+	margin-top: 6px !important;
 }
 
 #overview-old ul li.row.well .rowtop .edit.button {
