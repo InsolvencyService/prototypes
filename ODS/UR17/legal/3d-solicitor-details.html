@@ -319,6 +319,7 @@
   var countx
   var thirdCount;
   var fourthCount;
+  var tempCount = 0;
   $(document).ready(function() {
 
     thirdCount = $.cookie("solicitor-prop-count");
@@ -352,7 +353,7 @@
     // My added code
     for (var i = 1; i <= fifthCount; i++) {
     	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
-    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie('+i+')" value="'+$.cookie("separation-court-reference_"+i)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
+    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie1('+i+')" value="'+$.cookie("separation-court-reference_"+i)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("separation-court_"+i) + '</span> (' + $.cookie("separation-court-reference_"+i) + ')';
       item += '<br>';
     	item += '<span class="court-type">Legal separation</span>';
@@ -362,7 +363,7 @@
 
     for (var j = 1; j <= fourthCount; j++) {
 
-    	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie('+j+')" for="your-case_'+j+'" class="block-label">';
+    	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie2('+j+')" for="your-case_'+j+'" class="block-label">';
     	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court-reference_"+j)+'" name="case-list" type="checkbox" aria-labelledby="case-list">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
@@ -394,9 +395,15 @@
     $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
 	}
-  function WriteSelectCookie(countx) {
-	$.cookie("solicitor-cases_"+countx, $("#your-case"+countx).val(), { path:'/' });
+  function WriteSelectCookie1(countx) {
+  	tempcount++;
+	$.cookie("solicitor-cases_"+tempcount, $("#your-case"+countx).val(), { path:'/' });
   }
+  function WriteSelectCookie2(countx) {
+  	tempcount++;
+	$.cookie("solicitor-cases_"+tempcount, $("#your-case_"+countx).val(), { path:'/' });
+  }
+
   
   </script>
   <!-- #EndEditable "scripts" -->
