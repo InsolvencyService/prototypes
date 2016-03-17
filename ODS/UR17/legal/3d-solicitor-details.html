@@ -319,7 +319,7 @@
   var countx
   var thirdCount;
   var fourthCount;
-  
+  var solicitor_cases;
   $(document).ready(function() {
 
     thirdCount = $.cookie("solicitor-prop-count");
@@ -394,24 +394,25 @@
   	$.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
     $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
-	}
-  function WriteSelectCookie1(countx) {
-  	var tempCount = 0;
+    
+    var tempCount = 0;
   	if($.cookie("sol_temp")){
   		tempcount = $.cookie("sol_temp");
   	}
   	tempcount++
-	$.cookie("solicitor-cases_"+tempcount, $("#your-case"+countx).val(), { path:'/' });
 	$.cookie("sol_temp", tempCount, { path:'/' });
+    $.cookie("solicitor-cases_"+tempcount, solicitor_cases, { path:'/' });
+
+	}
+  
+  
+  
+  
+  function WriteSelectCookie1(countx) {
+	solicitor_cases = $("#your-case"+countx).val();
   }
   function WriteSelectCookie2(countx) {
-  	var tempCount = 0;
-  	if($.cookie("sol_temp")){
-  		tempcount = $.cookie("sol_temp");
-  	}
-  	tempcount++
-	$.cookie("solicitor-cases_"+tempcount, $("#your-case_"+countx).val(), { path:'/' });
-	$.cookie("sol_temp", tempCount, { path:'/' });
+	solicitor_cases = $("#your-case_"+countx).val();
   }
 
   
