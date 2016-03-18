@@ -163,22 +163,12 @@
                   <input id="question2-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="question2-label question2-yes-label">
                   Yes
                 </label>
-                <label id="question2-no-label" for="question1-no" class="block-label">
+                <label id="question2-no-label" for="question2-no" class="block-label">
                   <input id="question2-no" value="No" name="settled-claim" type="radio" aria-labelledby="question2-label question2-no-label">
                   No
                 </label>
               </div>
               <input type="button" onclick="location.href='#';" id="continue" class="button" value="Continue" aria-labelledby="question2-label">
-            </fieldset>
-
-
-
-            <fieldset class="inline form-group" aria-labelledby="">
-              <br>
-              <label class="hidden" id="button-title-1">Yes</label>
-              <label class="hidden" id="button-title-2">No</label>
-              <input type="button" onclick="location.href='2b-name-of-court.html';" id="question2-yes" class="button" value="Yes" aria-labelledby="heading-1 question2-label hint-1 button-title-1">
-              <input type="button" onclick="location.href='3a-solicitors.html';" id="question2-no" class="button" value="No" aria-labelledby="question2-label button-title-2">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -256,12 +246,20 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#question2-no").on("click", function (e) {
-      $.cookie("question2", $("#question2-no").val(), {path:'/'});
+    $("#continue").on("click", function (e) {
+      $.cookie("question2", $("#question2 :checked").attr("value"), { path:'/' });
     });
 
-    $("#question2-yes").on("click", function (e) {
-      $.cookie("question2", $("#question2-yes").val(), {path:'/'});
+    $('#question2 input[type="radio"]').click(function() {
+        var g1 = $("#question2-yes").is(":checked");
+
+        var addr = "";
+        if (g1) {
+          addr = "2b-name-of-court.html";
+        } else {
+          addr = "3a-solicitors.html";
+        }
+        $("#question2 #continue").attr('href', addr);
     });
 
   </script>
