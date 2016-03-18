@@ -226,7 +226,7 @@
 
             <!-- ///////////////// Add Item - Start ///////////////// -->
             <fieldset class="add-item">
-              <a href="1b-court-details.html" role="button" id="btn-add-separation" class="link-lookalike">Add another legal separation</a>
+              <a role="button" id="btn-add-separation" class="link-lookalike">Add another legal separation</a>
             </fieldset>
             <!-- ///////////////// Add Item - End ///////////////// -->
 
@@ -322,10 +322,11 @@
         $.cookie("separation-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
         $.cookie("separation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
         $.cookie("legal-prop-count", firstCount, { path: '/' } );
+        $("#btn-add-separation").attr("href", "1b-court-details.html?p="+firstCount);
       }
     });
 
-    if ($.cookie("separation-court_"+firstCount)) {
+    if ($.cookie("separation-court_"+getParameterByName('p')) {
       $("#court-name").text($.cookie("separation-court_"+firstCount));
       $("#confirmation-panel").show();
     } else {
