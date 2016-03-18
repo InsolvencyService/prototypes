@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Ongoing legal claims? - court details</title>
+  <title>Legal proceedings - court details</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -148,7 +148,9 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-xlarge" role="header" id="claims-court-name">Claim details</h1>
+          <h1 class="form-title heading-xlarge" role="header" id="court-name">Court name</h1>
+
+          <p class="lede">Please give us some more details about this court case.</p>
 
           <p></p>
 
@@ -158,79 +160,61 @@
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
             <fieldset class="inline form-group">
-              <label class="form-label-bold" for="court-ref" id="court-ref-label">Court Reference</label>
-              <!-- <span class="form-hint" id="form-hint-desc1">Leave blank if you don't have one</span> -->
-              <input type="text" id="court-ref" aria-labelledby="court-ref-label">
+              <label class="form-label-bold" for="name-of-court" id="name-of-court-label">Enter the name of the court, justice centre or unit where you sent the forms</label>
+              <span class="form-hint" id="form-hint-desc">For example West Midlands Divorce Unit or Birmingham Civil and Family Justice Centre.</span>
+              <input type="text" class="input-with-button" id="name-of-court" aria-labelledby="name-of-court-label form-hint-desc">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
             <!-- ///// Fieldset/Group 2 - START ///// -->
-            <fieldset class="inline form-group" role="radiogroup" id="type-of-claim">
-              <label class="form-label-bold" for="claim-type" id="claim-type-label">What's the claim about?</label>
-              <span class="form-hint" id="form-hint-desc2">Select the type of claim</span>
-              <label id="claim-type-label1" for="claim-type1" class="block-label">
-                <input id="claim-type1" value="Criminal" name="type-of-claim" type="radio" aria-labelledby="claims-court-name claim-type-label form-hint-desc2 claim-type1">
-                Criminal
-              </label>
-              <label id="claim-type-label2" for="claim-type2" class="block-label">
-                <input id="claim-type2" value="Civil dispute" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type2">
-                Civil dispute
-              </label>
-              <label id="claim-type-label3" for="claim-type3" class="block-label">
-                <input id="claim-type3" value="Employment tribunal" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type3">
-                Employment tribunal
-              </label>
-              <label id="claim-type-label4" for="claim-type4" class="block-label">
-                <input id="claim-type4" value="Financial ombudsman" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type4">
-                Financial ombudsman
-              </label>
-              <label id="claim-type-label5" for="claim-type5" class="block-label">
-                <input id="claim-type5" value="Car accident or other personal injury claim" name="type-of-claim" type="radio" aria-labelledby="claim-type-label claim-type5">
-                Car accident or other personal injury claim
-              </label>
-
-              <div class="wrap-radio-button">
-                <div class="row">
-                  <div class="col-md-7 col-xs-5">
-                    <label id="claim-type-label6" for="title_other" class="block-label">
-                      <input id="claim-type6" value="" name="type-of-claim" type="radio" aria-labelledby="claim-type-label6">
-                      Other - please specify:
-                    </label>
-                  </div>
-                  <div class="col-md-5 col-xs-7">
-                    <label for="claim-type6_answer" class="hidden">Enter here:</label>
-                    <input id="claim-type6_answer" name="type-of-claim_answer" type="text" value=""/>
-                  </div>
-                </div>
-              </div>
-
+            <fieldset class="inline form-group">
+              <label class="form-label-bold" for="court-ref" id="court-ref-label">Reference number</label>
+              <!-- <span class="form-hint" id="form-hint-desc1">Leave blank if you don't have one</span> -->
+              <input type="text" id="court-ref" aria-labelledby="court-ref-label">
             </fieldset>
             <!-- ///// Fieldset/Group 2 - END ///// -->
 
             <!-- ///// Fieldset/Group 3 - START ///// -->
-            <fieldset class="inline form-group" role="radiogroup" id="claim-origin">
-              <label class="form-label-bold" for="origin" id="origin-label">Did you start this claim?</label>
-              <span class="form-hint" id="form-hint-desc3">Leave blank if you don't have one</span>
-              <label id="origin-yes-label" for="origin-yes" class="block-label">
-                <input id="origin-yes" value="Yes - I started it" name="claim-origin" type="radio" aria-labelledby="claims-court-name origin-label form-hint-desc3 origin-yes">
-                Yes - I started it
-              </label>
-              <label id="origin-no-label" for="origin-no" class="block-label">
-                <input id="origin-no" value="No - It was brought against me" name="claim-origin" type="radio" aria-labelledby="origin-label origin-no">
-                No - It was brought against me
-              </label>
+            <fieldset class="inline form-group" role="group">
+              <legend id="process-date-label" class="form-label-bold">Date the process finished</legend>
+              <span class="form-hint" id="process-date-hint-1">For example, the date of your decree absolute or final order</span>
+              <span class="form-hint" id="process-date-hint-2">Leave blank if the process hasn't finished</span>
+              <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-2" role="group">
+                  <label id="finish-month-label" for="finish-month">Month</label><br>
+                  <select id="finish-month" name="finish-month" aria-labelledby="process-date-label process-date-hint-1 process-date-hint-2 finish-month-label">
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                  </select>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4" role="group">
+                  <label id="finish-year-label" for="finish-year">Year</label><br>
+                  <input id="finish-year" name="finish-year" type="number" min="2000" max="2016" aria-labelledby="process-date-label finish-year-label" />
+                </div>
+              </div>
             </fieldset>
             <!-- ///// Fieldset/Group 3 - END ///// -->
 
             <!-- ///// Fieldset/Group 4 - START ///// -->
-            <fieldset class="inline form-group" role="radiogroup" id="settled-claim">
-              <legend id="settled-title" class="form-label-bold">Has the claim been settled out of court (interim settlement)?</legend>
-              <label id="settled-yes-label" for="settled-yes" class="block-label">
-                <input id="settled-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="claims-court-name settled-title asset-yes">
+            <fieldset class="inline form-group" role="radiogroup" id="asset-division">
+              <legend id="asset-title" class="form-label-bold">Has there been a division of your assets?</legend>
+              <span class="form-hint" id="asset-title-hint">Leave blank if the process hasn't finished</span>
+              <label id="asset-yes-label" for="asset-yes" class="block-label">
+                <input id="asset-yes" value="Yes" name="title" type="radio" aria-labelledby="asset-title asset-yes">
                 Yes
               </label>
-              <label id="settled-no-label" for="settled-no" class="block-label">
-                <input id="settled-no" value="No" name="settled-claim" type="radio" aria-labelledby="settled-title asset-no">
+              <label id="asset-no-label" for="asset-no" class="block-label">
+                <input id="asset-no" value="No" name="title" type="radio" aria-labelledby="asset-title asset-no">
                 No
               </label>
             </fieldset>
@@ -238,17 +222,36 @@
 
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="inline form-group">
-              <label class="form-label-bold" for="yes no" id="continue-label">Would you like to add another ongoing legal claim?</label>
+              <label class="form-label-bold" for="yes no" id="continue-label">Would you like to add another legal separation?</label>
               <br>
               <label class="hidden" id="button-title-1">Yes</label>
               <label class="hidden" id="button-title-2">No</label>
-              <input type="button" onclick="location.href='2b-name-of-court.html';" id="yes" class="button" value="Yes" aria-labelledby="continue-label button-title-1">
-              <input type="button" onclick="location.href='summary-2.html';" id="no" class="button" value="No" aria-labelledby="continue-label button-title-2">
+              <input type="button" onclick="location.href='1b-name-of-court.html';" id="yes" class="button" value="Yes" aria-labelledby="continue-label button-title-1">
+              <input type="button" onclick="location.href='summary-1.html';" id="no" class="button" value="No" aria-labelledby="continue-label button-title-2">
               <br>
               <br>
               <a href="javascript:history.go(-1)" id="back">Back</a>
               <a href="#" class="cancel">Save and logout</a>
             </fieldset>
+            <!-- ///// CTA Section - END ///// -->
+
+            <!-- ///// CTA Section - START ///// -->
+            <!-- <fieldset class="form-group">
+              <label class="form-label-bold" for="solicitor-yes solicitor-no" id="solicitor-label">Did you use a solicitor for the court case?</label>
+              <br>
+              <label class="hidden" id="button-title-1">Yes</label>
+              <label class="hidden" id="button-title-2">No</label>
+              <input type="button" onclick="location.href='1d-solicitor.html';" id="solicitor-yes" class="button" value="Yes" aria-labelledby="solicitor-label button-title-1">
+              <input type="button" onclick="location.href='summary-question.html';" id="solicitor-no" class="button" value="No" aria-labelledby="solicitor-label button-title-2">
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="form-navigation form-group">
+                    <a href="javascript:history.go(-1)" id="back">Back</a>
+                    <a href="#" class="cancel">Save and logout</a>
+                  </div>
+                </div>
+              </div>
+            </fieldset> -->
             <!-- ///// CTA Section - END ///// -->
 
           </form>
@@ -314,24 +317,24 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  var secondCount;
+  var firstCount;
   $(document).ready(function() {
 
-    secondCount = $.cookie("claims-prop-count");
+    firstCount = $.cookie("legal-prop-count");
 
     $("#yes, #no").on("click", function (e) {
       // if(count == "" || count == null){
       //   count = 0;
       // }
       // count++;
-        $.cookie("claims-court-reference_"+secondCount, $("#court-ref").val(), {path:'/'});
-        $.cookie("claims-type_"+secondCount, $("#type-of-claim :checked").attr("value"), { path:'/' });
-        $.cookie("claims-origin_"+secondCount, $("#claim-origin :checked").attr("value"), { path:'/' });
-        $.cookie("claims-settled_"+secondCount, $("#settled-claim :checked").attr("value"), { path:'/' });
+        $.cookie("separation-court-reference_"+firstCount, $("#court-ref").val(), {path:'/'});
+        $.cookie("separation-finish-month_"+firstCount, $("#finish-month").val(), {path:'/'});
+        $.cookie("separation-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
+        $.cookie("separation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
     });
 
-    if ($.cookie("claims-court_"+secondCount)) {
-      $("#claims-court-name").text($.cookie("claims-court_"+secondCount));
+    if ($.cookie("separation-court_"+firstCount)) {
+      $("#court-name").text($.cookie("separation-court_"+firstCount));
     }
 
   });
