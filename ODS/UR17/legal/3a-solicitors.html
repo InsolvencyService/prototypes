@@ -155,7 +155,23 @@
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline form-group">
+
+
+            <fieldset class="inline form-group" role="radiogroup" id="yes-no">
+              <label class="form-label-bold" for="solicitor-yes solicitor-no" id="solicitor-label">Have you used any solicitors in the last 5 years?</label>
+              <span class="form-hint" id="hint-1">Include any time you received legal advice</span>
+              <label id="settled-yes-label" for="settled-yes" class="block-label">
+                <input id="settled-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="claims-court-name settled-title asset-yes">
+                Yes
+              </label>
+              <label id="settled-no-label" for="settled-no" class="block-label">
+                <input id="settled-no" value="No" name="settled-claim" type="radio" aria-labelledby="settled-title asset-no">
+                No
+              </label>
+              <input type="button" onclick="location.href='overview.html';" id="solicitor-no" class="button" value="Continue" aria-labelledby="solicitor-label button-title-2">
+            </fieldset>
+
+            <!-- <fieldset class="inline form-group">
               <label class="form-label-bold" for="solicitor-yes solicitor-no" id="solicitor-label">Have you used any solicitors in the last 5 years?</label>
               <span class="form-hint" id="hint-1">Include any time you received legal advice</span>
               <br>
@@ -163,7 +179,7 @@
               <label class="hidden" id="button-title-2">No</label>
               <input type="button" onclick="location.href='3b-solicitor-name.html';" id="solicitor-yes" class="button" value="Yes" aria-labelledby="heading-1 solicitor-label hint-1 button-title-1">
               <input type="button" onclick="location.href='overview.html';" id="solicitor-no" class="button" value="No" aria-labelledby="solicitor-label button-title-2">
-            </fieldset>
+            </fieldset> -->
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
             <!-- ///// CTA Section - START ///// -->
