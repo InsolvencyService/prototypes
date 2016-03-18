@@ -251,11 +251,17 @@
       $.cookie("question1", $("#question1 :checked").attr("value"), { path:'/' });
     });
 
-    if ($("#question1 :checked").attr("Yes")) {
-      $("#continue").append("onclick=\"location.href='1b-name-of-court.html';\"");
-    } else {
-      $("#continue").append("onclick=\"location.href='2a-legal-claims.html';\"");
-    }
+    $('#question1 input[type="radio"]').click(function() {
+        var g1 = $("#question1-yes").is(":checked");
+
+        var addr = "";
+        if (g1) {
+          addr = "1b-name-of-court.html";
+        } else {
+          addr = "2a-legal-claims.html";
+        }
+        $("#question1 #continue").attr('onclick', addr);
+    });
 
     // $("#continue").on("click", function (e) {
     //   $.cookie("question1", $("#question1-no").val(), {path:'/'});
