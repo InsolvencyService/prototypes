@@ -152,7 +152,7 @@
 
           <!-- ///// Confirmation Message - Start ///// -->
           <div class="govuk-box-highlight" id="confirmation-panel">
-            <h2 class="bold-large">Legal separation sucessfully added</h2>
+            <h2 class="bold-large">Sucessfully added</h2>
             <p class="bold-medium" id="court-name">Court name</p>
           </div>
           <!-- ///// Confirmation Message - END ///// -->
@@ -321,15 +321,15 @@
         $.cookie("separation-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
         $.cookie("separation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
         $.cookie("legal-prop-count", firstCount, { path: '/' } );
-      }
 
-      if ($.cookie("separation-court_"+firstCount)) {
-        $("#court-name").text($.cookie("separation-court_"+firstCount));
-        $("#confirmation-panel").show();
-      } else {
-        $("#confirmation-panel").hide();
-      }
+        if ($.cookie("separation-court_"+firstCount)) {
+          $("#court-name").text($.cookie("separation-court_"+firstCount));
+          $("#confirmation-panel").show();
+        } else {
+          $("#confirmation-panel").hide();
+        }
 
+      }
     });
 
   });
