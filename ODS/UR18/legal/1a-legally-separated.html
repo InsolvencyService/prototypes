@@ -155,15 +155,21 @@
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline form-group">
+            <fieldset class="inline" id="question1">
               <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Have you legally separated, divorced or dissolved a civil partnership in the last 5 years?</label>
               <span class="form-hint" id="hint-1">Include any ongoing divorces, legal separations, etc</span>
               <span class="form-hint" id="hint-2">This will help us understand any changes to your financial situation during this time</span>
-              <br>
-              <label class="hidden" id="button-title-1">Yes</label>
-              <label class="hidden" id="button-title-2">No</label>
-              <input type="button" onclick="location.href='1b-name-of-court.html';" id="question1-yes" class="button" value="Yes" aria-labelledby="heading-1 question1-label hint-1 hint-2 button-title-1">
-              <input type="button" onclick="location.href='2a-legal-claims.html';" id="question1-no" class="button" value="No" aria-labelledby="question1-label button-title-2">
+              <div class="form-group">
+                <label id="question1-yes-label" for="question1-yes" class="block-label">
+                  <input id="question1-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="question1-label question1-yes-label">
+                  Yes
+                </label>
+                <label id="question1-no-label" for="question1-no" class="block-label">
+                  <input id="question1-no" value="No" name="settled-claim" type="radio" aria-labelledby="question1-label question1-no-label">
+                  No
+                </label>
+              </div>
+              <input type="button" onclick="location.href='#';" id="continue" class="button" value="Continue" aria-labelledby="question1-label">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -241,13 +247,23 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#question1-no").on("click", function (e) {
-      $.cookie("question1", $("#question1-no").val(), {path:'/'});
+    $("#continue").on("click", function (e) {
+      $.cookie("question1", $("#question1 :checked").attr("value"), { path:'/' });
     });
 
-    $("#question1-yes").on("click", function (e) {
-      $.cookie("question1", $("#question1-yes").val(), {path:'/'});
-    });
+    if ($("#question1 :checked").attr("Yes")) {
+      $("#continue").append("onclick=\"location.href='1b-name-of-court.html';\"");
+    } else {
+      $("#continue").append("onclick=\"location.href='2a-legal-claims.html';\"");
+    }
+
+    // $("#continue").on("click", function (e) {
+    //   $.cookie("question1", $("#question1-no").val(), {path:'/'});
+    // });
+    //
+    // $("#question1-yes").on("click", function (e) {
+    //   $.cookie("question1", $("#question1-yes").val(), {path:'/'});
+    // });
 
   </script>
   <!-- #EndEditable "scripts" -->
