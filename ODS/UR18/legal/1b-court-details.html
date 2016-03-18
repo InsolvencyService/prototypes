@@ -151,7 +151,7 @@
           <h1 class="form-title heading-xlarge" role="header">Legal separation details</h1>
 
           <!-- ///// Confirmation Message - Start ///// -->
-          <div class="govuk-box-highlight">
+          <div class="govuk-box-highlight" id="confirmation-panel">
             <h2 class="bold-large">Your legal separation was sucessfully added</h2>
             <p class="bold-medium" id="court-name">Court name</p>
           </div>
@@ -305,6 +305,8 @@
   var firstCount;
   $(document).ready(function() {
 
+    $("#confirmation-panel").hide();
+
     $("#continue").on("click", function (e) {
       if (getParameterByName('p')) {
         firstCount = getParameterByName('p');
@@ -331,6 +333,8 @@
       if ($.cookie("separation-court_"+firstCount)) {
         $("#court-name").text($.cookie("separation-court_"+firstCount));
       }
+
+      $("#confirmation-panel").show();
 
     });
 
