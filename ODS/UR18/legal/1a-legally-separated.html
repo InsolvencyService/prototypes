@@ -169,7 +169,7 @@
                   No
                 </label>
               </div>
-              <input type="button" onclick="location.href='#';" id="continue" class="button" value="Continue" aria-labelledby="question1-label">
+              <a role="button" id="continue" class="button" aria-labelledby="question1-label">
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -266,16 +266,8 @@
         } else {
           addr = "2a-legal-claims.html";
         }
-        $("#question1 #continue").append("onclick=\"location.href='"+addr+"';\"");
+        $("#question1 #continue").attr('href', addr);
     });
-
-    // $("#continue").on("click", function (e) {
-    //   $.cookie("question1", $("#question1-no").val(), {path:'/'});
-    // });
-    //
-    // $("#question1-yes").on("click", function (e) {
-    //   $.cookie("question1", $("#question1-yes").val(), {path:'/'});
-    // });
 
   </script>
   <!-- #EndEditable "scripts" -->
