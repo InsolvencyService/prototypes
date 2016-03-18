@@ -305,8 +305,6 @@
   var firstCount;
   $(document).ready(function() {
 
-    $("#confirmation-panel").hide();
-
     $("#continue, #btn-add-separation").on("click", function (e) {
       if (getParameterByName('p')) {
         firstCount = getParameterByName('p');
@@ -328,6 +326,8 @@
       if ($.cookie("separation-court_"+firstCount)) {
         $("#court-name").text($.cookie("separation-court_"+firstCount));
         $("#confirmation-panel").show();
+      } else {
+        $("#confirmation-panel").hide();
       }
 
     });
