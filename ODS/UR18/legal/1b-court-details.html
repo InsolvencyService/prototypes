@@ -148,11 +148,14 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-xlarge" role="header" id="court-name">Court name</h1>
+          <h1 class="form-title heading-xlarge" role="header">Legal separation details</h1>
 
-          <p class="lede">Please give us some more details about this court case.</p>
-
-          <p></p>
+          <!-- ///// Confirmation Message - Start ///// -->
+          <div class="govuk-box-highlight">
+            <h2 class="bold-large">Your legal separation was sucessfully added</h2>
+            <p class="bold-medium" id="court-name">Court name</p>
+          </div>
+          <!-- ///// Confirmation Message - END ///// -->
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -220,38 +223,20 @@
             </fieldset>
             <!-- ///// Fieldset/Group 4 - END ///// -->
 
+            <!-- ///////////////// Add Item - Start ///////////////// -->
+            <fieldset class="add-item">
+              <a href="#" role="button" id="btn-add-separation" class="link-lookalike">Add another legal separation</a>
+            </fieldset>
+            <!-- ///////////////// Add Item - End ///////////////// -->
+
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="inline form-group">
-              <label class="form-label-bold" for="yes no" id="continue-label">Would you like to add another legal separation?</label>
-              <br>
-              <label class="hidden" id="button-title-1">Yes</label>
-              <label class="hidden" id="button-title-2">No</label>
-              <input type="button" onclick="location.href='1b-name-of-court.html';" id="yes" class="button" value="Yes" aria-labelledby="continue-label button-title-1">
-              <input type="button" onclick="location.href='summary-1.html';" id="no" class="button" value="No" aria-labelledby="continue-label button-title-2">
+              <input type="button" onclick="location.href='summary-1.html';" id="continue" class="button" value="Continue" aria-labelledby="continue-label button-title-1">
               <br>
               <br>
               <a href="javascript:history.go(-1)" id="back">Back</a>
               <a href="#" class="cancel">Save and logout</a>
             </fieldset>
-            <!-- ///// CTA Section - END ///// -->
-
-            <!-- ///// CTA Section - START ///// -->
-            <!-- <fieldset class="form-group">
-              <label class="form-label-bold" for="solicitor-yes solicitor-no" id="solicitor-label">Did you use a solicitor for the court case?</label>
-              <br>
-              <label class="hidden" id="button-title-1">Yes</label>
-              <label class="hidden" id="button-title-2">No</label>
-              <input type="button" onclick="location.href='1d-solicitor.html';" id="solicitor-yes" class="button" value="Yes" aria-labelledby="solicitor-label button-title-1">
-              <input type="button" onclick="location.href='summary-question.html';" id="solicitor-no" class="button" value="No" aria-labelledby="solicitor-label button-title-2">
-              <div class="row">
-                <div class="col-md-12 col-xs-12">
-                  <div class="form-navigation form-group">
-                    <a href="javascript:history.go(-1)" id="back">Back</a>
-                    <a href="#" class="cancel">Save and logout</a>
-                  </div>
-                </div>
-              </div>
-            </fieldset> -->
             <!-- ///// CTA Section - END ///// -->
 
           </form>
@@ -320,32 +305,36 @@
   var firstCount;
   $(document).ready(function() {
 
-    firstCount = $.cookie("legal-prop-count");
-
-    $("#yes, #no").on("click", function (e) {
-      // if(count == "" || count == null){
-      //   count = 0;
-      // }
-      // count++;
+    $("#continue").on("click", function (e) {
+      if (getParameterByName('p')) {
+        firstCount = getParameterByName('p');
+      }
+      else {
+        firstCount = $.cookie("legal-prop-count");
+        if(firstCount == "" || firstCount == null){
+          firstCount = 0;
+        }
+        firstCount++;
+        $.cookie("separation-court_"+firstCount, $("#name-of-court").val(), {path:'/'});
         $.cookie("separation-court-reference_"+firstCount, $("#court-ref").val(), {path:'/'});
         $.cookie("separation-finish-month_"+firstCount, $("#finish-month").val(), {path:'/'});
         $.cookie("separation-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
         $.cookie("separation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
+        $.cookie("legal-prop-count", firstCount, { path: '/' } );
+      }
     });
 
-    if ($.cookie("separation-court_"+firstCount)) {
-      $("#court-name").text($.cookie("separation-court_"+firstCount));
-    }
+    $("#btn-add-separation").on("click", function (e) {
+
+      $.cookie("separation-court_"+firstCount, $("#name-of-court").val(), {path:'/'});
+
+      if ($.cookie("separation-court_"+firstCount)) {
+        $("#court-name").text($.cookie("separation-court_"+firstCount));
+      }
+
+    });
 
   });
-
-  // $("#solicitor-no").on("click", function (e) {
-  //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
-  // });
-  //
-  // $("#solicitor-yes").on("click", function (e) {
-  //   $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
-  // });
 
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
