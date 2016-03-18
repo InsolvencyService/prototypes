@@ -305,14 +305,12 @@
 
   var firstCount;
   $(document).ready(function() {
-  		
-	if($.cookie("legal-prop-count")){
-		firstCount = $.cookie("legal-prop-count");
-	}
-	else{
-		firstCount = 0;
-	}  		
-  		  
+
+  	if($.cookie("legal-prop-count")){
+  		firstCount = $.cookie("legal-prop-count");
+  	} else{
+  		firstCount = 0;
+  	}
 
     $("#continue, #btn-add-separation").on("click", function (e) {
         firstCount++;

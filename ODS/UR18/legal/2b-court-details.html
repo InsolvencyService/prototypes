@@ -150,7 +150,13 @@
 
           <h1 class="form-title heading-xlarge" role="header">Ongoing legal claim details</h1>
 
-          <p></p>
+          <!-- ///// Confirmation Message - Start ///// -->
+          <div class="govuk-box-highlight" id="confirmation-panel">
+            <h2 class="bold-large" id="court-name">Court name</h2>
+            <p class="bold-medium">Sucessfully added</p>
+            <p>Add another ongoing legal claim below <br>or <a href="summary-1.html">Continue to summary</a>
+          </div>
+          <!-- ///// Confirmation Message - END ///// -->
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -325,32 +331,30 @@
   var secondCount;
   $(document).ready(function() {
 
-    secondCount = $.cookie("claims-prop-count");
+    if($.cookie("claims-prop-count")){
+      secondCount = $.cookie("claims-prop-count");
+    } else{
+      secondCount = 0;
+    }
 
-    $("#yes, #no").on("click", function (e) {
-      // if(count == "" || count == null){
-      //   count = 0;
-      // }
-      // count++;
+    $("#continue, #btn-add-separation").on("click", function (e) {
+        secondCount++;
+        $.cookie("claims-court_"+secondCount, $("#name-of-court").val(), {path:'/'});
         $.cookie("claims-court-reference_"+secondCount, $("#court-ref").val(), {path:'/'});
         $.cookie("claims-type_"+secondCount, $("#type-of-claim :checked").attr("value"), { path:'/' });
         $.cookie("claims-origin_"+secondCount, $("#claim-origin :checked").attr("value"), { path:'/' });
         $.cookie("claims-settled_"+secondCount, $("#settled-claim :checked").attr("value"), { path:'/' });
+        $("#btn-add-separation").attr("href", "1b-court-details.html?p="+firstCount);
     });
 
-    if ($.cookie("claims-court_"+secondCount)) {
-      $("#claims-court-name").text($.cookie("claims-court_"+secondCount));
+    if ($.cookie("claims-prop-count")) {
+      $("#court-name").text($.cookie("claims-court_"+$.cookie("claims-prop-count")));
+      $("#confirmation-panel").show();
+    } else {
+      $("#confirmation-panel").hide();
     }
 
   });
-
-  // $("#solicitor-no").on("click", function (e) {
-  //   $.cookie("solicitor-used", $("#solicitor-no").val(), {path:'/'});
-  // });
-  //
-  // $("#solicitor-yes").on("click", function (e) {
-  //   $.cookie("solicitor-used", $("#solicitor-yes").val(), {path:'/'});
-  // });
 
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
