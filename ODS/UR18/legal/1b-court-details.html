@@ -305,16 +305,17 @@
 
   var firstCount;
   $(document).ready(function() {
+  		
+	if($.cookie("legal-prop-count")){
+		firstCount = $.cookie("legal-prop-count");
+	}
+	else{
+		firstCount = 0;
+	}  		
+  		  
 
     $("#continue, #btn-add-separation").on("click", function (e) {
-      if (getParameterByName('p')) {
-        firstCount = getParameterByName('p');
-      }
-      else {
-        firstCount = $.cookie("legal-prop-count");
-        if(firstCount == "" || firstCount == null){
-          firstCount = 0;
-        }
+     
         firstCount++;
         $.cookie("separation-court_"+firstCount, $("#name-of-court").val(), {path:'/'});
         $.cookie("separation-court-reference_"+firstCount, $("#court-ref").val(), {path:'/'});
@@ -326,8 +327,8 @@
       }
     });
 
-    if ($.cookie("separation-court_"+getParameterByName('p'))) {
-      $("#court-name").text($.cookie("separation-court_"+getParameterByName('p')));
+    if ($.cookie("legal-prop-count")) {
+      $("#court-name").text($.cookie("separation-court_"+$.cookie("legal-prop-count")));
       $("#confirmation-panel").show();
     } else {
       $("#confirmation-panel").hide();
