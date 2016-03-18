@@ -321,15 +321,15 @@
         $.cookie("separation-finish-year_"+firstCount, $("#finish-year").val(), {path:'/'});
         $.cookie("separation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
         $.cookie("legal-prop-count", firstCount, { path: '/' } );
-
-        if ($.cookie("separation-court_"+firstCount)) {
-          $("#court-name").text($.cookie("separation-court_"+firstCount));
-          $("#confirmation-panel").show();
-        } else {
-          $("#confirmation-panel").hide();
-        }
-
       }
+
+      if ($.cookie("separation-court_"+firstCount)) {
+        $("#court-name").text($.cookie("separation-court_"+firstCount));
+        $("#confirmation-panel").show();
+      } else {
+        $("#confirmation-panel").hide();
+      }
+
     });
 
   });
