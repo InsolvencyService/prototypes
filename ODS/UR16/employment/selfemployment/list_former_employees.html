@@ -64,10 +64,10 @@
 <link href="../../../assets/stylesheets/main-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]>
 <link href="../../../assets/stylesheets/main-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    
-     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">  
+
+     <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
      <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/complete.css">
-     
+
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/js/bootstrap-switch/bootstrap.min.css">
   <link href="../../creditors/css/typeahead.css" rel="stylesheet">
@@ -89,7 +89,7 @@
 }
 .row > div:first-child{
 	padding-left:5px;
-	margin-left:0;	
+	margin-left:0;
 }
 i.glyphicon{
 	margin-right:5px;
@@ -204,7 +204,7 @@ legend{
 </div>
 
 <main role="main" id="wrapper">
-    
+
  <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
@@ -214,20 +214,20 @@ legend{
 	</p>
 	</div>
 	</div>
-	
 
 
-<!-- #BeginEditable "content" --> 
+
+<!-- #BeginEditable "content" -->
 <div id="content0" >
 
-<div class="inner-block">	
+<div class="inner-block">
 	<h1 class="form-title heading-large">Former employees claiming money from you<span class="repeat"> summary</span></h1>
 	<div class="col-md-9">
 		<form class="form" method="post">
-			
-			
+
+
 			<div id="pnl-partner_table" class="repeat">
-			
+
 	            <table style="width: 100%" class="family">
 	                <thead>
 	                    <tr>
@@ -238,19 +238,19 @@ legend{
 	                    </tr>
 	                </thead>
 	                <tbody id="tablebody">
-	                    
+
 	                </tbody>
 	            </table>
-	           <p>&nbsp;</p>   
+	           <p>&nbsp;</p>
 			</div>
 			<p class="repeat">The table above summarises the former employees you have told us about.</p>
 			<p>We need to know about <span class="firsttime">all </span><span class="repeat">any other</span> former employees who claim you owe them money.</p>
 			<p>&nbsp;</p>
-            
-            
+
+
   <fieldset>
-	<legend class="form-label-bold">Enter the employee's first and last name</legend>
-	
+	<legend class="form-label-bold">Enter former employee's name</legend>
+
 	<span class="form-hint">For example, John Smith. You can add more employees later.</span>
 	<div class="form-group halfwidth">
 		 <label for="firstname">First name</label>
@@ -274,7 +274,7 @@ legend{
 			<div class="form-navigation form-group">
 					<a href="javascript:history.go(-1)">Back</a>
 				</div>
-		</div>		
+		</div>
 		<div class="col-md-3">
             <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
             <p><a href="#" style="font-weight:bold">Save and logout</a></p>
@@ -299,13 +299,13 @@ legend{
 
 	 <!-- #EndEditable -->
 
-        
+
 </div>
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
 
-        
+
     <div class="footer-wrapper">
 
         <div class="footer-meta">
@@ -353,10 +353,10 @@ legend{
 <script type="text/javascript">
 
 $(document).ready(function() {
-	var url      = window.location.href;     // Returns full URL            
+	var url      = window.location.href;     // Returns full URL
  	var pathname = window.location.pathname; // Returns path only
  	$("#email-link").on("click", function (e) {
-		$.cookie("url", url, {path:'/'});              
+		$.cookie("url", url, {path:'/'});
 		$.cookie("pathname", pathname, {path:'/'});
 	});
 
@@ -368,7 +368,7 @@ $(document).ready(function() {
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../../creditors/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../shared/loop.js"></script>
-	
+
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -376,40 +376,40 @@ $(document).ready(function() {
     if ($.cookie("business_id") && parseInt($.cookie("business_id"))) {
         x = parseInt($.cookie("business_id"));
     }
-	
+
 	$(".business_name").text($.cookie("business"+x+"_name"));
-	
+
 	var count;
 	var row;
-	
+
 	count = $.cookie("business"+x+"_femployee_count");
-	
+
 	if(count == null){
 		count=0;
 	}
-	
+
 	var employeeamounttotal = 0;
 	for(var i=1; i<=count; i++){
 		row = "<tr><td>" + $.cookie("business"+x+"_femployee_name"+i) + "</td><td>" + $.cookie("business"+x+"_femployee_address"+i) + "</td><td>£ " + $.cookie("business"+x+"_femployee_amount"+i) + "</td><td><a href=\"#\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>";
 		$("#tablebody").append(row);
-		
+
 		if($.cookie("business"+x+"_femployee_amount"+i)){
 			employeeamounttotal += parseFloat($.cookie("business"+x+"_femployee_amount"+i));
 			$.cookie("employee_owed", employeeamounttotal, {path: '/'});
 		}
 	}
-	
-	
-	
+
+
+
 });
-	
+
 
 
 $("#add_employee").click(function(){
 	var employeename = $.trim($("#firstname").val() + " " + $("#lastname").val());
 	$.cookie("employee_name", employeename, {path:'/'});
 	//$("#add_employee").prop("href","employee_detail.html");
-	
+
 });
 
 function getParameterByName(name) {
@@ -425,12 +425,12 @@ function getParameterByName(name) {
 
 
 <!-- #EndEditable -->
-    
+
 
 
 
 <div id="window-resizer-tooltip" style="display: none;">
-<a href="/claims/start#" title="Edit settings" 
+<a href="/claims/start#" title="Edit settings"
 style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
 <span class="tooltipTitle">Window size: </span>
 <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
