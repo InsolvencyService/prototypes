@@ -154,7 +154,7 @@
           <div class="govuk-box-highlight" id="confirmation-panel">
             <h2 class="bold-large" id="court-name">Court name</h2>
             <p class="bold-medium">Sucessfully added</p>
-            <p>Add another legal separation below or <a href="2a-legal-claims.html">Continue with your application</a>
+            <p>Add another legal separation below <br>or <a href="2a-legal-claims.html">Continue with your application</a>
           </div>
           <!-- ///// Confirmation Message - END ///// -->
 
@@ -323,15 +323,14 @@
         $.cookie("separation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
         $.cookie("legal-prop-count", firstCount, { path: '/' } );
       }
-
-      if ($.cookie("separation-court_"+firstCount)) {
-        $("#court-name").text($.cookie("separation-court_"+firstCount));
-        $("#confirmation-panel").show();
-      } else {
-        $("#confirmation-panel").hide();
-      }
-
     });
+
+    if ($.cookie("separation-court_"+firstCount)) {
+      $("#court-name").text($.cookie("separation-court_"+firstCount));
+      $("#confirmation-panel").show();
+    } else {
+      $("#confirmation-panel").hide();
+    }
 
   });
 
