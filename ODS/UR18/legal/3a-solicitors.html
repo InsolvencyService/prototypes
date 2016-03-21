@@ -155,16 +155,23 @@
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline form-group">
+            <fieldset class="inline" id="question3">
               <label class="form-label-bold" for="solicitor-yes solicitor-no" id="solicitor-label">Have you used any solicitors in the last 5 years?</label>
               <span class="form-hint" id="hint-1">Include any time you received legal advice</span>
-              <br>
-              <label class="hidden" id="button-title-1">Yes</label>
-              <label class="hidden" id="button-title-2">No</label>
-              <input type="button" onclick="location.href='3b-solicitor-name.html';" id="solicitor-yes" class="button" value="Yes" aria-labelledby="heading-1 solicitor-label hint-1 button-title-1">
-              <input type="button" onclick="location.href='overview.html';" id="solicitor-no" class="button" value="No" aria-labelledby="solicitor-label button-title-2">
+              <div class="form-group">
+                <label id="question3-yes-label" for="question3-yes" class="block-label">
+                  <input id="question3-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="question3-label question3-yes-label">
+                  Yes
+                </label>
+                <label id="question3-no-label" for="question3-no" class="block-label">
+                  <input id="question3-no" value="No" name="settled-claim" type="radio" aria-labelledby="question3-label question3-no-label">
+                  No
+                </label>
+              </div>
+              <a role="button" id="continue" class="button" aria-labelledby="question3-label">Continue</a>
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
+
 
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="form-group">
@@ -240,13 +247,21 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#solicitor-no").on("click", function (e) {
-      $.cookie("solicitor", $("#solicitor-no").val(), {path:'/'});
-    });
+  $("#continue").on("click", function (e) {
+    $.cookie("question3", $("#question3 :checked").attr("value"), { path:'/' });
+  });
 
-    $("#solicitor-yes").on("click", function (e) {
-      $.cookie("solicitor", $("#solicitor-yes").val(), {path:'/'});
-    });
+  $('#question3 input[type="radio"]').click(function() {
+      var g1 = $("#question3-yes").is(":checked");
+
+      var addr = "";
+      if (g1) {
+        addr = "3b-solicitor-details.html";
+      } else {
+        addr = "overview.html";
+      }
+      $("#question3 #continue").attr('href', addr);
+  });
 
   </script>
   <!-- #EndEditable "scripts" -->

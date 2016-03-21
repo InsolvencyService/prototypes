@@ -153,8 +153,6 @@
 
           <h1 class="form-title heading-xlarge" role="header" id="solicitor-name">Solicitors address</h1>
 
-          <p class="lede">Please tell us the solicitors address below:</p>
-
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
@@ -163,6 +161,15 @@
               <legend class="hidden">We require you to answer 5 questions, please enter your contact details in the following fields</legend>
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
+              <fieldset class="inline form-group">
+                <label class="form-label-bold" for="solicitor-name" id="solicitor-name-label">Enter the name of the solicitor's firm</label>
+                <span class="form-hint" id="form-hint-desc1">For example, ABC Legal LLP or J. Smith Solicitors.</span>
+                <span class="form-hint" id="form-hint-desc2">If you used more than one solicitor, just tell us about the most recent one. </span>
+                <input type="text" class="input-with-button" id="solicitor-name" aria-labelledby="name-of-court-label form-hint-desc">
+              </fieldset>
+              <!-- ///// Fieldset/Group 1 - END ///// -->
+
+              <!-- ///// Fieldset/Group 2 - START ///// -->
               <fieldset id="fulladdress" role="group">
                 <legend class="hidden">Enter your address below.</legend>
                 <div class="form-group" aria-hidden="true">
@@ -199,7 +206,7 @@
                   <input id="address_country" name="address_country" type="text" value="" aria-labelledby="address_county_label0 intro" />
                 </div>
               </fieldset>
-              <!-- ///// Fieldset/Group 1 - END ///// -->
+              <!-- ///// Fieldset/Group 2 - END ///// -->
 
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="form-group">
@@ -207,7 +214,7 @@
                 <div class="row">
                   <div class="col-md-12 col-xs-12">
                     <div class="form-navigation form-group">
-                      <input type="button" onclick="location.href='3d-solicitor-details.html';" id="next" class="button" value="Continue">
+                      <input type="button" onclick="location.href='3c-solicitor-details.html';" id="continue" class="button" value="Continue">
                       <br>
                       <a href="javascript:history.go(-1)" id="back">Back</a>
                       <a href="#" class="cancel">Save and logout</a>
@@ -289,31 +296,40 @@
 
     var thirdCount;
     $(document).ready(function() {
-
       thirdCount = $.cookie("solicitor-prop-count");
 
-      $("#next").click(function(e){
-    		var addr = $("#address_line_1").val();
-    		if (addr && addr.length > 0){
-  		    $.cookie("address_"+thirdCount, addr, { path: '/' });
-  		    $.cookie("applicant_address_"+thirdCount, addr, { path: '/' });
+      $("#continue").click(function(e){
 
-    			$.cookie("address_line_1_"+thirdCount, addr, { path:'/' });
-    			$.cookie("address_line_2_"+thirdCount, $("#address_line_2").val(), { path:'/' });
-    			$.cookie("address_line_3_"+thirdCount, $("#address_line_3").val(), { path:'/' });
+        if (getParameterByName('p')) {
+          thirdCount = getParameterByName('p');
+        }
+        else {
+          thirdCount = $.cookie("solicitor-prop-count");
+          if(thirdCount == "" || thirdCount == null){
+            thirdCount = 0;
+          }
+          thirdCount++;
+          $.cookie("solicitor-name_"+thirdCount, $("#solicitor-name").val(), {path:'/'});
+          $.cookie("solicitor-prop-count", thirdCount, { path: '/' } );
 
-    			$.cookie("town_"+thirdCount, $("#address_town").val(), { path: '/' });
-    			$.cookie("county_"+thirdCount, $("#address_county").val(), { path: '/' });
-          $.cookie("country_"+thirdCount, $("#address_country").val(), { path: '/' });
-    			if ( $("#address_post_code")+thirdCount){
-    				$.cookie("post_code_"+thirdCount, $("#address_post_code").val(), { path:'/' });
-    			}
-    		}
+          var addr = $("#address_line_1").val();
+      		if (addr && addr.length > 0){
+    		    $.cookie("address_"+thirdCount, addr, { path: '/' });
+    		    $.cookie("applicant_address_"+thirdCount, addr, { path: '/' });
+
+      			$.cookie("address_line_1_"+thirdCount, addr, { path:'/' });
+      			$.cookie("address_line_2_"+thirdCount, $("#address_line_2").val(), { path:'/' });
+      			$.cookie("address_line_3_"+thirdCount, $("#address_line_3").val(), { path:'/' });
+
+      			$.cookie("town_"+thirdCount, $("#address_town").val(), { path: '/' });
+      			$.cookie("county_"+thirdCount, $("#address_county").val(), { path: '/' });
+            $.cookie("country_"+thirdCount, $("#address_country").val(), { path: '/' });
+      			if ( $("#address_post_code")+thirdCount){
+      				$.cookie("post_code_"+thirdCount, $("#address_post_code").val(), { path:'/' });
+      			}
+          }
+
       });
-
-      if ($.cookie("solicitor-name_"+thirdCount)) {
-        $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
-      }
 
     });
 

@@ -239,6 +239,22 @@
               </fieldset>
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
+              <!-- ///////////////// Add Item - Start ///////////////// -->
+              <fieldset class="add-item">
+                <a role="button" id="btn-add-separation" class="link-lookalike">Add another solicitor</a>
+              </fieldset>
+              <!-- ///////////////// Add Item - End ///////////////// -->
+
+              <!-- ///// CTA Section - START ///// -->
+              <fieldset class="inline form-group">
+                <input type="button" onclick="location.href='summary-3.html';" id="continue" class="button" value="Continue" aria-labelledby="continue-label button-title-1">
+                <br>
+                <br>
+                <a href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" class="cancel">Save and logout</a>
+              </fieldset>
+              <!-- ///// CTA Section - END ///// -->
+
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="inline form-group">
               <label class="form-label-bold" for="yes no" id="continue-label">Would you like to add another solicitor?</label>
@@ -394,7 +410,7 @@
   	$.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
     $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
-    
+
     var tempCount = 0;
   	if($.cookie("sol_temp")){
   		tempCount = parseInt($.cookie("sol_temp"));
@@ -404,10 +420,10 @@
     $.cookie("solicitor-cases_"+tempCount, solicitor_cases, { path:'/' });
 
 	}
-  
-  
-  
-  
+
+
+
+
   function WriteSelectCookie1(countx) {
 	solicitor_cases = $("#your-case"+countx).val();
   }
@@ -415,7 +431,7 @@
 	solicitor_cases = $("#your-case_"+countx).val();
   }
 
-  
+
   </script>
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
