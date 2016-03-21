@@ -314,6 +314,12 @@
   var solicitor_cases;
   $(document).ready(function() {
 
+    if ($.cookie("solicitor-action_"+thirdCount).val("none-of-the-above")) {
+      $("#action-select").show();
+    } else {
+      $("#action-select").hide();
+    }    
+
     thirdCount = $.cookie("solicitor-prop-count");
   	fourthCount =  parseInt($.cookie("claims-prop-count"));
   	fifthCount = parseInt($.cookie("legal-prop-count"));
