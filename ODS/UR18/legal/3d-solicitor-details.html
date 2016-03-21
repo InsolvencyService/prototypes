@@ -163,18 +163,91 @@
               <fieldset class="inline form-group" role="group" id="your-cases">
                 <legend id="your-cases-label" class="form-label-bold">Please select from your cases below which one these Solicitors helped you with</legend>
                 <span class="form-hint" id="your-cases-hint-1">Do not tick any of your cases in list below if this does not apply to any of them</span>
-                <div id="case-list" role="radiogroup">
-                  <label id="action_label0" for="action0" class="block-label">
-                    <input id="action0" value="Conveyancing" name="Conveyancing" type="checkbox" aria-labelledby="action_label">
-                    None of the above
-                  </label>
+                <div id="case-list">
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
+              <!-- ///// Fieldset/Group 2 - START ///// -->
+              <fieldset class="inline form-group" role="group">
+                <legend id="instructed-date-label" class="form-label-bold">Date you instructed your solicitor</legend>
+                <span class="form-hint" id="instructed-date-hint-1">Leave blank if the date is in the future</span>
+                <div class="row">
+                  <div class="col-md-2 col-sm-2 col-xs-2" role="group">
+                    <label id="instructed-month-label" for="instructed-month">Month</label><br>
+                    <select id="instructed-month" name="instructed-month" aria-labelledby="instructed-date-label instructed-date-hint-1 instructed-month-label">
+                      <option value="Jan">Jan</option>
+                      <option value="Feb">Feb</option>
+                      <option value="Mar">Mar</option>
+                      <option value="Apr">Apr</option>
+                      <option value="May">May</option>
+                      <option value="Jun">Jun</option>
+                      <option value="Jul">Jul</option>
+                      <option value="Aug">Aug</option>
+                      <option value="Sep">Sep</option>
+                      <option value="Oct">Oct</option>
+                      <option value="Nov">Nov</option>
+                      <option value="Dec">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4" role="group">
+                    <label id="instructed-year-label" for="instructed-year">Year</label><br>
+                    <input id="instructed-year" name="instructed-year" type="number" min="2000" max="2016" aria-labelledby="instructed-date-label instructed-year-label" />
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///// Fieldset/Group 2 - END ///// -->
+
+              <!-- ///// Fieldset/Group 3 - START ///// -->
+              <fieldset class="inline form-group" id="action-select" role="radiogroup">
+                <legend id="action_label" class="form-label-bold">What type of action did they assist you with?</legend>
+                <span class="form-hint" id="action-date-hint-1">Please tick all that apply</span>
+                <label id="action_label0" for="action0" class="block-label">
+                  <input id="action0" value="Conveyancing" name="Conveyancing" type="checkbox" aria-labelledby="action_label">
+                  Conveyancing
+                </label>
+                <label id="action_label1" for="action1" class="block-label">
+                  <input id="action1" value="Disputes" name="Disputes" type="checkbox" aria-labelledby="action_label">
+                  Disputes
+                </label>
+                <label id="action_label2" for="action2" class="block-label">
+                  <input id="action2" value="Acting as defendent" name="Acting as defendent" type="checkbox" aria-labelledby="action_label">
+                  Acting as defendent
+                </label>
+                <label id="action_label3" for="action3" class="block-label">
+                  <input id="action3" value="Trust" name="Trust" type="checkbox" aria-labelledby="action_label">
+                  Trust
+                </label>
+                <label id="action_label4" for="action4" class="block-label">
+                  <input id="action4" value="Criminal proceedings" name="Criminal proceedings" type="checkbox" aria-labelledby="action_label">
+                  Criminal proceedings
+                </label>
+                <div class="wrap-radio-button">
+                  <div class="row">
+                    <div class="col-md-7 col-xs-5">
+                      <label id="action_label5" for="action_other" class="block-label">
+                        <input id="action_other" value="" name="title" type="checkbox" aria-labelledby="action_label">
+                        Other - please specify:
+                      </label>
+                    </div>
+                    <div class="col-md-5 col-xs-7">
+                      <label for="action_answer" class="hidden">Enter here:</label>
+                      <input id="action_answer" name="action_answer" type="text" value=""/>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- ///// Fieldset/Group 3 - END ///// -->
+
+              <!-- ///////////////// Add Item - Start ///////////////// -->
+              <fieldset class="add-item">
+                <a role="button" id="btn-add-separation" class="link-lookalike">Add another solicitor</a>
+              </fieldset>
+              <!-- ///////////////// Add Item - End ///////////////// -->
+
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="inline form-group">
-                <input type="button" onclick="location.href='summary-3.html';" id="continue" class="button" value="Continue" aria-labelledby="continue-label button-title-1">
+                <input type="button" onclick="location.href='summary-3.html';" id="continue" class="button" value="Continue to my summary" aria-labelledby="continue-label button-title-1">
                 <br>
                 <br>
                 <a href="javascript:history.go(-1)" id="back">Back</a>
