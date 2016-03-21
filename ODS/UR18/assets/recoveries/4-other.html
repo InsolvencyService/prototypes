@@ -262,8 +262,12 @@
   <script type="text/javascript">
    $(document).ready(function() {
 		$("#yes").on("click", function (e) {
-			$.cookie("recovery_3", "yes");
-			$("#yes").attr("href", "otherassets/asset_list.html");
+			if($.cookie("recovery_3")){
+				$("#yes").attr("href", "otherassets/detail.html?id=2");
+			}
+			else{
+				$.cookie("recovery_3", "yes");
+				$("#yes").attr("href", "otherassets/asset_list.html");
 		});
 	
 		$("#no").on("click", function (e) {
