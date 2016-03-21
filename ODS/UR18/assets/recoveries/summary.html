@@ -180,7 +180,7 @@
                     <p>In the last 5 years, have you sold, transferred or given away any properties?</p>
                   </div>
                   <div class="col-xs-5">
-                    <p class="bolder" id="q1">[answers]</p>
+                    <p class="bolder font-xsmall" id="q1">[answers]</p>
                   </div>
                   <div class="col-xs-2">
                     <a href="proprty/overview.html">Change your answers</a>
@@ -194,7 +194,7 @@
                     <p>In the last 5 years, have you cashed in, sold, transferred, or given away any pension, endowment or life insurance policies?</p>
                   </div>
                   <div class="col-xs-5">
-                    <p class="bolder" id="q2">[answers]</p>
+                    <p class="bolder font-xsmall" id="q2">[answers]</p>
                   </div>
                   <div class="col-xs-2">
                     <a href="policy/asset_list.html">Change your answers</a>
@@ -208,7 +208,7 @@
                     <p>In the last 5 years, have you sold, transferred or given away vehicle for less than it was worth?</p>
                   </div>
                   <div class="col-xs-5">
-                    <p class="bolder" id="q3">[answers]</p>
+                    <p class="bolder font-xsmall" id="q3">[answers]</p>
                   </div>
                   <div class="col-xs-2">
                     <a href="vehicles/asset_list.html">Change your answers</a>
@@ -221,7 +221,7 @@
                     <p class="non-visible">In the last 5 years, have you sold, transferred or given away assets worth more than £500 each for less than they're worth?</p>
                   </div>
                   <div class="col-xs-5">
-                    <p class="bolder" id="q4">[answers]</p>
+                    <p class="bolder font-xsmall" id="q4">[answers]</p>
                   </div>
                   <div class="col-xs-2">
                     <a href="otherassets/asset_list.html">Change your answers</a>
@@ -316,6 +316,53 @@
 		else if($.cookie("recovery_1")=="no"){
 			$("#q1").text("No");
 		}
+		
+	
+		if($.cookie("recovery_2")=="yes"){
+			var count= $.cookie("ass-rec-pol-count");
+			var policy = "";
+			for (var i = 1; i <= count; i++) { 
+				policy += $.cookie("ass-rec-pol-"+count+"-company");
+				policy += ".<br />";
+			}
+			$("#q2").html(policy);
+
+		}
+		else if($.cookie("recovery_2")=="no"){
+			$("#q2").text("No");
+		}
+		
+		
+		if($.cookie("recovery_3")=="yes"){
+			var count= $.cookie("ass-rec-veh-count");
+			var vehicle = "";
+			for (var i = 1; i <= count; i++) { 
+				vehicle += $.cookie("ass-rec-veh-make"+count) +  " " + $.cookie("ass-rec-veh-model"+count) + " " $.cookie("ass-rec-veh-vrn"+count);
+				vehicle += ".<br />";
+			}
+			$("#q3").html(vehicle);
+
+		}
+		else if($.cookie("recovery_3")=="no"){
+			$("#q3").text("No");
+		}
+		
+		if($.cookie("recovery_4")=="yes"){
+			var count= $.cookie("ass-rec-oth-count");
+			var other = "";
+			for (var i = 1; i <= count; i++) { 
+				other += $.cookie("ass-rec-oth-type"+count);
+				other += ".<br />";
+			}
+			$("#q4").html(other );
+
+		}
+		else if($.cookie("recovery_4")=="no"){
+			$("#q4").text("No");
+		}
+
+
+
 	
 	});
 
