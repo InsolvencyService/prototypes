@@ -195,18 +195,18 @@ display:block;
 
                     <select id="month" name="month">
                         <option value="0"></option>
-                        <option value="1">Jan</option>
-                        <option value="2">Feb</option>
-                        <option value="3">Mar</option>
-                        <option value="4">Apr</option>
-                        <option value="5">May</option>
-                        <option value="6">Jun</option>
-                        <option value="7">Jul</option>
-                        <option value="8">Aug</option>
-                        <option value="9">Sep</option>
-                        <option value="10">Oct</option>
-                        <option value="11">Nov</option>
-                        <option value="12">Dec</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
                     </select>
 
                 </div>
@@ -225,7 +225,7 @@ display:block;
         
         <div class="form-group">
                         
-			<label id="first_name_label" for="propertyvalue" class="form-label-bold">What was the value of the <span class="asset"></span> at the time you sold, transferred or gave it away?</label>
+			<label id="first_name_label" for="value" class="form-label-bold">What was the value of the <span class="asset"></span> at the time you sold, transferred or gave it away?</label>
 						
 			<div class="form-hint">Please provide the most accurate figure you can</div>
 			<span class="currency">£ </span><input id="propertyvalue" name="marketvalue" type="text" value="" class="amount-value" />
@@ -236,7 +236,7 @@ display:block;
         
         <div class="form-group">
                         
-			<label id="first_name_label0" for="saleamount" class="form-label-bold">How much money did you receive for the <span class="asset"></span> after any charges and legal fees (proceeds of sale)?</label>
+			<label id="first_name_label0" for="net" class="form-label-bold">How much money did you receive for the <span class="asset"></span> after any charges and legal fees (proceeds of sale)?</label>
 						
 			<div class="form-hint">Leave blank if you gave the <span class="asset"></span> away</div>
 			<span class="currency">£ </span><input id="saleamount" name="amount" type="text" value="" class="amount-value" />
@@ -249,21 +249,9 @@ display:block;
 	
 	<!-- For User research -->
 	<div class="form-navigation form-group">
-	
-	<div>
-		<a a href="transfer.html" id="next" class="button">Continue</a>
-	</div>
-	<div>
-	<br>
-	</div>
-	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
+		<a role="button" id="next" class="button" href="transfer.html">Continue</a>
+		<br>
+		<a href="javascript:history.back()" id="back">Back</a>
 	</div>
 	</form>
 	</div>
@@ -343,34 +331,28 @@ var count;
 var type = getParameterByName("id");
 $(document).ready(function() {
 	
-	if(type==2){
+	
 		$(".asset").text("item");
 		$("#title").text("Asset");
 		$("#nonvehicle").show();
 		
-	}
-	else{
-		$(".asset").text("vehicle");
-		$("#title").text("Vehicle");
-		var month = $.cookie('ass-rec-oth-tempvehiclemonth');
-		var year = $.cookie('ass-rec-oth-tempvehicleyear');
-		var amount = $.cookie('ass-rec-oth-tempvehiclevalue');
-		
-		if(amount != null || amount != 'undefined'){
-			$("#year").val(year);
-			$("#saleamount").val(amount);
-			$("#month").val(month);
-		}
-		
-	}
+	
 });
 
 $("#next").on("click", function(e){
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	if(type==2){
-		$.cookie("ass-rec-oth-type-"+cookiecount, $("#desc").val());
+	if($.cookie('ass-rec-oth-count')){
+		count=$.cookie('ass-rec-oth-count');
 	}
-	$.cookie("ass-rec-oth-value-"+cookiecount, $("#saleamount").val());
+	else{
+		count=0
+	}
+	count++;
+
+	$.cookie("ass-rec-oth-type-"+count, $("#desc").val(), {path:'/'});
+	$.cookie("ass-rec-oth-month-"+count, $("#month").val(), {path:'/'});
+	$.cookie("ass-rec-oth-year-"+count, $("#year").val(), {path:'/'});
+	$.cookie("ass-rec-oth-value-"+count, $("#saleamount").val(), {path:'/'});
+	$.cookie("ass-rec-oth-net-"+count, $("#saleamount").val(), {path:'/'});
 
 });
 

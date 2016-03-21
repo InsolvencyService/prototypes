@@ -146,14 +146,21 @@
 			
 		</div>
 	
-		
 		<p>&nbsp;</p>
 		<div class="form-group">
-			<label class="form-label-bold" for="additional_policy">Do you have any other vehicles you have sold, transferred, or given away in the last 5 years for less than they were worth?</label>
-			<p><a class="button" role="button" id="yes">Yes</a> 
-			<a class="button" role="button" id="no" href="../4-other.html">No</a> </p>
-			<p>&nbsp;</p>
-			<p><a href="" id="back">Back</a></p>
+			<fieldset>
+				<legend class="form-label-bold" for="additional_policy">Do you have any other vehicles you have sold, transferred, or given away in the last 5 years for less than they were worth?</legend>
+				<div id="another" class="inline">
+					<label for="yes" class="block-label">
+						<input id="yes" value="" name="mktvalue" type="radio">Yes</label>
+					<label for="no" class="block-label">
+						<input id="no" value="" name="mktvalue" type="radio">No</label>
+				</div>
+			</fieldset>
+		</div>
+		<div class="form-navigation form-group">
+			<p><a role="button" class="button" id="next" >Continue</a></p>
+			<a href="javascript:history.go(-1)" id="back">Back</a>
 		</div>
 	</div>
 
@@ -272,14 +279,16 @@ $("#yes").on("click", function(e){
 	}	
 	
 	if(y==true){
-		$("#yes").attr('href', 'vehicle.html');
+		$("#next").attr('href', 'vehicle.html');
 	}
 	else{
-		$("#yes").attr('href', 'add-vehicle.html');
+		$("#next").attr('href', 'add-vehicle.html');
 	}
 });
 
-
+$("#no").on("click", function (e) {
+	$("#next").attr("href", "../4-other.html");
+});
 
 
 </script>

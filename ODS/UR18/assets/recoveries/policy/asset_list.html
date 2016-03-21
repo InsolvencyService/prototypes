@@ -153,11 +153,20 @@
 			</div>
 			<p>&nbsp;</p>
 			<div class="form-group">
-				<label class="form-label-bold" for="additional_policy">Do you have any other pensions, endowments or life insurances you have cashed in, sold, transferred, or given away in the last 5 years?</label>
-				<p><a class="button" role="button" href="address.html">Yes</a> 
-				<a class="button" role="button" href="../3-vehicles.html">No</a> </p>
-				<p>&nbsp;</p>
-				<p><a href="" id="back">Back</a></p>
+				<fieldset>
+					<legend class="form-label-bold">Do you have any other pensions, endowments or life insurances you have cashed in, sold, transferred, or given away in the last 5 years?</legend>
+					<div id="another" class="inline">
+						<label for="yes" class="block-label">
+							<input id="yes" value="" name="mktvalue" type="radio">Yes</label>
+						<label for="no" class="block-label">
+							<input id="no" value="" name="mktvalue" type="radio">No</label>
+					</div>
+				</fieldset>
+			</div>
+			
+			<div class="form-navigation form-group">
+				<p><a role="button" class="button" id="next" >Continue</a></p>
+				<a href="javascript:history.go(-1)" id="back">Back</a>
 			</div>
 
 			
@@ -262,7 +271,13 @@ $(document).ready(function() {
 		$("#policylist").append(row);
 	}
 });
+$("#yes").on("click", function (e) {
+	$("#next").attr("href", "address.html");
+});
 
+$("#no").on("click", function (e) {
+	$("#next").attr("href", "../3-vehicles.html");
+});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -270,9 +285,6 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
-
-
 </script>
 
 

@@ -148,19 +148,24 @@
 			</div>
 			<p>&nbsp;</p>
 			<div class="form-group">				
-				<fieldset>
+				<fieldset class="form-group">
 					<legend class=" form-label-bold">Do you have any other sold, gifted or transfered properties to add?</legend>
-					<a role="button" class="button" href="address.html">Yes</a>
-					<a role="button" class="button" href="../2-policies.html">No</a>				
+						<div id="another" class="inline">
+							<label for="yes" class="block-label">
+								<input id="yes" value="" name="mktvalue" type="radio">Yes</label>
+							<label for="no" class="block-label">
+								<input id="no" value="" name="mktvalue" type="radio">No</label>
+						</div>									
 				</fieldset>
+				
 			</div>
 				
 		<!-- For User research -->
 			<div class="form-navigation form-group">
 			
 				<fieldset class="form-group ">	
-					
-					<a href="property.html" id="back">Back</a>
+					<p><a role="button" class="button" id="next" >Continue</a></p>
+					<a href="javascript:history.go(-1)" id="back">Back</a>
 				</fieldset>
 			</div>
 		</form>
@@ -288,6 +293,14 @@ $(document).ready(function() {
 
 
 });
+
+	$("#yes").on("click", function (e) {
+			$("#next").attr("href", "address.html");
+	});
+
+	$("#no").on("click", function (e) {
+		$("#next").attr("href", "../2-policies.html");
+	});
 
 
 </script>

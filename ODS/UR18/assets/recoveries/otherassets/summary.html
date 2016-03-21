@@ -75,27 +75,6 @@
 <style type="text/css">
 
 
-
-.row img{
-width:60px;
-text-align:right;
-float:right
-}
-.row > div{
-padding-top:15px;
-}
-.row > div:first-child{
-padding-top:0px;
-}
-
-a.well{
-padding-top:8px;
-display:block;
-	height:90px;
-	min-width:99%;
-	font-size:16px;
-}
-
 </style>
 <!-- #EndEditable -->
 
@@ -138,7 +117,7 @@ display:block;
     </div>
 </header>
 <!--end header-->
-
+<div class="content">
 <div id="global-header-bar">
     <div class="inner-block">
         <div class="header-bar"></div>
@@ -146,9 +125,9 @@ display:block;
 </div>
 
 <main role="main" id="wrapper">
-    
- <div id="content" >
+<div id="content" >
  <div class="inner-block">
+
 	<div class="phase-banner">
 	<p>
 	<strong class="phase-tag">BETA</strong>
@@ -159,90 +138,174 @@ display:block;
 	
 
 
-<!-- #BeginEditable "content" --> 
-<div class="inner-block text">
-	
-	
-	
-	<h1 class="form-title heading-large">Vehicle details</h1>
-	
-	<form class="form" method="post">
-	<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-	
-	<div>
-			<div class="form-group ">
-				<label id="make_label" for="make" class="form-label-bold">Make</label>
-				<input id="make" name="make" type="text"  value="" />
-				<br/>
-			</div>
-			<div class="form-group ">
-				<label id="model_label" class="form-label-bold" for="model">Model</label>
-				<input id="model" name="model" type="text"  value="" />
-				<br/>
-			</div>
-						<div class="form-group ">
-				<label id="vrn_label" class="form-label-bold" for="vrn">Registration number</label>
-				<input id="vrn" name="vrn" type="text"  value="" />
-				<br/><br/>
-			</div>
 
+	
+
+
+	 </div>
+	
+
+
+
+	
+
+
+<!-- #BeginEditable "content" -->
+
+	<div id="content" >
+
+<div class="inner-block">
+	<h1 class="form-title heading-large">Sold, transfered or gifted item summary.</h1>
+	<p class="lede">Please check your answers carefully</p>	
+	<p>&nbsp;</p>
+	<fieldset>
+		<legend class="form-label-bold">Item  details</legend>
+
+		<header>
+			<div class="row tabledivide">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <h2 class="heading-small visuallyhidden">Question</h2>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <h2 class="heading-small visuallyhidden">Your answer</h2>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <h2 class="heading-small visuallyhidden">Actions</h2>
+			  </div>
+			</div>
+		</header>
+		
+    	<section id="property_table" role="main">		
 			
-			<div class="form-group" >
-			<p id="title_label" class="form-label-bold">Type of vehicle</p>
-			<fieldset class="inline">
-				<div id="pnl-type">				
-					<label id="car_label1" for="car" class="block-label">
-					<input id="car"  name="vehicle" value="car" type="radio">Car</label>
-					
-					<label id="van_label1" for="van" class="block-label">
-					<input id="van"  name="vehicle" value="van" type="radio">Van</label>
-					
-					<label id="motorcycle_label1" for="motorcycle" class="block-label">
-					<input id="motorcycle"  name="vehicle" value="motorcycle" type="radio">Motorcycle</label>
+			<div class="row group-heading tabledivide">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>What is the item?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="item">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="#">Change your answers</a>
+			  </div>
+			</div>
 								
-					<label id="other_label" for="other" class="block-label">
-	                    <input id="other" value="Other" name="vehicle" type="radio">Other <span id="hidden" style="font-weight:normal">- please specify:
-	                    <input id="other_input" name="other" type="text" value="" style="position:relative; margin-top:0;top:0;width:275px;font-weight:normal"/></span>
-	                </label>			
+		</section>
+	</fieldset>
+	
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	
+	<fieldset>
+		<legend class="form-label-bold">Transfer details</legend>
+
+		<header>
+			<div class="row tabledivide">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <h2 class="heading-small visuallyhidden">Question</h2>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <h2 class="heading-small visuallyhidden">Your answer</h2>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <h2 class="heading-small visuallyhidden">Actions</h2>
+			  </div>
+			</div>
+		</header>
+
+    	<section id="vehicle_table" role="main">	
+    		
+			<div class="row group-heading tabledivide">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>Date you sold, transferred or gave away the item?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="date">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="#">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading tabledivide">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>What was the value of the item at the time you sold, transferred or gave it away?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="marketvalue">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="../property/amount.html">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading tabledivide">
+			  <div class="col-md-4 col-sm-4 col-xs-4">
+			    <p>How much money did you receive for the item after any charges and legal fees (proceeds of sale)?</p>
+			  </div>
+			  <div class="col-md-5 col-sm-5 col-xs-5">
+			    <p class="bolder" id="netvalue">Your answer</p>
+			  </div>
+			  <div class="col-md-2 col-sm-2 col-xs-2">
+			    <a href="#">Change your answers</a>
+			  </div>
+			</div>
+			
+			<div class="row group-heading tabledivide">
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<p>Who did you sell, transfer or give the property to?</p>
 				</div>
-			</fieldset>
-			<p>&nbsp;</p>
-		</div>
-	</div>
-	
-	
-	
-	
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<p class="bolder" id="who">Your answer</p>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<a href="../property/transfered_to.html">Change your answers</a>
+				</div>
+			</div>
+			
+			<div class="row group-heading tabledivide">
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<p>Their address</p>
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<p class="bolder" id="theiraddress">Your answer</p>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<a href="../property/transfered_to.html">Change your answers</a>
+				</div>
+			</div>
+			
+			<div class="row group-heading tabledivide">
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<p>What's their relationship to you?</p>
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<p class="bolder" id="relationship">Your answer</p>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<a href="../property/transfered_to.html">Change your answers</a>
+				</div>
+			</div>
+			
+		</section>
+	</fieldset>
 
-       
-
-		<p class="clearfix"><br/></p>
-	
-	<!-- For User research -->
+<!-- For User research -->
 	<div class="form-navigation form-group">
-	
-	<div>
-		<a href="detail.html" id="next" class="button">Continue</a>
-	</div>
-	<div>
-	<br>
+		<a role="button" id="next" class="button" href="asset_list.html">Continue</a>
+		<br>
+		<a href="javascript:history.back()" id="back">Back</a>
 	</div>
 	
-	<div>
-	<a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-
-	
-	<a href="#" id="cancel">Save and logout</a>
-	
-	</div>
-	</div>
-	</form>
-	</div>
-
+</div>
+	 </div>
 	 <!-- #EndEditable -->
 
         
-</div>
+
+
+
+
+
 
 
 <footer role="contentinfo" id="footer" class="group js-footer">
@@ -308,16 +371,68 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+
 <script type="text/javascript">
-$("#next").on("click", function(e){
-	writeCookies();
+
+
+$(document).ready(function() {
+
+	if(getParameterByName('p')){
+		count = getParameterByName('p');
+	}
+	else{
+		var count= $.cookie("ass-rec-oth-count");
+	}
+	
+	$("#item").text($.cookie("ass-rec-oth-item-"+count));;
+	$("#date").text($.cookie("ass-rec-oth-month-"+count) + " " + $.cookie("ass-rec-oth-year"+count));
+	$("#marketvalue").text("£"+$.cookie("ass-rec-oth-value-"+count));
+	$("#netvalue").text("£"+$.cookie("ass-rec-oth-net-"+count));
+	$("#who").text($.cookie("ass-rec-oth-name-"+count));
+	$("#relationship").text($.cookie("ass-rec-oth-relationship-"+count));
+	
+	var address;
+	if($.cookie("ass-rec-oth-add1-"+count)){
+		address = $.cookie("ass-rec-oth-add1-"+count);
+	}
+	if($.cookie("ass-rec-oth-add2-"+count)){
+		address += ", "+$.cookie("ass-rec-oth-add2-"+count);
+	}
+	if($.cookie("ass-rec-oth-add3-"+count)){
+		address += ", "+$.cookie("ass-rec-oth-add3-"+count);
+	}
+    if($.cookie("ass-rec-oth-add4-"+count)){
+    	address += ", "+$.cookie("ass-rec-oth-add4-"+count);
+    }
+    if($.cookie("ass-rec-oth-add5-"+count)){
+    	address += ", "+$.cookie("ass-rec-oth-add5-"+count);
+	}	
+    if($.cookie("ass-rec-oth-add6-"+count)){
+    	address += ", "+$.cookie("ass-rec-oth-add6-"+count);
+	} 
+	if($.cookie("ass-rec-oth-add7-"+count)){
+    	address += ", "+$.cookie("ass-rec-oth-add7-"+count);
+	}   
+	$("#theiraddress").text(address); 
+	
+	
+	
+	
+	
 });
 
-function writeCookies() {
-	var cookiecount = $.cookie('ass-rec-oth-count');
-	$.cookie("ass-rec-oth-type-"+cookiecount, "Vehicle");
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+   
+function numberWithoutCommas(x) {
+    var number = parseFloat(x.toString().replace(",", "")).toFixed(0);
+    return number;
+}
 
 </script>
 
