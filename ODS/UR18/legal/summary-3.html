@@ -360,19 +360,19 @@
       // End wrapping container
       row += '</div>';
 
-      if($.cookie("claims-court-reference_"+i) === null) {
+      if($.cookie("claims-court-reference_"+i) == null) {
         $("#court-ref-appearance").hide();
       } else {
         $("#court-ref-appearance").show();
       }
 
-      if($.cookie("solicitor-action_"+thirdCount) === null) {
+      if($.cookie("solicitor-action_"+i) == null) {
         $("#solicitor-action").hide();
       } else {
         $("#solicitor-action").show();
       }
 
-      if ($.cookie("solicitor-action_"+thirdCount) === "none-of-the-above") {
+      if ($.cookie("solicitor-action_"+i) === "none-of-the-above") {
         $("#court-case-details").hide();
       } else {
         $("#court-case-details").show();
