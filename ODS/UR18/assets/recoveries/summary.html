@@ -287,7 +287,7 @@
 	$(document).ready(function() {
 		var temp;
 		if($.cookie("recovery_1")=="yes"){
-			count= $.cookie("ass-rec-prop-count");
+			var count= $.cookie("ass-rec-prop-count");
 			var property_address;
 			for (var i = 1; i <= count; i++) { 
 				if($.cookie("ass-rec-prop-add1-"+i)){
@@ -310,7 +310,7 @@
 				}  
 				property_address+="<br />";
 			}
-			$("#q1").html(property_address)
+			$("#q1").html(property_address);
 
 		}
 		else if($.cookie("recovery_1")=="no"){
