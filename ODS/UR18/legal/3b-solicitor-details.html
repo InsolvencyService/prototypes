@@ -314,6 +314,10 @@
 
       $("#continue").click(function(e){
 
+        // This will re-direct users to 3d-solicitors details if there are no previous cases
+        if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
+          $("#continue").attr('href', '3d-solicitor-details.html');
+        }
         // if (getParameterByName('p')) {
         //   thirdCount = getParameterByName('p');
         // }
