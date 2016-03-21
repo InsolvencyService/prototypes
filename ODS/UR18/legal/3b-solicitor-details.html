@@ -299,6 +299,12 @@
 
       thirdCount = $.cookie("solicitor-prop-count");
 
+      if($.cookie("solicitor-prop-count")){
+        thirdCount = $.cookie("solicitor-prop-count");
+      } else{
+        thirdCount = 0;
+      }
+
       $("#continue").click(function(e){
 
         // if (getParameterByName('p')) {
@@ -306,10 +312,10 @@
         // }
         // else {
         // }
-        thirdCount = $.cookie("solicitor-prop-count");
-        if(thirdCount == "" || thirdCount == null){
-          thirdCount = 0;
-        }
+        // thirdCount = $.cookie("solicitor-prop-count");
+        // if(thirdCount == "" || thirdCount == null){
+        //   thirdCount = 0;
+        // }
         thirdCount++;
         $.cookie("solicitor-name_"+thirdCount, $("#solicitor-name").val(), {path:'/'});
         $.cookie("solicitor-prop-count", thirdCount, { path: '/' } );
@@ -334,7 +340,6 @@
       });
 
     });
-
 
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
