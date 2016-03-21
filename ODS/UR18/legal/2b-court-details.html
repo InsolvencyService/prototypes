@@ -352,6 +352,7 @@
       $.cookie("claims-type_"+secondCount, $("#type-of-claim :checked").attr("value"), { path:'/' });
       $.cookie("claims-origin_"+secondCount, $("#claim-origin :checked").attr("value"), { path:'/' });
       $.cookie("claims-settled_"+secondCount, $("#settled-claim :checked").attr("value"), { path:'/' });
+      $.cookie("claims-prop-count", secondCount, { path: '/' } );
       $("#btn-add-separation").attr("href", "2b-court-details.html?p="+secondCount);
     });
 
