@@ -262,17 +262,17 @@
   <script type="text/javascript">
    $(document).ready(function() {
 		$("#yes").on("click", function (e) {
-			if($.cookie("recovery_3")){
+			if($.cookie("recovery_4")=="no"){
 				$("#yes").attr("href", "otherassets/detail.html?id=2");
 			}
 			else{
-				$.cookie("recovery_3", "yes");
+				$.cookie("recovery_4", "yes");
 				$("#yes").attr("href", "otherassets/asset_list.html");
 			}
 		});
 	
 		$("#no").on("click", function (e) {
-			$.cookie("recovery_3", "no");
+			$.cookie("recovery_4", "no");
 			$("#no").attr("href", "recovery_summary.html");
 		});
 	});

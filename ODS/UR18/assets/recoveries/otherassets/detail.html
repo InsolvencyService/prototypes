@@ -228,7 +228,7 @@ display:block;
 			<label id="first_name_label" for="value" class="form-label-bold">What was the value of the <span class="asset"></span> at the time you sold, transferred or gave it away?</label>
 						
 			<div class="form-hint">Please provide the most accurate figure you can</div>
-			<span class="currency">£ </span><input id="propertyvalue" name="marketvalue" type="text" value="" class="amount-value" />
+			<span class="currency">£ </span><input id="marketvalue" name="marketvalue" type="text" value="" class="amount-value" />
                        
         </div>
         
@@ -347,11 +347,11 @@ $("#next").on("click", function(e){
 		count=0
 	}
 	count++;
-
+	$.cookie('ass-rec-oth-count', count, {path:'/'});
 	$.cookie("ass-rec-oth-type-"+count, $("#desc").val(), {path:'/'});
 	$.cookie("ass-rec-oth-month-"+count, $("#month").val(), {path:'/'});
 	$.cookie("ass-rec-oth-year-"+count, $("#year").val(), {path:'/'});
-	$.cookie("ass-rec-oth-value-"+count, $("#saleamount").val(), {path:'/'});
+	$.cookie("ass-rec-oth-value-"+count, $("#marketamount").val(), {path:'/'});
 	$.cookie("ass-rec-oth-net-"+count, $("#saleamount").val(), {path:'/'});
 
 });
