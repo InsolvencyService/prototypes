@@ -67,12 +67,8 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overrides.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../../assets/stylesheets/overview-design-changes.css">
 
 <style>
-.non-visible{
-	display:none;
-}
 </style>
 <!-- #EndEditable -->
 
@@ -148,7 +144,7 @@
       <div class="row">
 
         
-        <div class="col-md-8 col-xs-12">
+        <div class="col-md-12 col-xs-12">
 
           <h1 class="form-title heading-xlarge" id="intro">Sold, transferred or gifted assets summary</h1>
           <p>Below is a brief summary of the assets you have told us about in this section.</p>
@@ -160,10 +156,10 @@
         <form class="form inner-block" method="post" role="main" id="maincontent" aria-labelledby="intro">
 			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 			
-			<fieldset class="inline form-group" id="details1">
+			
 
-             <header>
-                <div class="row">
+             <section role="header">
+                <div class="row tabledivide">
                   <div class="col-xs-7">
                     <h2 class="heading-small">Question</h2>
                   </div>
@@ -174,67 +170,65 @@
                     <h2 class="heading-small">Actions</h2>
                   </div>
                 </div>
-              </header>
+              </section>
               
               <section id="summary_table" role="main">
                 
-                
                 <!-- row 1 - START -->
-                <div class="row group-heading">
+                <div class="row tabledivide">
                   <div class="col-xs-7">
                     <p>In the last 5 years, have you sold, transferred or given away any properties?</p>
                   </div>
                   <div class="col-xs-3">
-                    <p class="bolder" id="user_title">No</p>
+                    <p class="bolder" id="q1">[answers]</p>
                   </div>
                   <div class="col-xs-2">
-                    <a href="#">Change answer</a>
+                    <a href="proprty/overview.html">Change your answers</a>
                   </div>
                 </div>
                 <!-- row 1 - END -->
                 
                 <!-- row 2 - START -->
-                <div class="row group-heading">
+                <div class="row group-heading  tabledivide">
                   <div class="col-xs-7">
                     <p>In the last 5 years, have you cashed in, sold, transferred, or given away any pension, endowment or life insurance policies?</p>
                   </div>
                   <div class="col-xs-3">
-                    <p class="bolder" id="user_title">No</p>
+                    <p class="bolder" id="q2">[answers]</p>
                   </div>
                   <div class="col-xs-2">
-                    <a href="#">Change answer</a>
+                    <a href="policy/asset_list.html">Change your answers</a>
                   </div>
                 </div>
                 <!-- row 2 - END -->
                 
                 <!-- row 3 - START -->
-                <div class="row group-heading">
+                <div class="row group-heading tabledivide">
                   <div class="col-xs-7">
-                    <p>In the last 5 years, have you sold, transferred or given away assets worth more than £500 each for less than they're worth?</p>
+                    <p>In the last 5 years, have you sold, transferred or given away vehicle for less than it was worth?</p>
                   </div>
                   <div class="col-xs-3">
-                    <p class="bolder" id="user_title">Macbook Pro</p>
+                    <p class="bolder" id="q3">[answers]</p>
                   </div>
                   <div class="col-xs-2">
-                    <a href="#">Change answer</a>
+                    <a href="vehicles/asset_list.html">Change your answers</a>
                   </div>
                 </div>
                 <!-- row 3 - END -->
                 
-                <div class="row group">
+                <div class="row group tabledivide">
                   <div class="col-xs-7">
                     <p class="non-visible">In the last 5 years, have you sold, transferred or given away assets worth more than £500 each for less than they're worth?</p>
                   </div>
                   <div class="col-xs-3">
-                    <p class="bolder" id="user_title">Iphone 6s</p>
+                    <p class="bolder" id="q4">[answers]</p>
                   </div>
                   <div class="col-xs-2">
-                    <a href="#">Change answer</a>
+                    <a href="otherassets/asset_list.html">Change your answers</a>
                   </div>
                 </div>
                                 
-			  </section>
-			</fieldset>			
+			  </section>		
 		</form>
           <!-- ///// Form - END ///// -->
 
@@ -290,9 +284,38 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
-  
-  
+	$(document).ready(function() {
+		var temp;
+		if(recovery_1=="yes"){
+			count= $.cookie("ass-rec-prop-count");
+			for (i = 1; i <= count; i++) { 
+				if($.cookie("ass-rec-prop-add1-"+i)){
+				 	property_address += $.cookie("ass-rec-prop-add1-"+i);
+				}
+				if($.cookie("ass-rec-prop-add2-"+i)){
+					property_address += ", "+$.cookie("ass-rec-prop-add2-"+i);
+				}
+				if($.cookie("ass-rec-prop-add3-"+i)){
+					property_address += ", "+$.cookie("ass-rec-prop-add3-"+i);
+				}
+			    if($.cookie("ass-rec-prop-addtown-"+i)){
+			    	property_address += ", "+$.cookie("ass-rec-prop-addtown-"+i);
+			    }
+			    if($.cookie("ass-rec-prop-addcounty-"+i)){
+			    	property_address += ", "+$.cookie("ass-rec-prop-addcounty-"+i);
+				}	
+			    if($.cookie("ass-rec-prop-addpcode-"+i)){
+			    	property_address += ", "+$.cookie("ass-rec-prop-addpcode-"+i);
+				}  
+				$("#q1").html("property address"+"<br />")
+		}
+		else if(recovery_1=="no"){
+			$("#q1").text("No");
+		}
+	
+	});
 
+  
   function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
