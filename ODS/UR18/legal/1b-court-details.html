@@ -306,6 +306,8 @@
   var firstCount;
   $(document).ready(function() {
 
+    firstCount = $.cookie("legal-prop-count");
+
   	if($.cookie("legal-prop-count")){
   		firstCount = $.cookie("legal-prop-count");
   	} else{
@@ -313,6 +315,10 @@
   	}
 
     $("#continue, #btn-add-separation").on("click", function (e) {
+      if (getParameterByName('p')) {
+        thirdCount = getParameterByName('p');
+      }
+      else {
         firstCount++;
         $.cookie("separation-court_"+firstCount, $("#name-of-court").val(), {path:'/'});
         $.cookie("separation-court-reference_"+firstCount, $("#court-ref").val(), {path:'/'});
@@ -321,6 +327,7 @@
         $.cookie("separation-division_"+firstCount, $("#asset-division :checked").attr("value"), {path:'/' });
         $.cookie("legal-prop-count", firstCount, { path: '/' } );
         $("#btn-add-separation").attr("href", "1b-court-details.html?p="+firstCount);
+      }
     });
 
     if ($.cookie("legal-prop-count")) {

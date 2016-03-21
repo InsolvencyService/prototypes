@@ -332,6 +332,8 @@
   var secondCount;
   $(document).ready(function() {
 
+    secondCount = $.cookie("claims-prop-count");
+
     if($.cookie("claims-prop-count")){
       secondCount = $.cookie("claims-prop-count");
     } else{
@@ -339,6 +341,10 @@
     }
 
     $("#continue, #btn-add-separation").on("click", function (e) {
+      if (getParameterByName('p')) {
+        thirdCount = getParameterByName('p');
+      }
+      else {
         secondCount++;
         $.cookie("claims-court_"+secondCount, $("#name-of-court").val(), {path:'/'});
         $.cookie("claims-court-reference_"+secondCount, $("#court-ref").val(), {path:'/'});
@@ -346,6 +352,7 @@
         $.cookie("claims-origin_"+secondCount, $("#claim-origin :checked").attr("value"), { path:'/' });
         $.cookie("claims-settled_"+secondCount, $("#settled-claim :checked").attr("value"), { path:'/' });
         $("#btn-add-separation").attr("href", "2b-court-details.html?p="+secondCount);
+      }
     });
 
     if ($.cookie("claims-prop-count")) {
