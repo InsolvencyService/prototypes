@@ -367,9 +367,9 @@
       }
 
       if(($.cookie("solicitor-action_"+i) === null) || ($.cookie("solicitor-action_"+i) === 'undefined')) {
-        $(".solicitor").parent().find(".solicitor-action").hide();
+        $(".solicitor").find(".solicitor-action").hide();
       } else {
-        $(".solicitor").parent().find(".solicitor-action").show();
+        $(".solicitor").find(".solicitor-action").show();
       }
 
       if ($.cookie("solicitor-action_"+i) === "none-of-the-above") {
