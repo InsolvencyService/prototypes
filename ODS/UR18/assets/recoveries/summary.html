@@ -286,7 +286,7 @@
   <script type="text/javascript">
 	$(document).ready(function() {
 		var temp;
-		if(recovery_1=="yes"){
+		if($.cookie("recovery_1")=="yes"){
 			count= $.cookie("ass-rec-prop-count");
 			for (i = 1; i <= count; i++) { 
 				if($.cookie("ass-rec-prop-add1-"+i)){
@@ -310,7 +310,7 @@
 				$("#q1").html("property address"+"<br />")
 			}
 		}
-		else if(recovery_1=="no"){
+		else if($.cookie("recovery_1")=="no"){
 			$("#q1").text("No");
 		}
 	
