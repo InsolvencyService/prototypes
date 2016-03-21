@@ -163,9 +163,11 @@
               <fieldset class="inline form-group" role="group" id="your-cases">
                 <legend id="your-cases-label" class="form-label-bold">Please select from your cases below which one these Solicitors helped you with</legend>
                 <span class="form-hint" id="your-cases-hint-1">Do not tick any of your cases in list below if this does not apply to any of them</span>
-                <div id="case-list" role="radiogroup">
-                  <label id="action_label0" for="action0" class="block-label">
-                    <input id="action0" value="Conveyancing" name="Conveyancing" type="checkbox" aria-labelledby="action_label">
+                <div id="case-list-group" role="radiogroup">
+                  <div id="case-list">
+                  </div>
+                  <label id="none-of-the-above-label" for="none-of-the-above" class="block-label">
+                    <input id="none-of-the-above" value="none-of-the-above" name="none-of-the-above" type="radio" aria-labelledby="your-cases-label">
                     None of the above
                   </label>
                 </div>
@@ -282,7 +284,7 @@
     // My added code
     for (var i = 1; i <= fifthCount; i++) {
     	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
-    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie1('+i+')" value="'+$.cookie("separation-court_"+i)+ ', ' +$.cookie("separation-court-reference_"+i)+'" name="case-list" type="radio" aria-labelledby="case-list">';
+    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie1('+i+')" value="'+$.cookie("separation-court_"+i)+ ', ' +$.cookie("separation-court-reference_"+i)+'" name="case-list-group" type="radio" aria-labelledby="case-list-group">';
     	item += '<span class="court-name bolder">' + $.cookie("separation-court_"+i) + '</span> (' + $.cookie("separation-court-reference_"+i) + ')';
       item += '<br>';
     	item += '<span class="court-type">Legal separation</span>';
@@ -293,7 +295,7 @@
     for (var j = 1; j <= fourthCount; j++) {
 
     	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie2('+j+')" for="your-case_'+j+'" class="block-label">';
-    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court_"+j)+ ', ' +$.cookie("claims-court-reference_"+j)+'" name="case-list" type="radio" aria-labelledby="case-list">';
+    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court_"+j)+ ', ' +$.cookie("claims-court-reference_"+j)+'" name="case-list-group" type="radio" aria-labelledby="case-list-group">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
