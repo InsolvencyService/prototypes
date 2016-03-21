@@ -322,7 +322,7 @@
 			var count= $.cookie("ass-rec-pol-count");
 			var policy = "";
 			for (var i = 1; i <= count; i++) { 
-				policy += $.cookie("ass-rec-pol-"+count+"-company");
+				policy += $.cookie("ass-rec-pol-"+i+"-company");
 				policy += ".<br />";
 			}
 			$("#q2").html(policy);
@@ -337,11 +337,10 @@
 			var count= $.cookie("ass-rec-veh-count");
 			var vehicle = "";
 			for (var i = 1; i <= count; i++) { 
-				vehicle += $.cookie("ass-rec-veh-make-"+count) +  " " + $.cookie("ass-rec-veh-model-"+count) + " " + $.cookie("ass-rec-veh-vrn-"+count);
+				vehicle += $.cookie("ass-rec-veh-make-"+i) +  " " + $.cookie("ass-rec-veh-model-"+i) + " - " + $.cookie("ass-rec-veh-vrn-"+i);
 				vehicle += ".<br />";
 			}
 			$("#q3").html(vehicle);
-
 		}
 		else if($.cookie("recovery_3")=="no"){
 			$("#q3").html("No");
@@ -351,7 +350,7 @@
 			var count= $.cookie("ass-rec-oth-count");
 			var other = "";
 			for (var i = 1; i <= count; i++) { 
-				other += $.cookie("ass-rec-oth-type-"+count);
+				other += $.cookie("ass-rec-oth-type-"+i);
 				other += ".<br />";
 			}
 			$("#q4").html(other );
