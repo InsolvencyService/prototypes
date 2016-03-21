@@ -260,7 +260,7 @@
   <script type="text/javascript">
    $(document).ready(function() {
 		$("#yes").on("click", function(e){
-		
+			$.cookie("recovery_3", "yes");
 			if($.cookie("ass-rec-veh-count")){
 				$("#yes").attr('href', 'vehicles/asset_list.html');
 			}
