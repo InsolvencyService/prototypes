@@ -327,7 +327,7 @@
       row += '</div>';
       row += '</div>';
       // row 3
-      row += '<div class="row" id="court-case-details">';
+      row += '<div class="row court-case-details">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
       row += '<p><span class="form-hint">The case details:</span>';
       row += '</div>';
@@ -373,9 +373,15 @@
       }
 
       if ($.cookie("solicitor-action_"+i) === "none-of-the-above") {
-        $("#court-case-details").hide();
+        $(".court-case-details").hide();
       } else {
-        $("#court-case-details").show();
+        $(".court-case-details").show();
+      }
+
+      if(($.cookie("solicitor-cases_"+i) === null) || ($.cookie("solicitor-cases_"+i) === 'undefined')) {
+        $(".court-case-details").hide();
+      } else {
+        $(".court-case-details").show();
       }
 
       // if ($.cookie("address_line_2_"+i) === "" || $.cookie("address_line_3_"+i) === "") {
