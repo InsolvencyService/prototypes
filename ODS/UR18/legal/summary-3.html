@@ -367,15 +367,15 @@
       }
 
       if (($.cookie("solicitor-action_"+i) === null) || ($.cookie("solicitor-action_"+i) === 'undefined')) {
-        $(".solicitor-action").hide();
+        $(".solicitor-action").addClass("hidden");
       } else {
-        $(".solicitor-action").show();
+        $(".solicitor-action").removeClass("hidden");
       }
 
       if (($.cookie("solicitor-cases_"+i) === null) || ($.cookie("solicitor-cases_"+i) === 'undefined') || ($.cookie("solicitor-action_"+i) === "none-of-the-above")) {
-        $(".court-case-details").hide();
+        $(".court-case-details").addClass("hidden");
       } else {
-        $(".court-case-details").show();
+        $(".court-case-details").removeClass("hidden");
       }
 
       $("#solicitors-used").append(row);
