@@ -262,12 +262,13 @@
   <script type="text/javascript">
    $(document).ready(function() {
 		$("#yes").on("click", function (e) {
-			if($.cookie("recovery_4")=="no"){
-				$("#yes").attr("href", "otherassets/detail.html?id=2");
+			if($.cookie("ass-rec-oth-count")){
+				$.cookie("recovery_4", "yes");
+				$("#yes").attr("href", "otherassets/asset_list.html");
 			}
 			else{
 				$.cookie("recovery_4", "yes");
-				$("#yes").attr("href", "otherassets/asset_list.html");
+				$("#yes").attr("href", "otherassets/detail.html?id=2");
 			}
 		});
 	
