@@ -362,17 +362,13 @@
     }
 
     // These lines display the cases the user has previously told us about
-    if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
+    if ($("#none-of-the-above").is(':checked')) {
+      $("#action-select").show();
+    } else if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
       $("#your-cases").hide();
       $("#action-select").show();
     } else if ($.cookie("question1") === "Yes" || $.cookie("question2") === "Yes") {
       $("#your-cases").show();
-      $("#action-select").hide();
-    }
-
-    if ($("#none-of-the-above").is(':checked')) {
-      $("#action-select").show();
-    } else {
       $("#action-select").hide();
     }
 
