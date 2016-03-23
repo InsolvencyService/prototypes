@@ -309,6 +309,7 @@ li.not-started:hover ul.row-bottom {
 
 ul#overview-panels li {
 	position: relative;
+	line-height: 0;
 }
 
 /*ul#overview-panels li:hover {
@@ -329,8 +330,9 @@ a.rowtop.wrapper-button {
 a.rowtop.wrapper-button .edit {
 	position: absolute;
 	right: 15px;
-	top: 22px;
+	top: 31px;
 	text-align: right;
+	width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -341,7 +343,8 @@ a.rowtop.wrapper-button .edit {
 		right: initial;
 		font-size: 13px;
 		float: left;
-		margin-left: 5px;
+		text-align: left;
+		margin: 10px 0 0 10px;
 	}
 }
 
@@ -349,6 +352,8 @@ a.rowtop.wrapper-button .edit.button {
 	position: relative;;
 	right: inherit;
 	top: inherit;
+	margin-top: 7px;
+	width: initial;
 }
 
 @media (max-width: 768px) {
@@ -357,6 +362,7 @@ a.rowtop.wrapper-button .edit.button {
 		text-align: center;
 		margin-left: 0;
 		margin-top: 10px;
+		width: 100%;
 	}
 }
 /* CSS for the status pages - End */
