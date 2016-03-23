@@ -342,7 +342,7 @@
   var fourthCount;
   var solicitor_cases;
   $(document).ready(function() {
-
+	$("#action-select").hide();
     thirdCount = $.cookie("solicitor-prop-count");
   	fourthCount =  parseInt($.cookie("claims-prop-count"));
   	fifthCount = parseInt($.cookie("legal-prop-count"));
@@ -435,9 +435,15 @@
   	solicitor_cases = $("#your-case_"+countx).val();
   }
 
-  $("#none-of-the-above").click(function(e){
-    $("#action-select").show();
-  )};
+  $("#case-list-group").click(function(e){
+	if($("#case-list-group :checked").val()==="none-of-the-above"){
+		alert("yes");  
+	    $("#action-select").show();
+	}
+	else{
+		$("#action-select").hide();
+	}
+  });
 
   </script>
   <!-- #EndEditable "scripts" -->
