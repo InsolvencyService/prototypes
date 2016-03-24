@@ -67,7 +67,7 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
+<link type="text/css" rel="stylesheet" media="screen" href="css/style.css"
 <!-- #EndEditable -->
 
 
@@ -144,11 +144,22 @@
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
           <h1 class="form-title heading-large" role="header" id="heading-1">Money you owe</h1>
-          <p>Organisations and people you owe money to are known as creditors.</p>
-          <p>We need to know about all of your creditors, including family members or friends.</p>
-          <p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
-          <p>You do not need to include any debts you have already told us about - for example, a mortgage, car financing or overdrafts.</p>
+          
+          <div id="firsttime">
+	          <p>Organisations and people you owe money to are known as creditors.</p>
+	          <p>We need to know about all of your creditors, including family members or friends.</p>
+	          <p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
+	          <p>You do not need to include any debts you have already told us about - for example, a mortgage, car financing or overdrafts.</p>
+		  </div>
+		  
+		  <div id="other">
+		  	<p class="lede">You already told us about:</p>
+			<div id="creditorlist">
+			</div>  
+		  </div>
+		  
 
+		  
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
@@ -244,7 +255,33 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
-
+	$(document).ready(function() {
+		if($.cookie("cred-count")){
+			$("#other").show();
+			$("#firsttime").hide();
+			$("#question1-label").text("Are there any other creditors you owe money to?")
+			
+			var count = $.cookie("cred-count");
+			for(i=1; i<=count; i++){	
+				var row;
+				row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
+				row += $.cookie("cred-name-"+i);
+				row += '</p><p class="bold-small">Ref:';
+				row += $.cookie("cred-ref-"+i);	
+				row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
+				row += 'summary.html?p='+i;
+				row += '">View your answers</a><br><a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12"><p><span class="bolder">Registration number:</span> <span>'; 
+				row += $.cookie("ass-rec-veh-vrn-"+i);
+				row += '</span></p></div></div></div>';
+				$("#creditorlist").append(row);
+			}
+		}
+		else{
+			$("#firsttime").show();
+			$("#other").hide();
+		}
+	});	
+	
     $("#continue").on("click", function (e) {
      	if ($("#answers :checked").val() === "Yes") {
           $("#continue").attr("href", "2-creditor_name.html");
