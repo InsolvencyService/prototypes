@@ -196,7 +196,7 @@
             <fieldset>
               <div class="row">
                 <div class="col-md-12 col-xs-12">
-                  <p><a role="button" href="summary.html" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
+                  <p><a role="button" href="6-summary.html" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
                   <p>
                   	<a href="javascript:history.go(-1)" id="back">Back</a>
                   	<a href="#" class="cancel">Save and logout</a>
@@ -270,7 +270,17 @@
 
   <!-- #BeginEditable "scripts" -->
 <script type="text/javascript">
+	var count;
+	$(document).ready(function() {
+		count=$.cookie("cred-count");
+		$("#name").val($.cookie("cred-name-"+count));
+	});
 
+    $("#continue").on("click", function (e) {
+    	$.cookie("cred-debt-attachment-"+count, "true", {path:'/'});
+    	$.cookie("cred-debt-attachment-date-"+count, $("#frequency :checked").val(), {path:'/'});
+    	$.cookie("cred-debt-attachment-amount-"+count, $("#amount").val(), {path:'/'});
+    });
 </script>
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
