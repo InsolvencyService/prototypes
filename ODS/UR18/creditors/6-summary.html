@@ -497,17 +497,21 @@
 		
 		$("#owe").text($.cookie("cred-amount-"+count));
 		$("#ref").text($.cookie("cred-ref-"+count));
-		$("#type").text($.cookie("cred-type-"+count));
-		$("#started").text($.cookie("cred-started-"+count));		
+		$("#type").text($.cookie("cred-debt-type-"+count));
+		$("#started").text($.cookie("cred-debt-started-"+count));		
 		if($.cookie("cred-reason-"+count)){
 			$("#reason").text($.cookie("cred-reason-"+count));
+			$("#debt_reason").show();
+		}
+		else{
+			$("#debt_reason").hide();
 		}
 		
 		if($.cookie("cred-debt-seize-"+count)=="true"){
 			$("#enforcement").show();
-			$("#visit").text($.cookie("cred-debt-seize-"+count));
-			$("#items").text($.cookie("cred-debt-seize-"+count));
-			$("#value").text($.cookie("cred-debt-seize-"+count));
+			$("#visit").text($.cookie("cred-debt-seize-date-"+count));
+			$("#items").text($.cookie("cred-debt-seize-description-"+count));
+			$("#value").text($.cookie("cred-debt-seize-value-"+count));
 		}
 		else{
 			$("#enforcement").hide();
@@ -515,8 +519,8 @@
 		
 		if($.cookie("cred-debt-attachment-"+count)=="true"){
 			$("#attachment").show();
-			$("#income").text($.cookie("cred-debt-seize-"+count));
-			$("#frequency").text($.cookie("cred-debt-seize-"+count));
+			$("#income").text($.cookie("cred-debt-attachment-amount"+count));
+			$("#frequency").text($.cookie("cred-debt-attachment-frequency"+count));
 		}
 		else{
 			$("#attachment").hide();

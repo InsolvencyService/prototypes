@@ -278,7 +278,7 @@
 
     $("#continue").on("click", function (e) {
     	$.cookie("cred-debt-attachment-"+count, "true", {path:'/'});
-    	$.cookie("cred-debt-attachment-date-"+count, $("#frequency :checked").val(), {path:'/'});
+    	$.cookie("cred-debt-attachment-frequency-"+count, $("#frequency :checked").val(), {path:'/'});
     	$.cookie("cred-debt-attachment-amount-"+count, $("#amount").val(), {path:'/'});
     });
 </script>
