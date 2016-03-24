@@ -266,13 +266,12 @@
 				var row;
 				row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
 				row += $.cookie("cred-name-"+i);
-				row += '</p><p class="bold-small">Ref:';
+				row += '</p><p><span class="bolder">Ref:</span>';
 				row += $.cookie("cred-ref-"+i);	
 				row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
-				row += 'summary.html?p='+i;
-				row += '">View your answers</a><br><a href="#" class="delete-item">Delete</a></div></div><div class="row"><div class="col-xs-12"><p><span class="bolder">Registration number:</span> <span>'; 
-				row += $.cookie("ass-rec-veh-vrn-"+i);
-				row += '</span></p></div></div></div>';
+				row += '6-summary.html?p='+i;
+				row += '">View your answers</a><br><a href="#" class="delete-item">Delete</a></div></div>; 
+				row += </div>';
 				$("#creditorlist").append(row);
 			}
 		}
