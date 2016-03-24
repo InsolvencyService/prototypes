@@ -335,7 +335,7 @@
 
   <script type="text/javascript">
 
-	var $checkboxes = $('input:checkbox');
+	var $checkboxes;
 	var count;
 	//set the cookie
 	function setcookie() {
@@ -346,8 +346,9 @@
 	    $.cookie('cred-reason-'+count, options, {path:'/'});
 	}
 	
-	$checkboxes.change(setcookie);
-  
+	$(function() {
+    	$checkboxes = $('input:checkbox').change(setcookie);
+	});
  
 	$(document).ready(function() {
 		count=$.cookie("cred-count");
