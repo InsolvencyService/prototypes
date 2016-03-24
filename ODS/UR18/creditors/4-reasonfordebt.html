@@ -313,8 +313,10 @@
   <!-- ////////////////////////////////////////////// Footer - END ////////////////////////////////////////////// -->
 
   <!-- ////////////////////////////////////////////// Javascript - START ////////////////////////////////////////////// -->
-  <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
-  <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+ 
+
+   <script type="text/javascript" src="../../assets/js/jquery-1.10.2.min.js"></script>
+   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -329,35 +331,64 @@
   </script>
 
   <!-- #BeginEditable "scripts" -->
+  
+
   <script type="text/javascript">
 
-    $("#continue").on("click", function (e) {
-	if ($("#formal_action :checked").val() === "seize") {
-	  $("#continue").attr("href", "5a-seized.html");
-	} 
-        
-	else if ($("#formal_action :checked").val() == "attachment"){
-	  $("#continue").attr("href", "5b-attachment.html");
+	var $checkboxes = $('input:checkbox');
+	var count;
+	//set the cookie
+	function setcookie() {
+		count=$.cookie("cred-count");
+	    var options = $checkboxes.map(function () {
+	        if (this.checked) return this.name;
+	    }).get().join(',');
+	    $.cookie('cred-reason-'+count, options, {path:'/'});
 	}
 	
-	else{
-	  $("#continue").attr("href", "6-summary.html");	
-	}
-    });
+	$checkboxes.change(setcookie);
+  
+ 
+	$(document).ready(function() {
+		count=$.cookie("cred-count");
+		$(".creditorname").text($.cookie("cred-name-"+count));
+		
+	/*	if(($.cookie("cred-debt-type-"+count)==="Credit card") || ($.cookie("cred-debt-type-"+count)==="Personal loan") || ($.cookie("cred-debt-type-"+count)==="Other")){
+    		$("#reason_for_debt").show();	
+    	}
+    	else{
+    		$("#reason_for_debt").hide();
+    	}
+    	*/
+	});
+    $("#continue").on("click", function (e) {
+    	$.cookie("cred-debt-started-"+count, $("#date_select :checked").val(), {path:'/'});  	
+    	//if(($.cookie("cred-debt-type-"+count)==="Credit card") || ($.cookie("cred-debt-type-"+count)==="Personal loan") || ($.cookie("cred-debt-type-"+count)==="Other")){
+    		 
+    		
+    		 alert($("#reason_for_debt :checked").val());
+   			 //$.cookie('cred-reason-'+count, options, {path:'/'});	
+    	//}
 
-    $('#question1 input[type="radio"]').click(function() {
-        var g1 = $("#question1-yes").is(":checked");
+    	
+    	
+		if ($("#formal_action :checked").val() === "seize") {
+		  $("#continue").attr("href", "5a-seized.html");
+		} 
+	        
+		else if ($("#formal_action :checked").val() == "attachment"){
+		  $("#continue").attr("href", "5b-attachment.html");
+		}
+		
+		else{
+		  $("#continue").attr("href", "6-summary.html");	
+		}
+	});
 
-        var addr = "";
-        if (g1) {
-          addr = "1b-court-details.html";
-        } else {
-          addr = "2a-legal-claims.html";
-        }
-        $("#question1 #continue").attr('href', addr);
-    });
+    
 
   </script>
+  
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
 
