@@ -264,11 +264,11 @@
 			var count = $.cookie("cred-count");
 			for(i=1; i<=count; i++){	
 				var row;
-				row =  '<div class="new-item"><div class="row"><div class="col-md-9 col-sm-6 col-xs-12"><p class="bold-medium">';
+				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
 				row += $.cookie("cred-name-"+i);
-				row += '</p><p><span class="bolder">Ref:</span>';
+				row += '</p><p><span class="bolder">Ref: </span>';
 				row += $.cookie("cred-ref-"+i);	
-				row += '</p></div><div class="col-md-3 col-sm-3 col-xs-12"><a href="';
+				row += '</p></div><div class="col-md-4 col-xs-12"><a href="';
 				row += '6-summary.html?p='+i;
 				row += '">View your answers</a><br><a href="#" class="delete-item">Delete</a></div></div></div>'; 
 				$("#creditorlist").append(row);
