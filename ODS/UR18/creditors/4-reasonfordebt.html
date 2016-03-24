@@ -354,22 +354,17 @@
 		count=$.cookie("cred-count");
 		$(".creditorname").text($.cookie("cred-name-"+count));
 		
-	/*	if(($.cookie("cred-debt-type-"+count)==="Credit card") || ($.cookie("cred-debt-type-"+count)==="Personal loan") || ($.cookie("cred-debt-type-"+count)==="Other")){
+		if(($.cookie("cred-debt-type-"+count)==="Credit card") || ($.cookie("cred-debt-type-"+count)==="Personal loan") || ($.cookie("cred-debt-type-"+count)==="Other")){
     		$("#reason_for_debt").show();	
     	}
     	else{
     		$("#reason_for_debt").hide();
     	}
-    	*/
+    	
 	});
     $("#continue").on("click", function (e) {
     	$.cookie("cred-debt-started-"+count, $("#date_select :checked").val(), {path:'/'});  	
-    	//if(($.cookie("cred-debt-type-"+count)==="Credit card") || ($.cookie("cred-debt-type-"+count)==="Personal loan") || ($.cookie("cred-debt-type-"+count)==="Other")){
-    		 
-    		
-    		 alert($("#reason_for_debt :checked").val());
-   			 //$.cookie('cred-reason-'+count, options, {path:'/'});	
-    	//}
+    	
 
     	
     	

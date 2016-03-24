@@ -240,21 +240,16 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <script type="text/javascript">
+	var count = 0;
 
     $("#continue").on("click", function (e) {
-      $.cookie("question1", $("#question1 :checked").attr("value"), { path:'/' });
-    });
 
-    $('#question1 input[type="radio"]').click(function() {
-        var g1 = $("#question1-yes").is(":checked");
-
-        var addr = "";
-        if (g1) {
-          addr = "1b-court-details.html";
-        } else {
-          addr = "2a-legal-claims.html";
-        }
-        $("#question1 #continue").attr('href', addr);
+		if($.cookie("cred-count")){
+			count=$.cookie("cred-count");
+		}
+		count++;
+		$.cookie("cred-name-"+count, $('#creditors.typeahead').val(), {path:'/'});
+		$.cookie("cred-count", count, {path:'/'});
     });
 
   </script>

@@ -272,11 +272,24 @@
   </script>
 
   <!-- #BeginEditable "scripts" -->
-  <script type="text/javascript">
-
-   
-
-  </script>
+	<script type="text/javascript">
+		
+		var count;
+		$(document).ready(function() {
+			count=$.cookie("cred-count");
+			$("#name").val($.cookie("cred-name-"+count));
+		});
+		
+		$("#continue").on("click", function (e) {	
+			$.cookie("cred-add1-"+count, $("#address_line_1").val(), {path:'/'});
+			$.cookie("cred-add2-"+count, $("#address_line_2").val(), {path:'/'});
+			$.cookie("cred-add3-"+count, $("#address_line_3").val(), {path:'/'});
+			$.cookie("cred-add4-"+count, $("#address_line_town").val(), {path:'/'});
+			$.cookie("cred-add5-"+count, $("#address_line_county").val(), {path:'/'});
+			$.cookie("cred-add6-"+count, $("#address_line_post_code").val(), {path:'/'});
+			$.cookie("cred-add7-"+count, $("#address_line_country").val(), {path:'/'});
+		}
+	</script>
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
 

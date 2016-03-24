@@ -307,23 +307,19 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
+	var count;
+	$(document).ready(function() {
+		count=$.cookie("cred-count");
+		$(".creditorname").text($.cookie("cred-name-"+count));
+	});
 
     $("#continue").on("click", function (e) {
-      $.cookie("question1", $("#question1 :checked").attr("value"), { path:'/' });
+    	$.cookie("cred-amount-"+count, $("#amount").val(), {path:'/'});
+    	$.cookie("cred-ref-"+count, $("#ref").val(), {path:'/'});
+    	$.cookie("cred-debt-type-"+count, $("#type-select :checked").val(), {path:'/'});
     });
 
-    $('#question1 input[type="radio"]').click(function() {
-        var g1 = $("#question1-yes").is(":checked");
-
-        var addr = "";
-        if (g1) {
-          addr = "1b-court-details.html";
-        } else {
-          addr = "2a-legal-claims.html";
-        }
-        $("#question1 #continue").attr('href', addr);
-    });
-
+    
   </script>
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
