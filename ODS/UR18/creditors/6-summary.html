@@ -178,7 +178,7 @@
 						    <p>Creditor name</p>
 						  </div>
 						  <div class="col-xs-5">
-						    <p class="bolder" id="address">Your answer</p>
+						    <p class="bolder" id="name">Your answer</p>
 						  </div>
 						  <div class="col-xs-2">
 						    <a href="#">Edit</a>
@@ -190,7 +190,7 @@
 						    <p>Address</p>
 						  </div>
 						  <div class="col-xs-5">
-						    <p class="bolder" id="type">Your answer</p>
+						    <p class="bolder" id="address">Your answer</p>
 						  </div>
 						  <div class="col-xs-2">
 						    <a href="#">Edit</a>
@@ -202,7 +202,7 @@
 						    <p>Amount they say you owe</p>
 						  </div>
 						  <div class="col-xs-5">
-						    <p class="bolder" id="bed">Your answer</p>
+						    <p class="bolder" id="owe">Your answer</p>
 						  </div>
 						  <div class="col-xs-2">
 						    <a href="#">Edit</a>
@@ -214,7 +214,7 @@
 						    <p>Account ref</p>
 						  </div>
 						  <div class="col-xs-5">
-						    <p class="bolder" id="bed">Your answer</p>
+						    <p class="bolder" id="ref">Your answer</p>
 						  </div>
 						  <div class="col-xs-2">
 						    <a href="#">Edit</a>
@@ -226,7 +226,7 @@
 						    <p>Debt type</p>
 						  </div>
 						  <div class="col-xs-5">
-						    <p class="bolder" id="bed">Your answer</p>
+						    <p class="bolder" id="type">Your answer</p>
 						  </div>
 						  <div class="col-xs-2">
 						    <a href="#">Edit</a>
@@ -238,7 +238,7 @@
 						    <p>Date debt started</p>
 						  </div>
 						  <div class="col-xs-5">
-						    <p class="bolder" id="bed">Your answer</p>
+						    <p class="bolder" id="started">Your answer</p>
 						  </div>
 						  <div class="col-xs-2">
 						    <a href="#">Edit</a>
@@ -250,7 +250,7 @@
 						    <p>Reason for debt</p>
 						  </div>
 						  <div class="col-xs-5">
-						    <p class="bolder" id="bed">Your answer</p>
+						    <p class="bolder" id="reason">Your answer</p>
 						  </div>
 						  <div class="col-xs-2">
 						    <a href="#">Edit</a>
@@ -313,7 +313,7 @@
 		</div>
 		
 		<!-- ///// ENFORCEMENT VISIT TABLE ///// -->
-		<div id="attachment" class="form-group">
+		<div id="enforcement" class="form-group">
             <fieldset>
 				<legend class="form-label-bold">Enforcement agent visits</legend>
 		
@@ -338,12 +338,38 @@
 					    <p>When did the agents last visit you?</p>
 					  </div>
 					  <div class="col-xs-5">
-					    <p class="bolder" id="address">Your answer</p>
+					    <p class="bolder" id="visit">Your answer</p>
 					  </div>
 					  <div class="col-xs-2">
 					    <a href="#">Edit</a>
 					  </div>
 					</div>
+					
+					<div class="row group-heading tabledivide">
+					  <div class="col-xs-5">
+					    <p>What items did they take control of?</p>
+					  </div>
+					  <div class="col-xs-5">
+					    <p class="bolder" id="items">Your answer</p>
+					  </div>
+					  <div class="col-xs-2">
+					    <a href="#">Edit</a>
+					  </div>
+					</div>
+
+
+					<div class="row group-heading tabledivide">
+					  <div class="col-xs-5">
+					    <p>What was the value of the items?</p>
+					  </div>
+					  <div class="col-xs-5">
+					    <p class="bolder" id="value">Your answer</p>
+					  </div>
+					  <div class="col-xs-2">
+					    <a href="#">Edit</a>
+					  </div>
+					</div>
+
 					
 				</section>
 			</fieldset>
@@ -433,31 +459,69 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#continue").on("click", function (e) {
-	if ($("#formal_action :checked").val() === "seize") {
-	  $("#continue").attr("href", "5a-seized.html");
-	} 
-        
-	else if ($("#formal_action :checked").val() == "attachment"){
-	  $("#continue").attr("href", "5b-attachment.html");
-	}
-	
-	else{
-	  $("#continue").attr("href", "6-summary.html");	
-	}
-    });
-
-    $('#question1 input[type="radio"]').click(function() {
-        var g1 = $("#question1-yes").is(":checked");
-
-        var addr = "";
-        if (g1) {
-          addr = "1b-court-details.html";
-        } else {
-          addr = "2a-legal-claims.html";
-        }
-        $("#question1 #continue").attr('href', addr);
-    });
+    var count;
+	$(document).ready(function() {
+		count=$.cookie("cred-count");
+		
+		$("#name").text($.cookie("cred-name-"+count));
+		
+		var address="";
+		if($.cookie("ass-rec-oth-add1-"+count)){
+			address = $.cookie("cred-add1-"+count);
+		}
+		if($.cookie("ass-rec-oth-add2-"+count)){
+			address += ", "+$.cookie("cred-add2-"+count);
+		}
+		if($.cookie("ass-rec-oth-add3-"+count)){
+			address += ", "+$.cookie("cred-add3-"+count);
+		}
+	    if($.cookie("ass-rec-oth-add4-"+count)){
+	    	address += ", "+$.cookie("cred-add4-"+count);
+	    }
+	    if($.cookie("ass-rec-oth-add5-"+count)){
+	    	address += ", "+$.cookie("cred-add5-"+count);
+		}	
+	    if($.cookie("ass-rec-oth-add6-"+count)){
+	    	address += ", "+$.cookie("cred-add6-"+count);
+		} 
+		if($.cookie("ass-rec-oth-add7-"+count)){
+	    	address += ", "+$.cookie("cred-add7-"+count);
+		}
+		if(address!=""){  
+			$("#creditor_address").show(); 
+			$("#address").text(address); 
+		}
+		else{
+			$("#creditor_address").hide();
+		}
+		
+		$("#owe").text($.cookie("cred-amount-"+count));
+		$("#ref").text($.cookie("cred-ref-"+count));
+		$("#type").text($.cookie("cred-type-"+count));
+		$("#started").text($.cookie("cred-started-"+count));		
+		if($.cookie("cred-reason-"+count)){
+			$("#reason").text($.cookie("cred-reason-"+count));
+		}
+		
+		if($.cookie("cred-debt-seize-"+count)=="true"){
+			$("#enforcement").show();
+			$("#visit").text($.cookie("cred-debt-seize-"+count));
+			$("#items").text($.cookie("cred-debt-seize-"+count));
+			$("#value").text($.cookie("cred-debt-seize-"+count));
+		}
+		else{
+			$("#enforcement").hide();
+		}
+		
+		if($.cookie("cred-debt-attachment-"+count)=="true"){
+			$("#attachment").show();
+			$("#income").text($.cookie("cred-debt-seize-"+count));
+			$("#frequency").text($.cookie("cred-debt-seize-"+count));
+		}
+		else{
+			$("#attachment").hide();
+		}
+	});
 
   </script>
   <!-- #EndEditable "scripts" -->
