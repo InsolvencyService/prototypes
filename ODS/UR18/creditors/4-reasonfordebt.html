@@ -341,8 +341,8 @@
 	function setcookie() {
 		count=$.cookie("cred-count");
 	    var options = $checkboxes.map(function () {
-	        if (this.checked) return this.name;
-	    }).get().join(',');
+	        if (this.checked) return this.value;
+	    }).get().join(', ');
 	    $.cookie('cred-reason-'+count, options, {path:'/'});
 	}
 	
