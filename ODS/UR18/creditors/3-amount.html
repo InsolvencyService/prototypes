@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Money you owe - </title>
+  <title>Money you owe - Amount you owe</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,7 +67,8 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bankruptcy-overrides.css">
+
 <!-- #EndEditable -->
 
 
@@ -143,30 +144,88 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header" id="heading-1">Money you owe</h1>
-          <p>Organisations and people you owe money to are known as creditors.</p>
-          <p>We need to know about all of your creditors, including family members or friends.</p>
-          <p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
-          <p>You do not need to include any debts you have already told us about - for example, a mortgage, car financing or overdrafts.</p>
-
+          <h1 class="form-title heading-large" role="header" id="heading-1">Amount you owe</h1>
+          
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline" id="question1">
-              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Do you owe any money to a creditor?</label>
-              <div class="form-group">
-                <label id="question1-yes-label" for="question1-yes" class="block-label">
-                  <input id="question1-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="question1-label question1-yes-label">
-                  Yes
-                </label>
-                <label id="question1-no-label" for="question1-no" class="block-label">
-                  <input id="question1-no" value="No" name="settled-claim" type="radio" aria-labelledby="question1-label question1-no-label">
-                  No
-                </label>
-              </div>
-              <a role="button" id="continue" class="button" aria-labelledby="question1-label">Continue</a>
+            <fieldset>
+            	<legend class="visuallyhidden">We're going to ask 3 questions regarding the money you owe to <span class="creditorname">the creditor</span></legend>
+              	
+              	
+              	<!-- //// Question1 ////-->
+              	<div class="form-group">
+                	<label id="question1_label" for="amount" class="form-label-bold">
+                 		 Amount <span class="creditorname">ABC Ltd</span> says you owe
+                 	</label>
+                  	<span>£ </span><input id="amount" name="amount" type="text" aria-labelledby="question1_label" value="" />
+                </div>
+                        	
+              	<!-- //// Question2 ////-->
+              	<div class="form-group ">
+                  <label id="question2_label" for="ref" class="form-label-bold applicant_address_town">Account or reference number</label>
+                  <p id="question2_hint_label" class="form-hint">You can find this on any correspondence from your creditor <br />
+                  Leave blank if you don't have one</p>
+                  <input id="ref" name="ref" type="text" value="" aria-labelledby="question2_hint_label" />
+                </div>
+                
+              	<!-- //// Question3 ////-->
+              	<fieldset class="inline">
+                  <legend id="question3_label" class="form-label-bold">Debt type</legend>
+                  <div id="type-select" class="form-group">
+                  
+                    <label id="title_label1" for="cc" class="block-label">
+                      <input id="cc" value="Credit card" name="title" type="radio" aria-describedby="question3_label">
+                      Credit card/ store card
+                    </label>
+
+                    <label for="sl" class="block-label">
+                      <input id="sl" value="Student loan" name="title" type="radio" aria-describedby="question3_label">
+                      Student loan
+                    </label>
+
+                    <label id="title_label2" for="pl" class="block-label">
+                      <input id="pl" value="Personal loan" name="title" type="radio" aria-describedby="question3_label">
+                      Personal loan (unsecured)
+                    </label>
+
+                    <label for="ra" class="block-label">
+                      <input id="ra" value="Rent arrears" name="title" type="radio" aria-describedby="question3_label">
+                      Rent
+                    </label>
+
+                    <label for="util" class="block-label">
+                      <input id="util" value="Utilities" name="title" type="radio" aria-describedby="question3_label">
+                      Utilities
+                    </label>
+
+                    <label for="fine" class="block-label">
+                      <input id="fine" value="Fines" name="title" type="radio" aria-describedby="question3_label">
+                      Fines
+                    </label>
+
+                    <label for="main" class="block-label">
+                      <input id="main" value="Child Maintenance" name="title" type="radio" aria-describedby="question3_label">
+                      Child maintenance payments
+                    </label>
+
+                    <label for="tele" class="block-label">
+                      <input id="tele" value="Landlord" name="title" type="radio" aria-describedby="question3_label">
+                      Telephone/ mobile phone
+                    </label>
+
+                    <label id="title_label4" for="title_other" class="block-label">
+                     <input id="title_other" value="" name="sameaddress" type="radio" aria-describedby="title_error title_help">Other <span style="font-weight:normal">- please specify:</span> 
+    				 <label for="other" class="visually-hidden">Enter other property type</label><input id="other" name="other" class="text-right" type="text" value="" />
+    				
+                    </label>
+
+                  </div>
+                  <p>&nbsp;</p>
+                </fieldset>
+              	
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -174,7 +233,7 @@
             <fieldset class="form-group">
               <div class="row">
                 <div class="col-md-12 col-xs-12">
-                  <p><a role="button" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
+                  <p><a role="button" href="4-reasonfordebt.html" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
                   <p>
                   	<a href="javascript:history.go(-1)" id="back">Back</a>
                   	<a href="#" class="cancel">Save and logout</a>

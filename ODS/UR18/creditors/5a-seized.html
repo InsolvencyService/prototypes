@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Money you owe - </title>
+  <title>Money you owe - Enforcement agent visits</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,7 +67,8 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bankruptcy-overrides.css">
+
 <!-- #EndEditable -->
 
 
@@ -143,30 +144,47 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header" id="heading-1">Money you owe</h1>
-          <p>Organisations and people you owe money to are known as creditors.</p>
-          <p>We need to know about all of your creditors, including family members or friends.</p>
-          <p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
-          <p>You do not need to include any debts you have already told us about - for example, a mortgage, car financing or overdrafts.</p>
-
+          <h1 class="form-title heading-large" role="header" id="heading-1">Enforcement agent visits</h1>
+          
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline" id="question1">
-              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Do you owe any money to a creditor?</label>
-              <div class="form-group">
-                <label id="question1-yes-label" for="question1-yes" class="block-label">
-                  <input id="question1-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="question1-label question1-yes-label">
-                  Yes
-                </label>
-                <label id="question1-no-label" for="question1-no" class="block-label">
-                  <input id="question1-no" value="No" name="settled-claim" type="radio" aria-labelledby="question1-label question1-no-label">
-                  No
-                </label>
-              </div>
-              <a role="button" id="continue" class="button" aria-labelledby="question1-label">Continue</a>
+            <fieldset>
+            	<legend class="visuallyhidden">We need to know about when the agents for <span class="creditorname">the creditor</span> came to visit</legend>
+              	
+              	
+              	<!-- //// Question1 ////-->
+              	<div class="form-group"  id="date_select">
+              		<fieldset class="inline">
+						<legend class="form-label-bold">When did the agents for <span class="creditorname">ABC Limited</span> last visit you?</legend>
+						
+						<label id="label1" for="1" class="block-label">
+						<input id="1"  name="agents-visit" value="0-6m" type="radio">0 to 6 months ago</label>
+						
+						<label id="label2" for="2" class="block-label">
+						<input id="2"  name="agents-visit" value="7-12m" type="radio">7 to 12 months ago</label>
+						
+						<label id="label3" for="3" class="block-label">
+						<input id="3"  name="agents-visit" value="1-2y" type="radio">1 to 2 years ago</label>
+						
+						<label id="label4" for="4" class="block-label">
+						<input id="4"  name="agents-visit" value="3-5y" type="radio">3 to 5 years ago</label>
+						
+						<label id="label5" for="5" class="block-label">
+						<input id="5"  name="agents-visit" value="6-10y" type="radio">6 to 10 years ago</label>
+						
+						<label id="label6" for="6" class="block-label">
+						<input id="6"  name="agents-visit" value="over-10y" type="radio">Over 10 years ago</label>    
+					</fieldset>     	
+              	</div>
+              	<!-- //// Question2 ////-->
+              <!-- //// Question3 ////-->
+   
+
+              	
+              	
             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
@@ -174,7 +192,8 @@
             <fieldset class="form-group">
               <div class="row">
                 <div class="col-md-12 col-xs-12">
-                  <p><a role="button" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
+                  <p>
+				  <a role="button" href="archive/summary.html" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
                   <p>
                   	<a href="javascript:history.go(-1)" id="back">Back</a>
                   	<a href="#" class="cancel">Save and logout</a>
@@ -250,7 +269,17 @@
   <script type="text/javascript">
 
     $("#continue").on("click", function (e) {
-      $.cookie("question1", $("#question1 :checked").attr("value"), { path:'/' });
+	if ($("#formal_action :checked").val() === "seize") {
+	  $("#continue").attr("href", "5a-seized.html");
+	} 
+        
+	else if ($("#formal_action :checked").val() == "attachment"){
+	  $("#continue").attr("href", "5b-attachment.html");
+	}
+	
+	else{
+	  $("#continue").attr("href", "6-summary.html");	
+	}
     });
 
     $('#question1 input[type="radio"]').click(function() {

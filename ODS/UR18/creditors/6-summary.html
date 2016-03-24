@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Money you owe - </title>
+  <title>Money you owe - Creditor summary</title>
   <!-- #EndEditable -->
 
   <!--[if gt IE 8]><!-->
@@ -67,7 +67,8 @@
 <!-- #BeginEditable "styles" -->
 <link type="text/css" rel="stylesheet" href="../../assets/stylesheets/main.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/overrides.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/legal.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/bankruptcy-overrides.css">
+
 <!-- #EndEditable -->
 
 
@@ -143,38 +144,221 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header" id="heading-1">Money you owe</h1>
-          <p>Organisations and people you owe money to are known as creditors.</p>
-          <p>We need to know about all of your creditors, including family members or friends.</p>
-          <p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
-          <p>You do not need to include any debts you have already told us about - for example, a mortgage, car financing or overdrafts.</p>
+          <h1 class="form-title heading-large" role="header" id="heading-1">Creditor summary</h1>
+          <p class="lede">Please check your answers carefully</p>
+          <p>&nbsp;</p>
 
+          
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-            <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline" id="question1">
-              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Do you owe any money to a creditor?</label>
-              <div class="form-group">
-                <label id="question1-yes-label" for="question1-yes" class="block-label">
-                  <input id="question1-yes" value="Yes" name="settled-claim" type="radio" aria-labelledby="question1-label question1-yes-label">
-                  Yes
-                </label>
-                <label id="question1-no-label" for="question1-no" class="block-label">
-                  <input id="question1-no" value="No" name="settled-claim" type="radio" aria-labelledby="question1-label question1-no-label">
-                  No
-                </label>
-              </div>
-              <a role="button" id="continue" class="button" aria-labelledby="question1-label">Continue</a>
-            </fieldset>
+            <!-- ///// CREDITOR DETAILS TABLE ///// -->
+            <div  class="form-group">
+	            <fieldset>
+					<legend class="form-label-bold">Creditor details</legend>
+			
+					<header>
+						<div class="row">
+						  <div class="col-xs-5">
+						    <h2 class="heading-small visuallyhidden">Question</h2>
+						  </div>
+						  <div class="col-xs-5">
+						    <h2 class="heading-small visuallyhidden">Your answer</h2>
+						  </div>
+						  <div class="col-xs-2">
+						    <h2 class="heading-small visuallyhidden">Actions</h2>
+						  </div>
+						</div>
+					</header>
+	
+			    	<section id="property_table" role="main">		
+						<div class="row group-heading tabledivide">
+						  <div class="col-xs-5">
+						    <p>Creditor name</p>
+						  </div>
+						  <div class="col-xs-5">
+						    <p class="bolder" id="address">Your answer</p>
+						  </div>
+						  <div class="col-xs-2">
+						    <a href="../assets/recoveries/property/address.html">Edit</a>
+						  </div>
+						</div>
+						
+						<div class="row group-heading tabledivide" id="creditor_address">
+						  <div class="col-xs-5">
+						    <p>Address</p>
+						  </div>
+						  <div class="col-xs-5">
+						    <p class="bolder" id="type">Your answer</p>
+						  </div>
+						  <div class="col-xs-2">
+						    <a href="../assets/recoveries/property/property_details.html">Edit</a>
+						  </div>
+						</div>
+						
+						<div class="row group-heading tabledivide">
+						  <div class="col-xs-5">
+						    <p>Amount they say you owe</p>
+						  </div>
+						  <div class="col-xs-5">
+						    <p class="bolder" id="bed">Your answer</p>
+						  </div>
+						  <div class="col-xs-2">
+						    <a href="../assets/recoveries/property/property_details.html">Edit</a>
+						  </div>
+						</div>
+						
+						<div class="row group-heading tabledivide">
+						  <div class="col-xs-5">
+						    <p>Account ref</p>
+						  </div>
+						  <div class="col-xs-5">
+						    <p class="bolder" id="bed">Your answer</p>
+						  </div>
+						  <div class="col-xs-2">
+						    <a href="../assets/recoveries/property/property_details.html">Edit</a>
+						  </div>
+						</div>
+						
+						<div class="row group-heading tabledivide">
+						  <div class="col-xs-5">
+						    <p>Debt type</p>
+						  </div>
+						  <div class="col-xs-5">
+						    <p class="bolder" id="bed">Your answer</p>
+						  </div>
+						  <div class="col-xs-2">
+						    <a href="../assets/recoveries/property/property_details.html">Edit</a>
+						  </div>
+						</div>
+						
+						<div class="row group-heading tabledivide">
+						  <div class="col-xs-5">
+						    <p>Date debt started</p>
+						  </div>
+						  <div class="col-xs-5">
+						    <p class="bolder" id="bed">Your answer</p>
+						  </div>
+						  <div class="col-xs-2">
+						    <a href="../assets/recoveries/property/property_details.html">Edit</a>
+						  </div>
+						</div>
+						
+						<div class="row group-heading tabledivide" id="debt_reason">
+						  <div class="col-xs-5">
+						    <p>Reason for debt</p>
+						  </div>
+						  <div class="col-xs-5">
+						    <p class="bolder" id="bed">Your answer</p>
+						  </div>
+						  <div class="col-xs-2">
+						    <a href="../assets/recoveries/property/property_details.html">Edit</a>
+						  </div>
+						</div>
+					</section>
+			</fieldset>
+			<p>&nbsp;</p>
+		</div>
+		
+		
+		<!-- ///// ATTACHMENT OF EARNINGS TABLE ///// -->
+		<div id="attachment"  class="form-group">
+            <fieldset>
+				<legend class="form-label-bold">Attachment of earnings details</legend>
+		
+				<header>
+					<div class="row">
+					  <div class="col-xs-5">
+					    <h2 class="heading-small visuallyhidden">Question</h2>
+					  </div>
+					  <div class="col-xs-5">
+					    <h2 class="heading-small visuallyhidden">Your answer</h2>
+					  </div>
+					  <div class="col-xs-2">
+					    <h2 class="heading-small visuallyhidden">Actions</h2>
+					  </div>
+					</div>
+				</header>
+
+		    	<section id="attachment_table" role="main">	
+		    		
+					<div class="row group-heading tabledivide">
+					  <div class="col-xs-5">
+					    <p>How much is deducted directly from your income to pay this debt?</p>
+					  </div>
+					  <div class="col-xs-5">
+					    <p class="bolder" id="address">Your answer</p>
+					  </div>
+					  <div class="col-xs-2">
+					    <a href="../assets/recoveries/property/address.html">Edit</a>
+					  </div>
+					</div>
+					
+					<div class="row group-heading tabledivide">
+					  <div class="col-xs-5">
+					    <p>How often is this amount taken?</p>
+					  </div>
+					  <div class="col-xs-5">
+					    <p class="bolder" id="address">Your answer</p>
+					  </div>
+					  <div class="col-xs-2">
+					    <a href="../assets/recoveries/property/address.html">Edit</a>
+					  </div>
+					</div>
+
+				</section>
+			</fieldset>
+			<p>&nbsp;</p>
+		</div>
+		
+		<!-- ///// ENFORCEMENT VISIT TABLE ///// -->
+		<div id="attachment" class="form-group">
+            <fieldset>
+				<legend class="form-label-bold">Enforcement agent visits</legend>
+		
+				<header>
+					<div class="row">
+					  <div class="col-xs-5">
+					    <h2 class="heading-small visuallyhidden">Question</h2>
+					  </div>
+					  <div class="col-xs-5">
+					    <h2 class="heading-small visuallyhidden">Your answer</h2>
+					  </div>
+					  <div class="col-xs-2">
+					    <h2 class="heading-small visuallyhidden">Actions</h2>
+					  </div>
+					</div>
+				</header>
+
+		    	<section id="attachment_table" role="main">	
+		    		
+					<div class="row group-heading tabledivide">
+					  <div class="col-xs-5">
+					    <p>When did the agents last visit you?</p>
+					  </div>
+					  <div class="col-xs-5">
+					    <p class="bolder" id="address">Your answer</p>
+					  </div>
+					  <div class="col-xs-2">
+					    <a href="../assets/recoveries/property/address.html">Edit</a>
+					  </div>
+					</div>
+					
+				</section>
+			</fieldset>
+			<p>&nbsp;</p>
+		</div>
+
+
+
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="form-group">
               <div class="row">
                 <div class="col-md-12 col-xs-12">
-                  <p><a role="button" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
+                  <p><a role="button" href="1-start.html" id="continue" class="button" aria-labelledby="question1-label">Continue</a></p>
                   <p>
                   	<a href="javascript:history.go(-1)" id="back">Back</a>
                   	<a href="#" class="cancel">Save and logout</a>
@@ -249,22 +433,7 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-    $("#continue").on("click", function (e) {
-      $.cookie("question1", $("#question1 :checked").attr("value"), { path:'/' });
-    });
-
-    $('#question1 input[type="radio"]').click(function() {
-        var g1 = $("#question1-yes").is(":checked");
-
-        var addr = "";
-        if (g1) {
-          addr = "1b-court-details.html";
-        } else {
-          addr = "2a-legal-claims.html";
-        }
-        $("#question1 #continue").attr('href', addr);
-    });
-
+    
   </script>
   <!-- #EndEditable "scripts" -->
   <!-- ////////////////////////////////////////////// Javascript - END ////////////////////////////////////////////// -->
