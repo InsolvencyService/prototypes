@@ -461,7 +461,14 @@
 
     var count;
 	$(document).ready(function() {
-		count=$.cookie("cred-count");
+	
+	if(getParameterByName('p')){
+		count = getParameterByName('p');
+	}
+	else{
+		count=$.cookie("cred-count");	
+	}
+		
 		
 		$("#name").text($.cookie("cred-name-"+count));
 		
@@ -526,6 +533,13 @@
 			$("#attachment").hide();
 		}
 	});
+	
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
   </script>
   <!-- #EndEditable "scripts" -->
