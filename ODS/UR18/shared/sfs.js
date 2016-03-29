@@ -14,7 +14,7 @@
     }
 
     var summaryurl = $("#next").prop("href");
- 
+
     if (summaryurl.indexOf("&") <= 0) {
         summaryurl = $(".form-hint > a").prop("href");
     }
@@ -59,7 +59,7 @@
 	//$("tr select").first().keydown();
 	$("tr input").first().focus();
 	//$("tr input").first().parent().parent().addClass("active");
-	
+
 	$("input").on("change", function(e){
 	    var total = calctotal();
 
@@ -79,7 +79,7 @@
 	$("#next").on("click", function () {
 	    var i = 1;
 	    var totalamount = 0;
-		
+
 	    $('tr td input.amount').each(function () {
 	        var listfrequency = $(this).parent().next().find("select");
 	        if ($(this).val()) {
@@ -105,7 +105,7 @@
 
 
 	});
-	
+
 
 
 	function normalise(amt, frequency) {

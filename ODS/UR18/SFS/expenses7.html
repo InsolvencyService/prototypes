@@ -4,10 +4,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions</title>
+  <title>Income and expenses - Savings, fines and other costs</title>
   <!-- #EndEditable -->
-
-
 
   <!--[if gt IE 8]><!-->
   <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/govuk-template.css"><!--<![endif]-->
@@ -77,7 +75,7 @@
 
 </head>
 
-<body class="js-enabled js-enabled">
+<body>
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
   <div id="global-cookie-message" style="display: none; height:0">
@@ -90,7 +88,7 @@
 
   <div id="skiplink-container">
     <div>
-      <a class="skiplink" href="/claims/start#content">Skip to main content</a>
+      <a class="skiplink" href="#maincontent">Skip to main content</a>
     </div>
   </div>
 
@@ -120,266 +118,289 @@
     </div>
   </div>
 
-  <main id="wrapper">
-
-    <div id="content">
+  <main id="content">
 
       <div class="inner-block">
+
         <div class="phase-banner">
           <p>
             <strong class="phase-tag">BETA</strong>
             This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
           </p>
         </div>
-      </div>
 
       <!-- #BeginEditable "content" -->
-      <div class="inner-block">
 
-        <!-- .breadcrumb - Start -->
-        <div class="breadcrumb form-hint">
-          <a href="overview.html">Overview</a>&nbsp; &gt; &nbsp;<a href="summary.html?stage=costs&amp;page=6">Income and expenses</a> &nbsp; &gt; &nbsp; Expenses 7 of 7
-        </div>
-        <!-- .breadcrumb - End -->
+        <h1 class="form-title heading-xlarge" id="maincontent">Savings, fines and other costs</h1>
 
-          <h1 class="form-title heading-xlarge">Savings, fines and other costs</h1>
+        <p class="lede">Add what you contribute to your household's savings.</p>
+        <p class="lede">Also add any fines in your name and your contributions towards any other household or personal expenses.</p>
+        <p class="lede">If you don't contribute towards something, leave it blank.</p>
 
-          <p class="lede">Add what you contribute to your household's savings.</p>
-          <br>
-          <p class="lede">Also add any fines in your name and your contributions towards any other household or personal expenses.</p>
-          <br>
-          <p class="lede">If you don't contribute towards something, leave it blank.</p>
-          <p><br></p>
+        <form class="form" method="post">
+          <input type="hidden" name="_csrf_token0" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token0" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-
-            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-            <div class="form-intro">
-              <div class="row">
-                <div class="col-sm-5">
-                  <h1 class="heading-medium">Savings</h1>
-                </div>
-                <div class="col-sm-2">
-                  <h1 class="amount heading-small">Amount</h1>
-                </div>
-                <div class="col-sm-3">
-                  <h1 class="per heading-small">per week / month / year</h1>
-                </div>
-                <div class="col-sm-2">
-                </div>
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+          <header class="form-intro">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h2 class="heading-large" id="savings_1_heading">Savings</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <h2 class="heading-small hide-for-mobile" id="amount-label">Amount</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <h2 class="heading-small hide-for-mobile" id="frequency-label">per week / month / year</h2>
               </div>
             </div>
-            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+          </header>
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
 
-            <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
-            <fieldset>
-              <legend class="hidden">Savings</legend>
-              <div class="row">
-                <div class="col-sm-5">
-                  <label for="turnover-amount">Enter the amount you regularly pay into a savings account</label>
-                </div>
-                <div class="col-sm-2 amount">
-                  <div class="currency">&pound;</div>
-                  <input type="text" id="turnover-amount" placeholder="0" class="amount">
-                </div>
-                <div class="col-sm-3 per">
-                  <label for="per">per week / month / year</label>
-                  <select id="per" name="D1">
-                    <option value="week">per week</option>
-                    <option value="fortnight">per fortnight</option>
-                    <option value="4weeks">per 4 weeks</option>
-                    <option value="month" selected="selected">per month</option>
-                    <option value="quarter">per quarter</option>
-                    <option value="year">per year</option>
-                  </select>
-                </div>
-                <div class="col-sm-2">
-                </div>
+          <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
+          <fieldset class="inline form-group">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <label for="savings_1" class="form-label-bold" id="savings_1_label">Enter the amount you regularly pay into a savings account</label>
               </div>
-            </fieldset>
-            <!-- ///////////////// Fieldset 1 - End ///////////////// -->
-
-            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-            <div class="form-intro large-margin-top">
-              <h1 class="heading-medium">Fines</h1>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <label for="savings_1" class="form-label-bold currency" id="currency-label_1">&pound;</label>
+                <input type="text" id="savings_1" placeholder="0" class="count-amount" aria-labelledby="savings_1_label amount-label currency-label_1">
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <label class="form-label-bold show-for-mobile">per week / month / year</label>
+                <select name="frequency" id="frequency_1" aria-labelledby="savings_1_label frequency-label">
+                  <option value="week">per week</option>
+                  <option value="fortnight">per fortnight</option>
+                  <option value="4weeks">per 4 weeks</option>
+                  <option value="month" selected="selected">per month</option>
+                  <option value="quarter">per quarter</option>
+                  <option value="year">per year</option>
+                </select>
+              </div>
             </div>
-            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+          </fieldset>
+          <!-- ///////////////// Fieldset 1 - End ///////////////// -->
 
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+          <header class="form-intro">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h2 class="heading-large" id="fines_1_heading">Fines</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+              </div>
+            </div>
+          </header>
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+
+          <div class="form-group">
             <p class="form-hint">Only include fines issued in relation to a criminal offense - for example, speeding or not having a TV license.</p>
             <p class="form-hint">Don't include country court judgments (CCJs) or penalty charges notices (PCNs)
               - for example, a parking ticket issued by a local council.</p>
             <p class="form-hint">Check the notification if you're unsure whether something is a fine.</p>
+            <p>&nbsp;</p>
+          </div>
 
-            <!-- ///////////////// Fieldset 2 - Start ///////////////// -->
-            <fieldset class="input-item fine">
-              <legend class="hidden">Who issued the fine?</legend>
-              <div class="row">
-                <div class="col-sm-5">
-                  <label for="fine-type-1">Who issued the fine?</label><br>
-                  <input id="fine-type-1" type="text" value="" class="description">
-                </div>
-                <div class="col-sm-2 amount">
-                  <label for="fine-amount-1">Amount</label>
-                  <div class="currency">&pound;</div>
-                  <input id="fine-amount-1" type="text" placeholder="0">
-                </div>
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-2">
-                  <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete fine">
-                </div>
+          <!-- ///////////////// Fieldset 2 - Start ///////////////// -->
+          <fieldset class="inline form-group expense">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-sm-12">
+                <label for="fines_2" class="form-label-bold" id="fines_2_label">Who issued the fine?</label>
               </div>
-            </fieldset>
-            <!-- ///////////////// Fieldset 2 - End ///////////////// -->
-
-            <!-- ///////////////// Fieldset 3 - Start ///////////////// -->
-            <div class="title-holder">
-              <h2 class="additional-item-intro fine">Additional penalty charges:</h2>
-            </div>
-            <fieldset class="input-item additional-item fine">
-              <legend class="hidden">Who issued the fine?</legend>
-              <div class="row">
-                <div class="col-sm-5">
-                  <label for="fine-type-2">Who issued the fine?</label><br>
-                  <input id="fine-type-2" type="text" value="" class="description">
-                </div>
-                <div class="col-sm-2 amount">
-                  <label for="fine-amount-2">Amount</label>
-                  <div class="currency">&pound;</div>
-                  <input id="fine-amount-2" type="text" placeholder="0">
-                </div>
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-2">
-                  <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete fine">
-                </div>
+              <div class="col-md-3 col-sm-3 col-sm-12 amount">
+                <label for="fines_2_amount" class="form-label-bold">Amount</label>
               </div>
-            </fieldset>
-            <!-- ///////////////// Fieldset 3 - End ///////////////// -->
-
-            <!-- ///////////////// Add Item - Start ///////////////// -->
-            <fieldset class="add-item">
-              <legend class="hidden">Add another fine</legend>
-              <input name="Add another fine" id="btn-add-fine" type="submit" class="link-lookalike" role="button" value="Add another fine">
-            </fieldset>
-            <!-- ///////////////// Add Item - End ///////////////// -->
-
-            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-            <div class="form-intro large-margin-top">
-              <h1 class="heading-medium">Other expense</h1>
-            </div>
-            <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-
-            <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
-            <fieldset class="input-item expense">
-              <legend class="hidden">What's the expense?</legend>
-              <div class="row">
-                <div class="col-sm-5">
-                  <label for="expense-label-1">What's the expense?</label><br>
-                  <input id="expense-label-1" type="text" value="" class="description">
-                </div>
-                <div class="col-sm-2 amount">
-                  <label for="expense-amount-1">Amount</label>
-                  <div class="currency">&pound;</div>
-                  <input id="expense-amount-1" class="amount" type="text" placeholder="0">
-                </div>
-                <div class="col-sm-3">
-                  <label for="expense-per-1">per week / month / year</label>
-                  <select id="expense-per-1">
-                    <option value="week">per week</option>
-                    <option value="fortnight">per fortnight</option>
-                    <option value="4weeks">per 4 weeks</option>
-                    <option value="month" selected="selected">per month</option>
-                    <option value="quarter">per quarter</option>
-                    <option value="year">per year</option>
-                  </select>
-                </div>
-                <div class="col-sm-2">
-                  <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete expense">
-                </div>
-              </div>
-            </fieldset>
-            <!-- ///////////////// Fieldset 4 - End ///////////////// -->
-
-            <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
-            <div class="title-holder">
-              <h2 class="additional-item-intro expense">Additional expense:</h2>
-            </div>
-            <fieldset class="input-item additional-item expense">
-              <legend class="hidden">What's the expense?</legend>
-              <div class="row">
-                <div class="col-sm-5">
-                  <label for="expense-label-2">What's the expense?</label><br>
-                  <input id="expense-label-2" type="text" value="" class="description">
-                </div>
-                <div class="col-sm-2 amount">
-                  <label for="expense-amount-2">Amount</label>
-                  <div class="currency">&pound;</div>
-                  <input id="expense-amount-2" class="amount" type="text" placeholder="0">
-                </div>
-                <div class="col-sm-3">
-                  <label for="expense-per-2">per week / month / year</label>
-                  <select id="expense-per-2">
-                    <option value="week">per week</option>
-                    <option value="fortnight">per fortnight</option>
-                    <option value="4weeks">per 4 weeks</option>
-                    <option value="month" selected="selected">per month</option>
-                    <option value="quarter">per quarter</option>
-                    <option value="year">per year</option>
-                  </select>
-                </div>
-                <div class="col-sm-2">
-                  <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete expense">
-                </div>
-              </div>
-            </fieldset>
-            <!-- ///////////////// Fieldset 5 - End ///////////////// -->
-
-            <!-- ///////////////// Add Item - Start ///////////////// -->
-            <fieldset class="add-item">
-              <legend class="hidden">Add another expense</legend>
-              <input name="Add another expense" id="btn-add-expense" type="submit" class="link-lookalike" role="button" value="Add another expense">
-            </fieldset>
-            <!-- ///////////////// Add Item - End ///////////////// -->
-
-            <!-- ///////////////// Total Value - Start ///////////////// -->
-            <div class="section-total-value">
-              <div class="row">
-                <div class="col-sm-5 description">
-                  <div>Total</div>
-                </div>
-                <div class="col-sm-2 total">
-                  <div>£</div>
-                  <div class="amount" id="box-total">0.00</div>
-                </div>
-                <div class="col-sm-3 frequency">
-                  <div>per month</div>
-                </div>
-                <div class="col-sm-2">
-                </div>
+              <div class="col-md-2 col-sm-2 col-sm-12 delete">
+                <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete">
               </div>
             </div>
-            <!-- ///////////////// Total Value - End ///////////////// -->
-
-            <p><br/></p>
-
-            <!-- For User research -->
-            <div class="form-navigation form-group">
-              <a id="next" class="button" href="summary.html?stage=costs&page=8#costs6">Continue</a>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-sm-12">
+                <input id="fines_2" type="text" value="" class="description" aria-labelledby="fines_1_heading fines_2_label">
+              </div>
+              <div class="col-md-3 col-sm-3 col-sm-12 amount">
+                <label for="fines_2_amount" class="form-label-bold currency" id="currency-label_2">&pound;</label>
+                <input type="text" id="fines_2_amount" placeholder="0" class="count-amount" aria-labelledby="fines_2_label amount-label currency-label_2">
+              </div>
+              <div class="col-md-3 col-sm-3 col-sm-12 per">
+              </div>
             </div>
-            <br>
-            <div>
-              <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-              <a href="#" id="cancel">Save and logout</a>
+          </fieldset>
+          <!-- ///////////////// Fieldset 2 - End ///////////////// -->
+
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+          <header class="form-intro additional-item expense">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h2 class="heading-large" id="fines_2_heading">Additional penalty charges</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+              </div>
             </div>
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-          </form>
-        </div>
+          </header>
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+
+          <!-- ///////////////// Fieldset 3 - Start ///////////////// -->
+          <fieldset class="inline form-group additional-item expense">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-sm-12">
+                <label for="fines_3" class="form-label-bold" id="fines_3_label">Who issued the fine?</label>
+              </div>
+              <div class="col-md-3 col-sm-3 col-sm-12 amount">
+                <label for="fines_3_amount" class="form-label-bold">Amount</label>
+              </div>
+              <div class="col-md-2 col-sm-2 col-sm-12 delete">
+                <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-sm-12">
+                <input id="fines_3" type="text" value="" class="description" aria-labelledby="fines_2_heading fines_3_label">
+              </div>
+              <div class="col-md-3 col-sm-3 col-sm-12 amount">
+                <label for="fines_3_amount" class="form-label-bold currency" id="currency-label_3">&pound;</label>
+                <input type="text" id="fines_3_amount" placeholder="0" class="count-amount" aria-labelledby="fines_3_label amount-label currency-label_3">
+              </div>
+              <div class="col-md-3 col-sm-3 col-sm-12 per">
+              </div>
+            </div>
+          </fieldset>
+          <!-- ///////////////// Fieldset 3 - End ///////////////// -->
+
+          <!-- ///////////////// Add Item - Start ///////////////// -->
+          <fieldset class="add-item">
+            <legend class="hidden">Add another fine</legend>
+            <input name="Add another fine" id="btn-add" type="submit" class="link-lookalike" role="button" value="Add another fine">
+          </fieldset>
+          <!-- ///////////////// Add Item - End ///////////////// -->
+
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+          <header class="form-intro">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h2 class="heading-large" id="other_expenses_heading">Other expense</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <h2 class="heading-small hide-for-mobile">Amount</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <h2 class="heading-small hide-for-mobile">per week / month / year</h2>
+              </div>
+            </div>
+          </header>
+          <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+
+          <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
+          <fieldset class="input-item expense">
+            <legend class="hidden">What's the expense?</legend>
+            <div class="row">
+              <div class="col-sm-5">
+                <label for="expense-label-1">What's the expense?</label><br>
+                <input id="expense-label-1" type="text" value="" class="description">
+              </div>
+              <div class="col-sm-2 amount">
+                <label for="expense-amount-1">Amount</label>
+                <div class="currency">&pound;</div>
+                <input id="expense-amount-1" class="amount" type="text" placeholder="0">
+              </div>
+              <div class="col-sm-3">
+                <label for="expense-per-1">per week / month / year</label>
+                <select id="expense-per-1">
+                  <option value="week">per week</option>
+                  <option value="fortnight">per fortnight</option>
+                  <option value="4weeks">per 4 weeks</option>
+                  <option value="month" selected="selected">per month</option>
+                  <option value="quarter">per quarter</option>
+                  <option value="year">per year</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete expense">
+              </div>
+            </div>
+          </fieldset>
+          <!-- ///////////////// Fieldset 4 - End ///////////////// -->
+
+          <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
+          <div class="title-holder">
+            <h2 class="additional-item-intro expense">Additional expense:</h2>
+          </div>
+          <fieldset class="input-item additional-item expense">
+            <legend class="hidden">What's the expense?</legend>
+            <div class="row">
+              <div class="col-sm-5">
+                <label for="expense-label-2">What's the expense?</label><br>
+                <input id="expense-label-2" type="text" value="" class="description">
+              </div>
+              <div class="col-sm-2 amount">
+                <label for="expense-amount-2">Amount</label>
+                <div class="currency">&pound;</div>
+                <input id="expense-amount-2" class="amount" type="text" placeholder="0">
+              </div>
+              <div class="col-sm-3">
+                <label for="expense-per-2">per week / month / year</label>
+                <select id="expense-per-2">
+                  <option value="week">per week</option>
+                  <option value="fortnight">per fortnight</option>
+                  <option value="4weeks">per 4 weeks</option>
+                  <option value="month" selected="selected">per month</option>
+                  <option value="quarter">per quarter</option>
+                  <option value="year">per year</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                <input name="delete" type="submit" class="delete-button additional-fine link-lookalike" role="button" value="Delete expense">
+              </div>
+            </div>
+          </fieldset>
+          <!-- ///////////////// Fieldset 5 - End ///////////////// -->
+
+          <!-- ///////////////// Add Item - Start ///////////////// -->
+          <fieldset class="add-item">
+            <legend class="hidden">Add another expense</legend>
+            <input name="Add another expense" id="btn-add-expense" type="submit" class="link-lookalike" role="button" value="Add another expense">
+          </fieldset>
+          <!-- ///////////////// Add Item - End ///////////////// -->
+
+          <!-- ///////////////// Total Footer - Start ///////////////// -->
+          <footer class="footer-total">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h2 class="heading-medium text-right">Total</h2>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="heading-medium total-currency">&pound;</div>
+                <div class="heading-medium" id="box-total">0.00</div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+              </div>
+            </div>
+          </footer>
+          <!-- ///////////////// Total Footer - End ///////////////// -->
+
+          <!-- ///////////////// Footer CTA's - Start ///////////////// -->
+          <footer class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="form-navigation form-group">
+                <input type="button" onclick="location.href='summary.html?stage=costs&amp;page=8#costs8';" id="next" class="button" value="Continue" aria-labelledby="continue">
+                <br>
+                <a href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" id="cancel">Save and logout</a>
+              </div>
+            </div>
+          </footer>
+          <!-- ///////////////// Footer CTA's - End ///////////////// -->
+
+        </form>
+
+      </div>
 
         <!-- #EndEditable -->
 
-      </div>
     </main>
 
 
@@ -419,6 +440,8 @@
     -->
     <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
     <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+    <!-- <script type="text/javascript" src="../shared/sfs-new.js"></script> -->
+
     <script type="text/javascript">
 
     $(document).ready(function() {
@@ -433,36 +456,18 @@
     </script>
 
     <!-- #BeginEditable "scripts" -->
-
-    <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../shared/sfs-new.js"></script>
-
     <script type="text/javascript">
     $(document).ready(function() {
+
       var defaultnext = $("#next").attr("href");
       $(".additional-item").hide();
-      $(".expense-additional").hide();
       $(".delete-button").hide();
       $(".additional-item-intro").hide();
 
 
-      $("#btn-add-fine").on("click", function (e) {
-        $(".additional-item.fine").show();
-        $(".input-item.fine .delete-button").show();
-        $(".additional-item-intro.fine").show();
-        e.preventDefault();
-      });
-
-      $(".additional-fine").on("click", function (e) {
-        $(".additional-item.fine").hide();
-        $(".input-item.fine .delete-button").hide();
-        $(".additional-item-intro.fine").hide();
-        e.preventDefault();
-      });
-
-      $("#btn-add-expense").on("click", function (e) {
+      $("#btn-add").on("click", function (e) {
         $(".additional-item.expense").show();
-        $(".input-item.expense .delete-button").show();
+        $(".delete-button").show();
         $(".additional-item-intro.expense").show();
         e.preventDefault();
       });

@@ -1,195 +1,33 @@
-
-.childrow td:first-child{
-    padding-left:20px;
-}
-.edit{
-      display: block;
-      min-width: 100px;
-  		visibility: visible;
-}
-.totalvalue{
-  font-weight:bold;
-  width: auto;
-}
-.actions{
-    width:100px;
-}
-.table-condensed thead{
-
-}
-tr td .heading-medium{
-	padding-top:15px;
-	padding-bottom:10px;
-	margin-bottom:0
-}
-table tr td {
-	vertical-align:top;
-}
-
-table tr td a.button{
-	margin-bottom:0
-}
-
-.table-condensed thead .heading-amount{
-	width:160px; text-align:right; padding-right:45px
-}
-
-
-.noborder td{
-	border:0 transparent none !important;
-}
-.number-col{
-
-	text-align:right;
-	padding-right:30px
-}
-
-.heading-medium{
-	margin-top:0;
-}
-input.amount{
-  font-size:19px !important;
-	border: 1px solid #fff;
-	padding-top:12px;
-  -webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-input.amount, input.amount-notcounted{
-	width:70%; font-size:19px;
-	border: 1px solid #fff;
-	padding-top:12px;
-  -webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-.select-control{
-	margin-top:4px;
-	display:  inline-block;
-	height: 34px;
-	padding: 4px 10px 2px 10px;
-	font-size: 19px;
-	line-height: 1.4285;
-	color: #555;
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #fff;
-
-	width: 100%;
-	height: 34px;
-
-	line-height: 1.42857143;
-	color: #555;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-.active .select-control{
-
-}
-
-.form-control{
-	margin-top:4px;
-}
-.select-control:focus,
-.form-control:focus {
-    border-color: #66afe9;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
-}
-
-td .form-label{
-	padding-top:8px
-}
-div.pound-sign{
-	width:20px; padding-right:15px; padding-top:8px; font-size:19px;
-}
-.totalrow td *{
-	font-size:19px;
-	font-weight:bold;
-
-	padding-right:10px;
-	padding-left:15px;
-}
-table th,
-table td {
-	font-size:19px;
-}
-
-table{
-border-collapse:separate;
-	font-size:19px;
-}
-
-table.table {
-
-	border-top: 0 none transparent !important;
-
-	border-bottom: 1px solid #ddd !important;
-}
-#box-total{
-	width: auto;
-  padding-right: 0;
-}
-.totalrow .pound-sign{
-	font-weight:normal; padding-left:0;
-}
-
-
-/* override the SFS in the assets section */
-#assetitems input.form-control{
-font-size:19px;
-}
-#assetitems input.amount{
-font-size:19px;
-		border: 1px solid #ccc;
-		padding-top:12px;
-	-webkit-box-shadow: none;
-		-moz-box-shadow: none;
-		box-shadow: none;
-	width:120px
-}
-#assetitems .halfwidth{
-  float: left;
-  margin-right: 10px;
-  clear: none;
-	width:47%;
-}
-#assetitems .question{
-	width:35%;
-}
-#assetitems .valuecolumn{
-	width:45%;
-}
-
-#assetitems .halfwidth input{
-	border: 1px solid #ccc;
-    border-radius: 4px;
-    width:90%
-}
-
-#assetitems .actions{
-}
-
-#assetitems .table>tbody>tr>td{
-	border: 0 transparent none;
-}
-
-#assetitems table>tbody>tr:first-child td{
-	border-top: 1px solid #ddd;
-}
-#assetitems table>tbody>tr:last-child td{
-	border-bottom: 1px solid #ddd;
-}
-
 /* ================================= SFS Overide - Start ================================= */
+
+.row > div {
+  padding-top: 0;
+}
+
+.show-for-mobile {
+  display: none;
+}
+
+.hide-for-mobile {
+  display: inline-block;
+}
+
+@media (max-width:768px) {
+  .show-for-mobile {
+    display: inline-block;
+  }
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+ul.lede {
+  padding-left: 23px;
+}
+
+ul.lede li {
+  list-style: disc;
+}
 
 #costs {
   padding-top: 15px;
@@ -197,59 +35,6 @@ font-size:19px;
 
 main#content #costs {
   padding-top: 30px;
-}
-
-/*#income {
-  padding-top: 0;
-}*/
-
-#income table th, #costs table th {
-  font-size: 26px;
-  border-bottom: 0;
-  padding: 0.5em 1em 0.5em 0.6em;
-}
-
-#income table th:nth-of-type(2), #costs table th:nth-of-type(2) {
-  font-size: 16px;
-  color: #6f777b;
-  border-radius: 0 5px 5px 0;
-}
-
-#income table td, #costs table td {
-  border-bottom: 0;
-}
-
-#income table tr#incometotal td, #costs table tr#coststotal td {
-  border-top: 3px solid #bfc1c3;
-}
-
-tr td.actions a.edit {
-  text-align: center;
-}
-
-#content .form-navigation.form-group.inner-block {
-  margin-left: 0;
-}
-
-#income tr.group-heading td, #costs tr.group-heading td {
-	padding: 25px 0;
-}
-
-#income tr.group-heading td.value, #costs tr.group-heading td.value {
-  font-weight: bold;
-}
-
-
-#income table thead, #costs table thead {
-  background: #eee;
-}
-
-#income table thead th:first-of-type, #costs table thead th:first-of-type {
-  border-radius: 5px 0 0 5px;
-}
-
-#income tbody tr.group-heading td, #costs tbody tr.group-heading td {
-  padding: 25px 15px;
 }
 
 fieldset label, fieldset .amount, fieldset .per {
@@ -263,14 +48,6 @@ fieldset label {
   width: 100%;
 }
 
-/*fieldset .per {
-  width: 33.3%;
-}
-
-fieldset .amount {
-  width: 23.3%;
-}*/
-
 fieldset {
   padding: 0 0 20px 0;
 }
@@ -278,27 +55,27 @@ fieldset {
 .amount, .per {
   text-align: left;
   font-weight: bold;
+  padding-top: 22px;
 }
 
 .amount label, .per label {
-  /*text-indent: -10000px;
-  text-align: left;*/
-  /*margin: 0;*/
-  /*height: 0;
-  width: 0;*/
 }
 
-.amount .currency {
+.amount .currency, .currency {
   font-weight: bold;
   float: left;
   display: inline-block;
-  margin: 7px 10px 0 0;
+  margin: 5px 10px 0 0;
   text-indent: 0;
+  width: auto;
 }
 
-/*fieldset.fine .amount .currency, fieldset.expense .amount .currency {
-  margin: 7px 20px 0 0;
-}*/
+@media (max-width:768px) {
+  .amount .currency, .currency {
+    width: 100%;
+    margin-top: -10px;
+  }
+}
 
 fieldset.input-item .amount .currency {
   margin-top: 32px;
@@ -312,12 +89,7 @@ fieldset.input-item .amount .currency {
   padding: 2px;
   line-height: 30px;
   text-align: left;
-  /*clear: left;*/
   font-weight: normal;
-}
-
-.amount input, .per select {
-  width: 20%;
 }
 
 .expense .amount input.amount, .fine .amount input {
@@ -325,24 +97,37 @@ fieldset.input-item .amount .currency {
   font-weight: normal;
 }
 
-/*fieldset .per select {
-  float: left;
-  width: 40%;
+/*.expense .amount, .expense .per, .expense .delete {
+  padding-top: 74px;
+}
+
+@media (max-width:768px) {
+  .expense .amount, .expense .per, .expense .delete {
+    padding-top: 0;
+  }
 }*/
+
+.amount .hidden {
+  position: relative;
+  height: 30px !important;
+}
+
+.accounting-date {
+  margin: 25px 0;
+}
 
 fieldset .section .row > div:first-child {
   padding-top: 0;
 }
 
 .add-item {
-  margin: 20px 0;
+  margin: 20px 0 80px 0;
   border-left: 5px solid #005ea5;
   padding: 20px 0 20px 20px;
 }
 
 .additional-item {
   padding-top: 10px;
-  /*margin-top: 20px;*/
 }
 
 h2.additional-item-intro {
@@ -350,7 +135,6 @@ h2.additional-item-intro {
   border-top: 1px solid #eee;
   width: 100%;
   padding-top: 30px;
-  /*display: inline-block !important;*/
 }
 
 .title-holder {
@@ -365,11 +149,23 @@ fieldset.input-item .amount label {
 
 .form-intro {
   border-bottom: 5px solid #eee;
-  margin-bottom: 20px;
+  margin: 40px 0;
   font-weight: bold;
+  display: inline-block;
+  width: 100%;
 }
 
-.form-intro.large-margin-top {
+.form-intro .heading-small {
+  margin-top: 14px;
+}
+
+@media (max-width:768px) {
+  .form-intro {
+    margin-top: 0;
+  }
+}
+
+.large-margin-top {
   margin-top: 100px;
   display: inline-block;
   width: 100%;
@@ -391,6 +187,42 @@ fieldset.input-item .amount label {
 
 .form-intro .heading-large {
   margin-top: 0;
+}
+
+.footer-total {
+  border-top: 5px solid #eee;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+.footer-total .total-currency {
+  width: auto;
+  float: left;
+  margin-right: 10px;
+}
+
+.footer-total .heading-medium {
+  margin: 20px 0 0 0;
+}
+
+@media (max-width:768px) {
+  .footer-total .heading-medium {
+    margin-top: 0;
+  }
+  .footer-total .text-right {
+    text-align: left;
+  }
+}
+
+.extra-item {
+  border-top: 5px solid #eee;
+  padding-top: 45px;
+}
+
+#another {
+  margin-top: 25px;
+  float: left;
 }
 
 label {
@@ -438,13 +270,14 @@ hr.seperator {
   font-size: 14px;
 }
 
-fieldset.input-item .delete-button {
-  margin-top: 30px;
-  position: absolute;
+fieldset .delete-button {
+  /*margin-top: 30px;
+  position: absolute;*/
   font-size: 18px;
+  float: right;
 }
 
-fieldset.input-item .delete-button .glyphicon {
+fieldset .delete-button .glyphicon {
   margin: 0 10px 0 0;
 }
 
@@ -476,6 +309,10 @@ input.description {
   text-align: right;
 }
 
+.summary-page .amount {
+  padding-top: 0;
+}
+
 .section-total-value .description {
   text-align: right;
 }
@@ -490,14 +327,13 @@ input.description {
   float: left;
 }
 
-
 /* ================================= SFS Overide - End ================================= */
 
 /* ================================= SFS Summary Overide - Start ================================= */
 
 .form-intro.summary {
   border-bottom: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .form-intro.summary h2, .description h2 {
@@ -659,6 +495,10 @@ fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
   display: inline-block;
 }
 
+#income {
+  padding-top: 30px;
+}
+
 .section-total-value#incometotal, .section-total-value#household-total, .section-total-value#coststotal {
   margin-top: 0;
   /*border-top: 0;*/
@@ -672,6 +512,11 @@ fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
 .section-total-value#incometotal .row {
   padding-top: 0;
 }
+
+#household-income {
+  padding-top: 33px;
+}
+
 
 #household-income .heading-xlarge {
   font-size: 30px;
@@ -690,71 +535,3 @@ fieldset.section div[class*=col-], fieldset.section .row > div:first-child {
 }
 
 /* ================================= SFS Summary Overide - End ================================= */
-
-/* ================================= Changes for David Presentation - Start ================================= */
-
-#summary-V1 main#content #costs {
-  padding-top: 15px;
-}
-
-#summary-V2 {
-
-}
-
-#summary-V3 .section .form-hint {
-  display: block;
-}
-
-#summary-V3 fieldset label {
-  font-size: 28px;
-  width: 100%;
-}
-
-#summary-V3 .section .heading-xlarge {
-  font-weight: bold;
-  font-size: 60px;
-  margin-top: -2px;
-  color: #a0a3a7 !important;
-}
-
-#summary-V3 .section.active .heading-xlarge {
-  color: black !important;
-}
-
-#summary-V3 .wrapping {
-  display: inline-block;
-}
-
-#summary-V3 .sub-header {
-  font-size: 14px;
-  text-align: right;
-  margin-top: 55px;
-}
-
-#summary-V3 #household-income .form-title.heading-xlarge {
-  font-size: 48px;
-}
-
-#summary-V3 #household-income .sub-header {
-  margin-top: 25px;
-}
-
-#summary-V4 main#content #costs {
-  padding-top: 15px;
-}
-
-#summary-V4 #income table thead, #summary-V4 #costs table thead {
-  background: white;
-}
-
-#summary-V4 #income table tr#incometotal td, #summary-V4 #costs table tr#coststotal td {
-  border-top: none;
-}
-
-#summary-V4 #income table th:nth-of-type(2), #summary-V4 #costs table th:nth-of-type(2) {
-  color: black;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-/* ================================= Changes for David Presentation - END ================================= */

@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Online debt solutions</title>
+  <title>Income and expenses summary page</title>
 
 
   <!--[if gt IE 8]><!-->
@@ -75,13 +75,13 @@
 }
 /*div[class*=col-]{
   padding-left:0;
-}*/
+}
 
 table td[class*=col-], table th[class*=col-]{
   padding-left:0;
   padding-right:20px
 
-}
+}*/
 
 </style>
 
@@ -90,7 +90,7 @@ table td[class*=col-], table th[class*=col-]{
 
 </head>
 
-<body class="js-enabled js-enabled" id="summary-V1">
+<body class="js-enabled js-enabled" id="summary-V2">
   <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
   <div id="global-cookie-message" style="display: none; height:0">
@@ -107,7 +107,7 @@ table td[class*=col-], table th[class*=col-]{
     </div>
   </div>
 
-  <header class="with-proposition" id="global-header" role="banner">
+  <header class="with-proposition" id="global-header">
     <div class="header-wrapper">
       <div class="header-global">
         <div class="header-logo">
@@ -119,7 +119,7 @@ table td[class*=col-], table th[class*=col-]{
       <div class="header-proposition">
         <div class="content">
           <nav id="proposition-menu">
-            <span id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</span>
+            <a id="proposition-name" href="https://www.gov.uk/service-manual">Online debt solutions</a>
           </nav>
         </div>
       </div>
@@ -135,281 +135,385 @@ table td[class*=col-], table th[class*=col-]{
 
   <main id="content">
 
-    <div class="inner-block">
+      <div class="inner-block">
+        <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">BETA</strong>
+            This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
+          </p>
+        </div>
 
-      <div class="phase-banner">
-        <p>
-          <strong class="phase-tag">BETA</strong>
-          This is a new service - your <a href="#" target="_blank">feedback</a> will help us improve it
-        </p>
-      </div>
+        <!-- #BeginEditable "content" -->
+        <form class="form" method="post">
+          <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
-      <!-- #BeginEditable "content" -->
-      <div class="row">
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
 
-        <div class="col-sm-12">
+              <!-- //////////////////////////////////////////////// Income - Start //////////////////////////////////////////////// -->
+              <fieldset>
+                <legend class="hidden">Tell us your income and expenses</legend>
+                <div class="row">
+                  <div id="income" class="col-xs-12">
 
-          <h1 class="form-title heading-large">Income and expenses</h1>
+                    <!-- /////////////////// Intro - Start /////////////////// -->
+                    <header class="form-intro summary">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <h1 class="hidden">First</h1>
+                          <h1 class="form-title heading-large">Your income</h1>
+                        </div>
+                        <div class="col-sm-4">
+                          <h2 class="sub-header">Amount per month</h2>
+                        </div>
+                      </div>
+                    </header>
+                    <!-- /////////////////// Intro - End /////////////////// -->
 
-          <form class="form" method="post">
-            <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+                    <div class="main" role="main">
 
-            <div class="row">
-              <div id="income" class="col-sm-6">
+                      <!-- /////////////////// Section - 1 - Start /////////////////// -->
+                      <section class="section" id="income1" aria-hidden="false">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <h2><span>1</span> Self-employed income</h2>
+                            <a href="#" class="declare btn-no">I'm not self-employed</a>
+                          </div>
+                          <div class="col-sm-5 main-cta">
+                            <span class="value"></span>
+                            <a href="1b.html" class="edit">Edit</a>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /////////////////// Section - 1 - End /////////////////// -->
 
-                <div class="form-group">
-                  <table>
-                    <thead class="group-title">
-                      <tr class="group-heading" id="income1">
-                        <th>Your income</th>
-                        <th colspan="2" style="text-align:right; font-weight:normal">Amount per month</th>
+                      <!-- /////////////////// Section - 2 - Start /////////////////// -->
+                      <section class="section" id="income2" aria-hidden="true">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <h2><span>2</span> Salary or wages</h2>
+                            <a href="#" class="declare btn-no">I don't receive any salary or wages</a>
+                          </div>
+                          <div class="col-sm-5 main-cta">
+                            <span class="value"></span>
+                            <a href="1a.html" class="edit">Edit</a>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /////////////////// Section - 2 - End /////////////////// -->
 
-                      </tr>
-                    </thead>
+                      <!-- /////////////////// Section - 3 - Start /////////////////// -->
+                      <section class="section" id="income3" aria-hidden="true">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <h2><span>3</span> Benefits</h2>
+                            <a href="#" class="declare btn-no">I don't receive benefits</a>
+                          </div>
+                          <div class="col-sm-5 main-cta">
+                            <span class="value"></span>
+                            <a href="2.html" class="edit">Edit</a>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /////////////////// Section - 3 - End /////////////////// -->
 
-                    <tbody class="group-title">
-                      <tr class="group-heading" id="income1">
-                        <td class="group-title col-sm-8">Self employed income
-                          <br/>
-                          <a href="#" class="declare" id="btn-no">I don't receive any self employed income</a>
+                      <!-- /////////////////// Section - 4 - Start /////////////////// -->
+                      <section class="section" id="income4" aria-hidden="true">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <h2><span>4</span> Pensions</h2>
+                            <a href="#" class="declare btn-no">I don't receive a pension</a>
+                          </div>
+                          <div class="col-sm-5 main-cta">
+                            <a href="3-pensions.html" class="edit">Edit</a>
+                            <span class="value"></span>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /////////////////// Section - 4 - End /////////////////// -->
 
-                        </td>
-                        <td class="actions col-sm-2">
-                          <a href="1b.html" class="next edit button">Start</a>
-
-                        </td>
-
-                        <td class="value col-sm-2">&nbsp;</td>
-
-                      </tr>
-
-                      <tr class="group-heading" id="income2">
-                        <td class="group-title col-sm-8">Salary or wages
-                          <br/>
-                          <a href="#" class="declare" id="btn-no">I don't receive any salary or wages</a>
-
-                        </td>
-                        <td class="actions col-sm-2">
-                          <a href="1a.html" class="next edit button">Start</a>
-
-                        </td>
-
-                        <td class="value col-sm-2">&nbsp;</td>
-
-                      </tr>
-
-                      <tr class="group-heading" id="income3">
-                        <td>
-                          Benefits<br />
-                          <a href="#" style="display:none" class="declare" id="btn-nobenefits">I don't receive benefits</a>
-                        </td>
-                        <td  class="actions">
-                          <a href="2.html" style="display:none" class="edit">Edit</a>
-                        </td>
-
-                        <td class="value"></td>
-
-                      </tr>
-                      <tr class="group-heading pensionable" id="income4">
-                        <td>Pensions<br />
-                          <a href="#" style="display:none" class="declare" id="btn-nobenefits">I don't receive a pension</a>
-                        </td>
-                        <td class="actions">
-                          <a href="3-pensions.html" style="display:none" class="edit">Edit</a>
-                        </td>
-
-                        <td class="value"></td>
-
-                      </tr>
-
-                      <tr class="group-heading" id="income5">
-                        <td>
-                          Household income<br />
-                          <a href="#" style="display:none" class="declare">I live alone</a></td>
-                          <td class="actions"><a href="3-contributions.html" style="display:none" class="edit">Start</a>
-                          </td>
-
-                          <td class="value">&nbsp;</td>
-
-                        </tr>
-
-                        <tr class="group-heading" id="income6">
-                          <td>
-                            Other income<br />
-                            <a href="#" style="display:none" class="declare">I don't have other income</a>
-                          </td>
-                          <td class="actions">
-                            <a href="4-other-income.html" style="display:none" class="edit">Edit</a>
-
-                          </td>
-
-                          <td class="value"></td>
-
-                        </tr>
-
-                        <tr class="group-heading totalrow" id="incometotal">
-                          <td></td>
-                          <td class="actions" style="text-align:right">
-                            <span style="float:right; width:100%">Total</span></td>
-                            <td class="totalvalue"></td>
-                          </tr>
-
-                        </tbody>
-                      </table>
+                      <!-- /////////////////// Section - 5 - Start /////////////////// -->
+                      <section class="section" id="income5" aria-hidden="true">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <h2><span>5</span> Other income</h2>
+                            <a href="#" class="declare btn-no">I don't have other income</a>
+                          </div>
+                          <div class="col-sm-5 main-cta">
+                            <a href="4-other-income.html" class="edit">Edit</a>
+                            <span class="value"></span>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /////////////////// Section - 5 - End /////////////////// -->
 
                     </div>
+
+                    <!-- ///////////////// Total Value - Start ///////////////// -->
+                    <footer class="section-total-value summary-page" id="incometotal">
+                      <div class="row">
+                        <div class="col-sm-5">
+                        </div>
+                        <div class="col-sm-3 description">
+                          <h2>Total</h2>
+                        </div>
+                        <div class="col-sm-4 total">
+                          <div class="amount totalvalue">8000.00</div>
+                        </div>
+                      </div>
+                    </footer>
+                    <!-- ///////////////// Total Value - End ///////////////// -->
+
                   </div>
+                  <!-- //////////////////////////////////////////////// Income - End //////////////////////////////////////////////// -->
 
-                  <div id="costs" class="col-sm-6">
+                  <!-- //////////////////////////////////////////////// Household Income - Start //////////////////////////////////////////////// -->
+                  <div id="household-income" class="col-sm-12">
 
-                    <div class="form-group">
-                      <table id="fixed">
-                        <thead class="group-title">
-                          <tr class="group-heading" id="income1">
-                            <th>Expenses</th>
-                            <th colspan="2" style="text-align:right; font-weight:normal">Amount per month</th>
+                    <!-- /////////////////// Intro - Start /////////////////// -->
+                    <header class="form-intro summary" aria-hidden="true">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <h1 class="form-title heading-xlarge">Household income</h1>
+                        </div>
+                        <div class="col-sm-4">
+                          <h2 class="sub-header">Amount per month</h2>
+                        </div>
+                      </div>
+                    </header>
+                    <!-- /////////////////// Intro - End /////////////////// -->
 
-                          </tr>
-                        </thead>
+                    <div class="main" role="main">
 
-                        <tbody class="group-title">
-                          <tr class="group-heading" id="costs1">
-                            <td class="group-title col-sm-8">Home and utilities</td>
-                            <td class="actions col-sm-2">
-                              <a href="expenses1.html" class="edit">Start</a>
-                            </td>
-
-                            <td class="value col-sm-2"></td>
-
-                          </tr>
-
-                          <tr class="group-heading" id="costs2">
-                            <td>Pension, insurance and health care</td>
-                            <td>
-                              <a href="expenses2.html" style="display:none" class="edit">Edit</a>
-                            </td>
-
-                            <td class="value"></td>
-
-                          </tr>
-                          <tr class="group-heading" id="costs3">
-                            <td>Food and housekeeping</td>
-                            <td>
-                              <a href="expenses3.html" style="display:none" class="edit">Edit</a>
-                            </td>
-
-                            <td class="value"></td>
-
-                          </tr>
-
-                          <tr class="group-heading" id="costs4">
-                            <td>Transport and travel</td>
-                            <td>
-                              <a href="expenses4.html" style="display:none" class="edit">Edit</a>
-                            </td>
-                            <td class="value"></td>
-                          </tr>
-                          <tr class="group-heading" id="costs5">
-                            <td>Childcare and maintenance
-                              <br/>
-                              <a href="#" class="declare" id="btn-no">I don't have children
-                              </a>
-                            </td>
-                            <td>
-                              <a href="expenses5.html" style="display:none" class="edit">Edit</a>
-                            </td>
-
-                            <td class="value"></td>
-
-                          </tr>
-                          <tr class="group-heading" id="costs6">
-                            <td>Personal and leisure</td>
-                            <td>
-                              <a href="expenses6.html" style="display:none" class="edit">Edit</a>
-                            </td>
-
-                            <td class="value"></td>
-
-                          </tr>
-
-                          <tr class="group-heading" id="costs7">
-                            <td>Regular savings, fines and other expenses</td>
-                            <td>
-                              <a href="expenses7.html" style="display:none" class="edit">Edit</a>
-                            </td>
-
-                            <td class="value"></td>
-
-                          </tr>
-                          <tr class="group-heading totalrow" id="coststotal">
-
-                            <td colspan="2" class="actions" style="text-align:right">
-                              <div style="float:right;">Total<span id="fines"></span></div>
-                            </td>
-                            <td class="totalvalue"></td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <!-- /////////////////// Section - 6 - Start /////////////////// -->
+                      <section class="section" id="income6" aria-hidden="true">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <h2><span>6</span>  Household income</h2>
+                            <a href="summary-test.html?stage=costs" class="declare btn-no">I live alone</a>
+                          </div>
+                          <div class="col-sm-5 main-cta">
+                            <span class="value"></span>
+                            <a href="3-contributions.html" class="edit">Edit</a>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /////////////////// Section - 6 - End /////////////////// -->
 
                     </div>
+
+                    <!-- ///////////////// Total Value - Start ///////////////// -->
+                    <footer class="section-total-value summary-page" id="household-total" aria-hidden="true">
+                      <div class="row">
+                        <div class="col-sm-5">
+                        </div>
+                        <div class="col-sm-3 description">
+                          <h2>Total</h2>
+                        </div>
+                        <div class="col-sm-4 total">
+                          <div class="amount totalvalue">0.00</div>
+                        </div>
+                      </div>
+                    </footer>
+                    <!-- ///////////////// Total Value - End ///////////////// -->
                   </div>
                 </div>
-              </form>
+              </fieldset>
+              <!-- //////////////////////////////////////////////// Household Income - End //////////////////////////////////////////////// -->
+
+            </div>
+
+
+            <!-- //////////////////////////////////////////////// Expenses - Start //////////////////////////////////////////////// -->
+            <div id="costs" class="col-md-6 col-xs-12">
+              <fieldset>
+                <legend class="hidden" aria-hidden="true">Tell us your expenses</legend>
+                <!-- /////////////////// Intro - Start /////////////////// -->
+                <header class="form-intro summary" aria-hidden="true">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h1 class="form-title heading-large">Your expenses</h1>
+                    </div>
+                    <div class="col-sm-4">
+                      <h2 class="sub-header">Amount per month</h2>
+                    </div>
+                  </div>
+                </header>
+                <!-- /////////////////// Intro - End /////////////////// -->
+
+                <div class="main" role="main">
+
+                  <!-- /////////////////// Section - 7 - Start /////////////////// -->
+                  <section class="section" id="costs1" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2><span>7</span> Home and utilities</h2>
+                      </div>
+                      <div class="col-sm-5 main-cta">
+                        <a href="expenses1.html" class="edit button">Start</a>
+                        <span class="value"></span>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /////////////////// Section - 7 - End /////////////////// -->
+
+                  <!-- /////////////////// Section - 8 - Start /////////////////// -->
+                  <section class="section" id="costs2" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2><span>8</span> Pension, insurance and health care</h2>
+                      </div>
+                      <div class="col-sm-5 main-cta">
+                        <a href="expenses2.html" class="edit button">Edit</a>
+                        <span class="value"></span>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /////////////////// Section - 8 - End /////////////////// -->
+
+                  <!-- /////////////////// Section - 9 - Start /////////////////// -->
+                  <section class="section" id="costs3" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2><span>9</span> Food and housekeeping</h2><br>
+                      </div>
+                      <div class="col-sm-5 main-cta">
+                        <a href="expenses3.html" class="edit button">Edit</a>
+                        <span class="value"></span>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /////////////////// Section - 9 - End /////////////////// -->
+
+                  <!-- /////////////////// Section - 10 - Start /////////////////// -->
+                  <section class="section" id="costs4" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2><span>10</span> Transport and travel</h2><br>
+                      </div>
+                      <div class="col-sm-5 main-cta">
+                        <a href="expenses4.html" class="edit button">Edit</a>
+                        <span class="value"></span>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /////////////////// Section - 10 - End /////////////////// -->
+
+                  <!-- /////////////////// Section - 11 - Start /////////////////// -->
+                  <section class="section" id="costs5" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2><span>11</span> Childcare and maintenance</h2>
+                        <a href="#" class="declare btn-no">I don't have children</a>
+                      </div>
+                      <div class="col-sm-5 main-cta">
+                        <a href="expenses5.html" class="edit button">Edit</a>
+                        <span class="value"></span>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /////////////////// Section - 11 - End /////////////////// -->
+
+                  <!-- /////////////////// Section - 12 - Start /////////////////// -->
+                  <section class="section" id="costs6" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2><span>12</span> Personal and leisure</h2>
+                      </div>
+                      <div class="col-sm-5 main-cta">
+                        <a href="expenses6.html" class="edit button">Edit</a>
+                        <span class="value"></span>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /////////////////// Section - 12 - End /////////////////// -->
+
+                  <!-- /////////////////// Section - 13 - Start /////////////////// -->
+                  <section class="section" id="costs7" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2><span>13</span> Regular savings, fines and other expenses</h2>
+                      </div>
+                      <div class="col-sm-5 main-cta">
+                        <a href="expenses7.html" class="edit button">Edit</a>
+                        <span class="value"></span>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /////////////////// Section - 13 - End /////////////////// -->
+
+                </div>
+
+                <!-- ///////////////// Total Value - Start ///////////////// -->
+                <footer class="section-total-value summary-page" id="coststotal" aria-hidden="true">
+                  <div class="row">
+                    <div class="col-sm-5">
+                    </div>
+                    <div class="col-sm-3 description">
+                      <h2>Total</h2>
+                    </div>
+                    <div class="col-sm-4 total">
+                      <div class="amount totalvalue">0.00</div>
+                    </div>
+                  </div>
+                </footer>
+                <!-- ///////////////// Total Value - End ///////////////// -->
+              </fieldset>
+            </div>
+
           </div>
 
-          <!-- For User research -->
-          <div class="form-navigation form-group inner-block">
-            <a id="next" class="button" href="../overview.html?section6=complete">Continue</a>
-            <br>
-            <a style="padding-right: 30px" href="../overview.html?section5=complete" id="back">Back</a>
-            <a href="#" id="cancel">Save and logout</a>
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </main>
-
-    <footer role="contentinfo" id="footer" class="group js-footer">
-      <div class="footer-wrapper">
-        <div class="footer-meta">
-          <div class="footer-meta-inner">
-            <ul class="footer__nav" style="width:100%">
-              <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
-            </ul>
-            <ul class="footer__nav" style="clear:left; text-align:left; display:block">
-              <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
-              <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
-              <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
-            </ul>
-            <div class="open-government-licence">
-              <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
-              <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+          <div class="row">
+            <div class="col-md-12 col-xs-12">
+              <div class="form-navigation form-group">
+                <input type="button" onclick="location.href='../overview.html?section6=complete';" id="next" class="button" value="Continue">
+                <a href="javascript:history.go(-1)" id="back">Back</a>
+                <a href="#" class="cancel">Save and logout</a>
+              </div>
             </div>
           </div>
-          <div class="copyright">
-            <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+
+          <!-- //////////////////////////////////////////////// Expenses - End //////////////////////////////////////////////// -->
+
+        </form>
+
+    </div>
+
+  </main>
+
+  <footer id="footer" class="group js-footer">
+    <div class="footer-wrapper">
+      <div class="footer-meta">
+        <div class="footer-meta-inner">
+          <ul class="footer__nav" style="width:100%">
+            <li class="small-btm-margin" style="text-align:left; display:block"><a class="bold-medium" href="../../contact-us.html">Contact us</a></li>
+          </ul>
+          <ul class="footer__nav" style="clear:left; text-align:left; display:block">
+            <li class="footer__link" style=" "><a href="../../privacy.html">Privacy</a></li>
+            <li class="footer__link" style=""><a href="../../cookies.html">Cookies</a></li>
+            <li class="footer__link" style=" ">Built by <a href="http://www.gov.uk/insolvency-service" target="_blank">The Insolvency Service</a></li>
+          </ul>
+          <div class="open-government-licence">
+            <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence</a></h2>
+            <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
           </div>
         </div>
+        <div class="copyright">
+          <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+        </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-      <!--end footer-->
+    <!--end footer-->
 
-      <div class="app-error hidden" id="global-app-error"></div>
-      <!--
-      <script type="text/javascript" src="assets/javascripts/govuk-template.js"></script>
-      <script type="text/javascript" src="assets/javascripts/vendor/jquery-1.11.0.min.js"></script>
+    <div class="app-error hidden" id="global-app-error"></div>
 
-      <script type="text/javascript" src="assets/javascripts/jquery.details.min.js"></script>
-      <script type="text/javascript" src="assets/javascripts/application.js"></script>
-    -->
     <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
     <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-    <!--  <script type="text/javascript" src="../assets/js/sfs.js"></script>-->
+    <script type="text/javascript" src="../assets/js/sfs.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/sfs-new.js"></script> -->
 
     <script type="text/javascript">
     var itemnumber = 0;
@@ -418,6 +522,11 @@ table td[class*=col-], table th[class*=col-]{
     var pensionable = true;
 
     $(document).ready(function () {
+
+      // if ($.cookie("net-profit-amount")) {
+      //   $("#email-address").text($.cookie("email-address")).addClass("bolder");
+      // }
+
       var reset = getParameterByName("reset");
 
       if($.cookie("fine")){
@@ -427,6 +536,8 @@ table td[class*=col-], table th[class*=col-]{
       if (reset && reset.length > 0) {
         removeallcookies();
       }
+
+      $("#income1").addClass("active");
 
       var defaultnext = $(".next").first().attr("href");
       $("#next").hide();
@@ -455,9 +566,23 @@ table td[class*=col-], table th[class*=col-]{
           totalincome();
         }
 
+        if (stage == "income" && page === 6) {
+          $("#income6 a").text("Edit").show();
+          //$("#income6 a.edit").text("Edit").show();
+          // $("#costs a.edit").first().text("Start").show();
+          totalincome();
+          totalpartnerincome();
+        }
+
         if (stage == "costs") {
           $("#income a.edit").text("Edit").show();
           $("#costs a.edit").first().text("Start").show();
+          $("#income1" + " .value").text("0.00");
+          $("#income2" + " .value").text("0.00");
+          $("#income3" + " .value").text("0.00");
+          $("#income4" + " .value").text("0.00");
+          $("#income5" + " .value").text("0.00");
+          $("#income6" + " .value").text("0.00");
           totalincome();
           totalpartnerincome();
           totalcosts(page);
@@ -484,8 +609,113 @@ table td[class*=col-], table th[class*=col-]{
       $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
       $("#" + stage + itemnumber +  " .declare").show();
 
-      if (stage == "income" && itemnumber > 5) {
+      /* ////////////////////////////////////////////////
+      This adds the style to the specific sections as the user goes through the application - Start
+      //////////////////////////////////////////////// */
+      if (stage == "income" && itemnumber === 2) {
+        $("#income1").removeClass("active").addClass("complete");
+        $("#income2").addClass("active");
+        $("#income2").attr("aria-hidden", "false");
+      }
+      if (stage == "income" && itemnumber === 3) {
+        $("#income1, #income2").removeClass("active").addClass("complete");
+        $("#income3").addClass("active");
+      }
+
+      if (stage == "income" && itemnumber === 4) {
+        $("#income1, #income2, #income3").removeClass("active").addClass("complete");
+        $("#income4").addClass("active");
+      }
+
+      if (stage == "income" && itemnumber === 5) {
+        $("#income1, #income2, #income3, #income4").removeClass("active").addClass("complete");
+        $("#income5").addClass("active");
+      }
+
+      if (stage == "income" && itemnumber === 6) {
+        $("#income1, #income2, #income3, #income4, #income5").removeClass("active").addClass("complete");
+        $("#income6").addClass("active");
+        $("#income6 .declare").show();
+        $("#income6 a.edit").first().text("Start").addClass("button").show();
+      }
+
+      if (stage == "costs" && itemnumber === 1) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs1").addClass("active");
+      }
+
+      if (stage == "costs" && itemnumber === 2) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6, #costs1").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs2").addClass("active");
+      }
+
+      if (stage == "costs" && itemnumber === 3) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6, #costs1, #costs2").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs2" + " .value").text("0.00");
+        $("#costs3").addClass("active");
+      }
+
+      if (stage == "costs" && itemnumber === 4) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6, #costs1, #costs2, #costs3").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs2" + " .value").text("0.00");
+        $("#costs3" + " .value").text("0.00");
+        $("#costs4").addClass("active");
+      }
+
+      if (stage == "costs" && itemnumber === 5) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6, #costs1, #costs2, #costs3, #costs4").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs2" + " .value").text("0.00");
+        $("#costs3" + " .value").text("0.00");
+        $("#costs4" + " .value").text("0.00");
+        $("#costs5").addClass("active");
+      }
+
+      if (stage == "costs" && itemnumber === 6) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6, #costs1, #costs2, #costs3, #costs4, #costs5").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs2" + " .value").text("0.00");
+        $("#costs3" + " .value").text("0.00");
+        $("#costs4" + " .value").text("0.00");
+        $("#costs5" + " .value").text("0.00");
+        $("#costs6").addClass("active");
+      }
+
+      if (stage == "costs" && itemnumber === 7) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6, #costs1, #costs2, #costs3, #costs4, #costs5, #costs6").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs2" + " .value").text("0.00");
+        $("#costs3" + " .value").text("0.00");
+        $("#costs4" + " .value").text("0.00");
+        $("#costs5" + " .value").text("0.00");
+        $("#costs6" + " .value").text("0.00");
+        $("#costs7").addClass("active");
+      }
+
+      if (stage == "costs" && itemnumber === 8) {
+        $("#income1, #income2, #income3, #income4, #income5, #income6, #costs1, #costs2, #costs3, #costs4, #costs5, #costs6, #costs7").removeClass("active").addClass("complete");
+        $("#costs1" + " .value").text("0.00");
+        $("#costs2" + " .value").text("0.00");
+        $("#costs3" + " .value").text("0.00");
+        $("#costs4" + " .value").text("0.00");
+        $("#costs5" + " .value").text("0.00");
+        $("#costs6" + " .value").text("0.00");
+        $("#costs7" + " .value").text("0.00");
+      }
+
+      /* ////////////////////////////////////////////////
+      This adds the style to the specific sections as the user goes through the application - End
+      //////////////////////////////////////////////// */
+
+      if (stage == "income" && itemnumber > 6) {
         $("#costs1 a.edit").addClass("button").text("Start");
+      }
+      if (stage == "income" && itemnumber === 6) {
+        $("#income6 a.edit").addClass("button").text("Start");
       }
       if (stage == "costs" && itemnumber > 7) {
         $("#next").show();
@@ -494,18 +724,24 @@ table td[class*=col-], table th[class*=col-]{
 
       var defaultnext = $(".next").first().attr("href");
       $(".declare").on("click", function () {
+        $("#" + stage + itemnumber).removeClass("active");
+        $("#" + stage + itemnumber).addClass("complete");
         $("#" + stage + itemnumber + " .declare").hide();
         $("#" + stage + itemnumber + " .value").text("0.00");
         $.cookie(stage + itemnumber, "0", { expires: 1 });
 
         $("#" + stage + itemnumber + " a.edit").show().removeClass("button").text("Edit");
         itemnumber = itemnumber + 1;
+        $("#" + stage + itemnumber).addClass("active");
         if (itemnumber == 3 && pensionable == false) {
           itemnumber = 4;
         }
         $("#" + stage + itemnumber + " .declare").show();
         $("#" + stage + itemnumber + " a.edit").show().addClass("button").text("Start");
-        if (stage == "income" && itemnumber == 6) {
+        if (stage == "income" && itemnumber === 6) {
+          $("#income6 a.edit").first().text("Start").addClass("button").show();
+        }
+        if (stage == "income" && itemnumber == 7) {
           $("#costs a.edit").first().text("Start").addClass("button").show();
         }
       });
@@ -519,17 +755,30 @@ table td[class*=col-], table th[class*=col-]{
       for (i = 1; i < 7; i++) {
         var amount = $.cookie(item + i);
         if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
-          $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
+          $("#" + item + i + " .value").text("£" + parseFloat(amount).toFixed(2));
           if (parseFloat(amount)) {
             totalamount = totalamount + parseFloat(amount);
           }
         }
       }
-      $("#incometotal .totalvalue").text(totalamount.toFixed(2));
+      $("#incometotal .totalvalue").text("£" + totalamount.toFixed(2));
       //$("#overalltotal .totalvalue").text(totalamount.toFixed(2));
     }
+
+
+
+
     //partnerincometotal  overalltotal  coststotal  totalvalue
     function totalpartnerincome() {
+      // Household income total
+	    if($.cookie("partnerincome0")){
+	    	var amount = $.cookie("partnerincome0");
+	    	$("#income6 .value").text("£" + parseFloat(amount).toFixed(2));
+	    	$("#household-total .total .totalvalue").text("£" + parseFloat(amount).toFixed(2));
+	    }
+
+
+      /*
       var totalamount = 0;
       var item = "partnerincome";
 
@@ -539,13 +788,15 @@ table td[class*=col-], table th[class*=col-]{
         if (parseFloat(amount)) {
           totalamount = totalamount + parseFloat(amount);
         }
+
+
       }
 
       $("#partnerincometotal .totalvalue").text(totalamount.toFixed(2));
       var overalltotal = totalamount;
       if ($("#incometotal .totalvalue").text().length > 0) {
         overalltotal += parseFloat($("#incometotal .totalvalue").text());
-      }
+      }*/
       //$("#overalltotal .totalvalue").text(overalltotal.toFixed(2));
     }
 
@@ -555,13 +806,13 @@ table td[class*=col-], table th[class*=col-]{
       for (i = 1; i <= page; i++) {
         if ($.cookie(item + i) && $.cookie(item + i).length > 0) {
           var amount = $.cookie(item + i);
-          $("#" + item + i + " .value").text(parseFloat(amount).toFixed(2));
+          $("#" + item + i + " .value").text("£" + parseFloat(amount).toFixed(2));
           if (parseFloat(amount)) {
             totalamount = totalamount + parseFloat(amount);
           }
         }
       }
-      $("#coststotal .totalvalue").text(totalamount.toFixed(2));
+      $("#coststotal .totalvalue").text("£" + totalamount.toFixed(2));
     }
 
     function removeallcookies() {
@@ -590,16 +841,6 @@ table td[class*=col-], table th[class*=col-]{
 
     </script>
 
-
-
-    <div id="window-resizer-tooltip" style="display: none;">
-      <a href="/claims/start#" title="Edit settings"
-      style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a>
-      <span class="tooltipTitle">Window size: </span>
-      <span class="tooltipWidth" id="winWidth">1194</span> x <span class="tooltipHeight" id="winHeight">754</span>
-      <br><span class="tooltipTitle">Viewport size: </span>
-      <span class="tooltipWidth" id="vpWidth">1178</span> x <span class="tooltipHeight" id="vpHeight">623</span>
-    </div>
   </body><!-- #EndTemplate -->
 
-  </html>
+</html>

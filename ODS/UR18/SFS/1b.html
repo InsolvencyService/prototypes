@@ -4,10 +4,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- #BeginEditable "title" -->
-  <title>Online debt solutions - your Self-employed income</title>
+  <title>Income and expenses - your self-employed income</title>
   <!-- #EndEditable -->
-
-
 
   <!--[if gt IE 8]><!-->
   <link type="text/css" rel="stylesheet" media="screen" href="../../assets/stylesheets/govuk-template.css"><!--<![endif]-->
@@ -124,7 +122,6 @@
 
   <main id="content">
 
-
       <!-- .inner-block - Start -->
       <div class="inner-block" role="main">
         <div class="phase-banner">
@@ -137,15 +134,6 @@
 
       <!-- #BeginEditable "content" -->
 
-        <!-- .breadcrumb - Start -->
-        <nav class="breadcrumbs" aria-label="breadcrumb">
-          <ol>
-            <li><a href="summary-test.html">Income and expenses</a></li>
-            <li>Income</li>
-          </ol>
-        </nav>
-        <!-- .breadcrumb - End -->
-
         <form class="form" method="post">
           <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
@@ -154,9 +142,7 @@
 
               <h1 class="form-title heading-xlarge" id="maincontent">Self-employed income</h1>
               <p class="lede">Add your business's full accounting details as they appear on your latest Self Assessment tax return.</p>
-              <br>
               <p class="lede">If this is your first year trading and you haven't submitted a Self Assessment tax return, please tell us about your earnings since your business began.</p>
-              <p><br></p>
 
             </div>
           </div>
@@ -167,31 +153,42 @@
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
               <header class="form-intro">
                 <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h2 class="heading-large"id="net-profit-amount-header">Accounting details</h2>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h2 class="heading-large" id="net-profit-amount-header">Accounting details</h2>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+                    <h2 class="heading-small hide-for-mobile" id="amount-label">Amount</h2>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+                    <h2 class="heading-small hide-for-mobile" id="frequency-label">per week / month / year</h2>
                   </div>
                 </div>
               </header>
               <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
 
               <!-- ///////////////// Fieldset 1 - Start ///////////////// -->
-              <fieldset>
+              <fieldset class="inline form-group">
                 <legend class="hidden">Accounting details Net profit</legend>
-                <div class="form-group amount">
-                  <label for="net-profit-amount" class="form-label-bold" id="net-profit-amount-label">Net profit</label>
-                  <div class="form-hint" id="net-profit-amount-label2">Total amount earned minus all your business expenses</div>
-                  <input type="text" id="net-profit-amount" placeholder="0" aria-labelledby="net-profit-amount-label net-profit-amount-label2">
-                </div>
-                <div class="form-group per">
-                  <label for="per-d6" class="form-label-bold" id="per-d6-label">per week / month / year</label>
-                  <select name="D6" id="per-d6" aria-labelledby="net-profit-amount-header net-profit-amount-label per-d6-label">
-                    <option value="week">per week</option>
-                    <option value="fortnight">per fortnight</option>
-                    <option value="4weeks">per 4 weeks</option>
-                    <option value="month">per month</option>
-                    <option value="quarter">per quarter</option>
-                    <option value="year" selected="selected">per year</option>
-                  </select>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <label for="net-profit-amount" class="form-label-bold" id="net-profit-amount-label">Net profit</label>
+                    <div class="form-hint" id="net-profit-amount-hint">Total amount earned minus all your business expenses</div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-12 amount">
+                    <label for="net-profit-amount" class="form-label-bold currency" id="currency-label">&pound;</label>
+                    <input type="text" id="net-profit-amount" placeholder="0" aria-labelledby="net-profit-amount-label net-profit-amount-hint amount-label currency-label">
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-12 per">
+                    <label class="form-label-bold show-for-mobile">per week / month / year</label>
+                    <select name="frequency" id="frequency_1" aria-labelledby="net-profit-amount-label frequency-label">
+                      <option value="week">per week</option>
+                      <option value="fortnight">per fortnight</option>
+                      <option value="4weeks">per 4 weeks</option>
+                      <option value="month">per month</option>
+                      <option value="quarter">per quarter</option>
+                      <option value="year" selected="selected">per year</option>
+                    </select>
+                  </div>
                 </div>
               </fieldset>
               <!-- ///////////////// Fieldset 1 - End ///////////////// -->
@@ -199,11 +196,12 @@
             </div>
           </div>
 
-          <header class="row">
-            <div class="col-xs-12">
 
-              <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
-              <div class="form-intro">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+              <header class="form-intro">
+                <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-5">
                     <h2 class="heading-large" id="accounting-period-header">Accounting period</h2>
@@ -213,26 +211,25 @@
                   <div class="col-md-3 col-sm-3 col-xs-4">
                   </div>
                 </div>
-              </div>
-              <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+                <!-- ///////////////// Fieldset Intro - Start ///////////////// -->
+              </header>
 
               <div class="row">
                 <div class="col-xs-12">
-                  <p>The accounting period is the period of time for which your business's financial statements are prepared. Your accounting period
-				            start and end dates should match the information you included in your most recent Self Assessment tax return. </p>
-				          <p>If you haven't completed a Self Assessment tax return yet, the start date should be the date your business began.</p>
+                  <p class="lede">The accounting period is the period of time for which your business's financial statements are prepared. Your accounting period
+  			            start and end dates should match the information you included in your most recent Self Assessment tax return. </p>
+  			          <p class="lede">If you haven't completed a Self Assessment tax return yet, the start date should be the date your business began.</p>
                 </div>
               </div>
 
-
             </div>
-          </header>
+          </div>
 
           <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
 
               <!-- ///////////////// Fieldset 4 - Start ///////////////// -->
-              <fieldset>
+              <fieldset class="accounting-date">
                 <legend class="hidden">Accounting period start date</legend>
                 <label class="form-label-bold" id="accounting-start-date-header">Accounting period start date</label>
                 <p class="form-hint">For example, Apr 2012</p>
@@ -265,12 +262,12 @@
 
             </div>
           </div>
-          <p></p>
+
           <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
 
               <!-- ///////////////// Fieldset 5 - Start ///////////////// -->
-              <fieldset>
+              <fieldset class="accounting-date">
                 <legend class="hidden">Accounting period end date</legend>
                 <label class="form-label-bold" id="accounting-year-end-header">Accounting period end date</label>
                 <p class="form-hint">For example, Mar 2013</p>
@@ -308,12 +305,11 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <h3 class="hidden" id="continue">Continue with your application form</h3>
               <div class="form-navigation form-group">
-                <input type="button" onclick="location.href='summary-test.html?stage=income&amp;page=2';" id="next" class="button" value="Continue" aria-labelledby="continue">
+                <input type="button" onclick="location.href='summary.html?stage=income&amp;page=2';" id="next" class="button" value="Continue" aria-labelledby="continue">
                 <br>
                 <a href="javascript:history.go(-1)" id="back">Back</a>
                 <a href="#" id="cancel">Save and logout</a>
               </div>
-
             </div>
           </footer>
 
@@ -355,6 +351,8 @@
 
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
+  <!-- <script type="text/javascript" src="../shared/sfs-new.js"></script> -->
+
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -369,21 +367,16 @@
   </script>
 
   <!-- #BeginEditable "scripts" -->
-
-  <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
-  <script type="text/javascript" src="../shared/sfs-new.js"></script>
-
   <script type="text/javascript">
   $(document).ready(function() {
 
-    var defaultnext = $("#next").first().attr("href");
-
-    var pensionable = getParameterByName("pensionable");
-    if (pensionable && pensionable.length > 0) {
-      defaultnext += "?pensionable=true";
-      $("#next").attr("href", defaultnext);
-    }
-
+    // var defaultnext = $("#next").first().attr("href");
+    //
+    // var pensionable = getParameterByName("pensionable");
+    // if (pensionable && pensionable.length > 0) {
+    //   defaultnext += "?pensionable=true";
+    //   $("#next").attr("href", defaultnext);
+    // }
 
     $("#btn-add").on("click", function (e) {
       $("#another").show();
