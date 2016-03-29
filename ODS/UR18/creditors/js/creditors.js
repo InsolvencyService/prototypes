@@ -396,7 +396,7 @@ $("#row-9").hide();
 var defaultnext = $("#next").prop("href");
 
 var creditorSelectedHandler = function (eventObject, suggestionObject, suggestionDataset) {
-	$("#next").prop("href", "amount.html");
+	$("#next").prop("href", "3-amount.html");
 
 };
 
