@@ -245,7 +245,7 @@ var count;
     });
     
     count=$.cookie("cred-count");
-    $(".input").text($.cookie("cred-name-"+count));
+    $(".input").text($.cookie("cred-temp-name-"));
 
   });
   </script>
@@ -259,11 +259,12 @@ var count;
 
     $("#next").on("click", function (e) {
     		if($("#creditor-select :checked").attr("value") == "unknown"){
+    		$.cookie("cred-name-"+count, $.cookie("cred-temp-name"), {path:'/'});
 			$("#next").attr("href", "2a-creditor_detail.html");
 		}
 		else{
 			$("#next").attr("href", "3-amount.html");
-			$.cookie("cred-name-"+count, $.cookie("cred-name-"+count) + $("#creditor-select :checked").attr("value"), {path:'/'});
+			$.cookie("cred-name-"+count, $.cookie("cred-temp-name") + $("#creditor-select :checked").attr("value"), {path:'/'});
 		}
     });
 
