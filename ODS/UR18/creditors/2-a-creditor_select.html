@@ -144,19 +144,32 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-large" role="header" id="heading-1">Creditors name</h1>
+          <h1 class="form-title heading-large" role="header" id="heading-1">Creditor</h1>
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+			
+           
+			<!-- ///// Fieldset/Group 1 - START ///// -->
+            <fieldset class="form-group" id="creditor-select" role="radiogroup">
+                <legend id="creditor_label" class="form-label-bold">Select your creditor</legend>
 
-            <!-- ///// Fieldset/Group 1 - START ///// -->
-            <fieldset class="inline" id="question1">
-               <legend class="form-label-bold" for="creditors" id="question1-label">Enter the creditor's name</legend>
-               <p class="form-hint">For example, ABC Bank Ltd or John Smith. You can add more creditors later.</p>
-			   <input type="text" id="creditors" class="form-control-2-3" aria-labelledby="question1-label" />             
-              
-            </fieldset>
+                <label id="creditor_label_0" for="creditor_0" class="block-label">
+                  <input id="creditor_0" value=" - Debt recoveries" name="creditor" type="radio" aria-labelledby="title_label">
+                  <span class="input"></span> - Debt recoveries
+                </label>
+
+                <label id="creditor_label_1" for="creditor_1" class="block-label">
+                  <input id="creditor_1" value=" - CCJ department" name="creditor" type="radio" aria-labelledby="title_label">
+                  <span class="input"></span> - CCJ department
+                </label>
+
+                <label id="creditor_label_2" for="creditor_2" class="block-label">
+                  <input id="creditor_2" value="unknown" name="creditor" type="radio" aria-labelledby="title_label">
+                  <span class="input">test</span>
+                </label>
+             </fieldset>
             <!-- ///// Fieldset/Group 1 - END ///// -->
 
             <!-- ///// CTA Section - START ///// -->
@@ -222,7 +235,7 @@
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
   <script type="text/javascript">
-
+var count;
   $(document).ready(function() {
     var url      = window.location.href;     // Returns full URL
     var pathname = window.location.pathname; // Returns path only
@@ -230,6 +243,9 @@
       $.cookie("url", url, {path:'/'});
       $.cookie("pathname", pathname, {path:'/'});
     });
+    
+    count=$.cookie("cred-count");
+    $(".input").text($.cookie("cred-name-"+count));
 
   });
   </script>
@@ -239,16 +255,16 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <script type="text/javascript">
-	var count = 0;
+	
 
     $("#next").on("click", function (e) {
-
-		if($.cookie("cred-count")){
-			count=$.cookie("cred-count");
+    		if($("#creditor-select :checked").attr("value") == "unknown"){
+			$("#next").attr("href", "2a-creditor_detail.html");
 		}
-		count++;
-		$.cookie("cred-name-"+count, $('#creditors').val(), {path:'/'});
-		$.cookie("cred-count", count, {path:'/'});
+		else{
+			$("#next").attr("href", "3-amount.html");
+			$.cookie("cred-name-"+count, $.cookie("cred-name-"+count) + $("#creditor-select :checked").attr("value"), {path:'/'});
+		}
     });
 
   </script>
