@@ -133,18 +133,13 @@
 	</p>
 	</div>
 	</div>
-	
 
-
-
-	 </div>
 	
 
 
 
 <!-- #BeginEditable "content" --> 
 
-<div id="content" >  
  
 <div class="inner-block text">
 	
@@ -157,7 +152,7 @@
         	
 			<fieldset id="property_type" class="inline">
 			
-				<legend id="title_label" class="form-label-bold">What type of property is <span class="bold-medium data">1 The Place</span>?</legend>
+				<legend id="title_label" class="form-label-bold">What type of property is <span class="bold-medium data">it</span>?</legend>
             	<label for="address_detached" class="block-label">
             		<input id="address_detached" name="sameaddress" type="radio"  value="Detached">Detached house
           		</label>
@@ -185,7 +180,7 @@
        	
 		<div class="form-group">
 			<br>
-			<label id="first_name_label" for="numbedrooms" class="form-label-bold">Number of bedrooms?</label>
+			<label id="first_name_label" for="numbedrooms" class="form-label-bold">Number of bedrooms</label>
   			<input id="numbedrooms" type="number" autocomplete="off" class="form-control-1-8" />
         </div>					 
 	
@@ -274,8 +269,8 @@ $(document).ready(function() {
 var count;
 
 $(document).ready(function() {
-
-	var prop_add = $.cookie('rec-propertyname');
+	count = $.cookie("ass-rec-prop-count");
+	var prop_add = $.cookie("ass-rec-prop-add1-"+count);
 	$(".data").text(prop_add);
    
 
@@ -283,7 +278,7 @@ $(document).ready(function() {
 
 
 $("#next").click(function() {
-	count = $.cookie("ass-rec-prop-count");
+	
 	
 	$.cookie("ass-rec-prop-type"+count, $("#property_type :checked").val(), { path: '/' } );
 	$.cookie("ass-rec-prop-bed"+count, $("#numbedrooms").val(), { path: '/' } );
