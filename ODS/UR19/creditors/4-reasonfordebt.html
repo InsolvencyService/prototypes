@@ -149,6 +149,18 @@
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+            
+            <div class="error-summary error" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+			    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+			      We only need to know about the most recent action taken against you.
+			    </h1>
+						
+			    <ul class="error-summary-list">
+			      <li><a href="#enforcement">Please tell us which was the most recent action</a></li>
+			    </ul>
+			
+			</div>
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
             <fieldset>
@@ -230,21 +242,38 @@
 	                    </label>
 	            	</fieldset>
               	</div>
-                
-              	<!-- //// Question3 ////-->
-              	<div class="form-group"  id="formal_action">
-	              	<fieldset>
-	                  <legend id="question3" class="form-label-bold">Has <span class="creditorname">this creditor</span> taken any formal action against you?</legend>
-	                  <p></p>
-	                  <label id="3a_label1" for="3a" class="block-label">
-	                  <input id="3a"  name="enforcement" value="seize" type="radio">Yes - they took control of my assets</label>
-	                  
-	                  <label id="3b_label1" for="3b" class="block-label">
-	                  <input id="3b"  name="enforcement" value="attachment" type="radio">Yes - they arranged an attachment of earnings</label>
-
-					  <label id="3c_label1" for="3c" class="block-label">
-	                  <input id="3c"  name="enforcement" value="" type="radio">No - they have not taken any formal action</label>
-	              	</fieldset>                        	
+              	
+              	<div class="form-group" id="enforcement">
+                    <span class="error-message">Please tell us which was the most recent action</span>
+	              	
+	              	<!-- //// Question3 ////-->
+	              	<div class="form-group inline"  id="seized">
+		              	<fieldset>
+		                  <legend id="question3" class="form-label-bold">Has <span class="creditorname">this creditor</span> taken control of any of your assets?</legend>
+		                  <p></p>
+		                  <label id="3a_label1" for="3a" class="block-label">
+		                  <input id="3a"  name="enforcement" value="yes" type="radio">Yes</label>
+		                  
+		               					  <label id="3c_label1" for="3c" class="block-label">
+		                  <input id="3c"  name="enforcement" value="no" type="radio">No</label>
+		              	</fieldset>                        	
+	              	</div>
+	              	
+	              	<p>&nbsp;</p>
+	              	
+	              	<!-- //// Question4 ////-->
+	              	<div class="form-group"  id="attachment">
+		              	<fieldset class="inline">
+		                  <legend id="question4" class="form-label-bold">Has <span class="creditorname">this creditor</span> placed an attachment of earnings on you?</legend>
+		                  <p></p>
+		                  <label id="4a_label1" for="4a" class="block-label">
+		                  <input id="4a"  name="attachment" value="yes" type="radio">Yes</label>
+		                  
+		               	  <label id="4c_label1" for="4c" class="block-label">
+		                  <input id="4c"  name="attachment" value="no" type="radio">No</label>
+		              	</fieldset>                        	
+	              	</div>
+              	
               	</div>
 
               	
@@ -345,6 +374,8 @@
 	    }).get().join(', ');
 	    $.cookie('cred-reason-'+count, options, {path:'/'});
 	}
+	$(".error").hide();
+	$(".error-message").hide();
 	
 	$(function() {
     	$checkboxes = $('input:checkbox').change(setcookie);
@@ -365,20 +396,21 @@
     $("#continue").on("click", function (e) {
     	$.cookie("cred-debt-started-"+count, $("#date_select :checked").val(), {path:'/'});  	
     	
-
-    	
-    	
-		if ($("#formal_action :checked").val() === "seize") {
-		  $("#continue").attr("href", "5a-seized.html");
-		} 
-	        
-		else if ($("#formal_action :checked").val() == "attachment"){
-		  $("#continue").attr("href", "5b-attachment.html");
+		if ($("#seized :checked").val() === "yes" && $("#attachment :checked").val() === "yes") {
+		  $("#enforcement").addClass("error");
+		  $(".error-message").show();
+		  $(".error").show();
 		}
-		
+		else if($("#seized :checked").val() === "yes"){
+			 $("#continue").attr("href", "5a-seized.html");
+		}
+		else if($("#attachment :checked").val() === "yes"){
+			 $("#continue").attr("href", "5b-attachment.html");
+		}
 		else{
-		  $("#continue").attr("href", "6-summary.html");	
+			 $("#continue").attr("href", "6-summary.html");
 		}
+
 	});
 
     
