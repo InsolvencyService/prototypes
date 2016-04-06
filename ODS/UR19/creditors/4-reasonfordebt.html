@@ -171,6 +171,7 @@
               	<div class="form-group"  id="date_select">
 	              	<fieldset class="inline">
 	                  <legend class="form-label-bold">Date the debt started (was incurred)</legend>
+	                  <p class="form-hint" id="datehelp">[HELP]</p>
 	                  <label id="1_label1" for="1" class="block-label">
 	                  <input id="1"  name="debt-incurred" value="0-6 months" type="radio">0 to 6 months ago</label>
 	
@@ -249,7 +250,7 @@
 	              	<!-- //// Question3 ////-->
 	              	<div class="form-group inline"  id="seized">
 		              	<fieldset>
-		                  <legend id="question3" class="form-label-bold">Has <span class="creditorname">this creditor</span> taken control of any of your assets?</legend>
+		                  <legend id="question3" class="form-label-bold">Within the last six months, has a bailiff or enforcement agent acting for <span class="creditorname">this creditor</span> taken control of any of your assets?</legend>
 		                  <p></p>
 		                  <label id="3a_label1" for="3a" class="block-label">
 		                  <input id="3a"  name="enforcement" value="yes" type="radio">Yes</label>
@@ -366,6 +367,7 @@
 
 	var $checkboxes;
 	var count;
+	var debttype;
 	//set the cookie
 	function setcookie() {
 		count=$.cookie("cred-count");
@@ -383,6 +385,27 @@
  
 	$(document).ready(function() {
 		count=$.cookie("cred-count");
+		debttype = $.cookie("cred-debt-type-"+count);
+		
+		if(debttype === "Credit card" ){
+			$("#datehelp").text("Enter the date you took out the credit card");
+		}
+		else if(debttype === "Student loan" || debttype === "Personal loan"){
+			$("#datehelp").text("Enter the date you received the money");
+		}
+		else if(debttype === "Rent arrears" || debttype === "Utilities"  || debttype === "Telephone/mobile phone" || debttype === "Store card/catalogue"){
+			$("#datehelp").text("Enter the first date you didn't pay the full bill");
+		}
+		else if(debttype === "Fines"){
+			$("#datehelp").text("Enter the date the fine was issued");
+		}
+		else{
+			$("#datehelp").text("Enter the first date you didn't make the payment");
+		}
+
+
+		
+		
 		$(".creditorname").text($.cookie("cred-name-"+count));
 		
 		if(($.cookie("cred-debt-type-"+count)==="Credit card") || ($.cookie("cred-debt-type-"+count)==="Personal loan") || ($.cookie("cred-debt-type-"+count)==="Other")){

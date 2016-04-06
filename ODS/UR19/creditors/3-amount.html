@@ -155,13 +155,7 @@
             	<legend class="visuallyhidden">We're going to ask 3 questions regarding the money you owe to <span class="creditorname">the creditor</span></legend>
               	
               	
-              	<!-- //// Question1 ////-->
-              	<div class="form-group">
-                	<label id="question1_label" for="amount" class="form-label-bold">
-                 		 Amount <span class="creditorname">ABC Ltd</span> says you owe
-                 	</label>
-                  	<span>£ </span><input id="amount" name="amount" type="text" aria-labelledby="question1_label" value="" />
-                </div>
+              	
                         	
               	<!-- //// Question2 ////-->
               	<div class="form-group ">
@@ -169,6 +163,14 @@
                   <p id="question2_hint_label" class="form-hint">You can find this on any correspondence from your creditor <br />
                   Leave blank if you don't have one</p>
                   <input id="ref" name="ref" type="text" value="" aria-labelledby="question2_hint_label" />
+                </div>
+                
+                <!-- //// Question1 ////-->
+              	<div class="form-group">
+                	<label id="question1_label" for="amount" class="form-label-bold">
+                 		 Amount <span class="creditorname">ABC Ltd</span> says you owe
+                 	</label>
+                  	<span>£ </span><input id="amount" name="amount" type="text" aria-labelledby="question1_label" value="" />
                 </div>
                 
               	<!-- //// Question3 ////-->
@@ -200,6 +202,12 @@
                       <input id="util" value="Utilities" name="title" type="radio" aria-describedby="question3_label">
                       Utilities
                     </label>
+                    
+                    <label for="cat" class="block-label">
+                      <input id="cat" value="Store card/catalogue" name="title" type="radio" aria-describedby="question3_label">
+                      Store card/catalogue
+                    </label>
+
 
                     <label for="fine" class="block-label">
                       <input id="fine" value="Fines" name="title" type="radio" aria-describedby="question3_label">
@@ -212,8 +220,8 @@
                     </label>
 
                     <label for="tele" class="block-label">
-                      <input id="tele" value="Landlord" name="title" type="radio" aria-describedby="question3_label">
-                      Telephone/ mobile phone
+                      <input id="tele" value="Telephone/mobile phone" name="title" type="radio" aria-describedby="question3_label">
+                      Telephone/mobile phone
                     </label>
 
                     <label id="title_label4" for="title_other" class="block-label">
