@@ -283,7 +283,8 @@
 				row += '</p><p>Ref: ';
 				row += $.cookie("cred-ref-"+i);	
 				row += '</p><p>Amount owed: £';
-				row += $.cookie("cred-amount-"+i).toFixed(2);
+				var temp = $.cookie("cred-amount-"+i)
+				row += parseFloat(temp).toFixed(2);
 				row += '</p></div><div class="col-md-4 col-xs-12"><a href="';
 				row += '6-summary.html?p='+i;
 				row += '">View your answers</a><br><a href="#" class="delete-item">Delete</a></div></div></div>'; 
