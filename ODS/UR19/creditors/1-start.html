@@ -156,8 +156,19 @@
 		  	<p class="lede">You already told us about:</p>
 			<div id="creditorlist">
 			</div>  
+			<div class="row">
+				<div class="col-xs-4">
+					<p class="bold-medium">Total</p>
+				</div>
+				<div class="col-xs-4">
+					<p class="bold-medium text-right">£<span id="total"></span></p>
+				</div>
+
+			</div>
 		  </div>
 		  
+				
+			
 
 		  
           <!-- ///// Form - START ///// -->
@@ -241,7 +252,7 @@
   <script type="text/javascript" src="../../assets/js/bootstrap-switch/jquery.min.js"></script>
   <script type="text/javascript" src="../../assets/js/jquery.cookie.js"></script>
   <script type="text/javascript">
-
+  var total = 0;
   $(document).ready(function() {
     var url      = window.location.href;     // Returns full URL
     var pathname = window.location.pathname; // Returns path only
@@ -262,16 +273,20 @@
 			$("#question1-label").text("Are there any other creditors you owe money to?")
 			
 			var count = $.cookie("cred-count");
-			for(i=1; i<=count; i++){	
+			for(i=1; i<=count; i++){
 				var row;
 				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
 				row += $.cookie("cred-name-"+i);
-				row += '</p><p><span class="bolder">Ref: </span>';
+				row += '</p><p>Ref: ';
 				row += $.cookie("cred-ref-"+i);	
+				row += '</p><p>Amount owed: '
+				row += $.cookie("cred-amount-"+i);
 				row += '</p></div><div class="col-md-4 col-xs-12"><a href="';
 				row += '6-summary.html?p='+i;
 				row += '">View your answers</a><br><a href="#" class="delete-item">Delete</a></div></div></div>'; 
 				$("#creditorlist").append(row);
+				total += parseFloat($.cookie("cred-amount-"+i));
+				$("#total").text(total);
 			}
 		}
 		else{
