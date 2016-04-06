@@ -279,7 +279,7 @@
 			if(parseFloat($.cookie("acc"+b+"-balance"))<0){
 				$("#other").show();
 				var row;
-				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
+				row =  '<div class="new-item"><div class="row"><div class="col-md-12 col-xs-12"><p class="bold-medium">';
 				row += $.cookie("acc"+b+"-bank");	
 				row += ' - overdrawn bank account</p><p>Amount owed: £';
 				var temp = parseFloat($.cookie("acc"+b+"-balance"));
@@ -297,7 +297,7 @@
 			if($.cookie("VehicleFinanceOutstanding"+v)){
 				$("#other").show();
 				var row;
-				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
+				row =  '<div class="new-item"><div class="row"><div class="col-md-12 col-xs-12"><p class="bold-medium">';
 				row += $.cookie("VehicleMake"+v) + " " + $.cookie("VehicleModel"+v);	
 				row += ' - outstanding vehicle finance</p><p>Amount owed: £';
 				var temp = parseFloat($.cookie("VehicleFinanceOutstanding"+v));
