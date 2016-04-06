@@ -154,6 +154,9 @@
 		  
 		  <div id="other">
 			  	<p class="lede">You already told us about:</p>
+			  	<div id="previousdebt">
+				
+				</div>
 				<div id="creditorlist">
 				
 				</div> 
@@ -270,12 +273,32 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 	$(document).ready(function() {
+	
+		//look for negative bank balances
+		for(b=1; b<=$.cookie("acc-count"); b++){
+			if(parseFloat($.cookie("acc"+b+"-balance"))<0){
+				$("#other").show();
+				var row;
+				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
+				row += $.cookie("acc"+b+"bank");	
+				row += '</p><p>Amount owed: £';
+				var temp = parseFloat($.cookie("acc"+b+"-balance"));
+				var temp1 = temp - temp - temp;
+				row += parseFloat(temp1).toFixed(2);
+				row += '</p></div></div></div>'; 
+				$("#previousdebt").append(row);
+				total += parseFloat(temp1);
+				$("#total").text(total.toFixed(2));
+			}
+		}
+		
 		if($.cookie("cred-count")){
 			$("#other").show();
 			$("#firsttime").hide();
 			$("#question1-label").text("Are there any other creditors you owe money to?")
 			
-			var count = $.cookie("cred-count");
+			var count = $.cookie("cred-count");	
+			
 			for(i=1; i<=count; i++){
 				var row;
 				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
