@@ -294,7 +294,7 @@
 		
 		//look for vehicle finance
 		for(var v=1; v<=$.cookie("VehicleCount"); v++){
-			if(($.cookie("VehicleFinanceOutstanding")+v)>0){
+			if($.cookie("VehicleFinanceOutstanding"+v)){
 				$("#other").show();
 				var row;
 				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
