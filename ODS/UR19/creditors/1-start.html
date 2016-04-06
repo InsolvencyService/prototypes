@@ -289,7 +289,7 @@
 				row += '">View your answers</a><br><a href="#" class="delete-item">Delete</a></div></div></div>'; 
 				$("#creditorlist").append(row);
 				total += parseFloat($.cookie("cred-amount-"+i));
-				$("#total").text(total);
+				$("#total").text(total.toFixed(2));
 			}
 		}
 		else{
