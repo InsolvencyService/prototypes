@@ -281,7 +281,7 @@
 				var row;
 				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
 				row += $.cookie("acc"+b+"-bank");	
-				row += '</p><p>Amount owed: £';
+				row += ' - overdrawn bank account</p><p>Amount owed: £';
 				var temp = parseFloat($.cookie("acc"+b+"-balance"));
 				var temp1 = temp - temp - temp;
 				row += parseFloat(temp1).toFixed(2);
@@ -291,6 +291,25 @@
 				$("#total").text(total.toFixed(2));
 			}
 		}
+		
+		//look for vehicle finance
+		for(var v=1; v<=$.cookie("VehicleCount"); v++){
+			if($.cookie("VehicleFinanceOutstanding")+v){
+				$("#other").show();
+				var row;
+				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
+				row += $.cookie("VehicleMake"+v) + " " $.cookie("VehicleModel"+v);	
+				row += ' - outstanding vehicle finance</p><p>Amount owed: £';
+				var temp = parseFloat($.cookie("VehicleFinanceOutstanding"+v));
+				
+				row += parseFloat(temp).toFixed(2);
+				row += '</p></div></div></div>'; 
+				$("#previousdebt").append(row);
+				total += parseFloat(temp1);
+				$("#total").text(total.toFixed(2));
+			}
+		}
+
 		
 		if($.cookie("cred-count")){
 			$("#other").show();
