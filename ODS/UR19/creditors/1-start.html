@@ -273,6 +273,7 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 	$(document).ready(function() {
+		$("#other").hide();
 	
 		//look for negative bank balances
 		for(var b=1; b<=$.cookie("acc-count"); b++){
@@ -289,6 +290,8 @@
 				$("#previousdebt").append(row);
 				total += parseFloat(temp1);
 				$("#total").text(total.toFixed(2));
+				$("#question1-label").text("Are there any other creditors you owe money to?")
+
 			}
 		}
 		
@@ -307,6 +310,8 @@
 				$("#previousdebt").append(row);
 				total += parseFloat(temp);
 				$("#total").text(total.toFixed(2));
+				$("#question1-label").text("Are there any other creditors you owe money to?")
+
 			}
 		}
 
@@ -337,7 +342,7 @@
 		}
 		else{
 			$("#firsttime").show();
-			$("#other").hide();
+			
 		}
 	});	
 	
