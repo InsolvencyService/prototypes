@@ -298,14 +298,14 @@
 				$("#other").show();
 				var row;
 				row =  '<div class="new-item"><div class="row"><div class="col-md-8 col-xs-12"><p class="bold-medium">';
-				row += $.cookie("VehicleMake"+v) + " " $.cookie("VehicleModel"+v);	
+				row += $.cookie("VehicleMake"+v) + " " + $.cookie("VehicleModel"+v);	
 				row += ' - outstanding vehicle finance</p><p>Amount owed: £';
 				var temp = parseFloat($.cookie("VehicleFinanceOutstanding"+v));
 				
 				row += parseFloat(temp).toFixed(2);
 				row += '</p></div></div></div>'; 
 				$("#previousdebt").append(row);
-				total += parseFloat(temp1);
+				total += parseFloat(temp);
 				$("#total").text(total.toFixed(2));
 			}
 		}
