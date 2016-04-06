@@ -429,13 +429,13 @@ table, thead, tbody, th, tr, td {
             $("#add_person").hide();
           }
 
-          $.cookie("acc"+ x +"-sort", sortcode);
-          $.cookie("acc"+ x +"-number", $("#ac_number").val());
-          $.cookie("acc"+ x +"-balance", $("#ac_balance").val());
+          $.cookie("acc"+ x +"-sort", sortcode, {path:'/'});
+          $.cookie("acc"+ x +"-number", $("#ac_number").val(), {path:'/'});
+          $.cookie("acc"+ x +"-balance", $("#ac_balance").val(), {path:'/'});
           $.cookie("acc"+ x + "-date", $("input:radio[name ='opened-account']:checked").val(), { expires: 1, path:'/' });
           // $.cookie("acc"+ x +"-month", $("#month :selected").val());
           // $.cookie("acc"+ x +"-year", $("#start_year").val());
-          $.cookie("acc"+ x +"-bank", bank_name);
+          $.cookie("acc"+ x +"-bank", bank_name, {path:'/'});
 
           $.cookie("acc-count",x);
 
