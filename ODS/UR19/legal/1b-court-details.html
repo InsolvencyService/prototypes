@@ -148,14 +148,8 @@
         <!-- ///// Left content - START ///// -->
         <div class="col-md-8 col-xs-12" role="main" id="maincontent">
 
-          <h1 class="form-title heading-xlarge" role="header">Legal separation details</h1>
+          <h1 class="form-title heading-large" role="header">Legal separation details</h1>
 
-          <!-- ///// Confirmation Message - Start ///// -->
-          <div class="govuk-box-highlight" id="confirmation-panel">
-            <h2 id="court-name">Court name</h2>
-            <p>Sucessfully added</p>
-          </div>
-          <!-- ///// Confirmation Message - END ///// -->
 
           <!-- ///// Form - START ///// -->
           <form class="form" method="post">
@@ -211,7 +205,7 @@
             <!-- ///// Fieldset/Group 4 - START ///// -->
             <fieldset class="inline form-group" role="radiogroup" id="asset-division">
               <legend id="asset-title" class="form-label-bold">Has there been a division of your assets?</legend>
-              <label id="asset-yes-label" for="asset-yes" class="block-label"> 
+              <label id="asset-yes-label" for="asset-yes" class="block-label">
                 <input id="asset-yes" value="Yes" name="title" type="radio" aria-labelledby="asset-title asset-yes">
                 Yes
               </label>
@@ -222,15 +216,9 @@
             </fieldset>
             <!-- ///// Fieldset/Group 4 - END ///// -->
 
-            <!-- ///////////////// Add Item - Start ///////////////// -->
-            <fieldset class="add-item">
-              <a role="button" id="btn-add-separation" class="link-lookalike">Add another legal separation</a>
-            </fieldset>
-            <!-- ///////////////// Add Item - End ///////////////// -->
-
             <!-- ///// CTA Section - START ///// -->
             <fieldset class="inline form-group">
-              <input type="button" onclick="location.href='summary-1.html';" id="continue" class="button" value="Continue to my summary" aria-labelledby="continue-label button-title-1">
+              <a type="button" href="summary-1.html" id="continue" class="button"  aria-labelledby="continue-label button-title-1">Continue</a>
               <br>
               <br>
               <a href="javascript:history.go(-1)" id="back">Back</a>
