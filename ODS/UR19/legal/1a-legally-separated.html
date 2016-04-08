@@ -146,7 +146,7 @@
       <div class="row">
       	<!-- ///// Left content - START ///// -->
         <div class="col-md-10 col-xs-12" role="main" id="maincontent">
-			<h1 class="form-title heading-large" role="header" id="heading-1">Legal proceedings</h1>
+			<h1 class="form-title heading-large" role="header" id="heading-1">Legal seperations and divorces</h1>
 			<section id="court-cases" role="main">
           		<p class="lede">You've already told us about:</p>
 			</section>
@@ -252,7 +252,7 @@
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
 
-  var firstCount;
+  var firstCount=0;
 
     // Court details variables
     var court_details_Name;
@@ -263,7 +263,11 @@
 
     $(document).ready(function() {
 		$("#court-cases").hide();
-      firstCount = $.cookie("legal-prop-count");
+      firstCount = parseInt($.cookie("legal-prop-count"));
+
+      if(firstCount>0){
+      	$("#question1-label").text("Have you had any other legally separations, divorces or dissolved civil partnerships in the last 5 years?");
+      }
 
       for (i = 1; i <= firstCount; i++) {
 
