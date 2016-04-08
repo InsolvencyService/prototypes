@@ -266,7 +266,9 @@
 	  	$("#ongoing-cases").hide();
 
 	    secondCount = parseInt($.cookie("claims-prop-count"));
-
+		if(secondCount>0){
+			$("#question2-label").text("Are you involved in any other ongoing legal claims?");
+		}
 	    for (i = 1; i <= secondCount; i++) {
 
 	      // Oustanding legal claims variables cookies
