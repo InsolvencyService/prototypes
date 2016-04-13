@@ -327,10 +327,10 @@
       // row 3
       if ($.cookie("solicitor-case-list_"+i)) {
 	      row += '<div class="row court-case-details">';
-	      row += '<div class="col-xs-12 col-sm-6">';
+	      row += '<div class="col-xs-12 col-sm-5">';
 	      row += '<p>Cases in which they reresented you: </p>';
 	      row += '</div>';
-	      row += '<div class="col-xs-12 col-sm-6">';
+	      row += '<div class="col-xs-12 col-sm-7">';
 	      var res = new Array();
 	      res = solicitor_CaseCourt.split(" & ");
 	      resLen = res.length;
@@ -344,7 +344,7 @@
       if ($.cookie("solicitor-action_"+i)) {
 	      row += '<div class="row solicitor-action">';
 	      row += '<div class="col-xs-12">';
-	      row += '<p>Other actions they assist you with:  ';
+	      row += '<p>&nbsp;</p><p>Other actions they assist you with:  ';
 	      row +=  solicitor_Action + '</p>';
 	      row += '</div>';
 	      row += '</div>';
