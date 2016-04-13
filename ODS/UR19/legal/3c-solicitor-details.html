@@ -406,14 +406,14 @@
     var $actionboxes;
 	
 	function setCaseListcookie() {
-		var options = $case-list_checkboxes.map(function () {
+		var options = $checkboxes.map(function () {
 	        if (this.checked) return this.value;
 	    }).get().join(', ');
 	    $.cookie("solicitor-case-list_"+thirdCount, options, {path:'/'});
 	}
 	
 	function setActionSelectcookie() {
-		var options = $case-list_checkboxes.map(function () {
+		var options = $actionboxes.map(function () {
 	        if (this.checked) return this.value;
 	    }).get().join(', ');
 	    $.cookie("solicitor-action_"+thirdCount, options, {path:'/'});
