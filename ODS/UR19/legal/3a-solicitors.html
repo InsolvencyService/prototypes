@@ -261,9 +261,7 @@
 
     for (i = 1; i <= thirdCount; i++) {
 
-      // no answers display
-      $("#question3-no").hide();
-
+      
       // Oustanding legal claims variables cookies
       // Solicitor Name
       if($.cookie("solicitor-name_"+i)){
@@ -328,7 +326,7 @@
       if ($.cookie("solicitor-case-list_"+i)) {
 	      row += '<div class="row court-case-details">';
 	      row += '<div class="col-xs-12 col-sm-5">';
-	      row += '<p>Cases in which they reresented you: </p>';
+	      row += '<p class="bolder">Cases in which they reresented you: </p>';
 	      row += '</div>';
 	      row += '<div class="col-xs-12 col-sm-7">';
 	      var res = new Array();
@@ -337,24 +335,28 @@
 	      for(var sp=0; sp<resLen; sp++){
 	      	row += '<p>'+ res[sp] + '</p>';     
 	      }
-	      row += '</div><p>&nbsp;</p>';
+	      row += '</div>';
 	      row += '</div>';
 	  }
       // row 4
       if ($.cookie("solicitor-action_"+i)) {
 	      row += '<div class="row solicitor-action">';
-	      row += '<div class="col-xs-12">';
-	      row += '<p>Other actions they assist you with:  ';
-	      row +=  solicitor_Action + '</p>';
+	      row += '<div class="col-xs-12 col-sm-5">';
+	      row += '<p class="bolder">Other actions they assist you with:</p>';
+	      row += '</div>';
+	      row += '<div class="col-xs-12 col-sm-7">';
+	      row +=  '<p>' + solicitor_Action + '</p>';
 	      row += '</div>';
 	      row += '</div>';
 	  }
       
       // row 5
       row += '<div class="row">';
-      row += '<div class="col-xs-12">';
-      row += '<p>Date you first instructed them:  ';
-      row +=  solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
+      row += '<div class="col-xs-12 col-sm-5">';
+      row += '<p class="bolder">Date you first instructed them:</p>';
+      row += '</div>';
+      row += '<div class="col-xs-12 col-sm-7">';
+      row += '<p>' + solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
       row += '</div>';
       row += '</div>';
       
