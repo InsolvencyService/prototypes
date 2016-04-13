@@ -331,9 +331,9 @@
   
   	if($.cookie("solicitor-prop-count")){
   		thirdCount = $.cookie("solicitor-prop-count");
-	
-  	claimsCount =  parseInt($.cookie("claims-prop-count"));
-  	legalCount = parseInt($.cookie("legal-prop-count"));
+	  	claimsCount =  parseInt($.cookie("claims-prop-count"));
+  		legalCount = parseInt($.cookie("legal-prop-count"));
+  	}
   	
   	if((claimsCount+legalCount)>0){
   		$("#your-cases").show();
@@ -369,7 +369,7 @@
     	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
     	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie1('+i+')" value="'+$.cookie("separation-court_"+i)+ ', ' +$.cookie("separation-court-reference_"+i)+'" name="case-list-group" type="checkbox" aria-labelledby="case-list-group">';
     	item += '<span class="court-name bolder">' + $.cookie("separation-court_"+i) + '</span> (' + $.cookie("separation-court-reference_"+i) + ')';
-      item += '<br>';
+        item += '<br>';
     	item += '<span class="court-type">Legal separation</span>';
     	item += '</label>';
     	$("#case-list").append(item);
@@ -380,7 +380,7 @@
     	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie2('+j+')" for="your-case_'+j+'" class="block-label">';
     	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court_"+j)+ ', ' +$.cookie("claims-court-reference_"+j)+'" name="case-list-group" type="checkbox" aria-labelledby="case-list-group">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
-      item += '<br>';
+        item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
     	if ($.cookie("claims-settled_"+j == "No")) {
     		item += ' - Ongoing legal claim</span>';
@@ -388,8 +388,8 @@
     	else {
     		item += '</span>';
     	}
-      item += '</label>';
-    	$("#case-list").append(item);
+       item += '</label>';
+       $("#case-list").append(item);
     }
 
     $("#case-list").append('</div>');
