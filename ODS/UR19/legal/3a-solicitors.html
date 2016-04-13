@@ -338,14 +338,14 @@
       if ($.cookie("solicitor-case-list_"+i)) {
 	      row += '<div class="row court-case-details">';
 	      row += '<div class="col-xs-12 col-sm-5">';
-	      row += '<p class="bolder">Cases in which they represented you: </p>';
+	      row += '<p >Cases in which they represented you: </p>';
 	      row += '</div>';
 	      row += '<div class="col-xs-12 col-sm-7">';
 	      var res = new Array();
 	      res = solicitor_CaseCourt.split(" & ");
 	      resLen = res.length;
 	      for(var sp=0; sp<resLen; sp++){
-	      	row += '<p>'+ res[sp] + '</p>';     
+	      	row += '<p class="bolder">'+ res[sp] + '</p>';     
 	      }
 	      row += '</div>';
 	      row += '</div>';
@@ -354,10 +354,10 @@
       if ($.cookie("solicitor-action_"+i)) {
 	      row += '<div class="row solicitor-action">';
 	      row += '<div class="col-xs-12 col-sm-5">';
-	      row += '<p class="bolder">Other actions they assist you with:</p>';
+	      row += '<p>Other actions they assist you with:</p>';
 	      row += '</div>';
 	      row += '<div class="col-xs-12 col-sm-7">';
-	      row +=  '<p>' + solicitor_Action + '</p>';
+	      row +=  '<p class="bolder">' + solicitor_Action + '</p>';
 	      row += '</div>';
 	      row += '</div>';
 	  }
@@ -365,10 +365,10 @@
       // row 5
       row += '<div class="row">';
       row += '<div class="col-xs-12 col-sm-5">';
-      row += '<p class="bolder">Date you first instructed them:</p>';
+      row += '<p>Date you first instructed them:</p>';
       row += '</div>';
       row += '<div class="col-xs-12 col-sm-7">';
-      row += '<p>' + solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
+      row += '<p class="bolder">' + solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
       row += '</div>';
       row += '</div>';
       
