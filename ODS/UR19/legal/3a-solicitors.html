@@ -258,6 +258,12 @@
   $(document).ready(function() {
 
     thirdCount = $.cookie("solicitor-prop-count");
+    
+    if(thirdCount>0){
+      	$("#question3-label").text("Have you used any other solicitors in the last 5 years?");
+      	$("#question3-no").attr("value", "Yes");
+      }
+
 
     for (i = 1; i <= thirdCount; i++) {
 
@@ -326,7 +332,7 @@
       if ($.cookie("solicitor-case-list_"+i)) {
 	      row += '<div class="row court-case-details">';
 	      row += '<div class="col-xs-12 col-sm-5">';
-	      row += '<p class="bolder">Cases in which they reresented you: </p>';
+	      row += '<p class="bolder">Cases in which they represented you: </p>';
 	      row += '</div>';
 	      row += '<div class="col-xs-12 col-sm-7">';
 	      var res = new Array();
