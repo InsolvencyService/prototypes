@@ -143,6 +143,10 @@
       </div>
       <!-- ///// Phase Banner - END ///// -->
 
+    </div>
+<!-- #BeginEditable "main" -->
+      <div class="inner-block">
+
       <div class="row">
 
         <!-- ///// Left content - START ///// -->
@@ -159,64 +163,45 @@
 
               <!-- ///// Fieldset/Group 1 - START ///// -->
               <fieldset class="inline form-group" role="group" id="your-cases">
-                <legend id="your-cases-label" class="form-label-bold">Please select from your cases below which one these Solicitors helped you with</legend>
-                <span class="form-hint" id="your-cases-hint-1">Do not tick any of your cases in list below if this does not apply to any of them</span>
+                <legend id="your-cases-label" class="form-label-bold">Please select from your cases below, all cases this Solicitor has helped you with</legend>
+                <span class="form-hint" id="your-cases-hint-1">Please tick all that apply</span>
                 <div id="case-list-group" role="radiogroup">
                   <div id="case-list">
                   </div>
 
-                  <div class="wrap-radio-button">
-                    <div class="row">
-                      <div class="col-md-7 col-xs-5">
-                        <label id="other-label" for="other" class="block-label">
-                          <input id="other" value="" name="case-list-group" type="radio" aria-labelledby="your-cases-label">
-                          Other - please specify:
-                        </label>
-                      </div>
-                      <div class="col-md-5 col-xs-7">
-                        <label for="other_answer" class="hidden">Enter here:</label>
-                        <input id="other_answer" name="case-list-group_answer" type="text" value=""/>
-                      </div>
-                    </div>
-                  </div>
-
-                  <label id="none-of-the-above-label" for="none-of-the-above" class="block-label">
-                    <input id="none-of-the-above" value="none-of-the-above" name="case-list-group" type="radio" aria-labelledby="your-cases-label">
-                    None of the above
-                  </label>
                 </div>
               </fieldset>
               <!-- ///// Fieldset/Group 1 - END ///// -->
 
               <!-- ///// Fieldset/Group 2 - START ///// -->
               <fieldset class="inline form-group" id="action-select" role="radiogroup">
-                <legend id="action_label" class="form-label-bold">What type of action did they assist you with?</legend>
+                <legend id="action_label" class="form-label-bold">Have they <span id="also">also </span>assisted you with any of the following types of action?</legend>
                 <span class="form-hint" id="action-date-hint-1">Please tick all that apply</span>
                 <label id="action_label0" for="action0" class="block-label">
-                  <input id="action0" value="Conveyancing" name="actions" type="radio" aria-labelledby="action_label">
+                  <input id="action0" value="Conveyancing" name="actions" type="checkbox" aria-labelledby="action_label">
                   Conveyancing
                 </label>
                 <label id="action_label1" for="action1" class="block-label">
-                  <input id="action1" value="Disputes" name="actions" type="radio" aria-labelledby="action_label">
+                  <input id="action1" value="Disputes" name="actions" type="checkbox" aria-labelledby="action_label">
                   Disputes
                 </label>
                 <label id="action_label2" for="action2" class="block-label">
-                  <input id="action2" value="Acting as defendent" name="actions" type="radio" aria-labelledby="action_label">
+                  <input id="action2" value="Acting as defendent" name="actions" type="checkbox" aria-labelledby="action_label">
                   Acting as defendent
                 </label>
                 <label id="action_label3" for="action3" class="block-label">
-                  <input id="action3" value="Trust" name="actions" type="radio" aria-labelledby="action_label">
+                  <input id="action3" value="Trust" name="actions" type="checkbox" aria-labelledby="action_label">
                   Trust
                 </label>
                 <label id="action_label4" for="action4" class="block-label">
-                  <input id="action4" value="Criminal proceedings" name="actions" type="radio" aria-labelledby="action_label">
+                  <input id="action4" value="Criminal proceedings" name="actions" type="checkbox" aria-labelledby="action_label">
                   Criminal proceedings
                 </label>
                 <div class="wrap-radio-button">
                   <div class="row">
                     <div class="col-md-7 col-xs-5">
                       <label id="action_label5" for="action_other" class="block-label">
-                        <input id="action_other" value="" name="actions" type="radio" aria-labelledby="action_label">
+                        <input id="action_other" value="" name="actions" type="checkbox" aria-labelledby="action_label">
                         Other - please specify:
                       </label>
                     </div>
@@ -237,6 +222,7 @@
                   <div class="col-md-2 col-sm-2 col-xs-2" role="group">
                     <label id="instructed-month-label" for="instructed-month">Month</label><br>
                     <select id="instructed-month" name="instructed-month" aria-labelledby="instructed-date-label instructed-date-hint-1 instructed-month-label">
+                      <option value=""></option>
                       <option value="Jan">Jan</option>
                       <option value="Feb">Feb</option>
                       <option value="Mar">Mar</option>
@@ -259,15 +245,11 @@
               </fieldset>
               <!-- ///// Fieldset/Group 3 - END ///// -->
 
-              <!-- ///////////////// Add Item - Start ///////////////// -->
-              <fieldset class="add-item">
-                <a role="button" id="btn-add-separation" class="link-lookalike">Add another solicitor</a>
-              </fieldset>
-              <!-- ///////////////// Add Item - End ///////////////// -->
+              
 
               <!-- ///// CTA Section - START ///// -->
               <fieldset class="inline form-group">
-                <input type="button" onclick="location.href='summary-3.html';" id="continue" class="button" value="Continue to my summary" aria-labelledby="continue-label button-title-1">
+                <a type="button" href='summary-3.html' id="continue" class="button" aria-labelledby="continue-label button-title-1">Continue</a>
                 <br>
                 <br>
                 <a href="javascript:history.go(-1)" id="back">Back</a>
@@ -291,6 +273,8 @@
     </div>
 
   </main>
+  <!-- #EndEditable "main" -->
+
   <!-- ////////////////////////////////////////////// Main - END ////////////////////////////////////////////// -->
 
   <!-- ////////////////////////////////////////////// Footer - START ////////////////////////////////////////////// -->
@@ -339,13 +323,25 @@
   <script type="text/javascript">
   var countx
   var thirdCount;
-  var fourthCount;
+  var claimsCount=0;
+  var legalCount=0;
   var solicitor_cases;
+  var list_checkboxes;
+  var action_checkboxes;
+  
   $(document).ready(function() {
-	$("#action-select").hide();
-    thirdCount = $.cookie("solicitor-prop-count");
-  	fourthCount =  parseInt($.cookie("claims-prop-count"));
-  	fifthCount = parseInt($.cookie("legal-prop-count"));
+	thirdCount = $.cookie("solicitor-prop-count");
+  	claimsCount =  parseInt($.cookie("claims-prop-count"));
+  	legalCount = parseInt($.cookie("legal-prop-count"));
+  	
+  	if((claimsCount+legalCount)>0){
+  		$("#your-cases").show();
+  		$("#also").show();
+  	}
+  	else{
+  		$("#your-cases").hide();
+  		$("#also").hide();
+  	}
 
     // These actions help write the cookies further down the page
     $("#btn-add-separation").on("click", function (e) {
@@ -361,23 +357,16 @@
       $("#solicitor-name").text($.cookie("solicitor-name_"+thirdCount));
     }
 
-    // These lines display the cases the user has previously told us about
-    if ($.cookie("question1") === "No" && $.cookie("question2") === "No") {
-      $("#your-cases").hide();
-      $("#action-select").show();
-    } else if ($.cookie("question1") === "Yes" || $.cookie("question2") === "Yes") {
-      $("#your-cases").show();
-      $("#action-select").hide();
-    }
+    
 
     // Wrapping container - START
     $("#case-list").append('<div class="case-item">');
     // Label - START
 
     // My added code
-    for (var i = 1; i <= fifthCount; i++) {
+    for (var i = 1; i <= legalCount; i++) {
     	var item = '<label id="your-case-label'+i+'" for="your-case'+i+'" class="block-label">';
-    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie1('+i+')" value="'+$.cookie("separation-court_"+i)+ ', ' +$.cookie("separation-court-reference_"+i)+'" name="case-list-group" type="radio" aria-labelledby="case-list-group">';
+    	item += '<input id="your-case'+i+'" onclick="WriteSelectCookie1('+i+')" value="'+$.cookie("separation-court_"+i)+ ', ' +$.cookie("separation-court-reference_"+i)+'" name="case-list-group" type="checkbox" aria-labelledby="case-list-group">';
     	item += '<span class="court-name bolder">' + $.cookie("separation-court_"+i) + '</span> (' + $.cookie("separation-court-reference_"+i) + ')';
       item += '<br>';
     	item += '<span class="court-type">Legal separation</span>';
@@ -385,10 +374,10 @@
     	$("#case-list").append(item);
     }
 
-    for (var j = 1; j <= fourthCount; j++) {
+    for (var j = 1; j <= claimsCount; j++) {
 
     	var item = '<label id="your-case-label_'+j+'" onclick="WriteSelectCookie2('+j+')" for="your-case_'+j+'" class="block-label">';
-    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court_"+j)+ ', ' +$.cookie("claims-court-reference_"+j)+'" name="case-list-group" type="radio" aria-labelledby="case-list-group">';
+    	item += '<input id="your-case_'+j+'" value="'+$.cookie("claims-court_"+j)+ ', ' +$.cookie("claims-court-reference_"+j)+'" name="case-list-group" type="checkbox" aria-labelledby="case-list-group">';
     	item += '<span class="court-name bolder">' + $.cookie("claims-court_"+j) + '</span> (' + $.cookie("claims-court-reference_"+j) + ')';
       item += '<br>';
     	item += '<span class="court-type">'+ $.cookie("claims-type_"+j);
@@ -412,10 +401,35 @@
       results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
+  
+  
+ 	////////////////////  Sets the select values of case-list in a cookie /////////////////////
+	
+	
+	function setCaseListcookie() {
+		var options = $case-list_checkboxes.map(function () {
+	        if (this.checked) return this.value;
+	    }).get().join(', ');
+	    $.cookie("solicitor-case-list_"+thirdCount, options, {path:'/'});
+	}
+	
+	function setCaseListcookie() {
+		var options = $case-list_checkboxes.map(function () {
+	        if (this.checked) return this.value;
+	    }).get().join(', ');
+	    $.cookie("solicitor-action_"+thirdCount, options, {path:'/'});
+	}
+	
+	
+	$(function() {
+		list_checkboxes = $('#case-list input:checkbox').change(setCaseListcookie);
+		action_checkboxes = $('#action-select input:checkbox').change(setActionSelectcookie);
+	});
+	////////////////////  Sets the select values of case-list in a cookie /////////////////////
+
 
   // Write cookies
   function WriteCookies() {
-  	$.cookie("solicitor-action_"+thirdCount, $("#action-select :checked").attr("value"), { path:'/' });
     $.cookie("solicitor-instructed-month_"+thirdCount, $("#instructed-month").val(), { path:'/' });
     $.cookie("solicitor-instructed-year_"+thirdCount, $("#instructed-year").val(), { path:'/' });
 
@@ -435,14 +449,7 @@
   	solicitor_cases = $("#your-case_"+countx).val();
   }
 
-  $("#case-list-group").click(function(e) {
-  	if ($("#case-list-group :checked").val() === "none-of-the-above") {
-	    $("#action-select").show();
-  	}
-  	else {
-  		$("#action-select").hide();
-  	}
-  });
+ 
 
   </script>
   <!-- #EndEditable "scripts" -->
