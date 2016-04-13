@@ -330,8 +330,10 @@
 	      row += '<div class="col-xs-12">';
 	      row += '<p>Cases in which they reresented you: </p>';
 	      
-	      var res = solicitor_CaseCourt.split(" & ");
-	      for(var sp=0; sp<$.cookie("solicitor-case-list_"+i); sp++){
+	      var res = new Array();
+	      res = solicitor_CaseCourt.split(" & ");
+	      resLen = res.length;
+	      for(var sp=0; sp<resLen; sp++){
 	      	row += '<p>'+ res[sp] + '</p>';     
 	      }
 	      row += '</div>';
