@@ -292,27 +292,23 @@
 	      var row= '<div class="new-item">';
 	      // row 1
 	      row += '<div class="row">';
-	      row += '<div class="col-xs-9">';
+	      row += '<div class="col-md-9 col-sm-9 col-xs-9">';
 	      row += '<h3 class="heading-medium">' + outstanding_details_Name + '</h3>';
 	      row += '</div>';
-	      row += '<div class="col-xs-3"><a href="#" class="delete-item">Delete</a>&nbsp;&nbsp;&nbsp;<a href="2b-court-details.html?p='+i+'">Edit</a></div>';
+	      row += '<div class="col-md-3 col-sm-3 col-xs-3"><a href="#" class="delete-item">Delete</a><a href="2b-court-details.html?p='+i+'">Edit</a></div>';
 	      row += '</div>';
 	      // row 2
 	      row += '<div class="row" id="court-ref-appearance">';
-	      row += '<div class="col-xs-12 col-sm-5">';
-	      row += '<p>Court reference:</p>';
-	      row += '</div>';
-	      row += '<div class="col-xs-12 col-sm-7">';
-	      row += '<p class="bolder">'+ outstanding_details_CourtRef + '</p>';
+	      row += '<div class="col-xs-12">';
+	      row += '<p>Court reference: ';
+	      row += outstanding_details_CourtRef + '</p>';
 	      row += '</div>';
 	      row += '</div>';
 	      // row 3
 	      row += '<div class="row">';
-	      row += '<div class="col-xs-12 col-sm-5">';
-	      row += "<p>Case type:</p>";
-	      row += '</div>';
-	      row += '<div class="col-xs-12 col-sm-7">';
-	      row += '<p class="bolder">' + outstanding_details_Claim + '</p>';
+	      row += '<div class="col-xs-12">';
+	      row += "<p>Case type: ";
+	      row += outstanding_details_Claim + '</p>';
 	      row += '</div>';
 	      row += '</div>';
 
