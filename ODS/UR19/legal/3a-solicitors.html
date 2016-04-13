@@ -313,16 +313,14 @@
       row += '<div class="col-xs-9">';
       row += '<h3 class="font-large bolder">' + solicitor_Name + '</h3>'; 
       row += '</div>';
-      row += '<div class="col-xs-3"><a href="#" class="delete-item">Delete </a><a href="3b-solicitor-details.html?p='+i+'"> Edit</a></div>';
+      row += '<div class="col-xs-3"><a href="#" class="delete-item">Delete</a>&nbsp;&nbsp;&nbsp;<a href="3b-solicitor-details.html?p='+i+'">Edit</a></div>';
       row += '</div>';
       // row 2
       if ($.cookie("solicitor-address_line_1_"+i)) {
 	      row += '<div class="row court-ref-appearance">';
 	      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-	      row += '<p><span class="form-hint">Address:</span>';
-	      row += '</div>';
-	      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-	      row += '<p id="address">' + solicitor_address +'</p>';
+	      row += '<p>Address:';
+	      row +=  solicitor_address +'</p>';
 	      row += '</div>';
 	      row += '</div>';
 	  }
@@ -330,10 +328,8 @@
       if ($.cookie("solicitor-case-list_"+i)) {
 	      row += '<div class="row court-case-details">';
 	      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-	      row += '<p><span class="form-hint">The case details:</span>';
-	      row += '</div>';
-	      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-	      row += '<p>' + solicitor_CaseCourt + '</p>';
+	      row += '<p>Cases in which they reresented you:';
+	      row += solicitor_CaseCourt + '</p>';
 	      row += '</div>';
 	      row += '</div>';
 	  }
@@ -341,10 +337,8 @@
       if ($.cookie("solicitor-action_"+i)) {
 	      row += '<div class="row solicitor-action">';
 	      row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-	      row += '<p><span class="form-hint">What type of action did they assist you with?:</span>';
-	      row += '</div>';
-	      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-	      row += '<p>' + solicitor_Action + '</p>';
+	      row += '<p>Other actions they assist you with:';
+	      row +=  solicitor_Action + '</p>';
 	      row += '</div>';
 	      row += '</div>';
 	  }
@@ -352,10 +346,8 @@
       // row 5
       row += '<div class="row">';
       row += '<div class="col-md-4 col-sm-4 col-xs-12">';
-      row += '<p><span class="form-hint">Date you instructed your solicitor:</span>';
-      row += '</div>';
-      row += '<div class="col-md-8 col-sm-8 col-xs-12">';
-      row += '<p>' + solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
+      row += '<p>Date you first instructed them:';
+      row +=  solicitor_InstructedMonth + ' / ' + solicitor_InstructedYear + '</p>';
       row += '</div>';
       row += '</div>';
       
