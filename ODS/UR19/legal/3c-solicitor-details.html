@@ -418,7 +418,7 @@
 	function setActionSelectcookie() {
 		var options = $actionboxes.map(function () {
 	        if (this.checked) return this.value;
-	    }).get().join(', ');
+	    }).get().join('\r\n ');
 	    $.cookie("solicitor-action_"+thirdCount, options, {path:'/'});
 	}
 	
