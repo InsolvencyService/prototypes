@@ -254,15 +254,21 @@
 
   <!-- #BeginEditable "scripts" -->
   <script type="text/javascript">
-  
+  var thirdCount=0
   $(document).ready(function() {
 
-    thirdCount = $.cookie("solicitor-prop-count");
+    if($.cookie("solicitor-prop-count")){
+    	thirdCount = $.cookie("solicitor-prop-count");
+    }
     
     if(thirdCount>0){
       	$("#solicitor-label").text("Have you used any other solicitors in the last 5 years?");
       	$("#question3-no").attr("value", "Yes");
-      }
+    }
+    else{
+    	$("#solicitor").hide();
+    }
+    
 
 
     for (i = 1; i <= thirdCount; i++) {
