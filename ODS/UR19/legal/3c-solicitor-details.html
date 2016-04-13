@@ -411,7 +411,7 @@
 	function setCaseListcookie() {
 		var options = $checkboxes.map(function () {
 	        if (this.checked) return this.value;
-	    }).get().join(', ');
+	    }).get().join(' & ');
 	    $.cookie("solicitor-case-list_"+thirdCount, options, {path:'/'});
 	}
 	

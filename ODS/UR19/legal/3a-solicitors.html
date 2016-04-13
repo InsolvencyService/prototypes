@@ -328,8 +328,12 @@
       if ($.cookie("solicitor-case-list_"+i)) {
 	      row += '<div class="row court-case-details">';
 	      row += '<div class="col-xs-12">';
-	      row += '<p>Cases in which they reresented you:  ';
-	      row += solicitor_CaseCourt + '</p>';
+	      row += '<p>Cases in which they reresented you: </p>';
+	      
+	      var res = solicitor_CaseCourt.split(" & ");
+	      for(var sp=0; sp<$.cookie("solicitor-case-list_"+i); sp++){
+	      	row += '<p>'+ res[sp] + '</p>';     
+	      }
 	      row += '</div>';
 	      row += '</div>';
 	  }
