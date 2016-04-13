@@ -294,30 +294,36 @@
         var row= '<div class="new-item">';
         // row 1
         row += '<div class="row">';
-        row += '<div class="col-md-9 col-sm-9 col-xs-9">';
-        row += '<h3 class="heading-medium">' + court_details_Name + '</h3>';
+        row += '<div class="col-xs-9">';
+        row += '<h3 class="font-large bolder">' + court_details_Name + '</h3>';
         row += '</div>';
-        row += '<div class="col-md-3 col-sm-3 col-xs-3"><a href="#" class="delete-item">Delete</a><a href="1b-court-details.html?p='+i+'">Edit</a></div>';
+        row += '<div class="col-xs-3"><a href="#" class="delete-item">Delete</a>&nbsp;&nbsp;&nbsp;<a href="1b-court-details.html?p='+i+'">Edit</a></div>';
         row += '</div>';
         // row 2
         row += '<div class="row" id="court-ref-appearance">';
-        row += '<div class="col-xs-12">';
-        row += '<p>Court reference: ';
-        row += court_details_CourtRef + '</p>';
+        row += '<div class="col-xs-12 col-sm-5">';
+        row += '<p>Court reference:</p>';
+        row += '<div class="col-xs-12 col-sm-7">';
+        row += '</div>';
+        row += '<p class="bolder">' +court_details_CourtRef + '</p>';
         row += '</div>';
         row += '</div>';
         // row 3
         row += '<div class="row">';
-        row += '<div class="col-xs-12">';
-        row += '<p>Date the process finished: ';
-        row += court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
+        row += '<div class="col-xs-12 col-sm-5">';
+        row += '<p>Date the process finished:</p>';
+        row += '</div>';
+        row += '<div class="col-xs-12 col-sm-7">';
+        row +=  '<p class="bolder">' +court_details_FinishMonth + ' / ' + court_details_FinishYear + '</p>';
         row += '</div>';
         row += '</div>';
         // row 4
         row += '<div class="row">';
-        row += '<div class="col-xs-12">';
-        row += '<p>Division of your assets: ';
-        row += court_details_Asset + '</p>';
+        row += '<div class="col-xs-12 col-sm-5">';
+        row += '<p>Division of your assets:</p>';
+        row += '</div>';
+        row += '<div class="col-xs-12 col-sm-7">';
+        row += '<p class="bolder">' +court_details_Asset + '</p>';
         row += '</div>';
         row += '</div>';
 
