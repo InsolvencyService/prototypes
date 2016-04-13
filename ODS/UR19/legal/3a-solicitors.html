@@ -327,9 +327,10 @@
       // row 3
       if ($.cookie("solicitor-case-list_"+i)) {
 	      row += '<div class="row court-case-details">';
-	      row += '<div class="col-xs-12">';
+	      row += '<div class="col-xs-12 col-sm-6">';
 	      row += '<p>Cases in which they reresented you: </p>';
-	      
+	      row += '</div>';
+	      row += '<div class="col-xs-12 col-sm-6">';
 	      var res = new Array();
 	      res = solicitor_CaseCourt.split(" & ");
 	      resLen = res.length;
