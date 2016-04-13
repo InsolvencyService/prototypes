@@ -326,8 +326,6 @@
   var claimsCount=0;
   var legalCount=0;
   var solicitor_cases;
-  var list_checkboxes;
-  var action_checkboxes;
   
   $(document).ready(function() {
 	thirdCount = $.cookie("solicitor-prop-count");
@@ -404,7 +402,8 @@
   
   
  	////////////////////  Sets the select values of case-list in a cookie /////////////////////
-	
+	var $checkboxes;
+    var $actionboxes;
 	
 	function setCaseListcookie() {
 		var options = $case-list_checkboxes.map(function () {
@@ -413,7 +412,7 @@
 	    $.cookie("solicitor-case-list_"+thirdCount, options, {path:'/'});
 	}
 	
-	function setCaseListcookie() {
+	function setActionSelectcookie() {
 		var options = $case-list_checkboxes.map(function () {
 	        if (this.checked) return this.value;
 	    }).get().join(', ');
@@ -422,8 +421,8 @@
 	
 	
 	$(function() {
-		list_checkboxes = $('#case-list input:checkbox').change(setCaseListcookie);
-		action_checkboxes = $('#action-select input:checkbox').change(setActionSelectcookie);
+		$checkboxes = $('#case-list input:checkbox').change(setCaseListcookie);
+		$actionboxes = $('#action-select input:checkbox').change(setActionSelectcookie);
 	});
 	////////////////////  Sets the select values of case-list in a cookie /////////////////////
 
