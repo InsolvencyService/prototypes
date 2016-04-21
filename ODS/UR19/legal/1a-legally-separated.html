@@ -159,9 +159,9 @@
           <form class="form" method="post">
             <!-- ///// Fieldset/Group 1 - START ///// -->
             <fieldset class="inline" id="question1">
-              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">Have you been legally separated, divorced or dissolved a civil partnership in the last 5 years?</label>
-              <p class="form-hint" id="hint-1">Include any ongoing divorces, legal separations, etc</p>
-              <p class="form-hint" id="hint-2">This will help us understand any changes to your financial situation during this time</p>
+              <label class="form-label-bold" for="question1-yes question1-no" id="question1-label">In the last 5 years, have you legally separated, divorced or dissolved a civil partnership?</label>
+              <p class="form-hint" id="hint-1">Include any ongoing divorces, legal separations or civil partnerships</p>
+              <p class="form-hint" id="hint-2">This inforamtion will help us understand any changes to your financial situation during this time</p>
 
               <div class="form-group">
                 <label id="question1-yes-label" for="question1-yes" class="block-label">
@@ -266,7 +266,7 @@
       firstCount = parseInt($.cookie("legal-prop-count"));
 
       if(firstCount>0){
-      	$("#question1-label").text("Have you had any other legally separations, divorces or dissolved civil partnerships in the last 5 years?");
+      	$("#question1-label").text("In the last 5 years, have you had any other legal separations, divorces or dissolved civil partnerships?");
       	$("#question1-no").attr("value", "Yes");
       }
 
