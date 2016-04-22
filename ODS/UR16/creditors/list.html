@@ -233,406 +233,391 @@ display:block;
 	
 
 
-</div>
+
 	
 
 
 <!-- #BeginEditable "content" -->
-<div id="content" >
+
 <div class="inner-block" > 
-<div class="row" style="margin-left:0px">
+	<div class="row" style="margin-left:0px">
 
-	<div class="col-sm-8">
-		<h1 class="form-title heading-large">Money you owe</h1>
-		<div class="firsttime">
-			<p>Organisations and people you owe money to are known as creditors.</p>
-			<br>
-			<p><span class="bold-small">What we need to know</span></p>
-			<p>We need to know about all of your creditors, including family members or friends.</p>
-			<p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
-			
-			<p>If a debt collection agency is involved:</p>
-			<ul class="list-bullet">
-			<li>check correspondence from your creditor to see if your debt has been sold to the agency</li>
-			<li>for sold debts, we only need to know about the debt collection agency</li>
-			<li>for all other debts, we only need to know about your original creditor</li>
-			</ul>
-			<div class="panel-indent">
-			<span class="bold-small">You do not need to include any debts you have already told us about (eg a mortgage, 
-			car financing or overdrafts EMPLOYEES).</span></div>
-	
-		<div id="previous_items" style="display:none">
-			<p>The table below shows all of the mortgages, secured loans and outstanding finance agreements you have already told us about. You don't need to add these again.</p>
-			<table>
-				<thead>
-					<tr>
-						<th>Type</th>
-						<th>Total amount</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id="mortgage_row" style="display:none">
-						<td>Mortgages</td>
-						<td>£ <span id="mortgagetotal"></span></td>
-						<td><a href="#">Edit</a></td>
-					</tr>
-					<tr id="secured_loans_row" style="display:none">
-						<td>Loans secured against your property</td>
-						<td>£ <span id="loantotal"></span></td>
-						<td><a href="#">Edit</a></td>
-					</tr>
-					<tr id="vehicle_finance_row" style="display:none">
-						<td>Vehicle finance</td>
-						<td>£ <span id="vehicletotal"></span></td>
-						<td><a href="#">Edit</a></td>
-					</tr>
-					<tr id="employee_owed_row" style="display:none">
-						<td>Employees who claim you owe them money</td>
-						<td>£ <span id="employeetotal"></span></td>
-						<td><a href="#">Edit</a></td>
-					</tr>
-					<tr id="overdraft_row" style="display:none">
-						<td>Overdrafts</td>
-						<td>£ <span id="overdrafttotal"></span></td>
-						<td><a href="#">Edit</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	
-	
-		<form class="form" method="post">
-			<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
-			<div class="validation-summary"  id="msg-entervalue" style="display:none">
-                <h2>Add a creditor</h2>
-                
-                <ol>
-			        <li class="error-message"> 
-			               Enter a creditor’s name below to continue
-			        </li>
-    			</ol>
+		<div class="col-sm-8">
+			<h1 class="form-title heading-large">Money you owe</h1>
+			<div class="firsttime">
+				<p>Organisations and people you owe money to are known as creditors.</p>
+				<br>
+				<p><span class="bold-small">What we need to know</span></p>
+				<p>We need to know about all of your creditors, including family members or friends.</p>
+				<p>If you have multiple debts with one creditor, please tell us about each one separately.</p>
+				<p>If a debt collection agency is involved:</p>
+				<ul class="list-bullet">
+					<li>check correspondence from your creditor to see if your debt has been sold to the agency</li>
+					<li>for sold debts, we only need to know about the debt collection agency</li>
+					<li>for all other debts, we only need to know about your original creditor</li>
+				</ul>
+				<div class="panel-indent bold-small">
+					
+						You do not need to include any debts you have already told us about (eg a mortgage, 
+						car financing or overdrafts EMPLOYEES).
+					
+				</div>
 			</div>
-			
-			
-           
-			<div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
-       			<h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
-        		<p>Are you sure you want to delete this creditor?</p>
-        		<p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
-    		</div>  
-			
-			<div id="creditorlist">
-
-				<table style="width: 100%">
+		
+	<!--
+			<div id="previous_items" style="display:none">
+				<p>The table below shows all of the mortgages, secured loans and outstanding finance agreements you have already told us about. You don't need to add these again.</p>
+				<table>
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Reference</th>
-							<th style="text-align:right; white-space:nowrap">Amount</th>
-							<th>Date</th>
-							<th>&nbsp;</th>
+							<th>Type</th>
+							<th>Total amount</th>
+							<th></th>
 						</tr>
 					</thead>
-					
 					<tbody>
-						<tr id="row1" style="display:none">
-							<td class="name" style="width:45%">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+						<tr id="mortgage_row" style="display:none">
+							<td>Mortgages</td>
+							<td>£ <span id="mortgagetotal"></span></td>
+							<td><a href="#">Edit</a></td>
 						</tr>
-						<tr id="row2" style="display:none">
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+						<tr id="secured_loans_row" style="display:none">
+							<td>Loans secured against your property</td>
+							<td>£ <span id="loantotal"></span></td>
+							<td><a href="#">Edit</a></td>
 						</tr>
-						<tr  id="row3" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+						<tr id="vehicle_finance_row" style="display:none">
+							<td>Vehicle finance</td>
+							<td>£ <span id="vehicletotal"></span></td>
+							<td><a href="#">Edit</a></td>
 						</tr>
-						<tr  id="row4" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+						<tr id="employee_owed_row" style="display:none">
+							<td>Employees who claim you owe them money</td>
+							<td>£ <span id="employeetotal"></span></td>
+							<td><a href="#">Edit</a></td>
 						</tr>
-						<tr  id="row5" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+						<tr id="overdraft_row" style="display:none">
+							<td>Overdrafts</td>
+							<td>£ <span id="overdrafttotal"></span></td>
+							<td><a href="#">Edit</a></td>
 						</tr>
-						<tr  id="row6" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row7" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row8" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row9" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row10" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row11" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row12" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row13" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row14" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row15" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row16" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row17" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row18" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row19" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row20" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row21" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row22" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-						<tr  id="row23" style="display:none">
-							
-							<td class="name">&nbsp;</td>
-							<td class="ref">&nbsp;</td>
-							<td class="amount">&nbsp;</td>
-							<td class="date">&nbsp;</td>
-							<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
-						</tr>
-			
-						<tr  class="totalrow" >
-							<td  colspan="2" class="text-right" style="white-space:nowrap"><span >Total £</span></td>
-							<td class="amount" style="width:100px; white-space:nowrap">
-									<div class="text-right" id="box-total"></div>
-							</td>
-							<td></td>
-							<td></td>
-						</tr>
-			
 					</tbody>
 				</table>
 			</div>
-			<div  class="clearfix"><br/></div>
-
-			<p class="repeat">The table above summarises the creditors you have told us about.</p>
-			<p class="repeat">We need to know about any other creditors you have, including family members or friends.</p>
-				<p class="repeat"><span class="panel-indent">
-			<span class="bold-small">You do not need to include any debts you have already told us about (eg a mortgage, 
-			car financing or overdrafts).</span></span>
-			
-			<div class="validation-summary"  id="msg-student" style="display:none">               
-                <ol>
-			        <li class="error-message"> 
-			               This debt can't be included in your bankruptcy, and you will still have to pay it back in full even if you are declared bankrupt.
-			        </li>
-    			</ol>
-			</div>
-
-			<div class="form-group">
-				<label  for="creditors" class="form-label-bold " id="heading-add" style="display:none">Add creditor</label>
-				<h2 class="form-label-bold">Enter <span class="firsttime">the</span><span class="repeat">another</span> creditor's name</h2>
-				
-				<div class="form-hint">For example, ABC Bank Ltd or John Smith. <span class="firsttime">You can add more creditors later.</span> </div>
-
-					<input type="text" placeholder="Start typing name" id="creditors" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
-					<a class="button" href="address.html" id="next">Add creditor</a>
-					&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
-					<p class="clearfix"><br/></p>
-			</div>
-			<div class="clearfix"></div>
-			
-
-			<a class="button secondary" href="actionlist.html" id="btn-addedall">Continue - I have added all my creditors</a>
-			<p><br></p>
-
-			<!-- For User research -->
-			<div class="form-navigation form-group">
-				<div>
-				<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
-				</div>
-				<div><br></div>
-				<div>
-					<a style="padding-right: 30px" href="../overview.html?section4=complete" id="back">Back</a>
-					<a class="save" id="cancel">Save and logout</a>
-				</div>
-			</div>
-		</form>
-	</div>
-	<div class="col-sm-3 col-sm-push-1" style="">
-		<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">                 
-            <p><a class="save" style="font-weight:bold">Save and logout</a></p>
-            <br>
-            <div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
-            <p class="heading-secondary">Bankruptcy fee</p>
-           	<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
-           	<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
-           	<p><a href="payments/payments.html">Make a payment</a></p>
-            </div>
-            <p><a href="#" style="display:none">Print summary</a></p>
-            <p><a href="#" style="display:none">Generate court documents</a></p>
-            <p><a href="#" style="display:none">Discard application</a></p>
-        </div>
-	</div>
+	-->
 	
+			<form class="form" method="post">
+				<input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
+					<div class="validation-summary"  id="msg-entervalue" style="display:none">
+						<h2>Add a creditor</h2>
+						
+						<ol>
+							<li class="error-message"> 
+								   Enter a creditor’s name below to continue
+							</li>
+						</ol>
+					</div>
+			    
+					<div class="alert alert-info" style="padding-top:0; display:none" id="confirm-delete">
+						<h2 class="heading-medium" style="margin-top:10px">Delete creditor</h2>
+						<p>Are you sure you want to delete this creditor?</p>
+						<p><a class="btn btn-danger" id="btn-confirm-delete">Confirm delete</a> </p>
+					</div>  
+			
+				<div id="creditorlist">
 
+					<table style="width: 100%">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Reference</th>
+								<th style="text-align:right; white-space:nowrap">Amount</th>
+								<th>Date</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+					
+						<tbody>
+							<tr id="row1" style="display:none">
+								<td class="name" style="width:45%">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr id="row2" style="display:none">
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row3" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row4" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row5" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row6" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row7" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row8" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row9" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row10" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row11" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row12" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row13" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row14" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row15" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row16" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row17" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row18" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row19" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row20" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row21" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row22" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+							<tr  id="row23" style="display:none">
+								
+								<td class="name">&nbsp;</td>
+								<td class="ref">&nbsp;</td>
+								<td class="amount">&nbsp;</td>
+								<td class="date">&nbsp;</td>
+								<td class="edit"><a href="#" class="btn-edit">Edit</a><a href="#" class="btn-delete">Delete</a></td>
+							</tr>
+				
+							<tr  class="totalrow" >
+								<td  colspan="2" class="text-right" style="white-space:nowrap"><span >Total £</span></td>
+								<td class="amount" style="width:100px; white-space:nowrap">
+										<div class="text-right" id="box-total"></div>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>			
+						</tbody>
+					</table>
+				</div>	
+				<div  class="clearfix"><br/></div>
+				<p class="repeat">The table above summarises the creditors you have told us about.</p>
+				<p class="repeat">We need to know about any other creditors you have, including family members or friends.</p>
+				<p class="repeat panel-indent">
+				<span class="bold-small">You do not need to include any debts you have already told us about (eg a mortgage, car financing or overdrafts).</span>			
+				<div class="validation-summary"  id="msg-student" style="display:none">               
+					<ol>
+						<li class="error-message"> 
+							   This debt can't be included in your bankruptcy, and you will still have to pay it back in full even if you are declared bankrupt.
+						</li>
+					</ol>
+				</div>
+				<div class="form-group">
+					<label  for="creditors" class="form-label-bold " id="heading-add" style="display:none">Add creditor</label>
+					<h2 class="form-label-bold">Enter <span class="firsttime">the</span><span class="repeat">another</span> creditor's name</h2>
+					
+					<div class="form-hint">For example, ABC Bank Ltd or John Smith. <span class="firsttime">You can add more creditors later.</span> </div>
+
+						<input type="text" placeholder="Start typing name" id="creditors" style="width:400px" class="form-control typeahead input-lg" autocomplete="off">
+						<a class="button" href="address.html" id="next">Add creditor</a>
+						&nbsp;<a href="#" id="btn-clear" style="display:none">X</a>							  
+						<p class="clearfix"><br/></p>
+				</div>
+				<div class="clearfix"></div>
+				<a class="button secondary" href="actionlist.html" id="btn-addedall">Continue - I have added all my creditors</a>
+				<p><br></p>
+				
+				<!-- For User research -->
+				<div class="form-navigation form-group">
+					<div>
+					<!--		<a id="next" class="button" href="../1-details/details.html" style="display:none">Continue</a>-->
+					</div>
+					<div><br></div>
+					<div>
+						<a style="padding-right: 30px" href="../overview.html?section4=complete" id="back">Back</a>
+						<a class="save" id="cancel">Save and logout</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-3 col-sm-push-1" style="">
+			<div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">                 
+				<p><a class="save" style="font-weight:bold">Save and logout</a></p>
+				<br>
+				<div class="panel panel-primary" id="payment" style="text-align:center;padding:15px;margin-right:60px; display:none">
+				<p class="heading-secondary">Bankruptcy fee</p>
+				<p style="font-weight:bold;font-size:large"><a href="payments/statement.html">£0 received</a><br>
+				<span class="text-muted" style="font-weight:normal">£705 left to pay</span></p>
+				<p><a href="payments/payments.html">Make a payment</a></p>
+				</div>
+				<p><a href="#" style="display:none">Print summary</a></p>
+				<p><a href="#" style="display:none">Generate court documents</a></p>
+				<p><a href="#" style="display:none">Discard application</a></p>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="overlay" >
+		 <div id="overback" class="col-sm-6 col-xs-push-4">
+			<div class="row">
+				<div class="font-xlarge col-xs-2">
+					<i class="glyphicon glyphicon-exclamation-sign "></i>
+				</div>
+				<div class="col-xs-6">
+					<p class="form-label-bold" style="margin-bottom:10px;">Save and log out</p>
+				</div>
+			 </div>
+			  
+				<p>&nbsp;</p>
+			  <p>If you log out now, you will lose any new information<br> you have entered on this page.</p>
+			  <p>Everything you have done before this page will be saved.</p>
+						<p>&nbsp;</p>
+			  <div>
+				<div class="col-xs-6"><a onclick='overlay()' class="btn btn-default"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
+				<div class="col-xs-6 text-right"><a href="../start/logout.html" class="btn btn-success">Log out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a></div>
+			  </div>
+			  
+		 </div>
+	</div>
 </div>
 </div>
 
-<div id="overlay" >
-     <div id="overback" class="col-sm-6 col-xs-push-4">
-     	<div class="row">
-	     	<div class="font-xlarge col-xs-2">
-	     		<i class="glyphicon glyphicon-exclamation-sign "></i>
-	     	</div>
-	     	<div class="col-xs-6">
-	     		<p class="form-label-bold" style="margin-bottom:10px;">Save and log out</p>
-	     	</div>
-	     </div>
-          
-        	<p>&nbsp;</p>
-          <p>If you log out now, you will lose any new information<br> you have entered on this page.</p>
-          <p>Everything you have done before this page will be saved.</p>
-                    <p>&nbsp;</p>
-          <div>
-          	<div class="col-xs-6"><a onclick='overlay()' class="btn btn-default"> Return to application &nbsp;<i class="glyphicon"></i></a></div>
-          	<div class="col-xs-6 text-right"><a href="../start/logout.html" class="btn btn-success">Log out &nbsp;<i class="glyphicon glyphicon-log-out"></i></a></div>
-          </div>
-          
-     </div>
-</div>
-
-        
-</div>
 
 
-	 </div>
-
-
-	 <!-- #EndEditable -->
-
-        
-<div id="content" >
-
-        
+	 <!-- #EndEditable -->      
 <footer role="contentinfo" id="footer" class="group js-footer">
 
         
