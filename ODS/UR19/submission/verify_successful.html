@@ -127,45 +127,51 @@
 </div>
 
 <main role="main" id="wrapper">
-<div id="content" >
+
+ <div id="content" >
  <div class="inner-block">
 	<div class="phase-banner">
 		<p>
-			<strong class="phase-tag">BETA</strong>
-			This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
+		<strong class="phase-tag">BETA</strong>
+   		 This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
 		</p>
 	</div>
 
-
 <!-- #BeginEditable "content" -->
-
- 	<div class="row">
-
-        <div class="col-md-8 col-xs-12" role="main" id="maincontent">
-
-			<h1 class="form-title heading-large">Confirm your identity</h1>
-			<p>Before you submit your application we need to confirm your identity. To do this we use another GOV.UK service called Verify.</p>
-			<div class="row">
-				<div class="col-xs-6 col-sm-3"><img src="../shared/images/verify-logo-inline.png" class="img-responsive" alt="GOV.UK Logo"></div>
-				<div class="col-xs-6 col-sm-5 font-large"><strong>GOV.UK</strong><br>Verify</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="govuk-box-highlight clearfix">
+				<div class="col-xs-6 col-sm-3 col-sm-push-1">
+					<img src="../shared/images/verify-logo-REVERSE.png" class="img-responsive" alt="GOV.UK Logo">
+				</div>
+				<div class="col-xs-6 col-sm-5 col-sm-push-2">
+					<h1 class="text-large text-left"><strong>GOV.UK</strong><br>Verify successful</h1>
+				</div>
 			</div>
 
-			<p>&nbsp;</p>
-			<p>GOV.UK Verify takes around 10 minutes to complete and uses certified companies to make sure you're the person whose name appears on this application.</p>
+			<p>Thanks for confirming your identity. You can now submit your bankruptcy application.</p>
 
-			<div class="panel-indent">To use GOV.UK Verify you'll need at least two forms of ID such as UK passport, photocard driving license or a credit/debit card.</div>
-							<div id="verify">
-								<p><a href="verify.html" id="next" class="button">Continue to GOV.UK Verify</a></p>
+			<p>By clicking submit you are confirming that:</p>
+			<ul class="list-bullet">
+				<li>you are unable to pay your debts</li>
+				<li>you consent to a bankruptcy order being made in your name</li>
+				<li>you aren't aware that anyone else (eg a creditor) is
+				currently petitioning the court to make you bankrupt</li>
+				<li>you have paid the full bankruptcy fee</li>
+				<li>the information you have provided is accurate to the best of your knowledge</li>
+				<li>you consent to a credit search to be run using the details you have provided</li>
+			</ul>
+
+				<p>&nbsp;</p>
+				<p><a href="submit.html" id="next" class="button">Submit my application</a></p>
 				<p><a action="javascript: history.go(-1)">Back</a></p>
-			</div>
-
 		</div>
 	</div>
 
 
-
-
 	 <!-- #EndEditable -->
+
+
 </div>
 </div>
 
@@ -233,26 +239,23 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function() {
 
-	var payment_amount = parseFloat($.cookie("fee_paid"));
+var numberx = Math.floor( Math.random() * ( 1 + 2 - 1 ) );
+	$(".success").hide();
+	$(".non_success").hide();
+	success = "false";//getParameterByName("success");
 
-	if(payment_amount<655){
-		$("#payment").html('<span style="color:red;"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp;&nbsp; Paid your application fee</span>');
-		$("#payment-fail").show();
-		$("#verify").hide();
+	if(success == "false"){
+		$(".non_success").show();
 	}
-	else {
-		$("#payment").html('<span style="color:green"><i class="glyphicon glyphicon-ok-circle"></i>&nbsp;&nbsp; Paid your application fee</span>');
+	else{
+		$(".success").show();
 	}
-});
-
-$("#next").click(function() {
-
-
-
-
 
 });
 
+$("#next").click(function(e) {
+	//window.open('submit_log.html','Submit Log','menubar=0,resizable=0,width=600,height=400');
+});
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
