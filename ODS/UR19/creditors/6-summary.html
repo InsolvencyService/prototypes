@@ -181,7 +181,7 @@
 						    <p class="bolder" id="name"></p>
 						  </div>
 						  <div class="col-xs-2">
-						    <a href="#">Edit</a>
+						    <a href="#" id="name_edit">Edit</a>
 						  </div>
 						</div>
 						
@@ -533,6 +533,10 @@
 			$("#attachment").hide();
 		}
 	});
+	
+	$("#name_edit").on("click", function (e) {
+		$("#name_edit").attr("html", "2-creditor_name.html?edit=true&id="+count);
+    });
 	
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
