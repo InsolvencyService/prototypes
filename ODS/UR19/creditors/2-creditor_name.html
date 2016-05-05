@@ -151,8 +151,8 @@
             <input type="hidden" name="_csrf_token" value="7caa09a921f0ea4cde7bf306c8177304dc3d209d">
 
             <!-- ///// Fieldset/Group 1 - START ///// -->
-<p>If a debt collection agency is involved, check letters from your creditor to see if they have sold your debt to the agency:</p>
-				<ul class="list-bullet">
+			<p class="return">If a debt collection agency is involved, check letters from your creditor to see if they have sold your debt to the agency:</p>
+				<ul class="list-bullet return">
 					
 					<li>for sold debts, we only need to know about the debt collection agency</li>
 					<li>for all other debts, we only need to know about your original creditor</li>
@@ -252,8 +252,10 @@
 		if (edit === "true"){
 			$("#heading-1").text("Edit creditor's name");
 			$(".form-hint").hide();
+			$(".return").hide();
 			var id = getParameterByName("id");
 			$("#creditors").val($.cookie("cred-name-"+id));
+			$("#question1-label").text("Creditor's name");
 		}
 	});
 	
