@@ -256,7 +256,7 @@
 			var id = getParameterByName("id");
 			$("#creditors").val($.cookie("cred-name-"+id));
 			$("#question1-label").text("Creditor's name");
-			count=(id-1);
+			$.cookie("cred-count",parseInt(id)-1, {path:'/'});
 		}
 	});
 	
