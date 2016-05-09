@@ -465,6 +465,19 @@ $(document).ready(function () {
   //   $("#urn").text(urn);
   // }
 
+  //USER TESTING 11 MAY - SET PAYMENT MADE ON LOAD
+  $.cookie("fee_paid", '655', {path:'/'});
+  $.cookie("fee_remaining", '0', {path:'/'});
+  $.cookie("amount", '655', {path:'/'});
+  $.cookie("payment_amount1", '655', {path:'/'});
+  $.cookie("payment_count", '1', {path:'/'});
+  $.cookie("payment_date1", '09%20May%202016', {path:'/'});
+  $.cookie("payment_ref1", 'ADJ58588987', {path:'/'});
+  $.cookie("payment_timestamp", '09%20May%202016%20at%2008%3A55%3a=A09', {path:'/'});
+  $.cookie("payment_type1", 'Credit%20Card', {path:'/'});
+  $.cookie("wp-ref1", 'ADJ58588987-7046', {path:'/'});
+  ///////////////////////////////////////////////////
+  
   // Unique reference number
   $("#make-a-payment").on("click", function (e) {
     $.cookie("urn", $("#urn").text(), {path:'/'});
