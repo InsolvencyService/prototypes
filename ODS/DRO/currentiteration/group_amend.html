@@ -77,9 +77,9 @@
 <!-- #BeginEditable "styles" -->
 <style type="text/css">
 
-
-
-
+.btn-danger{text-decoration:none!important;color:white!important}
+.btn-default{text-decoration:none!important;}
+.btn-success{text-decoration:none!important;color:white!important}
 
 </style>
 <!-- #EndEditable -->
@@ -136,13 +136,12 @@
 <!-- #BeginEditable "content" -->
 
 	<div class="row">   
-		
 		<div class="col-sm-12">
 			<h1 class="form-title heading-large">Change your group</h1>
 			<div class="col-sm-6">
 				<div class="well panel panel-primary">
 					<div>
-						<p class="font-medium">Access code for <span id="group_name" class="bolder"></span> group</label>
+						<p class="font-medium">Access code for the <span id="group_name" class="bolder"></span> group</label>
 						<p class="font-large" id="group_code"></p>
 						
 					</div>
@@ -151,7 +150,7 @@
 			
 			<div class="col-sm-4 col-sm-push-3 clearfix">
 				<div class="panel-indent panel-title" >
-					<p><a href="ai_admin.html">Leave this group</a></p>
+					<p><a id="leave" href="ai_admin.html">Leave this group</a></p>
 				    <p><a href="group_allocation.html">Join another group</a></p>
 				    <p><a href="group_create.html">Create a group</a></p>                       
 				</div>
@@ -159,9 +158,42 @@
 		</div>
 	</div>
 	
+	<div class="row">   
+		<div class="col-sm-12">
+			<h1 class="form-title font-medium">Members</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="1">
+						<td>Mark Keeling</td>
+						<td>mark.keeling@insolvency.gsi.gov.uk</td>
+						<td><a class="btn btn-success" onclick="$('#delete').hide(); $(this).text('Remove from group'); $(this).removeClass('btn-success'); $(this).addClass('btn-default');">Add to group</a> &nbsp;&nbsp; <a id="delete" class="btn btn-danger"onclick="$('#1').hide();">Refuse access</a></td>
+					</tr>
+					<tr id="2">
+						<td>Richard McHale</td>
+						<td>richard.mchale@insolvency.gsi.gov.uk</td>
+						<td><a class="btn btn-default" onclick="$('#2').hide();">Remove from group</a></td>
+					</tr>
+					<tr id="3">
+						<td>Seema Menon</td>
+						<td>seema.menon@insolvency.gsi.gov.uk</td>
+						<td><a class="btn btn-default" onclick="$('#3').hide();">Remove from group</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
 	<div class="row">
 		<div class="col-sm-12">
-			<a href="#">Back</a>
+			<p>&nbsp</p>	
+			<p><a href="#">Back</a></p>
 		</div>
 		
 	</div>
@@ -233,6 +265,11 @@
 $(document).ready(function() {
 	$("#group_name").text($.cookie("group_name"));
 	$("#group_code").text($.cookie("group_code"));
+});
+
+$("#leave").on("click", function (e) {
+	$.cookie("group_code", "", {path:'/'});
+	$.cookie("group_name", "", {path:'/'});
 });
 
 
