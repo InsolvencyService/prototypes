@@ -341,12 +341,14 @@
 <script type="text/javascript">
 $(document).ready(function() { 
 	$("#logout").show();
-    $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")}); 
-    if($.cookie("group_name")){
+	if($.cookie("group_name")){
 		$("#groupname").text("You're currently allocated to the "+$.cookie("group_name")+" group.");
 		$("#groupaction").text("Change group details");
 		$("#groupaction").attr("href", "group_amend.html");
 	}
+	
+    $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")}); 
+   
 }); 
 /*
 $("i").click(function(){
