@@ -1,0 +1,40 @@
+﻿<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Dialog - Modal confirmation</title>
+  <style type="text/css">
+  #overlay {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 30px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+    /* background-image:url(background-trans.png);*/
+	}
+  
+  </style>
+
+</head>
+<body>
+ <a href='#' onclick='overlay()'>Click here to show the overlay</a>
+ 
+ <div id="overlay">
+     <div>
+          <p>Content you want the user to see goes here.</p>
+          <input id="password" name="password" type="password" aria-describedby="first_name_error first_name_help" value="" />
+           <a href='#' onclick='overlay()'>Click here to show the overlay</a>
+     </div>
+</div>
+ 
+</body>
+<script type="text/javascript">
+function overlay() {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
+</script>
+</html>
