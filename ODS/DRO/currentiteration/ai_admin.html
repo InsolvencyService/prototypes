@@ -191,7 +191,7 @@
 				<div class="panel-title">
 					<h3>Group allocation</h3>
 					<p id="groupname">You're not currently allocated to a group.</p>
-					<p id="groupaction" class="text-right"><a href="group_allocation.html">Join a group</a></p>
+					<p class="text-right"><a id="groupaction" href="group_allocation.html">Join a group</a></p>
 				</div>
 			</div>
 			
@@ -343,7 +343,7 @@ $(document).ready(function() {
 	$("#logout").show();
     $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")}); 
     if($.cookie("group_name")){
-		$("#groupname").text("You're currently allocated to the "+$.cookie("")+" group.");
+		$("#groupname").text("You're currently allocated to the "+$.cookie("group_name")+" group.");
 		$("#groupaction").text("Change group details");
 		$("#groupaction").attr("href", "group_amend.html");
 	}
