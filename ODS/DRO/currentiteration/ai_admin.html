@@ -342,7 +342,7 @@
 $(document).ready(function() { 
 	$("#logout").show();
 	if($.cookie("group_name")){
-		$("#groupname").text("You're currently allocated to the "+$.cookie("group_name")+" group.");
+		$("#groupname").html('You\'re currently allocated to the <span class="bolder">'+$.cookie("group_name")+'</span> group.');
 		$("#groupaction").text("Change group details");
 		$("#groupaction").attr("href", "group_amend.html");
 	}
