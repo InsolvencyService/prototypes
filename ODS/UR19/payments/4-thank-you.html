@@ -177,6 +177,7 @@ table td{
           <div class="col-md-8 col-xs-12">
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your payment was successful.</h2>
+			  <p id="submit_flow" class="bold-medium">Please continue to submit your application</p>
               <p>Your payment reference is:<br>
                 <span class="payment-ref">ADJ12345678</span>
               </p>
@@ -294,6 +295,7 @@ var ref, paydate, payment_made, total_fee_paid, fee_remaining, cookiecount;
 
 $(document).ready(function() {
   $("#fullpage").hide();
+  $("#submit_flow").hide();
   //for contact us email
   var url      = window.location.href;     // Returns full URL
   var pathname = window.location.pathname; // Returns path only
@@ -347,6 +349,7 @@ $(document).ready(function() {
   if($.cookie("payment_route")){
 	$(".button").text("Continue to submit your application");
 	$(".button").attr("href", "../submission/start.html");
+	$("#submit_flow").show();
   }
 });
 
