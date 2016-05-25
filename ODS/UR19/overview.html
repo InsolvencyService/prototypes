@@ -491,11 +491,11 @@ $(document).ready(function () {
     $(".lefttopay").text($.cookie("fee_remaining"));
     $("#timestamp").text($.cookie("payment_timestamp"));
     $("#updated").show();
-    $("#payment-info").hide();
+    $("#payment-info").show();
     $("#make-a-payment").show();
     $("#next").hide();
     $(".next").hide();
-    $("#completion-message").show();
+    $("#completion-message").hide();
     $(".payment-amount").show();
     $(".payment-made").hide();
   }
@@ -570,7 +570,7 @@ $(document).ready(function () {
   var section5 = getParameterByName("section5");
   var section6 = getParameterByName("section6");
   var section7 = getParameterByName("section7");
-  var section8 = 'complete'; //AMENDED FOR USER TESTING 11/05/2016
+  var section8 = getParameterByName("section8");
 
   // =================================== Links for all wrapper DIV's - Start =================================== //
 
@@ -713,6 +713,7 @@ $(document).ready(function () {
     $("#section2, #section3, #section4, #section5, #section6, #section7, #section8").addClass("edit-information").removeClass("not-started");
 
     document.title = 'Ready to submit';
+	$(".next").show();
   }
 
   //}

@@ -136,12 +136,6 @@
     This is a new service - your <a href="https://www.surveymonkey.com/r/QX93Q2F" target="_blank">feedback</a> will help us improve it
 	</p>
 	</div>
-	</div>
-
-
-
-
-
 
 
 </div>
@@ -151,20 +145,9 @@
 
 
 
-
 <!-- #BeginEditable "content" -->
 
-
-
-
-
-	<div id="content" >
-
-
-
-
-
-	<div class="content">
+ <div id="content" >
 
 		<div id="payment-fail" class="row" style="margin-left:15px;margin-right:15px;">
 			<div class="col-sm-10">
@@ -341,10 +324,14 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 var payment_amount = 0;
+var remaining_amount=0;
 $(document).ready(function() {
 
-	payment_amount = parseFloat($.cookie("fee_paid"));
-	var remaining_amount= parseFloat($.cookie("fee_remaining")).toFixed(2);
+	if($.cookie("fee_paid")){
+		payment_amount = parseFloat($.cookie("fee_paid"));
+		remaining_amount= parseFloat($.cookie("fee_remaining")).toFixed(2);
+	}
+	
 
 	$("#fee").text(remaining_amount);
 
@@ -357,6 +344,9 @@ $(document).ready(function() {
 		$("#normalroute").show();
 	}
 
+	$("#pay").click(function(e) {
+		$.cookie("payment_route", "../submission/start.html", {path:'/'})	
+	}
 
 });
 var visible = false;
