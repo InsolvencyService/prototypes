@@ -343,6 +343,11 @@ $(document).ready(function() {
       writeCookies();
     }
   }
+  
+  if($.cookie("payment_route")){
+	$(".button").text("Continue to submit your application");
+	$(".button").attr("href", $.cookie(payment_route));
+  }
 });
 
 $("#email-link").on("click", function (e) {
