@@ -484,7 +484,7 @@ $(document).ready(function () {
   });
 
   //checking payment details
-  if (parseInt($.cookie("fee_paid")) != 655) {
+  if (parseInt($.cookie("fee_paid")) < 655) && (parseInt($.cookie("fee_paid")) > 0) {
     $("#fee_paid").text($.cookie("fee_paid"));
     $(".fee_paid").text($.cookie("fee_paid"));
     $("#fee_remaining").text($.cookie("fee_remaining"));
