@@ -144,7 +144,21 @@
 
 
 
+</div>
+
+
+
+
+
+
+
 <!-- #BeginEditable "content" -->
+
+
+
+
+
+	<div id="content" >
 
 
 
@@ -326,9 +340,10 @@ $(document).ready(function() {
 <!-- #BeginEditable "scripts" -->
 
 <script type="text/javascript">
+var payment_amount = 0;
 $(document).ready(function() {
 
-	var payment_amount = parseFloat($.cookie("fee_paid"));
+	payment_amount = parseFloat($.cookie("fee_paid"));
 	var remaining_amount= parseFloat($.cookie("fee_remaining")).toFixed(2);
 
 	$("#fee").text(remaining_amount);
