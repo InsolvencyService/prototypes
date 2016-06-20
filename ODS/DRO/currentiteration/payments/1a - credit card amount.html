@@ -202,14 +202,11 @@
 <script type="text/javascript" src="../../../assets/js/bootstrap/js/toggle-button.js"></script>
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
-<script>
-	$(document).ready(function(){
-		$("#pnl-validation").hide();
-		
-	});
+<script type="text/javascript">
+	
 	
 	$("#pay-online").on("click", function (e) {
-    	e.preventDefault();
+    
 		$.cookie("amount", $("#amount").val(), {path:'/'});
 	});
 	
