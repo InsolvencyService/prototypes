@@ -142,8 +142,12 @@
 					
 				</div>
 				<div class="column-one-third">
-					<div class="panel-indent">
-						Please make sure you complete all of the information 
+					<div class="panel panel-primary text-center">
+						<h2 class="heading-small">Application fee</h2>
+						<span class="payment-amount">&pound;<span id="fee_remaining" class="lefttopay">90</span> left to pay</span>
+						<p class="text-muted" style="font-weight:normal">&pound;<span id="fee_paid" class="fee_paid">0</span> received</p>
+						<p id="updated" class="updated-text" style="display:none;">Last payment update:<br><span id="timestamp"></span></p>
+						
 					</div>
 				</div>	
 			</div>
@@ -205,7 +209,21 @@
 
 <script>
 	$(document).ready(function(){
-		$("#pnl-validation").hide();
+		//checking payment details
+		  if ($.cookie("fee_paid") && $.cookie("fee_paid")!="0.00"){
+		    $(".fee_paid").text($.cookie("fee_paid"));
+		    $(".lefttopay").text($.cookie("fee_remaining"));
+		    $("#timestamp").text($.cookie("payment_timestamp"));
+		    $("#updated").show();
+		  }
+		  else {
+		    $.cookie("fee_paid", "0.00", {path:'/'});
+		    $.cookie("fee_remaining", "90.00", {path:'/'});
+		    $("#fee_paid").text("0.00");
+		    $(".fee_paid").text("0.00");
+		    $(".lefttopay").text("90.00");
+		    $("#updated").hide();
+		  }
 		
 	});
 	
