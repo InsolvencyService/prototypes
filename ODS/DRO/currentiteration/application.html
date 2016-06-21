@@ -206,9 +206,7 @@
 				        </div>			        
 			    </div>
 		
-    </div>   
 
-</div>
 
 <!-- #BeginEditable "content" -->
  	
@@ -299,16 +297,16 @@
                                            
                         <div class="panel panel-primary" style="text-align:center;padding:15px;margin-right:60px">
 	                        <p class="heading-secondary">Debt relief order fee</p>
-	                       	<p style="font-weight:bold;font-size:large"><a href="#">£70 received</a><br>
+	                       	<p style="font-weight:bold;font-size:large">£70 received<br>
 	                       	<span  class="text-muted" style="font-weight:normal">£20 left to pay</span></p>
 	                       	<p style="font-size:0.7em">Last updated:<br>7 June 2015 at 15:05:06</p>
+							<a href="payments/payment_information.html" id="ai_pay" class="button">Payment information</a>
                         </div>
                                             
                         <div class="panel-indent" style="margin-top:0;font-size  :16px; border-color:#efefef">
                             <!---<p><a href="#">Make a payment</a></p>--->
                             <p><a href="#">View and print application</a></p>
-							<div class="ai" hidden="true">	 
-								<p><a href="#">Print barcode letter</a></p>                       
+							<div class="ai" hidden="true">	                      
 							    <p><a href="ai_admin.html">Return to case search</a></p>
 							</div>
                         </div>
@@ -347,8 +345,8 @@
 
         
 </div>
-
-
+</div>
+</div>
 <!-- #EndEditable -->
 
         
@@ -636,6 +634,10 @@
 				  $.cookie("case_notes", $("#notes").val());
 				});
             });
+			
+			$('#ai_pay').click({
+				$.cookie("reference","DRO66598745",{path:'/'}
+			});
 
 
 
