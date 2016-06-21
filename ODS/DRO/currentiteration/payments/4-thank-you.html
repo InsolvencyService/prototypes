@@ -177,7 +177,7 @@ table td{
           <div class="col-md-8 col-xs-12">
             <div class="govuk-box-highlight">
               <h2 class="bold-large">Your payment was successful.</h2>
-			  <p id="submit_flow" class="bold-medium">Please continue to submit your application</p>
+			  
               <p>Your payment reference is:<br>
                 <span class="payment-ref">DRO30012568</span>
               </p>
@@ -302,7 +302,7 @@ $(document).ready(function() {
   // end
 
   //8 digit random number for the payment number
-  ref = "ADJ" + Math.floor(Math.random()*1E8);
+  ref = $.cookie("reference");
   $(".payment-ref").text(ref).addClass("bolder");
 
   //if an amount of payment has been entered

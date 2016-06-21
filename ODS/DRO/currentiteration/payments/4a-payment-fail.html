@@ -208,11 +208,8 @@ padding:50px;
 
             <!-- CTA Section Start -->
             <div class="form-navigation form-group" style="margin:30px 0;">
-              <a href="1 - options for paying fee.html"><button class="button">Continue</button></a>
-              <div>
-                <a style="padding-right: 30px" href="javascript:history.go(-1)" id="back">Back</a>
-                <a href="#" id="cancel">Save and logout</a>
-              </div>
+              <a href="1a - credit card amount.html"><button class="button">Make another payment</button></a>
+              
               <p>&nbsp;</p>
 
             </div>
@@ -223,15 +220,10 @@ padding:50px;
 
           <!-- Side Panel Section Start -->
           <div class="col-md-4 col-xs-12">
-            <div class="helpline heading-small">
-              <i class="glyphicon glyphicon-earphone"></i>
-              Helpline<br>
-              0870 366 1233
-            </div>
+            
             <div class="panel-indent no-margin">
               <p><a href="#" class="small-icon"><img src="../../../UR19/payments/images/print-icon.png">Print confirmation</a></p>
-              <br>
-              <p><a href="../../../UR19/payments/8-statements-page.html">View my payment history</a></p>
+              
             </div>
           </div>
           <!-- Side Panel Section End -->
@@ -306,7 +298,7 @@ padding:50px;
     // end
 
     //8 digit random number for the payment number
-    ref = "ADJ" + Math.floor(Math.random()*1E8);
+    ref = $.cookie("reference");
     $(".payment-ref").text(ref).addClass("bolder");
 
     //if an amount of payment has been entered

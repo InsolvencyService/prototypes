@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0055)/claims/start -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -89,7 +89,7 @@
         <div class="header-proposition">
             <div class="content">
                 <nav id="proposition-menu">
-                    <span id="proposition-name" href="https://www.gov.uk/service-manual">Debt Relief Orders</span>
+                    <span id="proposition-name" href="https://www.gov.uk/service-manual"></span>
                 </nav>
             </div>
         </div>
@@ -106,41 +106,31 @@
 <div id="content" > 
     <div class="inner-block">
     	<div class="phase-banner clearfix">
-	        <div class="col-sm-9">
+	        <div class="col-sm-8">
 		        <strong class="phase-tag">BETA</strong>
 		        This is a new service - your <a href="https://www.surveymonkey.com/s/RBW8HYW" target="_blank">feedback</a> will help us improve it
 	        </div>				
-			<div id="logout" class="col-sm-3 text-right">
-		       
+			<div class="col-sm-4 text-right">
+		     
 	        </div>			        
 	    </div>
 		
      	<div role="main">
-     		<h1 class="form-title heading-large">Sign in to pay your Debt Relief Order fee online</h1>
+     		
 			<div class="grid-row">
 				<div class="column-two-thirds">
-					<p>Before your Approved Intermediary can submit your Debt Relief Order application, a fee of £90 needs to be paid.</p>
-					<form role="form">
-						<div class="form-group">
-							<label class="form-label-bold" for="dro_reference">What is your DRO reference</label>
-							<p class="form-hint">This can be found on the email or letter from your Approved Intermediary</p>
-							<input id="dro_reference" type="text" class="form-control-1-2"/>	
-						</div>
-						
-						<div class="form-group">
-							<label class="form-label-bold" for="dro_reference">Enter your last name</label>
-							<input id="last_name" type="text" class="form-control-1-2"/>	
-						</div>
-
-						
-						<div class="form-group" id="buttons">
-							<p><a id="next" href="1a - credit card amount.html" role="button" class="button">Continue</a></p>
-							<p><a href="javascript:history.go(-1)">Back</a></p>
-						</div>
-					</form>
+					<h1 class="form-title heading-large">Pay your debt relief order fee</h1>
+					<p>Use this service to pay for your Debt Relief Order application fee online.</p>
+					<p>To use this service you will need your DRO case number. Your approved intermediary will have sent this to you either by email or letter. If you haven't received a reference please contact them directly.</p>
+					<p>&nbsp;</p>
+					<a href="start.html" class="button button-get-started">Start now </a>
 				</div>
 				<div class="column-one-third">
-					
+					<div >
+						<p class="heading-medium"  style="border-top:thick navy solid; padding-top:15px" >Elsewhere on GOV.UK</p>	
+						<p><a href="#">GOV.UK link 1</a></p>
+						<p><a href="#">GOV.UK link 2</a></p>
+					</div>
 				</div>	
 			</div>
 		</div>
@@ -200,8 +190,9 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 
 <script>
-	$("#next").click(function(){
-		$.cookie("reference",$("#dro_reference").val(),{path:'/'});
+	$(document).ready(function(){
+		
+		
 	});
 	
 	
