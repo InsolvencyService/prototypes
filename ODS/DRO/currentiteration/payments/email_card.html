@@ -61,7 +61,7 @@
           		<p class="text">Your Debt Relief Order application has now been created by your Approved Intermediary, [AI NAME].</p>
           		<p class="text">To enable them to submit your application you will need to pay the application fee of £90.</p>
           		<p class="text bolder"><strong>[LOOK AT WORDS ABOVE ^^^ AND ADD MORE REGARDING ONLINE PAYMENT LINK]</strong></p>
-          		<p class="text">You will receive a second email from us to explain how to pay by cash at hundreds of local stores.</p>
+          		<p class="text">You will receive a <a href="email_cash.html" target="_blank">second email</a> from us to explain how to pay by cash at hundreds of local stores.</p>
           	</td>
           </tr>
         
@@ -96,24 +96,7 @@
 <script type="text/javascript" src="../../../assets/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-
-	var url = $.cookie("url");
-	var email = $.cookie("email");
-	var telephone = $.cookie("telephone");
-		
-	$("#url").text(url);
-	$("#url").attr("href",url);
-	
-	if(email){
-		$("#contact").text(email);
-		$("#url").attr("href","mailto:"+email);
-	}
-	else{
-		$("#contact").text(telephone);
-	}
-	
-	$("#problem").text($.cookie("message"));
-
+	window.open("email_cash.html", "_blank");
 });
 
 

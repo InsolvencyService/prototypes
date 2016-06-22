@@ -151,12 +151,15 @@
 
 			</div>
 			<div class="form-group">
-				<p>Your client has been sent <a id="information">information</a> on how to pay by cash or online using a credit or debit card. <br/>We have instructed them to inform you when the payment has been made.</p>
+				<p>Your client has been sent <a a href="email_card.html" target="_blank">information</a> on how to pay by cash or online using a credit or debit card. <br/>We have instructed them to inform you when the payment has been made.</p>
 			</div>
 			
 			<div class="form-group">
-				<p><a href="../ai_admin.html" class="button">Return to the application.</a></p>
-				<p><a href="#">Return to your case search</a></p>
+				<p><a href="../application.html" class="button">Return to the application.</a></p>
+				<p>
+					<a href="../ai_admin.html">Return to your case search</a><br/>
+					<a href="javascript:history.go(-1)">Back</a>
+				</p>
 			</div>
 
 			<p>&nbsp;</p>
@@ -230,29 +233,9 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-
-	$(".email").hide()
-	$(".letter").hide()
-
-	if($.cookie('email')){
-		$(".email").show()
-	}
-	else{
-		$(".letter").show()
-
-	}
 
 
-});
 
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
 </script>
 
