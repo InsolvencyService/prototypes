@@ -339,41 +339,43 @@
 			p_new = true;
 		}
 		 
-		 var charPassword = $("#newpassword").val();
-		 var lower = false;
-		 var upper = false;
-		 var number = false;
-		 var special = false;
-		 var length = false;
-		 
-		 for (i=0; i<charPassword.length;i++){
-		 	if(charPassword[i].match(/[a-z]/)){
-		 		lower=true;
-		 	}
-		 	else if(charPassword[i].match(/[A-Z]/)){
-		 		upper=true;
-		 	}
-		 	else if(charPassword[i].match(/\d+/)){
-		 		number=true;
-		 	}
-		 	else if(charPassword[i].match(/(.*[!,@,#,$,%,^,&,*,?,_,~])/)){
-		 		special=true;
-		 	}
-		 	if(charPassword.length>7){
-		 		length=true;
-			}		 
-		 }
-		
-		if((lower==true) && (upper==true) && (number==true) && (special==true) && (length==true)){
-				complete=true;
+		if($("#newpassword").length>0 || $("#newpassword").length>0){
+			 
+			var charPassword = $("#newpassword").val();
+			var lower = false;
+			var upper = false;
+			var number = false;
+			var special = false;
+			var length = false;
+			
+			for (i=0; i<charPassword.length;i++){
+				if(charPassword[i].match(/[a-z]/)){
+					lower=true;
+				}
+				else if(charPassword[i].match(/[A-Z]/)){
+					upper=true;
+				}
+				else if(charPassword[i].match(/\d+/)){
+					number=true;
+				}
+				else if(charPassword[i].match(/(.*[!,@,#,$,%,^,&,*,?,_,~])/)){
+					special=true;
+				}
+				if(charPassword.length>7){
+					length=true;
+				}		 
 			}
-		else{
-		 	$(".error-summary").show();
-		 	$(".password_validation").show();
-		 	$("#u_newpassword").addClass("error");
-		 	complete=false;
-		 }
-		 
+		
+			if((lower==true) && (upper==true) && (number==true) && (special==true) && (length==true)){
+					complete=true;
+				}
+			else{
+			 	$(".error-summary").show();
+			 	$(".password_validation").show();
+			 	$("#u_newpassword").addClass("error");
+			 	complete=false;
+			 }
+		}
 		
 		if($("#currentpassword").val() === ""){
 			$(".error-summary").show();
