@@ -338,10 +338,10 @@
 		else{
 			p_new = true;
 		}
-		 
-		if($("#newpassword").val().length>0 || $("#confirmpassword").val().length>0){
+		var charPassword = $("#newpassword").val();
+		if(charPassword.length>0){
 			 
-			var charPassword = $("#newpassword").val();
+			
 			var lower = false;
 			var upper = false;
 			var number = false;
