@@ -136,7 +136,8 @@
 						    <li class="er_type password_mismatch"><a href="#newpassword">New passwords didn't match</a></li>
 						    <li class="er_type username_missing"><a href="#username">Username is missing</a></li>
 						    <li class="er_type email_missing"><a href="#email">Email is missing</a></li>
-						    <li class="er_type telephone_missing"><a href="#telephone">Telephone is missing</a></li>			    
+						    <li class="er_type telephone_missing"><a href="#telephone">Telephone is missing</a></li>
+						    <li class="er_type password_validation"><a href="#newpassword">Your password must contain at least 8 characters including 1 capital letter, 1 numeric character and 1 special character</a></li>			    
 						  </ul>
 					
 					</div>
@@ -185,6 +186,7 @@
 							<label for="currentpassword" class="form-label-bold">Current password</label>
 							<p class="er_type current_password_missing error-message">Please enter your password</p>
 							<p class="er_type current_password_incorrect error-message">Current password is incorrect</p>
+							<p class="er_type password_validation error-message">Your password must contain at least 8 characters including 1 capital letter, 1 numeric character and 1 special character</p>
 							<p class="form-hint">You will need to enter your current password to confirm any changes</p>
 							<input type="password" id="currentpassword" class="form-control-1-3" />
 						</div>
@@ -327,6 +329,16 @@
 			$("#u_newpassword").addClass("error");
 			complete=false;
 		}
+		 if(($("#newpassword").match(/[a-z]/)) && ($("#newpassword").match(/[A-Z]/)) && ($("#newpassword").match(/\d+/)) && ($("#newpassword").match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) &&  ($("#newpassword").length > 7)){
+		 	complete=true;
+		 }
+		 else{
+		 	$(".error-summary").show();
+		 	$(".password_validation").show();
+		 	$("#u_password").addClass("error");
+		 	complete=false;
+		 }
+		
 		if($("#currentpassword").val() === ""){
 			$(".error-summary").show();
 			$(".current_password_missing").show();
