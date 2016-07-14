@@ -322,6 +322,9 @@
 			$("#u_telephone").addClass("error");
 			complete=false;
 		}
+		
+		var p_new;
+		
 		if($("#newpassword").val() != $("#confirmnewpassword").val()){
 			$(".error-summary").show();
 			$(".password_mismatch").show();
@@ -330,6 +333,10 @@
 			$("#currentpassword").val("");
 			$("#u_newpassword").addClass("error");
 			complete=false;
+			p_new = flase;
+		}
+		else{
+			p_new = true;
 		}
 		 
 		 var charPassword = $("#newpassword").val();
@@ -386,7 +393,13 @@
 			$.cookie("username", $("#username").val());
 			$.cookie("email", $("#email").val());
 			$.cookie("telephone", $("#telephone").val());
-			$.cookie("password", $("#currentpassword").val());	
+			
+			if(p_new=true){
+				$.cookie("password", $("#newpassword").val());	
+			}
+			else{
+				$.cookie("password", $("#currentpassword").val());	
+			}
 			$("#next").attr("href", "ai_admin.html");
 		}
 	});
