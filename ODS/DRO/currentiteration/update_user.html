@@ -333,11 +333,16 @@
 			$("#currentpassword").val("");
 			$("#u_newpassword").addClass("error");
 			complete=false;
-			p_new = flase;
+			p_new = false;
 		}
 		else{
 			p_new = true;
 		}
+		
+		if($("#newpassword").val() == ""){
+			p_new = false;
+		}
+
 		var charPassword = $("#newpassword").val();
 		if(charPassword.length>0){
 			 
