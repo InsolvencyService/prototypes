@@ -397,10 +397,10 @@
 			$.cookie("telephone", $("#telephone").val());
 			
 			if(p_new=true){
-				$.cookie("password", $("#newpassword").val());	
+				$.cookie("password", String($("#newpassword").val()));	
 			}
 			else{
-				$.cookie("password", $("#currentpassword").val());	
+				$.cookie("password", String($("#currentpassword").val()));	
 			}
 			$("#next").attr("href", "ai_admin.html");
 		}
