@@ -250,7 +250,8 @@
 					<div class="form-group ">
 						<label for="why" class="form-label-bold">Why didn’t you sell/transfer the item for its market value?</label>
 						<p class="form-hint">Include details of why you were motivated to make the sale at this time, how you valued the item, any advertising of the asset for sale (online or locally) and the response and how any proceeds of sale were spent</p>
-						<textarea id="why" rows="6" cols="60"></textarea>
+						<textarea id="why" rows="6" cols="60"  maxlength="250"></textarea>
+						<div id="textarea_feedback"></div>
 					</div>
 				
 					
@@ -332,6 +333,18 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	var text_max = 250;
+    $('#textarea_feedback').html(text_max + ' characters remaining');
+
+    $('#why').keyup(function() {
+        var text_length = $('#why').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+    });
+
+
 	var self = getParameterByName("self");
 	
 	
