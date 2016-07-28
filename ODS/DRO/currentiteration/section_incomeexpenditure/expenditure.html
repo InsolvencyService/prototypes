@@ -495,39 +495,76 @@
 		 				<i class="glyphicon glyphicon-chevron-up"></i>
 		 			</a>
 		 		</div>
-		 		
-			 	<table id="table7" class="table table-condensed">
-					<thead style="visibility:hidden">
-						<tr>
-							<th></th>
-							<th class="heading-amount">Amount</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<tr>
-							<td><span class="form-label">Savings</span></td>
-							<td>
-								<div class="pull-left text-right pound-sign">£</div>
-						      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-							</td>
-						</tr>
-						<tr>
-							<td><span class="form-label">Hire purchase/conditional sale</span></td>
-							<td>
-								<div class="pull-left text-right pound-sign">£</div>
-						      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-							</td>
-						</tr>
-						<tr>
-							<td><span class="form-label">Magistrate court fines</span></td>
-							<td>
-								<div class="pull-left text-right pound-sign">£</div>
-						      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
-							</td>
-						</tr>
-					</tbody>
-				</table>
+		 		<div id="table7">
+				 	<table  class="table table-condensed">
+						<thead style="visibility:hidden">
+							<tr>
+								<th></th>
+								<th class="heading-amount">Amount</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td><span class="form-label">Savings</span></td>
+								<td>
+									<div class="pull-left text-right pound-sign">£</div>
+							      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+								</td>
+							</tr>
+							<tr>
+								<td><span class="form-label">Hire purchase/conditional sale</span></td>
+								<td>
+									<div class="pull-left text-right pound-sign">£</div>
+							      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+								</td>
+							</tr>
+							<tr>
+								<td><span class="form-label">Magistrate court fines</span></td>
+								<td>
+									<div class="pull-left text-right pound-sign">£</div>
+							      	<input type="text" class="form-control text-right pull-left amount" placeholder="0">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="form-label">Miscellaneous expenditure</p>
+									<input type="text" class="form-control" placeholder="Add item description">
+									<input type="text" class="form-control item1" placeholder="Add item description">
+									<input type="text" class="form-control item2" placeholder="Add item description">
+									
+								</td>
+								<td><p>&nbsp;</p>
+									
+									<div class="col-sm-12">
+										<div class="pull-left text-left pound-sign">£</div>
+
+								      	<input type="text" class="form-control text-right amount" placeholder="0">
+							      	</div>
+							      	
+							      	<div class="col-sm-12 item1">
+								      	<div class="pull-left text-left pound-sign">£</div>
+
+										<input type="text" class="form-control text-right amount" placeholder="0">
+									</div>
+									
+									<div class="col-sm-12 item2">
+										<div class="pull-left text-left pound-sign">£</div>
+										<input type="text" class="form-control text-right  amount" placeholder="0">
+									</div>
+									
+									
+								</td>
+							</tr>
+
+							
+							
+						</tbody>
+					</table>			
+					<div class="text-right">
+						<a id="add_misc" class="btn btn-default">Add another miscellaneous expense</a>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -609,17 +646,27 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-for(var i = 1; i<=7; i++){
-	$( "#table"+i ).fadeOut( 1500 );
-	$("#link"+i).removeClass("open");
-	$("#section"+i).find("i").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
-	var details = $($("#table"+i).attr("href"));
-	details.hide();
-}
 
-	
+	$(".item1").hide();
+	$(".item2").hide();
 
+	for(var i = 1; i<=7; i++){
+		$( "#table"+i ).fadeOut( 1500 );
+		$("#link"+i).removeClass("open");
+		$("#section"+i).find("i").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+		var details = $($("#table"+i).attr("href"));
+		details.hide();
+		
+	}
+});
 
+var count=1;
+$("#add_misc").on("click", function (e) {
+	$(".item"+count).show();
+	count++;
+	if(count>2){
+		count=2;
+	}
 });
 
 $(".js-expand").on("click", function (e) {
