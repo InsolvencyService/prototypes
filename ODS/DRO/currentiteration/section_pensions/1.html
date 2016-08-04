@@ -210,11 +210,28 @@ display:block;
 	
 	<h1 class="form-title heading-large">5. Pension details</h1>
 	
-	
+	<div id="pensionlist">
+		<p class="bold-small">Personal and occupational pensions</p>
+		<table style="width: 60%">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<!--<th>Address</th>--->
+					<th>Policy number</th>
+					<th>Approved pension</th>
+					<th>Personal pension</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody id="body">
+
+			</tbody>
+		</table>
+	</div>
 	<div class="form-group firsttime" id="pnl-Other">
 		<fieldset class="inline" id="previoustrade">
 		<p>&nbsp;</p>
-		<label id="_label" class="form-label-bold">Do you have a pension?</label>
+		<label id="pensionQ_label" class="form-label-bold">Do you have a pension?</label>
 		
 			<div class="form-group">
 			
@@ -232,24 +249,7 @@ display:block;
 		
 		<form>
 		
-			<div id="pensionlist">
-				<p class="bold-small">Personal and occupational pensions</p>
-				<table style="width: 60%">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<!--<th>Address</th>--->
-							<th>Policy number</th>
-							<th>Approved pension</th>
-							<th>Personal pension</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
-					<tbody id="body">
-	
-					</tbody>
-				</table>
-			</div>
+			
 			
 			<div  class="clearfix"><br/></div>
 	
@@ -371,6 +371,10 @@ $(document).ready(function() {
 			$("#body").append("<tr><td>"+ pname +"</td><td>" + pnumber +"</td><td>"+ papproved +"</td><td>"+ ppersonal +"</td><td class=\"edit\"><a href=\"2.html?edit=true&id="+i+"\" class=\"btn-edit\">Edit</a><a href=\"#\" class=\"btn-delete\">Delete</a></td></tr>");
 			
 		}
+		$("#pensionlist").show();
+		$("#next_section").text("I don't have any pensions");
+		$("#pensionQ_label").text("Do you have any other pensions?");
+		
 	}
 
 
